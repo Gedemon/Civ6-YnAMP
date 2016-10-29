@@ -311,8 +311,14 @@
 		<Replace>
 			<Civilization>CIVILIZATION_GREECE</Civilization>
 			<X>57</X>
-			<Y>41</Y>
+			<Y>40</Y>
 		</Replace>
+       <Replace>
+            <Civilization>CIVILIZATION_GREECE</Civilization>
+			<Leader>LEADER_GORGO</Leader>
+            <X>57</X>
+            <Y>44</Y>
+        </Replace>
 		<Replace>
 			<Civilization>CIVILIZATION_INDIA</Civilization>
 			<X>75</X>
