@@ -1,0 +1,15 @@
+<GameInfo>
+	<Maps>
+		<Row MapSizeType="MAPSIZE_ENORMOUS" Name="LOC_MAPSIZE_ENORMOUS_NAME" Description="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" DefaultPlayers="20" GridWidth="128" GridHeight="80" NumNaturalWonders="8" PlateValue="5" Continents="6"/>
+		<Row MapSizeType="MAPSIZE_GIANT" Name="LOC_MAPSIZE_GIANT_NAME" Description="LOC_MAPSIZE_GIANT_DESCRIPTION" DefaultPlayers="20" GridWidth="180" GridHeight="94" NumNaturalWonders="8" PlateValue="5" Continents="6"/>
+		<Row MapSizeType="MAPSIZE_LUDICROUS" Name="LOC_MAPSIZE_LUDICROUS_NAME" Description="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" DefaultPlayers="20" GridWidth="230" GridHeight="115" NumNaturalWonders="8" PlateValue="6" Continents="7"/>
+
+		<Row MapSizeType="MAPSIZE_GREATESTEARTH" Name="LOC_GREATESTEARTH_NAME" Description="LOC_GREATESTEARTH_NAME" DefaultPlayers="20" GridWidth="104" GridHeight="64" NumNaturalWonders="7" PlateValue="4" Continents="5"/>
+	</Maps>
+	<Map_GreatPersonClasses>
+		<Row MapSizeType="MAPSIZE_GREATESTEARTH" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
+		<Row MapSizeType="MAPSIZE_ENORMOUS" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="8"/>
+		<Row MapSizeType="MAPSIZE_GIANT" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="9"/>
+		<Row MapSizeType="MAPSIZE_LUDICROUS" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="10"/>
+	</Map_GreatPersonClasses>
+</GameInfo>

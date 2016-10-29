@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Ed Beach (Firaxis Games) -->
+<GameData>
+  <LocalizedText>
+    <Replace Tag="LOC_TEST_NAME" Language="en_US">
+      <Text>Test</Text>
+    </Replace>
+  </LocalizedText>
+</GameData>
