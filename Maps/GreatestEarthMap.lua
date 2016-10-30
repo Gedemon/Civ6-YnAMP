@@ -38,7 +38,39 @@ end
 -------------------------------------------------------------------------------
 function GenerateMap()
 	print("Calling Map Generator");
-	GenerateImportedMap(GetMap(), g_iW, g_iH)
+	GenerateImportedMap(GetMap(), GetCiv6DataToConvert(), GetNaturalWonders(), g_iW, g_iH)
+end
+
+
+function GetCiv6DataToConvert()
+	local Civ6DataToConvert = {}
+	for i = 0, g_iW - 1, 1 do
+		Civ6DataToConvert[i] = {}
+	end
+	
+	-- Civ6 Data
+	-- Civ6DataToConvert[x][y]={{IsNEOfCliff,IsWOfCliff,IsNWOfCliff},}
+	
+	return Civ6DataToConvert
+end
+
+function GetNaturalWonders()
+	local NaturalWonders = {}
+	
+	NaturalWonders[6]  = { X = 103, Y = 16} -- FEATURE_BARRIER_REEF	
+	NaturalWonders[7]  = { X = 39, Y = 51} 	-- FEATURE_CLIFFS_DOVER	
+	NaturalWonders[8]  = { X = 3, Y = 48} -- FEATURE_CRATER_LAKE	
+	NaturalWonders[9]  = { X = 63, Y = 37} 	-- FEATURE_DEAD_SEA	
+	NaturalWonders[10] = { X = 78, Y = 42} 	-- FEATURE_EVEREST	
+	NaturalWonders[11] = { X = 15, Y = 20} -- FEATURE_GALAPAGOS	
+	NaturalWonders[12] = { X = 62, Y = 17} 	-- FEATURE_KILIMANJARO	
+	NaturalWonders[13] = { X = 27, Y = 16} -- FEATURE_PANTANAL	
+	NaturalWonders[14] = { X = 0, Y = 6} 	-- FEATURE_PIOPIOTAHI	
+	NaturalWonders[15] = { X = 25, Y = 6} 	-- FEATURE_TORRES_DEL_PAINE	
+	NaturalWonders[16] = { X = 64, Y = 9} 	-- FEATURE_TSINGY	
+	NaturalWonders[17] = { X = 2, Y = 45} -- FEATURE_YOSEMITE
+	
+	return NaturalWonders
 end
 
 function GetMap()

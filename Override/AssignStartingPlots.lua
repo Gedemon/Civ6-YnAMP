@@ -2263,13 +2263,16 @@ print ("Loading YnAMP functions ...")
 -- Imported Maps Creation
 ------------------------------------------------------------------------------
 
-function GenerateImportedMap(MapToConvert, g_iW, g_iH)
+function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_iW, g_iH)
 
 	--local pPlot
 	--g_iFlags = TerrainBuilder.GetFractalFlags();
 	
-	print("Importing Map Data...")
-	ImportMap(MapToConvert, g_iW, g_iH)
+	print("Importing Map Data...")	
+	
+	-- We'll do Rivers after NW placement, as they can create incompatibilities and Resources come after Rivers (in case Rivers are generated instead of imported)
+	local bDoTerrains, bDoRivers, bDoFeatures, bDoResources, bDoCliffs = true, false, true, false, true
+	ImportMap(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains, bDoRivers, bDoFeatures, bDoResources, bDoCliffs)
 
 	-- Temp
 	AreaBuilder.Recalculate();
@@ -2285,20 +2288,30 @@ function GenerateImportedMap(MapToConvert, g_iW, g_iH)
 		numberToPlace = GameInfo.Maps[Map.GetMapSize()].NumNaturalWonders,
 	};
 	--local nwGen = NaturalWonderGenerator.Create(args);
+	PlaceRealNaturalWonders(NaturalWonders)
+	
+	-- now we import rivers and resources
+	local resourcePlacement = MapConfiguration.GetValue("ResourcesPlacement")
+	print("Resource placement = "..tostring(resourcePlacement))
+	bDoResources = resourcePlacement == "PLACEMENT_IMPORT"
+	bDoTerrains, bDoRivers, bDoFeatures, bDoCliffs = false, true, false, false
+	ImportMap(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains, bDoRivers, bDoFeatures, bDoResources, bDoCliffs)
 
 	AreaBuilder.Recalculate();
 	TerrainBuilder.AnalyzeChokepoints();
 	TerrainBuilder.StampContinents();
 	
-	local resourcePlacement = MapConfiguration.GetValue("ResourcesPlacement")
-	print(" Resource placement = "..tostring(resourcePlacement))
-	--local bImportResources = resourcePlacement == "PLACEMENT_IMPORT";
-	if resourcePlacement ~= "PLACEMENT_IMPORT" then
+
+	if not bDoResources then
 		resourcesConfig = MapConfiguration.GetValue("resources");
 		local args = {
 			resources = resourcesConfig,
 		};
 		ResourceGenerator.Create(args);
+	else
+		--local resourceType = GameInfo.Resources["RESOURCE_NITER"].Index
+		--print(" Adding Civ6 resource : Niter (TypeID = " .. tostring(resourceType)..")")
+		--PlaceStrategicResources(resourceType)
 	end
 	
 	print("Creating start plot database.");
@@ -2317,6 +2330,195 @@ function GenerateImportedMap(MapToConvert, g_iW, g_iH)
 	local GoodyGen = AddGoodies(g_iW, g_iH);
 end
 
+function PlaceRealNaturalWonders(NaturalWonders)
+	print("YnAMP Natural Wonders placement")
+	for eFeatureType, position in pairs(NaturalWonders) do
+		local featureTypeName = GameInfo.Features[eFeatureType].FeatureType
+		local x, y = position.X, position.Y
+		print ("- Trying to place " .. tostring(featureTypeName) .. " at (" .. tostring(x) .. ", " .. tostring(y) .. ")");		
+		local pPlot = Map.GetPlot(x, y);
+		local plotsIndex = {}
+		local plotsList = {}
+		
+		-- Preparing placement
+		if featureTypeName == "FEATURE_DEAD_SEA" then
+			print(" - Preparing position...")
+			-- 2 plots, flat desert surrounded by desert, 1st plot is SOUTHWEST 
+			-- preparing the 2 plot
+			local terrainType = g_TERRAIN_TYPE_DESERT
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST), Terrain = terrainType })
+		end		
+		
+		if featureTypeName == "FEATURE_PIOPIOTAHI" then
+			print(" - Preparing position...")
+			-- 3 plots, flat grass near coast, 1st plot is WEST
+			-- preparing the 3 plots
+			local terrainType = g_TERRAIN_TYPE_GRASS
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST), Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+		end
+		
+		if featureTypeName == "FEATURE_EVEREST" then
+			print(" - Preparing position...")
+			-- 3 plots, mountains, 1st plot is WEST
+			-- preparing the 3 plots
+			local terrainType = g_TERRAIN_TYPE_TUNDRA_MOUNTAIN
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHEAST), Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+		end
+		
+		if featureTypeName == "FEATURE_PANTANAL" then
+			print(" - Preparing position...")
+			-- 4 plots, flat grass/plains without features, 1st plot is SOUTH-WEST
+			-- preparing the 4 plots
+			local terrainType = g_TERRAIN_TYPE_PLAINS
+			local pPlot2 = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST) -- we need plot2 to get plot4
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = pPlot2, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+		end
+
+		if featureTypeName == "FEATURE_CLIFFS_DOVER" then
+			print(" - Preparing position...")
+			-- 2 plots, hills on coast, 1st plot is WEST 
+			-- preparing the 2 plots
+			local terrainType = g_TERRAIN_TYPE_GRASS_HILLS
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+		end
+		
+		if featureTypeName == "FEATURE_YOSEMITE" then
+			print(" - Preparing position...")
+			-- 2 plots EAST-WEST, flat tundra/plains without features, 1st plot is WEST
+			-- preparing the 2 plots
+			local terrainType = g_TERRAIN_TYPE_PLAINS
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+		end
+		
+		if featureTypeName == "FEATURE_TORRES_DEL_PAINE" then
+			print(" - Preparing position...")
+			-- 2 plots EAST-WEST without features, 1st plot is WEST
+			-- preparing the 2 plots
+			local terrainType = g_TERRAIN_TYPE_PLAINS
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+		end		
+
+		if featureTypeName == "FEATURE_BARRIER_REEF" then
+			print(" - Preparing position...")
+			-- 2 plots, coast, 1st plot is SOUTHEAST 
+			-- preparing the 2 plots
+			local terrainType = g_TERRAIN_TYPE_COAST
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = terrainType })
+		end
+
+		if featureTypeName == "FEATURE_GALAPAGOS" then
+			print(" - Preparing position...")
+			-- 2 plots, coast, surrounded by coast, 1st plot is SOUTHWEST 
+			-- preparing the area
+			local terrainType = g_TERRAIN_TYPE_COAST			
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST), Terrain = terrainType })
+		end
+		
+		for k, data in ipairs(plotsList) do 
+			TerrainBuilder.SetTerrainType(data.Plot, data.Terrain)
+			TerrainBuilder.SetFeatureType(data.Plot, -1)
+			ResourceBuilder.SetResourceType(data.Plot, -1)
+			table.insert(plotsIndex, data.Plot:GetIndex())
+		end		
+		
+		if not(TerrainBuilder.CanHaveFeature(pPlot, eFeatureType)) then			
+			print("  - WARNING : TerrainBuilder.CanHaveFeature says that we can't place that feature here...")
+		end		
+		
+		print("  - Trying Direct Placement...")
+		TerrainBuilder.SetFeatureType(pPlot, eFeatureType);
+		local bPlaced = pPlot:IsNaturalWonder()
+			
+		if (not bPlaced) and (#plotsIndex > 0) then
+			print("  - Direct Placement has failed, using plot list for placement")
+			TerrainBuilder.SetMultiPlotFeatureType(plotsIndex, eFeatureType)
+			bPlaced = pPlot:IsNaturalWonder()
+		end
+		
+		if bPlaced then
+			ResetTerrain(pPlot:GetIndex())
+			ResourceBuilder.SetResourceType(pPlot, -1)
+
+			local plotX = pPlot:GetX()
+			local plotY = pPlot:GetY()
+
+			for dx = -2, 2 do
+				for dy = -2,2 do
+					local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, 2)
+					if(otherPlot) then
+						if(otherPlot:IsNaturalWonder() == true) then
+							ResetTerrain(otherPlot:GetIndex())
+							ResourceBuilder.SetResourceType(otherPlot, -1)
+						end
+					end
+				end
+			end
+			print ("  - Success : plot is now a natural wonder !")
+		else
+			print ("  - Failed to place natural wonder here...")		
+		end
+	end
+end
+
+-- Add a strategic resource
+function PlaceStrategicResources(resourceType)
+
+	local continentsInUse = Map.GetContinentsInUse();	
+	ResourceGenerator.iNumContinents = #continentsInUse;
+	ResourceGenerator.aStrategicType = {};
+
+	-- Find the Strategic Resource
+	table.insert(ResourceGenerator.aStrategicType, resourceType);
+
+	aWeight = {};
+	for row in GameInfo.Resource_Distribution() do
+		if (row.Continents == ResourceGenerator.iNumContinents) then
+			for iI = 1, row.Scarce do
+				table.insert(aWeight, 1 - row.PercentAdjusted / 100);
+			end
+
+			for iI = 1, row.Average do
+				table.insert(aWeight, 1);
+			end
+
+			for iI = 1, row.Plentiful do
+				table.insert(aWeight, 1 + row.PercentAdjusted / 100);
+			end
+		end
+	end
+
+	aWeight	= GetShuffledCopyOfTable(aWeight);
+
+	ResourceGenerator.iFrequencyStrategicTotal = 0;
+    for i, row in ipairs(ResourceGenerator.aStrategicType) do
+		ResourceGenerator.iFrequencyStrategicTotal = ResourceGenerator.iFrequencyStrategicTotal + GameInfo.Resources["RESOURCE_NITER"].Frequency;
+	end
+
+	for index, eContinent in ipairs(continentsInUse) do 
+		-- Shuffle the table
+		ResourceGenerator.aStrategicType = GetShuffledCopyOfTable(ResourceGenerator.aStrategicType);
+		--print ("Retrieved plots for continent: " .. tostring(eContinent));
+
+		ResourceGenerator:__ValidStrategicPlots(aWeight[index], eContinent);
+
+		-- next find the valid plots for each of the strategics
+		ResourceGenerator:__PlaceStrategicResources(eContinent);
+	end
+end
+
 function AddFeatures()
 	print("Adding Features");
 
@@ -2331,12 +2533,13 @@ function AddFeatures()
 
 	featuregen:AddFeatures();
 end
---[[
 
-	ENUM from Civ5
-	
-	ResourceType
-	
+-----------------
+-- ENUM 
+-----------------
+
+-- ResourceType Civ5
+--[[
 	[0]	 = RESOURCE_IRON
 	[1]	 = RESOURCE_HORSE
 	[2]	 = RESOURCE_COAL
@@ -2374,8 +2577,9 @@ end
 	[34] = RESOURCE_CITRUS
 	[40] = RESOURCE_BISON
 	[41] = RESOURCE_COCOA
-	
-	civ6
+--]]
+-- ResourceType Civ6
+--[[
 	[0]	 = RESOURCE_BANANAS
 	[1]	 = RESOURCE_CATTLE
 	[2]	 = RESOURCE_COPPER
@@ -2417,8 +2621,9 @@ end
 	[44] = RESOURCE_NITER
 	[45] = RESOURCE_OIL
 	[46] = RESOURCE_URANIUM
-	
-	FeaturesType
+--]]
+-- FeaturesType Civ5
+--[[
 	[0]  = FEATURE_ICE			----> 1
 	[1]  = FEATURE_JUNGLE		----> 2
 	[2]  = FEATURE_MARSH		----> 5
@@ -2444,14 +2649,37 @@ end
 	[22] = FEATURE_LAKE_VICTORIA
 	[23] = FEATURE_KILIMANJARO	----> 12
 	[24] = FEATURE_SOLOMONS_MINES	
-	
-	PlotType
+--]]
+-- FeaturesType Civ6
+--[[
+[0]  = FEATURE_FLOODPLAINS
+[1]  = FEATURE_ICE
+[2]  = FEATURE_JUNGLE
+[3]  = FEATURE_FOREST
+[4]  = FEATURE_OASIS
+[5]  = FEATURE_MARSH
+[6]  = FEATURE_BARRIER_REEF
+[7]  = FEATURE_CLIFFS_DOVER
+[8]  = FEATURE_CRATER_LAKE
+[9]  = FEATURE_DEAD_SEA
+[10] = FEATURE_EVEREST
+[11] = FEATURE_GALAPAGOS
+[12] = FEATURE_KILIMANJARO
+[13] = FEATURE_PANTANAL
+[14] = FEATURE_PIOPIOTAHI
+[15] = FEATURE_TORRES_DEL_PAINE
+[16] = FEATURE_TSINGY
+[17] = FEATURE_YOSEMITE
+--]]
+-- PlotType Civ5
+--[[
 	[0] =	PLOT_MOUNTAIN		
 	[1] =	PLOT_HILLS		
 	[2] =	PLOT_LAND		
-	[3] =	PLOT_OCEAN		
-
-	TerrainTypes
+	[3] =	PLOT_OCEAN
+--]]	
+-- TerrainTypes Civ5
+--[[
 	[0] = TERRAIN_GRASS, 
 	[1] = TERRAIN_PLAINS,
 	[2] = TERRAIN_DESERT,
@@ -2459,25 +2687,18 @@ end
 	[4] = TERRAIN_SNOW,
 	[5] = TERRAIN_COAST,
 	[6] = TERRAIN_OCEAN,
-	
-	FeatureTypes
-	[0] = FEATURE_ICE, 
-	[1] = FEATURE_JUNGLE,
-	[2] = FEATURE_MARSH,
-	[3] = FEATURE_OASIS,
-	[4] = FEATURE_FLOOD_PLAINS,
-	[5] = FEATURE_FOREST,
-	[6] = FEATURE_FALLOUT,
-	[7] = FEATURE_ATOLL,
-	
-	Continental Art Set
+--]]
+-- Continental Art Set Civ5
+--[[
 	[0] = Ocean
 	[1] = America
 	[2] = Asia
 	[3] = Africa
 	[4] = Europe
+--]]
+-- Rivers (same for civ6)
+--[[	
 	
-	Rivers (same for civ6)
 	[0] = FLOWDIRECTION_NORTH
 	[1] = FLOWDIRECTION_NORTHEAST
 	[2] = FLOWDIRECTION_SOUTHEAST
@@ -2492,9 +2713,9 @@ end
 	[3] = DIRECTION_SOUTHWEST
 	[4] = DIRECTION_WEST		
 	[5] = DIRECTION_NORTHWEST
-	
-	
-	-- Code to export the civ5 map
+--]]	
+-- Code to export a civ5 map
+--[[
 	for iPlotLoop = 0, Map.GetNumPlots()-1, 1 do
 		local plot = Map.GetPlotByIndex(iPlotLoop)
 		local NEOfRiver = 0
@@ -2505,11 +2726,29 @@ end
 		if plot:IsNWOfRiver() then NWOfRiver = 1 end -- GetRiverSEFlowDirection()
 		print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..plot:GetTerrainType()..","..plot:GetPlotType()..","..plot:GetFeatureType()..","..plot:GetContinentArtType()..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{"..plot:GetResourceType(-1)..","..plot:GetNumResource().."}}")
 	end
-
+--]]
+-- Code to export a civ6 cliffs map
+--[[
+	local iPlotCount = Map.GetPlotCount();
+	for iPlotLoop = 0, iPlotCount-1, 1 do
+		local bData = false
+		local plot = Map.GetPlotByIndex(iPlotLoop)
+		local NEOfCliff = 0
+		local WOfCliff = 0
+		local NWOfCliff = 0
+		if plot:IsNEOfCliff() then NEOfCliff = 1 end 
+		if plot:IsWOfCliff() then WOfCliff = 1 end 
+		if plot:IsNWOfCliff() then NWOfCliff = 1 end 
+		
+		bData = NEOfCliff + WOfCliff + NWOfCliff > 0
+		if bData then
+			print("Civ6DataToConvert["..plot:GetX().."]["..plot:GetY().."]={{"..NEOfCliff..","..WOfCliff..","..NWOfCliff.."},}")
+		end
+	end
 --]]
 
-function ImportMap(MapToConvert, g_iW, g_iH)
-
+function ImportMap(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains, bDoRivers, bDoFeatures, bDoResources, bDoCliffs)
+	print("Importing Map ( Terrain = "..tostring(bDoTerrains)..", Rivers = "..tostring(bDoRivers)..", Features = "..tostring(bDoFeatures)..", Resources = "..tostring(bDoResources)..", Cliffs = "..tostring(bDoCliffs).." )")
 	local count = 0
 	
 	-- Civ5 ENUM
@@ -2581,57 +2820,88 @@ function ImportMap(MapToConvert, g_iW, g_iH)
 		local civ5PlotTypes = MapToConvert[plot:GetX()][plot:GetY()][2]
 		local civ5FeatureTypes = MapToConvert[plot:GetX()][plot:GetY()][3]
 		local civ5ContinentType = MapToConvert[plot:GetX()][plot:GetY()][4]
-		local rivers = MapToConvert[plot:GetX()][plot:GetY()][5] -- = {{IsNEOfRiver, flow}, {IsWOfRiver, flow}, {IsNWOfRiver, flow}}
+		local Rivers = MapToConvert[plot:GetX()][plot:GetY()][5] -- = {{IsNEOfRiver, flow}, {IsWOfRiver, flow}, {IsNWOfRiver, flow}}
 		local resource = MapToConvert[plot:GetX()][plot:GetY()][6] -- = {Civ5ResourceType, num}
 		
-		-- Set terrain type
-		local civ6TerrainType = g_TERRAIN_TYPE_OCEAN		
-		if civ5TerrainType == 5 then civ6TerrainType = g_TERRAIN_TYPE_COAST
-		elseif civ5TerrainType ~= 6 then
-			-- the code below won't work if the order is changed in the terrains table
-			-- entrie for civ5 are: 0 = GRASS, 1= PLAINS, ...
-			-- entries for civ6 are: 0 = GRASS, 1= GRASS_HILL, 2 = GRASS_MOUNTAIN, 3= PLAINS, 4 = PLAINS_HILL, ...
-			civ6TerrainType = civ5TerrainType * 3 -- civ5TerrainType * 3  0-0 1-3 2-6 3-9 4-12
-			if civ5PlotTypes == PLOT_HILLS then 
-				civ6TerrainType = civ6TerrainType + g_TERRAIN_BASE_TO_HILLS_DELTA
-			elseif civ5PlotTypes == PLOT_MOUNTAIN then
-				civ6TerrainType = civ6TerrainType + g_TERRAIN_BASE_TO_MOUNTAIN_DELTA
-			end
+		-- Get Civ6 map data exported form the internal WB
+		local Cliffs
+		if Civ6DataToConvert[plot:GetX()][plot:GetY()] then
+			Cliffs =  Civ6DataToConvert[plot:GetX()][plot:GetY()][1] -- {IsNEOfCliff,IsWOfCliff,IsNWOfCliff}
 		end
-		if bOutput then print(" - Set Terrain Type = "..tostring(GameInfo.Terrains[civ6TerrainType].TerrainType)) end
-		count = count + 1
-		TerrainBuilder.SetTerrainType(plot, civ6TerrainType)
 		
-		-- Set rivers
-		if rivers[1][1] == 1 then -- IsNEOfRiver
-			TerrainBuilder.SetNEOfRiver(plot, true, rivers[1][2])
-			if bOutput then print(" - Set is NE of river, flow = "..tostring(rivers[1][2])) end
+		-- Set terrain type
+		if bDoTerrains then
+			local civ6TerrainType = g_TERRAIN_TYPE_OCEAN		
+			if civ5TerrainType == 5 then civ6TerrainType = g_TERRAIN_TYPE_COAST
+			elseif civ5TerrainType ~= 6 then
+				-- the code below won't work if the order is changed in the terrains table
+				-- entrie for civ5 are: 0 = GRASS, 1= PLAINS, ...
+				-- entries for civ6 are: 0 = GRASS, 1= GRASS_HILL, 2 = GRASS_MOUNTAIN, 3= PLAINS, 4 = PLAINS_HILL, ...
+				civ6TerrainType = civ5TerrainType * 3 -- civ5TerrainType * 3  0-0 1-3 2-6 3-9 4-12
+				if civ5PlotTypes == PLOT_HILLS then 
+					civ6TerrainType = civ6TerrainType + g_TERRAIN_BASE_TO_HILLS_DELTA
+				elseif civ5PlotTypes == PLOT_MOUNTAIN then
+					civ6TerrainType = civ6TerrainType + g_TERRAIN_BASE_TO_MOUNTAIN_DELTA
+				end
+			end
+			if bOutput then print(" - Set Terrain Type = "..tostring(GameInfo.Terrains[civ6TerrainType].TerrainType)) end
+			count = count + 1
+			TerrainBuilder.SetTerrainType(plot, civ6TerrainType)
 		end
-		if rivers[2][1] == 1 then -- IsWOfRiver
-			TerrainBuilder.SetWOfRiver(plot, true, rivers[2][2])
-			if bOutput then print(" - Set is W of river, flow = "..tostring(rivers[2][2])) end
-		end
-		if rivers[3][1] == 1 then -- IsNWOfRiver
-			TerrainBuilder.SetNWOfRiver(plot, true, rivers[3][2])
-			if bOutput then print(" - Set is NW of river, flow = "..tostring(rivers[3][2])) end
+		
+		-- Set Rivers
+		if bDoRivers then
+			if Rivers[1][1] == 1 then -- IsNEOfRiver
+				TerrainBuilder.SetNEOfRiver(plot, true, Rivers[1][2])
+				if bOutput then print(" - Set is NE of River, flow = "..tostring(Rivers[1][2])) end
+			end
+			if Rivers[2][1] == 1 then -- IsWOfRiver
+				TerrainBuilder.SetWOfRiver(plot, true, Rivers[2][2])
+				if bOutput then print(" - Set is W of River, flow = "..tostring(Rivers[2][2])) end
+			end
+			if Rivers[3][1] == 1 then -- IsNWOfRiver
+				TerrainBuilder.SetNWOfRiver(plot, true, Rivers[3][2])
+				if bOutput then print(" - Set is NW of River, flow = "..tostring(Rivers[3][2])) end
+			end
 		end
 		
 		-- Set Features
-		if civ5FeatureTypes ~= -1 and FeaturesCiv5toCiv6[civ5FeatureTypes] ~= g_FEATURE_NONE then		
-			if bOutput then print(" - Set Feature Type = "..tostring(GameInfo.Features[FeaturesCiv5toCiv6[civ5FeatureTypes]].FeatureType)) end
-			TerrainBuilder.SetFeatureType(plot, FeaturesCiv5toCiv6[civ5FeatureTypes])
+		if bDoFeatures then
+			if civ5FeatureTypes ~= -1 and FeaturesCiv5toCiv6[civ5FeatureTypes] ~= g_FEATURE_NONE then		
+				if bOutput then print(" - Set Feature Type = "..tostring(GameInfo.Features[FeaturesCiv5toCiv6[civ5FeatureTypes]].FeatureType)) end
+				TerrainBuilder.SetFeatureType(plot, FeaturesCiv5toCiv6[civ5FeatureTypes])
+			end
 		end
 		
 		-- Set Resources
-		if resource[1] ~= -1 and ResourceCiv5toCiv6[resource[1]] ~= -1 then		
-			if bOutput then print(" - Set Resource Type = "..tostring(GameInfo.Resources[ResourceCiv5toCiv6[resource[1]]].ResourceType)) end
-			ResourceBuilder.SetResourceType(plot, ResourceCiv5toCiv6[resource[1]], resource[2])
+		if bDoResources and not plot:IsNaturalWonder() then
+			if resource[1] ~= -1 and ResourceCiv5toCiv6[resource[1]] ~= -1 then		
+				if bOutput then print(" - Set Resource Type = "..tostring(GameInfo.Resources[ResourceCiv5toCiv6[resource[1]]].ResourceType)) end
+				--ResourceBuilder.SetResourceType(plot, ResourceCiv5toCiv6[resource[1]], resource[2]) -- maybe an option to import number of resources on one plot even if civ6 use 1 ?
+				ResourceBuilder.SetResourceType(plot, ResourceCiv5toCiv6[resource[1]], 1)
+			end
 		end
 		
-	end
-	print(" Placed terrain on "..tostring(count) .. " tiles")
+		-- Set Cliffs
+		if bDoCliffs and Cliffs then
+			if Cliffs[1] == 1 then -- IsNEOfCliff
+				TerrainBuilder.SetNEOfCliff(plot, true)
+				if bOutput then print(" - Set is NE of Cliff") end
+			end
+			if Cliffs[2] == 1 then -- IsWOfCliff
+				TerrainBuilder.SetWOfCliff(plot, true)
+				if bOutput then print(" - Set is W of Cliff") end
+			end
+			if Cliffs[3] == 1 then -- IsNWOfCliff
+				TerrainBuilder.SetNWOfCliff(plot, true)
+				if bOutput then print(" - Set is NW of Cliff") end
+			end	
+		end
+		
+	end	
+	
+	print("Placed terrain on "..tostring(count) .. " tiles")
 end
-
 
 ------------------------------------------------------------------------------
 -- True Starting Locations

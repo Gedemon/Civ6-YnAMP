@@ -51,19 +51,19 @@ UPDATE Civilizations SET Ethnicity = 'ETHNICITY_AFRICAN'	WHERE CivilizationType 
 -- Create Tables
 -----------------------------------------------
 
-CREATE TABLE GiantEarth_StartPosition
+CREATE TABLE IF NOT EXISTS GiantEarth_StartPosition
 	(	Civilization TEXT,
 		Leader TEXT,
 		X INT default 0,
 		Y INT default 0);		
 
-CREATE TABLE GreatestEarthMap_StartPosition
+CREATE TABLE IF NOT EXISTS GreatestEarthMap_StartPosition
 	(	Civilization TEXT,
 		Leader TEXT,
 		X INT default 0,
 		Y INT default 0);
 		
-CREATE TABLE PlayEuropeAgain_StartPosition
+CREATE TABLE IF NOT EXISTS PlayEuropeAgain_StartPosition
 	(	Civilization TEXT,
 		Leader TEXT,
 		X INT default 0,

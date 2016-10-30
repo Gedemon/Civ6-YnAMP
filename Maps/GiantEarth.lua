@@ -39,41 +39,59 @@ end
 -------------------------------------------------------------------------------
 function GenerateMap()
 	print("Calling Map Generator");
-	GenerateImportedMap(GetMap(), g_iW, g_iH)
+	GenerateImportedMap(GetMap(), GetCiv6DataToConvert(), GetNaturalWonders(), g_iW, g_iH)
 end
 
---[[
-table.insert(Cliffs, {X = 7, Y = 70, Direction = DirectionTypes.DIRECTION_NORTHEAST})
-table.insert(Cliffs, {X = 7, Y = 70, Direction = DirectionTypes.DIRECTION_EAST})
-table.insert(Cliffs, {X = 7, Y = 70, Direction = DirectionTypes.DIRECTION_SOUTHEAST})
-table.insert(Cliffs, {X = 7, Y = 70, Direction = DirectionTypes.DIRECTION_SOUTHWEST})
-table.insert(Cliffs, {X = 9, Y = 71, Direction = DirectionTypes.DIRECTION_SOUTHEAST})
-table.insert(Cliffs, {X = 10, Y = 71, Direction = DirectionTypes.DIRECTION_SOUTHWEST})
-table.insert(Cliffs, {X = 7, Y = 73, Direction = DirectionTypes.DIRECTION_SOUTHEAST})
-table.insert(Cliffs, {X = 7, Y = 73, Direction = DirectionTypes.DIRECTION_NORTHWEST})
-table.insert(Cliffs, {X = 8, Y = 74, Direction = DirectionTypes.DIRECTION_WEST})
-table.insert(Cliffs, {X = 9, Y = 77, Direction = DirectionTypes.DIRECTION_SOUTHWEST})
-table.insert(Cliffs, {X = 8, Y = 78, Direction = DirectionTypes.DIRECTION_SOUTHEAST})
-table.insert(Cliffs, {X = 8, Y = 78, Direction = DirectionTypes.DIRECTION_SOUTHWEST})
-table.insert(Cliffs, {X = 8, Y = 78, Direction = DirectionTypes.DIRECTION_NORTHWEST})
-table.insert(Cliffs, {X = 8, Y = 79, Direction = DirectionTypes.DIRECTION_WEST})
-table.insert(Cliffs, {X = 6, Y = 80, Direction = DirectionTypes.DIRECTION_NORTHEAST})
-table.insert(Cliffs, {X = 9, Y = 83, Direction = DirectionTypes.DIRECTION_EAST})
-table.insert(Cliffs, {X = 7, Y = 81, Direction = DirectionTypes.DIRECTION_NORTHWEST})
-table.insert(Cliffs, {X = 8, Y = 82, Direction = DirectionTypes.DIRECTION_WEST})
-table.insert(Cliffs, {X = 8, Y = 82, Direction = DirectionTypes.DIRECTION_NORTHWEST})
-table.insert(Cliffs, {X = 8, Y = 83, Direction = DirectionTypes.DIRECTION_WEST})
-table.insert(Cliffs, {X = 9, Y = 83, Direction = DirectionTypes.DIRECTION_EAST})
-table.insert(Cliffs, {X = 10, Y = 81, Direction = DirectionTypes.DIRECTION_EAST})
-table.insert(Cliffs, {X = 10, Y = 81, Direction = DirectionTypes.DIRECTION_SOUTHEAST})
-table.insert(Cliffs, {X = 10, Y = 80, Direction = DirectionTypes.DIRECTION_EAST})
-table.insert(Cliffs, {X = 10, Y = 77, Direction = DirectionTypes.DIRECTION_NORTHEAST})
-table.insert(Cliffs, {X = 10, Y = 77, Direction = DirectionTypes.DIRECTION_EAST})
-table.insert(Cliffs, {X = 12, Y = 84, Direction = DirectionTypes.DIRECTION_SOUTHEAST})
-table.insert(Cliffs, {X = 12, Y = 84, Direction = DirectionTypes.DIRECTION_SOUTHWEST})
-table.insert(Cliffs, {X = 12, Y = 84, Direction = DirectionTypes.DIRECTION_WEST})
---]]
+function GetNaturalWonders()
+	local NaturalWonders = {}
+	NaturalWonders[6]  = { X = 101, Y = 23} -- FEATURE_BARRIER_REEF
+	NaturalWonders[7]  = { X = 11, Y = 71} 	-- FEATURE_CLIFFS_DOVER
+	NaturalWonders[8]  = { X = 132, Y = 65} -- FEATURE_CRATER_LAKE
+	NaturalWonders[9]  = { X = 37, Y = 50} 	-- FEATURE_DEAD_SEA
+	NaturalWonders[10] = { X = 64, Y = 54} 	-- FEATURE_EVEREST
+	NaturalWonders[11] = { X = 144, Y = 35} -- FEATURE_GALAPAGOS
+	NaturalWonders[12] = { X = 31, Y = 27} 	-- FEATURE_KILIMANJARO
+	NaturalWonders[13] = { X = 159, Y = 27} -- FEATURE_PANTANAL
+	NaturalWonders[14] = { X = 107, Y = 3} 	-- FEATURE_PIOPIOTAHI
+	NaturalWonders[15] = { X = 154, Y = 7} 	-- FEATURE_TORRES_DEL_PAINE
+	NaturalWonders[16] = { X = 36, Y = 18} 	-- FEATURE_TSINGY
+	NaturalWonders[17] = { X = 132, Y = 62} -- FEATURE_YOSEMITE
+	
+	return NaturalWonders
+end
 
+function GetCiv6DataToConvert()
+	local Civ6DataToConvert = {}
+	for i = 0, g_iW - 1, 1 do
+		Civ6DataToConvert[i] = {}
+	end
+	
+	-- Civ6 Data
+	-- Civ6DataToConvert[x][y]={{IsNEOfCliff,IsWOfCliff,IsNWOfCliff},}
+	Civ6DataToConvert[6][70]={{0,1,0},}
+	Civ6DataToConvert[7][70]={{1,0,1},}
+	Civ6DataToConvert[6][71]={{0,0,1},}
+	Civ6DataToConvert[9][71]={{0,0,1},}
+	Civ6DataToConvert[10][71]={{1,0,0},}
+	Civ6DataToConvert[12][71]={{0,1,1},}
+	Civ6DataToConvert[7][73]={{0,0,1},}
+	Civ6DataToConvert[7][74]={{0,1,1},}
+	Civ6DataToConvert[9][77]={{1,0,0},}
+	Civ6DataToConvert[10][77]={{0,1,0},}
+	Civ6DataToConvert[8][78]={{1,0,1},}
+	Civ6DataToConvert[11][78]={{1,0,0},}
+	Civ6DataToConvert[7][79]={{0,1,1},}
+	Civ6DataToConvert[6][80]={{0,1,0},}
+	Civ6DataToConvert[10][80]={{0,1,0},}
+	Civ6DataToConvert[10][81]={{0,1,1},}
+	Civ6DataToConvert[7][82]={{0,1,1},}
+	Civ6DataToConvert[7][83]={{0,1,1},}
+	Civ6DataToConvert[9][83]={{0,1,0},}
+	Civ6DataToConvert[11][84]={{0,1,0},}
+	Civ6DataToConvert[12][84]={{1,0,1},}
+	
+	return Civ6DataToConvert
+end
 
 function GetMap()
 

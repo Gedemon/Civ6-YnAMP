@@ -39,7 +39,29 @@ end
 -------------------------------------------------------------------------------
 function GenerateMap()
 	print("Calling Map Generator");
-	GenerateImportedMap(GetMap(), g_iW, g_iH)
+	GenerateImportedMap(GetMap(), GetCiv6DataToConvert(), GetNaturalWonders(), g_iW, g_iH)
+end
+
+function GetCiv6DataToConvert()
+	local Civ6DataToConvert = {}
+	for i = 0, g_iW - 1, 1 do
+		Civ6DataToConvert[i] = {}
+	end
+	
+	-- Civ6 Data
+	-- Civ6DataToConvert[x][y]={{IsNEOfCliff,IsWOfCliff,IsNWOfCliff},}
+
+	
+	return Civ6DataToConvert
+end
+
+function GetNaturalWonders()
+	local NaturalWonders = {}
+	
+	NaturalWonders[7]  = { X = 30, Y = 59} 	-- FEATURE_CLIFFS_DOVER
+	NaturalWonders[9]  = { X = 83, Y = 10} 	-- FEATURE_DEAD_SEA
+	
+	return NaturalWonders
 end
 
 function GetMap()

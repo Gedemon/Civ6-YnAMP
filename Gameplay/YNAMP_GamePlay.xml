@@ -8,8 +8,8 @@
 	</Maps>
 	<Map_GreatPersonClasses>
 		<Row MapSizeType="MAPSIZE_GREATESTEARTH" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
-		<Row MapSizeType="MAPSIZE_ENORMOUS" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="8"/>
-		<Row MapSizeType="MAPSIZE_GIANT" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="9"/>
-		<Row MapSizeType="MAPSIZE_LUDICROUS" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="10"/>
+		<Row MapSizeType="MAPSIZE_ENORMOUS" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
+		<Row MapSizeType="MAPSIZE_GIANT" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
+		<Row MapSizeType="MAPSIZE_LUDICROUS" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
 	</Map_GreatPersonClasses>
 </GameInfo>
