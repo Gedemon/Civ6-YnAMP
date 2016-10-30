@@ -2,6 +2,24 @@
 <!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Ed Beach (Firaxis Games) -->
 <GameData>
   <LocalizedText>
+    <Replace Tag="LOC_YNAGEM_RULESET1_NAME" Language="en_US">
+      <Text>YnAMP 1 : Light</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_RULESET1_DESC" Language="en_US">
+      <Text>Light Changes[NEWLINE]- Raise Max distance between Civilizations[NEWLINE]- 33% less Barbarian encampment (2/civ)[NEWLINE]- Min distance to city from camps raised to 7</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_RULESET2_NAME" Language="en_US">
+      <Text>YnAMP 2 : Medium</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_RULESET2_DESC" Language="en_US">
+      <Text>Medium Changes (include light)[NEWLINE]- Min distance between city lowered to 2[NEWLINE]- 66% less Barbarian encampment (1/civ)[NEWLINE]- Min distance to city from camps set to 5 (default = 4)[NEWLINE]- Raised chance of camps spawning</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_RULESET3_NAME" Language="en_US">
+      <Text>YnAMP 3 : Heavy [COLOR_RED](Very Experimental)[ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_RULESET3_DESC" Language="en_US">
+      <Text>Heavy Changes (include light and medium)[NEWLINE]- Ranged land units are now used as support units (0 combat, can stack with Melee)[NEWLINE]- All land/sea units range set to 1 (with late game exception)</Text>
+    </Replace>
     <Replace Tag="LOC_YNAGEM_NAME" Language="en_US">
       <Text>Giant Earth Map</Text>
     </Replace>

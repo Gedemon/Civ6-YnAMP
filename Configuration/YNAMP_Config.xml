@@ -17,6 +17,23 @@
 -->
 
 <GameInfo>
+	<RuleSets>
+		<Row>
+			<RuleSetType>RULESET_YNAMP_1</RuleSetType>
+			<Name>LOC_YNAGEM_RULESET1_NAME</Name>
+			<Description>LOC_YNAGEM_RULESET1_DESC</Description>
+		</Row>
+		<Row>
+			<RuleSetType>RULESET_YNAMP_2</RuleSetType>
+			<Name>LOC_YNAGEM_RULESET2_NAME</Name>
+			<Description>LOC_YNAGEM_RULESET2_DESC</Description>
+		</Row>
+		<Row>
+			<RuleSetType>RULESET_YNAMP_3</RuleSetType>
+			<Name>LOC_YNAGEM_RULESET3_NAME</Name>
+			<Description>LOC_YNAGEM_RULESET3_DESC</Description>
+		</Row>
+	</RuleSets>
 	<Maps>
 		<Row File="GiantEarth.lua" Name="LOC_YNAGEM_NAME" Description="LOC_YNAGEM_DESC" SortIndex="1"/>
 		<Row File="GreatestEarthMap.lua" Name="LOC_GREATESTEARTH_NAME" Description="LOC_GREATESTEARTH_DESC" SortIndex="5"/>

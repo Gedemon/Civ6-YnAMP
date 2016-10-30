@@ -4,6 +4,8 @@ include "MapEnums"
 include "MapUtilities"
 
 print ("loading modded AssignStartingPlots")
+local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION because Value is Text ?
+print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016) by Gedemon")
 
 ------------------------------------------------------------------------------
 -- **************************** YnAMP globals ******************************

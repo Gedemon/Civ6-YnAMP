@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mod id="36e88483-48fe-4545-b85f-bafc50dde315" version="23">
   <Properties>
-    <Name>Yet (not) Another Maps Pack</Name>
+    <Name>LOC_YNAMP_TITLE</Name>
     <Stability>Alpha</Stability>
-    <Teaser>Maps with True or Culturally Linked Start Locations.</Teaser>
-    <Description>Maps with True or Culturally Linked Starting Location and custom options using an advanced setup screen.[NEWLINE][COLOR_RED]quadcore CPU and 4gb RAM on 64bit OS are recommanded to use the giant map.[/COLOR][NEWLINE][ICON_BULLET] Giant Earth (180x96): edited conversion of Genghis Kai GEM for civ4.[NEWLINE][ICON_BULLET] Huge Earth (120x80): Dale's huge map edited with Europe and Japan upscaled[NEWLINE][ICON_BULLET] Standard Earth (82x50): a Werner projection Earth map by smellymummy[NEWLINE][ICON_BULLET] Large Europe (79x73): Dieter's Europe CiV map[NEWLINE][ICON_BULLET] Standard Mediterranean (74x52): for Ambrox62's AMC mod[NEWLINE][NEWLINE]City States [ICON_CITY_STATE] with TSL for each map are available as separate mods[NEWLINE][NEWLINE]Installation: activate the mod, then choose SINGLE PLAYER and CUSTOM GAME to get the new setup menu. [COLOR_RED]You must use the custom game menu, else the mod will not be activated in game.[/COLOR]</Description>
+    <Teaser>LOC_YNAMP_TEASER</Teaser>
+    <Description>LOC_YNAMP_DESCRIPTION</Description>
     <Authors>Gedemon</Authors>
-    <SpecialThanks>Genghis Kai, Dale, smellymummy, Dieter VonClam, Ambrox62</SpecialThanks>
   </Properties>
   <Dependencies />
   <References />
@@ -31,22 +30,57 @@
                <File>Maps/test.Civ6Map</File>
            </Items>
        </Map>
-	</Settings>
+	</Settings>	
 	<Components>
 		<ImportFiles id="YNAMP_IMPORT">
 			<Items>
 				<File>Maps/GiantEarth.lua</File>
 				<File>Maps/GreatestEarthMap.lua</File>
 				<File>Maps/PlayEuropeAgain.lua</File>
-				<File>Maps/Utils/YnAMP_MapGenerator.lua</File>
 				<File>Override/AssignStartingPlots.lua</File>
+				<File>Scripts/YnAMP_Utils.lua</File>
 			</Items>
 		</ImportFiles>
-		<UpdateDatabase id="YNAMP_COMPONENT">
+        <GameplayScripts>
+            <Property>
+                <RuleSet>YOUR_RULESET</RuleSet>      
+            </Property>
+            <Items>
+                <File>Scripts/YnAMP_Script.lua</File>
+            </Items>
+        </GameplayScripts>
+		<UpdateDatabase id="YNAMP_DEFAULT_COMPONENT">
 			<Items>
 				<File>Gameplay/YNAMP_GamePlay.sql</File>
 				<File>Gameplay/YNAMP_GamePlay.xml</File>
 				<File>Gameplay/YNAMP_StartPos.xml</File>
+			</Items>
+		</UpdateDatabase>
+		<UpdateDatabase id="RULESET_YNAMP_1">
+			<Properties>
+				<RuleSet>RULESET_YNAMP_1</RuleSet>
+			</Properties>
+			<Items>
+				<File>Rules/YNAMP_Rules_1.sql</File>
+			</Items>
+		</UpdateDatabase>
+		<UpdateDatabase id="RULESET_YNAMP_2">
+			<Properties>
+				<RuleSet>RULESET_YNAMP_2</RuleSet>
+			</Properties>
+			<Items>
+				<File>Rules/YNAMP_Rules_1.sql</File>
+				<File>Rules/YNAMP_Rules_2.sql</File>
+			</Items>
+		</UpdateDatabase>
+		<UpdateDatabase id="RULESET_YNAMP_3">
+			<Properties>
+				<RuleSet>RULESET_YNAMP_3</RuleSet>
+			</Properties>
+			<Items>
+				<File>Rules/YNAMP_Rules_1.sql</File>
+				<File>Rules/YNAMP_Rules_2.sql</File>
+				<File>Rules/YNAMP_Rules_3.sql</File>
 			</Items>
 		</UpdateDatabase>
 		<LocalizedText id="YNAMP_COMPONENT">
@@ -55,18 +89,35 @@
 			</Items>
 		</LocalizedText>
 	</Components>
+	
+	<LocalizedText>
+		<Text id="LOC_YNAMP_TITLE">
+			<en_US>Yet (not) Another Maps Pack</en_US>
+		</Text>
+		<Text id="LOC_YNAMP_TEASER">
+			<en_US>Maps with True or Culturally Linked Start Locations.</en_US>
+		</Text>
+		<Text id="LOC_YNAMP_DESCRIPTION">
+			<en_US>Maps with True or Culturally Linked Starting Location and custom options.</en_US>
+		</Text>
+	</LocalizedText>
+	
 	<Files>
 		<File>Maps/GiantEarth.lua</File>
 		<File>Maps/GreatestEarthMap.lua</File>
 		<File>Maps/PlayEuropeAgain.lua</File>
-		<File>Maps/Utils/YnAMP_MapGenerator.lua</File>
 		<File>Configuration/YNAMP_Config.xml</File>
 		<File>Gameplay/YNAMP_GamePlay.xml</File>
 		<File>Gameplay/YNAMP_GamePlay.sql</File>
+		<File>Rules/YNAMP_Rules_1.sql</File>
+		<File>Rules/YNAMP_Rules_2.sql</File>
+		<File>Rules/YNAMP_Rules_3.sql</File>
 		<File>Maps/test.Civ6Map</File>
 		<File>Override/AssignStartingPlots.lua</File>
 		<File>Configuration/YNAMP_ConfigText.xml</File>
 		<File>Gameplay/YNAMP_StartPos.xml</File>
 		<File>Gameplay/YNAMP_Tables.xml</File>
+		<File>Scripts/YnAMP_Script.lua</File>
+		<File>Scripts/YnAMP_Utils.lua</File>
 	</Files>
 </Mod>

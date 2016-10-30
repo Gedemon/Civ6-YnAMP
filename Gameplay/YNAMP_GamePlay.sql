@@ -5,6 +5,12 @@
 */
 
 -----------------------------------------------
+-- Defines
+-----------------------------------------------
+
+ INSERT OR REPLACE INTO GlobalParameters (Name, Value) VALUES ('YNAMP_VERSION', 'Alpha 6');
+
+-----------------------------------------------
 -- Fix Ethnicity
 -----------------------------------------------
 
@@ -19,7 +25,6 @@ UPDATE Civilizations SET Ethnicity = 'ETHNICITY_EURO'		WHERE CivilizationType = 
 UPDATE Civilizations SET Ethnicity = 'ETHNICITY_EURO'		WHERE CivilizationType = 'CIVILIZATION_PRESLAV';
 UPDATE Civilizations SET Ethnicity = 'ETHNICITY_EURO'		WHERE CivilizationType = 'CIVILIZATION_STOCKHOLM';
 UPDATE Civilizations SET Ethnicity = 'ETHNICITY_EURO'		WHERE CivilizationType = 'CIVILIZATION_VILNIUS';
-UPDATE Civilizations SET Ethnicity = 'ETHNICITY_EURO'		WHERE CivilizationType = 'CIVILIZATION_PRESLAV';
 
 -- SouthAm City States
 UPDATE Civilizations SET Ethnicity = 'ETHNICITY_SOUTHAM'	WHERE CivilizationType = 'CIVILIZATION_BUENOS_AIRES';
@@ -45,7 +50,6 @@ UPDATE Civilizations SET Ethnicity = 'ETHNICITY_ASIAN'		WHERE CivilizationType =
 -- African City States
 UPDATE Civilizations SET Ethnicity = 'ETHNICITY_AFRICAN'	WHERE CivilizationType = 'CIVILIZATION_KUMASI';
 UPDATE Civilizations SET Ethnicity = 'ETHNICITY_AFRICAN'	WHERE CivilizationType = 'CIVILIZATION_ZANZIBAR';
-
 
 -----------------------------------------------
 -- Create Tables
