@@ -3,22 +3,43 @@
 <GameData>
   <LocalizedText>
     <Replace Tag="LOC_YNAGEM_RULESET1_NAME" Language="en_US">
-      <Text>YnAMP 1 : Light</Text>
-    </Replace>
-    <Replace Tag="LOC_YNAGEM_RULESET1_DESC" Language="en_US">
-      <Text>Light Changes[NEWLINE]- Raise Max distance between Civilizations[NEWLINE]- 33% less Barbarian encampment (2/civ)[NEWLINE]- Min distance to city from camps raised to 7</Text>
+      <Text>Earth 1 : Light</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_RULESET2_NAME" Language="en_US">
-      <Text>YnAMP 2 : Medium</Text>
-    </Replace>
-    <Replace Tag="LOC_YNAGEM_RULESET2_DESC" Language="en_US">
-      <Text>Medium Changes (include light)[NEWLINE]- Min distance between city lowered to 2[NEWLINE]- 66% less Barbarian encampment (1/civ)[NEWLINE]- Min distance to city from camps set to 5 (default = 4)[NEWLINE]- Raised chance of camps spawning</Text>
+      <Text>Earth 2 : Medium</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_RULESET3_NAME" Language="en_US">
-      <Text>YnAMP 3 : Heavy [COLOR_RED](Very Experimental)[ENDCOLOR]</Text>
+      <Text>Earth 3 : [COLOR_RED]Advanced[ENDCOLOR]</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_EURO_RULESET1_NAME" Language="en_US">
+      <Text>Euro 1 : Light</Text>
+    </Replace>
+    <Replace Tag="LOC_EURO_RULESET2_NAME" Language="en_US">
+      <Text>Euro 2 : Medium</Text>
+    </Replace>
+    <Replace Tag="LOC_EURO_RULESET3_NAME" Language="en_US">
+      <Text>Euro 3 : [COLOR_RED]Advanced[ENDCOLOR]</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_OLDWORLD_RULESET1_NAME" Language="en_US">
+      <Text>Old World 1 : Light</Text>
+    </Replace>
+    <Replace Tag="LOC_OLDWORLD_RULESET2_NAME" Language="en_US">
+      <Text>Old World 2 : Medium</Text>
+    </Replace>
+    <Replace Tag="LOC_OLDWORLD_RULESET3_NAME" Language="en_US">
+      <Text>Old World 3 : [COLOR_RED]Advanced[ENDCOLOR]</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAGEM_RULESET1_DESC" Language="en_US">
+      <Text>Light Modificationss[NEWLINE][ICON_Bullet] Raise Max distance between Civilizations[NEWLINE][ICON_Bullet] 33% less Barbarian encampment (2/civ)[NEWLINE][ICON_Bullet] Min distance to city from camps raised to 7</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_RULESET2_DESC" Language="en_US">
+      <Text>Medium Modifications [NEWLINE]Include light modifications[NEWLINE][ICON_Bullet] Add or remove some CS to fit the Map[NEWLINE][ICON_Bullet] Min distance between city lowered to 2[NEWLINE][ICON_Bullet] 66% less Barbarian encampment (1/civ)[NEWLINE][ICON_Bullet] Min distance to city from camps set to 5 (default = 4)[NEWLINE][ICON_Bullet] Raised chance of camps spawning</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_RULESET3_DESC" Language="en_US">
-      <Text>Heavy Changes (include light and medium)[NEWLINE]- Ranged land units are now used as support units (0 combat, can stack with Melee)[NEWLINE]- All land/sea units range set to 1 (with late game exception)</Text>
+      <Text>Advanced Modifications[NEWLINE]Include light and medium modifications[NEWLINE][COLOR_RED]Experimental ![ENDCOLOR][NEWLINE][ICON_Bullet] Ranged land units are now "support" (0 [ICON_Strength], can stack with Melee)[NEWLINE][ICON_Bullet] All land/sea units range set to 1 (with late game exception)[NEWLINE][ICON_Bullet] No ancient walls, cities can't attack.</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_NAME" Language="en_US">
       <Text>Giant Earth Map</Text>

@@ -38,9 +38,28 @@ end
 -------------------------------------------------------------------------------
 function GenerateMap()
 	print("Calling Map Generator");
+	-- Everything has been moved to the modded AssignStartingPlots in the "override" folder, search for "YnAMP" string in that file
 	GenerateImportedMap(GetMap(), GetCiv6DataToConvert(), GetNaturalWonders(), g_iW, g_iH)
 end
 
+function GetNaturalWonders()
+	local NaturalWonders = {}
+	
+	NaturalWonders[GameInfo.Features["FEATURE_BARRIER_REEF"].Index] 	= { X = 103, Y = 16}	
+	NaturalWonders[GameInfo.Features["FEATURE_CLIFFS_DOVER"].Index] 	= { X = 39, Y = 51}
+	NaturalWonders[GameInfo.Features["FEATURE_CRATER_LAKE"].Index] 		= { X = 3, Y = 48}	
+	NaturalWonders[GameInfo.Features["FEATURE_DEAD_SEA"].Index] 		= { X = 63, Y = 37}	
+	NaturalWonders[GameInfo.Features["FEATURE_EVEREST"].Index] 			= { X = 78, Y = 42}	
+	NaturalWonders[GameInfo.Features["FEATURE_GALAPAGOS"].Index] 		= { X = 15, Y = 20}
+	NaturalWonders[GameInfo.Features["FEATURE_KILIMANJARO"].Index] 		= { X = 62, Y = 17}	
+	NaturalWonders[GameInfo.Features["FEATURE_PANTANAL"].Index] 		= { X = 27, Y = 16}	
+	NaturalWonders[GameInfo.Features["FEATURE_PIOPIOTAHI"].Index] 		= { X = 0, Y = 6}
+	NaturalWonders[GameInfo.Features["FEATURE_TORRES_DEL_PAINE"].Index] = { X = 25, Y = 6}
+	NaturalWonders[GameInfo.Features["FEATURE_TSINGY"].Index] 			= { X = 64, Y = 9}
+	NaturalWonders[GameInfo.Features["FEATURE_YOSEMITE"].Index] 		= { X = 2, Y = 45}
+	
+	return NaturalWonders
+end
 
 function GetCiv6DataToConvert()
 	local Civ6DataToConvert = {}
@@ -48,29 +67,11 @@ function GetCiv6DataToConvert()
 		Civ6DataToConvert[i] = {}
 	end
 	
-	-- Civ6 Data
+	-- Civ6 Data (copy from Lua.log below and on each lines remove everything before "Civ6DataToConvert")
 	-- Civ6DataToConvert[x][y]={{IsNEOfCliff,IsWOfCliff,IsNWOfCliff},}
 	
+	-- End of Cliffs table
 	return Civ6DataToConvert
-end
-
-function GetNaturalWonders()
-	local NaturalWonders = {}
-	
-	NaturalWonders[6]  = { X = 103, Y = 16} -- FEATURE_BARRIER_REEF	
-	NaturalWonders[7]  = { X = 39, Y = 51} 	-- FEATURE_CLIFFS_DOVER	
-	NaturalWonders[8]  = { X = 3, Y = 48} -- FEATURE_CRATER_LAKE	
-	NaturalWonders[9]  = { X = 63, Y = 37} 	-- FEATURE_DEAD_SEA	
-	NaturalWonders[10] = { X = 78, Y = 42} 	-- FEATURE_EVEREST	
-	NaturalWonders[11] = { X = 15, Y = 20} -- FEATURE_GALAPAGOS	
-	NaturalWonders[12] = { X = 62, Y = 17} 	-- FEATURE_KILIMANJARO	
-	NaturalWonders[13] = { X = 27, Y = 16} -- FEATURE_PANTANAL	
-	NaturalWonders[14] = { X = 0, Y = 6} 	-- FEATURE_PIOPIOTAHI	
-	NaturalWonders[15] = { X = 25, Y = 6} 	-- FEATURE_TORRES_DEL_PAINE	
-	NaturalWonders[16] = { X = 64, Y = 9} 	-- FEATURE_TSINGY	
-	NaturalWonders[17] = { X = 2, Y = 45} -- FEATURE_YOSEMITE
-	
-	return NaturalWonders
 end
 
 function GetMap()

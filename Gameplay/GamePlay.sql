@@ -8,7 +8,7 @@
 -- Defines
 -----------------------------------------------
 
- INSERT OR REPLACE INTO GlobalParameters (Name, Value) VALUES ('YNAMP_VERSION', 'Alpha 6');
+ INSERT OR REPLACE INTO GlobalParameters (Name, Value) VALUES ('YNAMP_VERSION', 'Alpha .7');
 
 -----------------------------------------------
 -- Fix Ethnicity
@@ -51,25 +51,5 @@ UPDATE Civilizations SET Ethnicity = 'ETHNICITY_ASIAN'		WHERE CivilizationType =
 UPDATE Civilizations SET Ethnicity = 'ETHNICITY_AFRICAN'	WHERE CivilizationType = 'CIVILIZATION_KUMASI';
 UPDATE Civilizations SET Ethnicity = 'ETHNICITY_AFRICAN'	WHERE CivilizationType = 'CIVILIZATION_ZANZIBAR';
 
------------------------------------------------
--- Create Tables
------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS GiantEarth_StartPosition
-	(	Civilization TEXT,
-		Leader TEXT,
-		X INT default 0,
-		Y INT default 0);		
-
-CREATE TABLE IF NOT EXISTS GreatestEarthMap_StartPosition
-	(	Civilization TEXT,
-		Leader TEXT,
-		X INT default 0,
-		Y INT default 0);
-		
-CREATE TABLE IF NOT EXISTS PlayEuropeAgain_StartPosition
-	(	Civilization TEXT,
-		Leader TEXT,
-		X INT default 0,
-		Y INT default 0);
 		

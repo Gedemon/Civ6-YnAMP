@@ -13,23 +13,14 @@
 	<Settings>
 		<Custom id="YNAMP_SETTING">
 			<Items>
-				<File>Configuration/YNAMP_Config.xml</File>
+				<File>Configuration/Config.xml</File>
 			</Items>
 		</Custom>
 		<LocalizedText id="YNAMP_SETTING">
 			<Items>
-				<File>Configuration/YNAMP_ConfigText.xml</File>
+				<File>Configuration/ConfigText.xml</File>
 			</Items>
 		</LocalizedText>
-       <Map>
-           <Properties>
-               <Name>Test map</Name>
-               <Description>Test Map</Description>
-           </Properties>
-           <Items>
-               <File>Maps/test.Civ6Map</File>
-           </Items>
-       </Map>
 	</Settings>	
 	<Components>
 		<ImportFiles id="YNAMP_IMPORT">
@@ -42,18 +33,20 @@
 			</Items>
 		</ImportFiles>
         <GameplayScripts>
-            <Property>
-                <RuleSet>YOUR_RULESET</RuleSet>      
-            </Property>
             <Items>
                 <File>Scripts/YnAMP_Script.lua</File>
             </Items>
         </GameplayScripts>
 		<UpdateDatabase id="YNAMP_DEFAULT_COMPONENT">
 			<Items>
-				<File>Gameplay/YNAMP_GamePlay.sql</File>
-				<File>Gameplay/YNAMP_GamePlay.xml</File>
-				<File>Gameplay/YNAMP_StartPos.xml</File>
+				<File>Gameplay/Tables.sql</File>
+				<File>Gameplay/GamePlay.sql</File>
+				<File>Gameplay/GamePlay.xml</File>
+				<File>Gameplay/Map_GiantEarth.xml</File>
+				<File>Gameplay/Map_GreatestEarthMap.xml</File>
+				<File>Gameplay/Map_PlayEuropeAgain.xml</File>
+				<File>Gameplay/Resource.xml</File>
+				<File>Gameplay/CityNameByEra.xml</File>
 			</Items>
 		</UpdateDatabase>
 		<UpdateDatabase id="RULESET_YNAMP_1">
@@ -61,7 +54,7 @@
 				<RuleSet>RULESET_YNAMP_1</RuleSet>
 			</Properties>
 			<Items>
-				<File>Rules/YNAMP_Rules_1.sql</File>
+				<File>Rules/Rules_1.sql</File>
 			</Items>
 		</UpdateDatabase>
 		<UpdateDatabase id="RULESET_YNAMP_2">
@@ -69,8 +62,9 @@
 				<RuleSet>RULESET_YNAMP_2</RuleSet>
 			</Properties>
 			<Items>
-				<File>Rules/YNAMP_Rules_1.sql</File>
-				<File>Rules/YNAMP_Rules_2.sql</File>
+				<File>Rules/Rules_1.sql</File>
+				<File>Rules/Rules_2.sql</File>
+				<File>Rules/NewCityStates.sql</File>
 			</Items>
 		</UpdateDatabase>
 		<UpdateDatabase id="RULESET_YNAMP_3">
@@ -78,14 +72,81 @@
 				<RuleSet>RULESET_YNAMP_3</RuleSet>
 			</Properties>
 			<Items>
-				<File>Rules/YNAMP_Rules_1.sql</File>
-				<File>Rules/YNAMP_Rules_2.sql</File>
-				<File>Rules/YNAMP_Rules_3.sql</File>
+				<File>Rules/Rules_1.sql</File>
+				<File>Rules/Rules_2.sql</File>
+				<File>Rules/Rules_3.sql</File>
+				<File>Rules/NewCityStates.sql</File>
 			</Items>
 		</UpdateDatabase>
+		
+		<UpdateDatabase id="RULESET_EURO_1">
+			<Properties>
+				<RuleSet>RULESET_EURO_1</RuleSet>
+			</Properties>
+			<Items>
+				<File>Rules/Rules_1.sql</File>
+				<File>Rules/LimitEuro.sql</File>
+			</Items>
+		</UpdateDatabase>
+		<UpdateDatabase id="RULESET_EURO_2">
+			<Properties>
+				<RuleSet>RULESET_EURO_2</RuleSet>
+			</Properties>
+			<Items>
+				<File>Rules/Rules_1.sql</File>
+				<File>Rules/Rules_2.sql</File>
+				<File>Rules/NewCityStates.sql</File>
+				<File>Rules/LimitEuro.sql</File>
+			</Items>
+		</UpdateDatabase>
+		<UpdateDatabase id="RULESET_EURO_3">
+			<Properties>
+				<RuleSet>RULESET_EURO_3</RuleSet>
+			</Properties>
+			<Items>
+				<File>Rules/Rules_1.sql</File>
+				<File>Rules/Rules_2.sql</File>
+				<File>Rules/Rules_3.sql</File>
+				<File>Rules/NewCityStates.sql</File>
+				<File>Rules/LimitEuro.sql</File>
+			</Items>
+		</UpdateDatabase>		
+		<UpdateDatabase id="RULESET_OLDWORLD_1">
+			<Properties>
+				<RuleSet>RULESET_OLDWORLD_1</RuleSet>
+			</Properties>
+			<Items>
+				<File>Rules/Rules_1.sql</File>
+				<File>Rules/LimitOldWorld.sql</File>
+			</Items>
+		</UpdateDatabase>
+		<UpdateDatabase id="RULESET_OLDWORLD_2">
+			<Properties>
+				<RuleSet>RULESET_OLDWORLD_2</RuleSet>
+			</Properties>
+			<Items>
+				<File>Rules/Rules_1.sql</File>
+				<File>Rules/Rules_2.sql</File>
+				<File>Rules/NewCityStates.sql</File>
+				<File>Rules/LimitOldWorld.sql</File>
+			</Items>
+		</UpdateDatabase>
+		<UpdateDatabase id="RULESET_OLDWORLD_3">
+			<Properties>
+				<RuleSet>RULESET_OLDWORLD_3</RuleSet>
+			</Properties>
+			<Items>
+				<File>Rules/Rules_1.sql</File>
+				<File>Rules/Rules_2.sql</File>
+				<File>Rules/Rules_3.sql</File>
+				<File>Rules/NewCityStates.sql</File>
+				<File>Rules/LimitOldWorld.sql</File>
+			</Items>
+		</UpdateDatabase>		
 		<LocalizedText id="YNAMP_COMPONENT">
 			<Items>
-				<File>YNAMP_GamePlayText.xml</File>
+				<File>GamePlayText.xml</File>
+				<File>NewCityStatesTexts.sql</File>
 			</Items>
 		</LocalizedText>
 	</Components>
@@ -103,20 +164,27 @@
 	</LocalizedText>
 	
 	<Files>
+		<File>Configuration/Config.xml</File>
+		<File>Configuration/ConfigText.xml</File>
+		<File>Gameplay/Tables.sql</File>
+		<File>Gameplay/GamePlay.xml</File>
+		<File>Gameplay/GamePlay.sql</File>
+		<File>Gameplay/GamePlayText.xml</File>
+		<File>Gameplay/Map_GiantEarth.xml</File>
+		<File>Gameplay/Map_GreatestEarthMap.xml</File>
+		<File>Gameplay/Map_PlayEuropeAgain.xml</File>
+		<File>Gameplay/Resource.xml</File>
+		<File>Gameplay/CityNameByEra.xml</File>
 		<File>Maps/GiantEarth.lua</File>
 		<File>Maps/GreatestEarthMap.lua</File>
 		<File>Maps/PlayEuropeAgain.lua</File>
-		<File>Configuration/YNAMP_Config.xml</File>
-		<File>Gameplay/YNAMP_GamePlay.xml</File>
-		<File>Gameplay/YNAMP_GamePlay.sql</File>
-		<File>Rules/YNAMP_Rules_1.sql</File>
-		<File>Rules/YNAMP_Rules_2.sql</File>
-		<File>Rules/YNAMP_Rules_3.sql</File>
-		<File>Maps/test.Civ6Map</File>
 		<File>Override/AssignStartingPlots.lua</File>
-		<File>Configuration/YNAMP_ConfigText.xml</File>
-		<File>Gameplay/YNAMP_StartPos.xml</File>
-		<File>Gameplay/YNAMP_Tables.xml</File>
+		<File>Rules/Rules_1.sql</File>
+		<File>Rules/Rules_2.sql</File>
+		<File>Rules/Rules_3.sql</File>
+		<File>Rules/NewCityStates.sql</File>
+		<File>Rules/LimitEuro.sql</File>
+		<File>Rules/LimitOldWorld.sql</File>
 		<File>Scripts/YnAMP_Script.lua</File>
 		<File>Scripts/YnAMP_Utils.lua</File>
 	</Files>

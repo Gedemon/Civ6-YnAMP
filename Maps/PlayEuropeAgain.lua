@@ -39,7 +39,17 @@ end
 -------------------------------------------------------------------------------
 function GenerateMap()
 	print("Calling Map Generator");
+	-- Everything has been moved to the modded AssignStartingPlots in the "override" folder, search for "YnAMP" string in that file
 	GenerateImportedMap(GetMap(), GetCiv6DataToConvert(), GetNaturalWonders(), g_iW, g_iH)
+end
+
+function GetNaturalWonders()
+	local NaturalWonders = {}	
+		
+	NaturalWonders[GameInfo.Features["FEATURE_CLIFFS_DOVER"].Index] 	= { X = 30, Y = 59}
+	NaturalWonders[GameInfo.Features["FEATURE_DEAD_SEA"].Index] 		= { X = 83, Y = 10}	
+	
+	return NaturalWonders
 end
 
 function GetCiv6DataToConvert()
@@ -48,20 +58,11 @@ function GetCiv6DataToConvert()
 		Civ6DataToConvert[i] = {}
 	end
 	
-	-- Civ6 Data
+	-- Civ6 Data (copy from Lua.log below and on each lines remove everything before "Civ6DataToConvert")
 	-- Civ6DataToConvert[x][y]={{IsNEOfCliff,IsWOfCliff,IsNWOfCliff},}
-
 	
+	-- End of Cliffs table
 	return Civ6DataToConvert
-end
-
-function GetNaturalWonders()
-	local NaturalWonders = {}
-	
-	NaturalWonders[7]  = { X = 30, Y = 59} 	-- FEATURE_CLIFFS_DOVER
-	NaturalWonders[9]  = { X = 83, Y = 10} 	-- FEATURE_DEAD_SEA
-	
-	return NaturalWonders
 end
 
 function GetMap()

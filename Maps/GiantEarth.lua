@@ -39,23 +39,25 @@ end
 -------------------------------------------------------------------------------
 function GenerateMap()
 	print("Calling Map Generator");
+	-- Everything has been moved to the modded AssignStartingPlots in the "override" folder, search for "YnAMP" string in that file
 	GenerateImportedMap(GetMap(), GetCiv6DataToConvert(), GetNaturalWonders(), g_iW, g_iH)
 end
 
 function GetNaturalWonders()
 	local NaturalWonders = {}
-	NaturalWonders[6]  = { X = 101, Y = 23} -- FEATURE_BARRIER_REEF
-	NaturalWonders[7]  = { X = 11, Y = 71} 	-- FEATURE_CLIFFS_DOVER
-	NaturalWonders[8]  = { X = 132, Y = 65} -- FEATURE_CRATER_LAKE
-	NaturalWonders[9]  = { X = 37, Y = 50} 	-- FEATURE_DEAD_SEA
-	NaturalWonders[10] = { X = 64, Y = 54} 	-- FEATURE_EVEREST
-	NaturalWonders[11] = { X = 144, Y = 35} -- FEATURE_GALAPAGOS
-	NaturalWonders[12] = { X = 31, Y = 27} 	-- FEATURE_KILIMANJARO
-	NaturalWonders[13] = { X = 159, Y = 27} -- FEATURE_PANTANAL
-	NaturalWonders[14] = { X = 107, Y = 3} 	-- FEATURE_PIOPIOTAHI
-	NaturalWonders[15] = { X = 154, Y = 7} 	-- FEATURE_TORRES_DEL_PAINE
-	NaturalWonders[16] = { X = 36, Y = 18} 	-- FEATURE_TSINGY
-	NaturalWonders[17] = { X = 132, Y = 62} -- FEATURE_YOSEMITE
+	
+	NaturalWonders[GameInfo.Features["FEATURE_BARRIER_REEF"].Index] 	 = { X = 101, Y = 23}
+	NaturalWonders[GameInfo.Features["FEATURE_CLIFFS_DOVER"].Index] 	 = { X = 11, Y = 71}
+	NaturalWonders[GameInfo.Features["FEATURE_CRATER_LAKE"].Index] 		 = { X = 132, Y = 65}
+	NaturalWonders[GameInfo.Features["FEATURE_DEAD_SEA"].Index] 		 = { X = 37, Y = 50}
+	NaturalWonders[GameInfo.Features["FEATURE_EVEREST"].Index] 			 = { X = 64, Y = 54}
+	NaturalWonders[GameInfo.Features["FEATURE_GALAPAGOS"].Index] 		 = { X = 144, Y = 35}
+	NaturalWonders[GameInfo.Features["FEATURE_KILIMANJARO"].Index] 		 = { X = 31, Y = 27}
+	NaturalWonders[GameInfo.Features["FEATURE_PANTANAL"].Index] 		 = { X = 159, Y = 27}
+	NaturalWonders[GameInfo.Features["FEATURE_PIOPIOTAHI"].Index] 		 = { X = 107, Y = 3}
+	NaturalWonders[GameInfo.Features["FEATURE_TORRES_DEL_PAINE"].Index]  = { X = 154, Y = 7}
+	NaturalWonders[GameInfo.Features["FEATURE_TSINGY"].Index] 			 = { X = 36, Y = 18}
+	NaturalWonders[GameInfo.Features["FEATURE_YOSEMITE"].Index] 		 = { X = 132, Y = 62}
 	
 	return NaturalWonders
 end
@@ -66,7 +68,7 @@ function GetCiv6DataToConvert()
 		Civ6DataToConvert[i] = {}
 	end
 	
-	-- Civ6 Data
+	-- Civ6 Data (copy from Lua.log below and on each lines remove everything before "Civ6DataToConvert")
 	-- Civ6DataToConvert[x][y]={{IsNEOfCliff,IsWOfCliff,IsNWOfCliff},}
 	Civ6DataToConvert[6][70]={{0,1,0},}
 	Civ6DataToConvert[7][70]={{1,0,1},}
