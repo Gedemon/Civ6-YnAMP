@@ -12,6 +12,14 @@
 INSERT OR REPLACE INTO GlobalParameters (Name, Value) VALUES ('YNAMP_RULESET', '3');
 
 -----------------------------------------------
+-- Barbarians
+-----------------------------------------------
+
+UPDATE GlobalParameters SET Value ='1' WHERE Name ='BARBARIAN_CAMP_MAX_PER_MAJOR_CIV';
+UPDATE GlobalParameters SET Value ='5' WHERE Name ='BARBARIAN_CAMP_MINIMUM_DISTANCE_CITY';
+UPDATE GlobalParameters SET Value ='4' WHERE Name ='BARBARIAN_CAMP_ODDS_OF_NEW_CAMP_SPAWNING';
+
+-----------------------------------------------
 -- Unit
 -----------------------------------------------
 

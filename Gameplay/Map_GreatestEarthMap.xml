@@ -4,6 +4,8 @@
 	<!-- +++++++++++++++++++++++++++++++++++ -->
 	<!-- "Greatest Earth Map" start position -->
 	<!-- +++++++++++++++++++++++++++++++++++ -->
+	
+	<!-- Major Civilization -->
 	<GreatestEarthMap_StartPosition>
 		
 		<!-- New Majors with Civilization 6 -->
@@ -251,11 +253,325 @@
 			<Civilization>CIVILIZATION_SHOSHONE</Civilization>
 			<X>5</X>
 			<Y>51</Y>
+		</Replace>		
+	</GreatestEarthMap_StartPosition>
+	
+	<!-- City States from civ5 -->
+	<GreatestEarthMap_StartPosition>
+		<Replace>
+			<Civilization>CIVILIZATION_BRATISLAVA</Civilization>
+			<X>55</X>
+			<Y>49</Y>
 		</Replace>
-		
-		
-		<!-- City States -->
-		
+		<Replace>
+			<Civilization>CIVILIZATION_BUDAPEST</Civilization>
+			<X>56</X>
+			<Y>48</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_GENEVA</Civilization>
+			<X>44</X>
+			<Y>47</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_RIGA</Civilization>
+			<X>57</X>
+			<Y>57</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_GENOA</Civilization>
+			<X>48</X>
+			<Y>46</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_FLORENCE</Civilization>
+			<X>50</X>
+			<Y>45</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_RAGUSA</Civilization>
+			<X>54</X>
+			<Y>44</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_SYDNEY</Civilization>
+			<X>102</X>
+			<Y>12</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_QUEBEC_CITY</Civilization>
+			<X>21</X>
+			<Y>54</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_BUCHAREST</Civilization>
+			<X>57</X>
+			<Y>48</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_BELGRADE</Civilization>
+			<X>55</X>
+			<Y>46</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_BRUSSELS</Civilization>
+			<X>43</X>
+			<Y>51</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_MONACO</Civilization>
+			<X>46</X>
+			<Y>44</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_KATHMANDU</Civilization>
+			<X>78</X>
+			<Y>41</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_HANOI</Civilization>
+			<X>84</X>
+			<Y>39</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_LHASA</Civilization>
+			<X>78</X>
+			<Y>46</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_ALMATY</Civilization>
+			<X>73</X>
+			<Y>50</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_KUALA_LUMPUR</Civilization>
+			<X>82</X>
+			<Y>35</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_SINGAPORE</Civilization>
+			<X>83</X>
+			<Y>33</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_PANAMA_CITY</Civilization>
+			<X>20</X>
+			<Y>25</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_CAPE_TOWN</Civilization>
+			<X>54</X>
+			<Y>3</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_SIDON</Civilization>
+			<X>62</X>
+			<Y>39</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_TYRE</Civilization>
+			<X>62</X>
+			<Y>38</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_ANTWERP</Civilization>
+			<X>42</X>
+			<Y>51</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_CAHOKIA</Civilization>
+			<X>13</X>
+			<Y>45</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_COLOMBO</Civilization>
+			<X>77</X>
+			<Y>29</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_HONG_KONG</Civilization>
+			<X>85</X>
+			<Y>42</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_ORMUS</Civilization>
+			<X>71</X>
+			<Y>38</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_JERUSALEM</Civilization>
+			<X>62</X>
+			<Y>37</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_LA_VENTA</Civilization>
+			<X>15</X>
+			<Y>32</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_VANCOUVER</Civilization>
+			<X>2</X>
+			<Y>54</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_MANILA</Civilization>
+			<X>88</X>
+			<Y>35</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_ANTANANARIVO</Civilization>
+			<X>66</X>
+			<Y>9</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_MILAN</Civilization>
+			<X>48</X>
+			<Y>47</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_MOMBASA</Civilization>
+			<X>63</X>
+			<Y>17</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_PRAGUE</Civilization>
+			<X>52</X>
+			<Y>51</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_VALLETTA</Civilization>
+			<X>50</X>
+			<Y>36</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_VATICAN_CITY</Civilization>
+			<X>50</X>
+			<Y>42</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_WITTENBERG</Civilization>
+			<X>50</X>
+			<Y>52</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_YEREVAN</Civilization>
+			<X>65</X>
+			<Y>45</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_ZANZIBAR</Civilization>
+			<X>64</X>
+			<Y>14</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_ZURICH</Civilization>
+			<X>48</X>
+			<Y>50</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_SAMARKAND</Civilization>
+			<X>71</X>
+			<Y>46</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_MALACCA</Civilization>
+			<X>83</X>
+			<Y>34</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_MOGADISHU</Civilization>
+			<X>66</X>
+			<Y>24</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_BYBLOS</Civilization>
+			<X>63</X>
+			<Y>40</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_KYZYL</Civilization>
+			<X>80</X>
+			<Y>59</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_IFE</Civilization>
+			<X>49</X>
+			<Y>22</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_KIEV</Civilization>
+			<X>60</X>
+			<Y>52</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_BUENOS_AIRES</Civilization>
+			<X>27</X>
+			<Y>7</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_MBANZA_KONGO</Civilization>
+			<X>52</X>
+			<Y>15</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_KABUL</Civilization>
+			<X>72</X>
+			<Y>43</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_SOFIA</Civilization>
+			<X>56</X>
+			<Y>46</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_UR</Civilization>
+			<X>66</X>
+			<Y>38</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_MELBOURNE</Civilization>
+			<X>100</X>
+			<Y>10</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_CHEYENNE</Civilization>
+			<X>8</X>
+			<Y>53</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_SIOUX</Civilization>
+			<X>9</X>
+			<Y>49</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_KINSHASA</Civilization>
+			<X>53</X>
+			<Y>16</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_HARAPPA</Civilization>
+			<X>74</X>
+			<Y>40</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_DAKAR</Civilization>
+			<X>39</X>
+			<Y>25</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_REYKJAVIK</Civilization>
+			<X>31</X>
+			<Y>61</Y>
+		</Replace>
+		<Replace>
+			<Civilization>CIVILIZATION_GARAMANTES</Civilization>
+			<X>49</X>
+			<Y>31</Y>
+		</Replace>
+	</GreatestEarthMap_StartPosition>
+	
+	<!-- City States from civ6 -->
+	<GreatestEarthMap_StartPosition>
 		<Replace>
 			<Civilization>CIVILIZATION_AMSTERDAM</Civilization>
 			<X>44</X>
@@ -378,7 +694,7 @@
 		</Replace>
 		
 	</GreatestEarthMap_StartPosition>
-	
+
 	<!-- ++++++++++++++++++++++++ -->
 	<GreatestEarthMap_RegionPosition>
 		<Replace>

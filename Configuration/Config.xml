@@ -95,69 +95,77 @@
 	</MapSizes>
 
 	<Parameters>
+		<!--	GiantEarth Options
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="FeaturesPlacement" Name="LOC_MAP_FEATURES_PLACEMENT_NAME" Description="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Domain="FeaturesPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" GroupId="MapOptions" Hash="0" SortIndex="245"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="Rainfall" Name="LOC_MAP_RAINFALL_NAME" Description="LOC_MAP_RAINFALL_DESCRIPTION" Domain="Rainfall" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="rainfall" GroupId="MapOptions" Hash="0" SortIndex="250"/>
+		-->
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="Resources" Name="LOC_MAP_RESOURCES_NAME" Description="LOC_MAP_RESOURCES_DESCRIPTION" Domain="Resources" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="resources" GroupId="MapOptions" Hash="0" SortIndex="270"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="StartPosition" Name="LOC_MAP_START_POSITION_NAME" Description="LOC_MAP_START_POSITION_DESCRIPTION" Domain="StartPosition" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="start" GroupId="MapOptions" Hash="0" SortIndex="280"/>
-		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="ResourcesPlacement" Name="LOC_MAP_RESOURCES_PLACEMENT_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Domain="ResourcesPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" GroupId="MapOptions" Hash="0" SortIndex="265"/>
-		<!--
-		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="FeaturesPlacement" Name="LOC_MAP_FEATURES_PLACEMENT_NAME" Description="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Domain="FeaturesPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" GroupId="MapOptions" Hash="0" SortIndex="245"/>
-		-->
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="ResourcesPlacement" Name="LOC_MAP_RESOURCES_PLACEMENT_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Domain="ResourcesPlacement" DefaultValue="PLACEMENT_DEFAULT" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" GroupId="MapOptions" Hash="0" SortIndex="272"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="CivilizationPlacement" Name="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Description="LOC_MAP_CIVILIZATION_PLACEMENT_DESCRIPTION" Domain="CivilizationPlacement" DefaultValue="PLACEMENT_TSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" GroupId="MapOptions" Hash="0" SortIndex="290"/>
-
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="ResourcesExclusion" Name="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" Domain="ResourcesExclusion" DefaultValue="PLACEMENT_EXCLUDE" ConfigurationGroup="Map" ConfigurationId="ResourcesExclusion" GroupId="MapOptions" SortIndex="275"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="RealDeposits" Name="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_DESCRIPTION" Domain="RealDeposits" DefaultValue="PLACEMENT_DEPOSIT" ConfigurationGroup="Map" ConfigurationId="RealDeposits" GroupId="MapOptions" SortIndex="277"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="RequestedResources" Name="LOC_MAP_RESOURCES_REQUESTED_NAME" Description="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" Domain="RequestedResources" DefaultValue="PLACEMENT_REQUEST" ConfigurationGroup="Map" ConfigurationId="RequestedResources" GroupId="MapOptions" SortIndex="295"/>
+		
+		<!--	GreatestEarthMap Options
+		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="FeaturesPlacement" Name="LOC_MAP_FEATURES_PLACEMENT_NAME" Description="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Domain="FeaturesPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" GroupId="MapOptions" Hash="0" SortIndex="245"/>
 		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="Rainfall" Name="LOC_MAP_RAINFALL_NAME" Description="LOC_MAP_RAINFALL_DESCRIPTION" Domain="Rainfall" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="rainfall" GroupId="MapOptions" Hash="0" SortIndex="250"/>
+			-->
 		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="Resources" Name="LOC_MAP_RESOURCES_NAME" Description="LOC_MAP_RESOURCES_DESCRIPTION" Domain="Resources" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="resources" GroupId="MapOptions" Hash="0" SortIndex="270"/>
 		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="StartPosition" Name="LOC_MAP_START_POSITION_NAME" Description="LOC_MAP_START_POSITION_DESCRIPTION" Domain="StartPosition" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="start" GroupId="MapOptions" Hash="0" SortIndex="280"/>
-		<!--
-		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="FeaturesPlacement" Name="LOC_MAP_FEATURES_PLACEMENT_NAME" Description="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Domain="FeaturesPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" GroupId="MapOptions" Hash="0" SortIndex="245"/>
-		-->
 		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="CivilizationPlacement" Name="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Description="LOC_MAP_CIVILIZATION_PLACEMENT_DESCRIPTION" Domain="CivilizationPlacement" DefaultValue="PLACEMENT_TSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" GroupId="MapOptions" Hash="0" SortIndex="290"/>
+		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="RequestedResources" Name="LOC_MAP_RESOURCES_REQUESTED_NAME" Description="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" Domain="RequestedResources" DefaultValue="PLACEMENT_REQUEST" ConfigurationGroup="Map" ConfigurationId="RequestedResources" GroupId="MapOptions" SortIndex="295"/>
 		
-		
+		<!--	PlayEuropeAgain Options
+		<Row Key1="Map" Key2="PlayEuropeAgain.lua" ParameterId="FeaturesPlacement" Name="LOC_MAP_FEATURES_PLACEMENT_NAME" Description="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Domain="FeaturesPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" GroupId="MapOptions" Hash="0" SortIndex="245"/>
 		<Row Key1="Map" Key2="PlayEuropeAgain.lua" ParameterId="Rainfall" Name="LOC_MAP_RAINFALL_NAME" Description="LOC_MAP_RAINFALL_DESCRIPTION" Domain="Rainfall" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="rainfall" GroupId="MapOptions" Hash="0" SortIndex="250"/>
+		-->
 		<Row Key1="Map" Key2="PlayEuropeAgain.lua" ParameterId="Resources" Name="LOC_MAP_RESOURCES_NAME" Description="LOC_MAP_RESOURCES_DESCRIPTION" Domain="Resources" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="resources" GroupId="MapOptions" Hash="0" SortIndex="270"/>
 		<Row Key1="Map" Key2="PlayEuropeAgain.lua" ParameterId="StartPosition" Name="LOC_MAP_START_POSITION_NAME" Description="LOC_MAP_START_POSITION_DESCRIPTION" Domain="StartPosition" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="start" GroupId="MapOptions" Hash="0" SortIndex="280"/>
-		<Row Key1="Map" Key2="PlayEuropeAgain.lua" ParameterId="ResourcesPlacement" Name="LOC_MAP_RESOURCES_PLACEMENT_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Domain="ResourcesPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" GroupId="MapOptions" Hash="0" SortIndex="265"/>
-		<!--
-		<Row Key1="Map" Key2="PlayEuropeAgain.lua" ParameterId="FeaturesPlacement" Name="LOC_MAP_FEATURES_PLACEMENT_NAME" Description="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Domain="FeaturesPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" GroupId="MapOptions" Hash="0" SortIndex="245"/>
-		-->
+		<Row Key1="Map" Key2="PlayEuropeAgain.lua" ParameterId="ResourcesPlacement" Name="LOC_MAP_RESOURCES_PLACEMENT_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Domain="ResourcesPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" GroupId="MapOptions" Hash="0" SortIndex="272"/>
 		<Row Key1="Map" Key2="PlayEuropeAgain.lua" ParameterId="CivilizationPlacement" Name="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Description="LOC_MAP_CIVILIZATION_PLACEMENT_DESCRIPTION" Domain="CivilizationPlacement" DefaultValue="PLACEMENT_TSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" GroupId="MapOptions" Hash="0" SortIndex="290"/>
+		<Row Key1="Map" Key2="PlayEuropeAgain.lua" ParameterId="RequestedResources" Name="LOC_MAP_RESOURCES_REQUESTED_NAME" Description="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" Domain="RequestedResources" DefaultValue="PLACEMENT_REQUEST" ConfigurationGroup="Map" ConfigurationId="RequestedResources" GroupId="MapOptions" SortIndex="295"/>
 		
-		<!-- Culturally Linked Start Position -->
+		<!--	Culturally Linked Start Position
+		-->
 		<Row ParameterId="CulturallyLinkedStart" Name="LOC_CULTURALLY_LINKED_START_NAME" Description="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Domain="CulturallyLinkedStart" DefaultValue="PLACEMENT_ETHNIC" ConfigurationGroup="Map" ConfigurationId="CulturallyLinkedStart" GroupId="MapOptions" Hash="0" SortIndex="295"/>
-
-		<!-- Exclude Zones for resources -->
-		<!--
-		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="ResourcesExclusion" Name="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="ResourcesExclusion" GroupId="MapOptions" SortIndex="2020"/>
-		-->
 		
-		<!-- Real Deposits for resources -->
-		<!--
-		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="RealDeposits" Name="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="RealDeposits" GroupId="MapOptions" SortIndex="2030"/>
+		<!--	Special default MapSize (hidden)
 		-->
-		
-		<!-- Special default MapSize (hidden) -->
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="MapSize1" Name="LOC_MAP_SIZE" Description="" Domain="StandardMapSizes" DefaultValue="MAPSIZE_GIANT" ConfigurationGroup="Map" ConfigurationId="MAP_SIZE" Hash="1" GroupId="MapOptions" Visible="0" SortIndex="225"/>
 		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="MapSize2" Name="LOC_MAP_SIZE" Description="" Domain="StandardMapSizes" DefaultValue="MAPSIZE_HUGE" ConfigurationGroup="Map" ConfigurationId="MAP_SIZE" Hash="1" GroupId="MapOptions" Visible="0" SortIndex="225"/>
 		<Row Key1="Map" Key2="PlayEuropeAgain.lua" ParameterId="MapSize3" Name="LOC_MAP_SIZE" Description="" Domain="StandardMapSizes" DefaultValue="MAPSIZE_ENORMOUS" ConfigurationGroup="Map" ConfigurationId="MAP_SIZE" Hash="1" GroupId="MapOptions" Visible="0" SortIndex="225"/>
 		
-		<!-- Hidden parameter to hide normal mapsize for converted maps -->
+		<!--	Hidden parameter to hide normal mapsize for converted maps
+		-->
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="HideSize" Name="HideSize" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="HideSize" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="HideSize" Name="HideSize" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="HideSize" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="PlayEuropeAgain.lua" ParameterId="HideSize" Name="HideSize" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="HideSize" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 
-		<!-- Hidden parameter to set the map name that will be used to find the tables for TSL -->
+		<!--	Hidden parameter to set the map name that will be used to find the tables for TSL
+		-->
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="MapName" Name="MapName" Description="" Domain="text" DefaultValue="GiantEarth" ConfigurationGroup="Map" ConfigurationId="MapName" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="MapName" Name="MapName" Description="" Domain="text" DefaultValue="GreatestEarthMap" ConfigurationGroup="Map" ConfigurationId="MapName" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="PlayEuropeAgain.lua" ParameterId="MapName" Name="MapName" Description="" Domain="text" DefaultValue="PlayEuropeAgain" ConfigurationGroup="Map" ConfigurationId="MapName" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 
-		<!-- Some Settings where linked to "RULESET_STANDARD", makes them available with all -->
+		<!--	Some Settings where linked to "RULESET_STANDARD", make them available with all
+		-->
 		<Row ParameterId="NoGoodyHuts" Name="LOC_GAME_NO_GOODY_HUTS" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAME_NO_GOODY_HUTS" GroupId="AdvancedOptions" SortIndex="2010"/>
 		<Row ParameterId="NoBarbarians" Name="LOC_GAME_NO_BARBARIANS" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAME_NO_BARBARIANS" GroupId="AdvancedOptions" SortIndex="2010"/>
 	</Parameters>	
 
 	<DomainValues>
 		<Row Domain="ResourcesPlacement" Value="PLACEMENT_DEFAULT" 	Name="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
-		<Row Domain="ResourcesPlacement" Value="PLACEMENT_IMPORT" 	Name="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_NAME" 	Description="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_DESCRIPTION" 	SortIndex="20"/>		
+		<Row Domain="ResourcesPlacement" Value="PLACEMENT_IMPORT" 	Name="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_NAME" 	Description="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_DESCRIPTION" 	SortIndex="20"/>
+		
+		<Row Domain="ResourcesExclusion" Value="PLACEMENT_DEFAULT" 	Name="LOC_YNAMP_DEACTIVATED_NAME" 	Description="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
+		<Row Domain="ResourcesExclusion" Value="PLACEMENT_EXCLUDE" 	Name="LOC_YNAMP_ACTIVATED_NAME" 	Description="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" 	SortIndex="20"/>
+		
+		<Row Domain="RealDeposits" Value="PLACEMENT_DEFAULT" 	Name="LOC_YNAMP_DEACTIVATED_NAME" 	Description="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
+		<Row Domain="RealDeposits" Value="PLACEMENT_DEPOSIT" 	Name="LOC_YNAMP_ACTIVATED_NAME" 	Description="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_DESCRIPTION" 	SortIndex="20"/>
+		
+		<Row Domain="RequestedResources" Value="PLACEMENT_DEFAULT" 	Name="LOC_YNAMP_DEACTIVATED_NAME" 	Description="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
+		<Row Domain="RequestedResources" Value="PLACEMENT_REQUEST" 	Name="LOC_YNAMP_ACTIVATED_NAME" 	Description="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" 	SortIndex="20"/>	
 		
 		<Row Domain="FeaturesPlacement" Value="PLACEMENT_DEFAULT" 	Name="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_NAME" 	Description="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
 		<Row Domain="FeaturesPlacement" Value="PLACEMENT_IMPORT" 	Name="LOC_MAP_FEATURES_PLACEMENT_IMPORT_NAME" 	Description="LOC_MAP_FEATURES_PLACEMENT_IMPORT_DESCRIPTION" 	SortIndex="20"/>		
@@ -176,13 +184,12 @@
 	
 		<Row ParameterId="Resources" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_IMPORT"/>
 		<Row ParameterId="Rainfall" ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_IMPORT"/>
-		<!--
-		<Row ParameterId="CulturallyLinkedStart" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_DEFAULT"/>
-		-->
 		<Row ParameterId="CulturallyLinkedStart" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_TSL"/>
 		<Row ParameterId="MapSize" ConfigurationGroup="Map" ConfigurationId="HideSize" Operator="NotEquals" ConfigurationValue="1"/>
 		<Row ParameterId="ResourcesExclusion" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_DEFAULT"/>
 		<Row ParameterId="RealDeposits" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_DEFAULT"/>
+		<Row ParameterId="RequestedResources" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_TSL"/>
+		<Row ParameterId="StartPosition" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_TSL"/>
 
 	</ParameterDependencies>
 	

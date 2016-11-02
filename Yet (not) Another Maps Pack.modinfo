@@ -146,7 +146,7 @@
 		<LocalizedText id="YNAMP_COMPONENT">
 			<Items>
 				<File>GamePlayText.xml</File>
-				<File>NewCityStatesTexts.sql</File>
+				<File>Texts.sql</File>
 			</Items>
 		</LocalizedText>
 	</Components>
@@ -183,6 +183,7 @@
 		<File>Rules/Rules_2.sql</File>
 		<File>Rules/Rules_3.sql</File>
 		<File>Rules/NewCityStates.sql</File>
+		<File>Rules/Texts.sql</File>
 		<File>Rules/LimitEuro.sql</File>
 		<File>Rules/LimitOldWorld.sql</File>
 		<File>Scripts/YnAMP_Script.lua</File>

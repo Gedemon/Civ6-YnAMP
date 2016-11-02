@@ -22,7 +22,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_ARABIA</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>2</Quantity>
 		</Row>
 		<Row>
@@ -56,7 +56,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_EGYPT</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>2</Quantity>
 		</Row>
 		<Row>
@@ -69,7 +69,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_ENGLAND</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>2</Quantity>
 		</Row>
 		<Row>
@@ -84,7 +84,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_ENGLAND</Civilization>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_ENGLAND</Civilization>
@@ -97,7 +97,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_FRANCE</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>2</Quantity>
 		</Row>
 		<Row>
@@ -111,12 +111,12 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_GERMANY</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>2</Quantity>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_GERMANY</Civilization>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_GREECE</Civilization>
@@ -125,7 +125,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_GREECE</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>2</Quantity>
 		</Row>
 		<Row>
@@ -154,7 +154,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_IROQUOIS</Civilization>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_IROQUOIS</Civilization>
@@ -179,7 +179,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_OTTOMAN</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>2</Quantity>
 		</Row>
 		<Row>
@@ -198,7 +198,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_ROME</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>2</Quantity>
 		</Row>
 		<Row>
@@ -211,7 +211,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_RUSSIA</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>2</Quantity>
 		</Row>
 		<Row>
@@ -230,7 +230,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_SONGHAI</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>2</Quantity>
 		</Row>
 		<Row>
@@ -243,7 +243,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_MONGOL</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>6</Quantity>
 		</Row>
 		<Row>
@@ -260,7 +260,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_SPAIN</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>4</Quantity>
 		</Row>
 		<Row>
@@ -286,7 +286,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_DENMARK</Civilization>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_DENMARK</Civilization>
@@ -302,7 +302,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_KOREA</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>4</Quantity>
 		</Row>
 		<Row>
@@ -316,7 +316,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_AUSTRIA</Civilization>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_AUSTRIA</Civilization>
@@ -337,7 +337,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_BYZANTIUM</Civilization>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_BYZANTIUM</Civilization>
@@ -358,7 +358,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_CARTHAGE</Civilization>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_CARTHAGE</Civilization>
@@ -379,7 +379,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_CELTS</Civilization>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_CELTS</Civilization>
@@ -400,7 +400,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_ETHIOPIA</Civilization>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_ETHIOPIA</Civilization>
@@ -421,7 +421,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_HUNS</Civilization>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_HUNS</Civilization>
@@ -429,12 +429,12 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_HUNS</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>4</Quantity>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_HUNS</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>4</Quantity>
 		</Row>
 		<Row>
@@ -444,7 +444,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_MAYA</Civilization>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_MAYA</Civilization>
@@ -465,7 +465,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_NETHERLANDS</Civilization>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_NETHERLANDS</Civilization>
@@ -486,7 +486,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_SWEDEN</Civilization>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_SWEDEN</Civilization>
@@ -507,7 +507,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_HELSINKI</Civilization>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_PORTUGAL</Civilization>
@@ -519,7 +519,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_SHOSHONE</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>2</Quantity>
 		</Row>
 		<Row>
@@ -546,12 +546,12 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_POLAND</Civilization>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>2</Quantity>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_POLAND</Civilization>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_ASSYRIA</Civilization>
@@ -853,7 +853,7 @@
 		</Row>
 		<Row>
 			<Region>ARCTIC_AMERICA</Region>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 		</Row>
 		<Row>
 			<Region>ARCTIC_AMERICA</Region>
@@ -896,7 +896,7 @@
 	<ResourceRegionExclude>
 		<Row>
 			<Region>NORTH_AMERICA</Region>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 		</Row>
 		<Row>
 			<Region>NORTH_AMERICA</Region>
@@ -923,7 +923,7 @@
 	<ResourceRegionExclude>
 		<Row>
 			<Region>CENTRAL_AMERICA</Region>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 		</Row>
 		<Row>
 			<Region>CENTRAL_AMERICA</Region>
@@ -947,7 +947,7 @@
 		</Row>
 		<Row>
 			<Region>CENTRAL_AMERICA</Region>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Region>CENTRAL_AMERICA</Region>
@@ -958,7 +958,7 @@
 	<ResourceRegionExclude>
 		<Row>
 			<Region>SOUTH_AMERICA_WEST</Region>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 		</Row>
 		<Row>
 			<Region>SOUTH_AMERICA_WEST</Region>
@@ -982,7 +982,7 @@
 		</Row>
 		<Row>
 			<Region>SOUTH_AMERICA_WEST</Region>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Region>SOUTH_AMERICA_WEST</Region>
@@ -993,7 +993,7 @@
 	<ResourceRegionExclude>
 		<Row>
 			<Region>SOUTH_AMERICA_EAST</Region>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 		</Row>
 		<Row>
 			<Region>SOUTH_AMERICA_EAST</Region>
@@ -1021,7 +1021,7 @@
 		</Row>
 		<Row>
 			<Region>SOUTH_AMERICA_EAST</Region>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Region>SOUTH_AMERICA_EAST</Region>
@@ -1032,7 +1032,7 @@
 	<ResourceRegionExclude>
 		<Row>
 			<Region>ANTARCTIC_AMERICA</Region>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 		</Row>
 		<Row>
 			<Region>ANTARCTIC_AMERICA</Region>
@@ -1079,7 +1079,7 @@
 	<ResourceRegionExclude>
 		<Row>
 			<Region>AUSTRALIA</Region>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 		</Row>
 		<Row>
 			<Region>AUSTRALIA</Region>
@@ -1110,7 +1110,7 @@
 	<ResourceRegionExclude>
 		<Row>
 			<Region>OCEANIA</Region>
-			<Resource>RESOURCE_HORSE</Resource>
+			<Resource>RESOURCE_HORSES</Resource>
 		</Row>
 		<Row>
 			<Region>OCEANIA</Region>
@@ -1142,7 +1142,7 @@
 		</Row>
 		<Row>
 			<Region>OCEANIA</Region>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Region>OCEANIA</Region>
@@ -1165,7 +1165,7 @@
 		</Row>
 		<Row>
 			<Region>SOUTH_ASIA</Region>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Region>SOUTH_ASIA</Region>
@@ -1196,7 +1196,7 @@
 		</Row>
 		<Row>
 			<Region>CENTRAL_ASIA</Region>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Region>CENTRAL_ASIA</Region>
@@ -1223,7 +1223,7 @@
 		</Row>
 		<Row>
 			<Region>EAST_ASIA</Region>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Region>EAST_ASIA</Region>
@@ -1297,7 +1297,7 @@
 		</Row>
 		<Row>
 			<Region>MIDDLE_EAST</Region>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Region>MIDDLE_EAST</Region>
@@ -1328,7 +1328,7 @@
 		</Row>
 		<Row>
 			<Region>MEDITERRANEAN</Region>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 	</ResourceRegionExclude>
 	<!-- TURKEY -->
@@ -1363,7 +1363,7 @@
 		</Row>
 		<Row>
 			<Region>TURKEY</Region>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Region>TURKEY</Region>
@@ -1394,7 +1394,7 @@
 		</Row>
 		<Row>
 			<Region>SOUTH_EUROPA</Region>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 	</ResourceRegionExclude>
 	<!-- WEST_EUROPA -->
@@ -1534,7 +1534,7 @@
 		</Row>
 		<Row>
 			<Region>NORTH_AFRICA</Region>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Region>NORTH_AFRICA</Region>
@@ -1569,7 +1569,7 @@
 		</Row>
 		<Row>
 			<Region>CENTRAL_AFRICA</Region>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Region>CENTRAL_AFRICA</Region>
@@ -1608,7 +1608,7 @@
 		</Row>
 		<Row>
 			<Region>SOUTH_AFRICA</Region>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Region>SOUTH_AFRICA</Region>
@@ -1643,7 +1643,7 @@
 		</Row>
 		<Row>
 			<Region>MADAGASCAR</Region>
-			<Resource>RESOURCE_FUR</Resource>
+			<Resource>RESOURCE_FURS</Resource>
 		</Row>
 		<Row>
 			<Region>MADAGASCAR</Region>
