@@ -145,8 +145,8 @@
 		</UpdateDatabase>		
 		<LocalizedText id="YNAMP_DEFAULT_COMPONENT">
 			<Items>
-				<File>Gameplay/GamePlayText.xml</File>
 				<File>Rules/NewCityStatesTexts.sql</File>
+				<File>Gameplay/GamePlayText.xml</File>
 			</Items>
 		</LocalizedText>
 	</Components>

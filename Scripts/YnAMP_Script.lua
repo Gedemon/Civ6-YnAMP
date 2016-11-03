@@ -88,9 +88,11 @@ function ResourcesStatistics(g_iW, g_iH)
 	for resRow in GameInfo.Resources() do
 		local numRes = resTable[resRow.Index]
 		local placedPercent = Round(numRes / totalplots * 10000) / 100
+		if placedPercent == 0 then placedPercent = "0.00" end
 		local ratio = Round(placedPercent * 100 / resRow.Frequency)
+		if ratio == 0 then ratio = "0.00" end
 		if resRow.Frequency > 0 then
-			print("Resource = " .. tostring(resRow.ResourceType).."		placed = " .. tostring(numRes).."	(" .. tostring(placedPercent).."%)	frequency = " .. tostring(resRow.Frequency).."	ratio = " .. tostring(ratio))
+			print("Resource = " .. tostring(resRow.ResourceType).."		placed = " .. tostring(numRes).."	(" .. tostring(placedPercent).."%)	frequency = " .. tostring(resRow.Frequency).."		ratio = " .. tostring(ratio))
 		end
 	end
 

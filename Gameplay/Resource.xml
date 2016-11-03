@@ -849,10 +849,6 @@
 	<ResourceRegionExclude>
 		<Row>
 			<Region>ARCTIC_AMERICA</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>ARCTIC_AMERICA</Region>
 			<Resource>RESOURCE_HORSES</Resource>
 		</Row>
 		<Row>
@@ -891,159 +887,65 @@
 			<Region>ARCTIC_AMERICA</Region>
 			<Resource>RESOURCE_TRUFFLES</Resource>
 		</Row>
-		<Row>
-			<Region>ARCTIC_AMERICA</Region>
-			<Resource>RESOURCE_COCOA</Resource>
-		</Row>
-		<Row>
-			<Region>ARCTIC_AMERICA</Region>
-			<Resource>RESOURCE_COFFEE</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+		<Row>
+			<Region>ARCTIC_AMERICA</Region>
+			<Resource>RESOURCE_JADE</Resource>
+		</Row>
+	</ResourceRegionExclusive>
 	<!-- NORTH_AMERICA -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>NORTH_AMERICA</Region>
-			<Resource>RESOURCE_HORSES</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_AMERICA</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_AMERICA</Region>
-			<Resource>RESOURCE_SPICES</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_AMERICA</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_AMERICA</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_AMERICA</Region>
-			<Resource>RESOURCE_CITRUS</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_AMERICA</Region>
-			<Resource>RESOURCE_COCOA</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+		<Row>
+			<Region>NORTH_AMERICA</Region>
+			<Resource>RESOURCE_TOBACCO</Resource>
+		</Row>
+	</ResourceRegionExclusive>
 	<!-- CENTRAL_AMERICA -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>CENTRAL_AMERICA</Region>
-			<Resource>RESOURCE_HORSES</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_AMERICA</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_AMERICA</Region>
-			<Resource>RESOURCE_PEARLS</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_AMERICA</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_AMERICA</Region>
-			<Resource>RESOURCE_COTTON</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_AMERICA</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_AMERICA</Region>
-			<Resource>RESOURCE_FURS</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_AMERICA</Region>
-			<Resource>RESOURCE_TRUFFLES</Resource>
-		</Row>
+	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
 		<Row>
 			<Region>CENTRAL_AMERICA</Region>
 			<Resource>RESOURCE_COCOA</Resource>
 		</Row>
-	</ResourceRegionExclude>
+		<Row>
+			<Region>CENTRAL_AMERICA</Region>
+			<Resource>RESOURCE_TOBACCO</Resource>
+		</Row>
+		<Row>
+			<Region>CENTRAL_AMERICA</Region>
+			<Resource>RESOURCE_JADE</Resource>
+		</Row>
+	</ResourceRegionExclusive>
 	<!-- SOUTH_AMERICA_WEST (Perou - Argentina)-->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>SOUTH_AMERICA_WEST</Region>
-			<Resource>RESOURCE_HORSES</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AMERICA_WEST</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AMERICA_WEST</Region>
-			<Resource>RESOURCE_MARBLE</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AMERICA_WEST</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AMERICA_WEST</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AMERICA_WEST</Region>
-			<Resource>RESOURCE_SUGAR</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AMERICA_WEST</Region>
-			<Resource>RESOURCE_FURS</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AMERICA_WEST</Region>
-			<Resource>RESOURCE_TRUFFLES</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+		<Row>
+			<Region>SOUTH_AMERICA_WEST</Region>
+			<Resource>RESOURCE_COCOA</Resource>
+		</Row>
+		<Row>
+			<Region>SOUTH_AMERICA_WEST</Region>
+			<Resource>RESOURCE_TOBACCO</Resource>
+		</Row>
+	</ResourceRegionExclusive>
 	<!-- SOUTH_AMERICA_EAST (brazil)-->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>SOUTH_AMERICA_EAST</Region>
-			<Resource>RESOURCE_HORSES</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AMERICA_EAST</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AMERICA_EAST</Region>
-			<Resource>RESOURCE_MARBLE</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AMERICA_EAST</Region>
-			<Resource>RESOURCE_SPICES</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AMERICA_EAST</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AMERICA_EAST</Region>
-			<Resource>RESOURCE_COTTON</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AMERICA_EAST</Region>
-			<Resource>RESOURCE_WINE</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AMERICA_EAST</Region>
-			<Resource>RESOURCE_FURS</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AMERICA_EAST</Region>
-			<Resource>RESOURCE_TRUFFLES</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+		<Row>
+			<Region>SOUTH_AMERICA_EAST</Region>
+			<Resource>RESOURCE_COCOA</Resource>
+		</Row>
+		<Row>
+			<Region>SOUTH_AMERICA_EAST</Region>
+			<Resource>RESOURCE_TOBACCO</Resource>
+		</Row>
+	</ResourceRegionExclusive>
 	<!-- ANTARCTIC_AMERICA -->
 	<ResourceRegionExclude>
 		<Row>
@@ -1090,604 +992,146 @@
 			<Region>ANTARCTIC_AMERICA</Region>
 			<Resource>RESOURCE_TRUFFLES</Resource>
 		</Row>
-		<Row>
-			<Region>ANTARCTIC_AMERICA</Region>
-			<Resource>RESOURCE_COCOA</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+	</ResourceRegionExclusive>
 	<!-- AUSTRALIA -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>AUSTRALIA</Region>
-			<Resource>RESOURCE_HORSES</Resource>
-		</Row>
-		<Row>
-			<Region>AUSTRALIA</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>AUSTRALIA</Region>
-			<Resource>RESOURCE_MARBLE</Resource>
-		</Row>
-		<Row>
-			<Region>AUSTRALIA</Region>
-			<Resource>RESOURCE_SPICES</Resource>
-		</Row>
-		<Row>
-			<Region>AUSTRALIA</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>AUSTRALIA</Region>
-			<Resource>RESOURCE_SUGAR</Resource>
-		</Row>
-		<Row>
-			<Region>AUSTRALIA</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+	</ResourceRegionExclusive>
 	<!-- OCEANIA -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>OCEANIA</Region>
-			<Resource>RESOURCE_HORSES</Resource>
-		</Row>
-		<Row>
-			<Region>OCEANIA</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>OCEANIA</Region>
-			<Resource>RESOURCE_MARBLE</Resource>
-		</Row>
-		<Row>
-			<Region>OCEANIA</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>OCEANIA</Region>
-			<Resource>RESOURCE_SUGAR</Resource>
-		</Row>
-		<Row>
-			<Region>OCEANIA</Region>
-			<Resource>RESOURCE_COTTON</Resource>
-		</Row>
-		<Row>
-			<Region>OCEANIA</Region>
-			<Resource>RESOURCE_WINE</Resource>
-		</Row>
-		<Row>
-			<Region>OCEANIA</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
-		<Row>
-			<Region>OCEANIA</Region>
-			<Resource>RESOURCE_FURS</Resource>
-		</Row>
-		<Row>
-			<Region>OCEANIA</Region>
-			<Resource>RESOURCE_CITRUS</Resource>
-		</Row>
-		<Row>
-			<Region>OCEANIA</Region>
-			<Resource>RESOURCE_TRUFFLES</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+		<Row>
+			<Region>OCEANIA</Region>
+			<Resource>RESOURCE_JADE</Resource>
+		</Row>
+	</ResourceRegionExclusive>
 	<!-- SOUTH_ASIA -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>SOUTH_ASIA</Region>
-			<Resource>RESOURCE_WINE</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_ASIA</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_ASIA</Region>
-			<Resource>RESOURCE_FURS</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_ASIA</Region>
-			<Resource>RESOURCE_TRUFFLES</Resource>
-		</Row>
 	</ResourceRegionExclude>
 	<ResourceRegionExclusive>
 		<Row>
 			<Region>SOUTH_ASIA</Region>
 			<Resource>RESOURCE_TEA</Resource>
+		</Row>
+		<Row>
+			<Region>SOUTH_ASIA</Region>
+			<Resource>RESOURCE_IVORY</Resource>
+		</Row>
+		<Row>
+			<Region>SOUTH_ASIA</Region>
+			<Resource>RESOURCE_JADE</Resource>
 		</Row>
 	</ResourceRegionExclusive>
 	<!-- CENTRAL_ASIA -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>CENTRAL_ASIA</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_ASIA</Region>
-			<Resource>RESOURCE_MARBLE</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_ASIA</Region>
-			<Resource>RESOURCE_SPICES</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_ASIA</Region>
-			<Resource>RESOURCE_SUGAR</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_ASIA</Region>
-			<Resource>RESOURCE_WINE</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_ASIA</Region>
-			<Resource>RESOURCE_FURS</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_ASIA</Region>
-			<Resource>RESOURCE_CITRUS</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_ASIA</Region>
-			<Resource>RESOURCE_TRUFFLES</Resource>
-		</Row>
 	</ResourceRegionExclude>
 	<ResourceRegionExclusive>
 		<Row>
 			<Region>CENTRAL_ASIA</Region>
 			<Resource>RESOURCE_TEA</Resource>
+		</Row>
+		<Row>
+			<Region>CENTRAL_ASIA</Region>
+			<Resource>RESOURCE_JADE</Resource>
 		</Row>
 	</ResourceRegionExclusive>
 
 	<!-- EAST_ASIA -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>EAST_ASIA</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>EAST_ASIA</Region>
-			<Resource>RESOURCE_SPICES</Resource>
-		</Row>
-		<Row>
-			<Region>EAST_ASIA</Region>
-			<Resource>RESOURCE_SUGAR</Resource>
-		</Row>
-		<Row>
-			<Region>EAST_ASIA</Region>
-			<Resource>RESOURCE_FURS</Resource>
-		</Row>
-		<Row>
-			<Region>EAST_ASIA</Region>
-			<Resource>RESOURCE_TRUFFLES</Resource>
-		</Row>
 	</ResourceRegionExclude>
 	<ResourceRegionExclusive>
 		<Row>
 			<Region>EAST_ASIA</Region>
 			<Resource>RESOURCE_TEA</Resource>
 		</Row>
+		<Row>
+			<Region>EAST_ASIA</Region>
+			<Resource>RESOURCE_JADE</Resource>
+		</Row>
 	</ResourceRegionExclusive>
 	<!-- NORTH_ASIA -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>NORTH_ASIA</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_ASIA</Region>
-			<Resource>RESOURCE_PEARLS</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_ASIA</Region>
-			<Resource>RESOURCE_MARBLE</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_ASIA</Region>
-			<Resource>RESOURCE_SPICES</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_ASIA</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_ASIA</Region>
-			<Resource>RESOURCE_SUGAR</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_ASIA</Region>
-			<Resource>RESOURCE_COTTON</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_ASIA</Region>
-			<Resource>RESOURCE_WINE</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_ASIA</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_ASIA</Region>
-			<Resource>RESOURCE_CITRUS</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_ASIA</Region>
-			<Resource>RESOURCE_TRUFFLES</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+		<Row>
+			<Region>NORTH_ASIA</Region>
+			<Resource>RESOURCE_JADE</Resource>
+		</Row>
+	</ResourceRegionExclusive>
 	<!-- MIDDLE_EAST -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>MIDDLE_EAST</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>MIDDLE_EAST</Region>
-			<Resource>RESOURCE_MARBLE</Resource>
-		</Row>
-		<Row>
-			<Region>MIDDLE_EAST</Region>
-			<Resource>RESOURCE_SPICES</Resource>
-		</Row>
-		<Row>
-			<Region>MIDDLE_EAST</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>MIDDLE_EAST</Region>
-			<Resource>RESOURCE_FURS</Resource>
-		</Row>
-		<Row>
-			<Region>MIDDLE_EAST</Region>
-			<Resource>RESOURCE_CITRUS</Resource>
-		</Row>
-		<Row>
-			<Region>MIDDLE_EAST</Region>
-			<Resource>RESOURCE_TRUFFLES</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+		<Row>
+			<Region>MIDDLE_EAST</Region>
+			<Resource>RESOURCE_COFFEE</Resource>
+		</Row>
+	</ResourceRegionExclusive>
 	<!-- MEDITERRANEAN -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>MEDITERRANEAN</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>MEDITERRANEAN</Region>
-			<Resource>RESOURCE_PEARLS</Resource>
-		</Row>
-		<Row>
-			<Region>MEDITERRANEAN</Region>
-			<Resource>RESOURCE_SPICES</Resource>
-		</Row>
-		<Row>
-			<Region>MEDITERRANEAN</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>MEDITERRANEAN</Region>
-			<Resource>RESOURCE_FURS</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+	</ResourceRegionExclusive>
 	<!-- TURKEY -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>TURKEY</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>TURKEY</Region>
-			<Resource>RESOURCE_PEARLS</Resource>
-		</Row>
-		<Row>
-			<Region>TURKEY</Region>
-			<Resource>RESOURCE_SPICES</Resource>
-		</Row>
-		<Row>
-			<Region>TURKEY</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>TURKEY</Region>
-			<Resource>RESOURCE_SUGAR</Resource>
-		</Row>
-		<Row>
-			<Region>TURKEY</Region>
-			<Resource>RESOURCE_WINE</Resource>
-		</Row>
-		<Row>
-			<Region>TURKEY</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
-		<Row>
-			<Region>TURKEY</Region>
-			<Resource>RESOURCE_FURS</Resource>
-		</Row>
-		<Row>
-			<Region>TURKEY</Region>
-			<Resource>RESOURCE_TRUFFLES</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+	</ResourceRegionExclusive>
 	<!-- SOUTH_EUROPA -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>SOUTH_EUROPA</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_EUROPA</Region>
-			<Resource>RESOURCE_PEARLS</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_EUROPA</Region>
-			<Resource>RESOURCE_SPICES</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_EUROPA</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_EUROPA</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_EUROPA</Region>
-			<Resource>RESOURCE_FURS</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+	</ResourceRegionExclusive>
 	<!-- WEST_EUROPA -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>WEST_EUROPA</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>WEST_EUROPA</Region>
-			<Resource>RESOURCE_PEARLS</Resource>
-		</Row>
-		<Row>
-			<Region>WEST_EUROPA</Region>
-			<Resource>RESOURCE_SPICES</Resource>
-		</Row>
-		<Row>
-			<Region>WEST_EUROPA</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>WEST_EUROPA</Region>
-			<Resource>RESOURCE_SUGAR</Resource>
-		</Row>
-		<Row>
-			<Region>WEST_EUROPA</Region>
-			<Resource>RESOURCE_COTTON</Resource>
-		</Row>
-		<Row>
-			<Region>WEST_EUROPA</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
-		<Row>
-			<Region>WEST_EUROPA</Region>
-			<Resource>RESOURCE_CITRUS</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+	</ResourceRegionExclusive>
 	<!-- NORTH_EUROPA -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>NORTH_EUROPA</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_EUROPA</Region>
-			<Resource>RESOURCE_PEARLS</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_EUROPA</Region>
-			<Resource>RESOURCE_SPICES</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_EUROPA</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_EUROPA</Region>
-			<Resource>RESOURCE_SUGAR</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_EUROPA</Region>
-			<Resource>RESOURCE_COTTON</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_EUROPA</Region>
-			<Resource>RESOURCE_WINE</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_EUROPA</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_EUROPA</Region>
-			<Resource>RESOURCE_CITRUS</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+	</ResourceRegionExclusive>
 	<!-- EAST_EUROPA -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>EAST_EUROPA</Region>
-			<Resource>RESOURCE_IVORY</Resource>
-		</Row>
-		<Row>
-			<Region>EAST_EUROPA</Region>
-			<Resource>RESOURCE_PEARLS</Resource>
-		</Row>
-		<Row>
-			<Region>EAST_EUROPA</Region>
-			<Resource>RESOURCE_SPICES</Resource>
-		</Row>
-		<Row>
-			<Region>EAST_EUROPA</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>EAST_EUROPA</Region>
-			<Resource>RESOURCE_SUGAR</Resource>
-		</Row>
-		<Row>
-			<Region>EAST_EUROPA</Region>
-			<Resource>RESOURCE_COTTON</Resource>
-		</Row>
-		<Row>
-			<Region>EAST_EUROPA</Region>
-			<Resource>RESOURCE_WINE</Resource>
-		</Row>
-		<Row>
-			<Region>EAST_EUROPA</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
-		<Row>
-			<Region>EAST_EUROPA</Region>
-			<Resource>RESOURCE_CITRUS</Resource>
-		</Row>
-		<Row>
-			<Region>EAST_EUROPA</Region>
-			<Resource>RESOURCE_TRUFFLES</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+	</ResourceRegionExclusive>
 	<!-- NORTH_AFRICA -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>NORTH_AFRICA</Region>
-			<Resource>RESOURCE_CATTLE</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_AFRICA</Region>
-			<Resource>RESOURCE_MARBLE</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_AFRICA</Region>
-			<Resource>RESOURCE_SPICES</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_AFRICA</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_AFRICA</Region>
-			<Resource>RESOURCE_FURS</Resource>
-		</Row>
-		<Row>
-			<Region>NORTH_AFRICA</Region>
-			<Resource>RESOURCE_TRUFFLES</Resource>
-		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+		<Row>
+			<Region>NORTH_AFRICA</Region>
+			<Resource>RESOURCE_IVORY</Resource>
+		</Row>
+	</ResourceRegionExclusive>
 	<!-- CENTRAL_AFRICA -->
 	<ResourceRegionExclude>
-		<Row>
-			<Region>CENTRAL_AFRICA</Region>
-			<Resource>RESOURCE_PEARLS</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_AFRICA</Region>
-			<Resource>RESOURCE_MARBLE</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_AFRICA</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_AFRICA</Region>
-			<Resource>RESOURCE_SUGAR</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_AFRICA</Region>
-			<Resource>RESOURCE_WINE</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_AFRICA</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_AFRICA</Region>
-			<Resource>RESOURCE_FURS</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_AFRICA</Region>
-			<Resource>RESOURCE_CITRUS</Resource>
-		</Row>
-		<Row>
-			<Region>CENTRAL_AFRICA</Region>
-			<Resource>RESOURCE_TRUFFLES</Resource>
-		</Row>
 	</ResourceRegionExclude>
-	<!-- SOUTH_AFRICA -->
-	<ResourceRegionExclude>
+	<ResourceRegionExclusive>
 		<Row>
-			<Region>SOUTH_AFRICA</Region>
-			<Resource>RESOURCE_PEARLS</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AFRICA</Region>
-			<Resource>RESOURCE_MARBLE</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AFRICA</Region>
-			<Resource>RESOURCE_SPICES</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AFRICA</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AFRICA</Region>
-			<Resource>RESOURCE_SUGAR</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AFRICA</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AFRICA</Region>
-			<Resource>RESOURCE_FURS</Resource>
-		</Row>
-		<Row>
-			<Region>SOUTH_AFRICA</Region>
-			<Resource>RESOURCE_TRUFFLES</Resource>
-		</Row>
-	</ResourceRegionExclude>
-	<!-- MADAGASCAR -->
-	<ResourceRegionExclude>
-		<Row>
-			<Region>MADAGASCAR</Region>
-			<Resource>RESOURCE_PEARLS</Resource>
-		</Row>
-		<Row>
-			<Region>MADAGASCAR</Region>
-			<Resource>RESOURCE_MARBLE</Resource>
-		</Row>
-		<Row>
-			<Region>MADAGASCAR</Region>
-			<Resource>RESOURCE_SILK</Resource>
-		</Row>
-		<Row>
-			<Region>MADAGASCAR</Region>
+			<Region>CENTRAL_AFRICA</Region>
 			<Resource>RESOURCE_IVORY</Resource>
 		</Row>
 		<Row>
-			<Region>MADAGASCAR</Region>
-			<Resource>RESOURCE_WINE</Resource>
+			<Region>CENTRAL_AFRICA</Region>
+			<Resource>RESOURCE_COFFEE</Resource>
 		</Row>
-		<Row>
-			<Region>MADAGASCAR</Region>
-			<Resource>RESOURCE_INCENSE</Resource>
-		</Row>
-		<Row>
-			<Region>MADAGASCAR</Region>
-			<Resource>RESOURCE_FURS</Resource>
-		</Row>
-		<Row>
-			<Region>MADAGASCAR</Region>
-			<Resource>RESOURCE_TRUFFLES</Resource>
-		</Row>
+	</ResourceRegionExclusive>
+	<!-- SOUTH_AFRICA -->
+	<ResourceRegionExclude>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+	</ResourceRegionExclusive>
+	<!-- MADAGASCAR -->
+	<ResourceRegionExclude>
+	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+	</ResourceRegionExclusive>
 	
 </GameData>
