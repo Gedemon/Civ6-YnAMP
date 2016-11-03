@@ -143,7 +143,7 @@
 				<File>Rules/LimitOldWorld.sql</File>
 			</Items>
 		</UpdateDatabase>		
-		<LocalizedText id="YNAMP_COMPONENT">
+		<LocalizedText id="YNAMP_DEFAULT_COMPONENT">
 			<Items>
 				<File>Gameplay/GamePlayText.xml</File>
 				<File>Rules/NewCityStatesTexts.sql</File>
@@ -183,7 +183,7 @@
 		<File>Rules/Rules_2.sql</File>
 		<File>Rules/Rules_3.sql</File>
 		<File>Rules/NewCityStates.sql</File>
-		<File>Rules/Texts.sql</File>
+		<File>Rules/NewCityStatesTexts.sql</File>
 		<File>Rules/LimitEuro.sql</File>
 		<File>Rules/LimitOldWorld.sql</File>
 		<File>Scripts/YnAMP_Script.lua</File>

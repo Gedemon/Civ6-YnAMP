@@ -61,3 +61,51 @@ function ExportCliffs()
 	end
 end
 
+function ResourcesStatistics(g_iW, g_iH)
+	print("------------------------------------")
+	print("-- Resources Placement Statistics --")
+	print("------------------------------------")
+	local resTable = {}
+	for resRow in GameInfo.Resources() do
+		resTable[resRow.Index] = 0
+	end
+	
+	local totalplots = g_iW * g_iH
+	print("-- Total plots on map = " .. tostring(totalplots))
+	print("------------------------------------")
+	for i = 0, (totalplots) - 1, 1 do
+		plot = Map.GetPlotByIndex(i)
+		local eResourceType = plot:GetResourceType()
+		if (eResourceType ~= -1) then
+			if resTable[eResourceType] then
+				resTable[eResourceType] = resTable[eResourceType] + 1
+			else
+				print("WARNING - resTable[eResourceType] is nil for eResourceType = " .. tostring(eResourceType))
+			end
+		end
+	end	
+
+	for resRow in GameInfo.Resources() do
+		local numRes = resTable[resRow.Index]
+		local placedPercent = Round(numRes / totalplots * 10000) / 100
+		local ratio = Round(placedPercent * 100 / resRow.Frequency)
+		if resRow.Frequency > 0 then
+			print("Resource = " .. tostring(resRow.ResourceType).."		placed = " .. tostring(numRes).."	(" .. tostring(placedPercent).."%)	frequency = " .. tostring(resRow.Frequency).."	ratio = " .. tostring(ratio))
+		end
+	end
+
+	print("------------------------------------")
+end
+
+function Round(num)
+    under = math.floor(num)
+    upper = math.floor(num) + 1
+    underV = -(under - num)
+    upperV = upper - num
+    if (upperV > underV) then
+        return under
+    else
+        return upper
+    end
+end
+

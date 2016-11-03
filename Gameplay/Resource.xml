@@ -8,7 +8,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_AMERICA</Civilization>
-			<Resource>RESOURCE_COW</Resource>
+			<Resource>RESOURCE_CATTLE</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_AMERICA</Civilization>
@@ -324,7 +324,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_AUSTRIA</Civilization>
-			<Resource>RESOURCE_COW</Resource>
+			<Resource>RESOURCE_CATTLE</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_AUSTRIA</Civilization>
@@ -345,7 +345,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_BYZANTIUM</Civilization>
-			<Resource>RESOURCE_COW</Resource>
+			<Resource>RESOURCE_CATTLE</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_BYZANTIUM</Civilization>
@@ -366,7 +366,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_CARTHAGE</Civilization>
-			<Resource>RESOURCE_COW</Resource>
+			<Resource>RESOURCE_CATTLE</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_CARTHAGE</Civilization>
@@ -387,7 +387,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_CELTS</Civilization>
-			<Resource>RESOURCE_COW</Resource>
+			<Resource>RESOURCE_CATTLE</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_CELTS</Civilization>
@@ -408,7 +408,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_ETHIOPIA</Civilization>
-			<Resource>RESOURCE_COW</Resource>
+			<Resource>RESOURCE_CATTLE</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_ETHIOPIA</Civilization>
@@ -452,7 +452,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_MAYA</Civilization>
-			<Resource>RESOURCE_COW</Resource>
+			<Resource>RESOURCE_CATTLE</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_MAYA</Civilization>
@@ -473,7 +473,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_NETHERLANDS</Civilization>
-			<Resource>RESOURCE_COW</Resource>
+			<Resource>RESOURCE_CATTLE</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_NETHERLANDS</Civilization>
@@ -494,7 +494,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_SWEDEN</Civilization>
-			<Resource>RESOURCE_COW</Resource>
+			<Resource>RESOURCE_CATTLE</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_SWEDEN</Civilization>
@@ -891,6 +891,14 @@
 			<Region>ARCTIC_AMERICA</Region>
 			<Resource>RESOURCE_TRUFFLES</Resource>
 		</Row>
+		<Row>
+			<Region>ARCTIC_AMERICA</Region>
+			<Resource>RESOURCE_COCOA</Resource>
+		</Row>
+		<Row>
+			<Region>ARCTIC_AMERICA</Region>
+			<Resource>RESOURCE_COFFEE</Resource>
+		</Row>
 	</ResourceRegionExclude>
 	<!-- NORTH_AMERICA -->
 	<ResourceRegionExclude>
@@ -917,6 +925,10 @@
 		<Row>
 			<Region>NORTH_AMERICA</Region>
 			<Resource>RESOURCE_CITRUS</Resource>
+		</Row>
+		<Row>
+			<Region>NORTH_AMERICA</Region>
+			<Resource>RESOURCE_COCOA</Resource>
 		</Row>
 	</ResourceRegionExclude>
 	<!-- CENTRAL_AMERICA -->
@@ -952,6 +964,10 @@
 		<Row>
 			<Region>CENTRAL_AMERICA</Region>
 			<Resource>RESOURCE_TRUFFLES</Resource>
+		</Row>
+		<Row>
+			<Region>CENTRAL_AMERICA</Region>
+			<Resource>RESOURCE_COCOA</Resource>
 		</Row>
 	</ResourceRegionExclude>
 	<!-- SOUTH_AMERICA_WEST (Perou - Argentina)-->
@@ -1074,6 +1090,10 @@
 			<Region>ANTARCTIC_AMERICA</Region>
 			<Resource>RESOURCE_TRUFFLES</Resource>
 		</Row>
+		<Row>
+			<Region>ANTARCTIC_AMERICA</Region>
+			<Resource>RESOURCE_COCOA</Resource>
+		</Row>
 	</ResourceRegionExclude>
 	<!-- AUSTRALIA -->
 	<ResourceRegionExclude>
@@ -1172,6 +1192,12 @@
 			<Resource>RESOURCE_TRUFFLES</Resource>
 		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+		<Row>
+			<Region>SOUTH_ASIA</Region>
+			<Resource>RESOURCE_TEA</Resource>
+		</Row>
+	</ResourceRegionExclusive>
 	<!-- CENTRAL_ASIA -->
 	<ResourceRegionExclude>
 		<Row>
@@ -1207,6 +1233,13 @@
 			<Resource>RESOURCE_TRUFFLES</Resource>
 		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+		<Row>
+			<Region>CENTRAL_ASIA</Region>
+			<Resource>RESOURCE_TEA</Resource>
+		</Row>
+	</ResourceRegionExclusive>
+
 	<!-- EAST_ASIA -->
 	<ResourceRegionExclude>
 		<Row>
@@ -1230,6 +1263,12 @@
 			<Resource>RESOURCE_TRUFFLES</Resource>
 		</Row>
 	</ResourceRegionExclude>
+	<ResourceRegionExclusive>
+		<Row>
+			<Region>EAST_ASIA</Region>
+			<Resource>RESOURCE_TEA</Resource>
+		</Row>
+	</ResourceRegionExclusive>
 	<!-- NORTH_ASIA -->
 	<ResourceRegionExclude>
 		<Row>
@@ -1518,7 +1557,7 @@
 	<ResourceRegionExclude>
 		<Row>
 			<Region>NORTH_AFRICA</Region>
-			<Resource>RESOURCE_COW</Resource>
+			<Resource>RESOURCE_CATTLE</Resource>
 		</Row>
 		<Row>
 			<Region>NORTH_AFRICA</Region>

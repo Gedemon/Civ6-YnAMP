@@ -13,22 +13,22 @@
 -- Fill the initialization table
 -----------------------------------------------
 INSERT INTO CityStatesConfiguration
-	(		Name,			Category,		Ethnicity,	en_US_Name,		en_US_Adj,		en_US_Desc,					en_US_CapitalName 	)
-SELECT	'SUTAIO',			'MILITARISTIC',	'SOUTHAM',	'Cheyenne',		'Cheyenne',		'Sutaio city-state',		'Sutaio'		UNION ALL
-SELECT	'LAKOTA',			'CULTURAL',		'SOUTHAM',	'Sioux',		'Sioux',		'Lakota city-state',		'Lakota'		UNION ALL
-SELECT	'HARAPPA',			'RELIGIOUS',	'ASIAN',	'Harappa',		'Harappan',		'Harappa city-state',		'Harappa'		UNION ALL
-SELECT	'DAKAR',			'TRADE',		'AFRICAN',	'Senegal',		'Senegalese',	'Dakar city-state',			'Dakar'			UNION ALL
-SELECT	'REYKJAVIK',		'SCIENTIFIC',	'EURO',		'Iceland',		'Icelander',	'Reykjavik city-state',		'Reykjavik'		UNION ALL
-SELECT	'GARAMANTES',		'INDUSTRIAL',	'MEDIT',	'Garama',		'Berber',		'Garama city-state',		'Garama'		UNION ALL
-SELECT	'SAMARKAND',		'MILITARISTIC',	'ASIAN',	'Uzbekistan',	'Uzbek',		'Samarkand city-state',		'Samarkand'		UNION ALL
-SELECT	'TIKAL',			'SCIENTIFIC',	'SOUTHAM',	'Maya',			'Maya',			'Tikal city-state',			'Tikal'			UNION ALL
-SELECT	'CUZCO',			'RELIGIOUS',	'SOUTHAM',	'Inca',			'Inca',			'Cuzco city-state',			'Cuzco'			UNION ALL
-SELECT	'IFE',				'CULTURAL',		'AFRICAN',	'Nigeria',		'Nigerian',		'Ile Ife city-state',		'Ile Ife'		UNION ALL
-SELECT	'ULUNDI',			'MILITARISTIC',	'AFRICAN',	'Zulu',			'Zulu',			'Ulundi city-state',		'Ulundi'		UNION ALL
-SELECT	'MOGADISHU',		'INDUSTRIAL',	'AFRICAN',	'Somalia',		'Somalian',		'Mogadishu city-state',		'Mogadishu'		UNION ALL
-SELECT	'AKSUM',			'TRADE',		'AFRICAN',	'Ethiopia',		'Ethiopian',	'Aksum city-state',			'Aksum'			UNION ALL
-SELECT	'RABAT',			'TRADE',		'MEDIT',	'Morocco',		'Moroccan',		'Rabat city-state',			'Rabat'			UNION ALL
-SELECT	'END_OF_INSERT',	NULL,			NULL,		NULL,			NULL,			NULL,						NULL;
+	(		Name,			Category,		Ethnicity	)
+SELECT	'SUTAIO',			'MILITARISTIC',	'SOUTHAM'	UNION ALL
+SELECT	'LAKOTA',			'CULTURAL',		'SOUTHAM'	UNION ALL
+SELECT	'HARAPPA',			'RELIGIOUS',	'ASIAN'		UNION ALL
+SELECT	'DAKAR',			'TRADE',		'AFRICAN'	UNION ALL
+SELECT	'REYKJAVIK',		'SCIENTIFIC',	'EURO'		UNION ALL
+SELECT	'GARAMANTES',		'INDUSTRIAL',	'MEDIT'		UNION ALL
+SELECT	'SAMARKAND',		'MILITARISTIC',	'ASIAN'		UNION ALL
+SELECT	'TIKAL',			'SCIENTIFIC',	'SOUTHAM'	UNION ALL
+SELECT	'CUZCO',			'RELIGIOUS',	'SOUTHAM'	UNION ALL
+SELECT	'IFE',				'CULTURAL',		'AFRICAN'	UNION ALL
+SELECT	'ULUNDI',			'MILITARISTIC',	'AFRICAN'	UNION ALL
+SELECT	'MOGADISHU',		'INDUSTRIAL',	'AFRICAN'	UNION ALL
+SELECT	'AKSUM',			'TRADE',		'AFRICAN'	UNION ALL
+SELECT	'RABAT',			'TRADE',		'MEDIT'		UNION ALL
+SELECT	'END_OF_INSERT',	NULL,			NULL;	
 -----------------------------------------------
 
 -- Remove "END_OF_INSERT" entry 
@@ -52,8 +52,8 @@ INSERT OR REPLACE INTO TypeProperties (Type, Name, Value)
 	FROM CityStatesConfiguration;
 	
 -- <Civilizations>
-INSERT OR REPLACE INTO Civilizations (CivilizationType, Name, Description, Adjective, StartingCivilizationLevelType, RandomCityNameDepth)
-	SELECT	'CIVILIZATION_' || Name, 'LOC_CIVILIZATION_' || Name || '_NAME', 'LOC_CIVILIZATION_' || Name || '_DESCRIPTION', 'LOC_CIVILIZATION_' || Name || '_ADJECTIVE', 'CIVILIZATION_LEVEL_CITY_STATE', 1
+INSERT OR REPLACE INTO Civilizations (CivilizationType, Name, Description, Adjective, StartingCivilizationLevelType, RandomCityNameDepth, Ethnicity)
+	SELECT	'CIVILIZATION_' || Name, 'LOC_CIVILIZATION_' || Name || '_NAME', 'LOC_CIVILIZATION_' || Name || '_DESCRIPTION', 'LOC_CIVILIZATION_' || Name || '_ADJECTIVE', 'CIVILIZATION_LEVEL_CITY_STATE', 1, 'ETHNICITY_' || Ethnicity
 	FROM CityStatesConfiguration;
 	
 -- <CivilizationLeaders>

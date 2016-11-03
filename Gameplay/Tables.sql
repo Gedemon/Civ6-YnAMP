@@ -17,7 +17,12 @@ CREATE TABLE IF NOT EXISTS CityNameByEra
 -- Resources : Exclusion zones for resources	
 CREATE TABLE IF NOT EXISTS ResourceRegionExclude
 	(	Region TEXT,
-		Resource TEXT);		
+		Resource TEXT);
+		
+-- Resources : Exclusive zones for resources	
+CREATE TABLE IF NOT EXISTS ResourceRegionExclusive
+	(	Region TEXT,
+		Resource TEXT);	
 		
 -- Resources : Regions of Major Deposits
 CREATE TABLE IF NOT EXISTS ResourceRegionDeposit
@@ -96,9 +101,5 @@ DROP TABLE IF EXISTS CityStatesConfiguration;
 CREATE TABLE CityStatesConfiguration
 	(	Name TEXT,
 		Category TEXT,
-		Ethnicity TEXT,
-		en_US_Name TEXT,
-		en_US_Adj TEXT,
-		en_US_Desc TEXT,
-		en_US_CapitalName TEXT		
+		Ethnicity TEXT		
 	);

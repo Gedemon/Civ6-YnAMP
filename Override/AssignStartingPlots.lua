@@ -22,6 +22,8 @@ if mapName then
 end
 local getTSL = {}
 local isResourceExcludedXY = {}
+local isResourceExclusiveXY = {}
+local isResourceExclusive = {}
 -- get options
 local bCulturallyLinked = MapConfiguration.GetValue("CulturallyLinkedStart") == "PLACEMENT_ETHNIC";
 local bTSL = MapConfiguration.GetValue("CivilizationPlacement") == "PLACEMENT_TSL";
@@ -2253,14 +2255,15 @@ function buildExclusionList()
 		local region = RegionRow.Region
 		print ("  - Exclusion list for "..tostring(region))
 		if region then
-			local resTable = {}
-			--local query = "Region = '" .. region .. "'"
-			--for exclusionList in GameInfo["ResourceRegionExclude"](query) do
-			for exclusionList in GameInfo["ResourceRegionExclude"]() do
+			local resExclusionTable = {}
+			local resExclusiveTable = {}
+			
+			-- Find resources that can't be placed in that region
+			for exclusionList in GameInfo.ResourceRegionExclude() do
 				if exclusionList.Region == region then 
 					if exclusionList.Resource  then
 						if GameInfo.Resources[exclusionList.Resource] then
-							table.insert(resTable, GameInfo.Resources[exclusionList.Resource].Index)
+							table.insert(resExclusionTable, GameInfo.Resources[exclusionList.Resource].Index)
 						else
 							print ("  - WARNING : can't find "..tostring(exclusionList.Resource).." in Resources")
 						end
@@ -2269,15 +2272,49 @@ function buildExclusionList()
 					end
 				end
 			end
-			if #resTable > 1 then
+			
+			-- Find resource that can only be placed in specific regions
+			for exclusiveList in GameInfo.ResourceRegionExclusive() do
+				if exclusiveList.Region == region then 
+					if exclusiveList.Resource  then
+						if GameInfo.Resources[exclusiveList.Resource] then
+							local eResourceID = GameInfo.Resources[exclusiveList.Resource].Index
+							table.insert(resExclusiveTable, eResourceID)
+							isResourceExclusive[eResourceID] = true
+						else
+							print ("  - WARNING : can't find "..tostring(exclusiveList.Resource).." in Resources")
+						end
+					else
+						print ("  - WARNING : found nil Resource")
+					end
+				end
+			end
+			
+			-- fill the exclusion/exclusive table
+			if (#resExclusionTable > 0) or (#resExclusiveTable > 0) then
 				for x = RegionRow.X, RegionRow.X + RegionRow.Width do
 					for y = RegionRow.Y, RegionRow.Y + RegionRow.Height do
-						for i, resourceID in ipairs(resTable) do
+						for i, resourceID in ipairs(resExclusionTable) do
 							isResourceExcludedXY[x][y][resourceID] = true
+						end						
+						for i, resourceID in ipairs(resExclusiveTable) do
+							isResourceExclusiveXY[x][y][resourceID] = true
 						end
 					end
 				end
 			end
+			if (#resExclusionTable > 0) then
+				print("   - Exluded resources :")
+				for i, resourceID in ipairs(resExclusionTable) do
+					print("      "..tostring(GameInfo.Resources[resourceID].ResourceType))
+				end
+			end
+			if (#resExclusiveTable > 0) then
+				print("   - Exlusive resources :")
+				for i, resourceID in ipairs(resExclusiveTable) do
+					print("      "..tostring(GameInfo.Resources[resourceID].ResourceType))
+				end	
+			end			
 		else
 			print ("  - WARNING : found nil region")
 		end
@@ -2330,8 +2367,10 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	if bResourceExclusion then
 		for x = 0, g_iW - 1, 1 do
 			isResourceExcludedXY[x] = {}
+			isResourceExclusiveXY[x] = {}
 			for y = 0, g_iH - 1, 1 do
 				isResourceExcludedXY[x][y] = {}
+				isResourceExclusiveXY[x][y] = {}
 			end
 		end
 	end
@@ -2388,6 +2427,8 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 		--print(" Adding Civ6 resource : Niter (TypeID = " .. tostring(resourceType)..")")
 		--PlaceStrategicResources(resourceType)
 	end
+	
+	ResourcesStatistics(g_iW, g_iH)
 	
 	print("Creating start plot database.");
 	
@@ -2572,7 +2613,7 @@ end
 -- Resources
 ------------------------------------------------------------------------------
 -- Add a strategic resource
-function PlaceStrategicResources(resourceType)
+function PlaceStrategicResources(eResourceType)
 	
 	ResourceBuilder.SetResourceType(pPlot, eResourceType, 1)
 end
@@ -2580,9 +2621,19 @@ end
 -- Check for Resource placement rules
 function YnAEMP_CanHaveResource(pPlot, eResourceType)
 	if not bResourceExclusion then
+		-- exlusion is not activated, just check the normal placement rule
 		return ResourceBuilder.CanHaveResource(pPlot, eResourceType)
 	end	
-	return ResourceBuilder.CanHaveResource(pPlot, eResourceType) and not isResourceExcludedXY[pPlot:GetX()][pPlot:GetY()][eResourceType]
+	if isResourceExclusive[eResourceType] and not isResourceExclusiveXY[pPlot:GetX()][pPlot:GetY()][eResourceType] then
+		-- resource is exclusive to specific regions, and this plot is not in one of them
+		return false
+	end
+	if isResourceExcludedXY[pPlot:GetX()][pPlot:GetY()][eResourceType] then
+		-- this plot is in a region from which this resource is excluded
+		return false
+	end
+	-- Resource is not excluded from this plot, or this plot is allowed for a region-exclusive resources, now check normal placement rules
+	return ResourceBuilder.CanHaveResource(pPlot, eResourceType)
 end
 
 function AddDeposits()
@@ -2636,6 +2687,43 @@ function AddDeposits()
 	print("-------------------------------")
 end
 
+function ResourcesStatistics(g_iW, g_iH)
+	print("------------------------------------")
+	print("-- Resources Placement Statistics --")
+	print("------------------------------------")
+	local resTable = {}
+	for resRow in GameInfo.Resources() do
+		resTable[resRow.Index] = 0
+	end
+	
+	local totalplots = g_iW * g_iH
+	print("-- Total plots on map = " .. tostring(totalplots))
+	print("------------------------------------")
+	for i = 0, (totalplots) - 1, 1 do
+		plot = Map.GetPlotByIndex(i)
+		local eResourceType = plot:GetResourceType()
+		if (eResourceType ~= -1) then
+			if resTable[eResourceType] then
+				resTable[eResourceType] = resTable[eResourceType] + 1
+			else
+				print("WARNING - resTable[eResourceType] is nil for eResourceType = " .. tostring(eResourceType))
+			end
+		end
+	end	
+
+	for resRow in GameInfo.Resources() do
+		local numRes = resTable[resRow.Index]
+		local placedPercent = Round(numRes / totalplots * 10000) / 100
+		if placedPercent = 0 then placedPercent = "0.00" end
+		local ratio = Round(placedPercent * 100 / resRow.Frequency)
+		if ratio = 0 then ratio = "0.00" end
+		if resRow.Frequency > 0 then
+			print("Resource = " .. tostring(resRow.ResourceType).."		placed = " .. tostring(numRes).."	(" .. tostring(placedPercent).."%)	frequency = " .. tostring(resRow.Frequency).."		ratio = " .. tostring(ratio))
+		end
+	end
+
+	print("------------------------------------")
+end
 
 -----------------
 -- ENUM 
