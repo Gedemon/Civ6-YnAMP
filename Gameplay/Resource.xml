@@ -896,6 +896,10 @@
 	</ResourceRegionExclusive>
 	<!-- NORTH_AMERICA -->
 	<ResourceRegionExclude>
+		<Row>
+			<Region>NORTH_AMERICA</Region>
+			<Resource>RESOURCE_RICE</Resource>
+		</Row>
 	</ResourceRegionExclude>
 	<ResourceRegionExclusive>
 		<Row>
@@ -1088,16 +1092,28 @@
 	</ResourceRegionExclusive>
 	<!-- WEST_EUROPA -->
 	<ResourceRegionExclude>
+		<Row>
+			<Region>WEST_EUROPA</Region>
+			<Resource>RESOURCE_RICE</Resource>
+		</Row>
 	</ResourceRegionExclude>
 	<ResourceRegionExclusive>
 	</ResourceRegionExclusive>
 	<!-- NORTH_EUROPA -->
 	<ResourceRegionExclude>
+		<Row>
+			<Region>NORTH_EUROPA</Region>
+			<Resource>RESOURCE_RICE</Resource>
+		</Row>
 	</ResourceRegionExclude>
 	<ResourceRegionExclusive>
 	</ResourceRegionExclusive>
 	<!-- EAST_EUROPA -->
 	<ResourceRegionExclude>
+		<Row>
+			<Region>EAST_EUROPA</Region>
+			<Resource>RESOURCE_RICE</Resource>
+		</Row>
 	</ResourceRegionExclude>
 	<ResourceRegionExclusive>
 	</ResourceRegionExclusive>
