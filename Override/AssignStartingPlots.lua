@@ -2414,7 +2414,7 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer before TerrainBuilder.AnalyzeChokepoints() = "..tostring(currentTimer).." seconds")
 	
-	--TerrainBuilder.AnalyzeChokepoints();
+	TerrainBuilder.AnalyzeChokepoints();
 	
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer before TerrainBuilder.StampContinents() = "..tostring(currentTimer).." seconds")

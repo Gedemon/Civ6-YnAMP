@@ -69,8 +69,8 @@
         </Replace>
         <Replace>
             <Civilization>CIVILIZATION_JAPAN</Civilization>
-            <X>94</X>
-            <Y>57</Y>
+            <X>96</X>
+            <Y>58</Y>
         </Replace>
        <Replace>
             <Civilization>CIVILIZATION_KONGO</Civilization>
