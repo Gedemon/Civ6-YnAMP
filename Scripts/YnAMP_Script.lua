@@ -36,7 +36,16 @@ function InitializeCityFunctions( ownerPlayerID, cityID)
 
 	--Events.SerialEventGameDataDirty()
 end
-Events.CityAddedToMap.Add( InitializeCityFunctions )
+--Events.CityAddedToMap.Add( InitializeCityFunctions )
+
+function ChangeCityName( ownerPlayerID, cityID)
+	local pCity = CityManager.GetCity(ownerPlayerID, cityID)
+	if pCity then -- initialize once
+		pCity:SetName("test") -- update on reloading... and sometime in game, try to find some events ?
+	end
+
+end
+--Events.CityAddedToMap.Add( ChangeCityName )
 
 
 ----------------------------------------------------------------------------------------

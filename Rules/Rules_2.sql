@@ -24,6 +24,9 @@ UPDATE Terrains SET MovementCost = 2 WHERE TerrainType="TERRAIN_COAST";
 UPDATE GlobalParameters SET Value = Value * 2 WHERE Name ='MOVEMENT_WHILE_EMBARKED_BASE';
 UPDATE Units SET BaseMoves = BaseMoves * 2 WHERE Domain = 'DOMAIN_SEA';
 
-
+-- Cliffs of Dover
+INSERT INTO Feature_YieldChanges (FeatureType, YieldType, YieldChange) VALUES ('FEATURE_CLIFFS_DOVER', 'YIELD_FOOD', '2');
+UPDATE Feature_YieldChanges SET YieldChange='1' WHERE FeatureType ='FEATURE_CLIFFS_DOVER' AND YieldType='YIELD_CULTURE';
+UPDATE Feature_YieldChanges SET YieldChange='1' WHERE FeatureType ='FEATURE_CLIFFS_DOVER' AND YieldType='YIELD_GOLD';
 
 
