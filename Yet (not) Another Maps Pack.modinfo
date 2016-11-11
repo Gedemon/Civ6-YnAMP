@@ -28,6 +28,7 @@
 				<File>Maps/GiantEarth.lua</File>
 				<File>Maps/GreatestEarthMap.lua</File>
 				<File>Maps/PlayEuropeAgain.lua</File>
+				<File>Maps/LudicrousEarth.lua</File>
 				<File>Override/AssignStartingPlots.lua</File>
 				<File>Scripts/YnAMP_Utils.lua</File>
 			</Items>
@@ -178,6 +179,7 @@
 		<File>Maps/GiantEarth.lua</File>
 		<File>Maps/GreatestEarthMap.lua</File>
 		<File>Maps/PlayEuropeAgain.lua</File>
+		<File>Maps/LudicrousEarth.lua</File>
 		<File>Override/AssignStartingPlots.lua</File>
 		<File>Rules/Rules_1.sql</File>
 		<File>Rules/Rules_2.sql</File>

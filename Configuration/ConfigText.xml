@@ -87,13 +87,25 @@
       <Text>Random</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
-      <Text>Don not try to regroup Civilizations by Ethnicity</Text>
+      <Text>Do not try to regroup Civilizations by Ethnicity</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_NAME" Language="en_US">
       <Text>Culturally</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_DESCRIPTION" Language="en_US">
       <Text>Try to regroup Civilizations by Ethnicity on the Starting Positions</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_NAME" Language="en_US">
+      <Text>Continents Placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_DESCRIPTION" Language="en_US">
+      <Text>How Continents name are placed on the Map</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_NAME" Language="en_US">
+      <Text>Rivers Placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERSS_PLACEMENT_DESCRIPTION" Language="en_US">
+      <Text>How Rivers) are placed on the Map</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAPSIZE_ENORMOUS_NAME" Language="en_US">
@@ -146,10 +158,10 @@
       <Text>Deactivated</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_NAME" Language="en_US">
-      <Text>Civilizations Resources</Text>
+      <Text>Civilization Resources</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" Language="en_US">
-      <Text>Place some specific Resources around specific Civilizations</Text>
+      <Text>Place some specific Resources around specific Civilizations starting position</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_NAME" Language="en_US">
@@ -176,6 +188,32 @@
     </Replace>
     <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_DESCRIPTION" Language="en_US">
       <Text>Civilizations are placed on Real World location when available</Text>
+    </Replace>	
+	
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_NAME" Language="en_US">
+      <Text>Map Generator</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
+      <Text>Continents are named using the standard Civ6 Map Generator (random name)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_NAME" Language="en_US">
+      <Text>Import</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_DESCRIPTION" Language="en_US">
+      <Text>Continents names are imported from the original map data</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_NAME" Language="en_US">
+      <Text>Map Generator</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
+      <Text>Rivers are placed using the standard Civ6 Map Generator</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_NAME" Language="en_US">
+      <Text>Import</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_DESCRIPTION" Language="en_US">
+      <Text>Rivers are imported from the original map data</Text>
     </Replace>
 	
   </LocalizedText>

@@ -32,6 +32,8 @@ local bTSL = MapConfiguration.GetValue("CivilizationPlacement") == "PLACEMENT_TS
 local bResourceExclusion = MapConfiguration.GetValue("ResourcesExclusion") == "PLACEMENT_EXCLUDE";
 local bRequestedResources = MapConfiguration.GetValue("RequestedResources") == "PLACEMENT_REQUEST";
 local bRealDeposits = MapConfiguration.GetValue("RealDeposits") == "PLACEMENT_DEPOSIT";
+local iIceNorth = MapConfiguration.GetValue("IceNorth")
+local iIceSouth = MapConfiguration.GetValue("IceSouth")
 
 print ("ynAMP Options: Culturally Linked = " .. tostring(bCulturallyLinked) ..", TSL = " .. tostring(bTSL) ..", Exclusion Zones = " .. tostring(bResourceExclusion) ..", Requested Resources = " .. tostring(bRequestedResources)..", Real Deposits = " .. tostring(bRealDeposits)) 
 
@@ -993,7 +995,7 @@ function AssignStartingPlots:__AddFood(plot)
 		if (adjacentPlot ~= nil) then
 			aShuffledBonus =  GetShuffledCopyOfTable(aBonus);
 			for i, bonus in ipairs(aShuffledBonus) do
-				if(YnAEMP_CanHaveResource(adjacentPlot, bonus)) then
+				if(YnAMP_CanHaveResource(adjacentPlot, bonus)) then
 					--print("X: ", adjacentPlot:GetX(), " Y: ", adjacentPlot:GetY(), " Resource #: ", bonus);
 					ResourceBuilder.SetResourceType(adjacentPlot, bonus, 1);
 					return;
@@ -1041,7 +1043,7 @@ function AssignStartingPlots:__AddProduction(plot)
 		if (adjacentPlot ~= nil) then
 			aShuffledBonus =  GetShuffledCopyOfTable(aBonus);
 			for i, bonus in ipairs(aShuffledBonus) do
-				if(YnAEMP_CanHaveResource(adjacentPlot, bonus)) then
+				if(YnAMP_CanHaveResource(adjacentPlot, bonus)) then
 					--print("X: ", adjacentPlot:GetX(), " Y: ", adjacentPlot:GetY(), " Resource #: ", bonus);
 					ResourceBuilder.SetResourceType(adjacentPlot, bonus, 1);
 					return;
@@ -2090,7 +2092,7 @@ function AssignStartingPlots:__AddStrategic(eResourceType, plot)
 		for dy = -3,3 do
 			local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, 3);
 			if(otherPlot) then
-				if(YnAEMP_CanHaveResource(otherPlot, eResourceType) and otherPlot:GetIndex() ~= plot:GetIndex()) then
+				if(YnAMP_CanHaveResource(otherPlot, eResourceType) and otherPlot:GetIndex() ~= plot:GetIndex()) then
 					ResourceBuilder.SetResourceType(otherPlot, eResourceType, 1);
 					return;
 				end
@@ -2141,7 +2143,7 @@ function AssignStartingPlots:__AddLuxury(plot)
 			if(otherPlot) then
 				eAddLux =  GetShuffledCopyOfTable(eAddLux);
 				for i, resource in ipairs(eAddLux) do
-					if(YnAEMP_CanHaveResource(otherPlot, resource) and otherPlot:GetIndex() ~= plot:GetIndex()) then
+					if(YnAMP_CanHaveResource(otherPlot, resource) and otherPlot:GetIndex() ~= plot:GetIndex()) then
 						ResourceBuilder.SetResourceType(otherPlot, resource, 1);
 						--print("Yeah Lux");
 						return true;
@@ -2186,7 +2188,7 @@ function AssignStartingPlots:__AddBonus(plot)
 			for dy = -2, 2 do
 				local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, 2);
 				if(otherPlot) then
-					if(YnAEMP_CanHaveResource(otherPlot, resource) and otherPlot:GetIndex() ~= plot:GetIndex()) then
+					if(YnAMP_CanHaveResource(otherPlot, resource) and otherPlot:GetIndex() ~= plot:GetIndex()) then
 						ResourceBuilder.SetResourceType(otherPlot, resource, 1);
 						--print("Yeah Bonus");
 						return true;
@@ -2285,11 +2287,15 @@ function buildExclusionList()
 			if (#resExclusionTable > 0) or (#resExclusiveTable > 0) then
 				for x = RegionRow.X, RegionRow.X + RegionRow.Width do
 					for y = RegionRow.Y, RegionRow.Y + RegionRow.Height do
-						for i, resourceID in ipairs(resExclusionTable) do
-							isResourceExcludedXY[x][y][resourceID] = true
-						end						
-						for i, resourceID in ipairs(resExclusiveTable) do
-							isResourceExclusiveXY[x][y][resourceID] = true
+						if (isResourceExcludedXY[x] and isResourceExcludedXY[x][y]) then
+							for i, resourceID in ipairs(resExclusionTable) do
+								isResourceExcludedXY[x][y][resourceID] = true
+							end
+							for i, resourceID in ipairs(resExclusiveTable) do
+								isResourceExclusiveXY[x][y][resourceID] = true
+							end
+						else
+							print ("  - WARNING : Region out of bound ( x = " ..tostring(x)..", y = ".. tostring(y).." )")
 						end
 					end
 				end
@@ -2352,13 +2358,15 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	--local pPlot
 	--g_iFlags = TerrainBuilder.GetFractalFlags();
 	
-	print("Importing Map Data...")
+	local bIsCiv5Map = (#MapToConvert[0][0][6] == 2) -- 6th entry is resource for civ5 data ( = 2 : type and number), cliffs positions for civ6 data ( = 3 : all possible positions on a hexagon side)
+	
+	print("Importing Map Data (Civ5 = "..tostring(bIsCiv5Map)..")")
 
 	local currentTimer = 0
 	currentTimer = os.clock() - g_startTimer
 	print("Current timer at beginning of Map creation (Map script is loaded) = "..tostring(currentTimer).." seconds")
 	
-	-- Create the resource exclusion table now, in case we call YnAEMP_CanHaveResource before filling it, at least it wont crash
+	-- Create the resource exclusion table now, in case we call YnAMP_CanHaveResource before filling it, at least it wont crash
 	if bResourceExclusion then
 		for x = 0, g_iW - 1, 1 do
 			isResourceExcludedXY[x] = {}
@@ -2369,11 +2377,32 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 			end
 		end
 	end
+		
+	local featuresPlacement = MapConfiguration.GetValue("FeaturesPlacement")
+	print("Features placement = "..tostring(featuresPlacement))	
+	local bDoFeatures = featuresPlacement == "PLACEMENT_IMPORT"
 	
+	local riversPlacement = MapConfiguration.GetValue("RiversPlacement")
+	print("Rivers Placement = "..tostring(riversPlacement))	
+	local bDoRivers = riversPlacement == "PLACEMENT_IMPORT"
+	
+	local resourcePlacement = MapConfiguration.GetValue("ResourcesPlacement")
+	print("Resource placement = "..tostring(resourcePlacement))	
+	local bDoResources = resourcePlacement == "PLACEMENT_IMPORT"
+	
+	local continentsPlacement = MapConfiguration.GetValue("ContinentsPlacement")
+	print("Continents naming = "..tostring(continentsPlacement))	
+	local bDoContinents = continentsPlacement == "PLACEMENT_IMPORT"
+
 	-- We'll do Rivers after NW placement, as they can create incompatibilities and Resources come after Rivers (in case Rivers are generated instead of imported)
-	local bDoTerrains, bDoRivers, bDoFeatures, bDoResources, bDoCliffs = true, false, true, false, true
-	ImportMap(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains, bDoRivers, bDoFeatures, bDoResources, bDoCliffs)
-	
+	-- First pass: create terrains and place cliffs... (	bDoTerrains, 	bDoRivers, 	bDoFeatures, 	bDoResources, 	bDoCliffs, 	bDoContinents)
+	if bIsCiv5Map then
+		-- 														(	bDoTerrains, 	bDoRivers, 	bDoFeatures, 	bDoResources, 	bDoCliffs, 	bDoContinents)
+		ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, 	true, 			false, 		false, 			false, 			true, 		false)
+	else
+		-- 									(	bDoTerrains, 	bDoRivers, 	bDoFeatures, 	bDoResources, 	bDoContinents)
+		ImportCiv6Map(MapToConvert, g_iW, g_iH, true, 			false, 		false, 			false, 			false)	
+	end
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")
 
@@ -2383,12 +2412,12 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	print("After Adding Hills: ", biggest_area:GetPlotCount());
 	
 	currentTimer = os.clock() - g_startTimer
-	print("Intermediate timer = "..tostring(currentTimer).." seconds")
+	print("Intermediate timer = "..tostring(currentTimer).." seconds")		
 	
 	-- River generation is affected by plot types, originating from highlands and preferring to traverse lowlands.
-	--AddRivers();
-	
-	--AddFeatures();	
+	if not bDoRivers then
+		AddRivers()
+	end
 
 	local args = {
 		numberToPlace = GameInfo.Maps[Map.GetMapSize()].NumNaturalWonders,
@@ -2398,13 +2427,20 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")
-	
-	-- now we import rivers and resources
-	local resourcePlacement = MapConfiguration.GetValue("ResourcesPlacement")
-	print("Resource placement = "..tostring(resourcePlacement))	
-	bDoResources = resourcePlacement == "PLACEMENT_IMPORT"
-	bDoTerrains, bDoRivers, bDoFeatures, bDoCliffs = false, true, false, false
-	ImportMap(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains, bDoRivers, bDoFeatures, bDoResources, bDoCliffs)
+		
+	-- Second pass : importing options...	
+	if bIsCiv5Map then
+		-- 														(	bDoTerrains, 	bDoRivers, 	bDoFeatures, 	bDoResources, bDoCliffs, 	bDoContinents)
+		ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, 	false, 			bDoRivers, 	bDoFeatures, 	bDoResources, false, 		bDoContinents)
+	else
+		-- 										(	bDoTerrains, 	bDoRivers, 	bDoFeatures, bDoResources, bDoContinents)
+		ImportCiv6Map(MapToConvert, g_iW, g_iH, 	false, 			bDoRivers, 	bDoFeatures, bDoResources, bDoContinents)	
+	end
+
+	-- Now that we are certain that rivers were placed we can add features if they were not imported
+	if not bDoFeatures then
+		AddFeatures()
+	end
 
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer before AreaBuilder.Recalculate() = "..tostring(currentTimer).." seconds")
@@ -2416,10 +2452,11 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	
 	TerrainBuilder.AnalyzeChokepoints();
 	
-	currentTimer = os.clock() - g_startTimer
-	print("Intermediate timer before TerrainBuilder.StampContinents() = "..tostring(currentTimer).." seconds")
-	
-	TerrainBuilder.StampContinents();
+	if not bDoContinents then
+		currentTimer = os.clock() - g_startTimer
+		print("Intermediate timer before TerrainBuilder.StampContinents() = "..tostring(currentTimer).." seconds")	
+		TerrainBuilder.StampContinents();
+	end
 	
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")
@@ -2427,7 +2464,7 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	if bRealDeposits then
 		AddDeposits()
 		-- to do : how to balance with normal placement ?
-		-- Deposits should be mostly strategic, so call AddDeposit after ResourceGenerator.Create and remove previous resources ?
+		-- Deposits should be mostly strategic, so call AddDeposit after ResourceGenerator.Create and remove a number of previous resources ?
 	end
 	
 	if not bDoResources then
@@ -2496,7 +2533,9 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 		for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
 			local player = Players[iPlayer]
 			local plot = player:GetStartingPlot(plot)
-			AssignStartingPlots:__AddBonusFoodProduction(plot)
+			if plot then
+				AssignStartingPlots:__AddBonusFoodProduction(plot)
+			end
 		end		
 		
 	end
@@ -2654,7 +2693,8 @@ function PlaceRealNaturalWonders(NaturalWonders)
 end
 
 function AddFeatures()
-	print("Adding Features");
+	print("---------------")
+	print("Adding Features")
 
 	-- Get Rainfall setting input by user.
 	local rainfall = MapConfiguration.GetValue("rainfall");
@@ -2662,7 +2702,23 @@ function AddFeatures()
 		rainfall = 1 + TerrainBuilder.GetRandomNumber(3, "Random Rainfall - Lua");
 	end
 	
-	local args = {rainfall = rainfall}
+	local iEquatorAdjustment = MapConfiguration.GetValue("EquatorAdjustment") or 0
+	print("Equator Adjustment = "..tostring(iEquatorAdjustment))
+	
+	local iJunglePercent = MapConfiguration.GetValue("JunglePercent") or 12
+	print("Jungle Percent = "..tostring(iJunglePercent))
+	
+	local iForestPercent = MapConfiguration.GetValue("ForestPercent") or 18
+	print("Forest Percent = "..tostring(iForestPercent)) 
+	
+	local iMarshPercent = MapConfiguration.GetValue("MarshPercent") or 3
+	print("Marsh Percent = "..tostring(iMarshPercent)) 
+	
+	local iOasisPercent = MapConfiguration.GetValue("OasisPercent") or 1
+	print("Oasis Percent = "..tostring(iOasisPercent)) 
+
+	
+	local args = {rainfall = rainfall, iEquatorAdjustment = iEquatorAdjustment, iJunglePercent = iJunglePercent, iForestPercent = iForestPercent, iMarshPercent = iMarshPercent, iOasisPercent = iOasisPercent }
 	local featuregen = FeatureGenerator.Create(args);
 
 	featuregen:AddFeatures();
@@ -2678,7 +2734,7 @@ function PlaceStrategicResources(eResourceType)
 end
 
 -- Check for Resource placement rules
-function YnAEMP_CanHaveResource(pPlot, eResourceType)
+function YnAMP_CanHaveResource(pPlot, eResourceType)
 	
 	if not bResourceExclusion then
 		-- exlusion is not activated, just check the normal placement rule
@@ -2785,7 +2841,7 @@ function getPlotsInAreaForResource(iX, iWidth, iY, iHeight, eResourceType)
 			if pPlot then
 				plotCount = plotCount + 1
 				-- placeResourceInRegion() override resources exclusions,
-				-- if we don't want that ResourceBuilder.CanHaveResource() could be replaced by YnAEMP_CanHaveResource()
+				-- if we don't want that ResourceBuilder.CanHaveResource() could be replaced by YnAMP_CanHaveResource()
 				-- but it will work only if we call placeResourceInRegion() after buildExclusionList() 
 				if ResourceBuilder.CanHaveResource(pPlot, eResourceType) then
 					table.insert ( plotTable, pPlot )
@@ -3111,8 +3167,30 @@ end
 	end
 --]]
 
-function ImportMap(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains, bDoRivers, bDoFeatures, bDoResources, bDoCliffs)
-	print("Importing Map ( Terrain = "..tostring(bDoTerrains)..", Rivers = "..tostring(bDoRivers)..", Features = "..tostring(bDoFeatures)..", Resources = "..tostring(bDoResources)..", Cliffs = "..tostring(bDoCliffs).." )")
+-- Code to export a civ6 complete map
+--[[
+	local iPlotCount = Map.GetPlotCount();
+	for iPlotLoop = 0, iPlotCount-1, 1 do
+		local bData = false
+		local plot = Map.GetPlotByIndex(iPlotLoop)
+		local NEOfCliff = 0
+		local WOfCliff = 0
+		local NWOfCliff = 0
+		if plot:IsNEOfCliff() then NEOfCliff = 1 end 
+		if plot:IsWOfCliff() then WOfCliff = 1 end 
+		if plot:IsNWOfCliff() then NWOfCliff = 1 end 
+		local NEOfRiver = 0
+		local WOfRiver = 0
+		local NWOfRiver = 0
+		if plot:IsNEOfRiver() then NEOfRiver = 1 end -- GetRiverSWFlowDirection()
+		if plot:IsWOfRiver() then WOfRiver = 1 end -- GetRiverEFlowDirection()
+		if plot:IsNWOfRiver() then NWOfRiver = 1 end -- GetRiverSEFlowDirection()
+		print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..plot:GetTerrainType()..","..plot:GetFeatureType()..","..plot:GetContinentType()..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{"..plot:GetResourceType(-1)..","..tostring(1).."},{"..NEOfCliff..","..WOfCliff..","..NWOfCliff.."}}")
+	end
+--]]
+
+function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains, bDoRivers, bDoFeatures, bDoResources, bDoCliffs, bDoContinents)
+	print("Importing Civ5 Map ( Terrain = "..tostring(bDoTerrains)..", Rivers = "..tostring(bDoRivers)..", Features = "..tostring(bDoFeatures)..", Resources = "..tostring(bDoResources)..", Cliffs = "..tostring(bDoCliffs)..", Continents = "..tostring(bDoContinents)..")")
 	local count = 0
 	
 	-- Civ5 ENUM
@@ -3128,9 +3206,7 @@ function ImportMap(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains, bDo
 	FeaturesCiv5toCiv6[3]  = g_FEATURE_OASIS
 	FeaturesCiv5toCiv6[4]  = g_FEATURE_FLOODPLAINS
 	FeaturesCiv5toCiv6[5]  = g_FEATURE_FOREST
-	-- Natural wonders may require a special coding
-	--FeaturesCiv5toCiv6[10] = g_FEATURE_BARRIER_REEF
-	--FeaturesCiv5toCiv6[23] = g_FEATURE_KILIMANJARO
+	-- Natural wonders require a special coding
 	
 	local ResourceCiv5toCiv6 = {}
 	for i = 0, 41 do ResourceCiv5toCiv6[i] = -1 end
@@ -3170,6 +3246,14 @@ function ImportMap(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains, bDo
 	ResourceCiv5toCiv6[13]= 32 -- WHALES
 	ResourceCiv5toCiv6[6]= 9 -- WHEAT
 	ResourceCiv5toCiv6[26]= 33 -- WINE
+	
+	local ContinentsCiv5toCiv6 = {}
+	for i = 0, 4 do ContinentsCiv5toCiv6[i] = 0 end
+	ContinentsCiv5toCiv6[0]  = -1
+	ContinentsCiv5toCiv6[1]  = GameInfo.Continents["CONTINENT_AMERICA"].Index
+	ContinentsCiv5toCiv6[2]  = GameInfo.Continents["CONTINENT_ASIA"].Index
+	ContinentsCiv5toCiv6[3]  = GameInfo.Continents["CONTINENT_AFRICA"].Index
+	ContinentsCiv5toCiv6[4]  = GameInfo.Continents["CONTINENT_EUROPE"].Index
 	
 	bOutput = false
 	for i = 0, (g_iW * g_iH) - 1, 1 do
@@ -3237,12 +3321,110 @@ function ImportMap(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains, bDo
 			end
 		end
 		
+		-- Set Continent
+		if bDoContinents then
+			if civ5ContinentType ~= 0 and ContinentsCiv5toCiv6[civ5ContinentType] ~= -1 then		
+				if bOutput then print(" - Set Continent Type = "..tostring(GameInfo.Continents[ContinentsCiv5toCiv6[civ5ContinentType]].ContinentType)) end
+				TerrainBuilder.SetContinentType(plot, ContinentsCiv5toCiv6[civ5ContinentType])
+			end
+		end
+		
 		-- Set Resources
 		if bDoResources and not plot:IsNaturalWonder() then
 			if resource[1] ~= -1 and ResourceCiv5toCiv6[resource[1]] ~= -1 then		
 				if bOutput then print(" - Set Resource Type = "..tostring(GameInfo.Resources[ResourceCiv5toCiv6[resource[1]]].ResourceType)) end
 				--ResourceBuilder.SetResourceType(plot, ResourceCiv5toCiv6[resource[1]], resource[2]) -- maybe an option to import number of resources on one plot even if civ6 use 1 ?
 				ResourceBuilder.SetResourceType(plot, ResourceCiv5toCiv6[resource[1]], 1)
+			end
+		end
+		
+		-- Set Cliffs
+		if bDoCliffs and Cliffs then
+			if Cliffs[1] == 1 then -- IsNEOfCliff
+				TerrainBuilder.SetNEOfCliff(plot, true)
+				if bOutput then print(" - Set is NE of Cliff") end
+			end
+			if Cliffs[2] == 1 then -- IsWOfCliff
+				TerrainBuilder.SetWOfCliff(plot, true)
+				if bOutput then print(" - Set is W of Cliff") end
+			end
+			if Cliffs[3] == 1 then -- IsNWOfCliff
+				TerrainBuilder.SetNWOfCliff(plot, true)
+				if bOutput then print(" - Set is NW of Cliff") end
+			end	
+		end
+		
+	end	
+	
+	print("Placed terrain on "..tostring(count) .. " tiles")
+end
+
+
+function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bDoRivers, bDoFeatures, bDoResources, bDoContinents)
+	print("Importing Civ6 Map ( Terrain = "..tostring(bDoTerrains)..", Rivers = "..tostring(bDoRivers)..", Features = "..tostring(bDoFeatures)..", Resources = "..tostring(bDoResources)..", Continents = "..tostring(bDoContinents)..")")
+	local count = 0
+		
+	bOutput = false
+	for i = 0, (g_iW * g_iH) - 1, 1 do
+		plot = Map.GetPlotByIndex(i)
+		if bOutput then
+			print("----------")
+			print("Convert plot at "..plot:GetX()..","..plot:GetY())
+		end
+		-- Map Data
+		-- MapToConvert[x][y] = {civ6TerrainType, civ6FeatureType, civ6ContinentType, {{IsNEOfRiver, flow}, {IsWOfRiver, flow}, {IsNWOfRiver, flow}}, {Civ6ResourceType, num} }
+		local civ6TerrainType = MapToConvert[plot:GetX()][plot:GetY()][1]
+		local civ6FeatureType = MapToConvert[plot:GetX()][plot:GetY()][2]
+		local civ6ContinentType = MapToConvert[plot:GetX()][plot:GetY()][3]
+		local Rivers = MapToConvert[plot:GetX()][plot:GetY()][4] -- = {{IsNEOfRiver, flow}, {IsWOfRiver, flow}, {IsNWOfRiver, flow}}
+		local resource = MapToConvert[plot:GetX()][plot:GetY()][5] -- = {Civ6ResourceType, num}
+		local Cliffs =  MapToConvert[plot:GetX()][plot:GetY()][6] -- {IsNEOfCliff,IsWOfCliff,IsNWOfCliff}
+		
+		-- Set terrain type
+		if bDoTerrains then
+			if bOutput then print(" - Set Terrain Type = "..tostring(GameInfo.Terrains[civ6TerrainType].TerrainType)) end
+			count = count + 1
+			TerrainBuilder.SetTerrainType(plot, civ6TerrainType)
+		end
+		
+		-- Set Rivers
+		if bDoRivers then
+			if Rivers[1][1] == 1 then -- IsNEOfRiver
+				TerrainBuilder.SetNEOfRiver(plot, true, Rivers[1][2])
+				if bOutput then print(" - Set is NE of River, flow = "..tostring(Rivers[1][2])) end
+			end
+			if Rivers[2][1] == 1 then -- IsWOfRiver
+				TerrainBuilder.SetWOfRiver(plot, true, Rivers[2][2])
+				if bOutput then print(" - Set is W of River, flow = "..tostring(Rivers[2][2])) end
+			end
+			if Rivers[3][1] == 1 then -- IsNWOfRiver
+				TerrainBuilder.SetNWOfRiver(plot, true, Rivers[3][2])
+				if bOutput then print(" - Set is NW of River, flow = "..tostring(Rivers[3][2])) end
+			end
+		end
+		
+		-- Set Features
+		if bDoFeatures then
+			if civ6FeatureType ~= g_FEATURE_NONE then		
+				if bOutput then print(" - Set Feature Type = "..tostring(GameInfo.Features[civ6FeatureType].FeatureType)) end
+				TerrainBuilder.SetFeatureType(plot, civ6FeatureType)
+			end
+		end
+		
+		-- Set Continent
+		if bDoContinents then
+			if civ6ContinentType ~= -1 then		
+				if bOutput then print(" - Set Continent Type = "..tostring(GameInfo.Continents[civ6ContinentType].ContinentType)) end
+				TerrainBuilder.SetContinentType(plot, ContinentsCiv5toCiv6[civ5ContinentType])
+			end
+		end
+		
+		-- Set Resources
+		if bDoResources and not plot:IsNaturalWonder() then
+			if resource[1] ~= -1 then		
+				if bOutput then print(" - Set Resource Type = "..tostring(GameInfo.Resources[resource[1]].ResourceType)) end
+				--ResourceBuilder.SetResourceType(plot, ResourceCiv5toCiv6[resource[1]], resource[2]) -- maybe an option to import number of resources on one plot even if civ6 use 1 ?
+				ResourceBuilder.SetResourceType(plot, resource[1], 1)
 			end
 		end
 		
@@ -3613,6 +3795,10 @@ end
 ------------------------------------------------------------------------------
 -- Override functions
 ------------------------------------------------------------------------------
+
+-- The ResourceGenerator functions have been edited to use YnAMP_CanHaveResource() instead of ResourceBuilder.CanHaveResource()
+-- to do : try to copy ResourceBuilder.CanHaveResource to ResourceBuilder.OldCanHaveResource and replace ResourceBuilder.CanHaveResource by the YnAMP function (calling ResourceBuilder.OldCanHaveResource)
+------------------------------------------------------------------------------
 function ResourceGenerator:__ValidLuxuryPlots(eContinent)
 	-- go through each plot on the continent and put the luxuries
 	print("YnAEMP Search for valid Luxuries plots")
@@ -3633,7 +3819,7 @@ function ResourceGenerator:__ValidLuxuryPlots(eContinent)
 				bIce = true;
 			end
 			
-			if (YnAEMP_CanHaveResource(pPlot, self.aLuxuryType[iI]) and bIce == false) then
+			if (YnAMP_CanHaveResource(pPlot, self.aLuxuryType[iI]) and bIce == false) then
 				row = {};
 				row.MapIndex = plot;
 				row.Score = iBaseScore;
@@ -3671,7 +3857,7 @@ function ResourceGenerator:__ValidStrategicPlots(iWeight, eContinent)
 
 		-- See which resources can appear here
 		for iI = 1, iSize do
-			if (YnAEMP_CanHaveResource(pPlot, self.aStrategicType[iI])) then
+			if (YnAMP_CanHaveResource(pPlot, self.aStrategicType[iI])) then
 				row = {};
 				row.MapIndex = plot;
 				row.Score = iBaseScore;
@@ -3692,7 +3878,7 @@ function ResourceGenerator:__ValidStrategicPlots(iWeight, eContinent)
 
 		-- See which resources can appear here
 		for iI = 1, iSize do
-			if (YnAEMP_CanHaveResource(pPlot, self.aStrategicType[iI])) then
+			if (YnAMP_CanHaveResource(pPlot, self.aStrategicType[iI])) then
 				row = {};
 				row.MapIndex = plot;
 				row.Score = 500;
@@ -3737,7 +3923,7 @@ function ResourceGenerator:__ScoreLuxuryPlots(iResourceIndex, eContinent)
 			bIce = true;
 		end
 
-		if (YnAEMP_CanHaveResource(pPlot, self.eResourceType[iResourceIndex]) and bIce == false) then
+		if (YnAMP_CanHaveResource(pPlot, self.eResourceType[iResourceIndex]) and bIce == false) then
 			row = {};
 			row.MapIndex = plot;
 			row.Score = 500;
@@ -3777,7 +3963,7 @@ function ResourceGenerator:__PlaceWaterLuxury(eChosenLux, eContinent)
 		end
 
 		-- See if the resources can appear here
-		if (YnAEMP_CanHaveResource(pPlot, eChosenLux) and bIce == false) then
+		if (YnAMP_CanHaveResource(pPlot, eChosenLux) and bIce == false) then
 			local iBonusAdjacent = 0;
 
 			if( self.iStandardPercentage < self.iTargetPercentage) then
@@ -3836,7 +4022,7 @@ function ResourceGenerator:__ScoreStrategicPlots(iResourceIndex, eContinent)
 	plots = Map.GetContinentPlots(eContinent);
 	for i, plot in ipairs(plots) do
 		local pPlot = Map.GetPlotByIndex(plot);
-		if (YnAEMP_CanHaveResource(pPlot, self.eResourceType[iResourceIndex])) then
+		if (YnAMP_CanHaveResource(pPlot, self.eResourceType[iResourceIndex])) then
 			row = {};
 			row.MapIndex = plot;
 			row.Score = 500;
@@ -3876,7 +4062,7 @@ function ResourceGenerator:__GetOtherResources()
 
 		-- See which resources can appear here
 		for iI = 1, iSize do
-			if (YnAEMP_CanHaveResource(pPlot, self.aOtherType[iI])) then
+			if (YnAMP_CanHaveResource(pPlot, self.aOtherType[iI])) then
 				row = {};
 				row.MapIndex = i;
 				row.Score = iBaseScore;
@@ -3928,7 +4114,7 @@ function ResourceGenerator:__ScorePlots(iResourceIndex)
 		for y = 0, iH - 1 do
 			local i = y * iW + x;
 			local pPlot = Map.GetPlotByIndex(i);
-			if (YnAEMP_CanHaveResource(pPlot, self.eResourceType[iResourceIndex])) then
+			if (YnAMP_CanHaveResource(pPlot, self.eResourceType[iResourceIndex])) then
 				row = {};
 				row.MapIndex = i;
 				row.Score = 500;
@@ -4020,6 +4206,122 @@ function ResourceGenerator.Create(args)
 	return instance;
 end
 ------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+-- Override required to use limits on ice placement for imported maps
+function FeatureGenerator:AddIceAtPlot(plot, iX, iY)
+
+	local bNorth = iY > (self.iGridH/2)
+
+	if not bNorth and (iIceSouth and (iIceSouth == 0 or iIceSouth < iY)) then
+		return
+	end
+	
+	if bNorth and iIceNorth and (iIceNorth == 0 or self.iGridH - iIceNorth > iY) then
+		return
+	end
+
+	local lat = math.abs((self.iGridH/2) - iY)/(self.iGridH/2)
+
+	if Map.IsWrapX() and (iY == 0 or iY == self.iGridH - 1) then
+		TerrainBuilder.SetFeatureType(plot, g_FEATURE_ICE);
+	else
+		local rand = TerrainBuilder.GetRandomNumber(100, "Add Ice Lua")/100.0;
+		
+		if(rand < 8 * (lat - 0.875)) then
+			TerrainBuilder.SetFeatureType(plot, g_FEATURE_ICE);
+		elseif(rand < 4 * (lat - 0.75)) then
+			TerrainBuilder.SetFeatureType(plot, g_FEATURE_ICE);
+		end
+	end
+end
+
+------------------------------------------------------------------------------
+-- The original function was placing forest and marshs on every available plots in the south of the Europe map, maybe because all the first land plots tested were deserts ?
+-- It has been changed here to randomize the order in which the land plots are tested for features placement.
+function FeatureGenerator:AddFeatures(allow_mountains_on_coast)
+	print("YnAMP : FeatureGenerator:AddFeatures() override")
+	local flag = allow_mountains_on_coast or true;
+
+	if allow_mountains_on_coast == false then -- remove any mountains from coastal plots
+		for x = 0, self.iGridW - 1 do
+			for y = 0, self.iGridH - 1 do
+				local plot = Map.GetPlot(x, y)
+				if plot:GetPlotType() == g_PLOT_TYPE_MOUNTAIN then
+					if plot:IsCoastalLand() then
+						plot:SetPlotType(g_PLOT_TYPE_HILLS, false, true); -- These flags are for recalc of areas and rebuild of graphics. Instead of recalc over and over, do recalc at end of loop.
+					end
+				end
+			end
+		end
+		-- This function needs to recalculate areas after operating. However, so does 
+		-- adding feature ice, so the recalc was removed from here and put in MapGenerator()
+	end
+	
+	-- First pass, adds ice to water plots as appropriate and count land plots that can have a feature
+	local availableLandPlots = {}
+	for y = 0, self.iGridH - 1, 1 do
+		for x = 0, self.iGridW - 1, 1 do			
+
+			local i = y * self.iGridW + x;
+			local plot = Map.GetPlotByIndex(i);
+			if(plot ~= nil) then
+				local featureType = plot:GetFeatureType();
+
+				if(plot:IsImpassable() or featureType ~= g_FEATURE_NONE) then
+					--No Feature
+				elseif(plot:IsWater() == true) then
+					if(TerrainBuilder.CanHaveFeature(plot, g_FEATURE_ICE) == true and IsAdjacentToRiver(x, y) == false) then
+						self:AddIceAtPlot(plot, x, y);
+					end
+				else  -- mark this plot available for land feature
+					self.iNumLandPlots = self.iNumLandPlots + 1
+					table.insert(availableLandPlots, plot)
+				end
+			end
+		end
+	end
+	
+	-- second pass, add features to all land plots as appropriate based on the count and percentage of that type
+	local aShuffledAvailablePlots =  GetShuffledCopyOfTable(availableLandPlots)
+	for k, plot in ipairs(aShuffledAvailablePlots) do
+		if(plot ~= nil) then
+			local x, y = plot:GetX(), plot:GetY()
+			if(TerrainBuilder.CanHaveFeature(plot, g_FEATURE_FLOODPLAINS) == true) then
+				-- All desert plots along river are set to flood plains.
+				TerrainBuilder.SetFeatureType(plot, g_FEATURE_FLOODPLAINS)
+			elseif(TerrainBuilder.CanHaveFeature(plot, g_FEATURE_OASIS) == true and math.ceil(self.iOasisCount * 100 / self.iNumLandPlots) <= self.iOasisMaxPercent ) then
+				if(TerrainBuilder.GetRandomNumber(4, "Oasis Random") == 1) then
+					TerrainBuilder.SetFeatureType(plot, g_FEATURE_OASIS);
+					self.iOasisCount = self.iOasisCount + 1;
+				end
+			end
+
+			local featureType = plot:GetFeatureType()
+			local bMarsh = false;
+			local bJungle = false;
+			if(featureType == g_FEATURE_NONE) then
+				--First check to add Marsh
+				bMarsh = self:AddMarshAtPlot(plot, x, y);
+
+				if(featureType == g_FEATURE_NONE and  bMarsh == false) then
+					--check to add Jungle
+					bJungle = self:AddJunglesAtPlot(plot, x, y);
+				end
+				
+				if(featureType == g_FEATURE_NONE and bMarsh== false and bJungle == false) then 
+					--check to add Forest
+					self:AddForestsAtPlot(plot, x, y);
+				end
+			end
+		end
+	end	
+	
+	print("Number of Forests: ", self.iForestCount);
+	print("Number of Jungles: ", self.iJungleCount);
+	print("Number of Marshes: ", self.iMarshCount);
+	print("Number of Oasis: ", self.iOasisCount);
+end
 
 ------------------------------------------------------------------------------
 -- /end YnAMP
