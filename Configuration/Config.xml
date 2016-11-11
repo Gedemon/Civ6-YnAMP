@@ -166,8 +166,8 @@
 		<Row Key1="Map" Key2="GiantEarth.lua" 		ParameterId="GiantEarthIceNorth" 		Name="IceNorth" Description="" Domain="text" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="IceNorth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" 		ParameterId="GiantEarthIceSouth" 		Name="IceSouth" Description="" Domain="text" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="IceSouth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		
-		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="GreatestEarthMapEquator" 	Name="EquatorAdjustment" Description="" Domain="text" DefaultValue="-9" 	ConfigurationGroup="Map" ConfigurationId="EquatorAdjustment" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
-		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="GreatestEarthMapJungle" 	Name="JunglePercent" Description="" Domain="text" DefaultValue="15" ConfigurationGroup="Map" ConfigurationId="JunglePercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="GreatestEarthMapEquator" 	Name="EquatorAdjustment" Description="" Domain="text" DefaultValue="-10" 	ConfigurationGroup="Map" ConfigurationId="EquatorAdjustment" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="GreatestEarthMapJungle" 	Name="JunglePercent" Description="" Domain="text" DefaultValue="14" ConfigurationGroup="Map" ConfigurationId="JunglePercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="GreatestEarthMapIceNorth" 	Name="IceNorth" Description="" Domain="text" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="IceNorth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="GreatestEarthMapIceSouth" 	Name="IceSouth" Description="" Domain="text" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="IceSouth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 

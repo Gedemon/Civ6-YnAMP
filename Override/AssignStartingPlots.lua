@@ -2398,10 +2398,10 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	-- First pass: create terrains and place cliffs... (	bDoTerrains, 	bDoRivers, 	bDoFeatures, 	bDoResources, 	bDoCliffs, 	bDoContinents)
 	if bIsCiv5Map then
 		-- 														(	bDoTerrains, 	bDoRivers, 	bDoFeatures, 	bDoResources, 	bDoCliffs, 	bDoContinents)
-		ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, 	true, 			false, 		false, 			false, 			true, 		false)
+		ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, 	true, 			false, 		bDoFeatures, 	false, 			true, 		false)
 	else
 		-- 									(	bDoTerrains, 	bDoRivers, 	bDoFeatures, 	bDoResources, 	bDoContinents)
-		ImportCiv6Map(MapToConvert, g_iW, g_iH, true, 			false, 		false, 			false, 			false)	
+		ImportCiv6Map(MapToConvert, g_iW, g_iH, true, 			false, 		bDoFeatures, 	false, 			false)	
 	end
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")
@@ -2431,10 +2431,10 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	-- Second pass : importing options...	
 	if bIsCiv5Map then
 		-- 														(	bDoTerrains, 	bDoRivers, 	bDoFeatures, 	bDoResources, bDoCliffs, 	bDoContinents)
-		ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, 	false, 			bDoRivers, 	bDoFeatures, 	bDoResources, false, 		bDoContinents)
+		ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, 	false, 			bDoRivers, 	false, 			bDoResources, false, 		bDoContinents)
 	else
-		-- 										(	bDoTerrains, 	bDoRivers, 	bDoFeatures, bDoResources, bDoContinents)
-		ImportCiv6Map(MapToConvert, g_iW, g_iH, 	false, 			bDoRivers, 	bDoFeatures, bDoResources, bDoContinents)	
+		-- 										(	bDoTerrains, 	bDoRivers, 	bDoFeatures, 	bDoResources, bDoContinents)
+		ImportCiv6Map(MapToConvert, g_iW, g_iH, 	false, 			bDoRivers, 	false, 			bDoResources, bDoContinents)	
 	end
 
 	-- Now that we are certain that rivers were placed we can add features if they were not imported
