@@ -1,13 +1,14 @@
 ------------------------------------------------------------------------------
 --	FILE:	 YnAMP_Script.lua
 --  Gedemon (2016)
+--  Testing things here
 ------------------------------------------------------------------------------
 
 local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION because Value is Text ?
 print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016) by Gedemon")
 print ("loading YnAMP_Script.lua")
 
-include ("YnAMP_Utils.lua") -- can't do that ?
+include ("YnAMP_Utils.lua") -- can't do that ???
 
 ----------------------------------------------------------------------------------------
 -- Testing City renaming
@@ -70,6 +71,32 @@ function ExportCliffs()
 	end
 end
 
+
+----------------------------------------------------------------------------------------
+-- Export a complete civ6 map to Lua.log
+----------------------------------------------------------------------------------------
+function ExportMap()
+	local iPlotCount = Map.GetPlotCount();
+	for iPlotLoop = 0, iPlotCount-1, 1 do
+		local bData = false
+		local plot = Map.GetPlotByIndex(iPlotLoop)
+		local NEOfCliff = 0
+		local WOfCliff = 0
+		local NWOfCliff = 0
+		if plot:IsNEOfCliff() then NEOfCliff = 1 end 
+		if plot:IsWOfCliff() then WOfCliff = 1 end 
+		if plot:IsNWOfCliff() then NWOfCliff = 1 end 
+		local NEOfRiver = 0
+		local WOfRiver = 0
+		local NWOfRiver = 0
+		if plot:IsNEOfRiver() then NEOfRiver = 1 end -- GetRiverSWFlowDirection()
+		if plot:IsWOfRiver() then WOfRiver = 1 end -- GetRiverEFlowDirection()
+		if plot:IsNWOfRiver() then NWOfRiver = 1 end -- GetRiverSEFlowDirection()
+		print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..plot:GetTerrainType()..","..plot:GetFeatureType()..","..plot:GetContinentType()..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{"..plot:GetResourceType(-1)..","..tostring(1).."},{"..NEOfCliff..","..WOfCliff..","..NWOfCliff.."}}")
+	end
+end
+
+----------------------------------------------
 function ResourcesStatistics(g_iW, g_iH)
 	print("------------------------------------")
 	print("-- Resources Placement Statistics --")
@@ -120,3 +147,28 @@ function Round(num)
     end
 end
 
+------------------------------------------------------
+
+function OnCombat(...)
+	print("-------------------------")
+	print("Events.Combat : ")
+	print(unpack({...}))
+	print("-------------------------")
+end
+Events.Combat.Add( OnCombat )
+
+function OnCombatVisBegin(...)
+	print("-------------------------")
+	print("Events.CombatVisBegin :")
+	print(unpack({...}))
+	print("-------------------------")
+end
+Events.CombatVisBegin.Add( OnCombatVisBegin )
+
+function OnCombatVisEnd(...)
+	print("-------------------------")
+	print("Events.CombatVisEnd : ")
+	print(unpack({...}))
+	print("-------------------------")
+end
+Events.CombatVisEnd.Add( OnCombatVisEnd )

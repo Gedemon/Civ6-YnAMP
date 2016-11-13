@@ -2,6 +2,17 @@
 <!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Ed Beach (Firaxis Games) -->
 <GameData>
   <LocalizedText>
+  
+	<!-- Replacing -->
+    <Replace Tag="LOC_MAP_RESOURCES_NAME" Language="en_US">
+      <Text>Resource Quantity</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_START_POSITION_NAME" Language="en_US">
+      <Text>Start Position Balance</Text>
+    </Replace>
+	
+	<!-- New entries -->
+	
     <Replace Tag="LOC_YNAGEM_RULESET1_NAME" Language="en_US">
       <Text>Earth 1 : Light</Text>
     </Replace>
@@ -33,7 +44,7 @@
     </Replace>
 	
     <Replace Tag="LOC_YNAGEM_RULESET1_DESC" Language="en_US">
-      <Text>Light Modificationss[NEWLINE][ICON_Bullet] Raise Max distance between Civilizations[NEWLINE][ICON_Bullet] 33% less Barbarian encampment (2/civ)[NEWLINE][ICON_Bullet] Min distance to city from camps raised to 7</Text>
+      <Text>Light Modificationss[NEWLINE][ICON_Bullet] Raise Max distance between Civilizations[NEWLINE][ICON_Bullet] 33% less Barbarian encampment (2/civ)[NEWLINE][ICON_Bullet] Min distance to city from camps raised to 7[NEWLINE][ICON_Bullet] Change some Capitals name[NEWLINE][ICON_Bullet] Tweak resources placement rules</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_RULESET2_DESC" Language="en_US">
       <Text>Medium Modifications [NEWLINE]Include light modifications[NEWLINE][ICON_Bullet] Add or remove some CS to fit the Map[NEWLINE][ICON_Bullet] Min distance between city lowered to 2[NEWLINE][ICON_Bullet] Double [ICON_Movement] Movement on Ocean[NEWLINE][ICON_Bullet] Faster [ICON_Movement] Movement on Roads</Text>
@@ -41,11 +52,12 @@
     <Replace Tag="LOC_YNAGEM_RULESET3_DESC" Language="en_US">
       <Text>Advanced Modifications[NEWLINE]Include light and medium modifications[NEWLINE][COLOR_RED]Experimental ![ENDCOLOR][NEWLINE][ICON_Bullet] 66% less Barbarian encampment (1/civ)[NEWLINE][ICON_Bullet] Min distance to city from camps set to 5 (default = 4)[NEWLINE][ICON_Bullet] Raised chance of camps spawning[NEWLINE][ICON_Bullet] Ranged land units are now "support" (0 [ICON_Strength], can stack with Melee)[NEWLINE][ICON_Bullet] All land/sea units range set to 1 (with late game exception)[NEWLINE][ICON_Bullet] No ancient walls, cities can't attack.</Text>
     </Replace>
-    <Replace Tag="LOC_YNAGEM_NAME" Language="en_US">
-      <Text>Giant Earth Map</Text>
+    
+	<Replace Tag="LOC_YNAGEM_NAME" Language="en_US">
+      <Text>Giant Earth</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_DESC" Language="en_US">
-      <Text>Genghis Kai's GEM Hormigas version) (180x94)</Text>
+      <Text>Genghis Kai's GEM (Hormigas version) (180x94)</Text>
     </Replace>
     <Replace Tag="LOC_GREATESTEARTH_NAME" Language="en_US">
       <Text>Greatest Earth Map</Text>
@@ -59,18 +71,13 @@
     <Replace Tag="LOC_PLAYEUROPEAGAIN_DESC" Language="en_US">
       <Text>NiRv4n4's Europe(Hormigas version) (108x98)</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_NAME" Language="en_US">
-      <Text>Resource Placement</Text>
+    <Replace Tag="LOC_LARGESTEARTH_NAME" Language="en_US">
+      <Text>[COLOR_RED]Largest Earth[ENDCOLOR]</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Language="en_US">
-      <Text>How Resources are placed on the Map</Text>
+    <Replace Tag="LOC_LARGESTEARTH_DESC" Language="en_US">
+      <Text>Largest Earth (230x116)[NEWLINE][ICON_Exclamation] [COLOR_RED]Slow Loading time ! (~5 mn)[ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]High VRAM usage ![ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]NASA's supercomputers hate it ![ENDCOLOR]</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_NAME" Language="en_US">
-      <Text>Features Placement</Text>
-    </Replace>
-    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Language="en_US">
-      <Text>How Features (Forests, Jungle, ...) are placed on the Map</Text>
-    </Replace>
+	
     <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Language="en_US">
       <Text>Civilization Placement</Text>
     </Replace>
@@ -78,7 +85,7 @@
       <Text>How Civilizations are placed on the Map</Text>
     </Replace>
     <Replace Tag="LOC_CULTURALLY_LINKED_START_NAME" Language="en_US">
-      <Text>Linked Start</Text>
+      <Text>Start position Link</Text>
     </Replace>
     <Replace Tag="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Language="en_US">
       <Text>Culturally Linked Starting Positions</Text>
@@ -90,22 +97,10 @@
       <Text>Do not try to regroup Civilizations by Ethnicity</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_NAME" Language="en_US">
-      <Text>Culturally</Text>
+      <Text>Cultural</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_DESCRIPTION" Language="en_US">
       <Text>Try to regroup Civilizations by Ethnicity on the Starting Positions</Text>
-    </Replace>
-    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_NAME" Language="en_US">
-      <Text>Continents Placement</Text>
-    </Replace>
-    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_DESCRIPTION" Language="en_US">
-      <Text>How Continents name are placed on the Map</Text>
-    </Replace>
-    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_NAME" Language="en_US">
-      <Text>Rivers Placement</Text>
-    </Replace>
-    <Replace Tag="LOC_MAP_RIVERSS_PLACEMENT_DESCRIPTION" Language="en_US">
-      <Text>How Rivers) are placed on the Map</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAPSIZE_ENORMOUS_NAME" Language="en_US">
@@ -127,11 +122,17 @@
       <Text>Will you stand the test of time while your computer try to load this ? (230x115)</Text>
     </Replace>
 	
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_NAME" Language="en_US">
+      <Text>Resource Placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Language="en_US">
+      <Text>How Resources are placed on the Map</Text>
+    </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_NAME" Language="en_US">
       <Text>Map Generator</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
-      <Text>Resources are placed using the standard Civ6 Map Generator</Text>
+      <Text>Resources are placed using the Civ6 Map Generator (random)</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_NAME" Language="en_US">
       <Text>Import</Text>
@@ -164,11 +165,17 @@
       <Text>Place some specific Resources around specific Civilizations starting position</Text>
     </Replace>
 	
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_NAME" Language="en_US">
+      <Text>Features Placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Language="en_US">
+      <Text>How Features (Forests, Jungle, ...) are placed on the Map</Text>
+    </Replace>
     <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_NAME" Language="en_US">
       <Text>Map Generator</Text>
     </Replace>
     <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
-      <Text>Features are placed using the standard Civ6 Map Generator</Text>
+      <Text>Features are placed using the Civ6 Map Generator (random)</Text>
     </Replace>
     <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_NAME" Language="en_US">
       <Text>Import</Text>
@@ -181,7 +188,7 @@
       <Text>Map Generator</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
-      <Text>Civilizations are placed using the Civ6 AssignStartingPlot monstrosity</Text>
+      <Text>Civilizations are placed using the Civ6 Map Generator (random)</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_NAME" Language="en_US">
       <Text>True Starting Locations</Text>
@@ -190,11 +197,17 @@
       <Text>Civilizations are placed on Real World location when available</Text>
     </Replace>	
 	
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_NAME" Language="en_US">
+      <Text>Continents Placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_DESCRIPTION" Language="en_US">
+      <Text>How Continents name are placed on the Map</Text>
+    </Replace>
     <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_NAME" Language="en_US">
       <Text>Map Generator</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
-      <Text>Continents are named using the standard Civ6 Map Generator (random name)</Text>
+      <Text>Continents are named using the Civ6 Map Generator (random name)</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_NAME" Language="en_US">
       <Text>Import</Text>
@@ -203,17 +216,59 @@
       <Text>Continents names are imported from the original map data</Text>
     </Replace>
 	
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_NAME" Language="en_US">
+      <Text>Rivers Placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DESCRIPTION" Language="en_US">
+      <Text>How Rivers are placed on the Map</Text>
+    </Replace>
     <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_NAME" Language="en_US">
       <Text>Map Generator</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
-      <Text>Rivers are placed using the standard Civ6 Map Generator</Text>
+      <Text>Rivers are placed using the Civ6 Map Generator (random)</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_NAME" Language="en_US">
       <Text>Import</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_DESCRIPTION" Language="en_US">
       <Text>Rivers are imported from the original map data</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_NAME" Language="en_US">
+      <Text>Natural Wonders Placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DESCRIPTION" Language="en_US">
+      <Text>How Natural Wonders are placed on the Map</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_NAME" Language="en_US">
+      <Text>Map Generator</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
+      <Text>Natural Wonders are placed using the Civ6 Map Generator (random)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_NAME" Language="en_US">
+      <Text>Import</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_DESCRIPTION" Language="en_US">
+      <Text>Natural Wonders are imported from the map data</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_NAME" Language="en_US">
+      <Text>Empty</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" Language="en_US">
+      <Text>No placement</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CLOSED_BOSPHORUS_NAME" Language="en_US">
+      <Text>Close the Bosphorus Strait</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MONT_SAINT_MICHEL_MARSH_NAME" Language="en_US">
+      <Text>Place marsh for Mont Saint Michel</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_STONEHENGE_STONE_NAME" Language="en_US">
+      <Text>Place stone for Stonehenge</Text>
     </Replace>
 	
   </LocalizedText>

@@ -96,7 +96,7 @@
 		<Replace>
 			<Civilization>CIVILIZATION_JAPAN</Civilization>
 			<X>98</X>
-			<Y>46</Y>
+			<Y>48</Y>
 		</Replace>
 		<Replace>
 			<Civilization>CIVILIZATION_OTTOMAN</Civilization>

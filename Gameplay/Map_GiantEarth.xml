@@ -1085,4 +1085,11 @@
 			<Y>67</Y>		
 		</Replace>
 	</GiantEarth_CityMap>
+
+	<ExtraPlacement>
+		<Replace MapName="GiantEarth" X="31" Y="59" ConfigurationId="ClosedBosphorus" TerrainType="TERRAIN_GRASS_HILLS" />
+		<Replace MapName="GiantEarth" X="10" Y="67" ConfigurationId="MontSaintMichel" FeatureType="FEATURE_MARSH" />
+		<Replace MapName="GiantEarth" X="10" Y="73" ConfigurationId="Stonehenge" ResourceType="RESOURCE_STONE" />
+	</ExtraPlacement>
+	
 </GameData>

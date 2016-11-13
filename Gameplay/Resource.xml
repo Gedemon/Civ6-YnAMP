@@ -4,7 +4,7 @@
 	<CivilizationRequestedResource>
 		<Row>
 			<Civilization>CIVILIZATION_AMERICA</Civilization>
-			<Resource>RESOURCE_GOLD</Resource>
+			<Resource>RESOURCE_NITER</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_AMERICA</Civilization>
@@ -32,15 +32,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_ARABIA</Civilization>
-			<Resource>RESOURCE_SHEEP</Resource>
-		</Row>
-		<Row>
-			<Civilization>CIVILIZATION_ARABIA</Civilization>
-			<Resource>RESOURCE_FISH</Resource>
-		</Row>
-		<Row>
-			<Civilization>CIVILIZATION_AZTEC</Civilization>
-			<Resource>RESOURCE_GOLD</Resource>
+			<Resource>RESOURCE_NITER</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_AZTEC</Civilization>
@@ -84,7 +76,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_ENGLAND</Civilization>
-			<Resource>RESOURCE_FURS</Resource>
+			<Resource>RESOURCE_NITER</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_ENGLAND</Civilization>
@@ -105,6 +97,10 @@
 			<Resource>RESOURCE_WINE</Resource>
 		</Row>
 		<Row>
+			<Civilization>CIVILIZATION_FRANCE</Civilization>
+			<Resource>RESOURCE_NITER</Resource>
+		</Row>
+		<Row>
 			<Civilization>CIVILIZATION_GERMANY</Civilization>
 			<Resource>RESOURCE_IRON</Resource>
 			<Quantity>2</Quantity>
@@ -117,6 +113,10 @@
 		<Row>
 			<Civilization>CIVILIZATION_GERMANY</Civilization>
 			<Resource>RESOURCE_FURS</Resource>
+		</Row>
+		<Row>
+			<Civilization>CIVILIZATION_GERMANY</Civilization>
+			<Resource>RESOURCE_NITER</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_GREECE</Civilization>
@@ -210,6 +210,10 @@
 			<Resource>RESOURCE_WINE</Resource>
 		</Row>
 		<Row>
+			<Civilization>CIVILIZATION_ROME</Civilization>
+			<Resource>RESOURCE_NITER</Resource>
+		</Row>
+		<Row>
 			<Civilization>CIVILIZATION_RUSSIA</Civilization>
 			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>2</Quantity>
@@ -221,7 +225,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_RUSSIA</Civilization>
-			<Resource>RESOURCE_ALUMINUM</Resource>
+			<Resource>RESOURCE_NITER</Resource>
 			<Quantity>2</Quantity>
 		</Row>
 		<Row>
@@ -262,6 +266,10 @@
 			<Civilization>CIVILIZATION_SPAIN</Civilization>
 			<Resource>RESOURCE_HORSES</Resource>
 			<Quantity>4</Quantity>
+		</Row>
+		<Row>
+			<Civilization>CIVILIZATION_SPAIN</Civilization>
+			<Resource>RESOURCE_NITER</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_POLYNESIA</Civilization>
@@ -900,6 +908,10 @@
 			<Region>NORTH_AMERICA</Region>
 			<Resource>RESOURCE_RICE</Resource>
 		</Row>
+		<Row>
+			<Region>NORTH_AMERICA</Region>
+			<Resource>RESOURCE_CITRUS</Resource>
+		</Row>
 	</ResourceRegionExclude>
 	<ResourceRegionExclusive>
 		<Row>
@@ -1059,6 +1071,10 @@
 	</ResourceRegionExclusive>
 	<!-- NORTH_ASIA -->
 	<ResourceRegionExclude>
+		<Row>
+			<Region>NORTH_ASIA</Region>
+			<Resource>RESOURCE_CITRUS</Resource>
+		</Row>
 	</ResourceRegionExclude>
 	<ResourceRegionExclusive>
 		<Row>
@@ -1104,6 +1120,10 @@
 		<Row>
 			<Region>NORTH_EUROPA</Region>
 			<Resource>RESOURCE_RICE</Resource>
+		</Row>
+		<Row>
+			<Region>NORTH_EUROPA</Region>
+			<Resource>RESOURCE_CITRUS</Resource>
 		</Row>
 	</ResourceRegionExclude>
 	<ResourceRegionExclusive>

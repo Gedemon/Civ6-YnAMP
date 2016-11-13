@@ -10,6 +10,7 @@
   <Dependencies />
   <References />
   <Blocks />
+  
 	<Settings>
 		<Custom id="YNAMP_SETTING">
 			<Items>
@@ -28,7 +29,7 @@
 				<File>Maps/GiantEarth.lua</File>
 				<File>Maps/GreatestEarthMap.lua</File>
 				<File>Maps/PlayEuropeAgain.lua</File>
-				<File>Maps/LudicrousEarth.lua</File>
+				<File>Maps/LargestEarth.lua</File>
 				<File>Override/AssignStartingPlots.lua</File>
 				<File>Scripts/YnAMP_Utils.lua</File>
 			</Items>
@@ -46,6 +47,7 @@
 				<File>Gameplay/Map_GiantEarth.xml</File>
 				<File>Gameplay/Map_GreatestEarthMap.xml</File>
 				<File>Gameplay/Map_PlayEuropeAgain.xml</File>
+				<File>Gameplay/Map_LargestEarth.xml</File>
 				<File>Gameplay/Resource.xml</File>
 				<File>Gameplay/CityNameByEra.xml</File>
 			</Items>
@@ -174,12 +176,13 @@
 		<File>Gameplay/Map_GiantEarth.xml</File>
 		<File>Gameplay/Map_GreatestEarthMap.xml</File>
 		<File>Gameplay/Map_PlayEuropeAgain.xml</File>
+		<File>Gameplay/Map_LargestEarth.xml</File>
 		<File>Gameplay/Resource.xml</File>
 		<File>Gameplay/CityNameByEra.xml</File>
 		<File>Maps/GiantEarth.lua</File>
 		<File>Maps/GreatestEarthMap.lua</File>
 		<File>Maps/PlayEuropeAgain.lua</File>
-		<File>Maps/LudicrousEarth.lua</File>
+		<File>Maps/LargestEarth.lua</File>
 		<File>Override/AssignStartingPlots.lua</File>
 		<File>Rules/Rules_1.sql</File>
 		<File>Rules/Rules_2.sql</File>

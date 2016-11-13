@@ -117,7 +117,8 @@ function AssignStartingPlots.Create(args)
 	-- YnAMP <<<<<
 	if not bTSL then
 		instance:__InitStartingData()
-	end
+	end	
+	YnAMP_StartPositions()
 	-- YnAMP >>>>>					
 
 	return instance
@@ -2380,28 +2381,37 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 		
 	local featuresPlacement = MapConfiguration.GetValue("FeaturesPlacement")
 	print("Features placement = "..tostring(featuresPlacement))	
-	local bDoFeatures = featuresPlacement == "PLACEMENT_IMPORT"
+	local bImportFeatures = featuresPlacement == "PLACEMENT_IMPORT"
+	local bNoFeatures = featuresPlacement == "PLACEMENT_EMPTY"
 	
 	local riversPlacement = MapConfiguration.GetValue("RiversPlacement")
 	print("Rivers Placement = "..tostring(riversPlacement))	
-	local bDoRivers = riversPlacement == "PLACEMENT_IMPORT"
+	local bImportRivers = riversPlacement == "PLACEMENT_IMPORT"
+	local bNoRivers = riversPlacement == "PLACEMENT_EMPTY"
 	
 	local resourcePlacement = MapConfiguration.GetValue("ResourcesPlacement")
 	print("Resource placement = "..tostring(resourcePlacement))	
-	local bDoResources = resourcePlacement == "PLACEMENT_IMPORT"
+	local bImportResources = resourcePlacement == "PLACEMENT_IMPORT"
+	local bNoResources = resourcePlacement == "PLACEMENT_EMPTY"
+	
+	local naturalWondersPlacement = MapConfiguration.GetValue("NaturalWondersPlacement")
+	print("Natural Wonders placement = "..tostring(naturalWondersPlacement))	
+	local bImportNaturalWonders = naturalWondersPlacement == "PLACEMENT_IMPORT"
+	local bNoNaturalWonders = naturalWondersPlacement == "PLACEMENT_EMPTY"
 	
 	local continentsPlacement = MapConfiguration.GetValue("ContinentsPlacement")
 	print("Continents naming = "..tostring(continentsPlacement))	
-	local bDoContinents = continentsPlacement == "PLACEMENT_IMPORT"
+	local bImportContinents = continentsPlacement == "PLACEMENT_IMPORT"
 
-	-- We'll do Rivers after NW placement, as they can create incompatibilities and Resources come after Rivers (in case Rivers are generated instead of imported)
-	-- First pass: create terrains and place cliffs... (	bDoTerrains, 	bDoRivers, 	bDoFeatures, 	bDoResources, 	bDoCliffs, 	bDoContinents)
+	-- We'll do Rivers after Natural Wonders placement, as they can create incompatibilities and Resources come after Rivers (in case Rivers are generated instead of imported)
+	-- We do Features now to prevent overriding the NW placement
+	-- First pass: create terrains and place cliffs... (	bDoTerrains, 	bImportRivers, 	bImportFeatures, 	bImportResources, 	bDoCliffs, 	bImportContinents)
 	if bIsCiv5Map then
-		-- 														(	bDoTerrains, 	bDoRivers, 	bDoFeatures, 	bDoResources, 	bDoCliffs, 	bDoContinents)
-		ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, 	true, 			false, 		bDoFeatures, 	false, 			true, 		false)
+		-- 														(	bDoTerrains, 	bImportRivers, 	bImportFeatures, 	bImportResources, 	bDoCliffs, 	bImportContinents)
+		ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, 	true, 			false, 			bImportFeatures, 	false, 			true, 		false)
 	else
-		-- 									(	bDoTerrains, 	bDoRivers, 	bDoFeatures, 	bDoResources, 	bDoContinents)
-		ImportCiv6Map(MapToConvert, g_iW, g_iH, true, 			false, 		bDoFeatures, 	false, 			false)	
+		-- 									(	bDoTerrains, 	bImportRivers, 	bImportFeatures, 	bImportResources, 	bImportContinents)
+		ImportCiv6Map(MapToConvert, g_iW, g_iH, true, 			false, 			bImportFeatures, 	false, 			false)	
 	end
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")
@@ -2415,30 +2425,35 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")		
 	
 	-- River generation is affected by plot types, originating from highlands and preferring to traverse lowlands.
-	if not bDoRivers then
+	if not (bImportRivers or bNoRivers)  then
 		AddRivers()
 	end
 
-	local args = {
-		numberToPlace = GameInfo.Maps[Map.GetMapSize()].NumNaturalWonders,
-	};
-	--local nwGen = NaturalWonderGenerator.Create(args);
-	PlaceRealNaturalWonders(NaturalWonders)
+	-- NW placement is affected by rivers, but when importing placement can be forced
+	if not (bImportNaturalWonders or bNoNaturalWonders)  then
+		local args = {
+			numberToPlace = GameInfo.Maps[Map.GetMapSize()].NumNaturalWonders,
+		};
+		local nwGen = NaturalWonderGenerator.Create(args);
+	end
+	if bImportNaturalWonders then
+		PlaceRealNaturalWonders(NaturalWonders)
+	end
 	
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")
 		
 	-- Second pass : importing options...	
 	if bIsCiv5Map then
-		-- 														(	bDoTerrains, 	bDoRivers, 	bDoFeatures, 	bDoResources, bDoCliffs, 	bDoContinents)
-		ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, 	false, 			bDoRivers, 	false, 			bDoResources, false, 		bDoContinents)
+		-- 														(	bDoTerrains, 	bImportRivers, 	bImportFeatures, 	bImportResources, bDoCliffs, 	bImportContinents)
+		ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, 	false, 			bImportRivers, 	false, 				bImportResources, false, 		bImportContinents)
 	else
-		-- 										(	bDoTerrains, 	bDoRivers, 	bDoFeatures, 	bDoResources, bDoContinents)
-		ImportCiv6Map(MapToConvert, g_iW, g_iH, 	false, 			bDoRivers, 	false, 			bDoResources, bDoContinents)	
+		-- 										(	bDoTerrains, 	bImportRivers, 	bImportFeatures, 	bImportResources, bImportContinents)
+		ImportCiv6Map(MapToConvert, g_iW, g_iH, 	false, 			bImportRivers, 	false, 				bImportResources, bImportContinents)	
 	end
 
 	-- Now that we are certain that rivers were placed we can add features if they were not imported
-	if not bDoFeatures then
+	if not (bImportFeatures or bNoFeatures) then
 		AddFeatures()
 	end
 
@@ -2450,9 +2465,14 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer before TerrainBuilder.AnalyzeChokepoints() = "..tostring(currentTimer).." seconds")
 	
-	TerrainBuilder.AnalyzeChokepoints();
+	if not WorldBuilder:IsActive() then -- to do : must use an option here, is this added to saved map ? will they work without this ? But it saves a lot of time for editing and exporting terrain data for YnAMP
+		TerrainBuilder.AnalyzeChokepoints();
+	else
+		print("Worldbuilder detected, skipping TerrainBuilder.AnalyzeChokepoints()...")
+		print("WARNING skipping AnalyzeChokepoints may create issues with saved maps (exporting for YnAMP scripts is not affected)")
+	end
 	
-	if not bDoContinents then
+	if not bImportContinents then
 		currentTimer = os.clock() - g_startTimer
 		print("Intermediate timer before TerrainBuilder.StampContinents() = "..tostring(currentTimer).." seconds")	
 		TerrainBuilder.StampContinents();
@@ -2467,7 +2487,7 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 		-- Deposits should be mostly strategic, so call AddDeposit after ResourceGenerator.Create and remove a number of previous resources ?
 	end
 	
-	if not bDoResources then
+	if not (bImportResources or bNoResources) then
 		if bResourceExclusion then
 			buildExclusionList()
 			placeExclusiveResources()
@@ -2483,17 +2503,18 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 		--PlaceStrategicResources(resourceType)
 	end
 	
+	-- The map may require some specific placement...
+	ExtraPlacement()
+	
 	ResourcesStatistics(g_iW, g_iH)
 	
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")
 	
-	print("Creating start plot database.");
-	
+	print("Creating start plot database.")	
 	if bTSL then
 		buidTSL()
-	end
-	
+	end	
 	local startConfig = MapConfiguration.GetValue("start");-- Get the start config
 	-- START_MIN_Y and START_MAX_Y is the percent of the map ignored for major civs' starting positions.
 	local args = {
@@ -2503,22 +2524,15 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 		START_MIN_Y = 15,
 		START_MAX_Y = 15,
 		START_CONFIG = startConfig,
-	};
-	
+	}	
 	currentTimer = os.clock() - g_startTimer
-	print("Intermediate timer before AssignStartingPlots.Create(args) = "..tostring(currentTimer).." seconds")
-	
-	local start_plot_database = AssignStartingPlots.Create(args)	
+	print("Intermediate timer before AssignStartingPlots.Create(args) = "..tostring(currentTimer).." seconds")	
+	local start_plot_database = AssignStartingPlots.Create(args)				
 	
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")
 	
-	YnAMP_StartPositions()	
-	
-	currentTimer = os.clock() - g_startTimer
-	print("Intermediate timer = "..tostring(currentTimer).." seconds")
-	
-	if bRequestedResources then
+	if bRequestedResources and not bNoResources then
 		AddStartingLocationResources()
 	end
 	
@@ -2722,6 +2736,56 @@ function AddFeatures()
 	local featuregen = FeatureGenerator.Create(args);
 
 	featuregen:AddFeatures();
+end
+
+function ExtraPlacement()
+
+	print("-------------------------------")
+	print("Checking for extra placement...")
+	
+	for row in GameInfo.ExtraPlacement() do
+		if row.MapName == mapName  then
+			local bDoPlacement = false
+			if row.ConfigurationId then
+				-- check if this setting is selected
+				local value = MapConfiguration.GetValue(row.ConfigurationId)				
+				if value == true or value == row.ConfigurationValue then
+					bDoPlacement = true
+				end
+			else
+				-- no specific rules, always place
+				bDoPlacement = true
+			end
+			
+			if bDoPlacement then
+				local terrainType = row.TerrainType
+				local featureType = row.FeatureType
+				local resourceType = row.ResourceType
+				local quantity = row.Quantity
+				local x = row.X
+				local y = row.Y
+				local plot = Map.GetPlot(x,y)
+				
+				if plot then
+					if terrainType and GameInfo.Terrains[terrainType] then
+						print("- Trying to place ".. tostring(terrainType).. " at " .. tostring(x) ..",".. tostring(y))
+						TerrainBuilder.SetTerrainType(plot, GameInfo.Terrains[terrainType].Index)
+					end
+					if featureType and GameInfo.Features[featureType] then
+						print("- Trying to place ".. tostring(featureType).. " at " .. tostring(x) ..",".. tostring(y))
+						TerrainBuilder.SetFeatureType(plot, GameInfo.Features[featureType].Index)
+					end
+					if resourceType and GameInfo.Resources[resourceType] then
+						print("- Trying to place ".. tostring(resourceType).. " at " .. tostring(x) ..",".. tostring(y))
+						local num = quantity or 1
+						ResourceBuilder.SetResourceType(plot, GameInfo.Resources[resourceType].Index, num)
+					end
+				else
+					print("- WARNING, plot is nil at " .. tostring(x) ..",".. tostring(y))
+				end
+			end		
+		end
+	end
 end
 
 ------------------------------------------------------------------------------
@@ -3189,8 +3253,8 @@ end
 	end
 --]]
 
-function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains, bDoRivers, bDoFeatures, bDoResources, bDoCliffs, bDoContinents)
-	print("Importing Civ5 Map ( Terrain = "..tostring(bDoTerrains)..", Rivers = "..tostring(bDoRivers)..", Features = "..tostring(bDoFeatures)..", Resources = "..tostring(bDoResources)..", Cliffs = "..tostring(bDoCliffs)..", Continents = "..tostring(bDoContinents)..")")
+function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bImportFeatures, bImportResources, bDoCliffs, bImportContinents)
+	print("Importing Civ5 Map ( Terrain = "..tostring(bDoTerrains)..", Rivers = "..tostring(bImportRivers)..", Features = "..tostring(bImportFeatures)..", Resources = "..tostring(bImportResources)..", Cliffs = "..tostring(bDoCliffs)..", Continents = "..tostring(bImportContinents)..")")
 	local count = 0
 	
 	-- Civ5 ENUM
@@ -3298,7 +3362,7 @@ function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains,
 		end
 		
 		-- Set Rivers
-		if bDoRivers then
+		if bImportRivers then
 			if Rivers[1][1] == 1 then -- IsNEOfRiver
 				TerrainBuilder.SetNEOfRiver(plot, true, Rivers[1][2])
 				if bOutput then print(" - Set is NE of River, flow = "..tostring(Rivers[1][2])) end
@@ -3314,7 +3378,7 @@ function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains,
 		end
 		
 		-- Set Features
-		if bDoFeatures then
+		if bImportFeatures then
 			if civ5FeatureTypes ~= -1 and FeaturesCiv5toCiv6[civ5FeatureTypes] ~= g_FEATURE_NONE then		
 				if bOutput then print(" - Set Feature Type = "..tostring(GameInfo.Features[FeaturesCiv5toCiv6[civ5FeatureTypes]].FeatureType)) end
 				TerrainBuilder.SetFeatureType(plot, FeaturesCiv5toCiv6[civ5FeatureTypes])
@@ -3322,7 +3386,7 @@ function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains,
 		end
 		
 		-- Set Continent
-		if bDoContinents then
+		if bImportContinents then
 			if civ5ContinentType ~= 0 and ContinentsCiv5toCiv6[civ5ContinentType] ~= -1 then		
 				if bOutput then print(" - Set Continent Type = "..tostring(GameInfo.Continents[ContinentsCiv5toCiv6[civ5ContinentType]].ContinentType)) end
 				TerrainBuilder.SetContinentType(plot, ContinentsCiv5toCiv6[civ5ContinentType])
@@ -3330,7 +3394,7 @@ function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains,
 		end
 		
 		-- Set Resources
-		if bDoResources and not plot:IsNaturalWonder() then
+		if bImportResources and not plot:IsNaturalWonder() then
 			if resource[1] ~= -1 and ResourceCiv5toCiv6[resource[1]] ~= -1 then		
 				if bOutput then print(" - Set Resource Type = "..tostring(GameInfo.Resources[ResourceCiv5toCiv6[resource[1]]].ResourceType)) end
 				--ResourceBuilder.SetResourceType(plot, ResourceCiv5toCiv6[resource[1]], resource[2]) -- maybe an option to import number of resources on one plot even if civ6 use 1 ?
@@ -3360,8 +3424,8 @@ function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains,
 end
 
 
-function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bDoRivers, bDoFeatures, bDoResources, bDoContinents)
-	print("Importing Civ6 Map ( Terrain = "..tostring(bDoTerrains)..", Rivers = "..tostring(bDoRivers)..", Features = "..tostring(bDoFeatures)..", Resources = "..tostring(bDoResources)..", Continents = "..tostring(bDoContinents)..")")
+function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bImportFeatures, bImportResources, bImportContinents)
+	print("Importing Civ6 Map ( Terrain = "..tostring(bDoTerrains)..", Rivers = "..tostring(bImportRivers)..", Features = "..tostring(bImportFeatures)..", Resources = "..tostring(bImportResources)..", Continents = "..tostring(bImportContinents)..")")
 	local count = 0
 		
 	bOutput = false
@@ -3388,7 +3452,7 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bDoRivers, bDoFeat
 		end
 		
 		-- Set Rivers
-		if bDoRivers then
+		if bImportRivers then
 			if Rivers[1][1] == 1 then -- IsNEOfRiver
 				TerrainBuilder.SetNEOfRiver(plot, true, Rivers[1][2])
 				if bOutput then print(" - Set is NE of River, flow = "..tostring(Rivers[1][2])) end
@@ -3404,7 +3468,7 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bDoRivers, bDoFeat
 		end
 		
 		-- Set Features
-		if bDoFeatures then
+		if bImportFeatures then
 			if civ6FeatureType ~= g_FEATURE_NONE then		
 				if bOutput then print(" - Set Feature Type = "..tostring(GameInfo.Features[civ6FeatureType].FeatureType)) end
 				TerrainBuilder.SetFeatureType(plot, civ6FeatureType)
@@ -3412,7 +3476,7 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bDoRivers, bDoFeat
 		end
 		
 		-- Set Continent
-		if bDoContinents then
+		if bImportContinents then
 			if civ6ContinentType ~= -1 then		
 				if bOutput then print(" - Set Continent Type = "..tostring(GameInfo.Continents[civ6ContinentType].ContinentType)) end
 				TerrainBuilder.SetContinentType(plot, ContinentsCiv5toCiv6[civ5ContinentType])
@@ -3420,7 +3484,7 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bDoRivers, bDoFeat
 		end
 		
 		-- Set Resources
-		if bDoResources and not plot:IsNaturalWonder() then
+		if bImportResources and not plot:IsNaturalWonder() then
 			if resource[1] ~= -1 then		
 				if bOutput then print(" - Set Resource Type = "..tostring(GameInfo.Resources[resource[1]].ResourceType)) end
 				--ResourceBuilder.SetResourceType(plot, ResourceCiv5toCiv6[resource[1]], resource[2]) -- maybe an option to import number of resources on one plot even if civ6 use 1 ?
@@ -3429,7 +3493,7 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bDoRivers, bDoFeat
 		end
 		
 		-- Set Cliffs
-		if bDoCliffs and Cliffs then
+		if Cliffs then
 			if Cliffs[1] == 1 then -- IsNEOfCliff
 				TerrainBuilder.SetNEOfCliff(plot, true)
 				if bOutput then print(" - Set is NE of Cliff") end
@@ -3483,7 +3547,7 @@ function YnAMP_StartPositions()
 	end
 	
 	if bCulturallyLinked then
-		CulturallyLinkedCivilizations(true)	
+		CulturallyLinkedCivilizations()	
 		CulturallyLinkedCityStates(true)
 	end
 end

@@ -38,6 +38,18 @@ CREATE TABLE IF NOT EXISTS CivilizationRequestedResource
 		Resource TEXT,
 		Quantity INT default 1);
 		
+-- Optional Extra Placement
+CREATE TABLE IF NOT EXISTS ExtraPlacement
+	(	MapName TEXT,
+		X INT default 0,
+		Y INT default 0,
+		ConfigurationId TEXT,
+		ConfigurationValue TEXT,
+		TerrainType TEXT,
+		FeatureType TEXT,
+		ResourceType TEXT,
+		Quantity INT default 0);
+		
 -- GiantEarth
 CREATE TABLE IF NOT EXISTS GiantEarth_StartPosition
 	(	Civilization TEXT,
@@ -90,7 +102,25 @@ CREATE TABLE IF NOT EXISTS PlayEuropeAgain_CityMap
 	(	Civilization TEXT,
 		CityLocaleName TEXT,
 		X INT default 0,
+		Y INT default 0);
+		
+-- LargestEarth
+CREATE TABLE IF NOT EXISTS LargestEarth_StartPosition
+	(	Civilization TEXT,
+		Leader TEXT,
+		X INT default 0,
 		Y INT default 0);	
+CREATE TABLE IF NOT EXISTS LargestEarth_RegionPosition
+	(	Region TEXT,
+		X INT default 0,
+		Y INT default 0,
+		Width INT default 0,
+		Height INT default 0);			
+CREATE TABLE IF NOT EXISTS LargestEarth_CityMap
+	(	Civilization TEXT,
+		CityLocaleName TEXT,
+		X INT default 0,
+		Y INT default 0);
 		
 -----------------------------------------------
 -- Temporary Tables for initialization
