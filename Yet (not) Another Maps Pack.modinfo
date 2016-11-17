@@ -20,6 +20,7 @@
 		<LocalizedText id="YNAMP_SETTING">
 			<Items>
 				<File>Configuration/ConfigText.xml</File>
+				<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
 			</Items>
 		</LocalizedText>
 	</Settings>	
@@ -157,18 +158,22 @@
 	<LocalizedText>
 		<Text id="LOC_YNAMP_TITLE">
 			<en_US>Yet (not) Another Maps Pack</en_US>
+			<zh_Hans_CN>模拟现实世界地图包</zh_Hans_CN>
 		</Text>
 		<Text id="LOC_YNAMP_TEASER">
 			<en_US>Maps with True or Culturally Linked Start Locations.</en_US>
+			<zh_Hans_CN>模拟文明在现实世界中或在人文地理中关联的起始位置的地图包。</zh_Hans_CN>
 		</Text>
 		<Text id="LOC_YNAMP_DESCRIPTION">
 			<en_US>Maps with True or Culturally Linked Starting Location and custom options.</en_US>
+			<zh_Hans_CN>模拟文明在现实世界中或在人文地理中关联的起始位置以及自定义选项的地图包。</zh_Hans_CN>
 		</Text>
 	</LocalizedText>
 	
 	<Files>
 		<File>Configuration/Config.xml</File>
 		<File>Configuration/ConfigText.xml</File>
+		<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
 		<File>Gameplay/Tables.sql</File>
 		<File>Gameplay/GamePlay.xml</File>
 		<File>Gameplay/GamePlay.sql</File>
