@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Ed Beach (Firaxis Games) -->
+<GameData>
+  <LocalizedText>
+ 
+	<!-- Replacing -->
+    <Replace Tag="LOC_MAP_RESOURCES_NAME" Language="zh_Hans_CN">
+      <Text>资源数量</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_START_POSITION_NAME" Language="zh_Hans_CN">
+      <Text>平衡出生位置</Text>
+    </Replace>
+	
+	<!-- New entries -->
+	
+    <Replace Tag="LOC_YNAGEM_RULESET1_NAME" Language="zh_Hans_CN">
+      <Text>地球 1 : 简单</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_RULESET2_NAME" Language="zh_Hans_CN">
+      <Text>地球 2 : 一般</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_RULESET3_NAME" Language="zh_Hans_CN">
+      <Text>地球 3 : [COLOR_RED]困难[ENDCOLOR]</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_EURO_RULESET1_NAME" Language="zh_Hans_CN">
+      <Text>欧洲 1 : 简单</Text>
+    </Replace>
+    <Replace Tag="LOC_EURO_RULESET2_NAME" Language="zh_Hans_CN">
+      <Text>欧洲 2 : 一般</Text>
+    </Replace>
+    <Replace Tag="LOC_EURO_RULESET3_NAME" Language="zh_Hans_CN">
+      <Text>欧洲 3 : [COLOR_RED]困难[ENDCOLOR]</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_OLDWORLD_RULESET1_NAME" Language="zh_Hans_CN">
+      <Text>东半球 1 : 简单</Text>
+    </Replace>
+    <Replace Tag="LOC_OLDWORLD_RULESET2_NAME" Language="zh_Hans_CN">
+      <Text>东半球 2 : 一般</Text>
+    </Replace>
+    <Replace Tag="LOC_OLDWORLD_RULESET3_NAME" Language="zh_Hans_CN">
+      <Text>东半球 3 : [COLOR_RED]困难[ENDCOLOR]</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAGEM_RULESET1_DESC" Language="zh_Hans_CN">
+      <Text> 简单的修改项 [NEWLINE][ICON_Bullet] 加大不同文明之间的最大距离 [NEWLINE][ICON_Bullet] 野蛮人营地距离减少33% (2/civ)[NEWLINE][ICON_Bullet] 城市到营地的最小距离增加到7格 </Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_RULESET2_DESC" Language="zh_Hans_CN">
+      <Text> 一般的修改项 [NEWLINE] 包括简单的修改项 [NEWLINE][ICON_Bullet] 增加或删去一些城邦去丰富地图 [NEWLINE][ICON_Bullet] 城市之间的最小距离缩小到2格 [NEWLINE][ICON_Bullet] 双倍 [ICON_Movement] 航海行动力 [NEWLINE][ICON_Bullet] 加快 [ICON_Movement] 道路行动力</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_RULESET3_DESC" Language="zh_Hans_CN">
+      <Text> 困难的修改项 [NEWLINE] 包括简单和一般的修改项 [NEWLINE][COLOR_RED] (测试中...) [ENDCOLOR][NEWLINE][ICON_Bullet] 野蛮人营地距离减少66% (1/civ) [NEWLINE][ICON_Bullet] 城市到营地的距离设置为5格(默认为4格) [NEWLINE][ICON_Bullet] 提高营地产出几率 [NEWLINE][ICON_Bullet] 远程陆地单位可以使用 (0 [ICON_Strength], 可以重叠近战单位)[NEWLINE][ICON_Bullet] 所有海陆单位攻击范围都设置为1格 (游戏后期除外) [NEWLINE][ICON_Bullet] 没有远古城墙，城市将不能攻击 </Text>
+    </Replace>
+    
+	<Replace Tag="LOC_YNAGEM_NAME" Language="zh_Hans_CN">
+      <Text>世界地图(大)</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_DESC" Language="zh_Hans_CN">
+      <Text>世界地图(Hormigas version)(180x94)</Text>
+    </Replace>
+    <Replace Tag="LOC_GREATESTEARTH_NAME" Language="zh_Hans_CN">
+      <Text>世界地图(小)</Text>
+    </Replace>
+    <Replace Tag="LOC_GREATESTEARTH_DESC" Language="zh_Hans_CN">
+      <Text>世界地图(by djvandyke)(104x64)</Text>
+    </Replace>
+    <Replace Tag="LOC_PLAYEUROPEAGAIN_NAME" Language="zh_Hans_CN">
+      <Text>欧洲</Text>
+    </Replace>
+    <Replace Tag="LOC_PLAYEUROPEAGAIN_DESC" Language="zh_Hans_CN">
+      <Text>欧洲地图(Hormigas version)(108x98)</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGESTEARTH_NAME" Language="zh_Hans_CN">
+      <Text>[COLOR_RED]世界地图(特大)[ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGESTEARTH_DESC" Language="zh_Hans_CN">
+      <Text>世界地图(230x116)[NEWLINE][ICON_Exclamation] [COLOR_RED]加载时间很长很长。。。(5分钟+)[ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]高显存使用 ![ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]NASA的超级计算机看着笑。。。[ENDCOLOR]</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Language="zh_Hans_CN">
+      <Text>文明位置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>如何在地图上放置文明</Text>
+    </Replace>
+    <Replace Tag="LOC_CULTURALLY_LINKED_START_NAME" Language="zh_Hans_CN">
+      <Text>出生位置</Text>
+    </Replace>
+    <Replace Tag="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>人文地理关联出生位置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">
+      <Text>标准</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>文明VI的标准</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_NAME" Language="zh_Hans_CN">
+      <Text>人文地理</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>人文地理关联出生位置</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS_NAME" Language="zh_Hans_CN">
+      <Text>庞大</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>16名玩家的庞大地图。(128x80)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_GIANT_NAME" Language="zh_Hans_CN">
+      <Text>巨大</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_GIANT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>20名玩家啪啪啪的地图。(180x94)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LUDICROUS_NAME" Language="zh_Hans_CN">
+      <Text>震精</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>当你的电脑玩命加载时你需要经得起时间的考验。(230x115)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_NAME" Language="zh_Hans_CN">
+      <Text>资源位置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>如何在地图上放置资源</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">
+      <Text>标准</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>使用文明VI生成器放置资源</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_NAME" Language="zh_Hans_CN">
+      <Text>导入</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>从导入的地图数据中放置资源</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_NAME" Language="zh_Hans_CN">
+      <Text>资源禁区</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>某些资源不会被放在地图预设的地方</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_NAME" Language="zh_Hans_CN">
+      <Text>真实矿产地图</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>某些矿产资源会被放在相对于现实世界中的区域</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_ACTIVATED_NAME" Language="zh_Hans_CN">
+      <Text>激活</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_DEACTIVATED_NAME" Language="zh_Hans_CN">
+      <Text>禁用</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_NAME" Language="zh_Hans_CN">
+      <Text>文明特产</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>在某些特别的文明开始位置周围放置某些文明特产</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_NAME" Language="zh_Hans_CN">	
+      <Text>地形位置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Language="zh_Hans_CN">	
+      <Text>如何在地图上放置地形资源(比如森林、热带雨林...)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">	
+      <Text>标准</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>文明VI的标准放置地形</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_NAME" Language="zh_Hans_CN">
+      <Text>导入</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>从导入的地图数据中放置地形</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">
+      <Text>标准</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>文明VI的标准放置文明</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_NAME" Language="zh_Hans_CN">
+      <Text>模拟现实世界出生位置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>文明将会被放在对应现实世界中的位置</Text>
+    </Replace>	
+	
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_NAME" Language="zh_Hans_CN">
+      <Text>文明位置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>如何在地图上放置文明</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">
+      <Text>标准</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>文明VI的标准命名大陆(洲)(随机命名)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_NAME" Language="zh_Hans_CN">
+      <Text>导入</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>从导入的地图数据中命名大陆(洲)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_NAME" Language="zh_Hans_CN">	
+      <Text>河流位置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DESCRIPTION" Language="zh_Hans_CN">	
+      <Text>如何在地图上放置河流</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">	
+      <Text>标准</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>文明VI的标准放置河流</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_NAME" Language="zh_Hans_CN">
+      <Text>导入</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>从导入的地图数据中放置河流</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_NAME" Language="zh_Hans_CN">
+      <Text>自然奇观</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>如何在地图上放置自然奇观</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">
+      <Text>标准</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>文明VI的标准放置自然奇观</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_NAME" Language="zh_Hans_CN">
+      <Text>导入</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>从导入的地图数据中放置自然奇观</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_NAME" Language="zh_Hans_CN">
+      <Text>空</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>不放置</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CLOSED_BOSPHORUS_NAME" Language="zh_Hans_CN">
+      <Text>取消[COLOR_GREEN]伊斯坦布尔海峡[ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MONT_SAINT_MICHEL_MARSH_NAME" Language="zh_Hans_CN">
+      <Text>在[COLOR_GREEN]圣米歇尔山[ENDCOLOR]附近放置沼泽</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_STONEHENGE_STONE_NAME" Language="zh_Hans_CN">
+      <Text>在[COLOR_GREEN]巨石阵[ENDCOLOR]附近放置石头</Text>
+    </Replace>
+	
+  </LocalizedText>
+</GameData>
