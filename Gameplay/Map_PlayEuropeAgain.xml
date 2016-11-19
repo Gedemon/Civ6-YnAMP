@@ -35,4 +35,159 @@
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_YEREVAN"		X="93" Y="36" />
 	</StartPosition>
 	
+	<!-- 
+
+	TRUE LOCATION CITY NAMES
+	16/11/19
+
+	DONE:
+
+	+ France
+
+	TO DO:
+	- Britan+Ireland
+	- Scandinavia
+	- Iceland
+	- Iberia
+	- Maghreb
+	- Central Europe (Germany, Austria...)
+	- Italy
+	- Eastern Europe (From Baltic to Balkan)
+	- Greece
+	- Anatoly
+	- Egyptian Africa
+	- Middle East
+	- Caucasus
+	- Ukraine
+	- Belarus
+	- Russia
+
+	-->
+	<CityMap>
+
+		<!--
+		
+		* WHEN NO AREA DEFAULT IS AREA="1"
+		
+		* COMMENT "OVERLAP" MEANS THIS TILE IS 0 RANGE AND PURE TO EMPHESIZE THIS NAME ON THIS TILE, BECAUSE
+		  SEVERAL RANGES FROM DIFFERENT NAMES OVERLAP THIS TILE
+		  
+		-->
+
+
+		<!-- FRANCE -->
+		
+		<Replace MapName="PlayEuropeAgain" X="29" Y="40" CityLocaleName="LOC_CITY_NAME_PERPIGNAN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="34" Y="40" CityLocaleName="LOC_CITY_NAME_MARSEILLE" />
+		
+		<Replace MapName="PlayEuropeAgain" X="28" Y="41" CityLocaleName="LOC_CITY_NAME_CARCASSONNE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="31" Y="41" CityLocaleName="LOC_CITY_NAME_ARLES" />
+		<Replace MapName="PlayEuropeAgain" X="36" Y="41" CityLocaleName="LOC_CITY_NAME_NICE" />
+		
+		<Replace MapName="PlayEuropeAgain" X="30" Y="42" CityLocaleName="LOC_CITY_NAME_MONTPELLIER" />
+		<Replace MapName="PlayEuropeAgain" X="31" Y="42" CityLocaleName="LOC_CITY_NAME_MONTPELLIER"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="33" Y="42" CityLocaleName="LOC_CITY_NAME_NIMES" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="25" Y="43" CityLocaleName="LOC_CITY_NAME_LOURDES" />
+		<Replace MapName="PlayEuropeAgain" X="26" Y="43" CityLocaleName="LOC_CITY_NAME_TOULOUSE"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="27" Y="43" CityLocaleName="LOC_CITY_NAME_TOULOUSE" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="43" CityLocaleName="LOC_CITY_NAME_MONTPELLIER"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="32" Y="43" CityLocaleName="LOC_CITY_NAME_NIMES" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="34" Y="43" CityLocaleName="LOC_CITY_NAME_AVIGNON" />
+		
+		<Replace MapName="PlayEuropeAgain" X="24" Y="44" CityLocaleName="LOC_CITY_NAME_BAYONNE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="44" CityLocaleName="LOC_CITY_NAME_TOULOUSE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="31" Y="44" CityLocaleName="LOC_CITY_NAME_SAINT_ETIENNE" />
+		<Replace MapName="PlayEuropeAgain" X="32" Y="44" CityLocaleName="LOC_CITY_NAME_LYON"  Area="0" /> <!-- OVERLAP -->
+
+		<Replace MapName="PlayEuropeAgain" X="26" Y="45" CityLocaleName="LOC_CITY_NAME_BORDEAUX" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="45" CityLocaleName="LOC_CITY_NAME_VICHY"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="34" Y="45" CityLocaleName="LOC_CITY_NAME_GRENOBLE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="35" Y="45" CityLocaleName="LOC_CITY_NAME_GRENOBLE" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="25" Y="46" CityLocaleName="LOC_CITY_NAME_BORDEAUX" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="46" CityLocaleName="LOC_CITY_NAME_LIMOGES" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="46" CityLocaleName="LOC_CITY_NAME_LIMOGES"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="30" Y="46" CityLocaleName="LOC_CITY_NAME_VICHY" />
+		<Replace MapName="PlayEuropeAgain" X="34" Y="46" CityLocaleName="LOC_CITY_NAME_BESANCON" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="25" Y="47" CityLocaleName="LOC_CITY_NAME_ROCHEFORT" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="47" CityLocaleName="LOC_CITY_NAME_POITIERS"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="30" Y="47" CityLocaleName="LOC_CITY_NAME_BOURGES"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="32" Y="47" CityLocaleName="LOC_CITY_NAME_BOURGES" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="34" Y="47" CityLocaleName="LOC_CITY_NAME_BESANCON"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="35" Y="47" CityLocaleName="LOC_CITY_NAME_BESANCON" />
+
+		<Replace MapName="PlayEuropeAgain" X="26" Y="48" CityLocaleName="LOC_CITY_NAME_LA_ROCHELLE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="48" CityLocaleName="LOC_CITY_NAME_POITIERS" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="48" CityLocaleName="LOC_CITY_NAME_TOURS"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="31" Y="48" CityLocaleName="LOC_CITY_NAME_BOURGES" />
+		<Replace MapName="PlayEuropeAgain" X="34" Y="48" CityLocaleName="LOC_CITY_NAME_DIJON" />
+		<Replace MapName="PlayEuropeAgain" X="35" Y="48" CityLocaleName="LOC_CITY_NAME_BESANCON"  Area="0" /> <!-- OVERLAP -->
+		
+		<Replace MapName="PlayEuropeAgain" X="25" Y="49" CityLocaleName="LOC_CITY_NAME_LA_ROCHELLE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="49" CityLocaleName="LOC_CITY_NAME_POITIERS"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="28" Y="49" CityLocaleName="LOC_CITY_NAME_TOURS" />
+		<Replace MapName="PlayEuropeAgain" X="32" Y="49" CityLocaleName="LOC_CITY_NAME_AUXERRE" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="25" Y="50" CityLocaleName="LOC_CITY_NAME_LA_ROCHELLE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="50" CityLocaleName="LOC_CITY_NAME_BLOIS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="33" Y="50" CityLocaleName="LOC_CITY_NAME_SENS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="34" Y="50" CityLocaleName="LOC_CITY_NAME_SENS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="36" Y="50" CityLocaleName="LOC_CITY_NAME_TROYES" />
+		
+		<Replace MapName="PlayEuropeAgain" X="26" Y="51" CityLocaleName="LOC_CITY_NAME_NANTES" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="51" CityLocaleName="LOC_CITY_NAME_BLOIS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="31" Y="51" CityLocaleName="LOC_CITY_NAME_ORLEANS" />
+		<Replace MapName="PlayEuropeAgain" X="38" Y="51" CityLocaleName="LOC_CITY_NAME_STRASBOURG" />
+		
+		<Replace MapName="PlayEuropeAgain" X="25" Y="52" CityLocaleName="LOC_CITY_NAME_SAINT_NAZAIRE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="52" CityLocaleName="LOC_CITY_NAME_RENNES"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="28" Y="52" CityLocaleName="LOC_CITY_NAME_RENNES"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="29" Y="52" CityLocaleName="LOC_CITY_NAME_LE_MANS" />
+		<Replace MapName="PlayEuropeAgain" X="34" Y="52" CityLocaleName="LOC_CITY_NAME_PARIS" />
+		<Replace MapName="PlayEuropeAgain" X="36" Y="52" CityLocaleName="LOC_CITY_NAME_TROYES" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="38" Y="52" CityLocaleName="LOC_CITY_NAME_METZ"  Area="0" /> <!-- OVERLAP -->
+		
+		<Replace MapName="PlayEuropeAgain" X="24" Y="53" CityLocaleName="LOC_CITY_NAME_SAINT_NAZAIRE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="25" Y="53" CityLocaleName="LOC_CITY_NAME_PONTIVY" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="53" CityLocaleName="LOC_CITY_NAME_RENNES" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="53" CityLocaleName="LOC_CITY_NAME_RENNES"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="30" Y="53" CityLocaleName="LOC_CITY_NAME_LE_MANS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="35" Y="53" CityLocaleName="LOC_CITY_NAME_PARIS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="37" Y="53" CityLocaleName="LOC_CITY_NAME_METZ" />
+		
+		<Replace MapName="PlayEuropeAgain" X="23" Y="54" CityLocaleName="LOC_CITY_NAME_BREST" />
+		<Replace MapName="PlayEuropeAgain" X="25" Y="54" CityLocaleName="LOC_CITY_NAME_PONTIVY" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="26" Y="54" CityLocaleName="LOC_CITY_NAME_SAINT_BRIEUC" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="54" CityLocaleName="LOC_CITY_NAME_SAINT_MALO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="54" CityLocaleName="LOC_CITY_NAME_SAINT_MALO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="54" CityLocaleName="LOC_CITY_NAME_VIRE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="31" Y="54" CityLocaleName="LOC_CITY_NAME_CAEN"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="32" Y="54" CityLocaleName="LOC_CITY_NAME_ROUEN" />
+		<Replace MapName="PlayEuropeAgain" X="37" Y="54" CityLocaleName="LOC_CITY_NAME_REIMS"  Area="0" /> <!-- OVERLAP -->
+		
+		<Replace MapName="PlayEuropeAgain" X="24" Y="55" CityLocaleName="LOC_CITY_NAME_MORLAIX" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="25" Y="55" CityLocaleName="LOC_CITY_NAME_SAINT_BRIEUC" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="55" CityLocaleName="LOC_CITY_NAME_COUTANCES" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="55" CityLocaleName="LOC_CITY_NAME_CAEN" />
+		<Replace MapName="PlayEuropeAgain" X="31" Y="55" CityLocaleName="LOC_CITY_NAME_LE_HAVRE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="33" Y="55" CityLocaleName="LOC_CITY_NAME_AMIENS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="34" Y="55" CityLocaleName="LOC_CITY_NAME_ARRAS" />
+		<Replace MapName="PlayEuropeAgain" X="35" Y="55" CityLocaleName="LOC_CITY_NAME_ARRAS"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="36" Y="55" CityLocaleName="LOC_CITY_NAME_REIMS" />
+		
+		<Replace MapName="PlayEuropeAgain" X="28" Y="56" CityLocaleName="LOC_CITY_NAME_CHERBOURG_OCTEVILLE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="56" CityLocaleName="LOC_CITY_NAME_CHERBOURG_OCTEVILLE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="32" Y="56" CityLocaleName="LOC_CITY_NAME_LE_HAVRE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="33" Y="56" CityLocaleName="LOC_CITY_NAME_AMIENS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="36" Y="56" CityLocaleName="LOC_CITY_NAME_SAINT_QUENTIN" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="32" Y="57" CityLocaleName="LOC_CITY_NAME_CALAIS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="33" Y="57" CityLocaleName="LOC_CITY_NAME_DUNKERQUE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="34" Y="57" CityLocaleName="LOC_CITY_NAME_DUNKERQUE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="35" Y="57" CityLocaleName="LOC_CITY_NAME_LILLE" Area="0" />
+
+	</CityMap>
+	
 </GameData>

@@ -222,7 +222,7 @@
 		<Replace MapName="GreatestEarthMap" X="45" Y="49" CityLocaleName="LOC_CITY_NAME_STRASBOURG" />
 		<Replace MapName="GreatestEarthMap" X="38" Y="47" CityLocaleName="LOC_CITY_NAME_RENNES" />
 		<Replace MapName="GreatestEarthMap" X="36" Y="47" CityLocaleName="LOC_CITY_NAME_QUIMPER" Area = "0"/>
-		<Replace MapName="GreatestEarthMap" X="38" Y="48" CityLocaleName="LOC_CITY_NAME_ST_MALO" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="38" Y="48" CityLocaleName="LOC_CITY_NAME_SAINT_MALO" Area = "0"/>
 		<Replace MapName="GreatestEarthMap" X="36" Y="36" CityLocaleName="LOC_CITY_NAME_BREST" />
 		<Replace MapName="GreatestEarthMap" X="46" Y="45" CityLocaleName="LOC_CITY_NAME_NICE" />
 	</CityMap>

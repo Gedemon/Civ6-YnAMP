@@ -92,22 +92,122 @@
 
   <!-- New City Names <en_US> -->
   <LocalizedText>
-	<!-- FRANCE -->
-    <Replace Tag="LOC_CITY_NAME_ORLEANS" Text="Orleans" Language="en_US"/>
-    <Replace Tag="LOC_CITY_NAME_NICE" Text="Nice" Language="en_US"/>
+	<!-- FRANCE -->		
+	<Replace Tag="LOC_CITY_NAME_AMIENS" Text="Amiens" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ARLES" Text="Arles" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ARRAS" Text="Arras" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AUXERRE" Text="Auxerre" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AVIGNON" Text="Avignon" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BAYONNE" Text="Bayonne" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_BESANCON" Text="Besancon" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_STRASBOURG" Text="Strasbourg" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_RENNES" Text="Rennes" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_QUIMPER" Text="Quimper" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ST_MALO" Text="Saint Malo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BLOIS" Text="Blois" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BORDEAUX" Text="Bordeaux" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BOURGES" Text="Bourges" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_BREST" Text="Brest" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CAEN" Text="Caen" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CALAIS" Text="Calais" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CARCASSONNE" Text="Carcassonne" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHERBOURG_OCTEVILLE" Text="Cherbourg-Octeville" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_COUTANCES" Text="Coutances" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DIJON" Text="Dijon" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DUNKERQUE" Text="Dunkerque" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GRENOBLE" Text="Grenoble" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LA_ROCHELLE" Text="La Rochelle" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LE_HAVRE" Text="Le Havre" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LE_MANS" Text="Le Mans" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LILLE" Text="Lille" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LIMOGES" Text="Limoges" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LOURDES" Text="Lourdes" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LYON" Text="Lyon" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MARSEILLE" Text="Marseille" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_METZ" Text="Metz" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MONTPELLIER" Text="Montpellier" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MORLAIX" Text="Morlaix" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NANTES" Text="Nantes" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NICE" Text="Nice" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NIMES" Text="Nimes" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ORLEANS" Text="Orleans" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PARIS" Text="Paris" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PERPIGNAN" Text="Perpignan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_POITIERS" Text="Poitiers" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PONTIVY" Text="Pontivy" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_QUIMPER" Text="Quimper" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REIMS" Text="Reims" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_RENNES" Text="Rennes" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ROCHEFORT" Text="Rochefort" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ROUEN" Text="Rouen" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_BRIEUC" Text="Saint-Brieuc" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_ETIENNE" Text="Saint-Etienne" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_MALO" Text="Saint-Malo " Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_NAZAIRE" Text="Saint-Nazaire" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_QUENTIN" Text="Saint-Quentin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SENS" Text="Sens" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_STRASBOURG" Text="Strasbourg" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TOULOUSE" Text="Toulouse" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TOURS" Text="Tours" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TROYES" Text="Troyes" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VICHY" Text="Vichy" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VIRE" Text="Vire" Language="en_US"/>	
+	
   </LocalizedText>
   
   <!-- New City Names <fr_FR> -->
   <LocalizedText>
 	<!-- FRANCE -->
-    <Replace Tag="LOC_CITY_NAME_ORLEANS" Text="Orléans" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_AMIENS" Text="Amiens" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_ARLES" Text="Arles" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_ARRAS" Text="Arras" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_AUXERRE" Text="Auxerre" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_AVIGNON" Text="Avignon" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_BAYONNE" Text="Bayonne" Language="fr_FR"/>
 	<Replace Tag="LOC_CITY_NAME_BESANCON" Text="Besançon" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_BLOIS" Text="Blois" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_BORDEAUX" Text="Bordeaux" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_BOURGES" Text="Bourges" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_BREST" Text="Brest" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_CAEN" Text="Caen" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_CALAIS" Text="Calais" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_CARCASSONNE" Text="Carcassonne" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_CHERBOURG_OCTEVILLE" Text="Cherbourg-Octeville" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_COUTANCES" Text="Coutances" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_DIJON" Text="Dijon" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_DUNKERQUE" Text="Dunkerque" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_GRENOBLE" Text="Grenoble" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_LA_ROCHELLE" Text="La Rochelle" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_LE_HAVRE" Text="Le Havre" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_LE_MANS" Text="Le Mans" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_LILLE" Text="Lille" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_LIMOGES" Text="Limoges" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_LOURDES" Text="Lourdes" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_LYON" Text="Lyon" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_MARSEILLE" Text="Marseille" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_METZ" Text="Metz" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_MONTPELLIER" Text="Montpellier" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_MORLAIX" Text="Morlaix" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_NANTES" Text="Nantes" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_NICE" Text="Nice" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_NIMES" Text="Nîmes" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_ORLEANS" Text="Orléans" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_PARIS" Text="Paris" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_PERPIGNAN" Text="Perpignan" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_POITIERS" Text="Poitiers" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_PONTIVY" Text="Pontivy" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_REIMS" Text="Reims" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_RENNES" Text="Rennes" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_ROCHEFORT" Text="Rochefort" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_ROUEN" Text="Rouen" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_BRIEUC" Text="Saint-Brieuc" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_ETIENNE" Text="Saint-Étienne" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_MALO" Text="Saint-Malo " Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_NAZAIRE" Text="Saint-Nazaire" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_QUENTIN" Text="Saint-Quentin" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_SENS" Text="Sens" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_STRASBOURG" Text="Strasbourg" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_TOULOUSE" Text="Toulouse" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_TOURS" Text="Tours" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_TROYES" Text="Troyes" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_VICHY" Text="Vichy" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_VIRE" Text="Vire" Language="fr_FR"/>
 	
   </LocalizedText>
 	
