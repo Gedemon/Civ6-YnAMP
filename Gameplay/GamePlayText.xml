@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Ed Beach (Firaxis Games) -->
 <GameData>
+  <!-- City States Pedia -->
   <LocalizedText>	
 	
     <Replace Tag="LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CHEYENNE_CHAPTER_HISTORY_PARA_1" Language="en_US">
@@ -88,4 +89,26 @@
     </Replace>
 	
   </LocalizedText>
-</GameData>
+
+  <!-- New City Names <en_US> -->
+  <LocalizedText>
+	<!-- FRANCE -->
+    <Replace Tag="LOC_CITY_NAME_ORLEANS" Text="Orleans" Language="en_US"/>
+    <Replace Tag="LOC_CITY_NAME_NICE" Text="Nice" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BESANCON" Text="Besancon" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_STRASBOURG" Text="Strasbourg" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_RENNES" Text="Rennes" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_QUIMPER" Text="Quimper" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ST_MALO" Text="Saint Malo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BREST" Text="Brest" Language="en_US"/>
+  </LocalizedText>
+  
+  <!-- New City Names <fr_FR> -->
+  <LocalizedText>
+	<!-- FRANCE -->
+    <Replace Tag="LOC_CITY_NAME_ORLEANS" Text="Orléans" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_BESANCON" Text="Besançon" Language="fr_FR"/>
+	
+  </LocalizedText>
+	
+  </GameData>

@@ -11,8 +11,6 @@
 
 INSERT OR REPLACE INTO GlobalParameters (Name, Value) VALUES ('YNAMP_RULESET', '2');
 
-UPDATE GlobalParameters SET Value = '2'	WHERE Name = 'CITY_MIN_RANGE';
-
 -- More moves on roads
 UPDATE Routes SET MovementCost = 0.75 WHERE RouteType="ROUTE_ANCIENT_ROAD"; 
 UPDATE Routes SET MovementCost = 0.50 WHERE RouteType="ROUTE_MEDIEVAL_ROAD"; 

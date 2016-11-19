@@ -1,53 +1,72 @@
 ------------------------------------------------------------------------------
---	FILE:	 YnAMP_Script.lua
+--	FILE:	 YnAMP_InGame.lua
 --  Gedemon (2016)
---  Testing things here
 ------------------------------------------------------------------------------
 
 local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION because Value is Text ?
 print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016) by Gedemon")
-print ("loading YnAMP_Script.lua")
+print ("loading YnAMP_InGame.lua")
 
 include ("YnAMP_Utils.lua") -- can't do that ???
+
+local mapName = MapConfiguration.GetValue("MapName")
+print ("Map Name = " .. tostring(mapName))
 
 ----------------------------------------------------------------------------------------
 -- Testing City renaming
 ----------------------------------------------------------------------------------------
-function CityNewGetName(self)
-	local name = self:OldGetName()
-	name = "test"
-	--
-	return name
-end
-function InitializeCityFunctions( ownerPlayerID, cityID)
-	local pCity= CityManager.GetCity(ownerPlayerID, cityID);
-	local c = getmetatable(pCity).__index
-	if c.OldGetName then -- initialize once
-		return
-	end
-	
-	-- save old functions
-	c.OldGetName = c.GetName
-	
-	-- set replacement functions
-	c.GetName = CityNewGetName
-	
-	-- set new functions
-	--c.NewFunction = NewFunction
-
-	--Events.SerialEventGameDataDirty()
-end
---Events.CityAddedToMap.Add( InitializeCityFunctions )
 
 function ChangeCityName( ownerPlayerID, cityID)
 	local pCity = CityManager.GetCity(ownerPlayerID, cityID)
-	if pCity then -- initialize once
-		pCity:SetName("test") -- update on reloading... and sometime in game, try to find some events ?
+	if pCity then
+		local x = pCity:GetX()
+		local y = pCity:GetY()
+		local CivilizationTypeName = PlayerConfigurations[ownerPlayerID]:GetCivilizationTypeName()
+		print("Trying to find name for city of ".. tostring(CivilizationTypeName) .." at "..tostring(x)..","..tostring(y))
+		local possibleName = {}
+		local maxRange = 1
+		local bestDistance = maxRange + 1
+		local bestName = nil
+		local bestDefaultName = nil
+		local cityPlot = Map.GetPlot(x, y)
+		for row in GameInfo.CityMap() do
+			if row.MapName == mapName  then
+				local nameX = row.X
+				local nameY = row.Y
+				local nameMaxDistance = row.Area or maxRange
+				-- rough selection before testing distance
+				print("- testing "..tostring(row.CityLocaleName).." at "..tostring(nameX)..","..tostring(nameX).." max distance is "..tostring(nameMaxDistance)..", best distance so far is "..tostring(bestDistance))
+				if (x - nameMaxDistance <= nameX and x + nameMaxDistance >= nameX) and (y - nameMaxDistance <= nameY and y + nameMaxDistance >= nameY) then	
+					local namePlot = Map.GetPlot(nameX, nameY)
+					local distance = Map.GetPlotDistance(x, y ,nameX, nameY)
+					if distance <= nameMaxDistance and distance < bestDistance then
+						if CivilizationTypeName == row.Civilization then
+							bestDistance = distance
+							bestName = row.CityLocaleName
+						elseif not row.Civilization then -- do not use Civilization specific name with another Civilization, only generic
+							bestDistance = distance
+							bestDefaultName = row.CityLocaleName						
+						end
+					end				
+				end
+			end
+		end
+		if not bestName then
+			bestName = bestDefaultName
+		end
+		if bestName then
+			--Send net message to change name.
+			local params = {}
+			params[CityCommandTypes.PARAM_NAME] = bestName
+			CityManager.RequestCommand(pCity, CityCommandTypes.NAME_CITY, params)
+			print("- New name : " .. tostring(bestName))
+		else
+			print("- Can't find a name for this position !")
+			-- todo : use a name not reserved for the map
+		end
 	end
-
 end
---Events.CityAddedToMap.Add( ChangeCityName )
-
+Events.CityAddedToMap.Add( ChangeCityName )
 
 
 ----------------------------------------------------------------------------------------
@@ -150,26 +169,3 @@ end
 
 ------------------------------------------------------
 
-function OnCombat(...)
-	print("-------------------------")
-	print("Events.Combat : ")
-	print(unpack({...}))
-	print("-------------------------")
-end
-Events.Combat.Add( OnCombat )
-
-function OnCombatVisBegin(...)
-	print("-------------------------")
-	print("Events.CombatVisBegin :")
-	print(unpack({...}))
-	print("-------------------------")
-end
-Events.CombatVisBegin.Add( OnCombatVisBegin )
-
-function OnCombatVisEnd(...)
-	print("-------------------------")
-	print("Events.CombatVisEnd : ")
-	print(unpack({...}))
-	print("-------------------------")
-end
-Events.CombatVisEnd.Add( OnCombatVisEnd )

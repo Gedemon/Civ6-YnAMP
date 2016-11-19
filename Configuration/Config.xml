@@ -211,6 +211,7 @@
 		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthJungle" 	Name="JunglePercent" Description="" Domain="text" DefaultValue="16" ConfigurationGroup="Map" ConfigurationId="JunglePercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthForest" 	Name="ForestPercent" Description="" Domain="text" DefaultValue="22" ConfigurationGroup="Map" ConfigurationId="ForestPercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthMarsh" 	Name="MarshPercent" Description="" Domain="text" DefaultValue="2" 	ConfigurationGroup="Map" ConfigurationId="MarshPercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthOasis" 	Name="OasisPercent" Description="" Domain="text" DefaultValue="1" 	ConfigurationGroup="Map" ConfigurationId="OasisPercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthIceNorth" 	Name="IceNorth" Description="" Domain="text" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="IceNorth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthIceSouth" 	Name="IceSouth" Description="" Domain="text" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="IceSouth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		

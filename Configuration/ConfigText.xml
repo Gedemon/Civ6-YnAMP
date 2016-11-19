@@ -44,10 +44,10 @@
     </Replace>
 	
     <Replace Tag="LOC_YNAGEM_RULESET1_DESC" Language="en_US">
-      <Text>Light Modificationss[NEWLINE][ICON_Bullet] Raise Max distance between Civilizations[NEWLINE][ICON_Bullet] 33% less Barbarian encampment (2/civ)[NEWLINE][ICON_Bullet] Min distance to city from camps raised to 7[NEWLINE][ICON_Bullet] Change some Capitals name[NEWLINE][ICON_Bullet] Tweak resources placement rules</Text>
+      <Text>Light Modifications[NEWLINE][ICON_Bullet] Add or remove some CS to fit the Maps[NEWLINE][ICON_Bullet] Raise Max distance between Civilizations[NEWLINE][ICON_Bullet] 33% less Barbarian encampment (2/civ)[NEWLINE][ICON_Bullet] Min distance to city from camps raised to 7[NEWLINE][ICON_Bullet] Change some Capitals name[NEWLINE][ICON_Bullet] Tweak resources placement rules</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_RULESET2_DESC" Language="en_US">
-      <Text>Medium Modifications [NEWLINE]Include light modifications[NEWLINE][ICON_Bullet] Add or remove some CS to fit the Map[NEWLINE][ICON_Bullet] Min distance between city lowered to 2[NEWLINE][ICON_Bullet] Double [ICON_Movement] Movement on Ocean[NEWLINE][ICON_Bullet] Faster [ICON_Movement] Movement on Roads</Text>
+      <Text>Medium Modifications [NEWLINE]Include light modifications[NEWLINE][ICON_Bullet] Double [ICON_Movement] Movement on Ocean[NEWLINE][ICON_Bullet] Faster [ICON_Movement] Movement on Roads</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_RULESET3_DESC" Language="en_US">
       <Text>Advanced Modifications[NEWLINE]Include light and medium modifications[NEWLINE][COLOR_RED]Experimental ![ENDCOLOR][NEWLINE][ICON_Bullet] 66% less Barbarian encampment (1/civ)[NEWLINE][ICON_Bullet] Min distance to city from camps set to 5 (default = 4)[NEWLINE][ICON_Bullet] Raised chance of camps spawning[NEWLINE][ICON_Bullet] Ranged land units are now "support" (0 [ICON_Strength], can stack with Melee)[NEWLINE][ICON_Bullet] All land/sea units range set to 1 (with late game exception)[NEWLINE][ICON_Bullet] No ancient walls, cities can't attack.</Text>

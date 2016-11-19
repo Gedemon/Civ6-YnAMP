@@ -6,865 +6,225 @@
 	<!-- +++++++++++++++++++++++++++++++++++ -->
 	
 	<!-- Major Civilization -->
-	<GreatestEarthMap_StartPosition>
+	<StartPosition>
 		
 		<!-- New Majors with Civilization 6 -->
-		<Replace>
-			<Civilization>CIVILIZATION_NORWAY</Civilization>
-			<X>44</X>
-			<Y>60</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_SCYTHIA</Civilization>
-			<X>61</X>
-			<Y>49</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_SUMERIA</Civilization>
-			<X>67</X>
-			<Y>39</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_KONGO</Civilization>
-			<X>57</X>
-			<Y>17</Y>
-		</Replace>
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NORWAY"		X="44" Y="60" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SCYTHIA"		X="61" Y="49" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SUMERIA"		X="67" Y="39" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KONGO"		X="57" Y="17" />
 		
-		<!-- YNAMP Originals -->
+		<!-- YNAEMP Originals -->
 		
-		<Replace>
-			<Civilization>CIVILIZATION_AMERICA</Civilization>
-			<X>19</X>
-			<Y>47</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_ARABIA</Civilization>
-			<X>64</X>
-			<Y>33</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_AZTEC</Civilization>
-			<X>11</X>
-			<Y>34</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_CHINA</Civilization>
-			<X>87</X>
-			<Y>54</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_EGYPT</Civilization>
-			<X>58</X>
-			<Y>33</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_ENGLAND</Civilization>
-			<X>40</X>
-			<Y>52</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_FRANCE</Civilization>
-			<X>42</X>
-			<Y>48</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_GERMANY</Civilization>
-			<X>51</X>
-			<Y>53</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_GREECE</Civilization>
-			<X>57</X>
-			<Y>40</Y>
-		</Replace>
-       <Replace>
-            <Civilization>CIVILIZATION_GREECE</Civilization>
-			<Leader>LEADER_GORGO</Leader>
-            <X>57</X>
-            <Y>44</Y>
-        </Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_INDIA</Civilization>
-			<X>75</X>
-			<Y>39</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_IROQUOIS</Civilization>
-			<X>19</X>
-			<Y>51</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_JAPAN</Civilization>
-			<X>98</X>
-			<Y>48</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_OTTOMAN</Civilization>
-			<X>62</X>
-			<Y>44</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_PERSIA</Civilization>
-			<X>69</X>
-			<Y>40</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_ROME</Civilization>
-			<X>50</X>
-			<Y>42</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_RUSSIA</Civilization>
-			<X>63</X>
-			<Y>56</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_SIAM</Civilization>
-			<X>83</X>
-			<Y>38</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_SONGHAI</Civilization>
-			<X>47</X>
-			<Y>26</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_BABYLON</Civilization>
-			<X>66</X>
-			<Y>38</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_MONGOL</Civilization>
-			<X>81</X>
-			<Y>57</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_INCA</Civilization>
-			<X>23</X>
-			<Y>17</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_SPAIN</Civilization>
-			<X>37</X>
-			<Y>38</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_POLYNESIA</Civilization>
-			<X>102</X>
-			<Y>36</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_DENMARK</Civilization>
-			<X>49</X>
-			<Y>57</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_KOREA</Civilization>
-			<X>92</X>
-			<Y>52</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_AUSTRIA</Civilization>
-			<X>54</X>
-			<Y>49</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_BYZANTIUM</Civilization>
-			<X>58</X>
-			<Y>45</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_CARTHAGE</Civilization>
-			<X>48</X>
-			<Y>36</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_CELTS</Civilization>
-			<X>38</X>
-			<Y>56</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_ETHIOPIA</Civilization>
-			<X>64</X>
-			<Y>26</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_HUNS</Civilization>
-			<X>67</X>
-			<Y>49</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_MAYA</Civilization>
-			<X>15</X>
-			<Y>31</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_NETHERLANDS</Civilization>
-			<X>43</X>
-			<Y>53</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_SWEDEN</Civilization>
-			<X>52</X>
-			<Y>61</Y>
-		</Replace>
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AMERICA"		X="19" Y="47" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ARABIA"		X="64" Y="33" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AZTEC"		X="11" Y="34" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CHINA"		X="87" Y="54" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_EGYPT"		X="58" Y="33" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ENGLAND"		X="40" Y="52" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_FRANCE"		X="42" Y="48" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GERMANY"		X="51" Y="53" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GREECE"		X="57" Y="40" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GREECE"		X="57" Y="44" Leader="LEADER_GORGO" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_INDIA"		X="75" Y="39" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_IROQUOIS" 	X="19" Y="51" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_JAPAN"		X="98" Y="48" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_OTTOMAN"		X="62" Y="44" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PERSIA"		X="69" Y="40" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ROME"		X="50" Y="42" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_RUSSIA"		X="63" Y="56" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SIAM"		X="83" Y="38" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SONGHAI"		X="47" Y="26" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BABYLON"		X="66" Y="38" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MONGOL"		X="81" Y="57" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_INCA"		X="23" Y="17" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SPAIN"		X="37" Y="38" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_POLYNESIA" 	X="102" Y="36" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_DENMARK"		X="49" Y="57" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KOREA"		X="92" Y="52" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AUSTRIA"		X="54" Y="49" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BYZANTIUM" 	X="58" Y="45" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CARTHAGE" 	X="48" Y="36" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CELTS"		X="38" Y="56" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ETHIOPIA" 	X="64" Y="26" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_HUNS"		X="67" Y="49" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MAYA"		X="15" Y="31" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NETHERLANDS" X="43" Y="53" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SWEDEN"		X="52" Y="61" />
 
-		<Replace>
-			<Civilization>CIVILIZATION_PORTUGAL</Civilization>
-			<X>33</X>
-			<Y>37</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_VENICE</Civilization>
-			<X>51</X>
-			<Y>47</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_POLAND</Civilization>
-			<X>56</X>
-			<Y>55</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_BRAZIL</Civilization>
-			<X>30</X>
-			<Y>13</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_ASSYRIA</Civilization>
-			<X>65</X>
-			<Y>41</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_INDONESIA</Civilization>
-			<X>85</X>
-			<Y>24</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_MOROCCO</Civilization>
-			<X>39</X>
-			<Y>31</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_ZULU</Civilization>
-			<X>59</X>
-			<Y>5</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_SHOSHONE</Civilization>
-			<X>5</X>
-			<Y>51</Y>
-		</Replace>		
-	</GreatestEarthMap_StartPosition>
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PORTUGAL"	X="33" Y="37" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_VENICE"		X="51" Y="47" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_POLAND"		X="56" Y="55" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BRAZIL"		X="30" Y="13" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ASSYRIA"		X="65" Y="41" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_INDONESIA"	X="85" Y="24" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MOROCCO"		X="39" Y="31" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ZULU"		X="59" Y="5" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SHOSHONE"	X="5" Y="51" />		
+	</StartPosition>
 	
 	<!-- City States from civ5 -->
-	<GreatestEarthMap_StartPosition>
-		<Replace>
-			<Civilization>CIVILIZATION_BRATISLAVA</Civilization>
-			<X>55</X>
-			<Y>49</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_BUDAPEST</Civilization>
-			<X>56</X>
-			<Y>48</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_GENEVA</Civilization>
-			<X>44</X>
-			<Y>47</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_RIGA</Civilization>
-			<X>57</X>
-			<Y>57</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_GENOA</Civilization>
-			<X>48</X>
-			<Y>46</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_FLORENCE</Civilization>
-			<X>50</X>
-			<Y>45</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_RAGUSA</Civilization>
-			<X>54</X>
-			<Y>44</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_SYDNEY</Civilization>
-			<X>102</X>
-			<Y>12</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_QUEBEC_CITY</Civilization>
-			<X>21</X>
-			<Y>54</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_BUCHAREST</Civilization>
-			<X>57</X>
-			<Y>48</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_BELGRADE</Civilization>
-			<X>55</X>
-			<Y>46</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_BRUSSELS</Civilization>
-			<X>43</X>
-			<Y>51</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_MONACO</Civilization>
-			<X>46</X>
-			<Y>44</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_KATHMANDU</Civilization>
-			<X>78</X>
-			<Y>41</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_HANOI</Civilization>
-			<X>84</X>
-			<Y>39</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_LHASA</Civilization>
-			<X>78</X>
-			<Y>46</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_ALMATY</Civilization>
-			<X>73</X>
-			<Y>50</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_KUALA_LUMPUR</Civilization>
-			<X>82</X>
-			<Y>35</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_SINGAPORE</Civilization>
-			<X>83</X>
-			<Y>33</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_PANAMA_CITY</Civilization>
-			<X>20</X>
-			<Y>25</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_CAPE_TOWN</Civilization>
-			<X>54</X>
-			<Y>3</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_SIDON</Civilization>
-			<X>62</X>
-			<Y>39</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_TYRE</Civilization>
-			<X>62</X>
-			<Y>38</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_ANTWERP</Civilization>
-			<X>42</X>
-			<Y>51</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_CAHOKIA</Civilization>
-			<X>13</X>
-			<Y>45</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_COLOMBO</Civilization>
-			<X>77</X>
-			<Y>29</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_HONG_KONG</Civilization>
-			<X>85</X>
-			<Y>42</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_ORMUS</Civilization>
-			<X>71</X>
-			<Y>38</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_JERUSALEM</Civilization>
-			<X>62</X>
-			<Y>37</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_LA_VENTA</Civilization>
-			<X>15</X>
-			<Y>32</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_VANCOUVER</Civilization>
-			<X>2</X>
-			<Y>54</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_MANILA</Civilization>
-			<X>88</X>
-			<Y>35</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_ANTANANARIVO</Civilization>
-			<X>66</X>
-			<Y>9</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_MILAN</Civilization>
-			<X>48</X>
-			<Y>47</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_MOMBASA</Civilization>
-			<X>63</X>
-			<Y>17</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_PRAGUE</Civilization>
-			<X>52</X>
-			<Y>51</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_VALLETTA</Civilization>
-			<X>50</X>
-			<Y>36</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_VATICAN_CITY</Civilization>
-			<X>50</X>
-			<Y>42</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_WITTENBERG</Civilization>
-			<X>50</X>
-			<Y>52</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_YEREVAN</Civilization>
-			<X>65</X>
-			<Y>45</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_ZANZIBAR</Civilization>
-			<X>64</X>
-			<Y>14</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_ZURICH</Civilization>
-			<X>48</X>
-			<Y>50</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_SAMARKAND</Civilization>
-			<X>71</X>
-			<Y>46</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_MALACCA</Civilization>
-			<X>83</X>
-			<Y>34</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_MOGADISHU</Civilization>
-			<X>66</X>
-			<Y>24</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_BYBLOS</Civilization>
-			<X>63</X>
-			<Y>40</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_KYZYL</Civilization>
-			<X>80</X>
-			<Y>59</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_IFE</Civilization>
-			<X>49</X>
-			<Y>22</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_KIEV</Civilization>
-			<X>60</X>
-			<Y>52</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_BUENOS_AIRES</Civilization>
-			<X>27</X>
-			<Y>7</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_MBANZA_KONGO</Civilization>
-			<X>52</X>
-			<Y>15</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_KABUL</Civilization>
-			<X>72</X>
-			<Y>43</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_SOFIA</Civilization>
-			<X>56</X>
-			<Y>46</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_UR</Civilization>
-			<X>66</X>
-			<Y>38</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_MELBOURNE</Civilization>
-			<X>100</X>
-			<Y>10</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_CHEYENNE</Civilization>
-			<X>8</X>
-			<Y>53</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_SIOUX</Civilization>
-			<X>9</X>
-			<Y>49</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_KINSHASA</Civilization>
-			<X>53</X>
-			<Y>16</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_HARAPPA</Civilization>
-			<X>74</X>
-			<Y>40</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_DAKAR</Civilization>
-			<X>39</X>
-			<Y>25</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_REYKJAVIK</Civilization>
-			<X>31</X>
-			<Y>61</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_GARAMANTES</Civilization>
-			<X>49</X>
-			<Y>31</Y>
-		</Replace>
-	</GreatestEarthMap_StartPosition>
+	<StartPosition>
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BRATISLAVA"		X="55" Y="49" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BUDAPEST"		X="56" Y="48" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GENEVA"			X="44" Y="47" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_RIGA"			X="57" Y="57" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GENOA"			X="48" Y="46" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_FLORENCE"		X="50" Y="45" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_RAGUSA"			X="54" Y="44" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SYDNEY"			X="102" Y="12" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_QUEBEC_CITY"		X="21" Y="54" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BUCHAREST"		X="57" Y="48" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BELGRADE"		X="55" Y="46" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BRUSSELS"		X="43" Y="51" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MONACO"			X="46" Y="44" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KATHMANDU"		X="78" Y="41" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_HANOI"			X="84" Y="39" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_LHASA"			X="78" Y="46" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ALMATY"			X="73" Y="50" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KUALA_LUMPUR"	X="82" Y="35" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SINGAPORE"		X="83" Y="33" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PANAMA_CITY"		X="20" Y="25" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CAPE_TOWN"		X="54" Y="3" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SIDON"			X="62" Y="39" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_TYRE"			X="62" Y="38" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ANTWERP"			X="42" Y="51" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CAHOKIA"			X="13" Y="45" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_COLOMBO"			X="77" Y="29" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_HONG_KONG"		X="85" Y="42" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ORMUS"			X="71" Y="38" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_JERUSALEM"		X="62" Y="37" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_LA_VENTA"		X="15" Y="32" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_VANCOUVER"		X="2" Y="54" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MANILA"			X="88" Y="35" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ANTANANARIVO"	X="66" Y="9" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MILAN"			X="48" Y="47" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MOMBASA"			X="63" Y="17" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PRAGUE"			X="52" Y="51" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_VALLETTA"		X="50" Y="36" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_VATICAN_CITY"	X="50" Y="42" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_WITTENBERG"		X="50" Y="52" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_YEREVAN"			X="65" Y="45" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ZANZIBAR"		X="64" Y="14" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ZURICH"			X="48" Y="50" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SAMARKAND"		X="71" Y="46" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MALACCA"			X="83" Y="34" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MOGADISHU"		X="66" Y="24" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BYBLOS"			X="63" Y="40" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KYZYL"			X="80" Y="59" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_IFE"				X="49" Y="22" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KIEV"			X="60" Y="52" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BUENOS_AIRES"	X="27" Y="7" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MBANZA_KONGO"	X="52" Y="15" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KABUL"			X="72" Y="43" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SOFIA"			X="56" Y="46" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_UR"				X="66" Y="38" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MELBOURNE"		X="100" Y="10" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CHEYENNE"		X="8" Y="53" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SIOUX"			X="9" Y="49" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KINSHASA"		X="53" Y="16" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_HARAPPA"			X="74" Y="40" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_DAKAR"			X="39" Y="25" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_REYKJAVIK"		X="31" Y="61" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GARAMANTES"		X="49" Y="31" />
+	</StartPosition>
 	
 	<!-- City States from civ6 -->
-	<GreatestEarthMap_StartPosition>
-		<Replace>
-			<Civilization>CIVILIZATION_AMSTERDAM</Civilization>
-			<X>44</X>
-			<Y>53</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_SYDNEY</Civilization>
-			<X>102</X>
-			<Y>12</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_BUENOS_AIRES</Civilization>
-			<X>27</X>
-			<Y>7</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_CARTHAGE</Civilization>
-			<X>47</X>
-			<Y>36</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_GENEVA</Civilization>
-			<X>46</X>
-			<Y>47</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_HATTUSA</Civilization>
-			<X>61</X>
-			<Y>43</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_HONG_KONG</Civilization>
-			<X>88</X>
-			<Y>40</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_JAKARTA</Civilization>
-			<X>85</X>
-			<Y>24</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_MEXICO_CITY</Civilization>
-			<X>11</X>
-			<Y>36</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_KABUL</Civilization>
-			<X>72</X>
-			<Y>43</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_KANDY</Civilization>
-			<X>78</X>
-			<Y>29</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_KUMASI</Civilization>
-			<X>46</X>
-			<Y>24</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_LA_VENTA</Civilization>
-			<X>15</X>
-			<Y>32</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_LISBON</Civilization>
-			<X>33</X>
-			<Y>37</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_CUBA</Civilization>
-			<X>22</X>
-			<Y>37</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_JAMAICA</Civilization>
-			<X>23</X>
-			<Y>32</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_PRESLAV</Civilization>
-			<X>57</X>
-			<Y>47</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_SEOUL</Civilization>
-			<X>91</X>
-			<Y>51</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_QUEBEC</Civilization>
-			<X>22</X>
-			<Y>54</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_TORONTO</Civilization>
-			<X>17</X>
-			<Y>52</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_CAP_TOWN</Civilization>
-			<X>54</X>
-			<Y>4</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_VILNIUS</Civilization>
-			<X>56</X>
-			<Y>57</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_MOROCCO</Civilization>
-			<X>39</X>
-			<Y>30</Y>
-		</Replace>
-		<Replace>
-			<Civilization>CIVILIZATION_ZANZIBAR</Civilization>
-			<X>63</X>
-			<Y>17</Y>
-		</Replace>
+	<StartPosition>
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AMSTERDAM"		X="44" Y="53" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SYDNEY"			X="102" Y="12" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BUENOS_AIRES"	X="27" Y="7" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CARTHAGE"		X="47" Y="36" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GENEVA"			X="46" Y="47" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_HATTUSA"			X="61" Y="43" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_HONG_KONG"		X="88" Y="40" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_JAKARTA"			X="85" Y="24" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MEXICO_CITY"		X="11" Y="36" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KABUL"			X="72" Y="43" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KANDY"			X="78" Y="29" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KUMASI"			X="46" Y="24" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_LA_VENTA"		X="15" Y="32" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_LISBON"			X="33" Y="37" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CUBA"			X="22" Y="37" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_JAMAICA"			X="23" Y="32" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PRESLAV"			X="57" Y="47" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SEOUL"			X="91" Y="51" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_QUEBEC"			X="22" Y="54" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_TORONTO"			X="17" Y="52" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CAP_TOWN"		X="54" Y="4" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_VILNIUS"			X="56" Y="57" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MOROCCO"			X="39" Y="30" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ZANZIBAR"		X="63" Y="17" />
 		
-	</GreatestEarthMap_StartPosition>
+	</StartPosition>
 
 	<!-- ++++++++++++++++++++++++ -->
-	<GreatestEarthMap_RegionPosition>
-		<Replace>
-			<Region>GROENLAND</Region>
-			<X>23</X>
-			<Y>59</Y>
-			<Width>7</Width>
-			<Height>4</Height>
-		</Replace>
-		<Replace>
-			<Region>NORTH_AMERICA</Region>
-			<X>0</X>
-			<Y>41</Y>
-			<Width>27</Width>
-			<Height>15</Height>
-		</Replace>
-		<Replace>
-			<Region>ARCTIC_AMERICA</Region>
-			<X>0</X>
-			<Y>56</Y>
-			<Width>27</Width>
-			<Height>7</Height>
-		</Replace>
-		<Replace>
-			<Region>CENTRAL_AMERICA</Region>
-			<X>0</X>
-			<Y>22</Y>
-			<Width>31</Width>
-			<Height>19</Height>
-		</Replace>
-		<Replace>
-			<Region>SOUTH_AMERICA_WEST</Region>
-			<X>17</X>
-			<Y>5</Y>
-			<Width>10</Width>
-			<Height>16</Height>
-		</Replace>
-		<Replace>
-			<Region>SOUTH_AMERICA_EAST</Region>
-			<X>27</X>
-			<Y>5</Y>
-			<Width>18</Width>
-			<Height>16</Height>
-		</Replace>
-		<Replace>
-			<Region>ANTARCTIC_AMERICA</Region>
-			<X>23</X>
-			<Y>0</Y>
-			<Width>12</Width>
-			<Height>5</Height>
-		</Replace>
-		<Replace>
-			<Region>AUSTRALIA</Region>
-			<X>90</X>
-			<Y>5</Y>
-			<Width>12</Width>
-			<Height>14</Height>
-		</Replace>
-		<Replace>
-			<Region>OCEANIA</Region>
-			<X>89</X>
-			<Y>20</Y>
-			<Width>14</Width>
-			<Height>19</Height>
-		</Replace>
-		<Replace>
-			<Region>SOUTH_ASIA</Region>
-			<X>73</X>
-			<Y>24</Y>
-			<Width>16</Width>
-			<Height>17</Height>
-		</Replace>
-		<Replace>
-			<Region>CENTRAL_ASIA</Region>
-			<X>73</X>
-			<Y>41</Y>
-			<Width>9</Width>
-			<Height>11</Height>
-		</Replace>
-		<Replace>
-			<Region>EAST_ASIA</Region>
-			<X>84</X>
-			<Y>41</Y>
-			<Width>17</Width>
-			<Height>14</Height>
-		</Replace>
-		<Replace>
-			<Region>NORTH_ASIA</Region>
-			<X>70</X>
-			<Y>52</Y>
-			<Width>30</Width>
-			<Height>11</Height>
-		</Replace>
-		<Replace>
-			<Region>MIDDLE_EAST</Region>
-			<X>59</X>
-			<Y>29</Y>
-			<Width>14</Width>
-			<Height>13</Height>
-		</Replace>
-		<Replace>
-			<Region>TURKEY</Region>
-			<X>58</X>
-			<Y>42</Y>
-			<Width>8</Width>
-			<Height>6</Height>
-		</Replace>
-		<Replace>
-			<Region>MEDITERRANEAN</Region>
-			<X>32</X>
-			<Y>33</Y>
-			<Width>30</Width>
-			<Height>12</Height>
-		</Replace>
-		<Replace>
-			<Region>SOUTH_EUROPA</Region>
-			<X>32</X>
-			<Y>39</Y>
-			<Width>26</Width>
-			<Height>7</Height>
-		</Replace>
-		<Replace>
-			<Region>WEST_EUROPA</Region>
-			<X>31</X>
-			<Y>45</Y>
-			<Width>24</Width>
-			<Height>7</Height>
-		</Replace>
-		<Replace>
-			<Region>NORTH_EUROPA</Region>
-			<X>31</X>
-			<Y>51</Y>
-			<Width>24</Width>
-			<Height>12</Height>
-		</Replace>
-		<Replace>
-			<Region>EAST_EUROPA</Region>
-			<X>55</X>
-			<Y>48</Y>
-			<Width>16</Width>
-			<Height>13</Height>
-		</Replace>
-		<Replace>
-			<Region>NORTH_AFRICA</Region>
-			<X>37</X>
-			<Y>23</Y>
-			<Width>24</Width>
-			<Height>14</Height>
-		</Replace>
-		<Replace>
-			<Region>CENTRAL_AFRICA</Region>
-			<X>37</X>
-			<Y>15</Y>
-			<Width>32</Width>
-			<Height>14</Height>
-		</Replace>
-		<Replace>
-			<Region>SOUTH_AFRICA</Region>
-			<X>49</X>
-			<Y>1</Y>
-			<Width>13</Width>
-			<Height>14</Height>
-		</Replace>
-		<Replace>
-			<Region>MADAGASCAR</Region>
-			<X>64</X>
-			<Y>4</Y>
-			<Width>8</Width>
-			<Height>9</Height>
-		</Replace>
-	</GreatestEarthMap_RegionPosition>
+	<!--     Regions Positions    -->
+	<!-- ++++++++++++++++++++++++ -->
+	<RegionPosition>
+		<Replace MapName="GreatestEarthMap" Region="GROENLAND"			X="23" Y="59" Width="7" Height="4" />
+		<Replace MapName="GreatestEarthMap" Region="NORTH_AMERICA"		X="0" Y="41" Width="27" Height="15" />
+		<Replace MapName="GreatestEarthMap" Region="ARCTIC_AMERICA"		X="0" Y="56" Width="27" Height="7" />
+		<Replace MapName="GreatestEarthMap" Region="CENTRAL_AMERICA"	X="0" Y="22" Width="31" Height="19" />
+		<Replace MapName="GreatestEarthMap" Region="SOUTH_AMERICA_WEST"	X="17" Y="5" Width="10" Height="16" />
+		<Replace MapName="GreatestEarthMap" Region="SOUTH_AMERICA_EAST" X="27" Y="5" Width="18" Height="16" />
+		<Replace MapName="GreatestEarthMap" Region="ANTARCTIC_AMERICA"	X="23" Y="0" Width="12" Height="5" />
+		<Replace MapName="GreatestEarthMap" Region="AUSTRALIA"			X="90" Y="5" Width="12" Height="14" />
+		<Replace MapName="GreatestEarthMap" Region="OCEANIA"			X="89" Y="20" Width="14" Height="19" />
+		<Replace MapName="GreatestEarthMap" Region="SOUTH_ASIA"			X="73" Y="24" Width="16" Height="17" />
+		<Replace MapName="GreatestEarthMap" Region="CENTRAL_ASIA"		X="73" Y="41" Width="9" Height="11" />
+		<Replace MapName="GreatestEarthMap" Region="EAST_ASIA"			X="84" Y="41" Width="17" Height="14" />
+		<Replace MapName="GreatestEarthMap" Region="NORTH_ASIA"			X="70" Y="52" Width="30" Height="11" />
+		<Replace MapName="GreatestEarthMap" Region="MIDDLE_EAST"		X="59" Y="29" Width="14" Height="13" />
+		<Replace MapName="GreatestEarthMap" Region="TURKEY"				X="58" Y="42" Width="8" Height="6" />
+		<Replace MapName="GreatestEarthMap" Region="MEDITERRANEAN"		X="32" Y="33" Width="30" Height="12" />
+		<Replace MapName="GreatestEarthMap" Region="SOUTH_EUROPA"		X="32" Y="39" Width="26" Height="7" />
+		<Replace MapName="GreatestEarthMap" Region="WEST_EUROPA"		X="31" Y="45" Width="24" Height="7" />
+		<Replace MapName="GreatestEarthMap" Region="NORTH_EUROPA"		X="31" Y="51" Width="24" Height="12" />
+		<Replace MapName="GreatestEarthMap" Region="EAST_EUROPA"		X="55" Y="48" Width="16" Height="13" />
+		<Replace MapName="GreatestEarthMap" Region="NORTH_AFRICA"		X="37" Y="23" Width="24" Height="14" />
+		<Replace MapName="GreatestEarthMap" Region="CENTRAL_AFRICA"		X="37" Y="15" Width="32" Height="14" />
+		<Replace MapName="GreatestEarthMap" Region="SOUTH_AFRICA"		X="49" Y="1" Width="13" Height="14" />
+		<Replace MapName="GreatestEarthMap" Region="MADAGASCAR"			X="64" Y="4" Width="8" Height="9" />
+	</RegionPosition>
+	
+	<!-- ++++++++++++++++++++++++ -->
+	<!--         City Map         -->
+	<!-- ++++++++++++++++++++++++ -->
+	<!-- FRANCE -->
+	<CityMap>
+		<Replace MapName="GreatestEarthMap" X="42" Y="48" CityLocaleName="LOC_CITY_NAME_PARIS" />
+		<Replace MapName="GreatestEarthMap" X="41" Y="48" CityLocaleName="LOC_CITY_NAME_ROUEN" />
+		<Replace MapName="GreatestEarthMap" X="44" Y="46" CityLocaleName="LOC_CITY_NAME_LYON" />
+		<Replace MapName="GreatestEarthMap" X="45" Y="44" CityLocaleName="LOC_CITY_NAME_MARSEILLE" />
+		<Replace MapName="GreatestEarthMap" X="38" Y="43" CityLocaleName="LOC_CITY_NAME_BORDEAUX" />
+		<Replace MapName="GreatestEarthMap" X="38" Y="45" CityLocaleName="LOC_CITY_NAME_LA_ROCHELLE" />
+		<Replace MapName="GreatestEarthMap" X="39" Y="46" CityLocaleName="LOC_CITY_NAME_NANTES" />
+		<Replace MapName="GreatestEarthMap" X="38" Y="47" CityLocaleName="LOC_CITY_NAME_RENNES" />
+		<Replace MapName="GreatestEarthMap" X="40" Y="43" CityLocaleName="LOC_CITY_NAME_TOULOUSE" />
+		<Replace MapName="GreatestEarthMap" X="42" Y="42" CityLocaleName="LOC_CITY_NAME_MONTPELLIER" />
+		<Replace MapName="GreatestEarthMap" X="41" Y="42" CityLocaleName="LOC_CITY_NAME_CARCASSONNE" />
+		<Replace MapName="GreatestEarthMap" X="42" Y="50" CityLocaleName="LOC_CITY_NAME_CALAIS" />
+		<Replace MapName="GreatestEarthMap" X="44" Y="45" CityLocaleName="LOC_CITY_NAME_AVIGNON" />
+		<Replace MapName="GreatestEarthMap" X="40" Y="44" CityLocaleName="LOC_CITY_NAME_LIMOGES" />
+		<Replace MapName="GreatestEarthMap" X="41" Y="49" CityLocaleName="LOC_CITY_NAME_DIEPPE" />
+		<Replace MapName="GreatestEarthMap" X="40" Y="47" CityLocaleName="LOC_CITY_NAME_CHARTRES" />
+		<Replace MapName="GreatestEarthMap" X="45" Y="50" CityLocaleName="LOC_CITY_NAME_METZ" />
+		<Replace MapName="GreatestEarthMap" X="44" Y="48" CityLocaleName="LOC_CITY_NAME_TROYES" />
+		<Replace MapName="GreatestEarthMap" X="44" Y="47" CityLocaleName="LOC_CITY_NAME_DIJON" />
+		<Replace MapName="GreatestEarthMap" X="40" Y="45" CityLocaleName="LOC_CITY_NAME_TOURS" />
+		<Replace MapName="GreatestEarthMap" X="43" Y="49" CityLocaleName="LOC_CITY_NAME_RHEIMS" />
+		<Replace MapName="GreatestEarthMap" X="45" Y="46" CityLocaleName="LOC_CITY_NAME_GRENOBLE"  Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="45" Y="45" CityLocaleName="LOC_CITY_NAME_GAP" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="42" Y="49" CityLocaleName="LOC_CITY_NAME_AMIENS" />
+		<Replace MapName="GreatestEarthMap" X="41" Y="46" CityLocaleName="LOC_CITY_NAME_ORLEANS" />
+		<Replace MapName="GreatestEarthMap" X="45" Y="48" CityLocaleName="LOC_CITY_NAME_BESANCON" />
+		<Replace MapName="GreatestEarthMap" X="45" Y="49" CityLocaleName="LOC_CITY_NAME_STRASBOURG" />
+		<Replace MapName="GreatestEarthMap" X="38" Y="47" CityLocaleName="LOC_CITY_NAME_RENNES" />
+		<Replace MapName="GreatestEarthMap" X="36" Y="47" CityLocaleName="LOC_CITY_NAME_QUIMPER" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="38" Y="48" CityLocaleName="LOC_CITY_NAME_ST_MALO" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="36" Y="36" CityLocaleName="LOC_CITY_NAME_BREST" />
+		<Replace MapName="GreatestEarthMap" X="46" Y="45" CityLocaleName="LOC_CITY_NAME_NICE" />
+	</CityMap>
 	
 </GameData>

@@ -11,17 +11,12 @@ print ("loading modded AssignStartingPlots")
 local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION because Value is Text ?
 print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016) by Gedemon")
 
-print ("Setting YnAMP globals ...")
+print ("Setting YnAMP globals and cache...")
 
 g_startTimer = os.clock()
 
 local mapName = MapConfiguration.GetValue("MapName")
 print ("Map Name = " .. tostring(mapName))
-local tableForTSL, tableForRegions = nil, nil
-if mapName then
-	tableForTSL = mapName.."_StartPosition"
-	tableForRegions = mapName.."_RegionPosition"
-end
 local getTSL = {}
 local isResourceExcludedXY = {}
 local isResourceExclusiveXY = {}
@@ -2245,98 +2240,102 @@ print ("Loading YnAMP functions ...")
 function buildExclusionList()
 	print ("Building Region Exclusion list for "..tostring(mapName).."...")
 	
-	for RegionRow in GameInfo[tableForRegions]() do
-		local region = RegionRow.Region
-		print ("  - Exclusion list for "..tostring(region))
-		if region then
-			local resExclusionTable = {}
-			local resExclusiveTable = {}
-			
-			-- Find resources that can't be placed in that region
-			for exclusionList in GameInfo.ResourceRegionExclude() do
-				if exclusionList.Region == region then 
-					if exclusionList.Resource  then
-						if GameInfo.Resources[exclusionList.Resource] then
-							table.insert(resExclusionTable, GameInfo.Resources[exclusionList.Resource].Index)
-						else
-							print ("  - WARNING : can't find "..tostring(exclusionList.Resource).." in Resources")
-						end
-					else
-						print ("  - WARNING : found nil Resource")
-					end
-				end
-			end
-			
-			-- Find resource that can only be placed in specific regions
-			for exclusiveList in GameInfo.ResourceRegionExclusive() do
-				if exclusiveList.Region == region then 
-					if exclusiveList.Resource  then
-						if GameInfo.Resources[exclusiveList.Resource] then
-							local eResourceID = GameInfo.Resources[exclusiveList.Resource].Index
-							table.insert(resExclusiveTable, eResourceID)
-							isResourceExclusive[eResourceID] = true
-						else
-							print ("  - WARNING : can't find "..tostring(exclusiveList.Resource).." in Resources")
-						end
-					else
-						print ("  - WARNING : found nil Resource")
-					end
-				end
-			end
-			
-			-- fill the exclusion/exclusive table
-			if (#resExclusionTable > 0) or (#resExclusiveTable > 0) then
-				for x = RegionRow.X, RegionRow.X + RegionRow.Width do
-					for y = RegionRow.Y, RegionRow.Y + RegionRow.Height do
-						if (isResourceExcludedXY[x] and isResourceExcludedXY[x][y]) then
-							for i, resourceID in ipairs(resExclusionTable) do
-								isResourceExcludedXY[x][y][resourceID] = true
-							end
-							for i, resourceID in ipairs(resExclusiveTable) do
-								isResourceExclusiveXY[x][y][resourceID] = true
+	for RegionRow in GameInfo.RegionPosition() do
+		if RegionRow.MapName == mapName  then
+			local region = RegionRow.Region
+			print ("  - Exclusion list for "..tostring(region))
+			if region then
+				local resExclusionTable = {}
+				local resExclusiveTable = {}
+				
+				-- Find resources that can't be placed in that region
+				for exclusionList in GameInfo.ResourceRegionExclude() do
+					if exclusionList.Region == region then 
+						if exclusionList.Resource  then
+							if GameInfo.Resources[exclusionList.Resource] then
+								table.insert(resExclusionTable, GameInfo.Resources[exclusionList.Resource].Index)
+							else
+								print ("  - WARNING : can't find "..tostring(exclusionList.Resource).." in Resources")
 							end
 						else
-							print ("  - WARNING : Region out of bound ( x = " ..tostring(x)..", y = ".. tostring(y).." )")
+							print ("  - WARNING : found nil Resource")
 						end
 					end
 				end
-			end
-			if (#resExclusionTable > 0) then
-				print("   - Exluded resources :")
-				for i, resourceID in ipairs(resExclusionTable) do
-					print("      "..tostring(GameInfo.Resources[resourceID].ResourceType))
+				
+				-- Find resource that can only be placed in specific regions
+				for exclusiveList in GameInfo.ResourceRegionExclusive() do
+					if exclusiveList.Region == region then 
+						if exclusiveList.Resource  then
+							if GameInfo.Resources[exclusiveList.Resource] then
+								local eResourceID = GameInfo.Resources[exclusiveList.Resource].Index
+								table.insert(resExclusiveTable, eResourceID)
+								isResourceExclusive[eResourceID] = true
+							else
+								print ("  - WARNING : can't find "..tostring(exclusiveList.Resource).." in Resources")
+							end
+						else
+							print ("  - WARNING : found nil Resource")
+						end
+					end
 				end
+				
+				-- fill the exclusion/exclusive table
+				if (#resExclusionTable > 0) or (#resExclusiveTable > 0) then
+					for x = RegionRow.X, RegionRow.X + RegionRow.Width do
+						for y = RegionRow.Y, RegionRow.Y + RegionRow.Height do
+							if (isResourceExcludedXY[x] and isResourceExcludedXY[x][y]) then
+								for i, resourceID in ipairs(resExclusionTable) do
+									isResourceExcludedXY[x][y][resourceID] = true
+								end
+								for i, resourceID in ipairs(resExclusiveTable) do
+									isResourceExclusiveXY[x][y][resourceID] = true
+								end
+							else
+								print ("  - WARNING : Region out of bound ( x = " ..tostring(x)..", y = ".. tostring(y).." )")
+							end
+						end
+					end
+				end
+				if (#resExclusionTable > 0) then
+					print("   - Exluded resources :")
+					for i, resourceID in ipairs(resExclusionTable) do
+						print("      "..tostring(GameInfo.Resources[resourceID].ResourceType))
+					end
+				end
+				if (#resExclusiveTable > 0) then
+					print("   - Exlusive resources :")
+					for i, resourceID in ipairs(resExclusiveTable) do
+						print("      "..tostring(GameInfo.Resources[resourceID].ResourceType))
+					end	
+				end			
+			else
+				print ("  - WARNING : found nil region")
 			end
-			if (#resExclusiveTable > 0) then
-				print("   - Exlusive resources :")
-				for i, resourceID in ipairs(resExclusiveTable) do
-					print("      "..tostring(GameInfo.Resources[resourceID].ResourceType))
-				end	
-			end			
-		else
-			print ("  - WARNING : found nil region")
 		end
 	end
 end
 
 function buidTSL()
 	print ("Building TSL list for "..tostring(mapName).."...")
-	for row in GameInfo[tableForTSL]() do
-		for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
-			local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
-			if row.Civilization == CivilizationTypeName then
-				if row.Leader then
-					local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
-					if row.Leader == LeaderTypeName then
-						print ("- "..tostring(CivilizationTypeName).."( leader = "..tostring(LeaderTypeName)..") at "..tostring(row.X)..","..tostring(row.Y))
+	for row in GameInfo.StartPosition() do
+		if row.MapName == mapName  then
+			for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+				local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+				if row.Civilization == CivilizationTypeName then
+					if row.Leader then
+						local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
+						if row.Leader == LeaderTypeName then
+							print ("- "..tostring(CivilizationTypeName).."( leader = "..tostring(LeaderTypeName)..") at "..tostring(row.X)..","..tostring(row.Y))
+							getTSL[iPlayer] = {X = row.X, Y = row.Y}
+						end
+					else
+						print ("- "..tostring(CivilizationTypeName).." at "..tostring(row.X)..","..tostring(row.Y))
 						getTSL[iPlayer] = {X = row.X, Y = row.Y}
 					end
-				else
-					print ("- "..tostring(CivilizationTypeName).." at "..tostring(row.X)..","..tostring(row.Y))
-					getTSL[iPlayer] = {X = row.X, Y = row.Y}
 				end
 			end
-		end	
+		end
 	end
 	
 	-- List Civs without TSL
@@ -2862,8 +2861,6 @@ function AddDeposits()
 		end	
 		
 		if region and eResourceType then
-			--local query = "Region = '" .. region .. "'"
-			--for Data in GameInfo[tableForRegions](query) do
 			placeResourceInRegion(eResourceType, region, DepositRow.Deposit)
 		end		
 	end
@@ -2871,27 +2868,29 @@ function AddDeposits()
 end
 
 function placeResourceInRegion(eResourceType, region, number, bNumberIsRatio)
-	for Data in GameInfo[tableForRegions]() do
-		if Data.Region == region then
-			-- get possible plots table
-			local plotTable = {}
-			local plotCount = 0
-			plotTable, plotCount = getPlotsInAreaForResource(Data.X, Data.Width, Data.Y, Data.Height, eResourceType)
+	for Data in GameInfo.RegionPosition() do
+		if Data.MapName == mapName  then
+			if Data.Region == region then
+				-- get possible plots table
+				local plotTable = {}
+				local plotCount = 0
+				plotTable, plotCount = getPlotsInAreaForResource(Data.X, Data.Width, Data.Y, Data.Height, eResourceType)
 
-			-- shuffle it
-			local shuffledPlotTable = GetShuffledCopyOfTable(plotTable)
-			
-			-- place deposits
-			local toPlace = number			
-			if bNumberIsRatio then
-				toPlace = math.ceil(plotCount * number / 1000) -- to do : check statistics to get a better approximation ?
+				-- shuffle it
+				local shuffledPlotTable = GetShuffledCopyOfTable(plotTable)
+				
+				-- place deposits
+				local toPlace = number			
+				if bNumberIsRatio then
+					toPlace = math.ceil(plotCount * number / 1000) -- to do : check statistics to get a better approximation ?
+				end
+				local placed = math.min(toPlace, #shuffledPlotTable)
+				for i = 1, placed do
+					local pPlot = shuffledPlotTable[i]
+					ResourceBuilder.SetResourceType(pPlot, eResourceType, 1)
+				end
+				print (" - Asked for " .. toPlace .. ", placed " .. placed .. " (available plots = " .. #shuffledPlotTable .. ", total plots in region = ".. plotCount .." )" )
 			end
-			local placed = math.min(toPlace, #shuffledPlotTable)
-			for i = 1, placed do
-				local pPlot = shuffledPlotTable[i]
-				ResourceBuilder.SetResourceType(pPlot, eResourceType, 1)
-			end
-			print (" - Asked for " .. toPlace .. ", placed " .. placed .. " (available plots = " .. #shuffledPlotTable .. ", total plots in region = ".. plotCount .." )" )
 		end
 	end
 end

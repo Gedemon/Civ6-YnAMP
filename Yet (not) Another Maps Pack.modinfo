@@ -39,6 +39,14 @@
                 <File>Scripts/YnAMP_Script.lua</File>
             </Items>
         </GameplayScripts>
+        <UserInterface>		
+			<Properties>
+				<Context>InGame</Context>
+			</Properties>
+            <Items>
+                <File>Scripts/YnAMP_InGame.xml</File>
+            </Items>
+        </UserInterface>
 		<UpdateDatabase id="YNAMP_DEFAULT_COMPONENT">
 			<Items>
 				<File>Gameplay/Tables.sql</File>
@@ -58,6 +66,7 @@
 			</Properties>
 			<Items>
 				<File>Rules/Rules_1.sql</File>
+				<File>Rules/NewCityStates.sql</File>
 			</Items>
 		</UpdateDatabase>
 		<UpdateDatabase id="RULESET_YNAMP_2">
@@ -193,5 +202,7 @@
 		<File>Rules/LimitOldWorld.sql</File>
 		<File>Scripts/YnAMP_Script.lua</File>
 		<File>Scripts/YnAMP_Utils.lua</File>
+		<File>Scripts/YnAMP_InGame.lua</File>
+		<File>Scripts/YnAMP_InGame.xml</File>
 	</Files>
 </Mod>

@@ -50,77 +50,31 @@ CREATE TABLE IF NOT EXISTS ExtraPlacement
 		ResourceType TEXT,
 		Quantity INT default 0);
 		
--- GiantEarth
-CREATE TABLE IF NOT EXISTS GiantEarth_StartPosition
-	(	Civilization TEXT,
+-- Start Positions
+CREATE TABLE IF NOT EXISTS StartPosition
+	(	MapName TEXT,
+		Civilization TEXT,
 		Leader TEXT,
 		X INT default 0,
-		Y INT default 0);	
-CREATE TABLE IF NOT EXISTS GiantEarth_RegionPosition
-	(	Region TEXT,
-		X INT default 0,
-		Y INT default 0,
-		Width INT default 0,
-		Height INT default 0);			
-CREATE TABLE IF NOT EXISTS GiantEarth_CityMap
-	(	Civilization TEXT,
-		CityLocaleName TEXT,
-		X INT default 0,
-		Y INT default 0);		
+		Y INT default 0);
 
--- GreatestEarthMap
-CREATE TABLE IF NOT EXISTS GreatestEarthMap_StartPosition
-	(	Civilization TEXT,
-		Leader TEXT,
-		X INT default 0,
-		Y INT default 0);
-CREATE TABLE IF NOT EXISTS GreatestEarthMap_RegionPosition
-	(	Region TEXT,
+-- Regions positions
+CREATE TABLE IF NOT EXISTS RegionPosition
+	(	MapName TEXT,
+		Region TEXT,
 		X INT default 0,
 		Y INT default 0,
 		Width INT default 0,
 		Height INT default 0);			
-CREATE TABLE IF NOT EXISTS GreatestEarthMap_CityMap
-	(	Civilization TEXT,
-		CityLocaleName TEXT,
-		X INT default 0,
-		Y INT default 0);	
 
--- PlayEuropeAgain
-CREATE TABLE IF NOT EXISTS PlayEuropeAgain_StartPosition
-	(	Civilization TEXT,
-		Leader TEXT,
-		X INT default 0,
-		Y INT default 0);
-CREATE TABLE IF NOT EXISTS PlayEuropeAgain_RegionPosition
-	(	Region TEXT,
-		X INT default 0,
-		Y INT default 0,
-		Width INT default 0,
-		Height INT default 0);			
-CREATE TABLE IF NOT EXISTS PlayEuropeAgain_CityMap
-	(	Civilization TEXT,
+-- City Map		
+CREATE TABLE IF NOT EXISTS CityMap
+	(	MapName TEXT,
+		Civilization TEXT,
 		CityLocaleName TEXT,
 		X INT default 0,
-		Y INT default 0);
-		
--- LargestEarth
-CREATE TABLE IF NOT EXISTS LargestEarth_StartPosition
-	(	Civilization TEXT,
-		Leader TEXT,
-		X INT default 0,
-		Y INT default 0);	
-CREATE TABLE IF NOT EXISTS LargestEarth_RegionPosition
-	(	Region TEXT,
-		X INT default 0,
 		Y INT default 0,
-		Width INT default 0,
-		Height INT default 0);			
-CREATE TABLE IF NOT EXISTS LargestEarth_CityMap
-	(	Civilization TEXT,
-		CityLocaleName TEXT,
-		X INT default 0,
-		Y INT default 0);
+		Area INT);		
 		
 -----------------------------------------------
 -- Temporary Tables for initialization
