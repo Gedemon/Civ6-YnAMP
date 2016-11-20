@@ -4,6 +4,7 @@
 
  <!-- New City Names <en_US> -->
   <LocalizedText>
+  
 	<!-- FRANCE -->		
 	<Replace Tag="LOC_CITY_NAME_AMIENS" Text="Amiens" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_ARLES" Text="Arles" Language="en_US"/>
@@ -59,12 +60,92 @@
 	<Replace Tag="LOC_CITY_NAME_TOURS" Text="Tours" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_TROYES" Text="Troyes" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_VICHY" Text="Vichy" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_VIRE" Text="Vire" Language="en_US"/>	
+	<Replace Tag="LOC_CITY_NAME_VIRE" Text="Vire" Language="en_US"/>
+	
+	<!-- ITALY, SICILY, SARDINIA and CORSICA -->
+	<Replace Tag="LOC_CITY_NAME_AGRIGENT" Text="Argient" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AJACCIO" Text="Ajaccio" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ALGHERO" Text="Alghero" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANCONA" Text="Ancona" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ARBATAX" Text="Arbatax" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AREZZO" Text="Arezzo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BARI" Text="Bari" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BASTIA" Text="Bastia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BERGAMO" Text="Bergamo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BOLOGNA" Text="Bologna" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BONIFACIO" Text="Bonifacio" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BOZEN" Text="Bozen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAGLIARI" Text="Cagliari" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CALTANISSETTA" Text="Caltanissetta" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CALVI" Text="Calvi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAPO_DORLANDO" Text="Cap D'Orlando" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CASTROVILLARI" Text="Castrovillari" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CATANIA" Text="Catania" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CATANZARO" Text="Catanzaro" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CORIGLIANO_CALABRO" Text="Corigliano Calabro" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CORTE" Text="Corte" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_COSENZA" Text="Cosenza" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CROTONE" Text="Cortone" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FERRARA" Text="Ferrara" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FLORENTA" Text="Florence" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FOGGIA" Text="Foggia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FOLIGNO" Text="Foligno" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FROSINONE" Text="Frosinone" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GELA" Text="Gela" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GENUA" Text="Genoa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GROSSETO" Text="Grosseto" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LAQUILA" Text="L'Aquila" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LATINA" Text="Latina" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LA_SPEZIA" Text="La Spezia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LECCE" Text="Lecce" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MARSALA" Text="Marsala" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MASSA" Text="Massa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MELFI" Text="Melfi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MESSINA" Text="Messina" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MILANO" Text="Milan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NAPOLI" Text="Naples" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OLBIA" Text="Olbia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ORISTANO" Text="Oristano" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PALERMO" Text="Palermo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PARMA" Text="Parma" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PAVIA" Text="Pavia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PERUGIA" Text="Perugia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PESCARA" Text="Pescara" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PIACENZA" Text="Piacenza" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PISA" Text="Pisa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_POLICORO" Text="Policoro" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_POTENZA" Text="Potenza" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RAGUSA" Text="Ragusa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RAVENNA" Text="Ravenna" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_REGGIO_CALABRIA" Text="Reggio Calabria" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RIETI" Text="Rieti" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RIMINI" Text="Rimini" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROMA" Text="Rome" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SALERNO" Text="Salerno" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SAN_BENEDETTO_DEL_TRONTO" Text="San Benedetto del Tronto" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SAN_SALVO" Text="San Salvo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SAN_VIESTE" Text="San Vieste" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SASSARI" Text="Sassari" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SAVONA" Text="Savona" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SYRAKUS" Text="Syracuse" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TARENT" Text="Tarent" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TERNI" Text="Terni" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TREVISO" Text="Treviso" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TRIENT" Text="Trient" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TRIEST" Text="Triest" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TURINO" Text="Turin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_UDINE" Text="Udine" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VASTO" Text="Vasto" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VENETIA" Text="Venice" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VERONA" Text="Verona" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VIBO_VALENTIA" Text="Vibo Valentia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VITERBO" Text="Viterbo" Language="en_US" />
 	
   </LocalizedText>
   
   <!-- New City Names <fr_FR> -->
   <LocalizedText>
+  
 	<!-- FRANCE -->
 	<Replace Tag="LOC_CITY_NAME_AMIENS" Text="Amiens" Language="fr_FR"/>
 	<Replace Tag="LOC_CITY_NAME_ARLES" Text="Arles" Language="fr_FR"/>
