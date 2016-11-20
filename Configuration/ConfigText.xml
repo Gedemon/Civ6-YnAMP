@@ -14,43 +14,43 @@
 	<!-- New entries -->
 	
     <Replace Tag="LOC_YNAGEM_RULESET1_NAME" Language="en_US">
-      <Text>Earth 1 : Light</Text>
+      <Text>Earth 1 : Small Scale</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_RULESET2_NAME" Language="en_US">
-      <Text>Earth 2 : Medium</Text>
+      <Text>Earth 2 : Medium  Scale</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_RULESET3_NAME" Language="en_US">
-      <Text>Earth 3 : [COLOR_RED]Advanced[ENDCOLOR]</Text>
+      <Text>Earth 3 : Large Scale</Text>
     </Replace>
 	
     <Replace Tag="LOC_EURO_RULESET1_NAME" Language="en_US">
-      <Text>Euro 1 : Light</Text>
+      <Text>Euro 1 : Small Scale</Text>
     </Replace>
     <Replace Tag="LOC_EURO_RULESET2_NAME" Language="en_US">
-      <Text>Euro 2 : Medium</Text>
+      <Text>Euro 2 : Medium  Scale</Text>
     </Replace>
     <Replace Tag="LOC_EURO_RULESET3_NAME" Language="en_US">
-      <Text>Euro 3 : [COLOR_RED]Advanced[ENDCOLOR]</Text>
+      <Text>Euro 3 : Large Scale</Text>
     </Replace>
 	
     <Replace Tag="LOC_OLDWORLD_RULESET1_NAME" Language="en_US">
-      <Text>Old World 1 : Light</Text>
+      <Text>Old World 1 : Small Scale</Text>
     </Replace>
     <Replace Tag="LOC_OLDWORLD_RULESET2_NAME" Language="en_US">
-      <Text>Old World 2 : Medium</Text>
+      <Text>Old World 2 : Medium  Scale</Text>
     </Replace>
     <Replace Tag="LOC_OLDWORLD_RULESET3_NAME" Language="en_US">
-      <Text>Old World 3 : [COLOR_RED]Advanced[ENDCOLOR]</Text>
+      <Text>Old World 3 : Large Scale</Text>
     </Replace>
 	
     <Replace Tag="LOC_YNAGEM_RULESET1_DESC" Language="en_US">
-      <Text>Light Modifications[NEWLINE][ICON_Bullet] Add or remove some CS to fit the Maps[NEWLINE][ICON_Bullet] Raise Max distance between Civilizations[NEWLINE][ICON_Bullet] 33% less Barbarian encampment (2/civ)[NEWLINE][ICON_Bullet] Min distance to city from camps raised to 7[NEWLINE][ICON_Bullet] Change some Capitals name[NEWLINE][ICON_Bullet] Tweak resources placement rules</Text>
+      <Text>For Small Scale Map[NEWLINE]- Specific rules :[NEWLINE][ICON_Bullet] 2 tiles Min Distance between City[NEWLINE][ICON_Bullet] Remove Brussels, Geneva and Lisbon[NEWLINE]- Common rules :[NEWLINE][ICON_Bullet] Raise Max distance between Civilizations[NEWLINE][ICON_Bullet] 33% less Barbarian encampment (2/civ)[NEWLINE][ICON_Bullet] Min distance to city from camps raised to 7[NEWLINE][ICON_Bullet] Change some Capitals name[NEWLINE][ICON_Bullet] Tweak resources placement rules[NEWLINE][ICON_Bullet] Change Cliffs of Dover yields (2[ICON_Food], 1[ICON_Culture], 1[ICON_Gold])</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_RULESET2_DESC" Language="en_US">
-      <Text>Medium Modifications [NEWLINE]Include light modifications[NEWLINE][ICON_Bullet] Double [ICON_Movement] Movement on Ocean[NEWLINE][ICON_Bullet] Faster [ICON_Movement] Movement on Roads</Text>
+      <Text>For Medium Scale Map[NEWLINE]- Specific rules :[NEWLINE][ICON_Bullet] Remove Brussels and Geneva[NEWLINE]- Common rules :[NEWLINE][ICON_Bullet] Raise Max distance between Civilizations[NEWLINE][ICON_Bullet] 33% less Barbarian encampment (2/civ)[NEWLINE][ICON_Bullet] Min distance to city from camps raised to 7[NEWLINE][ICON_Bullet] Change some Capitals name[NEWLINE][ICON_Bullet] Tweak resources placement rules[NEWLINE][ICON_Bullet] Change Cliffs of Dover yields (2[ICON_Food], 1[ICON_Culture], 1[ICON_Gold])</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_RULESET3_DESC" Language="en_US">
-      <Text>Advanced Modifications[NEWLINE]Include light and medium modifications[NEWLINE][COLOR_RED]Experimental ![ENDCOLOR][NEWLINE][ICON_Bullet] 66% less Barbarian encampment (1/civ)[NEWLINE][ICON_Bullet] Min distance to city from camps set to 5 (default = 4)[NEWLINE][ICON_Bullet] Raised chance of camps spawning[NEWLINE][ICON_Bullet] Ranged land units are now "support" (0 [ICON_Strength], can stack with Melee)[NEWLINE][ICON_Bullet] All land/sea units range set to 1 (with late game exception)[NEWLINE][ICON_Bullet] No ancient walls, cities can't attack.</Text>
+      <Text>For Large Scale Map[NEWLINE]- Specific rules :[NEWLINE][ICON_Bullet] Double [ICON_Movement] Movement on Ocean[NEWLINE][ICON_Bullet] Faster [ICON_Movement] Movement on Roads[NEWLINE]- Common rules :[NEWLINE][ICON_Bullet] Raise Max distance between Civilizations[NEWLINE][ICON_Bullet] 33% less Barbarian encampment (2/civ)[NEWLINE][ICON_Bullet] Min distance to city from camps raised to 7[NEWLINE][ICON_Bullet] Change some Capitals name[NEWLINE][ICON_Bullet] Tweak resources placement rules[NEWLINE][ICON_Bullet] Change Cliffs of Dover yields (2[ICON_Food], 1[ICON_Culture], 1[ICON_Gold])</Text>
     </Replace>
     
 	<Replace Tag="LOC_YNAGEM_NAME" Language="en_US">

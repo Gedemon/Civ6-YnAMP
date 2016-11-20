@@ -98,6 +98,10 @@
 	</MapSizes>
 
 	<Parameters>
+		<Update>
+			<Where Name="LOC_MAP_RESOURCES_NAME"/>
+			<Set SortIndex="270"/>
+		</Update>
 		<!--	GiantEarth Options
 		-->
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="RiversPlacement" Name="LOC_MAP_RIVERS_PLACEMENT_NAME" Description="LOC_MAP_RIVERS_PLACEMENT_DESCRIPTION" Domain="RiversPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="RiversPlacement" GroupId="MapOptions" SortIndex="231"/>

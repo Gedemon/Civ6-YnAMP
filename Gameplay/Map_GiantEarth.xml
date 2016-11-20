@@ -26,100 +26,9 @@
         <Replace MapName="GiantEarth" Civilization="CIVILIZATION_SCYTHIA"	X="49" Y="75" />
         <Replace MapName="GiantEarth" Civilization="CIVILIZATION_SPAIN"		X="7" Y="57" />
         <Replace MapName="GiantEarth" Civilization="CIVILIZATION_SUMERIA"	X="41" Y="49" />		
-	</StartPosition>
+	</StartPosition>	
 	
-	
-	<!-- Old Minors from Civ5 -->
-	<StartPosition>
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_EDINBURGH"		X="9" Y="77" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_DUBLIN"		X="6" Y="72" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MADRID"		X="9" Y="57" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_LISBON"		X="5" Y="55" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CARTHAGE"		X="18" Y="51" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_RAGUSA"		X="24" Y="60" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BUDAPEST"		X="25" Y="65" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_OSLO"			X="21" Y="80" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_STOCKHOLM"		X="26" Y="77" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_HELSINKI"		X="30" Y="78" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_TYRE"			X="36" Y="52" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_IFE"			X="18" Y="33" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KINSHASA"		X="25" Y="27" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ULUNDI"		X="32" Y="9" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MOGADISHU"		X="40" Y="31" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SAMARKAND"		X="52" Y="57" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ALMATY"		X="60" Y="67" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_LHASA"			X="70" Y="55" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SEOUL"			X="89" Y="61" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_HANOI"			X="78" Y="46" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KUALA_LUMPUR"	X="76" Y="33" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_JAKARTA"		X="80" Y="26" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CUZCO"			X="153" Y="27" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_RIO_DE_JANEIRO" X="169" Y="24" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_TIKAL"			X="146" Y="45" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SUTAIO"		X="142" Y="63" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_LAKOTA"		X="138" Y="70" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_WARSAW"		X="29" Y="70" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GENEVA"		X="17" Y="64" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_VENICE"		X="21" Y="62" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GENOA"			X="18" Y="61" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_FLORENCE"		X="20" Y="59" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_COPENHAGEN"	X="22" Y="75" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BUCHAREST"		X="30" Y="63" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BELGRADE"		X="27" Y="62" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_VIENNA"		X="22" Y="65" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BRUSSELS"		X="15" Y="69" />	
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MONACO"		X="18" Y="60" />		
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SINGAPORE"		X="78" Y="32" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CAPE_TOWN"		X="26" Y="7" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SIDON"			X="36" Y="52" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AKSUM"			X="34" Y="37" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_RABAT"			X="6" Y="50" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_HARAPPA"		X="56" Y="53" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_DAKAR"			X="3" Y="40" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_QUEBEC_CITY"	X="156" Y="71" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SYDNEY"		X="103" Y="11" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ROTTERDAM"		X="16" Y="70" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_REYKJAVIK"		X="3" Y="83" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KATHMANDU"		X="66" Y="52" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ANTWERP"		X="15" Y="69" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CAHOKIA"		X="146" Y="64" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_COLOMBO"		X="62" Y="33" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_HONG_KONG"		X="83" Y="48" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_JERUSALEM"		X="36" Y="50" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_LA_VENTA"		X="144" Y="48" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MANILA"		X="87" Y="41" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MARRAKECH"		X="6" Y="48" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MILAN"			X="19" Y="62" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MOMBASA"		X="37" Y="27" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PRAGUE"		X="23" Y="67" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_VALLETTA"		X="21" Y="51" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_VATICAN_CITY"	X="21" Y="58" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_WITTENBERG"	X="21" Y="68" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_YEREVAN"		X="42" Y="57" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ZANZIBAR"		X="38" Y="24" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ZURICH"		X="18" Y="64" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KIEV"			X="34" Y="68" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_RIGA"			X="30" Y="73" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GARAMANTES"	X="23" Y="44" />
-
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ORMUS"			X="50" Y="47" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MELBOURNE"		X="100" Y="9" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_UR"			X="45" Y="48" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SOFIA"			X="28" Y="61" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KABUL"			X="53" Y="55" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MBANZA_KONGO"	X="24" Y="23" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BUENOS_AIRES"	X="161" Y="16" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KYZYL"			X="70" Y="74" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BYBLOS"		X="36" Y="52" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MALACCA"		X="77" Y="32" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ANTANANARIVO"	X="42" Y="17" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_VANCOUVER"		X="130" Y="73" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PANAMA_CITY"	X="150" Y="41" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BRATISLAVA"	X="26" Y="66" />
-	</StartPosition>
-
-	
-	<!-- New Minors from Civ6 -->
+	<!-- Minors -->
 	<StartPosition>		
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AMSTERDAM"		X="15" Y="71" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BRUSSELS"		X="15" Y="70" />
@@ -127,7 +36,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CARTHAGE"		X="18" Y="52" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GENEVA"		X="15" Y="63" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_HATTUSA"		X="36" Y="59" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_HONG_KONG"		X="82" Y="48" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_HONG_KONG"		X="83" Y="48" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_JAKARTA"		X="80" Y="26" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_JERUSALEM"		X="36" Y="51" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KABUL"			X="53" Y="55" />

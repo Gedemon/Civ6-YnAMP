@@ -34,10 +34,9 @@ function ChangeCityName( ownerPlayerID, cityID)
 				local nameX = row.X
 				local nameY = row.Y
 				local nameMaxDistance = row.Area or maxRange
-				-- rough selection before testing distance
-				print("- testing "..tostring(row.CityLocaleName).." at "..tostring(nameX)..","..tostring(nameX).." max distance is "..tostring(nameMaxDistance)..", best distance so far is "..tostring(bestDistance))
+				-- rough selection first before testing distance
 				if (x - nameMaxDistance <= nameX and x + nameMaxDistance >= nameX) and (y - nameMaxDistance <= nameY and y + nameMaxDistance >= nameY) then	
-					local namePlot = Map.GetPlot(nameX, nameY)
+					print("- testing "..tostring(row.CityLocaleName).." at "..tostring(nameX)..","..tostring(nameY).." max distance is "..tostring(nameMaxDistance)..", best distance so far is "..tostring(bestDistance))
 					local distance = Map.GetPlotDistance(x, y ,nameX, nameY)
 					if distance <= nameMaxDistance and distance < bestDistance then
 						if CivilizationTypeName == row.Civilization then

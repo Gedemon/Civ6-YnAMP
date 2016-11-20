@@ -65,26 +65,6 @@
         <Replace MapName="LargestEarth" Civilization="CIVILIZATION_YEREVAN"			X="55" Y="73" />
         <Replace MapName="LargestEarth" Civilization="CIVILIZATION_ZANZIBAR"		X="45" Y="31" />		
 	</StartPosition>
-	
-	<!-- New Minors from YnAMP -->
-	<StartPosition>
-		
-        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_SUTAIO"		X="193" Y="85" />
-        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_LAKOTA"		X="191" Y="78" />
-        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_HARAPPA"		X="76" Y="69" />
-        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_DAKAR"		X="6" Y="48" />
-        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_REYKJAVIK"	X="3" Y="104" />
-        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_GARAMANTES"	X="27" Y="56" />
-        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_SAMARKAND"	X="73" Y="75" />
-        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_TIKAL"		X="193" Y="59" />
-        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_CUZCO"		X="206" Y="31" />
-        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_IFE"			X="22" Y="43" />
-        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_ULUNDI"		X="39" Y="14" />
-        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_MOGADISHU"	X="49" Y="39" />
-        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_AKSUM"		X="46" Y="44" />
-        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_RABAT"		X="8" Y="61" />
-				
-	</StartPosition>
 
 	<!-- ++++++++++++++++++++++++++++++ -->
 	<!--  Largest Earth Region position   -->

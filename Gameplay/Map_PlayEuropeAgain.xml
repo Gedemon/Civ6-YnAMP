@@ -8,7 +8,7 @@
 	    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"	X="74" Y="6" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_EGYPT"	X="75" Y="2" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ENGLAND"	X="31" Y="60" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FRANCE"	X="32" Y="52" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FRANCE"	X="34" Y="52" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GERMANY"	X="48" Y="57" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GREECE"	X="58" Y="21" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GREECE"  	X="60" Y="25" Leader="LEADER_GORGO"/>
@@ -19,12 +19,11 @@
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SPAIN"	X="18" Y="38" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SUMERIA"	X="100" Y="15" />
 	
-	<!-- City States -->
-	
-	    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_AMSTERDAM"	X="36" Y="59" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_BRUSSELS"		X="35" Y="55" />
+		<!-- Civ6 City States -->	
+	    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_AMSTERDAM"	X="37" Y="60" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_BRUSSELS"		X="36" Y="56" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_CARTHAGE"		X="37" Y="23" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GENEVA"		X="36" Y="46" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GENEVA"		X="37" Y="47" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_HATTUSA"		X="79" Y="30" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_JERUSALEM"	X="82" Y="12" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_LISBON"		X="11" Y="36" />
@@ -102,6 +101,8 @@
 
 		<Replace MapName="PlayEuropeAgain" X="26" Y="45" CityLocaleName="LOC_CITY_NAME_BORDEAUX" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="30" Y="45" CityLocaleName="LOC_CITY_NAME_VICHY"  Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="31" Y="45" CityLocaleName="LOC_CITY_NAME_LYON" Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="32" Y="45" CityLocaleName="LOC_CITY_NAME_LYON" />
 		<Replace MapName="PlayEuropeAgain" X="34" Y="45" CityLocaleName="LOC_CITY_NAME_GRENOBLE" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="35" Y="45" CityLocaleName="LOC_CITY_NAME_GRENOBLE" Area="0" />
 		

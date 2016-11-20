@@ -3468,7 +3468,7 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 		
 		-- Set Features
 		if bImportFeatures then
-			if civ6FeatureType ~= g_FEATURE_NONE then		
+			if civ6FeatureType ~= g_FEATURE_NONE and civ6FeatureType < GameInfo.Features["FEATURE_BARRIER_REEF"].Index then -- Do not import Natural Wonder here !
 				if bOutput then print(" - Set Feature Type = "..tostring(GameInfo.Features[civ6FeatureType].FeatureType)) end
 				TerrainBuilder.SetFeatureType(plot, civ6FeatureType)
 			end
@@ -3478,7 +3478,7 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 		if bImportContinents then
 			if civ6ContinentType ~= -1 then		
 				if bOutput then print(" - Set Continent Type = "..tostring(GameInfo.Continents[civ6ContinentType].ContinentType)) end
-				TerrainBuilder.SetContinentType(plot, ContinentsCiv5toCiv6[civ5ContinentType])
+				TerrainBuilder.SetContinentType(plot, civ6ContinentType)
 			end
 		end
 		

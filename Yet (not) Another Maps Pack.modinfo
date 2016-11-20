@@ -66,8 +66,8 @@
 				<RuleSet>RULESET_YNAMP_1</RuleSet>
 			</Properties>
 			<Items>
+				<File>Rules/Rules_Common.sql</File>
 				<File>Rules/Rules_1.sql</File>
-				<File>Rules/NewCityStates.sql</File>
 			</Items>
 		</UpdateDatabase>
 		<UpdateDatabase id="RULESET_YNAMP_2">
@@ -75,9 +75,8 @@
 				<RuleSet>RULESET_YNAMP_2</RuleSet>
 			</Properties>
 			<Items>
-				<File>Rules/Rules_1.sql</File>
+				<File>Rules/Rules_Common.sql</File>
 				<File>Rules/Rules_2.sql</File>
-				<File>Rules/NewCityStates.sql</File>
 			</Items>
 		</UpdateDatabase>
 		<UpdateDatabase id="RULESET_YNAMP_3">
@@ -85,10 +84,8 @@
 				<RuleSet>RULESET_YNAMP_3</RuleSet>
 			</Properties>
 			<Items>
-				<File>Rules/Rules_1.sql</File>
-				<File>Rules/Rules_2.sql</File>
+				<File>Rules/Rules_Common.sql</File>
 				<File>Rules/Rules_3.sql</File>
-				<File>Rules/NewCityStates.sql</File>
 			</Items>
 		</UpdateDatabase>
 		
@@ -97,6 +94,7 @@
 				<RuleSet>RULESET_EURO_1</RuleSet>
 			</Properties>
 			<Items>
+				<File>Rules/Rules_Common.sql</File>
 				<File>Rules/Rules_1.sql</File>
 				<File>Rules/LimitEuro.sql</File>
 			</Items>
@@ -106,9 +104,8 @@
 				<RuleSet>RULESET_EURO_2</RuleSet>
 			</Properties>
 			<Items>
-				<File>Rules/Rules_1.sql</File>
+				<File>Rules/Rules_Common.sql</File>
 				<File>Rules/Rules_2.sql</File>
-				<File>Rules/NewCityStates.sql</File>
 				<File>Rules/LimitEuro.sql</File>
 			</Items>
 		</UpdateDatabase>
@@ -117,10 +114,8 @@
 				<RuleSet>RULESET_EURO_3</RuleSet>
 			</Properties>
 			<Items>
-				<File>Rules/Rules_1.sql</File>
-				<File>Rules/Rules_2.sql</File>
+				<File>Rules/Rules_Common.sql</File>
 				<File>Rules/Rules_3.sql</File>
-				<File>Rules/NewCityStates.sql</File>
 				<File>Rules/LimitEuro.sql</File>
 			</Items>
 		</UpdateDatabase>		
@@ -129,6 +124,7 @@
 				<RuleSet>RULESET_OLDWORLD_1</RuleSet>
 			</Properties>
 			<Items>
+				<File>Rules/Rules_Common.sql</File>
 				<File>Rules/Rules_1.sql</File>
 				<File>Rules/LimitOldWorld.sql</File>
 			</Items>
@@ -138,9 +134,8 @@
 				<RuleSet>RULESET_OLDWORLD_2</RuleSet>
 			</Properties>
 			<Items>
-				<File>Rules/Rules_1.sql</File>
+				<File>Rules/Rules_Common.sql</File>
 				<File>Rules/Rules_2.sql</File>
-				<File>Rules/NewCityStates.sql</File>
 				<File>Rules/LimitOldWorld.sql</File>
 			</Items>
 		</UpdateDatabase>
@@ -149,16 +144,13 @@
 				<RuleSet>RULESET_OLDWORLD_3</RuleSet>
 			</Properties>
 			<Items>
-				<File>Rules/Rules_1.sql</File>
-				<File>Rules/Rules_2.sql</File>
+				<File>Rules/Rules_Common.sql</File>
 				<File>Rules/Rules_3.sql</File>
-				<File>Rules/NewCityStates.sql</File>
 				<File>Rules/LimitOldWorld.sql</File>
 			</Items>
 		</UpdateDatabase>		
 		<LocalizedText id="YNAMP_DEFAULT_COMPONENT">
 			<Items>
-				<File>Rules/NewCityStatesTexts.sql</File>
 				<File>Gameplay/GamePlayText.xml</File>
 			</Items>
 		</LocalizedText>
@@ -201,8 +193,7 @@
 		<File>Rules/Rules_1.sql</File>
 		<File>Rules/Rules_2.sql</File>
 		<File>Rules/Rules_3.sql</File>
-		<File>Rules/NewCityStates.sql</File>
-		<File>Rules/NewCityStatesTexts.sql</File>
+		<File>Rules/Rules_Common.sql</File>
 		<File>Rules/LimitEuro.sql</File>
 		<File>Rules/LimitOldWorld.sql</File>
 		<File>Scripts/YnAMP_Script.lua</File>
