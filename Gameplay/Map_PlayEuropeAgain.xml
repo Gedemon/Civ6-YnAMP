@@ -19,7 +19,7 @@
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SPAIN"	X="18" Y="38" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SUMERIA"	X="100" Y="15" />
 		
-			<!-- Civ6 City States -->
+		<!-- Civ6 City States -->
 	    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_AMSTERDAM"	X="37" Y="60" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_BRUSSELS"		X="36" Y="56" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_CARTHAGE"		X="37" Y="23" />
@@ -426,6 +426,177 @@
 		<Replace MapName="PlayEuropeAgain" X="18" Y="45" CityLocaleName="LOC_CITY_NAME_GIJON" />
 		
 		<Replace MapName="PlayEuropeAgain" X="16" Y="46" CityLocaleName="LOC_CITY_NAME_VIVEIRO" />
+		
+		<!-- BRITISH ISLES, WITH FAROER, WITHOUT IRELAND -->
+		<Replace MapName="PlayEuropeAgain" X="25" Y="58" CityLocaleName="LOC_CITY_NAME_TORQUAY" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="22" Y="59" CityLocaleName="LOC_CITY_NAME_ST_IVES" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="23" Y="59" CityLocaleName="LOC_CITY_NAME_ST_AUSTELL" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="24" Y="59" CityLocaleName="LOC_CITY_NAME_PLYMOUTH" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="25" Y="59" CityLocaleName="LOC_CITY_NAME_EXETER" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="26" Y="59" CityLocaleName="LOC_CITY_NAME_EXETER" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="59" CityLocaleName="LOC_CITY_NAME_SOUTHAMPTON" />
+		
+		<Replace MapName="PlayEuropeAgain" X="24" Y="60" CityLocaleName="LOC_CITY_NAME_BIDEFORD" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="25" Y="60" CityLocaleName="LOC_CITY_NAME_BRIDGWATER" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="26" Y="60" CityLocaleName="LOC_CITY_NAME_WESTON_SUPER_MARE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="60" CityLocaleName="LOC_CITY_NAME_BATH" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="60" CityLocaleName="LOC_CITY_NAME_READING" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="60" CityLocaleName="LOC_CITY_NAME_READING" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="31" Y="60" CityLocaleName="LOC_CITY_NAME_LONDON" />
+		
+		<Replace MapName="PlayEuropeAgain" X="26" Y="61" CityLocaleName="LOC_CITY_NAME_BRISTOL" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="61" CityLocaleName="LOC_CITY_NAME_READING" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="32" Y="61" CityLocaleName="LOC_CITY_NAME_SOUTHEND_ON_SEA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="24" Y="62" CityLocaleName="LOC_CITY_NAME_SWANSEA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="25" Y="62" CityLocaleName="LOC_CITY_NAME_SWANSEA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="26" Y="62" CityLocaleName="LOC_CITY_NAME_CARDIFF" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="62" CityLocaleName="LOC_CITY_NAME_BRISTOL" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="62" CityLocaleName="LOC_CITY_NAME_OXFORD" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="62" CityLocaleName="LOC_CITY_NAME_CAMBRIDGE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="31" Y="62" CityLocaleName="LOC_CITY_NAME_CAMBRIDGE" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="24" Y="63" CityLocaleName="LOC_CITY_NAME_CARDIGAN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="25" Y="63" CityLocaleName="LOC_CITY_NAME_ABERYSTWYTH" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="26" Y="63" CityLocaleName="LOC_CITY_NAME_BRIMINGHAM" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="63" CityLocaleName="LOC_CITY_NAME_LEICESTER" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="63" CityLocaleName="LOC_CITY_NAME_LEICESTER" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="63" CityLocaleName="LOC_CITY_NAME_PETERBOROUGH" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="32" Y="63" CityLocaleName="LOC_CITY_NAME_NORWICH" />
+		
+		<Replace MapName="PlayEuropeAgain" X="26" Y="64" CityLocaleName="LOC_CITY_NAME_ABERYSTWYTH" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="64" CityLocaleName="LOC_CITY_NAME_SHEFFIELD" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="64" CityLocaleName="LOC_CITY_NAME_NOTTINGHAM" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="64" CityLocaleName="LOC_CITY_NAME_LINCOLN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="31" Y="64" CityLocaleName="LOC_CITY_NAME_BOSTON" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="25" Y="65" CityLocaleName="LOC_CITY_NAME_CAERNARFON" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="26" Y="65" CityLocaleName="LOC_CITY_NAME_COLWYN_BAY" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="65" CityLocaleName="LOC_CITY_NAME_LIVERPOOL" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="65" CityLocaleName="LOC_CITY_NAME_SHEFFIELD" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="65" CityLocaleName="LOC_CITY_NAME_SHEFFIELD" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="65" CityLocaleName="LOC_CITY_NAME_SCUNTHORPE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="31" Y="65" CityLocaleName="LOC_CITY_NAME_GRIMSBY" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="28" Y="66" CityLocaleName="LOC_CITY_NAME_MANCHESTER" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="66" CityLocaleName="LOC_CITY_NAME_MANCHESTER" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="66" CityLocaleName="LOC_CITY_NAME_LEEDS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="31" Y="66" CityLocaleName="LOC_CITY_NAME_KINGSTON_UPON_HILL" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="28" Y="67" CityLocaleName="LOC_CITY_NAME_LANCASTER" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="67" CityLocaleName="LOC_CITY_NAME_LEEDS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="67" CityLocaleName="LOC_CITY_NAME_SCARBOROUGH" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="26" Y="68" CityLocaleName="LOC_CITY_NAME_DOUGLAS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="68" CityLocaleName="LOC_CITY_NAME_BARROW_IN_FURNESS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="68" CityLocaleName="LOC_CITY_NAME_KENDAL" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="68" CityLocaleName="LOC_CITY_NAME_MIDDLESBROUGH" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="28" Y="69" CityLocaleName="LOC_CITY_NAME_CARLISLE" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="69" CityLocaleName="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="26" Y="70" CityLocaleName="LOC_CITY_NAME_PORTPATRICK" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="70" CityLocaleName="LOC_CITY_NAME_NEWTON_STEWART" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="70" CityLocaleName="LOC_CITY_NAME_DUMFRIES" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="70" CityLocaleName="LOC_CITY_NAME_ALNWICK" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="28" Y="71" CityLocaleName="LOC_CITY_NAME_EDINBURGH" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="71" CityLocaleName="LOC_CITY_NAME_EDINBURGH" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="27" Y="72" CityLocaleName="LOC_CITY_NAME_GLASGOW" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="72" CityLocaleName="LOC_CITY_NAME_KIRKCALDY" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="28" Y="73" CityLocaleName="LOC_CITY_NAME_STIRLING" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="73" CityLocaleName="LOC_CITY_NAME_DUNDEE" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="25" Y="74" CityLocaleName="LOC_CITY_NAME_CALGARY" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="26" Y="74" CityLocaleName="LOC_CITY_NAME_LOCHALINE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="74" CityLocaleName="LOC_CITY_NAME_FORT_WILLIAM" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="74" CityLocaleName="LOC_CITY_NAME_FORT_WILLIAM" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="74" CityLocaleName="LOC_CITY_NAME_PERTH" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="26" Y="75" CityLocaleName="LOC_CITY_NAME_MALLAIG" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="75" CityLocaleName="LOC_CITY_NAME_FORT_WILLIAM" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="75" CityLocaleName="LOC_CITY_NAME_FORT_AUGUSTUS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="75" CityLocaleName="LOC_CITY_NAME_FORT_ABERDEEN" />
+		
+		<Replace MapName="PlayEuropeAgain" X="27" Y="76" CityLocaleName="LOC_CITY_NAME_MALLAIG" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="76" CityLocaleName="LOC_CITY_NAME_FORT_AUGUSTUS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="76" CityLocaleName="LOC_CITY_NAME_INVERNESS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="76" CityLocaleName="LOC_CITY_NAME_ELGIN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="31" Y="76" CityLocaleName="LOC_CITY_NAME_FRASERBURGH" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="25" Y="77" CityLocaleName="LOC_CITY_NAME_PORTREE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="26" Y="77" CityLocaleName="LOC_CITY_NAME_KYLE_OF_LOCHALSH" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="77" CityLocaleName="LOC_CITY_NAME_STRATHPEFFER" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="77" CityLocaleName="LOC_CITY_NAME_INVERNESS" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="25" Y="78" CityLocaleName="LOC_CITY_NAME_LOCHMADDY" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="78" CityLocaleName="LOC_CITY_NAME_ULLAPOOL" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="78" CityLocaleName="LOC_CITY_NAME_LAIRG" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="78" CityLocaleName="LOC_CITY_NAME_HELMSDALE" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="25" Y="79" CityLocaleName="LOC_CITY_NAME_STORNOWAY" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="79" CityLocaleName="LOC_CITY_NAME_DURNESS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="79" CityLocaleName="LOC_CITY_NAME_BETTYHILL" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="79" CityLocaleName="LOC_CITY_NAME_WICK" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="31" Y="80" CityLocaleName="LOC_CITY_NAME_KIRKWALL" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="35" Y="81" CityLocaleName="LOC_CITY_NAME_LERWICK" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="36" Y="82" CityLocaleName="LOC_CITY_NAME_GLOUP" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="29" Y="88" CityLocaleName="LOC_CITY_NAME_TORSHAVN" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="28" Y="89" CityLocaleName="LOC_CITY_NAME_KLAKSVIK" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="89" CityLocaleName="LOC_CITY_NAME_SORVAGUR" Area="0" />
+		
+		<!-- IRELAND -->
+		<Replace MapName="PlayEuropeAgain" X="18" Y="64" CityLocaleName="LOC_CITY_NAME_CORK" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="64" CityLocaleName="LOC_CITY_NAME_WATERFORD" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="21" Y="64" CityLocaleName="LOC_CITY_NAME_WEXFORD" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="16" Y="65" CityLocaleName="LOC_CITY_NAME_KILLARNEY" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="17" Y="65" CityLocaleName="LOC_CITY_NAME_LISTOWEL" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="18" Y="65" CityLocaleName="LOC_CITY_NAME_LIMERICK" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="65" CityLocaleName="LOC_CITY_NAME_KILKENNY" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="21" Y="65" CityLocaleName="LOC_CITY_NAME_ARKLOW" Area="0" />
+				
+		<Replace MapName="PlayEuropeAgain" X="17" Y="66" CityLocaleName="LOC_CITY_NAME_TRALEE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="19" Y="66" CityLocaleName="LOC_CITY_NAME_LIMERICK" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="66" CityLocaleName="LOC_CITY_NAME_NENAGH" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="21" Y="66" CityLocaleName="LOC_CITY_NAME_TULLAMORE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="22" Y="66" CityLocaleName="LOC_CITY_NAME_DUBLIN" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="18" Y="67" CityLocaleName="LOC_CITY_NAME_GALWAY" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="19" Y="67" CityLocaleName="LOC_CITY_NAME_ATHLONE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="67" CityLocaleName="LOC_CITY_NAME_ATHLONE" />
+		<Replace MapName="PlayEuropeAgain" X="21" Y="67" CityLocaleName="LOC_CITY_NAME_ATHLONE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="22" Y="67" CityLocaleName="LOC_CITY_NAME_DUBLIN" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="19" Y="68" CityLocaleName="LOC_CITY_NAME_GALWAY" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="68" CityLocaleName="LOC_CITY_NAME_ROSCOMMON" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="22" Y="68" CityLocaleName="LOC_CITY_NAME_MULLINGAR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="23" Y="68" CityLocaleName="LOC_CITY_NAME_DUNDALK" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="24" Y="68" CityLocaleName="LOC_CITY_NAME_NEWCASTLE" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="18" Y="69" CityLocaleName="LOC_CITY_NAME_WESTPORT" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="19" Y="69" CityLocaleName="LOC_CITY_NAME_CASTLEBAR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="69" CityLocaleName="LOC_CITY_NAME_CARRICK_ON_SHANNON" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="21" Y="69" CityLocaleName="LOC_CITY_NAME_CAVAN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="22" Y="69" CityLocaleName="LOC_CITY_NAME_OMAGH" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="24" Y="69" CityLocaleName="LOC_CITY_NAME_BELFAST" />
+		
+		<Replace MapName="PlayEuropeAgain" X="19" Y="70" CityLocaleName="LOC_CITY_NAME_BALLINA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="70" CityLocaleName="LOC_CITY_NAME_SLIGO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="21" Y="70" CityLocaleName="LOC_CITY_NAME_SLIGO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="22" Y="70" CityLocaleName="LOC_CITY_NAME_DONEGAL" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="23" Y="70" CityLocaleName="LOC_CITY_NAME_COOKSTOWN" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="22" Y="71" CityLocaleName="LOC_CITY_NAME_LONDONDERRY_DERRY" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="23" Y="71" CityLocaleName="LOC_CITY_NAME_CLOERAINE" Area="0" />
 		
 	</CityMap>
 	
