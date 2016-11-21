@@ -39,6 +39,7 @@
 	<Replace Tag="LOC_CITY_NAME_METZ" Text="Metz" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_MONTPELLIER" Text="Montpellier" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_MORLAIX" Text="Morlaix" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MULHOUSE" Text="Mulhouse" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_NANTES" Text="Nantes" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_NICE" Text="Nice" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_NIMES" Text="Nimes" Language="en_US"/>
@@ -327,6 +328,102 @@
 	<Replace Tag="LOC_CITY_NAME_WATERFORD" Text="Waterford" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_WESTPORT" Text="Westport" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_WEXFORD" Text="Wexford" Language="en_US" />
+	
+	<!-- GERMANY (WITH BENELUX AND HELVETIA, WITHOUT DENMARK, CHECZ AND AUSTRIA -->
+	<Replace Tag="LOC_CITY_NAME_ALMELO" Text="Almelo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AMSTERDAM" Text="Amsterdam" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ARNHEIM" Text="Arnheim" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AUGSBURG" Text="Augsburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BASEL" Text="Basel" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BAYREUTH" Text="Bayreuth" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BERLIN" Text="Berlin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BERN" Text="Bern" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BIELEFELD" Text="Bielefeld" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BOCHOLT" Text="Bocholt" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BREGENZ" Text="Bregenz" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BREMEN" Text="Bremen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BREMERHAVEN" Text="Bremerhaven" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRUGES" Text="Bruges" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRUSSELS" Text="Brussels" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_COLOGNE" Text="Cologne" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_COTTBUS" Text="Cottbus" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CRAILSHEIM" Text="Crailsheim" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DEGGENDORF" Text="Deggendorf" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DEN_HELDER" Text="Den Helder" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DORDRECHT" Text="Dordrecht" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DORTMUND" Text="Dortmund" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DRESDEN" Text="Dresden" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUESSELDORF" Text="Duesseldorf" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EBERSWALDE" Text="Eberswalde" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ELST" Text="Elst" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EMMEN" Text="Emmen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ERFURT" Text="Erfurt" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FLENSBURG" Text="Flensburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT" Text="Frankfurt" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT_ODER" Text="Frankfurt (Oder)" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FREIBURG" Text="Freiburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FRIEDRICHSHAFEN" Text="Friedrichshafen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FULDA" Text="Fulda" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GARMISCH_PATENKIRCHEN" Text="Garmisch-Patenkirchen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GENEVA" Text="Geneva" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GENT" Text="Gent" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GOETTINGEN" Text="Goettingen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GRONINGEN" Text="Groningen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HAMBURG" Text="Hamburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HAMELN" Text="Hameln" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HANNOVER" Text="Hannover" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HUSUM" Text="Husum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_INGOLSTADT" Text="Ingolstadt" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KARLSRUHE" Text="Karsruhe" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KASSEL" Text="Kassel" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KEMPTEN" Text="Kempten" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KIEL" Text="Kiel" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KONSTANZ" Text="Konstanz" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LAUSANNE" Text="Lausanne" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LEEUWARDEN" Text="Leeuwarden" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LEIPZIG" Text="Leipzig" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LEVERKUSEN" Text="Leverkusen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LINDAU" Text="Lindau" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LOERRACH" Text="Loerrach" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LUEBECK" Text="Luebeck" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LUENEBURG" Text="Lueneburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MAGDEBURG" Text="Magdeburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MAINZ" Text="Mainz" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MEPPEL" Text="Meppel" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MINDEN" Text="Minden" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUENSTER" Text="Muenster" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUNICH" Text="Munich" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NEUBRANDENBURG" Text="Neubrandenburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NIENBURG" Text="Nienburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NIJMEGEN" Text="Nijmegen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NUREMBERG" Text="Nuremberg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OSNABRUECK" Text="Osnabrueck" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PADERBORN" Text="Paderborn" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PASSAU" Text="Passau" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_REGENSBURG" Text="Regensburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROSTOCK" Text="Rostock" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROTTERDAM" Text="Rotterdam" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SCHAFFHAUSEN" Text="Schaffhausen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SCHWERIN" Text="Schwerin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STETTIN" Text="Stettin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STRALSUND" Text="Stralsund" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STUTTGART" Text="Stuttgart" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ST_GALLEN" Text="St Gallen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TIEL" Text="Tiel" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TILBURG" Text="Tilburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ULM" Text="Ulm" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_UTRECHT" Text="Utrecht" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VADUZ" Text="Vaduz" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WEGSCHEID" Text="Wegscheid" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WIESBADEN" Text="Wiesbaden" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WILHELMSHAVEN" Text="Wilhelmshaven" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WINTERTHUR" Text="Winterthur" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WISMAR" Text="Wismar" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WITTENBERGE" Text="Wittenberge" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WUERZBURG" Text="Wuerzburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ZURICH" Text="Zuerich" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ZWICKAU" Text="Zwickau" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ZWOLLE" Text="Zwolle" Language="en_US" />
 
   </LocalizedText>
   
@@ -364,6 +461,7 @@
 	<Replace Tag="LOC_CITY_NAME_METZ" Text="Metz" Language="fr_FR"/>
 	<Replace Tag="LOC_CITY_NAME_MONTPELLIER" Text="Montpellier" Language="fr_FR"/>
 	<Replace Tag="LOC_CITY_NAME_MORLAIX" Text="Morlaix" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_MULHOUSE" Text="Mulhouse" Language="fr_FR"/>
 	<Replace Tag="LOC_CITY_NAME_NANTES" Text="Nantes" Language="fr_FR"/>
 	<Replace Tag="LOC_CITY_NAME_NICE" Text="Nice" Language="fr_FR"/>
 	<Replace Tag="LOC_CITY_NAME_NIMES" Text="Nîmes" Language="fr_FR"/>
@@ -390,5 +488,24 @@
 	<Replace Tag="LOC_CITY_NAME_VIRE" Text="Vire" Language="fr_FR"/>
 	
   </LocalizedText>
+  
+  <!-- New City Names <de_DE> -->
+  <LocalizedText>
+
+	<!-- GERMANY, BENELUX, HELVETIA -->
+	<Replace Tag="LOC_CITY_NAME_BRUGES" Text="Brügge" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_BRUSSELS" Text="Brüssel" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_COLOGNE" Text="Köln" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_DUESSELDORF" Text="Düsseldorf" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_GOETTINGEN" Text="Göttingen" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_LOERRACH" Text="Lörrach" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_LUEBECK" Text="Lübeck" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_LUENEBURG" Text="Lüneburg" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_MUENSTER" Text="Münster" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_MUNICH" Text="München" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_NUREMBERG" Text="Nürnberg" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_OSNABRUECK" Text="Osnabrück" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_WUERZBURG" Text="Würzburg" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_ZURICH" Text="Zürich" Language="de_DE" />
 	
   </GameData>
