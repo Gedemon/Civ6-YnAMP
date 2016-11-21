@@ -19,12 +19,12 @@
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SPAIN"	X="18" Y="38" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SUMERIA"	X="100" Y="15" />
 	
-		<!-- Civ 6 City States -->
+	   <!-- Civ6 City States -->
 	
 	    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_AMSTERDAM"	X="37" Y="60" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_BRUSSELS"		X="36" Y="56" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_CARTHAGE"		X="37" Y="23" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GENEVA"		X="36" Y="46" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GENEVA"		X="37" Y="47" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_HATTUSA"		X="79" Y="30" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_JERUSALEM"	X="82" Y="12" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_LISBON"		X="11" Y="36" />
