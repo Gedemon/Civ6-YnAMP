@@ -18,8 +18,8 @@
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SCYTHIA"	X="101" Y="52" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SPAIN"	X="18" Y="38" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SUMERIA"	X="100" Y="15" />
-	
-		<!-- Civ6 City States -->	
+		
+			<!-- Civ6 City States -->
 	    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_AMSTERDAM"	X="37" Y="60" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_BRUSSELS"		X="36" Y="56" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_CARTHAGE"		X="37" Y="23" />
@@ -43,12 +43,12 @@
 
 	+ France
 	+ Italy (with Sicily, Sardinia and Corsica)
+	+ Iberia
 
 	TO DO:
 	- Britan+Ireland
 	- Scandinavia
 	- Iceland
-	- Iberia
 	- Maghreb
 	- Central Europe (Germany, Austria...)
 	- Eastern Europe (From Baltic to Balkan)
@@ -75,7 +75,6 @@
 
 
 		<!-- FRANCE -->
-		
 		<Replace MapName="PlayEuropeAgain" X="29" Y="40" CityLocaleName="LOC_CITY_NAME_PERPIGNAN" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="34" Y="40" CityLocaleName="LOC_CITY_NAME_MARSEILLE" />
 		
@@ -95,11 +94,11 @@
 		<Replace MapName="PlayEuropeAgain" X="34" Y="43" CityLocaleName="LOC_CITY_NAME_AVIGNON" />
 		
 		<Replace MapName="PlayEuropeAgain" X="24" Y="44" CityLocaleName="LOC_CITY_NAME_BAYONNE" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="29" Y="44" CityLocaleName="LOC_CITY_NAME_TOULOUSE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="29" Y="44" CityLocaleName="LOC_CITY_NAME_ALBI" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="31" Y="44" CityLocaleName="LOC_CITY_NAME_SAINT_ETIENNE" />
 		<Replace MapName="PlayEuropeAgain" X="32" Y="44" CityLocaleName="LOC_CITY_NAME_LYON"  Area="0" /> <!-- OVERLAP -->
 
-		<Replace MapName="PlayEuropeAgain" X="26" Y="45" CityLocaleName="LOC_CITY_NAME_BORDEAUX" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="26" Y="45" CityLocaleName="LOC_CITY_NAME_SAINT_NICOLAS_DE_LA_GRAVE" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="30" Y="45" CityLocaleName="LOC_CITY_NAME_VICHY"  Area="0" /> <!-- OVERLAP -->
 		<Replace MapName="PlayEuropeAgain" X="31" Y="45" CityLocaleName="LOC_CITY_NAME_LYON" Area="0" /> <!-- OVERLAP -->
 		<Replace MapName="PlayEuropeAgain" X="32" Y="45" CityLocaleName="LOC_CITY_NAME_LYON" />
@@ -110,12 +109,12 @@
 		<Replace MapName="PlayEuropeAgain" X="28" Y="46" CityLocaleName="LOC_CITY_NAME_LIMOGES" />
 		<Replace MapName="PlayEuropeAgain" X="29" Y="46" CityLocaleName="LOC_CITY_NAME_LIMOGES"  Area="0" /> <!-- OVERLAP -->
 		<Replace MapName="PlayEuropeAgain" X="30" Y="46" CityLocaleName="LOC_CITY_NAME_VICHY" />
-		<Replace MapName="PlayEuropeAgain" X="34" Y="46" CityLocaleName="LOC_CITY_NAME_BESANCON" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="34" Y="46" CityLocaleName="LOC_CITY_NAME_LONS_LE_SAUNIER" Area="0" />
 		
 		<Replace MapName="PlayEuropeAgain" X="25" Y="47" CityLocaleName="LOC_CITY_NAME_ROCHEFORT" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="27" Y="47" CityLocaleName="LOC_CITY_NAME_POITIERS"  Area="0" /> <!-- OVERLAP -->
 		<Replace MapName="PlayEuropeAgain" X="30" Y="47" CityLocaleName="LOC_CITY_NAME_BOURGES"  Area="0" /> <!-- OVERLAP -->
-		<Replace MapName="PlayEuropeAgain" X="32" Y="47" CityLocaleName="LOC_CITY_NAME_BOURGES" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="32" Y="47" CityLocaleName="LOC_CITY_NAME_ROANNE" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="34" Y="47" CityLocaleName="LOC_CITY_NAME_BESANCON"  Area="0" /> <!-- OVERLAP -->
 		<Replace MapName="PlayEuropeAgain" X="35" Y="47" CityLocaleName="LOC_CITY_NAME_BESANCON" />
 
@@ -147,15 +146,15 @@
 		<Replace MapName="PlayEuropeAgain" X="28" Y="52" CityLocaleName="LOC_CITY_NAME_RENNES"  Area="0" /> <!-- OVERLAP -->
 		<Replace MapName="PlayEuropeAgain" X="29" Y="52" CityLocaleName="LOC_CITY_NAME_LE_MANS" />
 		<Replace MapName="PlayEuropeAgain" X="34" Y="52" CityLocaleName="LOC_CITY_NAME_PARIS" />
-		<Replace MapName="PlayEuropeAgain" X="36" Y="52" CityLocaleName="LOC_CITY_NAME_TROYES" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="36" Y="52" CityLocaleName="LOC_CITY_NAME_CHALONS_EN_CHAMPAGNE" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="38" Y="52" CityLocaleName="LOC_CITY_NAME_METZ"  Area="0" /> <!-- OVERLAP -->
 		
 		<Replace MapName="PlayEuropeAgain" X="24" Y="53" CityLocaleName="LOC_CITY_NAME_SAINT_NAZAIRE" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="25" Y="53" CityLocaleName="LOC_CITY_NAME_PONTIVY" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="27" Y="53" CityLocaleName="LOC_CITY_NAME_RENNES" />
 		<Replace MapName="PlayEuropeAgain" X="28" Y="53" CityLocaleName="LOC_CITY_NAME_RENNES"  Area="0" /> <!-- OVERLAP -->
-		<Replace MapName="PlayEuropeAgain" X="30" Y="53" CityLocaleName="LOC_CITY_NAME_LE_MANS" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="35" Y="53" CityLocaleName="LOC_CITY_NAME_PARIS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="53" CityLocaleName="LOC_CITY_NAME_ALENCON" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="35" Y="53" CityLocaleName="LOC_CITY_NAME_CHALONS_EN_CHAMPAGNE" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="37" Y="53" CityLocaleName="LOC_CITY_NAME_METZ" />
 		
 		<Replace MapName="PlayEuropeAgain" X="23" Y="54" CityLocaleName="LOC_CITY_NAME_BREST" />
@@ -190,7 +189,6 @@
 		<Replace MapName="PlayEuropeAgain" X="35" Y="57" CityLocaleName="LOC_CITY_NAME_LILLE" Area="0" />
 
 		<!-- ITALY MAINLAND UP TO THE ALPS (WITHOUT sicily, sardinia, corsica) -->
-		
 		<Replace MapName="PlayEuropeAgain" X="47" Y="24" CityLocaleName="LOC_CITY_NAME_REGGIO_CALABRIA" Area="0" />
 		
 		<Replace MapName="PlayEuropeAgain" X="48" Y="25" CityLocaleName="LOC_CITY_NAME_VIBO_VALENTIA" Area="0" />
@@ -282,12 +280,11 @@
 		<Replace MapName="PlayEuropeAgain" X="40" Y="44" CityLocaleName="LOC_CITY_NAME_MILANO" />
 		<Replace MapName="PlayEuropeAgain" X="44" Y="44" CityLocaleName="LOC_CITY_NAME_TRIENT" />
 		
-		<Replace MapName="PlayEuropeAgain" X="38" Y="45" CityLocaleName="LOC_CITY_NAME_MILANO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="38" Y="45" CityLocaleName="LOC_CITY_NAME_AOSTA" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="42" Y="45" CityLocaleName="LOC_CITY_NAME_BOZEN" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="43" Y="45" CityLocaleName="LOC_CITY_NAME_BOZEN" Area="0" />
 		
 		<!-- SICILY, SARDINIA AND CORSICA -->
-		
 		<Replace MapName="PlayEuropeAgain" X="43" Y="22" CityLocaleName="LOC_CITY_NAME_RAGUSA" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="44" Y="22" CityLocaleName="LOC_CITY_NAME_SYRAKUS" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="41" Y="23" CityLocaleName="LOC_CITY_NAME_AGRIGENT" Area="0" />
@@ -314,6 +311,121 @@
 		<Replace MapName="PlayEuropeAgain" X="39" Y="36" CityLocaleName="LOC_CITY_NAME_CORTE" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="38" Y="37" CityLocaleName="LOC_CITY_NAME_CALVI" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="39" Y="37" CityLocaleName="LOC_CITY_NAME_BASTIA" Area="0" />
+		
+		<!-- IBERIA -->
+		<Replace MapName="PlayEuropeAgain" X="14" Y="30" CityLocaleName="LOC_CITY_NAME_GIBRALTAR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="15" Y="30" CityLocaleName="LOC_CITY_NAME_GIBRALTAR" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="13" Y="31" CityLocaleName="LOC_CITY_NAME_CADIZ" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="14" Y="31" CityLocaleName="LOC_CITY_NAME_CADIZ" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="15" Y="31" CityLocaleName="LOC_CITY_NAME_MALAGA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="16" Y="31" CityLocaleName="LOC_CITY_NAME_MALAGA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="17" Y="31" CityLocaleName="LOC_CITY_NAME_ALMERIA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="18" Y="31" CityLocaleName="LOC_CITY_NAME_ALMERIA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="31" CityLocaleName="LOC_CITY_NAME_MURCIA" />
+		
+		<Replace MapName="PlayEuropeAgain" X="14" Y="32" CityLocaleName="LOC_CITY_NAME_CADIZ" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="16" Y="32" CityLocaleName="LOC_CITY_NAME_CORDOBA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="17" Y="32" CityLocaleName="LOC_CITY_NAME_GRANADA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="19" Y="32" CityLocaleName="LOC_CITY_NAME_CARAVACA_DE_LA_CRUZ" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="25" Y="32" CityLocaleName="LOC_CITY_NAME_IBIZA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="12" Y="33" CityLocaleName="LOC_CITY_NAME_HUELVA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="14" Y="33" CityLocaleName="LOC_CITY_NAME_SEVILLA" />
+		<Replace MapName="PlayEuropeAgain" X="18" Y="33" CityLocaleName="LOC_CITY_NAME_RIOPAR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="19" Y="33" CityLocaleName="LOC_CITY_NAME_HELLIN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="33" CityLocaleName="LOC_CITY_NAME_ALICANTE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="21" Y="33" CityLocaleName="LOC_CITY_NAME_ALICANTE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="22" Y="33" CityLocaleName="LOC_CITY_NAME_BENIDORM" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="33" CityLocaleName="LOC_CITY_NAME_PALMA_DE_MALLORCA" />
+		
+		<Replace MapName="PlayEuropeAgain" X="10" Y="34" CityLocaleName="LOC_CITY_NAME_LAGOS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="11" Y="34" CityLocaleName="LOC_CITY_NAME_FARO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="12" Y="34" CityLocaleName="LOC_CITY_NAME_HUELVA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="18" Y="34" CityLocaleName="LOC_CITY_NAME_RIOPAR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="21" Y="34" CityLocaleName="LOC_CITY_NAME_ALMANSA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="22" Y="34" CityLocaleName="LOC_CITY_NAME_CULLERA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="30" Y="34" CityLocaleName="LOC_CITY_NAME_CIUTADELLA_DE_MENORCA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="10" Y="35" CityLocaleName="LOC_CITY_NAME_SETUBAL" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="12" Y="35" CityLocaleName="LOC_CITY_NAME_BADAJOZ"	/>
+		<Replace MapName="PlayEuropeAgain" X="14" Y="35" CityLocaleName="LOC_CITY_NAME_ZAFRA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="16" Y="35" CityLocaleName="LOC_CITY_NAME_CIUDAD_REAL" />
+		<Replace MapName="PlayEuropeAgain" X="19" Y="35" CityLocaleName="LOC_CITY_NAME_ALBACETE" />
+		
+		<Replace MapName="PlayEuropeAgain" X="12" Y="36" CityLocaleName="LOC_CITY_NAME_LISBON" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="17" Y="36" CityLocaleName="LOC_CITY_NAME_TOLEDO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="18" Y="36" CityLocaleName="LOC_CITY_NAME_TOLEDO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="21" Y="36" CityLocaleName="LOC_CITY_NAME_REQUENA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="22" Y="36" CityLocaleName="LOC_CITY_NAME_VALENCIA" />
+		
+		<Replace MapName="PlayEuropeAgain" X="11" Y="37" CityLocaleName="LOC_CITY_NAME_LISBON" />
+		<Replace MapName="PlayEuropeAgain" X="14" Y="37" CityLocaleName="LOC_CITY_NAME_CACERES" />
+		<Replace MapName="PlayEuropeAgain" X="16" Y="37" CityLocaleName="LOC_CITY_NAME_TRUJILLO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="17" Y="37" CityLocaleName="LOC_CITY_NAME_TOLEDO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="19" Y="37" CityLocaleName="LOC_CITY_NAME_CUENCA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="37" CityLocaleName="LOC_CITY_NAME_CUENCA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="21" Y="37" CityLocaleName="LOC_CITY_NAME_REQUENA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="23" Y="37" CityLocaleName="LOC_CITY_NAME_PENISCOLA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="24" Y="37" CityLocaleName="LOC_CITY_NAME_TARRAGONA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="13" Y="38" CityLocaleName="LOC_CITY_NAME_CASTELO_BRANCO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="14" Y="38" CityLocaleName="LOC_CITY_NAME_CASTELO_BRANCO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="15" Y="38" CityLocaleName="LOC_CITY_NAME_SALAMANCA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="16" Y="38" CityLocaleName="LOC_CITY_NAME_SALAMANCA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="18" Y="38" CityLocaleName="LOC_CITY_NAME_MADRID" />
+		<Replace MapName="PlayEuropeAgain" X="21" Y="38" CityLocaleName="LOC_CITY_NAME_GUADALAJARA" />
+		<Replace MapName="PlayEuropeAgain" X="23" Y="38" CityLocaleName="LOC_CITY_NAME_TERUEL" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="24" Y="38" CityLocaleName="LOC_CITY_NAME_TARRAGONA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="38" CityLocaleName="LOC_CITY_NAME_GIRONA" />
+		
+		<Replace MapName="PlayEuropeAgain" X="11" Y="39" CityLocaleName="LOC_CITY_NAME_COIMBRA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="12" Y="39" CityLocaleName="LOC_CITY_NAME_COIMBRA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="13" Y="39" CityLocaleName="LOC_CITY_NAME_CASTELO_BRANCO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="15" Y="39" CityLocaleName="LOC_CITY_NAME_SALAMANCA" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="39" CityLocaleName="LOC_CITY_NAME_SORIA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="25" Y="39" CityLocaleName="LOC_CITY_NAME_BARCELONA" />
+		
+		<Replace MapName="PlayEuropeAgain" X="15" Y="40" CityLocaleName="LOC_CITY_NAME_ZAMORA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="16" Y="40" CityLocaleName="LOC_CITY_NAME_TORDESILLAS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="19" Y="40" CityLocaleName="LOC_CITY_NAME_SORIA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="40" CityLocaleName="LOC_CITY_NAME_SORIA" />
+		<Replace MapName="PlayEuropeAgain" X="23" Y="40" CityLocaleName="LOC_CITY_NAME_SARAGOSSA" />
+		<Replace MapName="PlayEuropeAgain" X="25" Y="40" CityLocaleName="LOC_CITY_NAME_HUESCA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="26" Y="40" CityLocaleName="LOC_CITY_NAME_BERGA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="27" Y="40" CityLocaleName="LOC_CITY_NAME_BERGA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="12" Y="41" CityLocaleName="LOC_CITY_NAME_PORTO" />
+		<Replace MapName="PlayEuropeAgain" X="13" Y="41" CityLocaleName="LOC_CITY_NAME_PORTO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="14" Y="41" CityLocaleName="LOC_CITY_NAME_ZAMORA" />
+		<Replace MapName="PlayEuropeAgain" X="14" Y="41" CityLocaleName="LOC_CITY_NAME_TORDESILLAS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="18" Y="41" CityLocaleName="LOC_CITY_NAME_VALLADOLID" />
+		<Replace MapName="PlayEuropeAgain" X="19" Y="41" CityLocaleName="LOC_CITY_NAME_SORIA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="22" Y="41" CityLocaleName="LOC_CITY_NAME_SARAGOSSA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="24" Y="41" CityLocaleName="LOC_CITY_NAME_HUESCA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="15" Y="42" CityLocaleName="LOC_CITY_NAME_OURENSE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="42" CityLocaleName="LOC_CITY_NAME_BURGOS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="22" Y="42" CityLocaleName="LOC_CITY_NAME_LOGRONO" />
+		<Replace MapName="PlayEuropeAgain" X="23" Y="42" CityLocaleName="LOC_CITY_NAME_PAMPLONA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="12" Y="43" CityLocaleName="LOC_CITY_NAME_PONTEVEDRA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="13" Y="43" CityLocaleName="LOC_CITY_NAME_LALIN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="14" Y="43" CityLocaleName="LOC_CITY_NAME_OURENSE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="16" Y="43" CityLocaleName="LOC_CITY_NAME_LEON" />
+		<Replace MapName="PlayEuropeAgain" X="18" Y="43" CityLocaleName="LOC_CITY_NAME_BURGOS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="19" Y="43" CityLocaleName="LOC_CITY_NAME_BURGOS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="21" Y="43" CityLocaleName="LOC_CITY_NAME_BILBAO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="22" Y="43" CityLocaleName="LOC_CITY_NAME_BILBAO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="23" Y="43" CityLocaleName="LOC_CITY_NAME_DONOSTIA_SAN_SEBASTIAN" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="15" Y="44" CityLocaleName="LOC_CITY_NAME_PONFERRADA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="21" Y="44" CityLocaleName="LOC_CITY_NAME_SANTANDER" />
+		
+		<Replace MapName="PlayEuropeAgain" X="13" Y="45" CityLocaleName="LOC_CITY_NAME_SANTIAGO_DE_COMPOSTELA" />
+		<Replace MapName="PlayEuropeAgain" X="18" Y="45" CityLocaleName="LOC_CITY_NAME_GIJON" />
+		
+		<Replace MapName="PlayEuropeAgain" X="16" Y="46" CityLocaleName="LOC_CITY_NAME_VIVEIRO" />
 		
 	</CityMap>
 	
