@@ -5,13 +5,13 @@
 	<!-- "Play Europe Again" start position -->
 	<!-- +++++++++++++++++++++++++++++++++++ -->
 	<StartPosition>
-	    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"	X="74" Y="6" />
+	    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"	X="83" Y="3" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_EGYPT"	X="75" Y="2" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ENGLAND"	X="31" Y="60" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FRANCE"	X="34" Y="52" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GERMANY"	X="48" Y="57" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GREECE"	X="58" Y="21" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GREECE"  	X="60" Y="25" Leader="LEADER_GORGO"/>
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GREECE"  	X="60" Y="29" Leader="LEADER_GORGO"/>
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_NORWAY"	X="49" Y="82" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ROME"		X="44" Y="34" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_RUSSIA"	X="78" Y="62" />

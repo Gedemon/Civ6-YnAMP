@@ -270,8 +270,10 @@
 		
 		<Row Map="LargestEarth.lua" Domain="ResourcesPlacement" Value="PLACEMENT_DEFAULT" />
 		<Row Map="LargestEarth.lua" Domain="ResourcesPlacement" Value="PLACEMENT_EMPTY" />
+		<!--
 		<Row Map="LargestEarth.lua" Domain="FeaturesPlacement" Value="PLACEMENT_DEFAULT" />
 		<Row Map="LargestEarth.lua" Domain="FeaturesPlacement" Value="PLACEMENT_EMPTY" />
+		-->
 	</MapSupportedValues>
 	
 	<ParameterDependencies>

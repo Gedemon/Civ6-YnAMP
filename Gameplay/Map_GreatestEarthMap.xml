@@ -10,7 +10,7 @@
 		
 		<!-- New Majors with Civilization 6 -->
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NORWAY"		X="44" Y="60" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SCYTHIA"		X="61" Y="49" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SCYTHIA"		X="68" Y="51" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SUMERIA"		X="67" Y="39" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KONGO"		X="57" Y="17" />
 		
