@@ -1,11 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Ed Beach (Firaxis Games) -->
 <GameData>
+  <!-- City States Pedia -->
+  <LocalizedText>	
+	
+    <Replace Tag="LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CHEYENNE_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      	<Text>
+			Cheyenne are a Native American people of the Great Plains, who are of the Algonquian language family. The Cheyenne Nation is composed of two united tribes, the Só'taeo'o (more commonly as Sutaio) and the Tsétsêhéstâhese (more commonly as Tsitsistas).[NEWLINE][NEWLINE]The Cheyenne are thought to have branched off other tribes of Algonquian stock around the Great Lakes in present-day Minnesota, perhaps ca. 1500. In historic times they moved west, migrating across the Mississippi River and into North and South Dakota. During the early 19th century, the Cheyenne formed a unified tribe, with more centralized authority through ritual ceremonies and structure than other Plains Indians. Having settled the Black Hills of South Dakota and the Powder River Country of present-day Montana, they introduced the horse culture to Lakota bands about 1730. Allied with the Arapaho, they pushed the Kiowa to the South. In turn they were pushed west by the more numerous Lakota.[NEWLINE][NEWLINE]The Cheyenne are one of the best known of the Plains tribes. The Cheyenne Nation formed into ten bands, spread across the Great Plains, from southern Colorado to the Black Hills in South Dakota. At the same time, they created a centralized structure through ritual ceremonies, such as the Sun Dance. When gathered, the bands leaders met in formal council. Alone among the Plains tribes, they waged war at the tribal level, first against their traditional enemy, the Crow, and later (1856–1879) against US forces. In the mid-19th century, the bands began to split, with some bands choosing to remain near the Black Hills, while others chose to remain near the Platte Rivers of central Colorado. (from wikipedia)
+		</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_SAMARKAND_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      	<Text>
+			Samarkand (literally "Stone Fort" or "Rock Town", in Sogdian) is the second-largest city in Uzbekistan and the capital of Samarqand Province. The city is most noted for its central position on the Silk Road between China and the West, and for being an Islamic centre for scholarly study. In the 14th century, it became the capital of the empire of Timur (Tamerlane), and is the site of his mausoleum (the Gur-e Amir). The Bibi-Khanym Mosque remains one of the city's most notable landmarks. The Registan was the ancient centre of the city. (from wikipedia)
+		</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_LAKOTA_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      	<Text>
+			The Lakota are a Native American tribe and they are part of a confederation of seven related Sioux tribes. They were originally referred to as the Dakota when they lived by the Great Lakes. Encroaching European-American settlement led them to migrate west from the Great Lakes region. They later called themselves the Lakota, and were also called Sioux. They were introduced to horse culture by the Cheyenne about 1730. (from wikipedia)
+		</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_TIKAL_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      	<Text>
+			Tikal was the capital of a conquest state that became one of the most powerful kingdoms of the ancient Maya. Though monumental architecture at the site dates back as far as the 4th century BC, Tikal reached its apogee during the Classic Period, ca. 200 to 900 AD. During this time, the city dominated much of the Maya region politically, economically, and militarily, while interacting with areas throughout Mesoamerica such as the great metropolis of Teotihuacan in the distant Valley of Mexico. (from wikipedia)
+		</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_CUZCO_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      	<Text>
+			The Inca civilization began as a tribe in the Cuzco area, where the legendary first Sapa Inca, Manco Capac founded the Kingdom of Cuzco around 1200. Under the leadership of the descendants of Manco Capac, the Inca state grew to absorb other Andean communities. In 1442, the Incas began a far-reaching expansion under the command of Patchacuti. He founded the Inca Empire (Tahuantinsuyo), which became the largest empire in pre-Columbian America. (from wikipedia)
+		</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_IFE_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      	<Text>
+			According to the Yoruba people, Ife is where the founding deities Oduduwa and Obatala began the creation of the world, as directed by the paramount Deity Olodumare. Obàtálá created the first humans out of clay, while Odùduwà became the first divine king of the Yoruba. The Oòni (King) of Ife claims direct descent from the god Oduduwa, and is counted first among Yoruba kings. To this day many of the surviving traditional religious groups of the city celebrate the creation of the world during the Itapa festival. According to anthropologists, its habitation can be traced as far back as 350 BCE.[NEWLINE][NEWLINE]Between 700 and 900 A.D., Ife began to develop as a major artistic center. The city was a settlement of substantial size between the 9th and 12th centuries, with houses featuring potsherd pavements. Ilé-Ifè is known for its ancient and naturalistic bronze, stone and terracotta sculptures, which reached their peak of artistic expression between 1200 and 1400 A.D. After this period, production declined as political and economic power shifted to the nearby kingdom of Benin which, like the Yoruba kingdom of Oyo, developed into a major empire. (from wikipedia)
+		</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_ULUNDI_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      	<Text>
+			Ulundi was the capital of the Zulu Kingdom, sometimes referred to as the Zulu Empire or, rather imprecisely, Zululand, which was a monarchy in Southern Africa that extended along the coast of the Indian Ocean from the Tugela River in the south to Pongola River in the north.[NEWLINE][NEWLINE] The small kingdom grew to dominate much of Southern Africa, but when it came into conflict with the British empire in the 1870s during the Anglo-Zulu War, it was defeated despite early Zulu victories in the war. The area was subsequently absorbed into the Colony of Natal and later became part of the Union of South Africa. (from wikipedia)
+		</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_MOGADISHU_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      	<Text>
+			Mogadishu (literally "The Seat of the Shah") is the largest city in Somalia and the nation's capital. Located in the coastal Benadir region on the Indian Ocean, the city has served as an important port for centuries.[NEWLINE][NEWLINE]According to the Periplus of the Erythraean Sea, maritime trade connected Somalis in the Mogadishu area with other communities along the Indian Ocean coast as early as the 1st century CE. With Muslim traders from the Arabian Peninsula arriving circa 900 CE, Mogadishu was well-suited to become a regional center for commerce.[NEWLINE][NEWLINE]The Sultanate of Mogadishu developed with the immigration of Emozeidi Arabs, a community whose earliest presence dates back to the 9th or 10th century. This evolved into the Muzaffar dynasty, a joint Somali-Arab federation of rulers, and Mogadishu became closely linked with the powerful Somali Ajuuraan State.[NEWLINE][NEWLINE]By the time of the Moroccan traveller Ibn Batuta's appearance on the Somali coast in 1331, the city was at the zenith of its prosperity. Batuta described Mogadishu as "an exceedingly large city" with many rich merchants, which was famous for its high quality fabric that it exported to Egypt, among other places. (from wikipedia)
+		</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_AKSUM_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      	<Text>
+			Axum or Aksum is a city in northern Ethiopia which was the original capital of the eponymous kingdom of Axum. Axum was a naval and trading power that ruled the region from ca. 400 BC into the 10th century. The kingdom was also arbitrarily identified as Abyssinia, Ethiopia, and India in medieval writings (from wikipedia)
+		</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_RABAT_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      	<Text>
+			Rabat's history began with a settlement, known as Chellah on the banks of the Oued Bou Regreg in the third century BC. In 40 AD, Romans took over Chellah and converted it to the Roman settlement of Sala Colonia. Rome held the colony until 250 AD when they abandoned it to local rulers. In 1146, the Almohad ruler Abd al-Mu'min turned Rabat's ribat into a full scale fortress to use as a launching point for attacks on Spain. In 1170, due to its military importance, Rabat acquired the title Ribatu l-Fath, meaning "stronghold of victory," from which it derives its current name.[NEWLINE][NEWLINE]Yaqub al-Mansur (known as Moulay Yacoub in Morocco), another Almohad Caliph, moved the capital of his empire to Rabat. He built Rabat's city walls, the Kasbah of the Udayas and began construction on what would have been the world's largest mosque. However, Yaqub died and construction stopped. The ruins of the unfinished mosque, along with the Hassan Tower, still stand today.[NEWLINE][NEWLINE]Yaqub's death initiated a period of decline. The Almohad empire lost control of its possessions in Spain and much of its African territory, eventually leading to its total collapse. In the 13th century, much of Rabat's economic power shifted to Fez. In 1515 a Moorish explorer, El Wassan, reported that Rabat had declined so much that only 100 inhabited houses remained. An influx of Moriscos, who had been expelled from Spain, in the early 17th century helped boost Rabat's growth.[NEWLINE][NEWLINE]Rabat and neighboring Salé united to form the Republic of Bou Regreg in 1627. The republic was run by Barbary pirates who used the two cities as base ports for launching attacks on shipping. The pirates did not have to contend with any central authority until the Alaouite Dynasty united Morocco in 1666. The latter attempted to establish control over the pirates, but failed. European and Muslims authorities continued to attempt to control the pirates over many years, but the Republic of Bou Regreg did not collapse until 1818. Even after the republic's collapse, pirates continued to use the port of Rabat, which led to the shelling of the city by Austria in 1829 after an Austrian ship had been lost to a pirate attack.[NEWLINE][NEWLINE]The French invaded Morocco in 1912 and established a protectorate. The French administrator of Morocco, General Hubert Lyautey, decided to relocate the country's capital from Fez to Rabat. Among other factors, rebellious citizens had made Fez an unstable place. Sultan Moulay Youssef followed the decision of the French and moved his residence to Rabat. In 1913, Gen. Lyautey hired Henri Prost who designed the Ville Nouvelle (Rabat's modern quarter) as an administrative sector. When Morocco achieved independence in 1956, Mohammed V, the then King of Morocco, chose to have the capital remain at Rabat. (from wikipedia)
+		</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_HARAPPA_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      	<Text>
+			The Indus Valley Civilization (also known as Harappan culture) has its earliest roots in cultures such as that of Mehrgarh, approximately 6000 BCE. The two greatest cities, Mohenjo-daro and Harappa, emerged circa 2600 BCE along the Indus River valley in Punjab and Sindh. The civilization, with a writing system, urban centers, and diversified social and economic system, was rediscovered in the 1920s after excavations at Mohenjo-daro (which means "mound of the dead") in Sindh near Sukkur, and Harappa, in west Punjab south of Lahore. (from wikipedia)
+		</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_DAKAR_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      	<Text>
+			Dakar is the capital city of Senegal, located on the Cap-Vert Peninsula, on the country's Atlantic coast. It is Senegal's largest city. Its position, on the western edge of Africa (it is the westernmost city on the African mainland), is an advantageous departure point for trans-Atlantic and European trade; this fact aided its growth into a major regional port. (from wikipedia)
+		</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_REYKJAVIK_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      	<Text>
+			Reykjavik is the capital and largest city of Iceland. Its latitude at 64°08' N makes it the world's northernmost capital of a sovereign state. It is located in southwestern Iceland, on the southern shore of Faxaflói Bay. With a population of around 120,000 (and over 200,000 in the Greater Reykjavík Area) it is the heart of Iceland's economic and governmental activity.[NEWLINE]Reykjavik is believed to be the location of the first permanent settlement in Iceland, which Ingólfur Arnarson is said to have established around 870. Until the 18th century, there was no urban development in the city location. The city was founded in 1786 as an official trading town and grew steadily over the next decades, as it transformed into a regional and later national centre of commerce, population and governmental activities. (from wikipedia)
+		</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_PEDIA_CITYSTATES_PAGE_CIVILIZATION_GARAMANTES_CHAPTER_HISTORY_PARA_1" Language="en_US">
+      	<Text>
+			The Garamantes were a Saharan people who used an elaborate underground irrigation system, and founded a prosperous Berber kingdom in the Fezzan area of modern-day Libya, in the Sahara desert. They were a local power in the Sahara between 500 BC and 700 AD.[NEWLINE][NEWLINE]There is little textual information about the Garamantes. Even the name Garamantes was a Greek name which the Romans later adopted. Available information comes mainly from Greek and Roman sources, as well as archaeological excavations in the area, though large areas in ruins remain unexcavated. Another important source of information are the abundant rock art, many of which depict life prior to the rise of the realm. (from wikipedia)
+		</Text>
+    </Replace>
+	
+  </LocalizedText>
 
- <!-- New City Names <en_US> -->
+  <!-- New City Names <en_US> -->
   <LocalizedText>
   
 	<!-- FRANCE -->		
+	<Replace Tag="LOC_CITY_NAME_ALBI" Text="Albi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ALENCON" Text="Alencon" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_AMIENS" Text="Amiens" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_ARLES" Text="Arles" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_ARRAS" Text="Arras" Language="en_US"/>
@@ -20,6 +110,7 @@
 	<Replace Tag="LOC_CITY_NAME_CAEN" Text="Caen" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_CALAIS" Text="Calais" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_CARCASSONNE" Text="Carcassonne" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHALONS_EN_CHAMPAGNE" Text="Chalons-en-Champagne" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_CHERBOURG_OCTEVILLE" Text="Cherbourg-Octeville" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_COUTANCES" Text="Coutances" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_DIJON" Text="Dijon" Language="en_US"/>
@@ -30,6 +121,7 @@
 	<Replace Tag="LOC_CITY_NAME_LE_MANS" Text="Le Mans" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_LILLE" Text="Lille" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_LIMOGES" Text="Limoges" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LONS_LE_SAUNIER" Text="Lons-le-Saunier" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_LOURDES" Text="Lourdes" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_LYON" Text="Lyon" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_MARSEILLE" Text="Marseille" Language="en_US"/>
@@ -47,12 +139,14 @@
 	<Replace Tag="LOC_CITY_NAME_QUIMPER" Text="Quimper" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_REIMS" Text="Reims" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_RENNES" Text="Rennes" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ROANNE" Text="Roanne" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_ROCHEFORT" Text="Rochefort" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_ROUEN" Text="Rouen" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_SAINT_BRIEUC" Text="Saint-Brieuc" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_SAINT_ETIENNE" Text="Saint-Etienne" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_SAINT_MALO" Text="Saint-Malo " Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_SAINT_NAZAIRE" Text="Saint-Nazaire" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_NICOLAS_DE_LA_GRAVE" Text="Saint-Nicolas-de-la-Grave" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_SAINT_QUENTIN" Text="Saint-Quentin" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_SENS" Text="Sens" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_STRASBOURG" Text="Strasbourg" Language="en_US"/>
@@ -67,6 +161,7 @@
 	<Replace Tag="LOC_CITY_NAME_AJACCIO" Text="Ajaccio" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_ALGHERO" Text="Alghero" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_ANCONA" Text="Ancona" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AOSTA" Text="Aosta" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_ARBATAX" Text="Arbatax" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_AREZZO" Text="Arezzo" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_BARI" Text="Bari" Language="en_US" />
@@ -140,7 +235,74 @@
 	<Replace Tag="LOC_CITY_NAME_VERONA" Text="Verona" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_VIBO_VALENTIA" Text="Vibo Valentia" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_VITERBO" Text="Viterbo" Language="en_US" />
-	
+
+	<!-- IBERIA -->
+	<Replace Tag="LOC_CITY_NAME_ALBACETE" Text="Albacete" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ALICANTE" Text="Alicante" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ALMANSA" Text="Almansa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ALMERIA" Text="Almeria" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BADAJOZ" Text="Badajoz" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BARCELONA" Text="Barcelona" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BENIDORM" Text="Benidorm" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BERGA" Text="Berga" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BILBAO" Text="Bilbao" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BURGOS" Text="Burgos" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CACERES" Text="Caceres" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CADIZ" Text="Cadiz" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARAVACA_DE_LA_CRUZ" Text="Caravaca de la Cruz" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CASTELO_BRANCO" Text="Castelo Branco" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CIUDAD_REAL" Text="Ciudad Real" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CIUTADELLA_DE_MENORCA" Text="Ciutadella de Menorca" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_COIMBRA" Text="Coimbra" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CORDOBA" Text="Cordoba" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CUENCA" Text="Cuenca" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CULLERA" Text="Cullera" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DONOSTIA_SAN_SEBASTIAN" Text="Donostia San Sebastian" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FARO" Text="Faro" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GIBRALTAR" Text="Gibraltar" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GIJON" Text="Gijon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GIRONA" Text="Girona" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GRANADA" Text="Granada" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GUADALAJARA" Text="Guadalajara" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HELLIN" Text="Hellin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HUELVA" Text="Huelva" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HUESCA" Text="Huesca" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_IBIZA" Text="Ibiza" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LAGOS" Text="Lagos" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LALIN" Text="Lalin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LEON" Text="Leon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LISBON" Text="Lisbon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LOGRONO" Text="Logrono" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MADRID" Text="Madrid" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MALAGA" Text="Malaga" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MURCIA" Text="Murcia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OURENSE" Text="Ourense" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PALMA_DE_MALLORCA" Text="Palma de Mallorca" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PAMPLONA" Text="Pamplona" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PENISCOLA" Text="Peniscola" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PONFERRADA" Text="Ponferrada" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PONTEVEDRA" Text="Ponteverda" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PORTO" Text="Porto" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_REQUENA" Text="Requena" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RIOPAR" Text="Riopar" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SALAMANCA" Text="Salamanca" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SANTANDER" Text="Santander" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SANTIAGO_DE_COMPOSTELA" Text="Santiago de Compostela" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SARAGOSSA" Text="Saragossa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SETUBAL" Text="Setubal" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SEVILLA" Text="Sevilla" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SORIA" Text="Soria" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TARRAGONA" Text="Tarragona" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TERUEL" Text="Teruel" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TOLEDO" Text="Toledo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TORDESILLAS" Text="Tordesillas" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TRUJILLO" Text="Trujillo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VALENCIA" Text="Valencia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VALLADOLID" Text="Valladolid" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VIVEIRO" Text="Viveiro" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ZAFRA" Text="Zafra" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ZAMORA" Text="Zamora" Language="en_US" />
+
   </LocalizedText>
   
   <!-- New City Names <fr_FR> -->
