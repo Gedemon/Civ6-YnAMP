@@ -29,6 +29,12 @@ UPDATE Units SET BaseMoves = BaseMoves * 2 WHERE Domain = 'DOMAIN_SEA';
 -----------------------------------------------
 -- Border Growth
 -----------------------------------------------
+/*
+
+-- try lua scripting instead:
+-- define regions for faster expansion, for each plot acquired give 1,2,3 or more free plots around (adjacent to the acquired plot and one other of that civilization)
+-- could scale with era.
+-- could scale with regions. 
 
 UPDATE Terrains SET InfluenceCost = 5 WHERE TerrainType="TERRAIN_COAST";
 UPDATE Terrains SET InfluenceCost = 10 WHERE TerrainType="TERRAIN_OCEAN";
@@ -45,4 +51,4 @@ INSERT INTO CivicModifiers (CivicType, ModifierId) VALUES ('CIVIC_MILITARY_TRADI
 INSERT INTO CivicModifiers (CivicType, ModifierId) VALUES ('CIVIC_STATE_WORKFORCE', 'ADJUST_BORDER_EXPANSION');
 INSERT INTO CivicModifiers (CivicType, ModifierId) VALUES ('CIVIC_EARLY_EMPIRE', 'ADJUST_BORDER_EXPANSION');
 INSERT INTO CivicModifiers (CivicType, ModifierId) VALUES ('CIVIC_MYSTICISM', 'ADJUST_BORDER_EXPANSION');
-
+*/
