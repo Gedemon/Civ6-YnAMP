@@ -23,6 +23,9 @@
       <Text>Earth 3 : Large Scale</Text>
     </Replace>
 	
+    <Replace Tag="LOC_EURO_RULESET0_NAME" Language="en_US">
+      <Text>Euro : Civilization restriction</Text>
+    </Replace>
     <Replace Tag="LOC_EURO_RULESET1_NAME" Language="en_US">
       <Text>Euro 1 : Small Scale</Text>
     </Replace>
@@ -43,6 +46,9 @@
       <Text>Old World 3 : Large Scale</Text>
     </Replace>
 	
+    <Replace Tag="LOC_YNAGEM_RULESET0_DESC" Language="en_US">
+      <Text>No change to game's rules</Text>
+    </Replace>
     <Replace Tag="LOC_YNAGEM_RULESET1_DESC" Language="en_US">
       <Text>For Small Scale Map[NEWLINE]- Specific rules :[NEWLINE][ICON_Bullet] 2 tiles Min Distance between City[NEWLINE][ICON_Bullet] Remove Brussels, Geneva and Lisbon[NEWLINE]- Common rules :[NEWLINE][ICON_Bullet] Raise Max distance between Civilizations[NEWLINE][ICON_Bullet] 33% less Barbarian encampment (2/civ)[NEWLINE][ICON_Bullet] Min distance to city from camps raised to 7[NEWLINE][ICON_Bullet] Change some Capitals name[NEWLINE][ICON_Bullet] Tweak resources placement rules[NEWLINE][ICON_Bullet] Change Cliffs of Dover yields (2[ICON_Food], 1[ICON_Culture], 1[ICON_Gold])</Text>
     </Replace>

@@ -92,6 +92,14 @@
 			</Items>
 		</UpdateDatabase>
 		
+		<UpdateDatabase id="RULESET_EURO_0">
+			<Properties>
+				<RuleSet>RULESET_EURO_0</RuleSet>
+			</Properties>
+			<Items>
+				<File>Rules/LimitEuro.sql</File>
+			</Items>
+		</UpdateDatabase>
 		<UpdateDatabase id="RULESET_EURO_1">
 			<Properties>
 				<RuleSet>RULESET_EURO_1</RuleSet>

@@ -35,6 +35,11 @@
 		</Row>
 		
 		<Row>
+			<RuleSetType>RULESET_EURO_0</RuleSetType>
+			<Name>LOC_EURO_RULESET0_NAME</Name>
+			<Description>LOC_YNAGEM_RULESET0_DESC</Description>
+		</Row>
+		<Row>
 			<RuleSetType>RULESET_EURO_1</RuleSetType>
 			<Name>LOC_EURO_RULESET1_NAME</Name>
 			<Description>LOC_YNAGEM_RULESET1_DESC</Description>
@@ -68,6 +73,7 @@
 	</RuleSets>
 
 	<RulesetDomainOverrides>
+		<Row Ruleset="RULESET_EURO_0" ParameterId="PlayerLeader" Domain="EuroPlayers"/>
 		<Row Ruleset="RULESET_EURO_1" ParameterId="PlayerLeader" Domain="EuroPlayers"/>
 		<Row Ruleset="RULESET_EURO_2" ParameterId="PlayerLeader" Domain="EuroPlayers"/>
 		<Row Ruleset="RULESET_EURO_3" ParameterId="PlayerLeader" Domain="EuroPlayers"/>

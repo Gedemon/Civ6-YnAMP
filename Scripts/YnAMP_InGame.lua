@@ -22,6 +22,8 @@ function ChangeCityName( ownerPlayerID, cityID)
 		local x = pCity:GetX()
 		local y = pCity:GetY()
 		local CivilizationTypeName = PlayerConfigurations[ownerPlayerID]:GetCivilizationTypeName()
+		local startPos, endPos = string.find(CivilizationTypeName, "CIVILIZATION_")
+		local sCivSuffix = string.sub(CivilizationTypeName, endPos)
 		print("Trying to find name for city of ".. tostring(CivilizationTypeName) .." at "..tostring(x)..","..tostring(y))
 		local possibleName = {}
 		local maxRange = 1
@@ -39,9 +41,15 @@ function ChangeCityName( ownerPlayerID, cityID)
 					print("- testing "..tostring(row.CityLocaleName).." at "..tostring(nameX)..","..tostring(nameY).." max distance is "..tostring(nameMaxDistance)..", best distance so far is "..tostring(bestDistance))
 					local distance = Map.GetPlotDistance(x, y ,nameX, nameY)
 					if distance <= nameMaxDistance and distance < bestDistance then
-						if CivilizationTypeName == row.Civilization then
+					
+						local sCityNameForCiv = tostring(row.CityLocaleName) .. sCivSuffix
+					
+						if CivilizationTypeName == row.Civilization then -- that city is specific to a Civilization
 							bestDistance = distance
-							bestName = row.CityLocaleName
+							bestName = row.CityLocaleName							
+						elseif Locale.Lookup(sCityNameForCiv) ~= sCityNameForCiv then -- means that this civilization has a specific name available for this city
+							bestDistance = distance
+							bestName = sCityNameForCiv							
 						elseif not row.Civilization then -- do not use Civilization specific name with another Civilization, only generic
 							bestDistance = distance
 							bestDefaultName = row.CityLocaleName						
