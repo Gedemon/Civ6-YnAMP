@@ -2787,6 +2787,13 @@ function ExtraPlacement()
 	end
 end
 
+function MakeRiverFlowToNorth(plot)
+	if plot then
+		if plot:IsNEOfRiver() then TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHWEST) end
+		if plot:IsWOfRiver() then TerrainBuilder.SetWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTH) end
+		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHEAST) end
+	end
+end
 ------------------------------------------------------------------------------
 -- Resources
 ------------------------------------------------------------------------------
