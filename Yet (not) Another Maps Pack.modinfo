@@ -27,10 +27,10 @@
 	<Components>
 		<ImportFiles id="YNAMP_IMPORT">
 			<Items>
-				<File>Maps/GiantEarth.lua</File>
-				<File>Maps/GreatestEarthMap.lua</File>
-				<File>Maps/PlayEuropeAgain.lua</File>
-				<File>Maps/LargestEarth.lua</File>
+				<File>Maps/GiantEarth/GiantEarth.lua</File>
+				<File>Maps/GreatestEarthMap/GreatestEarthMap.lua</File>
+				<File>Maps/PlayEuropeAgain/PlayEuropeAgain.lua</File>
+				<File>Maps/LargestEarth/LargestEarth.lua</File>
 				<File>Override/AssignStartingPlots.lua</File>
 				<File>Scripts/YnAMP_Utils.lua</File>
 			</Items>
@@ -53,10 +53,10 @@
 				<File>Gameplay/Tables.sql</File>
 				<File>Gameplay/GamePlay.sql</File>
 				<File>Gameplay/GamePlay.xml</File>
-				<File>Gameplay/Map_GiantEarth.xml</File>
-				<File>Gameplay/Map_GreatestEarthMap.xml</File>
-				<File>Gameplay/Map_PlayEuropeAgain.xml</File>
-				<File>Gameplay/Map_LargestEarth.xml</File>
+				<File>Maps/GiantEarth/Map_GiantEarth.xml</File>
+				<File>Maps/GreatestEarthMap/Map_GreatestEarthMap.xml</File>
+				<File>Maps/PlayEuropeAgain/Map_PlayEuropeAgain.xml</File>
+				<File>Maps/LargestEarth/Map_LargestEarth.xml</File>
 				<File>Gameplay/Resource.xml</File>
 				<File>Gameplay/CityNameByEra.xml</File>
 			</Items>
@@ -179,16 +179,16 @@
 		<File>Gameplay/GamePlay.xml</File>
 		<File>Gameplay/GamePlay.sql</File>
 		<File>Gameplay/GamePlayText.xml</File>
-		<File>Gameplay/Map_GiantEarth.xml</File>
-		<File>Gameplay/Map_GreatestEarthMap.xml</File>
-		<File>Gameplay/Map_PlayEuropeAgain.xml</File>
-		<File>Gameplay/Map_LargestEarth.xml</File>
+		<File>Maps/GiantEarth/Map_GiantEarth.xml</File>
+		<File>Maps/GreatestEarthMap/Map_GreatestEarthMap.xml</File>
+		<File>Maps/PlayEuropeAgain/Map_PlayEuropeAgain.xml</File>
+		<File>Maps/LargestEarth/Map_LargestEarth.xml</File>
 		<File>Gameplay/Resource.xml</File>
 		<File>Gameplay/CityNameByEra.xml</File>
-		<File>Maps/GiantEarth.lua</File>
-		<File>Maps/GreatestEarthMap.lua</File>
-		<File>Maps/PlayEuropeAgain.lua</File>
-		<File>Maps/LargestEarth.lua</File>
+		<File>Maps/GiantEarth/GiantEarth.lua</File>
+		<File>Maps/GreatestEarthMap/GreatestEarthMap.lua</File>
+		<File>Maps/PlayEuropeAgain/PlayEuropeAgain.lua</File>
+		<File>Maps/LargestEarth/LargestEarth.lua</File>
 		<File>Override/AssignStartingPlots.lua</File>
 		<File>Rules/Rules_1.sql</File>
 		<File>Rules/Rules_2.sql</File>
