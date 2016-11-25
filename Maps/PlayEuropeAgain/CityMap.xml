@@ -1,40 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
-
-	<!-- +++++++++++++++++++++++++++++++++++ -->
-	<!-- "Play Europe Again" start position -->
-	<!-- +++++++++++++++++++++++++++++++++++ -->
-	<StartPosition>
-	    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"	X="83" Y="3" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_EGYPT"	X="75" Y="2" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ENGLAND"	X="31" Y="60" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FRANCE"	X="34" Y="52" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GERMANY"	X="47" Y="58" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GREECE"	X="58" Y="21" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GREECE"  	X="60" Y="29" Leader="LEADER_GORGO"/>
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_NORWAY"	X="49" Y="82" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ROME"		X="44" Y="34" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_RUSSIA"	X="78" Y="62" />
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SCYTHIA"	X="101" Y="52" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SPAIN"	X="18" Y="38" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SUMERIA"	X="100" Y="15" />
-		
-		<!-- Civ6 City States -->
-	    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_AMSTERDAM"	X="37" Y="60" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_BRUSSELS"		X="36" Y="56" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_CARTHAGE"		X="37" Y="23" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GENEVA"		X="37" Y="47" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_HATTUSA"		X="79" Y="30" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_JERUSALEM"	X="82" Y="12" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_LISBON"		X="11" Y="36" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_PRESLAV"		X="65" Y="39" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_STOCKHOLM"	X="55" Y="72" />
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_VALLETTA"		X="42" Y="19" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_VILNIUS"		X="60" Y="60" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_YEREVAN"		X="93" Y="36" />
-	</StartPosition>
 	
 	<!-- 
+	
+	"Play Europe Again"
 
 	TRUE LOCATION CITY NAMES
 	16/11/22
@@ -1086,5 +1055,124 @@
 		<Replace MapName="PlayEuropeAgain" X="69" Y="85" CityLocaleName="LOC_CITY_NAME_PLOTINA" />
 		
 	</CityMap>
+	
+	<!-- GREECE (AEGEAN ISLANDS & MAINLAND) -->
+	<CityMap>
+		
+		<!-- MODERN GREECE (AEGEAN ISLANDS) -->
+		<Replace MapName="PlayEuropeAgain" X="60" Y="18" CityLocaleName="LOC_CITY_NAME_CHANIA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="61" Y="18" CityLocaleName="LOC_CITY_NAME_RETHYMNO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="62" Y="18" CityLocaleName="LOC_CITY_NAME_HERAKLION" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="63" Y="18" CityLocaleName="LOC_CITY_NAME_AGIOS_NIKOLAOS" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="62" Y="20" CityLocaleName="LOC_CITY_NAME_FIRA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="64" Y="21" CityLocaleName="LOC_CITY_NAME_KOS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="66" Y="21" CityLocaleName="LOC_CITY_NAME_RHODES" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="62" Y="23" CityLocaleName="LOC_CITY_NAME_ANDROS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="64" Y="23" CityLocaleName="LOC_CITY_NAME_SAMOS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="65" Y="23" CityLocaleName="LOC_CITY_NAME_SAMOS" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="63" Y="26" CityLocaleName="LOC_CITY_NAME_SKYROS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="63" Y="29" CityLocaleName="LOC_CITY_NAME_MYRINA" Area="0" />
+		
+		<!-- MODERN GREECE (MAINLAND) -->
+		
+		<Replace MapName="PlayEuropeAgain" X="58" Y="20" CityLocaleName="LOC_CITY_NAME_KALAMATA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="20" CityLocaleName="LOC_CITY_NAME_SPARTA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="57" Y="21" CityLocaleName="LOC_CITY_NAME_KYPARISSIA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="21" CityLocaleName="LOC_CITY_NAME_SPARTA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="21" CityLocaleName="LOC_CITY_NAME_SPARTA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="60" Y="21" CityLocaleName="LOC_CITY_NAME_POROS" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="57" Y="22" CityLocaleName="LOC_CITY_NAME_ARCHEA_OLIMPIA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="22" CityLocaleName="LOC_CITY_NAME_TRIPOLI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="22" CityLocaleName="LOC_CITY_NAME_ARGOS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="60" Y="22" CityLocaleName="LOC_CITY_NAME_NAFPLION" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="56" Y="23" CityLocaleName="LOC_CITY_NAME_VARDA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="57" Y="23" CityLocaleName="LOC_CITY_NAME_PATRAS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="23" CityLocaleName="LOC_CITY_NAME_PATRAS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="23" CityLocaleName="LOC_CITY_NAME_CORINTH" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="60" Y="23" CityLocaleName="LOC_CITY_NAME_KORFOS" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="60" Y="24" CityLocaleName="LOC_CITY_NAME_CORINTH" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="56" Y="25" CityLocaleName="LOC_CITY_NAME_MISSOLONGHI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="57" Y="25" CityLocaleName="LOC_CITY_NAME_NAFPAKTOS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="25" CityLocaleName="LOC_CITY_NAME_ARACHOVA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="25" CityLocaleName="LOC_CITY_NAME_THIVA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="60" Y="25" CityLocaleName="LOC_CITY_NAME_ATHENS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="61" Y="25" CityLocaleName="LOC_CITY_NAME_ATHENS" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="56" Y="26" CityLocaleName="LOC_CITY_NAME_PREVEZA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="57" Y="26" CityLocaleName="LOC_CITY_NAME_AGRINIO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="26" CityLocaleName="LOC_CITY_NAME_KARPENISSI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="26" CityLocaleName="LOC_CITY_NAME_LAMIA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="60" Y="26" CityLocaleName="LOC_CITY_NAME_LAMIA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="55" Y="27" CityLocaleName="LOC_CITY_NAME_IGOUMENITSA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="56" Y="27" CityLocaleName="LOC_CITY_NAME_IOANNINA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="57" Y="27" CityLocaleName="LOC_CITY_NAME_LARISSA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="27" CityLocaleName="LOC_CITY_NAME_LARISSA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="27" CityLocaleName="LOC_CITY_NAME_VOLOS" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="55" Y="28" CityLocaleName="LOC_CITY_NAME_SARANDE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="56" Y="28" CityLocaleName="LOC_CITY_NAME_GJIROKASTER" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="57" Y="28" CityLocaleName="LOC_CITY_NAME_GREVENA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="28" CityLocaleName="LOC_CITY_NAME_SERVIA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="28" CityLocaleName="LOC_CITY_NAME_KATERINI" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="54" Y="29" CityLocaleName="LOC_CITY_NAME_VLORE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="55" Y="29" CityLocaleName="LOC_CITY_NAME_TEPELENE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="56" Y="29" CityLocaleName="LOC_CITY_NAME_KORCE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="57" Y="29" CityLocaleName="LOC_CITY_NAME_EDESSA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="29" CityLocaleName="LOC_CITY_NAME_EDESSA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="29" CityLocaleName="LOC_CITY_NAME_THESSALONICA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="60" Y="29" CityLocaleName="LOC_CITY_NAME_THESSALONICA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="61" Y="29" CityLocaleName="LOC_CITY_NAME_OURANOUPOLI" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="54" Y="30" CityLocaleName="LOC_CITY_NAME_VLORE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="55" Y="30" CityLocaleName="LOC_CITY_NAME_BERAT" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="56" Y="30" CityLocaleName="LOC_CITY_NAME_KORCE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="57" Y="30" CityLocaleName="LOC_CITY_NAME_FLORINA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="30" CityLocaleName="LOC_CITY_NAME_GIANNITSA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="30" CityLocaleName="LOC_CITY_NAME_KILKIS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="60" Y="30" CityLocaleName="LOC_CITY_NAME_SERRES" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="61" Y="30" CityLocaleName="LOC_CITY_NAME_STAVROS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="65" Y="30" CityLocaleName="LOC_CITY_NAME_ALEXANDROUPOLI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="66" Y="30" CityLocaleName="LOC_CITY_NAME_ALEXANDROUPOLI" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="54" Y="31" CityLocaleName="LOC_CITY_NAME_DURRES" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="55" Y="31" CityLocaleName="LOC_CITY_NAME_TIRANA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="56" Y="31" CityLocaleName="LOC_CITY_NAME_OHRID" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="31" CityLocaleName="LOC_CITY_NAME_KILKIS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="31" CityLocaleName="LOC_CITY_NAME_SERRES" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="60" Y="31" CityLocaleName="LOC_CITY_NAME_DRAMA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="61" Y="31" CityLocaleName="LOC_CITY_NAME_KAVALA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="62" Y="31" CityLocaleName="LOC_CITY_NAME_KAVALA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="63" Y="31" CityLocaleName="LOC_CITY_NAME_KOMOTINI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="64" Y="31" CityLocaleName="LOC_CITY_NAME_ALEXANDROUPOLI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="65" Y="31" CityLocaleName="LOC_CITY_NAME_ALEXANDROUPOLI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="66" Y="31" CityLocaleName="LOC_CITY_NAME_GALLIPOLI" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="55" Y="32" CityLocaleName="LOC_CITY_NAME_DURRES" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="56" Y="32" CityLocaleName="LOC_CITY_NAME_TIRANA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="57" Y="32" CityLocaleName="LOC_CITY_NAME_OHRID" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="32" CityLocaleName="LOC_CITY_NAME_IDOMENI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="61" Y="32" CityLocaleName="LOC_CITY_NAME_SMOLYON" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="62" Y="32" CityLocaleName="LOC_CITY_NAME_SMOLYON" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="63" Y="32" CityLocaleName="LOC_CITY_NAME_KARDAZLI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="64" Y="32" CityLocaleName="LOC_CITY_NAME_IVAYLOVGRAD" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="65" Y="32" CityLocaleName="LOC_CITY_NAME_ORESTIAS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="66" Y="32" CityLocaleName="LOC_CITY_NAME_ORESTIAS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="67" Y="32" CityLocaleName="LOC_CITY_NAME_GALLIPOLI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="68" Y="32" CityLocaleName="LOC_CITY_NAME_ISTANBUL" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="69" Y="32" CityLocaleName="LOC_CITY_NAME_ISTANBUL" Area="0" />
+		
+	</CityMap>
+	
 	
 </GameData>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Ed Beach (Firaxis Games) -->
+<GameData>
+
+  <!-- New City Names <fr_FR> -->
+  <LocalizedText>
+  
+	<!-- FRANCE -->
+	<Replace Tag="LOC_CITY_NAME_AMIENS" Text="Amiens" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_ARLES" Text="Arles" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_ARRAS" Text="Arras" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_AUXERRE" Text="Auxerre" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_AVIGNON" Text="Avignon" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_BAYONNE" Text="Bayonne" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_BESANCON" Text="Besançon" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_BLOIS" Text="Blois" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_BORDEAUX" Text="Bordeaux" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_BOURGES" Text="Bourges" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_BREST" Text="Brest" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_CAEN" Text="Caen" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_CALAIS" Text="Calais" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_CARCASSONNE" Text="Carcassonne" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_CHERBOURG_OCTEVILLE" Text="Cherbourg-Octeville" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_COUTANCES" Text="Coutances" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_DIJON" Text="Dijon" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_DUNKERQUE" Text="Dunkerque" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_GRENOBLE" Text="Grenoble" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_LA_ROCHELLE" Text="La Rochelle" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_LE_HAVRE" Text="Le Havre" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_LE_MANS" Text="Le Mans" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_LILLE" Text="Lille" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_LIMOGES" Text="Limoges" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_LOURDES" Text="Lourdes" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_LYON" Text="Lyon" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_MARSEILLE" Text="Marseille" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_METZ" Text="Metz" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_MONTPELLIER" Text="Montpellier" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_MORLAIX" Text="Morlaix" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_MULHOUSE" Text="Mulhouse" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_NANTES" Text="Nantes" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_NICE" Text="Nice" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_NIMES" Text="Nîmes" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_ORLEANS" Text="Orléans" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_PARIS" Text="Paris" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_PERPIGNAN" Text="Perpignan" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_POITIERS" Text="Poitiers" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_PONTIVY" Text="Pontivy" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_REIMS" Text="Reims" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_RENNES" Text="Rennes" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_ROCHEFORT" Text="Rochefort" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_ROUEN" Text="Rouen" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_BRIEUC" Text="Saint-Brieuc" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_ETIENNE" Text="Saint-Étienne" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_MALO" Text="Saint-Malo " Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_NAZAIRE" Text="Saint-Nazaire" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_SAINT_QUENTIN" Text="Saint-Quentin" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_SENS" Text="Sens" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_STRASBOURG" Text="Strasbourg" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_TOULOUSE" Text="Toulouse" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_TOURS" Text="Tours" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_TROYES" Text="Troyes" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_VICHY" Text="Vichy" Language="fr_FR"/>
+	<Replace Tag="LOC_CITY_NAME_VIRE" Text="Vire" Language="fr_FR"/>
+	
+  </LocalizedText>
+  
+</GameData>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+
+	<!-- +++++++++++++++++++++++++++++ -->
+	<!-- "Greatest Earth Map" City Map -->
+	<!-- +++++++++++++++++++++++++++++ -->
+	
+	<!-- FRANCE -->
+	<CityMap>
+		<Replace MapName="GreatestEarthMap" X="42" Y="48" CityLocaleName="LOC_CITY_NAME_PARIS" />
+		<Replace MapName="GreatestEarthMap" X="41" Y="48" CityLocaleName="LOC_CITY_NAME_ROUEN" />
+		<Replace MapName="GreatestEarthMap" X="44" Y="46" CityLocaleName="LOC_CITY_NAME_LYON" />
+		<Replace MapName="GreatestEarthMap" X="45" Y="44" CityLocaleName="LOC_CITY_NAME_MARSEILLE" />
+		<Replace MapName="GreatestEarthMap" X="38" Y="43" CityLocaleName="LOC_CITY_NAME_BORDEAUX" />
+		<Replace MapName="GreatestEarthMap" X="38" Y="45" CityLocaleName="LOC_CITY_NAME_LA_ROCHELLE" />
+		<Replace MapName="GreatestEarthMap" X="39" Y="46" CityLocaleName="LOC_CITY_NAME_NANTES" />
+		<Replace MapName="GreatestEarthMap" X="38" Y="47" CityLocaleName="LOC_CITY_NAME_RENNES" />
+		<Replace MapName="GreatestEarthMap" X="40" Y="43" CityLocaleName="LOC_CITY_NAME_TOULOUSE" />
+		<Replace MapName="GreatestEarthMap" X="42" Y="42" CityLocaleName="LOC_CITY_NAME_MONTPELLIER" />
+		<Replace MapName="GreatestEarthMap" X="41" Y="42" CityLocaleName="LOC_CITY_NAME_CARCASSONNE" />
+		<Replace MapName="GreatestEarthMap" X="42" Y="50" CityLocaleName="LOC_CITY_NAME_CALAIS" />
+		<Replace MapName="GreatestEarthMap" X="44" Y="45" CityLocaleName="LOC_CITY_NAME_AVIGNON" />
+		<Replace MapName="GreatestEarthMap" X="40" Y="44" CityLocaleName="LOC_CITY_NAME_LIMOGES" />
+		<Replace MapName="GreatestEarthMap" X="41" Y="49" CityLocaleName="LOC_CITY_NAME_DIEPPE" />
+		<Replace MapName="GreatestEarthMap" X="40" Y="47" CityLocaleName="LOC_CITY_NAME_CHARTRES" />
+		<Replace MapName="GreatestEarthMap" X="45" Y="50" CityLocaleName="LOC_CITY_NAME_METZ" />
+		<Replace MapName="GreatestEarthMap" X="44" Y="48" CityLocaleName="LOC_CITY_NAME_TROYES" />
+		<Replace MapName="GreatestEarthMap" X="44" Y="47" CityLocaleName="LOC_CITY_NAME_DIJON" />
+		<Replace MapName="GreatestEarthMap" X="40" Y="45" CityLocaleName="LOC_CITY_NAME_TOURS" />
+		<Replace MapName="GreatestEarthMap" X="43" Y="49" CityLocaleName="LOC_CITY_NAME_RHEIMS" />
+		<Replace MapName="GreatestEarthMap" X="45" Y="46" CityLocaleName="LOC_CITY_NAME_GRENOBLE"  Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="45" Y="45" CityLocaleName="LOC_CITY_NAME_GAP" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="42" Y="49" CityLocaleName="LOC_CITY_NAME_AMIENS" />
+		<Replace MapName="GreatestEarthMap" X="41" Y="46" CityLocaleName="LOC_CITY_NAME_ORLEANS" />
+		<Replace MapName="GreatestEarthMap" X="45" Y="48" CityLocaleName="LOC_CITY_NAME_BESANCON" />
+		<Replace MapName="GreatestEarthMap" X="45" Y="49" CityLocaleName="LOC_CITY_NAME_STRASBOURG" />
+		<Replace MapName="GreatestEarthMap" X="38" Y="47" CityLocaleName="LOC_CITY_NAME_RENNES" />
+		<Replace MapName="GreatestEarthMap" X="36" Y="47" CityLocaleName="LOC_CITY_NAME_QUIMPER" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="38" Y="48" CityLocaleName="LOC_CITY_NAME_SAINT_MALO" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="36" Y="36" CityLocaleName="LOC_CITY_NAME_BREST" />
+		<Replace MapName="GreatestEarthMap" X="46" Y="45" CityLocaleName="LOC_CITY_NAME_NICE" />
+	</CityMap>
+	
+</GameData>

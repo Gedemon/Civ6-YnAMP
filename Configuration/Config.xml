@@ -276,6 +276,11 @@
 		-->
 	</MapSupportedValues>
 	
+	
+	<MapUnSupportedValues>
+		<Row Map="PlayEuropeAgain.lua" Domain="StandardPlayers" Value="CIVILIZATION_AMERICA" />
+	</MapUnSupportedValues>
+	
 	<ParameterDependencies>
 	
 		<Row ParameterId="Resources" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_IMPORT"/>

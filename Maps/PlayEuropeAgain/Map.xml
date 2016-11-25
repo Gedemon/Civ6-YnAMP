@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+
+	<!-- +++++++++++++++++++++++++++++++++++ -->
+	<!-- "Play Europe Again" start position -->
+	<!-- +++++++++++++++++++++++++++++++++++ -->
+	<StartPosition>
+	    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"	X="83" Y="3" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_EGYPT"	X="75" Y="2" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ENGLAND"	X="31" Y="60" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FRANCE"	X="34" Y="52" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GERMANY"	X="47" Y="58" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GREECE"	X="58" Y="21" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GREECE"  	X="60" Y="29" Leader="LEADER_GORGO"/>
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_NORWAY"	X="49" Y="82" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ROME"		X="44" Y="34" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_RUSSIA"	X="78" Y="62" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SCYTHIA"	X="101" Y="52" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SPAIN"	X="18" Y="38" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SUMERIA"	X="100" Y="15" />
+		
+		<!-- Civ6 City States -->
+	    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_AMSTERDAM"	X="37" Y="60" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_BRUSSELS"		X="36" Y="56" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_CARTHAGE"		X="37" Y="23" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GENEVA"		X="37" Y="47" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_HATTUSA"		X="79" Y="30" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_JERUSALEM"	X="82" Y="12" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_LISBON"		X="11" Y="36" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_PRESLAV"		X="65" Y="39" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_STOCKHOLM"	X="55" Y="72" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_VALLETTA"		X="42" Y="19" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_VILNIUS"		X="60" Y="60" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_YEREVAN"		X="93" Y="36" />
+	</StartPosition>
+	
+</GameData>

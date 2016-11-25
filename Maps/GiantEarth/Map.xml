@@ -122,17 +122,7 @@
 		<Replace MapName="GiantEarth" Region="INDONESIA_COAL"		X="75" Y="24" Width="11" Height="5" />
 		<Replace MapName="GiantEarth" Region="ENGLAND_COAL"			X="8" Y="71" Width="3" Height="5" />		
 	</RegionPosition>
-	
 
-	<!-- ++++++++++++++++++++++++++++++ -->
-	<!--      Giant Earth City Map      -->
-	<!-- ++++++++++++++++++++++++++++++ -->
-	
-	<CityMap>
-		<!-- FRANCE -->
-		<Replace MapName="GiantEarth" X="12" Y="67" CityLocaleName="LOC_CITY_NAME_PARIS" />
-	</CityMap>
-	
 	<!-- +++++++++++++++++++++++++++ -->
 	<!--      Giant Earth Extra      -->
 	<!-- +++++++++++++++++++++++++++ -->

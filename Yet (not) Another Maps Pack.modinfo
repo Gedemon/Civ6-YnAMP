@@ -53,10 +53,13 @@
 				<File>Gameplay/Tables.sql</File>
 				<File>Gameplay/GamePlay.sql</File>
 				<File>Gameplay/GamePlay.xml</File>
-				<File>Maps/GiantEarth/Map_GiantEarth.xml</File>
-				<File>Maps/GreatestEarthMap/Map_GreatestEarthMap.xml</File>
-				<File>Maps/PlayEuropeAgain/Map_PlayEuropeAgain.xml</File>
-				<File>Maps/LargestEarth/Map_LargestEarth.xml</File>
+				<File>Maps/GiantEarth/Map.xml</File>
+				<File>Maps/GreatestEarthMap/Map.xml</File>
+				<File>Maps/GreatestEarthMap/CityMap.xml</File>
+				<File>Maps/PlayEuropeAgain/Map.xml</File>
+				<File>Maps/PlayEuropeAgain/CityMap.xml</File>
+				<File>Maps/PlayEuropeAgain/CityMap_Greece.xml</File>
+				<File>Maps/LargestEarth/Map.xml</File>
 				<File>Gameplay/Resource.xml</File>
 				<File>Gameplay/CityNameByEra.xml</File>
 			</Items>
@@ -179,10 +182,13 @@
 		<File>Gameplay/GamePlay.xml</File>
 		<File>Gameplay/GamePlay.sql</File>
 		<File>Gameplay/GamePlayText.xml</File>
-		<File>Maps/GiantEarth/Map_GiantEarth.xml</File>
-		<File>Maps/GreatestEarthMap/Map_GreatestEarthMap.xml</File>
-		<File>Maps/PlayEuropeAgain/Map_PlayEuropeAgain.xml</File>
-		<File>Maps/LargestEarth/Map_LargestEarth.xml</File>
+		<File>Maps/GiantEarth/Map.xml</File>
+		<File>Maps/GreatestEarthMap/Map.xml</File>
+		<File>Maps/GreatestEarthMap/CityMap.xml</File>
+		<File>Maps/PlayEuropeAgain/Map.xml</File>
+		<File>Maps/PlayEuropeAgain/CityMap.xml</File>
+		<File>Maps/PlayEuropeAgain/CityMap_Greece.xml</File>
+		<File>Maps/LargestEarth/Map.xml</File>
 		<File>Gameplay/Resource.xml</File>
 		<File>Gameplay/CityNameByEra.xml</File>
 		<File>Maps/GiantEarth/GiantEarth.lua</File>

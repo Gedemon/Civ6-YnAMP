@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Ed Beach (Firaxis Games) -->
+<GameData>
+
+  <!-- New City Names <de_DE> -->
+  
+  <LocalizedText>
+
+	<!-- GERMANY, BENELUX, HELVETIA -->
+	<Replace Tag="LOC_CITY_NAME_BRUGES" Text="Brügge" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_BRUSSELS" Text="Brüssel" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_COLOGNE" Text="Köln" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_DUESSELDORF" Text="Düsseldorf" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_GOETTINGEN" Text="Göttingen" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_LOERRACH" Text="Lörrach" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_LUEBECK" Text="Lübeck" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_LUENEBURG" Text="Lüneburg" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_MUENSTER" Text="Münster" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_MUNICH" Text="München" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_NUREMBERG" Text="Nürnberg" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_OSNABRUECK" Text="Osnabrück" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_WUERZBURG" Text="Würzburg" Language="de_DE" />
+	<Replace Tag="LOC_CITY_NAME_ZURICH" Text="Zürich" Language="de_DE" />
+	
+  </LocalizedText>
+	
+  </GameData>
