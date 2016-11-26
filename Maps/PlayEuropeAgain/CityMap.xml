@@ -1174,5 +1174,138 @@
 		
 	</CityMap>
 	
+	<!-- BALKANS -->
+	<CityMap>
+	
+		<Replace MapName="PlayEuropeAgain" X="54" Y="33" CityLocaleName="LOC_CITY_NAME_SHKODER" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="55" Y="33" CityLocaleName="LOC_CITY_NAME_SHKODER" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="33" CityLocaleName="LOC_CITY_NAME_STRUMICA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="33" CityLocaleName="LOC_CITY_NAME_STRUMICA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="61" Y="33" CityLocaleName="LOC_CITY_NAME_SMOLYAN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="65" Y="33" CityLocaleName="LOC_CITY_NAME_EDIRNE" />
+		<Replace MapName="PlayEuropeAgain" X="67" Y="33" CityLocaleName="LOC_CITY_NAME_KIRKLARELI" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="54" Y="34" CityLocaleName="LOC_CITY_NAME_SHKODER" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="55" Y="34" CityLocaleName="LOC_CITY_NAME_SHKODER" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="57" Y="34" CityLocaleName="LOC_CITY_NAME_SKOPJE" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="34" CityLocaleName="LOC_CITY_NAME_SHTIP" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="61" Y="34" CityLocaleName="LOC_CITY_NAME_BLAGOEVGRAD" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="63" Y="34" CityLocaleName="LOC_CITY_NAME_PLOVDIV" />
+		<Replace MapName="PlayEuropeAgain" X="67" Y="34" CityLocaleName="LOC_CITY_NAME_BURGAS" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="59" Y="35" CityLocaleName="LOC_CITY_NAME_SOFIA" />
+		<Replace MapName="PlayEuropeAgain" X="66" Y="35" CityLocaleName="LOC_CITY_NAME_YAMBOL" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="67" Y="35" CityLocaleName="LOC_CITY_NAME_BURGAS" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="52" Y="36" CityLocaleName="LOC_CITY_NAME_DUBROVNIK" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="54" Y="36" CityLocaleName="LOC_CITY_NAME_PODGORICA" />
+		<Replace MapName="PlayEuropeAgain" X="56" Y="36" CityLocaleName="LOC_CITY_NAME_PRISHTINA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="57" Y="36" CityLocaleName="LOC_CITY_NAME_PRISHTINA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="36" CityLocaleName="LOC_CITY_NAME_NIS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="61" Y="36" CityLocaleName="LOC_CITY_NAME_PLEVEN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="62" Y="36" CityLocaleName="LOC_CITY_NAME_SHISTOV" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="63" Y="36" CityLocaleName="LOC_CITY_NAME_RUSE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="65" Y="36" CityLocaleName="LOC_CITY_NAME_VELIKO_TARNOVO" />
+		<Replace MapName="PlayEuropeAgain" X="67" Y="36" CityLocaleName="LOC_CITY_NAME_VARNA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="50" Y="37" CityLocaleName="LOC_CITY_NAME_DUBROVNIK" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="51" Y="37" CityLocaleName="LOC_CITY_NAME_DUBROVNIK" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="52" Y="37" CityLocaleName="LOC_CITY_NAME_SARAJEVO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="53" Y="37" CityLocaleName="LOC_CITY_NAME_SARAJEVO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="55" Y="37" CityLocaleName="LOC_CITY_NAME_NOVI_PAZAR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="56" Y="37" CityLocaleName="LOC_CITY_NAME_NOVI_PAZAR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="57" Y="37" CityLocaleName="LOC_CITY_NAME_NIS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="37" CityLocaleName="LOC_CITY_NAME_VIDIN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="37" CityLocaleName="LOC_CITY_NAME_CRAIOVA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="60" Y="37" CityLocaleName="LOC_CITY_NAME_CRAIOVA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="61" Y="37" CityLocaleName="LOC_CITY_NAME_SLATINA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="62" Y="37" CityLocaleName="LOC_CITY_NAME_RUSE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="63" Y="37" CityLocaleName="LOC_CITY_NAME_RUSE" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="65" Y="37" CityLocaleName="LOC_CITY_NAME_PRESLAV" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="66" Y="37" CityLocaleName="LOC_CITY_NAME_PRESLAV" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="67" Y="37" CityLocaleName="LOC_CITY_NAME_VARNA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="50" Y="38" CityLocaleName="LOC_CITY_NAME_SPLIT" />
+		<Replace MapName="PlayEuropeAgain" X="53" Y="38" CityLocaleName="LOC_CITY_NAME_SARAJEVO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="54" Y="38" CityLocaleName="LOC_CITY_NAME_SABAC" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="55" Y="38" CityLocaleName="LOC_CITY_NAME_SABAC" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="56" Y="38" CityLocaleName="LOC_CITY_NAME_BELGRADE" Area="0" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="57" Y="38" CityLocaleName="LOC_CITY_NAME_BELGRADE" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="38" CityLocaleName="LOC_CITY_NAME_VIDIN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="60" Y="38" CityLocaleName="LOC_CITY_NAME_CRAIOVA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="61" Y="38" CityLocaleName="LOC_CITY_NAME_CRAIOVA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="62" Y="38" CityLocaleName="LOC_CITY_NAME_SLATINA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="63" Y="38" CityLocaleName="LOC_CITY_NAME_GIURGU" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="64" Y="38" CityLocaleName="LOC_CITY_NAME_GIURGU" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="67" Y="38" CityLocaleName="LOC_CITY_NAME_CALARASI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="68" Y="38" CityLocaleName="LOC_CITY_NAME_CONSTANTA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="52" Y="39" CityLocaleName="LOC_CITY_NAME_ZENICA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="53" Y="39" CityLocaleName="LOC_CITY_NAME_SLAVONSKI_BROD" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="54" Y="39" CityLocaleName="LOC_CITY_NAME_SABAC" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="55" Y="39" CityLocaleName="LOC_CITY_NAME_SABAC" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="39" CityLocaleName="LOC_CITY_NAME_VRSAC" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="39" CityLocaleName="LOC_CITY_NAME_VRSAC" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="63" Y="39" CityLocaleName="LOC_CITY_NAME_PITESTI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="65" Y="39" CityLocaleName="LOC_CITY_NAME_BUCHAREST" />
+		<Replace MapName="PlayEuropeAgain" X="67" Y="39" CityLocaleName="LOC_CITY_NAME_BRAILA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="68" Y="39" CityLocaleName="LOC_CITY_NAME_CONSTANTA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="48" Y="40" CityLocaleName="LOC_CITY_NAME_PULA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="49" Y="40" CityLocaleName="LOC_CITY_NAME_RIJEKA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="52" Y="40" CityLocaleName="LOC_CITY_NAME_SLAVONSKI_BROD" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="53" Y="40" CityLocaleName="LOC_CITY_NAME_SLAVONSKI_BROD" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="54" Y="40" CityLocaleName="LOC_CITY_NAME_OSIJEK" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="55" Y="40" CityLocaleName="LOC_CITY_NAME_NOVI_SAD" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="56" Y="40" CityLocaleName="LOC_CITY_NAME_NOVI_SAD" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="57" Y="40" CityLocaleName="LOC_CITY_NAME_NOVI_SAD" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="40" CityLocaleName="LOC_CITY_NAME_ZRENJANIN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="40" CityLocaleName="LOC_CITY_NAME_TIMISOARA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="60" Y="40" CityLocaleName="LOC_CITY_NAME_TIMISOARA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="61" Y="40" CityLocaleName="LOC_CITY_NAME_TIMISOARA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="62" Y="40" CityLocaleName="LOC_CITY_NAME_ALBA_IULIA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="67" Y="40" CityLocaleName="LOC_CITY_NAME_BRAILA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="68" Y="40" CityLocaleName="LOC_CITY_NAME_BRAILA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="69" Y="40" CityLocaleName="LOC_CITY_NAME_TULCEA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="50" Y="41" CityLocaleName="LOC_CITY_NAME_ZAGREB" />
+		<Replace MapName="PlayEuropeAgain" X="52" Y="41" CityLocaleName="LOC_CITY_NAME_PECS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="53" Y="41" CityLocaleName="LOC_CITY_NAME_OSIJEK" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="54" Y="41" CityLocaleName="LOC_CITY_NAME_OSIJEK" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="55" Y="41" CityLocaleName="LOC_CITY_NAME_SOMBOR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="56" Y="41" CityLocaleName="LOC_CITY_NAME_SOMBOR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="57" Y="41" CityLocaleName="LOC_CITY_NAME_ZRENJANIN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="41" CityLocaleName="LOC_CITY_NAME_ZRENJANIN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="41" CityLocaleName="LOC_CITY_NAME_TIMISOARA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="60" Y="41" CityLocaleName="LOC_CITY_NAME_TIMISOARA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="62" Y="41" CityLocaleName="LOC_CITY_NAME_CLUJ_NAPOCA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="64" Y="41" CityLocaleName="LOC_CITY_NAME_BRASOV" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="67" Y="41" CityLocaleName="LOC_CITY_NAME_GALATI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="68" Y="41" CityLocaleName="LOC_CITY_NAME_GALATI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="69" Y="41" CityLocaleName="LOC_CITY_NAME_IZMAIL" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="48" Y="42" CityLocaleName="LOC_CITY_NAME_LJUBLJANA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="49" Y="42" CityLocaleName="LOC_CITY_NAME_LJUBLJANA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="52" Y="42" CityLocaleName="LOC_CITY_NAME_PECS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="53" Y="42" CityLocaleName="LOC_CITY_NAME_PECS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="54" Y="42" CityLocaleName="LOC_CITY_NAME_MOHACS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="55" Y="42" CityLocaleName="LOC_CITY_NAME_MOHACS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="56" Y="42" CityLocaleName="LOC_CITY_NAME_SOMBOR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="57" Y="42" CityLocaleName="LOC_CITY_NAME_SUBOTICA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="42" CityLocaleName="LOC_CITY_NAME_SZEGED" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="59" Y="42" CityLocaleName="LOC_CITY_NAME_SZEGED" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="60" Y="42" CityLocaleName="LOC_CITY_NAME_ARAD" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="61" Y="42" CityLocaleName="LOC_CITY_NAME_ARAD" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="62" Y="42" CityLocaleName="LOC_CITY_NAME_CLUJ_NAPOCA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="63" Y="42" CityLocaleName="LOC_CITY_NAME_CLUJ_NAPOCA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="64" Y="42" CityLocaleName="LOC_CITY_NAME_BRASOV" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="65" Y="42" CityLocaleName="LOC_CITY_NAME_BRASOV" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="67" Y="42" CityLocaleName="LOC_CITY_NAME_BACAU" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="68" Y="42" CityLocaleName="LOC_CITY_NAME_BACAU" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="69" Y="42" CityLocaleName="LOC_CITY_NAME_GALATI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="69" Y="42" CityLocaleName="LOC_CITY_NAME_IZMAIL" Area="0" />
+		
+	</CityMap>
+	
 	
 </GameData>

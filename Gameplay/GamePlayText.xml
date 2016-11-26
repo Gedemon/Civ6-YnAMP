@@ -774,7 +774,7 @@
 	<Replace Tag="LOC_CITY_NAME_SERRES" Text="Serres" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_SERRES" Text="Serres" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_SERVIA" Text="Servia" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SMOLYON" Text="Smolyon" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SMOLYAN" Text="Smolyan" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_SPARTA" Text="Sparta" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_STAVROS" Text="Stavros" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_TEPELENE" Text="Tepelenë" Language="en_US"/>
@@ -785,6 +785,71 @@
 	<Replace Tag="LOC_CITY_NAME_VARDA" Text="Varda" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_VLORE" Text="Vlöre" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_VOLOS" Text="Volos" Language="en_US"/>
+	
+  </LocalizedText>
+  
+  <LocalizedText>
+  
+	<!-- BALKANS -->
+	<Replace Tag="LOC_CITY_NAME_ALBA_IULIA" Text="Alba Iulia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ARAD" Text="Arad" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BACAU" Text="Bacău" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BELGRADE" Text="Belgrade" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BLAGOEVGRAD" Text="Blagoevgrad" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BRAILA" Text="Brăila" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BRASOV" Text="Brașov" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BUCHAREST" Text="Bucharest" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BURGAS" Text="Burgas" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CALARASI" Text="Călărași" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CLUJ_NAPOCA" Text="Cluj-Napoca" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CONSTANTA" Text="Constanța" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CRAIOVA" Text="Craiova" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DUBROVNIK" Text="Dubrovnik" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_EDIRNE" Text="Edirne" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GALATI" Text="Galati" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GIURGU" Text="Giurgu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_IZMAIL" Text="Izmail" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KIRKLARELI" Text="Kırklareli" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LJUBLJANA" Text="Ljubljana" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MOHACS" Text="Mohács" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NIS" Text="Niš" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NOVI_PAZAR" Text="Novi Pazar" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NOVI_SAD" Text="Novi Sad" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_OSIJEK" Text="Osijek" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PECS" Text="Pécs" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PITESTI" Text="Pitești" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PLEVEN" Text="Pleven" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PLOVDIV" Text="Plovdiv" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PODGORICA" Text="Podgorica" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PRESLAV" Text="Preslav" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PRISHTINA" Text="Prishtina" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PULA" Text="Pula" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_RIJEKA" Text="Rijeka" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_RUSE" Text="Ruse" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SABAC" Text="Šabac" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SARAJEVO" Text="Sarajevo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SHISTOV" Text="Shistov" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SHKODER" Text="Shkodër" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SHTIP" Text="Shtip" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SKOPJE" Text="Skopje" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SLATINA" Text="Slatina" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SLAVONSKI_BROD" Text="Slavonski Brod" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SOFIA" Text="Sofia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SOMBOR" Text="Sombor" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SPLIT" Text="Split" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_STRUMICA" Text="Strumica" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SUBOTICA" Text="Subotica" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SZEGED" Text="Szeged" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TIMISOARA" Text="Timișoara" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TULCEA" Text="Tulcea" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VARNA" Text="Varna" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VELIKO_TARNOVO" Text="Veliko Tarnovo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VIDIN" Text="Vidin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VRSAC" Text="Vršac" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YAMBOL" Text="Yambol" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZAGREB" Text="Zagreb" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZENICA" Text="Zenica" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZRENJANIN" Text="Zrenjanin" Language="en_US"/>
 	
   </LocalizedText>
   
