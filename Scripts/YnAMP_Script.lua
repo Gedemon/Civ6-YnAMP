@@ -10,43 +10,73 @@ print ("loading YnAMP_Script.lua")
 
 include ("YnAMP_Utils.lua") -- can't do that ???
 
+local mapName = MapConfiguration.GetValue("MapName")
+print ("Map Name = " .. tostring(mapName))
+
 ----------------------------------------------------------------------------------------
 -- Testing City renaming
 ----------------------------------------------------------------------------------------
-function CityNewGetName(self)
-	local name = self:OldGetName()
-	name = "test"
-	--
-	return name
-end
-function InitializeCityFunctions( ownerPlayerID, cityID)
-	local pCity= CityManager.GetCity(ownerPlayerID, cityID);
-	local c = getmetatable(pCity).__index
-	if c.OldGetName then -- initialize once
-		return
-	end
-	
-	-- save old functions
-	c.OldGetName = c.GetName
-	
-	-- set replacement functions
-	c.GetName = CityNewGetName
-	
-	-- set new functions
-	--c.NewFunction = NewFunction
-
-	--Events.SerialEventGameDataDirty()
-end
---Events.CityAddedToMap.Add( InitializeCityFunctions )
 
 function ChangeCityName( ownerPlayerID, cityID)
-	local pCity = CityManager.GetCity(ownerPlayerID, cityID)
-	if pCity then -- initialize once
-		pCity:SetName("test") -- update on reloading... and sometime in game, try to find some events ?
+	if not Players[ownerPlayerID]:IsMajor() then
+		return
 	end
-
+	local pCity = CityManager.GetCity(ownerPlayerID, cityID)
+	if pCity then
+		local x = pCity:GetX()
+		local y = pCity:GetY()
+		local CivilizationTypeName = PlayerConfigurations[ownerPlayerID]:GetCivilizationTypeName()
+		local startPos, endPos = string.find(CivilizationTypeName, "CIVILIZATION_")
+		local sCivSuffix = string.sub(CivilizationTypeName, endPos)
+		print("Trying to find name for city of ".. tostring(CivilizationTypeName) .." at "..tostring(x)..","..tostring(y))
+		local possibleName = {}
+		local maxRange = 1
+		local bestDistance = maxRange + 1
+		local bestName = nil
+		local bestDefaultName = nil
+		local cityPlot = Map.GetPlot(x, y)
+		for row in GameInfo.CityMap() do
+			if row.MapName == mapName  then
+				local nameX = row.X
+				local nameY = row.Y
+				local nameMaxDistance = row.Area or maxRange
+				-- rough selection in a square first before really testing distance
+				if (x - nameMaxDistance <= nameX and x + nameMaxDistance >= nameX) and (y - nameMaxDistance <= nameY and y + nameMaxDistance >= nameY) then	
+					print("- testing "..tostring(row.CityLocaleName).." at "..tostring(nameX)..","..tostring(nameY).." max distance is "..tostring(nameMaxDistance)..", best distance so far is "..tostring(bestDistance))
+					local distance = Map.GetPlotDistance(x, y ,nameX, nameY)
+					if distance <= nameMaxDistance and distance < bestDistance then
+					
+						local sCityNameForCiv = tostring(row.CityLocaleName) .. sCivSuffix
+					
+						if CivilizationTypeName == row.Civilization then -- this city is specific to this Civilization
+							bestDistance = distance
+							bestName = row.CityLocaleName
+						elseif not row.Civilization then -- do not use Civilization specific name with another Civilization, only generic							
+							if Locale.Lookup(sCityNameForCiv) ~= sCityNameForCiv then -- means that this civilization has a specific name available for this generic city
+								bestDistance = distance
+								bestName = sCityNameForCiv
+							else -- use generic name
+								bestDistance = distance
+								bestDefaultName = row.CityLocaleName
+							end							
+						end
+					end				
+				end
+			end
+		end
+		if not bestName then
+			bestName = bestDefaultName
+		end
+		if bestName then
+			pCity:SetName(bestName)
+			print("- New name : " .. tostring(bestName))
+		else
+			print("- Can't find a name for this position !")
+			-- todo : use a name not reserved for the map
+		end
+	end
 end
---Events.CityAddedToMap.Add( ChangeCityName )
+Events.CityAddedToMap.Add( ChangeCityName )
 
 
 

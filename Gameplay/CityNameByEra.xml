@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created by ModBuddy on 6/12/2011 4:32:22 PM -->
 <GameData>
-	<CityNameByEra>
-		<!-- FRANCE -->
-		<Row>
-			<CityLocaleName>LOC_CITY_NAME_PARIS</CityLocaleName>
-			<Era>ERA_ANCIENT</Era>
-			<CityEraName>Parisi</CityEraName>			
-		</Row>
-		<Row>
-			<CityLocaleName>LOC_CITY_NAME_PARIS</CityLocaleName>
-			<Era>ERA_CLASSICAL</Era>
-			<CityEraName>Lutece</CityEraName>			
-		</Row>
-		<Row>
-			<CityLocaleName>LOC_CITY_NAME_PARIS</CityLocaleName>
-			<Era>ERA_MEDIEVAL</Era>
-			<CityEraName>Paris</CityEraName>			
-		</Row>
-	</CityNameByEra>
+    <CityNameByEra>
+        <!-- FRANCE -->
+        <Row>
+            <CityLocaleName>LOC_CITY_NAME_PARIS</CityLocaleName>
+            <Era>ERA_ANCIENT</Era>
+            <CityEraName>LOC_CITY_NAME_PARISI</CityEraName>          
+        </Row>
+        <Row>
+            <CityLocaleName>LOC_CITY_NAME_PARIS</CityLocaleName>
+            <Era>ERA_CLASSICAL</Era>
+            <CityEraName>LOC_CITY_NAME_LUTECE</CityEraName>          
+        </Row>
+        <Row>
+            <CityLocaleName>LOC_CITY_NAME_PARIS</CityLocaleName>
+            <Era>ERA_MEDIEVAL</Era>
+            <CityEraName>LOC_CITY_NAME_PARIS</CityEraName>          
+        </Row>
+    </CityNameByEra>
 </GameData>

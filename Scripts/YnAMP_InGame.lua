@@ -36,7 +36,7 @@ function ChangeCityName( ownerPlayerID, cityID)
 				local nameX = row.X
 				local nameY = row.Y
 				local nameMaxDistance = row.Area or maxRange
-				-- rough selection first before testing distance
+				-- rough selection in a square first before really testing distance
 				if (x - nameMaxDistance <= nameX and x + nameMaxDistance >= nameX) and (y - nameMaxDistance <= nameY and y + nameMaxDistance >= nameY) then	
 					print("- testing "..tostring(row.CityLocaleName).." at "..tostring(nameX)..","..tostring(nameY).." max distance is "..tostring(nameMaxDistance)..", best distance so far is "..tostring(bestDistance))
 					local distance = Map.GetPlotDistance(x, y ,nameX, nameY)
@@ -44,15 +44,17 @@ function ChangeCityName( ownerPlayerID, cityID)
 					
 						local sCityNameForCiv = tostring(row.CityLocaleName) .. sCivSuffix
 					
-						if CivilizationTypeName == row.Civilization then -- that city is specific to a Civilization
+						if CivilizationTypeName == row.Civilization then -- this city is specific to this Civilization
 							bestDistance = distance
-							bestName = row.CityLocaleName							
-						elseif Locale.Lookup(sCityNameForCiv) ~= sCityNameForCiv then -- means that this civilization has a specific name available for this city
-							bestDistance = distance
-							bestName = sCityNameForCiv							
-						elseif not row.Civilization then -- do not use Civilization specific name with another Civilization, only generic
-							bestDistance = distance
-							bestDefaultName = row.CityLocaleName						
+							bestName = row.CityLocaleName
+						elseif not row.Civilization then -- do not use Civilization specific name with another Civilization, only generic							
+							if Locale.Lookup(sCityNameForCiv) ~= sCityNameForCiv then -- means that this civilization has a specific name available for this generic city
+								bestDistance = distance
+								bestName = sCityNameForCiv
+							else -- use generic name
+								bestDistance = distance
+								bestDefaultName = row.CityLocaleName
+							end							
 						end
 					end				
 				end
