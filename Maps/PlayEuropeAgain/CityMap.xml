@@ -1162,8 +1162,8 @@
 		<Replace MapName="PlayEuropeAgain" X="56" Y="32" CityLocaleName="LOC_CITY_NAME_TIRANA" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="57" Y="32" CityLocaleName="LOC_CITY_NAME_OHRID" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="58" Y="32" CityLocaleName="LOC_CITY_NAME_IDOMENI" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="61" Y="32" CityLocaleName="LOC_CITY_NAME_SMOLYON" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="62" Y="32" CityLocaleName="LOC_CITY_NAME_SMOLYON" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="61" Y="32" CityLocaleName="LOC_CITY_NAME_SMOLYAN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="62" Y="32" CityLocaleName="LOC_CITY_NAME_SMOLYAN" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="63" Y="32" CityLocaleName="LOC_CITY_NAME_KARDAZLI" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="64" Y="32" CityLocaleName="LOC_CITY_NAME_IVAYLOVGRAD" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="65" Y="32" CityLocaleName="LOC_CITY_NAME_ORESTIAS" Area="0" />
