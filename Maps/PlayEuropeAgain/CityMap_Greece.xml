@@ -9,7 +9,7 @@
 
 	<CityMap>
 		
-		<!-- CLASSICAL GREECE (AEGEAN ISLANDS) -->
+		<!-- AEGEAN ISLANDS -->
 		<Replace MapName="PlayEuropeAgain" X="60" Y="18" CityLocaleName="LOC_CITY_NAME_KYDONIA" Area="0" Civilization="CIVILIZATION_GREECE" />
 		<Replace MapName="PlayEuropeAgain" X="61" Y="18" CityLocaleName="LOC_CITY_NAME_KNOSSOS" Area="0" Civilization="CIVILIZATION_GREECE" />
 		<Replace MapName="PlayEuropeAgain" X="62" Y="18" CityLocaleName="LOC_CITY_NAME_KNOSSOS" Area="0" Civilization="CIVILIZATION_GREECE" />
@@ -27,8 +27,7 @@
 		<Replace MapName="PlayEuropeAgain" X="63" Y="26" CityLocaleName="LOC_CITY_NAME_SKYROS" Area="0" Civilization="CIVILIZATION_GREECE" />
 		<Replace MapName="PlayEuropeAgain" X="63" Y="29" CityLocaleName="LOC_CITY_NAME_HEPHAISTIA" Area="0" Civilization="CIVILIZATION_GREECE" />
 		
-		<!-- CLASSICAL GREECE (MAINLAND) -->
-		
+		<!-- GREEK MAINLAND -->
 		<Replace MapName="PlayEuropeAgain" X="58" Y="20" CityLocaleName="LOC_CITY_NAME_PYLOS" Area="0" Civilization="CIVILIZATION_GREECE" />
 		<Replace MapName="PlayEuropeAgain" X="59" Y="20" CityLocaleName="LOC_CITY_NAME_SPARTA" Area="0" Civilization="CIVILIZATION_GREECE" />
 		
