@@ -2,10 +2,15 @@
 <!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Ed Beach (Firaxis Games) -->
 <GameData>
 
- <!-- City Names <en_US> --> 
-  <LocalizedText>
-  
-	<!-- FRANCE -->		
+
+
+	<!-- *****************************
+		 City Names : Modern World Names (Default Layer) <en_US>
+		 ***************************** --> 
+
+		 
+		 
+ <LocalizedText> <!-- FRANCE -->
 	<Replace Tag="LOC_CITY_NAME_ALBI" Text="Albi" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_ALENCON" Text="Alencon" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_AMIENS" Text="Amiens" Language="en_US"/>
@@ -68,156 +73,482 @@
 	<Replace Tag="LOC_CITY_NAME_TROYES" Text="Troyes" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_VICHY" Text="Vichy" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_VIRE" Text="Vire" Language="en_US"/>
+ </LocalizedText>
 	
-	<!-- ITALY, SICILY, SARDINIA and CORSICA -->
-	<Replace Tag="LOC_CITY_NAME_AGRIGENT" Text="Argient" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_AJACCIO" Text="Ajaccio" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_ALGHERO" Text="Alghero" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_ANCONA" Text="Ancona" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_AOSTA" Text="Aosta" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_ARBATAX" Text="Arbatax" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_AREZZO" Text="Arezzo" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_BARI" Text="Bari" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_BASTIA" Text="Bastia" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_BERGAMO" Text="Bergamo" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_BOLOGNA" Text="Bologna" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_BONIFACIO" Text="Bonifacio" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_BOZEN" Text="Bozen" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CAGLIARI" Text="Cagliari" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CALTANISSETTA" Text="Caltanissetta" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CALVI" Text="Calvi" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CAPO_DORLANDO" Text="Cap D'Orlando" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CASTROVILLARI" Text="Castrovillari" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CATANIA" Text="Catania" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CATANZARO" Text="Catanzaro" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CORIGLIANO_CALABRO" Text="Corigliano Calabro" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CORTE" Text="Corte" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_COSENZA" Text="Cosenza" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CROTONE" Text="Cortone" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_FERRARA" Text="Ferrara" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_FLORENTA" Text="Florence" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_FOGGIA" Text="Foggia" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_FOLIGNO" Text="Foligno" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_FROSINONE" Text="Frosinone" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_GELA" Text="Gela" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_GENUA" Text="Genoa" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_GROSSETO" Text="Grosseto" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_LAQUILA" Text="L'Aquila" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_LATINA" Text="Latina" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_LA_SPEZIA" Text="La Spezia" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_LECCE" Text="Lecce" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_MARSALA" Text="Marsala" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_MASSA" Text="Massa" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_MELFI" Text="Melfi" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_MESSINA" Text="Messina" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_MILANO" Text="Milan" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_NAPOLI" Text="Naples" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_OLBIA" Text="Olbia" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_ORISTANO" Text="Oristano" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_PALERMO" Text="Palermo" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_PARMA" Text="Parma" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_PAVIA" Text="Pavia" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_PERUGIA" Text="Perugia" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_PESCARA" Text="Pescara" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_PIACENZA" Text="Piacenza" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_PISA" Text="Pisa" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_POLICORO" Text="Policoro" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_POTENZA" Text="Potenza" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_RAGUSA" Text="Ragusa" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_RAVENNA" Text="Ravenna" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_REGGIO_CALABRIA" Text="Reggio Calabria" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_RIETI" Text="Rieti" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_RIMINI" Text="Rimini" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_ROMA" Text="Rome" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_SALERNO" Text="Salerno" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_SAN_BENEDETTO_DEL_TRONTO" Text="San Benedetto del Tronto" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_SAN_SALVO" Text="San Salvo" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_SAN_VIESTE" Text="San Vieste" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_SASSARI" Text="Sassari" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_SAVONA" Text="Savona" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_SYRAKUS" Text="Syracuse" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_TARENT" Text="Tarent" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_TERNI" Text="Terni" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_TREVISO" Text="Treviso" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_TRIENT" Text="Trient" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_TRIEST" Text="Triest" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_TURINO" Text="Turin" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_UDINE" Text="Udine" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_VASTO" Text="Vasto" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_VALLETTA" Text="Valletta" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_VENETIA" Text="Venice" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_VERONA" Text="Verona" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_VIBO_VALENTIA" Text="Vibo Valentia" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_VITERBO" Text="Viterbo" Language="en_US" />
+ <LocalizedText> <!-- ITALY, SICILY, SARDINIA and CORSICA -->
+        <Replace Tag="LOC_CITY_NAME_ATRIA" Text="Atria" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_AGRIGENTO" Text="Agrigento" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_AGRIGENTO_ARABIA" Text="Kirkent" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_AGRIGENTO_GREECE" Text="Akragas" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_AGRIGENTO_ROME" Text="Agrigentum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_AJACCIO" Text="Ajaccio" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_AJACCIO_ROME" Text="Adiacium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ALGHERO" Text="Alghero" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ALGHERO_ROME" Text="Aleguerium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ALGHERO_SPAIN" Text="L'Alguer" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_AQUILA" Text="L'Aquila" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_AQUILA_ROME" Text="Corfinium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_AQUILEIA" Text="Aquileia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_AQUILEIA_GERMANY" Text="Aglar" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ANCONA" Text="Ancona" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ANCONA_FRANCE" Text="Ancône" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ANTIUM" Text="Anzio" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ANTIUM_ROME" Text="Antium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ARBATAX" Text="Arbatax" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ARBATAX_ROME" Text="Portus Ilii" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_AREZZO" Text="Arezzo" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_AREZZO_ROME" Text="Arretium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BARI" Text="Bari" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BARI_GREECE" Text="Barion" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BARI_ROME" Text="Barium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BASTIA" Text="Bastia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BASTIA_ROME" Text="Mariana" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BENEVENTO" Text="Benevento" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BENEVENTO_GREECE" Text="Beneventum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BENEVENTO_ROME" Text="Beneventum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BERGAMO" Text="Bergamo" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BERGAMO_FRANCE" Text="Bergame" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BERGAMO_ROME" Text="Bergomum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BOLOGNA" Text="Bologna" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BOLOGNA_FRANCE" Text="Bologne" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BOLOGNA_ROME" Text="Bononia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BOLZANO" Text="Bolzano" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BOLZANO_GERMANY" Text="Bozen" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BOLZANO_ROME" Text="Bauzanum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BONIFACIO" Text="Bonifacio" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BONIFACIO_ROME" Text="Aleria" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BRESCIA" Text="Brescia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BRESCIA_ROME" Text="Brixia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BRINDISI" Text="Brindisi" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BRINDISI_GREECE" Text="Brentesion" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BRINDISI_ROME" Text="Brundisium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CAGLIARI" Text="Cagliari" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CAGLIARI_ROME" Text="Caralis" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CALTANISSETTA" Text="Caltanissetta" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CALTANISSETTA_ARABIA" Text="Qal'at al-Nisā'" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CALTANISSETTA_GREECE" Text="Castra Nicia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CALTANISSETTA_ROME" Text="Castra Nicia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CALVI" Text="Calvi" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CANOSA" Text="Canosa" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CANOSA_GREECE" Text="Kanysion" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CANOSA_ROME" Text="Canusium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CAPO_DORLANDO" Text="Capo d'Orlando" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CAPO_DORLANDO_GREECE" Text="Tyndarion" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CAPO_DORLANDO_ROME" Text="Tyndaris" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CARRARA" Text="Carrara" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CARRARA_ROME" Text="Luna" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CASTROVILLARI" Text="Castrovillari" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CASTROVILLARI_ROME" Text="Castrum Villarum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CATANIA" Text="Catania" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CATANIA_ARABIA" Text="Madinat al-fīl" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CATANIA_GREECE" Text="Katane" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CATANZARO" Text="Catanzaro" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CATANZARO_GREECE" Text="Katantzarion" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CATANZARO_ROME" Text="Chatacium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_IULIA_CONCORDIA" Text="Iulia Concordia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CORIGLIANO_CALABRO" Text="Corigliano Calabro" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CORIGLIANO_CALABRO_GREECE" Text="Thurii" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CORIGLIANO_CALABRO_ROME" Text="Thurii" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CORTE" Text="Corte" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CORTE_ROME" Text="Aleria" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_COSENZA" Text="Cosenza" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_COSENZA_GREECE" Text="Cosentia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_COSENZA_ROME" Text="Cosentia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CREMONA" Text="Cremona" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CREMONA_FRANCE" Text="Crémone" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CROTONE" Text="Crotone" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CROTONE_GREECE" Text="Kroton" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CROTONE_ROME" Text="Crotona" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ELEA" Text="Elea" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ELEA_GREECE" Text="Hyele" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ELEA_ROME" Text="Velia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ENNA" Text="Enna" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ENNA_ARABIA" Text="Qas'r Ianni" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ENNA_ROME" Text="Henna" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FAENZA" Text="Fænza" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FAENZA_ROME" Text="Faventia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FERMO" Text="Fermo" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FERMO_ROME" Text="Fermum Picenum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FERRARA" Text="Ferrara" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FERRARA_FRANCE" Text="Ferrare" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FIRENZE" Text="Florence" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FIRENZE_ROME" Text="Florentia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FOGGIA" Text="Foggia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FOGGIA_GREECE" Text="Argos Hippium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FOGGIA_ROME" Text="Herdoniæ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FOLIGNO" Text="Foligno" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FOLIGNO_ROME" Text="Fulginiæ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FROSINONE" Text="Frosinone" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FROSINONE_GREECE" Text="Setia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FROSINONE_ROME" Text="Setia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GELA" Text="Gela" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GENOVA" Text="Genoa" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GENOVA_FRANCE" Text="Gênes" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GENOVA_ROME" Text="Genua" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GROSSETO" Text="Grosseto" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GROSSETO_ROME" Text="Vetulonia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GRUMENTO_NOVA" Text="Grumento Nova" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GRUMENTO_NOVA_GREECE" Text="Grumentum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GRUMENTO_NOVA_ROME" Text="Grumentum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ISERNIA" Text="Isernia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ISERNIA_ROME" Text="Aesernia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LATINA" Text="Latina" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LATINA_GREECE" Text="Circei" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LATINA_ROME" Text="Circei" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LA_SPEZIA" Text="La Spezia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LA_SPEZIA_ROME" Text="Luna" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LECCE" Text="Lecce" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LECCE_ROME" Text="Lupiæ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LIVORNO" Text="Livorno" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LIVORNO_ENGLAND" Text="Leghorn" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LIVORNO_ROME" Text="Liburna" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LUCCA" Text="Lucca" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LUCCA_ROME" Text="Luca" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LUCERA" Text="Lucera" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LUCERA_ROME" Text="Luceria" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LUGANO" Text="Lugano" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LUGANO_ROME" Text="Comum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MALLES_VENOSTA" Text="Malles Venosta" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MALLES_VENOSTA_GERMANY" Text="Mals" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MALLES_VENOSTA_ROME" Text="Aquæ Bormiæ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MANTOVA" Text="Mantua" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MANTOVA_FRANCE" Text="Mantoue" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MARSALA" Text="Marsala" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MARSALA_ARABIA" Text="Marsa 'Alī" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MARSALA_GREECE" Text="Lilybaion" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MARSALA_ROME" Text="Lilybæum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MELFI" Text="Melfi" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MELFI_GREECE" Text="Aphrodisia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MELFI_ROME" Text="Venusia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MESSINA" Text="Messina" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MESSINA_ARABIA" Text="Ṭabarmīn" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MESSINA_GREECE" Text="Zancle" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MESSINA_ROME" Text="Messana" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MILANO" Text="Milan" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MILANO_ROME" Text="Mediolanum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MONTELEONE" Text="Monteleone" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MONTELEONE_GREECE" Text="Hipponion" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MONTELEONE_ROME" Text="Vibo Valentia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_NAPOLI" Text="Naples" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_NAPOLI_GREECE" Text="Parthenope" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_NAPOLI_ROME" Text="Neapolis" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_OLBIA" Text="Olbia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ORISTANO" Text="Oristano" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ORISTANO_ROME" Text="Aristanis" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PADOVA" Text="Padua" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PADOVA_FRANCE" Text="Padoue" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PADOVA_ROME" Text="Patavium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PALERMO" Text="Palermo" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PALERMO_ARABIA" Text="Balarm" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PALERMO_GREECE" Text="Panormos" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PALERMO_ROME" Text="Panormus" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PARMA" Text="Parma" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PARMA_FRANCE" Text="Parme" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PAVIA" Text="Pavia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PAVIA_FRANCE" Text="Pavie" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PAVIA_ROME" Text="Ticinum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PERUGIA" Text="Perugia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PERUGIA_FRANCE" Text="Pérouse" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PERUGIA_ROME" Text="Perusia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PESCARA" Text="Pescara" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PESCARA_ROME" Text="Aternum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PIACENZA" Text="Piacenza" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PIACENZA_FRANCE" Text="Plaisance" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PIACENZA_ROME" Text="Placentia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PIOMBINO" Text="Piombino" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PIOMBINO_ROME" Text="Populonia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PISA" Text="Pisa" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PISA_FRANCE" Text="Pise" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PISA_ROME" Text="Pisæ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_POLICORO" Text="Policoro" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_POLICORO_GREECE" Text="Herakleia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_POLICORO_ROME" Text="Heraclea" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_POTENZA" Text="Potenza" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_POTENZA_ROME" Text="Potentia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_RAGUSA" Text="Ragusa" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_RAGUSA_GREECE" Text="Gela" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_RAGUSA_ROME" Text="Gela" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_RAVENNA" Text="Ravenna" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_REGGIO_CALABRIA" Text="Reggio Calabria" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_REGGIO_CALABRIA_GREECE" Text="Rhegium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_REGGIO_CALABRIA_ROME" Text="Rhegium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_RIETI" Text="Rieti" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_RIETI_ROME" Text="Reate" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_RIMINI" Text="Rimini" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_RIMINI_ROME" Text="Ariminum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ROMA" Text="Rome" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ROMA_ROME" Text="Roma" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SALERNO" Text="Salerno" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SALERNO_ROME" Text="Salernum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SAN_BENEDETTO_DEL_TRONTO" Text="San Benedetto del Tronto" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SAN_BENEDETTO_DEL_TRONTO_ROME" Text="Asculum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SAN_SEVERO" Text="San Severo" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SAN_SEVERO_ROME" Text="Teanum Apulum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SASSARI" Text="Sassari" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SASSARI_ROME" Text="Turris Libyssonis" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SAVONA" Text="Savona" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SAVONA_FRANCE" Text="Savone" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SAVONA_ROME" Text="Albingaunum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SIENA" Text="Siena" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SIENA_FRANCE" Text="Sienne" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SIENA_ROME" Text="Sæna Julia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SIRACUSA" Text="Syracuse" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SIRACUSA_GREECE" Text="Syrakousai" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SIRACUSA_ROME" Text="Syracusæ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TARANTO" Text="Taranto" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TARANTO_GREECE" Text="Taras" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TARANTO_ROME" Text="Tarentum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TARQUINIA" Text="Tarquinia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TARQUINIA_ROME" Text="Tarquinii" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TERNI" Text="Terni" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TERNI_ROME" Text="Interamma Nahartium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TORINO" Text="Turin" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TORINO_ROME" Text="Augusta Taurinorum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TORTONA" Text="Tortona" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TORTONA_FRANCE" Text="Tortone" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TORTONA_ROME" Text="Dertona" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TRENTO" Text="Trent" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TRENTO_GERMANY" Text="Trient" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TRENTO_ROME" Text="Tridentum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TREVISO" Text="Treviso" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TREVISO_ROME" Text="Tarvisium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TRIESTE" Text="Trieste" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TRIESTE_GERMANY" Text="Triest" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TRIESTE_ROME" Text="Tergestum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_UDINE" Text="Udine" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_UDINE_GERMANY" Text="Weiden" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_UDINE_ROME" Text="Utinum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VASTO" Text="Vasto" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VASTO_ROME" Text="Larinum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VENETIA" Text="Venice" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VENETIA_GERMANY" Text="Venedig" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VENETIA_ROME" Text="Altinum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VERONA" Text="Verona" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VERONA_FRANCE" Text="Vérone" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VICENZA" Text="Vicenza" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VICENZA_ROME" Text="Vicetia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VIESTE" Text="Vieste" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VIESTE_GREECE" Text="Apeneste" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VIESTE_ROME" Text="Vesta" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VITERBO" Text="Viterbo" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VITERBO_ROME" Text="Ferentium" Language="en_US" />
+ </LocalizedText>
 
-	<!-- IBERIA -->
-	<Replace Tag="LOC_CITY_NAME_ALBACETE" Text="Albacete" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_ALICANTE" Text="Alicante" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_ALMANSA" Text="Almansa" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_ALMERIA" Text="Almeria" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_BADAJOZ" Text="Badajoz" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_BARCELONA" Text="Barcelona" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_BENIDORM" Text="Benidorm" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_BERGA" Text="Berga" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_BILBAO" Text="Bilbao" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_BURGOS" Text="Burgos" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CACERES" Text="Caceres" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CADIZ" Text="Cadiz" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CARAVACA_DE_LA_CRUZ" Text="Caravaca de la Cruz" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CASTELO_BRANCO" Text="Castelo Branco" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CIUDAD_REAL" Text="Ciudad Real" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CIUTADELLA_DE_MENORCA" Text="Ciutadella de Menorca" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_COIMBRA" Text="Coimbra" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CORDOBA" Text="Cordoba" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CUENCA" Text="Cuenca" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_CULLERA" Text="Cullera" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_DONOSTIA_SAN_SEBASTIAN" Text="Donostia San Sebastian" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_FARO" Text="Faro" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_GIBRALTAR" Text="Gibraltar" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_GIJON" Text="Gijon" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_GIRONA" Text="Girona" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_GRANADA" Text="Granada" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_GUADALAJARA" Text="Guadalajara" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_HELLIN" Text="Hellin" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_HUELVA" Text="Huelva" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_HUESCA" Text="Huesca" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_IBIZA" Text="Ibiza" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_LAGOS" Text="Lagos" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_LALIN" Text="Lalin" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_LEON" Text="Leon" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_LISBON" Text="Lisbon" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_LOGRONO" Text="Logrono" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_MADRID" Text="Madrid" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_MALAGA" Text="Malaga" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_MURCIA" Text="Murcia" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_OURENSE" Text="Ourense" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_PALMA_DE_MALLORCA" Text="Palma de Mallorca" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_PAMPLONA" Text="Pamplona" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_PENISCOLA" Text="Peniscola" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_PONFERRADA" Text="Ponferrada" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_PONTEVEDRA" Text="Ponteverda" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_PORTO" Text="Porto" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_REQUENA" Text="Requena" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_RIOPAR" Text="Riopar" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_SALAMANCA" Text="Salamanca" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_SANTANDER" Text="Santander" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_SANTIAGO_DE_COMPOSTELA" Text="Santiago de Compostela" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_SARAGOSSA" Text="Saragossa" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_SETUBAL" Text="Setubal" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_SEVILLA" Text="Sevilla" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_SORIA" Text="Soria" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_TARRAGONA" Text="Tarragona" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_TERUEL" Text="Teruel" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_TOLEDO" Text="Toledo" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_TORDESILLAS" Text="Tordesillas" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_TRUJILLO" Text="Trujillo" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_VALENCIA" Text="Valencia" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_VALLADOLID" Text="Valladolid" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_VIVEIRO" Text="Viveiro" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_ZAFRA" Text="Zafra" Language="en_US" />
-	<Replace Tag="LOC_CITY_NAME_ZAMORA" Text="Zamora" Language="en_US" />
-	
-	<!-- BRITISH ISLES, WITH FAROER, WITHOUT IRELAND -->
+ <LocalizedText> <!-- IBERIA -->
+        <Replace Tag="LOC_CITY_NAME_A_CORUNA" Text="A Coruña" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_A_CORUNA_ROME" Text="Flavium Brigantium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_A_CORUNA_SPAIN" Text="La Coruña" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ALBACETE" Text="Albacete" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ALBACETE_ARABIA" Text="al-Basīt" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ALBACETE_ROME" Text="Libisosa" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ALICANTE" Text="Alicante" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ALICANTE_ARABIA" Text="al-Laqant" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ALICANTE_ROME" Text="Lucentum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ALMANSA" Text="Almansa" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ALMANSA_ARABIA" Text="al-Mansa" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ALMANSA_ROME" Text="Sætabis" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ALMERIA" Text="Almería" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ALMERIA_ARABIA" Text="al-Mari'yah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ALMERIA_ROME" Text="Portus Magnus" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_AQUAE_FLAVIAE" Text="Aquæ Flaviæ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BAELO_CLAUDIA" Text="Bælo Claudia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BADAJOZ" Text="Badajoz" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BADAJOZ_ARABIA" Text="Batalyaws" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BADAJOZ_ROME" Text="Emerita Augusta" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BARCELONA" Text="Barcelona" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BARCELONA_ARABIA" Text="Baršalūnâ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BARCELONA_ROME" Text="Barcino" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BEJA" Text="Beja" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BEJA_ARABIA" Text="al-Bajah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BEJA_ROME" Text="Pax Iulia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BERGA" Text="Berga" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BERGA_ROME" Text="Castrum Bergum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BILBAO" Text="Bilbao" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BILBAO_ROME" Text="Flaviobriga" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BILBILIS_ROME" Text="Augusta Bilbilis" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BURGOS" Text="Burgos" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BURGOS_ARABIA" Text="Burġuš" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BURGOS_ROME" Text="Palantia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BRAGA" Text="Braga" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_BRAGA_ROME" Text="Bracara Augusta" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CACERES" Text="Cáceres" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CACERES_ARABIA" Text="Qazrix" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CACERES_ROME" Text="Castra Cæcilia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CADIZ" Text="Cádiz" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CADIZ_ARABIA" Text="Qādis" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CADIZ_ROME" Text="Gades" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CARTAGENA" Text="Cartagena" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CARTAGENA_ARABIA" Text="Qartājanna" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CARTAGENA_ROME" Text="Carthago Nova" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CASTELO_BRANCO" Text="Castelo Branco" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CASTELO_BRANCO_ARABIA" Text="al-Antaniya" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CASTELO_BRANCO_ROME" Text="Igæditania" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CIUDAD_REAL" Text="Ciudad Real" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CIUTADELLA_DE_MENORCA" Text="Ciutadella de Menorca" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CIUTADELLA_DE_MENORCA_ARABIA" Text="Medīna Menūrqa" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CIUTADELLA_DE_MENORCA_ROME" Text="Iamo" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_COIMBRA" Text="Coimbra" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_COIMBRA_ARABIA" Text="Qulumriyah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_COIMBRA_ROME" Text="Conimbriga" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CORDOBA" Text="Córdoba" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CORDOBA_ARABIA" Text="Qurtubah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CORDOBA_ROME" Text="Corduba" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CUENCA" Text="Cuenca" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CUENCA_ARABIA" Text="Kunka" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CUENCA_ROME" Text="Valeria" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CULLERA" Text="Cullera" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CULLERA_ARABIA" Text="Colla-Aeria" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_CULLERA_ROME" Text="Portus Sucronis" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_DENIA" Text="Dénia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_DENIA_ARABIA" Text="Dāniyah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_DENIA_ROME" Text="Dianium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_DONOSTIA_SAN_SEBASTIAN" Text="Donostia San Sebastián" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_DONOSTIA_SAN_SEBASTIAN_FRANCE" Text="Saint Sébastien" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_DONOSTIA_SAN_SEBASTIAN_ROME" Text="Oiasso" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_EVORA" Text="Évora" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_EVORA_ARABIA" Text="Yaburah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_EVORA_ROME" Text="Ebora" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FARO" Text="Faro" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FARO_ARABIA" Text="Uhsunubah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_FARO_ROME" Text="Ossonoba" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GIBRALTAR" Text="Gibraltar" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GIBRALTAR_ARABIA" Text="Jabal Ṭāriq" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GIBRALTAR_ROME" Text="Carteia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GIJON" Text="Gijón" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GIJON_ROME" Text="Gigia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GIRONA" Text="Girona" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GIRONA_ARABIA" Text="Ǧarundâ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GIRONA_FRANCE" Text="Gérone" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GIRONA_ROME" Text="Gerunda" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GRANADA" Text="Granada" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GRANADA_ARABIA" Text="Ġarnāṭah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GRANADA_ROME" Text="Iliberitanum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GUADALAJARA" Text="Guadalajara" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GUADALAJARA_ARABIA" Text="Wādī-al-Ḥajāra" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_GUADALAJARA_ROME" Text="Arriaca" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_HELLIN" Text="Hellín" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_HUELVA" Text="Huelva" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_HUELVA_ARABIA" Text="Walbah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_HUELVA_ROME" Text="Onoba Aestuaria" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_HUESCA" Text="Huesca" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_HUESCA_ARABIA" Text="Washqah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_HUESCA_ROME" Text="Osca" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_IBIZA" Text="Ibiza" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_IBIZA_ARABIA" Text="Yebisah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_IBIZA_ROME" Text="Ebusus" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ITALICA" Text="Italica" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_JAEN" Text="Jaén" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_JAEN_ARABIA" Text="Yayyan" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_JAEN_ROME" Text="Aurgi" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LAGOS" Text="Lagos" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LAGOS_ARABIA" Text="Zawaia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LAGOS_ROME" Text="Lacobriga" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LALIN" Text="Lalín" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LEON" Text="León" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LEON_ARABIA" Text="Liyūn" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LEON_ROME" Text="Legio" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LINARES" Text="Linares" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LINARES_ARABIA" Text="Qastuluna" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LINARES_ROME" Text="Castulo" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LIRIA" Text="Liria" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LIRIA_ROME" Text="Edeta" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LISBOA" Text="Lisbon" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LISBOA_ARABIA" Text="al-Ushbuna" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LISBOA_LISBON" Text="Lisboa" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LISBOA_ROME" Text="Olissipo" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LLEIDA" Text="Lleida" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LLEIDA_ARABIA" Text="Lāridâ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LLEIDA_ROME" Text="Ilerda" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LOGRONO" Text="Logroño" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LOGRONO_ROME" Text="Vareia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LORCA" Text="Lorca" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LORCA_ARABIA" Text="Lorqa" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_LORCA_ROME" Text="Eliocroca" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MADRID" Text="Madrid" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MADRID_ARABIA" Text="Majrīṭ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MADRID_ROME" Text="Segovia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MALAGA" Text="Málaga" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MALAGA_ARABIA" Text="Mālaqah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MALAGA_ROME" Text="Malaca" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MERIDA" Text="Mérida" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MERIDA_ARABIA" Text="Marida" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MERIDA_ROME" Text="Emerita Augusta" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MOTRIL" Text="Motril" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MURCIA" Text="Murcia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_MURCIA_ARABIA" Text="Mursiyah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_OURENSE" Text="Ourense" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_OURENSE_ROME" Text="Aurium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PALMA_DE_MALLORCA" Text="Palma de Mallorca" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PALMA_DE_MALLORCA_ARABIA" Text="Medina Mayurqa" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PALMA_DE_MALLORCA_ROME" Text="Palma" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PAMPLONA" Text="Pamplona" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PAMPLONA_ARABIA" Text="Banbalūnâ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PAMPLONA_FRANCE" Text="Pampelune" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PAMPLONA_ROME" Text="Pompælo" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_POLLENTIA" Text="Pollentia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PONFERRADA" Text="Ponferrada" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PONFERRADA_ROME" Text="Asturica Augusta" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PONTEVEDRA" Text="Pontevedra" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PONTEVEDRA_ROME" Text="Ponte Vetera" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PORTO" Text="Porto" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PORTO_ARABIA" Text="Burtuqal" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PORTO_ENGLAND" Text="Oporto" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_PORTO_ROME" Text="Portus Cale" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_REQUENA" Text="Requena" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SAGUNTO" Text="Sagunto" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SAGUNTO_ARABIA" Text="Morvedre" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SAGUNTO_ROME" Text="Saguntum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SALAMANCA" Text="Salamanca" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SALAMANCA_ARABIA" Text="Šalamantiqâ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SALAMANCA_ROME" Text="Salmantica" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SANTANDER" Text="Santander" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SANTANDER_ROME" Text="Iuliobriga" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SANTIAGO_DE_COMPOSTELA" Text="Santiago de Compostela" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SANTIAGO_DE_COMPOSTELA_ARABIA" Text="Šānt Yāqūb" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SANTIAGO_DE_COMPOSTELA_ROME" Text="Lucus Augusti" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SETUBAL" Text="Setúbal" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SETUBAL_ARABIA" Text="Sheṭūbar" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SETUBAL_FRANCE" Text="Saint-Yves" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SETUBAL_ROME" Text="Cætobriga" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SEVILLA" Text="Seville" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SEVILLA_ARABIA" Text="Ishbiliya" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SEVILLA_ROME" Text="Hispalis" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SEVILLA_SPAIN" Text="Sevilla" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SINES" Text="Sines" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SINES_ROME" Text="Mirobriga" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SORIA" Text="Soria" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_SORIA_ROME" Text="Numantia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TARRAGONA" Text="Tarragona" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TARRAGONA_ARABIA" Text="Ṭarrākūnâ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TARRAGONA_ROME" Text="Tarraco" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TERUEL" Text="Teruel" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TERUEL_ARABIA" Text="Tīrwāl" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TOLEDO" Text="Toledo" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TOLEDO_ARABIA" Text="Tulaytulah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TOLEDO_ROME" Text="Toletum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TORDESILLAS" Text="Tordesillas" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TORDESILLAS_ROME" Text="Turris Sillæ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TORTOSA" Text="Tortosa" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TORTOSA_ARABIA" Text="Ṭurṭūšah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TORTOSA_ROME" Text="Dertosa" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TRUJILLO" Text="Trujillo" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TRUJILLO_ARABIA" Text="Turjalah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_TRUJILLO_ROME" Text="Turgalium" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VALENCIA" Text="Valencia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VALENCIA_ARABIA" Text="Balansiya" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VALENCIA_LA" Text="Valentia" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VALLADOLID" Text="Valladolid" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VALLADOLID_ARABIA" Text="Balad al-Walīd" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_VALLADOLID_ROME" Text="Vallis Tolitum" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ZAMORA" Text="Zamora" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ZAMORA_ARABIA" Text="Semurah" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ZAMORA_ROME" Text="Occelum Durii" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ZARAGOZA" Text="Zaragoza" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ZARAGOZA_ARABIA" Text="Saraqusṭâ" Language="en_US" />
+        <Replace Tag="LOC_CITY_NAME_ZARAGOZA_ROME" Text="Cæsaraugusta" Language="en_US" />
+ </LocalizedText>
+
+ <LocalizedText> <!-- BRITISH ISLES (WITH FAROER AND IRELAND) -->
 	<Replace Tag="LOC_CITY_NAME_ABERDEEN" Text="Aberdeen" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_ABERYSTWYTH" Text="Aberystwyth" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_ALNWICK" Text="Alnwick" Language="en_US" />
@@ -298,7 +629,7 @@
 	<Replace Tag="LOC_CITY_NAME_ULLAPOOL" Text="Ullapool" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_WESTON_SUPER_MARE" Text="Weston-super-Mare" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_WICK" Text="Wick" Language="en_US" />
-	
+
 	<!-- IRELAND -->
 	<Replace Tag="LOC_CITY_NAME_ARKLOW" Text="Arklow" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_ATHLONE" Text="Athlone" Language="en_US" />
@@ -330,8 +661,9 @@
 	<Replace Tag="LOC_CITY_NAME_WATERFORD" Text="Waterford" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_WESTPORT" Text="Westport" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_WEXFORD" Text="Wexford" Language="en_US" />
-	
-	<!-- GERMANY (WITH BENELUX AND HELVETIA, WITHOUT DENMARK, CHECZ AND AUSTRIA -->
+ </LocalizedText>
+
+ <LocalizedText> <!-- GERMANY (WITH BENELUX AND HELVETIA, WITHOUT DENMARK, CHECZ AND AUSTRIA -->
 	<Replace Tag="LOC_CITY_NAME_ALMELO" Text="Almelo" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_AMSTERDAM" Text="Amsterdam" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_ARNHEIM" Text="Arnheim" Language="en_US" />
@@ -426,8 +758,9 @@
 	<Replace Tag="LOC_CITY_NAME_ZURICH" Text="Zuerich" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_ZWICKAU" Text="Zwickau" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_ZWOLLE" Text="Zwolle" Language="en_US" />
+ </LocalizedText>
 
-	<!-- SCANDINAVIA (WITHOUT ICELAND) -->
+ <LocalizedText> <!-- SCANDINAVIA (WITHOUT ICELAND) -->
 	<Replace Tag="LOC_CITY_NAME_AALBORG" Text="Aalborg" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_AARHUS" Text="Aarhus" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_ALAVUS" Text="Alavus" Language="en_US"/>
@@ -639,11 +972,156 @@
 	<Replace Tag="LOC_CITY_NAME_WSEWOLOSCHSK" Text="Wsewoloschsk" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_WYBORG" Text="Wyborg" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_YSTAD" Text="Ystad" Language="en_US"/>
+ </LocalizedText>
+
+ <LocalizedText> <!-- GREECE -->
+ 
+	<!-- GREECE (AEGEAN) -->
+	<Replace Tag="LOC_CITY_NAME_AGIOS_NIKOLAOS" Text="Agios Nikolaos" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ANDROS" Text="Andros" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHANIA" Text="Chania" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FIRA" Text="Fira" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HERAKLION" Text="Heraklion" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOS" Text="Kos" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MYRINA" Text="Myrina" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_RETHYMNO" Text="Rethymno" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_RHODES" Text="Rhodes" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SAMOS" Text="Samos" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SKYROS" Text="Skyros" Language="en_US"/>
 	
-  </LocalizedText>
+	<!-- GREECE (MAINLAND) -->
+	<Replace Tag="LOC_CITY_NAME_AGRINIO" Text="Agrinio" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ALEXANDROUPOLI" Text="Alexandroupoli" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ARACHOVA" Text="Arachova" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ARCHEA_OLIMPIA" Text="Archea Olimpia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ARGOS" Text="Argos" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ATHENS" Text="Athens" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BERAT" Text="Berat" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CORINTH" Text="Corinth" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DRAMA" Text="Drama" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DURRES" Text="Durrës" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_EDESSA" Text="Edessa" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FLORINA" Text="Florina" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GALLIPOLI" Text="Gallipoli" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GIANNITSA" Text="Giannitsa" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GJIROKASTER" Text="Gjirokastër" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GREVENA" Text="Grevena" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_IDOMENI" Text="Idomeni" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_IGOUMENITSA" Text="Igoumenitsa" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_IOANNINA" Text="Ioannina" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ISTANBUL" Text="Istanbul" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_IVAYLOVGRAD" Text="Ivaylovgrad" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KALAMATA" Text="Kalamata" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KARDAZLI" Text="Kardazli" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KARPENISSI" Text="Karpenissi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KATERINI" Text="Katerini" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KAVALA" Text="Kavala" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KILKIS" Text="Kilkis" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KILKIS" Text="Kilkis" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOMOTINI" Text="Komotini" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KORCE" Text="Korçë" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KORFOS" Text="Korfos" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KYPARISSIA" Text="Kyparissia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LAMIA" Text="Lamia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LARISSA" Text="Larissa" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MISSOLONGHI" Text="Missolonghi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NAFPAKTOS" Text="Nafpaktos" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NAFPLION" Text="Nafplion" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_OHRID" Text="Ohrid" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ORESTIAS" Text="Orestias" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_OURANOUPOLI" Text="Ouranoupoli" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PATRAS" Text="Patras" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_POROS" Text="Poros" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PREVEZA" Text="Preveza" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SARANDE" Text="Sarandë" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SERRES" Text="Serres" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SERRES" Text="Serres" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SERVIA" Text="Servia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SMOLYAN" Text="Smolyan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SPARTA" Text="Sparta" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_STAVROS" Text="Stavros" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TEPELENE" Text="Tepelenë" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_THESSALONICA" Text="Thessalonica" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_THIVA" Text="Thiva" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TIRANA" Text="Tirana" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TRIPOLI" Text="Tripoli" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VARDA" Text="Varda" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VLORE" Text="Vlöre" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VOLOS" Text="Volos" Language="en_US"/>
+ </LocalizedText>
   
-  <!-- City Names : CLASSICAL GREECE -->
-  <LocalizedText>
+ <LocalizedText> <!-- BALKANS -->
+	<Replace Tag="LOC_CITY_NAME_ALBA_IULIA" Text="Alba Iulia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ARAD" Text="Arad" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BACAU" Text="Bacău" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BELGRADE" Text="Belgrade" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BLAGOEVGRAD" Text="Blagoevgrad" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BRAILA" Text="Brăila" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BRASOV" Text="Brașov" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BUCHAREST" Text="Bucharest" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BURGAS" Text="Burgas" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CALARASI" Text="Călărași" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CLUJ_NAPOCA" Text="Cluj-Napoca" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CONSTANTA" Text="Constanța" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CRAIOVA" Text="Craiova" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DUBROVNIK" Text="Dubrovnik" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_EDIRNE" Text="Edirne" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GALATI" Text="Galati" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GIURGU" Text="Giurgu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_IZMAIL" Text="Izmail" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KIRKLARELI" Text="Kırklareli" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LJUBLJANA" Text="Ljubljana" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MOHACS" Text="Mohács" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NIS" Text="Niš" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NOVI_PAZAR" Text="Novi Pazar" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NOVI_SAD" Text="Novi Sad" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_OSIJEK" Text="Osijek" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PECS" Text="Pécs" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PITESTI" Text="Pitești" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PLEVEN" Text="Pleven" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PLOVDIV" Text="Plovdiv" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PODGORICA" Text="Podgorica" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PRESLAV" Text="Preslav" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PRISHTINA" Text="Prishtina" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PULA" Text="Pula" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_RIJEKA" Text="Rijeka" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_RUSE" Text="Ruse" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SABAC" Text="Šabac" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SARAJEVO" Text="Sarajevo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SHISTOV" Text="Shistov" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SHKODER" Text="Shkodër" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SHTIP" Text="Shtip" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SKOPJE" Text="Skopje" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SLATINA" Text="Slatina" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SLAVONSKI_BROD" Text="Slavonski Brod" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SOFIA" Text="Sofia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SOMBOR" Text="Sombor" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SPLIT" Text="Split" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_STRUMICA" Text="Strumica" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SUBOTICA" Text="Subotica" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SZEGED" Text="Szeged" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TIMISOARA" Text="Timișoara" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TULCEA" Text="Tulcea" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VARNA" Text="Varna" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VELIKO_TARNOVO" Text="Veliko Tarnovo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VIDIN" Text="Vidin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VRSAC" Text="Vršac" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YAMBOL" Text="Yambol" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZAGREB" Text="Zagreb" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZENICA" Text="Zenica" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZRENJANIN" Text="Zrenjanin" Language="en_US"/>
+ </LocalizedText>
+
+ 
+ 
+
+	<!-- *****************************
+		 City Names : Civ-specific Names (For both, Default AND Civ Layers)
+		 ***************************** -->
+
+		 
+		 
+ <LocalizedText> <!-- CLASSICAL GREECE -->
   
 	<!-- CLASSICAL GREECE (AEGEAN) -->
 	<Replace Tag="LOC_CITY_NAME_HEPHAISTIA" Text="Hephaistia" Language="en_US"/>
@@ -707,150 +1185,6 @@
 	<Replace Tag="LOC_CITY_NAME_THERMOPYLAE" Text="Thermopylae" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_THERMOS" Text="Thermos" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_THESSALONICA" Text="Thessalonica" Language="en_US"/>
-	
-  </LocalizedText>
-  
-  <!-- City Names : MODERN GREECE -->
- <LocalizedText>
-  
-	<!-- MODERN GREECE (AEGEAN) -->
-	<Replace Tag="LOC_CITY_NAME_AGIOS_NIKOLAOS" Text="Agios Nikolaos" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ANDROS" Text="Andros" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_CHANIA" Text="Chania" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_FIRA" Text="Fira" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_HERAKLION" Text="Heraklion" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KOS" Text="Kos" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_MYRINA" Text="Myrina" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_RETHYMNO" Text="Rethymno" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_RHODES" Text="Rhodes" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SAMOS" Text="Samos" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SKYROS" Text="Skyros" Language="en_US"/>
-	
-	<!-- MODERN GREECE (MAINLAND) -->
-	<Replace Tag="LOC_CITY_NAME_AGRINIO" Text="Agrinio" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ALEXANDROUPOLI" Text="Alexandroupoli" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ARACHOVA" Text="Arachova" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ARCHEA_OLIMPIA" Text="Archea Olimpia" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ARGOS" Text="Argos" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ATHENS" Text="Athens" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_BERAT" Text="Berat" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_CORINTH" Text="Corinth" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_DRAMA" Text="Drama" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_DURRES" Text="Durrës" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_EDESSA" Text="Edessa" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_FLORINA" Text="Florina" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_GALLIPOLI" Text="Gallipoli" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_GIANNITSA" Text="Giannitsa" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_GJIROKASTER" Text="Gjirokastër" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_GREVENA" Text="Grevena" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_IDOMENI" Text="Idomeni" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_IGOUMENITSA" Text="Igoumenitsa" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_IOANNINA" Text="Ioannina" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ISTANBUL" Text="Istanbul" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_IVAYLOVGRAD" Text="Ivaylovgrad" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KALAMATA" Text="Kalamata" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KARDAZLI" Text="Kardazli" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KARPENISSI" Text="Karpenissi" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KATERINI" Text="Katerini" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KAVALA" Text="Kavala" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KILKIS" Text="Kilkis" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KILKIS" Text="Kilkis" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KOMOTINI" Text="Komotini" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KORCE" Text="Korçë" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KORFOS" Text="Korfos" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KYPARISSIA" Text="Kyparissia" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_LAMIA" Text="Lamia" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_LARISSA" Text="Larissa" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_MISSOLONGHI" Text="Missolonghi" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_NAFPAKTOS" Text="Nafpaktos" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_NAFPLION" Text="Nafplion" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_OHRID" Text="Ohrid" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ORESTIAS" Text="Orestias" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_OURANOUPOLI" Text="Ouranoupoli" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_PATRAS" Text="Patras" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_POROS" Text="Poros" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_PREVEZA" Text="Preveza" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SARANDE" Text="Sarandë" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SERRES" Text="Serres" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SERRES" Text="Serres" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SERVIA" Text="Servia" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SMOLYAN" Text="Smolyan" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SPARTA" Text="Sparta" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_STAVROS" Text="Stavros" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_TEPELENE" Text="Tepelenë" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_THESSALONICA" Text="Thessalonica" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_THIVA" Text="Thiva" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_TIRANA" Text="Tirana" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_TRIPOLI" Text="Tripoli" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_VARDA" Text="Varda" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_VLORE" Text="Vlöre" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_VOLOS" Text="Volos" Language="en_US"/>
-	
-  </LocalizedText>
-  
-  <LocalizedText>
-  
-	<!-- BALKANS -->
-	<Replace Tag="LOC_CITY_NAME_ALBA_IULIA" Text="Alba Iulia" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ARAD" Text="Arad" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_BACAU" Text="Bacău" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_BELGRADE" Text="Belgrade" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_BLAGOEVGRAD" Text="Blagoevgrad" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_BRAILA" Text="Brăila" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_BRASOV" Text="Brașov" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_BUCHAREST" Text="Bucharest" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_BURGAS" Text="Burgas" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_CALARASI" Text="Călărași" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_CLUJ_NAPOCA" Text="Cluj-Napoca" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_CONSTANTA" Text="Constanța" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_CRAIOVA" Text="Craiova" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_DUBROVNIK" Text="Dubrovnik" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_EDIRNE" Text="Edirne" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_GALATI" Text="Galati" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_GIURGU" Text="Giurgu" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_IZMAIL" Text="Izmail" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KIRKLARELI" Text="Kırklareli" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_LJUBLJANA" Text="Ljubljana" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_MOHACS" Text="Mohács" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_NIS" Text="Niš" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_NOVI_PAZAR" Text="Novi Pazar" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_NOVI_SAD" Text="Novi Sad" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_OSIJEK" Text="Osijek" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_PECS" Text="Pécs" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_PITESTI" Text="Pitești" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_PLEVEN" Text="Pleven" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_PLOVDIV" Text="Plovdiv" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_PODGORICA" Text="Podgorica" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_PRESLAV" Text="Preslav" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_PRISHTINA" Text="Prishtina" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_PULA" Text="Pula" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_RIJEKA" Text="Rijeka" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_RUSE" Text="Ruse" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SABAC" Text="Šabac" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SARAJEVO" Text="Sarajevo" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SHISTOV" Text="Shistov" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SHKODER" Text="Shkodër" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SHTIP" Text="Shtip" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SKOPJE" Text="Skopje" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SLATINA" Text="Slatina" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SLAVONSKI_BROD" Text="Slavonski Brod" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SOFIA" Text="Sofia" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SOMBOR" Text="Sombor" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SPLIT" Text="Split" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_STRUMICA" Text="Strumica" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SUBOTICA" Text="Subotica" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SZEGED" Text="Szeged" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_TIMISOARA" Text="Timișoara" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_TULCEA" Text="Tulcea" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_VARNA" Text="Varna" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_VELIKO_TARNOVO" Text="Veliko Tarnovo" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_VIDIN" Text="Vidin" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_VRSAC" Text="Vršac" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_YAMBOL" Text="Yambol" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ZAGREB" Text="Zagreb" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ZENICA" Text="Zenica" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ZRENJANIN" Text="Zrenjanin" Language="en_US"/>
-	
-  </LocalizedText>
-  
+ </LocalizedText>
+ 
 </GameData>
