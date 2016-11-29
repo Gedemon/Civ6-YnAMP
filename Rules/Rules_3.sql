@@ -29,7 +29,7 @@ UPDATE Units SET BaseMoves = BaseMoves * 2 WHERE Domain = 'DOMAIN_SEA';
 -----------------------------------------------
 -- Border Growth
 -----------------------------------------------
-/*
+--/*
 UPDATE ModifierArguments SET Value = 30 WHERE ModifierId="RELIGIOUS_SETTLEMENTS_CULTUREBORDER";
 INSERT INTO Modifiers (ModifierId, ModifierType) VALUES ('ADJUST_BORDER_EXPANSION', 'MODIFIER_ALL_CITIES_CULTURE_BORDER_EXPANSION');
 INSERT INTO ModifierArguments (ModifierId, Name, Value) VALUES ('ADJUST_BORDER_EXPANSION', 'Amount', '25');
@@ -50,7 +50,7 @@ INSERT INTO CivicModifiers (CivicType, ModifierId) VALUES ('CIVIC_SUFFRAGE', 'AD
 -- could be different per regions. 
 
 --*/
---/*
+/*
 
 INSERT INTO TraitModifiers
 (	TraitType,					ModifierId							)	VALUES
@@ -93,5 +93,5 @@ INSERT INTO ModifierArguments
 --*/
 
 /* Balance */
-UPDATE ModifierArguments SET Value = 30 WHERE ModifierId="RELIGIOUS_SETTLEMENTS_CULTUREBORDER";
+--UPDATE ModifierArguments SET Value = 30 WHERE ModifierId="RELIGIOUS_SETTLEMENTS_CULTUREBORDER";
 
