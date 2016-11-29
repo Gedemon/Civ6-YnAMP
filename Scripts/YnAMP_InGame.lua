@@ -27,7 +27,8 @@ function ChangeCityName( ownerPlayerID, cityID)
 		print("Trying to find name for city of ".. tostring(CivilizationTypeName) .." at "..tostring(x)..","..tostring(y))
 		local possibleName = {}
 		local maxRange = 1
-		local bestDistance = maxRange + 1
+		local bestDistance = 99
+		local bestDefaultDistance = 99
 		local bestName = nil
 		local bestDefaultName = nil
 		local cityPlot = Map.GetPlot(x, y)
@@ -51,8 +52,8 @@ function ChangeCityName( ownerPlayerID, cityID)
 							if Locale.Lookup(sCityNameForCiv) ~= sCityNameForCiv then -- means that this civilization has a specific name available for this generic city
 								bestDistance = distance
 								bestName = sCityNameForCiv
-							else -- use generic name
-								bestDistance = distance
+							elseif distance < bestDefaultDistance then -- use generic name
+								bestDefaultDistance = distance
 								bestDefaultName = row.CityLocaleName
 							end							
 						end
