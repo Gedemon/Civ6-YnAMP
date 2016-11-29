@@ -213,9 +213,9 @@
         <Replace MapName="PlayEuropeAgain" X="37" Y="42" CityLocaleName="LOC_CITY_NAME_SAVONA" Area="0" />
         <Replace MapName="PlayEuropeAgain" X="39" Y="42" CityLocaleName="LOC_CITY_NAME_GENOVA" />
         <Replace MapName="PlayEuropeAgain" X="41" Y="42" CityLocaleName="LOC_CITY_NAME_PIACENZA" Area="0" />
-        <Replace MapName="PlayEuropeAgain" X="42" Y="42" CityLocaleName="LOC_CITY_NAME_CREMONA" Area="0" Area="0" />
-        <Replace MapName="PlayEuropeAgain" X="43" Y="42" CityLocaleName="LOC_CITY_NAME_MANTOVA" Area="0" Area="0" />
-        <Replace MapName="PlayEuropeAgain" X="44" Y="42" CityLocaleName="LOC_CITY_NAME_VERONA" Area="0" Area="0" />
+        <Replace MapName="PlayEuropeAgain" X="42" Y="42" CityLocaleName="LOC_CITY_NAME_CREMONA" Area="0" />
+        <Replace MapName="PlayEuropeAgain" X="43" Y="42" CityLocaleName="LOC_CITY_NAME_MANTOVA" Area="0" />
+        <Replace MapName="PlayEuropeAgain" X="44" Y="42" CityLocaleName="LOC_CITY_NAME_VERONA" Area="0" />
         <Replace MapName="PlayEuropeAgain" X="45" Y="42" CityLocaleName="LOC_CITY_NAME_PADOVA" Area="0" />
         <Replace MapName="PlayEuropeAgain" X="46" Y="42" CityLocaleName="LOC_CITY_NAME_VENETIA" Area="0" />
         <Replace MapName="PlayEuropeAgain" X="47" Y="42" CityLocaleName="LOC_CITY_NAME_AQUILEIA" Area="0" />
