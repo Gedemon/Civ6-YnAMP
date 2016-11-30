@@ -1253,7 +1253,77 @@
 	<Replace Tag="LOC_CITY_NAME_ZYTKAVICY" Text="Žytkavičy" Language="en_US"/>
 	
   </LocalizedText>
-
+  
+ <LocalizedText>
+  
+	<!-- BALTIC -->
+	<Replace Tag="LOC_CITY_NAME_AIZKRAUKLE" Text="Aizkraukle" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ALUKSNE" Text="Alūksne" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHUDOVO" Text="Chudovo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DNO" Text="Dno" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KHOLM" Text="Kholm" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KIRISHI" Text="Kirishi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOLPINO" Text="Kolpino" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KUPISKIS" Text="Kupiškis" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LAMOVO" Text="Lamovo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LIEPAJA" Text="Liepāja" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LUGA" Text="Luga" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MAZEIKIAI" Text="Mažeikiai" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NARVA" Text="Narva" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NEVEL" Text="Nevel" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_OPOCHKA" Text="Opochka" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_OSTASHKOV" Text="Ostashkov" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_OSTROV" Text="Ostrov" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PANEVEZYS" Text="Panevėžys" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PARNU" Text="Pärnu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PSKOV" Text="Pskov" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PUSHKINSKIYE_GORY" Text="Pushkinskiye Gory" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_RASONY" Text="Rasony" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REZEKNE" Text="Rēzekne" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_RIGA" Text="Riga" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SIAULIAI" Text="Šiauliai" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_STARAYA_RUSSA" Text="Staraya Russa" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ST_PETERSBURG" Text="St Petersburg" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SUCHKI" Text="Suchki" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TALLINN" Text="Tallinn" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TARTU" Text="Tartu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TOROPETS" Text="Toropets" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TURI" Text="Türi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VALMEIRA" Text="Valmeira" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VELIKIYE_LUKI" Text="Velikiye Luki" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VELIKY_NOVGOROD" Text="Veliky Novgorod" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VELIZH" Text="Velizh" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VENTSPILS" Text="Ventspils" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VERKHNYADZVINSK" Text="Verkhnyadzvinsk" Language="en_US"/>
+	
+  </LocalizedText>
+  
+  <LocalizedText>
+  
+	<!-- ICELAND -->
+	<Replace Tag="LOC_CITY_NAME_ABAER" Text="Ábær" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AKUREYRI" Text="Akureyri" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BUTHARDALUR" Text="Búðardalur" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FLJOTSDALSHREPPUR" Text="Fljótsdalshreppur" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GRUNDARFJORTHUR" Text="Grundarfjörður" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HAFNARFJORTHUR" Text="Hafnarfjörður" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HELLA" Text="Hella" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HOFN" Text="Höfn" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HRAFNAGIL" Text="Hrafnagil" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HVAMMSTANGI" Text="Hvammstangi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HVERAGERTHI" Text="Hveragerði" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ISAFJORTHUR" Text="Ísafjörður" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KALMANSTUNGA" Text="Kalmanstunga" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KEFLAVIK" Text="Keflavík" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYKJAVIK" Text="Reykjavik" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYTHARFJORTHUR" Text="Reyðarfjörður" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SELFOSS" Text="Selfoss" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SKALHOLT" Text="Skálholt" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SKEITHA" Text="Skeiða" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_STORI_NUPUR" Text="Stóri Núpur" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_THORSHOFN" Text="Þórshöfn" Language="en_US"/>
+	
+  </LocalizedText>
  
  
 
