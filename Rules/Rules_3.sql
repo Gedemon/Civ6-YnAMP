@@ -11,6 +11,10 @@
 
 INSERT OR REPLACE INTO GlobalParameters (Name, Value) VALUES ('YNAMP_RULESET', '3');
 
+
+UPDATE GlobalParameters SET Value = '20' WHERE Name = 'START_DISTANCE_MAJOR_CIVILIZATION';
+UPDATE GlobalParameters SET Value = '10' WHERE Name = 'START_DISTANCE_MINOR_CIVILIZATION';
+
 -----------------------------------------------
 -- More moves on roads
 -----------------------------------------------
