@@ -13,12 +13,50 @@ local mapName = MapConfiguration.GetValue("MapName")
 print ("Map Name = " .. tostring(mapName))
 
 ----------------------------------------------------------------------------------------
--- Testing City renaming
+-- City renaming
 ----------------------------------------------------------------------------------------
+local nameTaken = {}
+local nameTakenByCivilization = {}
+
+function SetExistingCityNames()
+	nameTaken = {}
+	nameTakenByCivilization = {}
+	for _, player_ID in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+		local player = Players[player_ID]
+		local playerConfig = PlayerConfigurations[player_ID]
+		local civilization = playerConfig:GetCivilizationTypeName()
+		local playerCities = player:GetCities();
+		for j, city in playerCities:Members() do
+			nameTaken[city:GetName()] = { X = city:GetX(), Y = city:GetY() }
+			nameTaken[Locale.Lookup(city:GetName())] = { X = city:GetX(), Y = city:GetY() }
+			if not nameTakenByCivilization[civilization] then
+				nameTakenByCivilization[civilization] = {}
+			end
+			nameTakenByCivilization[civilization][city:GetName()] = { X = city:GetX(), Y = city:GetY() }
+			nameTakenByCivilization[civilization][Locale.Lookup(city:GetName())] = { X = city:GetX(), Y = city:GetY() }
+		end		
+	end
+end
+
+function IsNameUsedByCivilization(name, civilization)
+	return nameTakenByCivilization[civilization] and (nameTakenByCivilization[civilization][name] or nameTakenByCivilization[civilization][Locale.Lookup(name)])
+end
+
+local minDistanceForDuplicate = 15
+function IsNameUsedInArea(name, x, y)
+	local namePosition = nameTaken[name] or nameTaken[Locale.Lookup(name)]
+	if namePosition then
+		if math.abs(x - namePosition.X) < minDistanceForDuplicate and math.abs(y - namePosition.Y) < minDistanceForDuplicate then 
+			return true
+		end
+	end
+	return false
+end
 
 function ChangeCityName( ownerPlayerID, cityID)
-	local pCity = CityManager.GetCity(ownerPlayerID, cityID)
+	local pCity = CityManager.GetCity(ownerPlayerID, cityID)	
 	if pCity then
+		SetExistingCityNames()
 		local x = pCity:GetX()
 		local y = pCity:GetY()
 		local CivilizationTypeName = PlayerConfigurations[ownerPlayerID]:GetCivilizationTypeName()
@@ -34,30 +72,32 @@ function ChangeCityName( ownerPlayerID, cityID)
 		local cityPlot = Map.GetPlot(x, y)
 		for row in GameInfo.CityMap() do
 			if row.MapName == mapName  then
+				local name = row.CityLocaleName
 				local nameX = row.X
 				local nameY = row.Y
 				local nameMaxDistance = row.Area or maxRange
 				-- rough selection in a square first before really testing distance
-				if (x - nameMaxDistance <= nameX and x + nameMaxDistance >= nameX) and (y - nameMaxDistance <= nameY and y + nameMaxDistance >= nameY) then	
-					print("- testing "..tostring(row.CityLocaleName).." at "..tostring(nameX)..","..tostring(nameY).." max distance is "..tostring(nameMaxDistance)..", best distance so far is "..tostring(bestDistance))
+				if (math.abs(x - nameX) <= nameMaxDistance) and (math.abs(y - nameY) <= nameMaxDistance) then	
+					print("- testing "..tostring(name).." at "..tostring(nameX)..","..tostring(nameY).." max distance is "..tostring(nameMaxDistance)..", best distance so far is "..tostring(bestDistance))
+					
 					local distance = Map.GetPlotDistance(x, y ,nameX, nameY)
 					if distance <= nameMaxDistance and distance < bestDistance then
 					
-						local sCityNameForCiv = tostring(row.CityLocaleName) .. sCivSuffix
+						local sCityNameForCiv = tostring(name) .. sCivSuffix
 					
-						if CivilizationTypeName == row.Civilization then -- this city is specific to this Civilization
+						if CivilizationTypeName == row.Civilization and not IsNameUsedByCivilization(name, CivilizationTypeName) then -- this city is specific to this Civilization, and the name is not already used
 							bestDistance = distance
-							bestName = row.CityLocaleName
+							bestName = name
 						elseif not row.Civilization then -- do not use Civilization specific name with another Civilization, only generic							
-							if Locale.Lookup(sCityNameForCiv) ~= sCityNameForCiv then -- means that this civilization has a specific name available for this generic city
+							if Locale.Lookup(sCityNameForCiv) ~= sCityNameForCiv and not isNameUsedByCivilization(sCityNameForCiv, CivilizationTypeName) then -- means that this civilization has a specific name available for this generic city
 								bestDistance = distance
 								bestName = sCityNameForCiv
-							elseif distance < bestDefaultDistance then -- use generic name
+							elseif distance < bestDefaultDistance and not IsNameUsedInArea(name, x, y) then -- use generic name
 								bestDefaultDistance = distance
-								bestDefaultName = row.CityLocaleName
+								bestDefaultName = name
 							end							
 						end
-					end				
+					end	
 				end
 			end
 		end
@@ -76,7 +116,7 @@ function ChangeCityName( ownerPlayerID, cityID)
 		end
 	end
 end
-Events.CityAddedToMap.Add( ChangeCityName )
+Events.CityInitialized.Add( ChangeCityName )
 
 
 ----------------------------------------------------------------------------------------
