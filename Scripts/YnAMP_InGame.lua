@@ -91,7 +91,7 @@ function ChangeCityName( ownerPlayerID, cityID)
 							bestDistance = distance
 							bestName = name
 						elseif not row.Civilization then -- do not use Civilization specific name with another Civilization, only generic							
-							if Locale.Lookup(sCityNameForCiv) ~= sCityNameForCiv and not isNameUsedByCivilization(sCityNameForCiv, CivilizationTypeName) then -- means that this civilization has a specific name available for this generic city
+							if Locale.Lookup(sCityNameForCiv) ~= sCityNameForCiv and not IsNameUsedByCivilization(sCityNameForCiv, CivilizationTypeName) then -- means that this civilization has a specific name available for this generic city
 								bestDistance = distance
 								bestName = sCityNameForCiv
 							elseif distance < bestDefaultDistance and not IsNameUsedOnContinent(name, x, y) then -- use generic name
