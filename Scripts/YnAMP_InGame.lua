@@ -15,42 +15,44 @@ print ("Map Name = " .. tostring(mapName))
 ----------------------------------------------------------------------------------------
 -- City renaming
 ----------------------------------------------------------------------------------------
-local nameTaken = {}
-local nameTakenByCivilization = {}
+local nameUsedOnContinent = {}
+local nameUsedByCivilization = {}
 
 function SetExistingCityNames()
-	nameTaken = {}
-	nameTakenByCivilization = {}
+	nameUsedOnContinent = {}
+	nameUsedByCivilization = {}
 	for _, player_ID in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
 		local player = Players[player_ID]
 		local playerConfig = PlayerConfigurations[player_ID]
 		local civilization = playerConfig:GetCivilizationTypeName()
 		local playerCities = player:GetCities();
 		for j, city in playerCities:Members() do
-			nameTaken[city:GetName()] = { X = city:GetX(), Y = city:GetY() }
-			nameTaken[Locale.Lookup(city:GetName())] = { X = city:GetX(), Y = city:GetY() }
-			if not nameTakenByCivilization[civilization] then
-				nameTakenByCivilization[civilization] = {}
+			local plot = Map.GetPlot(city:GetX(), city:GetY())
+			local continent = plot:GetContinentType()
+			
+			if not nameUsedOnContinent[continent] then
+				nameUsedOnContinent[continent] = {}
 			end
-			nameTakenByCivilization[civilization][city:GetName()] = { X = city:GetX(), Y = city:GetY() }
-			nameTakenByCivilization[civilization][Locale.Lookup(city:GetName())] = { X = city:GetX(), Y = city:GetY() }
+			nameUsedOnContinent[continent][city:GetName()] = true
+			nameUsedOnContinent[continent][Locale.Lookup(city:GetName())] = true
+			
+			if not nameUsedByCivilization[civilization] then
+				nameUsedByCivilization[civilization] = {}
+			end
+			nameUsedByCivilization[civilization][city:GetName()] = true
+			nameUsedByCivilization[civilization][Locale.Lookup(city:GetName())] = true
 		end		
 	end
 end
 
 function IsNameUsedByCivilization(name, civilization)
-	return nameTakenByCivilization[civilization] and (nameTakenByCivilization[civilization][name] or nameTakenByCivilization[civilization][Locale.Lookup(name)])
+	return nameUsedByCivilization[civilization] and (nameUsedByCivilization[civilization][name] or nameUsedByCivilization[civilization][Locale.Lookup(name)])
 end
 
-local minDistanceForDuplicate = 15
-function IsNameUsedInArea(name, x, y)
-	local namePosition = nameTaken[name] or nameTaken[Locale.Lookup(name)]
-	if namePosition then
-		if math.abs(x - namePosition.X) < minDistanceForDuplicate and math.abs(y - namePosition.Y) < minDistanceForDuplicate then 
-			return true
-		end
-	end
-	return false
+function IsNameUsedOnContinent(name, x, y)
+	local plot = Map.GetPlot(x, y)
+	local continent = plot:GetContinentType()
+	return nameUsedOnContinent[continent] and (nameUsedOnContinent[continent][name] or nameUsedOnContinent[continent][Locale.Lookup(name)])
 end
 
 function ChangeCityName( ownerPlayerID, cityID)
@@ -92,7 +94,7 @@ function ChangeCityName( ownerPlayerID, cityID)
 							if Locale.Lookup(sCityNameForCiv) ~= sCityNameForCiv and not isNameUsedByCivilization(sCityNameForCiv, CivilizationTypeName) then -- means that this civilization has a specific name available for this generic city
 								bestDistance = distance
 								bestName = sCityNameForCiv
-							elseif distance < bestDefaultDistance and not IsNameUsedInArea(name, x, y) then -- use generic name
+							elseif distance < bestDefaultDistance and not IsNameUsedOnContinent(name, x, y) then -- use generic name
 								bestDefaultDistance = distance
 								bestDefaultName = name
 							end							
