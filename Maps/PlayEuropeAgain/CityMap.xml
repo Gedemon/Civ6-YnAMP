@@ -413,7 +413,7 @@
 	
 	<CityMap> <!-- BRITISH ISLES -->
         
-        <!-- GREAT BRITAIN, MAN, SKYE, ORKNEYS, AND FAROES -->
+        	<!-- GREAT BRITAIN, MAN, SKYE, ORKNEYS, AND FAROES -->
 		<Replace MapName="PlayEuropeAgain" X="25" Y="58" CityLocaleName="LOC_CITY_NAME_TORQUAY" Area="0" />
 		
 		<Replace MapName="PlayEuropeAgain" X="22" Y="59" CityLocaleName="LOC_CITY_NAME_ST_IVES" Area="0" />
