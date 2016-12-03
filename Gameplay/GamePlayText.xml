@@ -620,7 +620,9 @@
         <Replace Tag="LOC_CITY_NAME_ZARAGOZA_ROME" Text="Cæsaraugusta" Language="en_US" />
  </LocalizedText>
 
- <LocalizedText> <!-- BRITISH ISLES (WITH FAROER AND IRELAND) -->
+ <LocalizedText> <!-- BRITISH ISLES -->
+	 
+	<!-- GREAT BRITAIN, MAN, SKYE, ORKNEYS, AND FAROES -->
 	<Replace Tag="LOC_CITY_NAME_ABERDEEN" Text="Aberdeen" Language="en_US" />
         <Replace Tag="LOC_CITY_NAME_ABERYSTWYTH" Text="Aberystwyth" Language="en_US" />
         <Replace Tag="LOC_CITY_NAME_ABERYSTWYTH_ROME" Text="Bremia" Language="en_US" />
@@ -801,7 +803,7 @@
 	<Replace Tag="LOC_CITY_NAME_WEXFORD" Text="Wexford" Language="en_US" />
  </LocalizedText>
 
- <LocalizedText> <!-- GERMANY (WITH BENELUX AND HELVETIA, WITHOUT DENMARK, CHECZ AND AUSTRIA -->
+ <LocalizedText> <!-- GERMANY (INCLUDING BENELUX AND HELVETIA, EXCLUDING DENMARK, CHECZ AND AUSTRIA -->
 	<Replace Tag="LOC_CITY_NAME_ALMELO" Text="Almelo" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_AMSTERDAM" Text="Amsterdam" Language="en_US" />
 	<Replace Tag="LOC_CITY_NAME_ARNHEIM" Text="Arnheim" Language="en_US" />
@@ -898,7 +900,9 @@
 	<Replace Tag="LOC_CITY_NAME_ZWOLLE" Text="Zwolle" Language="en_US" />
  </LocalizedText>
 
- <LocalizedText> <!-- SCANDINAVIA (WITHOUT ICELAND) -->
+ <LocalizedText> <!-- SCANDINAVIA -->
+	 
+	 <!-- SCANDINAVIA (MAINLAND) -->
 	<Replace Tag="LOC_CITY_NAME_AALBORG" Text="Aalborg" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_AARHUS" Text="Aarhus" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_ALAVUS" Text="Alavus" Language="en_US"/>
@@ -1110,82 +1114,107 @@
 	<Replace Tag="LOC_CITY_NAME_WSEWOLOSCHSK" Text="Wsewoloschsk" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_WYBORG" Text="Wyborg" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_YSTAD" Text="Ystad" Language="en_US"/>
- </LocalizedText>
+  
+	<!-- ICELAND -->
+	<Replace Tag="LOC_CITY_NAME_ABAER" Text="Ábær" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AKUREYRI" Text="Akureyri" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BUTHARDALUR" Text="Búðardalur" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FLJOTSDALSHREPPUR" Text="Fljótsdalshreppur" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GRUNDARFJORTHUR" Text="Grundarfjörður" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HAFNARFJORTHUR" Text="Hafnarfjörður" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HELLA" Text="Hella" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HOFN" Text="Höfn" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HRAFNAGIL" Text="Hrafnagil" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HVAMMSTANGI" Text="Hvammstangi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HVERAGERTHI" Text="Hveragerði" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ISAFJORTHUR" Text="Ísafjörður" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KALMANSTUNGA" Text="Kalmanstunga" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KEFLAVIK" Text="Keflavík" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYKJAVIK" Text="Reykjavik" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYTHARFJORTHUR" Text="Reyðarfjörður" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SELFOSS" Text="Selfoss" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SKALHOLT" Text="Skálholt" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SKEITHA" Text="Skeiða" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_STORI_NUPUR" Text="Stóri Núpur" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_THORSHOFN" Text="Þórshöfn" Language="en_US"/>
+  </LocalizedText>
 
  <LocalizedText> <!-- GREECE -->
- 
-	<!-- GREECE (AEGEAN) -->
-	<Replace Tag="LOC_CITY_NAME_AGIOS_NIKOLAOS" Text="Agios Nikolaos" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ANDROS" Text="Andros" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_CHANIA" Text="Chania" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_FIRA" Text="Fira" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_HERAKLION" Text="Heraklion" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KOS" Text="Kos" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_MYRINA" Text="Myrina" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_RETHYMNO" Text="Rethymno" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_RHODES" Text="Rhodes" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SAMOS" Text="Samos" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SKYROS" Text="Skyros" Language="en_US"/>
 	
 	<!-- GREECE (MAINLAND) -->
 	<Replace Tag="LOC_CITY_NAME_AGRINIO" Text="Agrinio" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ALEXANDROUPOLI" Text="Alexandroupoli" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ARACHOVA" Text="Arachova" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ARCHEA_OLIMPIA" Text="Archea Olimpia" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ARGOS" Text="Argos" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ATHENS" Text="Athens" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_BERAT" Text="Berat" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_CORINTH" Text="Corinth" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_DRAMA" Text="Drama" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_DURRES" Text="Durrës" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_EDESSA" Text="Edessa" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_FLORINA" Text="Florina" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_GALLIPOLI" Text="Gallipoli" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_GIANNITSA" Text="Giannitsa" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_GJIROKASTER" Text="Gjirokastër" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_GREVENA" Text="Grevena" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_IDOMENI" Text="Idomeni" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_IGOUMENITSA" Text="Igoumenitsa" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_IOANNINA" Text="Ioannina" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ISTANBUL" Text="Istanbul" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_IVAYLOVGRAD" Text="Ivaylovgrad" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KALAMATA" Text="Kalamata" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KARDAZLI" Text="Kardazli" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KARPENISSI" Text="Karpenissi" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KATERINI" Text="Katerini" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KAVALA" Text="Kavala" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KILKIS" Text="Kilkis" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KILKIS" Text="Kilkis" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KOMOTINI" Text="Komotini" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KORCE" Text="Korçë" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KORFOS" Text="Korfos" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KYPARISSIA" Text="Kyparissia" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_LAMIA" Text="Lamia" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_LARISSA" Text="Larissa" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_MISSOLONGHI" Text="Missolonghi" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_NAFPAKTOS" Text="Nafpaktos" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_NAFPLION" Text="Nafplion" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_OHRID" Text="Ohrid" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ORESTIAS" Text="Orestias" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_OURANOUPOLI" Text="Ouranoupoli" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_PATRAS" Text="Patras" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_POROS" Text="Poros" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_PREVEZA" Text="Preveza" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SARANDE" Text="Sarandë" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SERRES" Text="Serres" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SERRES" Text="Serres" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SERVIA" Text="Servia" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SMOLYAN" Text="Smolyan" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SPARTA" Text="Sparta" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_STAVROS" Text="Stavros" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_TEPELENE" Text="Tepelenë" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_THESSALONICA" Text="Thessalonica" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_THIVA" Text="Thiva" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_TIRANA" Text="Tirana" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_TRIPOLI" Text="Tripoli" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_VARDA" Text="Varda" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_VLORE" Text="Vlöre" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_VOLOS" Text="Volos" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_ALEXANDROUPOLI" Text="Alexandroupoli" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_ARACHOVA" Text="Arachova" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_ARCHEA_OLIMPIA" Text="Archea Olimpia" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_ARGOS" Text="Argos" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_ATHENS" Text="Athens" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_BERAT" Text="Berat" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_CORINTH" Text="Corinth" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_DRAMA" Text="Drama" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_DURRES" Text="Durrës" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_EDESSA" Text="Edessa" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_FLORINA" Text="Florina" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_GALLIPOLI" Text="Gallipoli" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_GIANNITSA" Text="Giannitsa" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_GJIROKASTER" Text="Gjirokastër" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_GREVENA" Text="Grevena" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_IDOMENI" Text="Idomeni" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_IGOUMENITSA" Text="Igoumenitsa" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_IOANNINA" Text="Ioannina" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_ISTANBUL" Text="Istanbul" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_ISTANBUL_NORWAY" Text="Miklagard" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_IVAYLOVGRAD" Text="Ivaylovgrad" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_KALAMATA" Text="Kalamata" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_KARDAZLI" Text="Kardazli" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_KARPENISSI" Text="Karpenissi" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_KATERINI" Text="Katerini" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_KAVALA" Text="Kavala" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_KILKIS" Text="Kilkis" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_KILKIS" Text="Kilkis" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_KOMOTINI" Text="Komotini" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_KORCE" Text="Korçë" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_KORFOS" Text="Korfos" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_KYPARISSIA" Text="Kyparissia" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_LAMIA" Text="Lamia" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_LARISSA" Text="Larissa" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_MISSOLONGHI" Text="Missolonghi" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_NAFPAKTOS" Text="Nafpaktos" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_NAFPLION" Text="Nafplion" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_OHRID" Text="Ohrid" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_ORESTIAS" Text="Orestias" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_OURANOUPOLI" Text="Ouranoupoli" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_PATRAS" Text="Patras" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_POROS" Text="Poros" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_PREVEZA" Text="Preveza" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_SARANDE" Text="Sarandë" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_SERRES" Text="Serres" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_SERRES" Text="Serres" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_SERVIA" Text="Servia" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_SMOLYAN" Text="Smolyan" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_SMOLYAN_ARABIA" Text="Paşmaklı" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_SPARTA" Text="Sparta" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_STAVROS" Text="Stavros" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_TEPELENE" Text="Tepelenë" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_THESSALONICA" Text="Thessalonica" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_THIVA" Text="Thiva" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_TIRANA" Text="Tirana" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_TRIPOLI" Text="Tripoli" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_VARDA" Text="Varda" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_VLORE" Text="Vlöre" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_VOLOS" Text="Volos" Language="en_US"/>
+        
+        <!-- GREECE (AEGEAN) -->
+        <Replace Tag="LOC_CITY_NAME_AGIOS_NIKOLAOS" Text="Agios Nikolaos" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_ANDROS" Text="Andros" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_CHANIA" Text="Chania" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_FIRA" Text="Fira" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_HERAKLION" Text="Heraklion" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_KOS" Text="Kos" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_MYRINA" Text="Myrina" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_RETHYMNO" Text="Rethymno" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_RHODES" Text="Rhodes" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_SAMOS" Text="Samos" Language="en_US"/>
+        <Replace Tag="LOC_CITY_NAME_SKYROS" Text="Skyros" Language="en_US"/>
  </LocalizedText>
   
  <LocalizedText> <!-- BALKANS -->
@@ -1586,33 +1615,6 @@
 	<Replace Tag="LOC_CITY_NAME_VELIZH" Text="Velizh" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_VENTSPILS" Text="Ventspils" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_VERKHNYADZVINSK" Text="Verkhnyadzvinsk" Language="en_US"/>
-	
-  </LocalizedText>
-  
-  <LocalizedText>
-  
-	<!-- ICELAND -->
-	<Replace Tag="LOC_CITY_NAME_ABAER" Text="Ábær" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_AKUREYRI" Text="Akureyri" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_BUTHARDALUR" Text="Búðardalur" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_FLJOTSDALSHREPPUR" Text="Fljótsdalshreppur" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_GRUNDARFJORTHUR" Text="Grundarfjörður" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_HAFNARFJORTHUR" Text="Hafnarfjörður" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_HELLA" Text="Hella" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_HOFN" Text="Höfn" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_HRAFNAGIL" Text="Hrafnagil" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_HVAMMSTANGI" Text="Hvammstangi" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_HVERAGERTHI" Text="Hveragerði" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_ISAFJORTHUR" Text="Ísafjörður" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KALMANSTUNGA" Text="Kalmanstunga" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_KEFLAVIK" Text="Keflavík" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_REYKJAVIK" Text="Reykjavik" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_REYTHARFJORTHUR" Text="Reyðarfjörður" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SELFOSS" Text="Selfoss" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SKALHOLT" Text="Skálholt" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_SKEITHA" Text="Skeiða" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_STORI_NUPUR" Text="Stóri Núpur" Language="en_US"/>
-	<Replace Tag="LOC_CITY_NAME_THORSHOFN" Text="Þórshöfn" Language="en_US"/>
 	
   </LocalizedText>
   
