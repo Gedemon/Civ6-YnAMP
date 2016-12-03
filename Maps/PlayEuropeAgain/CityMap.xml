@@ -128,9 +128,9 @@
 		
 	</CityMap>
 
-	<CityMap> <!-- ITALY -->
+	<CityMap> <!-- ITALY, SICILY, SARDINIA, & CORSICA -->
 	
-		<!-- ITALY MAINLAND UP TO THE ALPS (WITHOUT sicily, sardinia, corsica) -->
+		<!-- ITALY (MAINLAND) -->
         <Replace MapName="PlayEuropeAgain" X="47" Y="24" CityLocaleName="LOC_CITY_NAME_REGGIO_CALABRIA" Area="0" />
         
         <Replace MapName="PlayEuropeAgain" X="48" Y="25" CityLocaleName="LOC_CITY_NAME_MONTELEONE" Area="0" />
@@ -405,8 +405,8 @@
 	</CityMap>
 	
 	<CityMap> <!-- BRITISH ISLES -->
-	
-		<!-- BRITISH ISLES, WITH FAROER, WITHOUT IRELAND -->
+        
+        <!-- GREAT BRITAIN, MAN, SKYE, ORKNEYS, AND FAROES -->
 		<Replace MapName="PlayEuropeAgain" X="25" Y="58" CityLocaleName="LOC_CITY_NAME_TORQUAY" Area="0" />
 		
 		<Replace MapName="PlayEuropeAgain" X="22" Y="59" CityLocaleName="LOC_CITY_NAME_ST_IVES" Area="0" />
@@ -578,9 +578,9 @@
 		<Replace MapName="PlayEuropeAgain" X="23" Y="71" CityLocaleName="LOC_CITY_NAME_CLOERAINE" Area="0" />
 	</CityMap>
 	
-	<CityMap> <!-- GERMANY (WITH BENELUX & HELVETIA, WITHOUT DENMARK) -->
+	<CityMap> <!-- GERMANY (INCLUDING BENELUX & HELVETIA, EXCLUDING DENMARK) -->
 	
-		<!-- NORTHERN GERMANY (WITH BENELUX, WITHOUT DENMARK) -->
+		<!-- NORTHERN GERMANY (INCLUDING BENELUX, EXCLUDING DENMARK) -->
 		<Replace MapName="PlayEuropeAgain" X="38" Y="56" CityLocaleName="LOC_CITY_NAME_NIJMEGEN" Area="0" />
 		
 		<Replace MapName="PlayEuropeAgain" X="36" Y="57" CityLocaleName="LOC_CITY_NAME_BRUSSELS" Area="0" />
@@ -642,7 +642,7 @@
 		<Replace MapName="PlayEuropeAgain" X="43" Y="63" CityLocaleName="LOC_CITY_NAME_HUSUM" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="44" Y="63" CityLocaleName="LOC_CITY_NAME_FLENSBURG" Area="0" />
 		
-		<!-- SOUTHERN GERMANY (WITH HELVETIA, WITHOUT CHECZ AND AUSTRIA) -->
+		<!-- SOUTHERN GERMANY (INCLUDING HELVETIA, EXCLUDING CHECZ AND AUSTRIA) -->
 		<Replace MapName="PlayEuropeAgain" X="36" Y="45" CityLocaleName="LOC_CITY_NAME_GENEVA" Area="0" />
 		
 		<Replace MapName="PlayEuropeAgain" X="36" Y="46" CityLocaleName="LOC_CITY_NAME_GENEVA" Area="0" />
@@ -719,7 +719,7 @@
 	
 	<CityMap> <!-- SCANDINAVIA -->
 	
-		<!-- DENMARK, NORWAY, SWEDEN (WITHOUT FINNLAND & WESTERN BORDER RUSSIA & ICELAND) -->
+		<!-- DENMARK, NORWAY, & SWEDEN -->
 		<Replace MapName="PlayEuropeAgain" X="46" Y="63" CityLocaleName="LOC_CITY_NAME_NAKSKOV" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="47" Y="63" CityLocaleName="LOC_CITY_NAME_COPENHAGEN" Area="0" />
 		
@@ -972,7 +972,7 @@
 		
 		<Replace MapName="PlayEuropeAgain" X="62" Y="96" CityLocaleName="LOC_CITY_NAME_NORDKAPP" Area="0" />
 		
-		<!-- FINNLAND WITH WESTERN BORDER RUSSIA (WITHOUT DENKMARK, NORWAY, SWEDEN & ICELAND) -->
+		<!-- FINLAND & RUSSIAN KARELIA -->
 		<Replace MapName="PlayEuropeAgain" X="61" Y="72" CityLocaleName="LOC_CITY_NAME_HELSINKI" />
 		<Replace MapName="PlayEuropeAgain" X="67" Y="72" CityLocaleName="LOC_CITY_NAME_WSEWOLOSCHSK" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="68" Y="72" CityLocaleName="LOC_CITY_NAME_KIROWSK" Area="0" />
@@ -1068,27 +1068,62 @@
 		<Replace MapName="PlayEuropeAgain" X="63" Y="85" CityLocaleName="LOC_CITY_NAME_RANUA" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="69" Y="85" CityLocaleName="LOC_CITY_NAME_PLOTINA" />
 		
+		<!-- ICELAND -->
+		<Replace MapName="PlayEuropeAgain" X="8" Y="88" CityLocaleName="LOC_CITY_NAME_KEFLAVIK" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="9" Y="88" CityLocaleName="LOC_CITY_NAME_HAFNARFJORTHUR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="11" Y="88" CityLocaleName="LOC_CITY_NAME_HELLA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="12" Y="88" CityLocaleName="LOC_CITY_NAME_HELLA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="15" Y="88" CityLocaleName="LOC_CITY_NAME_HOFN" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="9" Y="89" CityLocaleName="LOC_CITY_NAME_HAFNARFJORTHUR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="10" Y="89" CityLocaleName="LOC_CITY_NAME_SELFOSS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="11" Y="89" CityLocaleName="LOC_CITY_NAME_HELLA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="12" Y="89" CityLocaleName="LOC_CITY_NAME_STORI_NUPUR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="13" Y="89" CityLocaleName="LOC_CITY_NAME_FLJOTSDALSHREPPUR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="14" Y="89" CityLocaleName="LOC_CITY_NAME_FLJOTSDALSHREPPUR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="15" Y="89" CityLocaleName="LOC_CITY_NAME_REYTHARFJORTHUR" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="9" Y="90" CityLocaleName="LOC_CITY_NAME_REYKJAVIK" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="10" Y="90" CityLocaleName="LOC_CITY_NAME_HVERAGERTHI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="11" Y="90" CityLocaleName="LOC_CITY_NAME_HVERAGERTHI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="12" Y="90" CityLocaleName="LOC_CITY_NAME_STORI_NUPUR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="13" Y="90" CityLocaleName="LOC_CITY_NAME_STORI_NUPUR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="14" Y="90" CityLocaleName="LOC_CITY_NAME_FLJOTSDALSHREPPUR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="15" Y="90" CityLocaleName="LOC_CITY_NAME_REYTHARFJORTHUR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="16" Y="90" CityLocaleName="LOC_CITY_NAME_REYTHARFJORTHUR" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="9" Y="91" CityLocaleName="LOC_CITY_NAME_REYKJAVIK" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="10" Y="91" CityLocaleName="LOC_CITY_NAME_SKALHOLT" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="11" Y="91" CityLocaleName="LOC_CITY_NAME_SKEITHA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="12" Y="91" CityLocaleName="LOC_CITY_NAME_SKEITHA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="13" Y="91" CityLocaleName="LOC_CITY_NAME_SKEITHA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="14" Y="91" CityLocaleName="LOC_CITY_NAME_HRAFNAGIL" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="15" Y="91" CityLocaleName="LOC_CITY_NAME_REYTHARFJORTHUR" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="8" Y="92" CityLocaleName="LOC_CITY_NAME_GRUNDARFJORTHUR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="9" Y="92" CityLocaleName="LOC_CITY_NAME_GRUNDARFJORTHUR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="10" Y="92" CityLocaleName="LOC_CITY_NAME_BUTHARDALUR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="11" Y="92" CityLocaleName="LOC_CITY_NAME_KALMANSTUNGA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="12" Y="92" CityLocaleName="LOC_CITY_NAME_ABAER" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="13" Y="92" CityLocaleName="LOC_CITY_NAME_HRAFNAGIL" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="14" Y="92" CityLocaleName="LOC_CITY_NAME_AKUREYRI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="15" Y="92" CityLocaleName="LOC_CITY_NAME_AKUREYRI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="16" Y="92" CityLocaleName="LOC_CITY_NAME_THORSHOFN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="17" Y="92" CityLocaleName="LOC_CITY_NAME_THORSHOFN" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="10" Y="93" CityLocaleName="LOC_CITY_NAME_BUTHARDALUR" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="11" Y="93" CityLocaleName="LOC_CITY_NAME_HVAMMSTANGI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="13" Y="93" CityLocaleName="LOC_CITY_NAME_AKUREYRI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="14" Y="93" CityLocaleName="LOC_CITY_NAME_AKUREYRI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="15" Y="93" CityLocaleName="LOC_CITY_NAME_THORSHOFN" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="11" Y="94" CityLocaleName="LOC_CITY_NAME_HVAMMSTANGI" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="9" Y="95" CityLocaleName="LOC_CITY_NAME_ISAFJORTHUR" />
+		
 	</CityMap>
 	
 	<CityMap> <!-- GREECE -->
-		
-		<!-- GREECE (AEGEAN ISLANDS) -->
-		<Replace MapName="PlayEuropeAgain" X="60" Y="18" CityLocaleName="LOC_CITY_NAME_CHANIA" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="61" Y="18" CityLocaleName="LOC_CITY_NAME_RETHYMNO" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="62" Y="18" CityLocaleName="LOC_CITY_NAME_HERAKLION" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="63" Y="18" CityLocaleName="LOC_CITY_NAME_AGIOS_NIKOLAOS" Area="0" />
-		
-		<Replace MapName="PlayEuropeAgain" X="62" Y="20" CityLocaleName="LOC_CITY_NAME_FIRA" Area="0" />
-		
-		<Replace MapName="PlayEuropeAgain" X="64" Y="21" CityLocaleName="LOC_CITY_NAME_KOS" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="66" Y="21" CityLocaleName="LOC_CITY_NAME_RHODES" Area="0" />
-		
-		<Replace MapName="PlayEuropeAgain" X="62" Y="23" CityLocaleName="LOC_CITY_NAME_ANDROS" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="64" Y="23" CityLocaleName="LOC_CITY_NAME_SAMOS" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="65" Y="23" CityLocaleName="LOC_CITY_NAME_SAMOS" Area="0" />
-		
-		<Replace MapName="PlayEuropeAgain" X="63" Y="26" CityLocaleName="LOC_CITY_NAME_SKYROS" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="63" Y="29" CityLocaleName="LOC_CITY_NAME_MYRINA" Area="0" />
 		
 		<!-- GREECE MAINLAND -->
 		
@@ -1184,6 +1219,24 @@
 		<Replace MapName="PlayEuropeAgain" X="67" Y="32" CityLocaleName="LOC_CITY_NAME_GALLIPOLI" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="68" Y="32" CityLocaleName="LOC_CITY_NAME_ISTANBUL" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="69" Y="32" CityLocaleName="LOC_CITY_NAME_ISTANBUL" Area="0" />
+		
+		<!-- GREECE (AEGEAN ISLANDS) -->
+		<Replace MapName="PlayEuropeAgain" X="60" Y="18" CityLocaleName="LOC_CITY_NAME_CHANIA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="61" Y="18" CityLocaleName="LOC_CITY_NAME_RETHYMNO" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="62" Y="18" CityLocaleName="LOC_CITY_NAME_HERAKLION" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="63" Y="18" CityLocaleName="LOC_CITY_NAME_AGIOS_NIKOLAOS" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="62" Y="20" CityLocaleName="LOC_CITY_NAME_FIRA" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="64" Y="21" CityLocaleName="LOC_CITY_NAME_KOS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="66" Y="21" CityLocaleName="LOC_CITY_NAME_RHODES" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="62" Y="23" CityLocaleName="LOC_CITY_NAME_ANDROS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="64" Y="23" CityLocaleName="LOC_CITY_NAME_SAMOS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="65" Y="23" CityLocaleName="LOC_CITY_NAME_SAMOS" Area="0" />
+		
+		<Replace MapName="PlayEuropeAgain" X="63" Y="26" CityLocaleName="LOC_CITY_NAME_SKYROS" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="63" Y="29" CityLocaleName="LOC_CITY_NAME_MYRINA" Area="0" />
 		
 	</CityMap>
 	
@@ -1319,8 +1372,7 @@
 		
 	</CityMap>
 	
-	<!-- CENTRAL AND EASTERN EUROPE (AUSTRIA, CZECH, POLAND, HUNGARY, SLOVAKIA, BELARUS, WESTERN UKRAINE, MOLDOVA, NORTHERN ROMANIA, SOUTHERN LITHUANIA) -->
-	<CityMap>
+	<CityMap> <!-- CENTRAL AND EASTERN EUROPE (AUSTRIA, CZECH, POLAND, HUNGARY, SLOVAKIA, BELARUS, WESTERN UKRAINE, MOLDOVA, NORTHERN ROMANIA, SOUTHERN LITHUANIA) -->
 	
 		<Replace MapName="PlayEuropeAgain" X="47" Y="43" CityLocaleName="LOC_CITY_NAME_KLAGENFURT" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="48" Y="43" CityLocaleName="LOC_CITY_NAME_LJUBLJANA" Area="0" />
@@ -1591,8 +1643,7 @@
 	</CityMap>
 	
 		
-	<!-- BALTICS -->
-	<CityMap>
+	<CityMap> <!-- BALTICS -->
 	
 		<Replace MapName="PlayEuropeAgain" X="58" Y="62" CityLocaleName="LOC_CITY_NAME_KLAIPEDA" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="59" Y="62" CityLocaleName="LOC_CITY_NAME_SIAULIAI" Area="0" />
@@ -1687,65 +1738,7 @@
 		
 	</CityMap>
 	
-	<!-- ICELAND -->
-	<CityMap>
-	
-		<Replace MapName="PlayEuropeAgain" X="8" Y="88" CityLocaleName="LOC_CITY_NAME_KEFLAVIK" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="9" Y="88" CityLocaleName="LOC_CITY_NAME_HAFNARFJORTHUR" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="11" Y="88" CityLocaleName="LOC_CITY_NAME_HELLA" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="12" Y="88" CityLocaleName="LOC_CITY_NAME_HELLA" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="15" Y="88" CityLocaleName="LOC_CITY_NAME_HOFN" Area="0" />
-		
-		<Replace MapName="PlayEuropeAgain" X="9" Y="89" CityLocaleName="LOC_CITY_NAME_HAFNARFJORTHUR" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="10" Y="89" CityLocaleName="LOC_CITY_NAME_SELFOSS" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="11" Y="89" CityLocaleName="LOC_CITY_NAME_HELLA" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="12" Y="89" CityLocaleName="LOC_CITY_NAME_STORI_NUPUR" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="13" Y="89" CityLocaleName="LOC_CITY_NAME_FLJOTSDALSHREPPUR" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="14" Y="89" CityLocaleName="LOC_CITY_NAME_FLJOTSDALSHREPPUR" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="15" Y="89" CityLocaleName="LOC_CITY_NAME_REYTHARFJORTHUR" Area="0" />
-		
-		<Replace MapName="PlayEuropeAgain" X="9" Y="90" CityLocaleName="LOC_CITY_NAME_REYKJAVIK" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="10" Y="90" CityLocaleName="LOC_CITY_NAME_HVERAGERTHI" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="11" Y="90" CityLocaleName="LOC_CITY_NAME_HVERAGERTHI" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="12" Y="90" CityLocaleName="LOC_CITY_NAME_STORI_NUPUR" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="13" Y="90" CityLocaleName="LOC_CITY_NAME_STORI_NUPUR" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="14" Y="90" CityLocaleName="LOC_CITY_NAME_FLJOTSDALSHREPPUR" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="15" Y="90" CityLocaleName="LOC_CITY_NAME_REYTHARFJORTHUR" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="16" Y="90" CityLocaleName="LOC_CITY_NAME_REYTHARFJORTHUR" Area="0" />
-		
-		<Replace MapName="PlayEuropeAgain" X="9" Y="91" CityLocaleName="LOC_CITY_NAME_REYKJAVIK" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="10" Y="91" CityLocaleName="LOC_CITY_NAME_SKALHOLT" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="11" Y="91" CityLocaleName="LOC_CITY_NAME_SKEITHA" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="12" Y="91" CityLocaleName="LOC_CITY_NAME_SKEITHA" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="13" Y="91" CityLocaleName="LOC_CITY_NAME_SKEITHA" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="14" Y="91" CityLocaleName="LOC_CITY_NAME_HRAFNAGIL" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="15" Y="91" CityLocaleName="LOC_CITY_NAME_REYTHARFJORTHUR" Area="0" />
-		
-		<Replace MapName="PlayEuropeAgain" X="8" Y="92" CityLocaleName="LOC_CITY_NAME_GRUNDARFJORTHUR" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="9" Y="92" CityLocaleName="LOC_CITY_NAME_GRUNDARFJORTHUR" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="10" Y="92" CityLocaleName="LOC_CITY_NAME_BUTHARDALUR" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="11" Y="92" CityLocaleName="LOC_CITY_NAME_KALMANSTUNGA" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="12" Y="92" CityLocaleName="LOC_CITY_NAME_ABAER" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="13" Y="92" CityLocaleName="LOC_CITY_NAME_HRAFNAGIL" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="14" Y="92" CityLocaleName="LOC_CITY_NAME_AKUREYRI" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="15" Y="92" CityLocaleName="LOC_CITY_NAME_AKUREYRI" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="16" Y="92" CityLocaleName="LOC_CITY_NAME_THORSHOFN" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="17" Y="92" CityLocaleName="LOC_CITY_NAME_THORSHOFN" Area="0" />
-		
-		<Replace MapName="PlayEuropeAgain" X="10" Y="93" CityLocaleName="LOC_CITY_NAME_BUTHARDALUR" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="11" Y="93" CityLocaleName="LOC_CITY_NAME_HVAMMSTANGI" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="13" Y="93" CityLocaleName="LOC_CITY_NAME_AKUREYRI" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="14" Y="93" CityLocaleName="LOC_CITY_NAME_AKUREYRI" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="15" Y="93" CityLocaleName="LOC_CITY_NAME_THORSHOFN" Area="0" />
-		
-		<Replace MapName="PlayEuropeAgain" X="11" Y="94" CityLocaleName="LOC_CITY_NAME_HVAMMSTANGI" Area="0" />
-		
-		<Replace MapName="PlayEuropeAgain" X="9" Y="95" CityLocaleName="LOC_CITY_NAME_ISAFJORTHUR" />
-		
-	</CityMap>
-	
-	<!-- RUSSIA (CENTRAL) -->
-	<CityMap>
+	<CityMap> <!-- RUSSIA (CENTRAL) -->
 	
 		<Replace MapName="PlayEuropeAgain" X="78" Y="55" CityLocaleName="LOC_CITY_NAME_YELETS" />
 		<Replace MapName="PlayEuropeAgain" X="82" Y="55" CityLocaleName="LOC_CITY_NAME_GRYAZI" Area="0" />
