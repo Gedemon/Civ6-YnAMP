@@ -15,10 +15,11 @@ print ("Map Name = " .. tostring(mapName))
 ----------------------------------------------------------------------------------------
 -- City renaming
 ----------------------------------------------------------------------------------------
+local nameUsed = {}
 local nameUsedOnContinent = {}
 local nameUsedByCivilization = {}
 
-function SetExistingCityNames()
+function SetExistingCityNames(excludingCity)
 	nameUsedOnContinent = {}
 	nameUsedByCivilization = {}
 	for _, player_ID in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
@@ -27,20 +28,25 @@ function SetExistingCityNames()
 		local civilization = playerConfig:GetCivilizationTypeName()
 		local playerCities = player:GetCities();
 		for j, city in playerCities:Members() do
-			local plot = Map.GetPlot(city:GetX(), city:GetY())
-			local continent = plot:GetContinentType()
-			
-			if not nameUsedOnContinent[continent] then
-				nameUsedOnContinent[continent] = {}
+			if city ~= excludingCity then -- do not add the current name of the city we are renaming, in case it's valid at the city position.
+				local plot = Map.GetPlot(city:GetX(), city:GetY())
+				local continent = plot:GetContinentType()
+				
+				nameUsed[city:GetName()] = true
+				nameUsed[Locale.Lookup(city:GetName())] = true
+				
+				if not nameUsedOnContinent[continent] then
+					nameUsedOnContinent[continent] = {}
+				end
+				nameUsedOnContinent[continent][city:GetName()] = true
+				nameUsedOnContinent[continent][Locale.Lookup(city:GetName())] = true
+				
+				if not nameUsedByCivilization[civilization] then
+					nameUsedByCivilization[civilization] = {}
+				end
+				nameUsedByCivilization[civilization][city:GetName()] = true
+				nameUsedByCivilization[civilization][Locale.Lookup(city:GetName())] = true
 			end
-			nameUsedOnContinent[continent][city:GetName()] = true
-			nameUsedOnContinent[continent][Locale.Lookup(city:GetName())] = true
-			
-			if not nameUsedByCivilization[civilization] then
-				nameUsedByCivilization[civilization] = {}
-			end
-			nameUsedByCivilization[civilization][city:GetName()] = true
-			nameUsedByCivilization[civilization][Locale.Lookup(city:GetName())] = true
 		end		
 	end
 end
@@ -58,7 +64,7 @@ end
 function ChangeCityName( ownerPlayerID, cityID)
 	local pCity = CityManager.GetCity(ownerPlayerID, cityID)	
 	if pCity then
-		SetExistingCityNames()
+		SetExistingCityNames(pCity)
 		local x = pCity:GetX()
 		local y = pCity:GetY()
 		local CivilizationTypeName = PlayerConfigurations[ownerPlayerID]:GetCivilizationTypeName()
@@ -120,6 +126,19 @@ function ChangeCityName( ownerPlayerID, cityID)
 end
 Events.CityInitialized.Add( ChangeCityName )
 
+function ListCityWithoutLOC()
+	for row in GameInfo.CityMap() do
+		local name = row.CityLocaleName
+		if name then
+			if Locale.Lookup(name) == name then
+				print("WARNING : no translation for "..tostring(name))
+			end
+		else
+			print("ERROR : no name at row "..tostring(row.Index + 1))
+		end
+	end
+end
+Events.LoadScreenClose.Add( ListCityWithoutLOC )
 
 ----------------------------------------------------------------------------------------
 -- Export Cliffs positions from a civ6 map to Lua.log
