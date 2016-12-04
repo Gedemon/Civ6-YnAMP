@@ -130,7 +130,7 @@
 
 	<CityMap> <!-- ITALY, SICILY, SARDINIA, & CORSICA -->
 	
-		<!-- ITALY (MAINLAND) -->
+		<!-- SICILY, SARDINIA, & CORSICA -->
         	<Replace MapName="PlayEuropeAgain" X="43" Y="22" CityLocaleName="LOC_CITY_NAME_RAGUSA" Area="0" />
         	<Replace MapName="PlayEuropeAgain" X="44" Y="22" CityLocaleName="LOC_CITY_NAME_SIRACUSA" Area="0" />
         	
@@ -252,8 +252,8 @@
         	<Replace MapName="PlayEuropeAgain" X="37" Y="42" CityLocaleName="LOC_CITY_NAME_SAVONA" Area="0" />
         	<Replace MapName="PlayEuropeAgain" X="39" Y="42" CityLocaleName="LOC_CITY_NAME_GENOVA" />
         	<Replace MapName="PlayEuropeAgain" X="41" Y="42" CityLocaleName="LOC_CITY_NAME_PIACENZA" Area="0" />
-        	<Replace MapName="PlayEuropeAgain" X="42" Y="42" CityLocaleName="LOC_CITY_NAME_CREMONA" Area="0" Area="0" />
-        	<Replace MapName="PlayEuropeAgain" X="44" Y="42" CityLocaleName="LOC_CITY_NAME_VERONA" Area="0" Area="0" />
+        	<Replace MapName="PlayEuropeAgain" X="42" Y="42" CityLocaleName="LOC_CITY_NAME_CREMONA" Area="0" />
+        	<Replace MapName="PlayEuropeAgain" X="44" Y="42" CityLocaleName="LOC_CITY_NAME_VERONA" Area="0" />
         	<Replace MapName="PlayEuropeAgain" X="45" Y="42" CityLocaleName="LOC_CITY_NAME_PADOVA" Area="0" />
         	<Replace MapName="PlayEuropeAgain" X="46" Y="42" CityLocaleName="LOC_CITY_NAME_VENETIA" Area="0" />
         	<Replace MapName="PlayEuropeAgain" X="47" Y="42" CityLocaleName="LOC_CITY_NAME_AQUILEIA" Area="0" />
@@ -413,7 +413,7 @@
 	
 	<CityMap> <!-- BRITISH ISLES -->
         
-        	<!-- GREAT BRITAIN, MAN, SKYE, ORKNEYS, AND FAROES -->
+        	<!-- GREAT BRITAIN, MAN, SKYE, ORKNEYS, & FAROES -->
 		<Replace MapName="PlayEuropeAgain" X="25" Y="58" CityLocaleName="LOC_CITY_NAME_TORQUAY" Area="0" />
 		
 		<Replace MapName="PlayEuropeAgain" X="22" Y="59" CityLocaleName="LOC_CITY_NAME_ST_IVES" Area="0" />
@@ -649,7 +649,7 @@
 		<Replace MapName="PlayEuropeAgain" X="43" Y="63" CityLocaleName="LOC_CITY_NAME_HUSUM" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="44" Y="63" CityLocaleName="LOC_CITY_NAME_FLENSBURG" Area="0" />
 		
-		<!-- SOUTHERN GERMANY (INCLUDING HELVETIA, EXCLUDING CHECZ AND AUSTRIA) -->
+		<!-- SOUTHERN GERMANY (INCLUDING HELVETIA, EXCLUDING CZECHIA AND AUSTRIA) -->
 		<Replace MapName="PlayEuropeAgain" X="36" Y="45" CityLocaleName="LOC_CITY_NAME_GENEVA" Area="0" />
 		
 		<Replace MapName="PlayEuropeAgain" X="36" Y="46" CityLocaleName="LOC_CITY_NAME_GENEVA" Area="0" />
@@ -1132,8 +1132,7 @@
 	
 	<CityMap> <!-- GREECE -->
 		
-		<!-- GREECE MAINLAND -->
-		
+		<!-- GREECE (MAINLAND) -->
 		<Replace MapName="PlayEuropeAgain" X="58" Y="20" CityLocaleName="LOC_CITY_NAME_KALAMATA" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="59" Y="20" CityLocaleName="LOC_CITY_NAME_SPARTA" Area="0" />
 		
@@ -1379,7 +1378,7 @@
 		
 	</CityMap>
 	
-	<CityMap> <!-- CENTRAL AND EASTERN EUROPE (AUSTRIA, CZECH, POLAND, HUNGARY, SLOVAKIA, BELARUS, WESTERN UKRAINE, MOLDOVA, NORTHERN ROMANIA, SOUTHERN LITHUANIA) -->
+	<CityMap> <!-- CENTRAL AND EASTERN EUROPE (AUSTRIA, CZECHIA, POLAND, HUNGARY, SLOVAKIA, BELARUS, WESTERN UKRAINE, MOLDOVA, NORTHERN ROMANIA, & SOUTHERN LITHUANIA) -->
 	
 		<Replace MapName="PlayEuropeAgain" X="47" Y="43" CityLocaleName="LOC_CITY_NAME_KLAGENFURT" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="48" Y="43" CityLocaleName="LOC_CITY_NAME_LJUBLJANA" Area="0" />
