@@ -9,7 +9,10 @@
 
 	<CityMap>
 	
-		<!-- IBERIA -->
+		<!-- FRANCE -->
+        	<Replace MapName="PlayEuropeAgain" X="35" Y="40" CityLocaleName="LOC_CITY_NAME_FRAXINET" Civilization="CIVILIZATION_ARABIA" Area="0" />
+        	
+        	<!-- IBERIA -->
         	<Replace MapName="PlayEuropeAgain" X="22" Y="36" CityLocaleName="LOC_CITY_NAME_VALENCIA" Civilization="CIVILIZATION_ARABIA" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="16" Y="41" CityLocaleName="LOC_CITY_NAME_VALLADOLID" Civilization="CIVILIZATION_ARABIA" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="14" Y="42" CityLocaleName="LOC_CITY_NAME_PORTO" Area="0" Civilization="CIVILIZATION_ARABIA" />
