@@ -138,7 +138,32 @@ function ListCityWithoutLOC()
 		end
 	end
 end
-Events.LoadScreenClose.Add( ListCityWithoutLOC )
+if mapName then
+	Events.LoadScreenClose.Add( ListCityWithoutLOC )
+end
+
+function ListCityNotOnMap()
+	local hasMap = {}
+	for row in GameInfo.CityMap() do
+		local name = row.CityLocaleName
+		if name then
+			hasMap[name] = true
+			hasMap[Locale.Lookup(name)] = true
+		else
+			print("ERROR : no name at row "..tostring(row.Index + 1))
+		end
+	end
+	for row in GameInfo.CityNames() do
+		local name = row.CityName
+		local civilization = row.CivilizationType
+		if not (hasMap[name] or hasMap[Locale.Lookup(name)]) then
+			print("Not mapped for "..tostring(civilization).." : "..tostring(name))
+		end
+	end
+end
+if mapName then
+	Events.LoadScreenClose.Add( ListCityNotOnMap )
+end
 
 ----------------------------------------------------------------------------------------
 -- Export Cliffs positions from a civ6 map to Lua.log

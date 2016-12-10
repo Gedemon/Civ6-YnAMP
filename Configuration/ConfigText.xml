@@ -276,5 +276,9 @@
       <Text>Place stone for Stonehenge</Text>
     </Replace>
 	
+    <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Language="en_US">
+      <Text>No ice near land (to help circumnavigation)</Text>
+    </Replace>
+	
   </LocalizedText>
 </GameData>

@@ -139,26 +139,24 @@ end
 
 ------------------------------------------------------
 
-function OnCombat(...)
-	print("-------------------------")
-	print("Events.Combat : ")
-	print(unpack({...}))
-	print("-------------------------")
+function OnPlayerTurnActivated( iPlayer, bFirstTime )
+	local player = Players[iPlayer]
+	if (bFirstTime) and player:GetCities():GetCount() == 0 and not player:IsHuman() then
+		print("- Checking for Settler on TSL for player #".. tostring(iPlayer))
+		local startingPlot = player:GetStartingPlot()	
+		if startingPlot and not startingPlot:IsCity() then
+			local unitsInPlot = Units.GetUnitsInPlot(startingPlot)
+			if unitsInPlot ~= nil then
+				for _, unit in ipairs(unitsInPlot) do
+					if (UnitManager.GetTypeName(unit) == "LOC_UNIT_SETTLER_NAME") then
+						print("  - found Settler !")
+						player:GetUnits():Destroy(unit)
+						print("  - create city here...")
+						player:GetCities():Create(startingPlot:GetX(), startingPlot:GetY())
+					end
+				end
+			end		
+		end	
+	end
 end
-Events.Combat.Add( OnCombat )
-
-function OnCombatVisBegin(...)
-	print("-------------------------")
-	print("Events.CombatVisBegin :")
-	print(unpack({...}))
-	print("-------------------------")
-end
-Events.CombatVisBegin.Add( OnCombatVisBegin )
-
-function OnCombatVisEnd(...)
-	print("-------------------------")
-	print("Events.CombatVisEnd : ")
-	print(unpack({...}))
-	print("-------------------------")
-end
-Events.CombatVisEnd.Add( OnCombatVisEnd )
+Events.PlayerTurnActivated.Add( OnPlayerTurnActivated )

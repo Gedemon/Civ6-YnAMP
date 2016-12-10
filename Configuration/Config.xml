@@ -202,8 +202,8 @@
 		<Row Key1="Map" Key2="GiantEarth.lua" 		ParameterId="GiantEarthEquator" 		Name="EquatorAdjustment" Description="" Domain="text" DefaultValue="-17"	ConfigurationGroup="Map" ConfigurationId="EquatorAdjustment" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" 		ParameterId="GiantEarthJungle" 			Name="JunglePercent" Description="" Domain="text" DefaultValue="18" ConfigurationGroup="Map" ConfigurationId="JunglePercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" 		ParameterId="GiantEarthMarsh" 			Name="MarshPercent" Description="" Domain="text" DefaultValue="2" 	ConfigurationGroup="Map" ConfigurationId="MarshPercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
-		<Row Key1="Map" Key2="GiantEarth.lua" 		ParameterId="GiantEarthIceNorth" 		Name="IceNorth" Description="" Domain="text" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="IceNorth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
-		<Row Key1="Map" Key2="GiantEarth.lua" 		ParameterId="GiantEarthIceSouth" 		Name="IceSouth" Description="" Domain="text" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="IceSouth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" 		ParameterId="GiantEarthIceNorth" 		Name="IceNorth" Description="" Domain="text" DefaultValue="5" ConfigurationGroup="Map" ConfigurationId="IceNorth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" 		ParameterId="GiantEarthIceSouth" 		Name="IceSouth" Description="" Domain="text" DefaultValue="3" ConfigurationGroup="Map" ConfigurationId="IceSouth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		
 		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="GreatestEarthMapEquator" 	Name="EquatorAdjustment" Description="" Domain="text" DefaultValue="-10" 	ConfigurationGroup="Map" ConfigurationId="EquatorAdjustment" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="GreatestEarthMapJungle" 	Name="JunglePercent" Description="" Domain="text" DefaultValue="14" ConfigurationGroup="Map" ConfigurationId="JunglePercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
@@ -222,9 +222,13 @@
 		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthForest" 	Name="ForestPercent" Description="" Domain="text" DefaultValue="22" ConfigurationGroup="Map" ConfigurationId="ForestPercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthMarsh" 	Name="MarshPercent" Description="" Domain="text" DefaultValue="2" 	ConfigurationGroup="Map" ConfigurationId="MarshPercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthOasis" 	Name="OasisPercent" Description="" Domain="text" DefaultValue="1" 	ConfigurationGroup="Map" ConfigurationId="OasisPercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
-		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthIceNorth" 	Name="IceNorth" Description="" Domain="text" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="IceNorth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
-		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthIceSouth" 	Name="IceSouth" Description="" Domain="text" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="IceSouth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
-		
+		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthIceNorth" 	Name="IceNorth" Description="" Domain="text" DefaultValue="5" ConfigurationGroup="Map" ConfigurationId="IceNorth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthIceSouth" 	Name="IceSouth" Description="" Domain="text" DefaultValue="4" ConfigurationGroup="Map" ConfigurationId="IceSouth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+	
+		<!--	New option for all maps to prevent Ice adjacent to land (help circumnavigation)
+		-->
+		<Row ParameterId="NoIceAdjacentToLand" Name="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="NoIceAdjacentToLand" GroupId="MapOptions" SortIndex="2000"/>
+	
 		<!--	Some Settings where linked to "RULESET_STANDARD", make them available with all
 		-->
 		<Row ParameterId="NoGoodyHuts" Name="LOC_GAME_NO_GOODY_HUTS" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAME_NO_GOODY_HUTS" GroupId="AdvancedOptions" SortIndex="2010"/>

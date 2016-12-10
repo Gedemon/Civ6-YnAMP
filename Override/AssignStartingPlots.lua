@@ -3535,12 +3535,13 @@ function SetTrueStartingLocations()
 			local plot = Map.GetPlot(position.X, position.Y)
 			if plot:IsStartingPlot() then
 				print ("WARNING ! Plot is already a Starting Position")
-			end
-			player:SetStartingPlot(plot)
-			if player:IsMajor() then
-				--table.insert(AssignStartingPlots.majorStartPlots, plot);
 			else
-				--table.insert(AssignStartingPlots.minorStartPlots, plot)
+				player:SetStartingPlot(plot)
+				if player:IsMajor() then
+					--table.insert(AssignStartingPlots.majorStartPlots, plot);
+				else
+					--table.insert(AssignStartingPlots.minorStartPlots, plot)
+				end
 			end
 		end
 	end	
@@ -4288,6 +4289,11 @@ function FeatureGenerator:AddIceAtPlot(plot, iX, iY)
 	end
 	
 	if bNorth and iIceNorth and (iIceNorth == 0 or self.iGridH - iIceNorth > iY) then
+		return
+	end
+	
+	local bNoIceAdjacentToLand = MapConfiguration.GetValue("NoIceAdjacentToLand");
+	if bNoIceAdjacentToLand and plot:IsAdjacentToLand() then
 		return
 	end
 
