@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+ 
+	<!-- Replacing -->
+    <Replace Tag="LOC_MAP_RESOURCES_NAME" Language="zh_Hant_HK">
+      <Text>資源數量</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_START_POSITION_NAME" Language="zh_Hant_HK">
+      <Text>出生地平衡</Text>
+    </Replace>
+	
+	<!-- New entries -->
+	
+    <Replace Tag="LOC_YNAGEM_RULESET1_NAME" Language="zh_Hant_HK">
+      <Text>地球 1：小型</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_RULESET2_NAME" Language="zh_Hant_HK">
+      <Text>地球 2：中型</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_RULESET3_NAME" Language="zh_Hant_HK">
+      <Text>地球 3：大型</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_EURO_RULESET0_NAME" Language="zh_Hant_HK">
+      <Text>歐洲：文明限定</Text>
+    </Replace>
+    <Replace Tag="LOC_EURO_RULESET1_NAME" Language="zh_Hant_HK">
+      <Text>歐洲 1：小型</Text>
+    </Replace>
+    <Replace Tag="LOC_EURO_RULESET2_NAME" Language="zh_Hant_HK">
+      <Text>歐洲 2：中型</Text>
+    </Replace>
+    <Replace Tag="LOC_EURO_RULESET3_NAME" Language="zh_Hant_HK">
+      <Text>歐洲 3：大型</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_OLDWORLD_RULESET1_NAME" Language="zh_Hant_HK">
+      <Text>舊世界 1：小型</Text>
+    </Replace>
+    <Replace Tag="LOC_OLDWORLD_RULESET2_NAME" Language="zh_Hant_HK">
+      <Text>舊世界 2：中型</Text>
+    </Replace>
+    <Replace Tag="LOC_OLDWORLD_RULESET3_NAME" Language="zh_Hant_HK">
+      <Text>舊世界 3：大型</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAGEM_RULESET0_DESC" Language="zh_Hant_HK">
+      <Text>使用標準的文明帝國VI遊戲規則</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_RULESET1_DESC" Language="zh_Hant_HK">
+      <Text>適用於小型地圖[NEWLINE]- 專用規則：[NEWLINE][ICON_Bullet]城市最小距離改為2格[NEWLINE][ICON_Bullet]移除布魯塞爾，日內瓦和里斯本城邦[NEWLINE]- 通用規則：[NEWLINE][ICON_Bullet]蠻族營地減少33%（2/文明）[NEWLINE][ICON_Bullet]蠻族營地與城市間的最小距離提高到7格[NEWLINE][ICON_Bullet]調整部分首都名稱[NEWLINE][ICON_Bullet]調整資源放置規則[NEWLINE][ICON_Bullet]調整多佛白崖產出（2[ICON_Food]，1[ICON_Culture]，1[ICON_Gold]）</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_RULESET2_DESC" Language="zh_Hant_HK">
+      <Text>適用於中型地圖[NEWLINE]- 專用規則：[NEWLINE][ICON_Bullet]移除布魯塞爾和日內瓦城邦邦[NEWLINE]- 通用規則：[NEWLINE][ICON_Bullet]蠻族營地減少33%（2/文明）[NEWLINE][ICON_Bullet]蠻族營地與城市間的最小距離提高到7格[NEWLINE][ICON_Bullet]調整部分首都名稱[NEWLINE][ICON_Bullet]調整資源放置規則[NEWLINE][ICON_Bullet]調整多佛白崖產出（2[ICON_Food]，1[ICON_Culture]，1[ICON_Gold]）</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_RULESET3_DESC" Language="zh_Hant_HK">
+      <Text>適用於大型地圖[NEWLINE]- 專用規則：[NEWLINE][ICON_Bullet]海洋地格雙倍[ICON_Movement]移動值[NEWLINE][ICON_Bullet]提高道路[ICON_Movement]移動值[NEWLINE][ICON_Bullet]提高文明間的最小距離[NEWLINE]- 通用規則：[NEWLINE][ICON_Bullet]蠻族營地減少33%（2/文明）[NEWLINE][ICON_Bullet]蠻族營地與城市間的最小距離提高到7格[NEWLINE][ICON_Bullet]調整部分首都名稱[NEWLINE][ICON_Bullet]調整資源放置規則[NEWLINE][ICON_Bullet]調整多佛白崖產出（2[ICON_Food]，1[ICON_Culture]，1[ICON_Gold]）</Text>
+    </Replace>
+    
+	<Replace Tag="LOC_YNAGEM_NAME" Language="zh_Hant_HK">
+      <Text>地球（特大）</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_DESC" Language="zh_Hant_HK">
+      <Text>Genghis Kai的特大地球地圖（Hormigas版）（180x94）</Text>
+    </Replace>
+    <Replace Tag="LOC_GREATESTEARTH_NAME" Language="zh_Hant_HK">
+      <Text>最偉大的地球</Text>
+    </Replace>
+    <Replace Tag="LOC_GREATESTEARTH_DESC" Language="zh_Hant_HK">
+      <Text>djvandyke的最偉大的地球地圖（104x64）</Text>
+    </Replace>
+    <Replace Tag="LOC_PLAYEUROPEAGAIN_NAME" Language="zh_Hant_HK">
+      <Text>歐洲再臨</Text>
+    </Replace>
+    <Replace Tag="LOC_PLAYEUROPEAGAIN_DESC" Language="zh_Hant_HK">
+      <Text>NiRv4n4的歐洲地圖（Hormigas版）（108x98）</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGESTEARTH_NAME" Language="zh_Hant_HK">
+      <Text>[COLOR_RED]地球（最大）[ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGESTEARTH_DESC" Language="zh_Hant_HK">
+      <Text>最大的地球地圖（230x116）[NEWLINE][ICON_Exclamation] [COLOR_RED]極長的加載時間！（約5分鐘）[ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]高顯存佔用！[ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]NASA的超級計算機恨死它了！[ENDCOLOR]</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Language="zh_Hant_HK">
+      <Text>文明位置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>決定在地圖上放置文明的規則</Text>
+    </Replace>
+    <Replace Tag="LOC_CULTURALLY_LINKED_START_NAME" Language="zh_Hant_HK">
+      <Text>出生地關聯</Text>
+    </Replace>
+    <Replace Tag="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>是否依據人文地理來關聯文明出生地</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_NAME" Language="zh_Hant_HK">
+      <Text>隨機</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>不依據種族來關聯出生地（文明帝國VI原版規則）</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_NAME" Language="zh_Hant_HK">
+      <Text>人文地理</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>依據種族來關聯文明出生地</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS_NAME" Language="zh_Hant_HK">
+      <Text>巨大</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>供16名玩家使用的巨大地圖（128x80）</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_GIANT_NAME" Language="zh_Hant_HK">
+      <Text>極大</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_GIANT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>供20名或更多玩家使用的極大地圖（180x94）</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LUDICROUS_NAME" Language="zh_Hant_HK">
+      <Text>最大</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>你的電腦玩命加載時你能經受得起時間的考驗嗎？（230x115）</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_NAME" Language="zh_Hant_HK">
+      <Text>資源放置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>決定在地圖上放置資源的規則</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_NAME" Language="zh_Hant_HK">
+      <Text>隨機</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>使用標準的文明帝國VI地圖生成規則</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_NAME" Language="zh_Hant_HK">
+      <Text>導入</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>從原始地圖數據中導入資源位置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_NAME" Language="zh_Hant_HK">
+      <Text>資源禁區</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>部分資源將不會被放置在地圖上某些預定的區域</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_NAME" Language="zh_Hant_HK">
+      <Text>現實世界資源儲藏</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>某些資源儲藏將被放置在對應的現實世界區域</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_ACTIVATED_NAME" Language="zh_Hant_HK">
+      <Text>啟用</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_DEACTIVATED_NAME" Language="zh_Hant_HK">
+      <Text>禁用</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_NAME" Language="zh_Hant_HK">
+      <Text>文明特產</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>為某些特定文明的出生地周圍放置其現實世界特產資源</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_NAME" Language="zh_Hant_HK">
+      <Text>地貌特征</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>決定在地圖上放置地貌（樹林，雨林……）的規則</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_NAME" Language="zh_Hant_HK">
+      <Text>隨機</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>使用標準的文明帝國VI地圖生成規則</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_NAME" Language="zh_Hant_HK">
+      <Text>導入</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>從原始地圖數據中導入地貌位置</Text>
+    </Replace>
+	
+   <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_NAME" Language="zh_Hant_HK">
+      <Text>隨機</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>使用標準的文明帝國VI地圖生成規則</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_NAME" Language="zh_Hant_HK">
+      <Text>現實世界</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>盡可能將文明放置在其現實世界中的位置</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_NAME" Language="zh_Hant_HK">
+      <Text>大陸名稱</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>決定在地圖上劃分大陸名稱的規則</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_NAME" Language="zh_Hant_HK">
+      <Text>隨機名稱</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>使用標準的文明帝國VI地圖生成規則</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_NAME" Language="zh_Hant_HK">
+      <Text>導入</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>從原始地圖數據中導入大陸名稱</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_NAME" Language="zh_Hant_HK">
+      <Text>河流放置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>決定在地圖上放置河流的規則</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_NAME" Language="zh_Hant_HK">
+      <Text>隨機</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>使用標準的文明帝國VI地圖生成規則</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_NAME" Language="zh_Hant_HK">
+      <Text>導入</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>從原始地圖數據中導入河流位置</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_NAME" Language="zh_Hant_HK">
+      <Text>自然奇觀</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>決定在地圖上放置自然奇觀的規則</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_NAME" Language="zh_Hant_HK">
+      <Text>隨機</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>使用標準的文明帝國VI地圖生成規則</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_NAME" Language="zh_Hant_HK">
+      <Text>導入</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>從原始地圖數據中導入自然奇觀位置</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_NAME" Language="zh_Hant_HK">
+      <Text>無</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" Language="zh_Hant_HK">
+      <Text>不放置</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CLOSED_BOSPHORUS_NAME" Language="zh_Hant_HK">
+      <Text>關閉伊斯坦布爾海峽</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MONT_SAINT_MICHEL_MARSH_NAME" Language="zh_Hant_HK">
+      <Text>為圣米歇爾山放置沼澤</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_STONEHENGE_STONE_NAME" Language="zh_Hant_HK">
+      <Text>為巨石陣放置石頭</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Language="zh_Hant_HK">
+      <Text>陸地周圍無冰層（以便環球航行）</Text>
+    </Replace>
+	
+  </LocalizedText>
+</GameData>

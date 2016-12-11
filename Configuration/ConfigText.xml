@@ -16,7 +16,7 @@
       <Text>Earth 1 : Small Scale</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_RULESET2_NAME" Language="en_US">
-      <Text>Earth 2 : Medium  Scale</Text>
+      <Text>Earth 2 : Medium Scale</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_RULESET3_NAME" Language="en_US">
       <Text>Earth 3 : Large Scale</Text>
@@ -29,7 +29,7 @@
       <Text>Euro 1 : Small Scale</Text>
     </Replace>
     <Replace Tag="LOC_EURO_RULESET2_NAME" Language="en_US">
-      <Text>Euro 2 : Medium  Scale</Text>
+      <Text>Euro 2 : Medium Scale</Text>
     </Replace>
     <Replace Tag="LOC_EURO_RULESET3_NAME" Language="en_US">
       <Text>Euro 3 : Large Scale</Text>
@@ -39,7 +39,7 @@
       <Text>Old World 1 : Small Scale</Text>
     </Replace>
     <Replace Tag="LOC_OLDWORLD_RULESET2_NAME" Language="en_US">
-      <Text>Old World 2 : Medium  Scale</Text>
+      <Text>Old World 2 : Medium Scale</Text>
     </Replace>
     <Replace Tag="LOC_OLDWORLD_RULESET3_NAME" Language="en_US">
       <Text>Old World 3 : Large Scale</Text>

@@ -21,6 +21,7 @@
 			<Items>
 				<File>Configuration/ConfigText.xml</File>
 				<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
+				<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
 			</Items>
 		</LocalizedText>
 	</Settings>	
@@ -172,15 +173,18 @@
 	<LocalizedText>
 		<Text id="LOC_YNAMP_TITLE">
 			<en_US>Yet (not) Another Maps Pack</en_US>
-			<zh_Hans_CN>模拟现实世界地图包</zh_Hans_CN>
+			<zh_Hans_CN>然而（并非）又一个地图包</zh_Hans_CN>
+			<zh_Hant_HK>然而（並非）又一個地圖包</zh_Hant_HK>
 		</Text>
 		<Text id="LOC_YNAMP_TEASER">
 			<en_US>Maps with True or Culturally Linked Start Locations.</en_US>
-			<zh_Hans_CN>模拟文明在现实世界中或在人文地理中关联的起始位置的地图包。</zh_Hans_CN>
+			<zh_Hans_CN>带有现实世界或人文地理关联出生地的地图包。</zh_Hans_CN>
+			<zh_Hant_HK>帶有現實世界或人文地理關聯出生地的地圖包。</zh_Hant_HK>
 		</Text>
 		<Text id="LOC_YNAMP_DESCRIPTION">
 			<en_US>Maps with True or Culturally Linked Starting Location and custom options.</en_US>
-			<zh_Hans_CN>模拟文明在现实世界中或在人文地理中关联的起始位置以及自定义选项的地图包。</zh_Hans_CN>
+			<zh_Hans_CN>带有现实世界或人文地理关联出生地，以及自定义选项的地图包。</zh_Hans_CN>
+			<zh_Hant_HK>帶有現實世界或人文地理關聯出生地，以及自定義選項的地圖包。</zh_Hant_HK>
 		</Text>
 	</LocalizedText>
 	
@@ -188,6 +192,7 @@
 		<File>Configuration/Config.xml</File>
 		<File>Configuration/ConfigText.xml</File>
 		<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
+		<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
 		<File>Gameplay/Tables.sql</File>
 		<File>Gameplay/GamePlay.xml</File>
 		<File>Gameplay/GamePlay.sql</File>
