@@ -2342,16 +2342,136 @@
 	<Replace MapName="PlayEuropeAgain" X="11" Y="25" CityLocaleName="LOC_CITY_NAME_RABAT" />
 	<Replace MapName="PlayEuropeAgain" X="15" Y="25" CityLocaleName="LOC_CITY_NAME_TAOUNATA" Area="0" />
 	
-	<Replace MapName="PlayEuropeAgain" X="14" Y="26" CityLocaleName="LOC_CITY_NAME_SALE" Area="0" />
-	<Replace MapName="PlayEuropeAgain" X="15" Y="26" CityLocaleName="LOC_CITY_NAME_KENITRA" Area="0" />
-	<Replace MapName="PlayEuropeAgain" X="16" Y="26" CityLocaleName="LOC_CITY_NAME_CHEFCHAOU" Area="0" />
-	<Replace MapName="PlayEuropeAgain" X="18" Y="26" CityLocaleName="LOC_CITY_NAME_HOCEIMA" Area="0" />
-	<Replace MapName="PlayEuropeAgain" X="20" Y="26" CityLocaleName="LOC_CITY_NAME_NADOR" />
+	<Replace MapName="PlayEuropeAgain" X="13" Y="26" CityLocaleName="LOC_CITY_NAME_SALE" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="14" Y="26" CityLocaleName="LOC_CITY_NAME_KENITRA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="15" Y="26" CityLocaleName="LOC_CITY_NAME_CHEFCHAOUEN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="17" Y="26" CityLocaleName="LOC_CITY_NAME_HOCEIMA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="19" Y="26" CityLocaleName="LOC_CITY_NAME_NADOR" />
 	
-	<Replace MapName="PlayEuropeAgain" X="17" Y="27" CityLocaleName="LOC_CITY_NAME_TETOUAN" />
+	<Replace MapName="PlayEuropeAgain" X="16" Y="27" CityLocaleName="LOC_CITY_NAME_TETOUAN" />
 	
-	<Replace MapName="PlayEuropeAgain" X="15" Y="28" CityLocaleName="LOC_CITY_NAME_TANGIER" />
+	<Replace MapName="PlayEuropeAgain" X="14" Y="28" CityLocaleName="LOC_CITY_NAME_TANGIER" />
 	
 	</CityMap>
 	
+	<!-- CENTRAL AFRICA (ALGERIA, TUNISIA, NORTH LIBYA) -->
+	<CityMap>
+	<Replace MapName="PlayEuropeAgain" X="22" Y="0" CityLocaleName="LOC_CITY_NAME_MGUIDEN" />
+	<Replace MapName="PlayEuropeAgain" X="27" Y="0" CityLocaleName="LOC_CITY_NAME_FOGGARET_EZ_ZOUA" />
+	
+	<Replace MapName="PlayEuropeAgain" X="34" Y="1" CityLocaleName="LOC_CITY_NAME_HASSI_BEL_GUEBBOUR" Area="3" />
+	
+	<Replace MapName="PlayEuropeAgain" X="25" Y="2" CityLocaleName="LOC_CITY_NAME_EL_MENIA" Area="2" />
+	
+	<Replace MapName="PlayEuropeAgain" X="29" Y="3" CityLocaleName="LOC_CITY_NAME_HASSI_MESSAOUD" Area="3" />
+	<Replace MapName="PlayEuropeAgain" X="39" Y="3" CityLocaleName="LOC_CITY_NAME_STAH" Area="3" />
+	
+	<Replace MapName="PlayEuropeAgain" X="22" Y="4" CityLocaleName="LOC_CITY_NAME_GRAND_ERG_OCCIDENTAL" Area="2" />
+	
+	<Replace MapName="PlayEuropeAgain" X="25" Y="6" CityLocaleName="LOC_CITY_NAME_HASSI_FEHAL" Area="2" />
+	<Replace MapName="PlayEuropeAgain" X="37" Y="6" CityLocaleName="LOC_CITY_NAME_DEBDEB" Area="2" />
+	
+	<Replace MapName="PlayEuropeAgain" X="42" Y="7" CityLocaleName="LOC_CITY_NAME_BORJ_EL_KHADRA" />
+	
+	<Replace MapName="PlayEuropeAgain" X="29" Y="8" CityLocaleName="LOC_CITY_NAME_GASSI_EL_AGREB" Area="2" />
+	<Replace MapName="PlayEuropeAgain" X="34" Y="8" CityLocaleName="LOC_CITY_NAME_EL_BORMA" Area="3" />
+	<Replace MapName="PlayEuropeAgain" X="40" Y="8" CityLocaleName="LOC_CITY_NAME_GADAMIS" />
+	
+	<Replace MapName="PlayEuropeAgain" X="22" Y="9" CityLocaleName="LOC_CITY_NAME_BENOUD" Area="2" />
+	<Replace MapName="PlayEuropeAgain" X="25" Y="9" CityLocaleName="LOC_CITY_NAME_MANSOURA" />
+	
+	<Replace MapName="PlayEuropeAgain" X="31" Y="10" CityLocaleName="LOC_CITY_NAME_TAMANGHASSET" />
+	<Replace MapName="PlayEuropeAgain" X="38" Y="10" CityLocaleName="LOC_CITY_NAME_SINAWIN" />
+	<Replace MapName="PlayEuropeAgain" X="42" Y="10" CityLocaleName="LOC_CITY_NAME_GARYAN" />
+	<Replace MapName="PlayEuropeAgain" X="44" Y="10" CityLocaleName="LOC_CITY_NAME_BANI_WALED" />
+	
+	<Replace MapName="PlayEuropeAgain" X="40" Y="11" CityLocaleName="LOC_CITY_NAME_ASH_SHWAYRIF" />
+	
+	<Replace MapName="PlayEuropeAgain" X="25" Y="12" CityLocaleName="LOC_CITY_NAME_GHARDAIA" />
+	<Replace MapName="PlayEuropeAgain" X="28" Y="12" CityLocaleName="LOC_CITY_NAME_OUARGLA" Area="2" />
+	<Replace MapName="PlayEuropeAgain" X="35" Y="12" CityLocaleName="LOC_CITY_NAME_JEBIL" />
+	<Replace MapName="PlayEuropeAgain" X="43" Y="12" CityLocaleName="LOC_CITY_NAME_MSALLATA" />
+	
+	<Replace MapName="PlayEuropeAgain" X="22" Y="13" CityLocaleName="LOC_CITY_NAME_MOGHRAR" />
+	<Replace MapName="PlayEuropeAgain" X="37" Y="13" CityLocaleName="LOC_CITY_NAME_TATAOUINE" Area="2" />
+	<Replace MapName="PlayEuropeAgain" X="40" Y="13" CityLocaleName="LOC_CITY_NAME_AL_JAWSH" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="41" Y="13" CityLocaleName="LOC_CITY_NAME_ALZINTAN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="45" Y="13" CityLocaleName="LOC_CITY_NAME_MISRATA" />
+	
+	<Replace MapName="PlayEuropeAgain" X="24" Y="14" CityLocaleName="LOC_CITY_NAME_EL_BADIYAH" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="23" Y="15" CityLocaleName="LOC_CITY_NAME_EL_BADIYAH" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="24" Y="16" CityLocaleName="LOC_CITY_NAME_EL_BADIYAH" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="32" Y="14" CityLocaleName="LOC_CITY_NAME_GRAND_ERG_ORIENTAL" Area="3" />
+	<Replace MapName="PlayEuropeAgain" X="41" Y="14" CityLocaleName="LOC_CITY_NAME_ALRIYAYNA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="44" Y="14" CityLocaleName="LOC_CITY_NAME_AL_KHUMS" Area="0" />
+	
+	<Replace MapName="PlayEuropeAgain" X="25" Y="15" CityLocaleName="LOC_CITY_NAME_LAGHOUAT" />
+	<Replace MapName="PlayEuropeAgain" X="39" Y="15" CityLocaleName="LOC_CITY_NAME_ZUWARA" />
+	<Replace MapName="PlayEuropeAgain" X="42" Y="15" CityLocaleName="LOC_CITY_NAME_TRIPOLI" />
+	
+	<Replace MapName="PlayEuropeAgain" X="22" Y="16" CityLocaleName="LOC_CITY_NAME_AIN_SEFRA" />
+	<Replace MapName="PlayEuropeAgain" X="28" Y="16" CityLocaleName="LOC_CITY_NAME_EL_GUERRARA" />
+	<Replace MapName="PlayEuropeAgain" X="35" Y="16" CityLocaleName="LOC_CITY_NAME_TOZEUR" />
+	
+	<Replace MapName="PlayEuropeAgain" X="36" Y="17" CityLocaleName="LOC_CITY_NAME_GABES" />
+	
+	<Replace MapName="PlayEuropeAgain" X="21" Y="18" CityLocaleName="LOC_CITY_NAME_NAAMA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="22" Y="18" CityLocaleName="LOC_CITY_NAME_NAAMA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="24" Y="18" CityLocaleName="LOC_CITY_NAME_DJELFA" />
+	<Replace MapName="PlayEuropeAgain" X="26" Y="18" CityLocaleName="LOC_CITY_NAME_MESSAAD" />
+	<Replace MapName="PlayEuropeAgain" X="28" Y="18" CityLocaleName="LOC_CITY_NAME_TOLGA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="29" Y="18" CityLocaleName="LOC_CITY_NAME_TOLGA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="28" Y="19" CityLocaleName="LOC_CITY_NAME_TOLGA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="33" Y="18" CityLocaleName="LOC_CITY_NAME_TOUGGOURT" />
+	
+	<Replace MapName="PlayEuropeAgain" X="30" Y="19" CityLocaleName="LOC_CITY_NAME_BISKRA" />
+	<Replace MapName="PlayEuropeAgain" X="35" Y="19" CityLocaleName="LOC_CITY_NAME_SIDI_BOUZID" />
+	
+	<Replace MapName="PlayEuropeAgain" X="22" Y="20" CityLocaleName="LOC_CITY_NAME_MECHERIA" />
+	<Replace MapName="PlayEuropeAgain" X="27" Y="20" CityLocaleName="LOC_CITY_NAME_BOU_SAADA" />
+	<Replace MapName="PlayEuropeAgain" X="32" Y="20" CityLocaleName="LOC_CITY_NAME_AIN_BEIDA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="32" Y="21" CityLocaleName="LOC_CITY_NAME_AIN_BEIDA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="34" Y="20" CityLocaleName="LOC_CITY_NAME_TEBESSA" />
+	<Replace MapName="PlayEuropeAgain" X="38" Y="20" CityLocaleName="LOC_CITY_NAME_SIAX" />
+	
+	<Replace MapName="PlayEuropeAgain" X="24" Y="21" CityLocaleName="LOC_CITY_NAME_AIN_OUSSERA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="25" Y="21" CityLocaleName="LOC_CITY_NAME_HAD_SAHARY" Area="0" />	
+	<Replace MapName="PlayEuropeAgain" X="28" Y="21" CityLocaleName="LOC_CITY_NAME_BARIKA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="36" Y="21" CityLocaleName="LOC_CITY_NAME_AL-QAYRAWAN" />
+	
+	<Replace MapName="PlayEuropeAgain" X="23" Y="22" CityLocaleName="LOC_CITY_NAME_SAIDA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="26" Y="22" CityLocaleName="LOC_CITY_NAME_SIDI_AISSA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="29" Y="22" CityLocaleName="LOC_CITY_NAME_EL_EULMA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="28" Y="23" CityLocaleName="LOC_CITY_NAME_EL_EULMA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="31" Y="22" CityLocaleName="LOC_CITY_NAME_BATNA" />
+	<Replace MapName="PlayEuropeAgain" X="33" Y="22" CityLocaleName="LOC_CITY_NAME_GUELMA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="34" Y="23" CityLocaleName="LOC_CITY_NAME_GUELMA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="34" Y="22" CityLocaleName="LOC_CITY_NAME_SOUK_AHRAS" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="35" Y="22" CityLocaleName="LOC_CITY_NAME_SOUK_AHRAS" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="37" Y="22" CityLocaleName="LOC_CITY_NAME_TUNIS" Area="0" />
+	
+	<Replace MapName="PlayEuropeAgain" X="21" Y="23" CityLocaleName="LOC_CITY_NAME_TLEMCEN" />
+	<Replace MapName="PlayEuropeAgain" X="23" Y="23" CityLocaleName="LOC_CITY_NAME_TIARET" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="24" Y="23" CityLocaleName="LOC_CITY_NAME_MEDEA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="25" Y="24" CityLocaleName="LOC_CITY_NAME_MEDEA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="28" Y="23" CityLocaleName="LOC_CITY_NAME_MSILA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="33" Y="23" CityLocaleName="LOC_CITY_NAME_ALI_MENDJELI" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="38" Y="23" CityLocaleName="LOC_CITY_NAME_TUNIS" />
+	
+	<Replace MapName="PlayEuropeAgain" X="31" Y="24" CityLocaleName="LOC_CITY_NAME_MILA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="35" Y="24" CityLocaleName="LOC_CITY_NAME_ANNABA" />
+	
+	<Replace MapName="PlayEuropeAgain" X="23" Y="25" CityLocaleName="LOC_CITY_NAME_BLIDA" />
+	<Replace MapName="PlayEuropeAgain" X="26" Y="25" CityLocaleName="LOC_CITY_NAME_BORDJ_BOU_ARRERIDJ" />
+	<Replace MapName="PlayEuropeAgain" X="28" Y="25" CityLocaleName="LOC_CITY_NAME_SETIF" />
+	<Replace MapName="PlayEuropeAgain" X="30" Y="25" CityLocaleName="LOC_CITY_NAME_TAMALOUS" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="32" Y="25" CityLocaleName="LOC_CITY_NAME_CONSTANTINE" />
+	
+	<Replace MapName="PlayEuropeAgain" X="21" Y="26" CityLocaleName="LOC_CITY_NAME_ORAN" />
+	<Replace MapName="PlayEuropeAgain" X="24" Y="26" CityLocaleName="LOC_CITY_NAME_ALGIERS" Area="0" />
+	
+	<Replace MapName="PlayEuropeAgain" X="24" Y="27" CityLocaleName="LOC_CITY_NAME_ALGIERS"  />
+	<Replace MapName="PlayEuropeAgain" X="27" Y="27" CityLocaleName="LOC_CITY_NAME_BEJAIA" />
+	<Replace MapName="PlayEuropeAgain" X="30" Y="27" CityLocaleName="LOC_CITY_NAME_COLLO" />
+	</CityMap>
 </GameData>
