@@ -2397,7 +2397,7 @@
 		<Replace Tag="LOC_CITY_NAME_TAOUNATA" Text="Taounata" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_SALE" Text="Sale" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_KENITRA" Text="Kenitra" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_CHEFCHAOU" Text="Chefchaouen" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_CHEFCHAOUEN" Text="Chefchaouen" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_HOCEIMA" Text="Hoceima" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_NADOR" Text="Nador" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_TETOUAN" Text="Tetouan" Language="en_US"/>
