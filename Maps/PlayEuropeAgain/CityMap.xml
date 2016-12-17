@@ -2385,7 +2385,7 @@
 	<Replace MapName="PlayEuropeAgain" X="42" Y="10" CityLocaleName="LOC_CITY_NAME_GARYAN" />
 	<Replace MapName="PlayEuropeAgain" X="44" Y="10" CityLocaleName="LOC_CITY_NAME_BANI_WALED" />
 	
-	<Replace MapName="PlayEuropeAgain" X="40" Y="11" CityLocaleName="LOC_CITY_NAME_ASH_TABAQAH" />
+	<Replace MapName="PlayEuropeAgain" X="40" Y="11" CityLocaleName="LOC_CITY_NAME_TABAQAH" />
 	
 	<Replace MapName="PlayEuropeAgain" X="25" Y="12" CityLocaleName="LOC_CITY_NAME_GHARDAIA" />
 	<Replace MapName="PlayEuropeAgain" X="28" Y="12" CityLocaleName="LOC_CITY_NAME_OUARGLA" Area="2" />
