@@ -2505,7 +2505,7 @@
 		<Replace Tag="LOC_CITY_NAME_AL_JAWF" Text="Al Jawf" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_BAHARIYA_OASIS" Text="Bahariya Oasis" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_AWJILAH" Text="Awjilah" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_WHITE_DESERT" Text="White Dessert" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_WHITE_DESERT" Text="White Desert" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_ASYUT" Text="Asyut" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_EASTERN_DESERT" Text="Eastern Desert" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_HURGHADA" Text="Hurghada" Language="en_US"/>
