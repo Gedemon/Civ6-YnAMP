@@ -2552,6 +2552,95 @@
 		<Replace Tag="LOC_CITY_NAME_AL_BAYDA" Text="Al Bayda" Language="en_US"/>
 
 	</LocalizedText>
+	
+	<LocalizedText>
+  
+	<!-- UKRAINE, SOUTHERN RUSSIA AND KAZAKHSTAN -->
+	<Replace Tag="LOC_CITY_NAME_AKTAU" Text="Aktau" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AKTOBE" Text="Aktobe" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ARYTAU" Text="Arytau" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ASGIL" Text="Asgil" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ASTRAKHAN" Text="Astrakhan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AZGIR" Text="Azgir" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BAYANDY" Text="Bayandy" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BEKDASH" Text="Bekdash" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BESBEY" Text="Besbey" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BEYNEU" Text="Beyneu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BOLSHOI_TSARYN" Text="Bolshoi Tsaryn" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BORISOGLEBSK" Text="Borisoglebsk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHAPAEV" Text="Chapaev" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHERKASY" Text="Cherkasy" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHERNIHIV" Text="Chernihiv" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHERNOBYL" Text="Chernobyl" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DNIPROPETROVSK" Text="Dnipropetrovsk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DONETSK" Text="Donetsk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DZHANKOI" Text="Dzhankoi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ELISTA" Text="Elista" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_EMBI" Text="Embi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FEODOSIA" Text="Feodosia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FORT_SHEVCHENKO" Text="Fort Shevchenko" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GRYAZI" Text="Gryazi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_IKI_BURUL" Text="Iki-Burul" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KAMYSHIN" Text="Kamyshin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KHARKIV" Text="Kharkiv" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KHERSON" Text="Kherson" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KIEV" Text="Kiev" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KIROVSKAYA" Text="Kirovskaya" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KIYEVKA" Text="Kiyevka" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOSCHAGYL" Text="Koschagyl" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOTELNIKOVO" Text="Kotelnikovo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KRAMATORSK" Text="Kramatorsk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KRASNY_YARR" Text="Krasny Yarr" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KREMENCHUK" Text="Kremenchuk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KROPVYNYTSKYI" Text="Kropvynytskyi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KRYVYI_RIH" Text="Kryvyi Rih" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KULSARY" Text="Kulsary" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KURSK" Text="Kursk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KURYK" Text="Kuryk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KYZAN" Text="Kyzan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LAGAN" Text="Lagan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LISKI" Text="Liski" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LUHANSK" Text="Luhansk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MAKAT" Text="Makat" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MARIUPOL" Text="Mariupol" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MELITOPOL" Text="Melitopol" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MIKHAYLOVKA" Text="Mikhaylovka" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MILLEROVO" Text="Millerovo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MYKOLAIV" Text="Mykolaiv" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NOVOCHERKASSK" Text="Novocherkassk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ODESSA" Text="Odessa" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PALLASOVKA" Text="Pallasovka" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PAVLOVSK" Text="Pavlovsk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_POLTAVA" Text="Poltava" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PRIPYAT" Text="Pripyat" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PRYLUKY" Text="Pryluky" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ROSTOV_ON_DON" Text="Rostov on Don" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SALSK" Text="Salsk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SARATOV" Text="Saratov" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SEVASTOPOL" Text="Sevastopol" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SEVERODONETSK" Text="Severodonetsk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SHOSTKA" Text="Shostka" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SIMFEROPOL" Text="Simferopol" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SMILA" Text="Smila" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SOLENOYE" Text="Solenoye" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_STAROBILSK" Text="Starobilsk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_STARY_OSKOL" Text="Stary Oskol" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TAGANROG" Text="Taganrog" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TENGIZ" Text="Tengiz" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TSAGAN_AMAN" Text="Tsagan Aman" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_UMAN" Text="Uman" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_URALSK" Text="Uralsk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_URYUPINSK" Text="Uryupinsk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VOLGODONSK" Text="Volgodonsk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VOLGOGRAD" Text="Volgograd" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VOLNOVAKHA" Text="Volnovakha" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VORONEZH" Text="Voronezh" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YEVPATORIYA" Text="Yevpatoriya" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YUZHNOUKRAINSK" Text="Yuzhnoukrainsk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZHANAOZEN" Text="Zhanaozen" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZHANBAY" Text="Zhanbay" Language="en_US"/>
+	
+  </LocalizedText>
  
 </GameData>
 

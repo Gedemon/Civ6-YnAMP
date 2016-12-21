@@ -2565,4 +2565,184 @@
 	<Replace MapName="PlayEuropeAgain" X="57" Y="13" CityLocaleName="LOC_CITY_NAME_AL_BAYDA" />
 	
 	</CityMap>
+	
+	<!-- UKRAINE, SOUTHERN RUSSIA AND KAZAKHSTAN -->
+	<CityMap>
+	
+	<Replace MapName="PlayEuropeAgain" X="107" Y="39" CityLocaleName="LOC_CITY_NAME_BEKDASH" Area="0" />
+	
+	<Replace MapName="PlayEuropeAgain" X="76" Y="40" CityLocaleName="LOC_CITY_NAME_SEVASTOPOL" />
+	
+	<Replace MapName="PlayEuropeAgain" X="74" Y="41" CityLocaleName="LOC_CITY_NAME_YEVPATORIYA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="77" Y="41" CityLocaleName="LOC_CITY_NAME_FEODOSIA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="78" Y="41" CityLocaleName="LOC_CITY_NAME_FEODOSIA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="106" Y="41" CityLocaleName="LOC_CITY_NAME_KURYK" />
+	
+	<Replace MapName="PlayEuropeAgain" X="75" Y="42" CityLocaleName="LOC_CITY_NAME_KHERSON" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="76" Y="42" CityLocaleName="LOC_CITY_NAME_SIMFEROPOL" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="77" Y="42" CityLocaleName="LOC_CITY_NAME_DZHANKOI" Area="0" />
+
+	<Replace MapName="PlayEuropeAgain" X="75" Y="43" CityLocaleName="LOC_CITY_NAME_KHERSON" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="76" Y="43" CityLocaleName="LOC_CITY_NAME_DZHANKOI" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="104" Y="43" CityLocaleName="LOC_CITY_NAME_AKTAU" />
+	
+	<Replace MapName="PlayEuropeAgain" X="72" Y="44" CityLocaleName="LOC_CITY_NAME_ODESSA" />
+	<Replace MapName="PlayEuropeAgain" X="73" Y="44" CityLocaleName="LOC_CITY_NAME_ODESSA" Area="0" /> <!-- OVERLAP -->
+	<Replace MapName="PlayEuropeAgain" X="75" Y="44" CityLocaleName="LOC_CITY_NAME_KHERSON" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="76" Y="44" CityLocaleName="LOC_CITY_NAME_KHERSON" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="77" Y="44" CityLocaleName="LOC_CITY_NAME_MELITOPOL" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="107" Y="44" CityLocaleName="LOC_CITY_NAME_ZHANAOZEN" />
+	
+	<Replace MapName="PlayEuropeAgain" X="72" Y="45" CityLocaleName="LOC_CITY_NAME_ODESSA" Area="0" /> <!-- OVERLAP -->
+	<Replace MapName="PlayEuropeAgain" X="73" Y="45" CityLocaleName="LOC_CITY_NAME_MYKOLAIV" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="77" Y="45" CityLocaleName="LOC_CITY_NAME_MELITOPOL" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="79" Y="45" CityLocaleName="LOC_CITY_NAME_MARIUPOL" />
+	<Replace MapName="PlayEuropeAgain" X="84" Y="45" CityLocaleName="LOC_CITY_NAME_KIROVSKAYA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="85" Y="45" CityLocaleName="LOC_CITY_NAME_KIROVSKAYA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="86" Y="45" CityLocaleName="LOC_CITY_NAME_KIROVSKAYA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="89" Y="45" CityLocaleName="LOC_CITY_NAME_SOLENOYE" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="90" Y="45" CityLocaleName="LOC_CITY_NAME_SOLENOYE" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="91" Y="45" CityLocaleName="LOC_CITY_NAME_KIYEVKA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="92" Y="45" CityLocaleName="LOC_CITY_NAME_IKI_BURUL" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="93" Y="45" CityLocaleName="LOC_CITY_NAME_IKI_BURUL" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="94" Y="45" CityLocaleName="LOC_CITY_NAME_IKI_BURUL" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="95" Y="45" CityLocaleName="LOC_CITY_NAME_LAGAN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="96" Y="45" CityLocaleName="LOC_CITY_NAME_LAGAN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="102" Y="45" CityLocaleName="LOC_CITY_NAME_FORT_SHEVCHENKO" />
+	<Replace MapName="PlayEuropeAgain" X="104" Y="45" CityLocaleName="LOC_CITY_NAME_BAYANDY" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="105" Y="45" CityLocaleName="LOC_CITY_NAME_BAYANDY" Area="0" />
+	
+	<Replace MapName="PlayEuropeAgain" X="71" Y="46" CityLocaleName="LOC_CITY_NAME_YUZHNOUKRAINSK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="72" Y="46" CityLocaleName="LOC_CITY_NAME_YUZHNOUKRAINSK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="76" Y="46" CityLocaleName="LOC_CITY_NAME_KRYVYI_RIH" />
+	<Replace MapName="PlayEuropeAgain" X="78" Y="46" CityLocaleName="LOC_CITY_NAME_MELITOPOL" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="81" Y="46" CityLocaleName="LOC_CITY_NAME_TAGANROG" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="83" Y="46" CityLocaleName="LOC_CITY_NAME_ROSTOV_ON_DON" />
+	<Replace MapName="PlayEuropeAgain" X="88" Y="46" CityLocaleName="LOC_CITY_NAME_SALSK" />
+	<Replace MapName="PlayEuropeAgain" X="90" Y="46" CityLocaleName="LOC_CITY_NAME_KIYEVKA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="91" Y="46" CityLocaleName="LOC_CITY_NAME_KIYEVKA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="92" Y="46" CityLocaleName="LOC_CITY_NAME_KIYEVKA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="95" Y="46" CityLocaleName="LOC_CITY_NAME_LAGAN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="96" Y="46" CityLocaleName="LOC_CITY_NAME_LAGAN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="104" Y="46" CityLocaleName="LOC_CITY_NAME_KYZAN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="105" Y="46" CityLocaleName="LOC_CITY_NAME_BAYANDY" Area="0" />
+	
+	<Replace MapName="PlayEuropeAgain" X="71" Y="47" CityLocaleName="LOC_CITY_NAME_YUZHNOUKRAINSK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="74" Y="47" CityLocaleName="LOC_CITY_NAME_SMILA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="79" Y="47" CityLocaleName="LOC_CITY_NAME_VOLNOVAKHA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="85" Y="47" CityLocaleName="LOC_CITY_NAME_NOVOCHERKASSK" />
+	<Replace MapName="PlayEuropeAgain" X="91" Y="47" CityLocaleName="LOC_CITY_NAME_KIYEVKA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="93" Y="47" CityLocaleName="LOC_CITY_NAME_ELISTA" />
+	<Replace MapName="PlayEuropeAgain" X="104" Y="47" CityLocaleName="LOC_CITY_NAME_KYZAN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="106" Y="47" CityLocaleName="LOC_CITY_NAME_BEYNEU" />
+	
+	<Replace MapName="PlayEuropeAgain" X="71" Y="48" CityLocaleName="LOC_CITY_NAME_UMAN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="73" Y="48" CityLocaleName="LOC_CITY_NAME_KROPVYNYTSKYI" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="75" Y="48" CityLocaleName="LOC_CITY_NAME_SMILA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="76" Y="48" CityLocaleName="LOC_CITY_NAME_KREMENCHUK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="78" Y="48" CityLocaleName="LOC_CITY_NAME_DNIPROPETROVSK" />
+	<Replace MapName="PlayEuropeAgain" X="81" Y="48" CityLocaleName="LOC_CITY_NAME_DONETSK" />
+	<Replace MapName="PlayEuropeAgain" X="90" Y="48" CityLocaleName="LOC_CITY_NAME_KOTELNIKOVO" />
+	<Replace MapName="PlayEuropeAgain" X="92" Y="48" CityLocaleName="LOC_CITY_NAME_BOLSHOI_TSARYN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="96" Y="48" CityLocaleName="LOC_CITY_NAME_ASTRAKHAN" />
+	<Replace MapName="PlayEuropeAgain" X="105" Y="48" CityLocaleName="LOC_CITY_NAME_KYZAN" Area="0" />
+	
+	<Replace MapName="PlayEuropeAgain" X="71" Y="49" CityLocaleName="LOC_CITY_NAME_UMAN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="76" Y="49" CityLocaleName="LOC_CITY_NAME_KREMENCHUK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="79" Y="49" CityLocaleName="LOC_CITY_NAME_KRAMATORSK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="83" Y="49" CityLocaleName="LOC_CITY_NAME_LUHANSK" />
+	<Replace MapName="PlayEuropeAgain" X="85" Y="49" CityLocaleName="LOC_CITY_NAME_MILLEROVO" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="87" Y="49" CityLocaleName="LOC_CITY_NAME_VOLGODONSK" />
+	<Replace MapName="PlayEuropeAgain" X="91" Y="49" CityLocaleName="LOC_CITY_NAME_BOLSHOI_TSARYN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="92" Y="49" CityLocaleName="LOC_CITY_NAME_BOLSHOI_TSARYN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="97" Y="49" CityLocaleName="LOC_CITY_NAME_KRASNY_YARR" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="105" Y="49" CityLocaleName="LOC_CITY_NAME_TENGIZ" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="106" Y="49" CityLocaleName="LOC_CITY_NAME_BESBEY" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="107" Y="49" CityLocaleName="LOC_CITY_NAME_BESBEY" Area="0" />
+	
+	<Replace MapName="PlayEuropeAgain" X="71" Y="50" CityLocaleName="LOC_CITY_NAME_UMAN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="75" Y="50" CityLocaleName="LOC_CITY_NAME_CHERKASY" />
+	<Replace MapName="PlayEuropeAgain" X="77" Y="50" CityLocaleName="LOC_CITY_NAME_POLTAVA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="78" Y="50" CityLocaleName="LOC_CITY_NAME_POLTAVA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="81" Y="50" CityLocaleName="LOC_CITY_NAME_SEVERODONETSK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="82" Y="50" CityLocaleName="LOC_CITY_NAME_SEVERODONETSK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="85" Y="50" CityLocaleName="LOC_CITY_NAME_MILLEROVO" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="86" Y="50" CityLocaleName="LOC_CITY_NAME_MILLEROVO" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="91" Y="50" CityLocaleName="LOC_CITY_NAME_BOLSHOI_TSARYN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="92" Y="50" CityLocaleName="LOC_CITY_NAME_BOLSHOI_TSARYN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="94" Y="50" CityLocaleName="LOC_CITY_NAME_TSAGAN_AMAN" />
+	<Replace MapName="PlayEuropeAgain" X="98" Y="50" CityLocaleName="LOC_CITY_NAME_KRASNY_YARR" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="104" Y="50" CityLocaleName="LOC_CITY_NAME_KOSCHAGYL" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="105" Y="50" CityLocaleName="LOC_CITY_NAME_TENGIZ" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="106" Y="50" CityLocaleName="LOC_CITY_NAME_TENGIZ" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="107" Y="50" CityLocaleName="LOC_CITY_NAME_BESBEY" Area="0" />
+	
+	<Replace MapName="PlayEuropeAgain" X="72" Y="51" CityLocaleName="LOC_CITY_NAME_KIEV" />
+	<Replace MapName="PlayEuropeAgain" X="76" Y="51" CityLocaleName="LOC_CITY_NAME_POLTAVA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="77" Y="51" CityLocaleName="LOC_CITY_NAME_POLTAVA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="79" Y="51" CityLocaleName="LOC_CITY_NAME_KHARKIV" />
+	<Replace MapName="PlayEuropeAgain" X="81" Y="51" CityLocaleName="LOC_CITY_NAME_SEVERODONETSK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="82" Y="51" CityLocaleName="LOC_CITY_NAME_STAROBILSK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="83" Y="51" CityLocaleName="LOC_CITY_NAME_STAROBILSK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="84" Y="51" CityLocaleName="LOC_CITY_NAME_MILLEROVO" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="85" Y="51" CityLocaleName="LOC_CITY_NAME_MILLEROVO" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="89" Y="51" CityLocaleName="LOC_CITY_NAME_MIKHAYLOVKA" />
+	<Replace MapName="PlayEuropeAgain" X="96" Y="51" CityLocaleName="LOC_CITY_NAME_AZGIR" />
+	<Replace MapName="PlayEuropeAgain" X="98" Y="51" CityLocaleName="LOC_CITY_NAME_ZHANBAY" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="99" Y="51" CityLocaleName="LOC_CITY_NAME_ZHANBAY" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="103" Y="51" CityLocaleName="LOC_CITY_NAME_KOSCHAGYL" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="106" Y="51" CityLocaleName="LOC_CITY_NAME_ASGIL" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="107" Y="51" CityLocaleName="LOC_CITY_NAME_ASGIL" Area="0" />
+	
+	<Replace MapName="PlayEuropeAgain" X="71" Y="52" CityLocaleName="LOC_CITY_NAME_PRIPYAT" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="74" Y="52" CityLocaleName="LOC_CITY_NAME_PRYLUKY" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="75" Y="52" CityLocaleName="LOC_CITY_NAME_PRYLUKY" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="78" Y="52" CityLocaleName="LOC_CITY_NAME_POLTAVA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="83" Y="52" CityLocaleName="LOC_CITY_NAME_STAROBILSK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="87" Y="52" CityLocaleName="LOC_CITY_NAME_PAVLOVSK" />
+	<Replace MapName="PlayEuropeAgain" X="92" Y="52" CityLocaleName="LOC_CITY_NAME_VOLGOGRAD" />
+	<Replace MapName="PlayEuropeAgain" X="98" Y="52" CityLocaleName="LOC_CITY_NAME_ZHANBAY" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="99" Y="52" CityLocaleName="LOC_CITY_NAME_ZHANBAY" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="101" Y="52" CityLocaleName="LOC_CITY_NAME_ARYTAU" />
+	<Replace MapName="PlayEuropeAgain" X="103" Y="52" CityLocaleName="LOC_CITY_NAME_KOSCHAGYL" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="105" Y="52" CityLocaleName="LOC_CITY_NAME_KULSARY" />
+	<Replace MapName="PlayEuropeAgain" X="107" Y="52" CityLocaleName="LOC_CITY_NAME_ASGIL" Area="0" />
+	
+	<Replace MapName="PlayEuropeAgain" X="71" Y="53" CityLocaleName="LOC_CITY_NAME_PRIPYAT" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="72" Y="53" CityLocaleName="LOC_CITY_NAME_CHERNOBYL" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="73" Y="53" CityLocaleName="LOC_CITY_NAME_CHERNIHIV" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="74" Y="53" CityLocaleName="LOC_CITY_NAME_SHOSTKA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="76" Y="53" CityLocaleName="LOC_CITY_NAME_KURSK" />
+	<Replace MapName="PlayEuropeAgain" X="81" Y="53" CityLocaleName="LOC_CITY_NAME_VORONEZH" />
+	<Replace MapName="PlayEuropeAgain" X="84" Y="53" CityLocaleName="LOC_CITY_NAME_LISKI" />
+	<Replace MapName="PlayEuropeAgain" X="88" Y="53" CityLocaleName="LOC_CITY_NAME_URYUPINSK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="94" Y="53" CityLocaleName="LOC_CITY_NAME_PALLASOVKA" />
+	<Replace MapName="PlayEuropeAgain" X="98" Y="53" CityLocaleName="LOC_CITY_NAME_CHAPAEV" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="99" Y="53" CityLocaleName="LOC_CITY_NAME_CHAPAEV" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="106" Y="53" CityLocaleName="LOC_CITY_NAME_EMBI" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="107" Y="53" CityLocaleName="LOC_CITY_NAME_ASGIL" Area="0" />
+	
+	<Replace MapName="PlayEuropeAgain" X="71" Y="54" CityLocaleName="LOC_CITY_NAME_PRIPYAT" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="72" Y="54" CityLocaleName="LOC_CITY_NAME_CHERNOBYL" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="73" Y="54" CityLocaleName="LOC_CITY_NAME_CHERNIHIV" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="74" Y="54" CityLocaleName="LOC_CITY_NAME_CHERNIHIV" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="75" Y="54" CityLocaleName="LOC_CITY_NAME_SHOSTKA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="79" Y="54" CityLocaleName="LOC_CITY_NAME_STARY_OSKOL" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="83" Y="54" CityLocaleName="LOC_CITY_NAME_GRYAZI" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="86" Y="54" CityLocaleName="LOC_CITY_NAME_BORISOGLEBSK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="87" Y="54" CityLocaleName="LOC_CITY_NAME_BORISOGLEBSK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="88" Y="54" CityLocaleName="LOC_CITY_NAME_BORISOGLEBSK" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="90" Y="54" CityLocaleName="LOC_CITY_NAME_SARATOV" />
+	<Replace MapName="PlayEuropeAgain" X="92" Y="54" CityLocaleName="LOC_CITY_NAME_KAMYSHIN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="93" Y="54" CityLocaleName="LOC_CITY_NAME_KAMYSHIN" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="97" Y="54" CityLocaleName="LOC_CITY_NAME_URALSK" />
+	<Replace MapName="PlayEuropeAgain" X="99" Y="54" CityLocaleName="LOC_CITY_NAME_CHAPAEV" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="100" Y="54" CityLocaleName="LOC_CITY_NAME_CHAPAEV" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="101" Y="54" CityLocaleName="LOC_CITY_NAME_AKTOBE" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="103" Y="54" CityLocaleName="LOC_CITY_NAME_MAKAT" />
+	<Replace MapName="PlayEuropeAgain" X="105" Y="54" CityLocaleName="LOC_CITY_NAME_EMBI" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="106" Y="54" CityLocaleName="LOC_CITY_NAME_EMBI" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="107" Y="54" CityLocaleName="LOC_CITY_NAME_EMBI" Area="0" />
+	
+	</CityMap>
 </GameData>
