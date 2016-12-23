@@ -279,6 +279,9 @@
     <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Language="en_US">
       <Text>No ice near land (to help circumnavigation)</Text>
     </Replace>
+    <Replace Tag="LOC_MAP_NO_CITY_STATE_NAME" Language="en_US">
+      <Text>No City States</Text>
+    </Replace>
 	
   </LocalizedText>
 </GameData>

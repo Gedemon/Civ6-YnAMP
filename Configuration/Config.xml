@@ -100,16 +100,16 @@
 			<Set SortIndex="270"/>
 		</Update>
 
-		<!--	Culturally Linked Start Position
-		-->
+		<!--	Culturally Linked Start Position		-->
 		<Row ParameterId="CulturallyLinkedStart" Name="LOC_CULTURALLY_LINKED_START_NAME" Description="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Domain="CulturallyLinkedStart" DefaultValue="PLACEMENT_ETHNIC" ConfigurationGroup="Map" ConfigurationId="CulturallyLinkedStart" GroupId="MapOptions" Hash="0" SortIndex="287"/>
 		
-		<!--	New option for all maps to prevent Ice adjacent to land (help circumnavigation)
-		-->
-		<Row ParameterId="NoIceAdjacentToLand" Name="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="NoIceAdjacentToLand" GroupId="MapOptions" SortIndex="2000"/>
-	
-		<!--	Some Settings where linked to "RULESET_STANDARD", make them available with all
-		-->
+		<!--	New option for all maps to prevent Ice adjacent to land (help circumnavigation)		-->
+		<Row ParameterId="NoIceAdjacentToLand" Name="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="NoIceAdjacentToLand" GroupId="MapOptions" SortIndex="2000"/>
+
+		<!--	New option for all maps to launch a game without city states		-->
+		<Row ParameterId="NoCityStates" Name="LOC_MAP_NO_CITY_STATE_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="NoCityStates" GroupId="AdvancedOptions" SortIndex="2020"/>
+
+		<!--	Some Settings where linked to "RULESET_STANDARD", make them available with all		-->
 		<Row ParameterId="NoGoodyHuts" Name="LOC_GAME_NO_GOODY_HUTS" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAME_NO_GOODY_HUTS" GroupId="AdvancedOptions" SortIndex="2010"/>
 		<Row ParameterId="NoBarbarians" Name="LOC_GAME_NO_BARBARIANS" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAME_NO_BARBARIANS" GroupId="AdvancedOptions" SortIndex="2010"/>
 	</Parameters>	

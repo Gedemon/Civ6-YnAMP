@@ -30,6 +30,8 @@ local bRealDeposits = MapConfiguration.GetValue("RealDeposits") == "PLACEMENT_DE
 local iIceNorth = MapConfiguration.GetValue("IceNorth")
 local iIceSouth = MapConfiguration.GetValue("IceSouth")
 
+local bNoCityStates = GameConfiguration.GetValue("NoCityStates");
+
 print ("ynAMP Options: Culturally Linked = " .. tostring(bCulturallyLinked) ..", TSL = " .. tostring(bTSL) ..", Exclusion Zones = " .. tostring(bResourceExclusion) ..", Requested Resources = " .. tostring(bRequestedResources)..", Real Deposits = " .. tostring(bRealDeposits)) 
 
 ------------------------------------------------------------------------------
@@ -133,7 +135,13 @@ function AssignStartingPlots:__InitStartingData()
 	end
 	
 	self.iNumMajorCivs = PlayerManager.GetAliveMajorsCount();
-	self.iNumMinorCivs = PlayerManager.GetAliveMinorsCount();
+	
+	if bNoCityStates then
+		self.iNumMinorCivs = 0
+	else
+		self.iNumMinorCivs = PlayerManager.GetAliveMinorsCount()
+	end
+	
 	self.iNumRegions = self.iNumMajorCivs + self.iNumMinorCivs;
 	local iMinNumBarbarians = self.iNumMajorCivs / 2;
 
@@ -2461,16 +2469,6 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	
 	AreaBuilder.Recalculate();
 	
-	currentTimer = os.clock() - g_startTimer
-	print("Intermediate timer before TerrainBuilder.AnalyzeChokepoints() = "..tostring(currentTimer).." seconds")
-	
-	if not WorldBuilder:IsActive() then -- to do : must use an option here, is this added to saved map ? will they work without this ? But it saves a lot of time for editing and exporting terrain data for YnAMP
-		TerrainBuilder.AnalyzeChokepoints();
-	else
-		print("Worldbuilder detected, skipping TerrainBuilder.AnalyzeChokepoints()...")
-		print("WARNING skipping AnalyzeChokepoints may create issues with saved maps (exporting for YnAMP scripts is not affected)")
-	end
-	
 	if not bImportContinents then
 		currentTimer = os.clock() - g_startTimer
 		print("Intermediate timer before TerrainBuilder.StampContinents() = "..tostring(currentTimer).." seconds")	
@@ -2504,6 +2502,17 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	
 	-- The map may require some specific placement...
 	ExtraPlacement()
+	
+	-- Analyse Chokepoints after extra placement...
+	currentTimer = os.clock() - g_startTimer
+	print("Intermediate timer before TerrainBuilder.AnalyzeChokepoints() = "..tostring(currentTimer).." seconds")
+	
+	if not WorldBuilder:IsActive() then -- to do : must use an option here, is this added to saved map ? will they work without this ? But it saves a lot of time for editing and exporting terrain data for YnAMP
+		TerrainBuilder.AnalyzeChokepoints();
+	else
+		print("Worldbuilder detected, skipping TerrainBuilder.AnalyzeChokepoints()...")
+		print("WARNING skipping AnalyzeChokepoints may create issues with saved maps (exporting for YnAMP scripts is not affected)")
+	end
 	
 	ResourcesStatistics(g_iW, g_iH)
 	
@@ -3343,8 +3352,8 @@ function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains,
 		
 		-- Get Civ6 map data exported form the internal WB
 		local Cliffs
-		if Civ6DataToConvert[plot:GetX()][plot:GetY()] then
-			Cliffs =  Civ6DataToConvert[plot:GetX()][plot:GetY()][1] -- {IsNEOfCliff,IsWOfCliff,IsNWOfCliff}
+		if Civ6DataToConvert[plot:GetX()] and Civ6DataToConvert[plot:GetX()][plot:GetY()] then
+			Cliffs = Civ6DataToConvert[plot:GetX()][plot:GetY()][1] -- {IsNEOfCliff,IsWOfCliff,IsNWOfCliff}
 		end
 		
 		-- Set terrain type
@@ -3533,15 +3542,22 @@ function SetTrueStartingLocations()
 		if position then 
 			print ("- "..tostring(CivilizationTypeName).." at "..tostring(position.X)..","..tostring(position.Y))
 			local plot = Map.GetPlot(position.X, position.Y)
-			if plot:IsStartingPlot() then
-				print ("WARNING ! Plot is already a Starting Position")
-			else
-				player:SetStartingPlot(plot)
-				if player:IsMajor() then
-					--table.insert(AssignStartingPlots.majorStartPlots, plot);
-				else
-					--table.insert(AssignStartingPlots.minorStartPlots, plot)
+			if plot then
+				if plot:IsStartingPlot() then
+					print ("WARNING ! Plot is already a Starting Position")
+				else					
+					if player:IsMajor() then
+						player:SetStartingPlot(plot)
+						--table.insert(AssignStartingPlots.majorStartPlots, plot);
+					else
+						if not bNoCityStates then
+							player:SetStartingPlot(plot)
+							--table.insert(AssignStartingPlots.minorStartPlots, plot)
+						end
+					end
 				end
+			else
+				print ("WARNING ! Plot is out of map !")
 			end
 		end
 	end	

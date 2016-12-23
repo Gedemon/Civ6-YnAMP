@@ -126,6 +126,46 @@ if mapName then
 	Events.CityInitialized.Add( ChangeCityName )
 end
 
+
+function ListCityWithoutLOC()
+	for row in GameInfo.CityMap() do
+		local name = row.CityLocaleName
+		if name then
+			if Locale.Lookup(name) == name then
+				print("WARNING : no translation for "..tostring(name))
+			end
+		else
+			print("ERROR : no name at row "..tostring(row.Index + 1))
+		end
+	end
+end
+if mapName then
+	Events.LoadScreenClose.Add( ListCityWithoutLOC )
+end
+
+function ListCityNotOnMap()
+	local hasMap = {}
+	for row in GameInfo.CityMap() do
+		local name = row.CityLocaleName
+		if name then
+			hasMap[name] = true
+			hasMap[Locale.Lookup(name)] = true
+		else
+			print("ERROR : no name at row "..tostring(row.Index + 1))
+		end
+	end
+	for row in GameInfo.CityNames() do
+		local name = row.CityName
+		local civilization = row.CivilizationType
+		if not (hasMap[name] or hasMap[Locale.Lookup(name)]) then
+			print("Not mapped for "..tostring(civilization).." : "..tostring(name))
+		end
+	end
+end
+if mapName then
+	Events.LoadScreenClose.Add( ListCityNotOnMap )
+end
+
 function Round(num)
     under = math.floor(num)
     upper = math.floor(num) + 1
