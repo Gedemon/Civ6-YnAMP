@@ -18,6 +18,7 @@
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SCYTHIA"	X="101" Y="52" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SPAIN"	X="18" Y="38" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SUMERIA"	X="100" Y="15" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_POLAND"	X="58" Y="53" />
 		
 		<!-- Civ6 City States -->
 	    <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_AMSTERDAM"	X="37" Y="60" />

@@ -7,25 +7,26 @@
 	<!-- Majors -->
 	<StartPosition>
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AMERICA"	X="155" Y="64" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_ARABIA"	X="36" Y="41" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_AZTEC"		X="138" Y="49" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_BRAZIL"	X="165" Y="20" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_CHINA"		X="80" Y="59" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_EGYPT"		X="32" Y="43" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_ENGLAND"	X="12" Y="72" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_FRANCE"	X="13" Y="67" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_GERMANY"	X="22" Y="69" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_GREECE"	X="28" Y="56" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_GREECE"	X="31" Y="60" Leader="LEADER_GORGO" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_INDIA"		X="61" Y="52" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_JAPAN"		X="96" Y="58" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_KONGO"		X="26" Y="29" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_NORWAY"	X="21" Y="84" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_ROME"		X="20" Y="57" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_RUSSIA"	X="38" Y="72" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_SCYTHIA"	X="47" Y="69" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_SPAIN"		X="7" Y="57" />
-        <Replace MapName="GiantEarth" Civilization="CIVILIZATION_SUMERIA"	X="41" Y="49" />		
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ARABIA"	X="36" Y="41" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AZTEC"		X="138" Y="49" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BRAZIL"	X="165" Y="20" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CHINA"		X="80" Y="59" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_EGYPT"		X="32" Y="43" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ENGLAND"	X="12" Y="72" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_FRANCE"	X="13" Y="67" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GERMANY"	X="22" Y="69" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GREECE"	X="28" Y="56" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GREECE"	X="31" Y="60" Leader="LEADER_GORGO" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_INDIA"		X="61" Y="52" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_JAPAN"		X="96" Y="58" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KONGO"		X="26" Y="29" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_NORWAY"	X="21" Y="84" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ROME"		X="20" Y="57" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_RUSSIA"	X="38" Y="72" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SCYTHIA"	X="47" Y="69" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SPAIN"		X="7" Y="57" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SUMERIA"	X="41" Y="49" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_POLAND"	X="29" Y="70" />		
 	</StartPosition>	
 	
 	<!-- Minors -->

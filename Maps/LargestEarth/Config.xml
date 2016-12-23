@@ -1,0 +1,79 @@
+<!--
+
+	Map Size reference
+
+			  Civ V       Civ VI 
+	 
+	Dual       40x24       44x26 
+	Tiny       55x36       60x36 
+	Small      66x42       74x46 
+	Standard   80x52       84x54 
+	Large     104x64       96x60
+	Huge      128x80      106x66  
+	Enormous              128x80
+	Giant     180x94      180x94
+	Ludicrous N/A        230x115 
+
+-->
+
+<GameInfo>
+	
+	<Maps>
+		<Row File="LargestEarth.lua" Name="LOC_LARGESTEARTH_NAME" Description="LOC_LARGESTEARTH_DESC" SortIndex="2"/>
+	</Maps>	
+
+	<Parameters>
+		<!--	LargestEarth Options
+		<Row Key1="Map" Key2="LargestEarth.lua" ParameterId="RealDeposits" Name="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_DESCRIPTION" Domain="RealDeposits" DefaultValue="PLACEMENT_DEPOSIT" ConfigurationGroup="Map" ConfigurationId="RealDeposits" GroupId="MapOptions" SortIndex="277"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" ParameterId="ContinentsPlacement" Name="LOC_MAP_CONTINENT_PLACEMENT_NAME" Description="LOC_MAP_CONTINENT_PLACEMENT_DESCRIPTION" Domain="ContinentsPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="ContinentsPlacement" GroupId="MapOptions" SortIndex="232"/>
+		-->
+		<Row Key1="Map" Key2="LargestEarth.lua" ParameterId="RiversPlacement" Name="LOC_MAP_RIVERS_PLACEMENT_NAME" Description="LOC_MAP_RIVERS_PLACEMENT_DESCRIPTION" Domain="RiversPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="RiversPlacement" GroupId="MapOptions" SortIndex="231"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" ParameterId="NaturalWondersPlacement" Name="LOC_MAP_NATURAL_WONDERS_PLACEMENT_NAME" Description="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DESCRIPTION" Domain="NaturalWondersPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="NaturalWondersPlacement" GroupId="MapOptions" Hash="0" SortIndex="244"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" ParameterId="FeaturesPlacement" Name="LOC_MAP_FEATURES_PLACEMENT_NAME" Description="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Domain="FeaturesPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" GroupId="MapOptions" Hash="0" SortIndex="245"/>		
+		<Row Key1="Map" Key2="LargestEarth.lua" ParameterId="Rainfall" Name="LOC_MAP_RAINFALL_NAME" Description="LOC_MAP_RAINFALL_DESCRIPTION" Domain="Rainfall" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="rainfall" GroupId="MapOptions" Hash="0" SortIndex="250"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" ParameterId="ResourcesPlacement" Name="LOC_MAP_RESOURCES_PLACEMENT_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Domain="ResourcesPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" GroupId="MapOptions" Hash="0" SortIndex="269"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" ParameterId="Resources" Name="LOC_MAP_RESOURCES_NAME" Description="LOC_MAP_RESOURCES_DESCRIPTION" Domain="Resources" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="resources" GroupId="MapOptions" Hash="0" SortIndex="270"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" ParameterId="ResourcesExclusion" Name="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" Domain="ResourcesExclusion" DefaultValue="PLACEMENT_EXCLUDE" ConfigurationGroup="Map" ConfigurationId="ResourcesExclusion" GroupId="MapOptions" SortIndex="275"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" ParameterId="CivilizationPlacement" Name="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Description="LOC_MAP_CIVILIZATION_PLACEMENT_DESCRIPTION" Domain="CivilizationPlacement" DefaultValue="PLACEMENT_TSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" GroupId="MapOptions" Hash="0" SortIndex="280"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" ParameterId="StartPosition" Name="LOC_MAP_START_POSITION_NAME" Description="LOC_MAP_START_POSITION_DESCRIPTION" Domain="StartPosition" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="start" GroupId="MapOptions" Hash="0" SortIndex="285"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" ParameterId="RequestedResources" Name="LOC_MAP_RESOURCES_REQUESTED_NAME" Description="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" Domain="RequestedResources" DefaultValue="PLACEMENT_REQUEST" ConfigurationGroup="Map" ConfigurationId="RequestedResources" GroupId="MapOptions" SortIndex="295"/>
+		
+		<!--	Special default MapSize (hidden)
+		-->
+		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthSize" 	Name="LOC_MAP_SIZE" Description="" Domain="StandardMapSizes" DefaultValue="MAPSIZE_LUDICROUS" ConfigurationGroup="Map" ConfigurationId="MAP_SIZE" Hash="1" GroupId="MapOptions" Visible="0" SortIndex="225"/>
+		
+		<!--	Hidden parameter to hide normal mapsize for converted maps
+		-->
+		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="HideSize" Name="HideSize" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="HideSize" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		
+		<!--	Hidden parameter to set the map name that will be used to find the tables for TSL
+		-->
+		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthName" 	Name="MapName" Description="" Domain="text" DefaultValue="LargestEarth" 	ConfigurationGroup="Map" ConfigurationId="MapName" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		
+		<!--	Hidden parameters to adjust features placement when they are not imported
+		-->		
+		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthEquator" 	Name="EquatorAdjustment" Description="" Domain="text" DefaultValue="-22"	ConfigurationGroup="Map" ConfigurationId="EquatorAdjustment" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthJungle" 	Name="JunglePercent" Description="" Domain="text" DefaultValue="16" ConfigurationGroup="Map" ConfigurationId="JunglePercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthForest" 	Name="ForestPercent" Description="" Domain="text" DefaultValue="22" ConfigurationGroup="Map" ConfigurationId="ForestPercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthMarsh" 	Name="MarshPercent" Description="" Domain="text" DefaultValue="2" 	ConfigurationGroup="Map" ConfigurationId="MarshPercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthOasis" 	Name="OasisPercent" Description="" Domain="text" DefaultValue="1" 	ConfigurationGroup="Map" ConfigurationId="OasisPercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthIceNorth" 	Name="IceNorth" Description="" Domain="text" DefaultValue="5" ConfigurationGroup="Map" ConfigurationId="IceNorth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthIceSouth" 	Name="IceSouth" Description="" Domain="text" DefaultValue="4" ConfigurationGroup="Map" ConfigurationId="IceSouth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+	
+	</Parameters>	
+	
+	<MapSupportedValues>
+		
+		<Row Map="LargestEarth.lua" Domain="ResourcesPlacement" Value="PLACEMENT_DEFAULT" />
+		<Row Map="LargestEarth.lua" Domain="ResourcesPlacement" Value="PLACEMENT_EMPTY" />
+		
+	</MapSupportedValues>
+	
+	
+	<MapUnSupportedValues>
+		<!--
+		<Row Map="PlayEuropeAgain.lua" Domain="StandardPlayers" Value="CIVILIZATION_AMERICA" />
+		 -->
+	</MapUnSupportedValues>
+	
+</GameInfo>

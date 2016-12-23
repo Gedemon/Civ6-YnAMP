@@ -35,7 +35,8 @@
         <Replace MapName="LargestEarth" Civilization="CIVILIZATION_RUSSIA"		X="47" Y="93" />
         <Replace MapName="LargestEarth" Civilization="CIVILIZATION_SCYTHIA"		X="62" Y="87" />
         <Replace MapName="LargestEarth" Civilization="CIVILIZATION_SPAIN"		X="10" Y="71" />
-        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_SUMERIA"		X="53" Y="63" />		
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_SUMERIA"		X="53" Y="63" />
+		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_POLAND"		X="33" Y="89" />
 	</StartPosition>
 		
 	<!-- Minors from Civ6 -->

@@ -15,6 +15,10 @@
 		<Custom id="YNAMP_SETTING">
 			<Items>
 				<File>Configuration/Config.xml</File>
+				<File>Maps/GiantEarth/Config.xml</File>
+				<File>Maps/GreatestEarthMap/Config.xml</File>
+				<File>Maps/PlayEuropeAgain/Config.xml</File>
+				<File>Maps/LargestEarth/Config.xml</File>
 			</Items>
 		</Custom>
 		<LocalizedText id="YNAMP_SETTING">
@@ -55,6 +59,7 @@
 				<File>Gameplay/GamePlay.sql</File>
 				<File>Gameplay/GamePlay.xml</File>
 				<File>Maps/GiantEarth/Map.xml</File>
+				<File>Maps/GiantEarth/CityMap.xml</File>
 				<File>Maps/GreatestEarthMap/Map.xml</File>
 				<File>Maps/GreatestEarthMap/CityMap.xml</File>
 				<File>Maps/PlayEuropeAgain/Map.xml</File>
@@ -63,6 +68,7 @@
 				<File>Maps/PlayEuropeAgain/CityMap_Greece.xml</File>
 				<File>Maps/PlayEuropeAgain/CityMap_Romans.xml</File>
 				<File>Maps/LargestEarth/Map.xml</File>
+				<File>Maps/LargestEarth/CityMap.xml</File>
 				<File>Gameplay/Resource.xml</File>
 				<File>Gameplay/CityNameByEra.xml</File>
 			</Items>
@@ -190,6 +196,10 @@
 	
 	<Files>
 		<File>Configuration/Config.xml</File>
+		<File>Maps/GiantEarth/Config.xml</File>
+		<File>Maps/GreatestEarthMap/Config.xml</File>
+		<File>Maps/PlayEuropeAgain/Config.xml</File>
+		<File>Maps/LargestEarth/Config.xml</File>
 		<File>Configuration/ConfigText.xml</File>
 		<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
 		<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
@@ -198,6 +208,7 @@
 		<File>Gameplay/GamePlay.sql</File>
 		<File>Gameplay/GamePlayText.xml</File>
 		<File>Maps/GiantEarth/Map.xml</File>
+		<File>Maps/GiantEarth/CityMap.xml</File>
 		<File>Maps/GreatestEarthMap/Map.xml</File>
 		<File>Maps/GreatestEarthMap/CityMap.xml</File>
 		<File>Maps/PlayEuropeAgain/Map.xml</File>
@@ -206,6 +217,7 @@
 		<File>Maps/PlayEuropeAgain/CityMap_Greece.xml</File>
 		<File>Maps/PlayEuropeAgain/CityMap_Romans.xml</File>
 		<File>Maps/LargestEarth/Map.xml</File>
+		<File>Maps/LargestEarth/CityMap.xml</File>
 		<File>Gameplay/Resource.xml</File>
 		<File>Gameplay/CityNameByEra.xml</File>
 		<File>Maps/GiantEarth/GiantEarth.lua</File>

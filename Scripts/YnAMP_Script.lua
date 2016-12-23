@@ -122,8 +122,9 @@ function ChangeCityName( ownerPlayerID, cityID)
 		end
 	end
 end
-Events.CityInitialized.Add( ChangeCityName )
-
+if mapName then
+	Events.CityInitialized.Add( ChangeCityName )
+end
 
 function Round(num)
     under = math.floor(num)
@@ -138,17 +139,20 @@ function Round(num)
 end
 
 ------------------------------------------------------
-
+--[[
 function OnPlayerTurnActivated( iPlayer, bFirstTime )
+	if not mapName then
+		return
+	end
 	local player = Players[iPlayer]
 	if (bFirstTime) and player:GetCities():GetCount() == 0 and not player:IsHuman() then
 		print("- Checking for Settler on TSL for player #".. tostring(iPlayer))
-		local startingPlot = player:GetStartingPlot()	
+		local startingPlot = player:GetStartingPlot()
 		if startingPlot and not startingPlot:IsCity() then
 			local unitsInPlot = Units.GetUnitsInPlot(startingPlot)
 			if unitsInPlot ~= nil then
 				for _, unit in ipairs(unitsInPlot) do
-					if (UnitManager.GetTypeName(unit) == "LOC_UNIT_SETTLER_NAME") then
+					if unit:GetType() == GameInfo.Units["UNIT_SETTLER"].Index then
 						print("  - found Settler !")
 						player:GetUnits():Destroy(unit)
 						print("  - create city here...")
@@ -160,3 +164,4 @@ function OnPlayerTurnActivated( iPlayer, bFirstTime )
 	end
 end
 Events.PlayerTurnActivated.Add( OnPlayerTurnActivated )
+--]]

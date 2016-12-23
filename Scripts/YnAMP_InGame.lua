@@ -124,7 +124,9 @@ function ChangeCityName( ownerPlayerID, cityID)
 		end
 	end
 end
-Events.CityInitialized.Add( ChangeCityName )
+if mapName then
+	Events.CityInitialized.Add( ChangeCityName )
+end
 
 function ListCityWithoutLOC()
 	for row in GameInfo.CityMap() do

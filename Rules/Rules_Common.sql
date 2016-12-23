@@ -19,7 +19,7 @@ INSERT INTO Feature_YieldChanges (FeatureType, YieldType, YieldChange) VALUES ('
 UPDATE Feature_YieldChanges SET YieldChange='1' WHERE FeatureType ='FEATURE_CLIFFS_DOVER' AND YieldType='YIELD_CULTURE';
 UPDATE Feature_YieldChanges SET YieldChange='1' WHERE FeatureType ='FEATURE_CLIFFS_DOVER' AND YieldType='YIELD_GOLD';
 --UPDATE Features SET Settlement='1' WHERE FeatureType ='FEATURE_CLIFFS_DOVER'; -- that removes the feature !
-INSERT INTO Improvement_ValidFeatures (FeatureType, ImprovementType) VALUES ('FEATURE_CLIFFS_DOVER', 'IMPROVEMENT_FARM');
+--INSERT INTO Improvement_ValidFeatures (FeatureType, ImprovementType) VALUES ('FEATURE_CLIFFS_DOVER', 'IMPROVEMENT_FARM'); -- Doesn't work...
 
 -- tweak resource placement
 INSERT OR REPLACE INTO Resource_ValidTerrains (ResourceType, TerrainType) VALUES ('RESOURCE_ALUMINUM', 'TERRAIN_GRASS_HILLS');
@@ -40,3 +40,5 @@ INSERT OR REPLACE INTO Resource_ValidFeatures (ResourceType, FeatureType) VALUES
 
 INSERT OR REPLACE INTO Resource_ValidFeatures (ResourceType, FeatureType) VALUES ('RESOURCE_IRON', 'FEATURE_FOREST');
 INSERT OR REPLACE INTO Resource_ValidFeatures (ResourceType, FeatureType) VALUES ('RESOURCE_IRON', 'FEATURE_JUNGLE');
+
+UPDATE Improvement_ValidResources SET MustRemoveFeature='0' WHERE ResourceType ='RESOURCE_ALUMINUM' OR ResourceType='RESOURCE_COAL' OR ResourceType = 'RESOURCE_IRON';
