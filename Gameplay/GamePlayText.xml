@@ -2642,5 +2642,74 @@
 	
   </LocalizedText>
  
+	<LocalizedText> 
+	<!-- Japan and Korea-->
+	
+	<Replace Tag="LOC_CITY_NAME_OKINAWA" Text="Okinawa" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_OSHIMA" Text="Oshima" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KAGOSHIMA" Text="Kagoshima" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MIYAZAKI" Text="Miyazaki" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KUMAMOTO" Text="Kumamoto" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOCHI" Text="Kochi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FUKUOKA" Text="Fukuoka" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MATSUYAMA" Text="Matsuyama" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KITAKYUSHU" Text="Kitakyushu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TAKAMATSU" Text="Takamatsu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SAKAI" Text="Sakai" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HIROSHIMA" Text="Hiroshima" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NARA" Text="Nara" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_JEJU" Text="Jeju" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YAMAGUSHI" Text="Yamagushi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_OKAYAMA" Text="Okayama" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HIMEJI" Text="Himeji" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOBE" Text="Kobe" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_OSAKA" Text="Osaka" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SHIZUOKA" Text="Shizuoka" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NAGOYA" Text="Nagoya" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHIBA" Text="Chiba" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MATSUE" Text="Matsue" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TOTTORI" Text="Tottori" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MAIZURU" Text="Maizuru" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SAGAMIHARA" Text="Sagamihara" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GWANGJU" Text="Gwangju" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BUSAN" Text="Busan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KYOTO" Text="Kyoto" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TOKYO" Text="Tokyo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_JEONJU" Text="Jeonju" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DAEGU" Text="Daegu" Language="en_US"/>
+ 	<Replace Tag="LOC_CITY_NAME_MATSUMOTO" Text="Matsumoto" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_INCHEON" Text="Incheon" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DAEJEON" Text="Daejon" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ULSAN" Text="Ulsan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TOYAMA" Text="Toyama" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NAGANO" Text="Nagano" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KORIYAMA" Text="Koriyama" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_IWAKI" Text="Iwaki" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SEOUL" Text="Seoul" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_POHANG" Text="Pohang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GANGNEUNG" Text="Gangneung" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NAGAOKA" Text="Nagaoka" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SENDAI" Text="Sendai" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YAMAGATA" Text="Yamagata" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NIIGATA" Text="Niigata" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PYONGYANG" Text="Pyongyang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KAECHON" Text="Kaechon" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HAMHUNG" Text="Hamhung" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MORIOKA" Text="Morioka" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SUNCHON" Text="Sunchon" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KANGYE" Text="Kangye" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHONGJIN" Text="Chongjin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AOMORI" Text="Aomori" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HACHINOHE" Text="Hachinohe" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HAKODATE" Text="Hakodate" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TOMAKOMAI" Text="Tomakomai" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_OBIHIRO" Text="Obihiro" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SAPPORO" Text="Sapporo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ASAHIKAWA" Text="Asahikawa" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KUSHIRO" Text="Kushiro" Language="en_US"/>
+ 
+	</LocalizedText>
+ 
+ 
 </GameData>
 
