@@ -32,7 +32,7 @@
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_STOCKHOLM"	X="55" Y="72" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_VALLETTA"		X="42" Y="19" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_VILNIUS"		X="60" Y="60" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_YEREVAN"		X="93" Y="36" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_YEREVAN"		X="94" Y="33" />
 	</StartPosition>
 	
 </GameData>
