@@ -2309,247 +2309,296 @@
         <Replace Tag="LOC_CITY_NAME_SAMOS" Text="Samos" Language="en_US"/>
         <Replace Tag="LOC_CITY_NAME_SKYROS" Text="Skyros" Language="en_US"/>
         <Replace Tag="LOC_CITY_NAME_THERA" Text="Thera" Language="en_US"/>
+		
+		<!-- CLASSICAL GREECE (ASIA MINOR) -->
+		<Replace Tag="LOC_CITY_NAME_ABONITEICHOS" Text="Aboniteichos" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ACHERUSIA_CHERSONESOS" Text="Acherusia Chersonesos" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ADANA" Text="Adana" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AMASIA" Text="Amasia" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AMYSUS" Text="Amysus" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ANTIOCHEA_PISIDAE" Text="Antiochea Pisidæ" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ASPENDOS" Text="Aspendos" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BITHYNIUM" Text="Bithynium" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_CALPE" Text="Calpe" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_CHALCEDON" Text="Chalcedon" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_CITIUM" Text="Citium" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_CYZICUS" Text="Cyzicus" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_DYNDIMUS" Text="Dyndimus" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_EPHESUS" Text="Ephesus" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_EUPATORIA" Text="Eupatoria" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_EUSEBIA_AT_THE_ARGAEUS" Text="Eusebia at the Argaeus" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_GANGRA" Text="Gangra" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_GORDIUM" Text="Gordium" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_HADRIANOPOLIS" Text="Hadrianopolis" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_HALICARNASSOS" Text="Halicarnassos" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_HYLLARIMA" Text="Hyllarima" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ICONIUM" Text="Iconium" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_LAODICEA" Text="Laodicea" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_LAODICEA_ON_THE_LYCUS" Text="Laodicea on the Lycus" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MOKISSOS" Text="Mokissos" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_NAZIANZUS" Text="Nazianzus" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_NICOMEDIA" Text="Nicomedia" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_NYSA" Text="Nysa" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_PERGAMON" Text="Pergamon" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_PESSINUS" Text="Pessinus" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_PHASELIS" Text="Phaselis" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA" Text="Philadelphia" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_PHILOMELIUM" Text="Philomelium" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_PHYSKOS" Text="Physkos" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_POMPEIOPOLIS" Text="Pompeiopolis" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_PRUSA" Text="Prusa" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_PYLAI" Text="Pylai" Language="en_US"/> 
+		<Replace Tag="LOC_CITY_NAME_SALAMIS" Text="Salamis" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SEBASTIA" Text="Sebastia" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SELEUCIA" Text="Seleucia" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SIDE" Text="Side" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SINOPE" Text="Sinope" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SMYRNA" Text="Smyrna" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TARSUS" Text="Tarsus" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TROY" Text="Troy" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TYANA" Text="Tyana" Language="en_US"/>	
  </LocalizedText>
  
  <LocalizedText>
 		<!-- WESTERN AFRICA (MOROCCO, WESTERN SAHARA, MAURITANIA, WESTERN ALGERIA -->
-		<Replace Tag="LOC_CITY_NAME_CHOUM" Text="Choum" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_KEDIET_IJILL" Text="Kediet_Ijill" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_OUADANE" Text="Ouadane" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_OUM_EL_ASSEL" Text="Oum El Assel" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ZOUERAT" Text="Zouérat" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ATAR" Text="Atar" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_EL_HANK" Text="El Hank" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TABALBALA" Text="Tabalbala" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_FDERIK" Text="Fderik" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ADRAR" Text="Adrar" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ERG_IGUIDI" Text="Erg Iguidi" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TOURINE" Text="Tourine" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BIR_LEULOU" Text="Bir Leulou" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ZERHAMRA" Text="Zerhamra" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BIR_MOGHREIN" Text="Bir Moghrein" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AIN_BEN_TILI" Text="Ain Ben Tili" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_IGLI" Text="Igli" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TIFARITI" Text="Tifariti" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_HAMAGUIR" Text="Hamaguir" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BOUCRAA" Text="Boucraa" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TINDUF" Text="Tinduf" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AL_MAHBES" Text="Al Mahbes" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TIRIS_ZEMMOUR" Text="Tiris Zemmour" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TAGHIT" Text="Taghit" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SAMARA" Text="Samara" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MAHBES" Text="Mahbés" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TINFOUCHY" Text="Tinfouchy" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_ABADLA" Text="Abadla" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_EL_AAIUN" Text="El-Aaiún" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ICHT" Text="Icht" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TOURZA" Text="Tourza" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ASSA" Text="Assa" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_OUM_EL_ASSEL" Text="Oum El Assel" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BECHAR" Text="Béchar" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TAN_TAN" Text="Tan-tan" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TAFRAOUTE" Text="Tafraoute" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TATA" Text="Tata" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ERFOUD" Text="Erfoud" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_GUELMIM" Text="Guelmim" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TIGHMERT" Text="Tighmert" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_KSAR_ES_SOUK" Text="Ksar Es Souk" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TIMICHA" Text="Timicha" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_OUARZAZATE" Text="Ouarzazate" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_GOULMIMA" Text="Goulmima" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AOUFOUS" Text="Aoufous" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_FIGUIG" Text="Figuig" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TIZNIT" Text="Tiznit" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TAROUDANNT" Text="Taroudannt" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TINGHIR" Text="Tinghir" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BOUARFA" Text="Bouarfa" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_IMLIL" Text="Imlil" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MIDELT" Text="Midelt" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ERRACHIDIA" Text="Errachidia" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_CHICHAOUA" Text="Chichaoua" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AZILAL" Text="Azilal" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TENDRARA" Text="Tendrara" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ADRAR" Text="Adrar" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_AGADIR" Text="Agadir" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MARRAKECH" Text="Marrakech" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BENI_MELLAL" Text="Beni-Mellal" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_EL_MENZEL" Text="El Menzel" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ESSAOUIRA" Text="Essaouira" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_KHOURIBGA" Text="Khouribga" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SAFI" Text="Safi" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SETTAT" Text="Settat" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_KHENIFRA" Text="Khenifra" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AZROU" Text="Azrou" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AIN_BEN_TILI" Text="Ain Ben Tili" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_AIN_BNI_MATHAR" Text="Ain bni mathar" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AL_MAHBES" Text="Al Mahbes" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AOUFOUS" Text="Aoufous" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ASSA" Text="Assa" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ATAR" Text="Atar" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AZILAL" Text="Azilal" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AZROU" Text="Azrou" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BECHAR" Text="Béchar" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BENI_MELLAL" Text="Beni-Mellal" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_BERRECHID" Text="Berrechid" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_OULMES" Text="Oulmes" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SEFROU" Text="Sefrou" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_GUERCIF" Text="Guercif" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_EL_JADIDA" Text="El Jadida" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_KHEMISSET" Text="Khemisset" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MEKNES" Text="Meknes" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_IMOUZZER_KANDAR" Text="Imouzzer Kandar" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BIR_LEULOU" Text="Bir Leulou" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BIR_MOGHREIN" Text="Bir Moghrein" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BOUARFA" Text="Bouarfa" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BOUCRAA" Text="Boucraa" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_CASABLANCA" Text="Casablanca" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_OUJDA" Text="Oujda" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TEMARA" Text="Temara" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_FES" Text="Fes" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TAZA" Text="Taza" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_RABAT" Text="Rabat" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TAOUNATA" Text="Taounata" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SALE" Text="Sale" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_KENITRA" Text="Kenitra" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_CHEFCHAOUEN" Text="Chefchaouen" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_CHICHAOUA" Text="Chichaoua" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_CHOUM" Text="Choum" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_EL_AAIUN" Text="El-Aaiún" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_EL_HANK" Text="El Hank" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_EL_JADIDA" Text="El Jadida" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_EL_MENZEL" Text="El Menzel" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ERFOUD" Text="Erfoud" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ERG_IGUIDI" Text="Erg Iguidi" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ERRACHIDIA" Text="Errachidia" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ESSAOUIRA" Text="Essaouira" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_FDERIK" Text="Fderik" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_FES" Text="Fes" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_FIGUIG" Text="Figuig" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_GOULMIMA" Text="Goulmima" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_GUELMIM" Text="Guelmim" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_GUERCIF" Text="Guercif" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_HAMAGUIR" Text="Hamaguir" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_HOCEIMA" Text="Hoceima" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ICHT" Text="Icht" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_IGLI" Text="Igli" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_IMLIL" Text="Imlil" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_IMOUZZER_KANDAR" Text="Imouzzer Kandar" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_KEDIET_IJILL" Text="Kediet_Ijill" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_KENITRA" Text="Kenitra" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_KHEMISSET" Text="Khemisset" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_KHENIFRA" Text="Khenifra" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_KHOURIBGA" Text="Khouribga" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_KSAR_ES_SOUK" Text="Ksar Es Souk" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MAHBES" Text="Mahbés" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MARRAKECH" Text="Marrakech" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MEKNES" Text="Meknes" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MIDELT" Text="Midelt" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_NADOR" Text="Nador" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TETOUAN" Text="Tetouan" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_OUADANE" Text="Ouadane" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_OUARZAZATE" Text="Ouarzazate" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_OUJDA" Text="Oujda" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_OULMES" Text="Oulmes" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_OUM_EL_ASSEL" Text="Oum El Assel" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_OUM_EL_ASSEL" Text="Oum El Assel" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_RABAT" Text="Rabat" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SAFI" Text="Safi" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SALE" Text="Sale" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SAMARA" Text="Samara" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SEFROU" Text="Sefrou" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SETTAT" Text="Settat" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TABALBALA" Text="Tabalbala" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TAFRAOUTE" Text="Tafraoute" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TAGHIT" Text="Taghit" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_TANGIER" Text="Tangier" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TAN_TAN" Text="Tan-tan" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TAOUNATA" Text="Taounata" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TAROUDANNT" Text="Taroudannt" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TATA" Text="Tata" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TAZA" Text="Taza" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TEMARA" Text="Temara" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TENDRARA" Text="Tendrara" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TETOUAN" Text="Tetouan" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TIFARITI" Text="Tifariti" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TIGHMERT" Text="Tighmert" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TIMICHA" Text="Timicha" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TINDUF" Text="Tinduf" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TINFOUCHY" Text="Tinfouchy" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TINGHIR" Text="Tinghir" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TIRIS_ZEMMOUR" Text="Tiris Zemmour" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TIZNIT" Text="Tiznit" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TOURINE" Text="Tourine" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TOURZA" Text="Tourza" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ZERHAMRA" Text="Zerhamra" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ZOUERAT" Text="Zouérat" Language="en_US"/>
  </LocalizedText>
  
   <LocalizedText>
 		<!-- CENTRAL AFRICA (ALGERIA, TUNISIA, NORTH LIBYA) -->
-		<Replace Tag="LOC_CITY_NAME_MGUIDEN" Text="M'guiden" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_FOGGARET_EZ_ZOUA" Text="Foggaret Ez Zoua" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_HASSI_BEL_GUEBBOUR" Text="Hassi Bel Guebbour" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_EL_MENIA" Text="El Menia" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_HASSI_MESSAOUD" Text="Hassi Messaoud" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_STAH" Text="Stah" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_GRAND_ERG_OCCIDENTAL" Text="Grand Erg Occidental" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_HASSI_FEHAL" Text="Hassi Fehal" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_DEBDEB" Text="Debdeb" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BORJ_EL_KHADRA" Text="Borj El Khadra" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_GASSI_EL_AGREB" Text="Gassi El Agreb" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_EL_BORMA" Text="El Borma" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_GADAMIS" Text="Gadamis" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BENOUD" Text="Benoud" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MANSOURA" Text="Mansoura" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TAMANGHASSET" Text="Tamanghasset" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SINAWIN" Text="Sinawin" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_GARYAN" Text="Garyan" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BANI_WALED" Text="Bani Waled" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TABAQAH" Text="Tabaqah" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_GHARDAIA" Text="Ghardaia" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_OUARGLA" Text="Ouargla" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_JEBIL" Text="Jebil" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MSALLATA" Text="Msallata" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MOGHRAR" Text="Moghrar" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TATAOUINE" Text="Tataouine" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AL_JAWSH" Text="Al Jawsh" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ALZINTAN" Text="Alzintan" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MISRATA" Text="Misrata" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_EL_BADIYAH" Text="El Badiyah" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_GRAND_ERG_ORIENTAL" Text="Grand Erg Oriental" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ALRIYAYNA" Text="Alriyayna" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AL_KHUMS" Text="Al Khums" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_LAGHOUAT" Text="Laghouat" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ZUWAR" Text="Zuwar" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TRIPOLI" Text="Tripoli" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AIN_SEFRA" Text="Ain Sefra" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_EL_GUERRARA" Text="El Guerrara" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TOZEUR" Text="Tozeur" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_GABES" Text="Gabes" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_NAAMA" Text="Naama" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_DJELFA" Text="Djelfa" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MESSAAD" Text="Messaad" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TOLGA" Text="Tolga" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TOUGGOURT" Text="Touggourt" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BISKRA" Text="Biskra" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SIDI_BOUZID" Text="Sidi Bouzid" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MECHERIA" Text="Mecheria" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BOU_SAADA" Text="Bou Saada" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_AIN_BEIDA" Text="Ain Beida" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TEBESSA" Text="Tebessa" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SIAX" Text="Siax" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_AIN_OUSSERA" Text="Ain Oussera" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_HAD_SAHARY" Text="Had-Sahary" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BARIKA" Text="Barika" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AL-QAYRAWAN" Text="Al-Qayrawan" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SAIDA" Text="Saida" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SIDI_AISSA" Text="Sidi Aissa" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_EL_EULMA" Text="El Eulma" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BATNA" Text="Batna" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_GUELMA" Text="Guelma" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SOUK_AHRAS" Text="Souk Ahras" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TUNIS" Text="Tunis" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TLEMCEN" Text="Tlemcen" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TIARET" Text="Tiaret" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MEDEA" Text="Médéa" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MSILA" Text="M'Sila" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AIN_SEFRA" Text="Ain Sefra" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ALGIERS" Text="Algiers" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_ALI_MENDJELI" Text="Ali Mendjeli" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MILA" Text="Mila" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ALRIYAYNA" Text="Alriyayna" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ALZINTAN" Text="Alzintan" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AL_JAWSH" Text="Al Jawsh" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AL_KHUMS" Text="Al Khums" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AL_QAYRAWAN" Text="Al-Qayrawan" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_ANNABA" Text="Annaba" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BANI_WALED" Text="Bani Waled" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BARIKA" Text="Barika" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BATNA" Text="Batna" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BEJAIA" Text="Béjaïa" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BENOUD" Text="Benoud" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BISKRA" Text="Biskra" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_BLIDA" Text="Blida" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_BORDJ_BOU_ARRERIDJ" Text="Bordj Bou Arreridj" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SETIF" Text="Setif" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TAMALOUS" Text="Tamalous" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_CONSTANTINE" Text="Constantine" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ORAN" Text="Oran" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ALGIERS" Text="Algiers" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BEJAIA" Text="Béjaïa" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BORJ_EL_KHADRA" Text="Borj El Khadra" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BOU_SAADA" Text="Bou Saada" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_COLLO" Text="Collo" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_CONSTANTINE" Text="Constantine" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_DEBDEB" Text="Debdeb" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_DJELFA" Text="Djelfa" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_EL_BADIYAH" Text="El Badiyah" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_EL_BORMA" Text="El Borma" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_EL_EULMA" Text="El Eulma" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_EL_GUERRARA" Text="El Guerrara" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_EL_MENIA" Text="El Menia" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_FOGGARET_EZ_ZOUA" Text="Foggaret Ez Zoua" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_GABES" Text="Gabes" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_GADAMIS" Text="Gadamis" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_GARYAN" Text="Garyan" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_GASSI_EL_AGREB" Text="Gassi El Agreb" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_GHARDAIA" Text="Ghardaia" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_GRAND_ERG_OCCIDENTAL" Text="Grand Erg Occidental" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_GRAND_ERG_ORIENTAL" Text="Grand Erg Oriental" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_GUELMA" Text="Guelma" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_HAD_SAHARY" Text="Had-Sahary" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_HASSI_BEL_GUEBBOUR" Text="Hassi Bel Guebbour" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_HASSI_FEHAL" Text="Hassi Fehal" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_HASSI_MESSAOUD" Text="Hassi Messaoud" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_JEBIL" Text="Jebil" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_LAGHOUAT" Text="Laghouat" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MANSOURA" Text="Mansoura" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MECHERIA" Text="Mecheria" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MEDEA" Text="Médéa" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MESSAAD" Text="Messaad" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MGUIDEN" Text="M'guiden" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MILA" Text="Mila" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MISRATA" Text="Misrata" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MOGHRAR" Text="Moghrar" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MSALLATA" Text="Msallata" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MSILA" Text="M'Sila" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_NAAMA" Text="Naama" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ORAN" Text="Oran" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_OUARGLA" Text="Ouargla" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SAIDA" Text="Saida" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SETIF" Text="Setif" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SIAX" Text="Siax" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SIDI_AISSA" Text="Sidi Aissa" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SIDI_BOUZID" Text="Sidi Bouzid" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SINAWIN" Text="Sinawin" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SOUK_AHRAS" Text="Souk Ahras" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_STAH" Text="Stah" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TABAQAH" Text="Tabaqah" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TAMALOUS" Text="Tamalous" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TAMANGHASSET" Text="Tamanghasset" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TATAOUINE" Text="Tataouine" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TEBESSA" Text="Tebessa" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TIARET" Text="Tiaret" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TLEMCEN" Text="Tlemcen" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TOLGA" Text="Tolga" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TOUGGOURT" Text="Touggourt" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TOZEUR" Text="Tozeur" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TRIPOLI" Text="Tripoli" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TUNIS" Text="Tunis" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TUNIS_CARTHAGE" Text="Carthage" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ZUWARA" Text="Zuwara" Language="en_US"/>
  
  </LocalizedText>
  
  <LocalizedText>
 		<!-- LIBYA AND EGYPT-->
-		<Replace Tag="LOC_CITY_NAME_ASH_SHWAYRIF" Text="Ash Shwayrif" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TAZIRBU" Text="Tazirbu" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_FARAFRA" Text="Farafra" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TOD" Text="Tod" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_QUS" Text="Qus" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AL_FUQAHA" Text="Al Fuqaha" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ZALTAN" Text="Zaltan" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_GILF_KEBIR_PLATEAU" Text="Gilf Kebir Plateau" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SOHAG" Text="Sohag" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_LUXOR" Text="Luxor" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SAFAGA" Text="Safaga" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SABHA" Text="Sabha" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AL_JAWF" Text="Al Jawf" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BAHARIYA_OASIS" Text="Bahariya Oasis" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AWJILAH" Text="Awjilah" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_WHITE_DESERT" Text="White Desert" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ASYUT" Text="Asyut" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_EASTERN_DESERT" Text="Eastern Desert" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_HURGHADA" Text="Hurghada" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_HOUN" Text="Houn" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MARADAH" Text="Maradah" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MALLAWI" Text="Mallawi" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BENI_SUEF" Text="Beni Suef" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_JALU" Text="Jalu" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AL_HARRAH" Text="Al Harrah" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_FAIYUM" Text="Faiyum" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_GIZA" Text="Giza" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_AJDABIYA" Text="Ajdabiya" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_JAKHARRAH" Text="Jakharrah" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AL_JAGHBUB" Text="Al_Jaghbub" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ZAAFARANA" Text="Zaafarana" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_EL_TOR" Text="El Tor" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SHARM_EL_SHEIKH" Text="Sharm El Sheikh" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AN_NAWFALIYAH" Text="An Nawfaliyah" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MECHILI" Text="Mechili" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SIWA_OASIS" Text="Siwa Oasis" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TANTA" Text="Tanta" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_CAIRO" Text="Cairo" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SIRTE" Text="Sirte" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BIN_JAWAD" Text="Bin Jawad" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_RAS_LANUF" Text="Ras Lanuf" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MARINA_EL_ALAMEIN" Text="Marina El Alamein" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ISMAILIA" Text="Ismalia" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_SUEZ" Text="Suez" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_NEKHEL" Text="Nekhel" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_QAMINIS" Text="Qaminis" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AL_MARJ" Text="Al Marj" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MARTUBA" Text="Martuba" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_EL_SALLOUM" Text="El Salloum" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_MARSA_MATRUH" Text="Marsa Matruh" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_ALEXANDRIA" Text="Alexandria" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AL_MAHALLAH" Text="Al Mahallah" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_AL_KUBRA" Text="Al Kubra" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BENGHAZI" Text="Benghazi" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_TOBRUK" Text="Tobruk" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_PORT_SAID" Text="Port Said" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_UMM_RIZAM" Text="Umm Rizam" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_BALTIM" Text="Baltim" Language="en_US"/>
-		<Replace Tag="LOC_CITY_NAME_ARISH" Text="Arish" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_AL_BAYDA" Text="Al Bayda" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AL_FUQAHA" Text="Al Fuqaha" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AL_HARRAH" Text="Al Harrah" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AL_JAGHBUB" Text="Al_Jaghbub" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AL_JAWF" Text="Al Jawf" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AL_KUBRA" Text="Al Kubra" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AL_MAHALLAH" Text="Al Mahallah" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AL_MARJ" Text="Al Marj" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AN_NAWFALIYAH" Text="An Nawfaliyah" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ARISH" Text="Arish" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ASH_SHWAYRIF" Text="Ash Shwayrif" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ASYUT" Text="Asyut" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AWJILAH" Text="Awjilah" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BAHARIYA_OASIS" Text="Bahariya Oasis" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BALTIM" Text="Baltim" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BENGHAZI" Text="Benghazi" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BENI_SUEF" Text="Beni Suef" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_BIN_JAWAD" Text="Bin Jawad" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_CAIRO" Text="Cairo" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_EASTERN_DESERT" Text="Eastern Desert" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_EL_SALLOUM" Text="El Salloum" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_EL_TOR" Text="El Tor" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_FAIYUM" Text="Faiyum" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_FARAFRA" Text="Farafra" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_GILF_KEBIR_PLATEAU" Text="Gilf Kebir Plateau" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_GIZA" Text="Giza" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_HOUN" Text="Houn" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_HURGHADA" Text="Hurghada" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ISMAILIA" Text="Ismalia" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_JAKHARRAH" Text="Jakharrah" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_JALU" Text="Jalu" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_LUXOR" Text="Luxor" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MALLAWI" Text="Mallawi" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MARADAH" Text="Maradah" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MARINA_EL_ALAMEIN" Text="Marina El Alamein" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MARSA_MATRUH" Text="Marsa Matruh" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MARTUBA" Text="Martuba" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_MECHILI" Text="Mechili" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_NEKHEL" Text="Nekhel" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_PORT_SAID" Text="Port Said" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_QAMINIS" Text="Qaminis" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_QUS" Text="Qus" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_RAS_LANUF" Text="Ras Lanuf" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SABHA" Text="Sabha" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SAFAGA" Text="Safaga" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SHARM_EL_SHEIKH" Text="Sharm El Sheikh" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SIRTE" Text="Sirte" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SIWA_OASIS" Text="Siwa Oasis" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SOHAG" Text="Sohag" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_SUEZ" Text="Suez" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TANTA" Text="Tanta" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TAZIRBU" Text="Tazirbu" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TOBRUK" Text="Tobruk" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TOD" Text="Tod" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_UMM_RIZAM" Text="Umm Rizam" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_WHITE_DESERT" Text="White Desert" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ZAAFARANA" Text="Zaafarana" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_ZALTAN" Text="Zaltan" Language="en_US"/>
 
 	</LocalizedText>
 	
@@ -2641,9 +2690,139 @@
 	<Replace Tag="LOC_CITY_NAME_ZHANBAY" Text="Zhanbay" Language="en_US"/>
 	
   </LocalizedText>
+  
+  <LocalizedText>
+  
+	<!-- WEST TURKEY AND CYPRUS -->
+	
+	<Replace Tag="LOC_CITY_NAME_ACIPAYAM" Text="Acıpayam" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ADANA" Text="Adana" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ADAPAZARI" Text="Adapazarı" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AKSARAY" Text="Aksaray" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AKSEHIR" Text="Akşehir" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ALANYA" Text="Alanya" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AMASYA" Text="Amasya" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AMASYA_HATTUSA" Text="Hattusa" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AMASIA" Text="Amasia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AMASIA_HATTUSA" Text="Hattusa" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ANKARA" Text="Ankara" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ANTALYA" Text="Antalya" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AYDIN" Text="Aydın" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AYFONKARAHISAR" Text="Afyonkarahisar" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BALIKESIR" Text="Balıkesir" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BANDIRMA" Text="Bandırma" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BEYPAZARI" Text="Beypazarı" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BIRSA" Text="Bursa" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BODRUM" Text="Bodrum" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BOLU" Text="Bolu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CANAKKALE" Text="Çanakkale" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CIDE" Text="Cide" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CORUM" Text="Çorum" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DENIZLI" Text="Denizli" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DEVELI" Text="Develi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DUZCE" Text="Düzce" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_EREGLI" Text="Karadeniz Ereğli" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ESKISEHIR" Text="Eskişehir" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FETHIYE" Text="Fethiye" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_IZMIR" Text="İzmir" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KADIKOY" Text="Kadıköy" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KARASU" Text="Karasu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KASTAMONU" Text="Kastamonu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KAYSERI" Text="Kayseri" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KIRSEHIR" Text="Kırşehir" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KONYA" Text="Konya" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KULU" Text="Kulu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LIMASSOL" Text="Limassol" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MARMARIS" Text="Marmaris" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MERSIN" Text="Mersin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NICOSIA" Text="Nicosia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NIGDE" Text="Niğde" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PAPHOS" Text="Paphos" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_POLI_CRYSOCHOUS" Text="Poli Chysochous" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SAMSUN" Text="Samsun" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SEYDISEHIR" Text="Seydişehir" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SINOP" Text="Sinop" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TAVSANLI" Text="Tavşanlı" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TOKAT" Text="Tokat" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YALOVA" Text="Yalova" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YOZGAT" Text="Yozgat" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZONGULDAK" Text="Zonguldak" Language="en_US"/>  
+	
+	</LocalizedText>
+	
+	<LocalizedText>
+  
+	<!-- MIDDLE EAST (NORTH) -->
+	<Replace Tag="LOC_CITY_NAME_ABHAR" Text="Abhar" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ADIYAMAN" Text="Adıyaman" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BANEH" Text="Baneh" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BATMAN" Text="Batman" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BAYBURT" Text="Bayburt" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BIJAR" Text="Bijar" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BINGOL" Text="Bingöl" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BUQAN" Text="Buqan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHALUS" Text="Chalus" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CIZRE" Text="Cizre" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DERECIK" Text="Derecik" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DIYARBAKIR" Text="Diyarbakır" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ELAZIG" Text="Elâzığ" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ELBISTAN" Text="Elbistan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ERGANI" Text="Ergani" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ERZINCAN" Text="Erzincan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ERZURUM" Text="Erzurum" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GAZIANTEP" Text="Gaziantep" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GIRESUN" Text="Giresun" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GOLBASI" Text="Gölbaşı" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ISKENDERUN" Text="Iskenderun" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KAHRAMANMARAS" Text="Kahramanmaraş" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KARAJ" Text="Karaj" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KARS" Text="Kars" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KHOY" Text="Khoy" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KIZILTEPE" Text="Kızıltepe" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOBANE" Text="Kobane" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LAHIJAN" Text="Lahijan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LANKARAN" Text="Lankaran" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MALATYA" Text="Malatya" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MARAND" Text="Marand" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MARIVAN" Text="Marivan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MUS" Text="Muş" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NAKHCHIVAN" Text="Nakhchivan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NAQADEH" Text="Naqadeh" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NARMAN" Text="Narman" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NIZIP" Text="Nizip" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NUSAYBIN" Text="Nusaybin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PAZARYOLU" Text="Pazaryolu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PIRANSHAHR" Text="Piranshahr" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_QAZVIN" Text="Qazvin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_QOM" Text="Qom" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_QORVEH" Text="Qorveh" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_QOSHACHAY" Text="Qoshachay" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_RASHT" Text="Rasht" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SALMAS" Text="Salmas" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SAQQEZ" Text="Saqqez" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SARKISLA" Text="Şarkışla" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SAVEH" Text="Saveh" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SEBINKARAHISAR" Text="Şebinkarahisar" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SIIRT" Text="Siirt" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SIVAS" Text="Sivas" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SORAN" Text="Soran" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TABRIZ" Text="Tabriz" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TATVAN" Text="Tatvan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TEHRAN" Text="Tehran" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TERCAN" Text="Tercan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TRABZON" Text="Trabzon" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ULAS" Text="Ulaş" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_URMIA" Text="Urmia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VAN" Text="Van" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VARDENIS" Text="Vardenis" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VIRANSEHIR" Text="Viranşehir" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_XANXENDI" Text="Xankandi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YEREVAN" Text="Yerevan" Language="en_US"/>
+	
+	</LocalizedText>
  
 	<LocalizedText> 
-	<!-- Japan and Korea-->
+	<!-- Japan and Korea GEM-->
 	
 	<Replace Tag="LOC_CITY_NAME_OKINAWA" Text="Okinawa" Language="en_US"/>
 	<Replace Tag="LOC_CITY_NAME_OSHIMA" Text="Oshima" Language="en_US"/>
