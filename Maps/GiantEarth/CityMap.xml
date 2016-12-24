@@ -98,4 +98,245 @@
 		<Replace MapName="GiantEarth" X="101" Y="71" CityLocaleName="LOC_CITY_NAME_KUSHIRO" />
 	</CityMap>
 
+	<!-- China -->
+	<CityMap>	
+		<Replace MapName="GiantEarth" X="81" Y="44" CityLocaleName="LOC_CITY_NAME_HAINAN" />
+		<Replace MapName="GiantEarth" X="81" Y="46" CityLocaleName="LOC_CITY_NAME_HAINAN" Area="0" />
+		<Replace MapName="GiantEarth" X="84" Y="46" CityLocaleName="LOC_CITY_NAME_PRATAS_ISLAND" />
+		<Replace MapName="GiantEarth" X="80" Y="47" CityLocaleName="LOC_CITY_NAME_ZHANJIANG" />
+		
+		<Replace MapName="GiantEarth" X="82" Y="48" CityLocaleName="LOC_CITY_NAME_YANGJIANG" Area="0" />
+		<Replace MapName="GiantEarth" X="83" Y="48" CityLocaleName="LOC_CITY_NAME_MACAU" Area="0" />
+		<Replace MapName="GiantEarth" X="84" Y="48" CityLocaleName="LOC_CITY_NAME_HONG_KONG" Area="0" />
+		<Replace MapName="GiantEarth" X="88" Y="48" CityLocaleName="LOC_CITY_NAME_KAOHSIUNG" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="76" Y="49" CityLocaleName="LOC_CITY_NAME_WENSHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="77" Y="50" CityLocaleName="LOC_CITY_NAME_WENSHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="78" Y="49" CityLocaleName="LOC_CITY_NAME_CHONGZUO" />
+		<Replace MapName="GiantEarth" X="79" Y="49" CityLocaleName="LOC_CITY_NAME_NANNING" Area="0" />
+		<Replace MapName="GiantEarth" X="79" Y="50" CityLocaleName="LOC_CITY_NAME_NANNING" Area="0" />
+		<Replace MapName="GiantEarth" X="80" Y="50" CityLocaleName="LOC_CITY_NAME_NANNING" Area="0" />
+		<Replace MapName="GiantEarth" X="80" Y="49" CityLocaleName="LOC_CITY_NAME_GUIGANG" Area="0" />
+		<Replace MapName="GiantEarth" X="82" Y="49" CityLocaleName="LOC_CITY_NAME_ZHONGSHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="84" Y="49" CityLocaleName="LOC_CITY_NAME_SHENZHEN" />
+		
+		<Replace MapName="GiantEarth" X="74" Y="50" CityLocaleName="LOC_CITY_NAME_DALI" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="50" CityLocaleName="LOC_CITY_NAME_KUNMING" />
+		<Replace MapName="GiantEarth" X="78" Y="50" CityLocaleName="LOC_CITY_NAME_GUIYANG" Area="0" />
+		<Replace MapName="GiantEarth" X="78" Y="51" CityLocaleName="LOC_CITY_NAME_GUIYANG" Area="0" />
+		<Replace MapName="GiantEarth" X="81" Y="50" CityLocaleName="LOC_CITY_NAME_ZHAOQING" />
+		<Replace MapName="GiantEarth" X="82" Y="50" CityLocaleName="LOC_CITY_NAME_FOSHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="81" Y="51" CityLocaleName="LOC_CITY_NAME_FOSHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="88" Y="50" CityLocaleName="LOC_CITY_NAME_TAIPEI" />
+		
+		<Replace MapName="GiantEarth" X="74" Y="51" CityLocaleName="LOC_CITY_NAME_LIJIANG" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="51" CityLocaleName="LOC_CITY_NAME_QUJING" Area="0" />
+		<Replace MapName="GiantEarth" X="79" Y="51" CityLocaleName="LOC_CITY_NAME_LIUZHOU" Area="0" />
+		<Replace MapName="GiantEarth" X="80" Y="51" CityLocaleName="LOC_CITY_NAME_WUZHOU" Area="0" />
+		<Replace MapName="GiantEarth" X="83" Y="51" CityLocaleName="LOC_CITY_NAME_GUANGZHOU" />
+		<Replace MapName="GiantEarth" X="85" Y="51" CityLocaleName="LOC_CITY_NAME_XIAMEN" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="52" CityLocaleName="LOC_CITY_NAME_XIAMEN" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="75" Y="52" CityLocaleName="LOC_CITY_NAME_LIANGSHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="52" CityLocaleName="LOC_CITY_NAME_LIANGSHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="77" Y="52" CityLocaleName="LOC_CITY_NAME_ZHAOTONG" Area="0" />
+		<Replace MapName="GiantEarth" X="79" Y="52" CityLocaleName="LOC_CITY_NAME_GUILIN" Area="0" />
+		<Replace MapName="GiantEarth" X="80" Y="52" CityLocaleName="LOC_CITY_NAME_GUILIN" Area="0" />
+		<Replace MapName="GiantEarth" X="81" Y="52" CityLocaleName="LOC_CITY_NAME_CHENZHOU" Area="0" />
+		<Replace MapName="GiantEarth" X="86" Y="52" CityLocaleName="LOC_CITY_NAME_WENZHOU" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="73" Y="53" CityLocaleName="LOC_CITY_NAME_DEQEN" />
+		<Replace MapName="GiantEarth" X="76" Y="53" CityLocaleName="LOC_CITY_NAME_NEIJIANG" Area="0" />
+		<Replace MapName="GiantEarth" X="77" Y="53" CityLocaleName="LOC_CITY_NAME_LUZHOU" Area="0" />
+		<Replace MapName="GiantEarth" X="82" Y="53" CityLocaleName="LOC_CITY_NAME_CHANGSHA" />
+		<Replace MapName="GiantEarth" X="84" Y="53" CityLocaleName="LOC_CITY_NAME_NANCHANG" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="53" CityLocaleName="LOC_CITY_NAME_JINHUA" Area="0" />
+		<Replace MapName="GiantEarth" X="86" Y="53" CityLocaleName="LOC_CITY_NAME_TAIZHOU" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="70" Y="54" CityLocaleName="LOC_CITY_NAME_LHASA" />
+		<Replace MapName="GiantEarth" X="74" Y="54" CityLocaleName="LOC_CITY_NAME_YAAN" Area="0" />
+		<Replace MapName="GiantEarth" X="73" Y="55" CityLocaleName="LOC_CITY_NAME_YAAN" Area="0" />
+		<Replace MapName="GiantEarth" X="77" Y="54" CityLocaleName="LOC_CITY_NAME_ZIYANG" Area="0" />
+		<Replace MapName="GiantEarth" X="79" Y="54" CityLocaleName="LOC_CITY_NAME_CHONGQING" />
+		<Replace MapName="GiantEarth" X="81" Y="54" CityLocaleName="LOC_CITY_NAME_JINGZHOU" Area="0" />
+		<Replace MapName="GiantEarth" X="81" Y="55" CityLocaleName="LOC_CITY_NAME_JINGZHOU" Area="0" />
+		<Replace MapName="GiantEarth" X="84" Y="54" CityLocaleName="LOC_CITY_NAME_HUANGSHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="54" CityLocaleName="LOC_CITY_NAME_HANGZHOU" />
+		<Replace MapName="GiantEarth" X="87" Y="54" CityLocaleName="LOC_CITY_NAME_NINGBO" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="66" Y="55" CityLocaleName="LOC_CITY_NAME_XIGAZE" />
+		<Replace MapName="GiantEarth" X="67" Y="55" CityLocaleName="LOC_CITY_NAME_XIGAZE" />
+		<Replace MapName="GiantEarth" X="72" Y="55" CityLocaleName="LOC_CITY_NAME_QAMDO" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="55" CityLocaleName="LOC_CITY_NAME_CHENGDU" />
+		<Replace MapName="GiantEarth" X="77" Y="55" CityLocaleName="LOC_CITY_NAME_SUINING" Area="0" />
+		<Replace MapName="GiantEarth" X="80" Y="55" CityLocaleName="LOC_CITY_NAME_YICHANG" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="71" Y="56" CityLocaleName="LOC_CITY_NAME_QAMDO" />
+		<Replace MapName="GiantEarth" X="77" Y="56" CityLocaleName="LOC_CITY_NAME_NANCHONG" Area="0" />
+		<Replace MapName="GiantEarth" X="80" Y="56" CityLocaleName="LOC_CITY_NAME_SHIYAN" Area="0" />
+		<Replace MapName="GiantEarth" X="80" Y="57" CityLocaleName="LOC_CITY_NAME_SHIYAN" Area="0" />
+		<Replace MapName="GiantEarth" X="81" Y="56" CityLocaleName="LOC_CITY_NAME_XIANGYANG" Area="0" />
+		<Replace MapName="GiantEarth" X="83" Y="56" CityLocaleName="LOC_CITY_NAME_WUHAN" />
+		<Replace MapName="GiantEarth" X="84" Y="56" CityLocaleName="LOC_CITY_NAME_NANJING" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="56" CityLocaleName="LOC_CITY_NAME_NANJING" Area="0" />
+		<Replace MapName="GiantEarth" X="84" Y="57" CityLocaleName="LOC_CITY_NAME_NANJING" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="57" CityLocaleName="LOC_CITY_NAME_NANJING" Area="0" />
+		<Replace MapName="GiantEarth" X="87" Y="56" CityLocaleName="LOC_CITY_NAME_SHANGHAI" />
+		
+		<Replace MapName="GiantEarth" X="64" Y="57" CityLocaleName="LOC_CITY_NAME_NGARI" Area="0" />
+		<Replace MapName="GiantEarth" X="64" Y="58" CityLocaleName="LOC_CITY_NAME_NGARI" Area="0" />
+		<Replace MapName="GiantEarth" X="66" Y="57" CityLocaleName="LOC_CITY_NAME_NAGQU" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="57" CityLocaleName="LOC_CITY_NAME_MIANYANG" Area="0" />
+		<Replace MapName="GiantEarth" X="78" Y="57" CityLocaleName="LOC_CITY_NAME_ANKANG" Area="0" />
+		<Replace MapName="GiantEarth" X="79" Y="57" CityLocaleName="LOC_CITY_NAME_ANKANG" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="69" Y="58" CityLocaleName="LOC_CITY_NAME_NAGQU" />
+		<Replace MapName="GiantEarth" X="73" Y="58" CityLocaleName="LOC_CITY_NAME_GARZE" />
+		<Replace MapName="GiantEarth" X="79" Y="58" CityLocaleName="LOC_CITY_NAME_SHANGLUO" />
+		<Replace MapName="GiantEarth" X="81" Y="58" CityLocaleName="LOC_CITY_NAME_NANYANG" />
+		
+		<Replace MapName="GiantEarth" X="66" Y="59" CityLocaleName="LOC_CITY_NAME_NAGQU" />
+		<Replace MapName="GiantEarth" X="75" Y="59" CityLocaleName="LOC_CITY_NAME_ABA" />
+		<Replace MapName="GiantEarth" X="79" Y="59" CityLocaleName="LOC_CITY_NAME_LUOYANG" Area="0" />
+		<Replace MapName="GiantEarth" X="80" Y="59" CityLocaleName="LOC_CITY_NAME_LUOYANG" Area="0" />
+		<Replace MapName="GiantEarth" X="81" Y="59" CityLocaleName="LOC_CITY_NAME_ZHENGZHOU" Area="0" />
+		<Replace MapName="GiantEarth" X="82" Y="59" CityLocaleName="LOC_CITY_NAME_JINING" Area="0" />
+		<Replace MapName="GiantEarth" X="83" Y="60" CityLocaleName="LOC_CITY_NAME_JINING" Area="0" />
+		<Replace MapName="GiantEarth" X="83" Y="59" CityLocaleName="LOC_CITY_NAME_XUZHOU" />
+		<Replace MapName="GiantEarth" X="84" Y="59" CityLocaleName="LOC_CITY_NAME_LINYI" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="59" CityLocaleName="LOC_CITY_NAME_YANCHENG" />
+		
+		<Replace MapName="GiantEarth" X="61" Y="60" CityLocaleName="LOC_CITY_NAME_KASHGAR" />
+		<Replace MapName="GiantEarth" X="64" Y="60" CityLocaleName="LOC_CITY_NAME_HOTAN" />
+		<Replace MapName="GiantEarth" X="71" Y="60" CityLocaleName="LOC_CITY_NAME_HAIXI_TIBETAN" />
+		<Replace MapName="GiantEarth" X="78" Y="60" CityLocaleName="LOC_CITY_NAME_XIAN" />
+		<Replace MapName="GiantEarth" X="81" Y="60" CityLocaleName="LOC_CITY_NAME_ZHENGZHOU" />
+		<Replace MapName="GiantEarth" X="84" Y="60" CityLocaleName="LOC_CITY_NAME_JINAN" Area="0" />
+		<Replace MapName="GiantEarth" X="83" Y="61" CityLocaleName="LOC_CITY_NAME_JINAN" Area="0" />
+		<Replace MapName="GiantEarth" X="84" Y="60" CityLocaleName="LOC_CITY_NAME_QINGDAO" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="60" CityLocaleName="LOC_CITY_NAME_QINGDAO" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="69" Y="61" CityLocaleName="LOC_CITY_NAME_HAIXI_TIBETAN" />
+		<Replace MapName="GiantEarth" X="74" Y="61" CityLocaleName="LOC_CITY_NAME_GOLOG" />
+		<Replace MapName="GiantEarth" X="76" Y="61" CityLocaleName="LOC_CITY_NAME_LANZHOU" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="62" CityLocaleName="LOC_CITY_NAME_LANZHOU" Area="0" />
+		<Replace MapName="GiantEarth" X="77" Y="62" CityLocaleName="LOC_CITY_NAME_LANZHOU" Area="0" />
+		<Replace MapName="GiantEarth" X="82" Y="61" CityLocaleName="LOC_CITY_NAME_KAIFENG" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="61" CityLocaleName="LOC_CITY_NAME_WEIFANG" />
+		<Replace MapName="GiantEarth" X="86" Y="61" CityLocaleName="LOC_CITY_NAME_YANTAI" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="66" Y="62" CityLocaleName="LOC_CITY_NAME_BAYINGOL" />
+		<Replace MapName="GiantEarth" X="72" Y="62" CityLocaleName="LOC_CITY_NAME_YUSHU" Area="2" />
+		<Replace MapName="GiantEarth" X="78" Y="62" CityLocaleName="LOC_CITY_NAME_YANAN" Area="0" />
+		<Replace MapName="GiantEarth" X="79" Y="62" CityLocaleName="LOC_CITY_NAME_YANAN" Area="0" />
+		<Replace MapName="GiantEarth" X="81" Y="62" CityLocaleName="LOC_CITY_NAME_CHANGZHI" Area="0" />
+		<Replace MapName="GiantEarth" X="82" Y="62" CityLocaleName="LOC_CITY_NAME_HANDAN" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="59" Y="63" CityLocaleName="LOC_CITY_NAME_KIZILSU" />
+		<Replace MapName="GiantEarth" X="75" Y="63" CityLocaleName="LOC_CITY_NAME_ZHONGWEI" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="63" CityLocaleName="LOC_CITY_NAME_ZHONGWEI" Area="0" />
+		<Replace MapName="GiantEarth" X="81" Y="63" CityLocaleName="LOC_CITY_NAME_BAODING" Area="0" />
+		<Replace MapName="GiantEarth" X="81" Y="64" CityLocaleName="LOC_CITY_NAME_BAODING" Area="0" />
+		<Replace MapName="GiantEarth" X="82" Y="64" CityLocaleName="LOC_CITY_NAME_BAODING" Area="0" />
+		<Replace MapName="GiantEarth" X="81" Y="65" CityLocaleName="LOC_CITY_NAME_BAODING" Area="0" />
+		<Replace MapName="GiantEarth" X="83" Y="63" CityLocaleName="LOC_CITY_NAME_TIANJIN" />
+		
+		<Replace MapName="GiantEarth" X="61" Y="64" CityLocaleName="LOC_CITY_NAME_KARAKOL" Area="0" />
+		<Replace MapName="GiantEarth" X="61" Y="65" CityLocaleName="LOC_CITY_NAME_KARAKOL" Area="0" />
+		<Replace MapName="GiantEarth" X="63" Y="64" CityLocaleName="LOC_CITY_NAME_AKSU" Area="2" />
+		<Replace MapName="GiantEarth" X="66" Y="64" CityLocaleName="LOC_CITY_NAME_BAYINGOL" />
+		<Replace MapName="GiantEarth" X="74" Y="64" CityLocaleName="LOC_CITY_NAME_HAIBEI" />
+		<Replace MapName="GiantEarth" X="76" Y="64" CityLocaleName="LOC_CITY_NAME_YINCHUAN" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="65" CityLocaleName="LOC_CITY_NAME_YINCHUAN" Area="0" />
+		<Replace MapName="GiantEarth" X="78" Y="64" CityLocaleName="LOC_CITY_NAME_YULIN" />
+		<Replace MapName="GiantEarth" X="80" Y="64" CityLocaleName="LOC_CITY_NAME_SHIJIAZHUANG" />
+		
+		<Replace MapName="GiantEarth" X="65" Y="65" CityLocaleName="LOC_CITY_NAME_YANQI" Area="0" />
+		<Replace MapName="GiantEarth" X="66" Y="65" CityLocaleName="LOC_CITY_NAME_YANQI" Area="0" />
+		<Replace MapName="GiantEarth" X="68" Y="65" CityLocaleName="LOC_CITY_NAME_XINJIANG" Area="2" />
+		<Replace MapName="GiantEarth" X="71" Y="65" CityLocaleName="LOC_CITY_NAME_HAIXI_MONGOL" />
+		<Replace MapName="GiantEarth" X="75" Y="65" CityLocaleName="LOC_CITY_NAME_WUWEI" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="66" CityLocaleName="LOC_CITY_NAME_WUWEI" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="66" CityLocaleName="LOC_CITY_NAME_WUWEI" Area="0" />
+		<Replace MapName="GiantEarth" X="84" Y="65" CityLocaleName="LOC_CITY_NAME_TANGSHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="65" CityLocaleName="LOC_CITY_NAME_TANGSHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="66" CityLocaleName="LOC_CITY_NAME_TANGSHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="86" Y="66" CityLocaleName="LOC_CITY_NAME_TANGSHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="86" Y="65" CityLocaleName="LOC_CITY_NAME_DALIAN" />
+		<Replace MapName="GiantEarth" X="87" Y="66" CityLocaleName="LOC_CITY_NAME_DALIAN" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="66" Y="66" CityLocaleName="LOC_CITY_NAME_URUMQI" Area="0" />
+		<Replace MapName="GiantEarth" X="67" Y="66" CityLocaleName="LOC_CITY_NAME_URUMQI" Area="0" />
+		<Replace MapName="GiantEarth" X="73" Y="66" CityLocaleName="LOC_CITY_NAME_JIAQUAN" Area="0" />
+		<Replace MapName="GiantEarth" X="71" Y="67" CityLocaleName="LOC_CITY_NAME_JIAQUAN" Area="0" />
+		<Replace MapName="GiantEarth" X="74" Y="66" CityLocaleName="LOC_CITY_NAME_HAIBEI" Area="0" />
+		<Replace MapName="GiantEarth" X="79" Y="66" CityLocaleName="LOC_CITY_NAME_BAOTOU" Area="0" />
+		<Replace MapName="GiantEarth" X="78" Y="67" CityLocaleName="LOC_CITY_NAME_BAOTOU" Area="0" />
+		<Replace MapName="GiantEarth" X="79" Y="68" CityLocaleName="LOC_CITY_NAME_BAOTOU" Area="0" />
+		<Replace MapName="GiantEarth" X="83" Y="66" CityLocaleName="LOC_CITY_NAME_BEIJING" />
+		
+		<Replace MapName="GiantEarth" X="64" Y="67" CityLocaleName="LOC_CITY_NAME_ILI" />
+		<Replace MapName="GiantEarth" X="67" Y="67" CityLocaleName="LOC_CITY_NAME_URUMQI" />
+		<Replace MapName="GiantEarth" X="68" Y="67" CityLocaleName="LOC_CITY_NAME_URUMQI" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="67" CityLocaleName="LOC_CITY_NAME_BAYANHOT" />
+		<Replace MapName="GiantEarth" X="77" Y="67" CityLocaleName="LOC_CITY_NAME_BAYAN_NUR" />
+		<Replace MapName="GiantEarth" X="80" Y="67" CityLocaleName="LOC_CITY_NAME_HOHHOT" />
+		<Replace MapName="GiantEarth" X="84" Y="67" CityLocaleName="LOC_CITY_NAME_CHENGDE" Area="0" />
+		<Replace MapName="GiantEarth" X="84" Y="68" CityLocaleName="LOC_CITY_NAME_CHENGDE" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="67" CityLocaleName="LOC_CITY_NAME_CHIFENG" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="68" CityLocaleName="LOC_CITY_NAME_CHIFENG" Area="0" />
+		<Replace MapName="GiantEarth" X="87" Y="67" CityLocaleName="LOC_CITY_NAME_SHENYANG" />
+		
+		<Replace MapName="GiantEarth" X="66" Y="68" CityLocaleName="LOC_CITY_NAME_BORTALA" />
+		<Replace MapName="GiantEarth" X="70" Y="68" CityLocaleName="LOC_CITY_NAME_TURPAN" />
+		<Replace MapName="GiantEarth" X="73" Y="68" CityLocaleName="LOC_CITY_NAME_JIAQUAN" />
+		<Replace MapName="GiantEarth" X="86" Y="68" CityLocaleName="LOC_CITY_NAME_FUXIN" Area="0" />
+		<Replace MapName="GiantEarth" X="87" Y="68" CityLocaleName="LOC_CITY_NAME_CHANGCHUN" Area="0" />
+		<Replace MapName="GiantEarth" X="88" Y="68" CityLocaleName="LOC_CITY_NAME_CHANGCHUN" Area="0" />
+		<Replace MapName="GiantEarth" X="87" Y="69" CityLocaleName="LOC_CITY_NAME_CHANGCHUN" Area="0" />
+		<Replace MapName="GiantEarth" X="89" Y="68" CityLocaleName="LOC_CITY_NAME_LIAOYUAN" Area="0" />
+		<Replace MapName="GiantEarth" X="90" Y="68" CityLocaleName="LOC_CITY_NAME_BAISHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="91" Y="68" CityLocaleName="LOC_CITY_NAME_YANBIAN" Area="0" />
+		<Replace MapName="GiantEarth" X="91" Y="69" CityLocaleName="LOC_CITY_NAME_YANBIAN" Area="0" />
+		<Replace MapName="GiantEarth" X="92" Y="69" CityLocaleName="LOC_CITY_NAME_YANBIAN" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="67" Y="69" CityLocaleName="LOC_CITY_NAME_KARAMAY" Area="0" />
+		<Replace MapName="GiantEarth" X="68" Y="69" CityLocaleName="LOC_CITY_NAME_KARAMAY" Area="0" />
+		<Replace MapName="GiantEarth" X="68" Y="70" CityLocaleName="LOC_CITY_NAME_KARAMAY" Area="0" />
+		<Replace MapName="GiantEarth" X="70" Y="69" CityLocaleName="LOC_CITY_NAME_KAMUL" />
+		<Replace MapName="GiantEarth" X="82" Y="69" CityLocaleName="LOC_CITY_NAME_XILIN_GOL"  />
+		<Replace MapName="GiantEarth" X="86" Y="69" CityLocaleName="LOC_CITY_NAME_TONGLIAO" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="66" Y="70" CityLocaleName="LOC_CITY_NAME_QOQEK" />
+		<Replace MapName="GiantEarth" X="85" Y="70" CityLocaleName="LOC_CITY_NAME_HINGGAN" />
+		<Replace MapName="GiantEarth" X="87" Y="70" CityLocaleName="LOC_CITY_NAME_SONGYUAN" Area="0" />
+		<Replace MapName="GiantEarth" X="87" Y="71" CityLocaleName="LOC_CITY_NAME_SONGYUAN" Area="0" />
+		<Replace MapName="GiantEarth" X="89" Y="70" CityLocaleName="LOC_CITY_NAME_HARBIN" />
+		<Replace MapName="GiantEarth" X="91" Y="70" CityLocaleName="LOC_CITY_NAME_JIAMUSI" Area="0" />
+		<Replace MapName="GiantEarth" X="92" Y="70" CityLocaleName="LOC_CITY_NAME_MUDANJIANG" />
+		
+		<Replace MapName="GiantEarth" X="67" Y="71" CityLocaleName="LOC_CITY_NAME_ALTAY" />
+		<Replace MapName="GiantEarth" X="83" Y="71" CityLocaleName="LOC_CITY_NAME_XILIN_GOL" Area="0" />
+		<Replace MapName="GiantEarth" X="86" Y="71" CityLocaleName="LOC_CITY_NAME_BAICHENG" Area="0" />
+		<Replace MapName="GiantEarth" X="90" Y="71" CityLocaleName="LOC_CITY_NAME_YICHUN" Area="0" />
+		<Replace MapName="GiantEarth" X="90" Y="72" CityLocaleName="LOC_CITY_NAME_YICHUN" Area="0" />
+		<Replace MapName="GiantEarth" X="91" Y="71" CityLocaleName="LOC_CITY_NAME_HEGANG" Area="0" />
+		<Replace MapName="GiantEarth" X="92" Y="71" CityLocaleName="LOC_CITY_NAME_SHUANGYASHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="93" Y="71" CityLocaleName="LOC_CITY_NAME_JIXI" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="84" Y="72" CityLocaleName="LOC_CITY_NAME_HULUN_BUIR" Area="0" />
+		<Replace MapName="GiantEarth" X="83" Y="73" CityLocaleName="LOC_CITY_NAME_HULUN_BUIR" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="74" CityLocaleName="LOC_CITY_NAME_HULUN_BUIR" />
+		<Replace MapName="GiantEarth" X="86" Y="72" CityLocaleName="LOC_CITY_NAME_QIQIHAR" Area="0" />
+		<Replace MapName="GiantEarth" X="87" Y="72" CityLocaleName="LOC_CITY_NAME_DAQING" Area="0" />
+		<Replace MapName="GiantEarth" X="88" Y="72" CityLocaleName="LOC_CITY_NAME_DAQING" Area="0" />
+		<Replace MapName="GiantEarth" X="89" Y="72" CityLocaleName="LOC_CITY_NAME_SUIHUA" Area="0" />
+		<Replace MapName="GiantEarth" X="89" Y="73" CityLocaleName="LOC_CITY_NAME_SUIHUA" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="88" Y="74" CityLocaleName="LOC_CITY_NAME_DAXINGANLING" />
+		<Replace MapName="GiantEarth" X="88" Y="75" CityLocaleName="LOC_CITY_NAME_MAGDAGACHI" Area="0" />
+		<Replace MapName="GiantEarth" X="89" Y="75" CityLocaleName="LOC_CITY_NAME_MAGDAGACHI" Area="0" />
+		<Replace MapName="GiantEarth" X="88" Y="76" CityLocaleName="LOC_CITY_NAME_MAGDAGACHI" Area="0" />
+	</CityMap>
+	
 </GameData>

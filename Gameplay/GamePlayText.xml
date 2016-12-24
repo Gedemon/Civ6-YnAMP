@@ -2889,6 +2889,153 @@
  
 	</LocalizedText>
  
+ <LocalizedText> 
+	<!-- CHINA GEM-->
+	
+	<Replace Tag="LOC_CITY_NAME_HAINAN" Text="Hainan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PRATAS_ISLAND" Text="Pratas Island" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZHANJIANG" Text="Zhanjiang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YANGJIANG" Text="Yangjiang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MACAU" Text="Macau" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HONG_KONG" Text="Hong Kong" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KAOHSIUNG" Text="Kaohsiung" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WENSHAN" Text="Wenshan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHONGZUO" Text="Chongzuo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NANNING" Text="Nanning" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GUIGANG" Text="Guigang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZHONGSHAN" Text="Zhongshan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SHENZHEN" Text="Shenzhen" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DALI" Text="Dali" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KUNMING" Text="Kunming" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GUIYANG" Text="Guiyang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZHAOQING" Text="Zhaoqing" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FOSHAN" Text="Foshan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TAIPEI" Text="Taipei" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LIJIANG" Text="Lijiang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_QUJING" Text="Qujing" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LIUZHOU" Text="Liuzhou" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WUZHOU" Text="Wuzhou" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GUANGZHOU" Text="Guangzhou" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_XIAMEN" Text="Xiamen" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LIANGSHAN" Text="Liangshan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZHAOTONG" Text="Zhaotong" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GUILIN" Text="Guilin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHENZHOU" Text="Chenzhou" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WENZHOU" Text="Wenzhou" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DEQEN" Text="Deqen" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NEIJIANG" Text="Neijiang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LUZHOU" Text="Luzhou" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHANGSHA" Text="Changsha" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NANCHANG" Text="Nanchang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_JINHUA" Text="Jinhua" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TAIZHOU" Text="Taizhou" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LHASA" Text="Lhasa" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YAAN" Text="Ya'an" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZIYANG" Text="Ziyang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHONGQING" Text="Chongqing" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_JINGZHOU" Text="Jingzhou" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HUANGSHAN" Text="Huangshan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HANGZHOU" Text="Hangzhou" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NINGBO" Text="Ningbo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_XIGAZE" Text="Xigaze" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_QAMDO" Text="Qamdo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHENGDU" Text="Chengdu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SUINING" Text="Suining" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YICHANG" Text="Yichang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NANCHONG" Text="Nanchong" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SHIYAN" Text="Shiyan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_XIANGYANG" Text="Xiangyang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WUHAN" Text="Wuhan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NANJING" Text="Nanjing" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SHANGHAI" Text="Shanghai" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NGARI" Text="Ngari" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NAGQU" Text="Nagqu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MIANYANG" Text="Miangyang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ANKANG" Text="Ankang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GARZE" Text="Garze" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SHANGLUO" Text="Shangluo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_NANYANG" Text="Nanyang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ABA" Text="Aba" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LUOYANG" Text="Luoyang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZHENGZHOU" Text="Zhengzhou" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_JINING" Text="Jining" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_XUZHOU" Text="Xuzhou" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LINYI" Text="Linyi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YANCHENG" Text="Yancheng" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KASHGAR" Text="Kashgar" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HOTAN" Text="Hotan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HAIXI_TIBETAN" Text="Haixi Tibetan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_XIAN" Text="Xi'an" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_JINAN" Text="Jinan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_QINGDAO" Text="Qingdao" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GOLOG" Text="Golog" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LANZHOU" Text="Lanzhou" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KAIFENG" Text="Kaifeng" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WEIFANG" Text="Weifeng" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YANTAI" Text="Yantai" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BAYINGOL" Text="Bayingol" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YUSHU" Text="Yushu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YANAN" Text="Yan'an" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHANGZHI" Text="Changzhi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HANDAN" Text="Handan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KIZILSU" Text="Kizilsu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ZHONGWEI" Text="Zhongwei" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BAODING" Text="Baoding" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TIANJIN" Text="Tianjin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KARAKOL" Text="Karakol" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AKSU" Text="Aksu" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HAIBEI" Text="Haibei" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YINCHUAN" Text="Yinchuan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YULIN" Text="Yulin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SHIJIAZHUANG" Text="Shijiazhuang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YANQI" Text="Yanqi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_XINJIANG" Text="Xinjiang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HAIXI_MONGOL" Text="Haixi Mongol" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WUWEI" Text="Wuwei" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TANGSHAN" Text="Tangshan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DALIAN" Text="Dalian" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_URUMQI" Text="Urumqi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_JIAQUAN" Text="Jiaquan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BAOTOU" Text="Baotou" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BEIJING" Text="Beijing" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ILI" Text="Ili" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BAYANHOT" Text="Bayanhot" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BAYAN_NUR" Text="Bayan Nur" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HOHHOT" Text="Hohhot" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHENGDE" Text="Chengde" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHIFENG" Text="Chifeng" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SHENYANG" Text="Shenyang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BORTALA" Text="Bortala" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TURPAN" Text="Turpan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FUXIN" Text="Fuxin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CHANGCHUN" Text="Changchun" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LIAOYUAN" Text="Liaoyuan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BAISHAN" Text="Baishan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YANBIAN" Text="Yanbian" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KARAMAY" Text="Karamay" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KAMUL" Text="Kamul" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_XILIN_GOL" Text="Xilin Gol" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_TONGLIAO" Text="Tongliao" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_QOQEK" Text="Qoqek" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HINGGAN" Text="Hinggan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SONGYUAN" Text="Songyuan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HARBIN" Text="Harbin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_JIAMUSI" Text="Jiamusi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MUDANJIANG" Text="Mudanjiang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ALTAY" Text="Altay" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BAICHENG" Text="Baicheng" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_YICHUN" Text="Yichun" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HEGANG" Text="Hegang" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SHUANGYASHAN" Text="Shuangyashan" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_JIXI" Text="Jixi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HULUN_BUIR" Text="Hulun Buir" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_QIQIHAR" Text="Qiqihar" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DAQING" Text="Daqing" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SUIHUA" Text="Suihua" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_DAXINANLING" Text="Daxing'anling" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MAGDAGACHI" Text="Magdagachi" Language="en_US"/>
+
+	</LocalizedText>
  
 </GameData>
 
