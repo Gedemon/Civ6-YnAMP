@@ -3036,6 +3036,463 @@
 	<Replace Tag="LOC_CITY_NAME_MAGDAGACHI" Text="Magdagachi" Language="en_US"/>
 
 	</LocalizedText>
- 
+	
+	<LocalizedText> 
+	<!-- GREAT BRITAIN, IRELAND AND ICELAND GEM-->
+	<Replace Tag="LOC_CITY_NAME_ABERDEEN" Text="Aberdeen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ABERDEEN_ARABIA" Text="Abradin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ABERDEEN_CHINA" Text="Yaboding" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ABERDEEN_GREECE" Text="Devana" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ABERDEEN_INDIA" Text="Ebaradeen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ABERDEEN_JAPAN" Text="Abadin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ABERDEEN_NORWAY" Text="Apardion" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ABERDEEN_ROME" Text="Devana" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ABERDEEN_RUSSIA" Text="Aberdin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ABERDEEN_SCYTHIA" Text="Aberdin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BIRMINGHAM" Text="Birmingham" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BIRMINGHAM_ARABIA" Text="Birmynghham" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BIRMINGHAM_CHINA" Text="Bominghan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BIRMINGHAM_GREECE" Text="Viroconion" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BIRMINGHAM_INDIA" Text="Barmingham" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BIRMINGHAM_JAPAN" Text="Bamingamu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BIRMINGHAM_ROME" Text="Viroconium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BIRMINGHAM_RUSSIA" Text="Birmingem" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BIRMINGHAM_SCYTHIA" Text="Birmingem" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRIGHTON" Text="Brighton" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRIGHTON_ARABIA" Text="Braytun" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRIGHTON_CHINA" Text="Balaidun" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRIGHTON_FRANCE" Text="Douvres" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRIGHTON_GREECE" Text="Anderida" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRIGHTON_INDIA" Text="Bra'iṭana" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRIGHTON_JAPAN" Text="Buraiton" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRIGHTON_ROME" Text="Noviomagus Reginorum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRIGHTON_RUSSIA" Text="Braiyton" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRIGHTON_SCYTHIA" Text="Braiyton" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRISTOL" Text="Bristol" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRISTOL_ARABIA" Text="Bristul" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRISTOL_CHINA" Text="Bulisituor" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRISTOL_FRANCE" Text="Bains" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRISTOL_GREECE" Text="Aquæ Sulis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRISTOL_JAPAN" Text="Burisutoru" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRISTOL_ROME" Text="Aquæ Sulis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAERNARFON" Text="Caernarfon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAERNARFON_ARABIA" Text="Knarvvn" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAERNARFON_CHINA" Text="Kanafen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAERNARFON_GREECE" Text="Segontion" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAERNARFON_JAPAN" Text="Kanavuon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAERNARFON_NORWAY" Text="Ǫngullsey" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAERNARFON_ROME" Text="Segontium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAERNARFON_RUSSIA" Text="Karnarfon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAERNARFON_SCYTHIA" Text="Karnarfon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAMBRIDGE" Text="Cambridge" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAMBRIDGE_ARABIA" Text="Kambrydj" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAMBRIDGE_CHINA" Text="Kangqiao" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAMBRIDGE_FRANCE" Text="Bouquinquan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAMBRIDGE_GREECE" Text="Verulamion" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAMBRIDGE_INDIA" Text="Kyamabrija" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAMBRIDGE_JAPAN" Text="Kemburijji" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAMBRIDGE_ROME" Text="Verulamium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAMBRIDGE_RUSSIA" Text="Kjembridzh" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAMBRIDGE_SCYTHIA" Text="Kjembridzh" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CANTERBURY" Text="Canterbury" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CANTERBURY_ARABIA" Text="Kantrbyri" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CANTERBURY_CHINA" Text="Kantebeilei" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CANTERBURY_FRANCE" Text="Cantorbéry" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CANTERBURY_GERMANY" Text="Kantelburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CANTERBURY_GREECE" Text="Durovernon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CANTERBURY_JAPAN" Text="Kantaberi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CANTERBURY_NORWAY" Text="Kantaraborg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CANTERBURY_ROME" Text="Durovernum Canticorum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CANTERBURY_RUSSIA" Text="Kenterberi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CANTERBURY_SCYTHIA" Text="Kenterberi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARDIFF" Text="Cardiff" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARDIFF_ARABIA" Text="Kardif" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARDIFF_CHINA" Text="Jiadefu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARDIFF_GREECE" Text="Isca Silurum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARDIFF_INDIA" Text="Kaardif" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARDIFF_JAPAN" Text="Kadifu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARDIFF_NORWAY" Text="Houndemammeby" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARDIFF_ROME" Text="Isca Silurum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARDIFF_RUSSIA" Text="Kardiff" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARDIFF_SCYTHIA" Text="Kardiff" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARLISLE" Text="Carlisle" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARLISLE_ARABIA" Text="Karlayl" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARLISLE_CHINA" Text="Kalai'er" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARLISLE_GREECE" Text="Luguvalium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARLISLE_JAPAN" Text="Karairu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARLISLE_NORWAY" Text="Kirkby" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARLISLE_ROME" Text="Luguvalium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARLISLE_RUSSIA" Text="Karlaiyl" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARLISLE_SCYTHIA" Text="Karlaiyl" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARMARTHEN" Text="Carmarthen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARMARTHEN_ARABIA" Text="Karmaten" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARMARTHEN_CHINA" Text="Kamasen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARMARTHEN_GREECE" Text="Moridunon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARMARTHEN_JAPAN" Text="Kamazen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARMARTHEN_NORWAY" Text="Tenby" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARMARTHEN_ROME" Text="Moridunum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARMARTHEN_RUSSIA" Text="Karmarten" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CARMARTHEN_SCYTHIA" Text="Karmarten" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUMFRIES" Text="Dumfries" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUMFRIES_ARABIA" Text="Damfrys" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUMFRIES_CHINA" Text="Dengfulisi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUMFRIES_GREECE" Text="Uxelodunon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUMFRIES_JAPAN" Text="Danfurizu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUMFRIES_ROME" Text="Uxelodunum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUMFRIES_RUSSIA" Text="Damfris" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUMFRIES_SCYTHIA" Text="Damfris" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUNDEE" Text="Dundee" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUNDEE_ARABIA" Text="Dandy" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUNDEE_CHINA" Text="Dengdi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUNDEE_GREECE" Text="Alectum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUNDEE_INDIA" Text="Dandi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUNDEE_JAPAN" Text="Dandi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUNDEE_ROME" Text="Pinnata Castra" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUNDEE_RUSSIA" Text="Dandi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUNDEE_SCYTHIA" Text="Dandi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH" Text="Edinburgh" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_ARABIA" Text="Iidnbra" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_AZTEC" Text="Edimburgo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_BRAZIL" Text="Edimburgo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_CHINA" Text="Aidingbao" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_EGYPT" Text="Iidnbra" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_FRANCE" Text="Édimbourg" Language="en_US" /> 
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_GERMANY" Text="Edinburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_GREECE" Text="Trimontion" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_INDIA" Text="Edinabara" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_JAPAN" Text="Edinbara" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_KONGO" Text="Édimbourg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_NORWAY" Text="Edinborg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_POLAND" Text="Edynburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_ROME" Text="Trimontium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_RUSSIA" Text="Yedinburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_SCYTHIA" Text="Yedinburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_SPAIN" Text="Edimburgo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EDINBURGH_SUMERIA" Text="Iidnbra" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EXETER" Text="Exeter" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EXETER_ARABIA" Text="Iikztar" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EXETER_CHINA" Text="Aikesaite" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EXETER_FRANCE" Text="Dèrtémue" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EXETER_GREECE" Text="Iska Dumnonioron" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EXETER_JAPAN" Text="Ekuseta" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EXETER_NORWAY" Text="Torkey" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EXETER_ROME" Text="Isca Dumnoniorum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EXETER_RUSSIA" Text="Yekseter" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EXETER_SCYTHIA" Text="Yekseter" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FORT_AUGUSTUS" Text="Fort Augustus" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FORT_AUGUSTUS_GERMANY" Text="Augsburg-am-Ness" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FORT_AUGUSTUS_NORWAY" Text="Ágsborg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FORT_AUGUSTUS_RUSSIA" Text="Fort Avgust" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FORT_AUGUSTUS_SCYTHIA" Text="Fort Avgust" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FORT_WILLIAM" Text="Fort William" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FORT_WILLIAM_FRANCE" Text="Fort Guillaume" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FORT_WILLIAM_RUSSIA" Text="Fort Vilyam" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FORT_WILLIAM_SCYTHIA" Text="Fort Vilyam" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLASGOW" Text="Glasgow" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLASGOW_ARABIA" Text="Ghlasku" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLASGOW_CHINA" Text="Gelasige" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLASGOW_FRANCE" Text="Glasgovie" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLASGOW_GERMANY" Text="Glaskove" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLASGOW_GREECE" Text="Glaskove" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLASGOW_INDIA" Text="Glaasago" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLASGOW_JAPAN" Text="Gurasugo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLASGOW_ROME" Text="Glasgua" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLASGOW_RUSSIA" Text="Glazgo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLASGOW_SPAIN" Text="Glazgo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLOUCESTER" Text="Gloucester" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLOUCESTER_ARABIA" Text="Ghalustr" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLOUCESTER_CHINA" Text="Gaoluoshida" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLOUCESTER_FRANCE" Text="Glochêtre" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLOUCESTER_GREECE" Text="Glevum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLOUCESTER_JAPAN" Text="Gorusuta" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLOUCESTER_ROME" Text="Glevum Nervensis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLOUCESTER_RUSSIA" Text="Gloster" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GLOUCESTER_SCYTHIA" Text="Gloster" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HELMSDALE" Text="Helmsdale" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HELMSDALE_NORWAY" Text="Hjalmundal" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HELMSDALE_ROME" Text="Penoxullum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_INVERNESS" Text="Inverness" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_INVERNESS_CHINA" Text="Inbonesu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_INVERNESS_GREECE" Text="Banatia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_INVERNESS_JAPAN" Text="Invuanesu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_INVERNESS_NORWAY" Text="Dingwall" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_INVERNESS_ROME" Text="Banatia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LANCASTER" Text="Lancester" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LANCASTER_ARABIA" Text="Lankastar" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LANCASTER_CHINA" Text="Lankasite" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LANCASTER_GERMANY" Text="Lünburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LANCASTER_GREECE" Text="Setantioron" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LANCASTER_INDIA" Text="Lankastar" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LANCASTER_JAPAN" Text="Rankasuta" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LANCASTER_NORWAY" Text="Kirkby Kendal" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LANCASTER_ROME" Text="Portus Setantiorum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LANCASTER_RUSSIA" Text="Lankaster" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LANCASTER_SCYTHIA" Text="Lankaster" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LAUNCESTON" Text="Launceston" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LAUNCESTON_GREECE" Text="Uxelis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LAUNCESTON_NORWAY" Text="Lundy" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LAUNCESTON_ROME" Text="Uxelis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LAUNCESTON_RUSSIA" Text="Lonston" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LAUNCESTON_SCYTHIA" Text="Lonston" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LERWICK" Text="Lerwick" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LERWICK_CHINA" Text="Leiweike" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LERWICK_GREECE" Text="Haemodae" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LERWICK_JAPAN" Text="Rauikku" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LERWICK_NORWAY" Text="Leirvik" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LERWICK_ROME" Text="Haemodae" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LERWICK_RUSSIA" Text="Lervik" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LERWICK_SCYTHIA" Text="Lervik" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LINCOLN" Text="Lincoln" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LINCOLN_ARABIA" Text="Lanukuwwalin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LINCOLN_CHINA" Text="Linken" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LINCOLN_GREECE" Text="Lindum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LINCOLN_JAPAN" Text="Rinkan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LINCOLN_NORWAY" Text="Torksey" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LINCOLN_ROME" Text="Lindum Colonia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LINCOLN_RUSSIA" Text="Linkoln" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LINCOLN_SCYTHIA" Text="Linkoln" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LIVERPOOL" Text="Liverpool" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LIVERPOOL_ARABIA" Text="Lifirbul" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LIVERPOOL_CHINA" Text="Ribopul" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LIVERPOOL_GREECE" Text="Deva" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LIVERPOOL_JAPAN" Text="Ribapuru" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LIVERPOOL_NORWAY" Text="Thingwall" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LIVERPOOL_ROME" Text="Deva Victrix" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LIVERPOOL_RUSSIA" Text="Liverpul" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LIVERPOOL_SCYTHIA" Text="Liverpul" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON" Text="London" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON_ARABIA" Text="Landan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON_AZTEC" Text="Londres" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON_BRAZIL" Text="Londres" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON_CHINA" Text="Lundun" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON_EGYPT" Text="Landan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON_FRANCE" Text="Londres" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON_GREECE" Text="Londino" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON_INDIA" Text="Landan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON_JAPAN" Text="Rondon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON_KONGO" Text="Londres" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON_NORWAY" Text="Lundúnir" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON_POLAND" Text="Londyn" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON_ROME" Text="Londinium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON_SPAIN" Text="Londres" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LONDON_SUMERIA" Text="Landan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MANCHESTER" Text="Manchester" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MANCHESTER_ARABIA" Text="Manchsitir" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MANCHESTER_BRAZIL" Text="Manchéster" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MANCHESTER_CHINA" Text="Manchesite" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MANCHESTER_FRANCE" Text="Manchêtre" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MANCHESTER_GREECE" Text="Manceinion" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MANCHESTER_JAPAN" Text="Manchesuta" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MANCHESTER_ROME" Text="Mancunium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MANCHESTER_SPAIN" Text="Manchéster" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE" Text="Newcastle-upon-Tyne" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_ARABIA" Text="Nyukasl" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_BRAZIL" Text="Castelo Novo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_CHINA" Text="Niukasu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_FRANCE" Text="Neufchâtel-sur-Tyne" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_GERMANY" Text="Neuschloss-an-der-Tyne" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_GREECE" Text="Segedunon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_INDIA" Text="Niukyasala" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_JAPAN" Text="Nyukassuru" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_NORWAY" Text="Nýikastali" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_ROME" Text="Pons Aelius" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_RUSSIA" Text="Nyukasl" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_SCYTHIA" Text="Nyukasl" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_SPAIN" Text="Castillo Nuevo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NORWICH" Text="Norwich" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NORWICH_ARABIA" Text="Nuruytsh" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NORWICH_CHINA" Text="Nuoliqi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NORWICH_FRANCE" Text="Noroui" Language="en_US" /> 
+	<Replace Tag="LOC_CITY_NAME_NORWICH_GREECE" Text="Venta" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NORWICH_JAPAN" Text="Noritchi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NORWICH_NORWAY" Text="Norvic" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NORWICH_ROME" Text="Venta Icenorum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NORWICH_RUSSIA" Text="Noridzh" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NORWICH_SCYTHIA" Text="Noridzh" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NOTTINGHAM" Text="Nottingham" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NOTTINGHAM_ARABIA" Text="Nutinghaham" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NOTTINGHAM_CHINA" Text="Nuodingxian" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NOTTINGHAM_FRANCE" Text="Nieuark" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NOTTINGHAM_GREECE" Text="Ratai" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NOTTINGHAM_JAPAN" Text="Nottingamu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NOTTINGHAM_NORWAY" Text="Deoraby" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NOTTINGHAM_ROME" Text="Ratæ" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NOTTINGHAM_RUSSIA" Text="Nottingem" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NOTTINGHAM_SCYTHIA" Text="Nottingem" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OXFORD" Text="Oxford" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OXFORD_ARABIA" Text="Aksfurd" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OXFORD_BRAZIL" Text="Oxónia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OXFORD_CHINA" Text="Niujin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OXFORD_GERMANY" Text="Ochsenfurt" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OXFORD_GREECE" Text="Calleva" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OXFORD_INDIA" Text="Oksaphord" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OXFORD_JAPAN" Text="Okkusufodo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OXFORD_NORWAY" Text="Uxnafurða" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OXFORD_POLAND" Text="Oksford" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OXFORD_ROME" Text="Calleva Atrebatum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OXFORD_RUSSIA" Text="Oksford" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OXFORD_SCYTHIA" Text="Oksford" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PERTH" Text="Perth" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PERTH_GREECE" Text="Orrea" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PERTH_NORWAY" Text="Hundby" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PERTH_ROME" Text="Orrea" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PERTH_RUSSIA" Text="Pert" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PERTH_SCYTHIA" Text="Pert" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PLYMOUTH" Text="Plymouth" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PLYMOUTH_ARABIA" Text="Bilimuth" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PLYMOUTH_CHINA" Text="Pulimaosi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PLYMOUTH_FRANCE" Text="Pliémue" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PLYMOUTH_GERMANY" Text="Pflaumünde" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PLYMOUTH_GREECE" Text="Tamaris" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PLYMOUTH_INDIA" Text="Plimatha" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PLYMOUTH_JAPAN" Text="Purimasu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PLYMOUTH_NORWAY" Text="Torkey" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PLYMOUTH_ROME" Text="Tamaris" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PLYMOUTH_RUSSIA" Text="Plimut" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PLYMOUTH_SCYTHIA" Text="Plimut" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PORTREE" Text="Portree" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PORTREE_GREECE" Text="Ebunda" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PORTREE_NORWAY" Text="Dùn Bheagain" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PORTREE_ROME" Text="Ebunda Major" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PORTREE_RUSSIA" Text="Portri" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PORTREE_SCYTHIA" Text="Portri" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_READING" Text="Reading" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_READING_ARABIA" Text="Ridingh" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_READING_CHINA" Text="Leiding" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_READING_GREECE" Text="Pontes" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_READING_JAPAN" Text="Redingu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_READING_ROME" Text="Pontes" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_READING_RUSSIA" Text="Reding" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_READING_SCYTHIA" Text="Reding" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SALISBURY" Text="Salisbury" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SALISBURY_ARABIC" Text="Salysbri" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SALISBURY_CHINA" Text="Suoerziboli" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SALISBURY_FRANCE" Text="Sarisberie" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SALISBURY_GREECE" Text="Sorviodunon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SALISBURY_INDIA" Text="Sal‌s‌bari" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SALISBURY_JAPAN" Text="Soruzuberi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SALISBURY_NORWAY" Text="Sjóraborg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SALISBURY_ROME" Text="Sorviodunum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SALISBURY_RUSSIA" Text="Solsberi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SALISBURY_SCYTHIA" Text="Solsberi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SCALLOWAY" Text="Scalloway" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SCALLOWAY_GERMANY" Text="Schaldewage" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SCALLOWAY_GREECE" Text="Haemodae" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SCALLOWAY_NORWAY" Text="Skálavágr" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SCALLOWAY_ROME" Text="Haemodae" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SOUTHAMPTON_ARABIA" Text="Sawthhambtun" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SOUTHAMPTON_CHINA" Text="Nananpudun" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SOUTHAMPTON_FRANCE" Text="Bicêtre" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SOUTHAMPTON_GREECE" Text="Venta Belgarum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SOUTHAMPTON_INDIA" Text="Sauthahaimpatan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SOUTHAMPTON_JAPAN" Text="Sausanputon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SOUTHAMPTON_NORWAY" Text="Wolvesey" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SOUTHAMPTON_ROME" Text="Clausentum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SOUTHAMPTON_RUSSIA" Text="Sautgempton" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SOUTHAMPTON_SCYTHIA" Text="Sautgempton" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STORNOWAY" Text="Stornoway" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STORNOWAY_GREECE" Text="Limnu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STORNOWAY_NORWAY" Text="Stjórnavágr" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STORNOWAY_ROME" Text="Leogus" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STORNOWAY_RUSSIA" Text="Stornovei" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STORNOWAY_SCYTHIA" Text="Stornovei" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STRANRAER" Text="Stranraer" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STRANRAER_GREECE" Text="Rerigonium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STRANRAER_NORWAY" Text="Hreyrreik" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STRANRAER_ROME" Text="Rerigonium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STRANRAER_RUSSIA" Text="Stranrar" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STRANRAER_SCYTHIA" Text="Stranrar" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_THURSO" Text="Thurso" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_THURSO_NORWAY" Text="Thjorsá" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_THURSO_ROME" Text="Tarvodunum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_THURSO_RUSSIA" Text="Terso" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_THURSO_SCYTHIA" Text="Terso" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ULLAPOOL" Text="Ullapool" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ULLAPOOL_NORWAY" Text="Ulla-Bolstadr" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ULLAPOOL_ROME" Text="Volsas" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ULLAPOOL_RUSSIA" Text="Allapul" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ULLAPOOL_SCYTHIA" Text="Allapul" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WICK" Text="Wick" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WICK_GREECE" Text="Vervedrum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WICK_NORWAY" Text="Vík" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WICK_ROME" Text="Vervedrum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WICK_RUSSIA" Text="Uik" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WICK_SCYTHIA" Text="Uik" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WORCESTER" Text="Worcester" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WORCESTER_CHINA" Text="Wusite" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WORCESTER_FRANCE" Text="Oucêtre" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WORCESTER_GREECE" Text="Vigornia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WORCESTER_JAPAN" Text="Usuta" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WORCESTER_ROME" Text="Vigornia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WORCESTER_RUSSIA" Text="Vuster" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WORCESTER_SCYTHIA" Text="Vuster" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YORK" Text="York" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YORK_ARABIA" Text="Yurk" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YORK_BRAZIL" Text="Iorque" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YORK_CHINA" Text="Yueke" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YORK_FRANCE" Text="Évèroui" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YORK_GREECE" Text="Eborakon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YORK_JAPAN" Text="Yoku" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YORK_NORWAY" Text="Jórvík" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YORK_ROME" Text="Eboracum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YORK_SPAIN" Text="Iorque" Language="en_US" />
+	
+	<!-- Ireland GEM-->
+	<Replace Tag="LOC_CITY_NAME_ARMAGH" Text="Armagh" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ARMAGH_NORWAY" Text="Emain Macha" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BELFAST" Text="Belfast" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BELFAST_CHINA" Text="Beirfaste" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BELFAST_JAPAN" Text="Berufasuto" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BELFAST_ROME" Text="Belfast" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CORK" Text="Cork" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CORK_ROME" Text="Corcagia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DERRY" Text="Derry" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DERRY_ENGLAND" Text="Londonderry" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DERRY_FRANCE" Text="Doire" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DERRY_ROME" Text="Derria" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DONEGAL" Text="Donegal" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DONEGAL_NORWAY" Text="Dunnagall" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DONEGAL_ROME" Text="Dungallium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUBLIN" Text="Dublin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUBLIN_ARABIA" Text="Dablin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUBLIN_CHINA" Text="Dobulin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUBLIN_FRANCE" Text="Dublîn" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUBLIN_GREECE" Text="Eblana" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUBLIN_JAPAN" Text="Daburin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUBLIN_NORWAY" Text="Dyvlinarskire" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUBLIN_ROME" Text="Eblana" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUBLIN_SPAIN" Text="Dublín" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GALWAY" Text="Galway" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GALWAY_ROME" Text="Galvia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LIMERICK" Text="Limerick" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LIMERICK_NORWAY" Text="Hlymrekr" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SLIGO" Text="Sligo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SLIGO_GREECE" Text="Nagnata" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SLIGO_ROME" Text="Nagnata" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WATERFORD" Text="Waterford" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WATERFORD_NORWAY" Text="Veðrafjǫrðr" Language="en_US" />
+	
+	<!-- Iceland GEM-->
+	<Replace Tag="LOC_CITY_NAME_AKUREYRI" Text="Akureyri" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HELLA" Text="Hella" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HOFN" Text="Höfn" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ISAFJORTHUR" Text="Ísafjörður" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYKJAVIK" Text="Reykjavík" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYKJAVIK_ARABIA" Text="Reikyavik" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYKJAVIK_AZTEC" Text="Reikiavik" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYKJAVIK_BRAZIL" Text="Reiquejavique" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYKJAVIK_CHINA" Text="Leikeyaweike" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYKJAVIK_INDIA" Text="Rekjaavik" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYKJAVIK_JAPAN" Text="Reikyabiku" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYKJAVIK_NORWAY" Text="Reykjarvík" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYKJAVIK_POLAND" Text="Rejkiawik" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYKJAVIK_ROME" Text="Reykiavikum" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYKJAVIK_RUSSIA" Text="Reiykyavik" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYKJAVIK_SCYTHIA" Text="Reiykyavik" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYKJAVIK_SPAIN" Text="Reikiavik" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_REYTHARFJORTHUR" Text="Reyðarfjörður" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_THORSHOFN" Text="Þórshöfn" Language="en_US"/>
+	</LocalizedText>
+	
 </GameData>
 
