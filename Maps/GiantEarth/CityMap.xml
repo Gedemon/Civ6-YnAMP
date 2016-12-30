@@ -422,8 +422,8 @@
 	
 	<Replace MapName="GiantEarth" X="4" Y="76" CityLocaleName="LOC_CITY_NAME_SLIGO" Area="0" />
 	<Replace MapName="GiantEarth" X="5" Y="76" CityLocaleName="LOC_CITY_NAME_DONEGAL" Area="0" />
-	<Replace MapName="GiantEarth" X="7" Y="76" CityLocaleName="LOC_CITY_NAME_ARMAGH" Area="0" /> <!--OVERLAP-->
-	<Replace MapName="GiantEarth" X="8" Y="76" CityLocaleName="LOC_CITY_NAME_BELFAST" Area="0" /> <!--OVERLAP-->
+	<Replace MapName="GiantEarth" X="6" Y="76" CityLocaleName="LOC_CITY_NAME_ARMAGH" Area="0" /> <!--OVERLAP-->
+	<Replace MapName="GiantEarth" X="7" Y="76" CityLocaleName="LOC_CITY_NAME_BELFAST" Area="0" /> <!--OVERLAP-->
 	
 	<Replace MapName="GiantEarth" X="5" Y="77" CityLocaleName="LOC_CITY_NAME_DERRY" Area="0" />
 	<Replace MapName="GiantEarth" X="6" Y="77" CityLocaleName="LOC_CITY_NAME_BELFAST" Area="0" />
