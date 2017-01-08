@@ -13,6 +13,8 @@ include ("YnAMP_Utils.lua") -- can't do that ???
 local mapName = MapConfiguration.GetValue("MapName")
 print ("Map Name = " .. tostring(mapName))
 
+local bAutoCityNaming = MapConfiguration.GetValue("AutoCityNaming")
+
 ----------------------------------------------------------------------------------------
 -- City renaming
 ----------------------------------------------------------------------------------------
@@ -122,7 +124,7 @@ function ChangeCityName( ownerPlayerID, cityID)
 		end
 	end
 end
-if mapName then
+if bAutoCityNaming then
 	Events.CityInitialized.Add( ChangeCityName )
 end
 
@@ -139,7 +141,7 @@ function ListCityWithoutLOC()
 		end
 	end
 end
-if mapName then
+if bAutoCityNaming then
 	Events.LoadScreenClose.Add( ListCityWithoutLOC )
 end
 
@@ -162,7 +164,7 @@ function ListCityNotOnMap()
 		end
 	end
 end
-if mapName then
+if bAutoCityNaming then
 	Events.LoadScreenClose.Add( ListCityNotOnMap )
 end
 
@@ -179,13 +181,23 @@ function Round(num)
 end
 
 ------------------------------------------------------
---[[
-function OnPlayerTurnActivated( iPlayer, bFirstTime )
-	if not mapName then
+---[[
+function ForceTSL( iPrevPlayer )
+
+	if Game.GetCurrentGameTurn() > GameConfiguration.GetStartTurn() then -- only called on first turn
+		Events.PlayerTurnActivated.Remove( ForceTSL )
 		return
 	end
+	
+	local bForceAll = (MapConfiguration.GetValue("ForceTSL") == "FORCE_TSL_ALL")
+	local bForceAI = (MapConfiguration.GetValue("ForceTSL") == "FORCE_TSL_AI") or bForceAll
+	local bForceCS = (MapConfiguration.GetValue("ForceTSL") == "FORCE_TSL_CS") or bForceAI
+	
+	local iPlayer = iPrevPlayer + 1
 	local player = Players[iPlayer]
-	if (bFirstTime) and player:GetCities():GetCount() == 0 and not player:IsHuman() then
+	if player and player:WasEverAlive() and player:GetCities():GetCount() == 0	
+	   and ((not player:IsMajor() and bForceCS) or (player:IsMajor() and bForceAI) or (player:IsHuman() and bForceAll))
+	   and not player:IsBarbarian() then
 		print("- Checking for Settler on TSL for player #".. tostring(iPlayer))
 		local startingPlot = player:GetStartingPlot()
 		if startingPlot and not startingPlot:IsCity() then
@@ -194,14 +206,23 @@ function OnPlayerTurnActivated( iPlayer, bFirstTime )
 				for _, unit in ipairs(unitsInPlot) do
 					if unit:GetType() == GameInfo.Units["UNIT_SETTLER"].Index then
 						print("  - found Settler !")
-						player:GetUnits():Destroy(unit)
 						print("  - create city here...")
-						player:GetCities():Create(startingPlot:GetX(), startingPlot:GetY())
+						local city = player:GetCities():Create(startingPlot:GetX(), startingPlot:GetY())
+						if city then
+							print ("  - deleting settler...")
+							player:GetUnits():Destroy(unit)
+						else
+							print ("  - WARNING : city is nil (tried to place at plot ".. tostring(startingPlot:GetX())..","..tostring(startingPlot:GetY()))
+						end
 					end
 				end
 			end		
 		end	
 	end
 end
-Events.PlayerTurnActivated.Add( OnPlayerTurnActivated )
+if MapConfiguration.GetValue("ForceTSL") and MapConfiguration.GetValue("ForceTSL") ~= "FORCE_TSL_OFF" then
+	Events.PlayerTurnDeactivated.Add( ForceTSL ) -- On TurnActivated, it seems the AI has already moved the initial settler
+	ForceTSL( -1 ) -- test ForceTSL on player 0
+end
+
 --]]

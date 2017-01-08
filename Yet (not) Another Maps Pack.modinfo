@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mod id="36e88483-48fe-4545-b85f-bafc50dde315" version="23">
+<Mod id="36e88483-48fe-4545-b85f-bafc50dde315">
   <Properties>
     <Name>LOC_YNAMP_TITLE</Name>
     <Stability>Alpha</Stability>
@@ -7,9 +7,6 @@
     <Description>LOC_YNAMP_DESCRIPTION</Description>
     <Authors>Gedemon</Authors>
   </Properties>
-  <Dependencies />
-  <References />
-  <Blocks />
   
 	<Settings>
 		<Custom id="YNAMP_SETTING">
@@ -21,7 +18,7 @@
 				<File>Maps/LargestEarth/Config.xml</File>
 			</Items>
 		</Custom>
-		<LocalizedText id="YNAMP_SETTING">
+		<LocalizedText id="YNAMP_SETTING_LOC">
 			<Items>
 				<File>Configuration/ConfigText.xml</File>
 				<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
@@ -53,26 +50,6 @@
                 <File>Scripts/YnAMP_InGame.xml</File>
             </Items>
         </UserInterface>
-		<UpdateDatabase id="YNAMP_DEFAULT_COMPONENT">
-			<Items>
-				<File>Gameplay/Tables.sql</File>
-				<File>Gameplay/GamePlay.sql</File>
-				<File>Gameplay/GamePlay.xml</File>
-				<File>Maps/GiantEarth/Map.xml</File>
-				<File>Maps/GiantEarth/CityMap.xml</File>
-				<File>Maps/GreatestEarthMap/Map.xml</File>
-				<File>Maps/GreatestEarthMap/CityMap.xml</File>
-				<File>Maps/PlayEuropeAgain/Map.xml</File>
-				<File>Maps/PlayEuropeAgain/CityMap.xml</File>
-				<File>Maps/PlayEuropeAgain/CityMap_Arabia.xml</File>
-				<File>Maps/PlayEuropeAgain/CityMap_Greece.xml</File>
-				<File>Maps/PlayEuropeAgain/CityMap_Romans.xml</File>
-				<File>Maps/LargestEarth/Map.xml</File>
-				<File>Maps/LargestEarth/CityMap.xml</File>
-				<File>Gameplay/Resource.xml</File>
-				<File>Gameplay/CityNameByEra.xml</File>
-			</Items>
-		</UpdateDatabase>
 		<UpdateDatabase id="RULESET_YNAMP_1">
 			<Properties>
 				<RuleSet>RULESET_YNAMP_1</RuleSet>
@@ -169,7 +146,29 @@
 				<File>Rules/LimitOldWorld.sql</File>
 			</Items>
 		</UpdateDatabase>		
-		<LocalizedText id="YNAMP_DEFAULT_COMPONENT">
+		<UpdateDatabase id="YNAMP_DEFAULT_COMPONENT">
+			<Items>
+				<File>Gameplay/Tables.sql</File>
+				<File>Gameplay/GamePlay.sql</File>
+				<File>Gameplay/GamePlay.xml</File>
+				<File>Maps/GiantEarth/Map.xml</File>
+				<File>Maps/GiantEarth/CityMap.xml</File>
+				<File>Maps/GreatestEarthMap/Map.xml</File>
+				<File>Maps/GreatestEarthMap/CityMap.xml</File>
+				<File>Maps/PlayEuropeAgain/Map.xml</File>
+				<File>Maps/PlayEuropeAgain/CityMap.xml</File>
+				<File>Maps/PlayEuropeAgain/CityMap_Arabia.xml</File>
+				<File>Maps/PlayEuropeAgain/CityMap_Greece.xml</File>
+				<File>Maps/PlayEuropeAgain/CityMap_Rome.xml</File>
+				<File>Maps/LargestEarth/Map.xml</File>
+				<File>Maps/LargestEarth/CityMap.xml</File>
+				<File>Gameplay/Resource.xml</File>
+				<File>Gameplay/CityNameByEra.xml</File>
+				<File>custom.sql</File>
+				<File>custom.xml</File>
+			</Items>
+		</UpdateDatabase>
+		<LocalizedText id="YNAMP_DEFAULT_LOC">
 			<Items>
 				<File>Gameplay/GamePlayText.xml</File>
 			</Items>
@@ -215,7 +214,7 @@
 		<File>Maps/PlayEuropeAgain/CityMap.xml</File>
 		<File>Maps/PlayEuropeAgain/CityMap_Arabia.xml</File>
 		<File>Maps/PlayEuropeAgain/CityMap_Greece.xml</File>
-		<File>Maps/PlayEuropeAgain/CityMap_Romans.xml</File>
+		<File>Maps/PlayEuropeAgain/CityMap_Rome.xml</File>
 		<File>Maps/LargestEarth/Map.xml</File>
 		<File>Maps/LargestEarth/CityMap.xml</File>
 		<File>Gameplay/Resource.xml</File>
@@ -235,5 +234,8 @@
 		<File>Scripts/YnAMP_Utils.lua</File>
 		<File>Scripts/YnAMP_InGame.lua</File>
 		<File>Scripts/YnAMP_InGame.xml</File>
+		
+		<File>custom.sql</File>
+		<File>custom.xml</File>
 	</Files>
 </Mod>

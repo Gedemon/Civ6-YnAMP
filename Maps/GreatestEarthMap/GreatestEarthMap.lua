@@ -78,7 +78,10 @@ function GetNaturalWonders()
 	NaturalWonders[GameInfo.Features["FEATURE_TORRES_DEL_PAINE"].Index] = { X = 25, Y = 6}
 	NaturalWonders[GameInfo.Features["FEATURE_TSINGY"].Index] 			= { X = 64, Y = 9}
 	NaturalWonders[GameInfo.Features["FEATURE_YOSEMITE"].Index] 		= { X = 2, Y = 45}
-	
+	--NaturalWonders[GameInfo.Features["FEATURE_EYJAFJALLAJOKULL"].Index]	= { X = 32, Y = 61}
+	--NaturalWonders[GameInfo.Features["FEATURE_LYSEFJORDEN"].Index] 		= { X = 43, Y = 61}
+	--NaturalWonders[GameInfo.Features["FEATURE_GIANTS_CAUSEWAY"].Index] 		= { X = 33, Y = 56}
+		
 	return NaturalWonders
 end
 

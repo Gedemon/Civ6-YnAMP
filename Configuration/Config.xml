@@ -149,6 +149,11 @@
 		<Row Domain="NaturalWondersPlacement" Value="PLACEMENT_IMPORT" 		Name="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_NAME" 	Description="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_DESCRIPTION" 	SortIndex="20"/>
 		<Row Domain="NaturalWondersPlacement" Value="PLACEMENT_EMPTY" 		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 			Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 			SortIndex="30"/>
 		
+		<Row Domain="ForceTSL" Value="FORCE_TSL_OFF" 	Name="LOC_MAP_FORCE_TSL_OFF" 	Description="LOC_MAP_FORCE_TSL_OFF_DESCRIPTION" 	SortIndex="10"/>
+		<Row Domain="ForceTSL" Value="FORCE_TSL_CS" 	Name="LOC_MAP_FORCE_TSL_CS" 	Description="LOC_MAP_FORCE_TSL_CS_DESCRIPTION" 		SortIndex="20"/>
+		<Row Domain="ForceTSL" Value="FORCE_TSL_AI" 	Name="LOC_MAP_FORCE_TSL_AI" 	Description="LOC_MAP_FORCE_TSL_AI_DESCRIPTION" 		SortIndex="30"/>
+		<Row Domain="ForceTSL" Value="FORCE_TSL_ALL" 	Name="LOC_MAP_FORCE_TSL_ALL" 	Description="LOC_MAP_FORCE_TSL_ALL_DESCRIPTION" 	SortIndex="30"/>
+		
 		<Row Domain="EuroPlayers" Value="RANDOM" Name="LOC_RANDOM_LEADER" Description="LOC_RANDOM_LEADER" SortIndex="1"/>
 		<Row Domain="OldWorldPlayers" Value="RANDOM" Name="LOC_RANDOM_LEADER" Description="LOC_RANDOM_LEADER" SortIndex="1"/>
 	</DomainValues>
@@ -167,6 +172,7 @@
 		<Row ParameterId="RequestedResources" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_TSL"/>
 		<Row ParameterId="RequestedResources" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_EMPTY"/>
 		<Row ParameterId="StartPosition" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_TSL"/>
+		<Row ParameterId="ForceTSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_TSL"/>
 
 	</ParameterDependencies>
 	
@@ -184,7 +190,7 @@
 		<Row Domain="EuroPlayers" CivilizationType="CIVILIZATION_SCYTHIA" LeaderType="LEADER_TOMYRIS" CivilizationName="LOC_CIVILIZATION_SCYTHIA_NAME" CivilizationIcon="ICON_CIVILIZATION_SCYTHIA" LeaderName="LOC_LEADER_TOMYRIS_NAME" LeaderIcon="ICON_LEADER_TOMYRIS" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_EXTRA_LIGHT_CAVALRY_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_SCYTHIA" LeaderAbilityName="LOC_TRAIT_LEADER_KILLER_OF_CYRUS_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_KILLER_OF_CYRUS_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_TOMYRIS"/>
 		<Row Domain="EuroPlayers" CivilizationType="CIVILIZATION_SPAIN" LeaderType="LEADER_PHILIP_II" CivilizationName="LOC_CIVILIZATION_SPAIN_NAME" CivilizationIcon="ICON_CIVILIZATION_SPAIN" LeaderName="LOC_LEADER_PHILIP_II_NAME" LeaderIcon="ICON_LEADER_PHILIP_II" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_TREASURE_FLEET_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_TREASURE_FLEET_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_SPAIN" LeaderAbilityName="LOC_TRAIT_LEADER_EL_ESCORIAL_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_EL_ESCORIAL_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_PHILIP_II"/>
 		<Row Domain="EuroPlayers" CivilizationType="CIVILIZATION_SUMERIA" LeaderType="LEADER_GILGAMESH" CivilizationName="LOC_CIVILIZATION_SUMERIA_NAME" CivilizationIcon="ICON_CIVILIZATION_SUMERIA" LeaderName="LOC_LEADER_GILGAMESH_NAME" LeaderIcon="ICON_LEADER_GILGAMESH" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FIRST_CIVILIZATION_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FIRST_CIVILIZATION_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_SUMERIA" LeaderAbilityName="LOC_TRAIT_LEADER_ADVENTURES_ENKIDU_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ADVENTURES_ENKIDU_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_GILGAMESH"/>
-
+		
 		<Row Domain="OldWorldPlayers" CivilizationType="CIVILIZATION_ARABIA" LeaderType="LEADER_SALADIN" CivilizationName="LOC_CIVILIZATION_ARABIA_NAME" CivilizationIcon="ICON_CIVILIZATION_ARABIA" LeaderName="LOC_LEADER_SALADIN_NAME" LeaderIcon="ICON_LEADER_SALADIN" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_LAST_PROPHET_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_LAST_PROPHET_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_ARABIA" LeaderAbilityName="LOC_TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_RIGHTEOUSNESS_OF_FAITH_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_SALADIN"/>
 		<Row Domain="OldWorldPlayers" CivilizationType="CIVILIZATION_CHINA" LeaderType="LEADER_QIN" CivilizationName="LOC_CIVILIZATION_CHINA_NAME" CivilizationIcon="ICON_CIVILIZATION_CHINA" LeaderName="LOC_LEADER_QIN_NAME" LeaderIcon="ICON_LEADER_QIN" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_DYNASTIC_CYCLE_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_CHINA" LeaderAbilityName="LOC_TRAIT_LEADER_FIRST_EMPEROR_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_FIRST_EMPEROR_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_QIN"/>
 		<Row Domain="OldWorldPlayers" CivilizationType="CIVILIZATION_EGYPT" LeaderType="LEADER_CLEOPATRA" CivilizationName="LOC_CIVILIZATION_EGYPT_NAME" CivilizationIcon="ICON_CIVILIZATION_EGYPT" LeaderName="LOC_LEADER_CLEOPATRA_NAME" LeaderIcon="ICON_LEADER_CLEOPATRA" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_ITERU_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_ITERU_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_EGYPT" LeaderAbilityName="LOC_TRAIT_LEADER_MEDITERRANEAN_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_MEDITERRANEAN_DESCRIPTION" LeaderAbilityIcon="LEADER_CLEOPATRA"/>

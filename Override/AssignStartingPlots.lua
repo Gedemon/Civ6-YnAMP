@@ -3532,6 +3532,29 @@ end
 -- True Starting Locations
 ------------------------------------------------------------------------------
 
+local bForceAll = (MapConfiguration.GetValue("ForceTSL") == "FORCE_TSL_ALL")
+local bForceAI = (MapConfiguration.GetValue("ForceTSL") == "FORCE_TSL_AI") or bForceAll
+
+function IsSafeStartingDistance(plot, bIsMajor, bIsHuman)
+	if MapConfiguration.GetValue("ForceTSL") == "FORCE_TSL_OFF"	then
+		return true
+	elseif (not bForceAI) and bIsMajor then
+		return true
+	elseif (not bForceAll) and bIsHuman then
+		return true
+	end
+	
+	local MinDistance = GlobalParameters.CITY_MIN_RANGE
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		local player = Players[iPlayer]
+		local startingPlot = player:GetStartingPlot()
+		if startingPlot and Map.GetPlotDistance(plot:GetIndex(), startingPlot:GetIndex()) <= MinDistance then
+			return false
+		end
+	end
+	return true
+end
+
 function SetTrueStartingLocations()
 	print ("-------------------------------------------------------")
 	print ("Beginning True Starting Location placement for "..tostring(mapName))
@@ -3547,12 +3570,20 @@ function SetTrueStartingLocations()
 					print ("WARNING ! Plot is already a Starting Position")
 				else					
 					if player:IsMajor() then
-						player:SetStartingPlot(plot)
-						--table.insert(AssignStartingPlots.majorStartPlots, plot);
+						if IsSafeStartingDistance(plot, true, player:IsHuman()) then
+							player:SetStartingPlot(plot)
+							--table.insert(AssignStartingPlots.majorStartPlots, plot)
+						else
+							print ("WARNING ! Plot is too close from another Starting Position")
+						end
 					else
 						if not bNoCityStates then
-							player:SetStartingPlot(plot)
-							--table.insert(AssignStartingPlots.minorStartPlots, plot)
+							if IsSafeStartingDistance(plot, false, false) then
+								player:SetStartingPlot(plot)
+								--table.insert(AssignStartingPlots.minorStartPlots, plot)
+							else
+								print ("WARNING ! Plot is too close from another Starting Position")
+							end
 						end
 					end
 				end

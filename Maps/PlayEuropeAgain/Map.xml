@@ -33,6 +33,12 @@
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_VALLETTA"		X="42" Y="19" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_VILNIUS"		X="60" Y="60" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_YEREVAN"		X="94" Y="33" />
+		
+		<!-- DLC City States -->
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_AMARGH"		X="22" Y="69" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GRANADA" 		X="17" Y="32" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_MUSCAT" 		X="106" Y="10" />
+		
 	</StartPosition>
 	
 </GameData>

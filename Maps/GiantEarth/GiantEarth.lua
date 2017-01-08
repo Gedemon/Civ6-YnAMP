@@ -66,18 +66,22 @@ end
 function GetNaturalWonders()
 	local NaturalWonders = {}
 	
-	NaturalWonders[GameInfo.Features["FEATURE_BARRIER_REEF"].Index] 	 = { X = 101, Y = 23}
-	NaturalWonders[GameInfo.Features["FEATURE_CLIFFS_DOVER"].Index] 	 = { X = 11, Y = 71}
+	NaturalWonders[GameInfo.Features["FEATURE_BARRIER_REEF"].Index] 	 = { X = 101, Y = 23}	-- 2 plots, coast, 1st plot is SOUTHEAST	
+	NaturalWonders[GameInfo.Features["FEATURE_CLIFFS_DOVER"].Index] 	 = { X = 11, Y = 71}    -- 2 plots, hills on coast, 1st plot is WEST	
 	NaturalWonders[GameInfo.Features["FEATURE_CRATER_LAKE"].Index] 		 = { X = 132, Y = 65}
-	NaturalWonders[GameInfo.Features["FEATURE_DEAD_SEA"].Index] 		 = { X = 37, Y = 50}
-	NaturalWonders[GameInfo.Features["FEATURE_EVEREST"].Index] 			 = { X = 64, Y = 54}
-	NaturalWonders[GameInfo.Features["FEATURE_GALAPAGOS"].Index] 		 = { X = 144, Y = 35}
-	NaturalWonders[GameInfo.Features["FEATURE_KILIMANJARO"].Index] 		 = { X = 32, Y = 27}
-	NaturalWonders[GameInfo.Features["FEATURE_PANTANAL"].Index] 		 = { X = 159, Y = 27}
-	NaturalWonders[GameInfo.Features["FEATURE_PIOPIOTAHI"].Index] 		 = { X = 107, Y = 3}
-	NaturalWonders[GameInfo.Features["FEATURE_TORRES_DEL_PAINE"].Index]  = { X = 154, Y = 7}
-	NaturalWonders[GameInfo.Features["FEATURE_TSINGY"].Index] 			 = { X = 36, Y = 18}
-	NaturalWonders[GameInfo.Features["FEATURE_YOSEMITE"].Index] 		 = { X = 132, Y = 62}
+	NaturalWonders[GameInfo.Features["FEATURE_DEAD_SEA"].Index] 		 = { X = 37, Y = 50}    -- 2 plots, flat desert surrounded by desert, 1st plot is SOUTHWEST	
+	NaturalWonders[GameInfo.Features["FEATURE_EVEREST"].Index] 			 = { X = 64, Y = 54}    -- 3 plots, mountains, 1st plot is WEST	
+	NaturalWonders[GameInfo.Features["FEATURE_GALAPAGOS"].Index] 		 = { X = 144, Y = 35}   -- 2 plots, coast, surrounded by coast, 1st plot is SOUTHWEST
+	NaturalWonders[GameInfo.Features["FEATURE_KILIMANJARO"].Index] 		 = { X = 32, Y = 27}    
+	NaturalWonders[GameInfo.Features["FEATURE_PANTANAL"].Index] 		 = { X = 159, Y = 27}   -- 4 plots, flat grass/plains without features, 1st plot is SOUTH-WEST	
+	NaturalWonders[GameInfo.Features["FEATURE_PIOPIOTAHI"].Index] 		 = { X = 107, Y = 3}    -- 3 plots, flat grass near coast, 1st plot is WEST	
+	NaturalWonders[GameInfo.Features["FEATURE_TORRES_DEL_PAINE"].Index]  = { X = 154, Y = 7}    -- 2 plots EAST-WEST without features, 1st plot is WEST	
+	NaturalWonders[GameInfo.Features["FEATURE_TSINGY"].Index] 			 = { X = 36, Y = 18}    
+	NaturalWonders[GameInfo.Features["FEATURE_YOSEMITE"].Index] 		 = { X = 132, Y = 62}   -- 2 plots EAST-WEST, flat tundra/plains without features, 1st plot is WEST
+	
+	--NaturalWonders[GameInfo.Features["FEATURE_EYJAFJALLAJOKULL"].Index]	= { X = 2, Y = 83}
+	--NaturalWonders[GameInfo.Features["FEATURE_LYSEFJORDEN"].Index] 		= { X = 18, Y = 80}
+	--NaturalWonders[GameInfo.Features["FEATURE_GIANTS_CAUSEWAY"].Index] 		= { X = 6, Y = 77}
 	
 	return NaturalWonders
 end
