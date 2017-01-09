@@ -3565,7 +3565,7 @@ function SetTrueStartingLocations()
 		if position then 
 			print ("- "..tostring(CivilizationTypeName).." at "..tostring(position.X)..","..tostring(position.Y))
 			local plot = Map.GetPlot(position.X, position.Y)
-			if plot then
+			if plot and not plot:IsWater() then
 				if plot:IsStartingPlot() then
 					print ("WARNING ! Plot is already a Starting Position")
 				else					
@@ -3588,7 +3588,7 @@ function SetTrueStartingLocations()
 					end
 				end
 			else
-				print ("WARNING ! Plot is out of map !")
+				print ("WARNING ! Plot is out of land !")
 			end
 		end
 	end	

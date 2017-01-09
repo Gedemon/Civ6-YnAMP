@@ -196,7 +196,7 @@ function ForceTSL( iPrevPlayer )
 	local iPlayer = iPrevPlayer + 1
 	local player = Players[iPlayer]
 	if player and player:WasEverAlive() and player:GetCities():GetCount() == 0	
-	   and ((not player:IsMajor() and bForceCS) or (player:IsMajor() and bForceAI) or (player:IsHuman() and bForceAll))
+	   and ((not player:IsMajor() and bForceCS) or (player:IsMajor() and (not player:IsHuman()) and bForceAI) or (player:IsHuman() and bForceAll))
 	   and not player:IsBarbarian() then
 		print("- Checking for Settler on TSL for player #".. tostring(iPlayer))
 		local startingPlot = player:GetStartingPlot()
