@@ -3846,5 +3846,327 @@
 	
 	</LocalizedText>
 	
+	<LocalizedText> 
+	<!-- AUSTRIA, GERMANY, CZECH, DENMARK, ITALY G.E.M.-->
+	
+	<Replace Tag="LOC_CITY_NAME_AACHEN" Text="Aachen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AACHEN_ENGLAND" Text="Aix-la-Chapelle" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AACHEN_FRANCE" Text="Aix-la-Chapelle" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AACHEN_POLAND" Text="Akwizgran" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AACHEN_ROME" Text="Aquæ Granni" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AACHEN_RUSSIA" Text="Aakhen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AACHEN_SPAIN" Text="Aquisgrán" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AALBORG" Text="Aalborg" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AALBORG_RUSSIA" Text="Olborg" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AARHUS" Text="Aarhus" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AARHUS_GERMANY" Text="Aarhaus" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AARHUS_NORWAY" Text="Viborg" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_AARHUS_RUSSIA" Text="Orhus" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BARI" Text="Bari" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BARI_GREECE" Text="Barion" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BARI_ROME" Text="Barium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BERLIN" Text="Berlin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BERLIN_ARABIA" Text="Barlīn" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BERLIN_CHINA" Text="Bolin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BERLIN_GREECE" Text="Verolíno" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BERLIN_JAPAN" Text="Berurin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BERLIN_NORWAY" Text="Berlín" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BERLIN_ROME" Text="Berolinum" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BERLIN_SPAIN" Text="Berlín" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BOLOGNA" Text="Bologna" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BOLOGNA_FRANCE" Text="Bologne" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BOLOGNA_POLAND" Text="Bolonia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BOLOGNA_ROME" Text="Bononia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BOLOGNA_SPAIN" Text="Bolonia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BREGENZ" Text="Bregenz" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BREGENZ_FRANCE" Text="Brégence" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BREGENZ_POLAND" Text="Bregencja" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BREGENZ_ROME" Text="Brigantium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BREMEN" Text="Bremen" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BREMEN_FRANCE" Text="Brême" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BREMEN_POLAND" Text="Brema" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRINDISI" Text="Brindisi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRINDISI_GREECE" Text="Brentesion" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRINDISI_ROME" Text="Brundisium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BRNO" Text="Brno" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BRNO_FRANCE" Text="Brin" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BRNO_GERMANY" Text="Brünn" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_BRNO_ROME" Text="Bruna" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CAGLIARI" Text="Cagliari" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAGLIARI_FRANCE" Text="Caglier" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CAGLIARI_ROME" Text="Caralis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CESKY_KRUMLOV" Text="Český Krumlov" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CESKY_KRUMLOV_ENGLAND" Text="Crumlaw" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CESKY_KRUMLOV_GERMANY" Text="Krummau an der Moldau" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CESKY_KRUMLOV_ROME" Text="Crumlovia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_CESKY_KRUMLOV_RUSSIA" Text="Chesky Krumlov" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_COLOGNE" Text="Köln" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_COLOGNE_ENGLAND" Text="Cologne" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_COLOGNE_FRANCE" Text="Cologne" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_COLOGNE_GREECE" Text="Kolonía" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_COLOGNE_NORWAY" Text="Køln" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_COLOGNE_POLAND" Text="Kolonia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_COLOGNE_ROME" Text="Colonia Agrippina" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_COLOGNE_RUSSIA" Text="Kjel'n" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_COLOGNE_SPAIN" Text="Colonia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CORIGLIANO_CALABRO" Text="Corigliano Calabro" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CORIGLIANO_CALABRO_GREECE" Text="Thurii" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CORIGLIANO_CALABRO_ROME" Text="Thurii" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_COTTBUS" Text="Cottbus" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_COTTBUS_POLAND" Text="Chociebuż" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_COTTBUS_ROME" Text="Cotbusium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CREMONA" Text="Cremona" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CREMONA_FRANCE" Text="Crémone" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CROTONE" Text="Crotone" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CROTONE_GREECE" Text="Kroton" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_CROTONE_ROME" Text="Crotona" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DRESDEN" Text="Dresden" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DRESDEN_FRANCE" Text="Dresde" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DRESDEN_GREECE" Text="Drésdi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DRESDEN_POLAND" Text="Drezno" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DRESDEN_ROME" Text="Dresda" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DRESDEN_SPAIN" Text="Dresde" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ESBJERG" Text="Esbjerg" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ESBJERG_GERMANY" Text="Esberg" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ESSEN" Text="Essen" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_ESSEN_ROME" Text="Assindia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FIRENZE" Text="Florence" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FIRENZE_GERMANY" Text="Florenz" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FIRENZE_GREECE" Text="Florentia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FIRENZE_POLAND" Text="Florencja" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FIRENZE_ROME" Text="Florentia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FIRENZE_SPAIN" Text="Florencia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FOGGIA" Text="Foggia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FOGGIA_GREECE" Text="Argos Hippium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FOGGIA_ROME" Text="Herdoniæ" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT_AM_MAIN" Text="Frankfurt" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT_AM_MAIN_ENGLAND" Text="Frankfurt upon Main" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT_AM_MAIN_FRANCE" Text="Francfort-sur-le-Main" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT_AM_MAIN_POLAND" Text="Frankfurt nad Menem" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT_AM_MAIN_ROME" Text="Nida" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT_AM_MAIN_RUSSIA" Text="Frankfurt-na-Mayne" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT_AM_MAIN_SPAIN" Text="Fráncfort del Meno" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT_AN_DER_ODER" Text="Frankurt an der Oder" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT_AN_DER_ODER_ENGLAND" Text="Frankfurt upon Oder" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT_AN_DER_ODER_FRANCE" Text="Francfort-sur-l'Oder" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT_AN_DER_ODER_GERMANY" Text="Frankurt an der Oder" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT_AN_DER_ODER_POLAND" Text="Frankfurt nad Odrą" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT_AN_DER_ODER_RUSSIA" Text="Frankfurt-na-Odere" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FRANKFURT_AN_DER_ODER_SPAIN" Text="Fráncfort del Oder" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_FREIBURG" Text="Freiburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FREIBURG_FRANCE" Text="Fribourg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_FREIBURG_ROME" Text="Aræ Flaviæ" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GENOA" Text="Genoa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GENOA_FRANCE" Text="Gênes" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GENOA_GERMANY" Text="Genua" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GENOA_NORWAY" Text="Genúa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GENOA_ROME" Text="Genua" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GENOA_SPAIN" Text="Génova" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GORLITZ" Text="Görlitz" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GORLITZ_POLAND" Text="Zgorzelec" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GRAZ" Text="Graz" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GRAZ_FRANCE" Text="Gratz" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GRAZ_GREECE" Text="Graecia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GRAZ_POLAND" Text="Grodziec" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_GRAZ_ROME" Text="Graecium" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_HAMBURG" Text="Hamburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HAMBURG_FRANCE" Text="Hambourg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HAMBURG_NORWAY" Text="Hamborg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HAMBURG_ROME" Text="Hamburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HAMBURG_RUSSIA" Text="Gamburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HAMBURG_SPAIN" Text="Hamburgo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HANNOVER" Text="Hannover" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HANNOVER_ENGLAND" Text="Hanover" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HANNOVER_FRANCE" Text="Hanovre" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HEIDENHEIM" Text="Heidenheim" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_INNSBRUCK" Text="Innsbruck" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_INNSBRUCK_ROME" Text="Oenipons" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KARLOVY_VARY" Text="Karlovy Vary" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KARLOVY_VARY_GERMANY" Text="Karlsbad" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KARLOVY_VARY_POLAND" Text="Karlowe Wary" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KIEL" Text="Kiel" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KIEL_NORWAY" Text="Heiðabýr" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KIEL_POLAND" Text="Kilonia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOBENHAVN" Text="Copenhagen" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOBENHAVN_FRANCE" Text="Copenhague" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOBENHAVN_GERMANY" Text="Kaufmannshafen" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOBENHAVN_NORWAY" Text="København" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOBENHAVN_POLAND" Text="Kopenhaga" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOBENHAVN_ROME" Text="Hafnia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOBENHAVN_RUSSIA" Text="Kopengagen" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_KOBENHAVN_SPAIN" Text="Copenhague" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LECCE" Text="Lecce" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LECCE_ROME" Text="Lupiæ" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_LEIPZIG" Text="Leipzig" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LEIPZIG_ENGLAND" Text="Leipsic" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LEIPZIG_FRANCE" Text="Leipsick" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LEIPZIG_POLAND" Text="Lipsk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LEIPZIG_RUSSIA" Text="Leiptsig" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LINZ" Text="Linz" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LINZ_ROME" Text="Lentia" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LUBECK" Text="Lübeck" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LUBECK_ENGLAND" Text="Lubeck" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LUBECK_NORWAY" Text="Lybæk" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LUBECK_POLAND" Text="Lubeka" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_LUBECK_RUSSIA" Text="Lyubek" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_L_AQUILA" Text="L'Aquila" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_L_AQUILA_ENGLAND" Text="The Eagle" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_L_AQUILA_FRANCE" Text="L'Aigle" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_L_AQUILA_GERMANY" Text="Der Adler" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_L_AQUILA_ROME" Text="Aquila Aprutiorum" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_L_AQUILA_SPAIN" Text="El Águila" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_MAGDEBURG" Text="Magdeburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MAGDEBURG_POLAND" Text="Dziewin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MAINZ" Text="Mainz" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MAINZ_FRANCE" Text="Mayence" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MAINZ_ROME" Text="Mogontiacum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MARSALA" Text="Marsala" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MARSALA_ARABIA" Text="Marsa 'Alī" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MARSALA_GREECE" Text="Lilybaion" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MARSALA_ROME" Text="Lilybæum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MILANO" Text="Milan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MILANO_GERMANY" Text="Mailand" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MILANO_POLAND" Text="Mediolan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MILANO_ROME" Text="Mediolanum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUENSTER" Text="Münster" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUENSTER_ENGLAND" Text="Minster" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUENSTER_ROME" Text="Monasterium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUNICH" Text="Munich" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUNICH_GERMANY" Text="München" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUNICH_POLAND" Text="Mnichów" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUNICH_ROME" Text="Monacum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NAPOLI" Text="Naples" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NAPOLI_GERMANY" Text="Neapel" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NAPOLI_GREECE" Text="Parthenope" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NAPOLI_ROME" Text="Neapolis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NAPOLI_RUSSIA" Text="Neapol" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NAPOLI_SPAIN" Text="Nápoles" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NUREMBERG" Text="Nürnberg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NUREMBERG_ENGLAND" Text="Nuremberg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NUREMBERG_FRANCE" Text="Nuremberg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_NUREMBERG_POLAND" Text="Norymberga" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ODENSE" Text="Odense" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_OLBIA" Text="Olbia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_OSTRAVA" Text="Ostrava" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_OSTRAVA_FRANCE" Text="Ostrava" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_OSTRAVA_GERMANY" Text="Ostrau" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_OSTRAVA_POLAND" Text="Ostrawa" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PADERBORN" Text="Paderborn" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PADERBORN_ROME" Text="Paderbronna" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PADOVA" Text="Padua" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PADOVA_FRANCE" Text="Padoue" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PADOVA_ROME" Text="Patavium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PALERMO" Text="Palermo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PALERMO_ARABIA" Text="Balarm" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PALERMO_GREECE" Text="Panormos" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PALERMO_ROME" Text="Panormus" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PESCARA" Text="Pescara" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PESCARA_ROME" Text="Aternum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PISA" Text="Pisa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PISA_FRANCE" Text="Pise" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PISA_ROME" Text="Pisæ" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PLZEN" Text="Plzeň" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PLZEN_ENGLAND" Text="Pilsen" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PLZEN_FRANCE" Text="Pilsen" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PLZEN_GERMANY" Text="Pilsen" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PLZEN_POLAND" Text="Pilzno" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_POTSDAM" Text="Potsdam" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_POTSDAM_POLAND" Text="Poczdam" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PRAHA" Text="Prague" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PRAHA_ARABIA" Text="Prag" Language="en_US"/> <!-- Turkish -->
+	<Replace Tag="LOC_CITY_NAME_PRAHA_GERMANY" Text="Prag" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PRAHA_GREECE" Text="Prága" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PRAHA_NORWAY" Text="Praha" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PRAHA_ROME" Text="Praga" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_PRAHA_RUSSIA" Text="Praga" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_RAVENNA" Text="Ravenna" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RAVENNA_FRANCE" Text="Ravenne" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RAVENNA_GERMANY" Text="Raben" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RAVENNA_SPAIN" Text="Rávena" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_REGENSBURG" Text="Regensburg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_REGENSBURG_ENGLAND" Text="Ratisbon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_REGENSBURG_FRANCE" Text="Ratisbonne" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_REGENSBURG_POLAND" Text="Ratyzbona" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_REGENSBURG_ROME" Text="Castra Regina" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_REGGIO_CALABRIA" Text="Reggio Calabria" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_REGGIO_CALABRIA_GREECE" Text="Rhegium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_REGGIO_CALABRIA_ROME" Text="Rhegium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROMA" Text="Rome" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROMA_ARABIA" Text="Rūmiya" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROMA_CHINA" Text="Luoma" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROMA_GERMANY" Text="Rom" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROMA_GREECE" Text="Rómi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROMA_JAPAN" Text="Rōma" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROMA_NORWAY" Text="Rómaborg" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROMA_POLAND" Text="Rzym" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROMA_ROME" Text="Roma" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROMA_RUSSIA" Text="Rim" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROMA_SPAIN" Text="Roma" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROSTOCK" Text="Rostock" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ROSTOCK_POLAND" Text="Roztoka" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SALZBURG" Text="Salzburg" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SALZBURG_FRANCE" Text="Salzbourg" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SALZBURG_POLAND" Text="Solnogród" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SALZBURG_ROME" Text="Salisburgum" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SALZBURG_RUSSIA" Text="Zaltsburg" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SALZBURG_SPAIN" Text="Salzburgo" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_SAN_BENEDETTO_DEL_TRONTO" Text="San Benedetto del Tronto" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SAN_BENEDETTO_DEL_TRONTO_ENGLAND" Text="Saint Benedict's" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SAN_BENEDETTO_DEL_TRONTO_FRANCE" Text="Saint-Benoît" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SAN_BENEDETTO_DEL_TRONTO_GERMANY" Text="Sankt Benedikt" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SAN_BENEDETTO_DEL_TRONTO_ROME" Text="Asculum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SIRACUSA" Text="Syracuse" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SIRACUSA_GREECE" Text="Syrakousai" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SIRACUSA_ROME" Text="Syracusæ" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STRALSUND" Text="Stralsund" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STUTTGART" Text="Stuttgart" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STUTTGART_FRANCE" Text="Stutgard" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STUTTGART_ROME" Text="Sumelocenna" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_STUTTGART_SPAIN" Text="Estucardia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TORINO" Text="Turin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TORINO_POLAND" Text="Turyn" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TORINO_ROME" Text="Augusta Taurinorum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TORINO_SPAIN" Text="Turín" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TRIESTE" Text="Trieste" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TRIESTE_GERMANY" Text="Triest" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TRIESTE_ROME" Text="Tergestum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ULM" Text="Ulm" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ULM_ROME" Text="Ad Lunam" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_USTI_NAD_LABEM" Text="Ústí nad Labem" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_USTI_NAD_LABEM_GERMANY" Text="Außig" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_USTI_NAD_LABEM_POLAND" Text="Uście nad Łabą" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VALLETTA" Text="Valletta" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VALLETTA_ARABIA" Text="Fālītā" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VALLETTA_FRANCE" Text="La Valette" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VALLETTA_FRANCE" Text="Valletta" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VALLETTA_GREECE" Text="Valéta" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VALLETTA_POLAND" Text="La Valletta" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VALLETTA_ROME" Text="Valletta" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_VENETIA" Text="Venice" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VENETIA_GERMANY" Text="Venedig" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VENETIA_ROME" Text="Altinum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VERONA" Text="Verona" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VERONA_FRANCE" Text="Vérone" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VICENZA" Text="Vicenza" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VICENZA_ROME" Text="Vicetia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WIEN" Text="Vienna" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WIEN_ARABIA" Text="Beç" Language="en_US"/> <!-- Turkish -->
+	<Replace Tag="LOC_CITY_NAME_WIEN_FRANCE" Text="Vienne" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WIEN_GERMANY" Text="Wien" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WIEN_GREECE" Text="Viénni" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WIEN_NORWAY" Text="Wien" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WIEN_POLAND" Text="Wiedeń" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WIEN_ROME" Text="Vindobona" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WIEN_RUSSIA" Text="Vena" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WIEN_SPAIN" Text="Viena" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WILHELMSHAVEN" Text="Wilhelmshaven" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WILHELMSHAVEN_ENGLAND" Text="William's Harbour" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WILHELMSHAVEN_FRANCE" Text="Le Port de Guillaume" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WILHELMSHAVEN_ROME" Text="Portus Gulielmi" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WITTENBERGE" Text="Wittenberge" Language="en_US"/>
+	<Replace Tag="LOC_CITY_NAME_WITTENBERGE_POLAND" Text="Biała Góra" Language="en_US"/>
+	
+	</LocalizedText>
+	
 </GameData>
 
