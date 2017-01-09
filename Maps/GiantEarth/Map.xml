@@ -14,7 +14,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_EGYPT"		X="32" Y="43" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ENGLAND"	X="12" Y="72" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_FRANCE"	X="13" Y="67" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GERMANY"	X="22" Y="69" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GERMANY"	X="22" Y="71" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GREECE"	X="28" Y="56" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GREECE"	X="31" Y="60" Leader="LEADER_GORGO" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_INDIA"		X="61" Y="52" />
