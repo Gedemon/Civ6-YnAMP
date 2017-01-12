@@ -2580,6 +2580,7 @@ function PlaceRealNaturalWonders(NaturalWonders)
 		local pPlot = Map.GetPlot(x, y);
 		local plotsIndex = {}
 		local plotsList = {}
+		local bUseOnlyPlotListPlacement = false
 		
 		-- Preparing placement
 		if featureTypeName == "FEATURE_DEAD_SEA" then
@@ -2632,7 +2633,7 @@ function PlaceRealNaturalWonders(NaturalWonders)
 			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
 		end
 		
-		if featureTypeName == "FEATURE_YOSEMITE" then
+		if featureTypeName == "FEATURE_YOSEMITE" or featureTypeName == "FEATURE_EYJAFJALLAJOKULL" then
 			print(" - Preparing position...")
 			-- 2 plots EAST-WEST, flat tundra/plains without features, 1st plot is WEST
 			-- preparing the 2 plots
@@ -2667,6 +2668,25 @@ function PlaceRealNaturalWonders(NaturalWonders)
 			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
 			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST), Terrain = terrainType })
 		end
+
+		if featureTypeName == "FEATURE_GIANTS_CAUSEWAY" then
+			print(" - Preparing position...")
+			-- 2 plots, one on coastal land and one in water, 1st plot is land, SOUTHEAST
+			-- preparing the 2 plots
+			bUseOnlyPlotListPlacement = true
+			table.insert(plotsList, { Plot = pPlot, Terrain = g_TERRAIN_TYPE_PLAINS })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = g_TERRAIN_TYPE_COAST })
+		end
+		
+		if featureTypeName == "FEATURE_LYSEFJORDEN"then
+			print(" - Preparing position...")
+			-- 3 plots, flat grass near coast, 1st plot is EAST
+			-- preparing the 3 plots
+			local terrainType = g_TERRAIN_TYPE_GRASS
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHWEST), Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_WEST), Terrain = terrainType })
+		end
 		
 		for k, data in ipairs(plotsList) do 
 			TerrainBuilder.SetTerrainType(data.Plot, data.Terrain)
@@ -2679,8 +2699,10 @@ function PlaceRealNaturalWonders(NaturalWonders)
 			print("  - WARNING : TerrainBuilder.CanHaveFeature says that we can't place that feature here...")
 		end		
 		
-		print("  - Trying Direct Placement...")
-		TerrainBuilder.SetFeatureType(pPlot, eFeatureType);
+		if not bUseOnlyPlotListPlacement then
+			print("  - Trying Direct Placement...")
+			TerrainBuilder.SetFeatureType(pPlot, eFeatureType);
+		end
 		local bPlaced = pPlot:IsNaturalWonder()
 			
 		if (not bPlaced) and (#plotsIndex > 0) then

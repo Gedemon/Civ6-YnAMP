@@ -66,22 +66,25 @@ end
 function GetNaturalWonders()
 	local NaturalWonders = {}
 	
-	NaturalWonders[GameInfo.Features["FEATURE_BARRIER_REEF"].Index] 	= { X = 103, Y = 16}	
-	NaturalWonders[GameInfo.Features["FEATURE_CLIFFS_DOVER"].Index] 	= { X = 39, Y = 51}
-	NaturalWonders[GameInfo.Features["FEATURE_CRATER_LAKE"].Index] 		= { X = 3, Y = 48}	
-	NaturalWonders[GameInfo.Features["FEATURE_DEAD_SEA"].Index] 		= { X = 63, Y = 37}	
-	NaturalWonders[GameInfo.Features["FEATURE_EVEREST"].Index] 			= { X = 78, Y = 42}	
-	NaturalWonders[GameInfo.Features["FEATURE_GALAPAGOS"].Index] 		= { X = 15, Y = 20}
-	NaturalWonders[GameInfo.Features["FEATURE_KILIMANJARO"].Index] 		= { X = 62, Y = 17}	
-	NaturalWonders[GameInfo.Features["FEATURE_PANTANAL"].Index] 		= { X = 27, Y = 16}	
-	NaturalWonders[GameInfo.Features["FEATURE_PIOPIOTAHI"].Index] 		= { X = 0, Y = 6}
-	NaturalWonders[GameInfo.Features["FEATURE_TORRES_DEL_PAINE"].Index] = { X = 25, Y = 6}
-	NaturalWonders[GameInfo.Features["FEATURE_TSINGY"].Index] 			= { X = 64, Y = 9}
-	NaturalWonders[GameInfo.Features["FEATURE_YOSEMITE"].Index] 		= { X = 2, Y = 45}
-	--NaturalWonders[GameInfo.Features["FEATURE_EYJAFJALLAJOKULL"].Index]	= { X = 32, Y = 61}
-	--NaturalWonders[GameInfo.Features["FEATURE_LYSEFJORDEN"].Index] 		= { X = 43, Y = 61}
-	--NaturalWonders[GameInfo.Features["FEATURE_GIANTS_CAUSEWAY"].Index] 		= { X = 33, Y = 56}
-		
+	NaturalWonders[GameInfo.Features["FEATURE_BARRIER_REEF"].Index] 	= { X = 103, Y = 16}	-- 2 plots, coast, 1st plot is SOUTHEAST	
+	NaturalWonders[GameInfo.Features["FEATURE_CLIFFS_DOVER"].Index] 	= { X = 39, Y = 51}		-- 2 plots, hills on coast, 1st plot is WEST	
+	NaturalWonders[GameInfo.Features["FEATURE_CRATER_LAKE"].Index] 		= { X = 3, Y = 48}
+	NaturalWonders[GameInfo.Features["FEATURE_DEAD_SEA"].Index] 		= { X = 63, Y = 37}		-- 2 plots, flat desert surrounded by desert, 1st plot is SOUTHWEST	
+	NaturalWonders[GameInfo.Features["FEATURE_EVEREST"].Index] 			= { X = 78, Y = 42}		-- 3 plots, mountains, 1st plot is WEST	
+	NaturalWonders[GameInfo.Features["FEATURE_GALAPAGOS"].Index] 		= { X = 15, Y = 20}		-- 2 plots, coast, surrounded by coast, 1st plot is SOUTHWEST
+	NaturalWonders[GameInfo.Features["FEATURE_KILIMANJARO"].Index] 		= { X = 62, Y = 17}
+	NaturalWonders[GameInfo.Features["FEATURE_PANTANAL"].Index] 		= { X = 27, Y = 16}		-- 4 plots, flat grass/plains without features, 1st plot is SOUTHWEST	
+	NaturalWonders[GameInfo.Features["FEATURE_PIOPIOTAHI"].Index] 		= { X = 0, Y = 6}		-- 3 plots, flat grass near coast, 1st plot is WEST	
+	NaturalWonders[GameInfo.Features["FEATURE_TORRES_DEL_PAINE"].Index] = { X = 25, Y = 6}		-- 2 plots EAST-WEST without features, 1st plot is WEST	
+	NaturalWonders[GameInfo.Features["FEATURE_TSINGY"].Index] 			= { X = 64, Y = 9}      
+	NaturalWonders[GameInfo.Features["FEATURE_YOSEMITE"].Index] 		= { X = 2, Y = 45}		-- 2 plots EAST-WEST, flat tundra/plains without features, 1st plot is WEST
+
+	if GameInfo.Features["FEATURE_EYJAFJALLAJOKULL"] then -- Vikings DLC is loaded
+	NaturalWonders[GameInfo.Features["FEATURE_EYJAFJALLAJOKULL"].Index]	= { X = 32, Y = 61}		-- 2 plots, use YOSEMITE rule
+	NaturalWonders[GameInfo.Features["FEATURE_LYSEFJORDEN"].Index] 		= { X = 43, Y = 61}		-- 3 plots, , flat grass near coast, 1st plot is EAST
+	NaturalWonders[GameInfo.Features["FEATURE_GIANTS_CAUSEWAY"].Index] 	= { X = 34, Y = 56}		-- 2 plots, one on coastal land and one in water, 1st plot is land, SOUTHEAST 
+	end
+	
 	return NaturalWonders
 end
 

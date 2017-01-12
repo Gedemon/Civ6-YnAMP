@@ -79,9 +79,11 @@ function GetNaturalWonders()
 	NaturalWonders[GameInfo.Features["FEATURE_TSINGY"].Index] 			 = { X = 36, Y = 18}    
 	NaturalWonders[GameInfo.Features["FEATURE_YOSEMITE"].Index] 		 = { X = 132, Y = 62}   -- 2 plots EAST-WEST, flat tundra/plains without features, 1st plot is WEST
 	
-	--NaturalWonders[GameInfo.Features["FEATURE_EYJAFJALLAJOKULL"].Index]	= { X = 2, Y = 83}
-	--NaturalWonders[GameInfo.Features["FEATURE_LYSEFJORDEN"].Index] 		= { X = 18, Y = 80}
-	--NaturalWonders[GameInfo.Features["FEATURE_GIANTS_CAUSEWAY"].Index] 		= { X = 6, Y = 77}
+	if GameInfo.Features["FEATURE_EYJAFJALLAJOKULL"] then -- Vikings DLC is loaded
+	NaturalWonders[GameInfo.Features["FEATURE_EYJAFJALLAJOKULL"].Index]	= { X = 2, Y = 83}		-- 2 plots, use YOSEMITE rule
+	NaturalWonders[GameInfo.Features["FEATURE_LYSEFJORDEN"].Index] 		= { X = 18, Y = 80}     -- 3 plots, , flat grass near coast, 1st plot is EAST
+	NaturalWonders[GameInfo.Features["FEATURE_GIANTS_CAUSEWAY"].Index] 	= { X = 6, Y = 77}      -- 2 plots, one on coastal land and one in water, 1st plot is land, SOUTHEAST 
+	end
 	
 	return NaturalWonders
 end
