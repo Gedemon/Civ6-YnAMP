@@ -176,7 +176,7 @@
         	<Replace MapName="GiantEarth" X="99" Y="16" CityLocaleName="LOC_CITY_NAME_BETOOTA" Area="0" />
         	<Replace MapName="GiantEarth" X="100" Y="16" CityLocaleName="LOC_CITY_NAME_QUILPIE" Area="0" />
         	<Replace MapName="GiantEarth" X="101" Y="16" CityLocaleName="LOC_CITY_NAME_CHARLEVILLE" Area="0" />
-        	<Replace MapName="GiantEarth" X="102" Y="16" CityLocaleName="LOC_CITY_NAME_ROMA" Area="0" />
+        	<Replace MapName="GiantEarth" X="102" Y="16" CityLocaleName="LOC_CITY_NAME_ROMA_QLD" Area="0" />
         	<Replace MapName="GiantEarth" X="103" Y="16" CityLocaleName="LOC_CITY_NAME_KINGAROY" Area="0" />
         	<Replace MapName="GiantEarth" X="104" Y="16" CityLocaleName="LOC_CITY_NAME_BUNDABERG" Area="0" />
         	
