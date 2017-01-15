@@ -121,7 +121,12 @@
 		<Replace MapName="PlayEuropeAgain" X="63" Y="26" CityLocaleName="LOC_CITY_NAME_SKYROS" Area="0" Civilization="CIVILIZATION_GREECE" />
 		<Replace MapName="PlayEuropeAgain" X="63" Y="29" CityLocaleName="LOC_CITY_NAME_HEPHAISTIA" Area="0" Civilization="CIVILIZATION_GREECE" />
 		
-		<!-- ASIA MINOR WEST AND CYPRUS -->
+		<!-- LIBYA & EGYPT -->
+		<Replace MapName="PlayEuropeAgain" X="55" Y="13" CityLocaleName="LOC_CITY_NAME_ARSINOE_CYRENAICA" Area="0" Civilization="CIVILIZATION_GREECE" />
+		<Replace MapName="PlayEuropeAgain" X="56" Y="13" CityLocaleName="LOC_CITY_NAME_PTOLEMAIS" Area="0" Civilization="CIVILIZATION_GREECE" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="13" CityLocaleName="LOC_CITY_NAME_APOLLONIA_CYRENAICA" Area="0" Civilization="CIVILIZATION_GREECE" />
+		
+		<!-- ANATOLIA & CYPRUS -->
 		<Replace MapName="PlayEuropeAgain" X="76" Y="18" CityLocaleName="LOC_CITY_NAME_PAPHOS" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="77" Y="18" CityLocaleName="LOC_CITY_NAME_CITIUM" Area="0" Civilization="CIVILIZATION_GREECE" />
 		<Replace MapName="PlayEuropeAgain" X="78" Y="18" CityLocaleName="LOC_CITY_NAME_CITIUM" Area="0" Civilization="CIVILIZATION_GREECE" />
