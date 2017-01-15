@@ -194,6 +194,11 @@
 		<Replace MapName="PlayEuropeAgain" X="14" Y="27" CityLocaleName="LOC_CITY_NAME_LIXUS" Area="0" Civilization="CIVILIZATION_ROME" />
 		<Replace MapName="PlayEuropeAgain" X="15" Y="27" CityLocaleName="LOC_CITY_NAME_IULIA_CONSTANTIA_ZILIL" Area="0" Civilization="CIVILIZATION_ROME" />
 		
+		<!-- LIBYA & EGYPT -->
+		<Replace MapName="PlayEuropeAgain" X="55" Y="13" CityLocaleName="LOC_CITY_NAME_ARSINOE_CYRENAICA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="56" Y="13" CityLocaleName="LOC_CITY_NAME_PTOLEMAIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="58" Y="13" CityLocaleName="LOC_CITY_NAME_APOLLONIA_CYRENAICA" Area="0" Civilization="CIVILIZATION_ROME" />
+		
 	</CityMap>
 	
 </GameData>
