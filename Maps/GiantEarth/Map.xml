@@ -58,7 +58,7 @@
 		
 		<!-- DLC -->
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AUCKLAND" X="112" Y="11" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ANTANARIVO" X="36" Y="17" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ANTANANARIVO" X="36" Y="17" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ARMAGH" X="4" Y="75" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MUSCAT" X="45" Y="43" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PALENQUE" X="142" Y="45" />
