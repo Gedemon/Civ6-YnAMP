@@ -26,7 +26,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SCYTHIA"	X="47" Y="69" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SPAIN"		X="7" Y="57" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SUMERIA"	X="41" Y="49" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_POLAND"	X="29" Y="70" />		
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_POLAND"	X="26" Y="68" />		
 	</StartPosition>	
 	
 	<!-- Minors -->
@@ -47,19 +47,19 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_LISBON"		X="4" Y="56" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MOHENJO_DARO"	X="55" Y="52" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_NAN_MADOL"		X="105" Y="31" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PRESLAV"		X="31" Y="62" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PRESLAV"		X="29" Y="61" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SEOUL"			X="89" Y="62" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_STOCKHOLM"		X="24" Y="79" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_TORONTO"		X="153" Y="69" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_VALLETTA"		X="22" Y="51" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_VILNIUS"		X="28" Y="72" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_VILNIUS"		X="29" Y="73" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_YEREVAN"		X="43" Y="59" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ZANZIBAR"		X="33" Y="27" />
 		
 		<!-- DLC -->
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AUCKLAND" X="112" Y="11" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ANTANANARIVO" X="36" Y="17" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ARMAGH" X="4" Y="75" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ANTANARIVO" X="36" Y="17" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ARMAGH" X="6" Y="76" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MUSCAT" X="45" Y="43" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PALENQUE" X="142" Y="45" />
 		
