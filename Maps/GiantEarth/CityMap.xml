@@ -808,7 +808,7 @@
 		<Replace MapName="GiantEarth" X="9" Y="54" CityLocaleName="LOC_CITY_NAME_GRANADA" Area="0" />
 		<Replace MapName="GiantEarth" X="10" Y="54" CityLocaleName="LOC_CITY_NAME_CARTAGENA" Area="0" />
 		
-		<Replace MapName="GiantEarth" X="4" Y="55" CityLocaleName="LOC_CITY_NAME_LISBON" Area="0" />
+		<Replace MapName="GiantEarth" X="4" Y="55" CityLocaleName="LOC_CITY_NAME_LISBOA" Area="0" />
 		<Replace MapName="GiantEarth" X="5" Y="55" CityLocaleName="LOC_CITY_NAME_EVORA" Area="0" />
 		<Replace MapName="GiantEarth" X="6" Y="55" CityLocaleName="LOC_CITY_NAME_SEVILLA" Area="0" />
 		<Replace MapName="GiantEarth" X="7" Y="55" CityLocaleName="LOC_CITY_NAME_CORDOBA" Area="0" />
@@ -816,7 +816,7 @@
 		<Replace MapName="GiantEarth" X="9" Y="55" CityLocaleName="LOC_CITY_NAME_ALBACETE" Area="0" />
 		<Replace MapName="GiantEarth" X="10" Y="55" CityLocaleName="LOC_CITY_NAME_VALENCIA" Area="0" />
 		
-		<Replace MapName="GiantEarth" X="4" Y="56" CityLocaleName="LOC_CITY_NAME_LISBON" Area="0" />
+		<Replace MapName="GiantEarth" X="4" Y="56" CityLocaleName="LOC_CITY_NAME_LISBOA" Area="0" />
 		<Replace MapName="GiantEarth" X="5" Y="56" CityLocaleName="LOC_CITY_NAME_EVORA" Area="0" />
 		<Replace MapName="GiantEarth" X="6" Y="56" CityLocaleName="LOC_CITY_NAME_MERIDA" Area="0" />
 		<Replace MapName="GiantEarth" X="7" Y="56" CityLocaleName="LOC_CITY_NAME_TOLEDO" Area="0" />
