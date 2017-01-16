@@ -2510,6 +2510,7 @@
 		<Replace Tag="LOC_CITY_NAME_STAH" Text="Stah" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_TABAQAH" Text="Tabaqah" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_TAMALOUS" Text="Tamalous" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_TAMALOUS_ROME" Text="Rusicade" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_TAMANGHASSET" Text="Tamanghasset" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_TATAOUINE" Text="Tataouine" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_TATAOUINE_ROME" Text="Gigthis" Language="en_US"/>
@@ -2541,6 +2542,8 @@
 		
 		<!-- LIBYA & EGYPT -->
 		<Replace Tag="LOC_CITY_NAME_AJDABIYA" Text="Ajdabiya" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AJDABIYA_GREECE" Text="Automala" Language="en_US"/>
+		<Replace Tag="LOC_CITY_NAME_AJDABIYA_ROME" Text="Anabucis" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_ALEXANDRIA" Text="Alexandria" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_ALEXANDRIA_ARABIA" Text="al-Iskandariyah" Language="en_US"/>
 		<Replace Tag="LOC_CITY_NAME_ALEXANDRIA_EGYPT" Text="Ra-Kedet" Language="en_US"/>
