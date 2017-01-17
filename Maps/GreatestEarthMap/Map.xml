@@ -72,7 +72,7 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CARTHAGE"		X="47" Y="36" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GENEVA"			X="46" Y="47" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_HATTUSA"			X="61" Y="43" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_HONG_KONG"		X="88" Y="40" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_HONG_KONG"		X="87" Y="42" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_JAKARTA"			X="85" Y="24" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MEXICO_CITY"		X="11" Y="36" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KABUL"			X="72" Y="43" />

@@ -71,7 +71,7 @@ function GetNaturalWonders()
 	NaturalWonders[GameInfo.Features["FEATURE_CRATER_LAKE"].Index] 		 = { X = 176, Y = 80}	
 	NaturalWonders[GameInfo.Features["FEATURE_DEAD_SEA"].Index] 		 = { X = 47, Y = 62}	-- 2 plots, flat desert surrounded by desert, 1st plot is SOUTHWEST	
 	NaturalWonders[GameInfo.Features["FEATURE_EVEREST"].Index] 			 = { X = 87, Y = 67}	-- 3 plots, mountains, 1st plot is WEST	
-	NaturalWonders[GameInfo.Features["FEATURE_GALAPAGOS"].Index] 		 = { X = 192, Y = 44}	-- 2 plots, coast, surrounded by coast, 1st plot is SOUTHWEST
+	NaturalWonders[GameInfo.Features["FEATURE_GALAPAGOS"].Index] 		 = { X = 192, Y = 44}   -- 2 plots, coast, surrounded by coast, 1st plot is SOUTHEAST
 	NaturalWonders[GameInfo.Features["FEATURE_KILIMANJARO"].Index] 		 = { X = 45, Y = 36}	
 	NaturalWonders[GameInfo.Features["FEATURE_PANTANAL"].Index] 		 = { X = 212, Y = 34}	-- 4 plots, flat grass/plains without features, 1st plot is SOUTH-WEST	
 	NaturalWonders[GameInfo.Features["FEATURE_PIOPIOTAHI"].Index] 		 = { X = 143, Y = 4}	-- 3 plots, flat grass near coast, 1st plot is WEST	

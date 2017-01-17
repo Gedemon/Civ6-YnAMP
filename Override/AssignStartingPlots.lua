@@ -2664,9 +2664,10 @@ function PlaceRealNaturalWonders(NaturalWonders)
 			print(" - Preparing position...")
 			-- 2 plots, coast, surrounded by coast, 1st plot is SOUTHWEST 
 			-- preparing the area
-			local terrainType = g_TERRAIN_TYPE_COAST			
+			local terrainType = g_TERRAIN_TYPE_COAST
+			bUseOnlyPlotListPlacement = true
 			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST), Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = terrainType })
 		end
 
 		if featureTypeName == "FEATURE_GIANTS_CAUSEWAY" then
@@ -3431,11 +3432,16 @@ function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains,
 		end
 		
 		-- Set Resources
-		if bImportResources and not plot:IsNaturalWonder() then
-			if resource[1] ~= -1 and ResourceCiv5toCiv6[resource[1]] ~= -1 then		
-				if bOutput then print(" - Set Resource Type = "..tostring(GameInfo.Resources[ResourceCiv5toCiv6[resource[1]]].ResourceType)) end
+		if bImportResources and not plot:IsNaturalWonder() and resource[1] ~= -1 then
+			local Civ6ResourceType = ResourceCiv5toCiv6[resource[1]]
+			if Civ6ResourceType ~= -1 then		
+				if bOutput then print(" - Set Resource Type = "..tostring(GameInfo.Resources[Civ6ResourceType].ResourceType)) end
 				--ResourceBuilder.SetResourceType(plot, ResourceCiv5toCiv6[resource[1]], resource[2]) -- maybe an option to import number of resources on one plot even if civ6 use 1 ?
-				ResourceBuilder.SetResourceType(plot, ResourceCiv5toCiv6[resource[1]], 1)
+				if(ResourceBuilder.CanHaveResource(plot, Civ6ResourceType)) then
+					ResourceBuilder.SetResourceType(plot, Civ6ResourceType, 1)
+				else
+					print(" - WARNING : ResourceBuilder.CanHaveResource says that "..tostring(GameInfo.Resources[Civ6ResourceType].ResourceType).." can't be placed at "..plot:GetX()..","..plot:GetY())
+				end
 			end
 		end
 		
