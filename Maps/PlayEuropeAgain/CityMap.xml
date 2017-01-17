@@ -2340,13 +2340,14 @@
 	<Replace MapName="PlayEuropeAgain" X="17" Y="24" CityLocaleName="LOC_CITY_NAME_TAZA" />
 	
 	<Replace MapName="PlayEuropeAgain" X="11" Y="25" CityLocaleName="LOC_CITY_NAME_RABAT" />
-	<Replace MapName="PlayEuropeAgain" X="15" Y="25" CityLocaleName="LOC_CITY_NAME_TAOUNATA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="15" Y="25" CityLocaleName="LOC_CITY_NAME_TAOUNATE" Area="0" />
 	
 	<Replace MapName="PlayEuropeAgain" X="13" Y="26" CityLocaleName="LOC_CITY_NAME_SALE" Area="0" />
 	<Replace MapName="PlayEuropeAgain" X="14" Y="26" CityLocaleName="LOC_CITY_NAME_KENITRA" Area="0" />
 	<Replace MapName="PlayEuropeAgain" X="15" Y="26" CityLocaleName="LOC_CITY_NAME_CHEFCHAOUEN" Area="0" />
 	<Replace MapName="PlayEuropeAgain" X="17" Y="26" CityLocaleName="LOC_CITY_NAME_HOCEIMA" Area="0" />
 	<Replace MapName="PlayEuropeAgain" X="19" Y="26" CityLocaleName="LOC_CITY_NAME_NADOR" />
+	<Replace MapName="PlayEuropeAgain" X="20" Y="26" CityLocaleName="LOC_CITY_NAME_NADOR" Area="0" />
 	
 	<Replace MapName="PlayEuropeAgain" X="16" Y="27" CityLocaleName="LOC_CITY_NAME_TETOUAN" />
 	
@@ -2375,15 +2376,15 @@
 	
 	<Replace MapName="PlayEuropeAgain" X="29" Y="8" CityLocaleName="LOC_CITY_NAME_GASSI_EL_AGREB" Area="2" />
 	<Replace MapName="PlayEuropeAgain" X="34" Y="8" CityLocaleName="LOC_CITY_NAME_EL_BORMA" Area="3" />
-	<Replace MapName="PlayEuropeAgain" X="40" Y="8" CityLocaleName="LOC_CITY_NAME_GADAMIS" />
+	<Replace MapName="PlayEuropeAgain" X="40" Y="8" CityLocaleName="LOC_CITY_NAME_GHADAMES" />
 	
 	<Replace MapName="PlayEuropeAgain" X="22" Y="9" CityLocaleName="LOC_CITY_NAME_BENOUD" Area="2" />
 	<Replace MapName="PlayEuropeAgain" X="25" Y="9" CityLocaleName="LOC_CITY_NAME_MANSOURA" />
 	
 	<Replace MapName="PlayEuropeAgain" X="31" Y="10" CityLocaleName="LOC_CITY_NAME_TAMANGHASSET" />
 	<Replace MapName="PlayEuropeAgain" X="38" Y="10" CityLocaleName="LOC_CITY_NAME_SINAWIN" />
-	<Replace MapName="PlayEuropeAgain" X="42" Y="10" CityLocaleName="LOC_CITY_NAME_GARYAN" />
-	<Replace MapName="PlayEuropeAgain" X="44" Y="10" CityLocaleName="LOC_CITY_NAME_BANI_WALED" />
+	<Replace MapName="PlayEuropeAgain" X="42" Y="10" CityLocaleName="LOC_CITY_NAME_GHARYAN" />
+	<Replace MapName="PlayEuropeAgain" X="44" Y="10" CityLocaleName="LOC_CITY_NAME_BANI_WALID" />
 	
 	<Replace MapName="PlayEuropeAgain" X="40" Y="11" CityLocaleName="LOC_CITY_NAME_TABAQAH" />
 	
@@ -2432,7 +2433,7 @@
 	<Replace MapName="PlayEuropeAgain" X="32" Y="20" CityLocaleName="LOC_CITY_NAME_AIN_BEIDA" Area="0" />
 	<Replace MapName="PlayEuropeAgain" X="32" Y="21" CityLocaleName="LOC_CITY_NAME_AIN_BEIDA" Area="0" />
 	<Replace MapName="PlayEuropeAgain" X="34" Y="20" CityLocaleName="LOC_CITY_NAME_TEBESSA" />
-	<Replace MapName="PlayEuropeAgain" X="38" Y="20" CityLocaleName="LOC_CITY_NAME_SIAX" />
+	<Replace MapName="PlayEuropeAgain" X="38" Y="20" CityLocaleName="LOC_CITY_NAME_SFAX" />
 	
 	<Replace MapName="PlayEuropeAgain" X="24" Y="21" CityLocaleName="LOC_CITY_NAME_AIN_OUSSERA" Area="0" />
 	<Replace MapName="PlayEuropeAgain" X="25" Y="21" CityLocaleName="LOC_CITY_NAME_HAD_SAHARY" Area="0" />	
@@ -2475,7 +2476,7 @@
 	<Replace MapName="PlayEuropeAgain" X="30" Y="27" CityLocaleName="LOC_CITY_NAME_COLLO" />
 	</CityMap>
 	
-		<!-- LIBYA AND EGYPT -->
+	<!-- LIBYA & EGYPT -->
 	<CityMap>
 	<Replace MapName="PlayEuropeAgain" X="56" Y="0" CityLocaleName="LOC_CITY_NAME_TAZIRBU" />
 	<Replace MapName="PlayEuropeAgain" X="69" Y="0" CityLocaleName="LOC_CITY_NAME_FARAFRA" />
@@ -2550,7 +2551,7 @@
 	<Replace MapName="PlayEuropeAgain" X="66" Y="10" CityLocaleName="LOC_CITY_NAME_MARSA_MATRUH" />
 	<Replace MapName="PlayEuropeAgain" X="72" Y="10" CityLocaleName="LOC_CITY_NAME_ALEXANDRIA" />
 	<Replace MapName="PlayEuropeAgain" X="74" Y="10" CityLocaleName="LOC_CITY_NAME_AL_MAHALLAH" Area="0" />
-	<Replace MapName="PlayEuropeAgain" X="75" Y="10" CityLocaleName="LOC_CITY_NAME_AL_KUBRA" Area="0" />
+	<Replace MapName="PlayEuropeAgain" X="75" Y="10" CityLocaleName="LOC_CITY_NAME_MANSOURA" Area="0" />
 	
 	<Replace MapName="PlayEuropeAgain" X="54" Y="11" CityLocaleName="LOC_CITY_NAME_BENGHAZI" Area="0" />
 	<Replace MapName="PlayEuropeAgain" X="55" Y="11" CityLocaleName="LOC_CITY_NAME_BENGHAZI" Area="0" />
@@ -2563,6 +2564,7 @@
 	<Replace MapName="PlayEuropeAgain" X="79" Y="12" CityLocaleName="LOC_CITY_NAME_ARISH" />
 	
 	<Replace MapName="PlayEuropeAgain" X="57" Y="13" CityLocaleName="LOC_CITY_NAME_AL_BAYDA" />
+	<Replace MapName="PlayEuropeAgain" X="59" Y="13" CityLocaleName="LOC_CITY_NAME_DERNA" Area="0" />
 	
 	</CityMap>
 	
