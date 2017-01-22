@@ -10,7 +10,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ARABIA"	X="36" Y="41" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AZTEC"		X="138" Y="49" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BRAZIL"	X="167" Y="22" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CHINA"		X="80" Y="59" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CHINA"		X="78" Y="60" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_EGYPT"		X="32" Y="43" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ENGLAND"	X="12" Y="72" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_FRANCE"	X="13" Y="67" />
@@ -26,7 +26,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SCYTHIA"	X="47" Y="69" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SPAIN"		X="7" Y="57" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SUMERIA"	X="41" Y="49" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_POLAND"	X="26" Y="68" />		
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_POLAND"	X="26" Y="71" />		
 	</StartPosition>	
 	
 	<!-- Minors -->
@@ -37,7 +37,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CARTHAGE"		X="18" Y="52" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GENEVA"		X="15" Y="63" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_HATTUSA"		X="36" Y="59" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_HONG_KONG"		X="83" Y="48" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_HONG_KONG"		X="84" Y="48" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_JAKARTA"		X="80" Y="26" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_JERUSALEM"		X="36" Y="51" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KABUL"			X="53" Y="55" />

@@ -14,6 +14,7 @@ local mapName = MapConfiguration.GetValue("MapName")
 print ("Map Name = " .. tostring(mapName))
 
 local bAutoCityNaming = MapConfiguration.GetValue("AutoCityNaming")
+local bCanUseCivSpecificName = not (MapConfiguration.GetValue("OnlyGenericCityNames"))
 
 ----------------------------------------------------------------------------------------
 -- City renaming
@@ -96,11 +97,11 @@ function ChangeCityName( ownerPlayerID, cityID)
 					
 						local sCityNameForCiv = tostring(name) .. sCivSuffix
 					
-						if CivilizationTypeName == row.Civilization and not IsNameUsedByCivilization(name, CivilizationTypeName) then -- this city is specific to this Civilization, and the name is not already used
+						if bCanUseCivSpecificName and CivilizationTypeName == row.Civilization and not IsNameUsedByCivilization(name, CivilizationTypeName) then -- this city is specific to this Civilization, and the name is not already used
 							bestDistance = distance
 							bestName = name
 						elseif not row.Civilization then -- do not use Civilization specific name with another Civilization, only generic							
-							if Locale.Lookup(sCityNameForCiv) ~= sCityNameForCiv and not IsNameUsedByCivilization(sCityNameForCiv, CivilizationTypeName) then -- means that this civilization has a specific name available for this generic city
+							if bCanUseCivSpecificName and Locale.Lookup(sCityNameForCiv) ~= sCityNameForCiv and not IsNameUsedByCivilization(sCityNameForCiv, CivilizationTypeName) then -- means that this civilization has a specific name available for this generic city
 								bestDistance = distance
 								bestName = sCityNameForCiv
 							elseif distance < bestDefaultDistance and not IsNameUsedOnContinent(name, x, y) then -- use generic name

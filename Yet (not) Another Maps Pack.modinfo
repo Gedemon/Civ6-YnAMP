@@ -49,103 +49,7 @@
             <Items>
                 <File>Scripts/YnAMP_InGame.xml</File>
             </Items>
-        </UserInterface>
-		<UpdateDatabase id="RULESET_YNAMP_1">
-			<Properties>
-				<RuleSet>RULESET_YNAMP_1</RuleSet>
-			</Properties>
-			<Items>
-				<File>Rules/Rules_Common.sql</File>
-				<File>Rules/Rules_1.sql</File>
-			</Items>
-		</UpdateDatabase>
-		<UpdateDatabase id="RULESET_YNAMP_2">
-			<Properties>
-				<RuleSet>RULESET_YNAMP_2</RuleSet>
-			</Properties>
-			<Items>
-				<File>Rules/Rules_Common.sql</File>
-				<File>Rules/Rules_2.sql</File>
-			</Items>
-		</UpdateDatabase>
-		<UpdateDatabase id="RULESET_YNAMP_3">
-			<Properties>
-				<RuleSet>RULESET_YNAMP_3</RuleSet>
-			</Properties>
-			<Items>
-				<File>Rules/Rules_Common.sql</File>
-				<File>Rules/Rules_3.sql</File>
-			</Items>
-		</UpdateDatabase>
-		
-		<UpdateDatabase id="RULESET_EURO_0">
-			<Properties>
-				<RuleSet>RULESET_EURO_0</RuleSet>
-			</Properties>
-			<Items>
-				<File>Rules/LimitEuro.sql</File>
-			</Items>
-		</UpdateDatabase>
-		<UpdateDatabase id="RULESET_EURO_1">
-			<Properties>
-				<RuleSet>RULESET_EURO_1</RuleSet>
-			</Properties>
-			<Items>
-				<File>Rules/Rules_Common.sql</File>
-				<File>Rules/Rules_1.sql</File>
-				<File>Rules/LimitEuro.sql</File>
-			</Items>
-		</UpdateDatabase>
-		<UpdateDatabase id="RULESET_EURO_2">
-			<Properties>
-				<RuleSet>RULESET_EURO_2</RuleSet>
-			</Properties>
-			<Items>
-				<File>Rules/Rules_Common.sql</File>
-				<File>Rules/Rules_2.sql</File>
-				<File>Rules/LimitEuro.sql</File>
-			</Items>
-		</UpdateDatabase>
-		<UpdateDatabase id="RULESET_EURO_3">
-			<Properties>
-				<RuleSet>RULESET_EURO_3</RuleSet>
-			</Properties>
-			<Items>
-				<File>Rules/Rules_Common.sql</File>
-				<File>Rules/Rules_3.sql</File>
-				<File>Rules/LimitEuro.sql</File>
-			</Items>
-		</UpdateDatabase>		
-		<UpdateDatabase id="RULESET_OLDWORLD_1">
-			<Properties>
-				<RuleSet>RULESET_OLDWORLD_1</RuleSet>
-			</Properties>
-			<Items>
-				<File>Rules/Rules_Common.sql</File>
-				<File>Rules/Rules_1.sql</File>
-				<File>Rules/LimitOldWorld.sql</File>
-			</Items>
-		</UpdateDatabase>
-		<UpdateDatabase id="RULESET_OLDWORLD_2">
-			<Properties>
-				<RuleSet>RULESET_OLDWORLD_2</RuleSet>
-			</Properties>
-			<Items>
-				<File>Rules/Rules_Common.sql</File>
-				<File>Rules/Rules_2.sql</File>
-				<File>Rules/LimitOldWorld.sql</File>
-			</Items>
-		</UpdateDatabase>
-		<UpdateDatabase id="RULESET_OLDWORLD_3">
-			<Properties>
-				<RuleSet>RULESET_OLDWORLD_3</RuleSet>
-			</Properties>
-			<Items>
-				<File>Rules/Rules_Common.sql</File>
-				<File>Rules/Rules_3.sql</File>
-				<File>Rules/LimitOldWorld.sql</File>
-			</Items>
-		</UpdateDatabase>		
+        </UserInterface>	
 		<UpdateDatabase id="YNAMP_DEFAULT_COMPONENT">
 			<Items>
 				<File>Gameplay/Tables.sql</File>
@@ -164,6 +68,13 @@
 				<File>Maps/LargestEarth/CityMap.xml</File>
 				<File>Gameplay/Resource.xml</File>
 				<File>Gameplay/CityNameByEra.xml</File>
+			</Items>
+		</UpdateDatabase>
+		<UpdateDatabase id="YNAMP_USER_CUSTOMIZATION">
+           	<Properties>
+				<LoadOrder>10600</LoadOrder>
+           	</Properties>
+			<Items>
 				<File>custom.sql</File>
 				<File>custom.xml</File>
 			</Items>
@@ -224,17 +135,10 @@
 		<File>Maps/PlayEuropeAgain/PlayEuropeAgain.lua</File>
 		<File>Maps/LargestEarth/LargestEarth.lua</File>
 		<File>Override/AssignStartingPlots.lua</File>
-		<File>Rules/Rules_1.sql</File>
-		<File>Rules/Rules_2.sql</File>
-		<File>Rules/Rules_3.sql</File>
-		<File>Rules/Rules_Common.sql</File>
-		<File>Rules/LimitEuro.sql</File>
-		<File>Rules/LimitOldWorld.sql</File>
 		<File>Scripts/YnAMP_Script.lua</File>
 		<File>Scripts/YnAMP_Utils.lua</File>
 		<File>Scripts/YnAMP_InGame.lua</File>
-		<File>Scripts/YnAMP_InGame.xml</File>
-		
+		<File>Scripts/YnAMP_InGame.xml</File>		
 		<File>custom.sql</File>
 		<File>custom.xml</File>
 	</Files>
