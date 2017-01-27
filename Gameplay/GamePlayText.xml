@@ -4140,6 +4140,7 @@
 		<Replace Tag="LOC_CITY_NAME_KITAKYUSHU" Text="Kitakyushu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TAKAMATSU" Text="Takamatsu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAKAI" Text="Sakai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WAKAYAMA" Text="Wakayama" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_HIROSHIMA" Text="Hiroshima" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NARA" Text="Nara" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_JEJU" Text="Jeju" Language="en_US" />
@@ -4176,6 +4177,7 @@
 		<Replace Tag="LOC_CITY_NAME_SENDAI" Text="Sendai" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_YAMAGATA" Text="Yamagata" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NIIGATA" Text="Niigata" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YOKOTE" Text="Yokote" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PYONGYANG" Text="Pyongyang" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KAECHON" Text="Kaechon" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_HAMHUNG" Text="Hamhung" Language="en_US" />
@@ -4336,7 +4338,7 @@
 		<Replace Tag="LOC_CITY_NAME_QIQIHAR" Text="Qiqihar" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DAQING" Text="Daqing" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SUIHUA" Text="Suihua" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_DAXINANLING" Text="Daxing'anling" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DAXINGANLING" Text="Daxing'anling" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MAGDAGACHI" Text="Magdagachi" Language="en_US" />
 		
 	</LocalizedText>
