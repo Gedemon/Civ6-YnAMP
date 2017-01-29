@@ -676,6 +676,158 @@
 		
 	</CityMap>
 	
+	<!-- SOUTH EAST ASIA -->
+	<CityMap>
+	
+	<!-- VIETNAM, LAOS, MYANMAR, THAILAND & CAMBODIA -->
+		<Replace MapName="GiantEarth" X="73" Y="51" CityLocaleName="LOC_CITY_NAME_NUJIANG" Area="0" />
+		<Replace MapName="GiantEarth" X="71" Y="49" CityLocaleName="LOC_CITY_NAME_MONYWA" Area="0" />
+		<Replace MapName="GiantEarth" X="71" Y="48" CityLocaleName="LOC_CITY_NAME_MONYWA" Area="0" />
+		<Replace MapName="GiantEarth" X="72" Y="49" CityLocaleName="LOC_CITY_NAME_MYITKYINA" />
+		<Replace MapName="GiantEarth" X="74" Y="48" CityLocaleName="LOC_CITY_NAME_XISHUANGBANNA" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="48" CityLocaleName="LOC_CITY_NAME_XISHUANGBANNA" Area="0" />
+		<Replace MapName="GiantEarth" X="72" Y="47" CityLocaleName="LOC_CITY_NAME_MANDALAY" />
+		<Replace MapName="GiantEarth" X="74" Y="47" CityLocaleName="LOC_CITY_NAME_LUANG_NAMTHA" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="47" CityLocaleName="LOC_CITY_NAME_LUANG_NAMTHA" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="47" CityLocaleName="LOC_CITY_NAME_HANOI" />
+		
+		<Replace MapName="GiantEarth" X="77" Y="46" CityLocaleName="LOC_CITY_NAME_HANOI" Area="0" />
+		<Replace MapName="GiantEarth" X="70" Y="46" CityLocaleName="LOC_CITY_NAME_CHITTAGONG" />
+		<Replace MapName="GiantEarth" X="73" Y="46" CityLocaleName="LOC_CITY_NAME_TAUNGGYI" Area="0" />
+		<Replace MapName="GiantEarth" X="74" Y="46" CityLocaleName="LOC_CITY_NAME_CHIANG_MAI" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="46" CityLocaleName="LOC_CITY_NAME_LUANG_PRABANG" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="46" CityLocaleName="LOC_CITY_NAME_LUANG_PRABANG" Area="0" />
+		<Replace MapName="GiantEarth" X="78" Y="46" CityLocaleName="LOC_CITY_NAME_HAI_PHONG" Area="0" />
+		<Replace MapName="GiantEarth" X="69" Y="45" CityLocaleName="LOC_CITY_NAME_SITTWE" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="45" CityLocaleName="LOC_CITY_NAME_VIENTIANE" />
+		<Replace MapName="GiantEarth" X="71" Y="44" CityLocaleName="LOC_CITY_NAME_THANDWE" Area="0" />
+		<Replace MapName="GiantEarth" X="72" Y="44" CityLocaleName="LOC_CITY_NAME_NAYPYIDAW" />
+		<Replace MapName="GiantEarth" X="73" Y="44" CityLocaleName="LOC_CITY_NAME_TAK" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="44" CityLocaleName="LOC_CITY_NAME_PHITSANULOK" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="72" Y="43" CityLocaleName="LOC_CITY_NAME_BAGO" Area="0" />
+		<Replace MapName="GiantEarth" X="74" Y="43" CityLocaleName="LOC_CITY_NAME_NAKHON_SAWAN" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="43" CityLocaleName="LOC_CITY_NAME_PETCHABURI" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="43" CityLocaleName="LOC_CITY_NAME_UDON_THANI" Area="0" />
+		<Replace MapName="GiantEarth" X="78" Y="43" CityLocaleName="LOC_CITY_NAME_HUE" />
+		<Replace MapName="GiantEarth" X="70" Y="42" CityLocaleName="LOC_CITY_NAME_PATHEIN" />
+		<Replace MapName="GiantEarth" X="74" Y="42" CityLocaleName="LOC_CITY_NAME_SUPHAN_BURI" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="42" CityLocaleName="LOC_CITY_NAME_AYUTTHAYA" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="42" CityLocaleName="LOC_CITY_NAME_KHON_KAEN" Area="0" />
+		<Replace MapName="GiantEarth" X="77" Y="42" CityLocaleName="LOC_CITY_NAME_UBON_RATCHATHANI" Area="0" />
+		<Replace MapName="GiantEarth" X="77" Y="41" CityLocaleName="LOC_CITY_NAME_UBON_RATCHATHANI" Area="0" />
+		<Replace MapName="GiantEarth" X="79" Y="42" CityLocaleName="LOC_CITY_NAME_DA_NANG" Area="0" />
+		<Replace MapName="GiantEarth" X="72" Y="41" CityLocaleName="LOC_CITY_NAME_YANGON" />
+		<Replace MapName="GiantEarth" X="73" Y="41" CityLocaleName="LOC_CITY_NAME_KANCHANABURI" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="41" CityLocaleName="LOC_CITY_NAME_NAKHON_RATCHASIMA" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="41" CityLocaleName="LOC_CITY_NAME_NAKHON_RATCHASIMA" Area="0" />
+		<Replace MapName="GiantEarth" X="78" Y="41" CityLocaleName="LOC_CITY_NAME_PAKXE" Area="0" />
+		<Replace MapName="GiantEarth" X="79" Y="41" CityLocaleName="LOC_CITY_NAME_BOUN_MA_THOUT" Area="0" />
+		<Replace MapName="GiantEarth" X="80" Y="41" CityLocaleName="LOC_CITY_NAME_BOUN_MA_THOUT" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="75" Y="40" CityLocaleName="LOC_CITY_NAME_BANGKOK" />
+		<Replace MapName="GiantEarth" X="76" Y="40" CityLocaleName="LOC_CITY_NAME_SEREI_SAOPHOAN" Area="0" />
+		<Replace MapName="GiantEarth" X="77" Y="40" CityLocaleName="LOC_CITY_NAME_SIEM_REAP" Area="0" />
+		<Replace MapName="GiantEarth" X="78" Y="40" CityLocaleName="LOC_CITY_NAME_SIEM_REAP" Area="0" />
+		<Replace MapName="GiantEarth" X="79" Y="40" CityLocaleName="LOC_CITY_NAME_DALAT" Area="0" />
+		<Replace MapName="GiantEarth" X="78" Y="39" CityLocaleName="LOC_CITY_NAME_DALAT" Area="0" />
+		<Replace MapName="GiantEarth" X="73" Y="39" CityLocaleName="LOC_CITY_NAME_HUA_HIN" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="39" CityLocaleName="LOC_CITY_NAME_PATTAYA" Area="0" />
+		<Replace MapName="GiantEarth" X="77" Y="39" CityLocaleName="LOC_CITY_NAME_PHNOM_PENH" />
+		<Replace MapName="GiantEarth" X="80" Y="39" CityLocaleName="LOC_CITY_NAME_NHA_TRANG" />
+		<Replace MapName="GiantEarth" X="69" Y="38" CityLocaleName="LOC_CITY_NAME_ANDAMAN_ISLANDS" />
+		<Replace MapName="GiantEarth" X="74" Y="38" CityLocaleName="LOC_CITY_NAME_PRACHUAP_KIRI_KHAN"/>
+		
+		<Replace MapName="GiantEarth" X="73" Y="37" CityLocaleName="LOC_CITY_NAME_SURAT_THANI" Area="0" />
+		<Replace MapName="GiantEarth" X="78" Y="38" CityLocaleName="LOC_CITY_NAME_HO_CHI_MINH_CITY" Area="0" />
+		<Replace MapName="GiantEarth" X="78" Y="37" CityLocaleName="LOC_CITY_NAME_HO_CHI_MINH_CITY" />
+		<Replace MapName="GiantEarth" X="74" Y="36" CityLocaleName="LOC_CITY_NAME_NAKHON_SI_THAMMARAT" Area="0" />
+		<Replace MapName="GiantEarth" X="69" Y="35" CityLocaleName="LOC_CITY_NAME_NICOBAR_ISLANDS" />
+		<Replace MapName="GiantEarth" X="74" Y="35" CityLocaleName="LOC_CITY_NAME_HAT_YAI" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="35" CityLocaleName="LOC_CITY_NAME_NARATHIWAT" Area="0" />
+
+		<!-- PHILIPPINES, MALAYSIA & INDONESIA  -->
+		
+		<Replace MapName="GiantEarth" X="87" Y="44" CityLocaleName="LOC_CITY_NAME_LAOAG" />
+		<Replace MapName="GiantEarth" X="89" Y="44" CityLocaleName="LOC_CITY_NAME_TUGUEGARAO" />
+		<Replace MapName="GiantEarth" X="90" Y="42" CityLocaleName="LOC_CITY_NAME_MUNOZ" />
+		<Replace MapName="GiantEarth" X="87" Y="41" CityLocaleName="LOC_CITY_NAME_MANILA" />
+		<Replace MapName="GiantEarth" X="89" Y="39" CityLocaleName="LOC_CITY_NAME_CEBU" />
+		<Replace MapName="GiantEarth" X="91" Y="38" CityLocaleName="LOC_CITY_NAME_TACLOBAN" />
+		<Replace MapName="GiantEarth" X="86" Y="37" CityLocaleName="LOC_CITY_NAME_PUERTO_PRINCESA" />
+		<Replace MapName="GiantEarth" X="88" Y="36" CityLocaleName="LOC_CITY_NAME_ZAMBOANGA" />
+		
+		<Replace MapName="GiantEarth" X="84" Y="35" CityLocaleName="LOC_CITY_NAME_KOTA_KINABALU" />
+		<Replace MapName="GiantEarth" X="90" Y="35" CityLocaleName="LOC_CITY_NAME_DAVAO" />
+		<Replace MapName="GiantEarth" X="72" Y="34" CityLocaleName="LOC_CITY_NAME_BANDA_ACEH" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="34" CityLocaleName="LOC_CITY_NAME_PENANG" Area="0"/>
+		<Replace MapName="GiantEarth" X="76" Y="34" CityLocaleName="LOC_CITY_NAME_KELANTAN" Area="0" />
+		<Replace MapName="GiantEarth" X="77" Y="34" CityLocaleName="LOC_CITY_NAME_KUALA_TERENGGANU" Area="0" />
+		<Replace MapName="GiantEarth" X="83" Y="34" CityLocaleName="LOC_CITY_NAME_BRUNEI" />
+		<Replace MapName="GiantEarth" X="87" Y="34" CityLocaleName="LOC_CITY_NAME_SANDAKAN" />
+		<Replace MapName="GiantEarth" X="72" Y="33" CityLocaleName="LOC_CITY_NAME_LHOKSEUMAWE" Area="0" />
+		<Replace MapName="GiantEarth" X="73" Y="33" CityLocaleName="LOC_CITY_NAME_MEDAN" />
+		<Replace MapName="GiantEarth" X="77" Y="33" CityLocaleName="LOC_CITY_NAME_KUANTAN" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="33" CityLocaleName="LOC_CITY_NAME_LAHAD_DATU" Area="0" />
+		<Replace MapName="GiantEarth" X="91" Y="33" CityLocaleName="LOC_CITY_NAME_NORTH_MALUKU" />
+
+		<Replace MapName="GiantEarth" X="73" Y="32" CityLocaleName="LOC_CITY_NAME_PADANG_SIDEMPUAN" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="32" CityLocaleName="LOC_CITY_NAME_KUALA_LUMPUR" />
+		<Replace MapName="GiantEarth" X="77" Y="32" CityLocaleName="LOC_CITY_NAME_JOHOR_BAHRU" Area="0" />
+		<Replace MapName="GiantEarth" X="78" Y="32" CityLocaleName="LOC_CITY_NAME_SINGAPORE" />
+		<Replace MapName="GiantEarth" X="81" Y="32" CityLocaleName="LOC_CITY_NAME_KUCHING" />
+		<Replace MapName="GiantEarth" X="83" Y="32" CityLocaleName="LOC_CITY_NAME_BINTULU" Area="0" />
+		<Replace MapName="GiantEarth" X="86" Y="32" CityLocaleName="LOC_CITY_NAME_TARAKAN" Area="0" />
+		<Replace MapName="GiantEarth" X="88" Y="32" CityLocaleName="LOC_CITY_NAME_GORONTALO" />
+		
+		<Replace MapName="GiantEarth" X="74" Y="31" CityLocaleName="LOC_CITY_NAME_DUMAI" Area="0" />
+		<Replace MapName="GiantEarth" X="82" Y="31" CityLocaleName="LOC_CITY_NAME_SIBU" Area="0" />
+		<Replace MapName="GiantEarth" X="83" Y="31" CityLocaleName="LOC_CITY_NAME_KALIMANTAN" />
+		<Replace MapName="GiantEarth" X="84" Y="31" CityLocaleName="LOC_CITY_NAME_SAMARINDA" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="31" CityLocaleName="LOC_CITY_NAME_SAMARINDA" Area="0" />
+		<Replace MapName="GiantEarth" X="73" Y="30" CityLocaleName="LOC_CITY_NAME_PADANG" />
+		<Replace MapName="GiantEarth" X="75" Y="30" CityLocaleName="LOC_CITY_NAME_PEKANBARU" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="30" CityLocaleName="LOC_CITY_NAME_JAMBI" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="29" CityLocaleName="LOC_CITY_NAME_JAMBI" Area="0" />
+		<Replace MapName="GiantEarth" X="81" Y="30" CityLocaleName="LOC_CITY_NAME_PONTIANAK" Area="0" />
+		<Replace MapName="GiantEarth" X="81" Y="29" CityLocaleName="LOC_CITY_NAME_PONTIANAK" Area="0" />
+		<Replace MapName="GiantEarth" X="82" Y="30" CityLocaleName="LOC_CITY_NAME_SINTANG" Area="0" />
+		<Replace MapName="GiantEarth" X="83" Y="30" CityLocaleName="LOC_CITY_NAME_BALIKPAPAN" Area="0" />
+		<Replace MapName="GiantEarth" X="84" Y="30" CityLocaleName="LOC_CITY_NAME_BALIKPAPAN" Area="0" />
+		<Replace MapName="GiantEarth" X="87" Y="30" CityLocaleName="LOC_CITY_NAME_PALU" Area="0" />
+		<Replace MapName="GiantEarth" X="91" Y="30" CityLocaleName="LOC_CITY_NAME_BANGGAI_REGENCY" />
+		
+		<Replace MapName="GiantEarth" X="72" Y="29" CityLocaleName="LOC_CITY_NAME_PULAU_NIAS" />
+		<Replace MapName="GiantEarth" X="77" Y="29" CityLocaleName="LOC_CITY_NAME_PALEMBANG" />
+		<Replace MapName="GiantEarth" X="79" Y="29" CityLocaleName="LOC_CITY_NAME_BANGKA_BELITUNG_ISLANDS" />
+		<Replace MapName="GiantEarth" X="82" Y="29" CityLocaleName="LOC_CITY_NAME_PALANGKA_RAYA" Area="0" />
+		<Replace MapName="GiantEarth" X="83" Y="29" CityLocaleName="LOC_CITY_NAME_PALANGKA_RAYA" Area="0" />
+		<Replace MapName="GiantEarth" X="84" Y="29" CityLocaleName="LOC_CITY_NAME_AMUNTAI" Area="0" />
+		<Replace MapName="GiantEarth" X="85" Y="29" CityLocaleName="LOC_CITY_NAME_AMUNTAI" Area="0" />
+		<Replace MapName="GiantEarth" X="88" Y="29" CityLocaleName="LOC_CITY_NAME_PALOPO" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="28" CityLocaleName="LOC_CITY_NAME_BENGKULU" Area="0" />
+		<Replace MapName="GiantEarth" X="93" Y="28" CityLocaleName="LOC_CITY_NAME_PALAU_JAMDENA" />
+		
+		<Replace MapName="GiantEarth" X="74" Y="27" CityLocaleName="LOC_CITY_NAME_PULUA_SIBERUT" />
+		<Replace MapName="GiantEarth" X="82" Y="27" CityLocaleName="LOC_CITY_NAME_SAMPIT" />
+		<Replace MapName="GiantEarth" X="84" Y="27" CityLocaleName="LOC_CITY_NAME_BANJARMASIN" />
+		<Replace MapName="GiantEarth" X="88" Y="27" CityLocaleName="LOC_CITY_NAME_MAKASSAR" />
+		<Replace MapName="GiantEarth" X="91" Y="27" CityLocaleName="LOC_CITY_NAME_TIMOR_LESTE" />
+		<Replace MapName="GiantEarth" X="78" Y="26" CityLocaleName="LOC_CITY_NAME_BANDAR_LAMPUNG" />
+		<Replace MapName="GiantEarth" X="80" Y="26" CityLocaleName="LOC_CITY_NAME_JAKARTA" />
+		<Replace MapName="GiantEarth" X="78" Y="25" CityLocaleName="LOC_CITY_NAME_KRAKATOA" />
+		<Replace MapName="GiantEarth" X="81" Y="25" CityLocaleName="LOC_CITY_NAME_BANDUNG" Area="0" />
+		<Replace MapName="GiantEarth" X="82" Y="25" CityLocaleName="LOC_CITY_NAME_SEMARANG" Area="0" />
+		<Replace MapName="GiantEarth" X="84" Y="25" CityLocaleName="LOC_CITY_NAME_SURABAYA" />
+		<Replace MapName="GiantEarth" X="87" Y="25" CityLocaleName="LOC_CITY_NAME_BALI" />
+		<Replace MapName="GiantEarth" X="89" Y="25" CityLocaleName="LOC_CITY_NAME_NUSA_TENGGARA" />
+		
+		<Replace MapName="GiantEarth" X="85" Y="24" CityLocaleName="LOC_CITY_NAME_PROBOLINGGO" Area="0" />
+		<Replace MapName="GiantEarth" X="78" Y="23" CityLocaleName="LOC_CITY_NAME_CHRISTMAS_ISLANDS" />
+		<Replace MapName="GiantEarth" X="82" Y="23" CityLocaleName="LOC_CITY_NAME_YOGYAKARTA" />
+	
+	</CityMap>
+	
 	<!-- BRITISH ISLES -->
 	<CityMap> 
 		

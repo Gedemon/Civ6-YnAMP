@@ -4343,5 +4343,129 @@
 		
 	</LocalizedText>
 	
+	<!-- SOUTH EAST ASIA -->
+	<LocalizedText>
+	
+	<!-- VIETNAM, LAOS, MYANMAR, THAILAND & CAMBODIA -->
+		<Replace Tag="LOC_CITY_NAME_NUJIANG" Text="Nujiang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MONYWA" Text="Monywa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MYITKYINA" Text="Myitkyina" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_XISHUANGBANNA" Text="Xishuangbanna" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANDALAY" Text="Mandalay" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUANG_NAMTHA" Text="Luang Namtha" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HANOI" Text="Hanoi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHITTAGONG" Text="Chittagong" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TAUNGGYI" Text="Taunggyi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHIANG_MAI" Text="Chiang Mai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUANG_PRABANG" Text="Luang Prabang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HAI_PHONG" Text="Hai Phong" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SITTWE" Text="Sittwe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VIENTIANE" Text="Vientiane" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_THANDWE" Text="Thandwe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAYPYIDAW" Text="Naypyidaw" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TAK" Text="Tak" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PHITSANULOK" Text="Phitsanulok" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BAGO" Text="Bago" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAKHON_SAWAN" Text="Nakhon Sawan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PETCHABURI" Text="Petchaburi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_UDON_THANI" Text="Udon Thani" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HUE" Text="Huế" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PATHEIN" Text="Pathein" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SUPHAN_BURI" Text="Suphan Buri" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AYUTTHAYA" Text="Ayutthaya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KHON_KAEN" Text="Khon Kaen" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_UBON_RATCHATHANI" Text="Ubon Ratchathani" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DA_NANG" Text="Da Nang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YANGON" Text="Yangon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KANCHANABURI" Text="Kanchanaburi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAKHON_RATCHASIMA" Text="Nakhon Ratchasima" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PAKXE" Text="Pakxe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BOUN_MA_THOUT" Text="Boun Ma Thout" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BANGKOK" Text="Bangkok" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEREI_SAOPHOAN" Text="Serei Saophoan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SIEM_REAP" Text="Siem Reap" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DALAT" Text="Dalat" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HUA_HIN" Text="Hua Hin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PATTAYA" Text="Pattaya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PHNOM_PENH" Text="Phnom Penh" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NHA_TRANG" Text="Nha Trang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANDAMAN_ISLANDS" Text="Andaman Islands" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PRACHUAP_KIRI_KHAN" Text="Prachuap Kiri Khan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SURAT_THANI" Text="Surat Thani" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HO_CHI_MINH_CITY" Text="Ho Chi Minh City" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAKHON_SI_THAMMARAT" Text="Nakhon Si Thammarat" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NICOBAR_ISLANDS" Text="Nicobar Islands" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HAT_YAI" Text="Hat Yai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NARATHIWAT" Text="Narathiwat" Language="en_US" />
+
+		<!-- PHILIPPINES, MALAYSIA & INDONESIA  -->
+
+		<Replace Tag="LOC_CITY_NAME_LAOAG" Text="Laoag" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TUGUEGARAO" Text="Tuguegarao" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MUNOZ" Text="Muñoz" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANILA" Text="Manila" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CEBU" Text="Cebu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TACLOBAN" Text="Tacloban" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PUERTO_PRINCESA" Text="Puerto Princesa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ZAMBOANGA" Text="Zamboanga" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KOTA_KINABALU" Text="Kota Kinabalu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DAVAO" Text="Davao" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BANDA_ACEH" Text="Banda Aceh" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PENANG" Text="Penang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KELANTAN" Text="Kelantan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KUALA_TERENGGANU" Text="Kuala Terengganu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRUNEI" Text="Brunei" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SANDAKAN" Text="Sandakan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LHOKSEUMAWE" Text="Lhokseumawe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEDAN" Text="Medan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KUANTAN" Text="Kuantan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LAHAD_DATU" Text="Lahad Datu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NORTH_MALUKU" Text="North Maluku" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PADANG_SIDEMPUAN" Text="Padang Sidempuan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KUALA_LUMPUR" Text="Kuala Lumpur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JOHOR_BAHRU" Text="Johor Bahru" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SINGAPORE" Text="Singapore" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KUCHING" Text="Kuching" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BINTULU" Text="Bintulu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TARAKAN" Text="Tarakan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GORONTALO" Text="Gorontalo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DUMAI" Text="Dumai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SIBU" Text="Sibu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KALIMANTAN" Text="Kalimantan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAMARINDA" Text="Samarinda" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PADANG" Text="Padang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PEKANBARU" Text="Pekanbaru" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JAMBI" Text="Jambi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PONTIANAK" Text="Pontianak" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SINTANG" Text="Sintang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BALIKPAPAN" Text="Balikpapan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PALU" Text="Palu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BANGGAI_REGENCY" Text="Banggai Regency" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PULAU_NIAS" Text="Pulau Nias" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PALEMBANG" Text="Palembang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BANGKA_BELITUNG_ISLANDS" Text="Bangka Belitung Islands" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PALANGKA_RAYA" Text="Palangka Raya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMUNTAI" Text="Amuntai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PALOPO" Text="Palopo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BENGKULU" Text="Bengkulu" Language="en_US" />		
+		<Replace Tag="LOC_CITY_NAME_PALAU_JAMDENA" Text="Palau Jamdena" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PULUA_SIBERUT" Text="Pulua Siberut" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAMPIT" Text="Sampit" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BANJARMASIN" Text="Banjarmasin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAKASSAR" Text="Makassar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TIMOR_LESTE" Text="Timor-Leste" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BANDAR_LAMPUNG" Text="Bandar Lampung" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JAKARTA" Text="Jakarta" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KRAKATOA" Text="Krakatoa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BANDUNG" Text="Bandung" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEMARANG" Text="Semarang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SURABAYA" Text="Surabaya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BALI" Text="Bali" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NUSA_TENGGARA" Text="Nusa Tenggara" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PROBOLINGGO" Text="Probolinggo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHRISTMAS_ISLANDS" Text="Christmas Islands" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YOGYAKARTA" Text="Yogyakarta" Language="en_US" />
+
+	</LocalizedText>
 	
 </GameData>
