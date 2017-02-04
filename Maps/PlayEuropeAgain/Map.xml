@@ -10,7 +10,7 @@
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ENGLAND"	X="31" Y="60" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FRANCE"	X="34" Y="52" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GERMANY"	X="47" Y="58" />
-        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GREECE"	X="60" Y="29" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GREECE"	X="60" Y="25" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GREECE"  	X="58" Y="21" Leader="LEADER_GORGO"/>
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_NORWAY"	X="49" Y="82" />
         <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ROME"		X="44" Y="34" />
