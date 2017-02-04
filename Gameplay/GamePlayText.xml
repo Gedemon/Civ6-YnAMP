@@ -3282,47 +3282,153 @@
 		<Replace Tag="LOC_CITY_NAME_ABONITEICHOS" Text="Aboniteichos" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ACHERUSIA_CHERSONESOS" Text="Acherusia Chersonesos" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ADANA" Text="Adana" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AEGEAE" Text="Ægeæ" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AIGEAI" Text="Aigeai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMASEIA" Text="Amaseia" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_AMASIA" Text="Amasia" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_AMYSUS" Text="Amysus" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ANTIOCHEA_PISIDAE" Text="Antiochea Pisidæ" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMASTRIS" Text="Amastris" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMISOS" Text="Amysos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMISUS" Text="Amysus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANAZARBOS" Text="Anazarbos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANEMOURION" Text="Anemourion" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANEMURIUM" Text="Anemurium" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANTIOCHIA_AD_MAEANDRUM" Text="Antiochia ad Mæandrum" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANTIOCHIA_AD_SARUM" Text="Antiochia ad Sarum" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANTIOCHEA_CAESAREA" Text="Antiochia Cæsarea" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANTIOCHIA_IN_CILICIA" Text="Antiochia in Cilicia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANTIOCHIA_PISIDAE" Text="Antiochia Pisidæ" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_APAMEA_AD_MAEANDRUM" Text="Apamea ad Mæandrum" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_APAMEA_MYRLEA" Text="Apamea Myrlea" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_APAMEIA_KIBOTOS" Text="Apameia Kibotos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_APAMEIA_MYRLEIA" Text="Apameia Myrleia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARCHELAIS" Text="Archelaïs" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARSINOE_CYPRUS" Text="Arsinoe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARYCANDA" Text="Arycanda" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARYKANDA" Text="Arykanda" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ASPENDOS" Text="Aspendos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ASPENDUS" Text="Aspendus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ATTALEA" Text="Attalea" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ATTALEIA" Text="Attaleia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BITHYNION" Text="Bithynion" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BITHYNIUM" Text="Bithynium" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAESAREA_IN_CAPPADOCIA" Text="Cæsarea in Cappadocia" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CALPE" Text="Calpe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAUNUS" Text="Caunus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CELENDERIS" Text="Celenderis" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHALCEDON" Text="Chalcedon" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CITIUM" Text="Citium" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CLAUDIOLAODICEA" Text="Claudiolaodicea" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CNIDUS" Text="Cnidus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_COLOPHON" Text="Colophon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_COLOSSAE" Text="Colossæ" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_COLOSSAI" Text="Colossai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CORACESIUM" Text="Coracesium" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CORYCUS" Text="Corycus" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CYZICUS" Text="Cyzicus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DORYLAEUM" Text="Dorylæum" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DORYLAION" Text="Dorylaion" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DYNDIMUS" Text="Dyndimus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ELAEOUSA_SEBASTE" Text="Elæousa Sebaste" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ELAIUSSA_SEBASTE" Text="Elaiussa Sebaste" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EPHESOS" Text="Ephesos" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_EPHESUS" Text="Ephesus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ERYTHRAE" Text="Erythræ" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ERYTHRAI" Text="Erythrai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ETENNA" Text="Etenna" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_EUPATORIA" Text="Eupatoria" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_EUSEBIA_AT_THE_ARGAEUS" Text="Eusebia at the Argaeus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EUSEBIA_AT_THE_ARGAEUS" Text="Eusebia" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GANGRA" Text="Gangra" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GARSAURA" Text="Garsaura" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GERMANICOPOLIS" Text="Germanicopolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GORDION" Text="Gordion" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GORDIUM" Text="Gordium" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_HADRIANOPOLIS" Text="Hadrianopolis" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_HALICARNASSOS" Text="Halicarnassos" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_HYLLARIMA" Text="Hyllarima" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HALICARNASSUS" Text="Halicarnassus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HALIKARNASSOS" Text="Halikarnassos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HERACLEA_PONTICA" Text="Heraclea Pontica" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HERAKLEIA_PONTIKE" Text="Herakleia Pontike" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ICONIUM" Text="Iconium" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_LAODICEA" Text="Laodicea" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_LAODICEA_ON_THE_LYCUS" Text="Laodicea on the Lycus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_IKONION" Text="Ikonion" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ILIUM" Text="Ilium" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_IONOPOLIS" Text="Ionopolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ISAURA_NOVA" Text="Isaura Nova" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ISAURA_PALAIA" Text="Isaura Palaia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JUSTINOPOLIS" Text="Justinopolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KAUNOS" Text="Kaunos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KELENDERIS" Text="Kelenderis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KIOS" Text="Kios" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KITION" Text="Kition" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KORAKESION" Text="Korakesion" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KORYKOS" Text="Korykos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LAODICEA_AD_LYCUM" Text="Laodicea ad Lycum" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LAODIKEIA_KATAKEKAUMENE" Text="Laodikeia Katakekaumenê" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LAODIKEIA_PROS_TON_LYCON" Text="Laodikeia pros ton Lycon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LARANDA" Text="Laranda" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LEBEDUS" Text="Lebedus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MACISSUS" Text="Macissus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MALLOS" Text="Mallos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MALLUS" Text="Mallus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARION" Text="Marion" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MILETOS" Text="Miletos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MILETUS" Text="Miletus" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MOKISSOS" Text="Mokissos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOPSOUHESTIA" Text="Mopsouhestia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOPSUESTIA" Text="Mopsuestia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MYLASA" Text="Mylasa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MYRA" Text="Myra" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NAZIANZUS" Text="Nazianzus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NICAEA" Text="Nicæa" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NICOMEDIA" Text="Nicomedia" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_NYSA" Text="Nysa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIKAIA" Text="Nikaia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIKOMEDEIA" Text="Nikomedeia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NYSA_MAEANDER" Text="Nysa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NYSA_AD_MAEANDRUM" Text="Nysa ad Mæandrum" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_OENOANDA" Text="Oenoanda" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_OINOANDA" Text="Oinoanda" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PAPHUS" Text="Paphus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PARIUM" Text="Parium" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PEDNELISSOS" Text="Pednelissos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PEDNELISSUS" Text="Pednelissus" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PERGAMON" Text="Pergamon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PERGAMUM" Text="Pergamum" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PESSINOUS" Text="Pessinous" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PESSINUS" Text="Pessinus" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PHASELIS" Text="Phaselis" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA" Text="Philadelphia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PHILOMELION" Text="Philomelion" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PHILOMELIUM" Text="Philomelium" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PHOCAEA" Text="Phocæa" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PHYSKOS" Text="Physkos" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_POMPEIOPOLIS" Text="Pompeiopolis" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PRUSA" Text="Prusa" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_PYLAI" Text="Pylai" Language="en_US" /> 
+		<Replace Tag="LOC_CITY_NAME_PRUSIAS" Text="Prusias" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PRUSIAS_AD_HYPIUM" Text="Prusias ad Hypium" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PRUSIAS_AD_MARE" Text="Prusias ad Mare" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PTERIA" Text="Pteria" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PYLAE" Text="Pylæ" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PYLAI" Text="Pylai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PYTHOPOLIS" Text="Pythopolis" Language="en_US" /> 
 		<Replace Tag="LOC_CITY_NAME_SALAMIS" Text="Salamis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SARDEIS" Text="Sardeis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SARDIS" Text="Sardis" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SEBASTIA" Text="Sebastia" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SELEUCIA" Text="Seleucia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEBASTEIA" Text="Sebasteia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SELEUCIA_AD_CALYCADNUM" Text="Seleucia ad Calycadnum" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SELEUKEIA_KALYKADNOS" Text="Seleukeia Kalykadnos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SELGE" Text="Selge" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SIDE" Text="Side" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SINOPE" Text="Sinope" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SMYRNA" Text="Smyrna" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_STRATONICEA" Text="Stratonicea" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_STRATONIKEIA" Text="Stratonikeia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TARSOS" Text="Tarsos" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TARSUS" Text="Tarsus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TELMESSOS" Text="Telmessos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TELMESSUS" Text="Telmessus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TRAIANOUPOLIS" Text="Traianoupolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TRAJANOPOLIS" Text="Trajanopolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TRIPOLIS_MAEANDER" Text="Tripolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TRIPOLIS_AD_MAEANDRUM" Text="Tripolis ad Mæandrum" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TROY" Text="Troy" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TYANA" Text="Tyana" Language="en_US" />
 		
