@@ -3278,12 +3278,160 @@
 		<Replace Tag="LOC_CITY_NAME_SKYROS" Text="Skyros" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_THERA" Text="Thera" Language="en_US" />
 		
-		<!-- CLASSICAL GREECE (ASIA MINOR) -->
+	</LocalizedText>
+		
+		
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- Middle East City Names: Default Layer (Modern) <en_US> -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	
+	
+	<LocalizedText>		<!-- ANATOLIA & CYPRUS -->
+	
+		<Replace Tag="LOC_CITY_NAME_ACIPAYAM" Text="Acıpayam" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ADANA" Text="Adana" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ADAPAZARI" Text="Adapazarı" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AKSARAY" Text="Aksaray" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AKSEHIR" Text="Akşehir" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ALANYA" Text="Alanya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMASYA" Text="Amasya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMASYA_HATTUSA" Text="Hattusa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMASIA" Text="Amasia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMASIA_HATTUSA" Text="Hattusa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANKARA" Text="Ankara" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANTALYA" Text="Antalya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AYDIN" Text="Aydın" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AYFONKARAHISAR" Text="Afyonkarahisar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BALIKESIR" Text="Balıkesir" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BANDIRMA" Text="Bandırma" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BEYPAZARI" Text="Beypazarı" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BIRSA" Text="Bursa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BODRUM" Text="Bodrum" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BOLU" Text="Bolu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CANAKKALE" Text="Çanakkale" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CIDE" Text="Cide" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CORUM" Text="Çorum" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DENIZLI" Text="Denizli" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DEVELI" Text="Develi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DUZCE" Text="Düzce" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EREGLI" Text="Karadeniz Ereğli" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ESKISEHIR" Text="Eskişehir" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_FETHIYE" Text="Fethiye" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_IZMIR" Text="İzmir" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KADIKOY" Text="Kadıköy" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KARASU" Text="Karasu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KASTAMONU" Text="Kastamonu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KAYSERI" Text="Kayseri" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KIRSEHIR" Text="Kırşehir" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KONYA" Text="Konya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KULU" Text="Kulu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LIMASSOL" Text="Limassol" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARMARIS" Text="Marmaris" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MERSIN" Text="Mersin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NICOSIA" Text="Nicosia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIGDE" Text="Niğde" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PAPHOS" Text="Paphos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_POLI_CRYSOCHOUS" Text="Poli Chysochous" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAMSUN" Text="Samsun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEYDISEHIR" Text="Seydişehir" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SINOP" Text="Sinop" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TAVSANLI" Text="Tavşanlı" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TOKAT" Text="Tokat" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YALOVA" Text="Yalova" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YOZGAT" Text="Yozgat" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ZONGULDAK" Text="Zonguldak" Language="en_US" />
+		
+	</LocalizedText>
+	
+	<LocalizedText>		<!-- MIDDLE EAST (NORTH) -->
+		
+		<Replace Tag="LOC_CITY_NAME_ABHAR" Text="Abhar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ADIYAMAN" Text="Adıyaman" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BANEH" Text="Baneh" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BATMAN" Text="Batman" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BAYBURT" Text="Bayburt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BIJAR" Text="Bijar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BINGOL" Text="Bingöl" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BUQAN" Text="Buqan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHALUS" Text="Chalus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CIZRE" Text="Cizre" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DERECIK" Text="Derecik" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DIYARBAKIR" Text="Diyarbakır" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ELAZIG" Text="Elâzığ" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ELBISTAN" Text="Elbistan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ERGANI" Text="Ergani" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ERZINCAN" Text="Erzincan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ERZURUM" Text="Erzurum" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GAZIANTEP" Text="Gaziantep" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIRESUN" Text="Giresun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GOLBASI" Text="Gölbaşı" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ISKENDERUN" Text="Iskenderun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KAHRAMANMARAS" Text="Kahramanmaraş" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KARAJ" Text="Karaj" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KARS" Text="Kars" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KHOY" Text="Khoy" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KIZILTEPE" Text="Kızıltepe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KOBANE" Text="Kobane" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LAHIJAN" Text="Lahijan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LANKARAN" Text="Lankaran" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MALATYA" Text="Malatya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARAND" Text="Marand" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARIVAN" Text="Marivan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MUS" Text="Muş" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAKHCHIVAN" Text="Nakhchivan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAQADEH" Text="Naqadeh" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NARMAN" Text="Narman" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIZIP" Text="Nizip" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NUSAYBIN" Text="Nusaybin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PAZARYOLU" Text="Pazaryolu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PIRANSHAHR" Text="Piranshahr" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_QAZVIN" Text="Qazvin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_QOM" Text="Qom" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_QORVEH" Text="Qorveh" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_QOSHACHAY" Text="Qoshachay" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RASHT" Text="Rasht" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SALMAS" Text="Salmas" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAQQEZ" Text="Saqqez" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SARKISLA" Text="Şarkışla" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAVEH" Text="Saveh" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEBINKARAHISAR" Text="Şebinkarahisar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SIIRT" Text="Siirt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SIVAS" Text="Sivas" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SORAN" Text="Soran" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TABRIZ" Text="Tabriz" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TATVAN" Text="Tatvan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TEHRAN" Text="Tehran" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TERCAN" Text="Tercan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TRABZON" Text="Trabzon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TRABZON_EGYPT" Text="Trebizond" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TRABZON_ENGLAND" Text="Trebizond" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TRABZON_RUSSIA" Text="Trebizond" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TRABZON_SUMERIA" Text="Trebizond" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ULAS" Text="Ulaş" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_URMIA" Text="Urmia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VAN" Text="Van" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VARDENIS" Text="Vardenis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VIRANSEHIR" Text="Viranşehir" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_XANXENDI" Text="Xankandi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YEREVAN" Text="Yerevan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YEREVAN_SUMERIA" Text="Artashat" Language="en_US" />
+		
+	</LocalizedText>
+	
+	
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- Middle East City Names: Civ-Specific Layer <en_US> -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	
+	
+	<LocalizedText>		<!-- CLASSICAL ANATOLIA & CYPRUS (GREECE & ROME) -->
+		
 		<Replace Tag="LOC_CITY_NAME_ABONITEICHOS" Text="Aboniteichos" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ACHERUSIA_CHERSONESOS" Text="Acherusia Chersonesos" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ADANA" Text="Adana" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_AEGEAE" Text="Ægeæ" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_AIGEAI" Text="Aigeai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ALABANDA" Text="Alabanda" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_AMASEIA" Text="Amaseia" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_AMASIA" Text="Amasia" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_AMASTRIS" Text="Amastris" Language="en_US" />
@@ -3294,7 +3442,7 @@
 		<Replace Tag="LOC_CITY_NAME_ANEMURIUM" Text="Anemurium" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ANTIOCHIA_AD_MAEANDRUM" Text="Antiochia ad Mæandrum" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ANTIOCHIA_AD_SARUM" Text="Antiochia ad Sarum" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ANTIOCHEA_CAESAREA" Text="Antiochia Cæsarea" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANTIOCHIA_CAESAREA" Text="Antiochia Cæsarea" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ANTIOCHIA_IN_CILICIA" Text="Antiochia in Cilicia" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ANTIOCHIA_PISIDAE" Text="Antiochia Pisidæ" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_APAMEA_AD_MAEANDRUM" Text="Apamea ad Mæandrum" Language="en_US" />
@@ -3425,6 +3573,7 @@
 		<Replace Tag="LOC_CITY_NAME_TARSUS" Text="Tarsus" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TELMESSOS" Text="Telmessos" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TELMESSUS" Text="Telmessus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TERMESSOS" Text="Termessos" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TRAIANOUPOLIS" Text="Traianoupolis" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TRAJANOPOLIS" Text="Trajanopolis" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TRIPOLIS_MAEANDER" Text="Tripolis" Language="en_US" />
@@ -3434,136 +3583,65 @@
 		
 	</LocalizedText>
 		
-		
-	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!-- Middle East  City Names: Default Layer (Modern) <en_US> -->
-	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<LocalizedText>		<!-- CLASSICAL MIDDLE EAST (NORTH) (GREECE & ROME) -->
 	
-		
-	<LocalizedText>		<!-- MIDDLE EAST (NORTH) -->
-	
-		<Replace Tag="LOC_CITY_NAME_ABHAR" Text="Abhar" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ADIYAMAN" Text="Adıyaman" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_BANEH" Text="Baneh" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_BATMAN" Text="Batman" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_BAYBURT" Text="Bayburt" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_BIJAR" Text="Bijar" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_BINGOL" Text="Bingöl" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_BUQAN" Text="Buqan" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CHALUS" Text="Chalus" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CIZRE" Text="Cizre" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_DERECIK" Text="Derecik" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_DIYARBAKIR" Text="Diyarbakır" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ELAZIG" Text="Elâzığ" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ELBISTAN" Text="Elbistan" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ERGANI" Text="Ergani" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ERZINCAN" Text="Erzincan" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ERZURUM" Text="Erzurum" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_GAZIANTEP" Text="Gaziantep" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_GIRESUN" Text="Giresun" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_GOLBASI" Text="Gölbaşı" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ISKENDERUN" Text="Iskenderun" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KAHRAMANMARAS" Text="Kahramanmaraş" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KARAJ" Text="Karaj" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KARS" Text="Kars" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KHOY" Text="Khoy" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KIZILTEPE" Text="Kızıltepe" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KOBANE" Text="Kobane" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_LAHIJAN" Text="Lahijan" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_LANKARAN" Text="Lankaran" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_MALATYA" Text="Malatya" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_MARAND" Text="Marand" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_MARIVAN" Text="Marivan" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_MUS" Text="Muş" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_NAKHCHIVAN" Text="Nakhchivan" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_NAQADEH" Text="Naqadeh" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_NARMAN" Text="Narman" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_NIZIP" Text="Nizip" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_NUSAYBIN" Text="Nusaybin" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_PAZARYOLU" Text="Pazaryolu" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_PIRANSHAHR" Text="Piranshahr" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_QAZVIN" Text="Qazvin" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_QOM" Text="Qom" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_QORVEH" Text="Qorveh" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_QOSHACHAY" Text="Qoshachay" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_RASHT" Text="Rasht" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SALMAS" Text="Salmas" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SAQQEZ" Text="Saqqez" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SARKISLA" Text="Şarkışla" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SAVEH" Text="Saveh" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SEBINKARAHISAR" Text="Şebinkarahisar" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SIIRT" Text="Siirt" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SIVAS" Text="Sivas" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SORAN" Text="Soran" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TABRIZ" Text="Tabriz" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TATVAN" Text="Tatvan" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TEHRAN" Text="Tehran" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TERCAN" Text="Tercan" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TRABZON" Text="Trabzon" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ULAS" Text="Ulaş" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_URMIA" Text="Urmia" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_VAN" Text="Van" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_VARDENIS" Text="Vardenis" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_VIRANSEHIR" Text="Viranşehir" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_XANXENDI" Text="Xankandi" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_YEREVAN" Text="Yerevan" Language="en_US" />
-		
-	</LocalizedText>
-	
-	<LocalizedText>		<!-- ANATOLIA & CYPRUS -->
-	
-		<Replace Tag="LOC_CITY_NAME_ACIPAYAM" Text="Acıpayam" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ADANA" Text="Adana" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ADAPAZARI" Text="Adapazarı" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_AKSARAY" Text="Aksaray" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_AKSEHIR" Text="Akşehir" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ALANYA" Text="Alanya" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_AMASYA" Text="Amasya" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_AMASYA_HATTUSA" Text="Hattusa" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_AMASIA" Text="Amasia" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_AMASIA_HATTUSA" Text="Hattusa" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ANKARA" Text="Ankara" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ANTALYA" Text="Antalya" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_AYDIN" Text="Aydın" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_AYFONKARAHISAR" Text="Afyonkarahisar" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_BALIKESIR" Text="Balıkesir" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_BANDIRMA" Text="Bandırma" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_BEYPAZARI" Text="Beypazarı" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_BIRSA" Text="Bursa" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_BODRUM" Text="Bodrum" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_BOLU" Text="Bolu" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CANAKKALE" Text="Çanakkale" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CIDE" Text="Cide" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CORUM" Text="Çorum" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_DENIZLI" Text="Denizli" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_DEVELI" Text="Develi" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_DUZCE" Text="Düzce" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_EREGLI" Text="Karadeniz Ereğli" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ESKISEHIR" Text="Eskişehir" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_FETHIYE" Text="Fethiye" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_IZMIR" Text="İzmir" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KADIKOY" Text="Kadıköy" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KARASU" Text="Karasu" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KASTAMONU" Text="Kastamonu" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KAYSERI" Text="Kayseri" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KIRSEHIR" Text="Kırşehir" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KONYA" Text="Konya" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KULU" Text="Kulu" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_LIMASSOL" Text="Limassol" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_MARMARIS" Text="Marmaris" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_MERSIN" Text="Mersin" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_NICOSIA" Text="Nicosia" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_NIGDE" Text="Niğde" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_PAPHOS" Text="Paphos" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_POLI_CRYSOCHOUS" Text="Poli Chysochous" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SAMSUN" Text="Samsun" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SEYDISEHIR" Text="Seydişehir" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SINOP" Text="Sinop" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TAVSANLI" Text="Tavşanlı" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TOKAT" Text="Tokat" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_YALOVA" Text="Yalova" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_YOZGAT" Text="Yozgat" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ZONGULDAK" Text="Zonguldak" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ACILISENE" Text="Acilisene" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ADATHA" Text="Adatha" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ALEXANDRIA_AD_ISSUM" Text="Alexandria ad Issum" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMIDA" Text="Amida" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANASTASIOPOLIS" Text="Anastasiopolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANTIOCHEIA_ARABIS" Text="Antiocheia Arabis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANTIOCHIA_AD_TAURUM" Text="Antiochia ad Taurum" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANTIOCHIA_ARABIS" Text="Antiochia Arabis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARASAMOSATA" Text="Arasamosata" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARIARATHEIA" Text="Ariaratheia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARTAXATA" Text="Artaxata" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BAIBERDON" Text="Baiberdon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BATNAE" Text="Batnæ" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BATNAI" Text="Batnai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BETHZABDE" Text="Bethzabde" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CARRHAE" Text="Carrhæ" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CEPHA" Text="Cepha" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CERASUS" Text="Cerasus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHARPETE" Text="Charpete" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHORZENE" Text="Chorzene" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_COMANA_CHRYSE" Text="Comana Chryse" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_COMANA_PONTICA" Text="Comana Pontica" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DARAS" Text="Daras" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DOLICHE" Text="Doliche" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EUROPOS" Text="Europos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EUROPUS" Text="Europus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EUSPENA" Text="Euspena" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_FLAVIOPOLIS" Text="Flaviopolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GERMANICIA_CAESAREA" Text="Germanicia Caesarea" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GERMANIKEIA" Text="Germanikeia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ISSUS" Text="Issus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KARRAI" Text="Karrai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KEPHA" Text="Kepha" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KERASOUS" Text="Kerasous" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KOMANA" Text="Komana" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KOMANA_PONTIKA" Text="Komana Pontika" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAIPA" Text="Maipa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARIDA" Text="Marida" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MELITENE" Text="Melitene" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NICOPOLIS" Text="Nicopolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIKOPOLIS" Text="Nikopolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_POLEMONION" Text="Polemonion" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_POLEMONIUM" Text="Polemonium" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NISIBIS" Text="Nisibis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RESAINA" Text="Resaina" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROMANOUPOLIS" Text="Romanoupolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAMOSATA" Text="Samosata" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SATALA" Text="Satala" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEBASTEIA" Text="Sebasteia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEBASTIA" Text="Sebastia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SINORIA" Text="Sinoria" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_THEODOSIOPOLIS" Text="Theodosiopolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TIGRANOCERTA" Text="Tigranocerta" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TIGRANOKERTA" Text="Tigranokerta" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TRAPEZOUS" Text="Trapezous" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TRAPEZUS" Text="Trapezus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ZEUGMA" Text="Zeugma" Language="en_US" />
 		
 	</LocalizedText>
 		
