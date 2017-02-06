@@ -176,7 +176,7 @@
 		<Replace MapName="PlayEuropeAgain" X="67" Y="23" CityLocaleName="LOC_CITY_NAME_MILETUS" Area="0" Civilization="CIVILIZATION_ROME" />
 		<Replace MapName="PlayEuropeAgain" X="68" Y="23" CityLocaleName="LOC_CITY_NAME_MYLASA" Area="0" Civilization="CIVILIZATION_ROME" />
 		<Replace MapName="PlayEuropeAgain" X="69" Y="23" CityLocaleName="LOC_CITY_NAME_STRATONICEA" Area="0" Civilization="CIVILIZATION_ROME" />
-		<Replace MapName="PlayEuropeAgain" X="7O" Y="23" CityLocaleName="LOC_CITY_NAME_OENOANDA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="70" Y="23" CityLocaleName="LOC_CITY_NAME_OENOANDA" Area="0" Civilization="CIVILIZATION_ROME" />
 		<Replace MapName="PlayEuropeAgain" X="71" Y="23" CityLocaleName="LOC_CITY_NAME_TERMESSOS" Area="0" Civilization="CIVILIZATION_ROME" />
 		<Replace MapName="PlayEuropeAgain" X="72" Y="23" CityLocaleName="LOC_CITY_NAME_ATTALEA" Area="0" Civilization="CIVILIZATION_ROME" />
 		<Replace MapName="PlayEuropeAgain" X="73" Y="23" CityLocaleName="LOC_CITY_NAME_ASPENDUS" Area="0" Civilization="CIVILIZATION_ROME" />
