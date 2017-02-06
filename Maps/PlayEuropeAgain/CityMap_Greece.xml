@@ -159,7 +159,7 @@
 		<Replace MapName="PlayEuropeAgain" X="67" Y="23" CityLocaleName="LOC_CITY_NAME_MILETOS" Area="0" Civilization="CIVILIZATION_GREECE" />
 		<Replace MapName="PlayEuropeAgain" X="68" Y="23" CityLocaleName="LOC_CITY_NAME_MYLASA" Area="0" Civilization="CIVILIZATION_GREECE" />
 		<Replace MapName="PlayEuropeAgain" X="69" Y="23" CityLocaleName="LOC_CITY_NAME_STRATONIKEIA" Area="0" Civilization="CIVILIZATION_GREECE" />
-		<Replace MapName="PlayEuropeAgain" X="7O" Y="23" CityLocaleName="LOC_CITY_NAME_OINOANDA" Area="0" Civilization="CIVILIZATION_GREECE" />
+		<Replace MapName="PlayEuropeAgain" X="70" Y="23" CityLocaleName="LOC_CITY_NAME_OINOANDA" Area="0" Civilization="CIVILIZATION_GREECE" />
 		<Replace MapName="PlayEuropeAgain" X="71" Y="23" CityLocaleName="LOC_CITY_NAME_TERMESSOS" Area="0" Civilization="CIVILIZATION_GREECE" />
 		<Replace MapName="PlayEuropeAgain" X="72" Y="23" CityLocaleName="LOC_CITY_NAME_ATTALEIA" Area="0" Civilization="CIVILIZATION_GREECE" />
 		<Replace MapName="PlayEuropeAgain" X="73" Y="23" CityLocaleName="LOC_CITY_NAME_ASPENDOS" Area="0" Civilization="CIVILIZATION_GREECE" />
