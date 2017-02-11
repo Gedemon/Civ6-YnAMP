@@ -329,8 +329,8 @@
 		<Replace MapName="PlayEuropeAgain" X="87" Y="32" CityLocaleName="LOC_CITY_NAME_BAIBERDON" Civilization="CIVILIZATION_GREECE" />
 		<Replace MapName="PlayEuropeAgain" X="90" Y="32" CityLocaleName="LOC_CITY_NAME_THEODOSIOPOLIS" Civilization="CIVILIZATION_GREECE" />
 		
-		<Replace MapName="PlayEuropeAgain" X="84" Y="33" CityLocaleName="LOC_CITY_NAME_TRAPEZOUS" Civilization="CIVILIZATION_ROME" />
-		<Replace MapName="PlayEuropeAgain" X="94" Y="33" CityLocaleName="LOC_CITY_NAME_ARTAXATA" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="84" Y="33" CityLocaleName="LOC_CITY_NAME_TRAPEZOUS" Civilization="CIVILIZATION_GREECE" />
+		<Replace MapName="PlayEuropeAgain" X="94" Y="33" CityLocaleName="LOC_CITY_NAME_ARTAXATA" Civilization="CIVILIZATION_GREECE" />
 		
 	</CityMap>
 	
