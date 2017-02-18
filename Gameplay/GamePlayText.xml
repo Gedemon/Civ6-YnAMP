@@ -3843,6 +3843,7 @@
 		<Replace Tag="LOC_CITY_NAME_BENI" Text="Beni" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BETHANIE" Text="Bethanie" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BINGA" Text="Binga" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BLOEMFONTEIN" Text="Bloemfontein" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BOENDE" Text="Boende" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BOMA" Text="Boma" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BRAZZAVILLE" Text="Brazzaville" Language="en_US" />
@@ -3944,8 +3945,8 @@
 		<Replace Tag="LOC_CITY_NAME_KISANGANI_GERMANY" Text="Stanleystadt" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KISANGANI_NETHERLANDS" Text="Stanleystad" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KISMAYO" Text="Kismayo" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KISUMI" Text="Kisumi" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KISUMI_ENGLAND" Text="Port Florence" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KISUMU" Text="Kisumu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KISUMU_ENGLAND" Text="Port Florence" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KITWE" Text="Kitwe" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KOLWEZI" Text="Kolwezi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KONGOLO" Text="Kongolo" Language="en_US" />
@@ -4049,7 +4050,7 @@
 		<Replace Tag="LOC_CITY_NAME_NAMIBE_PORTUGAL" Text="Moçâmedes" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NAMPULA" Text="Nampula" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NDOLA" Text="Ndola" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ONDANGA" Text="Ondanga" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ONDANGWA" Text="Ondangwa" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ONDJIVA" Text="Ondjiva" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ONDJIVA_PORTUGAL" Text="Pereica de Eça" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OPALA" Text="Opala" Language="en_US" />
@@ -5134,7 +5135,7 @@
 		<Replace Tag="LOC_CITY_NAME_BALI" Text="Bali" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NUSA_TENGGARA" Text="Nusa Tenggara" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PROBOLINGGO" Text="Probolinggo" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CHRISTMAS_ISLANDS" Text="Christmas Islands" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHRISTMAS_ISLANDS" Text="Christmas Island" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_YOGYAKARTA" Text="Yogyakarta" Language="en_US" />
 
 	</LocalizedText>
