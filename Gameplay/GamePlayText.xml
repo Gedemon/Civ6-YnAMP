@@ -175,6 +175,7 @@
 		<Replace Tag="LOC_CITY_NAME_SAINT_QUENTIN" Text="Brussels" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAINT_QUENTIN_FRANCE" Text="Bruxelles" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAINT_QUENTIN_GERMANY" Text="Brüssel" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAINT_QUENTIN_NETHERLANDS" Text="Brussel" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAINT_QUENTIN_ROME" Text="Augusta Viromanduorum" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SENS" Text="Sens" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SENS_ROME" Text="Agedincum" Language="en_US" />
@@ -1397,6 +1398,7 @@
 		<Replace Tag="LOC_CITY_NAME_BRUSSELS" Text="Brussels" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BRUSSELS_FRANCE" Text="Bruxelles" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BRUSSELS_GERMANY" Text="Brüssel" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRUSSELS_NETHERLANDS" Text="Brussel" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BRUSSELS_ROME" Text="Aduatuca Tungrorum" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_COLOGNE" Text="Cologne" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_COLOGNE_GERMANY" Text="Köln" Language="en_US" />
@@ -3811,8 +3813,333 @@
 	<!-- Africa City Names: Default Layer (Modern) <en_US> -->
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
-	<LocalizedText>		<!-- WESTERN NORTH AFRICA (MOROCCO, WESTERN SAHARA, MAURITANIA, & WESTERN ALGERIA) -->
+	<LocalizedText>		<!-- SUB-EQUATORIAL AFRICA -->
+		
+		<Replace Tag="LOC_CITY_NAME_ALEXANDER_BAY" Text="Alexander Bay" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ALEXANDER_BAY_BOER" Text="Alexanderbaai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ALEXANDER_BAY_NETHERLANDS" Text="Alexanderbaai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMBANJA" Text="Ambanja" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMBOVOMBE" Text="Ambovombe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANDAPA" Text="Andapa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANDROKA" Text="Androka" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANTANANARIVO" Text="Antananarivo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANTANANARIVO_FRANCE" Text="Tananarive" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANTSIRABE" Text="Antsirabe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANTSIRANANA" Text="Antsiranana" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ANTSIRANANA_FRANCE" Text="Diego-Suarez" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BAFWASENDE" Text="Bafwasende" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BANDUNDU" Text="Bandundu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BANDUNDU_BOER" Text="Banningstad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BANDUNDU_ENGLAND" Text="Banningville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BANDUNDU_FRANCE" Text="Banningville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BANDUNDU_GERMANY" Text="Banningstadt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BANDUNDU_NETHERLANDS" Text="Banningstad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BEIRA" Text="Beira" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BEITBRIDGE" Text="Beitbridge" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BELO_TSIRIBIHINA" Text="Belo Tsiribihina" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BELO_TSIRIBIHINA_FRANCE" Text="Belo sur Tsiribihina" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BENGUELA" Text="Benguela" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BENGUELA_PORTUGAL" Text="Benguella" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BENI" Text="Beni" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BETHANIE" Text="Bethanie" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BINGA" Text="Binga" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BLOEMFONTEIN" Text="Bloemfontein" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BOENDE" Text="Boende" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BOMA" Text="Boma" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRAZZAVILLE" Text="Brazzaville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BUJUMBURA" Text="Bujumbura" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BUJUMBURA_GERMANY" Text="Usumbura" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BUKOBA" Text="Bukoba" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BULAWAYO" Text="Bulawayo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BUNKEYA" Text="Bunkeya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CABINDA" Text="Cabinda" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CACOLO" Text="Cacolo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CANDANGALA" Text="Candangala" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAPE_TOWN" Text="Cape Town" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAPE_TOWN_BOER" Text="Kaapstad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAPE_TOWN_BRAZIL" Text="Cidade do Cabo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAPE_TOWN_FRANCE" Text="Le Cap" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAPE_TOWN_GERMANY" Text="Kapstadt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAPE_TOWN_KONGO" Text="Kaapstad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAPE_TOWN_NETHERLANDS" Text="Kaapstad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAPE_TOWN_NORWAY" Text="Kappstaden" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAPE_TOWN_ROME" Text="Civitas Capitis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAPE_TOWN_SPAIN" Text="Ciudad del Cabo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAPE_TOWN_POLAND" Text="Kapsztad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAPE_TOWN_ZULU" Text="iKapa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAUNGULA" Text="Caungula" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHIGUBO" Text="Chigubo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHINGOLA" Text="Chingola" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHIPATA" Text="Chipata" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHIREDZI" Text="Chiredzi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CUITO_CUANAVALE" Text="Cuito Cuanavale" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DAR_ES_SALAAM" Text="Dar es Salaam" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DILOLO" Text="Dilolo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DIVUNDU" Text="Divundu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DODOMA" Text="Dodoma" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DONDO" Text="Dondo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DURBAN" Text="Durban" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DURBAN_ZULU" Text="eThekwini" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EPUKIRO" Text="Epukiro" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_FRANCEVILLE" Text="Franceville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_FRANCEVILLE_KONGO" Text="Masuku" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_FRANCISTOWN" Text="Francistown" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GABORONE" Text="Gaborone" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GEORGE" Text="George" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GHANZI" Text="Ghanzi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GROOTFONTEIN" Text="Grootfontein" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GWERU" Text="Gweru" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GWERU_ENGLAND" Text="Gwelo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HARARE" Text="Harare" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HARARE_ENGLAND" Text="Salisbury" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HUAMBO" Text="Huambo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HUAMBO_PORTUGAL" Text="Nova Lisboa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HUMBE" Text="Humbe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HWANGE" Text="Hwange" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ILEBO" Text="Ilebo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ILEBO_FRANCE" Text="Port-Francqui" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_INONGO" Text="Inongo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_INHAMBANE" Text="Inhambane" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ISANGI" Text="Isangi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JOHANNESBURG" Text="Johannesburg" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JOHANNESBURG_ZULU" Text="iGoli" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KABINDA" Text="Kabinda" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KABWE" Text="Kabwe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KAKAMAS" Text="Kakamas" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KALABO" Text="Kalabo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KALEMIE" Text="Kalemie" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KALEMIE_BOER" Text="Albertstad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KALEMIE_FRANCE" Text="Albertville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KALEMIE_ENGLAND" Text="Albertville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KALEMIE_GERMANY" Text="Albertstadt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KALEMIE_NETHERLANDS" Text="Albertstad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KALIMA" Text="Kalima" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KAMINA" Text="Kamina" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KANANGA" Text="Kananga" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KANANGA_BOER" Text="Luluaburg" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KANANGA_FRANCE" Text="Luluabourg" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KANANGA_GERMANY" Text="Luluaburg" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KANANGA_NETHERLANDS" Text="Luluaburg" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KANYEMBA" Text="Kanyemba" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KAOMA" Text="Kaoma" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KARIBA" Text="Kariba" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KASANE" Text="Kasane" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KASEMPA" Text="Kasempa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KASONGO" Text="Kasongo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KASONGO_LUNDA" Text="Kasongo-Lunda" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KEETMANSHOOP" Text="Keetmanshoop" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KIGALI" Text="Kigali" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KIKWIT" Text="Kikwit" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KILWA_MASOKO" Text="Kilwa Masoko" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KINDU" Text="Kindu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KINSHASA" Text="Kinshasa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KINSHASA_BOER" Text="Leopoldstad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KINSHASA_ENGLAND" Text="Leopoldville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KINSHASA_FRANCE" Text="Leopoldville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KINSHASA_GERMANY" Text="Leopoldstadt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KINSHASA_NETHERLANDS" Text="Leopoldstad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KISANGANI" Text="Kisangani" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KISANGANI_BOER" Text="Stanleystad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KISANGANI_ENGLAND" Text="Stanleyville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KISANGANI_FRANCE" Text="Stanleyville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KISANGANI_GERMANY" Text="Stanleystadt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KISANGANI_NETHERLANDS" Text="Stanleystad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KISMAYO" Text="Kismayo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KISUMU" Text="Kisumu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KISUMU_ENGLAND" Text="Port Florence" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KITWE" Text="Kitwe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KOLWEZI" Text="Kolwezi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KONGOLO" Text="Kongolo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KUITO" Text="Kuito" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KUITO_PORTUGAL" Text="Silva Porto" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KULE" Text="Kule" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KUVANGO" Text="Kuvango" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KUVANGO_PORTUGAL" Text="Cuvango" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LIBREVILLE" Text="Libreville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LIKASI" Text="Likasi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LIKASI_BOER" Text="Jadotstad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LIKASI_ENGLAND" Text="Jadotville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LIKASI_FRANCE" Text="Jadotville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LIKASI_GERMANY" Text="Jadotstadt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LIKASI_NETHERLANDS" Text="Jadotstad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LILONGWE" Text="Lilongwe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LIVINGSTONE" Text="Livingstone" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LOBITO" Text="Lobito" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LODJA" Text="Lodja" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LOUKOLELA" Text="Loukoléla" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUANDA" Text="Luanda" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUANGWA" Text="Luangwa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUANGWA_ENGLAND" Text="Feira" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUAU" Text="Luau" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUAU_PORTUGAL" Text="Teixeira de Sousa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUBANGO" Text="Lubango" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUBANGO_PORTUGAL" Text="Sá da Bandeira" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUBEFU" Text="Lubefu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUBUMBASHI" Text="Lubumbashi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUBUMBASHI_BOER" Text="Elisabethstad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUBUMBASHI_ENGLAND" Text="Elizabethville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUBUMBASHI_FRANCE" Text="Élisabethville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUBUMBASHI_GERMANY" Text="Elizabethstadt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUBUMBASHI_NETHERLANDS" Text="Elisabethstad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUBUTU" Text="Lubutu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUEDERITZ" Text="Lüderitz" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUENA" Text="Luena" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUENA_PORTUGAL" Text="Luso" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUKOLELA" Text="Lukolela" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUSAKA" Text="Lusaka" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAHAJANGA" Text="Mahajanga" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAHAJANGA_FRANCE" Text="Majunga" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAHALAPYE" Text="Mahalapye" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAHANORO" Text="Mahanoro" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAHATSINJO" Text="Mahatsinjo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAKOKOU" Text="Makokou" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MALANJE" Text="Malanje" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MALINDI" Text="Malindi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MALTAHOEHE" Text="Maltahöhe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANAKARA" Text="Manakara" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANANARA_AVARATRA" Text="Mananara Avaratra" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANANARA_AVARATRA_FRANCE" Text="Mananara Nord" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANONO" Text="Manono" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANSA" Text="Mansa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANSA_ENGLAND" Text="Fort Roseberry" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAPUTO" Text="Maputo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAPUTO_PORTUGAL" Text="Lourenço Marques" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARIENTAL" Text="Mariental" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MASAKA" Text="Masaka" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MATADI" Text="Matadi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAUN" Text="Maun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MASVINGO" Text="Masvingo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MASVINGO_ENGLAND" Text="Fort Victoria" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAXIXE" Text="Maxixe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MBAMBA_BAY" Text="Mbamba Bay" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MBANDAKA" Text="Mbandaka" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MBANDAKA_BOER" Text="Coquilhatstad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MBANDAKA_ENGLAND" Text="Coquilhatville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MBANDAKA_FRANCE" Text="Coquilhatville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MBANDAKA_GERMANY" Text="Coquilhatstadt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MBANDAKA_NETHERLANDS" Text="Coquilhatstad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MBANZA_KONGO" Text="Mbanza Kongo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MBANZA_KONGO_PORTUGAL" Text="São Salvador" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MBEYA" Text="Mbeya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MBUJI_MAYI" Text="Mbuji-Mayi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MBUJI_MAYI_FRANCE" Text="Bakwanga" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MIDDELBURG" Text="Middelburg" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOLPOLOLE" Text="Molpolole" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOMBASA" Text="Mombasa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MONGU" Text="Mongu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MONKOTO" Text="Monkoto" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOROMBE" Text="Morombe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MORONDAVA" Text="Morondava" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MPANDA" Text="Mpanda" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MPANDAMATENGA" Text="Mpandamatenga" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MPIKA" Text="Mpika" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MTWARA" Text="Mtwara" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MTWARA_PORTUGAL" Text="Montewara" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MUCONDA" Text="Muconda" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MUFULIRA" Text="Mufulira" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MUSINA" Text="Musina" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MUSOMA" Text="Musoma" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MUTARE" Text="Mutare" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MUTARE_ENGLAND" Text="Umtali" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MWANZA" Text="Mwanza" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MWEKA" Text="Mweka" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MZUZU" Text="Mzuzu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NACALA" Text="Nacala" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAIROBI" Text="Nairobi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAMIBE" Text="Namibe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAMIBE_PORTUGAL" Text="Moçâmedes" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAMPULA" Text="Nampula" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NDOLA" Text="Ndola" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ONDANGWA" Text="Ondangwa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ONDJIVA" Text="Ondjiva" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ONDJIVA_PORTUGAL" Text="Pereica de Eça" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_OPALA" Text="Opala" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_OPUWA" Text="Opuwa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ORANJEMUND" Text="Oranjemund" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_OUTJO" Text="Outjo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_OWANDO" Text="Owando" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_OWANDO_FRANCE" Text="Fort-Rousset" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PEMBA" Text="Pemba" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PEMBA_PORTUGAL" Text="Porto Amélia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_POLOKWANE" Text="Polokwane" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_POLOKWANE_BOER" Text="Pietersburg" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_POLOKWANE_ENGLAND" Text="Pietersburg" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_POLOKWANE_GERMANY" Text="Pietersburg" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_POLOKWANE_NETHERLANDS" Text="Pietersburg" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_POINTE_NOIRE" Text="Pointe-Noire" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_POINTE_NOIRE_KONGO" Text="Ndindi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_POPOKABAKA" Text="Popokabaka" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PORT_ELIZABETH" Text="Port Elizabeth" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PORT_ELIZABETH_BOER" Text="Die Baai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PORT_ELIZABETH_ZULU" Text="iBhayi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PORT_GENTIL" Text="Port-Gentil" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PORT_GENTIL_KONGO" Text="Mandji" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PORTO_AMBOIM" Text="Porto Amboim" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PRETORIA" Text="Pretoria" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PRETORIA_KONGO" Text="Tshwane" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PRETORIA_ZULU" Text="Tshwane" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PWETO" Text="Pweto" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_QUELIMANE" Text="Quelimane" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_QUIBALA" Text="Quibala" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RICHMOND" Text="Richmond" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RUNDU" Text="Rundu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAMPWE" Text="Sampwe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SANDOA" Text="Sandoa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAURIMO" Text="Saurimo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAURIMO_PORTUGAL" Text="Henrique de Carvalho" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEROWE" Text="Serowe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SESFONTEIN" Text="Sesfontein" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SIOMA" Text="Sioma" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SKELETON_COAST" Text="Skeleton Coast" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SOYO" Text="Soyo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SOYO_KONGO" Text="Mbanza Soyo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SWAKOPMUND" Text="Swakopmund" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TABORA" Text="Tabora" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TABORA_ARABIA" Text="Kazeh" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TANGA" Text="Tanga" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TETE" Text="Tete" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TOAMASINA" Text="Toamasina" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TOAMASINA_FRANCE" Text="Tamatave" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TOILARA" Text="Toilara" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TOILARA_FRANCE" Text="Tuléar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TOLNARO" Text="Tôlnaro" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TOLNARO_FRANCE" Text="Fort Dauphin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TOMBWA" Text="Tômbwa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TOMBWA_PORTUGAL" Text="Porto Alexandre" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TRANOROA" Text="Tranoroa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TSAU" Text="Tsau" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TSHABONG" Text="Tshabong" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TSHANE" Text="Tshane" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TSHIKAPA" Text="Tshikapa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_UIGE" Text="Uíge" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_UIGE_PORTUGAL" Text="Carmona" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_UJIJI" Text="Ujiji" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_UPINGTON" Text="Upington" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_UPINGTON_BOER" Text="Olyfenhoudtsdrif" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_UPINGTON_NETHERLANDS" Text="Olyfenhoudtsdrif" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_USAKOS" Text="Usakos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VICTORIA_FALLS" Text="Victoria Falls" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VILANKULO" Text="Vilankulo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VILANKULO_PORTUGAL" Text="Vilanculos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WALVIS_BAY" Text="Walvis Bay" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WALVIS_BAY_BOER" Text="Walvisbaai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WALVIS_BAY_GERMANY" Text="Walfischbucht" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WALVIS_BAY_NETHERLANDS" Text="Walvisbaai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WINDHOEK" Text="Windhoek" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WINDHOEK_GERMANY" Text="Windhuk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_XAI_XAI" Text="Xai-Xai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_XAI_XAI_PORTUGAL" Text="João Belo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_XANGONGO" Text="Xangongo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YANGAMBI" Text="Yangambi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ZAMBEZI" Text="Zambezi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ZANZIBAR" Text="Zanzibar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ZOMBA" Text="Zomba" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ZUMBO" Text="Zumbo" Language="en_US" />
+		
+	</LocalizedText>
 	
+	<LocalizedText>		<!-- WESTERN NORTH AFRICA (MOROCCO, WESTERN SAHARA, MAURITANIA, & WESTERN ALGERIA) -->
+		
 		<Replace Tag="LOC_CITY_NAME_ABADLA" Text="Abadla" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ADRAR" Text="Adrar" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_AGADIR" Text="Agadir" Language="en_US" />
@@ -4808,7 +5135,7 @@
 		<Replace Tag="LOC_CITY_NAME_BALI" Text="Bali" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NUSA_TENGGARA" Text="Nusa Tenggara" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PROBOLINGGO" Text="Probolinggo" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CHRISTMAS_ISLANDS" Text="Christmas Islands" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHRISTMAS_ISLANDS" Text="Christmas Island" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_YOGYAKARTA" Text="Yogyakarta" Language="en_US" />
 
 	</LocalizedText>
