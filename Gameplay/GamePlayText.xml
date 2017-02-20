@@ -4822,7 +4822,6 @@
 		<Replace Tag="LOC_CITY_NAME_KOBE" Text="Kobe" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OSAKA" Text="Osaka" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OTSU" Text="Otsu" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TSU" Text="Tsu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NAGOYA" Text="Nagoya" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHIBA" Text="Chiba" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MATSUE" Text="Matsue" Language="en_US" />
