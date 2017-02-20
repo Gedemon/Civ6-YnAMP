@@ -1765,5 +1765,75 @@
 		<Replace MapName="GiantEarth" X="33" Y="77" CityLocaleName="LOC_CITY_NAME_KIRISHI" Area="0" />
 		
 	</CityMap>
+
+	<!-- LATIN AMERICA -->
+	<CityMap>
+
+		<!-- CUBA -->
+		<Replace MapName="GiantEarth" X="149" Y="51" CityLocaleName="LOC_CITY_NAME_HAVANA" Area="1" />
+		<Replace MapName="GiantEarth" X="151" Y="50" CityLocaleName="LOC_CITY_NAME_MATANZAS" Area="0" />
+		<Replace MapName="GiantEarth" X="152" Y="50" CityLocaleName="LOC_CITY_NAME_VARADERO" Area="0" />
+		<Replace MapName="GiantEarth" X="152" Y="49" CityLocaleName="LOC_CITY_NAME_LAS_TUNAS" Area="0" />
+		<Replace MapName="GiantEarth" X="153" Y="48" CityLocaleName="LOC_CITY_NAME_GUANTANAMO" Area="0" />		
+
+		<!-- ISLANDS -->
+		<Replace MapName="GiantEarth" X="154" Y="51" CityLocaleName="LOC_CITY_NAME_BAHAMAS" Area="0" />		
+		<Replace MapName="GiantEarth" X="154" Y="51" CityLocaleName="LOC_CITY_NAME_INAGUA_ISLANDS" Area="0" />
+		<Replace MapName="GiantEarth" X="159" Y="47" CityLocaleName="LOC_CITY_NAME_SAN_JUAN" Area="0" />
+		<Replace MapName="GiantEarth" X="156" Y="47" CityLocaleName="LOC_CITY_NAME_SANTO_DOMINGO" Area="1" />			
+		<Replace MapName="GiantEarth" X="153" Y="46" CityLocaleName="LOC_CITY_NAME_KINGSTON__JAMAICA" Area="0" />		
+		<Replace MapName="GiantEarth" X="152" Y="46" CityLocaleName="LOC_CITY_NAME_BLACK_RIVER" Area="0" />		
+		<Replace MapName="GiantEarth" X="159" Y="46" CityLocaleName="LOC_CITY_NAME_PONCE" Area="0" />	
+		<Replace MapName="GiantEarth" X="155" Y="46" CityLocaleName="LOC_CITY_NAME_PORT_PRINCE" Area="1" />		
+		<Replace MapName="GiantEarth" X="161" Y="46" CityLocaleName="LOC_CITY_NAME_BRITISH_VIRGIN_ISLANDS" Area="0" />		
+		<Replace MapName="GiantEarth" X="161" Y="44" CityLocaleName="LOC_CITY_NAME_US_VIRGIN_ISLANDS" Area="0" />	
+
+		<!-- SOUTH AMERICA -->		
+		<Replace MapName="GiantEarth" X="156" Y="7" CityLocaleName="LOC_CITY_NAME_COMODORO_RIVADAVIA" Area="0" />	
+		<Replace MapName="GiantEarth" X="157" Y="10" CityLocaleName="LOC_CITY_NAME_PUERTO_MADRYN" Area="0" />	
+		<Replace MapName="GiantEarth" X="154" Y="12" CityLocaleName="LOC_CITY_NAME_PUERTO_MONTT" Area="0" />		
+
+		<Replace MapName="GiantEarth" X="162" Y="16" CityLocaleName="LOC_CITY_NAME_CHAPECO" Area="0" />		
+		<Replace MapName="GiantEarth" X="158" Y="17" CityLocaleName="LOC_CITY_NAME_ASUNCION" Area="0" />
+		<Replace MapName="GiantEarth" X="162" Y="17" CityLocaleName="LOC_CITY_NAME_SANTOS" Area="0" />
+		<Replace MapName="GiantEarth" X="160" Y="19" CityLocaleName="LOC_CITY_NAME_SOROCABA" Area="0" />
+		<Replace MapName="GiantEarth" X="162" Y="19" CityLocaleName="LOC_CITY_NAME_SAO_PAULO" Area="0" />
+		<Replace MapName="GiantEarth" X="163" Y="19" CityLocaleName="LOC_CITY_NAME_SAO_JOSE_DOS_CAMPOS" Area="0" />	
+		<Replace MapName="GiantEarth" X="159" Y="20" CityLocaleName="LOC_CITY_NAME_BAURU" Area="0" />
+		<Replace MapName="GiantEarth" X="164" Y="20" CityLocaleName="LOC_CITY_NAME_TAUBATE" Area="0" />		
+		<Replace MapName="GiantEarth" X="161" Y="20" CityLocaleName="LOC_CITY_NAME_CAMPINAS" Area="0" />
+		<Replace MapName="GiantEarth" X="164" Y="21" CityLocaleName="LOC_CITY_NAME_APARECIDA" Area="0" />
+		<Replace MapName="GiantEarth" X="162" Y="22" CityLocaleName="LOC_CITY_NAME_RIBEIRAO_PRETO" Area="0" />	
+		<Replace MapName="GiantEarth" X="159" Y="22" CityLocaleName="LOC_CITY_NAME_CAMPO_GRANDE" Area="0" />	
+		<Replace MapName="GiantEarth" X="153" Y="23" CityLocaleName="LOC_CITY_NAME_VALLENAR" Area="0" />
+		<Replace MapName="GiantEarth" X="155" Y="23" CityLocaleName="LOC_CITY_NAME_SANTIAGO_CHILE" Area="1" />
+		<Replace MapName="GiantEarth" X="168" Y="23" CityLocaleName="LOC_CITY_NAME_NITEROI" Area="0" />	
+		<Replace MapName="GiantEarth" X="168" Y="24" CityLocaleName="LOC_CITY_NAME_SAO_GONCALO" Area="0" />	
+		<Replace MapName="GiantEarth" X="166" Y="24" CityLocaleName="LOC_CITY_NAME_DUKE_CAXIAS" Area="0" />				
+		<Replace MapName="GiantEarth" X="165" Y="24" CityLocaleName="LOC_CITY_NAME_NEW_IGUACU" Area="0" />
+		<Replace MapName="GiantEarth" X="152" Y="25" CityLocaleName="LOC_CITY_NAME_COPIAPO" Area="0" />	
+		<Replace MapName="GiantEarth" X="159" Y="26" CityLocaleName="LOC_CITY_NAME_RIO_VERDE" Area="0" />
+		<Replace MapName="GiantEarth" X="169" Y="26" CityLocaleName="LOC_CITY_NAME_VICTORY_BRAZIL" Area="0" />
+		<Replace MapName="GiantEarth" X="163" Y="28" CityLocaleName="LOC_CITY_NAME_UBERLAND" Area="0" />	
+		<Replace MapName="GiantEarth" X="155" Y="28" CityLocaleName="LOC_CITY_NAME_SANTA_CRUZ_SIERRA" Area="1" />
+		<Replace MapName="GiantEarth" X="167" Y="28" CityLocaleName="LOC_CITY_NAME_BELO_HORIZONTE" Area="1" />
+		<Replace MapName="GiantEarth" X="160" Y="29" CityLocaleName="LOC_CITY_NAME_GOIANIA" Area="0" />
+		<Replace MapName="GiantEarth" X="171" Y="29" CityLocaleName="LOC_CITY_NAME_PORTO_SEGURO" Area="0" />
+		<Replace MapName="GiantEarth" X="157" Y="30" CityLocaleName="LOC_CITY_NAME_CUIABA" Area="0" />
+		<Replace MapName="GiantEarth" X="162" Y="31" CityLocaleName="LOC_CITY_NAME_BRASILIA" Area="1" />
+		<Replace MapName="GiantEarth" X="165" Y="31" CityLocaleName="LOC_CITY_NAME_VITORIA_CONQUISTA" Area="0" />
+		<Replace MapName="GiantEarth" X="159" Y="32" CityLocaleName="LOC_CITY_NAME_MANAUS" Area="0" />
+		<Replace MapName="GiantEarth" X="154" Y="33" CityLocaleName="LOC_CITY_NAME_MEDELLIN" Area="0" />
+		<Replace MapName="GiantEarth" X="155" Y="33" CityLocaleName="LOC_CITY_NAME_IQUITOS" Area="0" />	
+		<Replace MapName="GiantEarth" X="166" Y="33" CityLocaleName="LOC_CITY_NAME_ILHEUS" Area="0" />
+		<Replace MapName="GiantEarth" X="165" Y="34" CityLocaleName="LOC_CITY_NAME_SALVADOR_BRAZIL" Area="1" />
+		<Replace MapName="GiantEarth" X="153" Y="37" CityLocaleName="LOC_CITY_NAME_CARORA" Area="1" />	
+		<Replace MapName="GiantEarth" X="155" Y="39" CityLocaleName="LOC_CITY_NAME_BARQUISIMETO" Area="1" />
+		<Replace MapName="GiantEarth" X="154" Y="40" CityLocaleName="LOC_CITY_NAME_MARACAIBO" Area="1" />
+		<Replace MapName="GiantEarth" X="160" Y="40" CityLocaleName="LOC_CITY_NAME_BELEM" Area="1" />
+		<Replace MapName="GiantEarth" X="157" Y="41" CityLocaleName="LOC_CITY_NAME_CARACAS" Area="1" />	
+		<Replace MapName="GiantEarth" X="156" Y="42" CityLocaleName="LOC_CITY_NAME_PUNTO_FIJO" Area="0" />	
+			
+	</CityMap>
 	
 </GameData>
