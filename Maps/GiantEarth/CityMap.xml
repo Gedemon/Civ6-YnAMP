@@ -362,7 +362,6 @@
 		<Replace MapName="GiantEarth" X="93" Y="56" CityLocaleName="LOC_CITY_NAME_HIROSHIMA" />
 		<Replace MapName="GiantEarth" X="97" Y="56" CityLocaleName="LOC_CITY_NAME_OSAKA" />
 		<Replace MapName="GiantEarth" X="98" Y="56" CityLocaleName="LOC_CITY_NAME_NARA" Area="0" />
-		<Replace MapName="GiantEarth" X="99" Y="56" CityLocaleName="LOC_CITY_NAME_TSU" Area="0" />
 		
 		<Replace MapName="GiantEarth" X="89" Y="57" CityLocaleName="LOC_CITY_NAME_JEJU" />
 		<Replace MapName="GiantEarth" X="91" Y="57" CityLocaleName="LOC_CITY_NAME_YAMAGUSHI" Area="0" />
@@ -372,6 +371,7 @@
 		<Replace MapName="GiantEarth" X="95" Y="58" CityLocaleName="LOC_CITY_NAME_KOBE" Area="0" />
 		<Replace MapName="GiantEarth" X="97" Y="57" CityLocaleName="LOC_CITY_NAME_OTSU" Area="0" />
 		<Replace MapName="GiantEarth" X="97" Y="58" CityLocaleName="LOC_CITY_NAME_OTSU" Area="0" />
+		<Replace MapName="GiantEarth" X="99" Y="56" CityLocaleName="LOC_CITY_NAME_NAGOYA" Area="0" />
 		<Replace MapName="GiantEarth" X="98" Y="57" CityLocaleName="LOC_CITY_NAME_NAGOYA" Area="0" />
 		
 		<Replace MapName="GiantEarth" X="93" Y="58" CityLocaleName="LOC_CITY_NAME_MATSUE" Area="0" />
@@ -409,7 +409,7 @@
 		<Replace MapName="GiantEarth" X="89" Y="64" CityLocaleName="LOC_CITY_NAME_PYONGYANG" Area="0" />
 		<Replace MapName="GiantEarth" X="88" Y="65" CityLocaleName="LOC_CITY_NAME_PYONGYANG" />
 		<Replace MapName="GiantEarth" X="97" Y="64" CityLocaleName="LOC_CITY_NAME_NIIGATA" />
-		<Replace MapName="GiantEarth" X="97" Y="65" CityLocaleName="LOC_CITY_NAME_AGITA" />
+		<Replace MapName="GiantEarth" X="97" Y="65" CityLocaleName="LOC_CITY_NAME_AKITA" Area="0"/>
 		<Replace MapName="GiantEarth" X="98" Y="64" CityLocaleName="LOC_CITY_NAME_YOKOTE" Area="0" />
 		<Replace MapName="GiantEarth" X="99" Y="64" CityLocaleName="LOC_CITY_NAME_MORIOKA" Area="0" />
 		<Replace MapName="GiantEarth" X="98" Y="65" CityLocaleName="LOC_CITY_NAME_MORIOKA" Area="0" />
