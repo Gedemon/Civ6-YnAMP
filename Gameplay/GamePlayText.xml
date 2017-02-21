@@ -4821,13 +4821,13 @@
 		<Replace Tag="LOC_CITY_NAME_HIMEJI" Text="Himeji" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KOBE" Text="Kobe" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OSAKA" Text="Osaka" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SHIZUOKA" Text="Shizuoka" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_OTSU" Text="Otsu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NAGOYA" Text="Nagoya" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHIBA" Text="Chiba" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MATSUE" Text="Matsue" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TOTTORI" Text="Tottori" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MAIZURU" Text="Maizuru" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SAGAMIHARA" Text="Sagamihara" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AKITA" Text="Akita" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GWANGJU" Text="Gwangju" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BUSAN" Text="Busan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KYOTO" Text="Kyoto" Language="en_US" />
