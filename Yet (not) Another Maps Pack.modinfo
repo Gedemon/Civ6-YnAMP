@@ -23,6 +23,7 @@
 				<File>Configuration/ConfigText.xml</File>
 				<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
 				<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
+				<File>Configuration/ConfigText_pt_BR.xml</File>
 			</Items>
 		</LocalizedText>
 	</Settings>	
@@ -113,6 +114,7 @@
 		<File>Configuration/ConfigText.xml</File>
 		<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
 		<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
+		<File>Configuration/ConfigText_pt_BR.xml</File>
 		<File>Gameplay/Tables.sql</File>
 		<File>Gameplay/GamePlay.xml</File>
 		<File>Gameplay/GamePlay.sql</File>

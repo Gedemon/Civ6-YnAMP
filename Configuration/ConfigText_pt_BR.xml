@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+  
+	<!-- Replacing -->
+	
+    <Replace Tag="LOC_MAP_RESOURCES_NAME" Language="pt_BR">
+      <Text>Abundância de Recursos</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_START_POSITION_NAME" Language="pt_BR">
+      <Text>Balanceamento da Posição Inicial</Text>
+    </Replace>
+	
+	<!-- New entries -->
+    
+	<Replace Tag="LOC_YNAGEM_NAME" Language="pt_BR">
+      <Text>Mapa Gigante</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_DESC" Language="pt_BR">
+      <Text>Genghis Kai's GEM (Versão Hormigas) (180x94)</Text>
+    </Replace>
+    <Replace Tag="LOC_GREATESTEARTH_NAME" Language="pt_BR">
+      <Text>Mapa Grande</Text>
+    </Replace>
+    <Replace Tag="LOC_GREATESTEARTH_DESC" Language="pt_BR">
+      <Text>Mapa Grande por djvandyke (104x64)</Text>
+    </Replace>
+    <Replace Tag="LOC_PLAYEUROPEAGAIN_NAME" Language="pt_BR">
+      <Text>Continente Europeu</Text>
+    </Replace>
+    <Replace Tag="LOC_PLAYEUROPEAGAIN_DESC" Language="pt_BR">
+      <Text>NiRv4n4's Europe(Versão Hormigas) (108x98)</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGESTEARTH_NAME" Language="pt_BR">
+      <Text>[COLOR_RED]Maior Mapa[ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGESTEARTH_DESC" Language="pt_BR">
+      <Text>Maior Mapa (230x116)[NEWLINE][ICON_Exclamation] [COLOR_RED]Demora muito para carregar ! (~5 mn)[ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]Alto uso da VRAM ![ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]Supercomputadores da NASA odeiam ele ![ENDCOLOR]</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Language="pt_BR">
+      <Text>Localização da civilização</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_DESCRIPTION" Language="pt_BR">
+      <Text>Como as civilizações são distribuídas no mapa</Text>
+    </Replace>
+    <Replace Tag="LOC_CULTURALLY_LINKED_START_NAME" Language="pt_BR">
+      <Text>Link da posição inicial</Text>
+    </Replace>
+    <Replace Tag="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Language="pt_BR">
+      <Text>Link para inciar na posição cultural</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_NAME" Language="pt_BR">
+      <Text>Aleatório</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_DESCRIPTION" Language="pt_BR">
+      <Text>Não tentar reagrupar Civilizações por Etnia</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_NAME" Language="pt_BR">
+      <Text>Cultural</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_DESCRIPTION" Language="pt_BR">
+      <Text>Tentar reagrupar civilizações por etnia nas posições iniciais</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS_NAME" Language="pt_BR">
+      <Text>Enorme</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" Language="pt_BR">
+      <Text>Mapa Realmente Enorme para 16 jogadores (128x80)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_GIANT_NAME" Language="pt_BR">
+      <Text>Gigante</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_GIANT_DESCRIPTION" Language="pt_BR">
+      <Text>Mapa Gigante para mais de 20 jogadores (180x94)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LUDICROUS_NAME" Language="pt_BR">
+      <Text>Absurdo</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" Language="pt_BR">
+      <Text>Você vai suportar o teste do tempo enquanto o seu computador tenta carregar isso ? (230x115)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_NAME" Language="pt_BR">
+      <Text>Distribuição dos Recursos</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Language="pt_BR">
+      <Text>Como os recursos são distribuidos no mapa</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_NAME" Language="pt_BR">
+      <Text>Map Generator</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" Language="pt_BR">
+      <Text>Os recursos são distribuidos usando o Civ6 Map Generator (Aleatório)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_NAME" Language="pt_BR">
+      <Text>Importar</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_DESCRIPTION" Language="pt_BR">
+      <Text>As posições dos recursos são importadas a partir dos dados do mapa original</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_NAME" Language="pt_BR">
+      <Text>Zonas de Exclusão de [NEWLINE]Recursos</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" Language="pt_BR">
+      <Text>Alguns recursos não serão colocados em áreas predefinidas do mapa</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_NAME" Language="pt_BR">
+      <Text>Depósitos do Mundo Real</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_DESCRIPTION" Language="pt_BR">
+      <Text>Alguns Recursos serão colocados em áreas correspondentes ao mundo real</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_ACTIVATED_NAME" Language="pt_BR">
+      <Text>Ativado</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_DEACTIVATED_NAME" Language="pt_BR">
+      <Text>Desativado</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_NAME" Language="pt_BR">
+      <Text>Recursos da Civilização</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" Language="pt_BR">
+      <Text>Coloca alguns Recursos específicos de Civilizações específicas</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_NAME" Language="pt_BR">
+      <Text>Locais Característicos</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Language="pt_BR">
+      <Text>Como recursos característicos (Florestas, Selva, ...) são distribuidos no Mapa</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_NAME" Language="pt_BR">
+      <Text>Map Generator</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_DESCRIPTION" Language="pt_BR">
+      <Text>Recursos característicos são distribuidos usando Civ6 Map Generator (aleatório)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_NAME" Language="pt_BR">
+      <Text>Importar</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_DESCRIPTION" Language="pt_BR">
+      <Text>posiçõesde recusrsos Característicos são importadas a partir dos dados do mapa original</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_NAME" Language="pt_BR">
+      <Text>Map Generator</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_DESCRIPTION" Language="pt_BR">
+      <Text>Civilizações são distribuidas usando Civ6 Map Generator (aleatório)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_NAME" Language="pt_BR">
+      <Text>Iniciar nas Localizações reais</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_DESCRIPTION" Language="pt_BR">
+      <Text>As civilizações são colocadas nas posições equivalentes ao do mundo real, quando disponíveis</Text>
+    </Replace>	
+	
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_NAME" Language="pt_BR">
+      <Text>Distribuição dos [NEWLINE]Continentes</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_DESCRIPTION" Language="pt_BR">
+      <Text>Como os nomes de continentes são distribuidos no mapa</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_NAME" Language="pt_BR">
+      <Text>Map Generator</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_DESCRIPTION" Language="pt_BR">
+      <Text>Continentes são nomeados usando Civ6 Map Generator (nome aleatório)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_NAME" Language="pt_BR">
+      <Text>Importar</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_DESCRIPTION" Language="pt_BR">
+      <Text>Nomes de continentes são importadas a partir dos dados do mapa original</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_NAME" Language="pt_BR">
+      <Text>Posicionamento dos Rios</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DESCRIPTION" Language="pt_BR">
+      <Text>Como os rios são distribuidos no mapa</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_NAME" Language="pt_BR">
+      <Text>Map Generator</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="pt_BR">
+      <Text>Rios são distribuidos usando Civ6 Map Generator (aleatório)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_NAME" Language="pt_BR">
+      <Text>Importar</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_DESCRIPTION" Language="pt_BR">
+      <Text>Rios são importadas a partir dos dados do mapa original</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_NAME" Language="pt_BR">
+      <Text>Posicionamento [NEWLINE]das Maravilhas Naturais</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DESCRIPTION" Language="pt_BR">
+      <Text>Como as Maravilhas Naturais são distribuidos no mapa</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_NAME" Language="pt_BR">
+      <Text>Map Generator</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="pt_BR">
+      <Text>Maravilhas Naturais são distribuidos usando Civ6 Map Generator (aleatório)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_NAME" Language="pt_BR">
+      <Text>Importar</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_DESCRIPTION" Language="pt_BR">
+      <Text>Maravilhas Naturais são importadas a partir dos dados do mapa</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_NAME" Language="pt_BR">
+      <Text>Vazio</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" Language="pt_BR">
+      <Text>Não Adicionar</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CLOSED_BOSPHORUS_NAME" Language="pt_BR">
+      <Text>Fechar o Estreito do Bósforo</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MONT_SAINT_MICHEL_MARSH_NAME" Language="pt_BR">
+      <Text>Adicionar pântano para Monte Saint-Michel</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_STONEHENGE_STONE_NAME" Language="pt_BR">
+      <Text>Adicionar pedra para Stonehenge</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Language="pt_BR">
+      <Text>Nenhum gelo perto da terra [NEWLINE](Para ajudar na circunavegação)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NO_CITY_STATE_NAME" Language="pt_BR">
+      <Text>Sem Cidade-Estados</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_FORCE_TSL_NAME" Language="pt_BR">
+      <Text>Forçar TSL</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_DESCRIPTION" Language="pt_BR">
+      <Text>Substitua o Colonizador inicial por uma cidade em TSL</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_OFF" Language="pt_BR">
+      <Text>Desligado</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_OFF_DESCRIPTION" Language="pt_BR">
+      <Text>Os colonizadores iniciais se movimentam livremente antes de fundar uma cidade</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_CS" Language="pt_BR">
+      <Text>Cidade-Estados</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_CS_DESCRIPTION" Language="pt_BR">
+      <Text>Os colonizadores de Cidade-Estados são substituídos por uma cidade em TSL</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_AI" Language="pt_BR">
+      <Text>I.A.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_AI_DESCRIPTION" Language="pt_BR">
+      <Text>I.A. (Civilizações e Cidade-Estados) colonizadores são substituídos por uma cidade em TSL</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_ALL" Language="pt_BR">
+      <Text>Todo Mundo</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_ALL_DESCRIPTION" Language="pt_BR">
+      <Text>Todos os colonizadores (incluindo de jogadores humanos) são substituídos por uma cidade em TSL</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_AUTO_CITY_NAMING_NAME" Language="pt_BR">
+      <Text>Cidades com nomes reais</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ONLY_GENERIC_CITY_NAMES_NAME" Language="pt_BR">
+      <Text>Use apenas nomes de cidades genéricos</Text>
+    </Replace>
+	
+  </LocalizedText>
+</GameData>
