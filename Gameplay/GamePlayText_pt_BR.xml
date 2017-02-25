@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Ed Beach (Firaxis Games) -->
+<GameData>
+
+  <!-- New City Names <pt_BR> -->
+  
+  <LocalizedText>
+
+	<!-- BRAZIL -->
+	<Replace Tag="LOC_CITY_NAME_BRITISH_VIRGIN_ISLANDS" Text="Ilhas Virgens Britânicas" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_US_VIRGIN_ISLANDS" Text="Ilhas Virgens Americanas" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_PORT_PRINCE" Text="Porto Príncipe" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_CHAPECO" Text="Chapecó" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_FLORIANOPOLIS" Text="Florianópolis" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_FOZ_DO_IGUACU" Text="Foz do Iguaçu" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_SAO_PAULO" Text="São Paulo" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_GUARUJA" Text="Guarujá" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_SAO_JOSE_DOS_CAMPOS" Text="São José dos Campos" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_TRES_LAGOAS" Text="Três Lagoas" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_SAO_JOSE_DO_RIO_PRETO" Text="São José do Rio Preto" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_RIBEIRAO_PRETO" Text="Ribeirão Preto" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_DUKE_OF_CAXIAS" Text="Duque de Caxias" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_SAO_GABRIEL_DO_OESTE" Text="São Gabriel do Oeste" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_UBERLAND" Text="Uberlândia" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_ARAXA" Text="Araxá" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_DIVINOPOLIS" Text="Divinópolis" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_TERESOPOLIS" Text="Teresópolis" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_VICTORY_BRAZIL" Text="Vitória" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_CUIABA" Text="Cuiabá" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_BARRA_DO_GARCAS" Text="Barra do Garças" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_GOIAS" Text="Goiás" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_BRASILIA" Text="Brasília" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_EUNAPOLIS" Text="Eunápolis" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_VITORIA_DA_CONQUISTA" Text="Vitória da Conquista" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_SAO_FELIX_DO_ARAGUAIA" Text="São Félix do Araguaia" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_SAO_VALERIO" Text="São Valerio" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_DIANOPOLIS" Text="Dianópolis" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_LUIS_EDUARDO_MAGALHAES" Text="Luis Eduardo Magalhães" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_ARIPUANA" Text="Aripuanã" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_LABREA" Text="Labrea" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_HUMAITA" Text="Humaitá" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_REDENCAO" Text="Redenção" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_PATAMUTE" Text="Patamuté" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_MACEIO" Text="Maceió" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_FEIJO" Text="Feijó" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_LABREA" Text="Lábrea" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_MANICORE" Text="Manicoré" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_ARAGUAINA" Text="Araguaína" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_CUSTODIA" Text="Custódia" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_TRES_CASAS" Text="Três Casas" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_VILLAGE_OF_THE_INDIANS" Text="Aldeia dos Índioss" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_URUCUI" Text="Uruçuí" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_SAO_JOSE_DO_EGITO" Text="São José do Egito" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_SAPE" Text="Sapé" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_JOAO_PESSOA" Text="João Pessoa" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_MARAPATA" Text="Marapatá" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_URUARA" Text="Uruará" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_WHITE_WATER" Text="Água Branca" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_SAO_FELIX_DO_PIAUI" Text="São Félix do Piauí" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_TAUA" Text="Tauá" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_ACU" Text="Açu" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_SAO_GONCALO_DO_AMARANTE" Text="São Gonçalo do Amarante" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_CAIAMBE" Text="Caiambé" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_FORDLANDIA" Text="Fordlândia" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_MARABA" Text="Marabá" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_ACAILANDIA" Text="Açailândia" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_ITAIPAVA_DO_GRAJAU" Text="Itaipava do Grajaú" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_PENTECOST" Text="Pentecoste" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_TUIUE" Text="Tuiué" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_FILHO_UNICO" Text="Filho Único" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_MEDICILAND" Text="Medicilândia" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_TUCURUI" Text="Tucuruí" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_GOIANESIA_DO_PARA" Text="Goianésia do Pará" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_ZE_DOCA" Text="Zé Doca" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_SAO_LUIS" Text="São Luís" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_ORIXIMINA" Text="Oriximiná" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_BELEM" Text="Belém" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_SAO_GABRIEL_DA_CACHOEIRA" Text="São Gabriel da Cachoeira" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_MACAPA" Text="Macapá" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_ARAQUA" Text="Araquã" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_ARAQUA" Text="Araquã" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_NUQUI" Text="Nuquí" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_FACATATIVA" Text="Facatativá" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_BOGOTA" Text="Bogotá" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_WILL_PASS" Text="Passarão" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_AMAPA" Text="Amapá" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_MEDELLIN" Text="Medellín" Language="pt_BR" />
+
+  </LocalizedText>
+	
+  </GameData>

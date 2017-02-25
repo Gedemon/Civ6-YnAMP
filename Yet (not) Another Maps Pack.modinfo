@@ -83,6 +83,7 @@
 		<LocalizedText id="YNAMP_DEFAULT_LOC">
 			<Items>
 				<File>Gameplay/GamePlayText.xml</File>
+				<File>Gameplay/GamePlayText_pt_BR.xml</File>
 			</Items>
 		</LocalizedText>
 	</Components>
@@ -119,6 +120,7 @@
 		<File>Gameplay/GamePlay.xml</File>
 		<File>Gameplay/GamePlay.sql</File>
 		<File>Gameplay/GamePlayText.xml</File>
+		<File>Gameplay/GamePlayText_pt_BR.xml</File>
 		<File>Maps/GiantEarth/Map.xml</File>
 		<File>Maps/GiantEarth/CityMap.xml</File>
 		<File>Maps/GreatestEarthMap/Map.xml</File>
