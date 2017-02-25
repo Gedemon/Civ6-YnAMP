@@ -9,6 +9,7 @@
 	<StartPosition>
 		
 		<!-- New Majors with Civilization 6 -->
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AUSTRALIA"	X="100" Y="10" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NORWAY"		X="44" Y="60" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SCYTHIA"		X="68" Y="51" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SUMERIA"		X="67" Y="39" />
@@ -68,7 +69,7 @@
 	<StartPosition>
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AMSTERDAM"		X="44" Y="53" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SYDNEY"			X="102" Y="12" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BUENOS_AIRES"	X="27" Y="7" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BUENOS_AIRES"		X="27" Y="7" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CARTHAGE"		X="47" Y="36" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GENEVA"			X="46" Y="47" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_HATTUSA"			X="61" Y="43" />
@@ -82,13 +83,18 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_LISBON"			X="33" Y="37" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CUBA"			X="22" Y="37" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_JAMAICA"			X="23" Y="32" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_JERUSALEM"		X="63" Y="38" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NAN_MADOL"		X="95" Y="29" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PRESLAV"			X="57" Y="47" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SEOUL"			X="91" Y="51" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_STOCKHOLM"		X="53" Y="62" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_QUEBEC"			X="22" Y="54" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_TORONTO"			X="17" Y="52" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CAP_TOWN"		X="54" Y="4" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_VALETTA"			X="50" Y="36" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_VILNIUS"			X="56" Y="57" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MOROCCO"			X="39" Y="30" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_YEREVAN"			X="64" Y="44" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ZANZIBAR"		X="63" Y="17" />
 		
 	</StartPosition>

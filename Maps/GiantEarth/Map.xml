@@ -8,6 +8,7 @@
 	<StartPosition>
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AMERICA"	X="155" Y="64" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ARABIA"	X="36" Y="41" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AUSTRALIA"	X="103" Y="10" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AZTEC"		X="138" Y="49" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BRAZIL"	X="167" Y="22" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CHINA"		X="78" Y="60" />

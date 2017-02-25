@@ -3928,6 +3928,7 @@
 		<Replace Tag="LOC_CITY_NAME_KASONGO" Text="Kasongo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KASONGO_LUNDA" Text="Kasongo-Lunda" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KEETMANSHOOP" Text="Keetmanshoop" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KERGUELEN" Text="Kerguelen" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KIGALI" Text="Kigali" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KIKWIT" Text="Kikwit" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KILWA_MASOKO" Text="Kilwa Masoko" Language="en_US" />
@@ -4008,6 +4009,10 @@
 		<Replace Tag="LOC_CITY_NAME_MASAKA" Text="Masaka" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MATADI" Text="Matadi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MAUN" Text="Maun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAURITIUS" Text="Mauritius" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAURITIUS_ARABIA" Text="Dina Arobi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAURITIUS_BRAZIL" Text="Ilha do Cirne" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAURITIUS_FRANCE" Text="Port-Louis" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MASVINGO" Text="Masvingo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MASVINGO_ENGLAND" Text="Fort Victoria" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MAXIXE" Text="Maxixe" Language="en_US" />
@@ -4081,6 +4086,9 @@
 		<Replace Tag="LOC_CITY_NAME_PWETO" Text="Pweto" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_QUELIMANE" Text="Quelimane" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_QUIBALA" Text="Quibala" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_REUNION" Text="Réunion" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_REUNION_ARABIA" Text="Dina Morgabin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_REUNION_FRANCE" Text="La Réunion" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RICHMOND" Text="Richmond" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RUNDU" Text="Rundu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAMPWE" Text="Sampwe" Language="en_US" />
@@ -4089,6 +4097,8 @@
 		<Replace Tag="LOC_CITY_NAME_SAURIMO_PORTUGAL" Text="Henrique de Carvalho" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SEROWE" Text="Serowe" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SESFONTEIN" Text="Sesfontein" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEYCHELLES" Text="Seychelles" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEYCHELLES_ENGLAND" Text="Victoria" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SIOMA" Text="Sioma" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SKELETON_COAST" Text="Skeleton Coast" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SOYO" Text="Soyo" Language="en_US" />
@@ -4552,6 +4562,7 @@
 	
 	
 	<LocalizedText>		<!-- PAPUA -->
+		
 		<Replace Tag="LOC_CITY_NAME_AGATS" Text="Agats" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BAIMURU" Text="Baimuru" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DARU" Text="Daru" Language="en_US" />
@@ -4561,6 +4572,7 @@
 		<Replace Tag="LOC_CITY_NAME_KONOKA" Text="Konoka" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LAE" Text="Lae" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MADANG" Text="Madang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MADANG_GERMANY" Text="Friedrich-Wilhelmshafen" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MATABOOR" Text="Mataboor" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MANOKWARI" Text="Manokwari" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MERAUKE" Text="Merauke" Language="en_US" />
@@ -4575,6 +4587,7 @@
 	</LocalizedText>
 	
 	<LocalizedText>		<!-- AUSTRALIA -->
+		
 		<Replace Tag="LOC_CITY_NAME_ADELAIDE" Text="Adelaide" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ALBANY" Text="Albany" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ALBURY_WODONGA" Text="Albury-Wodonga" Language="en_US" />
@@ -4636,6 +4649,7 @@
 		<Replace Tag="LOC_CITY_NAME_DOOMAGEE" Text="Doomagee" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DUBBO" Text="Dubbo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_EARAHEADY" Text="Earaheady" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EDEN" Text="Eden" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_EMERALD" Text="Emerald" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ERLDUNDA" Text="Erldunda" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ESPERANCE" Text="Esperance" Language="en_US" />
@@ -4740,7 +4754,7 @@
 		<Replace Tag="LOC_CITY_NAME_ROMA_QLD" Text="Roma" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SUNSHINE_COAST" Text="Sunshine Coast" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SYDNEY" Text="Sydney" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TAILERN_BEND" Text="Tailern Bend" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TAILEM_BEND" Text="Tailem Bend" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TAMWORTH" Text="Tamworth" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TANAMI" Text="Tanami" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TARCOOLA" Text="Tarcoola" Language="en_US" />
@@ -4772,6 +4786,7 @@
 	</LocalizedText>
 	
 	<LocalizedText>		<!-- AOTEAROA/NEW ZEALAND -->
+		
 		<Replace Tag="LOC_CITY_NAME_AUCKLAND" Text="Auckland" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BLENHEIM" Text="Blenheim" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BLUFF" Text="Bluff" Language="en_US" />
@@ -4797,6 +4812,15 @@
 		<Replace Tag="LOC_CITY_NAME_WHANGANUI" Text="Whanganui" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WHANGANUI_ENGLAND" Text="Wanganui" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WHANGAREI" Text="Whangarei" Language="en_US" />
+		
+	</LocalizedText>
+	
+	<LocalizedText>		<!-- SOUTH PACIFIC ISLANDS -->
+		
+		<Replace Tag="LOC_CITY_NAME_FIJI" Text="Fiji" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HONIARA" Text="Honiara" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NOUMEA" Text="Noumea" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAMOA" Text="Samoa" Language="en_US" />
 		
 	</LocalizedText>
  	
