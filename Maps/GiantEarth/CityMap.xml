@@ -69,7 +69,7 @@
 		<Replace MapName="GiantEarth" X="89" Y="10" CityLocaleName="LOC_CITY_NAME_ESPERANCE" Area="0" />
 		<Replace MapName="GiantEarth" X="95" Y="10" CityLocaleName="LOC_CITY_NAME_PORT_LINCOLN" Area="0" />
 		<Replace MapName="GiantEarth" X="97" Y="10" CityLocaleName="LOC_CITY_NAME_ADELAIDE" Area="0" />
-		<Replace MapName="GiantEarth" X="98" Y="10" CityLocaleName="LOC_CITY_NAME_TAILERN_BEND" Area="0" />
+		<Replace MapName="GiantEarth" X="98" Y="10" CityLocaleName="LOC_CITY_NAME_TAILEM_BEND" Area="0" />
 		<Replace MapName="GiantEarth" X="99" Y="10" CityLocaleName="LOC_CITY_NAME_MILDURA" Area="0" />
 		<Replace MapName="GiantEarth" X="100" Y="10" CityLocaleName="LOC_CITY_NAME_GRIFFITH" Area="0" />
 		<Replace MapName="GiantEarth" X="101" Y="10" CityLocaleName="LOC_CITY_NAME_WAGGA_WAGGA" Area="0" />
@@ -846,6 +846,7 @@
 		<Replace MapName="GiantEarth" X="25" Y="9" CityLocaleName="LOC_CITY_NAME_KAKAMAS" Area="0" />
 		<Replace MapName="GiantEarth" X="26" Y="9" CityLocaleName="LOC_CITY_NAME_BLOEMFONTEIN" Area="0" />
 		<Replace MapName="GiantEarth" X="28" Y="9" CityLocaleName="LOC_CITY_NAME_DURBAN" Area="0" />
+		<Replace MapName="GiantEarth" X="56" Y="9" CityLocaleName="LOC_CITY_NAME_KERGUELEN" Area="0" />
 		
 		<Replace MapName="GiantEarth" X="23" Y="10" CityLocaleName="LOC_CITY_NAME_LUEDERITZ" Area="0" />
 		<Replace MapName="GiantEarth" X="24" Y="10" CityLocaleName="LOC_CITY_NAME_ORANJEMUND" Area="0" />
@@ -926,6 +927,7 @@
 		<Replace MapName="GiantEarth" X="36" Y="16" CityLocaleName="LOC_CITY_NAME_MORONDAVA" Area="0" />
 		<Replace MapName="GiantEarth" X="37" Y="16" CityLocaleName="LOC_CITY_NAME_ANTSIRABE" Area="0" />
 		<Replace MapName="GiantEarth" X="38" Y="16" CityLocaleName="LOC_CITY_NAME_MAHANORO" Area="0" />
+		<Replace MapName="GiantEarth" X="47" Y="16" CityLocaleName="LOC_CITY_NAME_REUNION" Area="0" />
 		
 		<Replace MapName="GiantEarth" X="20" Y="17" CityLocaleName="LOC_CITY_NAME_SKELETON_COAST" Area="0" />
 		<Replace MapName="GiantEarth" X="21" Y="17" CityLocaleName="LOC_CITY_NAME_OPUWA" Area="0" />
@@ -942,6 +944,7 @@
 		<Replace MapName="GiantEarth" X="36" Y="17" CityLocaleName="LOC_CITY_NAME_BELO_TSIRIBIHINA" Area="0" />
 		<Replace MapName="GiantEarth" X="37" Y="17" CityLocaleName="LOC_CITY_NAME_ANTANANARIVO" Area="0" />
 		<Replace MapName="GiantEarth" X="38" Y="17" CityLocaleName="LOC_CITY_NAME_TOAMASINA" Area="0" />
+		<Replace MapName="GiantEarth" X="49" Y="17" CityLocaleName="LOC_CITY_NAME_MAURITIUS" Area="0" />
 		
 		<Replace MapName="GiantEarth" X="20" Y="18" CityLocaleName="LOC_CITY_NAME_TOMBWA" Area="0" />
 		<Replace MapName="GiantEarth" X="21" Y="18" CityLocaleName="LOC_CITY_NAME_HUMBE" Area="0" />
@@ -1073,6 +1076,7 @@
 		<Replace MapName="GiantEarth" X="32" Y="26" CityLocaleName="LOC_CITY_NAME_TABORA" Area="0" />
 		<Replace MapName="GiantEarth" X="33" Y="26" CityLocaleName="LOC_CITY_NAME_TANGA" Area="0" />
 		<Replace MapName="GiantEarth" X="35" Y="26" CityLocaleName="LOC_CITY_NAME_ZANZIBAR" Area="0" />
+		<Replace MapName="GiantEarth" X="47" Y="26" CityLocaleName="LOC_CITY_NAME_SEYCHELLES" Area="0" />
 		
 		<Replace MapName="GiantEarth" X="18" Y="27" CityLocaleName="LOC_CITY_NAME_PORT_GENTIL" Area="0" />
 		<Replace MapName="GiantEarth" X="19" Y="27" CityLocaleName="LOC_CITY_NAME_FRANCEVILLE" Area="0" />
