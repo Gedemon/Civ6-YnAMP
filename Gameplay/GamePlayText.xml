@@ -4293,6 +4293,7 @@
 		<Replace Tag="LOC_CITY_NAME_BORDJ_BOU_ARRERIDJ" Text="Bordj Bou Arreridj" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BORDJ_BOU_ARRERIDJ_ROME" Text="Ad Sava Municipium" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BORJ_EL_KHADRA" Text="Borj El Khadra" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BORJ_EL_KHADRA_GARAMANTES" Text="Garama" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BOU_SAADA" Text="Bou Saada" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_COLLO" Text="Collo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_COLLO_ROME" Text="Chullu" Language="en_US" />
@@ -4599,6 +4600,7 @@
 		<Replace Tag="LOC_CITY_NAME_BAMAGA" Text="Bamaga" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BARCALDINE" Text="Barcaldine" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BARKLEY" Text="Barkley" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BARRINGUN" Text="Barringun" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BARROW_CREEK" Text="Barrow Creek" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BATCHELOR" Text="Batchelor" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BEDOURIE" Text="Bedourie" Language="en_US" />
@@ -4708,6 +4710,7 @@
 		<Replace Tag="LOC_CITY_NAME_MERREDIN" Text="Merredin" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MILDURA" Text="Mildura" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MINILYA" Text="Minilya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MINTABIE" Text="Mintabie" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MOONIE" Text="Moonie" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MOORA" Text="Moora" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MOREE" Text="Moree" Language="en_US" />
