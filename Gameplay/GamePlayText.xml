@@ -1085,7 +1085,7 @@
 		<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE" Text="Newcastle upon Tyne" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE" Text="Newcastle-upon-Tyne" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_ARABIA" Text="Nyukasl" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_BRAZIL" Text="Castelo Novo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_BRAZIL" Text="Newcastle" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_CHINA" Text="Niukasu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_FRANCE" Text="Neufchâtel-sur-Tyne" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NEWCASTLE_UPON_TYNE_GERMANY" Text="Neuschloss-an-der-Tyne" Language="en_US" />
@@ -1121,7 +1121,7 @@
 		<Replace Tag="LOC_CITY_NAME_NOTTINGHAM_SCYTHIA" Text="Nottingem" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OXFORD" Text="Oxford" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OXFORD_ARABIA" Text="Aksfurd" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_OXFORD_BRAZIL" Text="Oxónia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_OXFORD_BRAZIL" Text="Oxford" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OXFORD_CHINA" Text="Niujin" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OXFORD_GERMANY" Text="Ochsenfurt" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OXFORD_GREECE" Text="Calleva" Language="en_US" />
@@ -5162,6 +5162,71 @@
 		<Replace Tag="LOC_CITY_NAME_CHRISTMAS_ISLANDS" Text="Christmas Island" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_YOGYAKARTA" Text="Yogyakarta" Language="en_US" />
 
+	</LocalizedText>
+
+
+	<!-- Latin America -->
+	<LocalizedText>
+
+		<Replace Tag="LOC_CITY_NAME_HAVANA" Text="Havana" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MATANZAS" Text="Matanzas" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VARADERO" Text="Varadero" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LAS_TUNAS" Text="Las Tunas" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GUANTANAMO" Text="Guantánamo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BAHAMAS" Text="Bahamas" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_INAGUA_ISLANDS" Text="Inagua Islands" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KINGSTON_JAMAICA" Text="Kingston" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BLACK_RIVER" Text="Black River" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAN_JUAN" Text="San Juan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PONCE" Text="Ponce" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRITISH_VIRGIN_ISLANDS" Text="British Virgin Islands" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_US_VIRGIN_ISLANDS" Text="US Virgin Islands" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PORT_PRINCE" Text="Port Prince" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SANTO_DOMINGO" Text="Santo Domingo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARACAIBO" Text="Maracaibo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PUNTO_FIJO" Text="Punto Fijo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CARACAS" Text="Caracas" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BARQUISIMETO" Text="Barquisimeto" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CARORA" Text="Carora" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_IQUITOS" Text="Iquitos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_COMODORO_RIVADAVIA" Text="Comodoro Rivadavia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PUERTO_MONTT" Text="Puerto Montt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PUERTO_MADRYN" Text="Puerto Madryn" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHAPECO" Text="Chapeco" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DUKE_CAXIAS" Text="Duke of Caxias" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NEW_IGUACU" Text="New Iguacu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NITEROI" Text="Niteroi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAO_GONCALO" Text="Sao Goncalo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAO_PAULO" Text="Sao Paulo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SANTOS" Text="Santos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SOROCABA" Text="Sorocaba" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAMPINAS" Text="Campinas" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAO_JOSE_DOS_CAMPOS" Text="Sao Jose dos Campos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TAUBATE" Text="Taubate" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_APARECIDA" Text="Aparecida" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BAURU" Text="Bauru" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RIBEIRAO_PRETO" Text="Ribeirao Preto" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CAMPO_GRANDE" Text="Campo Grande" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ASUNCION" Text="Asuncion" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VICTORY_BRAZIL" Text="Victory" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BELO_HORIZONTE" Text="Belo Horizonte" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_UBERLAND" Text="Uberland" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRASILIA" Text="Brasilia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GOIANIA" Text="Goiania" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RIO_VERDE" Text="Rio Verde" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CUIABA" Text="Cuiaba" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SANTA_CRUZ_SIERRA" Text="Santa Cruz de La Sierra" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_COPIAPO" Text="Copiapo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VALLENAR" Text="Vallenar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SANTIAGO_CHILE" Text="Santiago" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PORTO_SEGURO" Text="Porto Seguro" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VITORIA_CONQUISTA" Text="Vitoria da Conquista" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ILHEUS" Text="Ilheus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SALVADOR_BRAZIL" Text="Salvador" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANAUS" Text="Manaus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BELEM" Text="Belem" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEDELLIN" Text="Medellin" Language="en_US" />
+		
 	</LocalizedText>
 	
 </GameData>

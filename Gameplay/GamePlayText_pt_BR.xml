@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Ed Beach (Firaxis Games) -->
+<GameData>
+
+  <!-- New City Names <pt_BR> -->
+  
+  <LocalizedText>
+
+	<!-- BRAZIL -->
+	<Replace Tag="LOC_CITY_NAME_BRITISH_VIRGIN_ISLANDS" Text="Ilhas Virgens Britânicas" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_US_VIRGIN_ISLANDS" Text="Ilhas Virgens Americanas" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_PORT_PRINCE" Text="Porto Príncipe" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_CHAPECO" Text="Chapecó" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_DUKE_CAXIAS" Text="Duque de Caxias" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_NEW_IGUACU" Text="Nova Iguaçu" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_NITEROI" Text="Niterói" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_SAO_GONCALO" Text="São Gonçalo" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_SAO_PAULO" Text="São Paulo" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_SAO_JOSE_DOS_CAMPOS" Text="São José dos Campos" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_TAUBATE" Text="Taubaté" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_RIBEIRAO_PRETO" Text="Ribeirão Preto" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_ASUNCION" Text="Asunción" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_VICTORY_BRAZIL" Text="Vitória" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_UBERLAND" Text="Uberlândia" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_BRASILIA" Text="Brasília" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_GOIANIA" Text="Goiânia" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_CUIABA" Text="Cuiabá" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_COPIAPO" Text="Copiapó" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_VITORIA_CONQUISTA" Text="Vitória da Conquista" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_ILHEUS" Text="Ilhéus" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_BELEM" Text="Belém" Language="pt_BR" />
+	<Replace Tag="LOC_CITY_NAME_MEDELLIN" Text="Medellín" Language="pt_BR" />
+
+  </LocalizedText>
+	
+  </GameData>
