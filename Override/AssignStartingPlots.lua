@@ -81,7 +81,8 @@ function AssignStartingPlots.Create(args)
 		__AddBonus							= AssignStartingPlots.__AddBonus,
 		__IsContinentalDivide				= AssignStartingPlots.__IsContinentalDivide,
 
-		iNumMajorCivs = 0,					
+		iNumMajorCivs = 0,
+		iResourceEraModifier = 1,
 		iNumMinorCivs = 0,			
 		iNumRegions		= 0,
 		iDefaultNumberMajor = 0,
@@ -660,9 +661,25 @@ function AssignStartingPlots:__WeightedFertility(plot)
 	local pPlot = Map.GetPlotByIndex(plot);
 	local plotX = pPlot:GetX();
 	local plotY = pPlot:GetY();
+	local iResourcesInDB = 0;
+	eResourceType	= {};
+	eResourceClassType = {};	
+	eRevealedEra = {};	
 
 	local gridWidth, gridHeight = Map.GetGridSize();
 	local gridHeightMinus1 = gridHeight - 1;
+ 
+	for row in GameInfo.Resources() do
+		eResourceType[iResourcesInDB] = row.Index;
+		eResourceClassType[iResourcesInDB] = row.ResourceClassType;
+		eRevealedEra[iResourcesInDB] = row.RevealedEra;
+	    iResourcesInDB = iResourcesInDB + 1;
+	end
+
+	local iStartIndex = 1;
+	if iStartEra ~= nil then
+		iStartIndex = iStartEra.ChronologyIndex;
+	end
 
 	--Rivers are awesome to start next to
 	local iFertility = 0;
@@ -696,10 +713,23 @@ function AssignStartingPlots:__WeightedFertility(plot)
 					if(iFertility > 5 and otherPlot:IsImpassable() == true) then
 						iFertility = iFertility - 5;
 					end
-
+					
+					-- Lower the Fertility if the plot has Features
 					if(featureType ~= g_FEATURE_NONE) then
-						iFertility = iFertility - 3;
+						iFertility = iFertility - 2;
 					end	
+
+					-- If there is a strategic in the given era range
+					if( otherPlot:GetResourceCount() > 0)then
+						for row = 0, iResourcesInDB do
+							if (eResourceClassType[row]== "RESOURCECLASS_STRATEGIC") then
+								if(eRevealedEra[row] >= iStartIndex - self.iResourceEraModifier and eRevealedEra[row] <= iStartIndex + self.iResourceEraModifier) then
+									--print("Strategic Era ", eRevealedEra[row]);
+									iFertility = iFertility + 10;
+								end
+							end
+						end
+					end
 				else
 					iFertility = iFertility - 20;
 				end
@@ -2052,7 +2082,7 @@ function AssignStartingPlots:__BalancedStrategic(plot, iStartIndex)
 
 	for row = 0, iResourcesInDB do
 		if (eResourceClassType[row]== "RESOURCECLASS_STRATEGIC") then
-			if(eRevealedEra[row] == iStartIndex) then
+			if(eRevealedEra[row] <= iStartIndex) then
 				local bHasResource = false;
 				bHasResource = self:__FindSpecificStrategic(eResourceType[row], plot);	
 				if(bHasResource == false) then
@@ -2826,6 +2856,15 @@ function MakeRiverFlowToNorth(plot)
 		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHEAST) end
 	end
 end
+
+function MakeRiverFlowToEast(plot)
+	if plot then
+		if plot:IsNEOfRiver() then TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHEAST) end
+		if plot:IsWOfRiver() then TerrainBuilder.SetWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTH) end
+		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHEAST) end
+	end
+end
+
 ------------------------------------------------------------------------------
 -- Resources
 ------------------------------------------------------------------------------
@@ -2837,10 +2876,10 @@ end
 
 -- Check for Resource placement rules
 function YnAMP_CanHaveResource(pPlot, eResourceType)
-	
+	--print("YnAMP_CanHaveResource(pPlot, eResourceType)", pPlot:GetID(), eResourceType)
 	if not bResourceExclusion then
 		-- exlusion is not activated, just check the normal placement rule
-		return ResourceBuilder.CanHaveResource(pPlot, eResourceType)
+		return ResourceBuilder.OldCanHaveResource(pPlot, eResourceType)
 	end	
 	
 	--[[
@@ -2859,7 +2898,7 @@ function YnAMP_CanHaveResource(pPlot, eResourceType)
 		return false
 	end
 	-- Resource is not excluded from this plot, or this plot is allowed for a region-exclusive resources, now check normal placement rules
-	return ResourceBuilder.CanHaveResource(pPlot, eResourceType)
+	return ResourceBuilder.OldCanHaveResource(pPlot, eResourceType)
 end
 
 function placeExclusiveResources()
@@ -3679,15 +3718,17 @@ function CalculateDistanceScore(cultureList, bOutput)
 				local civCulture2 = GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity
 				if  civCulture2 == civCulture then
 					local startPlot1 = player:GetStartingPlot()
-					if not startPlot1 then print("WARNING no starting plot for : " .. tostring(playerConfig:GetPlayerName())) end
+					--if not startPlot1 then print("WARNING no starting plot for : " .. tostring(playerConfig:GetPlayerName())) end
 					local startPlot2 = player2:GetStartingPlot()
-					if not startPlot2 then print("WARNING no starting plot for : " .. tostring(playerConfig2:GetPlayerName())) end
-					local distance = Map.GetPlotDistance(startPlot1:GetX(), startPlot1:GetY(), startPlot2:GetX(), startPlot2:GetY())
-					if startPlot1:GetArea() ~= startPlot2:GetArea() then
-						distance = distance + OVERSEA_PENALTY
+					--if not startPlot2 then print("WARNING no starting plot for : " .. tostring(playerConfig2:GetPlayerName())) end
+					if startPlot1 and startPlot2 then
+						local distance = Map.GetPlotDistance(startPlot1:GetX(), startPlot1:GetY(), startPlot2:GetX(), startPlot2:GetY())
+						if startPlot1:GetArea() ~= startPlot2:GetArea() then
+							distance = distance + OVERSEA_PENALTY
+						end
+						distanceScore = distanceScore + Round(distance*SAME_GROUP_WEIGHT)
+						if bOutput then print ("      - Distance to same culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (x".. tostring(SAME_GROUP_WEIGHT) .."), total distance score = " .. tostring(distanceScore) ) end
 					end
-					distanceScore = distanceScore + Round(distance*SAME_GROUP_WEIGHT)
-					if bOutput then print ("      - Distance to same culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (x".. tostring(SAME_GROUP_WEIGHT) .."), total distance score = " .. tostring(distanceScore) ) end
 				else
 					local interGroupMinimizer = 1
 					if g_CultureRelativeDistance[civCulture] and g_CultureRelativeDistance[civCulture2] then
@@ -3696,10 +3737,14 @@ function CalculateDistanceScore(cultureList, bOutput)
 						interGroupMinimizer = 8 -- unknown culture group (new DLC ?), average distance
 					end
 					local startPlot1 = player:GetStartingPlot()
+					--if not startPlot1 then print("WARNING no starting plot for : " .. tostring(playerConfig:GetPlayerName())) end
 					local startPlot2 = player2:GetStartingPlot()
-					local distance = Map.GetPlotDistance(startPlot1:GetX(), startPlot1:GetY(), startPlot2:GetX(), startPlot2:GetY())
-					distanceScore = distanceScore + Round(distance/interGroupMinimizer)
-					if bOutput then print ("      - Distance to different culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (/".. tostring(interGroupMinimizer) .." from intergroup relative distance), total distance score = " .. tostring(distanceScore) ) end
+					--if not startPlot2 then print("WARNING no starting plot for : " .. tostring(playerConfig2:GetPlayerName())) end
+					if startPlot1 and startPlot2 then
+						local distance = Map.GetPlotDistance(startPlot1:GetX(), startPlot1:GetY(), startPlot2:GetX(), startPlot2:GetY())
+						distanceScore = distanceScore + Round(distance/interGroupMinimizer)
+						if bOutput then print ("      - Distance to different culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (/".. tostring(interGroupMinimizer) .." from intergroup relative distance), total distance score = " .. tostring(distanceScore) ) end
+					end
 				end
 			end
 		end
@@ -3789,21 +3834,23 @@ function CulturallyLinkedCivilizations()
 					if culture ~= culture2 then -- don't try to swith civs from same culture style, we can gain better score from different culture only...
 						--print ("culture ~= culture2")
 						local startPlot1 = player:GetStartingPlot()
-						local startPlot2 = player2:GetStartingPlot()
-						--print ("------------------------------------------------------- ")
-						--print ("trying to switch " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) )
-						player:SetStartingPlot(startPlot2)
-						player2:SetStartingPlot(startPlot1)
-						local actualdistanceScore = CalculateDistanceScore(cultureList)
-						if  actualdistanceScore < bestDistanceScore then
-							bestDistanceScore = actualdistanceScore
+						local startPlot2 = player2:GetStartingPlot()					
+						if startPlot1 and startPlot2 then
 							--print ("------------------------------------------------------- ")
-							--print ("Better score, confirming switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) )
-						else
-							--print ("------------------------------------------------------- ")
-							--print ("No gain, restoring position of " .. tostring(playerConfig:GetPlayerName()) .. " and " .. tostring(playerConfig2:GetPlayerName()) )								
-							player:SetStartingPlot(startPlot1)
-							player2:SetStartingPlot(startPlot2)
+							--print ("trying to switch " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) )	
+							player:SetStartingPlot(startPlot2)
+							player2:SetStartingPlot(startPlot1)
+							local actualdistanceScore = CalculateDistanceScore(cultureList)
+							if  actualdistanceScore < bestDistanceScore then
+								bestDistanceScore = actualdistanceScore
+								--print ("------------------------------------------------------- ")
+								--print ("Better score, confirming switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) )
+							else
+								--print ("------------------------------------------------------- ")
+								--print ("No gain, restoring position of " .. tostring(playerConfig:GetPlayerName()) .. " and " .. tostring(playerConfig2:GetPlayerName()) )								
+								player:SetStartingPlot(startPlot1)
+								player2:SetStartingPlot(startPlot2)
+							end
 						end
 					end
 				end
@@ -3942,416 +3989,10 @@ end
 -- Override functions
 ------------------------------------------------------------------------------
 
--- The ResourceGenerator functions have been edited to use YnAMP_CanHaveResource() instead of ResourceBuilder.CanHaveResource()
--- to do : try to copy ResourceBuilder.CanHaveResource to ResourceBuilder.OldCanHaveResource and replace ResourceBuilder.CanHaveResource by the YnAMP function (calling ResourceBuilder.OldCanHaveResource)
-------------------------------------------------------------------------------
-function ResourceGenerator:__ValidLuxuryPlots(eContinent)
-	-- go through each plot on the continent and put the luxuries
-	print("YnAEMP Search for valid Luxuries plots")
-	local iSize = #self.aLuxuryType;
-	local iBaseScore = 1;
-	self.iTotalValidPlots = 0;
+print ("Replacing ResourceBuilder.CanHaveResource by YnAMP_CanHaveResource...")
+ResourceBuilder.OldCanHaveResource = ResourceBuilder.CanHaveResource
+ResourceBuilder.CanHaveResource = YnAMP_CanHaveResource
 
-	plots = Map.GetContinentPlots(eContinent);
-	for i, plot in ipairs(plots) do
-		local bCanHaveSomeResource = false;
-		local pPlot = Map.GetPlotByIndex(plot);
-
-		-- See which resources can appear here
-		for iI = 1, iSize do
-			local bIce = false;
-
-			if(IsAdjacentToIce(pPlot:GetX(), pPlot:GetY()) == true) then
-				bIce = true;
-			end
-			
-			if (YnAMP_CanHaveResource(pPlot, self.aLuxuryType[iI]) and bIce == false) then
-				row = {};
-				row.MapIndex = plot;
-				row.Score = iBaseScore;
-				table.insert (self.aaPossibleLuxLocs[self.aLuxuryType[iI]], row);
-				bCanHaveSomeResource = true;
-			end
-		end
-
-
-		if (bCanHaveSomeResource == true) then
-			self.iTotalValidPlots = self.iTotalValidPlots + 1;
-		end
-
-		-- Compute how many of each resource to place
-	end
-
-	self.iOccurencesPerFrequency = self.iTargetPercentage / 100 * #plots * self.iLuxuryPercentage / 100 / self.iLuxuriesPerRegion;
-end
-
-------------------------------------------------------------------------------
-function ResourceGenerator:__ValidStrategicPlots(iWeight, eContinent)
-	-- go through each plot on the continent and find the valid strategic plots
-	print("YnAEMP Search for valid Strategic Resources plots")
-	local iSize = #self.aStrategicType;
-	local iBaseScore = 1;
-	self.iTotalValidPlots = 0;
-	self.aResourcePlacementOrderStrategic = {};
-	plots = Map.GetContinentPlots(eContinent);
-	coastalPlots = Map.GetContinentCoastalPlots(eContinent, 2);
-
-	-- Find valid spots for land resources first
-	for i, plot in ipairs(plots) do
-		local bCanHaveSomeResource = false;
-		local pPlot = Map.GetPlotByIndex(plot);
-
-		-- See which resources can appear here
-		for iI = 1, iSize do
-			if (YnAMP_CanHaveResource(pPlot, self.aStrategicType[iI])) then
-				row = {};
-				row.MapIndex = plot;
-				row.Score = iBaseScore;
-				table.insert (self.aaPossibleStratLocs[self.aStrategicType[iI]], row);
-				bCanHaveSomeResource = true;
-			end
-		end
-
-		if (bCanHaveSomeResource == true) then
-			self.iTotalValidPlots = self.iTotalValidPlots + 1;
-		end
-	end
-
-	-- Now run through the same logic but for coastal plots
-	for i, plot in ipairs(coastalPlots) do
-		local bCanHaveSomeResource = false;
-		local pPlot = Map.GetPlotByIndex(plot);
-
-		-- See which resources can appear here
-		for iI = 1, iSize do
-			if (YnAMP_CanHaveResource(pPlot, self.aStrategicType[iI])) then
-				row = {};
-				row.MapIndex = plot;
-				row.Score = 500;
-				row.Score = row.Score / ((ResourceBuilder.GetAdjacentResourceCount(pPlot) + 1) * 4.5);
-				row.Score = row.Score + TerrainBuilder.GetRandomNumber(100, "Resource Placement Score Adjust");
-				table.insert (self.aaPossibleStratLocsWater[self.aStrategicType[iI]], row);
-				bCanHaveSomeResource = true;
-			end
-		end
-
-		if (bCanHaveSomeResource == true) then
-			self.iTotalValidPlots = self.iTotalValidPlots + 1;
-		end
-	end
-
-	for iI = 1, iSize do
-		row = {};
-		row.ResourceIndex = self.aStrategicType[iI];
-		row.NumEntries = #self.aaPossibleStratLocs[iI];
-		row.Weight = iWeight or 0;
-		table.insert (self.aResourcePlacementOrderStrategic, row);
-	end
-
-	table.sort (self.aResourcePlacementOrderStrategic, function(a, b) return a.NumEntries < b.NumEntries; end);
-
-	self.iOccurencesPerFrequency = (#plots) * (self.iTargetPercentage / 100)  * (self.iStrategicPercentage / 100);
-end
-
-------------------------------------------------------------------------------
-function ResourceGenerator:__ScoreLuxuryPlots(iResourceIndex, eContinent)
-	-- Clear all earlier entries (some might not be valid if resources have been placed
-	for k, v in pairs(self.aaPossibleLuxLocs[iResourceIndex]) do
-		self.aaPossibleLuxLocs[iResourceIndex][k] = nil;
-	end
-
-	plots = Map.GetContinentPlots(eContinent);
-	for i, plot in ipairs(plots) do
-		local pPlot = Map.GetPlotByIndex(plot);
-		local bIce = false;
-		
-		if(IsAdjacentToIce(pPlot:GetX(), pPlot:GetY()) == true) then
-			bIce = true;
-		end
-
-		if (YnAMP_CanHaveResource(pPlot, self.eResourceType[iResourceIndex]) and bIce == false) then
-			row = {};
-			row.MapIndex = plot;
-			row.Score = 500;
-			row.Score = row.Score / ((ResourceBuilder.GetAdjacentResourceCount(pPlot) + 1) * 3.5);
-			row.Score = row.Score + TerrainBuilder.GetRandomNumber(100, "Resource Placement Score Adjust");
-			
-			if(ResourceBuilder.GetAdjacentResourceCount(pPlot) <= 1 or #self.aaPossibleLuxLocs == 0) then
-					table.insert (self.aaPossibleLuxLocs[iResourceIndex], row);
-			end
-		end
-	end
-end
-
-------------------------------------------------------------------------------
-function ResourceGenerator:__PlaceWaterLuxury(eChosenLux, eContinent)
-	local eLuxuryType = self.eResourceType[eChosenLux];
-
-	-- Compute how many to place
-	local iNumToPlace = 1;
-	if(self.iOccurencesPerFrequency > 1) then
-		iNumToPlace = self.iOccurencesPerFrequency;
-	end
-
-	
-	-- Find the water luxury plots
-	for k, v in pairs(self.aaPossibleLuxLocsWater[eChosenLux]) do
-		self.aaPossibleLuxLocsWater[eChosenLux][k] = nil;
-	end
-
-	coastalPlots = Map.GetContinentCoastalPlots(eContinent, 2);
-	for i, plot in ipairs(coastalPlots) do
-		local pPlot = Map.GetPlotByIndex(plot);
-		local bIce = false;
-		
-		if(IsAdjacentToIce(pPlot:GetX(), pPlot:GetY()) == true) then
-			bIce = true;
-		end
-
-		-- See if the resources can appear here
-		if (YnAMP_CanHaveResource(pPlot, eChosenLux) and bIce == false) then
-			local iBonusAdjacent = 0;
-
-			if( self.iStandardPercentage < self.iTargetPercentage) then
-				iBonusAdjacent = 0.5;
-			elseif ( self.iStandardPercentage > self.iTargetPercentage) then
-				iBonusAdjacent = -0.5;
-			end
-			
-			row = {};
-			row.MapIndex = plot;
-			score = TerrainBuilder.GetRandomNumber(200, "Resource Placement Score Adjust");
-			score = score / ((ResourceBuilder.GetAdjacentResourceCount(pPlot) + 1) * (3.5 + iBonusAdjacent));
-			row.Score = score;
-			
-			if(ResourceBuilder.GetAdjacentResourceCount(pPlot) <= 1 or #self.aaPossibleLuxLocsWater == 0) then
-				table.insert (self.aaPossibleLuxLocsWater[eChosenLux], row);
-			end
-		end
-	end
-
-
-	-- Sort and take best score
-	table.sort (self.aaPossibleLuxLocsWater[eLuxuryType], function(a, b) return a.Score > b.Score; end);
-
-	for iI = 1, iNumToPlace do
-			if (iI <= #self.aaPossibleLuxLocsWater[eLuxuryType]) then
-				local iMapIndex = self.aaPossibleLuxLocsWater[eLuxuryType][iI].MapIndex;
-				local iScore = self.aaPossibleLuxLocsWater[eLuxuryType][iI].Score;
-
-				-- Place at this location
-				local pPlot = Map.GetPlotByIndex(iMapIndex);
-				ResourceBuilder.SetResourceType(pPlot, eLuxuryType, 1);
---			print ("   Placed at (" .. tostring(pPlot:GetX()) .. ", " .. tostring(pPlot:GetY()) .. ") with score of " .. tostring(iScore));
-		end
-	end
-end
-
-------------------------------------------------------------------------------
-function ResourceGenerator:__ScoreStrategicPlots(iResourceIndex, eContinent)
-	-- Clear all earlier entries (some might not be valid if resources have been placed
-	for k, v in pairs(self.aaPossibleStratLocs[iResourceIndex]) do
-		self.aaPossibleStratLocs[iResourceIndex][k] = nil;
-	end
-
-	local iSize = #self.aaPossibleStratLocsWater[iResourceIndex];
-
-	if(iSize > 0 ) then
-		for k, v in pairs(self.aaPossibleStratLocsWater[iResourceIndex]) do
-			row = {};
-			row.MapIndex = v.MapIndex;
-			row.Score = v.Score;
-			table.insert (self.aaPossibleStratLocs[iResourceIndex], row);
-		end
-	end
-
-	plots = Map.GetContinentPlots(eContinent);
-	for i, plot in ipairs(plots) do
-		local pPlot = Map.GetPlotByIndex(plot);
-		if (YnAMP_CanHaveResource(pPlot, self.eResourceType[iResourceIndex])) then
-			row = {};
-			row.MapIndex = plot;
-			row.Score = 500;
-			row.Score = row.Score / ((ResourceBuilder.GetAdjacentResourceCount(pPlot) + 1) * 4.5);
-			row.Score = row.Score + TerrainBuilder.GetRandomNumber(100, "Resource Placement Score Adjust");
-			
-			if(ResourceBuilder.GetAdjacentResourceCount(pPlot) <= 1 or #self.aaPossibleStratLocs == 0) then
-				table.insert (self.aaPossibleStratLocs[iResourceIndex], row);
-			end
-		end
-	end
-end
-
-------------------------------------------------------------------------------
-function ResourceGenerator:__GetOtherResources()
-	self.aOtherType = {};
-	-- Find the other resources
-    for row = 0, self.iResourcesInDB do
-		if (self.eResourceClassType[row] ~= "RESOURCECLASS_STRATEGIC" and self.eResourceClassType[row] ~= "RESOURCECLASS_LUXURY" and self.eResourceClassType[row] ~= "RESOURCECLASS_ARTIFACT") then
-			table.insert(self.aOtherType, self.eResourceType[row]);
-		end
-	end
-
-	-- Shuffle the table
-	self.aOtherType = GetShuffledCopyOfTable(self.aOtherType);
-
-	local iW, iH;
-	iW, iH = Map.GetGridSize();
-
-	local iBaseScore = 1;
-	self.iTotalValidPlots = 0;
-	local iSize = #self.aOtherType;
-	local iPlotCount = Map.GetPlotCount();
-	for i = 0, iPlotCount - 1 do
-		local pPlot = Map.GetPlotByIndex(i);
-		local bCanHaveSomeResource = false;
-
-		-- See which resources can appear here
-		for iI = 1, iSize do
-			if (YnAMP_CanHaveResource(pPlot, self.aOtherType[iI])) then
-				row = {};
-				row.MapIndex = i;
-				row.Score = iBaseScore;
-				table.insert (self.aaPossibleLocs[self.aOtherType[iI]], row);
-				bCanHaveSomeResource = true;
-			end
-		end
-
-		if (bCanHaveSomeResource == true) then
-			self.iTotalValidPlots = self.iTotalValidPlots + 1;
-		end
-	end
-
-	for iI = 1, iSize do
-		row = {};
-		row.ResourceIndex = self.aOtherType[iI];
-		row.NumEntries = #self.aaPossibleLocs[iI];
-		table.insert (self.aResourcePlacementOrder, row);
-	end
-
-	table.sort (self.aResourcePlacementOrder, function(a, b) return a.NumEntries < b.NumEntries; end);
-
-    for i, row in ipairs(self.aOtherType) do
-		self.iFrequencyTotal = self.iFrequencyTotal + self.iFrequency[row];
-	end
-
-	--print ("Total frequency: " .. tostring(self.iFrequencyTotal));
-
-	-- Compute how many of each resource to place
-	self.iOccurencesPerFrequency = (self.iTargetPercentage / 100 ) * self.iTotalValidPlots * (100 - self.iStrategicPercentage - self.iLuxuryPercentage) / 100 / self.iFrequencyTotal;
-
-	--print ("Occurrences per frequency: " .. tostring(self.iOccurencesPerFrequency));
-
-	self:__PlaceOtherResources();
-end
-
-------------------------------------------------------------------------------
-function ResourceGenerator:__ScorePlots(iResourceIndex)
-
-	local iW, iH;
-	iW, iH = Map.GetGridSize();
-
-	-- Clear all earlier entries (some might not be valid if resources have been placed
-	for k, v in pairs(self.aaPossibleLocs[iResourceIndex]) do
-		self.aaPossibleLocs[iResourceIndex][k] = nil;
-	end
-
-	for x = 0, iW - 1 do
-		for y = 0, iH - 1 do
-			local i = y * iW + x;
-			local pPlot = Map.GetPlotByIndex(i);
-			if (YnAMP_CanHaveResource(pPlot, self.eResourceType[iResourceIndex])) then
-				row = {};
-				row.MapIndex = i;
-				row.Score = 500;
-				row.Score = row.Score / ((ResourceBuilder.GetAdjacentResourceCount(pPlot) + 1) * 1.1);
-				row.Score = row.Score + TerrainBuilder.GetRandomNumber(100, "Resource Placement Score Adjust");
-				table.insert (self.aaPossibleLocs[iResourceIndex], row);
-			end
-		end
-	end
-end
-
-------------------------------------------------------------------------------
-function ResourceGenerator.Create(args)
-
-	print ("In ResourceGenerator.Create()");
-	print ("    Placing resources");
-
-	-- create instance data
-	local instance = {
-			
-		-- methods
-		__InitResourceData		= ResourceGenerator.__InitResourceData,
-		__FindValidLocs			= ResourceGenerator.__FindValidLocs,
-		__GetLuxuryResources	= ResourceGenerator.__GetLuxuryResources,
-		__IsCoastal				= ResourceGenerator.__IsCoastal,
-		__ValidLuxuryPlots		= ResourceGenerator.__ValidLuxuryPlots,
-		__PlaceLuxuryResources		= ResourceGenerator.__PlaceLuxuryResources,
-		__ScoreLuxuryPlots			= ResourceGenerator.__ScoreLuxuryPlots,
-		__PlaceWaterLuxury			= ResourceGenerator.__PlaceWaterLuxury,
-		__GetStrategicResources	= ResourceGenerator.__GetStrategicResources,
-		__ValidStrategicPlots		= ResourceGenerator.__ValidStrategicPlots,
-		__ScoreStrategicPlots			= ResourceGenerator.__ScoreStrategicPlots,
-		__PlaceStrategicResources		= ResourceGenerator.__PlaceStrategicResources,
-		__GetOtherResources		= ResourceGenerator.__GetOtherResources,
-		__PlaceOtherResources		= ResourceGenerator.__PlaceOtherResources,
-		__RemoveOtherDuplicateResources		= ResourceGenerator.__RemoveOtherDuplicateResources,
-		__RemoveDuplicateResources		= ResourceGenerator.__RemoveDuplicateResources,
-		__ScorePlots			= ResourceGenerator.__ScorePlots,
-
-		-- data
-		bCoastalBias = args.bCoastalBias or false;
-		bLandBias = args.bLandBias or false;
-
-		resources = args.resources;
-		iResourcesInDB      = 0;
-		iNumContinents		= 0;
-		iTotalValidPlots    = 0;
-		iFrequencyTotal     = 0;
-		iFrequencyStrategicTotal     = 0;
-		iTargetPercentage   = 28;
-		iStandardPercentage = 28;
-		iLuxuryPercentage   = 20;
-		iStrategicPercentage   = 21;
-		iOccurencesPerFrequency = 0;
-		iLuxuriesPerRegion = 4; -- 4
-		eResourceType		= {},
-		eResourceClassType	= {},
-		iFrequency          = {},
-		aLuxuryType		= {},
-		aLuxuryTypeCoast		= {},
-		aStrategicType		= {},
-		aOtherType		= {},
-		aStrategicCoast = {},
-		aaPossibleLuxLocs		= {},
-		aaPossibleLuxLocsWater = {},
-		aaPossibleStratLocs		= {},
-		aaPossibleStratLocsWater = {},
-		aaPossibleLocs		= {},
-		aResourcePlacementOrderStrategic = {},
-		aResourcePlacementOrder = {},
-		aPeakEra = {},
-	};
-
-	-- initialize instance data
-	instance:__InitResourceData()
-	
-	-- Chooses and then places the luxury resources
-	instance:__GetLuxuryResources()
-
-	-- Chooses and then places the strategic resources
-	instance:__GetStrategicResources()
-
-	-- Chooses and then places the other resources [other is now only bonus, but later could be resource types added through mods]
-	instance:__GetOtherResources()
-
-	-- Removes too many adjacent other resources.
-	instance:__RemoveOtherDuplicateResources()
-
-	return instance;
-end
-------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
 -- Override required to use limits on ice placement for imported maps

@@ -182,7 +182,6 @@ function Round(num)
 end
 
 ------------------------------------------------------
----[[
 function ForceTSL( iPrevPlayer )
 
 	if Game.GetCurrentGameTurn() > GameConfiguration.GetStartTurn() then -- only called on first turn
@@ -225,5 +224,3 @@ if MapConfiguration.GetValue("ForceTSL") and MapConfiguration.GetValue("ForceTSL
 	Events.PlayerTurnDeactivated.Add( ForceTSL ) -- On TurnActivated, it seems the AI has already moved the initial settler
 	ForceTSL( -1 ) -- test ForceTSL on player 0
 end
-
---]]

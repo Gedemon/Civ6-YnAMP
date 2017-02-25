@@ -61,6 +61,14 @@ function GenerateMap()
 			end
 		end
 	end
+	
+	-- Volga direction
+	local plot = Map.GetPlot(36,77)
+	TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHEAST);
+	-- Svir direction
+	local plot = Map.GetPlot(32,80)
+	TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHWEST);
+
 end
 
 function GetNaturalWonders()
