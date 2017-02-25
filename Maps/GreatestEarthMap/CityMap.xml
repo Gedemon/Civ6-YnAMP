@@ -5,8 +5,157 @@
 	<!-- "Greatest Earth Map" City Map -->
 	<!-- +++++++++++++++++++++++++++++ -->
 	
+	<!-- PAPUA -->
+	<CityMap>
+		
+		<Replace MapName="GreatestEarthMap" X="97" Y="22" CityLocaleName="LOC_CITY_NAME_MERAUKE" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="98" Y="22" CityLocaleName="LOC_CITY_NAME_DARU" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="100" Y="22" CityLocaleName="LOC_CITY_NAME_PORT_MORESBY" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="95" Y="23" CityLocaleName="LOC_CITY_NAME_AGATS" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="98" Y="23" CityLocaleName="LOC_CITY_NAME_LAE" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="99" Y="23" CityLocaleName="LOC_CITY_NAME_PORT_MORESBY" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="95" Y="24" CityLocaleName="LOC_CITY_NAME_NABIRE" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="96" Y="24" CityLocaleName="LOC_CITY_NAME_JAYAPURA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="97" Y="24" CityLocaleName="LOC_CITY_NAME_WEWAK" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="98" Y="24" CityLocaleName="LOC_CITY_NAME_MADANG" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="94" Y="25" CityLocaleName="LOC_CITY_NAME_SORONG" Area = "0"/>
+		
+	</CityMap>
+	
+	<!-- AUSTRALIA -->
+	<CityMap>
+		
+		<Replace MapName="GreatestEarthMap" X="100" Y="7" CityLocaleName="LOC_CITY_NAME_HOBART" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="100" Y="8" CityLocaleName="LOC_CITY_NAME_DEVONPORT" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="101" Y="8" CityLocaleName="LOC_CITY_NAME_LAUNCESTON" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="93" Y="10" CityLocaleName="LOC_CITY_NAME_ALBANY" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="97" Y="10" CityLocaleName="LOC_CITY_NAME_PORT_LINCOLN" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="99" Y="10" CityLocaleName="LOC_CITY_NAME_MOUNT_GAMBIER" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="100" Y="10" CityLocaleName="LOC_CITY_NAME_MELBOURNE" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="101" Y="10" CityLocaleName="LOC_CITY_NAME_EDEN" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="92" Y="11" CityLocaleName="LOC_CITY_NAME_PERTH" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="93" Y="11" CityLocaleName="LOC_CITY_NAME_RAVENSTHORPE" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="94" Y="11" CityLocaleName="LOC_CITY_NAME_BALLADONIA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="95" Y="11" CityLocaleName="LOC_CITY_NAME_YALATA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="96" Y="11" CityLocaleName="LOC_CITY_NAME_CEDUNA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="97" Y="11" CityLocaleName="LOC_CITY_NAME_PORT_AUGUSTA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="98" Y="11" CityLocaleName="LOC_CITY_NAME_ADELAIDE" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="99" Y="11" CityLocaleName="LOC_CITY_NAME_MILDURA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="100" Y="11" CityLocaleName="LOC_CITY_NAME_CANBERRA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="101" Y="11" CityLocaleName="LOC_CITY_NAME_SYDNEY" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="92" Y="12" CityLocaleName="LOC_CITY_NAME_PERTH" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="93" Y="12" CityLocaleName="LOC_CITY_NAME_MERREDIN" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="94" Y="12" CityLocaleName="LOC_CITY_NAME_KOOLGARDIE" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="95" Y="12" CityLocaleName="LOC_CITY_NAME_COOK" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="96" Y="12" CityLocaleName="LOC_CITY_NAME_MARALINGA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="97" Y="12" CityLocaleName="LOC_CITY_NAME_TARCOOLA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="98" Y="12" CityLocaleName="LOC_CITY_NAME_MAREE" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="99" Y="12" CityLocaleName="LOC_CITY_NAME_BROKEN_HILL" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="100" Y="12" CityLocaleName="LOC_CITY_NAME_WAGGA_WAGGA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="102" Y="12" CityLocaleName="LOC_CITY_NAME_SYDNEY" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="91" Y="13" CityLocaleName="LOC_CITY_NAME_CARNAVON" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="92" Y="13" CityLocaleName="LOC_CITY_NAME_MOUNT_MAGNET" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="93" Y="13" CityLocaleName="LOC_CITY_NAME_LEONARA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="94" Y="13" CityLocaleName="LOC_CITY_NAME_WARBURTON" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="95" Y="13" CityLocaleName="LOC_CITY_NAME_MINTABIE" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="96" Y="13" CityLocaleName="LOC_CITY_NAME_COOBER_PEDY" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="97" Y="13" CityLocaleName="LOC_CITY_NAME_COOBER_PEDY" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="98" Y="13" CityLocaleName="LOC_CITY_NAME_BIRDSVILLE" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="99" Y="13" CityLocaleName="LOC_CITY_NAME_BOURKE" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="100" Y="13" CityLocaleName="LOC_CITY_NAME_BARRINGUN" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="102" Y="13" CityLocaleName="LOC_CITY_NAME_BRISBANE" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="92" Y="14" CityLocaleName="LOC_CITY_NAME_DAMPIER" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="93" Y="14" CityLocaleName="LOC_CITY_NAME_GASCOYNE_JUNCTION" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="94" Y="14" CityLocaleName="LOC_CITY_NAME_WILUNA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="95" Y="14" CityLocaleName="LOC_CITY_NAME_YALSRA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="96" Y="14" CityLocaleName="LOC_CITY_NAME_ALICE_SPRINGS" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="97" Y="14" CityLocaleName="LOC_CITY_NAME_ALICE_SPRINGS" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="98" Y="14" CityLocaleName="LOC_CITY_NAME_BEDOURIE" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="99" Y="14" CityLocaleName="LOC_CITY_NAME_WINTON" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="100" Y="14" CityLocaleName="LOC_CITY_NAME_LONGREACH" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="101" Y="14" CityLocaleName="LOC_CITY_NAME_CHARLEVILLE" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="102" Y="14" CityLocaleName="LOC_CITY_NAME_BRISBANE" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="92" Y="15" CityLocaleName="LOC_CITY_NAME_PORT_HEDLAND" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="93" Y="15" CityLocaleName="LOC_CITY_NAME_NEWMAN" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="94" Y="15" CityLocaleName="LOC_CITY_NAME_CHRISTMAS_CREEK" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="95" Y="15" CityLocaleName="LOC_CITY_NAME_TENNANT_CREEK" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="96" Y="15" CityLocaleName="LOC_CITY_NAME_TENNANT_CREEK" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="97" Y="15" CityLocaleName="LOC_CITY_NAME_BARKLEY" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="98" Y="15" CityLocaleName="LOC_CITY_NAME_MOUNT_ISA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="99" Y="15" CityLocaleName="LOC_CITY_NAME_CLONCURRY" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="100" Y="15" CityLocaleName="LOC_CITY_NAME_CHARTERS_TOWERS" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="101" Y="15" CityLocaleName="LOC_CITY_NAME_MACKAY" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="93" Y="16" CityLocaleName="LOC_CITY_NAME_BROOME" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="94" Y="16" CityLocaleName="LOC_CITY_NAME_WYNDHAM" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="95" Y="16" CityLocaleName="LOC_CITY_NAME_RIVER_DOWNS" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="96" Y="16" CityLocaleName="LOC_CITY_NAME_DALY_WATERS" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="97" Y="16" CityLocaleName="LOC_CITY_NAME_BOROLOOLA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="98" Y="16" CityLocaleName="LOC_CITY_NAME_BURKETOWN" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="99" Y="16" CityLocaleName="LOC_CITY_NAME_KARUMBA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="100" Y="16" CityLocaleName="LOC_CITY_NAME_GEORGETOWN" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="101" Y="16" CityLocaleName="LOC_CITY_NAME_TOWNSVILLE" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="94" Y="17" CityLocaleName="LOC_CITY_NAME_BATCHELOR" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="95" Y="17" CityLocaleName="LOC_CITY_NAME_KATHERINE" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="96" Y="17" CityLocaleName="LOC_CITY_NAME_ROPER_BAR" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="99" Y="17" CityLocaleName="LOC_CITY_NAME_KARUMBA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="100" Y="17" CityLocaleName="LOC_CITY_NAME_CAIRNS" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="95" Y="18" CityLocaleName="LOC_CITY_NAME_DARWIN" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="96" Y="18" CityLocaleName="LOC_CITY_NAME_JABIRU" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="97" Y="18" CityLocaleName="LOC_CITY_NAME_NHULUNBUY" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="100" Y="18" CityLocaleName="LOC_CITY_NAME_BAMAGA" Area = "0"/>
+		
+	</CityMap>
+	
+	<!-- AOTEAROA/NEW ZEALAND -->
+	<CityMap>
+		
+		<Replace MapName="GreatestEarthMap" X="103" Y="5" CityLocaleName="LOC_CITY_NAME_INVERCARGILL" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="0" Y="5" CityLocaleName="LOC_CITY_NAME_DUNEDIN" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="1" Y="6" CityLocaleName="LOC_CITY_NAME_CHRISTCHURCH" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="0" Y="7" CityLocaleName="LOC_CITY_NAME_GREYMOUTH" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="1" Y="7" CityLocaleName="LOC_CITY_NAME_KAIKOURA" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="1" Y="8" CityLocaleName="LOC_CITY_NAME_NELSON" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="3" Y="8" CityLocaleName="LOC_CITY_NAME_WELLINGTON" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="2" Y="9" CityLocaleName="LOC_CITY_NAME_NEW_PLYMOUTH" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="3" Y="9" CityLocaleName="LOC_CITY_NAME_NAPIER_HASTINGS" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="3" Y="10" CityLocaleName="LOC_CITY_NAME_HAMILTON" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="4" Y="10" CityLocaleName="LOC_CITY_NAME_GISBORNE" Area = "0"/>
+		
+		<Replace MapName="GreatestEarthMap" X="2" Y="11" CityLocaleName="LOC_CITY_NAME_AUCKLAND" Area = "0"/>
+		
+	</CityMap>
+	
+	<!-- SOUTH PACIFIC ISLANDS -->
+	<CityMap>
+		
+		<Replace MapName="GreatestEarthMap" X="1" Y="15" CityLocaleName="LOC_CITY_NAME_NOUMEA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="3" Y="16" CityLocaleName="LOC_CITY_NAME_FIJI" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="4" Y="20" CityLocaleName="LOC_CITY_NAME_SAMOA" Area = "0"/>
+		<Replace MapName="GreatestEarthMap" X="2" Y="21" CityLocaleName="LOC_CITY_NAME_HONIARA" Area = "0"/>
+		
+	</CityMap>
+	
 	<!-- FRANCE -->
 	<CityMap>
+		
 		<Replace MapName="GreatestEarthMap" X="42" Y="48" CityLocaleName="LOC_CITY_NAME_PARIS" />
 		<Replace MapName="GreatestEarthMap" X="41" Y="48" CityLocaleName="LOC_CITY_NAME_ROUEN" />
 		<Replace MapName="GreatestEarthMap" X="44" Y="46" CityLocaleName="LOC_CITY_NAME_LYON" />
@@ -39,6 +188,7 @@
 		<Replace MapName="GreatestEarthMap" X="38" Y="48" CityLocaleName="LOC_CITY_NAME_SAINT_MALO" Area = "0"/>
 		<Replace MapName="GreatestEarthMap" X="36" Y="46" CityLocaleName="LOC_CITY_NAME_BREST" />
 		<Replace MapName="GreatestEarthMap" X="46" Y="45" CityLocaleName="LOC_CITY_NAME_NICE" />
+		
 	</CityMap>
 	
 </GameData>
