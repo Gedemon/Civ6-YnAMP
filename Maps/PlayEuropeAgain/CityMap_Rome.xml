@@ -10,16 +10,16 @@
 	<CityMap>
 		
 		<!-- IBERIA -->
-		<Replace MapName="PlayEuropeAgain" X="14" Y="30" CityLocaleName="LOC_CITY_NAME_BAELO_CLAUDIA" Civilization="CIVILIZATION_ROME" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="14" Y="30" CityLocaleName="LOC_CITY_NAME_BAELO_CLAUDIA" Area="0" Civilization="CIVILIZATION_ROME" />
 		<Replace MapName="PlayEuropeAgain" X="14" Y="33" CityLocaleName="LOC_CITY_NAME_ITALICA" Civilization="CIVILIZATION_ROME" />
-		<Replace MapName="PlayEuropeAgain" X="20" Y="33" CityLocaleName="LOC_CITY_NAME_ALICANTE" Civilization="CIVILIZATION_ROME" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="28" Y="33" CityLocaleName="LOC_CITY_NAME_POLLENTIA" Civilization="CIVILIZATION_ROME" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="18" Y="37" CityLocaleName="LOC_CITY_NAME_TOLEDO" Civilization="CIVILIZATION_ROME" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="21" Y="37" CityLocaleName="LOC_CITY_NAME_CUENCA" Civilization="CIVILIZATION_ROME" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="22" Y="37" CityLocaleName="LOC_CITY_NAME_TORTOSA" Civilization="CIVILIZATION_ROME" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="23" Y="38" CityLocaleName="LOC_CITY_NAME_BILBILIS" Civilization="CIVILIZATION_ROME" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="13" Y="42" CityLocaleName="LOC_CITY_NAME_BRAGA" Civilization="CIVILIZATION_ROME" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="15" Y="42" CityLocaleName="LOC_CITY_NAME_AQUAE_FLAVIAE" Civilization="CIVILIZATION_ROME" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="33" CityLocaleName="LOC_CITY_NAME_ALICANTE" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="28" Y="33" CityLocaleName="LOC_CITY_NAME_POLLENTIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="18" Y="37" CityLocaleName="LOC_CITY_NAME_TOLEDO" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="21" Y="37" CityLocaleName="LOC_CITY_NAME_CUENCA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="22" Y="37" CityLocaleName="LOC_CITY_NAME_TORTOSA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="23" Y="38" CityLocaleName="LOC_CITY_NAME_BILBILIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="13" Y="42" CityLocaleName="LOC_CITY_NAME_BRAGA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="15" Y="42" CityLocaleName="LOC_CITY_NAME_AQUAE_FLAVIAE" Area="0" Civilization="CIVILIZATION_ROME" />
 		
 		<!-- ITALY -->
 		<Replace MapName="PlayEuropeAgain" X="45" Y="40" CityLocaleName="LOC_CITY_NAME_RAVENNA" Area="0" Civilization="CIVILIZATION_ROME" />
@@ -143,6 +143,147 @@
 		<Replace MapName="PlayEuropeAgain" X="62" Y="41" CityLocaleName="LOC_CITY_NAME_ALBA_IULIA" Area="0" Civilization="CIVILIZATION_ROME" />
 		<Replace MapName="PlayEuropeAgain" X="54" Y="42" CityLocaleName="LOC_CITY_NAME_PECS" Area="0" Civilization="CIVILIZATION_ROME" />
 		
+		<!-- ANATOLIA & CYPRUS -->
+		<Replace MapName="PlayEuropeAgain" X="76" Y="18" CityLocaleName="LOC_CITY_NAME_PAPHUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="77" Y="18" CityLocaleName="LOC_CITY_NAME_CITIUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="78" Y="18" CityLocaleName="LOC_CITY_NAME_CITIUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="76" Y="19" CityLocaleName="LOC_CITY_NAME_ARSINOE_CYPRUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="77" Y="19" CityLocaleName="LOC_CITY_NAME_SALAMIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="78" Y="19" CityLocaleName="LOC_CITY_NAME_SALAMIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="79" Y="20" CityLocaleName="LOC_CITY_NAME_SALAMIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="68" Y="21" CityLocaleName="LOC_CITY_NAME_CNIDUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="70" Y="21" CityLocaleName="LOC_CITY_NAME_MYRA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="71" Y="21" CityLocaleName="LOC_CITY_NAME_MYRA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="75" Y="21" CityLocaleName="LOC_CITY_NAME_ANEMURIUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="76" Y="21" CityLocaleName="LOC_CITY_NAME_CELENDERIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="77" Y="21" CityLocaleName="LOC_CITY_NAME_CORYCUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="68" Y="22" CityLocaleName="LOC_CITY_NAME_HALICARNASSUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="69" Y="22" CityLocaleName="LOC_CITY_NAME_CAUNUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="70" Y="22" CityLocaleName="LOC_CITY_NAME_TELMESSUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="71" Y="22" CityLocaleName="LOC_CITY_NAME_ARYCANDA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="72" Y="22" CityLocaleName="LOC_CITY_NAME_PHASELIS" Area="0" Civilization="CIVILIZATION_ROME" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="75" Y="22" CityLocaleName="LOC_CITY_NAME_CORACESIUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="76" Y="22" CityLocaleName="LOC_CITY_NAME_GERMANICOPOLIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="77" Y="22" CityLocaleName="LOC_CITY_NAME_SELEUCIA_AD_CALYCADNUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="78" Y="22" CityLocaleName="LOC_CITY_NAME_ELAEOUSA_SEBASTE" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="80" Y="22" CityLocaleName="LOC_CITY_NAME_MALLUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="81" Y="22" CityLocaleName="LOC_CITY_NAME_AEGEAE" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="67" Y="23" CityLocaleName="LOC_CITY_NAME_MILETUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="68" Y="23" CityLocaleName="LOC_CITY_NAME_MYLASA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="69" Y="23" CityLocaleName="LOC_CITY_NAME_STRATONICEA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="70" Y="23" CityLocaleName="LOC_CITY_NAME_OENOANDA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="71" Y="23" CityLocaleName="LOC_CITY_NAME_TERMESSOS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="72" Y="23" CityLocaleName="LOC_CITY_NAME_ATTALEA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="73" Y="23" CityLocaleName="LOC_CITY_NAME_ASPENDUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="74" Y="23" CityLocaleName="LOC_CITY_NAME_SIDE" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="75" Y="23" CityLocaleName="LOC_CITY_NAME_ISAURA_NOVA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="77" Y="23" CityLocaleName="LOC_CITY_NAME_LARANDA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="78" Y="23" CityLocaleName="LOC_CITY_NAME_TARSUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="80" Y="23" CityLocaleName="LOC_CITY_NAME_ANTIOCHIA_AD_SARUM" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="81" Y="23" CityLocaleName="LOC_CITY_NAME_MOPSUESTIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="67" Y="24" CityLocaleName="LOC_CITY_NAME_EPHESUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="68" Y="24" CityLocaleName="LOC_CITY_NAME_ALABANDA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="69" Y="24" CityLocaleName="LOC_CITY_NAME_ANTIOCHIA_AD_MAEANDRUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="70" Y="24" CityLocaleName="LOC_CITY_NAME_LAODICEA_AD_LYCUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="73" Y="24" CityLocaleName="LOC_CITY_NAME_PEDNELISSUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="74" Y="24" CityLocaleName="LOC_CITY_NAME_ETENNA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="78" Y="24" CityLocaleName="LOC_CITY_NAME_TYANA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="79" Y="24" CityLocaleName="LOC_CITY_NAME_TYANA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="81" Y="24" CityLocaleName="LOC_CITY_NAME_JUSTINOPOLIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="65" Y="25" CityLocaleName="LOC_CITY_NAME_ERYTHRAE" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="66" Y="25" CityLocaleName="LOC_CITY_NAME_LEBEDUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="67" Y="25" CityLocaleName="LOC_CITY_NAME_EPHESUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="68" Y="25" CityLocaleName="LOC_CITY_NAME_NYSA_AD_MAEANDRUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="69" Y="25" CityLocaleName="LOC_CITY_NAME_TRIPOLIS_AD_MAEANDRUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="70" Y="25" CityLocaleName="LOC_CITY_NAME_COLOSSAE" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="71" Y="25" CityLocaleName="LOC_CITY_NAME_APAMEA_AD_MAEANDRUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="72" Y="25" CityLocaleName="LOC_CITY_NAME_APAMEA_AD_MAEANDRUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="73" Y="25" CityLocaleName="LOC_CITY_NAME_ANTIOCHIA_CAESAREA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="76" Y="25" CityLocaleName="LOC_CITY_NAME_ICONIUM" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="78" Y="25" CityLocaleName="LOC_CITY_NAME_TYANA" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="66" Y="26" CityLocaleName="LOC_CITY_NAME_SMYRNA" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="67" Y="26" CityLocaleName="LOC_CITY_NAME_SARDIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="68" Y="26" CityLocaleName="LOC_CITY_NAME_SARDIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="69" Y="26" CityLocaleName="LOC_CITY_NAME_PHILADELPHIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="70" Y="26" CityLocaleName="LOC_CITY_NAME_PHILADELPHIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="71" Y="26" CityLocaleName="LOC_CITY_NAME_PHILADELPHIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="72" Y="26" CityLocaleName="LOC_CITY_NAME_TRAJANOPOLIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="73" Y="26" CityLocaleName="LOC_CITY_NAME_ANTIOCHIA_CAESAREA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="74" Y="26" CityLocaleName="LOC_CITY_NAME_PHILOMELIUM" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="78" Y="26" CityLocaleName="LOC_CITY_NAME_GARSAURA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="79" Y="26" CityLocaleName="LOC_CITY_NAME_GARSAURA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="80" Y="26" CityLocaleName="LOC_CITY_NAME_NAZIANZUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="65" Y="27" CityLocaleName="LOC_CITY_NAME_PHOCAEA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="66" Y="27" CityLocaleName="LOC_CITY_NAME_PERGAMUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="67" Y="27" CityLocaleName="LOC_CITY_NAME_PERGAMUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="68" Y="27" CityLocaleName="LOC_CITY_NAME_PERGAMUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="69" Y="27" CityLocaleName="LOC_CITY_NAME_PHILADELPHIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="70" Y="27" CityLocaleName="LOC_CITY_NAME_PHILADELPHIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="75" Y="27" CityLocaleName="LOC_CITY_NAME_CLAUDIOLAODICEA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="78" Y="27" CityLocaleName="LOC_CITY_NAME_GARSAURA" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="65" Y="28" CityLocaleName="LOC_CITY_NAME_ILIUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="66" Y="28" CityLocaleName="LOC_CITY_NAME_PARIUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="67" Y="28" CityLocaleName="LOC_CITY_NAME_CYZICUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="68" Y="28" CityLocaleName="LOC_CITY_NAME_CYZICUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="69" Y="28" CityLocaleName="LOC_CITY_NAME_PRUSA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="70" Y="28" CityLocaleName="LOC_CITY_NAME_PRUSA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="71" Y="28" CityLocaleName="LOC_CITY_NAME_DORYLAEUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="72" Y="28" CityLocaleName="LOC_CITY_NAME_PESSINUS" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="77" Y="28" CityLocaleName="LOC_CITY_NAME_MACISSUS" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="80" Y="28" CityLocaleName="LOC_CITY_NAME_CAESAREA_IN_CAPPADOCIA" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="68" Y="29" CityLocaleName="LOC_CITY_NAME_APAMEA_MYRLEA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="69" Y="29" CityLocaleName="LOC_CITY_NAME_NICAEA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="70" Y="29" CityLocaleName="LOC_CITY_NAME_NICAEA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="71" Y="29" CityLocaleName="LOC_CITY_NAME_DORYLAEUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="74" Y="29" CityLocaleName="LOC_CITY_NAME_GORDIUM" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="78" Y="29" CityLocaleName="LOC_CITY_NAME_SEBASTIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="69" Y="30" CityLocaleName="LOC_CITY_NAME_PRUSIAS_AD_MARE" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="70" Y="30" CityLocaleName="LOC_CITY_NAME_PYLAE" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="71" Y="30" CityLocaleName="LOC_CITY_NAME_NICOMEDIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="72" Y="30" CityLocaleName="LOC_CITY_NAME_DORYLAEUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="73" Y="30" CityLocaleName="LOC_CITY_NAME_BITHYNIUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="80" Y="30" CityLocaleName="LOC_CITY_NAME_EUPATORIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="70" Y="31" CityLocaleName="LOC_CITY_NAME_NICOMEDIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="71" Y="31" CityLocaleName="LOC_CITY_NAME_NICOMEDIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="72" Y="31" CityLocaleName="LOC_CITY_NAME_PRUSIAS_AD_HYPIUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="73" Y="31" CityLocaleName="LOC_CITY_NAME_BITHYNIUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="74" Y="31" CityLocaleName="LOC_CITY_NAME_HADRIANOPOLIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="76" Y="31" CityLocaleName="LOC_CITY_NAME_GANGRA" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="77" Y="31" CityLocaleName="LOC_CITY_NAME_GANGRA" Area="0" Civilization="CIVILIZATION_ROME" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="78" Y="31" CityLocaleName="LOC_CITY_NAME_AMASIA" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="80" Y="31" CityLocaleName="LOC_CITY_NAME_EUPATORIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="70" Y="32" CityLocaleName="LOC_CITY_NAME_CHALCEDON" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="71" Y="32" CityLocaleName="LOC_CITY_NAME_CALPE" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="72" Y="32" CityLocaleName="LOC_CITY_NAME_PRUSIAS_AD_HYPIUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="73" Y="32" CityLocaleName="LOC_CITY_NAME_PRUSIAS_AD_HYPIUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="74" Y="32" CityLocaleName="LOC_CITY_NAME_BITHYNIUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="75" Y="32" CityLocaleName="LOC_CITY_NAME_HADRIANOPOLIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="73" Y="33" CityLocaleName="LOC_CITY_NAME_HERACLEA_PONTICA" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="75" Y="33" CityLocaleName="LOC_CITY_NAME_POMPEIOPOLIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="76" Y="33" CityLocaleName="LOC_CITY_NAME_POMPEIOPOLIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="77" Y="33" CityLocaleName="LOC_CITY_NAME_POMPEIOPOLIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="78" Y="33" CityLocaleName="LOC_CITY_NAME_PTERIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="80" Y="33" CityLocaleName="LOC_CITY_NAME_AMISUS" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="75" Y="34" CityLocaleName="LOC_CITY_NAME_AMASTRIS" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="76" Y="34" CityLocaleName="LOC_CITY_NAME_IONOPOLIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="78" Y="34" CityLocaleName="LOC_CITY_NAME_SINOPE" Civilization="CIVILIZATION_ROME" />
+		
 		<!-- FRANCE -->
 		<Replace MapName="PlayEuropeAgain" X="29" Y="41" CityLocaleName="LOC_CITY_NAME_NARBONNE" Area="0" Civilization="CIVILIZATION_ROME" />
 		<Replace MapName="PlayEuropeAgain" X="30" Y="42" CityLocaleName="LOC_CITY_NAME_NARBONNE" Area="0" Civilization="CIVILIZATION_ROME" />
@@ -198,6 +339,82 @@
 		<Replace MapName="PlayEuropeAgain" X="55" Y="13" CityLocaleName="LOC_CITY_NAME_ARSINOE_CYRENAICA" Area="0" Civilization="CIVILIZATION_ROME" />
 		<Replace MapName="PlayEuropeAgain" X="56" Y="13" CityLocaleName="LOC_CITY_NAME_PTOLEMAIS" Area="0" Civilization="CIVILIZATION_ROME" />
 		<Replace MapName="PlayEuropeAgain" X="58" Y="13" CityLocaleName="LOC_CITY_NAME_APOLLONIA_CYRENAICA" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<!-- MIDDLE EAST (NORTH) -->
+		<Replace MapName="PlayEuropeAgain" X="82" Y="21" CityLocaleName="LOC_CITY_NAME_ALEXANDRIA_AD_ISSUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="82" Y="22" CityLocaleName="LOC_CITY_NAME_ISSUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="85" Y="22" CityLocaleName="LOC_CITY_NAME_EUROPUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="86" Y="22" CityLocaleName="LOC_CITY_NAME_BATNAE" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="87" Y="22" CityLocaleName="LOC_CITY_NAME_BATNAE" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="88" Y="22" CityLocaleName="LOC_CITY_NAME_CARRHAE" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="89" Y="22" CityLocaleName="LOC_CITY_NAME_CARRHAE" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="90" Y="22" CityLocaleName="LOC_CITY_NAME_ANTIOCHIA_ARABIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="91" Y="22" CityLocaleName="LOC_CITY_NAME_RESAINA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="92" Y="22" CityLocaleName="LOC_CITY_NAME_RESAINA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="93" Y="22" CityLocaleName="LOC_CITY_NAME_ANASTASIOPOLIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="94" Y="22" CityLocaleName="LOC_CITY_NAME_NISIBIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="83" Y="23" CityLocaleName="LOC_CITY_NAME_ANTIOCHIA_AD_TAURUM" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="85" Y="23" CityLocaleName="LOC_CITY_NAME_ZEUGMA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="88" Y="23" CityLocaleName="LOC_CITY_NAME_ANTIOCHIA_ARABIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="89" Y="23" CityLocaleName="LOC_CITY_NAME_ANTIOCHIA_ARABIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="90" Y="23" CityLocaleName="LOC_CITY_NAME_ANTIOCHIA_ARABIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="91" Y="23" CityLocaleName="LOC_CITY_NAME_MARIDA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="92" Y="23" CityLocaleName="LOC_CITY_NAME_ANASTASIOPOLIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="93" Y="23" CityLocaleName="LOC_CITY_NAME_ANASTASIOPOLIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="94" Y="23" CityLocaleName="LOC_CITY_NAME_BETHZABDE" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="82" Y="24" CityLocaleName="LOC_CITY_NAME_GERMANICIA_CAESAREA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="85" Y="24" CityLocaleName="LOC_CITY_NAME_SAMOSATA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="86" Y="24" CityLocaleName="LOC_CITY_NAME_SAMOSATA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="87" Y="24" CityLocaleName="LOC_CITY_NAME_EDESSA" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="92" Y="24" CityLocaleName="LOC_CITY_NAME_MARIDA" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="93" Y="24" CityLocaleName="LOC_CITY_NAME_ANASTASIOPOLIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="81" Y="25" CityLocaleName="LOC_CITY_NAME_FLAVIOPOLIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="84" Y="25" CityLocaleName="LOC_CITY_NAME_ADATHA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="85" Y="25" CityLocaleName="LOC_CITY_NAME_SAMOSATA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="89" Y="25" CityLocaleName="LOC_CITY_NAME_AMIDA" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="92" Y="25" CityLocaleName="LOC_CITY_NAME_CEPHA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="93" Y="25" CityLocaleName="LOC_CITY_NAME_CEPHA" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="83" Y="26" CityLocaleName="LOC_CITY_NAME_COMANA_CHRYSE" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="81" Y="27" CityLocaleName="LOC_CITY_NAME_ARIARATHEIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="85" Y="27" CityLocaleName="LOC_CITY_NAME_MELITENE" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="86" Y="27" CityLocaleName="LOC_CITY_NAME_MELITENE" Area="0" Civilization="CIVILIZATION_ROME" /> <!-- OVERLAP -->
+		<Replace MapName="PlayEuropeAgain" X="87" Y="27" CityLocaleName="LOC_CITY_NAME_CHARPETE" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="89" Y="27" CityLocaleName="LOC_CITY_NAME_MAIPA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="91" Y="27" CityLocaleName="LOC_CITY_NAME_TIGRANOCERTA" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="84" Y="28" CityLocaleName="LOC_CITY_NAME_EUSPENA" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="82" Y="29" CityLocaleName="LOC_CITY_NAME_SEBASTIA" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="86" Y="29" CityLocaleName="LOC_CITY_NAME_ARASAMOSATA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="87" Y="29" CityLocaleName="LOC_CITY_NAME_ARASAMOSATA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="89" Y="29" CityLocaleName="LOC_CITY_NAME_ROMANOUPOLIS" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="85" Y="30" CityLocaleName="LOC_CITY_NAME_ACILISENE" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="87" Y="30" CityLocaleName="LOC_CITY_NAME_ARASAMOSATA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="88" Y="30" CityLocaleName="LOC_CITY_NAME_ARASAMOSATA" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="81" Y="31" CityLocaleName="LOC_CITY_NAME_COMANA_PONTICA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="82" Y="31" CityLocaleName="LOC_CITY_NAME_COMANA_PONTICA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="84" Y="31" CityLocaleName="LOC_CITY_NAME_NICOPOLIS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="88" Y="31" CityLocaleName="LOC_CITY_NAME_SATALA" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="82" Y="32" CityLocaleName="LOC_CITY_NAME_POLEMONIUM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="83" Y="32" CityLocaleName="LOC_CITY_NAME_CERASUS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="87" Y="32" CityLocaleName="LOC_CITY_NAME_SINORIA" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="90" Y="32" CityLocaleName="LOC_CITY_NAME_THEODOSIOPOLIS" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="92" Y="32" CityLocaleName="LOC_CITY_NAME_CHORZENE" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="93" Y="32" CityLocaleName="LOC_CITY_NAME_CHORZENE" Area="0" Civilization="CIVILIZATION_ROME" />
+		
+		<Replace MapName="PlayEuropeAgain" X="84" Y="33" CityLocaleName="LOC_CITY_NAME_TRAPEZUS" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="91" Y="33" CityLocaleName="LOC_CITY_NAME_CHORZENE" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="92" Y="33" CityLocaleName="LOC_CITY_NAME_CHORZENE" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="PlayEuropeAgain" X="94" Y="33" CityLocaleName="LOC_CITY_NAME_ARTAXATA" Civilization="CIVILIZATION_ROME" />
 		
 	</CityMap>
 	
