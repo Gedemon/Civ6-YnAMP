@@ -5,6 +5,13 @@
 	<!-- "Giant Earth Map" City Map -->
 	<!-- ++++++++++++++++++++++++++ -->
 	
+	<!-- CAPITALS -->	
+	<CityMap>	<!-- (temporary section to covert all TSL that doesn't fit the game's capitals names) -->
+		<Replace MapName="GiantEarth" X="36" Y="41" CityLocaleName="LOC_CITY_NAME_MECCA" />
+		<Replace MapName="GiantEarth" X="36" Y="74" CityLocaleName="LOC_CITY_NAME_MOSCOW" />
+		<Replace MapName="GiantEarth" X="32" Y="43" CityLocaleName="LOC_CITY_NAME_THEBES" />		
+	</CityMap>	
+	
 	<!-- PAPUA -->
 	<CityMap>
 		

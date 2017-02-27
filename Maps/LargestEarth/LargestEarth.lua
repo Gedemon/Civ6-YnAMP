@@ -84,6 +84,10 @@ function GetNaturalWonders()
 	NaturalWonders[GameInfo.Features["FEATURE_LYSEFJORDEN"].Index] 		= { X = 23, Y = 100}	-- 3 plots, , flat grass near coast, 1st plot is EAST
 	NaturalWonders[GameInfo.Features["FEATURE_GIANTS_CAUSEWAY"].Index] 	= { X = 7, Y = 97}		-- 2 plots, one on coastal land and one in water, 1st plot is land, SOUTHEAST 
 	end
+	
+	if GameInfo.Features["FEATURE_ULURU"] then -- Australia DLC is loaded
+    NaturalWonders[GameInfo.Features["FEATURE_ULURU"].Index]			= { X = 124, Y = 20} 	-- 1 plot, desert, surrounded by desert
+    end
 	--]]
 	return NaturalWonders
 end
