@@ -2647,7 +2647,7 @@
 		<Replace MapName="PlayEuropeAgain" X="106" Y="47" CityLocaleName="LOC_CITY_NAME_BEYNEU" />
 		
 		<Replace MapName="PlayEuropeAgain" X="71" Y="48" CityLocaleName="LOC_CITY_NAME_UMAN" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="73" Y="48" CityLocaleName="LOC_CITY_NAME_KROPVYNYTSKYI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="73" Y="48" CityLocaleName="LOC_CITY_NAME_KROPVYNYTSKYI" />
 		<Replace MapName="PlayEuropeAgain" X="75" Y="48" CityLocaleName="LOC_CITY_NAME_SMILA" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="76" Y="48" CityLocaleName="LOC_CITY_NAME_KREMENCHUK" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="78" Y="48" CityLocaleName="LOC_CITY_NAME_DNIPROPETROVSK" />
@@ -2713,7 +2713,7 @@
 		<Replace MapName="PlayEuropeAgain" X="92" Y="52" CityLocaleName="LOC_CITY_NAME_VOLGOGRAD" />
 		<Replace MapName="PlayEuropeAgain" X="98" Y="52" CityLocaleName="LOC_CITY_NAME_ZHANBAY" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="99" Y="52" CityLocaleName="LOC_CITY_NAME_ZHANBAY" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="101" Y="52" CityLocaleName="LOC_CITY_NAME_ARYTAU" />
+		<Replace MapName="PlayEuropeAgain" X="101" Y="52" CityLocaleName="LOC_CITY_NAME_ATYRAU" />
 		<Replace MapName="PlayEuropeAgain" X="103" Y="52" CityLocaleName="LOC_CITY_NAME_KOSCHAGYL" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="105" Y="52" CityLocaleName="LOC_CITY_NAME_KULSARY" />
 		<Replace MapName="PlayEuropeAgain" X="107" Y="52" CityLocaleName="LOC_CITY_NAME_ASGIL" Area="0" />
