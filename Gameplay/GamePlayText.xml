@@ -3064,7 +3064,7 @@
 	
 		<Replace Tag="LOC_CITY_NAME_AKTAU" Text="Aktau" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_AKTOBE" Text="Aktobe" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ARYTAU" Text="Arytau" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ATYRAU" Text="Atyrau" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ASGIL" Text="Asgil" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ASTRAKHAN" Text="Astrakhan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_AZGIR" Text="Azgir" Language="en_US" />
