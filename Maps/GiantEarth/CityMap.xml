@@ -1778,6 +1778,207 @@
 		
 	</CityMap>
 	
+	<!-- EUROPEAN RUSSIA -->
+	<CityMap> 
+		
+		<Replace MapName="GiantEarth" X="41" Y="61" CityLocaleName="LOC_CITY_NAME_SOCHI" Area="0" />
+		<Replace MapName="GiantEarth" X="44" Y="61" CityLocaleName="LOC_CITY_NAME_BAKU" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="41" Y="62" CityLocaleName="LOC_CITY_NAME_SOCHI" Area="0" />
+		<Replace MapName="GiantEarth" X="44" Y="62" CityLocaleName="LOC_CITY_NAME_MAKHACHKALA" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="39" Y="63" CityLocaleName="LOC_CITY_NAME_KRASNODAR" />
+		<Replace MapName="GiantEarth" X="42" Y="63" CityLocaleName="LOC_CITY_NAME_GROZNY" />
+		
+		<Replace MapName="GiantEarth" X="37" Y="64" CityLocaleName="LOC_CITY_NAME_SEVASTOPOL" />
+		<Replace MapName="GiantEarth" X="41" Y="64" CityLocaleName="LOC_CITY_NAME_STAVROPOL" Area="0" />
+		<Replace MapName="GiantEarth" X="44" Y="64" CityLocaleName="LOC_CITY_NAME_LAGAN" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="41" Y="65" CityLocaleName="LOC_CITY_NAME_STAVROPOL" Area="0" />
+		<Replace MapName="GiantEarth" X="42" Y="65" CityLocaleName="LOC_CITY_NAME_STAVROPOL" Area="0" />
+		<Replace MapName="GiantEarth" X="43" Y="65" CityLocaleName="LOC_CITY_NAME_ELISTA" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="34" Y="66" CityLocaleName="LOC_CITY_NAME_ODESSA" Area="0" />
+		<Replace MapName="GiantEarth" X="35" Y="66" CityLocaleName="LOC_CITY_NAME_ODESSA" Area="0" />
+		<Replace MapName="GiantEarth" X="36" Y="66" CityLocaleName="LOC_CITY_NAME_KHERSON" Area="0" />
+		<Replace MapName="GiantEarth" X="37" Y="66" CityLocaleName="LOC_CITY_NAME_KHERSON" Area="0" />
+		<Replace MapName="GiantEarth" X="38" Y="66" CityLocaleName="LOC_CITY_NAME_DONETSK" Area="0" />
+		<Replace MapName="GiantEarth" X="40" Y="66" CityLocaleName="LOC_CITY_NAME_ROSTOV_ON_DON" />
+		<Replace MapName="GiantEarth" X="42" Y="66" CityLocaleName="LOC_CITY_NAME_VOLGODONSK" Area="0" />
+		<Replace MapName="GiantEarth" X="43" Y="66" CityLocaleName="LOC_CITY_NAME_ELISTA" Area="0" />
+		<Replace MapName="GiantEarth" X="45" Y="66" CityLocaleName="LOC_CITY_NAME_ASTRAKHAN" />
+		<Replace MapName="GiantEarth" X="47" Y="66" CityLocaleName="LOC_CITY_NAME_ATYRAU" Area="0" />
+		<Replace MapName="GiantEarth" X="48" Y="66" CityLocaleName="LOC_CITY_NAME_ATYRAU" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="34" Y="67" CityLocaleName="LOC_CITY_NAME_ODESSA" Area="0" />
+		<Replace MapName="GiantEarth" X="37" Y="67" CityLocaleName="LOC_CITY_NAME_DONETSK" Area="0" />
+		<Replace MapName="GiantEarth" X="38" Y="67" CityLocaleName="LOC_CITY_NAME_DONETSK" Area="0" />
+		<Replace MapName="GiantEarth" X="41" Y="67" CityLocaleName="LOC_CITY_NAME_VOLGODONSK" Area="0" />
+		<Replace MapName="GiantEarth" X="49" Y="67" CityLocaleName="LOC_CITY_NAME_AKTOBE" />
+		<Replace MapName="GiantEarth" X="51" Y="67" CityLocaleName="LOC_CITY_NAME_ARALSK" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="36" Y="68" CityLocaleName="LOC_CITY_NAME_DNIPROPETROVSK" />
+		<Replace MapName="GiantEarth" X="40" Y="68" CityLocaleName="LOC_CITY_NAME_TAMBOV" Area="0" />
+		<Replace MapName="GiantEarth" X="41" Y="68" CityLocaleName="LOC_CITY_NAME_TAMBOV" Area="0" />
+		<Replace MapName="GiantEarth" X="43" Y="68" CityLocaleName="LOC_CITY_NAME_VOLGOGRAD" />
+		<Replace MapName="GiantEarth" X="45" Y="68" CityLocaleName="LOC_CITY_NAME_URALSK" Area="0" />
+		<Replace MapName="GiantEarth" X="47" Y="68" CityLocaleName="LOC_CITY_NAME_ORENBURG" />
+		<Replace MapName="GiantEarth" X="51" Y="68" CityLocaleName="LOC_CITY_NAME_ARALSK" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="38" Y="69" CityLocaleName="LOC_CITY_NAME_VORONEZH" />
+		<Replace MapName="GiantEarth" X="40" Y="69" CityLocaleName="LOC_CITY_NAME_TAMBOV" Area="0" />
+		<Replace MapName="GiantEarth" X="41" Y="69" CityLocaleName="LOC_CITY_NAME_PENZA" Area="0" />
+		<Replace MapName="GiantEarth" X="43" Y="69" CityLocaleName="LOC_CITY_NAME_SAMARA" Area="0" /> <!--OVERLAP-->
+		<Replace MapName="GiantEarth" X="45" Y="69" CityLocaleName="LOC_CITY_NAME_URALSK" Area="0" />
+		<Replace MapName="GiantEarth" X="50" Y="69" CityLocaleName="LOC_CITY_NAME_YASNY" Area="0" />
+		<Replace MapName="GiantEarth" X="51" Y="69" CityLocaleName="LOC_CITY_NAME_YASNY" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="35" Y="70" CityLocaleName="LOC_CITY_NAME_BRYANSK" Area="0" />
+		<Replace MapName="GiantEarth" X="42" Y="70" CityLocaleName="LOC_CITY_NAME_PENZA" Area="0" />
+		<Replace MapName="GiantEarth" X="44" Y="70" CityLocaleName="LOC_CITY_NAME_SAMARA" />
+		<Replace MapName="GiantEarth" X="49" Y="70" CityLocaleName="LOC_CITY_NAME_STERLITAMAK" Area="0" />
+		<Replace MapName="GiantEarth" X="51" Y="70" CityLocaleName="LOC_CITY_NAME_YASNY" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="34" Y="71" CityLocaleName="LOC_CITY_NAME_KALUGA" Area="0" />
+		<Replace MapName="GiantEarth" X="36" Y="71" CityLocaleName="LOC_CITY_NAME_TULA" />
+		<Replace MapName="GiantEarth" X="38" Y="71" CityLocaleName="LOC_CITY_NAME_RYAZAN" Area="0" />
+		<Replace MapName="GiantEarth" X="40" Y="71" CityLocaleName="LOC_CITY_NAME_SARANSK" />
+		<Replace MapName="GiantEarth" X="42" Y="71" CityLocaleName="LOC_CITY_NAME_PENZA" Area="0" />
+		<Replace MapName="GiantEarth" X="46" Y="71" CityLocaleName="LOC_CITY_NAME_UFA" />
+		<Replace MapName="GiantEarth" X="50" Y="71" CityLocaleName="LOC_CITY_NAME_MIASS" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="35" Y="72" CityLocaleName="LOC_CITY_NAME_KALUGA" Area="0" />
+		<Replace MapName="GiantEarth" X="38" Y="72" CityLocaleName="LOC_CITY_NAME_RYAZAN" Area="0" />
+		<Replace MapName="GiantEarth" X="39" Y="72" CityLocaleName="LOC_CITY_NAME_RYAZAN" Area="0" />
+		<Replace MapName="GiantEarth" X="42" Y="72" CityLocaleName="LOC_CITY_NAME_ULYANOVSK" Area="0" />
+		<Replace MapName="GiantEarth" X="45" Y="72" CityLocaleName="LOC_CITY_NAME_NIZHNEKAMSK" Area="0" />
+		<Replace MapName="GiantEarth" X="48" Y="72" CityLocaleName="LOC_CITY_NAME_BELORETSK" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="37" Y="73" CityLocaleName="LOC_CITY_NAME_VLADIMIR" Area="0" />
+		<Replace MapName="GiantEarth" X="38" Y="73" CityLocaleName="LOC_CITY_NAME_VLADIMIR" Area="0" />
+		<Replace MapName="GiantEarth" X="41" Y="73" CityLocaleName="LOC_CITY_NAME_CHEBOKSARY" Area="0" />
+		<Replace MapName="GiantEarth" X="43" Y="73" CityLocaleName="LOC_CITY_NAME_KAZAN" />
+		<Replace MapName="GiantEarth" X="45" Y="73" CityLocaleName="LOC_CITY_NAME_NIZHNEKAMSK" Area="0" />
+		<Replace MapName="GiantEarth" X="49" Y="73" CityLocaleName="LOC_CITY_NAME_KUNGUR" />
+		
+		<Replace MapName="GiantEarth" X="36" Y="74" CityLocaleName="LOC_CITY_NAME_MOSCOW" />
+		<Replace MapName="GiantEarth" X="38" Y="74" CityLocaleName="LOC_CITY_NAME_VLADIMIR" Area="0" />
+		<Replace MapName="GiantEarth" X="40" Y="74" CityLocaleName="LOC_CITY_NAME_NIZHNIY_NOVGOROD" />
+		<Replace MapName="GiantEarth" X="42" Y="74" CityLocaleName="LOC_CITY_NAME_CHEBOKSARY" Area="0" />
+		<Replace MapName="GiantEarth" X="45" Y="74" CityLocaleName="LOC_CITY_NAME_NIZHNEKAMSK" Area="0" />
+		<Replace MapName="GiantEarth" X="47" Y="74" CityLocaleName="LOC_CITY_NAME_PERM" />
+		
+		<Replace MapName="GiantEarth" X="35" Y="75" CityLocaleName="LOC_CITY_NAME_MOSCOW" Area="0" /> <!--OVERLAP-->
+		<Replace MapName="GiantEarth" X="43" Y="75" CityLocaleName="LOC_CITY_NAME_IZHEVSK" Area="0" />
+		<Replace MapName="GiantEarth" X="44" Y="75" CityLocaleName="LOC_CITY_NAME_IZHEVSK" Area="0" />
+		<Replace MapName="GiantEarth" X="45" Y="75" CityLocaleName="LOC_CITY_NAME_IZHEVSK" Area="0" />
+		<Replace MapName="GiantEarth" X="48" Y="75" CityLocaleName="LOC_CITY_NAME_DOBRYANKA" Area="0" />
+		<Replace MapName="GiantEarth" X="49" Y="75" CityLocaleName="LOC_CITY_NAME_DOBRYANKA" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="35" Y="76" CityLocaleName="LOC_CITY_NAME_TVER" />
+		<Replace MapName="GiantEarth" X="38" Y="76" CityLocaleName="LOC_CITY_NAME_YAROSLAVL" />
+		<Replace MapName="GiantEarth" X="40" Y="76" CityLocaleName="LOC_CITY_NAME_KOSTROMA" Area="0" />
+		<Replace MapName="GiantEarth" X="42" Y="76" CityLocaleName="LOC_CITY_NAME_YOSHKAR_OLA" />
+		<Replace MapName="GiantEarth" X="46" Y="76" CityLocaleName="LOC_CITY_NAME_GLAZOV" Area="0" />
+		<Replace MapName="GiantEarth" X="47" Y="76" CityLocaleName="LOC_CITY_NAME_GLAZOV" Area="0" />
+		<Replace MapName="GiantEarth" X="41" Y="76" CityLocaleName="LOC_CITY_NAME_BEREZNIKI" />
+		
+		<Replace MapName="GiantEarth" X="36" Y="77" CityLocaleName="LOC_CITY_NAME_VOLOGDA" Area="0" />
+		<Replace MapName="GiantEarth" X="44" Y="77" CityLocaleName="LOC_CITY_NAME_KIROV" />
+		<Replace MapName="GiantEarth" X="46" Y="77" CityLocaleName="LOC_CITY_NAME_GLAZOV" Area="0" />
+		<Replace MapName="GiantEarth" X="48" Y="77" CityLocaleName="LOC_CITY_NAME_SOLIKAMSK" />
+		
+		<Replace MapName="GiantEarth" X="34" Y="78" CityLocaleName="LOC_CITY_NAME_CHAGODA" Area="0" />
+		<Replace MapName="GiantEarth" X="37" Y="78" CityLocaleName="LOC_CITY_NAME_VOLOGDA" Area="0" />
+		<Replace MapName="GiantEarth" X="38" Y="78" CityLocaleName="LOC_CITY_NAME_VOLOGDA" Area="0" />
+		<Replace MapName="GiantEarth" X="40" Y="78" CityLocaleName="LOC_CITY_NAME_VELIKY_USTYUG" />
+		<Replace MapName="GiantEarth" X="42" Y="78" CityLocaleName="LOC_CITY_NAME_KORYAZHMA" Area="0" />
+		<Replace MapName="GiantEarth" X="43" Y="78" CityLocaleName="LOC_CITY_NAME_KORYAZHMA" Area="0" />
+		<Replace MapName="GiantEarth" X="50" Y="78" CityLocaleName="LOC_CITY_NAME_VELS" Area="0" />
+		<Replace MapName="GiantEarth" X="51" Y="78" CityLocaleName="LOC_CITY_NAME_VELS" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="32" Y="79" CityLocaleName="LOC_CITY_NAME_VYTEGRA" Area="0" />
+		<Replace MapName="GiantEarth" X="33" Y="79" CityLocaleName="LOC_CITY_NAME_VYTEGRA" Area="0" />
+		<Replace MapName="GiantEarth" X="35" Y="79" CityLocaleName="LOC_CITY_NAME_CHEREPOVETS" />
+		<Replace MapName="GiantEarth" X="41" Y="79" CityLocaleName="LOC_CITY_NAME_KORYAZHMA" Area="0" />
+		<Replace MapName="GiantEarth" X="42" Y="79" CityLocaleName="LOC_CITY_NAME_KORYAZHMA" Area="0" />
+		<Replace MapName="GiantEarth" X="46" Y="79" CityLocaleName="LOC_CITY_NAME_SYKTYVKAR" />
+		<Replace MapName="GiantEarth" X="50" Y="79" CityLocaleName="LOC_CITY_NAME_VELS" Area="0" />
+		<Replace MapName="GiantEarth" X="51" Y="79" CityLocaleName="LOC_CITY_NAME_VELS" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="34" Y="80" CityLocaleName="LOC_CITY_NAME_VYTEGRA" Area="0" />
+		<Replace MapName="GiantEarth" X="35" Y="80" CityLocaleName="LOC_CITY_NAME_CHEREPOVETS" Area="0" /> <!--OVERLAP-->
+		<Replace MapName="GiantEarth" X="36" Y="80" CityLocaleName="LOC_CITY_NAME_CHEREPOVETS" Area="0" /> <!--OVERLAP-->
+		<Replace MapName="GiantEarth" X="38" Y="80" CityLocaleName="LOC_CITY_NAME_VELSK" />
+		<Replace MapName="GiantEarth" X="40" Y="80" CityLocaleName="LOC_CITY_NAME_KOTLAS" Area="0" />
+		<Replace MapName="GiantEarth" X="41" Y="80" CityLocaleName="LOC_CITY_NAME_KOTLAS" Area="0" />
+		<Replace MapName="GiantEarth" X="42" Y="80" CityLocaleName="LOC_CITY_NAME_KOTLAS" Area="0" />
+		<Replace MapName="GiantEarth" X="44" Y="80" CityLocaleName="LOC_CITY_NAME_MIKUN" />
+		<Replace MapName="GiantEarth" X="46" Y="80" CityLocaleName="LOC_CITY_NAME_SYKTYVKAR" Area="0" /> <!--OVERLAP-->
+		<Replace MapName="GiantEarth" X="47" Y="80" CityLocaleName="LOC_CITY_NAME_SYKTYVKAR" Area="0" /> <!--OVERLAP-->
+		<Replace MapName="GiantEarth" X="49" Y="80" CityLocaleName="LOC_CITY_NAME_NYROB" />
+		<Replace MapName="GiantEarth" X="51" Y="80" CityLocaleName="LOC_CITY_NAME_VELS" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="33" Y="81" CityLocaleName="LOC_CITY_NAME_PETROZAVODSK" Area="0" />
+		<Replace MapName="GiantEarth" X="35" Y="81" CityLocaleName="LOC_CITY_NAME_ONEGA" />
+		<Replace MapName="GiantEarth" X="41" Y="81" CityLocaleName="LOC_CITY_NAME_USOGORSK" Area="0" />
+		<Replace MapName="GiantEarth" X="42" Y="81" CityLocaleName="LOC_CITY_NAME_USOGORSK" Area="0" />
+		<Replace MapName="GiantEarth" X="46" Y="81" CityLocaleName="LOC_CITY_NAME_UST_TSILMA" />
+		<Replace MapName="GiantEarth" X="50" Y="81" CityLocaleName="LOC_CITY_NAME_USINSK" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="34" Y="82" CityLocaleName="LOC_CITY_NAME_SEGEZHA" Area="0" />
+		<Replace MapName="GiantEarth" X="40" Y="82" CityLocaleName="LOC_CITY_NAME_PINEGRA" />
+		<Replace MapName="GiantEarth" X="42" Y="82" CityLocaleName="LOC_CITY_NAME_USOGORSK" Area="0" />
+		<Replace MapName="GiantEarth" X="43" Y="82" CityLocaleName="LOC_CITY_NAME_USOGORSK" Area="0" />
+		<Replace MapName="GiantEarth" X="48" Y="82" CityLocaleName="LOC_CITY_NAME_USTYE" Area="0" />
+		<Replace MapName="GiantEarth" X="51" Y="82" CityLocaleName="LOC_CITY_NAME_USINSK" Area="0" />
+		<Replace MapName="GiantEarth" X="52" Y="82" CityLocaleName="LOC_CITY_NAME_USINSK" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="33" Y="83" CityLocaleName="LOC_CITY_NAME_SEGEZHA" Area="0" />
+		<Replace MapName="GiantEarth" X="37" Y="83" CityLocaleName="LOC_CITY_NAME_ARKHANGELSK" />
+		<Replace MapName="GiantEarth" X="44" Y="83" CityLocaleName="LOC_CITY_NAME_VOLOKOVAYA" />
+		<Replace MapName="GiantEarth" X="49" Y="83" CityLocaleName="LOC_CITY_NAME_KHOREY_VER" />
+		<Replace MapName="GiantEarth" X="51" Y="83" CityLocaleName="LOC_CITY_NAME_USINSK" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="35" Y="84" CityLocaleName="LOC_CITY_NAME_SEVERODVINSK" />
+		<Replace MapName="GiantEarth" X="42" Y="84" CityLocaleName="LOC_CITY_NAME_YUROMA" />
+		<Replace MapName="GiantEarth" X="47" Y="84" CityLocaleName="LOC_CITY_NAME_NARYAN_MAR" />
+		<Replace MapName="GiantEarth" X="53" Y="84" CityLocaleName="LOC_CITY_NAME_KARATAYKA" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="36" Y="85" CityLocaleName="LOC_CITY_NAME_POMORYE" Area="0" />
+		<Replace MapName="GiantEarth" X="37" Y="85" CityLocaleName="LOC_CITY_NAME_POMORYE" Area="0" />
+		<Replace MapName="GiantEarth" X="39" Y="85" CityLocaleName="LOC_CITY_NAME_MEZEN" />
+		<Replace MapName="GiantEarth" X="43" Y="85" CityLocaleName="LOC_CITY_NAME_VYUCHEYSKIY" Area="0" />
+		<Replace MapName="GiantEarth" X="48" Y="85" CityLocaleName="LOC_CITY_NAME_KHODOVARIKHA" Area="0" />
+		<Replace MapName="GiantEarth" X="49" Y="85" CityLocaleName="LOC_CITY_NAME_KHODOVARIKHA" Area="0" />
+		<Replace MapName="GiantEarth" X="51" Y="85" CityLocaleName="LOC_CITY_NAME_CHYORNAYA" />
+		<Replace MapName="GiantEarth" X="53" Y="85" CityLocaleName="LOC_CITY_NAME_KARATAYKA" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="38" Y="86" CityLocaleName="LOC_CITY_NAME_POMORYE" Area="0" />
+		<Replace MapName="GiantEarth" X="41" Y="86" CityLocaleName="LOC_CITY_NAME_VOLONGA" Area="0" />
+		<Replace MapName="GiantEarth" X="42" Y="86" CityLocaleName="LOC_CITY_NAME_VOLONGA" Area="0" />
+		<Replace MapName="GiantEarth" X="45" Y="86" CityLocaleName="LOC_CITY_NAME_FORT_POUSTOZERSKIY" />
+		<Replace MapName="GiantEarth" X="47" Y="86" CityLocaleName="LOC_CITY_NAME_INDIGA" Area="0" />
+		<Replace MapName="GiantEarth" X="53" Y="86" CityLocaleName="LOC_CITY_NAME_KARATAYKA" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="49" Y="87" CityLocaleName="LOC_CITY_NAME_VARNEK" Area="0" />
+		<Replace MapName="GiantEarth" X="50" Y="87" CityLocaleName="LOC_CITY_NAME_VARNEK" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="40" Y="88" CityLocaleName="LOC_CITY_NAME_SHOYNA" />
+		<Replace MapName="GiantEarth" X="43" Y="88" CityLocaleName="LOC_CITY_NAME_BUGRINO" Area="0" />
+		<Replace MapName="GiantEarth" X="44" Y="88" CityLocaleName="LOC_CITY_NAME_BUGRINO" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="45" Y="89" CityLocaleName="LOC_CITY_NAME_BELUSHYA_GUBA" Area="0" />
+		<Replace MapName="GiantEarth" X="47" Y="89" CityLocaleName="LOC_CITY_NAME_KRASINO" />
+		
+		<Replace MapName="GiantEarth" X="47" Y="91" CityLocaleName="LOC_CITY_NAME_ROGACHYOVO" Area="0" />
+		<Replace MapName="GiantEarth" X="49" Y="91" CityLocaleName="LOC_CITY_NAME_STOLBOVOY" />
+		
+		<Replace MapName="GiantEarth" X="52" Y="92" CityLocaleName="LOC_CITY_NAME_SEVERNY_ISLAND" Area="0" />
+		<Replace MapName="GiantEarth" X="55" Y="92" CityLocaleName="LOC_CITY_NAME_GORA_SEVERNY_NUNATAK" Area="0" />
+		
+	</CityMap>
+	
 	<!-- SCANDINAVIA (NORWAY, SWEDEN, FINLAND, MURMANSK, KARELIA) -->
 	<CityMap>
 	

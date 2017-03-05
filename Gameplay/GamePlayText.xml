@@ -5664,4 +5664,206 @@
 		
 	</LocalizedText>
 	
+	<!-- European Russia -->
+	<LocalizedText>
+
+		<Replace Tag="LOC_CITY_NAME_AKTOBE" Text="Aktobe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AKTOBE_RUSSIA" Text="Aktyubinsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARALSK" Text="Aralsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARKHANGELSK" Text="Arkhangelsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARKHANGELSK_AMERICA" Text="Archangel" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARKHANGELSK_BRAZIL" Text="Arcangel" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARKHANGELSK_ENGLAND" Text="Archangel" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARKHANGELSK_FRANCE" Text="Arkhangel" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARKHANGELSK_GERMANY" Text="Archangelsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARKHANGELSK_GREECE" Text="Archángelos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARKHANGELSK_NORWAY" Text="Bjarmaland" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARKHANGELSK_POLAND" Text="Archangielsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARKHANGELSK_ROME" Text="Archangelopolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ARKHANGELSK_SPAIN" Text="Arjángelsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ASTRAKHAN" Text="Astrakhan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ASTRAKHAN_ARABIA" Text="Ustarakhan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ASTRAKHAN_CHINA" Text="Yasitelahan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ASTRAKHAN_ROME" Text="Astrachanum" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ASTRAKHAN_SCYTHIA" Text="Xacitarxan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ATYRAU" Text="Atyrau" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BAKU" Text="Baku" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BELORETSK" Text="Beloretsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BELUSHYA_GUBA" Text="Belushya Guba" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BEREZNIKI" Text="Berezniki" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRYANSK" Text="Bryansk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRYANSK_POLAND" Text="Briańsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BUGRINO" Text="Bugrino" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHAGODA" Text="Chagoda" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHEBOKSARY" Text="Cheboksary" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHEREPOVETS" Text="Cherepovets" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHEREPOVETS_GERMANY" Text="Tscherepowez" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHEREPOVETS_POLAND" Text="Czerepowiec" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHYORNAYA" Text="Chyornaya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DNIPROPETROVSK" Text="Dnipropetrovsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DNIPROPETROVSK_POLAND" Text="Dniepr" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DNIPROPETROVSK_RUSSIA" Text="Ekaterinoslav" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DNIPROPETROVSK_SCYTHIA" Text="Tovsta" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DOBRYANKA" Text="Dobryanka" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DONETSK" Text="Donetsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DONETSK_ENGLAND" Text="Hughes Town" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DONETSK_GERMANY" Text="Donezk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DONETSK_POLAND" Text="Donieck" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DONETSK_RUSSIA" Text="Yuzovka" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DONETSK_SCYTHIA" Text="Solokha" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ELISTA" Text="Elista" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_FORT_POUSTOZERSKIY" Text="Fort Poustozerskiy" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GLAZOV" Text="Glazov" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GORA_SEVERNY_NUNATAK" Text="Gora Severny Nunatak" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GROZNY" Text="Grozny" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_INDIGA" Text="Indiga" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_IZHEVSK" Text="Izhevsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_IZHEVSK_SCYTHIA" Text="Izh" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KALUGA" Text="Kaluga" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KARATAYKA" Text="Karatayka" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KAZAN" Text="Kazan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KAZAN_ARABIA" Text="Qazan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KAZAN_CHINA" Text="Kashan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KAZAN_GERMANY" Text="Kasan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KHERSON" Text="Kherson" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KHERSON_ARABIA" Text="Kharsun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KHERSON_GREECE" Text="Cherson" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KHERSON_SCYTHIA" Text="Olbia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KHODOVARIKHA" Text="Kohodovarikha" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KHOREY_VER" Text="Khorey-Ver" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KIROV" Text="Kirov" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KORYAZHMA" Text="Koryazhma" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KOSTROMA" Text="Kostroma" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KOTLAS" Text="Kotlas" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KRASINO" Text="Krasino" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KRASNODAR" Text="Krasnodar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KRASNODAR_RUSSIA" Text="Yekaterinodar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KRASNODAR_SCYTHIA" Text="Seven Brothers" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KUNGUR" Text="Kungur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LAGAN" Text="Lagan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MAKHACHKALA" Text="Makhachkala" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEZEN" Text="Mezen" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MIASS" Text="Miass" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MIKUN" Text="Mikun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW" Text="Moscow" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW_ARABIA" Text="Musku" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW_AZTEC" Text="Moscohuia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW_BRAZIL" Text="Moscou" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW_CHINA" Text="Mosike" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW_FRANCE" Text="Moscou" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW_GERMANY" Text="Moskau" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW_GREECE" Text="Móskha" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW_INDIA" Text="Maasko" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW_JAPAN" Text="Mosukuwa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW_NORWAY" Text="Moskva" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW_POLAND" Text="Moskwa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW_ROME" Text="Moscow" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW_RUSSIA" Text="Moskva" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW_SCYTHIA" Text="Moskva" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSCOW_SPAIN" Text="Moscú" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NARYAN_MAR" Text="Naryan-Mar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIZHNEKAMSK" Text="Nizhnekamsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIZHNEKAMSK_SCYTHIA" Text="Tübän Kama" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIZHNIY_NOVGOROD" Text="Nizhniy Novgorod" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIZHNIY_NOVGOROD_CHINA" Text="Xianuofugeluode" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIZHNIY_NOVGOROD_FRANCE" Text="Nijni-Novgorod" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIZHNIY_NOVGOROD_GERMANY" Text="Nischnij Nowgorod" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIZHNIY_NOVGOROD_NORWAY" Text="Nizjnij Novgorod" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIZHNIY_NOVGOROD_POLAND" Text="Niżny Nowogród" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIZHNIY_NOVGOROD_SCYTHIA" Text="Čulhula" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NYROB" Text="Nyrob" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ODESSA" Text="Odessa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ODESSA_ARABIA" Text="Khadjibey" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ODESSA_GREECE" Text="Odessos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ODESSA_ROME" Text="Odessus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ONEGA" Text="Onega" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ORENBURG" Text="Orenburg" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ORENBURG_SCYTHIA" Text="Pokrovka" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PENZA" Text="Penza" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PERM" Text="Perm" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PERM_SCYTHIA" Text="Yagoshikha" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PETROZAVODSK" Text="Petrozavodsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PINEGRA" Text="Pinegra" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_POMORYE" Text="Pomorye" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROGACHYOVO" Text="Rogachyovo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROSTOV_ON_DON" Text="Rostov-on-Don" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROSTOV_ON_DON_CHINA" Text="Luosituofu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROSTOV_ON_DON_GREECE" Text="Tanais" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROSTOV_ON_DON_ROME" Text="Tanais" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROSTOV_ON_DON_RUSSIA" Text="Rostov-na-Donu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROSTOV_ON_DON_RUSSIA_ARABIA" Text="Rustuf-na-Dunu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROSTOV_ON_DON_RUSSIA_GERMANY" Text="Rostow-am-Don" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROSTOV_ON_DON_RUSSIA_POLAND" Text="Rostów nad Donem" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROSTOV_ON_DON_SCYTHIA" Text="Tanais" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RYAZAN" Text="Ryazan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAMARA" Text="Samara" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SARANSK" Text="Saransk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEGEZHA" Text="Segezha" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEVASTOPOL" Text="Sevastopol" Language="en_US" /> 
+		<Replace Tag="LOC_CITY_NAME_SEVASTOPOL_ARABIA" Text="Fayudusia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEVASTOPOL_FRANCE" Text="Sébastopol" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEVASTOPOL_GERMANY" Text="Theodorichshafen" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEVASTOPOL_GREECE" Text="Chersonesos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEVASTOPOL_POLAND" Text="Sewastopol" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEVASTOPOL_ROME" Text="Chersonesus Taurica" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEVASTOPOL_SCYTHIA" Text="Kerch" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEVERNY_ISLAND" Text="Severny Island" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEVERODVINSK" Text="Severodvinsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SHOYNA" Text="Shoyna" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SOCHI" Text="Sochi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SOCHI_SCYTHIA" Text="Maikop" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SOLIKAMSK" Text="Solikamsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_STAVROPOL" Text="Stavropol" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_STAVROPOL_ARABIA" Text="Satafrubul" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_STAVROPOL_SCYTHIA" Text="Ulski" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_STERLITAMAK" Text="Sterlitamak" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_STOLBOVOY" Text="Stol'bovoy" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SYKTYVKAR" Text="Syktyvkar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TAMBOV" Text="Tambov" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TULA" Text="Tula" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TULA_POLAND" Text="Tuła" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TVER" Text="Tver" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TVER_GERMANY" Text="Twer" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TVER_POLAND" Text="Twer" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_UFA" Text="Ufa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_UFA_SCYTHIA" Text="Öfö" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ULYANOVSK" Text="Ulyanovsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ULYANOVSK_RUSSIA" Text="Simbirsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ULYANOVSK_SCYTHIA" Text="Simbirsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_URALSK" Text="Uralsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_USINSK" Text="Usinsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_USOGORSK" Text="Usogorsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_USTYE" Text="Ustye" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_UST_TSILMA" Text="Ust-Tsilma" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VARNEK" Text="Varnek" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VELIKY_USTYUG" Text="Veliky-Ustyug" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VELS" Text="Vels" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VELSK" Text="Vel'sk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VLADIMIR" Text="Vladimir" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VOLGODONSK" Text="Volgodonsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VOLGODONSK_SCYTHIA" Text="Elizavetinskaya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VOLGOGRAD" Text="Volgograd" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VOLGOGRAD_ARABIA" Text="Fawalghughrad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VOLGOGRAD_CHINA" Text="Fu'erjiagele" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VOLGOGRAD_GERMANY" Text="Wolgograd" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VOLGOGRAD_POLAND" Text="Wołgograd" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VOLGOGRAD_RUSSIA" Text="Tsaritsyn" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VOLGOGRAD_SCYTHIA" Text="Ahş" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VOLOGDA" Text="Vologda" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VOLOKOVAYA" Text="Volokovaya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VOLONGA" Text="Volonga" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VORONEZH" Text="Voronezh" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VYTEGRA" Text="Vytegra" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VYUCHEYSKIY" Text="Vyucheyskiy" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YAROSLAVL" Text="Yaroslavl" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YAROSLAVL_GERMANY" Text="Jaroslawl" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YAROSLAVL_NORWAY" Text="Jaroslavl" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YAROSLAVL_POLAND" Text="Jarosław" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YAROSLAVL_ROME" Text="Iaroslavia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YASNY" Text="Yasny" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YOSHKAR_OLA" Text="Yoshkar-Ola" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YUROMA" Text="Yuroma" Language="en_US" />
+		
+	</LocalizedText>
+	
 </GameData>
