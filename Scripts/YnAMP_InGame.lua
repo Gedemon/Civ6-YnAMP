@@ -7,6 +7,14 @@ local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't 
 print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016) by Gedemon")
 print ("loading YnAMP_InGame.lua")
 
+local mods = Modding.GetActiveMods()
+if mods ~= nil then
+	print("Active mods:")
+	for i,v in ipairs(mods) do
+		print("- ".. Locale.Lookup(v.Name))
+	end
+end
+
 include ("YnAMP_Utils.lua") -- can't do that ???
 
 local mapName = MapConfiguration.GetValue("MapName")

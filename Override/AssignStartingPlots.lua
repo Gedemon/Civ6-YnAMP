@@ -8,9 +8,8 @@ include "MapUtilities"
 ------------------------------------------------------------------------------
 
 print ("loading modded AssignStartingPlots")
-local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION because Value is Text ?
+local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION ?
 print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016) by Gedemon")
-
 print ("Setting YnAMP globals and cache...")
 
 g_startTimer = os.clock()
