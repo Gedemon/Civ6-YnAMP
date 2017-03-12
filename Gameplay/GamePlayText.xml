@@ -5669,6 +5669,7 @@
 
 		<Replace Tag="LOC_CITY_NAME_AKTOBE" Text="Aktobe" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_AKTOBE_RUSSIA" Text="Aktyubinsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AKTOBE_SCYTHIA" Text="Sarai" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ARALSK" Text="Aralsk" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ARKHANGELSK" Text="Arkhangelsk" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ARKHANGELSK_AMERICA" Text="Archangel" Language="en_US" />
@@ -5701,9 +5702,10 @@
 		<Replace Tag="LOC_CITY_NAME_CHEREPOVETS_POLAND" Text="Czerepowiec" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHYORNAYA" Text="Chyornaya" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DNIPROPETROVSK" Text="Dnipropetrovsk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DNIPROPETROVSK_GREECE" Text="Gelonus" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DNIPROPETROVSK_POLAND" Text="Dniepr" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DNIPROPETROVSK_RUSSIA" Text="Ekaterinoslav" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_DNIPROPETROVSK_SCYTHIA" Text="Tovsta" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DNIPROPETROVSK_SCYTHIA" Text="Gelonus" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DOBRYANKA" Text="Dobryanka" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DONETSK" Text="Donetsk" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DONETSK_ENGLAND" Text="Hughes Town" Language="en_US" />
@@ -5716,6 +5718,7 @@
 		<Replace Tag="LOC_CITY_NAME_GLAZOV" Text="Glazov" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GORA_SEVERNY_NUNATAK" Text="Gora Severny Nunatak" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GROZNY" Text="Grozny" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GROZNY_SCYTHIA" Text="Samandar" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_INDIGA" Text="Indiga" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_IZHEVSK" Text="Izhevsk" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_IZHEVSK_SCYTHIA" Text="Izh" Language="en_US" />
@@ -5731,14 +5734,16 @@
 		<Replace Tag="LOC_CITY_NAME_KHERSON_SCYTHIA" Text="Olbia" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KHODOVARIKHA" Text="Kohodovarikha" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KHOREY_VER" Text="Khorey-Ver" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KIEV_SCYTHIA" Text="Myriv" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KIROV" Text="Kirov" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KORYAZHMA" Text="Koryazhma" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KOSTROMA" Text="Kostroma" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KOTLAS" Text="Kotlas" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KRASINO" Text="Krasino" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KRASNODAR" Text="Krasnodar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KRASNODAR_GREECE" Text="Phanagoria" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KRASNODAR_RUSSIA" Text="Yekaterinodar" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KRASNODAR_SCYTHIA" Text="Seven Brothers" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KRASNODAR_SCYTHIA" Text="Phanagoria" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KUNGUR" Text="Kungur" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LAGAN" Text="Lagan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MAKHACHKALA" Text="Makhachkala" Language="en_US" />
@@ -5776,6 +5781,7 @@
 		<Replace Tag="LOC_CITY_NAME_ODESSA_ARABIA" Text="Khadjibey" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ODESSA_GREECE" Text="Odessos" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ODESSA_ROME" Text="Odessus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ODESSA_SCYTHIA" Text="Tiras" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ONEGA" Text="Onega" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ORENBURG" Text="Orenburg" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ORENBURG_SCYTHIA" Text="Pokrovka" Language="en_US" />
@@ -5815,7 +5821,8 @@
 		<Replace Tag="LOC_CITY_NAME_SOLIKAMSK" Text="Solikamsk" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_STAVROPOL" Text="Stavropol" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_STAVROPOL_ARABIA" Text="Satafrubul" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_STAVROPOL_SCYTHIA" Text="Ulski" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_STAVROPOL_GREECE" Text="Siracena" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_STAVROPOL_SCYTHIA" Text="Siracena" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_STERLITAMAK" Text="Sterlitamak" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_STOLBOVOY" Text="Stol'bovoy" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SYKTYVKAR" Text="Syktyvkar" Language="en_US" />
@@ -5864,6 +5871,272 @@
 		<Replace Tag="LOC_CITY_NAME_YOSHKAR_OLA" Text="Yoshkar-Ola" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_YUROMA" Text="Yuroma" Language="en_US" />
 		
+	</LocalizedText>
+	
+	<!-- Middle East -->
+	<LocalizedText>
+
+	<Replace Tag="LOC_CITY_NAME_ABU_DHABI" Text="Abu Dhabi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AHVAZ" Text="Ahvaz" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ALEPPO" Text="Aleppo" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ALEPPO_ARABIA" Text="Halab" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AL_MUKALLA" Text="Al Mukalla" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AMMAN" Text="Amman" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANKARA" Text="Ankara" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANKARA_ARABIA" Text="Anqara" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANKARA_GREECE" Text="Gordion" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANKARA_ROME" Text="Gordium" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANKARA_SUMERIA" Text="Gordion" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANTAKYA" Text="Antakya" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANTAKYA_ARABIA" Text="Antakia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANTAKYA_ENGLAND" Text="Antioch" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANTAKYA_GERMANY" Text="Antiochien" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANTAKYA_GREECE" Text="Antiokheia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANTAKYA_ROME" Text="Antiochia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANTALYA" Text="Antalya" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANTALYA_ARABIA" Text="Antalia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANTALYA_GREECE" Text="Attaleia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ANTALYA_ROME" Text="Attalia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ARISH" Text="Arish" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ARISH_ARABIA" Text="El Arish" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ARISH_EGYPT" Text="Per-Amun" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ARISH_GREECE" Text="Pelusion" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ARISH_ROME" Text="Ostium Pelusiacum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AR_RAQQA" Text="Raqqa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AR_RAQQA_ARABIA" Text="ar-Raqqa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AR_RAQQA_GREECE" Text="Nikephorion" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AR_RAQQA_ROME" Text="Leontopolis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_AR_RAQQA_SUMERIA" Text="Tuttul" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ASH_SHALFA" Text="Ash Shalfa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BAGHDAD" Text="Baghdad" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BAGHDAD_GREECE" Text="Babylon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BAGHDAD_ROME" Text="Babylon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BAGHDAD_SUMERIA" Text="Babili" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BAKU" Text="Baku" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BANDAR_ABBAS" Text="Bandar Abbas" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BANDAR_ABBAS_GREECE" Text="Harmozeia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BANDAR_BUSHEHR" Text="Bandar Bushehr" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BANDAR_BUSHEHR_GREECE" Text="Charax" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BEER_SHEVA" Text="Be'er Sheva" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BEER_SHEVA_ARABIA" Text="Bi'ir as-Sab" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BEER_SHEVA_GREECE" Text="Beersheba" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BEER_SHEVA_ROME" Text="Beersheba" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BODRUM" Text="Bodrum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BODRUM_ARABIA" Text="Budarum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BODRUM_GREECE" Text="Halikarnassos" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BODRUM_ROME" Text="Halicarnassus" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BURAIDAH" Text="Buraidah" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BURSA" Text="Bursa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BURSA_GREECE" Text="Prusa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_BURSA_ROME" Text="Prusa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DAMASCUS" Text="Damascus" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DAMASCUS_ARABIA" Text="Dimashqu sh-Shām" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DAMASCUS_EGYPT" Text="T-ms-ḳw" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DAMASCUS_SUMERIA" Text="Dimašqa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DAMMAM" Text="Dammam" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DEIR_EZ_ZUR" Text="Deir ez-Zor" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DEIR_EZ_ZUR_GREECE" Text="Thapsacus" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DEIR_EZ_ZUR_ROME" Text="Thapsacus" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DEIR_EZ_ZUR_SUMERIA" Text="Mari" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DENIZLI" Text="Denizli" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DENIZLI_GREECE" Text="Laodicea on the Lycus" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DENIZLI_ROME" Text="Laodicea ad Lycum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DENIZLI_SUMERIA" Text="Diospolis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DOHA" Text="Doha" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DOHA_ARABIA" Text="ad-Dawha" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUBAI" Text="Dubai" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_DUQM" Text="Duqm" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EILAT" Text="Eilat" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EILAT_ARABIA" Text="Um 'al-Rashrash" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EILAT_EGYPT" Text="Timna" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EILAT_GREECE" Text="Timna" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EILAT_ROME" Text="Timna" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_EILAT_SUMERIA" Text="Timna" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ERZURUM" Text="Erzurum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ERZURUM_ARABIA" Text="Kalikala" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ERZURUM_GREECE" Text="Theodosiopolis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ERZURUM_ROME" Text="Theodosiopolis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ERZURUM_SUMERIA" Text="Karin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GAZA" Text="Gaza" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GAZA_ARABIA" Text="Ghazzat Hashem" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GAZA_EGYPT" Text="Azzati" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GAZA_SUMERIA" Text="Ghazzat" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GAZIANTEP" Text="Gaziantep" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GAZIANTEP_ARABIA" Text="Aïntab" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GAZIANTEP_GREECE" Text="Antiokeia tou Taurou" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GAZIANTEP_ROME" Text="Antiochia ad Taurum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_GAZIANTEP_SUMERIA" Text="Doliche" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_HAIL" Text="Ha'il" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ISFAHAN" Text="Isfahan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ISFAHAN_ARABIA" Text="Asfahan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ISFAHAN_GREECE" Text="Aspadana" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ISFAHAN_INDIA" Text="Isfahaan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ISFAHAN_ROME" Text="Aspadana" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ISFAHAN_SUMERIA" Text="Aspadana" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_IZMIR" Text="Izmir" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_IZMIR_GREECE" Text="Smyrna" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_IZMIR_ROME" Text="Smyrna" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_IZMIR_SUMERIA" Text="Apasa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_JERUSALEM" Text="Jerusalem" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_JERUSALEM_ARABIA" Text="al-Quds" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_JERUSALEM_BRAZIL" Text="Jerusalém" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_JERUSALEM_CHINA" Text="Yelusaleng" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_JERUSALEM_EGYPT" Text="Beth-Shalem" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_JERUSALEM_FRANCE" Text="Jérusalem" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_JERUSALEM_GREECE" Text="Hierosolyma" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_JERUSALEM_INDIA" Text="Yarushalam" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_JERUSALEM_JAPAN" Text="Erusaremu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_JERUSALEM_NORWAY" Text="Jorsala" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_JERUSALEM_POLAND" Text="Jerozolima" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_JERUSALEM_ROME" Text="Aelia Capitolina" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_JERUSALEM_RUSSIA" Text="Ierusalim" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_JERUSALEM_SPAIN" Text="Jerusalén" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_JERUSALEM_SUMERIA" Text="Rushalim" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KARBALA" Text="Karbala" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KARBALA_GREECE" Text="Borsippa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KARBALA_ROME" Text="Borsippa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KARBALA_SUMERIA" Text="Badsi-a-Abba" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KAYSERI" Text="Kayseri" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KAYSERI_ARABIA" Text="Kaisariyah" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KAYSERI_GREECE" Text="Eusebeia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KAYSERI_HATTUSA" Text="Hattusa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KAYSERI_ROME" Text="Caesarea in Cappadocia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KAYSERI_SUMERIA" Text="Kultepe" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KERMANSHAH" Text="Kermanshah" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KERMANSHAH_SUMERIA" Text="Bit Bunakki" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KUWAIT" Text="Kuwait" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_KUWAIT_ARABIA" Text="Madinat al-Kuwayt" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MECCA" Text="Mecca" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MECCA_ARABIA" Text="Makkah" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MECCA_CHINA" Text="Mai-Jia" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MECCA_EGYPT" Text="Baka" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MECCA_FRANCE" Text="Le Mecque" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MECCA_GERMANY" Text="Mekka" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MECCA_INDIA" Text="Makka" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MECCA_JAPAN" Text="Mekka" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MECCA_RUSSIA" Text="Mekka" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MECCA_SUMERIA" Text="Baka" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MEDINA" Text="Medina" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MEDINA_ARABIA" Text="Madinah" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MEDINA_EGYPT" Text="Yathrib" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MEDINA_FRANCE" Text="Médine" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MEDINA_GREECE" Text="Yathrib" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MEDINA_SUMERIA" Text="Yathrib" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MERSIN" Text="Mersin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MERSIN_ARABIA" Text="Marsin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MERSIN_GREECE" Text="Zephyrion" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MERSIN_ROME" Text="Hadrianopolis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MERSIN_SUMERIA" Text="Mersin" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MIRBAT" Text="Mirbat" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MOSUL" Text="Mosul" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MOSUL_ARABIA" Text="al-Mawsil" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MOSUL_EGYPT" Text="Ninii" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MOSUL_GREECE" Text="Ninive" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MOSUL_ROME" Text="Ninive" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MOSUL_SUMERIA" Text="Ninuwa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUSCAT" Text="Muscat" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUSCAT_ARABIA" Text="Masqat" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUSCAT_CHINA" Text="Masikate" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUSCAT_EGYPT" Text="Maas-Gat" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUSCAT_GREECE" Text="Cryptus Portus" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUSCAT_INDIA" Text="Masqat" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUSCAT_JAPAN" Text="Masukatto" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUSCAT_ROME" Text="Amithoscuta" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_MUSCAT_SUMERIA" Text="Maas-Gat" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PETRA" Text="Petra" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PETRA_ARABIA" Text="al-Batra" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PETRA_EGYPT" Text="Raqmu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PETRA_SUMERIA" Text="Raqmu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PORT_SAID" Text="Port Said" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PORT_SAID_ARABIA" Text="Borsa'id" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PORT_SAID_EGYPT" Text="Tahpanhes" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PORT_SAID_GREECE" Text="Daphnae" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PORT_SAID_ROME" Text="Daphnae" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_PORT_SAID_SUMERIA" Text="Tahpanhes" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_POTI" Text="Poti" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_POTI_GREECE" Text="Phasis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_POTI_ROME" Text="Phasis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_QOM" Text="Qom" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RAFHA" Text="Rafha" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RASHT" Text="Rasht" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RIYADH" Text="Riyadh" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RIYADH_ARABIA" Text="ar-Riyadh" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RIYADH_CHINA" Text="Liyade" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RIYADH_EGYPT" Text="Hajr" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RIYADH_FRANCE" Text="Riyad" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RIYADH_GERMANY" Text="Riad" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RIYADH_INDIA" Text="Riyaad" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RIYADH_JAPAN" Text="Riyado" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_RIYADH_SUMERIA" Text="Hajr" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SAKAKA" Text="Sakaka" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SALALAH" Text="Salalah" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SAMAWAH" Text="" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SAMSUN" Text="Samsun" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SAMSUN_ARABIA" Text="Samisun" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SAMSUN_GREECE" Text="Amisos" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SAMSUN_ROME" Text="Amisos" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SAMSUN_SUMERIA" Text="Eis Amison" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SANAA" Text="Sana'a" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SHARM_EL_SHEIKH" Text="Sharm El Sheikh" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SHARM_EL_SHEIKH_EGYPT" Text="At-tor" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SHARM_EL_SHEIKH_GREECE" Text="Raithu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SHARM_EL_SHEIKH_ROME" Text="Raithu" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SHARM_EL_SHEIKH_SUMERIA" Text="At-tor" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SHIRAZ" Text="Shiraz" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SHIRAZ_GREECE" Text="Persepolis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SHIRAZ_INDIA" Text="Shiraaz" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SHIRAZ_ROME" Text="Persepolis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_SHIRAZ_SUMERIA" Text="Parsa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TABRIZ" Text="Tabriz" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TABRIZ_GREECE" Text="Tauris" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TABRIZ_INDIA" Text="Tabarez" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TABRIZ_ROME" Text="Tauris" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TABRIZ_SUMERIA" Text="Tauris" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TAIF" Text="Taif" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TAIF_ARABIA" Text="al-Ta'if" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TBILISI" Text="Tbilisi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TBILISI_ARABIA" Text="Tablisi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TBILISI_GREECE" Text="Tiflis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TBILISI_ROME" Text="Tiflis" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TEHRAN" Text="Tehran" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TEHRAN_ARABIA" Text="Tahran" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TEHRAN_GREECE" Text="Hecatompylos" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TEHRAN_INDIA" Text="Teharaan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TEHRAN_ROME" Text="Teheranum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TRABZON" Text="Trabzon" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TRABZON_ARABIA" Text="Tarabizun" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TRABZON_GREECE" Text="Trapezounta" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TRABZON_ROME" Text="Trebizond" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_TRABZON_SUMERIA" Text="Trapezos" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_UR" Text="Ur" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_UR_ARABIA" Text="al-Basrah" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_UR_EGYPT" Text="Urim" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_UR_SUMERIA" Text="Urim" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VAN" Text="Van" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VAN_ARABIA" Text="Dabil" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VAN_EGYPT" Text="Tushpa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VAN_GREECE" Text="Tushpa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VAN_ROME" Text="Tushpa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_VAN_SUMERIA" Text="Tushpa" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_WADI_AD_DAWASIR" Text="Wadi ad-Dawasir" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_XANXENDI" Text="Xanxendi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_XANXENDI_ARABIA" Text="Khankhendi" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_XANXENDI_RUSSIA" Text="Stepanakert" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YAZD" Text="Yazd" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YAZD_GREECE" Text="Pasargadae" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YAZD_ROME" Text="Pasargadae" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YAZD_SUMERIA" Text="Pasargad" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YEREVAN" Text="Yerevan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YEREVAN_ARABIA" Text="Yurifan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YEREVAN_GERMANY" Text="Jerewan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YEREVAN_GREECE" Text="Gerevan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YEREVAN_INDIA" Text="Yerevana" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YEREVAN_ROME" Text="Erevanum" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_YEREVAN_RUSSIA" Text="Erivan" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ZONGULDAK" Text="Zonguldak" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ZONGULDAK_ARABIA" Text="Zunghuldaq" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ZONGULDAK_GREECE" Text="Acherusia Chersonesos" Language="en_US" />
+	<Replace Tag="LOC_CITY_NAME_ZONGULDAK_ROME" Text="Acherusia Chersonesos" Language="en_US" />	
 	</LocalizedText>
 	
 </GameData>
