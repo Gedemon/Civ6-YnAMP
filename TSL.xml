@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<!-- Giant Earth -->
+	<StartPosition>
+
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AKSUM"			X="34" Y="37" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CAPE_TOWN"		X="26" Y="7" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CUZCO"			X="153" Y="27" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_DAKAR"			X="4" Y="39" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_DUBLIN"		X="6" Y="75" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GARAMANTES"	X="23" Y="44" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_HARAPPA"		X="56" Y="53" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_IFE"			X="18" Y="33" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KIEV"			X="34" Y="68" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_LAKOTA"		X="138" Y="70" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MOGADISHU"		X="37" Y="31" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_RABAT"			X="6" Y="48" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_REYKJAVIK"		X="3" Y="83" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SAMARKAND"		X="52" Y="57" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SUTAIO"		X="142" Y="63" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SYDNEY"		X="103" Y="10" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_TIKAL"			X="146" Y="46" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ULUNDI"		X="32" Y="9" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_VANCOUVER"		X="131" Y="70" />
+		
+	</StartPosition>	
+
+	<!-- Greatest Earth Map -->
+	<StartPosition>
+	
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CAPE_TOWN"		X="54" Y="3" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_DAKAR"			X="39" Y="25" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_DUBLIN"			X="34" Y="54" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GARAMANTES"		X="49" Y="31" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_HARAPPA"			X="74" Y="40" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_IFE"				X="50" Y="21" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KIEV"			X="60" Y="52" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_LAKOTA"			X="9" Y="49" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MOGADISHU"		X="66" Y="24" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_REYKJAVIK"		X="31" Y="61" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SAMARKAND"		X="71" Y="46" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SUTAIO"			X="8" Y="53" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SYDNEY"			X="102" Y="12" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_VANCOUVER"		X="2" Y="54" />
+		
+	</StartPosition>
+
+	<!-- Largest Earth -->
+	<StartPosition>
+		
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_AKSUM"		X="46" Y="44" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_CAPE_TOWN"	X="32" Y="10" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_CUZCO"		X="206" Y="31" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_DAKAR"		X="6" Y="48" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_DUBLIN"		X="7" Y="93" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_GARAMANTES"	X="27" Y="56" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_HARAPPA"		X="76" Y="69" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_IFE"			X="22" Y="43" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_KIEV"		X="43" Y="87" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_LAKOTA"		X="191" Y="78" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_MOGADISHU"	X="49" Y="39" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_RABAT"		X="8" Y="61" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_REYKJAVIK"	X="1" Y="105" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_SAMARKAND"	X="73" Y="75" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_SYDNEY"		X="137" Y="13" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_SUTAIO"		X="193" Y="85" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_TIKAL"		X="193" Y="59" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_ULUNDI"		X="39" Y="14" />
+        <Replace MapName="LargestEarth" Civilization="CIVILIZATION_VANCOUVER"	X="175" Y="88" />
+				
+	</StartPosition>
+
+	<!-- Play Europe Againh -->
+	<StartPosition>	
+		
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_DUBLIN"		X="22" Y="66" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GARAMANTES"	X="41" Y="07" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_KIEV"			X="72" Y="51" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_RABAT"		X="12" Y="25" />
+        <Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_REYKJAVIK"	X="9" Y="89" />
+	
+	</StartPosition>
+	
+	
+	<!-- Cordiform Earth -->
+	<StartPosition>
+		
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_AKSUM"			X="44" Y="12" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_CAPE_TOWN"		X="38" Y="2" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_CUZCO"			X="14" Y="12" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_DAKAR"			X="27" Y="13" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_DUBLIN"		X="29" Y="34" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_GARAMANTES"	X="36" Y="16" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_IFE"			X="35" Y="12" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_KIEV"			X="45" Y="30" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_LAKOTA"		X="8" Y="33" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_MOGADISHU"		X="47" Y="12" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_RABAT"			X="30" Y="19" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_REYKJAVIK"		X="33" Y="40" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_SAMARKAND"		X="52" Y="30" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_SYDNEY"		X="75" Y="9" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_SUTAIO"		X="13" Y="39" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_TIKAL"			X="9" Y="21" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_ULUNDI"		X="40" Y="3" />
+        <Replace MapName="CordiformEarth" Civilization="CIVILIZATION_VANCOUVER"		X="175" Y="88" />
+				
+	</StartPosition>
+	
+</GameData>
