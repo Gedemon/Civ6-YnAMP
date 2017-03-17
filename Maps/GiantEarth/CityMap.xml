@@ -836,6 +836,192 @@
 	
 	</CityMap>
 	
+	<!-- SOUTH ASIA -->
+	
+	<!-- INDIA, PAKISTAN, BANGLADESH, SRI LANKA -->
+	<CityMap>
+		<Replace MapName="GiantEarth" X="58" Y="58" CityLocaleName="LOC_CITY_NAME_MALAKAND" Area="0" />
+		<Replace MapName="GiantEarth" X="59" Y="58" CityLocaleName="LOC_CITY_NAME_ABBOTTABAD" Area="0" />
+		<Replace MapName="GiantEarth" X="62" Y="58" CityLocaleName="LOC_CITY_NAME_CHAMBA" Area="0" />		
+		<Replace MapName="GiantEarth" X="56" Y="57" CityLocaleName="LOC_CITY_NAME_PESHAWAR" Area="0" />
+		<Replace MapName="GiantEarth" X="57" Y="57" CityLocaleName="LOC_CITY_NAME_ISLAMABAD" Area="0" />
+		<Replace MapName="GiantEarth" X="58" Y="57" CityLocaleName="LOC_CITY_NAME_ISLAMABAD" Area="0" />
+		<Replace MapName="GiantEarth" X="60" Y="57" CityLocaleName="LOC_CITY_NAME_SRINAGAR" />		
+		<Replace MapName="GiantEarth" X="62" Y="57" CityLocaleName="LOC_CITY_NAME_PALAMPUR" Area="0" />		
+		<Replace MapName="GiantEarth" X="63" Y="57" CityLocaleName="LOC_CITY_NAME_MANALI" Area="0" />
+		<Replace MapName="GiantEarth" X="55" Y="56" CityLocaleName="LOC_CITY_NAME_PARACHINAR" Area="0" />
+		<Replace MapName="GiantEarth" X="57" Y="56" CityLocaleName="LOC_CITY_NAME_KOHAT" Area="0" />		
+		<Replace MapName="GiantEarth" X="58" Y="56" CityLocaleName="LOC_CITY_NAME_RAWALPINDI" />		
+		<Replace MapName="GiantEarth" X="63" Y="56" CityLocaleName="LOC_CITY_NAME_MANDI" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="55" Y="55" CityLocaleName="LOC_CITY_NAME_DERA_ISMAIL_KHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="56" Y="55" CityLocaleName="LOC_CITY_NAME_DERA_ISMAIL_KHAN" Area="0" />		
+		<Replace MapName="GiantEarth" X="57" Y="55" CityLocaleName="LOC_CITY_NAME_SARGODHA" Area="0" />		
+		<Replace MapName="GiantEarth" X="57" Y="54" CityLocaleName="LOC_CITY_NAME_SARGODHA" Area="0" />
+		<Replace MapName="GiantEarth" X="58" Y="55" CityLocaleName="LOC_CITY_NAME_GUJRANWALA" Area="0" />
+		<Replace MapName="GiantEarth" X="58" Y="54" CityLocaleName="LOC_CITY_NAME_GUJRANWALA" Area="0" />
+		<Replace MapName="GiantEarth" X="61" Y="55" CityLocaleName="LOC_CITY_NAME_CHANDIGARH" />
+		<Replace MapName="GiantEarth" X="62" Y="55" CityLocaleName="LOC_CITY_NAME_SHIMLA" Area="0" />		
+		<Replace MapName="GiantEarth" X="63" Y="55" CityLocaleName="LOC_CITY_NAME_SHIMLA" Area="0" />
+		<Replace MapName="GiantEarth" X="64" Y="55" CityLocaleName="LOC_CITY_NAME_SURKHET" Area="0" />
+		<Replace MapName="GiantEarth" X="55" Y="54" CityLocaleName="LOC_CITY_NAME_QUETTA" />
+		<Replace MapName="GiantEarth" X="56" Y="54" CityLocaleName="LOC_CITY_NAME_BHAKKAR" Area="0" />		
+		<Replace MapName="GiantEarth" X="59" Y="54" CityLocaleName="LOC_CITY_NAME_LAHORE" />
+		<Replace MapName="GiantEarth" X="60" Y="54" CityLocaleName="LOC_CITY_NAME_LUDHIANA" Area="0" />
+		<Replace MapName="GiantEarth" X="62" Y="54" CityLocaleName="LOC_CITY_NAME_DEHRADUN" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="55" Y="53" CityLocaleName="LOC_CITY_NAME_DERA_GHAZI_KHAN" Area="0" />		
+		<Replace MapName="GiantEarth" X="56" Y="53" CityLocaleName="LOC_CITY_NAME_DERA_GHAZI_KHAN" Area="0" />		
+		<Replace MapName="GiantEarth" X="57" Y="53" CityLocaleName="LOC_CITY_NAME_FAISALABAD" Area="0" />
+		<Replace MapName="GiantEarth" X="58" Y="52" CityLocaleName="LOC_CITY_NAME_FAISALABAD" Area="0" />
+		<Replace MapName="GiantEarth" X="61" Y="53" CityLocaleName="LOC_CITY_NAME_MEERUT" Area="0" />
+		<Replace MapName="GiantEarth" X="62" Y="53" CityLocaleName="LOC_CITY_NAME_GONDA" Area="0" />		
+		<Replace MapName="GiantEarth" X="63" Y="53" CityLocaleName="LOC_CITY_NAME_BHARATPUR" Area="0" />		
+		<Replace MapName="GiantEarth" X="71" Y="53" CityLocaleName="LOC_CITY_NAME_DIBRUGARH" Area="0" />
+		<Replace MapName="GiantEarth" X="72" Y="53" CityLocaleName="LOC_CITY_NAME_DIBRUGARH" Area="0" />
+		<Replace MapName="GiantEarth" X="53" Y="52" CityLocaleName="LOC_CITY_NAME_KHUZDAR" Area="0" />		
+		<Replace MapName="GiantEarth" X="53" Y="51" CityLocaleName="LOC_CITY_NAME_KHUZDAR" Area="0" />				
+		<Replace MapName="GiantEarth" X="56" Y="52" CityLocaleName="LOC_CITY_NAME_SHIKARPU" Area="0" />
+		<Replace MapName="GiantEarth" X="57" Y="52" CityLocaleName="LOC_CITY_NAME_MULTAN" Area="0" />
+		<Replace MapName="GiantEarth" X="56" Y="51" CityLocaleName="LOC_CITY_NAME_MULTAN" Area="0" />
+		<Replace MapName="GiantEarth" X="60" Y="52" CityLocaleName="LOC_CITY_NAME_NEW_DELHI" />		
+		<Replace MapName="GiantEarth" X="62" Y="52" CityLocaleName="LOC_CITY_NAME_FAIZABAD" Area="0" />
+		<Replace MapName="GiantEarth" X="63" Y="52" CityLocaleName="LOC_CITY_NAME_GIRAKHPUR" Area="0" />
+		<Replace MapName="GiantEarth" X="64" Y="52" CityLocaleName="LOC_CITY_NAME_BETTIAH" Area="0" />
+		<Replace MapName="GiantEarth" X="66" Y="52" CityLocaleName="LOC_CITY_NAME_KATHMANDU" />		
+		<Replace MapName="GiantEarth" X="67" Y="52" CityLocaleName="LOC_CITY_NAME_DARJEELING" Area="0" />
+		<Replace MapName="GiantEarth" X="68" Y="52" CityLocaleName="LOC_CITY_NAME_THIMPHU" Area="0" />
+		<Replace MapName="GiantEarth" X="69" Y="52" CityLocaleName="LOC_CITY_NAME_THIMPHU" Area="0" />
+		<Replace MapName="GiantEarth" X="70" Y="52" CityLocaleName="LOC_CITY_NAME_ITANAGAR" Area="0" />		
+		<Replace MapName="GiantEarth" X="71" Y="52" CityLocaleName="LOC_CITY_NAME_ITANAGAR" Area="0" />		
+		
+		<Replace MapName="GiantEarth" X="54" Y="51" CityLocaleName="LOC_CITY_NAME_LARKANA" />
+		<Replace MapName="GiantEarth" X="55" Y="51" CityLocaleName="LOC_CITY_NAME_SUKKUR" Area="0" />		
+		<Replace MapName="GiantEarth" X="56" Y="51" CityLocaleName="LOC_CITY_NAME_SUKKUR" Area="0" />		
+		<Replace MapName="GiantEarth" X="57" Y="51" CityLocaleName="LOC_CITY_NAME_BAHAWALPUR" Area="0" />		
+		<Replace MapName="GiantEarth" X="58" Y="51" CityLocaleName="LOC_CITY_NAME_SRI_GANGANAGAR" Area="0" />
+		<Replace MapName="GiantEarth" X="61" Y="51" CityLocaleName="LOC_CITY_NAME_LUCKNOW" Area="0" />
+		<Replace MapName="GiantEarth" X="62" Y="50" CityLocaleName="LOC_CITY_NAME_LUCKNOW" Area="0" />
+		<Replace MapName="GiantEarth" X="62" Y="51" CityLocaleName="LOC_CITY_NAME_ALLAHABAD" Area="0" />		
+		<Replace MapName="GiantEarth" X="63" Y="51" CityLocaleName="LOC_CITY_NAME_VARANASI"  />		
+		<Replace MapName="GiantEarth" X="65" Y="51" CityLocaleName="LOC_CITY_NAME_BIRGUNJ" Area="0" />
+		<Replace MapName="GiantEarth" X="66" Y="51" CityLocaleName="LOC_CITY_NAME_JANAKPUR" Area="0" />
+		<Replace MapName="GiantEarth" X="67" Y="51" CityLocaleName="LOC_CITY_NAME_BOGRA" Area="0" />		
+		<Replace MapName="GiantEarth" X="68" Y="51" CityLocaleName="LOC_CITY_NAME_GUWAHATI" Area="0" />
+		<Replace MapName="GiantEarth" X="69" Y="51" CityLocaleName="LOC_CITY_NAME_DIMAPUR" Area="0" />
+		<Replace MapName="GiantEarth" X="70" Y="51" CityLocaleName="LOC_CITY_NAME_DIMAPUR" Area="0" />
+		<Replace MapName="GiantEarth" X="71" Y="51" CityLocaleName="LOC_CITY_NAME_KOHIMA" Area="0" />		
+
+		<Replace MapName="GiantEarth" X="54" Y="50" CityLocaleName="LOC_CITY_NAME_DADU" Area="0" />
+		<Replace MapName="GiantEarth" X="55" Y="50" CityLocaleName="LOC_CITY_NAME_NAWABSHAH" Area="0" />
+		<Replace MapName="GiantEarth" X="54" Y="49" CityLocaleName="LOC_CITY_NAME_NAWABSHAH" Area="0" />
+		<Replace MapName="GiantEarth" X="57" Y="50" CityLocaleName="LOC_CITY_NAME_JAISALMER" Area="0" />		
+		<Replace MapName="GiantEarth" X="58" Y="50" CityLocaleName="LOC_CITY_NAME_BIKANER" Area="0" />		
+		<Replace MapName="GiantEarth" X="60" Y="50" CityLocaleName="LOC_CITY_NAME_AGRA" Area="0" />
+		<Replace MapName="GiantEarth" X="61" Y="50" CityLocaleName="LOC_CITY_NAME_AGRA" Area="0" />
+		<Replace MapName="GiantEarth" X="66" Y="50" CityLocaleName="LOC_CITY_NAME_BEGUSARAI" Area="0" />		
+		<Replace MapName="GiantEarth" X="67" Y="50" CityLocaleName="LOC_CITY_NAME_RAJSHAHI" Area="0" />		
+		<Replace MapName="GiantEarth" X="68" Y="50" CityLocaleName="LOC_CITY_NAME_RANGPUR" Area="0" />
+		<Replace MapName="GiantEarth" X="69" Y="50" CityLocaleName="LOC_CITY_NAME_SYLHET" Area="0" />
+		<Replace MapName="GiantEarth" X="70" Y="50" CityLocaleName="LOC_CITY_NAME_AIZAWL" Area="0" />		
+		<Replace MapName="GiantEarth" X="71" Y="50" CityLocaleName="LOC_CITY_NAME_IMPHAL" Area="0" />		
+		
+		<Replace MapName="GiantEarth" X="53" Y="49" CityLocaleName="LOC_CITY_NAME_WINDER" Area="0" />
+		<Replace MapName="GiantEarth" X="53" Y="48" CityLocaleName="LOC_CITY_NAME_WINDER" Area="0" />
+		<Replace MapName="GiantEarth" X="56" Y="49" CityLocaleName="LOC_CITY_NAME_HYDERABAD_SINDH" />		
+		<Replace MapName="GiantEarth" X="57" Y="49" CityLocaleName="LOC_CITY_NAME_JODHPUR" Area="0" />
+		<Replace MapName="GiantEarth" X="59" Y="49" CityLocaleName="LOC_CITY_NAME_JAIPUR" />
+		<Replace MapName="GiantEarth" X="60" Y="49" CityLocaleName="LOC_CITY_NAME_GWALIOR" Area="0" />
+		<Replace MapName="GiantEarth" X="61" Y="49" CityLocaleName="LOC_CITY_NAME_KANPUR" />		
+		<Replace MapName="GiantEarth" X="63" Y="49" CityLocaleName="LOC_CITY_NAME_GAYA" Area="0" />
+		<Replace MapName="GiantEarth" X="65" Y="49" CityLocaleName="LOC_CITY_NAME_PATNA" />
+		<Replace MapName="GiantEarth" X="66" Y="49" CityLocaleName="LOC_CITY_NAME_BHAGALPUR" Area="0" />
+		<Replace MapName="GiantEarth" X="67" Y="49" CityLocaleName="LOC_CITY_NAME_KHULNA" Area="0" />		
+		
+		<Replace MapName="GiantEarth" X="58" Y="48" CityLocaleName="LOC_CITY_NAME_UDAIPUR" Area="0" />		
+		<Replace MapName="GiantEarth" X="60" Y="48" CityLocaleName="LOC_CITY_NAME_KOTA" Area="0" />
+		<Replace MapName="GiantEarth" X="61" Y="48" CityLocaleName="LOC_CITY_NAME_ASHOKNAGAR" Area="0" />
+		<Replace MapName="GiantEarth" X="62" Y="48" CityLocaleName="LOC_CITY_NAME_SAGAR" Area="0" />		
+		<Replace MapName="GiantEarth" X="63" Y="48" CityLocaleName="LOC_CITY_NAME_DALTONGANJ" Area="0" />		
+		<Replace MapName="GiantEarth" X="64" Y="48" CityLocaleName="LOC_CITY_NAME_GAYA" Area="0" />
+		<Replace MapName="GiantEarth" X="65" Y="48" CityLocaleName="LOC_CITY_NAME_RANCHI" Area="0" />
+		<Replace MapName="GiantEarth" X="64" Y="47" CityLocaleName="LOC_CITY_NAME_RANCHI" Area="0" />
+		<Replace MapName="GiantEarth" X="66" Y="48" CityLocaleName="LOC_CITY_NAME_JAMSHEDPUR" Area="0" />		
+		<Replace MapName="GiantEarth" X="65" Y="47" CityLocaleName="LOC_CITY_NAME_JAMSHEDPUR" Area="0" />		
+		<Replace MapName="GiantEarth" X="68" Y="48" CityLocaleName="LOC_CITY_NAME_KOLKATA" Area="0" />		
+		<Replace MapName="GiantEarth" X="69" Y="48" CityLocaleName="LOC_CITY_NAME_DHAKA" />
+		
+		<Replace MapName="GiantEarth" X="54" Y="47" CityLocaleName="LOC_CITY_NAME_KARACHI" />
+		<Replace MapName="GiantEarth" X="56" Y="47" CityLocaleName="LOC_CITY_NAME_JALANPUR" Area="0" />		
+		<Replace MapName="GiantEarth" X="59" Y="47" CityLocaleName="LOC_CITY_NAME_INDORE" Area="0" />
+		<Replace MapName="GiantEarth" X="59" Y="46" CityLocaleName="LOC_CITY_NAME_INDORE" Area="0" />
+		<Replace MapName="GiantEarth" X="60" Y="46" CityLocaleName="LOC_CITY_NAME_INDORE" Area="0" />
+		<Replace MapName="GiantEarth" X="61" Y="47" CityLocaleName="LOC_CITY_NAME_BHOPAL" Area="0" />		
+		<Replace MapName="GiantEarth" X="62" Y="47" CityLocaleName="LOC_CITY_NAME_JABALPUR" Area="0" />
+		<Replace MapName="GiantEarth" X="63" Y="47" CityLocaleName="LOC_CITY_NAME_AMBIKAPUR" Area="0" />
+		<Replace MapName="GiantEarth" X="67" Y="47" CityLocaleName="LOC_CITY_NAME_KOLKATA" />
+		<Replace MapName="GiantEarth" X="56" Y="46" CityLocaleName="LOC_CITY_NAME_BHUJ" />		
+		<Replace MapName="GiantEarth" X="58" Y="46" CityLocaleName="LOC_CITY_NAME_AHMEDABAD" />		
+		<Replace MapName="GiantEarth" X="62" Y="46" CityLocaleName="LOC_CITY_NAME_CHHINDWARA" Area="0" />
+		<Replace MapName="GiantEarth" X="63" Y="46" CityLocaleName="LOC_CITY_NAME_BILASPUR" Area="0" />
+		<Replace MapName="GiantEarth" X="64" Y="46" CityLocaleName="LOC_CITY_NAME_KORBA" Area="0" />
+		<Replace MapName="GiantEarth" X="65" Y="46" CityLocaleName="LOC_CITY_NAME_ROURKELA" Area="0" />		
+		<Replace MapName="GiantEarth" X="66" Y="46" CityLocaleName="LOC_CITY_NAME_KHARAGPUR" Area="0" />		
+		<Replace MapName="GiantEarth" X="66" Y="46" CityLocaleName="LOC_CITY_NAME_BALASORE" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="55" Y="45" CityLocaleName="LOC_CITY_NAME_RAJKOT" Area="0" />
+		<Replace MapName="GiantEarth" X="55" Y="44" CityLocaleName="LOC_CITY_NAME_RAJKOT" Area="0" />		
+		<Replace MapName="GiantEarth" X="56" Y="45" CityLocaleName="LOC_CITY_NAME_BHAVNAGAR" Area="0" />		
+		<Replace MapName="GiantEarth" X="56" Y="44" CityLocaleName="LOC_CITY_NAME_BHAVNAGAR" Area="0" />
+		<Replace MapName="GiantEarth" X="57" Y="45" CityLocaleName="LOC_CITY_NAME_VADODARA" Area="0" />
+		<Replace MapName="GiantEarth" X="58" Y="45" CityLocaleName="LOC_CITY_NAME_VADODARA" Area="0" />		
+		<Replace MapName="GiantEarth" X="59" Y="45" CityLocaleName="LOC_CITY_NAME_KHANDWA" Area="0" />		
+		<Replace MapName="GiantEarth" X="60" Y="45" CityLocaleName="LOC_CITY_NAME_HOSHANGABAD" Area="0" />
+		<Replace MapName="GiantEarth" X="62" Y="45" CityLocaleName="LOC_CITY_NAME_RAJNANDGAON" Area="0" />
+		<Replace MapName="GiantEarth" X="63" Y="45" CityLocaleName="LOC_CITY_NAME_RAIPUR" />		
+		<Replace MapName="GiantEarth" X="64" Y="45" CityLocaleName="LOC_CITY_NAME_SAMBALPUR" Area="0" />		
+		<Replace MapName="GiantEarth" X="66" Y="45" CityLocaleName="LOC_CITY_NAME_CUTTACK" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="57" Y="44" CityLocaleName="LOC_CITY_NAME_SURAT" />
+		<Replace MapName="GiantEarth" X="59" Y="44" CityLocaleName="LOC_CITY_NAME_DHULE" Area="0" />		
+		<Replace MapName="GiantEarth" X="60" Y="44" CityLocaleName="LOC_CITY_NAME_AMRAVATI" Area="0" />
+		<Replace MapName="GiantEarth" X="62" Y="44" CityLocaleName="LOC_CITY_NAME_NAGPUR" />
+		<Replace MapName="GiantEarth" X="66" Y="44" CityLocaleName="LOC_CITY_NAME_BRAHMAPUR" Area="0" />
+		<Replace MapName="GiantEarth" X="58" Y="43" CityLocaleName="LOC_CITY_NAME_NASHIK" Area="0" />		
+		<Replace MapName="GiantEarth" X="59" Y="42" CityLocaleName="LOC_CITY_NAME_NASHIK" Area="0" />		
+		<Replace MapName="GiantEarth" X="59" Y="43" CityLocaleName="LOC_CITY_NAME_AURANGABAD" Area="0" />
+		<Replace MapName="GiantEarth" X="60" Y="43" CityLocaleName="LOC_CITY_NAME_NANDED" Area="0" />
+		<Replace MapName="GiantEarth" X="61" Y="43" CityLocaleName="LOC_CITY_NAME_KARIMNAGAR" Area="0" />
+		<Replace MapName="GiantEarth" X="62" Y="43" CityLocaleName="LOC_CITY_NAME_RAJAHMUNDRY" Area="0" />		
+		<Replace MapName="GiantEarth" X="63" Y="42" CityLocaleName="LOC_CITY_NAME_RAJAHMUNDRY" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="60" Y="42" CityLocaleName="LOC_CITY_NAME_SOLAPUR" Area="0" />		
+		<Replace MapName="GiantEarth" X="61" Y="42" CityLocaleName="LOC_CITY_NAME_NIZAMABAD" Area="0" />
+		<Replace MapName="GiantEarth" X="62" Y="42" CityLocaleName="LOC_CITY_NAME_VIJAYAWADA" Area="0" />
+		<Replace MapName="GiantEarth" X="62" Y="41" CityLocaleName="LOC_CITY_NAME_VIJAYAWADA" Area="0" />		
+		<Replace MapName="GiantEarth" X="65" Y="42" CityLocaleName="LOC_CITY_NAME_VISAKHAPATNAM" />		
+		<Replace MapName="GiantEarth" X="57" Y="41" CityLocaleName="LOC_CITY_NAME_MUMBAI" />
+		<Replace MapName="GiantEarth" X="59" Y="41" CityLocaleName="LOC_CITY_NAME_PUNE" Area="0" />
+		<Replace MapName="GiantEarth" X="59" Y="40" CityLocaleName="LOC_CITY_NAME_PUNE" Area="0" />
+		<Replace MapName="GiantEarth" X="60" Y="41" CityLocaleName="LOC_CITY_NAME_HYDERABAD" />	
+		
+		<Replace MapName="GiantEarth" X="62" Y="40" CityLocaleName="LOC_CITY_NAME_ONGOLE" Area="0" />		
+		<Replace MapName="GiantEarth" X="58" Y="38" CityLocaleName="LOC_CITY_NAME_PANAJI" />
+		<Replace MapName="GiantEarth" X="60" Y="38" CityLocaleName="LOC_CITY_NAME_BENGALURU" />
+		<Replace MapName="GiantEarth" X="62" Y="38" CityLocaleName="LOC_CITY_NAME_CHENNAI" />		
+		<Replace MapName="GiantEarth" X="59" Y="37" CityLocaleName="LOC_CITY_NAME_MANGALURU" Area="0" />	
+		<Replace MapName="GiantEarth" X="60" Y="36" CityLocaleName="LOC_CITY_NAME_COIMBATORE" Area="0" />
+		<Replace MapName="GiantEarth" X="61" Y="36" CityLocaleName="LOC_CITY_NAME_MADURAI" Area="0" />		
+		<Replace MapName="GiantEarth" X="62" Y="36" CityLocaleName="LOC_CITY_NAME_MADURAI" Area="0" />	
+		<Replace MapName="GiantEarth" X="60" Y="35" CityLocaleName="LOC_CITY_NAME_THIRUVANANTHAPURAM" Area="0" />
+		<Replace MapName="GiantEarth" X="61" Y="35" CityLocaleName="LOC_CITY_NAME_THOOTHUKUDI" Area="0" />		
+		<Replace MapName="GiantEarth" X="61" Y="34" CityLocaleName="LOC_CITY_NAME_NAGERCOIL" Area="0" />	
+		<Replace MapName="GiantEarth" X="63" Y="34" CityLocaleName="LOC_CITY_NAME_JAFFNA" Area="0" />
+		<Replace MapName="GiantEarth" X="62" Y="32" CityLocaleName="LOC_CITY_NAME_COLOMBO" />		
+		<Replace MapName="GiantEarth" X="64" Y="32" CityLocaleName="LOC_CITY_NAME_BATTICOLOA" Area="0" />	
+		<Replace MapName="GiantEarth" X="58" Y="31" CityLocaleName="LOC_CITY_NAME_MALDIVES" />	
+	</CityMap>	
+		
 	<!-- SUB-EQUATORIAL AFRICA -->
 	<CityMap>
 		
@@ -2686,3 +2872,4 @@
 	</CityMap>
 	
 </GameData>
+
