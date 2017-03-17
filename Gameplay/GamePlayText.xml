@@ -5168,7 +5168,148 @@
 
 	</LocalizedText>
 
-
+	<!-- India, Pakistan, Bangladesh, Srilanka -->
+	
+	<LocalizedText>
+		<Replace Tag="LOC_CITY_NAME_MALAKAND" Text="Malakand" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ABBOTTABAD" Text="Abbottabad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHAMBA" Text="Chamba" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PESHAWAR" Text="Peshawar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ISLAMABAD" Text="Islamabad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SRINAGAR" Text="Srinagar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PALAMPUR" Text="Palampur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANALI" Text="Manali" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PARACHINAR" Text="Parachinar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KOHAT" Text="Kohat" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RAWALPINDI" Text="Rawalpindi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANDI" Text="Mandi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DERA_ISMAIL_KHAN" Text="Dera Ismail Khan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SARGODHA" Text="Sargodha" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GUJRANWALA" Text="Gujranwala" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHANDIGARH" Text="Chandigarh" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SHIMLA" Text="Shimla" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SURKHET" Text="Surkhet" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_QUETTA" Text="Quetta" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BHAKKAR" Text="Bhakkar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LAHORE" Text="Lahore" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUDHIANA" Text="Ludhiana" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DEHRADUN" Text="Dehradun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DERA_GHAZI_KHAN" Text="Dera Ghazi Khan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_FAISALABAD" Text="Faisalabad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEERUT" Text="Meerut" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GONDA" Text="Gonda" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BHARATPUR" Text="Bharatpur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DIBRUGARH" Text="Dibrugarh" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KHUZDAR" Text="Khuzdar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SHIKARPU" Text="Shikarpu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MULTAN" Text="Multan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NEW_DELHI" Text="New Delhi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_FAIZABAD" Text="Faizabad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIRAKHPUR" Text="Girakhpur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BETTIAH" Text="Bettiah" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KATHMANDU" Text="Kathmandu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DARJEELING" Text="Darjeeling" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_THIMPHU" Text="Thimphu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ITANAGAR" Text="Itanagar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LARKANA" Text="Larkana" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SUKKUR" Text="Sukkur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BAHAWALPUR" Text="Bahawalpur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SRI_GANGANAGAR" Text="Sri Ganganagar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUCKNOW" Text="Lucknow" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ALLAHABAD" Text="Allahabad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VARANASI" Text="Varanasi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BIRGUNJ" Text="Birgunj" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JANAKPUR" Text="Janakpur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BOGRA" Text="Bogra" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GUWAHATI" Text="Guwahati" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DIMAPUR" Text="Dimapur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KOHIMA" Text="Kohima" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DADU" Text="Dadu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAWABSHAH" Text="Nawabshah" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JAISALMER" Text="jaisalmer" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BIKANER" Text="Bikaner" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AGRA" Text="Agra" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BEGUSARAI" Text="Begusarai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RANGPUR" Text="Rangpur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SYLHET" Text="Sylhet" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AIZAWL" Text="Aizawl" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_IMPHAL" Text="Imphal" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WINDER" Text="Winder" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HYDERABAD_SINDH" Text="Hyderabad, Sindh" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HYDERABAD" Text="Hyderabad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JODHPUR" Text="Jodhpur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JAIPUR" Text="Jaipur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GWALIOR" Text="Gwalior" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KANPUR" Text="Kanpur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GAYA" Text="Gaya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PATNA" Text="Patna" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BHAGALPUR" Text="Bhagalpur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KHULNA" Text="Khulna" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_UDAIPUR" Text="Udaipur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KOTA" Text="Kota" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ASHOKNAGAR" Text="Ashoknagar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAGAR" Text="Sagar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DALTONGANJ" Text="Daltonganj" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RANCHI" Text="Ranchi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JAMSHEDPUR" Text="Jamshedpur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KOLKATA" Text="Kolkata" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DHAKA" Text="Dhaka" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KARACHI" Text="Karachi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JALANPUR" Text="Jalanpur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_INDORE" Text="Indore" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BHOPAL" Text="Bhopal" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JABALPUR" Text="Jabalpur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMBIKAPUR" Text="Ambikapur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BHUJ" Text="Bhuj" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AHMEDABAD" Text="Ahmedabad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHHINDWARA" Text="Chhindwara" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BILASPUR" Text="Bilaspur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KORBA" Text="Korba" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROURKELA" Text="Rourkela" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KHARAGPUR" Text="Kharagpur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BALASORE" Text="Balasore" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RAJKOT" Text="Rajkot" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BHAVNAGAR" Text="Bhavnagar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VADODARA" Text="Vadodara" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KHANDWA" Text="Khandwa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HOSHANGABAD" Text="Hoshangabad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RAJNANDGAON" Text="Rajnandgaon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RAIPUR" Text="Raipur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAMBALPUR" Text="Sambalpur" Language="en_US" />		
+		<Replace Tag="LOC_CITY_NAME_CUTTACK" Text="Cuttack" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SURAT" Text="Surat" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DHULE" Text="Dhule" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMRAVATI" Text="Amravati" Language="en_US" />		
+		<Replace Tag="LOC_CITY_NAME_NAGPUR" Text="Nagpur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRAHMAPUR" Text="Brahmapur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NASHIK" Text="Nashik" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AURANGABAD" Text="Aurangabad" Language="en_US" />		
+		<Replace Tag="LOC_CITY_NAME_NANDED" Text="Nanded" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KARIMNAGAR" Text="Karimnagar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RAJAHMUNDRY" Text="Rajahmundry" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SOLAPUR" Text="Solapur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIZAMABAD" Text="Nizamabad" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VIJAYAWADA" Text="Vijayawada" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VISAKHAPATNAM" Text="Visakhapatnam" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MUMBAI" Text="Mumbai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PUNE" Text="Pune" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ONGOLE" Text="Ongole" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PANAJI" Text="Panaji" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BENGALURU" Text="Bengaluru" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHENNAI" Text="Chennai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANGALURU" Text="Mangaluru" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_COIMBATORE" Text="Coimbatore" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MADURAI" Text="Madurai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_THIRUVANANTHAPURAM" Text="Thiruvananthapuram" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_THOOTHUKUDI" Text="Thoothukudi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAGERCOIL" Text="Nagercoil" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JAFFNA" Text="Jaffna" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_COLOMBO" Text="Colombo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BATTICOLOA" Text="Batticoloa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MALDIVES" Text="Maldives" Language="en_US" />
+		
+	</LocalizedText>
+	
 	<!-- Latin America -->
 	<LocalizedText>
 
