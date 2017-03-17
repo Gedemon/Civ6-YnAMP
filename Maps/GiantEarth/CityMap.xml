@@ -2684,5 +2684,1001 @@
 	<Replace MapName="GiantEarth" X="45" Y="60" CityLocaleName="LOC_CITY_NAME_BAKU" />
 
 	</CityMap>
+
+	<!-- GREENLAND -->
+	<CityMap>
+		<Replace MapName="GiantEarth" X="178" Y="92" CityLocaleName="LOC_CITY_NAME_MYGGBUKTA" Area="2" />
+		<Replace MapName="GiantEarth" X="175" Y="88" CityLocaleName="LOC_CITY_NAME_TASIILAQ" Area="2" />
+		<Replace MapName="GiantEarth" X="174" Y="92" CityLocaleName="LOC_CITY_NAME_GREENLAND_GLACIER_EAST" Area="2" />
+		<Replace MapName="GiantEarth" X="174" Y="86" CityLocaleName="LOC_CITY_NAME_ISORTOQ" Area="1" />
+		<Replace MapName="GiantEarth" X="173" Y="84" CityLocaleName="LOC_CITY_NAME_PRINS_CHRISTIANS_SUND" Area="2" />
+		<Replace MapName="GiantEarth" X="171" Y="89" CityLocaleName="LOC_CITY_NAME_GREENLAND_GLACIER_SOUTH" Area="2" />
+		<Replace MapName="GiantEarth" X="170" Y="92" CityLocaleName="LOC_CITY_NAME_GREENLAND_GLACIER_NORTH" Area="2" />
+		<Replace MapName="GiantEarth" X="170" Y="86" CityLocaleName="LOC_CITY_NAME_NARSARSUAQ" Area="2" />
+		<Replace MapName="GiantEarth" X="170" Y="82" CityLocaleName="LOC_CITY_NAME_NANORTALIK" Area="2" />
+		<Replace MapName="GiantEarth" X="168" Y="89" CityLocaleName="LOC_CITY_NAME_GREENLAND_GLACIER_CENTER" Area="2" />
+		<Replace MapName="GiantEarth" X="168" Y="84" CityLocaleName="LOC_CITY_NAME_QAQORTOQ" Area="2" />	
+		<Replace MapName="GiantEarth" X="170" Y="84" CityLocaleName="LOC_CITY_NAME_NANORTALIK" Area="0" />
+		<Replace MapName="GiantEarth" X="171" Y="84" CityLocaleName="LOC_CITY_NAME_NANORTALIK" Area="0" />	
+		<Replace MapName="GiantEarth" X="164" Y="91" CityLocaleName="LOC_CITY_NAME_KANGERLUSSAQ" Area="0" />
+		<Replace MapName="GiantEarth" X="166" Y="91" CityLocaleName="LOC_CITY_NAME_GREENLAND_GLACIER_WEST" Area="2" />
+		<Replace MapName="GiantEarth" X="168" Y="91" CityLocaleName="LOC_CITY_NAME_GREENLAND_GLACIER_NORTH" Area="0" />
+		<Replace MapName="GiantEarth" X="171" Y="91" CityLocaleName="LOC_CITY_NAME_GREENLAND_GLACIER_NORTH" Area="0" />
+		<Replace MapName="GiantEarth" X="172" Y="91" CityLocaleName="LOC_CITY_NAME_GREENLAND_GLACIER_EAST" Area="0" />
+		<Replace MapName="GiantEarth" X="166" Y="88" CityLocaleName="LOC_CITY_NAME_KAPISILLIT" Area="2" />
+		<Replace MapName="GiantEarth" X="165" Y="84" CityLocaleName="LOC_CITY_NAME_PAAMIUT" Area="1" />
+		<Replace MapName="GiantEarth" X="163" Y="92" CityLocaleName="LOC_CITY_NAME_KANGERLUSSUAQ" Area="2" />
+		<Replace MapName="GiantEarth" X="165" Y="92" CityLocaleName="LOC_CITY_NAME_KANGERLUSSUAQ" Area="0" />
+		<Replace MapName="GiantEarth" X="168" Y="92" CityLocaleName="LOC_CITY_NAME_GREENLAND_GLACIER_WEST" Area="0" />
+		<Replace MapName="GiantEarth" X="172" Y="92" CityLocaleName="LOC_CITY_NAME_GREENLAND_GLACIER_NORTH" Area="0" />
+		<Replace MapName="GiantEarth" X="176" Y="92" CityLocaleName="LOC_CITY_NAME_GREENLAND_GLACIER_EAST" Area="0" />
+		<Replace MapName="GiantEarth" X="163" Y="88" CityLocaleName="LOC_CITY_NAME_MANIITSOQ" Area="2" />
+		<Replace MapName="GiantEarth" X="170" Y="88" CityLocaleName="LOC_CITY_NAME_GREENLAND_GLACIER_CENTER" Area="0" />
+		<Replace MapName="GiantEarth" X="173" Y="88" CityLocaleName="LOC_CITY_NAME_TASIILAQ" Area="0" />
+		<Replace MapName="GiantEarth" X="163" Y="86" CityLocaleName="LOC_CITY_NAME_NUUK" Area="1" />
+		<Replace MapName="GiantEarth" X="167" Y="86" CityLocaleName="LOC_CITY_NAME_QAQORTOQ" Area="0" />
+		<Replace MapName="GiantEarth" X="168" Y="86" CityLocaleName="LOC_CITY_NAME_QAQORTOQ" Area="0" />
+		<Replace MapName="GiantEarth" X="172" Y="86" CityLocaleName="LOC_CITY_NAME_NARSARSUAQ" Area="0" />
+		<Replace MapName="GiantEarth" X="162" Y="88" CityLocaleName="LOC_CITY_NAME_SISIMIUT" Area="0" />	
+		<Replace MapName="GiantEarth" X="161" Y="90" CityLocaleName="LOC_CITY_NAME_ILULISSAT" Area="1" />	
+		<Replace MapName="GiantEarth" X="163" Y="90" CityLocaleName="LOC_CITY_NAME_MANIITSOQ" Area="0" />	
+		<Replace MapName="GiantEarth" X="164" Y="90" CityLocaleName="LOC_CITY_NAME_MANIITSOQ" Area="0" />	
+		<Replace MapName="GiantEarth" X="165" Y="90" CityLocaleName="LOC_CITY_NAME_GREENLAND_GLACIER_WEST" Area="0" />	
+		<Replace MapName="GiantEarth" X="170" Y="90" CityLocaleName="LOC_CITY_NAME_GREENLAND_GLACIER_CENTER" Area="0" />	
+		<Replace MapName="GiantEarth" X="173" Y="90" CityLocaleName="LOC_CITY_NAME_GREENLAND_GLACIER_SOUTH" Area="0" />	
+		<Replace MapName="GiantEarth" X="174" Y="90" CityLocaleName="LOC_CITY_NAME_TASIILAQ" Area="0" />	
+		<Replace MapName="GiantEarth" X="175" Y="90" CityLocaleName="LOC_CITY_NAME_TASIILAQ" Area="0" />			
+		<Replace MapName="GiantEarth" X="161" Y="89" CityLocaleName="LOC_CITY_NAME_AASIAAT" Area="0" />				
+		<Replace MapName="GiantEarth" X="164" Y="89" CityLocaleName="LOC_CITY_NAME_MANIITSOQ" Area="0" />				
+		<Replace MapName="GiantEarth" X="173" Y="89" CityLocaleName="LOC_CITY_NAME_TASIILAQ" Area="0" />			
+		<Replace MapName="GiantEarth" X="164" Y="87" CityLocaleName="LOC_CITY_NAME_KAPISILLIT" Area="0" />			
+		<Replace MapName="GiantEarth" X="167" Y="87" CityLocaleName="LOC_CITY_NAME_KAPISILLIT" Area="0" />			
+		<Replace MapName="GiantEarth" X="168" Y="87" CityLocaleName="LOC_CITY_NAME_NARSARSUAQ" Area="0" />			
+		<Replace MapName="GiantEarth" X="171" Y="87" CityLocaleName="LOC_CITY_NAME_NARSARSUAQ" Area="0" />				
+		<Replace MapName="GiantEarth" X="171" Y="85" CityLocaleName="LOC_CITY_NAME_PRINS_CHRISTIANS_SUND" Area="0" />		
+		<Replace MapName="GiantEarth" X="171" Y="83" CityLocaleName="LOC_CITY_NAME_PRINS_CHRISTIANS_SUND" Area="0" />
+		
+	</CityMap>
+
+	<!-- NORTH AMERICA & HAWAII -->
+	<CityMap>
+
+		<!-- CANADA -->	
+			<!-- CANADIAN TERRITORIES -->										
+				<!-- NORTHWEST TERRITORIES -->	
+				<Replace MapName="GiantEarth" X="134" Y="80" CityLocaleName="LOC_CITY_NAME_HAY_RIVER" Area="0" />
+				<Replace MapName="GiantEarth" X="136" Y="80" CityLocaleName="LOC_CITY_NAME_FORT_SMITH" Area="1" />
+
+				<Replace MapName="GiantEarth" X="131" Y="81" CityLocaleName="LOC_CITY_NAME_FORT_SIMPSON" Area="1" />
+				<Replace MapName="GiantEarth" X="133" Y="81" CityLocaleName="LOC_CITY_NAME_GAMETI" Area="1" />
+				<Replace MapName="GiantEarth" X="135" Y="81" CityLocaleName="LOC_CITY_NAME_YELLOWKNIFE" Area="0" />	
+
+				<Replace MapName="GiantEarth" X="130" Y="82" CityLocaleName="LOC_CITY_NAME_NORMAN_WELLS" Area="0" />
+				<Replace MapName="GiantEarth" X="131" Y="82" CityLocaleName="LOC_CITY_NAME_FORT_SIMPSON" Area="0" />
+				<Replace MapName="GiantEarth" X="132" Y="82" CityLocaleName="LOC_CITY_NAME_FORT_SIMPSON" Area="0" />
+				<Replace MapName="GiantEarth" X="133" Y="82" CityLocaleName="LOC_CITY_NAME_WHATI" Area="0" />
+				<Replace MapName="GiantEarth" X="135" Y="82" CityLocaleName="LOC_CITY_NAME_YELLOWKNIFE" Area="1" />
+
+				<Replace MapName="GiantEarth" X="129" Y="83" CityLocaleName="LOC_CITY_NAME_NORMAN_WELLS" Area="0" />
+				<Replace MapName="GiantEarth" X="130" Y="83" CityLocaleName="LOC_CITY_NAME_DELINE" Area="1" />
+				<Replace MapName="GiantEarth" X="133" Y="83" CityLocaleName="LOC_CITY_NAME_SAWMILL_BAY" Area="2" />
+	
+				<Replace MapName="GiantEarth" X="130" Y="84" CityLocaleName="LOC_CITY_NAME_COLVILLE_LAKE" Area="0" />
+				<Replace MapName="GiantEarth" X="131" Y="84" CityLocaleName="LOC_CITY_NAME_COLVILLE_LAKE" Area="1" />
+				<Replace MapName="GiantEarth" X="135" Y="84" CityLocaleName="LOC_CITY_NAME_SAWMILL_BAY" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="131" Y="85" CityLocaleName="LOC_CITY_NAME_COLVILLE_LAKE" Area="0" />
+				<Replace MapName="GiantEarth" X="128" Y="85" CityLocaleName="LOC_CITY_NAME_INUVIK" Area="0" />	
+			
+				<Replace MapName="GiantEarth" X="128" Y="84" CityLocaleName="LOC_CITY_NAME_FORT_GOOD_HOPE" Area="0" />
+				<Replace MapName="GiantEarth" X="129" Y="84" CityLocaleName="LOC_CITY_NAME_FORT_GOOD_HOPE" Area="0" />
+				<Replace MapName="GiantEarth" X="129" Y="86" CityLocaleName="LOC_CITY_NAME_INUVIK" Area="1" />
+				<Replace MapName="GiantEarth" X="127" Y="86" CityLocaleName="LOC_CITY_NAME_AKLAVIK" Area="0" />
+				<Replace MapName="GiantEarth" X="128" Y="86" CityLocaleName="LOC_CITY_NAME_AKLAVIK" Area="1" />
+				<Replace MapName="GiantEarth" X="127" Y="85" CityLocaleName="LOC_CITY_NAME_FORT_MCPHERSON" Area="1" />
+				<Replace MapName="GiantEarth" X="130" Y="86" CityLocaleName="LOC_CITY_NAME_TUKTOYAKTUK" Area="0" />
+				<Replace MapName="GiantEarth" X="132" Y="86" CityLocaleName="LOC_CITY_NAME_PAULATUK" Area="1" />
+
+				<Replace MapName="GiantEarth" X="129" Y="87" CityLocaleName="LOC_CITY_NAME_TUKTOYAKTUK" Area="1" />
+
+				<Replace MapName="GiantEarth" X="134" Y="89" CityLocaleName="LOC_CITY_NAME_URUKHAKTOK" Area="2" />
+				<Replace MapName="GiantEarth" X="136" Y="89" CityLocaleName="LOC_CITY_NAME_URUKHAKTOK" Area="0" />
+
+				<Replace MapName="GiantEarth" X="132" Y="90" CityLocaleName="LOC_CITY_NAME_SACHS_HARBOUR" Area="2" />		
+
+				<Replace MapName="GiantEarth" X="133" Y="91" CityLocaleName="LOC_CITY_NAME_SACHS_HARBOUR" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="136" Y="93" CityLocaleName="LOC_CITY_NAME_MELVILLE_ISLAND" Area="2" />	
+
+				<!-- NUNAVUT -->
+				<Replace MapName="GiantEarth" X="140" Y="80" CityLocaleName="LOC_CITY_NAME_ENNADAI" Area="0" />
+				<Replace MapName="GiantEarth" X="150" Y="79" CityLocaleName="LOC_CITY_NAME_SANIKILUAQ" Area="0" />
+
+				<Replace MapName="GiantEarth" X="139" Y="81" CityLocaleName="LOC_CITY_NAME_ENNADAI" Area="0" />	
+				<Replace MapName="GiantEarth" X="140" Y="81" CityLocaleName="LOC_CITY_NAME_ENNADAI" Area="1" />	
+				<Replace MapName="GiantEarth" X="141" Y="81" CityLocaleName="LOC_CITY_NAME_ENNADAI" Area="0" />
+				<Replace MapName="GiantEarth" X="159" Y="81" CityLocaleName="LOC_CITY_NAME_KILLINIQ" Area="0" />
+
+				<Replace MapName="GiantEarth" X="139" Y="82" CityLocaleName="LOC_CITY_NAME_DUBAWNT_LAKE" Area="0" />
+				<Replace MapName="GiantEarth" X="142" Y="82" CityLocaleName="LOC_CITY_NAME_PADLEI" Area="1" />	
+				<Replace MapName="GiantEarth" X="143" Y="82" CityLocaleName="LOC_CITY_NAME_ARVIAT" Area="0" />	
+				<Replace MapName="GiantEarth" X="151" Y="82" CityLocaleName="LOC_CITY_NAME_COATS_ISLAND" Area="0" />
+		
+				<Replace MapName="GiantEarth" X="137" Y="83" CityLocaleName="LOC_CITY_NAME_TAKIJUQ_LAKE" Area="1" />
+				<Replace MapName="GiantEarth" X="143" Y="83" CityLocaleName="LOC_CITY_NAME_BAKER_LAKE" Area="0" />
+				<Replace MapName="GiantEarth" X="144" Y="83" CityLocaleName="LOC_CITY_NAME_RANKIN_INLET" Area="1" />
+				<Replace MapName="GiantEarth" X="148" Y="83" CityLocaleName="LOC_CITY_NAME_CORAL_HARBOUR" Area="0" />	
+				<Replace MapName="GiantEarth" X="157" Y="83" CityLocaleName="LOC_CITY_NAME_KIMMIRUT" Area="1" />
+				<Replace MapName="GiantEarth" X="158" Y="83" CityLocaleName="LOC_CITY_NAME_KIMMIRUT" Area="0" />	
+
+				<Replace MapName="GiantEarth" X="140" Y="84" CityLocaleName="LOC_CITY_NAME_BATHURST_INLET" Area="1" />
+				<Replace MapName="GiantEarth" X="142" Y="84" CityLocaleName="LOC_CITY_NAME_BAKER_LAKE" Area="0" />
+				<Replace MapName="GiantEarth" X="143" Y="84" CityLocaleName="LOC_CITY_NAME_BAKER_LAKE" Area="1" />
+				<Replace MapName="GiantEarth" X="144" Y="84" CityLocaleName="LOC_CITY_NAME_RANKIN_INLET" Area="0" />
+				<Replace MapName="GiantEarth" X="150" Y="84" CityLocaleName="LOC_CITY_NAME_CORAL_HARBOUR" Area="2" />
+				<Replace MapName="GiantEarth" X="151" Y="84" CityLocaleName="LOC_CITY_NAME_CORAL_HARBOUR" Area="0" />
+				<Replace MapName="GiantEarth" X="157" Y="84" CityLocaleName="LOC_CITY_NAME_KIMMIRUT" Area="0" />	
+				<Replace MapName="GiantEarth" X="158" Y="84" CityLocaleName="LOC_CITY_NAME_IQALUIT" Area="2" />	
+				<Replace MapName="GiantEarth" X="160" Y="84" CityLocaleName="LOC_CITY_NAME_RESOLUTION_ISLAND" Area="0" />
+					
+				<Replace MapName="GiantEarth" X="140" Y="85" CityLocaleName="LOC_CITY_NAME_UMINGMAKTOK" Area="0" />
+				<Replace MapName="GiantEarth" X="141" Y="85" CityLocaleName="LOC_CITY_NAME_UMINGMAKTOK" Area="0" />
+				<Replace MapName="GiantEarth" X="142" Y="85" CityLocaleName="LOC_CITY_NAME_MACALPINE_LAKE" Area="1" />
+				<Replace MapName="GiantEarth" X="143" Y="85" CityLocaleName="LOC_CITY_NAME_MACALPINE_LAKE" Area="0" />
+				<Replace MapName="GiantEarth" X="147" Y="85" CityLocaleName="LOC_CITY_NAME_REPULSE_BAY" Area="2" />
+				<Replace MapName="GiantEarth" X="152" Y="85" CityLocaleName="LOC_CITY_NAME_CAPE_DORSET" Area="2" />
+				<Replace MapName="GiantEarth" X="155" Y="85" CityLocaleName="LOC_CITY_NAME_AMADJUAK" Area="1" />
+				<Replace MapName="GiantEarth" X="157" Y="85" CityLocaleName="LOC_CITY_NAME_IQALUIT" Area="0" />
+
+				<Replace MapName="GiantEarth" X="135" Y="86" CityLocaleName="LOC_CITY_NAME_KUGLUKTUK" Area="2" />
+				<Replace MapName="GiantEarth" X="138" Y="86" CityLocaleName="LOC_CITY_NAME_EDINBURGH_ISLAND" Area="1" />
+				<Replace MapName="GiantEarth" X="141" Y="86" CityLocaleName="LOC_CITY_NAME_UMINGMAKTOK" Area="1" />
+				<Replace MapName="GiantEarth" X="145" Y="86" CityLocaleName="LOC_CITY_NAME_GJOA_HAVEN" Area="1" />
+				<Replace MapName="GiantEarth" X="150" Y="86" CityLocaleName="LOC_CITY_NAME_HALL_BEACH" Area="1" />
+				<Replace MapName="GiantEarth" X="157" Y="86" CityLocaleName="LOC_CITY_NAME_PANGNIRTUNG" Area="2" />	
+				<Replace MapName="GiantEarth" X="158" Y="86" CityLocaleName="LOC_CITY_NAME_IQALUIT" Area="0" />
+
+				<Replace MapName="GiantEarth" X="146" Y="87" CityLocaleName="LOC_CITY_NAME_TALOYOAK" Area="1" />
+		
+				<Replace MapName="GiantEarth" X="141" Y="88" CityLocaleName="LOC_CITY_NAME_CAMBRIDGE_BAY" Area="2" />
+				<Replace MapName="GiantEarth" X="147" Y="88" CityLocaleName="LOC_CITY_NAME_TALOYOAK" Area="0" />
+				<Replace MapName="GiantEarth" X="151" Y="88" CityLocaleName="LOC_CITY_NAME_SHIMIK" Area="2" />	
+
+				<Replace MapName="GiantEarth" X="138" Y="89" CityLocaleName="LOC_CITY_NAME_VICTORIA_ISLAND" Area="2" />
+				<Replace MapName="GiantEarth" X="146" Y="89" CityLocaleName="LOC_CITY_NAME_FORT_ROSS" Area="1" />
+				<Replace MapName="GiantEarth" X="148" Y="89" CityLocaleName="LOC_CITY_NAME_ARCTIC_BAY" Area="1" />	
+				<Replace MapName="GiantEarth" X="153" Y="89" CityLocaleName="LOC_CITY_NAME_CLYDE_RIVER" Area="2" />	
+
+				<Replace MapName="GiantEarth" X="144" Y="90" CityLocaleName="LOC_CITY_NAME_PRINCE_OF_WALES_ISLAND" Area="1" />	
+
+				<Replace MapName="GiantEarth" X="141" Y="92" CityLocaleName="LOC_CITY_NAME_BATHURST_ISLAND" Area="1" />
+				<Replace MapName="GiantEarth" X="147" Y="92" CityLocaleName="LOC_CITY_NAME_RESOLUTE" Area="2" />
+				<Replace MapName="GiantEarth" X="150" Y="92" CityLocaleName="LOC_CITY_NAME_DUNDAS_HARBOUR" Area="1" />		
+			
+				<Replace MapName="GiantEarth" X="143" Y="93" CityLocaleName="LOC_CITY_NAME_POLARIS" Area="1" />		
+			
+				<!-- YUKON -->
+				<Replace MapName="GiantEarth" X="126" Y="80" CityLocaleName="LOC_CITY_NAME_DESTRUCTION_BAY" Area="0" />
+				<Replace MapName="GiantEarth" X="127" Y="80" CityLocaleName="LOC_CITY_NAME_DESTRUCTION_BAY" Area="1" />
+				<Replace MapName="GiantEarth" X="130" Y="80" CityLocaleName="LOC_CITY_NAME_WATSON_LAKE" Area="0" />
+				<Replace MapName="GiantEarth" X="128" Y="81" CityLocaleName="LOC_CITY_NAME_WHITEHORSE" Area="0" />
+				<Replace MapName="GiantEarth" X="129" Y="80" CityLocaleName="LOC_CITY_NAME_WHITEHORSE" Area="0" />
+				<Replace MapName="GiantEarth" X="128" Y="82" CityLocaleName="LOC_CITY_NAME_MAYO" Area="1" />				
+				<Replace MapName="GiantEarth" X="129" Y="81" CityLocaleName="LOC_CITY_NAME_ROSS_RIVER" Area="0" />
+				<Replace MapName="GiantEarth" X="127" Y="81" CityLocaleName="LOC_CITY_NAME_CARMACKS" Area="0" />
+				<Replace MapName="GiantEarth" X="126" Y="83" CityLocaleName="LOC_CITY_NAME_DAWSON" Area="1" />
+				<Replace MapName="GiantEarth" X="127" Y="83" CityLocaleName="LOC_CITY_NAME_DAWSON" Area="0" />
+				<Replace MapName="GiantEarth" X="127" Y="84" CityLocaleName="LOC_CITY_NAME_EAGLE_PLAINS" Area="0" />
+				<Replace MapName="GiantEarth" X="126" Y="82" CityLocaleName="LOC_CITY_NAME_BEAVER_CREEK" Area="0" />
+				<Replace MapName="GiantEarth" X="125" Y="85" CityLocaleName="LOC_CITY_NAME_OLD_CROW" Area="0" />
+				
+			<!-- EASTERN CANADA -->
+				<!-- NEWFOUNDLAND -->	
+				<Replace MapName="GiantEarth" X="164" Y="72" CityLocaleName="LOC_CITY_NAME_STEPHENVILLE" Area="0" />
+				<Replace MapName="GiantEarth" X="165" Y="72" CityLocaleName="LOC_CITY_NAME_BURGEO" Area="0" />
+				<Replace MapName="GiantEarth" X="166" Y="72" CityLocaleName="LOC_CITY_NAME_MARYSTOWN" Area="0" />	
+				<Replace MapName="GiantEarth" X="167" Y="72" CityLocaleName="LOC_CITY_NAME_ST_JOHNS" Area="1" />
+		
+				<Replace MapName="GiantEarth" X="164" Y="73" CityLocaleName="LOC_CITY_NAME_CORNER_BROOK" Area="0" />
+				<Replace MapName="GiantEarth" X="165" Y="73" CityLocaleName="LOC_CITY_NAME_GRAND_FALLS_WINDSOR" Area="0" />
+				<Replace MapName="GiantEarth" X="166" Y="73" CityLocaleName="LOC_CITY_NAME_GANDER" Area="0" />		
+
+				<Replace MapName="GiantEarth" X="165" Y="75" CityLocaleName="LOC_CITY_NAME_ST_ANTHONY" Area="1" />				
+
+				<!-- LABRADOR -->
+				<Replace MapName="GiantEarth" X="159" Y="75" CityLocaleName="LOC_CITY_NAME_LABRADOR_CITY" Area="0" />
+				<Replace MapName="GiantEarth" X="160" Y="75" CityLocaleName="LOC_CITY_NAME_LABRADOR_CITY" Area="0" />
+	
+				<Replace MapName="GiantEarth" X="160" Y="76" CityLocaleName="LOC_CITY_NAME_LABRADOR_CITY" Area="1" />
+				<Replace MapName="GiantEarth" X="161" Y="76" CityLocaleName="LOC_CITY_NAME_CHURCHILL_FALLS" Area="0" />	
+				<Replace MapName="GiantEarth" X="163" Y="76" CityLocaleName="LOC_CITY_NAME_HAPPY_VALLEY_GOOSE_BAY" Area="0" />
+
+				<Replace MapName="GiantEarth" X="159" Y="77" CityLocaleName="LOC_CITY_NAME_CHURCHILL_FALLS" Area="0" />	
+				<Replace MapName="GiantEarth" X="160" Y="77" CityLocaleName="LOC_CITY_NAME_CHURCHILL_FALLS" Area="0" />	
+				<Replace MapName="GiantEarth" X="161" Y="77" CityLocaleName="LOC_CITY_NAME_HAPPY_VALLEY_GOOSE_BAY" Area="1" />	
+				<Replace MapName="GiantEarth" X="162" Y="77" CityLocaleName="LOC_CITY_NAME_CARTWRIGHT" Area="0" />	
+
+				<Replace MapName="GiantEarth" X="161" Y="78" CityLocaleName="LOC_CITY_NAME_NAIN" Area="0" />
+				<Replace MapName="GiantEarth" X="162" Y="78" CityLocaleName="LOC_CITY_NAME_NAIN" Area="0" />
+				<Replace MapName="GiantEarth" X="163" Y="78" CityLocaleName="LOC_CITY_NAME_CARTWRIGHT" Area="1" />
+
+				<Replace MapName="GiantEarth" X="160" Y="79" CityLocaleName="LOC_CITY_NAME_NUTAK" Area="0" />
+
+				<Replace MapName="GiantEarth" X="160" Y="80" CityLocaleName="LOC_CITY_NAME_NUTAK" Area="0" />	
+	
+			
+				<!-- QUEBEC -->		
+				<Replace MapName="GiantEarth" X="156" Y="70" CityLocaleName="LOC_CITY_NAME_MONTREAL" Area="0" />
+				<Replace MapName="GiantEarth" X="157" Y="70" CityLocaleName="LOC_CITY_NAME_SHERBROOKE" Area="0" />
+
+				<Replace MapName="GiantEarth" X="154" Y="71" CityLocaleName="LOC_CITY_NAME_GATINEAU" Area="0" />
+				<Replace MapName="GiantEarth" X="155" Y="71" CityLocaleName="LOC_CITY_NAME_MONTREAL" Area="0" />
+				<Replace MapName="GiantEarth" X="156" Y="71" CityLocaleName="LOC_CITY_NAME_TROIS_RIVIERES" Area="0" />
+				<Replace MapName="GiantEarth" X="157" Y="71" CityLocaleName="LOC_CITY_NAME_QUEBEC_CITY" Area="0" />
+				<Replace MapName="GiantEarth" X="158" Y="71" CityLocaleName="LOC_CITY_NAME_GASPE" Area="0" />
+	
+				<Replace MapName="GiantEarth" X="152" Y="72" CityLocaleName="LOC_CITY_NAME_FORT_RUPERT" Area="0" />
+				<Replace MapName="GiantEarth" X="153" Y="72" CityLocaleName="LOC_CITY_NAME_VAL_DOR" Area="0" />
+				<Replace MapName="GiantEarth" X="154" Y="72" CityLocaleName="LOC_CITY_NAME_GATINEAU" Area="0" />
+				<Replace MapName="GiantEarth" X="155" Y="72" CityLocaleName="LOC_CITY_NAME_MONT_TREMBLANT" Area="0" />
+				<Replace MapName="GiantEarth" X="156" Y="72" CityLocaleName="LOC_CITY_NAME_SHAWINIGAN" Area="0" />
+				<Replace MapName="GiantEarth" X="157" Y="72" CityLocaleName="LOC_CITY_NAME_QUEBEC_CITY" Area="0" />
+				<Replace MapName="GiantEarth" X="159" Y="72" CityLocaleName="LOC_CITY_NAME_GASPE" Area="0" />
+				<Replace MapName="GiantEarth" X="161" Y="72" CityLocaleName="LOC_CITY_NAME_PORT_MENIER" Area="0" />
+
+				<Replace MapName="GiantEarth" X="152" Y="73" CityLocaleName="LOC_CITY_NAME_FORT_RUPERT" Area="0" />
+				<Replace MapName="GiantEarth" X="153" Y="73" CityLocaleName="LOC_CITY_NAME_VAL_DOR" Area="0" />
+				<Replace MapName="GiantEarth" X="154" Y="73" CityLocaleName="LOC_CITY_NAME_VAL_DOR" Area="0" />
+				<Replace MapName="GiantEarth" X="156" Y="73" CityLocaleName="LOC_CITY_NAME_SAGUENAY" Area="0" />
+				<Replace MapName="GiantEarth" X="157" Y="73" CityLocaleName="LOC_CITY_NAME_BAIE_COMEAU" Area="0" />
+	
+				<Replace MapName="GiantEarth" X="153" Y="74" CityLocaleName="LOC_CITY_NAME_EASTMAIN" Area="0" />
+				<Replace MapName="GiantEarth" X="154" Y="74" CityLocaleName="LOC_CITY_NAME_SAKAMI" Area="0" />	
+				<Replace MapName="GiantEarth" X="156" Y="74" CityLocaleName="LOC_CITY_NAME_CHIBOUGAMAU" Area="1" />
+				<Replace MapName="GiantEarth" X="157" Y="74" CityLocaleName="LOC_CITY_NAME_SAGUENAY" Area="0" />
+				<Replace MapName="GiantEarth" X="158" Y="74" CityLocaleName="LOC_CITY_NAME_SEPT_ILES" Area="1" />
+				<Replace MapName="GiantEarth" X="159" Y="74" CityLocaleName="LOC_CITY_NAME_SEPT_ILES" Area="0" />
+				<Replace MapName="GiantEarth" X="160" Y="74" CityLocaleName="LOC_CITY_NAME_HAVRE_SAINT_PIERRE" Area="1" />
+				<Replace MapName="GiantEarth" X="163" Y="74" CityLocaleName="LOC_CITY_NAME_LA_ROMAINE" Area="1" />
+				<Replace MapName="GiantEarth" X="162" Y="74" CityLocaleName="LOC_CITY_NAME_LA_ROMAINE" Area="1" />
+
+				<Replace MapName="GiantEarth" X="153" Y="75" CityLocaleName="LOC_CITY_NAME_RADISSON" Area="1" />
+				<Replace MapName="GiantEarth" X="154" Y="75" CityLocaleName="LOC_CITY_NAME_SAKAMI" Area="0" />
+				<Replace MapName="GiantEarth" X="158" Y="75" CityLocaleName="LOC_CITY_NAME_FERMONT" Area="0" />
+				<Replace MapName="GiantEarth" X="162" Y="75" CityLocaleName="LOC_CITY_NAME_SAINT_AUGUSTIN" Area="0" />
+				<Replace MapName="GiantEarth" X="163" Y="75" CityLocaleName="LOC_CITY_NAME_BLANC_SABLON" Area="1" />
+
+				<Replace MapName="GiantEarth" X="153" Y="76" CityLocaleName="LOC_CITY_NAME_KUUJJUARAPIK" Area="0" />
+				<Replace MapName="GiantEarth" X="154" Y="76" CityLocaleName="LOC_CITY_NAME_KUUJJUARAPIK" Area="0" />
+				<Replace MapName="GiantEarth" X="158" Y="76" CityLocaleName="LOC_CITY_NAME_FERMONT" Area="1" />	
+	
+				<Replace MapName="GiantEarth" X="153" Y="77" CityLocaleName="LOC_CITY_NAME_CHISASIBI" Area="0" />
+				<Replace MapName="GiantEarth" X="154" Y="77" CityLocaleName="LOC_CITY_NAME_CHISASIBI" Area="1" />
+				<Replace MapName="GiantEarth" X="155" Y="77" CityLocaleName="LOC_CITY_NAME_FORT_MACKENZIE" Area="0" />
+				<Replace MapName="GiantEarth" X="156" Y="77" CityLocaleName="LOC_CITY_NAME_FORT_MACKENZIE" Area="1" />
+				<Replace MapName="GiantEarth" X="158" Y="77" CityLocaleName="LOC_CITY_NAME_SCHEFFERVILLE" Area="0" />
+
+				<Replace MapName="GiantEarth" X="154" Y="78" CityLocaleName="LOC_CITY_NAME_UMIUJAQ" Area="0" />
+				<Replace MapName="GiantEarth" X="155" Y="78" CityLocaleName="LOC_CITY_NAME_UMIUJAQ" Area="0" />
+				<Replace MapName="GiantEarth" X="156" Y="78" CityLocaleName="LOC_CITY_NAME_FORT_MACKENZIE" Area="0" />
+				<Replace MapName="GiantEarth" X="158" Y="78" CityLocaleName="LOC_CITY_NAME_FORT_MACKENZIE" Area="0" />	
+
+				<Replace MapName="GiantEarth" X="153" Y="79" CityLocaleName="LOC_CITY_NAME_INUKJUAK" Area="0" />
+				<Replace MapName="GiantEarth" X="156" Y="79" CityLocaleName="LOC_CITY_NAME_KANGIRSUK" Area="0" />
+				<Replace MapName="GiantEarth" X="157" Y="79" CityLocaleName="LOC_CITY_NAME_KUUJJUAQ" Area="1" />
+				<Replace MapName="GiantEarth" X="158" Y="79" CityLocaleName="LOC_CITY_NAME_KUUJJUAQ" Area="0" />
+				<Replace MapName="GiantEarth" X="159" Y="79" CityLocaleName="LOC_CITY_NAME_KANGIQSUALUJJUAQ" Area="1" />
+		
+				<Replace MapName="GiantEarth" X="154" Y="80" CityLocaleName="LOC_CITY_NAME_PUVIRNITUQ" Area="1" />
+				<Replace MapName="GiantEarth" X="155" Y="80" CityLocaleName="LOC_CITY_NAME_KANGIRSUK" Area="0" />
+				<Replace MapName="GiantEarth" X="156" Y="80" CityLocaleName="LOC_CITY_NAME_KANGIRSUK" Area="1" />
+				<Replace MapName="GiantEarth" X="157" Y="80" CityLocaleName="LOC_CITY_NAME_TASIUJAQ" Area="1" />	
+	
+				<Replace MapName="GiantEarth" X="153" Y="81" CityLocaleName="LOC_CITY_NAME_AKULIVIK" Area="0" />
+				<Replace MapName="GiantEarth" X="154" Y="81" CityLocaleName="LOC_CITY_NAME_SALLUIT" Area="0" />	
+				<Replace MapName="GiantEarth" X="155" Y="81" CityLocaleName="LOC_CITY_NAME_DIANA_BAY" Area="0" />					
+
+				<Replace MapName="GiantEarth" X="153" Y="82" CityLocaleName="LOC_CITY_NAME_AKULIVIK" Area="1" />
+				<Replace MapName="GiantEarth" X="154" Y="82" CityLocaleName="LOC_CITY_NAME_SALLUIT" Area="1" />
+				<Replace MapName="GiantEarth" X="156" Y="82" CityLocaleName="LOC_CITY_NAME_DIANA_BAY" Area="0" />
+
+				<Replace MapName="GiantEarth" X="152" Y="83" CityLocaleName="LOC_CITY_NAME_AKULIVIK" Area="0" />
+				<Replace MapName="GiantEarth" X="153" Y="83" CityLocaleName="LOC_CITY_NAME_SALLUIT" Area="0" />	
+
+				<!-- ONTARIO -->
+				<Replace MapName="GiantEarth" X="151" Y="68" CityLocaleName="LOC_CITY_NAME_WINDSOR" Area="1" />	
+				<Replace MapName="GiantEarth" X="152" Y="68" CityLocaleName="LOC_CITY_NAME_CAN_HAMILTON" Area="0" />
+				<Replace MapName="GiantEarth" X="153" Y="68" CityLocaleName="LOC_CITY_NAME_CAN_HAMILTON" Area="0" />
+
+				<Replace MapName="GiantEarth" X="152" Y="69" CityLocaleName="LOC_CITY_NAME_TORONTO" Area="0" />
+
+				<Replace MapName="GiantEarth" X="149" Y="70" CityLocaleName="LOC_CITY_NAME_SAULT_STE_MARIE" Area="1" />
+				<Replace MapName="GiantEarth" X="151" Y="70" CityLocaleName="LOC_CITY_NAME_SUDBURY" Area="0" />
+				<Replace MapName="GiantEarth" X="152" Y="70" CityLocaleName="LOC_CITY_NAME_BARRIE" Area="0" />
+				<Replace MapName="GiantEarth" X="153" Y="70" CityLocaleName="LOC_CITY_NAME_TORONTO" Area="0" />
+				<Replace MapName="GiantEarth" X="154" Y="70" CityLocaleName="LOC_CITY_NAME_CAN_KINGSTON" Area="0" />
+				<Replace MapName="GiantEarth" X="155" Y="70" CityLocaleName="LOC_CITY_NAME_CAN_KINGSTON" Area="0" />
+
+				<Replace MapName="GiantEarth" X="145" Y="71" CityLocaleName="LOC_CITY_NAME_FORT_FRANCES" Area="0" />
+				<Replace MapName="GiantEarth" X="147" Y="71" CityLocaleName="LOC_CITY_NAME_THUNDER_BAY" Area="1" />
+				<Replace MapName="GiantEarth" X="148" Y="71" CityLocaleName="LOC_CITY_NAME_SAULT_STE_MARIE" Area="0" />
+				<Replace MapName="GiantEarth" X="150" Y="71" CityLocaleName="LOC_CITY_NAME_SUDBURY" Area="0" />
+				<Replace MapName="GiantEarth" X="151" Y="71" CityLocaleName="LOC_CITY_NAME_NORTH_BAY" Area="0" />
+				<Replace MapName="GiantEarth" X="152" Y="71" CityLocaleName="LOC_CITY_NAME_OTTAWA" Area="0" />
+				<Replace MapName="GiantEarth" X="153" Y="71" CityLocaleName="LOC_CITY_NAME_OTTAWA" Area="0" />
+
+				<Replace MapName="GiantEarth" X="146" Y="72" CityLocaleName="LOC_CITY_NAME_FORT_FRANCES" Area="0" />
+				<Replace MapName="GiantEarth" X="149" Y="72" CityLocaleName="LOC_CITY_NAME_TIMMINS" Area="0" />
+				<Replace MapName="GiantEarth" X="150" Y="72" CityLocaleName="LOC_CITY_NAME_TIMMINS" Area="0" />
+
+				<Replace MapName="GiantEarth" X="145" Y="73" CityLocaleName="LOC_CITY_NAME_DRYDEN" Area="1" />
+				<Replace MapName="GiantEarth" X="146" Y="73" CityLocaleName="LOC_CITY_NAME_GREENSTONE" Area="0" />
+				<Replace MapName="GiantEarth" X="148" Y="73" CityLocaleName="LOC_CITY_NAME_KAPUSKASING" Area="0" />
+				<Replace MapName="GiantEarth" X="149" Y="73" CityLocaleName="LOC_CITY_NAME_KAPUSKASING" Area="0" />
+				<Replace MapName="GiantEarth" X="150" Y="73" CityLocaleName="LOC_CITY_NAME_MOOSONEE" Area="1" />
+	
+				<Replace MapName="GiantEarth" X="146" Y="74" CityLocaleName="LOC_CITY_NAME_GREENSTONE" Area="0" />
+				<Replace MapName="GiantEarth" X="147" Y="74" CityLocaleName="LOC_CITY_NAME_GREENSTONE" Area="1" />
+				<Replace MapName="GiantEarth" X="149" Y="74" CityLocaleName="LOC_CITY_NAME_KAPUSKASING" Area="0" />
+				<Replace MapName="GiantEarth" X="150" Y="74" CityLocaleName="LOC_CITY_NAME_MOOSONEE" Area="0" />
+	
+				<Replace MapName="GiantEarth" X="144" Y="75" CityLocaleName="LOC_CITY_NAME_OPASQUIA" Area="0" />
+				<Replace MapName="GiantEarth" X="145" Y="75" CityLocaleName="LOC_CITY_NAME_OPASQUIA" Area="0" />
+				<Replace MapName="GiantEarth" X="149" Y="75" CityLocaleName="LOC_CITY_NAME_ATTAWAPISKAT" Area="1" />
+
+				<Replace MapName="GiantEarth" X="145" Y="76" CityLocaleName="LOC_CITY_NAME_OPASQUIA" Area="0" />
+				<Replace MapName="GiantEarth" X="146" Y="76" CityLocaleName="LOC_CITY_NAME_OPASQUIA" Area="0" />
+
+				<Replace MapName="GiantEarth" X="147" Y="77" CityLocaleName="LOC_CITY_NAME_FORT_SEVERN" Area="1" />
+
+				<!-- MARITIMES -->	
+				<Replace MapName="GiantEarth" X="160" Y="68" CityLocaleName="LOC_CITY_NAME_HALIFAX" Area="1" />	
+
+				<Replace MapName="GiantEarth" X="159" Y="70" CityLocaleName="LOC_CITY_NAME_SAINT_JOHN" Area="0" />
+				<Replace MapName="GiantEarth" X="160" Y="70" CityLocaleName="LOC_CITY_NAME_CHARLOTTETOWN" Area="0" />
+				<Replace MapName="GiantEarth" X="161" Y="70" CityLocaleName="LOC_CITY_NAME_CAPE_BRETON" Area="0" />
+	
+				<Replace MapName="GiantEarth" X="159" Y="71" CityLocaleName="LOC_CITY_NAME_FREDERICTON" Area="0" />	
+			
+			<!-- WESTERN CANADA -->
+				<!-- MANITOBA -->		
+				<Replace MapName="GiantEarth" X="139" Y="71" CityLocaleName="LOC_CITY_NAME_BRANDON" Area="0" />
+				<Replace MapName="GiantEarth" X="142" Y="71" CityLocaleName="LOC_CITY_NAME_STEINBACH" Area="0" />
+				<Replace MapName="GiantEarth" X="143" Y="71" CityLocaleName="LOC_CITY_NAME_STEINBACH" Area="0" />
+
+				<Replace MapName="GiantEarth" X="139" Y="72" CityLocaleName="LOC_CITY_NAME_BRANDON" Area="1" />
+				<Replace MapName="GiantEarth" X="140" Y="72" CityLocaleName="LOC_CITY_NAME_BRANDON" Area="0" />
+				<Replace MapName="GiantEarth" X="141" Y="72" CityLocaleName="LOC_CITY_NAME_WINNIPEG" Area="1" />
+				<Replace MapName="GiantEarth" X="143" Y="72" CityLocaleName="LOC_CITY_NAME_STEINBACH" Area="0" />
+				<Replace MapName="GiantEarth" X="144" Y="72" CityLocaleName="LOC_CITY_NAME_STEINBACH" Area="0" />
+
+				<Replace MapName="GiantEarth" X="139" Y="73" CityLocaleName="LOC_CITY_NAME_DAUPHIN" Area="0" />
+				<Replace MapName="GiantEarth" X="140" Y="73" CityLocaleName="LOC_CITY_NAME_PORTAGE_LA_PRAIRIE" Area="0" />
+
+				<Replace MapName="GiantEarth" X="139" Y="74" CityLocaleName="LOC_CITY_NAME_DAUPHIN" Area="1" />
+				<Replace MapName="GiantEarth" X="141" Y="74" CityLocaleName="LOC_CITY_NAME_PORTAGE_LA_PRAIRIE" Area="0" />
+				<Replace MapName="GiantEarth" X="143" Y="74" CityLocaleName="LOC_CITY_NAME_PINAWA" Area="1" />
+
+				<Replace MapName="GiantEarth" X="141" Y="76" CityLocaleName="LOC_CITY_NAME_GRAND_RAPIDS" Area="1" />
+
+				<Replace MapName="GiantEarth" X="138" Y="77" CityLocaleName="LOC_CITY_NAME_FLIN_FLON" Area="1" />
+				<Replace MapName="GiantEarth" X="139" Y="77" CityLocaleName="LOC_CITY_NAME_LYNN_LAKE" Area="0" />
+				<Replace MapName="GiantEarth" X="143" Y="77" CityLocaleName="LOC_CITY_NAME_THOMPSON" Area="1" />
+				<Replace MapName="GiantEarth" X="146" Y="77" CityLocaleName="LOC_CITY_NAME_YORK_FACTORY" Area="0" />
+	
+				<Replace MapName="GiantEarth" X="139" Y="78" CityLocaleName="LOC_CITY_NAME_LYNN_LAKE" Area="0" />
+				<Replace MapName="GiantEarth" X="140" Y="78" CityLocaleName="LOC_CITY_NAME_LYNN_LAKE" Area="1" />	
+				<Replace MapName="GiantEarth" X="143" Y="78" CityLocaleName="LOC_CITY_NAME_THOMPSON" Area="1" />	
+				<Replace MapName="GiantEarth" X="144" Y="78" CityLocaleName="LOC_CITY_NAME_PORT_NELSON" Area="0" />
+				<Replace MapName="GiantEarth" X="145" Y="78" CityLocaleName="LOC_CITY_NAME_YORK_FACTORY" Area="0" />
+				<Replace MapName="GiantEarth" X="146" Y="78" CityLocaleName="LOC_CITY_NAME_YORK_FACTORY" Area="1" />
+				<Replace MapName="GiantEarth" X="147" Y="78" CityLocaleName="LOC_CITY_NAME_YORK_FACTORY" Area="0" />
+
+				<Replace MapName="GiantEarth" X="137" Y="81" CityLocaleName="LOC_CITY_NAME_BROCHET" Area="0" />	
+				<Replace MapName="GiantEarth" X="139" Y="79" CityLocaleName="LOC_CITY_NAME_LYNN_LAKE" Area="0" />
+				<Replace MapName="GiantEarth" X="141" Y="79" CityLocaleName="LOC_CITY_NAME_TADOULE_LAKE" Area="0" />
+				<Replace MapName="GiantEarth" X="142" Y="79" CityLocaleName="LOC_CITY_NAME_TADOULE_LAKE" Area="0" />
+				<Replace MapName="GiantEarth" X="143" Y="79" CityLocaleName="LOC_CITY_NAME_CHURCHILL" Area="1" />
+				<Replace MapName="GiantEarth" X="144" Y="79" CityLocaleName="LOC_CITY_NAME_PORT_NELSON" Area="1" />
+				<Replace MapName="GiantEarth" X="145" Y="79" CityLocaleName="LOC_CITY_NAME_YORK_FACTORY" Area="0" />
+	
+				<Replace MapName="GiantEarth" X="138" Y="80" CityLocaleName="LOC_CITY_NAME_LYNN_LAKE" Area="0" />
+				<Replace MapName="GiantEarth" X="139" Y="80" CityLocaleName="LOC_CITY_NAME_BROCHET" Area="1" />
+				<Replace MapName="GiantEarth" X="142" Y="80" CityLocaleName="LOC_CITY_NAME_TADOULE_LAKE" Area="0" />
+				<Replace MapName="GiantEarth" X="143" Y="80" CityLocaleName="LOC_CITY_NAME_CHURCHILL" Area="0" />
+				<Replace MapName="GiantEarth" X="144" Y="80" CityLocaleName="LOC_CITY_NAME_CHURCHILL" Area="0" />
+	
+				<Replace MapName="GiantEarth" X="142" Y="81" CityLocaleName="LOC_CITY_NAME_EGG_ISLAND" Area="1" />
+			
+				<!-- SASKATCHEWAN -->	
+				<Replace MapName="GiantEarth" X="138" Y="71" CityLocaleName="LOC_CITY_NAME_REGINA" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="138" Y="72" CityLocaleName="LOC_CITY_NAME_REGINA" Area="0" />
+
+				<Replace MapName="GiantEarth" X="137" Y="73" CityLocaleName="LOC_CITY_NAME_REGINA" Area="0" />
+				<Replace MapName="GiantEarth" X="138" Y="73" CityLocaleName="LOC_CITY_NAME_REGINA" Area="0" />
+
+				<Replace MapName="GiantEarth" X="137" Y="74" CityLocaleName="LOC_CITY_NAME_SASKATOON" Area="0" />
+				<Replace MapName="GiantEarth" X="138" Y="74" CityLocaleName="LOC_CITY_NAME_REGINA" Area="0" />	
+
+				<Replace MapName="GiantEarth" X="136" Y="75" CityLocaleName="LOC_CITY_NAME_SASKATOON" Area="0" />
+				<Replace MapName="GiantEarth" X="137" Y="75" CityLocaleName="LOC_CITY_NAME_SASKATOON" Area="0" />
+
+				<Replace MapName="GiantEarth" X="137" Y="76" CityLocaleName="LOC_CITY_NAME_SASKATOON" Area="0" />
+
+				<Replace MapName="GiantEarth" X="135" Y="79" CityLocaleName="LOC_CITY_NAME_BLACK_LAKE" Area="0" />
+				<Replace MapName="GiantEarth" X="136" Y="79" CityLocaleName="LOC_CITY_NAME_BLACK_LAKE" Area="1" />
+			
+				<!-- ALBERTA -->
+				<Replace MapName="GiantEarth" X="135" Y="71" CityLocaleName="LOC_CITY_NAME_LETHBRIDGE" Area="0" />
+				<Replace MapName="GiantEarth" X="136" Y="71" CityLocaleName="LOC_CITY_NAME_LETHBRIDGE" Area="0" />
+				<Replace MapName="GiantEarth" X="137" Y="71" CityLocaleName="LOC_CITY_NAME_MEDICINE_HAT" Area="0" />
+
+				<Replace MapName="GiantEarth" X="137" Y="72" CityLocaleName="LOC_CITY_NAME_MEDICINE_HAT" Area="0" />
+
+				<Replace MapName="GiantEarth" X="134" Y="73" CityLocaleName="LOC_CITY_NAME_BANFF" Area="1" />
+				<Replace MapName="GiantEarth" X="135" Y="73" CityLocaleName="LOC_CITY_NAME_CALGARY" Area="0" />
+				<Replace MapName="GiantEarth" X="136" Y="73" CityLocaleName="LOC_CITY_NAME_CALGARY" Area="1" />
+
+				<Replace MapName="GiantEarth" X="135" Y="74" CityLocaleName="LOC_CITY_NAME_RED_DEER" Area="0" />
+
+				<Replace MapName="GiantEarth" X="133" Y="75" CityLocaleName="LOC_CITY_NAME_HINTON" Area="0" />
+				<Replace MapName="GiantEarth" X="134" Y="75" CityLocaleName="LOC_CITY_NAME_RED_DEER" Area="0" />
+				<Replace MapName="GiantEarth" X="135" Y="75" CityLocaleName="LOC_CITY_NAME_RED_DEER" Area="0" />
+
+				<Replace MapName="GiantEarth" X="136" Y="76" CityLocaleName="LOC_CITY_NAME_EDMONTON" Area="1" />
+
+				<Replace MapName="GiantEarth" X="133" Y="77" CityLocaleName="LOC_CITY_NAME_GRANDE_PRAIRIE" Area="1" />
+				<Replace MapName="GiantEarth" X="135" Y="77" CityLocaleName="LOC_CITY_NAME_EDMONTON" Area="0" />
+				<Replace MapName="GiantEarth" X="136" Y="77" CityLocaleName="LOC_CITY_NAME_FORT_MCMURRAY" Area="0" />
+
+				<Replace MapName="GiantEarth" X="132" Y="78" CityLocaleName="LOC_CITY_NAME_HIGH_LEVEL" Area="0" />
+				<Replace MapName="GiantEarth" X="133" Y="78" CityLocaleName="LOC_CITY_NAME_HIGH_LEVEL" Area="0" />
+				<Replace MapName="GiantEarth" X="136" Y="78" CityLocaleName="LOC_CITY_NAME_FORT_MCMURRAY" Area="1" />
+				<Replace MapName="GiantEarth" X="137" Y="78" CityLocaleName="LOC_CITY_NAME_FORT_MCMURRAY" Area="0" />
+
+				<Replace MapName="GiantEarth" X="132" Y="79" CityLocaleName="LOC_CITY_NAME_HIGH_LEVEL" Area="0" />
+				<Replace MapName="GiantEarth" X="133" Y="79" CityLocaleName="LOC_CITY_NAME_HIGH_LEVEL" Area="0" />
+			
+
+				<!-- BRITISH COLUMBIA -->
+				<Replace MapName="GiantEarth" X="129" Y="69" CityLocaleName="LOC_CITY_NAME_VICTORIA" Area="1" />
+
+				<Replace MapName="GiantEarth" X="131" Y="70" CityLocaleName="LOC_CITY_NAME_VANCOUVER" Area="0" />
+				<Replace MapName="GiantEarth" X="132" Y="70" CityLocaleName="LOC_CITY_NAME_VANCOUVER" Area="0" />
+				<Replace MapName="GiantEarth" X="133" Y="70" CityLocaleName="LOC_CITY_NAME_KELOWNA" Area="0" />
+				<Replace MapName="GiantEarth" X="134" Y="70" CityLocaleName="LOC_CITY_NAME_KELOWNA" Area="0" />
+
+				<Replace MapName="GiantEarth" X="133" Y="71" CityLocaleName="LOC_CITY_NAME_KELOWNA" Area="0" />
+
+				<Replace MapName="GiantEarth" X="132" Y="72" CityLocaleName="LOC_CITY_NAME_KAMLOOPS" Area="1" />
+
+				<Replace MapName="GiantEarth" X="128" Y="73" CityLocaleName="LOC_CITY_NAME_QUEEN_CHARLOTTE" Area="0" />
+				<Replace MapName="GiantEarth" X="130" Y="73" CityLocaleName="LOC_CITY_NAME_PRINCE_RUPERT" Area="0" />
+
+				<Replace MapName="GiantEarth" X="130" Y="74" CityLocaleName="LOC_CITY_NAME_PRINCE_RUPERT" Area="0" />
+
+				<Replace MapName="GiantEarth" X="131" Y="75" CityLocaleName="LOC_CITY_NAME_PRINCE_GEORGE" Area="1" />
+
+				<Replace MapName="GiantEarth" X="129" Y="78" CityLocaleName="LOC_CITY_NAME_ATLIN" Area="1" />
+
+				<Replace MapName="GiantEarth" X="131" Y="79" CityLocaleName="LOC_CITY_NAME_FORT_NELSON" Area="1" />
+
+				<Replace MapName="GiantEarth" X="131" Y="80" CityLocaleName="LOC_CITY_NAME_FORT_NELSON" Area="0" />
+				<Replace MapName="GiantEarth" X="132" Y="80" CityLocaleName="LOC_CITY_NAME_FORT_NELSON" Area="0" />
+	</CityMap>
+
+	<CityMap> <!-- MAINLAND USA, HAWAII & ALASKA -->
+
+			<!-- HAWAII -->
+			<Replace MapName="GiantEarth" X="110" Y="54" CityLocaleName="LOC_CITY_NAME_KAPAA" Area="0" />
+			<Replace MapName="GiantEarth" X="115" Y="52" CityLocaleName="LOC_CITY_NAME_HONOLULU" Area="1" />
+			<Replace MapName="GiantEarth" X="116" Y="51" CityLocaleName="LOC_CITY_NAME_KAHULUI" Area="1" />
+			<Replace MapName="GiantEarth" X="119" Y="50" CityLocaleName="LOC_CITY_NAME_HAWI" Area="0" />
+			<Replace MapName="GiantEarth" X="119" Y="48" CityLocaleName="LOC_CITY_NAME_KAILUA" Area="0" />
+			<Replace MapName="GiantEarth" X="119" Y="47" CityLocaleName="LOC_CITY_NAME_KAILUA" Area="0" />
+			<Replace MapName="GiantEarth" X="120" Y="49" CityLocaleName="LOC_CITY_NAME_HILO" Area="1" />
+			<Replace MapName="GiantEarth" X="120" Y="47" CityLocaleName="LOC_CITY_NAME_PAHALA" Area="0" />
+			
+			<!-- ALASKA -->
+			<Replace MapName="GiantEarth" X="127" Y="74" CityLocaleName="LOC_CITY_NAME_SITKA" Area="0" />
+
+			<Replace MapName="GiantEarth" X="129" Y="75" CityLocaleName="LOC_CITY_NAME_KETCHIKAN" Area="0" />
+
+			<Replace MapName="GiantEarth" X="127" Y="76" CityLocaleName="LOC_CITY_NAME_JUNEAU" Area="0" />
+			<Replace MapName="GiantEarth" X="128" Y="76" CityLocaleName="LOC_CITY_NAME_JUNEAU" Area="1" />
+			<Replace MapName="GiantEarth" X="130" Y="76" CityLocaleName="LOC_CITY_NAME_KETCHIKAN" Area="0" />
+
+			<Replace MapName="GiantEarth" X="126" Y="77" CityLocaleName="LOC_CITY_NAME_YAKUTAT" Area="1" />
+			
+			<Replace MapName="GiantEarth" X="106" Y="74" CityLocaleName="LOC_CITY_NAME_ATTU_ISLAND" Area="0" />
+			<Replace MapName="GiantEarth" X="109" Y="73" CityLocaleName="LOC_CITY_NAME_ADAK" Area="0" />
+			<Replace MapName="GiantEarth" X="112" Y="74" CityLocaleName="LOC_CITY_NAME_UNALASKA" Area="0" />
+			<Replace MapName="GiantEarth" X="113" Y="79" CityLocaleName="LOC_CITY_NAME_PORT_HEIDEN" Area="1" />
+			<Replace MapName="GiantEarth" X="114" Y="84" CityLocaleName="LOC_CITY_NAME_NOME" Area="1" />
+			<Replace MapName="GiantEarth" X="114" Y="81" CityLocaleName="LOC_CITY_NAME_BETHEL" Area="1" />
+			<Replace MapName="GiantEarth" X="115" Y="80" CityLocaleName="LOC_CITY_NAME_DILLINGHAM" Area="0" />
+			<Replace MapName="GiantEarth" X="115" Y="84" CityLocaleName="LOC_CITY_NAME_KOTZEBUE" Area="0" />			
+			<Replace MapName="GiantEarth" X="116" Y="78" CityLocaleName="LOC_CITY_NAME_KODIAK" Area="0" />
+			<Replace MapName="GiantEarth" X="116" Y="84" CityLocaleName="LOC_CITY_NAME_GALENA" Area="0" />			
+			<Replace MapName="GiantEarth" X="116" Y="85" CityLocaleName="LOC_CITY_NAME_AMBLER" Area="0" />	
+			<Replace MapName="GiantEarth" X="116" Y="86" CityLocaleName="LOC_CITY_NAME_POINT_HOPE" Area="1" />	
+			<Replace MapName="GiantEarth" X="117" Y="81" CityLocaleName="LOC_CITY_NAME_KENAI" Area="0" />
+			<Replace MapName="GiantEarth" X="118" Y="80" CityLocaleName="LOC_CITY_NAME_HOMER" Area="0" />
+			<Replace MapName="GiantEarth" X="118" Y="81" CityLocaleName="LOC_CITY_NAME_SEWARD" Area="0" />			
+			<Replace MapName="GiantEarth" X="118" Y="82" CityLocaleName="LOC_CITY_NAME_ANCHORAGE" Area="1" />
+			<Replace MapName="GiantEarth" X="118" Y="83" CityLocaleName="LOC_CITY_NAME_WASILLA" Area="0" />
+			<Replace MapName="GiantEarth" X="118" Y="84" CityLocaleName="LOC_CITY_NAME_TANANA" Area="0" />
+			<Replace MapName="GiantEarth" X="120" Y="82" CityLocaleName="LOC_CITY_NAME_GLACIER_VIEW" Area="0" />
+			<Replace MapName="GiantEarth" X="120" Y="84" CityLocaleName="LOC_CITY_NAME_FAIRBANKS" Area="1" />
+			<Replace MapName="GiantEarth" X="121" Y="81" CityLocaleName="LOC_CITY_NAME_VALDEZ" Area="1" />
+			<Replace MapName="GiantEarth" X="122" Y="81" CityLocaleName="LOC_CITY_NAME_WORTMANNS" Area="0" />
+			<Replace MapName="GiantEarth" X="122" Y="82" CityLocaleName="LOC_CITY_NAME_PAXSON" Area="0" />	
+			<Replace MapName="GiantEarth" X="122" Y="83" CityLocaleName="LOC_CITY_NAME_DELTA_JUNCTION" Area="1" />				
+			<Replace MapName="GiantEarth" X="123" Y="80" CityLocaleName="LOC_CITY_NAME_CORDOVA" Area="1" />
+			<Replace MapName="GiantEarth" X="123" Y="85" CityLocaleName="LOC_CITY_NAME_FORT_YUKON" Area="1" />
+			<Replace MapName="GiantEarth" X="124" Y="79" CityLocaleName="LOC_CITY_NAME_KATALLA" Area="1" />
+			<Replace MapName="GiantEarth" X="124" Y="80" CityLocaleName="LOC_CITY_NAME_ALAGANIK" Area="0" />
+			<Replace MapName="GiantEarth" X="124" Y="82" CityLocaleName="LOC_CITY_NAME_TOK" Area="0" />
+			<Replace MapName="GiantEarth" X="124" Y="83" CityLocaleName="LOC_CITY_NAME_CHICKEN" Area="0" />
+			<Replace MapName="GiantEarth" X="125" Y="81" CityLocaleName="LOC_CITY_NAME_MCCARTHY" Area="1" />
+			<Replace MapName="GiantEarth" X="125" Y="84" CityLocaleName="LOC_CITY_NAME_EAGLE_VILLAGE" Area="0" />
+			<Replace MapName="GiantEarth" X="125" Y="87" CityLocaleName="LOC_CITY_NAME_GORDON" Area="1" />
+			<Replace MapName="GiantEarth" X="122" Y="87" CityLocaleName="LOC_CITY_NAME_KAKTOVIK" Area="1" />
+			<Replace MapName="GiantEarth" X="122" Y="88" CityLocaleName="LOC_CITY_NAME_PRUDHOE_BAY" Area="0" />
+			<Replace MapName="GiantEarth" X="121" Y="88" CityLocaleName="LOC_CITY_NAME_PRUDHOE_BAY" Area="1" />
+			<Replace MapName="GiantEarth" X="122" Y="86" CityLocaleName="LOC_CITY_NAME_ANAKTUVUK_PASS" Area="0" />	
+			<Replace MapName="GiantEarth" X="121" Y="87" CityLocaleName="LOC_CITY_NAME_ANAKTUVUK_PASS" Area="0" />			
+			<Replace MapName="GiantEarth" X="121" Y="86" CityLocaleName="LOC_CITY_NAME_ANAKTUVUK_PASS" Area="0" />	
+			<Replace MapName="GiantEarth" X="119" Y="87" CityLocaleName="LOC_CITY_NAME_ATQASUK" Area="0" />			
+			<Replace MapName="GiantEarth" X="118" Y="87" CityLocaleName="LOC_CITY_NAME_ATQASUK" Area="0" />	
+			<Replace MapName="GiantEarth" X="118" Y="88" CityLocaleName="LOC_CITY_NAME_BARROW" Area="1" />	
+			
+			<!-- EASTERN USA -->
+				<!-- MAINE -->
+				<Replace MapName="GiantEarth" X="157" Y="69" CityLocaleName="LOC_CITY_NAME_ME_PORTLAND" Area="0" />
+				<Replace MapName="GiantEarth" X="158" Y="69" CityLocaleName="LOC_CITY_NAME_BANGOR" Area="0" />
+
+				<Replace MapName="GiantEarth" X="158" Y="70" CityLocaleName="LOC_CITY_NAME_CARIBOU" Area="0" />
+
+				<!-- MASSACHUSETTS -->
+				<Replace MapName="GiantEarth" X="157" Y="67" CityLocaleName="LOC_CITY_NAME_BOSTON" Area="0" />
+
+				<Replace MapName="GiantEarth" X="157" Y="68" CityLocaleName="LOC_CITY_NAME_BOSTON" Area="0" />
+
+				<!-- DC -->
+				<Replace MapName="GiantEarth" X="154" Y="64" CityLocaleName="LOC_CITY_NAME_WASHINGTON" Area="0" />
+				<Replace MapName="GiantEarth" X="155" Y="64" CityLocaleName="LOC_CITY_NAME_WASHINGTON" Area="0" />
+		
+				<!-- NEW YORK -->
+				<Replace MapName="GiantEarth" X="156" Y="66" CityLocaleName="LOC_CITY_NAME_NEW_YORK" Area="0" />
+
+				<Replace MapName="GiantEarth" X="153" Y="67" CityLocaleName="LOC_CITY_NAME_BUFFALO" Area="0" />
+				<Replace MapName="GiantEarth" X="155" Y="67" CityLocaleName="LOC_CITY_NAME_USA_ALBANY" Area="0" />
+				<Replace MapName="GiantEarth" X="156" Y="67" CityLocaleName="LOC_CITY_NAME_NEW_YORK" Area="0" />
+
+				<Replace MapName="GiantEarth" X="154" Y="68" CityLocaleName="LOC_CITY_NAME_BUFFALO" Area="0" />
+				<Replace MapName="GiantEarth" X="155" Y="68" CityLocaleName="LOC_CITY_NAME_USA_ALBANY" Area="0" />
+
+				<Replace MapName="GiantEarth" X="156" Y="69" CityLocaleName="LOC_CITY_NAME_ROCHESTER" Area="0" />
+	
+				<!-- PENNSYLVANIA -->
+				<Replace MapName="GiantEarth" X="155" Y="65" CityLocaleName="LOC_CITY_NAME_PHILADELPHIA" Area="1" />
+
+				<Replace MapName="GiantEarth" X="154" Y="66" CityLocaleName="LOC_CITY_NAME_PITTSBURGH" Area="0" />
+
+				<Replace MapName="GiantEarth" X="154" Y="67" CityLocaleName="LOC_CITY_NAME_PITTSBURGH" Area="0" />
+
+				<!-- MICHIGAN -->
+				<Replace MapName="GiantEarth" X="149" Y="67" CityLocaleName="LOC_CITY_NAME_DETROIT" Area="1" />
+				<Replace MapName="GiantEarth" X="146" Y="69" CityLocaleName="LOC_CITY_NAME_MARQUETTE" Area="0" />
+				<Replace MapName="GiantEarth" X="147" Y="69" CityLocaleName="LOC_CITY_NAME_MARQUETTE" Area="0" />
+				
+				<!-- VERMONT -->
+				<Replace MapName="GiantEarth" X="156" Y="69" CityLocaleName="LOC_CITY_NAME_MONTPELIER" Area="1" />
+				
+				<!-- MARYLAND -->	
+				<Replace MapName="GiantEarth" X="154" Y="65" CityLocaleName="LOC_CITY_NAME_BALTIMORE" Area="0" />
+
+				<!-- VIRGINIA -->
+				<Replace MapName="GiantEarth" X="154" Y="62" CityLocaleName="LOC_CITY_NAME_RICHMOND" Area="0" />
+				<Replace MapName="GiantEarth" X="155" Y="62" CityLocaleName="LOC_CITY_NAME_RICHMOND" Area="1" />
+
+				<!-- NORTH CAROLINA -->
+				<Replace MapName="GiantEarth" X="152" Y="61" CityLocaleName="LOC_CITY_NAME_CHARLOTTE" Area="0" />
+				<Replace MapName="GiantEarth" X="154" Y="61" CityLocaleName="LOC_CITY_NAME_WILMINGTON" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="153" Y="62" CityLocaleName="LOC_CITY_NAME_CHARLOTTE" Area="1" />
+
+				<!-- SOUTH CAROLINA -->
+				<Replace MapName="GiantEarth" X="154" Y="60" CityLocaleName="LOC_CITY_NAME_CHARLESTON" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="153" Y="61" CityLocaleName="LOC_CITY_NAME_CHARLESTON" Area="0" />
+
+				<!-- GEORGIA -->
+				<Replace MapName="GiantEarth" X="152" Y="58" CityLocaleName="LOC_CITY_NAME_SAVANNAH" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="150" Y="59" CityLocaleName="LOC_CITY_NAME_ATLANTA" Area="0" />
+				<Replace MapName="GiantEarth" X="151" Y="59" CityLocaleName="LOC_CITY_NAME_ATLANTA" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="151" Y="60" CityLocaleName="LOC_CITY_NAME_ATLANTA" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="151" Y="61" CityLocaleName="LOC_CITY_NAME_ATLANTA" Area="0" />
+
+				<!-- FLORIDA -->
+				<Replace MapName="GiantEarth" X="151" Y="53" CityLocaleName="LOC_CITY_NAME_MIAMI" Area="0" />
+
+				<Replace MapName="GiantEarth" X="152" Y="54" CityLocaleName="LOC_CITY_NAME_MIAMI" Area="0" />
+
+				<Replace MapName="GiantEarth" X="150" Y="55" CityLocaleName="LOC_CITY_NAME_TAMPA" Area="1" />
+				<Replace MapName="GiantEarth" X="151" Y="55" CityLocaleName="LOC_CITY_NAME_ORLANDO" Area="0" />
+
+				<Replace MapName="GiantEarth" X="152" Y="56" CityLocaleName="LOC_CITY_NAME_JACKSONVILLE" Area="0" />
+
+				<Replace MapName="GiantEarth" X="149" Y="57" CityLocaleName="LOC_CITY_NAME_TALLAHASSEE" Area="0" />
+				<Replace MapName="GiantEarth" X="150" Y="57" CityLocaleName="LOC_CITY_NAME_TALLAHASSEE" Area="0" />
+				<Replace MapName="GiantEarth" X="151" Y="57" CityLocaleName="LOC_CITY_NAME_JACKSONVILLE" Area="0" />
+
+				<!-- OHIO -->
+				<Replace MapName="GiantEarth" X="150" Y="63" CityLocaleName="LOC_CITY_NAME_CINCINNATI" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="151" Y="64" CityLocaleName="LOC_CITY_NAME_CINCINNATI" Area="0" />
+				<Replace MapName="GiantEarth" X="150" Y="64" CityLocaleName="LOC_CITY_NAME_CINCINNATI" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="149" Y="65" CityLocaleName="LOC_CITY_NAME_COLUMBUS" Area="0" />
+				<Replace MapName="GiantEarth" X="150" Y="65" CityLocaleName="LOC_CITY_NAME_COLUMBUS" Area="1" />
+				<Replace MapName="GiantEarth" X="152" Y="65" CityLocaleName="LOC_CITY_NAME_AKRON" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="151" Y="66" CityLocaleName="LOC_CITY_NAME_CLEVELAND" Area="0" />
+				<Replace MapName="GiantEarth" X="152" Y="66" CityLocaleName="LOC_CITY_NAME_CLEVELAND" Area="0" />
+				<Replace MapName="GiantEarth" X="153" Y="66" CityLocaleName="LOC_CITY_NAME_CLEVELAND" Area="0" />
+				
+				<!-- MINNESOTA -->
+				<Replace MapName="GiantEarth" X="143" Y="67" CityLocaleName="LOC_CITY_NAME_MINNEAPOLIS" Area="0" />
+				<Replace MapName="GiantEarth" X="144" Y="67" CityLocaleName="LOC_CITY_NAME_MINNEAPOLIS" Area="0" />
+
+				<Replace MapName="GiantEarth" X="143" Y="68" CityLocaleName="LOC_CITY_NAME_MINNEAPOLIS" Area="0" />
+				<Replace MapName="GiantEarth" X="144" Y="68" CityLocaleName="LOC_CITY_NAME_MINNEAPOLIS" Area="1" />
+
+				<Replace MapName="GiantEarth" X="142" Y="69" CityLocaleName="LOC_CITY_NAME_BEMIDJI" Area="1" />
+				<Replace MapName="GiantEarth" X="143" Y="69" CityLocaleName="LOC_CITY_NAME_MINNEAPOLIS" Area="0" />
+				<Replace MapName="GiantEarth" X="144" Y="69" CityLocaleName="LOC_CITY_NAME_DULUTH" Area="0" />
+
+				<Replace MapName="GiantEarth" X="142" Y="70" CityLocaleName="LOC_CITY_NAME_BEMIDJI" Area="0" />
+				<Replace MapName="GiantEarth" X="145" Y="70" CityLocaleName="LOC_CITY_NAME_DULUTH" Area="1" />
+			
+				<!-- WISCONSIN -->	
+				<Replace MapName="GiantEarth" X="146" Y="66" CityLocaleName="LOC_CITY_NAME_MILWAUKEE" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="146" Y="67" CityLocaleName="LOC_CITY_NAME_MILWAUKEE" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="146" Y="68" CityLocaleName="LOC_CITY_NAME_GREEN_BAY" Area="0" />	
+				<Replace MapName="GiantEarth" X="147" Y="68" CityLocaleName="LOC_CITY_NAME_GREEN_BAY" Area="0" />	
+
+				<!-- ILLINOIS -->
+				<Replace MapName="GiantEarth" X="147" Y="64" CityLocaleName="LOC_CITY_NAME_SPRINGFIELD" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="146" Y="65" CityLocaleName="LOC_CITY_NAME_CHICAGO" Area="0" />
+				<Replace MapName="GiantEarth" X="147" Y="65" CityLocaleName="LOC_CITY_NAME_CHICAGO" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="147" Y="66" CityLocaleName="LOC_CITY_NAME_CHICAGO" Area="1" />
+			
+				<!-- INDIANA -->
+				<Replace MapName="GiantEarth" X="148" Y="64" CityLocaleName="LOC_CITY_NAME_INDIANAPOLIS" Area="0" />
+				<Replace MapName="GiantEarth" X="149" Y="64" CityLocaleName="LOC_CITY_NAME_INDIANAPOLIS" Area="1" />
+				
+				<!-- WEST VIRGINIA -->	
+				<Replace MapName="GiantEarth" X="152" Y="63" CityLocaleName="LOC_CITY_NAME_HUNTINGTON" Area="1" />
+				<Replace MapName="GiantEarth" X="153" Y="63" CityLocaleName="LOC_CITY_NAME_HUNTINGTON" Area="0" />
+				
+				<!-- KENTUCKY -->
+				<Replace MapName="GiantEarth" X="148" Y="63" CityLocaleName="LOC_CITY_NAME_LOUISVILLE" Area="0" />
+				<Replace MapName="GiantEarth" X="149" Y="63" CityLocaleName="LOC_CITY_NAME_LOUISVILLE" Area="1" />
+				
+				<!-- TENNESSEE -->
+				<Replace MapName="GiantEarth" X="146" Y="61" CityLocaleName="LOC_CITY_NAME_USA_MEMPHIS" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="149" Y="62" CityLocaleName="LOC_CITY_NAME_NASHVILLE" Area="1" />
+				<Replace MapName="GiantEarth" X="150" Y="62" CityLocaleName="LOC_CITY_NAME_NASHVILLE" Area="0" />
+				<Replace MapName="GiantEarth" X="151" Y="62" CityLocaleName="LOC_CITY_NAME_KNOXVILLE" Area="1" />
+				<Replace MapName="GiantEarth" X="152" Y="62" CityLocaleName="LOC_CITY_NAME_KNOXVILLE" Area="0" />
+				
+				<!-- ALABAMA -->
+				<Replace MapName="GiantEarth" X="148" Y="57" CityLocaleName="LOC_CITY_NAME_MOBILE" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="149" Y="58" CityLocaleName="LOC_CITY_NAME_MONTGOMERY" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="148" Y="59" CityLocaleName="LOC_CITY_NAME_MONTGOMERY" Area="0" />
+				<Replace MapName="GiantEarth" X="149" Y="59" CityLocaleName="LOC_CITY_NAME_MONTGOMERY" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="149" Y="60" CityLocaleName="LOC_CITY_NAME_USA_BIRMINGHAM" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="148" Y="61" CityLocaleName="LOC_CITY_NAME_USA_BIRMINGHAM" Area="0" />
+				<Replace MapName="GiantEarth" X="149" Y="61" CityLocaleName="LOC_CITY_NAME_USA_BIRMINGHAM" Area="0" />
+				
+				<!-- MISSISSIPPI -->
+				<Replace MapName="GiantEarth" X="145" Y="59" CityLocaleName="LOC_CITY_NAME_JACKSON" Area="0" />
+				<Replace MapName="GiantEarth" X="146" Y="59" CityLocaleName="LOC_CITY_NAME_JACKSON" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="146" Y="60" CityLocaleName="LOC_CITY_NAME_JACKSON" Area="0" />
+				<Replace MapName="GiantEarth" X="147" Y="60" CityLocaleName="LOC_CITY_NAME_JACKSON" Area="0" />
+				
+			<!-- WESTERN USA -->
+				<!-- WASHINGTON -->
+				<Replace MapName="GiantEarth" X="131" Y="68" CityLocaleName="LOC_CITY_NAME_SEATTLE" Area="0" />
+
+				<Replace MapName="GiantEarth" X="131" Y="69" CityLocaleName="LOC_CITY_NAME_SEATTLE" Area="0" />
+				<Replace MapName="GiantEarth" X="132" Y="69" CityLocaleName="LOC_CITY_NAME_SEATTLE" Area="0" />
+				<Replace MapName="GiantEarth" X="133" Y="69" CityLocaleName="LOC_CITY_NAME_SPOKANE" Area="0" />
+
+				<!-- OREGON -->
+				<Replace MapName="GiantEarth" X="133" Y="65" CityLocaleName="LOC_CITY_NAME_BEND" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="133" Y="66" CityLocaleName="LOC_CITY_NAME_BEND" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="130" Y="67" CityLocaleName="LOC_CITY_NAME_OR_PORTLAND" Area="1" />
+				
+				<!-- NEW MEXICO -->
+				<Replace MapName="GiantEarth" X="137" Y="58" CityLocaleName="LOC_CITY_NAME_LAS_CRUCES" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="136" Y="59" CityLocaleName="LOC_CITY_NAME_LAS_CRUCES" Area="0" />
+				<Replace MapName="GiantEarth" X="138" Y="59" CityLocaleName="LOC_CITY_NAME_ALBUQUERQUE" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="138" Y="60" CityLocaleName="LOC_CITY_NAME_ALBUQUERQUE" Area="1" />
+				<Replace MapName="GiantEarth" X="139" Y="60" CityLocaleName="LOC_CITY_NAME_ALBUQUERQUE" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="138" Y="61" CityLocaleName="LOC_CITY_NAME_SANTA_FE" Area="0" />
+
+				<!-- ARIZONA -->
+				<Replace MapName="GiantEarth" X="136" Y="58" CityLocaleName="LOC_CITY_NAME_TUCSON" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="134" Y="59" CityLocaleName="LOC_CITY_NAME_PHOENIX" Area="1" />
+				<Replace MapName="GiantEarth" X="135" Y="59" CityLocaleName="LOC_CITY_NAME_TUCSON" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="136" Y="60" CityLocaleName="LOC_CITY_NAME_FLAGSTAFF" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="135" Y="61" CityLocaleName="LOC_CITY_NAME_FLAGSTAFF" Area="0" />
+				
+				<!-- NEVADA -->
+				<Replace MapName="GiantEarth" X="134" Y="62" CityLocaleName="LOC_CITY_NAME_LAS_VEGAS" Area="1" />
+				<Replace MapName="GiantEarth" X="136" Y="62" CityLocaleName="LOC_CITY_NAME_LAS_VEGAS" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="132" Y="63" CityLocaleName="LOC_CITY_NAME_RENO" Area="0" />
+				<Replace MapName="GiantEarth" X="135" Y="63" CityLocaleName="LOC_CITY_NAME_LAS_VEGAS" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="134" Y="64" CityLocaleName="LOC_CITY_NAME_SALT_LAKE_CITY" Area="0" />
+				<Replace MapName="GiantEarth" X="135" Y="64" CityLocaleName="LOC_CITY_NAME_SALT_LAKE_CITY" Area="0" />
+				
+				<!-- UTAH -->
+				<Replace MapName="GiantEarth" X="134" Y="66" CityLocaleName="LOC_CITY_NAME_SALT_LAKE_CITY" Area="0" />
+				<Replace MapName="GiantEarth" X="135" Y="66" CityLocaleName="LOC_CITY_NAME_SALT_LAKE_CITY" Area="1" />
+				
+				<!-- IDAHO -->
+				<Replace MapName="GiantEarth" X="136" Y="68" CityLocaleName="LOC_CITY_NAME_BOISE" Area="1" />
+				
+				<!-- CALIFORNIA -->
+				<Replace MapName="GiantEarth" X="131" Y="59" CityLocaleName="LOC_CITY_NAME_SAN_DIEGO" Area="0" />
+				<Replace MapName="GiantEarth" X="132" Y="59" CityLocaleName="LOC_CITY_NAME_SAN_DIEGO" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="131" Y="60" CityLocaleName="LOC_CITY_NAME_LOS_ANGELES" Area="1" />
+				<Replace MapName="GiantEarth" X="133" Y="60" CityLocaleName="LOC_CITY_NAME_BAKERSFIELD" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="132" Y="61" CityLocaleName="LOC_CITY_NAME_BAKERSFIELD" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="130" Y="63" CityLocaleName="LOC_CITY_NAME_SAN_JOSE" Area="1" />
+				<Replace MapName="GiantEarth" X="131" Y="63" CityLocaleName="LOC_CITY_NAME_SACRAMENTO" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="130" Y="64" CityLocaleName="LOC_CITY_NAME_SAN_FRANCISCO" Area="0" />
+				<Replace MapName="GiantEarth" X="131" Y="64" CityLocaleName="LOC_CITY_NAME_SACRAMENTO" Area="0" />
+				
+			<!-- CENTRAL USA -->
+			
+				<!-- MISSOURI -->
+				<Replace MapName="GiantEarth" X="146" Y="62" CityLocaleName="LOC_CITY_NAME_ST_LOUIS" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="143" Y="63" CityLocaleName="LOC_CITY_NAME_KANSAS_CITY" Area="1" />
+				<Replace MapName="GiantEarth" X="144" Y="63" CityLocaleName="LOC_CITY_NAME_ST_LOUIS" Area="0" />
+				<Replace MapName="GiantEarth" X="145" Y="63" CityLocaleName="LOC_CITY_NAME_ST_LOUIS" Area="1" />
+				<Replace MapName="GiantEarth" X="146" Y="63" CityLocaleName="LOC_CITY_NAME_ST_LOUIS" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="146" Y="64" CityLocaleName="LOC_CITY_NAME_ST_LOUIS" Area="0" />
+		
+				<!-- LOUISIANA -->	
+				<Replace MapName="GiantEarth" X="145" Y="56" CityLocaleName="LOC_CITY_NAME_NEW_ORLEANS" Area="0" />	
+				<Replace MapName="GiantEarth" X="146" Y="56" CityLocaleName="LOC_CITY_NAME_NEW_ORLEANS" Area="1" />
+
+				<Replace MapName="GiantEarth" X="144" Y="57" CityLocaleName="LOC_CITY_NAME_LAFAYETTE" Area="1" />
+				<Replace MapName="GiantEarth" X="145" Y="57" CityLocaleName="LOC_CITY_NAME_NEW_ORLEANS" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="144" Y="58" CityLocaleName="LOC_CITY_NAME_SHREVEPORT" Area="0" />
+				<Replace MapName="GiantEarth" X="145" Y="58" CityLocaleName="LOC_CITY_NAME_SHREVEPORT" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="144" Y="59" CityLocaleName="LOC_CITY_NAME_SHREVEPORT" Area="0" />
+
+				<!-- ARKANSAS -->
+				<Replace MapName="GiantEarth" X="144" Y="60" CityLocaleName="LOC_CITY_NAME_LITTLE_ROCK" Area="1" />
+
+				<!-- IOWA -->
+				<Replace MapName="GiantEarth" X="142" Y="65" CityLocaleName="LOC_CITY_NAME_DES_MOINES" Area="0" />
+				<Replace MapName="GiantEarth" X="143" Y="65" CityLocaleName="LOC_CITY_NAME_DES_MOINES" Area="0" />
+				<Replace MapName="GiantEarth" X="145" Y="65" CityLocaleName="LOC_CITY_NAME_CEDAR_RAPIDS" Area="0" />	
+
+				<Replace MapName="GiantEarth" X="143" Y="66" CityLocaleName="LOC_CITY_NAME_DES_MOINES" Area="0" />
+				<Replace MapName="GiantEarth" X="144" Y="66" CityLocaleName="LOC_CITY_NAME_CEDAR_RAPIDS" Area="1" />	
+
+				<!-- NORTH DAKOTA -->	
+				<Replace MapName="GiantEarth" X="139" Y="69" CityLocaleName="LOC_CITY_NAME_BISMARCK" Area="1" />
+				<Replace MapName="GiantEarth" X="140" Y="69" CityLocaleName="LOC_CITY_NAME_BISMARCK" Area="0" />	
+				<Replace MapName="GiantEarth" X="141" Y="69" CityLocaleName="LOC_CITY_NAME_FARGO" Area="1" />
+				
+				<!-- MONTANA -->	
+				<Replace MapName="GiantEarth" X="135" Y="69" CityLocaleName="LOC_CITY_NAME_MISSOULA" Area="1" />
+				<Replace MapName="GiantEarth" X="137" Y="69" CityLocaleName="LOC_CITY_NAME_BILLINGS" Area="1" />
+				<Replace MapName="GiantEarth" X="138" Y="69" CityLocaleName="LOC_CITY_NAME_BILLINGS" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="136" Y="70" CityLocaleName="LOC_CITY_NAME_GREAT_FALLS" Area="0" />
+				<Replace MapName="GiantEarth" X="137" Y="70" CityLocaleName="LOC_CITY_NAME_GREAT_FALLS" Area="1" />
+				<Replace MapName="GiantEarth" X="138" Y="70" CityLocaleName="LOC_CITY_NAME_BILLINGS" Area="0" />
+				
+				<!-- TEXAS -->
+				<Replace MapName="GiantEarth" X="141" Y="54" CityLocaleName="LOC_CITY_NAME_CORPUS_CHRISTI" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="139" Y="55" CityLocaleName="LOC_CITY_NAME_USA_SAN_ANTONIO" Area="0" />
+				<Replace MapName="GiantEarth" X="141" Y="55" CityLocaleName="LOC_CITY_NAME_HOUSTON" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="139" Y="56" CityLocaleName="LOC_CITY_NAME_EL_PASO" Area="0" />
+				<Replace MapName="GiantEarth" X="141" Y="56" CityLocaleName="LOC_CITY_NAME_USA_SAN_ANTONIO" Area="1" />
+				<Replace MapName="GiantEarth" X="142" Y="56" CityLocaleName="LOC_CITY_NAME_HOUSTON" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="138" Y="57" CityLocaleName="LOC_CITY_NAME_EL_PASO" Area="0" />
+				<Replace MapName="GiantEarth" X="139" Y="57" CityLocaleName="LOC_CITY_NAME_MIDLAND" Area="0" />
+				<Replace MapName="GiantEarth" X="140" Y="57" CityLocaleName="LOC_CITY_NAME_AUSTIN" Area="0" />
+				<Replace MapName="GiantEarth" X="141" Y="57" CityLocaleName="LOC_CITY_NAME_AUSTIN" Area="1" />
+				<Replace MapName="GiantEarth" X="142" Y="57" CityLocaleName="LOC_CITY_NAME_AUSTIN" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="139" Y="58" CityLocaleName="LOC_CITY_NAME_LUBBOCK" Area="0" />
+				<Replace MapName="GiantEarth" X="142" Y="58" CityLocaleName="LOC_CITY_NAME_DALLAS" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="139" Y="59" CityLocaleName="LOC_CITY_NAME_LUBBOCK" Area="1" />
+				<Replace MapName="GiantEarth" X="140" Y="59" CityLocaleName="LOC_CITY_NAME_FORT_WORTH" Area="0" />
+				<Replace MapName="GiantEarth" X="141" Y="59" CityLocaleName="LOC_CITY_NAME_FORT_WORTH" Area="0" />
+				<Replace MapName="GiantEarth" X="142" Y="59" CityLocaleName="LOC_CITY_NAME_DALLAS" Area="1" />
+				<Replace MapName="GiantEarth" X="143" Y="59" CityLocaleName="LOC_CITY_NAME_DALLAS" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="140" Y="60" CityLocaleName="LOC_CITY_NAME_AMARILLO" Area="0" />
+				<Replace MapName="GiantEarth" X="141" Y="60" CityLocaleName="LOC_CITY_NAME_FORT_WORTH" Area="0" />
+				<Replace MapName="GiantEarth" X="142" Y="60" CityLocaleName="LOC_CITY_NAME_DALLAS" Area="0" />
+				<Replace MapName="GiantEarth" X="143" Y="60" CityLocaleName="LOC_CITY_NAME_DALLAS" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="139" Y="61" CityLocaleName="LOC_CITY_NAME_AMARILLO" Area="0" />
+				
+				<!-- OKLAHOMA -->
+				<Replace MapName="GiantEarth" X="141" Y="61" CityLocaleName="LOC_CITY_NAME_OKLAHOMA_CITY" Area="1" />
+				
+				<!-- COLORADO -->
+				<Replace MapName="GiantEarth" X="138" Y="62" CityLocaleName="LOC_CITY_NAME_PUEBLO" Area="0" />
+				<Replace MapName="GiantEarth" X="140" Y="62" CityLocaleName="LOC_CITY_NAME_PUEBLO" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="136" Y="63" CityLocaleName="LOC_CITY_NAME_GRAND_JUNCTION" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="139" Y="64" CityLocaleName="LOC_CITY_NAME_DENVER" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="139" Y="65" CityLocaleName="LOC_CITY_NAME_BOULDER" Area="0" />
+				<Replace MapName="GiantEarth" X="138" Y="65" CityLocaleName="LOC_CITY_NAME_BOULDER" Area="0" />
+				
+				<!-- KANSAS -->
+				<Replace MapName="GiantEarth" X="140" Y="63" CityLocaleName="LOC_CITY_NAME_WICHITA" Area="0" />
+				<Replace MapName="GiantEarth" X="141" Y="63" CityLocaleName="LOC_CITY_NAME_WICHITA" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="141" Y="64" CityLocaleName="LOC_CITY_NAME_TOPEKA" Area="0" />
+				<Replace MapName="GiantEarth" X="142" Y="64" CityLocaleName="LOC_CITY_NAME_TOPEKA" Area="0" />
+				
+				<!-- SOUTH DAKOTA -->
+				<Replace MapName="GiantEarth" X="139" Y="67" CityLocaleName="LOC_CITY_NAME_RAPID_CITY" Area="0" />
+				<Replace MapName="GiantEarth" X="140" Y="67" CityLocaleName="LOC_CITY_NAME_RAPID_CITY" Area="0" />
+				<Replace MapName="GiantEarth" X="141" Y="67" CityLocaleName="LOC_CITY_NAME_SIOUX_FALLS" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="139" Y="68" CityLocaleName="LOC_CITY_NAME_RAPID_CITY" Area="0" />
+				<Replace MapName="GiantEarth" X="140" Y="68" CityLocaleName="LOC_CITY_NAME_RAPID_CITY" Area="0" />
+				<Replace MapName="GiantEarth" X="141" Y="68" CityLocaleName="LOC_CITY_NAME_SIOUX_FALLS" Area="0" />
+				<Replace MapName="GiantEarth" X="142" Y="68" CityLocaleName="LOC_CITY_NAME_SIOUX_FALLS" Area="0" />
+				
+				<!-- NEBRASKA -->
+				<Replace MapName="GiantEarth" X="141" Y="65" CityLocaleName="LOC_CITY_NAME_OMAHA" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="141" Y="66" CityLocaleName="LOC_CITY_NAME_USA_LINCOLN" Area="1" />
+				<Replace MapName="GiantEarth" X="142" Y="66" CityLocaleName="LOC_CITY_NAME_OMAHA" Area="0" />
+				
+				<!-- WYOMING -->
+				<Replace MapName="GiantEarth" X="137" Y="65" CityLocaleName="LOC_CITY_NAME_ROCK_SPRINGS" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="137" Y="66" CityLocaleName="LOC_CITY_NAME_CHEYENNE" Area="0" />
+				<Replace MapName="GiantEarth" X="138" Y="66" CityLocaleName="LOC_CITY_NAME_CHEYENNE" Area="1" />
+				
+				<Replace MapName="GiantEarth" X="137" Y="67" CityLocaleName="LOC_CITY_NAME_CASPER" Area="1" />
+				<Replace MapName="GiantEarth" X="138" Y="67" CityLocaleName="LOC_CITY_NAME_CHEYENNE" Area="0" />
+				
+				<Replace MapName="GiantEarth" X="137" Y="68" CityLocaleName="LOC_CITY_NAME_CASPER" Area="0" />
+				<Replace MapName="GiantEarth" X="138" Y="68" CityLocaleName="LOC_CITY_NAME_CASPER" Area="0" />
+				
+		<!-- MEXICO & CENTRAL AMERICA-->
+			<!-- MEXICO -->
+			<Replace MapName="GiantEarth" X="140" Y="45" CityLocaleName="LOC_CITY_NAME_OAXACA" Area="1" />
+			<Replace MapName="GiantEarth" X="142" Y="45" CityLocaleName="LOC_CITY_NAME_SALINA_CRUZ" Area="0" />
+			<Replace MapName="GiantEarth" X="143" Y="45" CityLocaleName="LOC_CITY_NAME_JUCHITAN_DE_ZARAGOZA" Area="0" />
+			
+			<Replace MapName="GiantEarth" X="144" Y="46" CityLocaleName="LOC_CITY_NAME_TUXTLA" Area="0" />
+			<Replace MapName="GiantEarth" X="145" Y="46" CityLocaleName="LOC_CITY_NAME_TUXTLA" Area="0" />
+			
+			<Replace MapName="GiantEarth" X="137" Y="47" CityLocaleName="LOC_CITY_NAME_ACAPULCO" Area="0" />
+			<Replace MapName="GiantEarth" X="138" Y="47" CityLocaleName="LOC_CITY_NAME_ACAPULCO" Area="0" />
+			<Replace MapName="GiantEarth" X="139" Y="47" CityLocaleName="LOC_CITY_NAME_TEHUACAN" Area="0" />
+			<Replace MapName="GiantEarth" X="143" Y="47" CityLocaleName="LOC_CITY_NAME_COATZACOALCOS" Area="1" />
+			<Replace MapName="GiantEarth" X="144" Y="47" CityLocaleName="LOC_CITY_NAME_VILLAHERMOSA" Area="0" />
+			
+			<Replace MapName="GiantEarth" X="139" Y="48" CityLocaleName="LOC_CITY_NAME_PUEBLA" Area="0" />
+			<Replace MapName="GiantEarth" X="140" Y="48" CityLocaleName="LOC_CITY_NAME_TEHUACAN" Area="0" />
+			<Replace MapName="GiantEarth" X="141" Y="48" CityLocaleName="LOC_CITY_NAME_VERACRUZ" Area="1" />
+			<Replace MapName="GiantEarth" X="144" Y="48" CityLocaleName="LOC_CITY_NAME_VILLAHERMOSA" Area="0" />
+			<Replace MapName="GiantEarth" X="145" Y="48" CityLocaleName="LOC_CITY_NAME_CIUDAD_DEL_CARMEN" Area="0" />
+			
+			<Replace MapName="GiantEarth" X="136" Y="49" CityLocaleName="LOC_CITY_NAME_MEX_GUADALAJARA" Area="1" />
+			<Replace MapName="GiantEarth" X="138" Y="49" CityLocaleName="LOC_CITY_NAME_MEXICO_CITY" Area="1" />
+			<Replace MapName="GiantEarth" X="139" Y="49" CityLocaleName="LOC_CITY_NAME_TEXCOCO" Area="0" />
+			<Replace MapName="GiantEarth" X="145" Y="49" CityLocaleName="LOC_CITY_NAME_MERIDA" Area="0" />
+			<Replace MapName="GiantEarth" X="146" Y="49" CityLocaleName="LOC_CITY_NAME_CHICHEN_ITZA" Area="1" />
+			
+			<Replace MapName="GiantEarth" X="146" Y="50" CityLocaleName="LOC_CITY_NAME_MERIDA" Area="0" />
+			
+			<Replace MapName="GiantEarth" X="136" Y="51" CityLocaleName="LOC_CITY_NAME_XILOTEPEC" Area="0" />
+			<Replace MapName="GiantEarth" X="137" Y="51" CityLocaleName="LOC_CITY_NAME_METZTITLAN" Area="0" />
+			<Replace MapName="GiantEarth" X="140" Y="51" CityLocaleName="LOC_CITY_NAME_CIUDAD_VICTORIA" Area="1" />
+			
+			<Replace MapName="GiantEarth" X="133" Y="52" CityLocaleName="LOC_CITY_NAME_LA_PAZ" Area="0" />
+			<Replace MapName="GiantEarth" X="137" Y="52" CityLocaleName="LOC_CITY_NAME_XILOTEPEC" Area="0" />
+			<Replace MapName="GiantEarth" X="138" Y="52" CityLocaleName="LOC_CITY_NAME_METZTITLAN" Area="0" />
+			
+			<Replace MapName="GiantEarth" X="135" Y="53" CityLocaleName="LOC_CITY_NAME_MAZATLAN" Area="0" />
+			<Replace MapName="GiantEarth" X="136" Y="53" CityLocaleName="LOC_CITY_NAME_MAZATLAN" Area="0" />
+			<Replace MapName="GiantEarth" X="140" Y="53" CityLocaleName="LOC_CITY_NAME_REYNOSA" Area="0" />
+			
+			<Replace MapName="GiantEarth" X="132" Y="54" CityLocaleName="LOC_CITY_NAME_LA_PAZ" Area="1" />
+			<Replace MapName="GiantEarth" X="135" Y="54" CityLocaleName="LOC_CITY_NAME_CULIACAN" Area="0" />
+			<Replace MapName="GiantEarth" X="136" Y="54" CityLocaleName="LOC_CITY_NAME_CULIACAN" Area="0" />
+			<Replace MapName="GiantEarth" X="137" Y="54" CityLocaleName="LOC_CITY_NAME_DURANGO" Area="0" />
+			<Replace MapName="GiantEarth" X="139" Y="54" CityLocaleName="LOC_CITY_NAME_MONTERREY" Area="1" />
+			
+			<Replace MapName="GiantEarth" X="134" Y="55" CityLocaleName="LOC_CITY_NAME_LOS_MOCHIS" Area="0" />
+			<Replace MapName="GiantEarth" X="135" Y="55" CityLocaleName="LOC_CITY_NAME_LOS_MOCHIS" Area="0" />
+			<Replace MapName="GiantEarth" X="136" Y="55" CityLocaleName="LOC_CITY_NAME_DURANGO" Area="0" />
+			
+			<Replace MapName="GiantEarth" X="135" Y="56" CityLocaleName="LOC_CITY_NAME_HERMOSILLO" Area="1" />
+			
+			<Replace MapName="GiantEarth" X="131" Y="57" CityLocaleName="LOC_CITY_NAME_TIJUANA" Area="1" />
+			<Replace MapName="GiantEarth" X="133" Y="57" CityLocaleName="LOC_CITY_NAME_MEXICALI" Area="0" />
+			<Replace MapName="GiantEarth" X="137" Y="57" CityLocaleName="LOC_CITY_NAME_CHIHUAHUA" Area="1" />
+			
+			<Replace MapName="GiantEarth" X="133" Y="58" CityLocaleName="LOC_CITY_NAME_MEXICALI" Area="0" />
+			
+			<!-- CENTRAL AMERICA -->
+			<Replace MapName="GiantEarth" X="150" Y="39" CityLocaleName="LOC_CITY_NAME_PANAMA_CITY" Area="1" />
+			
+			<Replace MapName="GiantEarth" X="148" Y="41" CityLocaleName="LOC_CITY_NAME_SAN_JOSE_COSTA_RICA" Area="1" />
+			
+			<Replace MapName="GiantEarth" X="148" Y="42" CityLocaleName="LOC_CITY_NAME_MANAGUA" Area="0" />
+			
+			<Replace MapName="GiantEarth" X="147" Y="43" CityLocaleName="LOC_CITY_NAME_TEGUCIGALPA" Area="1" />
+			<Replace MapName="GiantEarth" X="148" Y="43" CityLocaleName="LOC_CITY_NAME_MANAGUA" Area="0" />
+			
+			<Replace MapName="GiantEarth" X="145" Y="44" CityLocaleName="LOC_CITY_NAME_GUATEMALA" Area="1" />
+			<Replace MapName="GiantEarth" X="149" Y="44" CityLocaleName="LOC_CITY_NAME_MOSQUITO" Area="0" />
+			
+			<Replace MapName="GiantEarth" X="146" Y="45" CityLocaleName="LOC_CITY_NAME_SAN_PEDRO_SULA" Area="0" />
+			<Replace MapName="GiantEarth" X="147" Y="45" CityLocaleName="LOC_CITY_NAME_SAN_PEDRO_SULA" Area="0" />
+			<Replace MapName="GiantEarth" X="148" Y="45" CityLocaleName="LOC_CITY_NAME_MOSQUITO" Area="0" />
+			
+			<Replace MapName="GiantEarth" X="146" Y="46" CityLocaleName="LOC_CITY_NAME_BELIZE_CITY" Area="1" />
+			
+	</CityMap>
 	
 </GameData>
