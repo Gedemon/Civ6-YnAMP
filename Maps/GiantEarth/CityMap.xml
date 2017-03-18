@@ -6,7 +6,7 @@
 	<!-- ++++++++++++++++++++++++++ -->
 	
 	<!-- CAPITALS -->	
-	<CityMap>	<!-- (temporary section to covert all TSL that doesn't fit the game's capitals names) -->
+	<CityMap>	<!-- (temporary section to cover all TSL that doesn't fit the game's capitals names) -->
 		
 		<Replace MapName="GiantEarth" X="32" Y="43" CityLocaleName="LOC_CITY_NAME_LUXOR" />
 		
@@ -16,7 +16,7 @@
 	<!-- +++++++++++++++ -->
 	<!-- Europe City Map -->
 	<!-- +++++++++++++++ -->
-	
+
 	
 	<!-- CONTINENTAL WESTERN EUROPE -->
 	<CityMap>
@@ -390,8 +390,8 @@
 		<Replace MapName="GiantEarth" X="18" Y="78" CityLocaleName="LOC_CITY_NAME_STAVANGER" Area="0" />
 		<Replace MapName="GiantEarth" X="19" Y="78" CityLocaleName="LOC_CITY_NAME_KRISTIANSAND" Area="0" />
 		
-		<Replace MapName="GiantEarth" X="22" Y="78" CityLocaleName="LOC_CITY_NAME_GOTHENBURG" Area="0" />
-		<Replace MapName="GiantEarth" X="23" Y="78" CityLocaleName="LOC_CITY_NAME_VAXJO" Area="0" />
+		<Replace MapName="GiantEarth" X="22" Y="78" CityLocaleName="LOC_CITY_NAME_GOETEBORG" Area="0" />
+		<Replace MapName="GiantEarth" X="23" Y="78" CityLocaleName="LOC_CITY_NAME_VAEXJOE" Area="0" />
 		<Replace MapName="GiantEarth" X="24" Y="78" CityLocaleName="LOC_CITY_NAME_KALMAR" Area="0" />
 		
 		<Replace MapName="GiantEarth" X="18" Y="79" CityLocaleName="LOC_CITY_NAME_SELJORD" Area="0" />
@@ -450,7 +450,7 @@
 		                                      
 		<Replace MapName="GiantEarth" X="21" Y="83" CityLocaleName="LOC_CITY_NAME_LILLEHAMMER" Area="0" />
 		<Replace MapName="GiantEarth" X="22" Y="83" CityLocaleName="LOC_CITY_NAME_ROEROS" Area="0" />
-		<Replace MapName="GiantEarth" X="23" Y="83" CityLocaleName="LOC_CITY_NAME_OSTERSUND" Area="0" />
+		<Replace MapName="GiantEarth" X="23" Y="83" CityLocaleName="LOC_CITY_NAME_OESTERSUND" Area="0" />
 		<Replace MapName="GiantEarth" X="24" Y="83" CityLocaleName="LOC_CITY_NAME_SUNDSVALL" Area="0" />
 		                                      
 		<Replace MapName="GiantEarth" X="27" Y="83" CityLocaleName="LOC_CITY_NAME_VAASA" Area="0" />
