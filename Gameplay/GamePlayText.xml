@@ -1450,6 +1450,7 @@
 		<Replace Tag="LOC_CITY_NAME_HOLSTEBRO" Text="Holstebro" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_HUDIKSVAL" Text="Hudiksval" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_INARI" Text="Inari" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JAKOBSTAD" Text="Jakobstad" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_JAEMSAE" Text="Jämsä" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_JOENKOEPING" Text="Jönköping" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_JOENSUU" Text="Joensuu" Language="en_US" />
@@ -2915,7 +2916,7 @@
 		<Replace Tag="LOC_CITY_NAME_NELIDOVO" Text="Nelidovo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NIKOLSK" Text="Nikolsk" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NIZHNY_LOMOV" Text="Nizhny Lomov" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_NIZHNY_NOVOGORD" Text="Nizhny Novgorod" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NIZHNY_NOVGOROD" Text="Nizhny Novgorod" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NIZHNY_NOVGOROD_CHINA" Text="Xianuofugeluode" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NIZHNY_NOVGOROD_FRANCE" Text="Nijni-Novgorod" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NIZHNY_NOVGOROD_GERMANY" Text="Nischnij Nowgorod" Language="en_US" />
