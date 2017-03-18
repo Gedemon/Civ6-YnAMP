@@ -977,7 +977,7 @@
 		<Replace MapName="PlayEuropeAgain" X="61" Y="93" CityLocaleName="LOC_CITY_NAME_UTSJOKI" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="62" Y="93" CityLocaleName="LOC_CITY_NAME_UTSJOKI" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="67" Y="93" CityLocaleName="LOC_CITY_NAME_NIKEL" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="69" Y="93" CityLocaleName="LOC_CITY_NAME_MURMKANSK" />
+		<Replace MapName="PlayEuropeAgain" X="69" Y="93" CityLocaleName="LOC_CITY_NAME_MURMANSK" />
 		<Replace MapName="PlayEuropeAgain" X="71" Y="93" CityLocaleName="LOC_CITY_NAME_TERIBERKA" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="72" Y="93" CityLocaleName="LOC_CITY_NAME_TERIBERKA" Area="0" />
 		
@@ -2963,7 +2963,7 @@
 		<Replace MapName="PlayEuropeAgain" X="77" Y="28" CityLocaleName="LOC_CITY_NAME_KIRSEHIR" />
 		<Replace MapName="PlayEuropeAgain" X="80" Y="28" CityLocaleName="LOC_CITY_NAME_KAYSERI" />
 		
-		<Replace MapName="PlayEuropeAgain" X="69" Y="29" CityLocaleName="LOC_CITY_NAME_BIRSA" />
+		<Replace MapName="PlayEuropeAgain" X="69" Y="29" CityLocaleName="LOC_CITY_NAME_BURSA" />
 		<Replace MapName="PlayEuropeAgain" X="74" Y="29" CityLocaleName="LOC_CITY_NAME_ANKARA" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="78" Y="29" CityLocaleName="LOC_CITY_NAME_YOZGAT" Area="0" />
 		
