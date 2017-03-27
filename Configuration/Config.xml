@@ -20,14 +20,14 @@
 	
 	<MapSizes>
 		<Update>
-			<Set MaxPlayers="60"/>
+			<Set MaxPlayers="62" MaxCityStates="60"/>
 		</Update>
 		
-		<Row MapSizeType="MAPSIZE_ENORMOUS" Name="LOC_MAPSIZE_ENORMOUS_NAME" Description="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" MinPlayers="2" MaxPlayers="60" DefaultPlayers="16" MinCityStates="0" MaxCityStates="28" DefaultCityStates="22" SortIndex="70" />
-		<Row MapSizeType="MAPSIZE_GIANT" Name="LOC_MAPSIZE_GIANT_NAME" Description="LOC_MAPSIZE_GIANT_DESCRIPTION" MinPlayers="2" MaxPlayers="60" DefaultPlayers="20" MinCityStates="0" MaxCityStates="32" DefaultCityStates="26" SortIndex="80" />
-		<Row MapSizeType="MAPSIZE_LUDICROUS" Name="LOC_MAPSIZE_LUDICROUS_NAME" Description="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" MinPlayers="2" MaxPlayers="60" DefaultPlayers="20" MinCityStates="0" MaxCityStates="40" DefaultCityStates="30" SortIndex="90" />	
+		<Row MapSizeType="MAPSIZE_ENORMOUS" Name="LOC_MAPSIZE_ENORMOUS_NAME" Description="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" MinPlayers="2" MaxPlayers="62" DefaultPlayers="16" MinCityStates="0" MaxCityStates="60" DefaultCityStates="22" SortIndex="70" />
+		<Row MapSizeType="MAPSIZE_GIANT" Name="LOC_MAPSIZE_GIANT_NAME" Description="LOC_MAPSIZE_GIANT_DESCRIPTION" MinPlayers="2" MaxPlayers="62" DefaultPlayers="20" MinCityStates="0" MaxCityStates="60" DefaultCityStates="26" SortIndex="80" />
+		<Row MapSizeType="MAPSIZE_LUDICROUS" Name="LOC_MAPSIZE_LUDICROUS_NAME" Description="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" MinPlayers="2" MaxPlayers="62" DefaultPlayers="20" MinCityStates="0" MaxCityStates="60" DefaultCityStates="30" SortIndex="90" />	
 
-		<Row Domain="CustomMapSizes" MapSizeType="MAPSIZE_GREATESTEARTH" Name="LOC_GREATESTEARTH_NAME" Description="LOC_GREATESTEARTH_NAME" MinPlayers="2" MaxPlayers="60" DefaultPlayers="16" MinCityStates="0" MaxCityStates="30" DefaultCityStates="20" SortIndex="90" />	
+		<Row Domain="CustomMapSizes" MapSizeType="MAPSIZE_GREATESTEARTH" Name="LOC_GREATESTEARTH_NAME" Description="LOC_GREATESTEARTH_NAME" MinPlayers="2" MaxPlayers="62" DefaultPlayers="16" MinCityStates="0" MaxCityStates="60" DefaultCityStates="20" SortIndex="90" />	
 	</MapSizes>
 
 	<Parameters>
@@ -52,7 +52,7 @@
 		<!--	Option to use only generic city names (no civ-specific names)		-->
 		<Row ParameterId="OnlyGenericCityNames" Name="LOC_MAP_ONLY_GENERIC_CITY_NAMES_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="OnlyGenericCityNames" GroupId="MapOptions" SortIndex="2001"/>
 
-		</Parameters>	
+	</Parameters>	
 
 	<DomainValues>
 		<Row Domain="ResourcesPlacement" Value="PLACEMENT_DEFAULT" 	Name="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
@@ -113,6 +113,12 @@
 		<Row ParameterId="ForceTSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_TSL"/>
 		<Row ParameterId="OnlyGenericCityNames" ConfigurationGroup="Map" ConfigurationId="AutoCityNaming" Operator="Equals" ConfigurationValue="1"/>
 
-	</ParameterDependencies>
+	</ParameterDependencies>	
+	
+	<MapUnSupportedValues>
+		<Row Map="InlandSea.lua" Domain="StandardMapSizes" Value="MAPSIZE_ENORMOUS" />
+		<Row Map="InlandSea.lua" Domain="StandardMapSizes" Value="MAPSIZE_GIANT" />
+		<Row Map="InlandSea.lua" Domain="StandardMapSizes" Value="MAPSIZE_LUDICROUS" />
+	</MapUnSupportedValues>
 	
 </GameInfo>

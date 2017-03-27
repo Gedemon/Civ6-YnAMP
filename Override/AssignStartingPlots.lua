@@ -2273,7 +2273,7 @@ print ("Loading YnAMP functions ...")
 ------------------------------------------------------------------------------
 -- Create Tables
 ------------------------------------------------------------------------------
-
+local hasBuildExclusionList = false
 function buildExclusionList()
 	print ("Building Region Exclusion list for "..tostring(mapName).."...")
 	
@@ -2351,6 +2351,7 @@ function buildExclusionList()
 			end
 		end
 	end
+	hasBuildExclusionList = true
 end
 
 function buidTSL()
@@ -2874,28 +2875,41 @@ function PlaceStrategicResources(eResourceType)
 end
 
 -- Check for Resource placement rules
-function YnAMP_CanHaveResource(pPlot, eResourceType)
-	--print("YnAMP_CanHaveResource(pPlot, eResourceType)", pPlot:GetID(), eResourceType)
+function YnAMP_CanHaveResource(pPlot, eResourceType, bOnlyExclu)
 	if not bResourceExclusion then
 		-- exlusion is not activated, just check the normal placement rule
 		return ResourceBuilder.OldCanHaveResource(pPlot, eResourceType)
 	end	
 	
-	--[[
+	if (not hasBuildExclusionList) and (eResourceType ~= -1) then
+		print("Calling YnAMP_CanHaveResource(pPlot, eResourceType) before  hasBuildExclusionList at", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
+	end	
+	
+	---[[
 	if isResourceExclusive[eResourceType] and not isResourceExclusiveXY[pPlot:GetX()][pPlot:GetY()][eResourceType] then
 		-- resource is exclusive to specific regions, and this plot is not in one of them
+		print("YnAMP_CanHaveResource(pPlot, eResourceType) isResourceExclusive", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
 		return false
 	end
 	--]]
-	if isResourceExclusive[eResourceType] then
+	--[[
+	if isResourceExclusive[eResourceType] then -- would require an argument to allow placement now that YnAMP_CanHaveResource replace ResourceBuilder.CanHaveResource
 		-- those are directly placed on the map
+		print("YnAMP_CanHaveResource(pPlot, eResourceType) isResourceExclusive", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
+		return false
+	end
+	--]]
+	
+	if isResourceExcludedXY[pPlot:GetX()][pPlot:GetY()][eResourceType] then
+		-- this plot is in a region from which this resource is excluded		
+		print("YnAMP_CanHaveResource(pPlot, eResourceType) isResourceExcludedXY", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
 		return false
 	end
 	
-	if isResourceExcludedXY[pPlot:GetX()][pPlot:GetY()][eResourceType] then
-		-- this plot is in a region from which this resource is excluded
-		return false
+	if bOnlyExclu then
+		return true -- YnAMP_CanHaveResource was called to test only excluded/exclusive resources
 	end
+	
 	-- Resource is not excluded from this plot, or this plot is allowed for a region-exclusive resources, now check normal placement rules
 	return ResourceBuilder.OldCanHaveResource(pPlot, eResourceType)
 end
@@ -3072,7 +3086,13 @@ function ResourcesStatistics(g_iW, g_iH)
 		local eResourceType = plot:GetResourceType()
 		if (eResourceType ~= -1) then
 			if resTable[eResourceType] then
-				resTable[eResourceType] = resTable[eResourceType] + 1
+				if not YnAMP_CanHaveResource(plot, eResourceType, true) then
+					print("WARNING - Removing unauthorised resource at", plot:GetX(), plot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
+					ResourceBuilder.OldSetResourceType(plot, -1)
+					-- to do : replace...
+				else
+					resTable[eResourceType] = resTable[eResourceType] + 1
+				end
 			else
 				print("WARNING - resTable[eResourceType] is nil for eResourceType = " .. tostring(eResourceType))
 			end
@@ -3992,6 +4012,15 @@ print ("Replacing ResourceBuilder.CanHaveResource by YnAMP_CanHaveResource...")
 ResourceBuilder.OldCanHaveResource = ResourceBuilder.CanHaveResource
 ResourceBuilder.CanHaveResource = YnAMP_CanHaveResource
 
+
+function YnAMP_SetResourceType(pPlot, eResourceType, number)
+	if (not YnAMP_CanHaveResource(pPlot, eResourceType)) and (eResourceType ~= -1) then
+		print("WARNING calling SetResourceType() but YnAMP_CanHaveResource() wouldn't allow it :", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
+	end
+	ResourceBuilder.OldSetResourceType(pPlot, eResourceType, number)
+end
+ResourceBuilder.OldSetResourceType = ResourceBuilder.SetResourceType
+ResourceBuilder.SetResourceType = YnAMP_SetResourceType
 
 ------------------------------------------------------------------------------
 -- Override required to use limits on ice placement for imported maps
