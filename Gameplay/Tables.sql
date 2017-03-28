@@ -51,6 +51,7 @@ CREATE TABLE IF NOT EXISTS ExtraPlacement
 		Quantity INT default 0);
 		
 -- Start Positions
+-- See EOF for added columns
 CREATE TABLE IF NOT EXISTS StartPosition
 	(	MapName TEXT,
 		Civilization TEXT,
@@ -87,3 +88,10 @@ CREATE TABLE CityStatesConfiguration
 		Category TEXT,
 		Ethnicity TEXT		
 	);
+	
+	
+-- Altering the StartPosition table for compatibility with mods that used to add the table instead of setting loading priority
+-- This is done at the end of the file in case of errors (IE if the columns are already set in another mod)
+ALTER TABLE StartPosition ADD COLUMN DisabledByCivilization TEXT;
+ALTER TABLE StartPosition ADD COLUMN DisabledByLeader TEXT;
+ALTER TABLE StartPosition ADD COLUMN AlternateStart INT default 0;
