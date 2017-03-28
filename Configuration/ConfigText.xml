@@ -279,7 +279,7 @@
 	<Replace Tag="LOC_MAP_LEADER_TSL_NAME" Language="en_US">
       <Text>Use Leaders TSL when available</Text>
     </Replace>
-	<Replace Tag="LOC_MAP_ONLY_GENERIC_CITY_NAMES_NAME" Language="en_US">
+	<Replace Tag="LOC_MAP_ALTERNATE_TSL_NAME" Language="en_US">
       <Text>Use Alternate TSL if required and available</Text>
     </Replace>
 	

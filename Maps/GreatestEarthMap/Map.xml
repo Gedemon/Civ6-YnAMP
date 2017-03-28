@@ -19,9 +19,14 @@
 		
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AMERICA"		X="19" Y="47" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ARABIA"		X="64" Y="33" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ARABIA"		X="58" Y="35" Leader="LEADER_SALADIN" DisabledByCivilization="CIVILIZATION_EGYPT" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ARABIA"		X="64" Y="33" Leader="LEADER_SALADIN" AlternateStart="1" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AZTEC"		X="11" Y="34" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CHINA"		X="87" Y="54" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_EGYPT"		X="58" Y="33" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_EGYPT"		X="58" Y="35" DisabledByLeader="LEADER_SALADIN" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_EGYPT"		X="60" Y="30" AlternateStart="1" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_EGYPT"		X="57" Y="36" Leader="LEADER_CLEOPATRA" DisabledByLeader="LEADER_SALADIN" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_EGYPT"		X="60" Y="30" Leader="LEADER_CLEOPATRA" AlternateStart="1" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ENGLAND"		X="40" Y="52" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_FRANCE"		X="42" Y="48" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GERMANY"		X="51" Y="53" />

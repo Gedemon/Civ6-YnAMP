@@ -2368,8 +2368,8 @@ function buidTSL()
 	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 		local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
 		local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
-		isInGame[CivilizationTypeName] = true
-		isInGame[LeaderTypeName] = true
+		if CivilizationTypeName then isInGame[CivilizationTypeName] = true end
+		if LeaderTypeName 		then isInGame[LeaderTypeName] 		= true end
 	end
 	
 	-- Create list of leaders TSL
@@ -2391,7 +2391,7 @@ function buidTSL()
 							if not tAlternateTSL[row.Civilization] then 
 								tAlternateTSL[row.Civilization] = {} 
 							end
-							table.insert(tAlternateTSL[row.Civilization], {row})
+							table.insert(tAlternateTSL[row.Civilization], row)
 						end
 					end
 				end
@@ -2418,68 +2418,73 @@ function buidTSL()
 				local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
 				if row.Civilization == CivilizationTypeName then
 					local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
+					local bCanPlaceHere = true
+					local sWarning = ""
+					
 					if row.DisabledByCivilization and isInGame[row.DisabledByCivilization] then
-						print ("- Can't reserve TSL for "..Locale.Lookup(LeaderTypeName).." of "..Locale.Lookup(CivilizationTypeName).." at "..tostring(row.X)..","..tostring(row.Y).." : position disabled by " .. Locale.Lookup(row.DisabledByCivilization))
+						sWarning = "position disabled by " .. tostring(row.DisabledByCivilization)
+						bCanPlaceHere = false
 					elseif row.DisabledByLeader and isInGame[row.DisabledByLeader] then
-						print ("- Can't reserve TSL for "..Locale.Lookup(LeaderTypeName).." of "..Locale.Lookup(CivilizationTypeName).." at "..tostring(row.X)..","..tostring(row.Y).." : position disabled by " .. Locale.Lookup(row.DisabledByLeader))
-					else
-						if row.Leader then -- Leaders TSL are exclusive
-							if bLeaderTSL and row.Leader == LeaderTypeName then
-								print ("- Checking Leader specific TSL for "..Locale.Lookup(LeaderTypeName).." of "..Locale.Lookup(CivilizationTypeName))
-								if bAlternateTSL then
-									if InRangeCurrentTSL(row, getTSL) then
-										print ("   - Too close from another TSL, checking for an Alternative TSL...")
-										local bFound = false
-										if tAlternateTSL[row.Civilization] then
-											for _, alternateRow in ipairs(tAlternateTSL[row.Civilization]) do
-												if (not bFound) and alternateRow.Leader and (alternateRow.Leader == LeaderTypeName) then
-													print ("   - Reserving (alternative TSL) at "..tostring(row.X)..","..tostring(row.Y))
-													getTSL[iPlayer] = {X = alternateRow.X, Y = alternateRow.Y}
-													bFound = true
-												end										
-											end									
-										end
-										if (not bFound) then
-											print ("   - Reserving (WARNING: in range of another TSL) at "..tostring(row.X)..","..tostring(row.Y))
-											getTSL[iPlayer] = {X = row.X, Y = row.Y}										
-										end
-									else
-										print ("   - Reserving (after checking for distance) at "..tostring(row.X)..","..tostring(row.Y))
-										getTSL[iPlayer] = {X = row.X, Y = row.Y}									
-									end
-								else
-									print ("   - Reserving (without checking for distance, no alternate TSL allowed) at "..tostring(row.X)..","..tostring(row.Y))
-									getTSL[iPlayer] = {X = row.X, Y = row.Y}								
+						sWarning = "position disabled by " .. tostring(row.DisabledByLeader)
+						bCanPlaceHere = false
+					elseif InRangeCurrentTSL(row, getTSL) then
+						sWarning = "too close from another TSL"
+						bCanPlaceHere = false
+					end	
+					
+					if row.Leader then -- Leaders TSL are exclusive
+						if bLeaderTSL and row.Leader == LeaderTypeName then
+							print ("- Checking Leader specific TSL for "..tostring(LeaderTypeName).." of "..tostring(CivilizationTypeName).." at "..tostring(row.X)..","..tostring(row.Y))
+							if bAlternateTSL and not bCanPlaceHere then
+								local bFound = false
+								if tAlternateTSL[row.Civilization] then
+									for _, alternateRow in ipairs(tAlternateTSL[row.Civilization]) do
+										if (not bFound) and alternateRow.Leader and (alternateRow.Leader == LeaderTypeName) then
+											print ("   - Reserving alternative TSL at "..tostring(alternateRow.X)..","..tostring(alternateRow.Y).." (initial TSL "..sWarning..")")
+											getTSL[iPlayer] = {X = alternateRow.X, Y = alternateRow.Y}
+											bFound = true
+										end										
+									end									
 								end
-							end
-						elseif (not bLeaderTSL) or (not tHasSpecificTSL[LeaderTypeName]) then -- If a Leaders has a specific TSL available, it will not use generic TSL for its Civilization
-							print ("- Checking generic civilization TSL for "..Locale.Lookup(LeaderTypeName).." of "..Locale.Lookup(CivilizationTypeName))
-							if bAlternateTSL then
-								if InRangeCurrentTSL(row, getTSL) then
-									print ("   - Too close from another TSL, checking for an Alternative TSL...")
-									local bFound = false
-									if tAlternateTSL[row.Civilization] then
-										for _, alternateRow in ipairs(tAlternateTSL[row.Civilization]) do
-											if (not bFound) and not alternateRow.Leader then
-												print ("   - Reserving (alternative TSL) at "..tostring(row.X)..","..tostring(row.Y))
-												getTSL[iPlayer] = {X = alternateRow.X, Y = alternateRow.Y}
-												bFound = true
-											end										
-										end									
-									end
-									if (not bFound) then
-										print ("   - Reserving (WARNING: in range of another TSL) at "..tostring(row.X)..","..tostring(row.Y))
-										getTSL[iPlayer] = {X = row.X, Y = row.Y}										
-									end
-								else
-									print ("   - Reserving (after checking for distance) at "..tostring(row.X)..","..tostring(row.Y))
-									getTSL[iPlayer] = {X = row.X, Y = row.Y}									
+								if (not bFound) then
+									print ("   - Reserving TSL with WARNING ("..sWarning.." and no alternative TSL found) at "..tostring(row.X)..","..tostring(row.Y))
+									getTSL[iPlayer] = {X = row.X, Y = row.Y}										
 								end
 							else
-								print ("   - Reserving (without checking for distance, no alternate TSL allowed) at "..tostring(row.X)..","..tostring(row.Y))
+								if bCanPlaceHere then
+									print ("   - Reserving TSL at "..tostring(row.X)..","..tostring(row.Y))
+								else
+									print ("   - Reserving TSL with WARNING ("..sWarning.." and no alternative TSL allowed) at "..tostring(row.X)..","..tostring(row.Y))
+								end
 								getTSL[iPlayer] = {X = row.X, Y = row.Y}								
 							end
 						end
+						
+					elseif (not bLeaderTSL) or (not tHasSpecificTSL[LeaderTypeName]) then -- If a Leaders has a specific TSL available, it will never use generic TSL for its Civilization
+						print ("- Checking generic civilization TSL for "..tostring(LeaderTypeName).." of "..tostring(CivilizationTypeName).." at "..tostring(row.X)..","..tostring(row.Y))						
+						if bAlternateTSL and not bCanPlaceHere then
+							local bFound = false
+							if tAlternateTSL[row.Civilization] then
+								for _, alternateRow in ipairs(tAlternateTSL[row.Civilization]) do
+									if (not bFound) and not alternateRow.Leader then
+										print ("   - Reserving alternative TSL at "..tostring(alternateRow.X)..","..tostring(alternateRow.Y).." (initial TSL "..sWarning..")")
+										getTSL[iPlayer] = {X = alternateRow.X, Y = alternateRow.Y}
+										bFound = true
+									end										
+								end									
+							end
+							if (not bFound) then
+								print ("   - Reserving TSL with WARNING ("..sWarning.." and no alternative TSL found) at "..tostring(row.X)..","..tostring(row.Y))
+								getTSL[iPlayer] = {X = row.X, Y = row.Y}										
+							end
+						else
+							if bCanPlaceHere then
+								print ("   - Reserving TSL at "..tostring(row.X)..","..tostring(row.Y))
+							else
+								print ("   - Reserving TSL with WARNING ("..sWarning.." and no alternative TSL allowed) at "..tostring(row.X)..","..tostring(row.Y))
+							end
+							getTSL[iPlayer] = {X = row.X, Y = row.Y}								
+						end						
 					end
 				end
 			end
@@ -2492,7 +2497,7 @@ function buidTSL()
 			local player = Players[iPlayer]
 			local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
 			local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
-			print ("WARNING : no starting position reserved for "..Locale.Lookup(LeaderTypeName).." of "..Locale.Lookup(CivilizationTypeName) )
+			print ("WARNING : no starting position reserved for "..tostring(LeaderTypeName).." of "..tostring(CivilizationTypeName) )
 		end
 	end	
 	print ("------------------------------------------------------------------------------")
@@ -3201,7 +3206,7 @@ function ResourcesValidation(g_iW, g_iH)
 	
 	for resRow in GameInfo.Resource_YieldChanges() do
 		local index = GameInfo.Resources[resRow.ResourceType].Index
-		if not (luxTable[index] or stratTable[index])
+		if not (luxTable[index] or stratTable[index]) then
 			if resRow.YieldType == "YIELD_FOOD" then
 				foodTable[resRow.Index] = resRow.YieldChange
 			elseif resRow.YieldType == "YIELD_PRODUCTION" then

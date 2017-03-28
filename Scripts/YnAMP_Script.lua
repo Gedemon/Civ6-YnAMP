@@ -5,7 +5,7 @@
 ------------------------------------------------------------------------------
 
 local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION because Value is Text ?
-print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016) by Gedemon")
+print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2017) by Gedemon")
 print ("loading YnAMP_Script.lua")
 
 include ("YnAMP_Utils.lua") -- can't do that ???
