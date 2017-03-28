@@ -9,14 +9,15 @@ include "MapUtilities"
 
 print ("loading modded AssignStartingPlots")
 local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION ?
-print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016) by Gedemon")
+print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2017) by Gedemon")
 print ("Setting YnAMP globals and cache...")
 
 g_startTimer = os.clock()
 
 local mapName = MapConfiguration.GetValue("MapName")
 print ("Map Name = " .. tostring(mapName))
-local getTSL = {}
+local getTSL 	= {} -- primary TSL for each civilization
+local isInGame 	= {} -- Civilization/Leaders type in game
 local isResourceExcludedXY = {}
 local isResourceExclusiveXY = {}
 local isResourceExclusive = {}
@@ -2355,21 +2356,130 @@ function buildExclusionList()
 end
 
 function buidTSL()
+	print ("------------------------------------------------------------------------------")
 	print ("Building TSL list for "..tostring(mapName).."...")
+	
+	local bAlternateTSL 	= MapConfiguration.GetValue("AlternateTSL")
+	local bLeaderTSL 		= MapConfiguration.GetValue("LeaderTSL")
+	local tAlternateTSL 	= {}
+	local tHasSpecificTSL 	= {}
+		
+	-- Create list of Civilizations and leaders in game
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+		local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
+		isInGame[CivilizationTypeName] = true
+		isInGame[LeaderTypeName] = true
+	end
+	
+	-- Create list of leaders TSL
 	for row in GameInfo.StartPosition() do
 		if row.MapName == mapName  then
-			for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+			if row.Leader then
+				tHasSpecificTSL[row.Leader] = true
+			end
+		end
+	end
+	
+	-- Create list of possible alternates TSL
+	if bAlternateTSL then
+		for row in GameInfo.StartPosition() do
+			if row.MapName == mapName  then
+				if row.AlternateStart and row.AlternateStart == 1 and isInGame[row.Civilization] then
+					if not (row.DisabledByCivilization and isInGame[row.DisabledByCivilization]) then
+						if not (row.DisabledByLeader and isInGame[row.DisabledByLeader]) then
+							if not tAlternateTSL[row.Civilization] then 
+								tAlternateTSL[row.Civilization] = {} 
+							end
+							table.insert(tAlternateTSL[row.Civilization], {row})
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	-- local function to check distance between a new TSL and those already reserved if AlternateStart are used
+	local function InRangeCurrentTSL(row, currentTSL)
+		local MinDistance = GlobalParameters.CITY_MIN_RANGE
+		for iPlayer, position in pairs(currentTSL) do
+			local player = Players[iPlayer]
+			if Map.GetPlotDistance(row.X, row.Y, position.X, position.Y) <= MinDistance then
+				return true
+			end
+		end
+		return false
+	end
+	
+	-- Reserve TSL for each civ
+	for row in GameInfo.StartPosition() do
+		if row.MapName == mapName and not(row.AlternateStart and row.AlternateStart == 1) then -- Alternate TSL are already in their own table, to be used if the normal TSL is unavailable
+			for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do -- players can share a Civilization/Leader, so we can't assume "one TSL by Civilization/Leader" and need to loop the players table
 				local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
 				if row.Civilization == CivilizationTypeName then
-					if row.Leader then
-						local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
-						if row.Leader == LeaderTypeName then
-							print ("- "..tostring(CivilizationTypeName).."( leader = "..tostring(LeaderTypeName)..") at "..tostring(row.X)..","..tostring(row.Y))
-							getTSL[iPlayer] = {X = row.X, Y = row.Y}
-						end
+					local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
+					if row.DisabledByCivilization and isInGame[row.DisabledByCivilization] then
+						print ("- Can't reserve TSL for "..Locale.Lookup(LeaderTypeName).." of "..Locale.Lookup(CivilizationTypeName).." at "..tostring(row.X)..","..tostring(row.Y).." : position disabled by " .. Locale.Lookup(row.DisabledByCivilization))
+					elseif row.DisabledByLeader and isInGame[row.DisabledByLeader] then
+						print ("- Can't reserve TSL for "..Locale.Lookup(LeaderTypeName).." of "..Locale.Lookup(CivilizationTypeName).." at "..tostring(row.X)..","..tostring(row.Y).." : position disabled by " .. Locale.Lookup(row.DisabledByLeader))
 					else
-						print ("- "..tostring(CivilizationTypeName).." at "..tostring(row.X)..","..tostring(row.Y))
-						getTSL[iPlayer] = {X = row.X, Y = row.Y}
+						if row.Leader then -- Leaders TSL are exclusive
+							if bLeaderTSL and row.Leader == LeaderTypeName then
+								print ("- Checking Leader specific TSL for "..Locale.Lookup(LeaderTypeName).." of "..Locale.Lookup(CivilizationTypeName))
+								if bAlternateTSL then
+									if InRangeCurrentTSL(row, getTSL) then
+										print ("   - Too close from another TSL, checking for an Alternative TSL...")
+										local bFound = false
+										if tAlternateTSL[row.Civilization] then
+											for _, alternateRow in ipairs(tAlternateTSL[row.Civilization]) do
+												if (not bFound) and alternateRow.Leader and (alternateRow.Leader == LeaderTypeName) then
+													print ("   - Reserving (alternative TSL) at "..tostring(row.X)..","..tostring(row.Y))
+													getTSL[iPlayer] = {X = alternateRow.X, Y = alternateRow.Y}
+													bFound = true
+												end										
+											end									
+										end
+										if (not bFound) then
+											print ("   - Reserving (WARNING: in range of another TSL) at "..tostring(row.X)..","..tostring(row.Y))
+											getTSL[iPlayer] = {X = row.X, Y = row.Y}										
+										end
+									else
+										print ("   - Reserving (after checking for distance) at "..tostring(row.X)..","..tostring(row.Y))
+										getTSL[iPlayer] = {X = row.X, Y = row.Y}									
+									end
+								else
+									print ("   - Reserving (without checking for distance, no alternate TSL allowed) at "..tostring(row.X)..","..tostring(row.Y))
+									getTSL[iPlayer] = {X = row.X, Y = row.Y}								
+								end
+							end
+						elseif (not bLeaderTSL) or (not tHasSpecificTSL[LeaderTypeName]) then -- If a Leaders has a specific TSL available, it will not use generic TSL for its Civilization
+							print ("- Checking generic civilization TSL for "..Locale.Lookup(LeaderTypeName).." of "..Locale.Lookup(CivilizationTypeName))
+							if bAlternateTSL then
+								if InRangeCurrentTSL(row, getTSL) then
+									print ("   - Too close from another TSL, checking for an Alternative TSL...")
+									local bFound = false
+									if tAlternateTSL[row.Civilization] then
+										for _, alternateRow in ipairs(tAlternateTSL[row.Civilization]) do
+											if (not bFound) and not alternateRow.Leader then
+												print ("   - Reserving (alternative TSL) at "..tostring(row.X)..","..tostring(row.Y))
+												getTSL[iPlayer] = {X = alternateRow.X, Y = alternateRow.Y}
+												bFound = true
+											end										
+										end									
+									end
+									if (not bFound) then
+										print ("   - Reserving (WARNING: in range of another TSL) at "..tostring(row.X)..","..tostring(row.Y))
+										getTSL[iPlayer] = {X = row.X, Y = row.Y}										
+									end
+								else
+									print ("   - Reserving (after checking for distance) at "..tostring(row.X)..","..tostring(row.Y))
+									getTSL[iPlayer] = {X = row.X, Y = row.Y}									
+								end
+							else
+								print ("   - Reserving (without checking for distance, no alternate TSL allowed) at "..tostring(row.X)..","..tostring(row.Y))
+								getTSL[iPlayer] = {X = row.X, Y = row.Y}								
+							end
+						end
 					end
 				end
 			end
@@ -2381,9 +2491,11 @@ function buidTSL()
 		if not getTSL[iPlayer] then
 			local player = Players[iPlayer]
 			local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
-			print ("WARNING : no starting position found for :" .. tostring(CivilizationTypeName) )
+			local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
+			print ("WARNING : no starting position reserved for "..Locale.Lookup(LeaderTypeName).." of "..Locale.Lookup(CivilizationTypeName) )
 		end
-	end
+	end	
+	print ("------------------------------------------------------------------------------")
 end
 
 
@@ -2543,9 +2655,7 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 		print("Worldbuilder detected, skipping TerrainBuilder.AnalyzeChokepoints()...")
 		print("WARNING skipping AnalyzeChokepoints may create issues with saved maps (exporting for YnAMP scripts is not affected)")
 	end
-	
-	ResourcesStatistics(g_iW, g_iH)
-	
+		
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")
 	
@@ -2573,7 +2683,7 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	if bRequestedResources and not bNoResources then
 		AddStartingLocationResources()
 	end
-	
+		
 	-- Balance Starting positions for TSL
 	if bTSL then	
 		currentTimer = os.clock() - g_startTimer
@@ -2591,6 +2701,8 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 		end		
 		
 	end
+	
+	ResourcesValidation(g_iW, g_iH)
 	
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")
@@ -2871,7 +2983,7 @@ end
 -- Add a strategic resource
 function PlaceStrategicResources(eResourceType)
 	
-	ResourceBuilder.SetResourceType(pPlot, eResourceType, 1)
+	--ResourceBuilder.SetResourceType(pPlot, eResourceType, 1)
 end
 
 -- Check for Resource placement rules
@@ -3069,18 +3181,52 @@ function AddStartingLocationResources()
 end
 
 
-function ResourcesStatistics(g_iW, g_iH)
-	print("------------------------------------")
-	print("-- Resources Placement Statistics --")
-	print("------------------------------------")
-	local resTable = {}
+function ResourcesValidation(g_iW, g_iH)
+
+	-- replacement tables
+	local resTable 		= {}
+	local luxTable 		= {}
+	local foodTable 	= {}
+	local prodTable 	= {}
+	local stratTable 	= {}
+	local goldTable		= {}
 	for resRow in GameInfo.Resources() do
 		resTable[resRow.Index] = 0
+		if resRow.ResourceClassType == "RESOURCECLASS_LUXURY" then
+			luxTable[resRow.Index] = true
+		elseif resRow.ResourceClassType == "RESOURCECLASS_STRATEGIC" then
+			stratTable[resRow.Index] = true
+		end
+	end	
+	
+	for resRow in GameInfo.Resource_YieldChanges() do
+		local index = GameInfo.Resources[resRow.ResourceType].Index
+		if not (luxTable[index] or stratTable[index])
+			if resRow.YieldType == "YIELD_FOOD" then
+				foodTable[resRow.Index] = resRow.YieldChange
+			elseif resRow.YieldType == "YIELD_PRODUCTION" then
+				prodTable[resRow.Index] = resRow.YieldChange
+			elseif resRow.YieldType == "YIELD_GOLD" then
+				goldTable[resRow.Index] = resRow.YieldChange
+			end
+		end
 	end
 	
+	function FindReplacement(eResourceType, plot)
+		local listTable = {luxTable, stratTable, foodTable, prodTable, goldTable}
+		for _, curTable in ipairs(listTable) do
+			if curTable[eResourceType] then
+				for newResourceType, value in pairs (curTable) do
+					if newResourceType ~= eResourceType and YnAMP_CanHaveResource(plot, newResourceType) then
+						print(" - Found replacement resource for", GameInfo.Resources[eResourceType].ResourceType, "at", plot:GetX(), plot:GetY(), "by resource", GameInfo.Resources[newResourceType].ResourceType)
+						return newResourceType						
+					end
+				end
+			end
+		end	
+	end
+		
 	local totalplots = g_iW * g_iH
-	print("-- Total plots on map = " .. tostring(totalplots))
-	print("------------------------------------")
 	for i = 0, (totalplots) - 1, 1 do
 		plot = Map.GetPlotByIndex(i)
 		local eResourceType = plot:GetResourceType()
@@ -3089,7 +3235,12 @@ function ResourcesStatistics(g_iW, g_iH)
 				if not YnAMP_CanHaveResource(plot, eResourceType, true) then
 					print("WARNING - Removing unauthorised resource at", plot:GetX(), plot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
 					ResourceBuilder.OldSetResourceType(plot, -1)
-					-- to do : replace...
+					-- find replacement
+					local newResourceType = FindReplacement(eResourceType, plot)
+					if newResourceType then
+						ResourceBuilder.OldSetResourceType(plot, newResourceType, 1)
+						resTable[newResourceType] = resTable[newResourceType] + 1
+					end					
 				else
 					resTable[eResourceType] = resTable[eResourceType] + 1
 				end
@@ -3098,6 +3249,12 @@ function ResourcesStatistics(g_iW, g_iH)
 			end
 		end
 	end	
+	
+	print("------------------------------------")
+	print("-- Resources Placement Statistics --")
+	print("------------------------------------")
+	print("-- Total plots on map = " .. tostring(totalplots))
+	print("------------------------------------")
 
 	local landPlots = Map.GetLandPlotCount()
 	for resRow in GameInfo.Resources() do
