@@ -30,13 +30,16 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ENGLAND"		X="40" Y="52" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_FRANCE"		X="42" Y="48" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GERMANY"		X="51" Y="53" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GREECE"		X="57" Y="40" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GREECE"		X="57" Y="44" Leader="LEADER_GORGO" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GREECE"		X="58" Y="42" Leader="LEADER_PERICLES" DisabledByLeader="LEADER_GORGO" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GREECE"		X="57" Y="44" Leader="LEADER_PERICLES" AlternateStart="1" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GREECE"		X="57" Y="40" Leader="LEADER_GORGO" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MACEDON"		X="56" Y="44" DisabledByLeader="LEADER_PERICLES" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MACEDON"		X="60" Y="45" AlternateStart="1" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_INDIA"		X="75" Y="39" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_IROQUOIS" 	X="19" Y="51" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_JAPAN"		X="98" Y="48" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_OTTOMAN"		X="62" Y="44" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PERSIA"		X="69" Y="40" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PERSIA"		X="67" Y="43" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ROME"		X="50" Y="42" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_RUSSIA"		X="63" Y="56" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SIAM"		X="83" Y="38" />
