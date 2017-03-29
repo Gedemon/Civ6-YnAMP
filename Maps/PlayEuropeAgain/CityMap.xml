@@ -1871,7 +1871,7 @@
 		<Replace MapName="PlayEuropeAgain" X="82" Y="66" CityLocaleName="LOC_CITY_NAME_SUZDAL" />
 		<Replace MapName="PlayEuropeAgain" X="83" Y="66" CityLocaleName="LOC_CITY_NAME_IVANOVO" Area="0" /> <!-- OVERLAP -->
 		<Replace MapName="PlayEuropeAgain" X="84" Y="66" CityLocaleName="LOC_CITY_NAME_IVANOVO" />
-		<Replace MapName="PlayEuropeAgain" X="87" Y="66" CityLocaleName="LOC_CITY_NAME_NIZHNY_NOVOGORD" />
+		<Replace MapName="PlayEuropeAgain" X="87" Y="66" CityLocaleName="LOC_CITY_NAME_NIZHNY_NOVGOROD" />
 		<Replace MapName="PlayEuropeAgain" X="89" Y="66" CityLocaleName="LOC_CITY_NAME_CHEBOKSARY" Area="0" />
 		
 		<Replace MapName="PlayEuropeAgain" X="71" Y="67" CityLocaleName="LOC_CITY_NAME_FIROVO" Area="0" />
@@ -3134,6 +3134,13 @@
 		
 		<Replace MapName="PlayEuropeAgain" X="100" Y="33" CityLocaleName="LOC_CITY_NAME_BILASUVAR" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="101" Y="33" CityLocaleName="LOC_CITY_NAME_NEFTCHALA" Area="0" />
+		
+	</CityMap>
+	
+	<!-- MIDDLE EAST (SOUTH) -->
+	<CityMap>
+		
+		<Replace MapName="PlayEuropeAgain" X="83" Y="18" CityLocaleName="LOC_CITY_NAME_DAMASCUS" />
 		
 	</CityMap>
 	
