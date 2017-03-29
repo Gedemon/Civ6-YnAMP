@@ -38,11 +38,12 @@ end
 
 -------------------------------------------------------------------------------
 function GenerateMap()
-	print("Calling Map Generator");
+	print("Calling Map Generator...");
 	-- Everything has been moved to the modded AssignStartingPlots in the "override" folder, search for "YnAMP" string in that file
 	GenerateImportedMap(GetMap(), GetCiv6DataToConvert(), GetNaturalWonders(), g_iW, g_iH)
 	
 	-- Handle Nile delta flow direction (North)
+	print("Handle Nile delta flow direction...");
 	for x = 29, 32 do
 		for y = 46, 50 do
 			local plot = Map.GetPlot(x,y)
@@ -53,6 +54,7 @@ function GenerateMap()
 	end
 	
 	-- Handle source of the Nile flow direction	
+	print("Handle source of the Nile flow direction...");
 	for x = 31, 32 do
 		for y = 29, 31 do
 			local plot = Map.GetPlot(x,y)
@@ -63,9 +65,11 @@ function GenerateMap()
 	end
 	
 	-- Volga direction
+	print("Handle Volga flow direction...");
 	local plot = Map.GetPlot(36,77)
 	TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHEAST);
 	-- Svir direction
+	print("Handle Svir flow direction...");
 	local plot = Map.GetPlot(32,80)
 	TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHWEST);
 
