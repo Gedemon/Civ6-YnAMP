@@ -26,17 +26,20 @@
 		<!--
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_GERMANY"		X="22" Y="85" Leader="LEADER_BARBAROSSA" />
 		-->
-		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_GREECE"		X="37" Y="68" />
-		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_GREECE"		X="37" Y="73" Leader="LEADER_GORGO" />
+		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_GREECE"		X="37" Y="68" Leader="LEADER_PERICLES" DisabledByLeader="LEADER_GORGO" />
+		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_GREECE"		X="42" Y="74" Leader="LEADER_PERICLES" AlternateStart="1" />
+		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_GREECE"		X="36" Y="68" Leader="LEADER_GORGO" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_INDIA"		X="80" Y="65" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_JAPAN"		X="127" Y="73" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_KONGO"		X="28" Y="34" />
+		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_MACEDON"		X="37" Y="73" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_NORWAY"		X="26" Y="105" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_ROME"		X="26" Y="73" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_RUSSIA"		X="47" Y="93" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_SCYTHIA"		X="62" Y="87" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_SPAIN"		X="10" Y="71" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_SUMERIA"		X="53" Y="63" />
+		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_PERSIA"		X="61" Y="68" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_POLAND"		X="33" Y="89" />
 	</StartPosition>
 		
