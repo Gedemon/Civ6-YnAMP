@@ -18,18 +18,18 @@ local mapName = MapConfiguration.GetValue("MapName")
 print ("Map Name = " .. tostring(mapName))
 local getTSL 	= {} -- primary TSL for each civilization
 local isInGame 	= {} -- Civilization/Leaders type in game
-local isResourceExcludedXY = {}
+local isResourceExcludedXY 	= {}
 local isResourceExclusiveXY = {}
-local isResourceExclusive = {}
+local isResourceExclusive 	= {}
 -- get options
-local bCulturallyLinked = MapConfiguration.GetValue("CulturallyLinkedStart") == "PLACEMENT_ETHNIC";
-local bTSL = MapConfiguration.GetValue("CivilizationPlacement") == "PLACEMENT_TSL";
-local bResourceExclusion = MapConfiguration.GetValue("ResourcesExclusion") == "PLACEMENT_EXCLUDE";
-local bRequestedResources = MapConfiguration.GetValue("RequestedResources") == "PLACEMENT_REQUEST";
-local bRealDeposits = MapConfiguration.GetValue("RealDeposits") == "PLACEMENT_DEPOSIT";
-local bImportResources = resourcePlacement == "PLACEMENT_IMPORT"
-local iIceNorth = MapConfiguration.GetValue("IceNorth")
-local iIceSouth = MapConfiguration.GetValue("IceSouth")
+local bCulturallyLinked 	= MapConfiguration.GetValue("CulturallyLinkedStart") == "PLACEMENT_ETHNIC";
+local bTSL 					= MapConfiguration.GetValue("CivilizationPlacement") == "PLACEMENT_TSL";
+local bResourceExclusion 	= MapConfiguration.GetValue("ResourcesExclusion") == "PLACEMENT_EXCLUDE";
+local bRequestedResources 	= MapConfiguration.GetValue("RequestedResources") == "PLACEMENT_REQUEST";
+local bRealDeposits 		= MapConfiguration.GetValue("RealDeposits") == "PLACEMENT_DEPOSIT";
+local bImportResources		= MapConfiguration.GetValue("ResourcesPlacement") == "PLACEMENT_IMPORT"
+local iIceNorth 			= MapConfiguration.GetValue("IceNorth")
+local iIceSouth 			= MapConfiguration.GetValue("IceSouth")
 
 local bNoCityStates = GameConfiguration.GetValue("NoCityStates");
 
