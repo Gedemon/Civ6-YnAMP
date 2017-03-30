@@ -67,6 +67,7 @@
 				<File>Maps/PlayEuropeAgain/CityMap.xml</File>
 				<File>Maps/PlayEuropeAgain/CityMap_Arabia.xml</File>
 				<File>Maps/PlayEuropeAgain/CityMap_Greece.xml</File>
+				<File>Maps/PlayEuropeAgain/CityMap_Macedon.xml</File>
 				<File>Maps/PlayEuropeAgain/CityMap_Rome.xml</File>
 				<File>Maps/LargestEarth/Map.xml</File>
 				<File>Maps/LargestEarth/CityMap.xml</File>
@@ -135,6 +136,7 @@
 		<File>Maps/PlayEuropeAgain/CityMap.xml</File>
 		<File>Maps/PlayEuropeAgain/CityMap_Arabia.xml</File>
 		<File>Maps/PlayEuropeAgain/CityMap_Greece.xml</File>
+		<File>Maps/PlayEuropeAgain/CityMap_Macedon.xml</File>
 		<File>Maps/PlayEuropeAgain/CityMap_Rome.xml</File>
 		<File>Maps/LargestEarth/Map.xml</File>
 		<File>Maps/LargestEarth/CityMap.xml</File>
