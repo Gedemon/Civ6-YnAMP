@@ -2040,6 +2040,7 @@
 		<Replace Tag="LOC_CITY_NAME_ISTANBUL_GERMANY" Text="Konstantinopel" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ISTANBUL_GREECE" Text="Byzantion" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ISTANBUL_JAPAN" Text="Isutamburu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ISTANBUL_MACEDON" Text="Byzantion" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ISTANBUL_NORWAY" Text="Miklagard" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ISTANBUL_POLAND" Text="Konstantynopol" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ISTANBUL_ROME" Text="Constantinopolis" Language="en_US" />
