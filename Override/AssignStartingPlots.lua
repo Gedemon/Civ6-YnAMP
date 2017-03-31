@@ -4,6 +4,44 @@ include "MapEnums"
 include "MapUtilities"
 
 ------------------------------------------------------------------------------
+-- **************************** YnAMP globals ******************************
+------------------------------------------------------------------------------
+
+print ("loading modded AssignStartingPlots")
+local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION ?
+print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2017) by Gedemon")
+print ("Setting YnAMP globals and cache...")
+
+g_startTimer = os.clock()
+
+local mapName = MapConfiguration.GetValue("MapName")
+print ("Map Name = " .. tostring(mapName))
+local getTSL 				= {} -- primary TSL for each civilization
+local isInGame 				= {} -- Civilization/Leaders type in game
+local tempStartingPlots 	= {} -- Temporary table for starting plots used when Historical Spawn Dates is set.
+local isResourceExcludedXY 	= {}
+local isResourceExclusiveXY = {}
+local isResourceExclusive 	= {}
+-- get options
+local bCulturallyLinked 	= MapConfiguration.GetValue("CulturallyLinkedStart") == "PLACEMENT_ETHNIC";
+local bTSL 					= MapConfiguration.GetValue("CivilizationPlacement") == "PLACEMENT_TSL";
+local bResourceExclusion 	= MapConfiguration.GetValue("ResourcesExclusion") == "PLACEMENT_EXCLUDE";
+local bRequestedResources 	= MapConfiguration.GetValue("RequestedResources") == "PLACEMENT_REQUEST";
+local bRealDeposits 		= MapConfiguration.GetValue("RealDeposits") == "PLACEMENT_DEPOSIT";
+local bImportResources		= MapConfiguration.GetValue("ResourcesPlacement") == "PLACEMENT_IMPORT"
+local iIceNorth 			= MapConfiguration.GetValue("IceNorth")
+local iIceSouth 			= MapConfiguration.GetValue("IceSouth")
+local bHistoricalSpawnDates	= MapConfiguration.GetValue("HistoricalSpawnDates") == 1
+
+local bNoCityStates = GameConfiguration.GetValue("NoCityStates");
+
+print ("ynAMP Options: Culturally Linked = " .. tostring(bCulturallyLinked) ..", TSL = " .. tostring(bTSL) ..", Exclusion Zones = " .. tostring(bResourceExclusion) ..", Requested Resources = " .. tostring(bRequestedResources)..", Real Deposits = " .. tostring(bRealDeposits)) 
+
+------------------------------------------------------------------------------
+-- YnAMP >>>>>
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
 AssignStartingPlots = {};
 ------------------------------------------------------------------------------
 function AssignStartingPlots.Create(args)
@@ -75,9 +113,13 @@ function AssignStartingPlots.Create(args)
 		
 	}
 
-	instance:__InitStartingData()
-	
-
+	--instance:__InitStartingData()
+	-- YnAMP <<<<<
+	if not bTSL then
+		instance:__InitStartingData()
+	end	
+	YnAMP_StartPositions()
+	-- YnAMP >>>>>					
 
 	return instance
 end
@@ -96,7 +138,13 @@ function AssignStartingPlots:__InitStartingData()
 	end
 	
 	self.iNumMajorCivs = PlayerManager.GetAliveMajorsCount();
-	self.iNumMinorCivs = PlayerManager.GetAliveMinorsCount();
+	
+	if bNoCityStates then
+		self.iNumMinorCivs = 0
+	else
+		self.iNumMinorCivs = PlayerManager.GetAliveMinorsCount()
+	end
+	
 	self.iNumRegions = self.iNumMajorCivs + self.iNumMinorCivs;
 	local iMinNumBarbarians = self.iNumMajorCivs / 2;
 
@@ -2224,3 +2272,2090 @@ function AssignStartingPlots:__IsContinentalDivide(plot)
 	
 	return false;
 end
+
+
+------------------------------------------------------------------------------
+-- **************************** YnAMP functions ******************************
+------------------------------------------------------------------------------
+
+print ("Loading YnAMP functions ...")
+
+------------------------------------------------------------------------------
+-- Create Tables
+------------------------------------------------------------------------------
+local hasBuildExclusionList = false
+function buildExclusionList()
+	print ("Building Region Exclusion list for "..tostring(mapName).."...")
+	
+	for RegionRow in GameInfo.RegionPosition() do
+		if RegionRow.MapName == mapName  then
+			local region = RegionRow.Region
+			print ("  - Exclusion list for "..tostring(region))
+			if region then
+				local resExclusionTable = {}
+				local resExclusiveTable = {}
+				
+				-- Find resources that can't be placed in that region
+				for exclusionList in GameInfo.ResourceRegionExclude() do
+					if exclusionList.Region == region then 
+						if exclusionList.Resource  then
+							if GameInfo.Resources[exclusionList.Resource] then
+								table.insert(resExclusionTable, GameInfo.Resources[exclusionList.Resource].Index)
+							else
+								print ("  - WARNING : can't find "..tostring(exclusionList.Resource).." in Resources")
+							end
+						else
+							print ("  - WARNING : found nil Resource")
+						end
+					end
+				end
+				
+				-- Find resource that can only be placed in specific regions
+				for exclusiveList in GameInfo.ResourceRegionExclusive() do
+					if exclusiveList.Region == region then 
+						if exclusiveList.Resource  then
+							if GameInfo.Resources[exclusiveList.Resource] then
+								local eResourceID = GameInfo.Resources[exclusiveList.Resource].Index
+								table.insert(resExclusiveTable, eResourceID)
+								isResourceExclusive[eResourceID] = true
+							else
+								print ("  - WARNING : can't find "..tostring(exclusiveList.Resource).." in Resources")
+							end
+						else
+							print ("  - WARNING : found nil Resource")
+						end
+					end
+				end
+				
+				-- fill the exclusion/exclusive table
+				if (#resExclusionTable > 0) or (#resExclusiveTable > 0) then
+					for x = RegionRow.X, RegionRow.X + RegionRow.Width do
+						for y = RegionRow.Y, RegionRow.Y + RegionRow.Height do
+							if (isResourceExcludedXY[x] and isResourceExcludedXY[x][y]) then
+								for i, resourceID in ipairs(resExclusionTable) do
+									isResourceExcludedXY[x][y][resourceID] = true
+								end
+								for i, resourceID in ipairs(resExclusiveTable) do
+									isResourceExclusiveXY[x][y][resourceID] = true
+								end
+							else
+								print ("  - WARNING : Region out of bound ( x = " ..tostring(x)..", y = ".. tostring(y).." )")
+							end
+						end
+					end
+				end
+				if (#resExclusionTable > 0) then
+					print("   - Exluded resources :")
+					for i, resourceID in ipairs(resExclusionTable) do
+						print("      "..tostring(GameInfo.Resources[resourceID].ResourceType))
+					end
+				end
+				if (#resExclusiveTable > 0) then
+					print("   - Exlusive resources :")
+					for i, resourceID in ipairs(resExclusiveTable) do
+						print("      "..tostring(GameInfo.Resources[resourceID].ResourceType))
+					end	
+				end			
+			else
+				print ("  - WARNING : found nil region")
+			end
+		end
+	end
+	hasBuildExclusionList = true
+end
+
+function buidTSL()
+	print ("------------------------------------------------------------------------------")
+	print ("Building TSL list for "..tostring(mapName).."...")
+	
+	local bAlternateTSL 	= MapConfiguration.GetValue("AlternateTSL")
+	local bLeaderTSL 		= MapConfiguration.GetValue("LeaderTSL")
+	local tAlternateTSL 	= {}
+	local tHasSpecificTSL 	= {}
+		
+	-- Create list of Civilizations and leaders in game
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+		local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
+		if CivilizationTypeName then isInGame[CivilizationTypeName] = true end
+		if LeaderTypeName 		then isInGame[LeaderTypeName] 		= true end
+	end
+	
+	-- Create list of leaders TSL
+	for row in GameInfo.StartPosition() do
+		if row.MapName == mapName  then
+			if row.Leader then
+				tHasSpecificTSL[row.Leader] = true
+			end
+		end
+	end
+	
+	-- Create list of possible alternates TSL
+	if bAlternateTSL then
+		for row in GameInfo.StartPosition() do
+			if row.MapName == mapName  then
+				if row.AlternateStart and row.AlternateStart == 1 and isInGame[row.Civilization] then
+					if not (row.DisabledByCivilization and isInGame[row.DisabledByCivilization]) then
+						if not (row.DisabledByLeader and isInGame[row.DisabledByLeader]) then
+							if not tAlternateTSL[row.Civilization] then 
+								tAlternateTSL[row.Civilization] = {} 
+							end
+							table.insert(tAlternateTSL[row.Civilization], row)
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	-- local function to check distance between a new TSL and those already reserved if AlternateStart are used
+	local function InRangeCurrentTSL(row, currentTSL)
+		local MinDistance = GlobalParameters.CITY_MIN_RANGE
+		for iPlayer, position in pairs(currentTSL) do
+			local player = Players[iPlayer]
+			if Map.GetPlotDistance(row.X, row.Y, position.X, position.Y) <= MinDistance then
+				return true
+			end
+		end
+		return false
+	end
+	
+	-- Reserve TSL for each civ
+	for row in GameInfo.StartPosition() do
+		if row.MapName == mapName and not(row.AlternateStart and row.AlternateStart == 1) then -- Alternate TSL are already in their own table, to be used if the normal TSL is unavailable
+			for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do -- players can share a Civilization/Leader, so we can't assume "one TSL by Civilization/Leader" and need to loop the players table
+				local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+				if row.Civilization == CivilizationTypeName then
+					local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
+					local bCanPlaceHere = true
+					local sWarning = ""
+					
+					if row.DisabledByCivilization and isInGame[row.DisabledByCivilization] then
+						sWarning = "position disabled by " .. tostring(row.DisabledByCivilization)
+						bCanPlaceHere = false
+					elseif row.DisabledByLeader and isInGame[row.DisabledByLeader] then
+						sWarning = "position disabled by " .. tostring(row.DisabledByLeader)
+						bCanPlaceHere = false
+					elseif InRangeCurrentTSL(row, getTSL) then
+						sWarning = "too close from another TSL"
+						bCanPlaceHere = false
+					end	
+					
+					if row.Leader then -- Leaders TSL are exclusive
+						if bLeaderTSL and row.Leader == LeaderTypeName then
+							print ("- Checking Leader specific TSL for "..tostring(LeaderTypeName).." of "..tostring(CivilizationTypeName).." at "..tostring(row.X)..","..tostring(row.Y))
+							if bAlternateTSL and not bCanPlaceHere then
+								local bFound = false
+								if tAlternateTSL[row.Civilization] then
+									for _, alternateRow in ipairs(tAlternateTSL[row.Civilization]) do
+										if (not bFound) and alternateRow.Leader and (alternateRow.Leader == LeaderTypeName) then
+											print ("   - Reserving alternative TSL at "..tostring(alternateRow.X)..","..tostring(alternateRow.Y).." (initial TSL "..sWarning..")")
+											getTSL[iPlayer] = {X = alternateRow.X, Y = alternateRow.Y}
+											bFound = true
+										end										
+									end									
+								end
+								if (not bFound) then
+									print ("   - Reserving TSL with WARNING ("..sWarning.." and no alternative TSL found) at "..tostring(row.X)..","..tostring(row.Y))
+									getTSL[iPlayer] = {X = row.X, Y = row.Y}										
+								end
+							else
+								if bCanPlaceHere then
+									print ("   - Reserving TSL at "..tostring(row.X)..","..tostring(row.Y))
+								else
+									print ("   - Reserving TSL with WARNING ("..sWarning.." and no alternative TSL allowed) at "..tostring(row.X)..","..tostring(row.Y))
+								end
+								getTSL[iPlayer] = {X = row.X, Y = row.Y}								
+							end
+						end
+						
+					elseif (not bLeaderTSL) or (not tHasSpecificTSL[LeaderTypeName]) then -- If a Leaders has a specific TSL available, it will never use generic TSL for its Civilization
+						print ("- Checking generic civilization TSL for "..tostring(LeaderTypeName).." of "..tostring(CivilizationTypeName).." at "..tostring(row.X)..","..tostring(row.Y))						
+						if bAlternateTSL and not bCanPlaceHere then
+							local bFound = false
+							if tAlternateTSL[row.Civilization] then
+								for _, alternateRow in ipairs(tAlternateTSL[row.Civilization]) do
+									if (not bFound) and not alternateRow.Leader then
+										print ("   - Reserving alternative TSL at "..tostring(alternateRow.X)..","..tostring(alternateRow.Y).." (initial TSL "..sWarning..")")
+										getTSL[iPlayer] = {X = alternateRow.X, Y = alternateRow.Y}
+										bFound = true
+									end										
+								end									
+							end
+							if (not bFound) then
+								print ("   - Reserving TSL with WARNING ("..sWarning.." and no alternative TSL found) at "..tostring(row.X)..","..tostring(row.Y))
+								getTSL[iPlayer] = {X = row.X, Y = row.Y}										
+							end
+						else
+							if bCanPlaceHere then
+								print ("   - Reserving TSL at "..tostring(row.X)..","..tostring(row.Y))
+							else
+								print ("   - Reserving TSL with WARNING ("..sWarning.." and no alternative TSL allowed) at "..tostring(row.X)..","..tostring(row.Y))
+							end
+							getTSL[iPlayer] = {X = row.X, Y = row.Y}								
+						end						
+					end
+				end
+			end
+		end
+	end
+	
+	-- List Civs without TSL
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		if not getTSL[iPlayer] then
+			local player = Players[iPlayer]
+			local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+			local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
+			print ("WARNING : no starting position reserved for "..tostring(LeaderTypeName).." of "..tostring(CivilizationTypeName) )
+		end
+	end	
+	print ("------------------------------------------------------------------------------")
+end
+
+
+------------------------------------------------------------------------------
+-- Imported Maps Creation
+------------------------------------------------------------------------------
+
+function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_iW, g_iH)
+
+	--local pPlot
+	--g_iFlags = TerrainBuilder.GetFractalFlags();
+	
+	local bIsCiv5Map = (#MapToConvert[0][0][6] == 2) -- 6th entry is resource for civ5 data ( = 2 : type and number), cliffs positions for civ6 data ( = 3 : all possible positions on a hexagon side)
+	
+	print("Importing Map Data (Civ5 = "..tostring(bIsCiv5Map)..")")
+
+	local currentTimer = 0
+	currentTimer = os.clock() - g_startTimer
+	print("Current timer at beginning of Map creation (Map script is loaded) = "..tostring(currentTimer).." seconds")
+	
+	-- Create the resource exclusion table now, in case we call YnAMP_CanHaveResource before filling it, at least it wont crash
+	if bResourceExclusion then
+		for x = 0, g_iW - 1, 1 do
+			isResourceExcludedXY[x] = {}
+			isResourceExclusiveXY[x] = {}
+			for y = 0, g_iH - 1, 1 do
+				isResourceExcludedXY[x][y] = {}
+				isResourceExclusiveXY[x][y] = {}
+			end
+		end
+	end
+		
+	local featuresPlacement = MapConfiguration.GetValue("FeaturesPlacement")
+	print("Features placement = "..tostring(featuresPlacement))	
+	local bImportFeatures = featuresPlacement == "PLACEMENT_IMPORT"
+	local bNoFeatures = featuresPlacement == "PLACEMENT_EMPTY"
+	
+	local riversPlacement = MapConfiguration.GetValue("RiversPlacement")
+	print("Rivers Placement = "..tostring(riversPlacement))	
+	local bImportRivers = riversPlacement == "PLACEMENT_IMPORT"
+	local bNoRivers = riversPlacement == "PLACEMENT_EMPTY"
+	
+	local resourcePlacement = MapConfiguration.GetValue("ResourcesPlacement")
+	print("Resource placement = "..tostring(resourcePlacement))	
+	local bNoResources = resourcePlacement == "PLACEMENT_EMPTY"
+	
+	local naturalWondersPlacement = MapConfiguration.GetValue("NaturalWondersPlacement")
+	print("Natural Wonders placement = "..tostring(naturalWondersPlacement))	
+	local bImportNaturalWonders = naturalWondersPlacement == "PLACEMENT_IMPORT"
+	local bNoNaturalWonders = naturalWondersPlacement == "PLACEMENT_EMPTY"
+	
+	local continentsPlacement = MapConfiguration.GetValue("ContinentsPlacement")
+	print("Continents naming = "..tostring(continentsPlacement))	
+	local bImportContinents = continentsPlacement == "PLACEMENT_IMPORT"
+
+	-- We'll do Rivers after Natural Wonders placement, as they can create incompatibilities and Resources come after Rivers (in case Rivers are generated instead of imported)
+	-- We do Features now to prevent overriding the NW placement
+	-- First pass: create terrains and place cliffs... (	bDoTerrains, 	bImportRivers, 	bImportFeatures, 	bImportResources, 	bDoCliffs, 	bImportContinents)
+	if bIsCiv5Map then
+		-- 														(	bDoTerrains, 	bImportRivers, 	bImportFeatures, 	bImportResources, 	bDoCliffs, 	bImportContinents)
+		ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, 	true, 			false, 			bImportFeatures, 	false, 			true, 		false)
+	else
+		-- 									(	bDoTerrains, 	bImportRivers, 	bImportFeatures, 	bImportResources, 	bImportContinents)
+		ImportCiv6Map(MapToConvert, g_iW, g_iH, true, 			false, 			bImportFeatures, 	false, 			false)	
+	end
+	currentTimer = os.clock() - g_startTimer
+	print("Intermediate timer = "..tostring(currentTimer).." seconds")
+
+	-- Temp
+	AreaBuilder.Recalculate();
+	local biggest_area = Areas.FindBiggestArea(false);
+	print("After Adding Hills: ", biggest_area:GetPlotCount());
+	
+	currentTimer = os.clock() - g_startTimer
+	print("Intermediate timer = "..tostring(currentTimer).." seconds")		
+	
+	-- River generation is affected by plot types, originating from highlands and preferring to traverse lowlands.
+	if not (bImportRivers or bNoRivers)  then
+		AddRivers()
+	end
+
+	-- NW placement is affected by rivers, but when importing placement can be forced
+	if not (bImportNaturalWonders or bNoNaturalWonders)  then
+		local args = {
+			numberToPlace = GameInfo.Maps[Map.GetMapSize()].NumNaturalWonders,
+		};
+		local nwGen = NaturalWonderGenerator.Create(args);
+	end
+	if bImportNaturalWonders then
+		PlaceRealNaturalWonders(NaturalWonders)
+	end
+	
+	currentTimer = os.clock() - g_startTimer
+	print("Intermediate timer = "..tostring(currentTimer).." seconds")
+		
+	-- Second pass : importing options...	
+	if bIsCiv5Map then
+		-- 														(	bDoTerrains, 	bImportRivers, 	bImportFeatures, 	bImportResources, bDoCliffs, 	bImportContinents)
+		ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, 	false, 			bImportRivers, 	false, 				bImportResources, false, 		bImportContinents)
+	else
+		-- 										(	bDoTerrains, 	bImportRivers, 	bImportFeatures, 	bImportResources, bImportContinents)
+		ImportCiv6Map(MapToConvert, g_iW, g_iH, 	false, 			bImportRivers, 	false, 				bImportResources, bImportContinents)	
+	end
+
+	-- Now that we are certain that rivers were placed we can add features if they were not imported
+	if not (bImportFeatures or bNoFeatures) then
+		AddFeatures()
+	end
+
+	currentTimer = os.clock() - g_startTimer
+	print("Intermediate timer before AreaBuilder.Recalculate() = "..tostring(currentTimer).." seconds")
+	
+	AreaBuilder.Recalculate();
+	
+	if not bImportContinents then
+		currentTimer = os.clock() - g_startTimer
+		print("Intermediate timer before TerrainBuilder.StampContinents() = "..tostring(currentTimer).." seconds")	
+		TerrainBuilder.StampContinents();
+	end
+	
+	currentTimer = os.clock() - g_startTimer
+	print("Intermediate timer = "..tostring(currentTimer).." seconds")
+	
+	if bRealDeposits then
+		AddDeposits()
+		-- to do : how to balance with normal placement ?
+		-- Deposits should be mostly strategic, so call AddDeposit after ResourceGenerator.Create and remove a number of previous resources ?
+	end
+	
+	if not (bImportResources or bNoResources) then
+		if bResourceExclusion then
+			buildExclusionList()
+			placeExclusiveResources()
+		end
+		resourcesConfig = MapConfiguration.GetValue("resources");
+		local args = {
+			resources = resourcesConfig,
+		};
+		ResourceGenerator.Create(args);
+	else
+		--local resourceType = GameInfo.Resources["RESOURCE_NITER"].Index
+		--print(" Adding Civ6 resource : Niter (TypeID = " .. tostring(resourceType)..")")
+		--PlaceStrategicResources(resourceType)
+	end
+	
+	-- The map may require some specific placement...
+	ExtraPlacement()
+	
+	-- Analyse Chokepoints after extra placement...
+	currentTimer = os.clock() - g_startTimer
+	print("Intermediate timer before TerrainBuilder.AnalyzeChokepoints() = "..tostring(currentTimer).." seconds")
+	
+	if not WorldBuilder:IsActive() then -- to do : must use an option here, is this added to saved map ? will they work without this ? But it saves a lot of time for editing and exporting terrain data for YnAMP
+		TerrainBuilder.AnalyzeChokepoints();
+	else
+		print("Worldbuilder detected, skipping TerrainBuilder.AnalyzeChokepoints()...")
+		print("WARNING skipping AnalyzeChokepoints may create issues with saved maps (exporting for YnAMP scripts is not affected)")
+	end
+		
+	currentTimer = os.clock() - g_startTimer
+	print("Intermediate timer = "..tostring(currentTimer).." seconds")
+	
+	print("Creating start plot database.")	
+	if bTSL then
+		buidTSL()
+	end	
+	local startConfig = MapConfiguration.GetValue("start");-- Get the start config
+	-- START_MIN_Y and START_MAX_Y is the percent of the map ignored for major civs' starting positions.
+	local args = {
+		MIN_MAJOR_CIV_FERTILITY = 150,
+		MIN_MINOR_CIV_FERTILITY = 50, 
+		MIN_BARBARIAN_FERTILITY = 1,
+		START_MIN_Y = 15,
+		START_MAX_Y = 15,
+		START_CONFIG = startConfig,
+	}	
+	currentTimer = os.clock() - g_startTimer
+	print("Intermediate timer before AssignStartingPlots.Create(args) = "..tostring(currentTimer).." seconds")	
+	local start_plot_database = AssignStartingPlots.Create(args)				
+	
+	currentTimer = os.clock() - g_startTimer
+	print("Intermediate timer = "..tostring(currentTimer).." seconds")
+	
+	ResourcesValidation(g_iW, g_iH) -- before Civ specific resources may be added (we allow exclusion override then)
+		
+	if bRequestedResources and not bNoResources then
+		AddStartingLocationResources()
+	end
+		
+	-- Balance Starting positions for TSL
+	if bTSL then	
+		currentTimer = os.clock() - g_startTimer
+		print("Intermediate timer before balancing TSL = "..tostring(currentTimer).." seconds")
+		-- to do : remove magic numbers
+		--if startConfig == 1 then AssignStartingPlots:__AddResourcesBalanced() end
+		--if startConfig == 3 then AssignStartingPlots:__AddResourcesLegendary()() end
+		
+		for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+			local player = Players[iPlayer]
+			local plot = player:GetStartingPlot(plot)
+			if plot then
+				AssignStartingPlots:__AddBonusFoodProduction(plot)
+			end
+		end		
+		
+	end
+	
+	currentTimer = os.clock() - g_startTimer
+	print("Intermediate timer = "..tostring(currentTimer).." seconds")
+
+	local GoodyGen = AddGoodies(g_iW, g_iH);
+	
+	local totalTimer = os.clock() - g_startTimer
+	print("Total time for Map creation = "..tostring(totalTimer).." seconds")
+end
+
+function PlaceRealNaturalWonders(NaturalWonders)
+	print("YnAMP Natural Wonders placement")
+	for eFeatureType, position in pairs(NaturalWonders) do
+		local featureTypeName = GameInfo.Features[eFeatureType].FeatureType
+		local x, y = position.X, position.Y
+		print ("- Trying to place " .. tostring(featureTypeName) .. " at (" .. tostring(x) .. ", " .. tostring(y) .. ")");		
+		local pPlot = Map.GetPlot(x, y);
+		local plotsIndex = {}
+		local plotsList = {}
+		local bUseOnlyPlotListPlacement = false
+		
+		-- Preparing placement
+		if featureTypeName == "FEATURE_DEAD_SEA" then
+			print(" - Preparing position...")
+			-- 2 plots, flat desert surrounded by desert, 1st plot is SOUTHWEST 
+			-- preparing the 2 plot
+			local terrainType = g_TERRAIN_TYPE_DESERT
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST), Terrain = terrainType })
+		end		
+		
+		if featureTypeName == "FEATURE_PIOPIOTAHI" then
+			print(" - Preparing position...")
+			-- 3 plots, flat grass near coast, 1st plot is WEST
+			-- preparing the 3 plots
+			local terrainType = g_TERRAIN_TYPE_GRASS
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST), Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+		end
+		
+		if featureTypeName == "FEATURE_EVEREST" then
+			print(" - Preparing position...")
+			-- 3 plots, mountains, 1st plot is WEST
+			-- preparing the 3 plots
+			local terrainType = g_TERRAIN_TYPE_TUNDRA_MOUNTAIN
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHEAST), Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+		end
+		
+		if featureTypeName == "FEATURE_PANTANAL" then
+			print(" - Preparing position...")
+			-- 4 plots, flat grass/plains without features, 1st plot is SOUTH-WEST
+			-- preparing the 4 plots
+			local terrainType = g_TERRAIN_TYPE_PLAINS
+			local pPlot2 = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST) -- we need plot2 to get plot4
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = pPlot2, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+		end
+
+		if featureTypeName == "FEATURE_CLIFFS_DOVER" then
+			print(" - Preparing position...")
+			-- 2 plots, hills on coast, 1st plot is WEST 
+			-- preparing the 2 plots
+			local terrainType = g_TERRAIN_TYPE_GRASS_HILLS
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+		end
+		
+		if featureTypeName == "FEATURE_YOSEMITE" or featureTypeName == "FEATURE_EYJAFJALLAJOKULL" then
+			print(" - Preparing position...")
+			-- 2 plots EAST-WEST, flat tundra/plains without features, 1st plot is WEST
+			-- preparing the 2 plots
+			local terrainType = g_TERRAIN_TYPE_PLAINS
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+		end
+		
+		if featureTypeName == "FEATURE_TORRES_DEL_PAINE" then
+			print(" - Preparing position...")
+			-- 2 plots EAST-WEST without features, 1st plot is WEST
+			-- preparing the 2 plots
+			local terrainType = g_TERRAIN_TYPE_PLAINS
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+		end		
+
+		if featureTypeName == "FEATURE_BARRIER_REEF" then
+			print(" - Preparing position...")
+			-- 2 plots, coast, 1st plot is SOUTHEAST 
+			-- preparing the 2 plots
+			local terrainType = g_TERRAIN_TYPE_COAST
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = terrainType })
+		end
+
+		if featureTypeName == "FEATURE_GALAPAGOS" then
+			print(" - Preparing position...")
+			-- 2 plots, coast, surrounded by coast, 1st plot is SOUTHWEST 
+			-- preparing the area
+			local terrainType = g_TERRAIN_TYPE_COAST
+			bUseOnlyPlotListPlacement = true
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = terrainType })
+		end
+
+		if featureTypeName == "FEATURE_GIANTS_CAUSEWAY" then
+			print(" - Preparing position...")
+			-- 2 plots, one on coastal land and one in water, 1st plot is land, SOUTHEAST
+			-- preparing the 2 plots
+			bUseOnlyPlotListPlacement = true
+			table.insert(plotsList, { Plot = pPlot, Terrain = g_TERRAIN_TYPE_PLAINS })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = g_TERRAIN_TYPE_COAST })
+		end
+		
+		if featureTypeName == "FEATURE_LYSEFJORDEN"then
+			print(" - Preparing position...")
+			-- 3 plots, flat grass near coast, 1st plot is EAST
+			-- preparing the 3 plots
+			local terrainType = g_TERRAIN_TYPE_GRASS
+			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHWEST), Terrain = terrainType })
+			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_WEST), Terrain = terrainType })
+		end
+		
+		for k, data in ipairs(plotsList) do 
+			TerrainBuilder.SetTerrainType(data.Plot, data.Terrain)
+			TerrainBuilder.SetFeatureType(data.Plot, -1)
+			ResourceBuilder.SetResourceType(data.Plot, -1)
+			table.insert(plotsIndex, data.Plot:GetIndex())
+		end		
+		
+		if not(TerrainBuilder.CanHaveFeature(pPlot, eFeatureType)) then			
+			print("  - WARNING : TerrainBuilder.CanHaveFeature says that we can't place that feature here...")
+		end		
+		
+		if not bUseOnlyPlotListPlacement then
+			print("  - Trying Direct Placement...")
+			TerrainBuilder.SetFeatureType(pPlot, eFeatureType);
+		end
+		local bPlaced = pPlot:IsNaturalWonder()
+			
+		if (not bPlaced) and (#plotsIndex > 0) then
+			print("  - Direct Placement has failed, using plot list for placement")
+			TerrainBuilder.SetMultiPlotFeatureType(plotsIndex, eFeatureType)
+			bPlaced = pPlot:IsNaturalWonder()
+		end
+		
+		if bPlaced then
+			ResetTerrain(pPlot:GetIndex())
+			ResourceBuilder.SetResourceType(pPlot, -1)
+
+			local plotX = pPlot:GetX()
+			local plotY = pPlot:GetY()
+
+			for dx = -2, 2 do
+				for dy = -2,2 do
+					local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, 2)
+					if(otherPlot) then
+						if(otherPlot:IsNaturalWonder() == true) then
+							ResetTerrain(otherPlot:GetIndex())
+							ResourceBuilder.SetResourceType(otherPlot, -1)
+						end
+					end
+				end
+			end
+			print ("  - Success : plot is now a natural wonder !")
+		else
+			print ("  - Failed to place natural wonder here...")		
+		end
+	end
+end
+
+function AddFeatures()
+	print("---------------")
+	print("Adding Features")
+
+	-- Get Rainfall setting input by user.
+	local rainfall = MapConfiguration.GetValue("rainfall");
+	if rainfall == 4 then
+		rainfall = 1 + TerrainBuilder.GetRandomNumber(3, "Random Rainfall - Lua");
+	end
+	
+	local iEquatorAdjustment = MapConfiguration.GetValue("EquatorAdjustment") or 0
+	print("Equator Adjustment = "..tostring(iEquatorAdjustment))
+	
+	local iJunglePercent = MapConfiguration.GetValue("JunglePercent") or 12
+	print("Jungle Percent = "..tostring(iJunglePercent))
+	
+	local iForestPercent = MapConfiguration.GetValue("ForestPercent") or 18
+	print("Forest Percent = "..tostring(iForestPercent)) 
+	
+	local iMarshPercent = MapConfiguration.GetValue("MarshPercent") or 3
+	print("Marsh Percent = "..tostring(iMarshPercent)) 
+	
+	local iOasisPercent = MapConfiguration.GetValue("OasisPercent") or 1
+	print("Oasis Percent = "..tostring(iOasisPercent)) 
+
+	
+	local args = {rainfall = rainfall, iEquatorAdjustment = iEquatorAdjustment, iJunglePercent = iJunglePercent, iForestPercent = iForestPercent, iMarshPercent = iMarshPercent, iOasisPercent = iOasisPercent }
+	local featuregen = FeatureGenerator.Create(args);
+
+	featuregen:AddFeatures();
+end
+
+function ExtraPlacement()
+
+	print("-------------------------------")
+	print("Checking for extra placement...")
+	
+	for row in GameInfo.ExtraPlacement() do
+		if row.MapName == mapName  then
+			local bDoPlacement = false
+			if row.ConfigurationId then
+				-- check if this setting is selected
+				local value = MapConfiguration.GetValue(row.ConfigurationId)				
+				if value == true or value == row.ConfigurationValue then
+					bDoPlacement = true
+				end
+			else
+				-- no specific rules, always place
+				bDoPlacement = true
+			end
+			
+			if bDoPlacement then
+				local terrainType = row.TerrainType
+				local featureType = row.FeatureType
+				local resourceType = row.ResourceType
+				local quantity = row.Quantity
+				local x = row.X
+				local y = row.Y
+				local plot = Map.GetPlot(x,y)
+				
+				if plot then
+					if terrainType and GameInfo.Terrains[terrainType] then
+						print("- Trying to place ".. tostring(terrainType).. " at " .. tostring(x) ..",".. tostring(y))
+						TerrainBuilder.SetTerrainType(plot, GameInfo.Terrains[terrainType].Index)
+					end
+					if featureType and GameInfo.Features[featureType] then
+						print("- Trying to place ".. tostring(featureType).. " at " .. tostring(x) ..",".. tostring(y))
+						TerrainBuilder.SetFeatureType(plot, GameInfo.Features[featureType].Index)
+					end
+					if resourceType and GameInfo.Resources[resourceType] then
+						print("- Trying to place ".. tostring(resourceType).. " at " .. tostring(x) ..",".. tostring(y))
+						local num = quantity or 1
+						ResourceBuilder.SetResourceType(plot, GameInfo.Resources[resourceType].Index, num)
+					end
+				else
+					print("- WARNING, plot is nil at " .. tostring(x) ..",".. tostring(y))
+				end
+			end		
+		end
+	end
+end
+
+function MakeRiverFlowToNorth(plot)
+	if plot then
+		if plot:IsNEOfRiver() then TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHWEST) end
+		if plot:IsWOfRiver() then TerrainBuilder.SetWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTH) end
+		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHEAST) end
+	end
+end
+
+function MakeRiverFlowToEast(plot)
+	if plot then
+		if plot:IsNEOfRiver() then TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHEAST) end
+		if plot:IsWOfRiver() then TerrainBuilder.SetWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTH) end
+		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHEAST) end
+	end
+end
+
+------------------------------------------------------------------------------
+-- Resources
+------------------------------------------------------------------------------
+-- Add a strategic resource
+function PlaceStrategicResources(eResourceType)
+	
+	--ResourceBuilder.SetResourceType(pPlot, eResourceType, 1)
+end
+
+
+function IsResourceExclusion(pPlot, eResourceType)
+
+	if not bResourceExclusion then
+		-- exlusion is not activated, so this plot can't be in an exclusion/exclusive zone...
+		return false
+	end	
+	
+	---[[
+	if isResourceExclusive[eResourceType] and not isResourceExclusiveXY[pPlot:GetX()][pPlot:GetY()][eResourceType] then
+		-- resource is exclusive to specific regions, and this plot is not in one of them
+		print("YnAMP_CanHaveResource(pPlot, eResourceType) isResourceExclusive", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
+		return true
+	end
+	--]]
+	--[[
+	if isResourceExclusive[eResourceType] then -- would require an argument to allow placement now that YnAMP_CanHaveResource replace ResourceBuilder.CanHaveResource
+		-- those are directly placed on the map
+		print("YnAMP_CanHaveResource(pPlot, eResourceType) isResourceExclusive", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
+		return false
+	end
+	--]]
+	
+	if isResourceExcludedXY[pPlot:GetX()][pPlot:GetY()][eResourceType] then
+		-- this plot is in a region from which this resource is excluded		
+		print("YnAMP_CanHaveResource(pPlot, eResourceType) isResourceExcludedXY", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
+		return true
+	end
+	
+	return false
+end
+
+
+-- Check for Resource placement rules
+function YnAMP_CanHaveResource(pPlot, eResourceType, bOverrideExclusion)
+
+	if bOverrideExclusion then 
+		return ResourceBuilder.OldCanHaveResource(pPlot, eResourceType)
+	end
+	
+	if (not hasBuildExclusionList) and (eResourceType ~= -1) and bResourceExclusion then
+		print("Calling YnAMP_CanHaveResource(pPlot, eResourceType) before  hasBuildExclusionList at", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
+	end	
+	
+	if IsResourceExclusion(pPlot, eResourceType) then
+		return false
+	end
+		
+	-- Resource is not excluded from this plot, or this plot is allowed for a region-exclusive resources, now check normal placement rules
+	return ResourceBuilder.OldCanHaveResource(pPlot, eResourceType)
+end
+
+function placeExclusiveResources()
+	print("Placing Exclusive resources...")
+	print("-------------------------------")	
+	for row in GameInfo.ResourceRegionExclusive() do
+		local region = row.Region
+		local resource = row.Resource
+		print ("Trying to place ".. tostring(resource) .." in "..tostring(region))
+		
+		local eResourceType = nil
+		if GameInfo.Resources[resource] then
+			eResourceType = GameInfo.Resources[resource].Index
+		else
+			print (" - WARNING : can't find "..tostring(resource).." in Resources")
+		end	
+		
+		if region and eResourceType then
+			placeResourceInRegion(eResourceType, region, 5, true)
+		end		
+	end
+	print("-------------------------------")
+end
+
+function AddDeposits()
+	print("Adding major deposits...")
+	print("-------------------------------")	
+	for DepositRow in GameInfo.ResourceRegionDeposit() do
+		local region = DepositRow.Region
+		local resource = DepositRow.Resource
+		print ("Trying to place ".. tostring(resource) .." in "..tostring(region))
+		
+		local eResourceType = nil
+		if GameInfo.Resources[resource] then
+			eResourceType = GameInfo.Resources[resource].Index
+		else
+			print (" - WARNING : can't find "..tostring(resource).." in Resources")
+		end	
+		
+		if region and eResourceType then
+			placeResourceInRegion(eResourceType, region, DepositRow.Deposit)
+		end		
+	end
+	print("-------------------------------")
+end
+
+function placeResourceInRegion(eResourceType, region, number, bNumberIsRatio)
+	for Data in GameInfo.RegionPosition() do
+		if Data.MapName == mapName  then
+			if Data.Region == region then
+				-- get possible plots table
+				local plotTable = {}
+				local plotCount = 0
+				plotTable, plotCount = getPlotsInAreaForResource(Data.X, Data.Width, Data.Y, Data.Height, eResourceType)
+
+				-- shuffle it
+				local shuffledPlotTable = GetShuffledCopyOfTable(plotTable)
+				
+				-- place deposits
+				local toPlace = number			
+				if bNumberIsRatio then
+					toPlace = math.ceil(plotCount * number / 1000) -- to do : check statistics to get a better approximation ?
+				end
+				local placed = math.min(toPlace, #shuffledPlotTable)
+				for i = 1, placed do
+					local pPlot = shuffledPlotTable[i]
+					ResourceBuilder.SetResourceType(pPlot, eResourceType, 1)
+				end
+				print (" - Asked for " .. toPlace .. ", placed " .. placed .. " (available plots = " .. #shuffledPlotTable .. ", total plots in region = ".. plotCount .." )" )
+			end
+		end
+	end
+end
+
+function getPlotsInAreaForResource(iX, iWidth, iY, iHeight, eResourceType)
+	local plotTable = {}
+	local plotCount = 0
+	for x = iX, iX + iWidth do
+		for y = iY, iY + iHeight do
+			local pPlot = Map.GetPlot(x,y)
+			if pPlot then
+				plotCount = plotCount + 1
+				local bOverrideExclusion = true -- we want to place Civ specific resources even in excluded region
+				if ResourceBuilder.CanHaveResource(pPlot, eResourceType, bOverrideExclusion) then
+					table.insert ( plotTable, pPlot )
+				end
+			end
+		end
+	end
+	return plotTable, plotCount
+end
+
+-- add civ's specific resources
+function AddStartingLocationResources()
+
+	print("-----------------------------------------")
+	print("-- Adding requested resources for civs...")
+	print("-----------------------------------------")
+		
+	for _, player_ID in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+
+		-- creating player lists
+		local player = Players[player_ID]
+		local playerConfig = PlayerConfigurations[player_ID]
+		local civilization = playerConfig:GetCivilizationTypeName()
+		print ("Searching Resources for ".. tostring(civilization))
+		
+		local startPlot = player:GetStartingPlot()
+		if startPlot then
+
+			local startX = startPlot:GetX()
+			local startY = startPlot:GetY()
+			for row in GameInfo.CivilizationRequestedResource() do
+				if row.Civilization == civilization then
+					
+					local resource = row.Resource
+					print ("  - Trying to place ".. tostring(resource))
+					
+					local eResourceType = nil
+					if GameInfo.Resources[resource] then
+						eResourceType = GameInfo.Resources[resource].Index
+					else
+						print (" - WARNING : can't find "..tostring(resource).." in Resources")
+					end
+					
+					if eResourceType then
+						-- to do : use rings
+						-- first pass, search in range = 2
+						local plotTable = {}
+						local plotCount = 0
+						plotTable, plotCount = getPlotsInAreaForResource(startX - 2, 4, startY - 2, 4, eResourceType)
+						
+						-- do a second pass if needed, search in range = 4
+						if #plotTable == 0 then
+							print ("  - no result on first pass, trying a larger search...")
+							plotTable, plotCount = getPlotsInAreaForResource(startX - 4, 8, startY - 4, 8, eResourceType)
+						end
+						
+						if #plotTable > 0 then
+							local random_index = 1 + TerrainBuilder.GetRandomNumber(#plotTable, "YnAMP - Placing requested resources")
+							local pPlot = plotTable[random_index]
+							ResourceBuilder.SetResourceType(pPlot, eResourceType, 1)
+							print ("  - Resource placed !")
+						else
+							print ("  - Failed on second pass...")
+						end
+					end
+				end
+			end
+		end
+	end
+	print("-------------------------------")
+end
+
+
+function ResourcesValidation(g_iW, g_iH)
+
+	-- replacement tables
+	local resTable 		= {}
+	local luxTable 		= {}
+	local foodTable 	= {}
+	local prodTable 	= {}
+	local stratTable 	= {}
+	local goldTable		= {}
+	for resRow in GameInfo.Resources() do
+		resTable[resRow.Index] = 0
+		if resRow.ResourceClassType == "RESOURCECLASS_LUXURY" then
+			luxTable[resRow.Index] = true
+		elseif resRow.ResourceClassType == "RESOURCECLASS_STRATEGIC" then
+			stratTable[resRow.Index] = true
+		end
+	end	
+	
+	for resRow in GameInfo.Resource_YieldChanges() do
+		local index = GameInfo.Resources[resRow.ResourceType].Index
+		if not (luxTable[index] or stratTable[index]) then
+			if resRow.YieldType == "YIELD_FOOD" then
+				foodTable[resRow.Index] = resRow.YieldChange
+			elseif resRow.YieldType == "YIELD_PRODUCTION" then
+				prodTable[resRow.Index] = resRow.YieldChange
+			elseif resRow.YieldType == "YIELD_GOLD" then
+				goldTable[resRow.Index] = resRow.YieldChange
+			end
+		end
+	end
+	
+	function FindReplacement(eResourceType, plot)
+		local listTable = {luxTable, stratTable, foodTable, prodTable, goldTable}
+		for _, curTable in ipairs(listTable) do
+			if curTable[eResourceType] then
+				for newResourceType, value in pairs (curTable) do
+					if newResourceType ~= eResourceType and YnAMP_CanHaveResource(plot, newResourceType) then
+						print(" - Found replacement resource for", GameInfo.Resources[eResourceType].ResourceType, "at", plot:GetX(), plot:GetY(), "by resource", GameInfo.Resources[newResourceType].ResourceType)
+						return newResourceType						
+					end
+				end
+			end
+		end	
+	end
+		
+	local totalplots = g_iW * g_iH
+	for i = 0, (totalplots) - 1, 1 do
+		plot = Map.GetPlotByIndex(i)
+		local eResourceType = plot:GetResourceType()
+		if (eResourceType ~= -1) then
+			if resTable[eResourceType] then
+				if not bImportResources and IsResourceExclusion(plot, eResourceType) then
+					print("WARNING - Removing unauthorised resource at", plot:GetX(), plot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
+					ResourceBuilder.SetResourceType(plot, -1)
+					-- find replacement
+					local newResourceType = FindReplacement(eResourceType, plot)
+					if newResourceType then
+						ResourceBuilder.SetResourceType(plot, newResourceType, 1)
+						resTable[newResourceType] = resTable[newResourceType] + 1
+					end					
+				else
+					resTable[eResourceType] = resTable[eResourceType] + 1
+				end
+			else
+				print("WARNING - resTable[eResourceType] is nil for eResourceType = " .. tostring(eResourceType))
+			end
+		end
+	end
+
+	print("------------------------------------")
+	print("-- Resources Placement Statistics --")
+	print("------------------------------------")
+	print("-- Total plots on map = " .. tostring(totalplots))
+	print("------------------------------------")
+
+	local landPlots = Map.GetLandPlotCount()
+	for resRow in GameInfo.Resources() do
+		local numRes = resTable[resRow.Index]
+		local placedPercent	= Round(numRes / landPlots * 10000) / 100
+		if placedPercent == 0 then placedPercent = "0.00" end
+		local ratio = Round(placedPercent * 100 / resRow.Frequency)
+		if ratio == 0 then ratio = "0.00" end
+		if resRow.Frequency > 0 then
+			print("Resource = " .. tostring(resRow.ResourceType).."		placed = " .. tostring(numRes).."		(" .. tostring(placedPercent).."% of land)		frequency = " .. tostring(resRow.Frequency).."		ratio = " .. tostring(ratio))
+		end
+	end
+
+	print("------------------------------------")
+end
+
+-----------------
+-- ENUM 
+-----------------
+
+-- ResourceType Civ5
+--[[
+	[0]	 = RESOURCE_IRON
+	[1]	 = RESOURCE_HORSE
+	[2]	 = RESOURCE_COAL
+	[3]	 = RESOURCE_OIL
+	[4]	 = RESOURCE_ALUMINUM
+	[5]	 = RESOURCE_URANIUM
+	[6]	 = RESOURCE_WHEAT
+	[7]	 = RESOURCE_COW
+	[8]	 = RESOURCE_SHEEP
+	[9]	 = RESOURCE_DEER
+	[10] = RESOURCE_BANANA
+	[11] = RESOURCE_FISH
+	[12] = RESOURCE_STONE
+	[13] = RESOURCE_WHALE
+	[14] = RESOURCE_PEARLS
+	[15] = RESOURCE_GOLD
+	[16] = RESOURCE_SILVER
+	[17] = RESOURCE_GEMS
+	[18] = RESOURCE_MARBLE
+	[19] = RESOURCE_IVORY
+	[20] = RESOURCE_FUR
+	[21] = RESOURCE_DYE
+	[22] = RESOURCE_SPICES
+	[23] = RESOURCE_SILK
+	[24] = RESOURCE_SUGAR
+	[25] = RESOURCE_COTTON
+	[26] = RESOURCE_WINE
+	[27] = RESOURCE_INCENSE
+	[28] = RESOURCE_JEWELRY
+	[29] = RESOURCE_PORCELAIN
+	[30] = RESOURCE_COPPER
+	[31] = RESOURCE_SALT
+	[32] = RESOURCE_CRAB
+	[33] = RESOURCE_TRUFFLES
+	[34] = RESOURCE_CITRUS
+	[40] = RESOURCE_BISON
+	[41] = RESOURCE_COCOA
+--]]
+-- ResourceType Civ6
+--[[
+	[0]	 = RESOURCE_BANANAS
+	[1]	 = RESOURCE_CATTLE
+	[2]	 = RESOURCE_COPPER
+	[3]	 = RESOURCE_CRABS
+	[4]	 = RESOURCE_DEER
+	[5]	 = RESOURCE_FISH
+	[6]	 = RESOURCE_RICE
+	[7]	 = RESOURCE_SHEEP
+	[8]	 = RESOURCE_STONE
+	[9]	 = RESOURCE_WHEAT
+	[10] = RESOURCE_CITRUS
+	[11] = RESOURCE_COCOA
+	[12] = RESOURCE_COFFEE
+	[13] = RESOURCE_COTTON
+	[14] = RESOURCE_DIAMONDS
+	[15] = RESOURCE_DYES
+	[16] = RESOURCE_FURS
+	[17] = RESOURCE_GYPSUM
+	[18] = RESOURCE_INCENSE
+	[19] = RESOURCE_IVORY
+	[20] = RESOURCE_JADE
+	[21] = RESOURCE_MARBLE
+	[22] = RESOURCE_MERCURY
+	[23] = RESOURCE_PEARLS
+	[24] = RESOURCE_SALT
+	[25] = RESOURCE_SILK
+	[26] = RESOURCE_SILVER
+	[27] = RESOURCE_SPICES
+	[28] = RESOURCE_SUGAR
+	[29] = RESOURCE_TEA
+	[30] = RESOURCE_TOBACCO
+	[31] = RESOURCE_TRUFFLES
+	[32] = RESOURCE_WHALES
+	[33] = RESOURCE_WINE
+	[40] = RESOURCE_ALUMINUM
+	[41] = RESOURCE_COAL
+	[42] = RESOURCE_HORSES
+	[43] = RESOURCE_IRON
+	[44] = RESOURCE_NITER
+	[45] = RESOURCE_OIL
+	[46] = RESOURCE_URANIUM
+--]]
+-- FeaturesType Civ5
+--[[
+	[0]  = FEATURE_ICE			----> 1
+	[1]  = FEATURE_JUNGLE		----> 2
+	[2]  = FEATURE_MARSH		----> 5
+	[3]  = FEATURE_OASIS		----> 4
+	[4]  = FEATURE_FLOOD_PLAINS	----> 0
+	[5]  = FEATURE_FOREST		----> 3
+	[6]  = FEATURE_FALLOUT
+	[7]  = FEATURE_CRATER
+	[8]  = FEATURE_FUJI
+	[9]  = FEATURE_MESA
+	[10] = FEATURE_REEF			----> 6
+	[11] = FEATURE_VOLCANO
+	[12] = FEATURE_GIBRALTAR
+	[13] = FEATURE_GEYSER
+	[14] = FEATURE_FOUNTAIN_YOUTH
+	[15] = FEATURE_POTOSI
+	[16] = FEATURE_EL_DORADO
+	[17] = FEATURE_ATOLL
+	[18] = FEATURE_SRI_PADA
+	[19] = FEATURE_MT_SINAI
+	[20] = FEATURE_MT_KAILASH
+	[21] = FEATURE_ULURU
+	[22] = FEATURE_LAKE_VICTORIA
+	[23] = FEATURE_KILIMANJARO	----> 12
+	[24] = FEATURE_SOLOMONS_MINES	
+--]]
+-- FeaturesType Civ6
+--[[
+[0]  = FEATURE_FLOODPLAINS
+[1]  = FEATURE_ICE
+[2]  = FEATURE_JUNGLE
+[3]  = FEATURE_FOREST
+[4]  = FEATURE_OASIS
+[5]  = FEATURE_MARSH
+[6]  = FEATURE_BARRIER_REEF
+[7]  = FEATURE_CLIFFS_DOVER
+[8]  = FEATURE_CRATER_LAKE
+[9]  = FEATURE_DEAD_SEA
+[10] = FEATURE_EVEREST
+[11] = FEATURE_GALAPAGOS
+[12] = FEATURE_KILIMANJARO
+[13] = FEATURE_PANTANAL
+[14] = FEATURE_PIOPIOTAHI
+[15] = FEATURE_TORRES_DEL_PAINE
+[16] = FEATURE_TSINGY
+[17] = FEATURE_YOSEMITE
+--]]
+-- PlotType Civ5
+--[[
+	[0] =	PLOT_MOUNTAIN		
+	[1] =	PLOT_HILLS		
+	[2] =	PLOT_LAND		
+	[3] =	PLOT_OCEAN
+--]]	
+-- TerrainTypes Civ5
+--[[
+	[0] = TERRAIN_GRASS, 
+	[1] = TERRAIN_PLAINS,
+	[2] = TERRAIN_DESERT,
+	[3] = TERRAIN_TUNDRA,
+	[4] = TERRAIN_SNOW,
+	[5] = TERRAIN_COAST,
+	[6] = TERRAIN_OCEAN,
+--]]
+-- Continental Art Set Civ5
+--[[
+	[0] = Ocean
+	[1] = America
+	[2] = Asia
+	[3] = Africa
+	[4] = Europe
+--]]
+-- Rivers (same for civ6)
+--[[	
+	
+	[0] = FLOWDIRECTION_NORTH
+	[1] = FLOWDIRECTION_NORTHEAST
+	[2] = FLOWDIRECTION_SOUTHEAST
+	[3] = FLOWDIRECTION_SOUTH
+	[4] = FLOWDIRECTION_SOUTHWEST
+	[5] = FLOWDIRECTION_NORTHWEST
+	
+	Directions (same for civ6)
+	[0] = DIRECTION_NORTHEAST	
+	[1] = DIRECTION_EAST
+	[2] = DIRECTION_SOUTHEAST
+	[3] = DIRECTION_SOUTHWEST
+	[4] = DIRECTION_WEST		
+	[5] = DIRECTION_NORTHWEST
+--]]	
+-- Code to export a civ5 map
+--[[
+	for iPlotLoop = 0, Map.GetNumPlots()-1, 1 do
+		local plot = Map.GetPlotByIndex(iPlotLoop)
+		local NEOfRiver = 0
+		local WOfRiver = 0
+		local NWOfRiver = 0
+		if plot:IsNEOfRiver() then NEOfRiver = 1 end -- GetRiverSWFlowDirection()
+		if plot:IsWOfRiver() then WOfRiver = 1 end -- GetRiverEFlowDirection()
+		if plot:IsNWOfRiver() then NWOfRiver = 1 end -- GetRiverSEFlowDirection()
+		print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..plot:GetTerrainType()..","..plot:GetPlotType()..","..plot:GetFeatureType()..","..plot:GetContinentArtType()..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{"..plot:GetResourceType(-1)..","..plot:GetNumResource().."}}")
+	end
+--]]
+-- Code to export a civ6 cliffs map
+--[[
+	local iPlotCount = Map.GetPlotCount();
+	for iPlotLoop = 0, iPlotCount-1, 1 do
+		local bData = false
+		local plot = Map.GetPlotByIndex(iPlotLoop)
+		local NEOfCliff = 0
+		local WOfCliff = 0
+		local NWOfCliff = 0
+		if plot:IsNEOfCliff() then NEOfCliff = 1 end 
+		if plot:IsWOfCliff() then WOfCliff = 1 end 
+		if plot:IsNWOfCliff() then NWOfCliff = 1 end 
+		
+		bData = NEOfCliff + WOfCliff + NWOfCliff > 0
+		if bData then
+			print("Civ6DataToConvert["..plot:GetX().."]["..plot:GetY().."]={{"..NEOfCliff..","..WOfCliff..","..NWOfCliff.."},}")
+		end
+	end
+--]]
+
+-- Code to export a civ6 complete map
+--[[
+	local iPlotCount = Map.GetPlotCount();
+	for iPlotLoop = 0, iPlotCount-1, 1 do
+		local bData = false
+		local plot = Map.GetPlotByIndex(iPlotLoop)
+		local NEOfCliff = 0
+		local WOfCliff = 0
+		local NWOfCliff = 0
+		if plot:IsNEOfCliff() then NEOfCliff = 1 end 
+		if plot:IsWOfCliff() then WOfCliff = 1 end 
+		if plot:IsNWOfCliff() then NWOfCliff = 1 end 
+		local NEOfRiver = 0
+		local WOfRiver = 0
+		local NWOfRiver = 0
+		if plot:IsNEOfRiver() then NEOfRiver = 1 end -- GetRiverSWFlowDirection()
+		if plot:IsWOfRiver() then WOfRiver = 1 end -- GetRiverEFlowDirection()
+		if plot:IsNWOfRiver() then NWOfRiver = 1 end -- GetRiverSEFlowDirection()
+		print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..plot:GetTerrainType()..","..plot:GetFeatureType()..","..plot:GetContinentType()..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{"..plot:GetResourceType(-1)..","..tostring(1).."},{"..NEOfCliff..","..WOfCliff..","..NWOfCliff.."}}")
+	end
+--]]
+
+function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bImportFeatures, bImportResources, bDoCliffs, bImportContinents)
+	print("Importing Civ5 Map ( Terrain = "..tostring(bDoTerrains)..", Rivers = "..tostring(bImportRivers)..", Features = "..tostring(bImportFeatures)..", Resources = "..tostring(bImportResources)..", Cliffs = "..tostring(bDoCliffs)..", Continents = "..tostring(bImportContinents)..")")
+	local count = 0
+	
+	-- Civ5 ENUM
+	PLOT_MOUNTAIN = 0
+	PLOT_HILLS = 1
+	
+	-- Civ5 to Civ6 
+	local FeaturesCiv5toCiv6 = {}
+	for i = 0, 24 do FeaturesCiv5toCiv6[i] = g_FEATURE_NONE end
+	FeaturesCiv5toCiv6[0]  = g_FEATURE_ICE
+	FeaturesCiv5toCiv6[1]  = g_FEATURE_JUNGLE
+	FeaturesCiv5toCiv6[2]  = g_FEATURE_MARSH
+	FeaturesCiv5toCiv6[3]  = g_FEATURE_OASIS
+	FeaturesCiv5toCiv6[4]  = g_FEATURE_FLOODPLAINS
+	FeaturesCiv5toCiv6[5]  = g_FEATURE_FOREST
+	-- Natural wonders require a special coding
+	
+	local ResourceCiv5toCiv6 = {}
+	for i = 0, 41 do ResourceCiv5toCiv6[i] = -1 end
+	ResourceCiv5toCiv6[4]= 40 -- ALUMINUM
+	ResourceCiv5toCiv6[10]= 0 -- BANANAS
+	ResourceCiv5toCiv6[40]= 16 -- BISON to FURS
+	ResourceCiv5toCiv6[7]= 1 -- CATTLE
+	ResourceCiv5toCiv6[34]= 10 -- CITRUS
+	ResourceCiv5toCiv6[2]= 41 -- COAL
+	ResourceCiv5toCiv6[41]= 11 -- COCOA
+	ResourceCiv5toCiv6[30]= 2 -- COPPER
+	ResourceCiv5toCiv6[25]= 13 -- COTTON
+	ResourceCiv5toCiv6[32]= 3 -- CRABS
+	ResourceCiv5toCiv6[9]= 4 -- DEER
+	ResourceCiv5toCiv6[17]= 14 -- DIAMONDS
+	ResourceCiv5toCiv6[21]= 15 -- DYES
+	ResourceCiv5toCiv6[11]= 5 -- FISH
+	ResourceCiv5toCiv6[20]= 16 -- FURS
+	ResourceCiv5toCiv6[15]= 44 -- GOLD to NITER
+	ResourceCiv5toCiv6[1]= 42 -- HORSES
+	ResourceCiv5toCiv6[27]= 18 -- INCENSE
+	ResourceCiv5toCiv6[0]= 43 -- IRON
+	ResourceCiv5toCiv6[19]= 19 -- IVORY
+	ResourceCiv5toCiv6[28]= 20 -- JADE
+	ResourceCiv5toCiv6[18]= 21 -- MARBLE
+	ResourceCiv5toCiv6[3]= 45 -- OIL
+	ResourceCiv5toCiv6[14]= 23 -- PEARLS
+	ResourceCiv5toCiv6[31]= 24 -- SALT
+	ResourceCiv5toCiv6[8]= 7 -- SHEEP
+	ResourceCiv5toCiv6[23]= 25 -- SILK
+	ResourceCiv5toCiv6[16]= 26 -- SILVER
+	ResourceCiv5toCiv6[22]= 27 -- SPICES
+	ResourceCiv5toCiv6[12]= 8 -- STONE
+	ResourceCiv5toCiv6[24]= 28 -- SUGAR
+	ResourceCiv5toCiv6[33]= 31 -- TRUFFLES
+	ResourceCiv5toCiv6[5]= 46 -- URANIUM
+	ResourceCiv5toCiv6[13]= 32 -- WHALES
+	ResourceCiv5toCiv6[6]= 9 -- WHEAT
+	ResourceCiv5toCiv6[26]= 33 -- WINE
+	
+	local ContinentsCiv5toCiv6 = {}
+	for i = 0, 4 do ContinentsCiv5toCiv6[i] = 0 end
+	ContinentsCiv5toCiv6[0]  = -1
+	ContinentsCiv5toCiv6[1]  = GameInfo.Continents["CONTINENT_AMERICA"].Index
+	ContinentsCiv5toCiv6[2]  = GameInfo.Continents["CONTINENT_ASIA"].Index
+	ContinentsCiv5toCiv6[3]  = GameInfo.Continents["CONTINENT_AFRICA"].Index
+	ContinentsCiv5toCiv6[4]  = GameInfo.Continents["CONTINENT_EUROPE"].Index
+	
+	bOutput = false
+	for i = 0, (g_iW * g_iH) - 1, 1 do
+		plot = Map.GetPlotByIndex(i)
+		if bOutput then
+			print("----------")
+			print("Convert plot at "..plot:GetX()..","..plot:GetY())
+		end
+		-- Map Data
+		-- MapToConvert[x][y] = {civ5TerrainType, civ5PlotTypes, civ5FeatureTypes, civ5ContinentType, {{IsNEOfRiver, flow}, {IsWOfRiver, flow}, {IsNWOfRiver, flow}}, {Civ5ResourceType, num} }
+		local civ5TerrainType = MapToConvert[plot:GetX()][plot:GetY()][1]
+		local civ5PlotTypes = MapToConvert[plot:GetX()][plot:GetY()][2]
+		local civ5FeatureTypes = MapToConvert[plot:GetX()][plot:GetY()][3]
+		local civ5ContinentType = MapToConvert[plot:GetX()][plot:GetY()][4]
+		local Rivers = MapToConvert[plot:GetX()][plot:GetY()][5] -- = {{IsNEOfRiver, flow}, {IsWOfRiver, flow}, {IsNWOfRiver, flow}}
+		local resource = MapToConvert[plot:GetX()][plot:GetY()][6] -- = {Civ5ResourceType, num}
+		
+		-- Get Civ6 map data exported form the internal WB
+		local Cliffs
+		if Civ6DataToConvert[plot:GetX()] and Civ6DataToConvert[plot:GetX()][plot:GetY()] then
+			Cliffs = Civ6DataToConvert[plot:GetX()][plot:GetY()][1] -- {IsNEOfCliff,IsWOfCliff,IsNWOfCliff}
+		end
+		
+		-- Set terrain type
+		if bDoTerrains then
+			local civ6TerrainType = g_TERRAIN_TYPE_OCEAN		
+			if civ5TerrainType == 5 then civ6TerrainType = g_TERRAIN_TYPE_COAST
+			elseif civ5TerrainType ~= 6 then
+				-- the code below won't work if the order is changed in the terrains table
+				-- entrie for civ5 are: 0 = GRASS, 1= PLAINS, ...
+				-- entries for civ6 are: 0 = GRASS, 1= GRASS_HILL, 2 = GRASS_MOUNTAIN, 3= PLAINS, 4 = PLAINS_HILL, ...
+				civ6TerrainType = civ5TerrainType * 3 -- civ5TerrainType * 3  0-0 1-3 2-6 3-9 4-12
+				if civ5PlotTypes == PLOT_HILLS then 
+					civ6TerrainType = civ6TerrainType + g_TERRAIN_BASE_TO_HILLS_DELTA
+				elseif civ5PlotTypes == PLOT_MOUNTAIN then
+					civ6TerrainType = civ6TerrainType + g_TERRAIN_BASE_TO_MOUNTAIN_DELTA
+				end
+			end
+			if bOutput then print(" - Set Terrain Type = "..tostring(GameInfo.Terrains[civ6TerrainType].TerrainType)) end
+			count = count + 1
+			TerrainBuilder.SetTerrainType(plot, civ6TerrainType)
+		end
+		
+		-- Set Rivers
+		if bImportRivers then
+			if Rivers[1][1] == 1 then -- IsNEOfRiver
+				TerrainBuilder.SetNEOfRiver(plot, true, Rivers[1][2])
+				if bOutput then print(" - Set is NE of River, flow = "..tostring(Rivers[1][2])) end
+			end
+			if Rivers[2][1] == 1 then -- IsWOfRiver
+				TerrainBuilder.SetWOfRiver(plot, true, Rivers[2][2])
+				if bOutput then print(" - Set is W of River, flow = "..tostring(Rivers[2][2])) end
+			end
+			if Rivers[3][1] == 1 then -- IsNWOfRiver
+				TerrainBuilder.SetNWOfRiver(plot, true, Rivers[3][2])
+				if bOutput then print(" - Set is NW of River, flow = "..tostring(Rivers[3][2])) end
+			end
+		end
+		
+		-- Set Features
+		if bImportFeatures then
+			if civ5FeatureTypes ~= -1 and FeaturesCiv5toCiv6[civ5FeatureTypes] ~= g_FEATURE_NONE then		
+				if bOutput then print(" - Set Feature Type = "..tostring(GameInfo.Features[FeaturesCiv5toCiv6[civ5FeatureTypes]].FeatureType)) end
+				TerrainBuilder.SetFeatureType(plot, FeaturesCiv5toCiv6[civ5FeatureTypes])
+			end
+		end
+		
+		-- Set Continent
+		if bImportContinents then
+			if civ5ContinentType ~= 0 and ContinentsCiv5toCiv6[civ5ContinentType] ~= -1 then		
+				if bOutput then print(" - Set Continent Type = "..tostring(GameInfo.Continents[ContinentsCiv5toCiv6[civ5ContinentType]].ContinentType)) end
+				TerrainBuilder.SetContinentType(plot, ContinentsCiv5toCiv6[civ5ContinentType])
+			end
+		end
+		
+		-- Set Resources
+		if bImportResources and not plot:IsNaturalWonder() and resource[1] ~= -1 then
+			local Civ6ResourceType = ResourceCiv5toCiv6[resource[1]]
+			if Civ6ResourceType ~= -1 then		
+				if bOutput then print(" - Set Resource Type = "..tostring(GameInfo.Resources[Civ6ResourceType].ResourceType)) end
+				--ResourceBuilder.SetResourceType(plot, ResourceCiv5toCiv6[resource[1]], resource[2]) -- maybe an option to import number of resources on one plot even if civ6 use 1 ?
+				if(ResourceBuilder.CanHaveResource(plot, Civ6ResourceType)) then
+					ResourceBuilder.SetResourceType(plot, Civ6ResourceType, 1)
+				else
+					print(" - WARNING : ResourceBuilder.CanHaveResource says that "..tostring(GameInfo.Resources[Civ6ResourceType].ResourceType).." can't be placed at "..plot:GetX()..","..plot:GetY())
+				end
+			end
+		end
+		
+		-- Set Cliffs
+		if bDoCliffs and Cliffs then
+			if Cliffs[1] == 1 then -- IsNEOfCliff
+				TerrainBuilder.SetNEOfCliff(plot, true)
+				if bOutput then print(" - Set is NE of Cliff") end
+			end
+			if Cliffs[2] == 1 then -- IsWOfCliff
+				TerrainBuilder.SetWOfCliff(plot, true)
+				if bOutput then print(" - Set is W of Cliff") end
+			end
+			if Cliffs[3] == 1 then -- IsNWOfCliff
+				TerrainBuilder.SetNWOfCliff(plot, true)
+				if bOutput then print(" - Set is NW of Cliff") end
+			end	
+		end
+		
+	end	
+	
+	print("Placed terrain on "..tostring(count) .. " tiles")
+end
+
+
+function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bImportFeatures, bImportResources, bImportContinents)
+	print("Importing Civ6 Map ( Terrain = "..tostring(bDoTerrains)..", Rivers = "..tostring(bImportRivers)..", Features = "..tostring(bImportFeatures)..", Resources = "..tostring(bImportResources)..", Continents = "..tostring(bImportContinents)..")")
+	local count = 0
+		
+	bOutput = false
+	for i = 0, (g_iW * g_iH) - 1, 1 do
+		plot = Map.GetPlotByIndex(i)
+		if bOutput then
+			print("----------")
+			print("Convert plot at "..plot:GetX()..","..plot:GetY())
+		end
+		-- Map Data
+		-- MapToConvert[x][y] = {civ6TerrainType, civ6FeatureType, civ6ContinentType, {{IsNEOfRiver, flow}, {IsWOfRiver, flow}, {IsNWOfRiver, flow}}, {Civ6ResourceType, num} }
+		local civ6TerrainType = MapToConvert[plot:GetX()][plot:GetY()][1]
+		local civ6FeatureType = MapToConvert[plot:GetX()][plot:GetY()][2]
+		local civ6ContinentType = MapToConvert[plot:GetX()][plot:GetY()][3]
+		local Rivers = MapToConvert[plot:GetX()][plot:GetY()][4] -- = {{IsNEOfRiver, flow}, {IsWOfRiver, flow}, {IsNWOfRiver, flow}}
+		local resource = MapToConvert[plot:GetX()][plot:GetY()][5] -- = {Civ6ResourceType, num}
+		local Cliffs =  MapToConvert[plot:GetX()][plot:GetY()][6] -- {IsNEOfCliff,IsWOfCliff,IsNWOfCliff}
+		
+		-- Set terrain type
+		if bDoTerrains then
+			if bOutput then print(" - Set Terrain Type = "..tostring(GameInfo.Terrains[civ6TerrainType].TerrainType)) end
+			count = count + 1
+			TerrainBuilder.SetTerrainType(plot, civ6TerrainType)
+		end
+		
+		-- Set Rivers
+		if bImportRivers then
+			if Rivers[1][1] == 1 then -- IsNEOfRiver
+				TerrainBuilder.SetNEOfRiver(plot, true, Rivers[1][2])
+				if bOutput then print(" - Set is NE of River, flow = "..tostring(Rivers[1][2])) end
+			end
+			if Rivers[2][1] == 1 then -- IsWOfRiver
+				TerrainBuilder.SetWOfRiver(plot, true, Rivers[2][2])
+				if bOutput then print(" - Set is W of River, flow = "..tostring(Rivers[2][2])) end
+			end
+			if Rivers[3][1] == 1 then -- IsNWOfRiver
+				TerrainBuilder.SetNWOfRiver(plot, true, Rivers[3][2])
+				if bOutput then print(" - Set is NW of River, flow = "..tostring(Rivers[3][2])) end
+			end
+		end
+		
+		-- Set Features
+		if bImportFeatures then
+			if civ6FeatureType ~= g_FEATURE_NONE and civ6FeatureType < GameInfo.Features["FEATURE_BARRIER_REEF"].Index then -- Do not import Natural Wonder here !
+				if bOutput then print(" - Set Feature Type = "..tostring(GameInfo.Features[civ6FeatureType].FeatureType)) end
+				TerrainBuilder.SetFeatureType(plot, civ6FeatureType)
+			end
+		end
+		
+		-- Set Continent
+		if bImportContinents then
+			if civ6ContinentType ~= -1 then		
+				if bOutput then print(" - Set Continent Type = "..tostring(GameInfo.Continents[civ6ContinentType].ContinentType)) end
+				TerrainBuilder.SetContinentType(plot, civ6ContinentType)
+			end
+		end
+		
+		-- Set Resources
+		if bImportResources and not plot:IsNaturalWonder() then
+			if resource[1] ~= -1 then		
+				if bOutput then print(" - Set Resource Type = "..tostring(GameInfo.Resources[resource[1]].ResourceType)) end
+				--ResourceBuilder.SetResourceType(plot, ResourceCiv5toCiv6[resource[1]], resource[2]) -- maybe an option to import number of resources on one plot even if civ6 use 1 ?
+				ResourceBuilder.SetResourceType(plot, resource[1], 1)
+			end
+		end
+		
+		-- Set Cliffs
+		if Cliffs then
+			if Cliffs[1] == 1 then -- IsNEOfCliff
+				TerrainBuilder.SetNEOfCliff(plot, true)
+				if bOutput then print(" - Set is NE of Cliff") end
+			end
+			if Cliffs[2] == 1 then -- IsWOfCliff
+				TerrainBuilder.SetWOfCliff(plot, true)
+				if bOutput then print(" - Set is W of Cliff") end
+			end
+			if Cliffs[3] == 1 then -- IsNWOfCliff
+				TerrainBuilder.SetNWOfCliff(plot, true)
+				if bOutput then print(" - Set is NW of Cliff") end
+			end	
+		end
+		
+	end	
+	
+	print("Placed terrain on "..tostring(count) .. " tiles")
+end
+
+------------------------------------------------------------------------------
+-- True Starting Locations
+------------------------------------------------------------------------------
+
+local bForceAll = (MapConfiguration.GetValue("ForceTSL") == "FORCE_TSL_ALL")
+local bForceAI = (MapConfiguration.GetValue("ForceTSL") == "FORCE_TSL_AI") or bForceAll
+
+function IsSafeStartingDistance(plot, bIsMajor, bIsHuman)
+	if MapConfiguration.GetValue("ForceTSL") == "FORCE_TSL_OFF"	then
+		return true
+	elseif (not bForceAI) and bIsMajor then
+		return true
+	elseif (not bForceAll) and bIsHuman then
+		return true
+	end
+	
+	local MinDistance = GlobalParameters.CITY_MIN_RANGE
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		local player = Players[iPlayer]
+		local startingPlot = player:GetStartingPlot()
+		if startingPlot and Map.GetPlotDistance(plot:GetIndex(), startingPlot:GetIndex()) <= MinDistance then
+			return false
+		end
+	end
+	return true
+end
+
+function SetTrueStartingLocations()
+	print ("-------------------------------------------------------")
+	print ("Beginning True Starting Location placement for "..tostring(mapName))
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		local player = Players[iPlayer]
+		local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+		local position = getTSL[iPlayer]
+		if position then 
+			print ("- "..tostring(CivilizationTypeName).." at "..tostring(position.X)..","..tostring(position.Y))
+			local plot = Map.GetPlot(position.X, position.Y)
+			if plot and not plot:IsWater() then
+				if plot:IsStartingPlot() then
+					print ("WARNING ! Plot is already a Starting Position")
+				else					
+					if player:IsMajor() then
+						if IsSafeStartingDistance(plot, true, player:IsHuman()) then
+							player:SetStartingPlot(plot)
+							--table.insert(AssignStartingPlots.majorStartPlots, plot)
+						else
+							print ("WARNING ! Plot is too close from another Starting Position")
+						end
+					else
+						if not bNoCityStates then
+							if IsSafeStartingDistance(plot, false, false) then
+								player:SetStartingPlot(plot)
+								--table.insert(AssignStartingPlots.minorStartPlots, plot)
+							else
+								print ("WARNING ! Plot is too close from another Starting Position")
+							end
+						end
+					end
+				end
+			else
+				print ("WARNING ! Plot is out of land !")
+			end
+		end
+	end	
+end
+
+function YnAMP_StartPositions()
+
+	if bTSL then
+		SetTrueStartingLocations()	
+	end
+	
+	if bCulturallyLinked then
+		CulturallyLinkedCivilizations()	
+		CulturallyLinkedCityStates(true)
+	end
+end
+
+------------------------------------------------------------------------------
+-- Culturally Linked Start Locations
+------------------------------------------------------------------------------
+function Round(num)
+    under = math.floor(num)
+    upper = math.floor(num) + 1
+    underV = -(under - num)
+    upperV = upper - num
+    if (upperV > underV) then
+        return under
+    else
+        return upper
+    end
+end
+
+BRUTE_FORCE_TRIES = 3 -- raise this number for better placement but longer initialization. From tests, 3 passes should be more than enough.
+OVERSEA_PENALTY = 50 -- distance penalty for starting plot separated by sea
+SAME_GROUP_WEIGHT = 2 -- factor to use for distance in same cultural group
+
+g_CultureRelativeDistance = {
+	["ETHNICITY_EURO"] = 0, -- center of the world (yes, that's a cliché)
+	["ETHNICITY_MEDIT"] = 1,
+	["ETHNICITY_SOUTHAM"] = 20,
+	["ETHNICITY_ASIAN"] = 10,
+	["ETHNICITY_AFRICAN"] = 5,
+}
+
+function CalculateDistanceScore(cultureList, bOutput)
+	if bOutput then print ("------------------------------------------------------- ") end
+	if bOutput then  print ("Calculating distance score...") end
+	local globalDistanceScore = 0
+	local cultureDistanceScore = {}
+	for civCulture, playerList in pairs(cultureList) do
+		if bOutput then  print (" - culture = " .. tostring(civCulture)) end
+		local distanceScore = 0
+		for i, playerID in pairs(playerList) do
+			local player = Players[playerID]
+			local playerConfig = PlayerConfigurations[playerID]
+			if bOutput then  print ("    - player = " .. tostring(playerConfig:GetPlayerName())) end
+			for _, player_ID2 in ipairs(PlayerManager.GetAliveMajorIDs()) do
+				local player2 = Players[player_ID2]
+				local playerConfig2 = PlayerConfigurations[player_ID2]
+				local civCulture2 = GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity
+				if  civCulture2 == civCulture then
+					local startPlot1 = player:GetStartingPlot()
+					--if not startPlot1 then print("WARNING no starting plot for : " .. tostring(playerConfig:GetPlayerName())) end
+					local startPlot2 = player2:GetStartingPlot()
+					--if not startPlot2 then print("WARNING no starting plot for : " .. tostring(playerConfig2:GetPlayerName())) end
+					if startPlot1 and startPlot2 then
+						local distance = Map.GetPlotDistance(startPlot1:GetX(), startPlot1:GetY(), startPlot2:GetX(), startPlot2:GetY())
+						if startPlot1:GetArea() ~= startPlot2:GetArea() then
+							distance = distance + OVERSEA_PENALTY
+						end
+						distanceScore = distanceScore + Round(distance*SAME_GROUP_WEIGHT)
+						if bOutput then print ("      - Distance to same culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (x".. tostring(SAME_GROUP_WEIGHT) .."), total distance score = " .. tostring(distanceScore) ) end
+					end
+				else
+					local interGroupMinimizer = 1
+					if g_CultureRelativeDistance[civCulture] and g_CultureRelativeDistance[civCulture2] then
+						interGroupMinimizer = math.abs(g_CultureRelativeDistance[civCulture] - g_CultureRelativeDistance[civCulture2])
+					else
+						interGroupMinimizer = 8 -- unknown culture group (new DLC ?), average distance
+					end
+					local startPlot1 = player:GetStartingPlot()
+					--if not startPlot1 then print("WARNING no starting plot for : " .. tostring(playerConfig:GetPlayerName())) end
+					local startPlot2 = player2:GetStartingPlot()
+					--if not startPlot2 then print("WARNING no starting plot for : " .. tostring(playerConfig2:GetPlayerName())) end
+					if startPlot1 and startPlot2 then
+						local distance = Map.GetPlotDistance(startPlot1:GetX(), startPlot1:GetY(), startPlot2:GetX(), startPlot2:GetY())
+						distanceScore = distanceScore + Round(distance/interGroupMinimizer)
+						if bOutput then print ("      - Distance to different culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (/".. tostring(interGroupMinimizer) .." from intergroup relative distance), total distance score = " .. tostring(distanceScore) ) end
+					end
+				end
+			end
+		end
+		cultureDistanceScore[civCulture] = distanceScore
+		globalDistanceScore = globalDistanceScore + distanceScore
+	end		
+	if bOutput then print ("Global distance score = " .. tostring(globalDistanceScore)) end
+	if bOutput then print ("------------------------------------------------------- ") end
+	return globalDistanceScore
+end
+
+function CulturallyLinkedCivilizations()
+
+	local playerList = {}
+
+	local cultureList = {}
+	local cultureCount = {}
+
+
+	local bestList = {}
+	local bestDistanceScore = 99999
+	
+	print ("------------------------------------------------------- ")
+	print ("Creating Civilization list for Culturally linked startingposition... ")
+	for _, player_ID in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+
+		-- creating player lists
+		local player = Players[player_ID]
+		local playerConfig = PlayerConfigurations[player_ID]
+		local civCulture = GameInfo.Civilizations[playerConfig:GetCivilizationTypeID()].Ethnicity
+		if not civCulture then
+			print("WARNING : no Ethnicity defined for " .. playerConfig:GetPlayerName() ..", using EURO")
+			civCulture = "ETHNICITY_EURO"
+		end
+		print (" - Adding player " .. tostring(playerConfig:GetPlayerName()) .. " to culture " .. tostring(civCulture))
+		table.insert(playerList, player_ID)
+		if cultureList[civCulture] then
+			table.insert(cultureList[civCulture], player_ID)
+			cultureCount[civCulture] = cultureCount[civCulture] + 1
+		else
+			cultureList[civCulture] = {}
+			table.insert(cultureList[civCulture], player_ID)
+			cultureCount[civCulture] = 1
+		end
+
+	end
+	print ("------------------------------------------------------- ")
+
+	-- Sort culture table by number of civs...
+	local cultureTable = {}
+	for civCulture, num in pairs(cultureCount) do	
+		table.insert(cultureTable, {Culture = civCulture, Num = num})
+	end
+	table.sort(cultureTable, function(a,b) return a.Num > b.Num end)
+	for i, data in ipairs(cultureTable) do	
+		print ("Culture " .. tostring(data.Culture) .. " represented by " .. tostring(data.Num) .. " civs")
+	end
+	print ("------------------------------------------------------- ")
+
+	
+	local initialDistanceScore = CalculateDistanceScore(cultureList, true)
+	if  initialDistanceScore < bestDistanceScore then
+		bestDistanceScore = initialDistanceScore
+	end
+
+	-- todo : do and lock initial placement of the biggest cultural group in game
+	-- on the area with most starting plots, then use brute force for the remaining civs
+
+	-- todo : add cultural relative distance (ie Mediterannean should be closer from European than American or Asian culture)
+
+	-- very brute force
+	for try = 1, BRUTE_FORCE_TRIES do 
+		print ("------------------------------------------------------- ")
+		print ("Brute Force Pass num = " .. tostring(try) )
+		for _, player_ID in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+			local player = Players[player_ID]
+			local playerConfig = PlayerConfigurations[player_ID]
+			--print ("------------------------------------------------------- ")
+			--print ("Testing " .. tostring(playerConfig:GetPlayerName()) )
+			local culture = GameInfo.Civilizations[playerConfig:GetCivilizationTypeID()].Ethnicity
+			for _, player_ID2 in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do	
+				--print ("in loop 2")
+				if player_ID ~= player_ID2 then
+					local player2 = Players[player_ID2]
+					local playerConfig2 = PlayerConfigurations[player_ID2]
+					local culture2 = GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity
+					if culture ~= culture2 then -- don't try to swith civs from same culture style, we can gain better score from different culture only...
+						--print ("culture ~= culture2")
+						local startPlot1 = player:GetStartingPlot()
+						local startPlot2 = player2:GetStartingPlot()					
+						if startPlot1 and startPlot2 then
+							--print ("------------------------------------------------------- ")
+							--print ("trying to switch " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) )	
+							player:SetStartingPlot(startPlot2)
+							player2:SetStartingPlot(startPlot1)
+							local actualdistanceScore = CalculateDistanceScore(cultureList)
+							if  actualdistanceScore < bestDistanceScore then
+								bestDistanceScore = actualdistanceScore
+								--print ("------------------------------------------------------- ")
+								--print ("Better score, confirming switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) )
+							else
+								--print ("------------------------------------------------------- ")
+								--print ("No gain, restoring position of " .. tostring(playerConfig:GetPlayerName()) .. " and " .. tostring(playerConfig2:GetPlayerName()) )								
+								player:SetStartingPlot(startPlot1)
+								player2:SetStartingPlot(startPlot2)
+							end
+						end
+					end
+				end
+			end
+		end
+
+		--print ("------------------------------------------------------- ")
+		--print ("Brute Force Pass num " .. tostring(try) )
+		print ("New global distance = " .. tostring(CalculateDistanceScore(cultureList)))
+	end
+	CalculateDistanceScore(cultureList, true)
+	print ("------------------------------------------------------- ")
+	print ("INITIAL DISTANCE SCORE = " .. tostring(initialDistanceScore))
+	print ("------------------------------------------------------- ")
+	print ("FINAL DISTANCE SCORE: " .. tostring(CalculateDistanceScore(cultureList)) )
+	print ("------------------------------------------------------- ")
+end
+
+function CalculateDistanceScoreCityStates(bOutput)
+	if bOutput then print ("------------------------------------------------------- ") end
+	if bOutput then  print ("Calculating distance score for City States...") end
+	local globalDistanceScore = 0
+	
+	for _, player_ID in ipairs(PlayerManager.GetAliveMinorIDs()) do
+		local player = Players[player_ID]
+		local playerConfig = PlayerConfigurations[player_ID]
+		local distanceScore = 0
+		local startPlot1 = player:GetStartingPlot()
+		local civCulture = GameInfo.Civilizations[playerConfig:GetCivilizationTypeID()].Ethnicity		
+		if not civCulture then
+			print("WARNING : no Ethnicity defined for " .. playerConfig:GetPlayerName() ..", using EURO")
+			civCulture = "ETHNICITY_EURO"
+		end
+		if startPlot1 ~= nil then
+
+			if bOutput then  print ("    - player = " .. tostring(playerConfig:GetPlayerName())) end
+
+			for _, player_ID2 in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+				local player2 = Players[player_ID2]
+				local playerConfig2 = PlayerConfigurations[player_ID2]
+				local civCulture2 = GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity
+				if  civCulture2 == civCulture then
+					local startPlot2 = player2:GetStartingPlot()
+					local distance = Map.GetPlotDistance(startPlot1:GetX(), startPlot1:GetY(), startPlot2:GetX(), startPlot2:GetY())
+					if startPlot1:GetArea() ~= startPlot2:GetArea() then
+						distance = distance + OVERSEA_PENALTY
+					end
+					distanceScore = distanceScore + Round(distance*SAME_GROUP_WEIGHT)
+					if bOutput then print ("      - Distance to same culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (x".. tostring(SAME_GROUP_WEIGHT) .."), total distance score = " .. tostring(distanceScore) ) end
+				else
+					local interGroupMinimizer = 1
+					if g_CultureRelativeDistance[civCulture] and g_CultureRelativeDistance[civCulture2] then
+						interGroupMinimizer = math.abs(g_CultureRelativeDistance[civCulture] - g_CultureRelativeDistance[civCulture2])
+					else
+						interGroupMinimizer = 8 -- unknown culture group, average distance
+					end
+					local startPlot2 = player2:GetStartingPlot()
+					local distance = Map.GetPlotDistance(startPlot1:GetX(), startPlot1:GetY(), startPlot2:GetX(), startPlot2:GetY())
+					distanceScore = distanceScore + Round(distance/interGroupMinimizer)
+					if bOutput then print ("      - Distance to different culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (/".. tostring(interGroupMinimizer) .." from intergroup relative distance), total distance score = " .. tostring(distanceScore) ) end
+				end
+			end
+		end
+		globalDistanceScore = globalDistanceScore + distanceScore
+	end		
+	if bOutput then print ("Global distance score = " .. tostring(globalDistanceScore)) end
+	if bOutput then print ("------------------------------------------------------- ") end
+	return globalDistanceScore
+end
+
+-- try to place city states closes to corresponding culture civs
+function CulturallyLinkedCityStates()
+
+	local bestDistanceScore = 99999
+	
+	print ("------------------------------------------------------- ")
+	print ("Set Culturally linked starting positions for City States... ")
+
+	local initialDistanceScore = CalculateDistanceScoreCityStates()
+	if  initialDistanceScore < bestDistanceScore then
+		bestDistanceScore = initialDistanceScore
+	end
+
+	-- very brute force again
+	for try = 1, BRUTE_FORCE_TRIES do 
+		print ("------------------------------------------------------- ")
+		print ("Brute Force Pass num = " .. tostring(try) )
+		for _, player_ID in ipairs(PlayerManager.GetAliveMinorIDs()) do
+			local player = Players[player_ID]
+			local playerConfig = PlayerConfigurations[player_ID]
+			local culture = GameInfo.Civilizations[playerConfig:GetCivilizationTypeID()].Ethnicity
+
+			for _, player_ID2 in ipairs(PlayerManager.GetAliveMinorIDs()) do
+				local player2 = Players[player_ID2]
+				if player_ID ~= player_ID2 then
+					local playerConfig2 = PlayerConfigurations[player_ID2]
+					local startPlot1 = player:GetStartingPlot()
+					local startPlot2 = player2:GetStartingPlot()
+					--print ("  - Player = " .. tostring(playerConfig:GetPlayerName()) .. ", Start Plot = " .. tostring(startPlot1) )
+					--print ("  - Player = " .. tostring(playerConfig2:GetPlayerName()) .. ", Start Plot = " .. tostring(startPlot2) )
+					local culture2 = GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity
+					if (startPlot1 ~= nil) and (startPlot2 ~= nil) then
+						if culture ~= culture2 then -- don't try to swith civs from same culture style, we can gain better score from different culture only...
+							--print ("culture ~= culture2")
+							--print ("------------------------------------------------------- ")
+							--print ("trying to switch " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) )
+							player:SetStartingPlot(startPlot2)
+							player2:SetStartingPlot(startPlot1)
+							local actualdistanceScore = CalculateDistanceScoreCityStates()
+							if  actualdistanceScore < bestDistanceScore then
+								bestDistanceScore = actualdistanceScore
+								--print ("------------------------------------------------------- ")
+								--print ("Better score, conforming switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) )
+							else
+								--print ("------------------------------------------------------- ")
+								--print ("No gain, restoring position of " .. tostring(playerConfig:GetPlayerName()) .. " and " .. tostring(playerConfig2:GetPlayerName()) )								
+								player:SetStartingPlot(startPlot1)
+								player2:SetStartingPlot(startPlot2)
+							end
+						end
+					end						
+				end
+			end			
+
+		end
+		print ("New global distance = " .. tostring(CalculateDistanceScoreCityStates()))
+	end
+	print ("------------------------------------------------------- ")
+	print ("CS INITIAL DISTANCE SCORE = " .. tostring(initialDistanceScore))
+	print ("------------------------------------------------------- ")
+	print ("CS FINAL DISTANCE SCORE = " .. tostring(CalculateDistanceScoreCityStates()))
+	print ("------------------------------------------------------- ")
+end
+
+------------------------------------------------------------------------------
+-- Override functions
+------------------------------------------------------------------------------
+
+print ("Replacing ResourceBuilder.CanHaveResource by YnAMP_CanHaveResource...")
+ResourceBuilder.OldCanHaveResource = ResourceBuilder.CanHaveResource
+ResourceBuilder.CanHaveResource = YnAMP_CanHaveResource
+
+
+function YnAMP_SetResourceType(pPlot, eResourceType, number)
+	if (not YnAMP_CanHaveResource(pPlot, eResourceType)) and (eResourceType ~= -1) then
+		print("WARNING calling SetResourceType() but YnAMP_CanHaveResource() wouldn't allow it :", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
+	end
+	ResourceBuilder.OldSetResourceType(pPlot, eResourceType, number)
+end
+--ResourceBuilder.OldSetResourceType = ResourceBuilder.SetResourceType
+--ResourceBuilder.SetResourceType = YnAMP_SetResourceType
+
+function InitializePlayerFunctions(player) -- Note that those functions are limited to this file context
+	if not player then player = Players[0] end
+	local p = getmetatable(player).__index	
+	p.OldSetStartingPlot	= p.SetStartingPlot
+	p.OldGetStartingPlot	= p.GetStartingPlot
+	p.SetStartingPlot		= NewSetstartingPlot
+	p.GetStartingPlot		= NewGetstartingPlot
+	
+end
+
+function NewSetstartingPlot(self, plot)
+	if bHistoricalSpawnDates then
+		tempStartingPlots[self:GetID()] = {X = plot:GetX(), Y = plot:GetY()}		
+	else
+		self:OldSetStartingPlot(plot)
+	end
+end
+
+
+function NewGetstartingPlot(self, plot)
+	if tempStartingPlots[self:GetID()] then
+		return Map.GetPlot(tempStartingPlots[self:GetID()].X, tempStartingPlots[self:GetID()].Y)
+	end
+	return self:OldGetStartingPlot()
+end
+
+------------------------------------------------------------------------------
+-- Override required to use limits on ice placement for imported maps
+function FeatureGenerator:AddIceAtPlot(plot, iX, iY)
+
+	local bNorth = iY > (self.iGridH/2)
+
+	if not bNorth and (iIceSouth and (iIceSouth == 0 or iIceSouth < iY)) then
+		return
+	end
+	
+	if bNorth and iIceNorth and (iIceNorth == 0 or self.iGridH - iIceNorth > iY) then
+		return
+	end
+	
+	local bNoIceAdjacentToLand = MapConfiguration.GetValue("NoIceAdjacentToLand");
+	if bNoIceAdjacentToLand and plot:IsAdjacentToLand() then
+		return
+	end
+
+	local lat = math.abs((self.iGridH/2) - iY)/(self.iGridH/2)
+
+	if Map.IsWrapX() and (iY == 0 or iY == self.iGridH - 1) then
+		TerrainBuilder.SetFeatureType(plot, g_FEATURE_ICE);
+	else
+		local rand = TerrainBuilder.GetRandomNumber(100, "Add Ice Lua")/100.0;
+		
+		if(rand < 8 * (lat - 0.875)) then
+			TerrainBuilder.SetFeatureType(plot, g_FEATURE_ICE);
+		elseif(rand < 4 * (lat - 0.75)) then
+			TerrainBuilder.SetFeatureType(plot, g_FEATURE_ICE);
+		end
+	end
+end
+
+------------------------------------------------------------------------------
+-- The original function was placing forest and marshs on every available plots in the south of the Europe map, maybe because all the first land plots tested were deserts ?
+-- It has been changed here to randomize the order in which the land plots are tested for features placement.
+function FeatureGenerator:AddFeatures(allow_mountains_on_coast)
+	print("YnAMP : FeatureGenerator:AddFeatures() override")
+	local flag = allow_mountains_on_coast or true;
+
+	if allow_mountains_on_coast == false then -- remove any mountains from coastal plots
+		for x = 0, self.iGridW - 1 do
+			for y = 0, self.iGridH - 1 do
+				local plot = Map.GetPlot(x, y)
+				if plot:GetPlotType() == g_PLOT_TYPE_MOUNTAIN then
+					if plot:IsCoastalLand() then
+						plot:SetPlotType(g_PLOT_TYPE_HILLS, false, true); -- These flags are for recalc of areas and rebuild of graphics. Instead of recalc over and over, do recalc at end of loop.
+					end
+				end
+			end
+		end
+		-- This function needs to recalculate areas after operating. However, so does 
+		-- adding feature ice, so the recalc was removed from here and put in MapGenerator()
+	end
+	
+	-- First pass, adds ice to water plots as appropriate and count land plots that can have a feature
+	local availableLandPlots = {}
+	for y = 0, self.iGridH - 1, 1 do
+		for x = 0, self.iGridW - 1, 1 do			
+
+			local i = y * self.iGridW + x;
+			local plot = Map.GetPlotByIndex(i);
+			if(plot ~= nil) then
+				local featureType = plot:GetFeatureType();
+
+				if(plot:IsImpassable() or featureType ~= g_FEATURE_NONE) then
+					--No Feature
+				elseif(plot:IsWater() == true) then
+					if(TerrainBuilder.CanHaveFeature(plot, g_FEATURE_ICE) == true and IsAdjacentToRiver(x, y) == false) then
+						self:AddIceAtPlot(plot, x, y);
+					end
+				else  -- mark this plot available for land feature
+					self.iNumLandPlots = self.iNumLandPlots + 1
+					table.insert(availableLandPlots, plot)
+				end
+			end
+		end
+	end
+	
+	-- second pass, add features to all land plots as appropriate based on the count and percentage of that type
+	local aShuffledAvailablePlots =  GetShuffledCopyOfTable(availableLandPlots)
+	for k, plot in ipairs(aShuffledAvailablePlots) do
+		if(plot ~= nil) then
+			local x, y = plot:GetX(), plot:GetY()
+			if(TerrainBuilder.CanHaveFeature(plot, g_FEATURE_FLOODPLAINS) == true) then
+				-- All desert plots along river are set to flood plains.
+				TerrainBuilder.SetFeatureType(plot, g_FEATURE_FLOODPLAINS)
+			elseif(TerrainBuilder.CanHaveFeature(plot, g_FEATURE_OASIS) == true and math.ceil(self.iOasisCount * 100 / self.iNumLandPlots) <= self.iOasisMaxPercent ) then
+				if(TerrainBuilder.GetRandomNumber(4, "Oasis Random") == 1) then
+					TerrainBuilder.SetFeatureType(plot, g_FEATURE_OASIS);
+					self.iOasisCount = self.iOasisCount + 1;
+				end
+			end
+
+			local featureType = plot:GetFeatureType()
+			local bMarsh = false;
+			local bJungle = false;
+			if(featureType == g_FEATURE_NONE) then
+				--First check to add Marsh
+				bMarsh = self:AddMarshAtPlot(plot, x, y);
+
+				if(featureType == g_FEATURE_NONE and  bMarsh == false) then
+					--check to add Jungle
+					bJungle = self:AddJunglesAtPlot(plot, x, y);
+				end
+				
+				if(featureType == g_FEATURE_NONE and bMarsh== false and bJungle == false) then 
+					--check to add Forest
+					self:AddForestsAtPlot(plot, x, y);
+				end
+			end
+		end
+	end	
+	
+	print("Number of Forests: ", self.iForestCount);
+	print("Number of Jungles: ", self.iJungleCount);
+	print("Number of Marshes: ", self.iMarshCount);
+	print("Number of Oasis: ", self.iOasisCount);
+end
+
+
+------------------------------------------------------------------------------
+-- initialize
+------------------------------------------------------------------------------
+
+InitializePlayerFunctions()
+
+------------------------------------------------------------------------------
+-- /end YnAMP
+------------------------------------------------------------------------------
