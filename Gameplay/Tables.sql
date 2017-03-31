@@ -51,11 +51,13 @@ CREATE TABLE IF NOT EXISTS ExtraPlacement
 		Quantity INT default 0);
 		
 -- Start Positions
--- See EOF for added columns
 CREATE TABLE IF NOT EXISTS StartPosition
 	(	MapName TEXT,
 		Civilization TEXT,
 		Leader TEXT,
+		DisabledByCivilization TEXT,
+		DisabledByLeader TEXT,
+		AlternateStart INT default 0,		
 		X INT default 0,
 		Y INT default 0);
 
@@ -75,7 +77,12 @@ CREATE TABLE IF NOT EXISTS CityMap
 		CityLocaleName TEXT,
 		X INT default 0,
 		Y INT default 0,
-		Area INT);		
+		Area INT);
+		
+-- Historical Spawn Dates
+CREATE TABLE IF NOT EXISTS HistoricalSpawnDates
+	 (	Civilization TEXT NOT NULL UNIQUE,
+		StartYear INTEGER DEFAULT -10000);
 		
 -----------------------------------------------
 -- Temporary Tables for initialization
