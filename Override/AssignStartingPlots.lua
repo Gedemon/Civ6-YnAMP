@@ -16,8 +16,9 @@ g_startTimer = os.clock()
 
 local mapName = MapConfiguration.GetValue("MapName")
 print ("Map Name = " .. tostring(mapName))
-local getTSL 	= {} -- primary TSL for each civilization
-local isInGame 	= {} -- Civilization/Leaders type in game
+local getTSL 				= {} -- primary TSL for each civilization
+local isInGame 				= {} -- Civilization/Leaders type in game
+local tempStartingPlots 	= {} -- Temporary table for starting plots used when Historical Spawn Dates is set.
 local isResourceExcludedXY 	= {}
 local isResourceExclusiveXY = {}
 local isResourceExclusive 	= {}
@@ -30,6 +31,7 @@ local bRealDeposits 		= MapConfiguration.GetValue("RealDeposits") == "PLACEMENT_
 local bImportResources		= MapConfiguration.GetValue("ResourcesPlacement") == "PLACEMENT_IMPORT"
 local iIceNorth 			= MapConfiguration.GetValue("IceNorth")
 local iIceSouth 			= MapConfiguration.GetValue("IceSouth")
+local bHistoricalSpawnDates	= MapConfiguration.GetValue("HistoricalSpawnDates") == 1
 
 local bNoCityStates = GameConfiguration.GetValue("NoCityStates");
 
@@ -4194,6 +4196,32 @@ end
 --ResourceBuilder.OldSetResourceType = ResourceBuilder.SetResourceType
 --ResourceBuilder.SetResourceType = YnAMP_SetResourceType
 
+function InitializePlayerFunctions(player) -- Note that those functions are limited to this file context
+	if not player then player = Players[0] end
+	local p = getmetatable(player).__index	
+	p.OldSetStartingPlot	= p.SetStartingPlot
+	p.OldGetStartingPlot	= p.GetStartingPlot
+	p.SetStartingPlot		= NewSetstartingPlot
+	p.GetStartingPlot		= NewGetstartingPlot
+	
+end
+
+function NewSetstartingPlot(self, plot)
+	if bHistoricalSpawnDates then
+		tempStartingPlots[self:GetID()] = {X = plot:GetX(), Y = plot:GetY()}		
+	else
+		self:OldSetStartingPlot(plot)
+	end
+end
+
+
+function NewGetstartingPlot(self, plot)
+	if tempStartingPlots[self:GetID()] then
+		return Map.GetPlot(tempStartingPlots[self:GetID()].X, tempStartingPlots[self:GetID()].Y)
+	end
+	return self:OldGetStartingPlot()
+end
+
 ------------------------------------------------------------------------------
 -- Override required to use limits on ice placement for imported maps
 function FeatureGenerator:AddIceAtPlot(plot, iX, iY)
@@ -4314,6 +4342,13 @@ function FeatureGenerator:AddFeatures(allow_mountains_on_coast)
 	print("Number of Marshes: ", self.iMarshCount);
 	print("Number of Oasis: ", self.iOasisCount);
 end
+
+
+------------------------------------------------------------------------------
+-- initialize
+------------------------------------------------------------------------------
+
+InitializePlayerFunctions()
 
 ------------------------------------------------------------------------------
 -- /end YnAMP
