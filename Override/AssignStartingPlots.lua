@@ -84,13 +84,12 @@ function AssignStartingPlots.Create(args)
 		__AddBonus							= AssignStartingPlots.__AddBonus,
 		__IsContinentalDivide				= AssignStartingPlots.__IsContinentalDivide,
 
-		iNumMajorCivs = 0,
-		iResourceEraModifier = 1,
+		iNumMajorCivs = 0,	
+		iResourceEraModifier = 1;
 		iNumMinorCivs = 0,			
 		iNumRegions		= 0,
 		iDefaultNumberMajor = 0,
 		iDefaultNumberMinor = 0,
-		iFirstFertility = 0,
 		uiMinMajorCivFertility = args.MIN_MAJOR_CIV_FERTILITY or 0,
 		uiMinMinorCivFertility = args.MIN_MINOR_CIV_FERTILITY or 0,
 		uiMinBarbarianFertility = args.MIN_BARBARIAN_FERTILITY or 0,
@@ -343,6 +342,7 @@ function AssignStartingPlots:__InitStartingData()
 			end
 		end
 	end
+
 end
 
 ------------------------------------------------------------------------------
@@ -638,7 +638,9 @@ function AssignStartingPlots:__GetValidAdjacent(plot, minor)
 		balancedStart = 1;
 	end
 
-	if(impassable >= 2 + minor - balancedStart or (self.LandMap == true and impassable >= 2 + minor)) then
+	if((impassable >= 2 + minor - balancedStart or (self.landMap == true and impassable >= 2 + minor)) and self.waterMap == false) then
+		return false;
+	elseif(self.waterMap == true and impassable >= 2 + minor * 2 - balancedStart) then
 		return false;
 	elseif(water + impassable  >= 4 + minor - balancedStart and self.waterMap == false) then
 		return false;
@@ -671,7 +673,7 @@ function AssignStartingPlots:__WeightedFertility(plot)
 
 	local gridWidth, gridHeight = Map.GetGridSize();
 	local gridHeightMinus1 = gridHeight - 1;
- 
+
 	for row in GameInfo.Resources() do
 		eResourceType[iResourcesInDB] = row.Index;
 		eResourceClassType[iResourcesInDB] = row.ResourceClassType;
@@ -716,10 +718,10 @@ function AssignStartingPlots:__WeightedFertility(plot)
 					if(iFertility > 5 and otherPlot:IsImpassable() == true) then
 						iFertility = iFertility - 5;
 					end
-					
+
 					-- Lower the Fertility if the plot has Features
 					if(featureType ~= g_FEATURE_NONE) then
-						iFertility = iFertility - 2;
+						iFertility = iFertility - 2
 					end	
 
 					-- If there is a strategic in the given era range
@@ -1032,7 +1034,7 @@ function AssignStartingPlots:__AddFood(plot)
 		if (adjacentPlot ~= nil) then
 			aShuffledBonus =  GetShuffledCopyOfTable(aBonus);
 			for i, bonus in ipairs(aShuffledBonus) do
-				if(YnAMP_CanHaveResource(adjacentPlot, bonus)) then
+				if(ResourceBuilder.CanHaveResource(adjacentPlot, bonus)) then
 					--print("X: ", adjacentPlot:GetX(), " Y: ", adjacentPlot:GetY(), " Resource #: ", bonus);
 					ResourceBuilder.SetResourceType(adjacentPlot, bonus, 1);
 					return;
@@ -1080,7 +1082,7 @@ function AssignStartingPlots:__AddProduction(plot)
 		if (adjacentPlot ~= nil) then
 			aShuffledBonus =  GetShuffledCopyOfTable(aBonus);
 			for i, bonus in ipairs(aShuffledBonus) do
-				if(YnAMP_CanHaveResource(adjacentPlot, bonus)) then
+				if(ResourceBuilder.CanHaveResource(adjacentPlot, bonus)) then
 					--print("X: ", adjacentPlot:GetX(), " Y: ", adjacentPlot:GetY(), " Resource #: ", bonus);
 					ResourceBuilder.SetResourceType(adjacentPlot, bonus, 1);
 					return;
@@ -1938,18 +1940,22 @@ end
 ------------------------------------------------------------------------------
 function AssignStartingPlots:__PreFertilitySort(sortedPlots)
 	--Only used for balanced start
-	if(#self.majorStartPlots == 1) then
-		self.iFirstFertility = self:__WeightedFertility(self.majorStartPlots[1]:GetIndex())
+	local iFirstFertility = sortedPlots[1].Fertility;
+	if(iFirstFertility < 0) then
+		iFirstFertility = 0;
 	end
 
 	local score = {};
 
 	for i, plot in ipairs(sortedPlots) do
 		local value = plot.Fertility;
-		if(#self.majorStartPlots > 1) then
-			if(self.iFirstFertility - plot.Fertility < 0) then
-				value = self.iFirstFertility - plot.Fertility;
-			end
+
+		if(value < 0) then
+			value = 0
+		end
+
+		if(iFirstFertility - value < 0) then
+			value = iFirstFertility - value;
 		end
 
 		table.insert(score, value);
@@ -2129,7 +2135,7 @@ function AssignStartingPlots:__AddStrategic(eResourceType, plot)
 		for dy = -3,3 do
 			local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, 3);
 			if(otherPlot) then
-				if(YnAMP_CanHaveResource(otherPlot, eResourceType) and otherPlot:GetIndex() ~= plot:GetIndex()) then
+				if(ResourceBuilder.CanHaveResource(otherPlot, eResourceType) and otherPlot:GetIndex() ~= plot:GetIndex()) then
 					ResourceBuilder.SetResourceType(otherPlot, eResourceType, 1);
 					return;
 				end
@@ -2180,7 +2186,7 @@ function AssignStartingPlots:__AddLuxury(plot)
 			if(otherPlot) then
 				eAddLux =  GetShuffledCopyOfTable(eAddLux);
 				for i, resource in ipairs(eAddLux) do
-					if(YnAMP_CanHaveResource(otherPlot, resource) and otherPlot:GetIndex() ~= plot:GetIndex()) then
+					if(ResourceBuilder.CanHaveResource(otherPlot, resource) and otherPlot:GetIndex() ~= plot:GetIndex()) then
 						ResourceBuilder.SetResourceType(otherPlot, resource, 1);
 						--print("Yeah Lux");
 						return true;
@@ -2225,7 +2231,7 @@ function AssignStartingPlots:__AddBonus(plot)
 			for dy = -2, 2 do
 				local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, 2);
 				if(otherPlot) then
-					if(YnAMP_CanHaveResource(otherPlot, resource) and otherPlot:GetIndex() ~= plot:GetIndex()) then
+					if(ResourceBuilder.CanHaveResource(otherPlot, resource) and otherPlot:GetIndex() ~= plot:GetIndex()) then
 						ResourceBuilder.SetResourceType(otherPlot, resource, 1);
 						--print("Yeah Bonus");
 						return true;
