@@ -3,7 +3,7 @@
 --  Gedemon (2016)
 ------------------------------------------------------------------------------
 
-local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION because Value is Text ?
+local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value
 print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016) by Gedemon")
 print ("loading YnAMP_InGame.lua")
 
@@ -68,7 +68,7 @@ function ExportMap()
 	end
 end
 
-----------------------------------------------
+----------------------------------------------------------------------------------------
 function ResourcesStatistics(g_iW, g_iH)
 	print("------------------------------------")
 	print("-- Resources Placement Statistics --")
@@ -119,5 +119,5 @@ function Round(num)
     end
 end
 
-------------------------------------------------------
+----------------------------------------------------------------------------------------
 
