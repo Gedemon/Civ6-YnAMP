@@ -283,5 +283,9 @@
       <Text>Use Alternate TSL if required and available</Text>
     </Replace>
 	
+	<Replace Tag="LOC_MAP_HISTORICAL_SPAWN_NAME" Language="en_US">
+      <Text>Use Historical Spawn Dates</Text>
+    </Replace>
+	
   </LocalizedText>
 </GameData>
