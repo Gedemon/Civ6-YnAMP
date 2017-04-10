@@ -70,6 +70,9 @@ function AssignStartingPlots.Create(args)
 		__StartBiasFeatures					= AssignStartingPlots.__StartBiasFeatures,
 		__StartBiasTerrains					= AssignStartingPlots.__StartBiasTerrains,
 		__StartBiasRivers					= AssignStartingPlots.__StartBiasRivers,
+		-- Maritime CS <<<<<
+		__StartBiasCoast					= AssignStartingPlots.__StartBiasCoast,
+		-- Maritime CS >>>>>
 		__StartBiasPlotRemoval				= AssignStartingPlots.__StartBiasPlotRemoval,
 		__SortByArray						= AssignStartingPlots.__SortByArray,
 		__ArraySize							= AssignStartingPlots.__ArraySize,				
@@ -84,8 +87,8 @@ function AssignStartingPlots.Create(args)
 		__AddBonus							= AssignStartingPlots.__AddBonus,
 		__IsContinentalDivide				= AssignStartingPlots.__IsContinentalDivide,
 
-		iNumMajorCivs = 0,	
-		iResourceEraModifier = 1;
+		iNumMajorCivs = 0,
+		iResourceEraModifier = 1,
 		iNumMinorCivs = 0,			
 		iNumRegions		= 0,
 		iDefaultNumberMajor = 0,
@@ -328,8 +331,12 @@ function AssignStartingPlots:__InitStartingData()
 
 	for i = 1, self.iNumMinorCivs do
 		local player = Players[self.minorList[i]]
-		
-		if(player == nil) then
+		-- Maritime CS <<<<<
+		local leader	:string = PlayerConfigurations[self.minorList[i]]:GetLeaderTypeName();
+		local civilizationType = PlayerConfigurations[self.minorList[i]]:GetCivilizationTypeName()
+		local leaderInfo:table	= GameInfo.Leaders[leader];
+		if(player == nil or leader == "LEADER_MINOR_CIV_MARITIME" or leaderInfo.InheritFrom == "LEADER_MINOR_CIV_MARITIME") then
+		-- Maritime CS >>>>>
 			--print("THIS PLAYER FAILED");
 		else
 			local hasPlot = false;
@@ -1178,6 +1185,16 @@ function AssignStartingPlots:__InitStartBias(minor)
 					end
 				end
 
+				-- Maritime CS <<<<<
+				for row in GameInfo.StartBiasCoast() do
+					if(row.CivilizationType == civilizationType) then
+						if( row.Tier == i) then
+							table.insert(players, playerIndex);
+						end
+					end
+				end
+				-- Maritime CS >>>>>
+				
 				for row in GameInfo.StartBiasRivers() do
 					if(row.CivilizationType == civilizationType) then
 						if( row.Tier == i) then
@@ -1213,6 +1230,16 @@ function AssignStartingPlots:__InitStartBias(minor)
 						end
 					end
 				end
+
+				-- Maritime CS <<<<<
+				for row in GameInfo.StartBiasCoast() do
+					if(row.CivilizationType == civilizationType) then
+						if( row.Tier == i) then
+							table.insert(players, playerIndex);
+						end
+					end
+				end
+				-- Maritime CS >>>>>
 
 				for row in GameInfo.StartBiasRivers() do
 					if(row.CivilizationType == civilizationType) then
@@ -1269,6 +1296,21 @@ function AssignStartingPlots:__InitStartBias(minor)
 			if(terrain == true) then
 				self:__StartBiasTerrains(playerIndex, i, minor);
 			end
+
+			-- Maritime CS <<<<<
+			--Check if this player has a true coast bias then it calls that method
+			local terrainCoast = false;
+			for row in GameInfo.StartBiasCoast() do
+				if(row.CivilizationType == civilizationType) then
+					if( row.Tier == i) then
+						terrainCoast = true;
+					end
+				end
+			end
+			if(terrainCoast == true) then
+				self:__StartBiasCoast(playerIndex, i, minor);
+			end
+			-- Maritime CS >>>>>
 
 			--Check if this player has a river bias then it calls that method
 			local river = false;
@@ -1724,6 +1766,159 @@ function AssignStartingPlots:__StartBiasTerrains(playerIndex, tier, minor)
 
 	end
 end
+
+------------------------------------------------------------------------------
+-- Maritime CS  <<<<<
+function AssignStartingPlots:__StartBiasCoast(playerIndex, tier, minor)
+	local numTerrain = 0;
+	--print("Starting startbiascoast");
+	local playerId = minor and self.minorList[playerIndex - self.iNumMajorCivs] or self.majorList[playerIndex];
+	local civilizationType = PlayerConfigurations[playerId]:GetCivilizationTypeName()
+	local playerStart = self.playerStarts[playerIndex];
+
+	--get a table of all plots on the map
+	--cycle through the table and if the plot is water/impassable/snow do not add it to validplots
+	allMapPlots = {};
+	local gridWidth, gridHeight = Map.GetGridSize();
+	for sx = 0, gridWidth, 1 do
+		for sy = 0, gridHeight, 1 do
+			local tempPlot = Map.GetPlot(sx, sy);
+			table.insert(allMapPlots, tempPlot);
+		end
+	end
+	--print("-----# of plots added to AllMapPlots", #allMapPlots);
+	
+	--parse the plots for valid starting plots
+	validplots = {};
+	local count = 1;
+	local bValid = false;
+	while (count < #allMapPlots) do
+		local bValid = false;
+		bValid = true;
+		local NWMinor = 2;
+		--print(count);
+		local pTempPlot = allMapPlots[count];
+		count = count + 1;
+		--print("Fertility: ", sortedPlots[count].Fertility)
+
+		-- Checks to see if the plot is impassable
+		if(pTempPlot:IsImpassable() == true) then
+			bValid = false;
+		end
+		
+		local isNextToSaltWater = false;
+		
+		-- Checks to see if the plot isn't AdjacentToSaltWater
+		if not pTempPlot:IsWater() then -- This plot is land, process it.
+			for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+				local testPlot = Map.GetAdjacentPlot(pTempPlot:GetX(),pTempPlot:GetY(), direction);
+				if testPlot ~= nil then
+					if testPlot:IsWater() then -- Adjacent plot is water! Check if ocean or lake.
+						if testPlot:IsLake() == false then -- Adjacent plot is salt water!
+							isNextToSaltWater = true
+						end
+					end
+				end
+			end
+		end
+		
+		if(isNextToSaltWater ~= true) then
+			bValid = false;
+		end
+		
+		-- Checks to see if the plot is water
+		if(pTempPlot:IsWater() == true) then
+			bValid = false;
+		end
+
+		-- Checks to see if there are resources
+		if(pTempPlot:GetResourceCount() > 0) then
+			local bValidResource = self:__BonusResource(pTempPlot);
+			if(bValidResource == false) then
+				bValid = false;
+			end
+		end
+
+		local bValidAdjacentCheck = self:__GetValidAdjacent(pTempPlot, 2); 
+		if(bValidAdjacentCheck == false) then
+			bValid = false;
+		end
+
+		-- Checks to see if there are natural wonders in the given distance
+		local bNaturalWonderCheck = self:__NaturalWonderBuffer(pTempPlot, true); 
+		if(bNaturalWonderCheck == false) then
+			bValid = false;
+		end
+
+		-- Checks to see if there are any minor civs in the given distance
+		local bMinorCivCheck = self:__MinorCivBuffer(pTempPlot, 1); 
+		if(bMinorCivCheck == false) then
+			bValid = false;
+		end
+
+		-- Checks to see if there is an Oasis
+		local featureType = pTempPlot:GetFeatureType();
+		if(featureType == g_FEATURE_OASIS) then
+			bValid = false;
+		end
+		
+		-- Checks to see if tundra
+		local terrainType = pTempPlot:GetTerrainType();
+		if(terrainType == g_TERRAIN_TYPE_TUNDRA) then
+			bValid = false;
+		end
+		-- Checks to see if tundra hills
+		local terrainType = pTempPlot:GetTerrainType();
+		if(terrainType == g_TERRAIN_TYPE_TUNDRA_HILLS) then
+			bValid = false;
+		end
+		-- Checks to see if snow
+		local terrainType = pTempPlot:GetTerrainType();
+		if(terrainType == g_TERRAIN_TYPE_SNOW) then
+			bValid = false;
+		end
+		-- Checks to see if snow hills
+		local terrainType = pTempPlot:GetTerrainType();
+		if(terrainType == g_TERRAIN_TYPE_SNOW_HILLS) then
+			bValid = false;
+		end
+
+		-- If the plots passes all the checks then the plot equals the temp plot
+		if(bValid == true) then
+			self:__TryToRemoveBonusResource(pTempPlot);
+			table.insert(validplots, pTempPlot);
+		end
+	end
+	--print("Found valid plots", #validplots);
+
+	numTerrain = #validplots;
+	if(numTerrain == 0) then
+	--print("-----There are no possible fertile Maritime starts for", civilizationType, ". Generating a new table of startplots for this civ based on coastal fertility.");
+	else
+	--print("-----Found", numTerrain, "possible Maritime starts for", civilizationType, "------");
+	end
+		
+		local player = Players[playerId];
+		validplots = GetShuffledCopyOfTable(validplots);
+		
+		for k, validplot in pairs(validplots) do
+			table.insert(playerStart, validplot);
+		end
+		if(numTerrain > 0) then
+			local f = validplots[1];
+			--print("Attempting to assign a CUSTOM COASTAL starting plot to", player, civilizationType, " ");
+			player:SetStartingPlot(f);
+			--print(civilizationType, "X:", f:GetX(), "Y:", f:GetY());
+		for k, v in pairs(playerStart) do
+			if(f:GetIndex() == v:GetIndex()) then
+				playerStart[k] = f;
+			else
+				playerStart[k] = nil;
+			end
+		end
+		end
+end
+-- Maritime CS >>>>>
 
 ------------------------------------------------------------------------------
 function AssignStartingPlots:__StartBiasRivers(playerIndex, tier, minor)
