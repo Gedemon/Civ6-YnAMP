@@ -2760,7 +2760,7 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	print("Continents naming = "..tostring(continentsPlacement))	
 	local bImportContinents = continentsPlacement == "PLACEMENT_IMPORT"
 
-	-- We'll do Rivers after Natural Wonders placement, as they can create incompatibilities and Resources come after Rivers (in case Rivers are generated instead of imported)
+	-- We'll do importation of Rivers after Natural Wonders placement, as they can create incompatibilities and Resources come after Rivers (in case Rivers are generated instead of imported)
 	-- We do Features now to prevent overriding the NW placement
 	-- First pass: create terrains and place cliffs... (	bDoTerrains, 	bImportRivers, 	bImportFeatures, 	bImportResources, 	bDoCliffs, 	bImportContinents)
 	if bIsCiv5Map then
@@ -3194,7 +3194,6 @@ function PlaceStrategicResources(eResourceType)
 	--ResourceBuilder.SetResourceType(pPlot, eResourceType, 1)
 end
 
-
 function IsResourceExclusion(pPlot, eResourceType)
 
 	if not bResourceExclusion then
@@ -3225,7 +3224,6 @@ function IsResourceExclusion(pPlot, eResourceType)
 	
 	return false
 end
-
 
 -- Check for Resource placement rules
 function YnAMP_CanHaveResource(pPlot, eResourceType, bOverrideExclusion)
@@ -4414,7 +4412,6 @@ function NewSetstartingPlot(self, plot)
 		self:OldSetStartingPlot(plot)
 	end
 end
-
 
 function NewGetstartingPlot(self, plot)
 	if tempStartingPlots[self:GetID()] then
