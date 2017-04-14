@@ -50,6 +50,14 @@ CREATE TABLE IF NOT EXISTS ExtraPlacement
 		ResourceType TEXT,
 		Quantity INT default 0);
 		
+-- Natural Wonder Positions
+CREATE TABLE IF NOT EXISTS NaturalWonderPosition
+	(	MapName TEXT,
+		FeatureType TEXT,
+		Template TEXT,
+		X INT default 0,
+		Y INT default 0);
+		
 -- Start Positions
 CREATE TABLE IF NOT EXISTS StartPosition
 	(	MapName TEXT,
