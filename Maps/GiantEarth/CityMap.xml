@@ -3456,20 +3456,20 @@
 		<Replace MapName="GiantEarth" X="145" Y="48" CityLocaleName="LOC_CITY_NAME_CIUDAD_DEL_CARMEN" Area="0" />
 		
 		<Replace MapName="GiantEarth" X="136" Y="49" CityLocaleName="LOC_CITY_NAME_MEX_GUADALAJARA" Area="1" />
-		<Replace MapName="GiantEarth" X="138" Y="49" CityLocaleName="LOC_CITY_NAME_TENOCHTITLAN" Area="1" />
+		<Replace MapName="GiantEarth" X="138" Y="49" CityLocaleName="LOC_CITY_NAME_MEXICO_CITY" Area="1" />
 		<Replace MapName="GiantEarth" X="139" Y="49" CityLocaleName="LOC_CITY_NAME_TEXCOCO" Area="0" />
 		<Replace MapName="GiantEarth" X="145" Y="49" CityLocaleName="LOC_CITY_NAME_MERIDA" Area="0" />
-		<Replace MapName="GiantEarth" X="146" Y="49" CityLocaleName="LOC_CITY_NAME_CHICHEN_ITZA" Area="1" />
+		<Replace MapName="GiantEarth" X="146" Y="49" CityLocaleName="LOC_CITY_NAME_CANCUN" Area="1" />
 		
 		<Replace MapName="GiantEarth" X="146" Y="50" CityLocaleName="LOC_CITY_NAME_MERIDA" Area="0" />
 		
-		<Replace MapName="GiantEarth" X="136" Y="51" CityLocaleName="LOC_CITY_NAME_XILOTEPEC" Area="0" />
-		<Replace MapName="GiantEarth" X="137" Y="51" CityLocaleName="LOC_CITY_NAME_METZTITLAN" Area="0" />
+		<Replace MapName="GiantEarth" X="136" Y="51" CityLocaleName="LOC_CITY_NAME_MEX_LEON" Area="0" />
+		<Replace MapName="GiantEarth" X="137" Y="51" CityLocaleName="LOC_CITY_NAME_SAN_LUIS_POTOSI" Area="0" />
 		<Replace MapName="GiantEarth" X="140" Y="51" CityLocaleName="LOC_CITY_NAME_CIUDAD_VICTORIA" Area="1" />
 		
 		<Replace MapName="GiantEarth" X="133" Y="52" CityLocaleName="LOC_CITY_NAME_LA_PAZ" Area="0" />
-		<Replace MapName="GiantEarth" X="137" Y="52" CityLocaleName="LOC_CITY_NAME_XILOTEPEC" Area="0" />
-		<Replace MapName="GiantEarth" X="138" Y="52" CityLocaleName="LOC_CITY_NAME_METZTITLAN" Area="0" />
+		<Replace MapName="GiantEarth" X="137" Y="52" CityLocaleName="LOC_CITY_NAME_MEX_LEON" Area="0" />
+		<Replace MapName="GiantEarth" X="138" Y="52" CityLocaleName="LOC_CITY_NAME_SAN_LUIS_POTOSI" Area="0" />
 		
 		<Replace MapName="GiantEarth" X="135" Y="53" CityLocaleName="LOC_CITY_NAME_MAZATLAN" Area="0" />
 		<Replace MapName="GiantEarth" X="136" Y="53" CityLocaleName="LOC_CITY_NAME_MAZATLAN" Area="0" />

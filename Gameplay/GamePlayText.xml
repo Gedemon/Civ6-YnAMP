@@ -6874,15 +6874,15 @@
 		<Replace Tag="LOC_CITY_NAME_ACAPULCO_CHINA" Text="Akapu'erke" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ACAPULCO_JAPAN" Text="Akapuruko" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ACAPULCO_ARABIA" Text="Akabuliku" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CHICHEN_ITZA" Text="Cancún" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CHICHEN_ITZA_CHINA" Text="Kankun" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CHICHEN_ITZA_JAPAN" Text="Kankun" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CHICHEN_ITZA_RUSSIA" Text="Kankun" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CHICHEN_ITZA_ARABIA" Text="Kanikun" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CHICHEN_ITZA_AZTEC" Text="Chichén Itzá" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CHICHEN_ITZA_TIKAL" Text="Chichén Itzá" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CHICHEN_ITZA_LA_VENTA" Text="Chichén Itzá" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_CHICHEN_ITZA_PALENQUE" Text="Chichén Itzá" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CANCUN" Text="Cancún" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CANCUN_CHINA" Text="Kankun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CANCUN_JAPAN" Text="Kankun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CANCUN_RUSSIA" Text="Kankun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CANCUN_ARABIA" Text="Kanikun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CANCUN_AZTEC" Text="Chichén Itzá" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CANCUN_TIKAL" Text="Chichén Itzá" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CANCUN_LA_VENTA" Text="Chichén Itzá" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CANCUN_PALENQUE" Text="Chichén Itzá" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHIHUAHUA" Text="Chihuahua" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHIHUAHUA_CHINA" Text="Qiwawa" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHIHUAHUA_JAPAN" Text="Chiwawa" Language="en_US" />
@@ -6963,14 +6963,14 @@
 		<Replace Tag="LOC_CITY_NAME_MERIDA_TIKAL" Text="Mayapan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MERIDA_LA_VENTA" Text="Mayapan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MERIDA_PALENQUE" Text="Mayapan" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_METZTITLAN" Text="San Luis Potosi" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_METZTITLAN_CHINA" Text="Shengluyisi Botuoxi" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_METZTITLAN_JAPAN" Text="Sanruisupotoshi" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_METZTITLAN_ARABIA" Text="San Luis Butusi" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_METZTITLAN_AZTEC" Text="Metztitlán" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_METZTITLAN_TIKAL" Text="Metztitlán" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_METZTITLAN_LA_VENTA" Text="Metztitlán" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_METZTITLAN_PALENQUE" Text="Metztitlán" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAN_LUIS_POTOSI" Text="San Luis Potosi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAN_LUIS_POTOSI_CHINA" Text="Shengluyisi Botuoxi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAN_LUIS_POTOSI_JAPAN" Text="Sanruisupotoshi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAN_LUIS_POTOSI_ARABIA" Text="San Luis Butusi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAN_LUIS_POTOSI_AZTEC" Text="Metztitlán" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAN_LUIS_POTOSI_TIKAL" Text="Metztitlán" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAN_LUIS_POTOSI_LA_VENTA" Text="Metztitlán" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAN_LUIS_POTOSI_PALENQUE" Text="Metztitlán" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MEXICALI" Text="Mexicali" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MEXICALI_RUSSIA" Text="Mekhikali" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MEXICALI_JAPAN" Text="Mehikari" Language="en_US" />
@@ -7013,24 +7013,26 @@
 		<Replace Tag="LOC_CITY_NAME_TEHUACAN_TIKAL" Text="Teotitlan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TEHUACAN_LA_VENTA" Text="Teotitlan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TEHUACAN_PALENQUE" Text="Teotitlan" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN" Text="Mexico City" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_CHINA" Text="Moxige Cheng" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_JAPAN" Text="Mekishikoshiti" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_RUSSIA" Text="Meksiko" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_ARABIA" Text="Mksykw Siti" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_GREECE" Text="Póli tou Mexikoú" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_GERMANY" Text="Mexiko Stadt" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_FRANCE" Text="Ville du Mexique" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_SPAIN" Text="Ciudad de México" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_BRAZIL" Text="Cidade do México" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_PORTUGAL" Text="Cidade do México" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_ROME" Text="Mexicopolis" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_AZTEC" Text="Tenochtitlan" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_TIKAL" Text="Tenochtitlan" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_LA_VENTA" Text="Tenochtitlan" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_PALENQUE" Text="Tenochtitlan" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TENOCHTITLAN_POLAND" Text="Meksyk" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_TEXCOCO" Text="Mexico City" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY" Text="Mexico City" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_CHINA" Text="Moxige Cheng" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_JAPAN" Text="Mekishikoshiti" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_RUSSIA" Text="Meksiko" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_ARABIA" Text="Mksykw Siti" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_GREECE" Text="Póli tou Mexikoú" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_GERMANY" Text="Mexiko Stadt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_FRANCE" Text="Ville du Mexique" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_SPAIN" Text="Ciudad de México" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_BRAZIL" Text="Cidade do México" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_PORTUGAL" Text="Cidade do México" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_ROME" Text="Mexicopolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_AZTEC" Text="Tenochtitlan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_TIKAL" Text="Tenochtitlan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_LA_VENTA" Text="Tenochtitlan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_PALENQUE" Text="Tenochtitlan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_POLAND" Text="Meksyk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TEXCOCO" Text="Texcoco" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TEXCOCO_AMERICA" Text="Mexico City" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TEXCOCO_ENGLAND" Text="Mexico City" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TEXCOCO_POLAND" Text="Meksyk" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TEXCOCO_CHINA" Text="Moxige Cheng" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TEXCOCO_JAPAN" Text="Mekishikoshiti" Language="en_US" />
@@ -7067,15 +7069,15 @@
 		<Replace Tag="LOC_CITY_NAME_VILLAHERMOSA_LA_VENTA" Text="La Venta" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_VILLAHERMOSA_TIKAL" Text="Xicallanco" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_VILLAHERMOSA_LA_VENTA" Text="Xicallanco" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_XILOTEPEC" Text="Leon" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_XILOTEPEC_CHINA" Text="Laiang" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_XILOTEPEC_JAPAN" Text="Reon" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_XILOTEPEC_ARABIA" Text="Liun" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_XILOTEPEC_SPAIN" Text="León" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_XILOTEPEC_AZTEC" Text="Xilotepec" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_XILOTEPEC_TIKAL" Text="Xilotepec" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_XILOTEPEC_LA_VENTA" Text="Xilotepec" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_XILOTEPEC_PALENQUE" Text="Xilotepec" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEX_LEON" Text="Leon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEX_LEON_CHINA" Text="Laiang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEX_LEON_JAPAN" Text="Reon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEX_LEON_ARABIA" Text="Liun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEX_LEON_SPAIN" Text="León" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEX_LEON_AZTEC" Text="Xilotepec" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEX_LEON_TIKAL" Text="Xilotepec" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEX_LEON_LA_VENTA" Text="Xilotepec" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEX_LEON_PALENQUE" Text="Xilotepec" Language="en_US" />
 		
 		<!-- CENTRAL AMERICA -->
 		<Replace Tag="LOC_CITY_NAME_BELIZE_CITY" Text="Belize City" Language="en_US" />

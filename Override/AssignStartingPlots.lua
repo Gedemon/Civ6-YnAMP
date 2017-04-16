@@ -33,7 +33,15 @@ local iIceNorth 			= MapConfiguration.GetValue("IceNorth")
 local iIceSouth 			= MapConfiguration.GetValue("IceSouth")
 local bHistoricalSpawnDates	= MapConfiguration.GetValue("HistoricalSpawnDates") == 1
 
-local bNoCityStates = GameConfiguration.GetValue("NoCityStates");
+local bNoCityStates = GameConfiguration.GetValue("NoCityStates")
+
+-- Create list of Civilizations and leaders in game
+for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+	local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+	local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
+	if CivilizationTypeName then isInGame[CivilizationTypeName] = true end
+	if LeaderTypeName 		then isInGame[LeaderTypeName] 		= true end
+end
 
 print ("ynAMP Options: Culturally Linked = " .. tostring(bCulturallyLinked) ..", TSL = " .. tostring(bTSL) ..", Exclusion Zones = " .. tostring(bResourceExclusion) ..", Requested Resources = " .. tostring(bRequestedResources)..", Real Deposits = " .. tostring(bRealDeposits)) 
 
@@ -2568,14 +2576,6 @@ function buidTSL()
 	local tAlternateTSL 	= {}
 	local tHasSpecificTSL 	= {}
 		
-	-- Create list of Civilizations and leaders in game
-	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
-		local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
-		local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
-		if CivilizationTypeName then isInGame[CivilizationTypeName] = true end
-		if LeaderTypeName 		then isInGame[LeaderTypeName] 		= true end
-	end
-	
 	-- Create list of leaders TSL
 	for row in GameInfo.StartPosition() do
 		if row.MapName == mapName  then
@@ -2922,167 +2922,218 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 end
 
 function PlaceRealNaturalWonders(NaturalWonders)
-	print("YnAMP Natural Wonders placement")
+	print("YnAMP Natural Wonders placement...")
+
+	-- Adding custom NW to the table
+	local DirectPlacementPlots = {}
+	for NaturalWonderRow in GameInfo.NaturalWonderPosition() do
+		if NaturalWonderRow.MapName == mapName and GameInfo.Features[NaturalWonderRow.FeatureType] then
+			local eFeatureType = GameInfo.Features[NaturalWonderRow.FeatureType].Index
+			if NaturalWonders[eFeatureType] then
+				-- Seems to be a multiplots feature...
+				if not DirectPlacementPlots[eFeatureType] then
+					-- add original plot entry to the multiplots table
+					DirectPlacementPlots[eFeatureType] = {}
+					local plot = Map.GetPlot(NaturalWonders[eFeatureType].X, NaturalWonders[eFeatureType].Y)
+					if plot then
+						if NaturalWonderRow.TerrainType and GameInfo.Terrains[NaturalWonderRow.TerrainType] then
+							TerrainBuilder.SetTerrainType(plot, GameInfo.Terrains[NaturalWonderRow.TerrainType].Index)
+						end
+						TerrainBuilder.SetFeatureType(plot, -1)
+						ResourceBuilder.SetResourceType(plot, -1)
+						table.insert(DirectPlacementPlots[eFeatureType], plot:GetIndex())
+					end
+				end
+				-- add new plot entry to the multiplots table
+				local plot = Map.GetPlot(NaturalWonderRow.X, NaturalWonderRow.Y)
+				if plot then				
+					if NaturalWonderRow.TerrainType and GameInfo.Terrains[NaturalWonderRow.TerrainType] then
+						TerrainBuilder.SetTerrainType(plot, GameInfo.Terrains[NaturalWonderRow.TerrainType].Index)
+					end
+					TerrainBuilder.SetFeatureType(plot, -1)
+					ResourceBuilder.SetResourceType(plot, -1)
+					table.insert(DirectPlacementPlots[eFeatureType], plot:GetIndex())
+				end
+			else
+				-- create original entry in the base table
+				NaturalWonders[GameInfo.Features[NaturalWonderRow.FeatureType].Index] = { X = NaturalWonderRow.X, Y = NaturalWonderRow.Y}
+				print("- Loaded " .. tostring(NaturalWonderRow.FeatureType) .." position from the DB")
+			end
+		end
+	end
+	
+	-- Place all NW from the table
 	for eFeatureType, position in pairs(NaturalWonders) do
-		local featureTypeName = GameInfo.Features[eFeatureType].FeatureType
-		local x, y = position.X, position.Y
-		print ("- Trying to place " .. tostring(featureTypeName) .. " at (" .. tostring(x) .. ", " .. tostring(y) .. ")");		
-		local pPlot = Map.GetPlot(x, y);
-		local plotsIndex = {}
-		local plotsList = {}
-		local bUseOnlyPlotListPlacement = false
-		
-		-- Preparing placement
-		if featureTypeName == "FEATURE_DEAD_SEA" then
-			print(" - Preparing position...")
-			-- 2 plots, flat desert surrounded by desert, 1st plot is SOUTHWEST 
-			-- preparing the 2 plot
-			local terrainType = g_TERRAIN_TYPE_DESERT
-			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST), Terrain = terrainType })
-		end		
-		
-		if featureTypeName == "FEATURE_PIOPIOTAHI" then
-			print(" - Preparing position...")
-			-- 3 plots, flat grass near coast, 1st plot is WEST
-			-- preparing the 3 plots
-			local terrainType = g_TERRAIN_TYPE_GRASS
-			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST), Terrain = terrainType })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
-		end
-		
-		if featureTypeName == "FEATURE_EVEREST" then
-			print(" - Preparing position...")
-			-- 3 plots, mountains, 1st plot is WEST
-			-- preparing the 3 plots
-			local terrainType = g_TERRAIN_TYPE_TUNDRA_MOUNTAIN
-			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHEAST), Terrain = terrainType })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
-		end
-		
-		if featureTypeName == "FEATURE_PANTANAL" then
-			print(" - Preparing position...")
-			-- 4 plots, flat grass/plains without features, 1st plot is SOUTH-WEST
-			-- preparing the 4 plots
-			local terrainType = g_TERRAIN_TYPE_PLAINS
-			local pPlot2 = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST) -- we need plot2 to get plot4
-			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
-			table.insert(plotsList, { Plot = pPlot2, Terrain = terrainType })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
-		end
-
-		if featureTypeName == "FEATURE_CLIFFS_DOVER" then
-			print(" - Preparing position...")
-			-- 2 plots, hills on coast, 1st plot is WEST 
-			-- preparing the 2 plots
-			local terrainType = g_TERRAIN_TYPE_GRASS_HILLS
-			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
-		end
-		
-		if featureTypeName == "FEATURE_YOSEMITE" or featureTypeName == "FEATURE_EYJAFJALLAJOKULL" then
-			print(" - Preparing position...")
-			-- 2 plots EAST-WEST, flat tundra/plains without features, 1st plot is WEST
-			-- preparing the 2 plots
-			local terrainType = g_TERRAIN_TYPE_PLAINS
-			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
-		end
-		
-		if featureTypeName == "FEATURE_TORRES_DEL_PAINE" then
-			print(" - Preparing position...")
-			-- 2 plots EAST-WEST without features, 1st plot is WEST
-			-- preparing the 2 plots
-			local terrainType = g_TERRAIN_TYPE_PLAINS
-			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
-		end		
-
-		if featureTypeName == "FEATURE_BARRIER_REEF" then
-			print(" - Preparing position...")
-			-- 2 plots, coast, 1st plot is SOUTHEAST 
-			-- preparing the 2 plots
-			local terrainType = g_TERRAIN_TYPE_COAST
-			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = terrainType })
-		end
-
-		if featureTypeName == "FEATURE_GALAPAGOS" then
-			print(" - Preparing position...")
-			-- 2 plots, coast, surrounded by coast, 1st plot is SOUTHWEST 
-			-- preparing the area
-			local terrainType = g_TERRAIN_TYPE_COAST
-			bUseOnlyPlotListPlacement = true
-			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = terrainType })
-		end
-
-		if featureTypeName == "FEATURE_GIANTS_CAUSEWAY" then
-			print(" - Preparing position...")
-			-- 2 plots, one on coastal land and one in water, 1st plot is land, SOUTHEAST
-			-- preparing the 2 plots
-			bUseOnlyPlotListPlacement = true
-			table.insert(plotsList, { Plot = pPlot, Terrain = g_TERRAIN_TYPE_PLAINS })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = g_TERRAIN_TYPE_COAST })
-		end
-		
-		if featureTypeName == "FEATURE_LYSEFJORDEN"then
-			print(" - Preparing position...")
-			-- 3 plots, flat grass near coast, 1st plot is EAST
-			-- preparing the 3 plots
-			local terrainType = g_TERRAIN_TYPE_GRASS
-			table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHWEST), Terrain = terrainType })
-			table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_WEST), Terrain = terrainType })
-		end
-		
-		for k, data in ipairs(plotsList) do 
-			TerrainBuilder.SetTerrainType(data.Plot, data.Terrain)
-			TerrainBuilder.SetFeatureType(data.Plot, -1)
-			ResourceBuilder.SetResourceType(data.Plot, -1)
-			table.insert(plotsIndex, data.Plot:GetIndex())
-		end		
-		
-		if not(TerrainBuilder.CanHaveFeature(pPlot, eFeatureType)) then			
-			print("  - WARNING : TerrainBuilder.CanHaveFeature says that we can't place that feature here...")
-		end		
-		
-		if not bUseOnlyPlotListPlacement then
-			print("  - Trying Direct Placement...")
-			TerrainBuilder.SetFeatureType(pPlot, eFeatureType);
-		end
-		local bPlaced = pPlot:IsNaturalWonder()
+		if GameInfo.Features[eFeatureType] then
+			local featureTypeName = GameInfo.Features[eFeatureType].FeatureType
+			local x, y = position.X, position.Y
+			print ("- Trying to place " .. tostring(featureTypeName) .. " at (" .. tostring(x) .. ", " .. tostring(y) .. ")");		
+			local pPlot = Map.GetPlot(x, y);
+			local plotsIndex = {}
+			local plotsList = {}
+			local bUseOnlyPlotListPlacement = false
 			
-		if (not bPlaced) and (#plotsIndex > 0) then
-			print("  - Direct Placement has failed, using plot list for placement")
-			TerrainBuilder.SetMultiPlotFeatureType(plotsIndex, eFeatureType)
-			bPlaced = pPlot:IsNaturalWonder()
-		end
-		
-		if bPlaced then
-			ResetTerrain(pPlot:GetIndex())
-			ResourceBuilder.SetResourceType(pPlot, -1)
+			-- Preparing placement
+			if featureTypeName == "FEATURE_DEAD_SEA" then
+				print(" - Preparing position...")
+				-- 2 plots, flat desert surrounded by desert, 1st plot is SOUTHWEST 
+				-- preparing the 2 plot
+				local terrainType = g_TERRAIN_TYPE_DESERT
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST), Terrain = terrainType })
+			end		
+			
+			if featureTypeName == "FEATURE_PIOPIOTAHI" then
+				print(" - Preparing position...")
+				-- 3 plots, flat grass near coast, 1st plot is WEST
+				-- preparing the 3 plots
+				local terrainType = g_TERRAIN_TYPE_GRASS
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST), Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+			end
+			
+			if featureTypeName == "FEATURE_EVEREST" then
+				print(" - Preparing position...")
+				-- 3 plots, mountains, 1st plot is WEST
+				-- preparing the 3 plots
+				local terrainType = g_TERRAIN_TYPE_TUNDRA_MOUNTAIN
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHEAST), Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+			end
+			
+			if featureTypeName == "FEATURE_PANTANAL" then
+				print(" - Preparing position...")
+				-- 4 plots, flat grass/plains without features, 1st plot is SOUTH-WEST
+				-- preparing the 4 plots
+				local terrainType = g_TERRAIN_TYPE_PLAINS
+				local pPlot2 = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST) -- we need plot2 to get plot4
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = pPlot2, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+			end
 
-			local plotX = pPlot:GetX()
-			local plotY = pPlot:GetY()
+			if featureTypeName == "FEATURE_CLIFFS_DOVER" then
+				print(" - Preparing position...")
+				-- 2 plots, hills on coast, 1st plot is WEST 
+				-- preparing the 2 plots
+				local terrainType = g_TERRAIN_TYPE_GRASS_HILLS
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+			end
+			
+			if featureTypeName == "FEATURE_YOSEMITE" or featureTypeName == "FEATURE_EYJAFJALLAJOKULL" then
+				print(" - Preparing position...")
+				-- 2 plots EAST-WEST, flat tundra/plains without features, 1st plot is WEST
+				-- preparing the 2 plots
+				local terrainType = g_TERRAIN_TYPE_PLAINS
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+			end
+			
+			if featureTypeName == "FEATURE_TORRES_DEL_PAINE" then
+				print(" - Preparing position...")
+				-- 2 plots EAST-WEST without features, 1st plot is WEST
+				-- preparing the 2 plots
+				local terrainType = g_TERRAIN_TYPE_PLAINS
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+			end		
 
-			for dx = -2, 2 do
-				for dy = -2,2 do
-					local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, 2)
-					if(otherPlot) then
-						if(otherPlot:IsNaturalWonder() == true) then
-							ResetTerrain(otherPlot:GetIndex())
-							ResourceBuilder.SetResourceType(otherPlot, -1)
+			if featureTypeName == "FEATURE_BARRIER_REEF" then
+				print(" - Preparing position...")
+				-- 2 plots, coast, 1st plot is SOUTHEAST 
+				-- preparing the 2 plots
+				local terrainType = g_TERRAIN_TYPE_COAST
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = terrainType })
+			end
+
+			if featureTypeName == "FEATURE_GALAPAGOS" then
+				print(" - Preparing position...")
+				-- 2 plots, coast, surrounded by coast, 1st plot is SOUTHWEST 
+				-- preparing the area
+				local terrainType = g_TERRAIN_TYPE_COAST
+				bUseOnlyPlotListPlacement = true
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = terrainType })
+			end
+
+			if featureTypeName == "FEATURE_GIANTS_CAUSEWAY" then
+				print(" - Preparing position...")
+				-- 2 plots, one on coastal land and one in water, 1st plot is land, SOUTHEAST
+				-- preparing the 2 plots
+				bUseOnlyPlotListPlacement = true
+				table.insert(plotsList, { Plot = pPlot, Terrain = g_TERRAIN_TYPE_PLAINS })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = g_TERRAIN_TYPE_COAST })
+			end
+			
+			if featureTypeName == "FEATURE_LYSEFJORDEN"then
+				print(" - Preparing position...")
+				-- 3 plots, flat grass near coast, 1st plot is EAST
+				-- preparing the 3 plots
+				local terrainType = g_TERRAIN_TYPE_GRASS
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHWEST), Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_WEST), Terrain = terrainType })
+			end
+			
+			-- Set terrain, remove features and resources for Civ6 NW
+			for k, data in ipairs(plotsList) do 
+				TerrainBuilder.SetTerrainType(data.Plot, data.Terrain)
+				TerrainBuilder.SetFeatureType(data.Plot, -1)
+				ResourceBuilder.SetResourceType(data.Plot, -1)
+				table.insert(plotsIndex, data.Plot:GetIndex())
+			end	
+
+			 -- now handling custom multiplots NW (terrain type and removing features/resources has already been handled for those)
+			if #plotsList == 0 and DirectPlacementPlots[eFeatureType] then -- plotsList is empty at this point for custom NW
+				plotsIndex = DirectPlacementPlots[eFeatureType]
+				bUseOnlyPlotListPlacement = true
+			end
+			
+			if not(TerrainBuilder.CanHaveFeature(pPlot, eFeatureType)) then			
+				print("  - WARNING : TerrainBuilder.CanHaveFeature says that we can't place that feature here...")
+			end		
+			
+			if not bUseOnlyPlotListPlacement then
+				print("  - Trying Direct Placement...")
+				TerrainBuilder.SetFeatureType(pPlot, eFeatureType);
+			end
+			local bPlaced = pPlot:IsNaturalWonder()
+				
+			if (not bPlaced) and (#plotsIndex > 0) then
+				print("  - Direct Placement has failed, using plot list for placement")
+				TerrainBuilder.SetMultiPlotFeatureType(plotsIndex, eFeatureType)
+				bPlaced = pPlot:IsNaturalWonder()
+			end
+			
+			if bPlaced then
+				ResetTerrain(pPlot:GetIndex())
+				ResourceBuilder.SetResourceType(pPlot, -1)
+
+				local plotX = pPlot:GetX()
+				local plotY = pPlot:GetY()
+
+				for dx = -2, 2 do
+					for dy = -2,2 do
+						local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, 2)
+						if(otherPlot) then
+							if(otherPlot:IsNaturalWonder() == true) then
+								ResetTerrain(otherPlot:GetIndex())
+								ResourceBuilder.SetResourceType(otherPlot, -1)
+							end
 						end
 					end
 				end
+				print ("  - Success : plot is now a natural wonder !")
+			else
+				print ("  - Failed to place natural wonder here...")		
 			end
-			print ("  - Success : plot is now a natural wonder !")
 		else
-			print ("  - Failed to place natural wonder here...")		
+			print ("  - WARNING : Can't find "..tostring().." in Features tables")
 		end
 	end
 end
@@ -3132,10 +3183,17 @@ function ExtraPlacement()
 				local value = MapConfiguration.GetValue(row.ConfigurationId)				
 				if value == true or value == row.ConfigurationValue then
 					bDoPlacement = true
-				end
+				end			
 			else
 				-- no specific rules, always place
 				bDoPlacement = true
+			end
+			
+			-- The placement may be conditionned by a specific Civilization in game
+			if row.Civilization then			
+				if not isInGame[row.Civilization] then
+					bDoPlacement = false
+				end
 			end
 			
 			if bDoPlacement then
@@ -3204,7 +3262,7 @@ function IsResourceExclusion(pPlot, eResourceType)
 	---[[
 	if isResourceExclusive[eResourceType] and not isResourceExclusiveXY[pPlot:GetX()][pPlot:GetY()][eResourceType] then
 		-- resource is exclusive to specific regions, and this plot is not in one of them
-		print("YnAMP_CanHaveResource(pPlot, eResourceType) isResourceExclusive", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
+		--print("YnAMP_CanHaveResource(pPlot, eResourceType) isResourceExclusive", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
 		return true
 	end
 	--]]
@@ -3218,7 +3276,7 @@ function IsResourceExclusion(pPlot, eResourceType)
 	
 	if isResourceExcludedXY[pPlot:GetX()][pPlot:GetY()][eResourceType] then
 		-- this plot is in a region from which this resource is excluded		
-		print("YnAMP_CanHaveResource(pPlot, eResourceType) isResourceExcludedXY", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
+		--print("YnAMP_CanHaveResource(pPlot, eResourceType) isResourceExcludedXY", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
 		return true
 	end
 	
@@ -3232,9 +3290,11 @@ function YnAMP_CanHaveResource(pPlot, eResourceType, bOverrideExclusion)
 		return ResourceBuilder.OldCanHaveResource(pPlot, eResourceType)
 	end
 	
+	--[[
 	if (not hasBuildExclusionList) and (eResourceType ~= -1) and bResourceExclusion then
 		print("Calling YnAMP_CanHaveResource(pPlot, eResourceType) before  hasBuildExclusionList at", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
 	end	
+	--]]
 	
 	if IsResourceExclusion(pPlot, eResourceType) then
 		return false

@@ -34,17 +34,18 @@ CREATE TABLE IF NOT EXISTS ResourceRegionDeposit
 		
 -- Resources : Requested for each Civilization
 CREATE TABLE IF NOT EXISTS CivilizationRequestedResource
-	(	Civilization TEXT,
+	(	Civilization TEXT NOT NULL,
 		Resource TEXT,
 		Quantity INT default 1);
 		
 -- Optional Extra Placement
 CREATE TABLE IF NOT EXISTS ExtraPlacement
-	(	MapName TEXT,
+	(	MapName TEXT NOT NULL,
 		X INT default 0,
 		Y INT default 0,
 		ConfigurationId TEXT,
 		ConfigurationValue TEXT,
+		Civilization TEXT,
 		TerrainType TEXT,
 		FeatureType TEXT,
 		ResourceType TEXT,
@@ -52,15 +53,15 @@ CREATE TABLE IF NOT EXISTS ExtraPlacement
 		
 -- Natural Wonder Positions
 CREATE TABLE IF NOT EXISTS NaturalWonderPosition
-	(	MapName TEXT,
-		FeatureType TEXT,
-		Template TEXT,
+	(	MapName TEXT NOT NULL,
+		FeatureType TEXT NOT NULL,
+		TerrainType TEXT,
 		X INT default 0,
 		Y INT default 0);
 		
 -- Start Positions
 CREATE TABLE IF NOT EXISTS StartPosition
-	(	MapName TEXT,
+	(	MapName TEXT NOT NULL,
 		Civilization TEXT,
 		Leader TEXT,
 		DisabledByCivilization TEXT,
@@ -71,8 +72,8 @@ CREATE TABLE IF NOT EXISTS StartPosition
 
 -- Regions positions
 CREATE TABLE IF NOT EXISTS RegionPosition
-	(	MapName TEXT,
-		Region TEXT,
+	(	MapName TEXT NOT NULL,
+		Region TEXT NOT NULL,
 		X INT default 0,
 		Y INT default 0,
 		Width INT default 0,
@@ -80,9 +81,9 @@ CREATE TABLE IF NOT EXISTS RegionPosition
 
 -- City Map		
 CREATE TABLE IF NOT EXISTS CityMap
-	(	MapName TEXT,
+	(	MapName TEXT NOT NULL,
 		Civilization TEXT,
-		CityLocaleName TEXT,
+		CityLocaleName TEXT NOT NULL,
 		X INT default 0,
 		Y INT default 0,
 		Area INT);
