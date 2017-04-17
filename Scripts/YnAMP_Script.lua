@@ -1,24 +1,36 @@
 ------------------------------------------------------------------------------
 --	FILE:	 YnAMP_Script.lua
---  Gedemon (2016)
---  Testing things here
+--  Gedemon (2016-2017)
 ------------------------------------------------------------------------------
 
-local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION because Value is Text ?
+local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value
 print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2017) by Gedemon")
 print ("loading YnAMP_Script.lua")
-
-include ("YnAMP_Utils.lua") -- can't do that ???
 
 local mapName = MapConfiguration.GetValue("MapName")
 print ("Map Name = " .. tostring(mapName))
 
-local bAutoCityNaming = MapConfiguration.GetValue("AutoCityNaming")
-local bCanUseCivSpecificName = not (MapConfiguration.GetValue("OnlyGenericCityNames"))
+local bAutoCityNaming 			= MapConfiguration.GetValue("AutoCityNaming")
+local bCanUseCivSpecificName 	= not (MapConfiguration.GetValue("OnlyGenericCityNames"))
+
+function Round(num)
+    under = math.floor(num)
+    upper = math.floor(num) + 1
+    underV = -(under - num)
+    upperV = upper - num
+    if (upperV > underV) then
+        return under
+    else
+        return upper
+    end
+end
 
 ----------------------------------------------------------------------------------------
--- City renaming
+-- City renaming <<<<<
 ----------------------------------------------------------------------------------------
+if bAutoCityNaming then
+----------------------------------------------------------------------------------------
+print("Activating Auto City Naming...")
 local nameUsed = {}
 local nameUsedOnContinent = {}
 local nameUsedByCivilization = {}
@@ -125,10 +137,7 @@ function ChangeCityName( ownerPlayerID, cityID)
 		end
 	end
 end
-if bAutoCityNaming then
-	Events.CityInitialized.Add( ChangeCityName )
-end
-
+Events.CityInitialized.Add( ChangeCityName )
 
 function ListCityWithoutLOC()
 	for row in GameInfo.CityMap() do
@@ -142,9 +151,7 @@ function ListCityWithoutLOC()
 		end
 	end
 end
-if bAutoCityNaming then
-	Events.LoadScreenClose.Add( ListCityWithoutLOC )
-end
+Events.LoadScreenClose.Add( ListCityWithoutLOC )
 
 function ListCityNotOnMap()
 	local hasMap = {}
@@ -165,27 +172,24 @@ function ListCityNotOnMap()
 		end
 	end
 end
-if bAutoCityNaming then
-	Events.LoadScreenClose.Add( ListCityNotOnMap )
-end
+Events.LoadScreenClose.Add( ListCityNotOnMap )
 
-function Round(num)
-    under = math.floor(num)
-    upper = math.floor(num) + 1
-    underV = -(under - num)
-    upperV = upper - num
-    if (upperV > underV) then
-        return under
-    else
-        return upper
-    end
+----------------------------------------------------------------------------------------
 end
+----------------------------------------------------------------------------------------
+-- City renaming >>>>>
+----------------------------------------------------------------------------------------
+-- EnforcingTSL <<<<<
+----------------------------------------------------------------------------------------
+if MapConfiguration.GetValue("ForceTSL") and MapConfiguration.GetValue("ForceTSL") ~= "FORCE_TSL_OFF" then
+----------------------------------------------------------------------------------------
 
-------------------------------------------------------
+print("Enforcing TSL...")
+
 function ForceTSL( iPrevPlayer )
 
 	if Game.GetCurrentGameTurn() > GameConfiguration.GetStartTurn() then -- only called on first turn
-		Events.PlayerTurnActivated.Remove( ForceTSL )
+		Events.PlayerTurnDeactivated.Remove( ForceTSL )
 		return
 	end
 	
@@ -220,7 +224,12 @@ function ForceTSL( iPrevPlayer )
 		end	
 	end
 end
-if MapConfiguration.GetValue("ForceTSL") and MapConfiguration.GetValue("ForceTSL") ~= "FORCE_TSL_OFF" then
-	Events.PlayerTurnDeactivated.Add( ForceTSL ) -- On TurnActivated, it seems the AI has already moved the initial settler
-	ForceTSL( -1 ) -- test ForceTSL on player 0
+
+Events.PlayerTurnDeactivated.Add( ForceTSL ) -- On TurnActivated, it seems the AI has already moved the initial settler
+ForceTSL( -1 ) -- test ForceTSL on player 0
+
+----------------------------------------------------------------------------------------
 end
+----------------------------------------------------------------------------------------
+-- EnforcingTSL >>>>>
+----------------------------------------------------------------------------------------

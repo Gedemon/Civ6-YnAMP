@@ -14,6 +14,8 @@ print ("Setting YnAMP globals and cache...")
 
 g_startTimer = os.clock()
 
+ExposedMembers.HistoricalStartingPlots = nil
+
 local mapName = MapConfiguration.GetValue("MapName")
 print ("Map Name = " .. tostring(mapName))
 local getTSL 				= {} -- primary TSL for each civilization
@@ -31,9 +33,6 @@ local bRealDeposits 		= MapConfiguration.GetValue("RealDeposits") == "PLACEMENT_
 local bImportResources		= MapConfiguration.GetValue("ResourcesPlacement") == "PLACEMENT_IMPORT"
 local iIceNorth 			= MapConfiguration.GetValue("IceNorth")
 local iIceSouth 			= MapConfiguration.GetValue("IceSouth")
-local bHistoricalSpawnDates	= MapConfiguration.GetValue("HistoricalSpawnDates") == 1
-
-local bNoCityStates = GameConfiguration.GetValue("NoCityStates")
 
 -- Create list of Civilizations and leaders in game
 for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
@@ -129,7 +128,7 @@ function AssignStartingPlots.Create(args)
 	if not bTSL then
 		instance:__InitStartingData()
 	end	
-	YnAMP_StartPositions()
+	YnAMP_StartPositions()	
 	-- YnAMP >>>>>					
 
 	return instance
@@ -148,13 +147,8 @@ function AssignStartingPlots:__InitStartingData()
 		self.uiMinBarbarianFertility = 1;
 	end
 	
-	self.iNumMajorCivs = PlayerManager.GetAliveMajorsCount();
-	
-	if bNoCityStates then
-		self.iNumMinorCivs = 0
-	else
-		self.iNumMinorCivs = PlayerManager.GetAliveMinorsCount()
-	end
+	self.iNumMajorCivs = PlayerManager.GetAliveMajorsCount();	
+	self.iNumMinorCivs = PlayerManager.GetAliveMinorsCount();
 	
 	self.iNumRegions = self.iNumMajorCivs + self.iNumMinorCivs;
 	local iMinNumBarbarians = self.iNumMajorCivs / 2;
@@ -3206,6 +3200,7 @@ function ExtraPlacement()
 				local plot = Map.GetPlot(x,y)
 				
 				if plot then
+					ResourceBuilder.SetResourceType(plot, -1) -- remove previous resource if any
 					if terrainType and GameInfo.Terrains[terrainType] then
 						print("- Trying to place ".. tostring(terrainType).. " at " .. tostring(x) ..",".. tostring(y))
 						TerrainBuilder.SetTerrainType(plot, GameInfo.Terrains[terrainType].Index)
@@ -4096,13 +4091,11 @@ function SetTrueStartingLocations()
 							print ("WARNING ! Plot is too close from another Starting Position")
 						end
 					else
-						if not bNoCityStates then
-							if IsSafeStartingDistance(plot, false, false) then
-								player:SetStartingPlot(plot)
-								--table.insert(AssignStartingPlots.minorStartPlots, plot)
-							else
-								print ("WARNING ! Plot is too close from another Starting Position")
-							end
+						if IsSafeStartingDistance(plot, false, false) then
+							player:SetStartingPlot(plot)
+							--table.insert(AssignStartingPlots.minorStartPlots, plot)
+						else
+							print ("WARNING ! Plot is too close from another Starting Position")
 						end
 					end
 				end
@@ -4446,40 +4439,6 @@ ResourceBuilder.OldCanHaveResource = ResourceBuilder.CanHaveResource
 ResourceBuilder.CanHaveResource = YnAMP_CanHaveResource
 
 
-function YnAMP_SetResourceType(pPlot, eResourceType, number)
-	if (not YnAMP_CanHaveResource(pPlot, eResourceType)) and (eResourceType ~= -1) then
-		print("WARNING calling SetResourceType() but YnAMP_CanHaveResource() wouldn't allow it :", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
-	end
-	ResourceBuilder.OldSetResourceType(pPlot, eResourceType, number)
-end
---ResourceBuilder.OldSetResourceType = ResourceBuilder.SetResourceType
---ResourceBuilder.SetResourceType = YnAMP_SetResourceType
-
-function InitializePlayerFunctions(player) -- Note that those functions are limited to this file context
-	if not player then player = Players[0] end
-	local p = getmetatable(player).__index	
-	p.OldSetStartingPlot	= p.SetStartingPlot
-	p.OldGetStartingPlot	= p.GetStartingPlot
-	p.SetStartingPlot		= NewSetstartingPlot
-	p.GetStartingPlot		= NewGetstartingPlot
-	
-end
-
-function NewSetstartingPlot(self, plot)
-	if bHistoricalSpawnDates then
-		tempStartingPlots[self:GetID()] = {X = plot:GetX(), Y = plot:GetY()}		
-	else
-		self:OldSetStartingPlot(plot)
-	end
-end
-
-function NewGetstartingPlot(self, plot)
-	if tempStartingPlots[self:GetID()] then
-		return Map.GetPlot(tempStartingPlots[self:GetID()].X, tempStartingPlots[self:GetID()].Y)
-	end
-	return self:OldGetStartingPlot()
-end
-
 ------------------------------------------------------------------------------
 -- Override required to use limits on ice placement for imported maps
 function FeatureGenerator:AddIceAtPlot(plot, iX, iY)
@@ -4601,12 +4560,6 @@ function FeatureGenerator:AddFeatures(allow_mountains_on_coast)
 	print("Number of Oasis: ", self.iOasisCount);
 end
 
-
-------------------------------------------------------------------------------
--- initialize
-------------------------------------------------------------------------------
-
-InitializePlayerFunctions()
 
 ------------------------------------------------------------------------------
 -- /end YnAMP

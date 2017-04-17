@@ -64,7 +64,6 @@
 				<LoadOrder>2</LoadOrder>
            	</Properties>
 			<Items>
-				<File>Gameplay/HistoricalSpawnDates.sql</File>
 				<File>Gameplay/GamePlay.sql</File>
 				<File>Gameplay/GamePlay.xml</File>
 				<File>Maps/GiantEarth/Map.xml</File>
@@ -132,7 +131,6 @@
 		<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
 		<File>Configuration/ConfigText_pt_BR.xml</File>
 		<File>Gameplay/Tables.sql</File>
-		<File>Gameplay/HistoricalSpawnDates.sql</File>
 		<File>Gameplay/GamePlay.xml</File>
 		<File>Gameplay/GamePlay.sql</File>
 		<File>Gameplay/GamePlayText.xml</File>

@@ -8,7 +8,7 @@
 -- Defines
 -----------------------------------------------
 
- INSERT OR REPLACE INTO GlobalParameters (Name, Value) VALUES ('YNAMP_VERSION', 'Beta .4');
+INSERT OR REPLACE INTO GlobalParameters (Name, Value) VALUES ('YNAMP_VERSION', 'Beta .4');
 
 -----------------------------------------------
 -- Fix Ethnicity

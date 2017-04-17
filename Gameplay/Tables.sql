@@ -87,11 +87,6 @@ CREATE TABLE IF NOT EXISTS CityMap
 		X INT default 0,
 		Y INT default 0,
 		Area INT);
-		
--- Historical Spawn Dates
-CREATE TABLE IF NOT EXISTS HistoricalSpawnDates
-	 (	Civilization TEXT NOT NULL UNIQUE,
-		StartYear INTEGER DEFAULT -10000);
 
 -- Maritime CS
 CREATE TABLE IF NOT EXISTS StartBiasCoast
