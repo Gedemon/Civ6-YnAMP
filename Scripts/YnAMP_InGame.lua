@@ -120,4 +120,19 @@ function Round(num)
 end
 
 
+----------------------------------------------------------------------------------------
+-- Allow to force EndTurn...
+----------------------------------------------------------------------------------------
+function OnInputHandler( pInputStruct:table )
+	local uiMsg:number = pInputStruct:GetMessageType();
+	if uiMsg == KeyEvents.KeyUp then 
+		if pInputStruct:GetKey() == Keys.E and pInputStruct:IsShiftDown() and pInputStruct:IsControlDown() then	-- pInputStruct:IsShiftDown() and pInputStruct:IsAltDown() and pInputStruct:IsControlDown()			
+			UI.RequestAction(ActionTypes.ACTION_ENDTURN)
+		end
+	end
+	return false;
+end
+ContextPtr:SetInputHandler( OnInputHandler, true )
+
+
 
