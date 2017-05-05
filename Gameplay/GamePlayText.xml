@@ -5790,6 +5790,7 @@
 		<Replace Tag="LOC_CITY_NAME_WHITEHORSE_NORWAY" Text="Hvit Hest" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WHITEHORSE_POLAND" Text="Biały Koń" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WHITEHORSE_GREECE" Text="Aspro Álogo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WHITEHORSE_MACEDON" Text="Aspro Álogo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WHITEHORSE_FRANCE" Text="Cheval Blanc" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MAYO" Text="Mayo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ROSS_RIVER" Text="Ross River" Language="en_US" />
@@ -5807,8 +5808,8 @@
 		<Replace Tag="LOC_CITY_NAME_FLIN_FLON" Text="Flin Flon" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_FLIN_FLON_JAPAN" Text="Furinfuron" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_FLIN_FLON_ARABIA" Text="Falayn Falun" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS" Text="Grand Rapids" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_FRANCE" Text="Fort Bourbon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOOSE_LAKE" Text="Moose Lake" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOOSE_LAKE_FRANCE" Text="Fort Bourbon" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LYNN_LAKE" Text="Lynn Lake" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PINAWA" Text="Pinawa" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PORTAGE_LA_PRAIRIE" Text="Portage la Prairie" Language="en_US" />
@@ -5841,6 +5842,7 @@
 		<Replace Tag="LOC_CITY_NAME_BLACK_LAKE_SPAIN" Text="Lago Negro" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BLACK_LAKE_BRAZIL" Text="Lago Preto" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BLACK_LAKE_GREECE" Text="Mávri Límni" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BLACK_LAKE_MACEDON" Text="Mávri Límni" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PILE_OF_BONES" Text="Pile-of-Bones" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_REGINA" Text="Regina" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_REGINA_CHINA" Text="Liguna" Language="en_US" />
@@ -5883,7 +5885,8 @@
 		<Replace Tag="LOC_CITY_NAME_RED_DEER_JAPAN" Text="Akai Shika" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_RED_DEER_RUSSIA" Text="Krasnyy Olen'" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_RED_DEER_ARABIA" Text="Ghazal 'Ahmar" Language="en_US" />		
-		<Replace Tag="LOC_CITY_NAME_RED_DEER_GREECE" Text="Kókkino Elafi" Language="en_US" />	
+		<Replace Tag="LOC_CITY_NAME_RED_DEER_GREECE" Text="Kókkino Elafi" Language="en_US" />			
+		<Replace Tag="LOC_CITY_NAME_RED_DEER_MACEDON" Text="Kókkino Elafi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RED_DEER_FRANCE" Text="Cerf Commun" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_RED_DEER_GERMANY" Text="Rotwild" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_RED_DEER_SPAIN" Text="Ciervo Rojo" Language="en_US" />	
@@ -5915,7 +5918,7 @@
 		<Replace Tag="LOC_CITY_NAME_VANCOUVER_ROME" Text="Vancuverium" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_VANCOUVER_RUSSIA" Text="Vankuver" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_VICTORIA" Text="Victoria" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_VICTORIA_AZTEC" Text="Kwakiutl" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VICTORIA_AZTEC" Text="Kwakwaka'wakw" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_VICTORIA_SPAIN" Text="Fort San Miguel" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_VICTORIA_CHINA" Text="Weiaduoliya" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_VICTORIA_JAPAN" Text="Bikutoria-shu" Language="en_US" />
@@ -5942,6 +5945,7 @@
 		<Replace Tag="LOC_CITY_NAME_ST_JOHNS_GERMANY" Text="St. Johannes" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ST_JOHNS_ROME" Text="S. Ioannes" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ST_JOHNS_GREECE" Text="Agíou Ioánni" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_JOHNS_MACEDON" Text="Agíou Ioánni" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ST_JOHNS_BRAZIL" Text="S. João" Language="en_US" />
 		
 		<!-- LABRADOR -->
@@ -5967,6 +5971,7 @@
 		<Replace Tag="LOC_CITY_NAME_LABRADOR_CITY_SPAIN" Text="Ciudad de Lavrador" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LABRADOR_CITY_BRAZIL" Text="Cidade do Lavrador" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LABRADOR_CITY_GREECE" Text="Póli tou Lamprantór" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LABRADOR_CITY_MACEDON" Text="Póli tou Lamprantór" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NAIN" Text="Nain" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NUTAK" Text="Nutak" Language="en_US" />
 		
@@ -6000,17 +6005,19 @@
 		<Replace Tag="LOC_CITY_NAME_MONTREAL_GERMANY" Text="Montreal" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MONTREAL_ROME" Text="Mons Regius" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MONTREAL_GREECE" Text="Móntreal" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MONTREAL_MACEDON" Text="Móntreal" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MONTREAL_ENGLAND" Text="Montreal" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MONT_ROYAL" Text="Mont-Royal" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MONT_TREMBLANT" Text="Mont-Tremblant" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_QUEBEC_CITY" Text="Québec City" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_QUEBEC_CITY_CHINA" Text="Kuibeike Shi" Language="en_US" />	
-		<Replace Tag="LOC_CITY_NAME_QUEBEC_CITY_JAPAN" Text="Kebekku" Language="en_US" />	
+		<Replace Tag="LOC_CITY_NAME_QUEBEC_CITY_JAPAN" Text="Kebekku-shi" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_QUEBEC_CITY_ARABIA" Text="Madinat Kybik" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_QUEBEC_CITY_RUSSIA" Text="Kvebek" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_QUEBEC_CITY_GERMANY" Text="Québec Stadt" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_QUEBEC_CITY_ROME" Text="Quebecum" Language="en_US" />	
-		<Replace Tag="LOC_CITY_NAME_QUEBEC_CITY_GREECE" Text="Kempék" Language="en_US" />	
+		<Replace Tag="LOC_CITY_NAME_QUEBEC_CITY_GREECE" Text="Kempék" Language="en_US" />		
+		<Replace Tag="LOC_CITY_NAME_QUEBEC_CITY_MACEDON" Text="Kempék" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_QUEBEC_CITY_POLAND" Text="Quebec" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_QUEBEC_CITY_NORWAY" Text="Quebec" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_QUEBEC_CITY_SPAIN" Text="La Ciudad de Quebec" Language="en_US" />	
@@ -6054,14 +6061,16 @@
 		<Replace Tag="LOC_CITY_NAME_DRYDEN" Text="Dryden" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DRYDEN_FRANCE" Text="Rat Portage" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_FORT_FRANCES" Text="Fort Frances" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_FORT_FRANCES_FRANCE" Text="Fort Saint-Pierre" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_FORT_SEVERN" Text="Fort Severn" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_FORT_YORK" Text="Fort York" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_FORT_YORK_FRANCE" Text="Fort Rouillé" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GRAND_FALLS_WINDSOR" Text="Grand Falls-Windsor" Language="en_US" />	
-		<Replace Tag="LOC_CITY_NAME_GREENSTONE" Text="Greenstone" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_GREENSTONE_FRANCE" Text="Fort Saint-Pierre" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PICKLE_LAKE" Text="Pickle Lake" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CAN_HAMILTON" Text="Hamilton" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KAPUSKASING" Text="Kapuskasing" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KENORA" Text="Kenora" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KENORA_FRANCE" Text="Rat Portage" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CAN_KINGSTON" Text="Kingston" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CAN_KINGSTON_FRANCE" Text="Fort Frontenac" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MOOSONEE" Text="Moosonee" Language="en_US" />	
@@ -6073,11 +6082,23 @@
 		<Replace Tag="LOC_CITY_NAME_NORTH_BAY_SPAIN" Text="Bahía del Norte" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NORTH_BAY_BRAZIL" Text="Baía do Norte" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NORTH_BAY_GREECE" Text="Vóreio Kólpo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NORTH_BAY_MACEDON" Text="Vóreio Kólpo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NORTH_BAY_GERMANY" Text="Nordbucht" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NORTH_BAY_NORWAY" Text="Nord-Bay" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NORTH_BAY_POLAND" Text="Północna Zatoka" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NORTH_BAY_FRANCE" Text="Baie du Nord" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_OPASQUIA" Text="Opasquia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RED_LAKE" Text="Red Lake" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RED_LAKE_FRANCE" Text="Lac Rouge" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RED_LAKE_SPAIN" Text="Lago Rojo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RED_LAKE_GERMANY" Text="Roter See" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RED_LAKE_BRAZIL" Text="Lago Vermelho" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RED_LAKE_POLAND" Text="Czerwone Jezioro" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RED_LAKE_RUSSIA" Text="Krasnoye Ozero" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RED_LAKE_GREECE" Text="Kókkini Límni" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RED_LAKE_MACEDON" Text="Kókkini Límni" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RED_LAKE_NORWAY" Text="Rød Innsjø" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RED_LAKE_CHINA" Text="Hóng Hú" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RED_LAKE_JAPAN" Text="Akai Mizūmi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OTTAWA" Text="Ottawa" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OTTAWA_CHINA" Text="Wotaihua" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OTTAWA_JAPAN" Text="Otawa" Language="en_US" />
@@ -6096,6 +6117,7 @@
 		<Replace Tag="LOC_CITY_NAME_THUNDER_BAY_BRAZIL" Text="Baía do Trovão" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_THUNDER_BAY_ROME" Text="Litora Tonitrui" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_THUNDER_BAY_GREECE" Text="Kólpo Vrontís" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_THUNDER_BAY_MACEDON" Text="Kólpo Vrontís" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_THUNDER_BAY_FRANCE" Text="Fort Kaministiquia" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TIMMINS" Text="Timmins" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TORONTO" Text="Toronto" Language="en_US" />
@@ -6141,6 +6163,7 @@
 		<Replace Tag="LOC_CITY_NAME_SAINT_JOHN_BRAZIL" Text="São João do Canadá" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAINT_JOHN_ROME" Text="Sanctus Ioannes Terrae Novae" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAINT_JOHN_GREECE" Text="O Ágios Ioánnis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAINT_JOHN_MECEDON" Text="O Ágios Ioánnis" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAINT_JOHN_POLAND" Text="Święty Jan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAINT_JOHN_FRANCE" Text="Fort LaTour" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_STE_ANNES_POINT" Text="Ste. Anne's Point" Language="en_US" />
@@ -6196,8 +6219,7 @@
 		<Replace Tag="LOC_CITY_NAME_SITKA_CHINA" Text="Xiteka" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SITKA_JAPAN" Text="Shitoka" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SITKA_ARABIA" Text="Sayataka" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_KETCHIKAN" Text="Ketchikan" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_YAKIMA" Text="Yakima" Language="en_US" />	
+		<Replace Tag="LOC_CITY_NAME_KETCHIKAN" Text="Ketchikan" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_YAKUTAT" Text="Yakutat" Language="en_US" />				
 		<Replace Tag="LOC_CITY_NAME_YAKUTAT_RUSSIA" Text="Slavorossiya" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ATTU_ISLAND" Text="Attu Island" Language="en_US" />	
@@ -6278,6 +6300,7 @@
 		<!-- MASSACHUSETTS -->
 		<Replace Tag="LOC_CITY_NAME_BOSTON" Text="Boston" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BOSTON_GREECE" Text="Vostóni" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BOSTON_MACEDON" Text="Vostóni" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BOSTON_CHINA" Text="Boshidun" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BOSTON_JAPAN" Text="Bosuton" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BOSTON_ARABIA" Text="Busatun" Language="en_US" />
@@ -6287,12 +6310,14 @@
 		<Replace Tag="LOC_CITY_NAME_POINT_OF_ROCKS_AMERICA" Text="Washington" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WASHINGTON" Text="Washington" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WASHINGTON_GREECE" Text="Vásinkton" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WASHINGTON_MACEDON" Text="Vásinkton" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WASHINGTON_SWEDEN" Text="Fort Christina" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WASHINGTON_CHINA" Text="Huashengdun" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WASHINGTON_JAPAN" Text="Washinton" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WASHINGTON_ARABIA" Text="Washintun" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WASHINGTON_RUSSIA" Text="Vashington" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WASHINGTON_ROME" Text="Vasintonia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WASHINGTON_AZTEC" Text="Conoy" Language="en_US" />
 		
 		<!-- NEW YORK STATE -->
 		<Replace Tag="LOC_CITY_NAME_USA_ALBANY" Text="Albany" Language="en_US" />
@@ -6308,6 +6333,7 @@
 		<Replace Tag="LOC_CITY_NAME_NEW_YORK" Text="New York" Language="en_US" />		
 		<Replace Tag="LOC_CITY_NAME_NEW_YORK_ROME" Text="Novum Eboracum" Language="en_US" />			
 		<Replace Tag="LOC_CITY_NAME_NEW_YORK_GREECE" Text="Néa Yórki" Language="en_US" />				
+		<Replace Tag="LOC_CITY_NAME_NEW_YORK_MACEDON" Text="Néa Yórki" Language="en_US" />				
 		<Replace Tag="LOC_CITY_NAME_NEW_YORK_CHINA" Text="Niuyue" Language="en_US" />			
 		<Replace Tag="LOC_CITY_NAME_NEW_YORK_JAPAN" Text="Nyuyoku" Language="en_US" />			
 		<Replace Tag="LOC_CITY_NAME_NEW_YORK_RUSSIA" Text="N'yu-York" Language="en_US" />			
@@ -6319,31 +6345,38 @@
 		<Replace Tag="LOC_CITY_NAME_ROCHESTER_ARABIA" Text="Rutshstr" Language="en_US" />
 		
 		<!-- PENNSYLVANIA -->
-		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA" Text="Philadelphia" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA_GREECE" Text="Filadélfeia" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA_CHINA" Text="Feicheng" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA_JAPAN" Text="Firaderufia" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA_RUSSIA" Text="Filadel'fiya" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA_ARABIA" Text="Filadilfia" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA_SWEDEN" Text="Fort Christina" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA_USA" Text="Philadelphia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA_USA_AZTEC" Text="Lenni-Lenape" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA_USA_GREECE" Text="Filadélfeia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA_USA_MACEDON" Text="Filadélfeia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA_USA_CHINA" Text="Feicheng" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA_USA_JAPAN" Text="Firaderufia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA_USA_RUSSIA" Text="Filadel'fiya" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA_USA_ARABIA" Text="Filadilfia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PHILADELPHIA_USA_SWEDEN" Text="Fort Christina" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PITTSBURGH" Text="Pittsburgh" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PITTSBURGH_FRANCE" Text="Fort Duquesne" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PITTSBURGH_GREECE" Text="Pítsmpournk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PITTSBURGH_MACEDON" Text="Pítsmpournk" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PITTSBURGH_RUSSIA" Text="Pittsburg" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PITTSBURGH_CHINA" Text="Picibao" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PITTSBURGH_JAPAN" Text="Pittsubagu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PITTSBURGH_ARABIA" Text="Biatasbaragh" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PITTSBURGH_AZTEC" Text="Susquehannock" Language="en_US" />
 		
 		<!-- MICHIGAN -->
 		<Replace Tag="LOC_CITY_NAME_DETROIT" Text="Detroit" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_DETROIT_GREECE" Text="Ntitróit" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DETROIT_MACEDON" Text="Ntitróit" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DETROIT_CHINA" Text="Ditelu" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_DETROIT_JAPAN" Text="Detoroito" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_DETROIT_ARABIA" Text="Ditruyt" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_DETROIT_RUSSIA" Text="Detroyt" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_DETROIT_FRANCE" Text="Fort Détroit" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_FORT_DETROIT" Text="Fort Detroit" Language="en_US" />	
-		<Replace Tag="LOC_CITY_NAME_FORT_DETROIT_FRANCE" Text="Fort Détroit" Language="en_US" />	
+		<Replace Tag="LOC_CITY_NAME_FORT_DETROIT_FRANCE" Text="Fort Détroit" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS" Text="Grand Rapids" Language="en_US" />	
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_FRANCE" Text="Grands Rapides" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_MARQUETTE" Text="Marquette" Language="en_US" />	
 		
 		<!-- VERMONT -->
@@ -6357,16 +6390,20 @@
 		<Replace Tag="LOC_CITY_NAME_BALTIMORE" Text="Baltimore" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BALTIMORE_ROME" Text="Baltimora" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BALTIMORE_GREECE" Text="Valtimóri" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BALTIMORE_MACEDON" Text="Valtimóri" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BALTIMORE_CHINA" Text="Ba'erdemo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BALTIMORE_JAPAN" Text="Boruchimoa" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BALTIMORE_RUSSIA" Text="Baltimor" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BALTIMORE_ARABIA" Text="Baltymwr" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BALTIMORE_SWEDEN" Text="Fort Christina" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BALTIMORE_AZTEC" Text="Patapsco" Language="en_US" />
 		
 		<!-- VIRGINIA -->
 		<Replace Tag="LOC_CITY_NAME_JAMESTOWN" Text="Jamestown" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RICHMOND" Text="Richmond" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RICHMOND_AZTEC" Text="Powhatan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RICHMOND_GREECE" Text="Rítsmont" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RICHMOND_MACEDON" Text="Rítsmont" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RICHMOND_CHINA" Text="Lishiman" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RICHMOND_JAPAN" Text="Ritchimondo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RICHMOND_ARABIA" Text="Ritshmund" Language="en_US" />
@@ -6374,6 +6411,7 @@
 		<!-- NORTH CAROLINA -->
 		<Replace Tag="LOC_CITY_NAME_CHARLOTTE" Text="Charlotte" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHARLOTTE_GREECE" Text="Sarlót" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHARLOTTE_MACEDON" Text="Sarlót" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHARLOTTE_CHINA" Text="Xialuote" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHARLOTTE_JAPAN" Text="Sharotto" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHARLOTTE_RUSSIA" Text="Sharlotta" Language="en_US" />
@@ -6382,15 +6420,18 @@
 		<Replace Tag="LOC_CITY_NAME_WILMINGTON_CHINA" Text="Weiermingdun" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WILMINGTON_JAPAN" Text="U~iruminton" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WILMINGTON_ARABIA" Text="Wayalmunjitun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WILMINGTON_AZTEC" Text="Waccamaw" Language="en_US" />
 		
 		<!-- SOUTH CAROLINA -->
 		<Replace Tag="LOC_CITY_NAME_CHARLESTON" Text="Charleston" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHARLESTON_GREECE" Text="Tsárleston" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHARLESTON_MACEDON" Text="Tsárleston" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHARLESTON_CHINA" Text="Cha'ersidun" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHARLESTON_JAPAN" Text="Charusuton" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHARLESTON_ARABIA" Text="Tasharilsutun" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHARLESTON_RUSSIA" Text="Charlston" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHARLESTON_ROME" Text="Carolopolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHARLESTON_AZTEC" Text="Cusabo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHARLES_TOWN" Text="Charles Town" Language="en_US" />
 		
 		<!-- GEORGIA -->
@@ -6409,6 +6450,7 @@
 		<Replace Tag="LOC_CITY_NAME_FORT_GATLIN" Text="Fort Gatlin" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_JACKSONVILLE" Text="Jacksonville" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_JACKSONVILLE_GREECE" Text="Tzáksonvil" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JACKSONVILLE_MACEDON" Text="Tzáksonvil" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_JACKSONVILLE_FRANCE" Text="Fort Caroline" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_JACKSONVILLE_SPAIN" Text="St. Augustine" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_JACKSONVILLE_ENGLAND" Text="Cow Ford" Language="en_US" />
@@ -6423,11 +6465,13 @@
 		<Replace Tag="LOC_CITY_NAME_MIAMI_SPAIN" Text="Santa Maria de Loreto" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ORLANDO" Text="Orlando" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ORLANDO_GREECE" Text="Orlánto" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ORLANDO_MACEDON" Text="Orlánto" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ORLANDO_CHINA" Text="Aolanduo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ORLANDO_JAPAN" Text="Orando" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ORLANDO_ARABIA" Text="Uwrlandu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TALLAHASSEE" Text="Tallahassee" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TALLAHASSEE_GREECE" Text="Talachási" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TALLAHASSEE_MACEDON" Text="Talachási" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TALLAHASSEE_CHINA" Text="Talahaxi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TALLAHASSEE_JAPAN" Text="Tarahashi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TALLAHASSEE_ARABIA" Text="Talahasi" Language="en_US" />
@@ -6451,12 +6495,14 @@
 		<Replace Tag="LOC_CITY_NAME_CINCINNATI_ARABIA" Text="Synsynaty" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CLEVELAND" Text="Cleveland" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CLEVELAND_GREECE" Text="Klívelant" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CLEVELAND_MACEDON" Text="Klívelant" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CLEVELAND_CHINA" Text="Kelifulan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CLEVELAND_JAPAN" Text="Kuriburando" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CLEVELAND_RUSSIA" Text="Klivlend" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CLEVELAND_ARABIA" Text="Klyfland" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_COLUMBUS" Text="Columbus" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_COLUMBUS_GREECE" Text="Kolómvos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_COLUMBUS_MACEDON" Text="Kolómvos" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_COLUMBUS_CHINA" Text="Gelunbu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_COLUMBUS_RUSSIA" Text="Kolumbus" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_COLUMBUS_JAPAN" Text="Koronbasu" Language="en_US" />
@@ -6490,6 +6536,7 @@
 		<!-- ILLINOIS -->
 		<Replace Tag="LOC_CITY_NAME_CHICAGO" Text="Chicago" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHICAGO_GREECE" Text="Sikágoo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHICAGO_MACEDON" Text="Sikágoo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHICAGO_CHINA" Text="Zhijiage" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHICAGO_JAPAN" Text="Shikago" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHICAGO_RUSSIA" Text="Chikago" Language="en_US" />
@@ -6562,8 +6609,14 @@
 		
 		<!-- WASHINGTON STATE -->
 		<Replace Tag="LOC_CITY_NAME_DUWAMPS" Text="Duwamps" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KENNEWICK" Text="Kennewick" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KENNEWICK_JAPAN" Text="Keneu~iku" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KENNEWICK_CHINA" Text="Kennaweike" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KENNEWICK_RUSSIA" Text="Kennuik" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KENNEWICK_ARABIA" Text="Kinwik" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SEATTLE" Text="Seattle" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SEATTLE_GREECE" Text="Siátl" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEATTLE_MACEDON" Text="Siátl" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SEATTLE_CHINA" Text="Xiyatu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SEATTLE_JAPAN" Text="Shiatoru" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SEATTLE_RUSSIA" Text="Sietl" Language="en_US" />
@@ -6573,12 +6626,23 @@
 		<Replace Tag="LOC_CITY_NAME_SEATTLE_VANCOUVER" Text="Vancouver" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SEATTLE_ROME" Text="Seattlum" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SPOKANE" Text="Spokane" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SPOKANE_CHINA" Text="Sibokan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SPOKANE_JAPAN" Text="Supoken" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SPOKANE_RUSSIA" Text="Spokan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SPOKANE_ARABIA" Text="Sabukan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YAKIMA" Text="Yakima" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YAKIMA_CHINA" Text="Yajima" Language="en_US" />
 		
 		<!-- OREGON -->
 		<Replace Tag="LOC_CITY_NAME_BEND" Text="Bend" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BEND_JAPAN" Text="Bendo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BEND_CHINA" Text="Bende" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BEND_ARABIA" Text="Bind" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EUGENE" Text="Eugene" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EUGENE_JAPAN" Text="Yujin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EUGENE_CHINA" Text="Youjin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EUGENE_ARABIA" Text="Yujin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEDFORD" Text="Medford" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OREGON_CITY" Text="Oregon City" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OR_PORTLAND" Text="Portland" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OR_PORTLAND_RUSSIA" Text="Portland" Language="en_US" />
@@ -6594,7 +6658,7 @@
 		<Replace Tag="LOC_CITY_NAME_ALBUQUERQUE_RUSSIA" Text="Al'bukerke" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ALBUQUERQUE_JAPAN" Text="Arubakaki" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ALBUQUERQUE_ARABIA" Text="Albukirik" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ALBUQUERQUE_AZTEC" Text="Navajo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ALBUQUERQUE_AZTEC" Text="Mescalero" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LAS_CRUCES" Text="Las Cruces" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LAS_CRUCES_CHINA" Text="Lasikelusaisi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LAS_CRUCES_JAPAN" Text="Rasukurusesu" Language="en_US" />
@@ -6613,7 +6677,11 @@
 		<Replace Tag="LOC_CITY_NAME_FLAGSTAFF_CHINA" Text="Fulagesitafu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_FLAGSTAFF_JAPAN" Text="Furaggusutaffu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_FLAGSTAFF_ARABIA" Text="Falaghstaf" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_FLAGSTAFF_AZTEC" Text="Apache" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_FLAGSTAFF_AZTEC" Text="Navajo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BULLHEAD_CITY" Text="Bullhead City" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BULLHEAD_CITY_AZTEC" Text="Mohave" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LAKE_HAVASU_CITY" Text="Lake Havasu City" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LAKE_HAVASU_CITY_AZTEC" Text="Halchidhoma" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PHOENIX" Text="Phoenix" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PHOENIX_RUSSIA" Text="Finiks" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PHOENIX_CHINA" Text="Fenghuang Cheng" Language="en_US" />
@@ -6628,24 +6696,48 @@
 		<Replace Tag="LOC_CITY_NAME_TUCSON_AZTEC" Text="Apache" Language="en_US" />
 		
 		<!-- NEVADA -->
+		<Replace Tag="LOC_CITY_NAME_CARSON_CITY" Text="Carson City" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CARSON_CITY_AZTEC" Text="Washo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CARSON_CITY_CHINA" Text="Kasen Cheng" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CARSON_CITY_JAPAN" Text="Kasonshiti" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CARSON_CITY_RUSSIA" Text="Karson-Siti" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CARSON_CITY_ARABIA" Text="Madinat Karisun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_GREECE" Text="Póli tou Karson" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_MACEDON" Text="Póli tou Karson" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_GERMANY" Text="Carson Stadt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_FRANCE" Text="Ville du Carson" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_SPAIN" Text="Ciudad de Carson" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_BRAZIL" Text="Cidade do Carson" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_ROME" Text="Carsonopolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ELKO" Text="Elko" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ELY" Text="Ely" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ELY_AZTEC" Text="Spring Valley" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ELY_JAPAN" Text="Eri" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ELY_CHINA" Text="Zhende" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ELY_ARABIA" Text="Ael" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LAS_VEGAS" Text="Las Vegas" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LAS_VEGAS_RUSSIA" Text="Las-Vegas" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LAS_VEGAS_CHINA" Text="Lasiweijiasi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LAS_VEGAS_JAPAN" Text="Rasubegasu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LAS_VEGAS_ARABIA" Text="Las Fyghas" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_LAS_VEGAS_AZTEC" Text="Paiute" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LAS_VEGAS_AZTEC" Text="Moapa" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RENO" Text="Reno" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RENO_ARABIA" Text="Rinu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RENO_CHINA" Text="Linuo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RENO_JAPAN" Text="Rino" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RENO_AZTEC" Text="Washo" Language="en_US" />
 		
 		<!-- UTAH -->
+		<Replace Tag="LOC_CITY_NAME_BLUFF_USA" Text="Bluff" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOAB" Text="Moab" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PROVO" Text="Provo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PROVO_AZTEC" Text="Gosiute" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SALT_LAKE_CITY" Text="Salt Lake City" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SALT_LAKE_CITY_FRANCE" Text="Lac Salé" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SALT_LAKE_CITY_SPAIN" Text="Ciudad de Lago salado" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SALT_LAKE_CITY_GREECE" Text="Póli tou Alykío" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SALT_LAKE_CITY_MACEDON" Text="Póli tou Alykío" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SALT_LAKE_CITY_BRAZIL" Text="Cidade do Lago Salgado" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SALT_LAKE_CITY_GREECE" Text="Salt Lake City" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SALT_LAKE_CITY_GERMANY" Text="Salzsee Stadt" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SALT_LAKE_CITY_POLAND" Text="Słone Jezioro" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SALT_LAKE_CITY_RUSSIA" Text="Sol' Ozero Ggorod" Language="en_US" />
@@ -6653,6 +6745,12 @@
 		<Replace Tag="LOC_CITY_NAME_SALT_LAKE_CITY_ROME" Text="Civitas Lacus Salsi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SALT_LAKE_CITY_JAPAN" Text="Sorutoreikushiti" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SALT_LAKE_CITY_ARABIA" Text="Sa'alt Lik" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SALT_LAKE_CITY_AZTEC" Text="Gosiute" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_GEORGE" Text="St. George" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_GEORGE_AZTEC" Text="Panguitch" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_GEORGE_SPAIN" Text="San Jorge" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_GEORGE_GERMANY" Text="St. Georg" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_GEORGE_BRAZIL" Text="São Jorge" Language="en_US" />
 		
 		<!-- IDAHO -->
 		<Replace Tag="LOC_CITY_NAME_BOISE" Text="Boise" Language="en_US" />
@@ -6660,6 +6758,11 @@
 		<Replace Tag="LOC_CITY_NAME_BOISE_RUSSIA" Text="Boyse" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BOISE_CHINA" Text="Boyixi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BOISE_JAPAN" Text="Boiji" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_IDAHO_FALLS" Text="Idaho Falls" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAMPA" Text="Nampa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAMPA_ARABIA" Text="Namaba" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAMPA_CHINA" Text="Nanpa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAMPA_JAPAN" Text="Nanpa" Language="en_US" />
 		
 		<!-- CALIFORNIA -->
 		<Replace Tag="LOC_CITY_NAME_BAKERSFIELD" Text="Bakersfield" Language="en_US" />
@@ -6668,6 +6771,14 @@
 		<Replace Tag="LOC_CITY_NAME_BAKERSFIELD_ARABIA" Text="Bykrsfyld" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BAKERSFIELD_AZTEC" Text="Serrano" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BAKERSFIELD_SPAIN" Text="San Joaquin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EUREKA" Text="Eureka" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EUREKA_AZTEC" Text="Wiyot" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EUREKA_JAPAN" Text="Yureka" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EUREKA_CHINA" Text="Youlika" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EUREKA_RUSSIA" Text="Evrika" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EUREKA_ARABIA" Text="Uwrika" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_FRESNO" Text="Fresno" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_FRESNO_AZTEC" Text="Yokuts" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LOS_ANGELES" Text="Los Angeles" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LOS_ANGELES_ROME" Text="Angelopolis" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LOS_ANGELES_CHINA" Text="Luoshanji" Language="en_US" />
@@ -6676,6 +6787,16 @@
 		<Replace Tag="LOC_CITY_NAME_LOS_ANGELES_ARABIA" Text="Lus 'Anjilus" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LOS_ANGELES_SPAIN" Text="Los Ángeles" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LOS_ANGELES_AZTEC" Text="Chumash" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PALM_DESERT" Text="Palm Desert" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PALM_DESERT_AZTEC" Text="Cahuilla" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_REDDING" Text="Redding" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_REDDING_AZTEC" Text="Wintu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_REDDING_CHINA" Text="Leiding" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_REDDING_JAPAN" Text="Redingu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_REDDING_RUSSIA" Text="Redding" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_REDDING_ARABIA" Text="Ridingh" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RIVERSIDE" Text="Riverside" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RIVERSIDE_AZTEC" Text="Tataviam" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SACRAMENTO" Text="Sacramento" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SACRAMENTO_CHINA" Text="Sakelamentuo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SACRAMENTO_JAPAN" Text="Sakuramento" Language="en_US" />
@@ -6688,13 +6809,13 @@
 		<Replace Tag="LOC_CITY_NAME_SAN_DIEGO_JAPAN" Text="Sandiego" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAN_DIEGO_RUSSIA" Text="San-Diyego" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAN_DIEGO_ARABIA" Text="San Dyyghw" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SAN_DIEGO_AZTEC" Text="Tipai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAN_DIEGO_AZTEC" Text="Kumeyaay" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAN_FRANCISCO" Text="San Francisco" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAN_FRANCISCO_ROME" Text="Franciscopolis" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAN_FRANCISCO_ARABIA" Text="San Fransisku" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAN_FRANCISCO_CHINA" Text="Jiujinshan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAN_FRANCISCO_JAPAN" Text="Sanfuranshisuko" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SAN_FRANCISCO_RUSSIA" Text="San-Frantsisko" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAN_FRANCISCO_RUSSIA" Text="Krepost Ross" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAN_FRANCISCO_AZTEC" Text="Miwok" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAN_JOSE" Text="San Jose" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAN_JOSE_ROME" Text="Sancti Iosephi" Language="en_US" />
@@ -6704,6 +6825,12 @@
 		<Replace Tag="LOC_CITY_NAME_SAN_JOSE_ARABIA" Text="San Khusih" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAN_JOSE_SPAIN" Text="San José" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAN_JOSE_AZTEC" Text="Costanoa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_STOCKTON" Text="Stockton" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_STOCKTON_AZTEC" Text="Miwok" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_STOCKTON_JAPAN" Text="Sutokkuton" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_STOCKTON_ARABIA" Text="Satukutun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_STOCKTON_RUSSIA" Text="Stokton" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_STOCKTON_CHINA" Text="Situokedun" Language="en_US" />
 		
 		<!-- MISSOURI -->
 		<Replace Tag="LOC_CITY_NAME_KANSAS_CITY" Text="Kansas City" Language="en_US" />
@@ -6713,6 +6840,7 @@
 		<Replace Tag="LOC_CITY_NAME_KANSAS_CITY_BRAZIL" Text="Cuidade do Kansas" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KANSAS_CITY_ROME" Text="Kansanopolis" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KANSAS_CITY_GREECE" Text="Póli tou Kánsas" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KANSAS_CITY_MACEDON" Text="Póli tou Kánsas" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KANSAS_CITY_CHINA" Text="Kansasi Cheng" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KANSAS_CITY_JAPAN" Text="Kanzasu-shu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KANSAS_CITY_RUSSIA" Text="Kanzas" Language="en_US" />
@@ -6734,12 +6862,14 @@
 		<Replace Tag="LOC_CITY_NAME_LAFAYETTE_CHINA" Text="Lafeite" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LAFAYETTE_JAPAN" Text="Rafaietto" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LAFAYETTE_ARABIA" Text="Lafayyt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LAFAYETTE_AZTEC" Text="Natchez" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NEW_ORLEANS" Text="New Orleans" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NEW_ORLEANS_CHINA" Text="Xin Ao'erliang" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NEW_ORLEANS_JAPAN" Text="Nyuorinzu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NEW_ORLEANS_ARABIA" Text="Niu Awrlyanz" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NEW_ORLEANS_RUSSIA" Text="Zhiteli Novogo Orleana" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NEW_ORLEANS_GREECE" Text="Néa Orleáni" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NEW_ORLEANS_MACEDON" Text="Néa Orleáni" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NEW_ORLEANS_ROME" Text="Neo-Aurelianense" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NEW_ORLEANS_BRAZIL" Text="Nova Orleans" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NEW_ORLEANS_GERMANY" Text="Neue Orleans" Language="en_US" />
@@ -6749,6 +6879,7 @@
 		<Replace Tag="LOC_CITY_NAME_SHREVEPORT_FRANCE" Text="Fort Rosalie" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SHREVEPORT_JAPAN" Text="Shuribupoto" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SHREVEPORT_ARABIA" Text="Wayazyana" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SHREVEPORT_AZTEC" Text="Caddo" Language="en_US" />
 		
 		<!-- ARKANSAS -->
 		<Replace Tag="LOC_CITY_NAME_LITTLE_ROCK" Text="Little Rock" Language="en_US" />
@@ -6779,26 +6910,31 @@
 		
 		<!-- TEXAS -->
 		<Replace Tag="LOC_CITY_NAME_AMARILLO" Text="Amarillo" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_AMARILLO_AZTEC" Text="Pueblo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMARILLO_AZTEC" Text="Teyas" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_AUSTIN" Text="Austin" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_AUSTIN_CHINA" Text="Aositing" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_AUSTIN_JAPAN" Text="Osutin" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_AUSTIN_ARABIA" Text="Uwsitin" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_AUSTIN_SPAIN" Text="San Marcos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AUSTIN_AZTEC" Text="Tonkawa" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CORPUS_CHRISTI" Text="Corpus Christi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CORPUS_CHRISTI_AZTEC" Text="Karankawa" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DALLAS" Text="Dallas" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DALLAS_CHINA" Text="Dalasi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DALLAS_JAPAN" Text="Derasu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DALLAS_ARABIA" Text="Dalas" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DALLAS_SPAIN" Text="Los Adaes" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DALLAS_AZTEC" Text="Wichita" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_EL_PASO" Text="El Paso" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_EL_PASO_JAPAN" Text="Erupaso" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_EL_PASO_CHINA" Text="Aierpasuo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_EL_PASO_RUSSIA" Text="El'-Paso" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_EL_PASO_ARABIA" Text="Albasu" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_EL_PASO_AZTEC" Text="Comanche" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_EL_PASO_AZTEC" Text="Lipan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_FORT_WORTH" Text="Fort Worth" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_FORT_WORTH_AZTEC" Text="Klowa" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_HOUSTON" Text="Houston" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HOUSTON_AZTEC" Text="Atakapa" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_HOUSTON_CHINA" Text="Xiusidun" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_HOUSTON_JAPAN" Text="Hyusuton" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_HOUSTON_RUSSIA" Text="Kh'yuston" Language="en_US" />
@@ -6808,12 +6944,13 @@
 		<Replace Tag="LOC_CITY_NAME_LUBBOCK_CHINA" Text="Laboke" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LUBBOCK_JAPAN" Text="Rabokku" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_LUBBOCK_ARABIA" Text="Lubuk" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_LUBBOCK_AZTEC" Text="Comanche" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_LUBBOCK_AZTEC" Text="Jicarilla" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MIDLAND" Text="Midland" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MIDLAND_CHINA" Text="Midelan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MIDLAND_JAPAN" Text="Middorando" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_MIDLAND_AZTEC" Text="Comanche" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MIDLAND_AZTEC" Text="Lipan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_USA_SAN_ANTONIO" Text="San Antonio" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_USA_SAN_ANTONIO_AZTEC" Text="Lipan" Language="en_US" />
 		
 		<!-- OKLAHOMA -->
 		<Replace Tag="LOC_CITY_NAME_OKLAHOMA_CITY" Text="Oklahoma City" Language="en_US" />
@@ -6821,13 +6958,14 @@
 		<Replace Tag="LOC_CITY_NAME_OKLAHOMA_CITY_SPAIN" Text="Ciudad de Oklahoma" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OKLAHOMA_CITY_BRAZIL" Text="Cidade de Oklahoma" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OKLAHOMA_CITY_GREECE" Text="Oklachóma" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_OKLAHOMA_CITY_MACEDON" Text="Oklachóma" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OKLAHOMA_CITY_POLAND" Text="Miasto Oklahoma" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OKLAHOMA_CITY_FRANCE" Text="Ville d'Oklahoma" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OKLAHOMA_CITY_RUSSIA" Text="Oklakhoma Gorod" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OKLAHOMA_CITY_CHINA" Text="Ekelahema Shi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OKLAHOMA_CITY_JAPAN" Text="Okurahomashiti" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OKLAHOMA_CITY_ARABIA" Text="Uwklahuma" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_OKLAHOMA_CITY_AZTEC" Text="Sequoyah" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_OKLAHOMA_CITY_AZTEC" Text="Escanjaque" Language="en_US" />
 		
 		<!-- COLORADO -->
 		<Replace Tag="LOC_CITY_NAME_BOULDER" Text="Boulder" Language="en_US" />
@@ -6840,6 +6978,7 @@
 		<!-- KANSAS -->
 		<Replace Tag="LOC_CITY_NAME_TOPEKA" Text="Topeka" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_WICHITA" Text="Wichita" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WICHITA_AZTEC" Text="Kansa" Language="en_US" />
 		
 		<!-- SOUTH DAKOTA -->
 		<Replace Tag="LOC_CITY_NAME_SIOUX_FALLS" Text="Sioux Falls" Language="en_US" />
@@ -7019,6 +7158,7 @@
 		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_RUSSIA" Text="Meksiko" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_ARABIA" Text="Mksykw Siti" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_GREECE" Text="Póli tou Mexikoú" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_MACEDON" Text="Póli tou Mexikoú" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_GERMANY" Text="Mexiko Stadt" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_FRANCE" Text="Ville du Mexique" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MEXICO_CITY_SPAIN" Text="Ciudad de México" Language="en_US" />
@@ -7039,6 +7179,7 @@
 		<Replace Tag="LOC_CITY_NAME_TEXCOCO_RUSSIA" Text="Meksiko" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TEXCOCO_ARABIA" Text="Mksykw Siti" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TEXCOCO_GREECE" Text="Póli tou Mexikoú" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TEXCOCO_MACEDON" Text="Póli tou Mexikoú" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TEXCOCO_SPAIN" Text="Ciudad de México" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TEXCOCO_GERMANY" Text="Mexiko Stadt" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_TEXCOCO_FRANCE" Text="Ville du Mexique" Language="en_US" />
@@ -7086,6 +7227,7 @@
 		<Replace Tag="LOC_CITY_NAME_BELIZE_CITY_JAPAN" Text="Berizushiti" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BELIZE_CITY_ARABIA" Text="Madinat Baliz" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BELIZE_CITY_GREECE" Text="Póli tou Belíz" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BELIZE_CITY_MACEDON" Text="Póli tou Belíz" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BELIZE_CITY_GERMANY" Text="Belize Stadt" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BELIZE_CITY_FRANCE" Text="Ville du Belize" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BELIZE_CITY_SPAIN" Text="Ciudad de Belice" Language="en_US" />
@@ -7100,6 +7242,7 @@
 		<Replace Tag="LOC_CITY_NAME_GUATEMALA_JAPAN" Text="Guatemarashiti" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GUATEMALA_ARABIA" Text="Madinat Ghuatimala" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GUATEMALA_GREECE" Text="póli tis Gouatemálas" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GUATEMALA_MACEDON" Text="póli tis Gouatemálas" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GUATEMALA_GERMANY" Text="Guatemala Stadt" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GUATEMALA_FRANCE" Text="Ville du Guatemala" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GUATEMALA_SPAIN" Text="Ciudad de Guatemala" Language="en_US" />
@@ -7112,6 +7255,7 @@
 		<Replace Tag="LOC_CITY_NAME_MANAGUA_ARABIA" Text="Managhuu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MOSQUITO" Text="Mosquito" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MOSQUITO_GREECE" Text="Miskito" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOSQUITO_MACEDON" Text="Miskito" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MOSQUITO_ROME" Text="Miskito" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MOSQUITO_GERMANY" Text="Moskito" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MOSQUITO_CHINA" Text="Misijituo" Language="en_US" />
@@ -7131,6 +7275,7 @@
 		<Replace Tag="LOC_CITY_NAME_PANAMA_CITY_JAPAN" Text="Panamashitii" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PANAMA_CITY_ARABIA" Text="Madinat Banama" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PANAMA_CITY_GREECE" Text="Póli tou Panamá" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PANAMA_CITY_MACEDON" Text="Póli tou Panamá" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PANAMA_CITY_GERMANY" Text="Panama-Stadt" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PANAMA_CITY_FRANCE" Text="Ville du Panama" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PANAMA_CITY_AZTEC" Text="Panamá" Language="en_US" />
