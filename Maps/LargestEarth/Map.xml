@@ -8,18 +8,15 @@
 	<StartPosition>
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_AMERICA"		X="206" Y="80" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_ARABIA"		X="48" Y="52" />
-		<!--
-		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_ARABIA"		X="41" Y="60" Leader="LEADER_SALADIN" />
-		-->
+		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_ARABIA"		X="40" Y="59" Leader="LEADER_SALADIN" DisabledByCivilization="CIVILIZATION_EGYPT" />
+		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_ARABIA"		X="48" Y="52" Leader="LEADER_SALADIN" AlternateStart="1" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_AUSTRALIA"		X="135" Y="11" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_AZTEC"		X="184" Y="61" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_BRAZIL"		X="219" Y="24" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_CHINA"		X="110" Y="81" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_CHINA"		X="107" Y="74" Leader="LEADER_QIN" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_EGYPT"		X="42" Y="56" />
-		<!--
-		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_EGYPT"		X="40" Y="61" Leader="LEADER_CLEOPATRA" />
-		-->
+		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_EGYPT"		X="38" Y="61" Leader="LEADER_CLEOPATRA" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_ENGLAND"		X="15" Y="90" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_FRANCE"		X="17" Y="84" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_GERMANY"		X="27" Y="89" />
@@ -34,6 +31,7 @@
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_KONGO"		X="28" Y="34" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_MACEDON"		X="37" Y="73" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_NORWAY"		X="26" Y="105" />
+		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_NUBIA"		X="43" Y="47" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_ROME"		X="26" Y="73" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_RUSSIA"		X="47" Y="93" />
 		<Replace MapName="LargestEarth" Civilization="CIVILIZATION_SCYTHIA"		X="62" Y="87" />
