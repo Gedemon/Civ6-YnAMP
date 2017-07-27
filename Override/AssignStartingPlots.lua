@@ -33,6 +33,7 @@ local bRealDeposits 		= MapConfiguration.GetValue("RealDeposits") == "PLACEMENT_
 local bImportResources		= MapConfiguration.GetValue("ResourcesPlacement") == "PLACEMENT_IMPORT"
 local iIceNorth 			= MapConfiguration.GetValue("IceNorth")
 local iIceSouth 			= MapConfiguration.GetValue("IceSouth")
+local bAnalyseChokepoints	= not GameConfiguration.GetValue("FastLoad")
 
 -- Create list of Civilizations and leaders in game
 for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
@@ -2851,7 +2852,7 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer before TerrainBuilder.AnalyzeChokepoints() = "..tostring(currentTimer).." seconds")
 	
-	if not WorldBuilder:IsActive() then -- to do : must use an option here, is this added to saved map ? will they work without this ? But it saves a lot of time for editing and exporting terrain data for YnAMP
+	if not WorldBuilder:IsActive() and bAnalyseChokepoints then -- to do : must use an option here, is this added to saved map ? will they work without this ? But it saves a lot of time for editing and exporting terrain data for YnAMP
 		TerrainBuilder.AnalyzeChokepoints();
 	else
 		print("Worldbuilder detected, skipping TerrainBuilder.AnalyzeChokepoints()...")
