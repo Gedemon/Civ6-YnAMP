@@ -10,6 +10,7 @@
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"	X="83" Y="18" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"	X="42" Y="15" AlternateStart="1" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_EGYPT"	X="73" Y="7" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_EGYPT"	X="72" Y="10" Leader="LEADER_CLEOPATRA" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ENGLAND"	X="31" Y="60" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ENGLAND"	X="28" Y="71" AlternateStart="1" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FRANCE"	X="34" Y="52" />
@@ -23,6 +24,7 @@
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_MACEDON"	X="74" Y="29" AlternateStart="1" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_NORWAY"	X="49" Y="82" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_NORWAY"	X="47" Y="73" AlternateStart="1" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_NUBIA"	X="75" Y="1" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ROME"	X="44" Y="34" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ROME"	X="69" Y="32" AlternateStart="1" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_RUSSIA"	X="78" Y="62" />
