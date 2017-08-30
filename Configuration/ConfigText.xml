@@ -287,5 +287,12 @@
       <Text>Use Historical Spawn Dates</Text>
     </Replace>
 	
+    <Replace Tag="LOC_TURNS_BEFORE_BARBARIANS_NAME" Language="en_US">
+      <Text>Barbarians Scout Turn</Text>
+    </Replace>
+    <Replace Tag="LOC_TURNS_BEFORE_BARBARIANS_DESCRIPTION" Language="en_US">
+      <Text>Minimum number of turns before allowing Barbarian Scouts</Text>
+    </Replace>
+	
   </LocalizedText>
 </GameData>

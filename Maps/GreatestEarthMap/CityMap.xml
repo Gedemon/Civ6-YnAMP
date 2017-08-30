@@ -7,9 +7,9 @@
 	
 	<!-- CAPITALS -->	
 	<CityMap>	<!-- (temporary section to covert all TSL that doesn't fit the game's capitals names) -->
-		<Replace MapName="GiantEarth" X="64" Y="33" CityLocaleName="LOC_CITY_NAME_MECCA" />
-		<Replace MapName="GiantEarth" X="63" Y="56" CityLocaleName="LOC_CITY_NAME_MOSCOW" />
-		<Replace MapName="GiantEarth" X="58" Y="33" CityLocaleName="LOC_CITY_NAME_THEBES" />		
+		<Replace MapName="GreatestEarthMap" X="64" Y="33" CityLocaleName="LOC_CITY_NAME_MECCA" />
+		<Replace MapName="GreatestEarthMap" X="63" Y="56" CityLocaleName="LOC_CITY_NAME_MOSCOW" />
+		<Replace MapName="GreatestEarthMap" X="58" Y="33" CityLocaleName="LOC_CITY_NAME_THEBES" />		
 	</CityMap>	
 	
 	<!-- PAPUA -->

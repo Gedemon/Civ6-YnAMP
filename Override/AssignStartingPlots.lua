@@ -4270,13 +4270,13 @@ function CulturallyLinkedCivilizations()
 			local playerConfig = PlayerConfigurations[player_ID]
 			--print ("------------------------------------------------------- ")
 			--print ("Testing " .. tostring(playerConfig:GetPlayerName()) )
-			local culture = GameInfo.Civilizations[playerConfig:GetCivilizationTypeID()].Ethnicity
+			local culture = GameInfo.Civilizations[playerConfig:GetCivilizationTypeID()].Ethnicity or "ETHNICITY_EURO"
 			for _, player_ID2 in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do	
 				--print ("in loop 2")
 				if player_ID ~= player_ID2 then
 					local player2 = Players[player_ID2]
 					local playerConfig2 = PlayerConfigurations[player_ID2]
-					local culture2 = GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity
+					local culture2 = GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity or "ETHNICITY_EURO"
 					if culture ~= culture2 then -- don't try to swith civs from same culture style, we can gain better score from different culture only...
 						--print ("culture ~= culture2")
 						local startPlot1 = player:GetStartingPlot()
@@ -4337,7 +4337,7 @@ function CalculateDistanceScoreCityStates(bOutput)
 			for _, player_ID2 in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
 				local player2 = Players[player_ID2]
 				local playerConfig2 = PlayerConfigurations[player_ID2]
-				local civCulture2 = GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity
+				local civCulture2 = GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity or "ETHNICITY_EURO"
 				if  civCulture2 == civCulture then
 					local startPlot2 = player2:GetStartingPlot()
 					local distance = Map.GetPlotDistance(startPlot1:GetX(), startPlot1:GetY(), startPlot2:GetX(), startPlot2:GetY())
@@ -4354,9 +4354,13 @@ function CalculateDistanceScoreCityStates(bOutput)
 						interGroupMinimizer = 8 -- unknown culture group, average distance
 					end
 					local startPlot2 = player2:GetStartingPlot()
-					local distance = Map.GetPlotDistance(startPlot1:GetX(), startPlot1:GetY(), startPlot2:GetX(), startPlot2:GetY())
-					distanceScore = distanceScore + Round(distance/interGroupMinimizer)
-					if bOutput then print ("      - Distance to different culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (/".. tostring(interGroupMinimizer) .." from intergroup relative distance), total distance score = " .. tostring(distanceScore) ) end
+					if startPlot2 then
+						local distance = Map.GetPlotDistance(startPlot1:GetX(), startPlot1:GetY(), startPlot2:GetX(), startPlot2:GetY())
+						distanceScore = distanceScore + Round(distance/interGroupMinimizer)
+						if bOutput then print ("      - Distance to different culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (/".. tostring(interGroupMinimizer) .." from intergroup relative distance), total distance score = " .. tostring(distanceScore) ) end
+					else
+						print("      - WARNING: no starting plot available for " .. tostring(playerConfig2:GetPlayerName()))
+					end
 				end
 			end
 		end

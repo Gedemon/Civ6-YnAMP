@@ -104,6 +104,13 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_YEREVAN"			X="64" Y="44" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ZANZIBAR"		X="63" Y="17" />
 		
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AUCKLAND" 		X="3" Y="10" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ANTANANARIVO" 	X="66" Y="9" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ARMAGH" 			X="33" Y="55" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GRANADA" 		X="38" Y="34" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MUSCAT" 			X="70" Y="33" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PALENQUE" 		X="18" Y="35" />
+	
 	</StartPosition>
 
 	<!-- ++++++++++++++++++++++++ -->

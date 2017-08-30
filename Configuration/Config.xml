@@ -59,6 +59,7 @@
 		<!--	Option to use only generic city names (no civ-specific names)		-->
 		<Row ParameterId="OnlyGenericCityNames" Name="LOC_MAP_ONLY_GENERIC_CITY_NAMES_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="OnlyGenericCityNames" GroupId="MapOptions" SortIndex="2001"/>
 
+		<Row ParameterId="TurnsBeforeBarbarians" Name="LOC_TURNS_BEFORE_BARBARIANS_NAME" Description="LOC_TURNS_BEFORE_BARBARIANS_DESCRIPTION" Domain="uint" Hash="0" DefaultValue="7" ConfigurationGroup="Game" ConfigurationId="TurnsBeforeBarbarians" GroupId="AdvancedOptions" SortIndex="2999"/>
 
 	</Parameters>	
 
@@ -121,7 +122,9 @@
 		<Row ParameterId="ForceTSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_TSL"/>
 		<Row ParameterId="LeaderTSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_TSL"/>
 		<Row ParameterId="AlternateTSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_TSL"/>
-		<Row ParameterId="OnlyGenericCityNames" ConfigurationGroup="Map" ConfigurationId="AutoCityNaming" Operator="Equals" ConfigurationValue="1"/>		
+		<Row ParameterId="OnlyGenericCityNames" ConfigurationGroup="Map" ConfigurationId="AutoCityNaming" Operator="Equals" ConfigurationValue="1"/>
+
+		<Row ParameterId="TurnsBeforeBarbarians" ConfigurationGroup="Game" ConfigurationId="GAME_NO_BARBARIANS" Operator="Equals" ConfigurationValue="0" />		
 
 	</ParameterDependencies>	
 	

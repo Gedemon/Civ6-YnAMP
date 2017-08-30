@@ -233,3 +233,26 @@ end
 ----------------------------------------------------------------------------------------
 -- EnforcingTSL >>>>>
 ----------------------------------------------------------------------------------------
+-- Limiting Barbarian Scouts <<<<<
+----------------------------------------------------------------------------------------
+if GameConfiguration.GetValue("TurnsBeforeBarbarians") and GameConfiguration.GetValue("TurnsBeforeBarbarians") > 0 then 
+----------------------------------------------------------------------------------------
+
+print("Limiting Barbarian Scouts is ON...")
+
+function OnUnitAddedToMap( playerID:number, unitID:number )
+	local unit 				= UnitManager.GetUnit(playerID, unitID)
+	local player 			= Players[playerID]
+	local turnsFromStart 	= Game.GetCurrentGameTurn() - GameConfiguration.GetStartTurn()
+	if unit and player and unit:GetType() == GameInfo.Units["UNIT_SCOUT"].Index and player:IsBarbarian() and turnsFromStart < GameConfiguration.GetValue("TurnsBeforeBarbarians") then
+		print("Removing Barbarian Scout at turn #"..tostring(Game.GetCurrentGameTurn()) ..", not allowed until turn #"..tostring(GameConfiguration.GetStartTurn()+GameConfiguration.GetValue("TurnsBeforeBarbarians")))
+		player:GetUnits():Destroy(unit)
+	end
+end
+Events.UnitAddedToMap.Add(OnUnitAddedToMap)
+
+----------------------------------------------------------------------------------------
+end
+----------------------------------------------------------------------------------------
+-- Limiting Barbarian Scouts >>>>>
+----------------------------------------------------------------------------------------

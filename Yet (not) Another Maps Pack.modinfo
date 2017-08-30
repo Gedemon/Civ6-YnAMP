@@ -64,6 +64,7 @@
 				<LoadOrder>2</LoadOrder>
            	</Properties>
 			<Items>
+				<File>Version.sql</File>
 				<File>Gameplay/GamePlay.sql</File>
 				<File>Gameplay/GamePlay.xml</File>
 				<File>Maps/GiantEarth/Map.xml</File>
@@ -121,6 +122,7 @@
 	</LocalizedText>
 	
 	<Files>
+		<File>Version.sql</File>
 		<File>Configuration/Config.xml</File>
 		<File>Maps/GiantEarth/Config.xml</File>
 		<File>Maps/GreatestEarthMap/Config.xml</File>
