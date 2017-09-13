@@ -35,7 +35,13 @@
       <Text>[COLOR_RED]Largest Earth[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_LARGESTEARTH_DESC" Language="en_US">
-      <Text>Largest Earth (230x116 - Ludicrous)[NEWLINE][ICON_Exclamation] [COLOR_RED]Slow Loading time ! (~5 mn)[ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]High VRAM usage ![ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]NASA's supercomputers hate it ![ENDCOLOR]</Text>
+      <Text>Largest Earth (230x116 - Ludicrous)[NEWLINE][ICON_Exclamation] [COLOR_RED]VERY UNSTABLE since summer patch[ENDCOLOR][NEWLINE][COLOR_RED]Slow Loading time ! (~5 mn)[ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]High VRAM usage ![ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]NASA's supercomputers hate it ![ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_TERRAMAP_NAME" Language="en_US">
+      <Text>Terra Map for YnAMP</Text>
+    </Replace>
+    <Replace Tag="LOC_TERRAMAP_DESC" Language="en_US">
+      <Text>A map with landmass placement based on a scalable Earth</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Language="en_US">
@@ -292,6 +298,20 @@
     </Replace>
     <Replace Tag="LOC_TURNS_BEFORE_BARBARIANS_DESCRIPTION" Language="en_US">
       <Text>Minimum number of turns before allowing Barbarian Scouts</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_LANDMASS_OVERLAY_NAME" Language="en_US">
+      <Text>Randomized Landmass</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LANDMASS_OVERLAY_DESCRIPTION" Language="en_US">
+      <Text>To generate Landmasses placed over real Earth continents position (randomize coastline)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_EARTH_LANDMASS_NAME" Language="en_US">
+      <Text>Use Base Earth</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EARTH_LANDMASS_DESCRIPTION" Language="en_US">
+      <Text>Real Earth continents shape the landmasses (scaled down to map size)</Text>
     </Replace>
 	
   </LocalizedText>

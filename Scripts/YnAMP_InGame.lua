@@ -20,7 +20,6 @@ include ("YnAMP_Utils.lua") -- can't do that ???
 local mapName = MapConfiguration.GetValue("MapName")
 print ("Map Name = " .. tostring(mapName))
 
---GameConfiguration.SetValue("GAME_NO_BARBARIANS", 1)
 
 ----------------------------------------------------------------------------------------
 -- Export Cliffs positions from a civ6 map to Lua.log

@@ -3954,7 +3954,7 @@ function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains,
 end
 
 
-function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bImportFeatures, bImportResources, bImportContinents)
+function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bImportFeatures, bImportResources, bImportContinents, bIgnoreCliffs)
 	print("Importing Civ6 Map ( Terrain = "..tostring(bDoTerrains)..", Rivers = "..tostring(bImportRivers)..", Features = "..tostring(bImportFeatures)..", Resources = "..tostring(bImportResources)..", Continents = "..tostring(bImportContinents)..")")
 	local count = 0
 		
@@ -4023,7 +4023,7 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 		end
 		
 		-- Set Cliffs
-		if Cliffs then
+		if Cliffs and not bIgnoreCliffs then
 			if Cliffs[1] == 1 then -- IsNEOfCliff
 				TerrainBuilder.SetNEOfCliff(plot, true)
 				if bOutput then print(" - Set is NE of Cliff") end

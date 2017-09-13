@@ -1,0 +1,71 @@
+<!--
+
+	Map Size reference
+
+			  Civ V       Civ VI 
+	 
+	Dual       40x24       44x26 
+	Tiny       55x36       60x36 
+	Small      66x42       74x46 
+	Standard   80x52       84x54 
+	Large     104x64       96x60
+	Huge      128x80      106x66  
+	Enormous              128x80
+	Giant     180x94      180x94
+	Ludicrous N/A        230x115 (220x110 for summer patch)
+
+-->
+
+<GameInfo>
+	
+	<Maps>
+		<Row File="TerraMap.lua" Name="LOC_TERRAMAP_NAME" Description="LOC_TERRAMAP_DESC" SortIndex="0"/>
+	</Maps>
+
+
+	<Parameters>
+		<!--	TerraMap Options
+		-->
+		
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="LandMassOverlay" Name="LOC_MAP_LANDMASS_OVERLAY_NAME" Description="LOC_MAP_LANDMASS_OVERLAY_DESCRIPTION" Domain="LandMassOverlay" DefaultValue="ADD_OVERLAY" ConfigurationGroup="Map" ConfigurationId="LandMassOverlay" GroupId="MapOptions" SortIndex="228"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="EarthLandMass" Name="LOC_MAP_EARTH_LANDMASS_NAME" Description="LOC_MAP_EARTH_LANDMASS_DESCRIPTION" Domain="EarthLandMass" DefaultValue="NO_EARTH_BASE" ConfigurationGroup="Map" ConfigurationId="EarthLandMass" GroupId="MapOptions" SortIndex="229"/>
+		
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="WorldAge" Name="LOC_MAP_WORLD_AGE_NAME" Description="LOC_MAP_WORLD_AGE_DESCRIPTION" Domain="WorldAge" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="world_age" GroupId="MapOptions" Hash="0" SortIndex="230"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="Temperature" Name="LOC_MAP_TEMPERATURE_NAME" Description="LOC_MAP_TEMPERATURE_DESCRIPTION" Domain="Temperature" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="temperature" GroupId="MapOptions" Hash="0" SortIndex="240"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="Rainfall" Name="LOC_MAP_RAINFALL_NAME" Description="LOC_MAP_RAINFALL_DESCRIPTION" Domain="Rainfall" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="rainfall" GroupId="MapOptions" Hash="0" SortIndex="250"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="SeaLevel" Name="LOC_MAP_SEA_LEVEL_NAME" Description="LOC_MAP_SEA_LEVEL_LOW_DESCRIPTION" Domain="SeaLevel" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="sea_level" GroupId="MapOptions" Hash="0" SortIndex="260"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="TerraMapIceNorth" 	Name="IceNorth" Description="" Domain="text" DefaultValue="3" ConfigurationGroup="Map" ConfigurationId="IceNorth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="TerraMapIceSouth" 	Name="IceSouth" Description="" Domain="text" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="IceSouth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+
+	</Parameters>	
+	
+	<DomainValues>
+		
+		<Row Domain="LandMassOverlay" Value="NO_OVERLAY" 	Name="LOC_YNAMP_DEACTIVATED_NAME" 	Description="LOC_MAP_LANDMASS_OVERLAY_DESCRIPTION" 	SortIndex="10"/>
+		<Row Domain="LandMassOverlay" Value="ADD_OVERLAY" 	Name="LOC_YNAMP_ACTIVATED_NAME" 	Description="LOC_MAP_LANDMASS_OVERLAY_DESCRIPTION" 	SortIndex="20"/>
+		
+		<Row Domain="EarthLandMass" Value="NO_EARTH_BASE" 	Name="LOC_YNAMP_DEACTIVATED_NAME" 	Description="LOC_MAP_EARTH_LANDMASS_DESCRIPTION" 	SortIndex="10"/>
+		<Row Domain="EarthLandMass" Value="ADD_EARTH_BASE" 	Name="LOC_YNAMP_ACTIVATED_NAME" 	Description="LOC_MAP_EARTH_LANDMASS_DESCRIPTION" 	SortIndex="20"/>	
+		
+	</DomainValues>
+	
+	<ParameterDependencies>	
+		<Row ParameterId="LandMassOverlay" ConfigurationGroup="Map" ConfigurationId="EarthLandMass" Operator="NotEquals" ConfigurationValue="NO_EARTH_BASE"/>
+	</ParameterDependencies>
+	
+	<!-- Only use those values for a domain -->
+	<MapSupportedValues>
+		<!--
+		<Row Map="LargestEarth.lua" Domain="FeaturesPlacement" Value="PLACEMENT_DEFAULT" />
+		<Row Map="LargestEarth.lua" Domain="FeaturesPlacement" Value="PLACEMENT_EMPTY" />
+		-->
+	</MapSupportedValues>
+	
+	<!-- Don't use those values for a domain -->
+	<MapUnSupportedValues>
+		<!--
+		<Row Map="PlayEuropeAgain.lua" Domain="StandardPlayers" Value="CIVILIZATION_AMERICA" />
+		-->
+	</MapUnSupportedValues>
+	
+</GameInfo>

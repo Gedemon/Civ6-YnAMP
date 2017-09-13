@@ -80,7 +80,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_ENGLAND</Civilization>
-			<Resource>RESOURCE_WHALE</Resource>
+			<Resource>RESOURCE_WHALES</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_FRANCE</Civilization>
@@ -167,7 +167,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_JAPAN</Civilization>
-			<Resource>RESOURCE_WHALE</Resource>
+			<Resource>RESOURCE_WHALES</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_JAPAN</Civilization>
@@ -277,7 +277,7 @@
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_POLYNESIA</Civilization>
-			<Resource>RESOURCE_WHALE</Resource>
+			<Resource>RESOURCE_WHALES</Resource>
 		</Row>
 		<Row>
 			<Civilization>CIVILIZATION_POLYNESIA</Civilization>

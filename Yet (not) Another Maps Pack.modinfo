@@ -6,102 +6,92 @@
     <Teaser>LOC_YNAMP_TEASER</Teaser>
     <Description>LOC_YNAMP_DESCRIPTION</Description>
     <Authors>Gedemon</Authors>
-  </Properties>
-  
-	<Settings>
-		<Custom id="YNAMP_SETTING">
-			<Items>
-				<File>Configuration/Config.xml</File>
-				<File>Maps/GiantEarth/Config.xml</File>
-				<File>Maps/GreatestEarthMap/Config.xml</File>
-				<File>Maps/PlayEuropeAgain/Config.xml</File>
-				<File>Maps/LargestEarth/Config.xml</File>
-			</Items>
-		</Custom>
-		<LocalizedText id="YNAMP_SETTING_LOC">
-			<Items>
-				<File>Configuration/ConfigText.xml</File>
-				<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
-				<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
-				<File>Configuration/ConfigText_pt_BR.xml</File>
-			</Items>
-		</LocalizedText>
-	</Settings>	
-	<Components>
+  </Properties>	
+	
+	<InGameActions>
 		<ImportFiles id="YNAMP_IMPORT">
-			<Items>
-				<File>Maps/GiantEarth/GiantEarth.lua</File>
-				<File>Maps/GreatestEarthMap/GreatestEarthMap.lua</File>
-				<File>Maps/PlayEuropeAgain/PlayEuropeAgain.lua</File>
-				<File>Maps/LargestEarth/LargestEarth.lua</File>
-				<File>Override/AssignStartingPlots.lua</File>
-				<File>Scripts/YnAMP_Utils.lua</File>
-			</Items>
+			<File>Maps/GiantEarth/GiantEarth.lua</File>
+			<File>Maps/GreatestEarthMap/GreatestEarthMap.lua</File>
+			<File>Maps/PlayEuropeAgain/PlayEuropeAgain.lua</File>
+			<File>Maps/LargestEarth/LargestEarth.lua</File>
+			<File>Maps/TerraMap/TerraMap.lua</File>
+			<File>Override/AssignStartingPlots.lua</File>
+			<File>Override/StagingRoom.lua</File>
+			<File>Scripts/YnAMP_Utils.lua</File>
 		</ImportFiles>
-        <GameplayScripts>
-            <Items>
-                <File>Scripts/YnAMP_Script.lua</File>
-            </Items>
-        </GameplayScripts>
-        <UserInterface>		
+        <AddGameplayScripts>
+               <File>Scripts/YnAMP_Script.lua</File>
+        </AddGameplayScripts>
+        <AddUserInterfaces>
 			<Properties>
 				<Context>InGame</Context>
 			</Properties>
-            <Items>
                 <File>Scripts/YnAMP_InGame.xml</File>
-            </Items>
-        </UserInterface>	
+        </AddUserInterfaces>	
+
 		<UpdateDatabase id="YNAMP_INIT_TABLE">
            	<Properties>
 				<LoadOrder>-1000</LoadOrder>
            	</Properties>
-			<Items>
-				<File>Gameplay/Tables.sql</File>
-			</Items>
+			<File>Gameplay/Tables.sql</File>
 		</UpdateDatabase>
 		<UpdateDatabase id="YNAMP_DEFAULT_COMPONENT">
            	<Properties>
 				<LoadOrder>2</LoadOrder>
            	</Properties>
-			<Items>
-				<File>Version.sql</File>
-				<File>Gameplay/GamePlay.sql</File>
-				<File>Gameplay/GamePlay.xml</File>
-				<File>Maps/GiantEarth/Map.xml</File>
-				<File>Maps/GiantEarth/CityMap.xml</File>
-				<File>Maps/GreatestEarthMap/Map.xml</File>
-				<File>Maps/GreatestEarthMap/CityMap.xml</File>
-				<File>Maps/PlayEuropeAgain/Map.xml</File>
-				<File>Maps/PlayEuropeAgain/CityMap.xml</File>
-				<File>Maps/PlayEuropeAgain/CityMap_Arabia.xml</File>
-				<File>Maps/PlayEuropeAgain/CityMap_Greece.xml</File>
-				<File>Maps/PlayEuropeAgain/CityMap_Macedon.xml</File>
-				<File>Maps/PlayEuropeAgain/CityMap_Rome.xml</File>
-				<File>Maps/LargestEarth/Map.xml</File>
-				<File>Maps/LargestEarth/CityMap.xml</File>
-				<File>Gameplay/Resource.xml</File>
-				<File>Gameplay/CityNameByEra.xml</File>
-			</Items>
+			<File>Version.sql</File>
+			<File>Gameplay/GamePlay.sql</File>
+			<File>Gameplay/GamePlay.xml</File>
+			<File>Maps/GiantEarth/Map.xml</File>
+			<File>Maps/GiantEarth/CityMap.xml</File>
+			<File>Maps/GreatestEarthMap/Map.xml</File>
+			<File>Maps/GreatestEarthMap/CityMap.xml</File>
+			<File>Maps/PlayEuropeAgain/Map.xml</File>
+			<File>Maps/PlayEuropeAgain/CityMap.xml</File>
+			<File>Maps/PlayEuropeAgain/CityMap_Arabia.xml</File>
+			<File>Maps/PlayEuropeAgain/CityMap_Greece.xml</File>
+			<File>Maps/PlayEuropeAgain/CityMap_Macedon.xml</File>
+			<File>Maps/PlayEuropeAgain/CityMap_Rome.xml</File>
+			<File>Maps/LargestEarth/Map.xml</File>
+			<File>Maps/LargestEarth/CityMap.xml</File>
+			<File>Gameplay/Resource.xml</File>
+			<File>Gameplay/CityNameByEra.xml</File>
 		</UpdateDatabase>
 		<UpdateDatabase id="YNAMP_USER_CUSTOMIZATION">
            	<Properties>
 				<LoadOrder>10600</LoadOrder>
            	</Properties>
-			<Items>
-				<File>custom.sql</File>
-				<File>custom.xml</File>
-			</Items>
+			<File>custom.sql</File>
+			<File>custom.xml</File>
 		</UpdateDatabase>
-		<LocalizedText id="YNAMP_DEFAULT_LOC">
+		<UpdateText id="YNAMP_DEFAULT_LOC">
            	<Properties>
 				<LoadOrder>2</LoadOrder>
            	</Properties>
-			<Items>
-				<File>Gameplay/GamePlayText.xml</File>
-				<File>Gameplay/GamePlayText_pt_BR.xml</File>
-			</Items>
-		</LocalizedText>
-	</Components>
+			<File>Gameplay/GamePlayText.xml</File>
+			<File>Gameplay/GamePlayText_pt_BR.xml</File>
+		</UpdateText>
+	</InGameActions>
+	
+	<FrontEndActions>
+		<ImportFiles id="YNAMP_IMPORT">
+			<File>Override/StagingRoom.lua</File>
+		</ImportFiles>
+		<UpdateDatabase id="YNAMP_SETTING">
+			<File>Configuration/Config.xml</File>
+			<File>Maps/GiantEarth/Config.xml</File>
+			<File>Maps/GreatestEarthMap/Config.xml</File>
+			<File>Maps/PlayEuropeAgain/Config.xml</File>
+			<File>Maps/LargestEarth/Config.xml</File>
+			<File>Maps/TerraMap/Config.xml</File>
+		</UpdateDatabase>		
+		<UpdateText id="YNAMP_SETTING_LOC">
+				<File>Configuration/ConfigText.xml</File>
+				<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
+				<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
+				<File>Configuration/ConfigText_pt_BR.xml</File>
+		</UpdateText>
+	</FrontEndActions>
 	
 	<LocalizedText>
 		<Text id="LOC_YNAMP_TITLE">
@@ -128,6 +118,7 @@
 		<File>Maps/GreatestEarthMap/Config.xml</File>
 		<File>Maps/PlayEuropeAgain/Config.xml</File>
 		<File>Maps/LargestEarth/Config.xml</File>
+		<File>Maps/TerraMap/Config.xml</File>
 		<File>Configuration/ConfigText.xml</File>
 		<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
 		<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
@@ -155,7 +146,9 @@
 		<File>Maps/GreatestEarthMap/GreatestEarthMap.lua</File>
 		<File>Maps/PlayEuropeAgain/PlayEuropeAgain.lua</File>
 		<File>Maps/LargestEarth/LargestEarth.lua</File>
+		<File>Maps/TerraMap/TerraMap.lua</File>
 		<File>Override/AssignStartingPlots.lua</File>
+		<File>Override/StagingRoom.lua</File>
 		<File>Scripts/YnAMP_Script.lua</File>
 		<File>Scripts/YnAMP_Utils.lua</File>
 		<File>Scripts/YnAMP_InGame.lua</File>
