@@ -16,11 +16,21 @@ include "NaturalWonderGenerator"
 include "ResourceGenerator"
 include "AssignStartingPlots"
 
-local g_iW, g_iH;
+local g_iW, g_iH, g_MapSize;
 
 -- The base map is the Largest Earth Map
 local g_LargestMapWidth 	= 230
 local g_LargestMapHeight 	= 116
+
+local g_SizeDual      =  44*26
+local g_SizeTiny      =  60*36
+local g_SizeSmall     =  74*46
+local g_SizeStandard  =  84*54
+local g_SizeLarge     =  96*60
+local g_SizeHuge      = 106*66
+local g_SizeEnormous  = 128*80
+local g_SizeGiant     = 180*94
+local g_SizeLudicrous = 230*115
 
 local g_WidthFactor
 local g_HeightFactor
@@ -32,8 +42,103 @@ local g_continentsFrac = nil;
 
 local bLandMassOverlay 	= (MapConfiguration.GetValue("LandMassOverlay") == "ADD_OVERLAY") or (MapConfiguration.GetValue("EarthLandMass") == "NO_EARTH_BASE");
 local bEarthLandMass 	= MapConfiguration.GetValue("EarthLandMass") == "ADD_EARTH_BASE";
+local bDebug			= false--true
 print("LandMassOverlay = ", bLandMassOverlay)
 print("EarthLandMass = ", bEarthLandMass)
+
+local g_RegionBorderCoastDistance
+
+local largeContinentArgs = {};
+local continentArgs = {};
+local smallContinentArgs = {};
+local largeIslandArgs = {};
+local islandArgs = {};
+local smallIslandsArgs = {};
+local seaArgs = {};
+local oceanArgs = {};
+local largeLakesArgs = {};
+
+local BackRegions = {	-- Region size/placement based on the Largest Earth	
+	["NORTH_AMERICA"] = 		{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="155", 	Y="66", 	Width="59", Height="32", southAttenuationRange = 0, northAttenuationRange = 0, eastAttenuationRange = 0.25, eastAttenuationFactor = 0.05, westAttenuationRange = 0.25, westAttenuationFactor = 0.05 },
+	["ARCTIC_AMERICA"] = 		{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="155", 	Y="95", 	Width="50", Height="20", southAttenuationRange = 0 },
+	["CENTRAL_AMERICA"] = 		{	Args= islandArgs,			Type="Land",	Pass="3",	X="170", 	Y="49", 	Width="40", Height="17", southAttenuationRange = 0, northAttenuationRange = 0 },
+	["SOUTH_AMERICA_WEST"] = 	{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="189", 	Y="18", 	Width="20", Height="34", westAttenuationRange = 0.35, eastAttenuationRange = 0, southAttenuationRange = 0.25 },
+	["SOUTH_AMERICA_EAST"] = 	{	Args= continentArgs,		Type="Land",	Pass="1",	X="201", 	Y="18", 	Width="15", Height="34", westAttenuationRange = 0 },
+	["ANTARCTIC_AMERICA"] = 	{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="200", 	Y="3", 		Width="25", Height="16", northAttenuationRange = 0 },
+	["AUSTRALIA"] = 			{	Args= largeIslandArgs,		Type="Land",	Pass="1",	X="110", 	Y="4", 		Width="50", Height="32" },
+	["OCEANIA"] = 				{	Args= seaArgs,				Type="Land",	Pass="1",	X="100", 	Y="20",		Width="80", Height="33" },
+	["SOUTH_ASIA"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="70", 	Y="30",		Width="65", Height="30", southAttenuationRange = 0.35, northAttenuationRange = 0, westAttenuationRange = 0.25 },
+	["CENTRAL_ASIA"] = 			{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="70", 	Y="60",		Width="55", Height="25", eastAttenuationRange = 0.40, eastAttenuationFactor = 0.80, southAttenuationRange = 0.25, westAttenuationRange = 0, northAttenuationRange = 0    },
+	["EAST_ASIA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="96", 	Y="58",		Width="20", Height="28", eastAttenuationRange = 0.35, westAttenuationRange = 0   },
+	["JAPAN"] = 				{	Args= largeIslandArgs,		Type="Land",	Pass="1",	X="125", 	Y="58",		Width="20", Height="36" },
+	["NORTH_ASIA"] = 			{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="68", 	Y="80",		Width="80", Height="35", westAttenuationRange = 0, southAttenuationRange = 0 },
+	["MIDDLE_EAST"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="40", 	Y="45",		Width="32", Height="31", eastAttenuationRange = 0, westAttenuationRange = 0.05, northAttenuationRange = 0 },
+	["TURKEY"] = 				{	Args= continentArgs,		Type="Land",	Pass="1",	X="40", 	Y="67",		Width="19", Height="9" },
+	["SOUTH_EUROPA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="4", 		Y="65",		Width="38", Height="13", eastAttenuationRange = 0, northAttenuationRange = 0 },
+	["WEST_EUROPA"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="2", 		Y="76",		Width="30", Height="17", eastAttenuationRange = 0, westAttenuationRange = 0.25, northAttenuationRange = 0},
+	["CENTRAL_EUROPA"] =		{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="30", 	Y="75",		Width="19", Height="28", eastAttenuationRange = 0, westAttenuationRange = 0, southAttenuationRange = 0, northAttenuationRange = 0 },
+	["NORTH_EUROPA"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="2", 		Y="85",		Width="70", Height="30", eastAttenuationRange = 0, southAttenuationRange = 0 },
+	["EAST_EUROPA"] = 			{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="32", 	Y="76",		Width="58", Height="22", eastAttenuationRange = 0, westAttenuationRange = 0, southAttenuationRange = 0 },
+	["NORTH_AFRICA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="1", 		Y="46",		Width="47", Height="19", southAttenuationRange = 0 },
+	["CENTRAL_AFRICA"] = 		{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="20", 	Y="27",		Width="34", Height="23", eastAttenuationRange = 0.25  },
+	["SOUTH_AFRICA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="25", 	Y="6",		Width="21", Height="25", northAttenuationRange = 0 },
+	["MADAGASCAR"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="52", 	Y="12",		Width="10", Height="15" },
+}
+
+local TopRegions = {	-- Region size/placement based on the Largest Earth
+	["GROENLAND"] = 			{	Args= islandArgs,			Type="Land",	Pass="1",	X="210", 	Y="98", 	Width="19", Height="17" },
+	["MEDITERRANEAN"] = 		{	Args= seaArgs,				Type="Water",	Pass="1",	X="15", 	Y="65",		Width="10", Height="5" },
+	["MEDITERRANEAN2"] = 		{	Args= seaArgs,				Type="Water",	Pass="1",	X="25", 	Y="65",		Width="12", Height="10" },
+	["MEDITERRANEAN3"] = 		{	Args= seaArgs,				Type="Water",	Pass="1",	X="37", 	Y="60",		Width="10", Height="5" },
+	["BLACK_SEA"] = 			{	Args= seaArgs,				Type="Water",	Pass="1",	X="42", 	Y="75",		Width="20", Height="5" },
+	["CHINA_SEA"] = 			{	Args= seaArgs,				Type="Water",	Pass="1",	X="100", 	Y="42",		Width="18", Height="6" },			
+	["NORTH_ATLANTIC1"] = 		{	Args= seaArgs,				Type="Water",	Pass="1",	X="214",	Y="75",		Width="16", Height="20", 	},--eastAttenuationRange = 0.25, eastAttenuationFactor = 0.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
+	["NORTH_ATLANTIC2"] = 		{	Args= seaArgs,				Type="Water",	Pass="1",	X="200",	Y="60",		Width="30", Height="15", 	},--eastAttenuationRange = 0.25, eastAttenuationFactor = 0.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
+	["ATLANTIC1"] = 			{	Args= oceanArgs,			Type="Water",	Pass="2",	X="220",	Y="37",		Width="10", Height="7", 	},--eastAttenuationRange = 0.25, eastAttenuationFactor = 0.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
+	["ATLANTIC2"] = 			{	Args= seaArgs,				Type="Water",	Pass="1",	X="224",	Y="30",		Width="10", Height="7", 	},--eastAttenuationRange = 0.25, eastAttenuationFactor = 0.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
+	["ATLANTIC3"] = 			{	Args= seaArgs,				Type="Water",	Pass="1",	X="0",		Y="16",		Width="18", Height="14", 	},--eastAttenuationRange = 0.25, eastAttenuationFactor = 0.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
+	["BERING_STRAIT"] = 		{	Args= oceanArgs,			Type="Water",	Pass="1",	X="146",	Y="90",		Width="12", Height="30", 	eastAttenuationRange = 0.55, eastAttenuationFactor = 2.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
+	["NORTH_PACIFIC1"] = 		{	Args= oceanArgs,			Type="Water",	Pass="1",	X="138",	Y="74",		Width="20", Height="12", 	},--eastAttenuationRange = 0.25, eastAttenuationFactor = 0.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
+	["NORTH_PACIFIC2"] = 		{	Args= oceanArgs,			Type="Water",	Pass="1",	X="136",	Y="62",		Width="26", Height="12", 	},--eastAttenuationRange = 0.25, eastAttenuationFactor = 0.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
+	["PACIFIC"] = 				{	Args= oceanArgs,			Type="Water",	Pass="1",	X="158",	Y="65",		Width="18", Height="10", 	},--eastAttenuationRange = 0.25, eastAttenuationFactor = 0.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
+	["NORTH_ASIA_LAKES"] = 		{	Args= largeLakesArgs,		Type="Water",	Pass="1",	X="75", 	Y="75",		Width="39", Height="25" },
+}
+
+local VerticalCoastRegions = {
+	
+	["NORTH_AMERICA"] = 		BackRegions["NORTH_AMERICA"],
+	["ARCTIC_AMERICA"] = 		BackRegions["ARCTIC_AMERICA"],
+	["CENTRAL_AMERICA"] = 		BackRegions["CENTRAL_AMERICA"],
+	["SOUTH_AMERICA_WEST"] = 	BackRegions["SOUTH_AMERICA_WEST"],
+	["SOUTH_AMERICA_EAST"] = 	BackRegions["SOUTH_AMERICA_EAST"],
+	["ANTARCTIC_AMERICA"] = 	BackRegions["ANTARCTIC_AMERICA"],
+	["SOUTH_ASIA"] = 			BackRegions["SOUTH_ASIA"],
+	--["CENTRAL_ASIA"] = 			BackRegions["CENTRAL_ASIA"],
+	["EAST_ASIA"] = 			BackRegions["EAST_ASIA"],
+	["NORTH_ASIA"] = 			BackRegions["NORTH_ASIA"],
+	--["MIDDLE_EAST"] = 			BackRegions["MIDDLE_EAST"],
+	--["TURKEY"] = 				BackRegions["TURKEY"],
+	--["SOUTH_EUROPA"] = 			BackRegions["SOUTH_EUROPA"],
+	["WEST_EUROPA"] = 			BackRegions["WEST_EUROPA"],
+	--["CENTRAL_EUROPA"] =		BackRegions["CENTRAL_EUROPA"],
+	--["NORTH_EUROPA"] = 			BackRegions["NORTH_EUROPA"],
+	--["EAST_EUROPA"] = 			BackRegions["EAST_EUROPA"],
+	["NORTH_AFRICA"] = 			BackRegions["NORTH_AFRICA"],
+	["CENTRAL_AFRICA"] = 		BackRegions["CENTRAL_AFRICA"],
+	["SOUTH_AFRICA"] = 			BackRegions["SOUTH_AFRICA"],
+	--["MADAGASCAR"] = 			BackRegions["MADAGASCAR"],
+	["NORTH_PACIFIC1"] = 		BackRegions["NORTH_PACIFIC1"],
+	["NORTH_PACIFIC2"] = 		BackRegions["NORTH_PACIFIC2"],
+	["PACIFIC"] = 				BackRegions["PACIFIC"],
+	["NORTH_ATLANTIC1"] = 		BackRegions["NORTH_ATLANTIC1"],
+	["NORTH_ATLANTIC2"] = 		BackRegions["NORTH_ATLANTIC2"],
+	["ATLANTIC1"] = 			BackRegions["ATLANTIC1"],
+	["ATLANTIC2"] = 			BackRegions["ATLANTIC2"],
+	["ATLANTIC3"] = 			BackRegions["ATLANTIC3"],
+	["BERING_STRAIT"] = 		BackRegions["BERING_STRAIT"],
+	["GROENLAND"] = 			BackRegions["GROENLAND"], 
+
+}
 
 -------------------------------------------------------------------------------
 function GenerateMap()
@@ -42,12 +147,15 @@ function GenerateMap()
 	local pPlot;
 
 	-- Set globals
-	g_iW, g_iH = Map.GetGridSize();	
+	g_iW, g_iH 	= Map.GetGridSize();	
+	g_MapSize	= g_iW * g_iH
 	
 	g_WidthFactor 	= g_LargestMapWidth / g_iW 
 	g_HeightFactor 	= g_LargestMapHeight / g_iH 
 	g_WidthRatio 	= g_iW / g_LargestMapWidth 
 	g_HeightRatio 	= g_iH / g_LargestMapHeight 
+	
+	g_RegionBorderCoastDistance = math.max(1, math.ceil(4 * g_WidthRatio))
 	
 	print("g_WidthFactor 	= ", g_WidthFactor)
 	print("g_HeightFactor 	= ", g_HeightFactor)
@@ -210,7 +318,7 @@ function GeneratePlotTypes()
 					plotTypes[i] = g_PLOT_TYPE_OCEAN
 				else
 					plotTypes[i] = g_PLOT_TYPE_LAND
-					-- ResourceBuilder.SetResourceType(pPlot, GameInfo.Resources["RESOURCE_JEANS"].Index, 1) -- for debugging, cover the real earth shape with jeans resource...
+					if bDebug then ResourceBuilder.SetResourceType(pPlot, GameInfo.Resources["RESOURCE_JEANS"].Index, 1) end -- for debugging, cover the real earth shape with jeans resource...
 				end
 			else
 				plotTypes[i] = g_PLOT_TYPE_OCEAN
@@ -219,127 +327,105 @@ function GeneratePlotTypes()
 	end
 	--]]
 	
-	if bLandMassOverlay then
 	
-		local largeContinentArgs = {};
-		largeContinentArgs.iWaterPercent = 20 + water_percent_modifier --65 + water_percent_modifier;
-		largeContinentArgs.iRegionGrain = 3;
-		largeContinentArgs.iRegionHillsGrain = 4;
-		largeContinentArgs.iRegionPlotFlags = g_iFlags;
-		largeContinentArgs.iRegionFracXExp = 5;
-		largeContinentArgs.iRegionFracYExp = 4;		
+	--local largeContinentArgs = {};
+	largeContinentArgs.iWaterPercent = 20 + water_percent_modifier --65 + water_percent_modifier;
+	largeContinentArgs.iRegionGrain = 3;
+	largeContinentArgs.iRegionHillsGrain = 4;
+	largeContinentArgs.iRegionPlotFlags = g_iFlags;
+	largeContinentArgs.iRegionFracXExp = 5;
+	largeContinentArgs.iRegionFracYExp = 4;		
+
+	--local continentArgs = {};
+	continentArgs.iWaterPercent = 30 + water_percent_modifier --65 + water_percent_modifier;
+	continentArgs.iRegionGrain = 3;
+	continentArgs.iRegionHillsGrain = 4;
+	continentArgs.iRegionPlotFlags = g_iFlags;
+	continentArgs.iRegionFracXExp = 6;
+	continentArgs.iRegionFracYExp = 5;
+
+	--local smallContinentArgs = {};
+	smallContinentArgs.iWaterPercent = 40 + water_percent_modifier --72 + water_percent_modifier;
+	smallContinentArgs.iRegionGrain = 3;
+	smallContinentArgs.iRegionHillsGrain = 4;
+	smallContinentArgs.iRegionPlotFlags = g_iFlags;
+	smallContinentArgs.iRegionFracXExp = 7;
+	smallContinentArgs.iRegionFracYExp = 6;	
+
+	--local largeIslandArgs = {};
+	largeIslandArgs.iWaterPercent = 53 + water_percent_modifier
+	largeIslandArgs.iRegionGrain = 4;
+	largeIslandArgs.iRegionHillsGrain = 4;
+	largeIslandArgs.iRegionPlotFlags = g_iFlags;
+	largeIslandArgs.iRegionFracXExp = 7;
+	largeIslandArgs.iRegionFracYExp = 6;	
+
+	--local islandArgs = {};
+	islandArgs.iWaterPercent = 60 + water_percent_modifier --95 + water_percent_modifier;
+	islandArgs.iRegionGrain = 4;
+	islandArgs.iRegionHillsGrain = 4;
+	islandArgs.iRegionPlotFlags = g_iFlags;
+	islandArgs.iRegionFracXExp = 7;
+	islandArgs.iRegionFracYExp = 6;	
+
+	--local smallIslandsArgs = {};
+	smallIslandsArgs.iWaterPercent = 95 --90 + water_percent_modifier;
+	smallIslandsArgs.iRegionGrain = 4--2--4;
+	smallIslandsArgs.iRegionHillsGrain = 4;
+	smallIslandsArgs.iRegionPlotFlags = g_iFlags;
+	smallIslandsArgs.iRegionFracXExp = 7;
+	smallIslandsArgs.iRegionFracYExp = 6;
+	smallIslandsArgs.iRiftGrain = -1;
+
+	--local seaArgs = {};
+	seaArgs.iWaterPercent = 95 --90 + water_percent_modifier;
+	seaArgs.iRegionGrain = 4--2--4;
+	seaArgs.iRegionHillsGrain = 4;
+	seaArgs.iRegionPlotFlags = g_iFlags;
+	seaArgs.iRegionFracXExp = 7;
+	seaArgs.iRegionFracYExp = 6;
+	seaArgs.iRiftGrain = -1;
+
+	--local oceanArgs = {};
+	oceanArgs.iWaterPercent = 98 --90 + water_percent_modifier;
+	oceanArgs.iRegionGrain = 4--2--4;
+	oceanArgs.iRegionHillsGrain = 4;
+	oceanArgs.iRegionPlotFlags = g_iFlags;
+	oceanArgs.iRegionFracXExp = 7;
+	oceanArgs.iRegionFracYExp = 6;
+	oceanArgs.iRiftGrain = -1;
+
+	--local largeLakesArgs = {};
+	largeLakesArgs.iWaterPercent = 10 --65 + water_percent_modifier;
+	largeLakesArgs.iRegionGrain = 6;
+	largeLakesArgs.iRegionHillsGrain = 4;
+	largeLakesArgs.iRegionPlotFlags = g_iFlags;
+	largeLakesArgs.iRegionFracXExp = 7;
+	largeLakesArgs.iRegionFracYExp = 6;
 	
-		local continentArgs = {};
-		continentArgs.iWaterPercent = 30 + water_percent_modifier --65 + water_percent_modifier;
-		continentArgs.iRegionGrain = 3;
-		continentArgs.iRegionHillsGrain = 4;
-		continentArgs.iRegionPlotFlags = g_iFlags;
-		continentArgs.iRegionFracXExp = 6;
-		continentArgs.iRegionFracYExp = 5;
-		
-		local smallContinentArgs = {};
-		smallContinentArgs.iWaterPercent = 40 + water_percent_modifier --72 + water_percent_modifier;
-		smallContinentArgs.iRegionGrain = 3;
-		smallContinentArgs.iRegionHillsGrain = 4;
-		smallContinentArgs.iRegionPlotFlags = g_iFlags;
-		smallContinentArgs.iRegionFracXExp = 7;
-		smallContinentArgs.iRegionFracYExp = 6;	
-		
-		local largeIslandArgs = {};
-		largeIslandArgs.iWaterPercent = 53 + water_percent_modifier
-		largeIslandArgs.iRegionGrain = 4;
-		largeIslandArgs.iRegionHillsGrain = 4;
-		largeIslandArgs.iRegionPlotFlags = g_iFlags;
-		largeIslandArgs.iRegionFracXExp = 7;
-		largeIslandArgs.iRegionFracYExp = 6;	
-		
-		local islandArgs = {};
-		islandArgs.iWaterPercent = 60 + water_percent_modifier --95 + water_percent_modifier;
-		islandArgs.iRegionGrain = 4;
-		islandArgs.iRegionHillsGrain = 4;
-		islandArgs.iRegionPlotFlags = g_iFlags;
-		islandArgs.iRegionFracXExp = 7;
-		islandArgs.iRegionFracYExp = 6;	
-		
-		local seaArgs = {};
-		seaArgs.iWaterPercent = 95 --90 + water_percent_modifier;
-		seaArgs.iRegionGrain = 4--2--4;
-		seaArgs.iRegionHillsGrain = 4;
-		seaArgs.iRegionPlotFlags = g_iFlags;
-		seaArgs.iRegionFracXExp = 7;
-		seaArgs.iRegionFracYExp = 6;
-		seaArgs.iRiftGrain = -1;
-		
-		local oceanArgs = {};
-		oceanArgs.iWaterPercent = 98 --90 + water_percent_modifier;
-		oceanArgs.iRegionGrain = 4--2--4;
-		oceanArgs.iRegionHillsGrain = 4;
-		oceanArgs.iRegionPlotFlags = g_iFlags;
-		oceanArgs.iRegionFracXExp = 7;
-		oceanArgs.iRegionFracYExp = 6;
-		oceanArgs.iRiftGrain = -1;
-		
-		local largeLakesArgs = {};
-		largeLakesArgs.iWaterPercent = 10 --65 + water_percent_modifier;
-		largeLakesArgs.iRegionGrain = 6;
-		largeLakesArgs.iRegionHillsGrain = 4;
-		largeLakesArgs.iRegionPlotFlags = g_iFlags;
-		largeLakesArgs.iRegionFracXExp = 7;
-		largeLakesArgs.iRegionFracYExp = 6;	
-		
-		local BackRegions = {	-- Region size/placement based on the Largest Earth	
-			["NORTH_AMERICA"] = 		{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="155", 	Y="66", 	Width="59", Height="32", southAttenuationRange = 0, northAttenuationRange = 0 },
-			["ARCTIC_AMERICA"] = 		{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="155", 	Y="95", 	Width="50", Height="20", southAttenuationRange = 0 },
-			["CENTRAL_AMERICA"] = 		{	Args= islandArgs,			Type="Land",	Pass="3",	X="170", 	Y="49", 	Width="40", Height="17", southAttenuationRange = 0, northAttenuationRange = 0 },
-			["SOUTH_AMERICA_WEST"] = 	{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="189", 	Y="18", 	Width="20", Height="34", westAttenuationRange = 0.35, eastAttenuationRange = 0, southAttenuationRange = 0.25 },
-			["SOUTH_AMERICA_EAST"] = 	{	Args= continentArgs,		Type="Land",	Pass="1",	X="201", 	Y="18", 	Width="15", Height="34", westAttenuationRange = 0 },
-			["ANTARCTIC_AMERICA"] = 	{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="200", 	Y="3", 		Width="25", Height="16", northAttenuationRange = 0 },
-			["AUSTRALIA"] = 			{	Args= largeIslandArgs,		Type="Land",	Pass="1",	X="110", 	Y="4", 		Width="50", Height="32" },
-			["OCEANIA"] = 				{	Args= seaArgs,				Type="Land",	Pass="1",	X="100", 	Y="20",		Width="80", Height="33" },
-			["SOUTH_ASIA"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="70", 	Y="30",		Width="65", Height="30", southAttenuationRange = 0.35, northAttenuationRange = 0, westAttenuationRange = 0.25 },
-			["CENTRAL_ASIA"] = 			{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="70", 	Y="60",		Width="55", Height="25", eastAttenuationRange = 0.40, eastAttenuationFactor = 0.80, southAttenuationRange = 0.25, westAttenuationRange = 0, northAttenuationRange = 0    },
-			["EAST_ASIA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="96", 	Y="58",		Width="20", Height="28", eastAttenuationRange = 0.35, westAttenuationRange = 0   },
-			["JAPAN"] = 				{	Args= largeIslandArgs,		Type="Land",	Pass="1",	X="125", 	Y="58",		Width="20", Height="36" },
-			["NORTH_ASIA"] = 			{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="68", 	Y="80",		Width="80", Height="35", westAttenuationRange = 0, southAttenuationRange = 0 },
-			["MIDDLE_EAST"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="40", 	Y="45",		Width="32", Height="31", eastAttenuationRange = 0, westAttenuationRange = 0.05, northAttenuationRange = 0 },
-			["TURKEY"] = 				{	Args= continentArgs,		Type="Land",	Pass="1",	X="40", 	Y="67",		Width="19", Height="9" },
-			["SOUTH_EUROPA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="4", 		Y="65",		Width="38", Height="13", eastAttenuationRange = 0, northAttenuationRange = 0 },
-			["WEST_EUROPA"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="2", 		Y="76",		Width="30", Height="17", eastAttenuationRange = 0, westAttenuationRange = 0.25, northAttenuationRange = 0},
-			["CENTRAL_EUROPA"] =		{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="30", 	Y="75",		Width="19", Height="28", eastAttenuationRange = 0, westAttenuationRange = 0, southAttenuationRange = 0, northAttenuationRange = 0 },
-			["NORTH_EUROPA"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="2", 		Y="85",		Width="70", Height="30", eastAttenuationRange = 0, southAttenuationRange = 0 },
-			["EAST_EUROPA"] = 			{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="32", 	Y="76",		Width="58", Height="22", eastAttenuationRange = 0, westAttenuationRange = 0, southAttenuationRange = 0 },
-			["NORTH_AFRICA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="1", 		Y="46",		Width="47", Height="19", southAttenuationRange = 0 },
-			["CENTRAL_AFRICA"] = 		{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="20", 	Y="27",		Width="34", Height="23", eastAttenuationRange = 0.25  },
-			["SOUTH_AFRICA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="25", 	Y="6",		Width="21", Height="25", northAttenuationRange = 0 },
-			["MADAGASCAR"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="52", 	Y="12",		Width="10", Height="15" },
-		}
-		
-		local TopRegions = {	-- Region size/placement based on the Largest Earth
-			["GROENLAND"] = 			{	Args= islandArgs,			Type="Land",	Pass="1",	X="210", 	Y="98", 	Width="19", Height="17" },
-			["MEDITERRANEAN"] = 		{	Args= seaArgs,				Type="Water",	Pass="1",	X="15", 	Y="65",		Width="10", Height="5" },
-			["MEDITERRANEAN2"] = 		{	Args= seaArgs,				Type="Water",	Pass="1",	X="25", 	Y="65",		Width="12", Height="10" },
-			["MEDITERRANEAN3"] = 		{	Args= seaArgs,				Type="Water",	Pass="1",	X="37", 	Y="60",		Width="10", Height="5" },
-			["BLACK_SEA"] = 			{	Args= seaArgs,				Type="Water",	Pass="1",	X="42", 	Y="75",		Width="20", Height="5" },
-			["CHINA_SEA"] = 			{	Args= seaArgs,				Type="Water",	Pass="1",	X="100", 	Y="42",		Width="18", Height="6" },			
-			["NORTH_ATLANTIC1"] = 		{	Args= seaArgs,				Type="Water",	Pass="1",	X="214",	Y="75",		Width="16", Height="20" },
-			["NORTH_ATLANTIC2"] = 		{	Args= seaArgs,				Type="Water",	Pass="1",	X="200",	Y="60",		Width="30", Height="15" },
-			["ATLANTIC1"] = 			{	Args= oceanArgs,			Type="Water",	Pass="2",	X="220",	Y="37",		Width="10", Height="7" },
-			["ATLANTIC2"] = 			{	Args= seaArgs,				Type="Water",	Pass="1",	X="224",	Y="30",		Width="10", Height="7" },
-			["ATLANTIC3"] = 			{	Args= seaArgs,				Type="Water",	Pass="1",	X="0",		Y="16",		Width="18", Height="14" },
-			["BERING_STRAIT"] = 		{	Args= oceanArgs,			Type="Water",	Pass="1",	X="146",	Y="90",		Width="12", Height="30" },
-			["NORTH_PACIFIC1"] = 		{	Args= oceanArgs,			Type="Water",	Pass="1",	X="138",	Y="74",		Width="20", Height="12" },
-			["NORTH_PACIFIC2"] = 		{	Args= oceanArgs,			Type="Water",	Pass="1",	X="136",	Y="62",		Width="26", Height="12" },
-			["PACIFIC"] = 				{	Args= oceanArgs,			Type="Water",	Pass="1",	X="158",	Y="65",		Width="18", Height="10" },
-			["NORTH_ASIA_LAKES"] = 		{	Args= largeLakesArgs,		Type="Water",	Pass="1",	X="75", 	Y="75",		Width="39", Height="25" },
-		}
-		if bEarthLandMass then
-			TopRegions.SEA_OF_OKHOTSK	= 	{	Args= seaArgs,				Type="Water",	Pass="1",	X="134", 	Y="92",	Width="8", Height="6" }
-			TopRegions.NORTH_SEA		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="15",		Y="95",		Width="6", Height="8" }
-			TopRegions.BALTIC_SEA 		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="30",		Y="92",		Width="3", Height="6" }
-			TopRegions.BAY_OF_BENGAL	=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="90",		Y="40",		Width="8", Height="12" }			
-			TopRegions.SEA_OF_JAPAN		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="123",	Y="75",		Width="5", Height="12" }
-			TopRegions.YELLOW_SEA		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="114",	Y="71",		Width="3", Height="6" }
+	
+	if bEarthLandMass then
+		TopRegions.SEA_OF_OKHOTSK	= 	{	Args= seaArgs,				Type="Water",	Pass="1",	X="134", 	Y="92",	Width="8", Height="6" }
+		TopRegions.NORTH_SEA		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="15",		Y="95",	Width="6", Height="8" }
+		TopRegions.BALTIC_SEA 		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="30",		Y="92",	Width="3", Height="6" }
+		TopRegions.BAY_OF_BENGAL	=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="90",		Y="40",	Width="8", Height="12" }			
+		TopRegions.SEA_OF_JAPAN		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="123",	Y="75",	Width="5", Height="12" }
+		TopRegions.YELLOW_SEA		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="114",	Y="71",	Width="3", Height="6" }
+	else
+		if g_MapSize >= g_SizeLudicrous then
+			TopRegions.ISLANDS		=	{	Args= smallIslandsArgs,			Type="Land",	Pass="4",	X="0",	Y="0",		Width= g_LargestMapWidth, Height= g_LargestMapHeight }
+		elseif g_MapSize >= g_SizeGiant then
+			TopRegions.ISLANDS		=	{	Args= smallIslandsArgs,			Type="Land",	Pass="3",	X="0",	Y="0",		Width= g_LargestMapWidth, Height= g_LargestMapHeight }
+		elseif g_MapSize >= g_SizeEnormous then
+			TopRegions.ISLANDS		=	{	Args= smallIslandsArgs,			Type="Land",	Pass="3",	X="0",	Y="0",		Width= g_LargestMapWidth, Height= g_LargestMapHeight }
+		elseif g_MapSize >= g_SizeHuge then
+			TopRegions.ISLANDS		=	{	Args= smallIslandsArgs,			Type="Land",	Pass="2",	X="0",	Y="0",		Width= g_LargestMapWidth, Height= g_LargestMapHeight }
+		elseif g_MapSize >= g_SizeStandard then
+			TopRegions.ISLANDS		=	{	Args= smallIslandsArgs,			Type="Land",	Pass="1",	X="0",	Y="0",		Width= g_LargestMapWidth, Height= g_LargestMapHeight }
 		end
+	end	
+	
+	if bLandMassOverlay then
 		
 		local function GenerateRegion(region)
 		
@@ -367,17 +453,42 @@ function GeneratePlotTypes()
 			
 			if region.Type == "Water" then
 				for k, v in pairs(region.Args) do args[k] = v end
+				for k, v in pairs(args) do print(k, v) end
 				for i = 1, region.Pass do
 					plotTypes = GenerateWaterLayer(args, plotTypes)
 				end
 			else
-				for k, v in pairs(region.Args) do args[k] = v end				
+				for k, v in pairs(region.Args) do args[k] = v end
+				for k, v in pairs(args) do print(k, v) end
 				for i = 1, region.Pass do
 					plotTypes = GenerateFractalLayerWithoutHills(args, plotTypes)
 				end
 			end
 			
-			for k, v in pairs(args) do print(k, v) end
+			
+			if bDebug then	-- for debugging, cover the regions borders with some artificial resources...	
+				for x = args.iRegionWestX, args.iRegionWestX + args.iRegionWidth do
+					for y = args.iRegionSouthY, args.iRegionSouthY + args.iRegionHeight do
+						local i = y * g_iW + x;
+						local pPlot = Map.GetPlotByIndex(i)
+						if pPlot then
+							local borderRes = GameInfo.Resources["RESOURCE_PERFUME"].Index
+							if region.Type == "Water" then borderRes = GameInfo.Resources["RESOURCE_COSMETICS"].Index end
+							if 	(pPlot:GetResourceType() == GameInfo.Resources["RESOURCE_PERFUME"].Index and borderRes == GameInfo.Resources["RESOURCE_COSMETICS"].Index) 
+							 or (pPlot:GetResourceType() == GameInfo.Resources["RESOURCE_COSMETICS"].Index and borderRes == GameInfo.Resources["RESOURCE_PERFUME"].Index)
+							 then
+								borderRes = GameInfo.Resources["RESOURCE_TOYS"].Index 
+							end
+							if 	x == args.iRegionWestX 	or x == args.iRegionWestX + args.iRegionWidth 
+							 or y == args.iRegionSouthY or y == args.iRegionSouthY + args.iRegionHeight
+							 then
+								ResourceBuilder.SetResourceType(pPlot, borderRes, 1)
+							end
+						end
+					end
+				end
+			end
+			
 		end
 		
 		for key, region in pairs(BackRegions) do
@@ -558,7 +669,7 @@ function GenerateTerrainTypes(plotTypes, iW, iH, iFlags, bNoCoastalMountains, te
 	
 	---[[
 	if bLandMassOverlay then
-		print("Breaking coastline");
+		print("Breaking horizontal coastline");
 		for iI = 0, 2 do
 			local shallowWaterPlots = {};
 			for iX = 0, iW - 1 do
@@ -578,8 +689,39 @@ function GenerateTerrainTypes(plotTypes, iW, iH, iFlags, bNoCoastalMountains, te
 			for i, index in ipairs(shallowWaterPlots) do
 				terrainTypes[index] = g_TERRAIN_TYPE_COAST;
 			end
-		end
-	end
+		end		
+		
+		print("Breaking vertical coastline");
+		for key, region in pairs(VerticalCoastRegions) do
+			if region.Type ~= "Water" then			
+				for iI = 0, 2 do
+					local shallowWaterPlots = {};
+					local iRegionWestX = math.floor(region.X * g_WidthRatio)
+					local iRegionSouthY = math.floor(region.Y * g_HeightRatio)
+					local iRegionHeight = math.ceil(region.Height * g_HeightRatio)
+					local iRegionWidth = math.ceil(region.Width * g_WidthRatio)
+					for x = iRegionWestX - g_RegionBorderCoastDistance, iRegionWestX + iRegionWidth + g_RegionBorderCoastDistance do
+						for y = iRegionSouthY, iRegionSouthY + iRegionHeight do
+							if x >= 0 and x <= iW then
+								local index = (y * iW) + x;
+								if 	(terrainTypes[index] ~= g_TERRAIN_TYPE_OCEAN and terrainTypes[index] ~= g_TERRAIN_TYPE_COAST)
+								 and x <= iRegionWestX + g_RegionBorderCoastDistance or x >= (iRegionWestX + iRegionWidth) - g_RegionBorderCoastDistance
+								 then
+									if (IsAdjacentToShallowWater(terrainTypes, x, y) and TerrainBuilder.GetRandomNumber(5, "add shallows") == 0) then
+										print("removing land coast at ", x, y, " region = ", key)
+										table.insert(shallowWaterPlots, index);
+									end
+								end
+							end
+						end
+					end					
+					for i, index in ipairs(shallowWaterPlots) do
+						terrainTypes[index] = g_TERRAIN_TYPE_COAST;
+					end
+				end			
+			end
+		end		
+	end	
 	--]]
 	
 	print("Expanding coasts");
@@ -749,6 +891,9 @@ function GenerateFractalLayerWithoutHills (args, plotTypes)
 				local val = regionContinentsFrac:GetHeight(x,y)
 				local attenuationFactor = GetAttenuationFactor(args,x,y)
 				elevationMap[i] = val * attenuationFactor
+				if attenuationFactor ~= 1 then
+					print ("x, y = ", x+iRegionWestX, y+iRegionSouthY, ", attenuationFactor = ", attenuationFactor, " initial height =",val, " final height = ", elevationMap[i], " iWaterThreshold = ", iWaterThreshold)
+				end
 			end
 		end
 
@@ -850,7 +995,36 @@ function GenerateWaterLayer (args, plotTypes)
 		
 		-- Using the fractal matrices we just created, determine fractal-height values for sea level.
 		local iWaterThreshold = regionContinentsFrac:GetHeight(iWaterPercent);
+		
+		-- Attenuation factors as usued in PerfectWorld3.lua map script (c)2010 Rich Marinaccio
+		local elevationMap = {}
+		for y = 0,iRegionHeight - 1,1 do
+			for x = 0,iRegionWidth - 1,1 do
+				local i = y * iRegionWidth + x + 1; -- Lua arrays start at 1.
+				local val = regionContinentsFrac:GetHeight(x,y)
+				local attenuationFactor = GetAttenuationFactor(args,x,y)
+				elevationMap[i] = val / attenuationFactor
+				if attenuationFactor ~= 1 then
+					print ("x, y = ", x, y, ", attenuationFactor = ", attenuationFactor, " initial height =",val, " final height = ", elevationMap[i], " iWaterThreshold = ", iWaterThreshold)
+				end
+			end
+		end
+		
+		-- Loop through the region's plots
+		local landPlots = 0
+		for x = 0, iRegionWidth - 1, 1 do
+			for y = 0, iRegionHeight - 1, 1 do		
+				local i = y * iRegionWidth + x + 1; -- Lua arrays start at 1.
+				if elevationMap[i] <= iWaterThreshold then
+					--do nothing
+				else
+					plotTypes2[i] = g_PLOT_TYPE_LAND;
+					landPlots = landPlots + 1
+				end
+			end
+		end
 
+		--[[
 		-- Loop through the region's plots
 		local landPlots = 0
 		for x = 0, iRegionWidth - 1, 1 do
@@ -865,6 +1039,7 @@ function GenerateWaterLayer (args, plotTypes)
 				end
 			end
 		end
+		--]]
 		
 		local numPlots 			= iRegionWidth * iRegionHeight
 		local realWaterPercent 	= (numPlots - landPlots) / numPlots * 100
