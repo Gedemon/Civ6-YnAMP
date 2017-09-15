@@ -79,13 +79,44 @@
       <Text>Giant</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_GIANT_DESCRIPTION" Language="en_US">
-      <Text>Giant Map for 20+ players (180x94)</Text>
+      <Text>Giant Map for 20+ players (184x92)</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_LUDICROUS_NAME" Language="en_US">
       <Text>Ludicrous</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" Language="en_US">
-      <Text>Will you stand the test of time while your computer try to load this ? (230x115)</Text>
+      <Text>Will you stand the test of time while your computer try to load this ? (200x100)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAPSIZE_SMALL21_NAME" Language="en_US">
+      <Text>Small (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_SMALL21_DESCRIPTION" Language="en_US">
+      <Text>Small map for 6 players (84x42)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_STANDARD21_NAME" Language="en_US">
+      <Text>Standard (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_STANDARD21_DESCRIPTION" Language="en_US">
+      <Text>Average-sized map for 8 players (96x48)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LARGE21_NAME" Language="en_US">
+      <Text>Large (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LARGE21_DESCRIPTION" Language="en_US">
+      <Text>Large map for 10 players (108x54)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_HUGE21_NAME" Language="en_US">
+      <Text>Huge (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_HUGE21_DESCRIPTION" Language="en_US">
+      <Text>Huge map for 12 players (120x60)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS21_NAME" Language="en_US">
+      <Text>Enormous (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS21_DESCRIPTION" Language="en_US">
+      <Text>Really Enormous Map for 16 players (148x74)</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_NAME" Language="en_US">

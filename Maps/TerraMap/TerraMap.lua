@@ -37,6 +37,16 @@ local g_HeightFactor
 local g_WidthRatio
 local g_HeightRatio
 
+-- set values of the reference map for placement
+local g_ReferenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth") or 180
+local g_ReferenceMapHeight 	= MapConfiguration.GetValue("ReferenceMapHeight") or 94
+local g_ReferenceMapSize    = g_ReferenceMapWidth*g_ReferenceMapHeight
+local g_ReferenceWidthFactor
+local g_ReferenceHeightFactor
+local g_ReferenceWidthRatio
+local g_ReferenceHeightRatio
+
+
 local g_iFlags = {};
 local g_continentsFrac = nil;
 
@@ -72,14 +82,14 @@ local BackRegions = {	-- Region size/placement based on the Largest Earth
 	["EAST_ASIA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="96", 	Y="58",		Width="20", Height="28", eastAttenuationRange = 0.35, westAttenuationRange = 0   },
 	["JAPAN"] = 				{	Args= largeIslandArgs,		Type="Land",	Pass="1",	X="125", 	Y="58",		Width="20", Height="36" },
 	["NORTH_ASIA"] = 			{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="68", 	Y="80",		Width="80", Height="35", westAttenuationRange = 0, southAttenuationRange = 0 },
-	["MIDDLE_EAST"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="40", 	Y="45",		Width="32", Height="31", eastAttenuationRange = 0, westAttenuationRange = 0.05, northAttenuationRange = 0 },
+	["MIDDLE_EAST"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="40", 	Y="45",		Width="32", Height="31", eastAttenuationRange = 0, westAttenuationRange = 0.05, northAttenuationRange = 0 },
 	["TURKEY"] = 				{	Args= continentArgs,		Type="Land",	Pass="1",	X="40", 	Y="67",		Width="19", Height="9" },
 	["SOUTH_EUROPA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="4", 		Y="65",		Width="38", Height="13", eastAttenuationRange = 0, northAttenuationRange = 0 },
-	["WEST_EUROPA"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="2", 		Y="76",		Width="30", Height="17", eastAttenuationRange = 0, westAttenuationRange = 0.25, northAttenuationRange = 0},
+	["WEST_EUROPA"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="2", 		Y="76",		Width="30", Height="17", westAttenuationRange = 0.40, westAttenuationFactor = 0.80, eastAttenuationRange = 0, northAttenuationRange = 0},
 	["CENTRAL_EUROPA"] =		{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="30", 	Y="75",		Width="19", Height="28", eastAttenuationRange = 0, westAttenuationRange = 0, southAttenuationRange = 0, northAttenuationRange = 0 },
 	["NORTH_EUROPA"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="2", 		Y="85",		Width="70", Height="30", eastAttenuationRange = 0, southAttenuationRange = 0 },
 	["EAST_EUROPA"] = 			{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="32", 	Y="76",		Width="58", Height="22", eastAttenuationRange = 0, westAttenuationRange = 0, southAttenuationRange = 0 },
-	["NORTH_AFRICA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="1", 		Y="46",		Width="47", Height="19", southAttenuationRange = 0 },
+	["NORTH_AFRICA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="1", 		Y="46",		Width="47", Height="19", westAttenuationRange = 0.40, westAttenuationFactor = 0.80, southAttenuationRange = 0 },
 	["CENTRAL_AFRICA"] = 		{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="20", 	Y="27",		Width="34", Height="23", eastAttenuationRange = 0.25  },
 	["SOUTH_AFRICA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="25", 	Y="6",		Width="21", Height="25", northAttenuationRange = 0 },
 	["MADAGASCAR"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="52", 	Y="12",		Width="10", Height="15" },
@@ -97,7 +107,7 @@ local TopRegions = {	-- Region size/placement based on the Largest Earth
 	["ATLANTIC1"] = 			{	Args= oceanArgs,			Type="Water",	Pass="2",	X="220",	Y="37",		Width="10", Height="7", 	},--eastAttenuationRange = 0.25, eastAttenuationFactor = 0.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
 	["ATLANTIC2"] = 			{	Args= seaArgs,				Type="Water",	Pass="1",	X="224",	Y="30",		Width="10", Height="7", 	},--eastAttenuationRange = 0.25, eastAttenuationFactor = 0.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
 	["ATLANTIC3"] = 			{	Args= seaArgs,				Type="Water",	Pass="1",	X="0",		Y="16",		Width="18", Height="14", 	},--eastAttenuationRange = 0.25, eastAttenuationFactor = 0.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
-	["BERING_STRAIT"] = 		{	Args= oceanArgs,			Type="Water",	Pass="1",	X="146",	Y="90",		Width="12", Height="30", 	eastAttenuationRange = 0.55, eastAttenuationFactor = 2.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
+	["BERING_STRAIT"] = 		{	Args= oceanArgs,			Type="Water",	Pass="1",	X="146",	Y="90",		Width="12", Height="30", 	eastAttenuationRange = 0.55, eastAttenuationFactor = 0.90, westAttenuationRange = 0.25, westAttenuationFactor = 0.90 },
 	["NORTH_PACIFIC1"] = 		{	Args= oceanArgs,			Type="Water",	Pass="1",	X="138",	Y="74",		Width="20", Height="12", 	},--eastAttenuationRange = 0.25, eastAttenuationFactor = 0.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
 	["NORTH_PACIFIC2"] = 		{	Args= oceanArgs,			Type="Water",	Pass="1",	X="136",	Y="62",		Width="26", Height="12", 	},--eastAttenuationRange = 0.25, eastAttenuationFactor = 0.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
 	["PACIFIC"] = 				{	Args= oceanArgs,			Type="Water",	Pass="1",	X="158",	Y="65",		Width="18", Height="10", 	},--eastAttenuationRange = 0.25, eastAttenuationFactor = 0.80, westAttenuationRange = 0.25, westAttenuationFactor = 0.80 },
@@ -154,6 +164,11 @@ function GenerateMap()
 	g_HeightFactor 	= g_LargestMapHeight / g_iH 
 	g_WidthRatio 	= g_iW / g_LargestMapWidth 
 	g_HeightRatio 	= g_iH / g_LargestMapHeight 
+	
+	g_ReferenceWidthFactor  = g_ReferenceMapWidth / g_iW 
+	g_ReferenceHeightFactor = g_ReferenceMapHeight / g_iH
+	g_ReferenceWidthRatio   = g_iW / g_ReferenceMapWidth 
+	g_ReferenceHeightRatio  = g_iH / g_ReferenceMapHeight
 	
 	g_RegionBorderCoastDistance = math.max(1, math.ceil(4 * g_WidthRatio))
 	
@@ -230,6 +245,11 @@ function GenerateMap()
 --		print ("i: plotType, terrainType, featureType: " .. tostring(i) .. ": " .. tostring(plotTypes[i]) .. ", " .. tostring(terrainTypes[i]) .. ", " .. tostring(pPlot:GetFeatureType(i)));
 --	end
 
+	print("Creating start plot database.")	
+	if bTSL then
+		buidTSL()
+	end	
+
 	local resourcesConfig = MapConfiguration.GetValue("resources");
 	local args = {
 		iWaterLux = 4,
@@ -249,6 +269,24 @@ function GenerateMap()
 		START_CONFIG = startConfig,
 	};
 	local start_plot_database = AssignStartingPlots.Create(args);
+	
+	-- Balance Starting positions for TSL
+	if bTSL then	
+		currentTimer = os.clock() - g_startTimer
+		print("Intermediate timer before balancing TSL = "..tostring(currentTimer).." seconds")
+		-- to do : remove magic numbers
+		--if startConfig == 1 then AssignStartingPlots:__AddResourcesBalanced() end
+		--if startConfig == 3 then AssignStartingPlots:__AddResourcesLegendary()() end
+		
+		for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+			local player = Players[iPlayer]
+			local plot = player:GetStartingPlot(plot)
+			if plot then
+				AssignStartingPlots:__AddBonusFoodProduction(plot)
+			end
+		end		
+		
+	end
 
 	local GoodyGen = AddGoodies(g_iW, g_iH);
 end
@@ -396,7 +434,7 @@ function GeneratePlotTypes()
 	oceanArgs.iRiftGrain = -1;
 
 	--local largeLakesArgs = {};
-	largeLakesArgs.iWaterPercent = 10 --65 + water_percent_modifier;
+	largeLakesArgs.iWaterPercent = 5 --65 + water_percent_modifier;
 	largeLakesArgs.iRegionGrain = 6;
 	largeLakesArgs.iRegionHillsGrain = 4;
 	largeLakesArgs.iRegionPlotFlags = g_iFlags;
@@ -513,10 +551,62 @@ function GeneratePlotTypes()
 	args.blendFract = 5;
 	args.world_age = world_age + 0.25;
 	mountainRatio = 2 + world_age * 2;
+	if g_MapSize >= g_SizeLudicrous then
+		args.adjust_plates = 7
+	elseif g_MapSize >= g_SizeGiant then
+		args.adjust_plates = 6
+	elseif g_MapSize >= g_SizeEnormous then
+		args.adjust_plates = 5
+	elseif g_MapSize >= g_SizeHuge then
+		args.adjust_plates = 4
+	elseif g_MapSize >= g_SizeLarge then
+		args.adjust_plates = 3
+	elseif g_MapSize >= g_SizeStandard then
+		args.adjust_plates = 2
+	elseif g_MapSize >= g_SizeSmall then
+		args.adjust_plates = 1
+	end
 	plotTypes = ApplyTectonics(args, plotTypes);
 	plotTypes = AddLonelyMountains(plotTypes, mountainRatio);
---]]
+--]]	
+	print("Breaking mountains range");
+	for iI = 0, 2 do
+		local toHillsPlots = {};
+		for iX = 0, g_iW - 1 do
+			for iY = 0, g_iH - 1 do
+				local index = (iY * g_iW) + iX;
+				if (plotTypes[index] == g_PLOT_TYPE_MOUNTAIN) then
+					local count = CountAdjacentMountains (plotTypes, iX, iY)
+					if (count > 3 and TerrainBuilder.GetRandomNumber( (7-count), "remove mountains") == 0) then
+						print("removing mountain from mountain range at ", iX, iY, " surrounded by #", count," mountains")
+						table.insert(toHillsPlots, index);
+					end
+				end
+			end
+		end
+		for i, index in ipairs(toHillsPlots) do
+			plotTypes[index] = g_PLOT_TYPE_HILLS;
+		end
+	end
+
 	return  plotTypes;
+end
+
+-------------------------------------------------------------------------------
+function CountAdjacentMountains(plotTypes, iX, iY)
+	local adjacentPlot;	
+	local iW, iH = Map.GetGridSize();
+	local count = 0
+	for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+		adjacentPlot = Map.GetAdjacentPlot(iX, iY, direction);
+		if (adjacentPlot ~= nil) then
+	   		local i = adjacentPlot:GetY() * iW + adjacentPlot:GetX();
+			if (plotTypes[i] == g_PLOT_TYPE_MOUNTAIN) then
+				count = count + 1
+			end
+		end
+	end
+	return count;
 end
 
 -------------------------------------------------------------------------------
@@ -615,7 +705,7 @@ function GenerateTerrainTypes(plotTypes, iW, iH, iFlags, bNoCoastalMountains, te
 				end
 			end
 		end
-	end
+	end	
 
 	if (bNoCoastalMountains == true) then
 		plotTypes = RemoveCoastalMountains(plotTypes, terrainTypes);
@@ -680,7 +770,7 @@ function GenerateTerrainTypes(plotTypes, iW, iH, iFlags, bNoCoastalMountains, te
 						-- Default is two passes at 1/8 chance per eligible plot on each pass.
 						--if (IsAdjacentToShallowWater(terrainTypes, iX, iY) and TerrainBuilder.GetRandomNumber(8, "add shallows") == 0) then
 						local count = CountAdjacentShallowWater (terrainTypes, iX, iY)
-						if (count > 1 and count < 3 and TerrainBuilder.GetRandomNumber(4, "add shallows") == 0) then
+						if (count > 1 and count < 3 and TerrainBuilder.GetRandomNumber(4, "remove land coast") == 0) then
 							table.insert(shallowWaterPlots, index);
 						end
 					end
@@ -707,7 +797,7 @@ function GenerateTerrainTypes(plotTypes, iW, iH, iFlags, bNoCoastalMountains, te
 								if 	(terrainTypes[index] ~= g_TERRAIN_TYPE_OCEAN and terrainTypes[index] ~= g_TERRAIN_TYPE_COAST)
 								 and x <= iRegionWestX + g_RegionBorderCoastDistance or x >= (iRegionWestX + iRegionWidth) - g_RegionBorderCoastDistance
 								 then
-									if (IsAdjacentToShallowWater(terrainTypes, x, y) and TerrainBuilder.GetRandomNumber(5, "add shallows") == 0) then
+									if (IsAdjacentToShallowWater(terrainTypes, x, y) and TerrainBuilder.GetRandomNumber(5, "remove land coast") == 0) then
 										print("removing land coast at ", x, y, " region = ", key)
 										table.insert(shallowWaterPlots, index);
 									end
@@ -1075,6 +1165,52 @@ function GenerateWaterLayer (args, plotTypes)
 
 	-- This region is done.
 	return plotTypes;
+end
+
+-------------------------------------------------------------------------------
+-- Override SetTrueStartingLocations
+-------------------------------------------------------------------------------
+function SetTrueStartingLocations()
+	print ("-------------------------------------------------------")
+	print ("Beginning True Starting Location placement for TerraMap based on "..tostring(mapName))
+	
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		local player = Players[iPlayer]
+		local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+		local position = getTSL[iPlayer]
+		if position then 
+			local x = Round( g_ReferenceWidthRatio	* position.X)
+			local y = Round( g_ReferenceHeightRatio	* position.Y)
+		
+			print ("- "..tostring(CivilizationTypeName).." at "..tostring(x)..","..tostring(y).." from initial values "..tostring(position.X)..","..tostring(position.Y))
+			local plot = Map.GetPlot(x, y)
+			if plot and plot:IsWater() then
+				print ("WARNING ! Plot is water, trying to switch to a land plot...")
+				plot = plot:GetNearestLandPlot()
+			end
+			if plot and not plot:IsWater() then
+				if plot:IsStartingPlot() then
+					print ("WARNING ! Plot is already a Starting Position")
+				else					
+					if player:IsMajor() then
+						if IsSafeStartingDistance(plot, true, player:IsHuman()) then
+							player:SetStartingPlot(plot)
+							--table.insert(AssignStartingPlots.majorStartPlots, plot)
+						else
+							print ("WARNING ! Plot is too close from another Starting Position")
+						end
+					else
+						if IsSafeStartingDistance(plot, false, false) then
+							player:SetStartingPlot(plot)
+							--table.insert(AssignStartingPlots.minorStartPlots, plot)
+						else
+							print ("WARNING ! Plot is too close from another Starting Position")
+						end
+					end
+				end
+			end
+		end
+	end	
 end
 
 -------------------------------------------------------------------------------

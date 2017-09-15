@@ -256,3 +256,47 @@ end
 ----------------------------------------------------------------------------------------
 -- Limiting Barbarian Scouts >>>>>
 ----------------------------------------------------------------------------------------
+
+-- test
+--[[
+local g_Timer = 0
+local g_Pause = 10
+
+function LaunchScriptWithPause()
+	Events.GameCoreEventPublishComplete.Add( CheckTimer )
+end
+Events.LoadScreenClose.Add( LaunchScriptWithPause ) -- launching the script when the load screen is closed, you can use your own events
+
+function StopScriptWithPause() -- GameCoreEventPublishComplete is called frequently, keep it clean
+	Events.GameCoreEventPublishComplete.Remove( CheckTimer )
+end
+
+function ChangePause(value)
+	print("changing pause value to ", value)
+	g_Pause = value
+end
+
+local AttachStuffToUnits = coroutine.create(function()
+	-- lets do stuff for 10 units
+	for unit = 1, 10 do
+		print("Doing stuff on unit #"..tostring(unit))
+		-- 
+		-- attach something to the unit or whatever you want to do before needing a pause
+		--
+		print("requesting pause in script for ", g_Pause, " seconds at time = ".. tostring( Automation.GetTime() ))
+		g_Timer = Automation.GetTime()
+		coroutine.yield()
+		-- after g_Pause seconds, the script will start again from here
+		print("resuming script at time = ".. tostring( Automation.GetTime() ))	
+	end	
+	StopScriptWithPause()
+end)
+
+function CheckTimer()	
+	if Automation.GetTime() >= g_Timer + g_Pause then
+		g_Timer = Automation.GetTime()
+		coroutine.resume(AttachStuffToUnits)
+	end
+end
+--]]
+

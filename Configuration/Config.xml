@@ -22,7 +22,12 @@
 		<Update>
 			<Set MaxPlayers="62" MaxCityStates="60"/>
 		</Update>
-		
+
+		<Row MapSizeType="MAPSIZE_SMALL21" Name="LOC_MAPSIZE_SMALL21_NAME" Description="LOC_MAPSIZE_SMALL21_DESCRIPTION" MinPlayers="2" MaxPlayers="62" DefaultPlayers="6" MinCityStates="0" MaxCityStates="60" DefaultCityStates="9" SortIndex="31" />
+		<Row MapSizeType="MAPSIZE_STANDARD21" Name="LOC_MAPSIZE_STANDARD21_NAME" Description="LOC_MAPSIZE_STANDARD21_DESCRIPTION" MinPlayers="2" MaxPlayers="62" DefaultPlayers="8" MinCityStates="0" MaxCityStates="60" DefaultCityStates="12" SortIndex="41" />
+		<Row MapSizeType="MAPSIZE_LARGE21" Name="LOC_MAPSIZE_LARGE21_NAME" Description="LOC_MAPSIZE_LARGE21_DESCRIPTION" MinPlayers="2" MaxPlayers="62" DefaultPlayers="10" MinCityStates="0" MaxCityStates="60" DefaultCityStates="15" SortIndex="51" />
+		<Row MapSizeType="MAPSIZE_HUGE21" Name="LOC_MAPSIZE_HUGE21_NAME" Description="LOC_MAPSIZE_HUGE21_DESCRIPTION" MinPlayers="2" MaxPlayers="62" DefaultPlayers="12" MinCityStates="0" MaxCityStates="60" DefaultCityStates="18" SortIndex="61" />			
+		<Row MapSizeType="MAPSIZE_ENORMOUS21" Name="LOC_MAPSIZE_ENORMOUS21_NAME" Description="LOC_MAPSIZE_ENORMOUS21_DESCRIPTION" MinPlayers="2" MaxPlayers="62" DefaultPlayers="16" MinCityStates="0" MaxCityStates="60" DefaultCityStates="22" SortIndex="71" />
 		<Row MapSizeType="MAPSIZE_ENORMOUS" Name="LOC_MAPSIZE_ENORMOUS_NAME" Description="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" MinPlayers="2" MaxPlayers="62" DefaultPlayers="16" MinCityStates="0" MaxCityStates="60" DefaultCityStates="22" SortIndex="70" />
 		<Row MapSizeType="MAPSIZE_GIANT" Name="LOC_MAPSIZE_GIANT_NAME" Description="LOC_MAPSIZE_GIANT_DESCRIPTION" MinPlayers="2" MaxPlayers="62" DefaultPlayers="20" MinCityStates="0" MaxCityStates="60" DefaultCityStates="26" SortIndex="80" />
 		<Row MapSizeType="MAPSIZE_LUDICROUS" Name="LOC_MAPSIZE_LUDICROUS_NAME" Description="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" MinPlayers="2" MaxPlayers="62" DefaultPlayers="20" MinCityStates="0" MaxCityStates="60" DefaultCityStates="30" SortIndex="90" />	

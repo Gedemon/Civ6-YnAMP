@@ -36,7 +36,25 @@
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="SeaLevel" Name="LOC_MAP_SEA_LEVEL_NAME" Description="LOC_MAP_SEA_LEVEL_LOW_DESCRIPTION" Domain="SeaLevel" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="sea_level" GroupId="MapOptions" Hash="0" SortIndex="260"/>
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="TerraMapIceNorth" 	Name="IceNorth" Description="" Domain="text" DefaultValue="3" ConfigurationGroup="Map" ConfigurationId="IceNorth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="TerraMapIceSouth" 	Name="IceSouth" Description="" Domain="text" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="IceSouth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="CivilizationPlacement" Name="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Description="LOC_MAP_CIVILIZATION_PLACEMENT_DESCRIPTION" Domain="CivilizationPlacement" DefaultValue="PLACEMENT_TSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" GroupId="MapOptions" Hash="0" SortIndex="280"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="ForceTSL" Name="LOC_MAP_FORCE_TSL_NAME" Description="LOC_MAP_FORCE_TSL_DESCRIPTION" Domain="ForceTSL" DefaultValue="FORCE_TSL_OFF" ConfigurationGroup="Map" ConfigurationId="ForceTSL" GroupId="MapOptions" Hash="0" SortIndex="281"/>
 
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="AutoCityNaming" Name="LOC_MAP_AUTO_CITY_NAMING_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="AutoCityNaming" GroupId="MapOptions" SortIndex="2000"/>
+				
+		<!--	Special default MapSize (hidden)
+		-->
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="UseRelativePlacement"	Name="UseRelativePlacement" Description="" Domain="StandardMapSizes" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="UseRelativePlacement" GroupId="MapOptions" Visible="0" SortIndex="225"/>
+		
+		<!--	Hidden parameters to pass the Height/Width of the reference map for TSL
+		-->
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="ReferenceMapHeight" 	Name="ReferenceMapHeight" 	Description="" Domain="text" DefaultValue="94" ConfigurationGroup="Map" ConfigurationId="ReferenceMapHeight" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="ReferenceMapWidth" 	Name="ReferenceMapWidth" 	Description="" Domain="text" DefaultValue="180" ConfigurationGroup="Map" ConfigurationId="ReferenceMapWidth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		
+		<!--	Hidden parameter to set the map name to the reference map that will be used to find the tables for TSL
+		-->
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="TerraMapName" 		Name="MapName" Description="" Domain="text" DefaultValue="GiantEarth" 		ConfigurationGroup="Map" ConfigurationId="MapName" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+
+		
 	</Parameters>	
 	
 	<DomainValues>

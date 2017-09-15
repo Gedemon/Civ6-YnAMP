@@ -16,24 +16,25 @@ g_startTimer = os.clock()
 
 ExposedMembers.HistoricalStartingPlots = nil
 
-local mapName = MapConfiguration.GetValue("MapName")
+-- Globals, can be called from the mapscript
+mapName = MapConfiguration.GetValue("MapName")
 print ("Map Name = " .. tostring(mapName))
-local getTSL 				= {} -- primary TSL for each civilization
-local isInGame 				= {} -- Civilization/Leaders type in game
-local tempStartingPlots 	= {} -- Temporary table for starting plots used when Historical Spawn Dates is set.
-local isResourceExcludedXY 	= {}
-local isResourceExclusiveXY = {}
-local isResourceExclusive 	= {}
+getTSL 				= {} -- primary TSL for each civilization
+isInGame 				= {} -- Civilization/Leaders type in game
+tempStartingPlots 	= {} -- Temporary table for starting plots used when Historical Spawn Dates is set.
+isResourceExcludedXY 	= {}
+isResourceExclusiveXY = {}
+isResourceExclusive 	= {}
 -- get options
-local bCulturallyLinked 	= MapConfiguration.GetValue("CulturallyLinkedStart") == "PLACEMENT_ETHNIC";
-local bTSL 					= MapConfiguration.GetValue("CivilizationPlacement") == "PLACEMENT_TSL";
-local bResourceExclusion 	= MapConfiguration.GetValue("ResourcesExclusion") == "PLACEMENT_EXCLUDE";
-local bRequestedResources 	= MapConfiguration.GetValue("RequestedResources") == "PLACEMENT_REQUEST";
-local bRealDeposits 		= MapConfiguration.GetValue("RealDeposits") == "PLACEMENT_DEPOSIT";
-local bImportResources		= MapConfiguration.GetValue("ResourcesPlacement") == "PLACEMENT_IMPORT"
-local iIceNorth 			= MapConfiguration.GetValue("IceNorth")
-local iIceSouth 			= MapConfiguration.GetValue("IceSouth")
-local bAnalyseChokepoints	= not GameConfiguration.GetValue("FastLoad")
+bCulturallyLinked 	= MapConfiguration.GetValue("CulturallyLinkedStart") == "PLACEMENT_ETHNIC";
+bTSL 					= MapConfiguration.GetValue("CivilizationPlacement") == "PLACEMENT_TSL";
+bResourceExclusion 	= MapConfiguration.GetValue("ResourcesExclusion") == "PLACEMENT_EXCLUDE";
+bRequestedResources 	= MapConfiguration.GetValue("RequestedResources") == "PLACEMENT_REQUEST";
+bRealDeposits 		= MapConfiguration.GetValue("RealDeposits") == "PLACEMENT_DEPOSIT";
+bImportResources		= MapConfiguration.GetValue("ResourcesPlacement") == "PLACEMENT_IMPORT"
+iIceNorth 			= MapConfiguration.GetValue("IceNorth")
+iIceSouth 			= MapConfiguration.GetValue("IceSouth")
+bAnalyseChokepoints	= not GameConfiguration.GetValue("FastLoad")
 
 -- Create list of Civilizations and leaders in game
 for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
