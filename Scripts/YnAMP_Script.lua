@@ -7,12 +7,6 @@ local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value
 print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2017) by Gedemon")
 print ("loading YnAMP_Script.lua")
 
-local mapName = MapConfiguration.GetValue("MapName")
-print ("Map Name = " .. tostring(mapName))
-
-local bAutoCityNaming 			= MapConfiguration.GetValue("AutoCityNaming")
-local bCanUseCivSpecificName 	= not (MapConfiguration.GetValue("OnlyGenericCityNames"))
-
 function Round(num)
     under = math.floor(num)
     upper = math.floor(num) + 1
@@ -23,6 +17,28 @@ function Round(num)
     else
         return upper
     end
+end
+
+
+local mapName = MapConfiguration.GetValue("MapName")
+print ("Map Name = " .. tostring(mapName))
+
+local bAutoCityNaming 			= MapConfiguration.GetValue("AutoCityNaming")
+local bCanUseCivSpecificName 	= not (MapConfiguration.GetValue("OnlyGenericCityNames"))
+
+local bUseRelativePlacement = MapConfiguration.GetValue("UseRelativePlacement")
+local g_ReferenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth") or 180
+local g_ReferenceMapHeight 	= MapConfiguration.GetValue("ReferenceMapHeight") or 94
+
+local g_iW, g_iH 	= Map.GetGridSize()
+local g_ReferenceWidthFactor  = g_ReferenceMapWidth / g_iW 
+local g_ReferenceHeightFactor = g_ReferenceMapHeight / g_iH
+local g_ReferenceWidthRatio   = g_iW / g_ReferenceMapWidth 
+local g_ReferenceHeightRatio  = g_iH / g_ReferenceMapHeight
+
+local g_ExtraRange = 0
+if bUseRelativePlacement then
+	g_ExtraRange = 10 --Round(10 * math.sqrt(g_iW * g_iH) / math.sqrt(g_ReferenceMapWidth * g_ReferenceMapHeight))
 end
 
 ----------------------------------------------------------------------------------------
@@ -81,30 +97,36 @@ function ChangeCityName( ownerPlayerID, cityID)
 	local pCity = CityManager.GetCity(ownerPlayerID, cityID)	
 	if pCity then
 		SetExistingCityNames(pCity)
-		local x = pCity:GetX()
-		local y = pCity:GetY()
+		local mapX = pCity:GetX()
+		local mapY = pCity:GetY()
+		local refMapX, refMapY = mapX, mapY
+		if bUseRelativePlacement then
+			-- Convert plot position to the corresponding position on the reference map
+			refMapX 	= Round(g_ReferenceWidthFactor * mapX)
+			refMapY 	= Round(g_ReferenceHeightFactor * mapY)
+		end
 		local CivilizationTypeName = PlayerConfigurations[ownerPlayerID]:GetCivilizationTypeName()
 		local startPos, endPos = string.find(CivilizationTypeName, "CIVILIZATION_")
 		local sCivSuffix = string.sub(CivilizationTypeName, endPos)
-		print("Trying to find name for city of ".. tostring(CivilizationTypeName) .." at "..tostring(x)..","..tostring(y))
+		print("Trying to find name for city of ".. tostring(CivilizationTypeName) .." at "..tostring(mapX)..","..tostring(mapY))
 		local possibleName = {}
 		local maxRange = 1
 		local bestDistance = 99
 		local bestDefaultDistance = 99
 		local bestName = nil
 		local bestDefaultName = nil
-		local cityPlot = Map.GetPlot(x, y)
+		local cityPlot = Map.GetPlot(mapX, mapY)
 		for row in GameInfo.CityMap() do
 			if row.MapName == mapName  then
 				local name = row.CityLocaleName
 				local nameX = row.X
 				local nameY = row.Y
-				local nameMaxDistance = row.Area or maxRange
+				local nameMaxDistance = (row.Area or maxRange) + g_ExtraRange
 				-- rough selection in a square first before really testing distance
-				if (math.abs(x - nameX) <= nameMaxDistance) and (math.abs(y - nameY) <= nameMaxDistance) then	
+				if (math.abs(refMapX - nameX) <= nameMaxDistance) and (math.abs(refMapY - nameY) <= nameMaxDistance) then	
 					print("- testing "..tostring(name).." at "..tostring(nameX)..","..tostring(nameY).." max distance is "..tostring(nameMaxDistance)..", best distance so far is "..tostring(bestDistance))
 					
-					local distance = Map.GetPlotDistance(x, y ,nameX, nameY)
+					local distance = Map.GetPlotDistance(refMapX, refMapY ,nameX, nameY)
 					if distance <= nameMaxDistance and distance < bestDistance then
 					
 						local sCityNameForCiv = tostring(name) .. sCivSuffix
@@ -116,7 +138,7 @@ function ChangeCityName( ownerPlayerID, cityID)
 							if bCanUseCivSpecificName and Locale.Lookup(sCityNameForCiv) ~= sCityNameForCiv and not IsNameUsedByCivilization(sCityNameForCiv, CivilizationTypeName) then -- means that this civilization has a specific name available for this generic city
 								bestDistance = distance
 								bestName = sCityNameForCiv
-							elseif distance < bestDefaultDistance and not IsNameUsedOnContinent(name, x, y) then -- use generic name
+							elseif distance < bestDefaultDistance and not IsNameUsedOnContinent(name, mapX, mapY) then -- use generic name
 								bestDefaultDistance = distance
 								bestDefaultName = name
 							end							

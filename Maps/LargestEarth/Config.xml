@@ -63,6 +63,9 @@
 		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthOasis" 	Name="OasisPercent" Description="" Domain="text" DefaultValue="1" 	ConfigurationGroup="Map" ConfigurationId="OasisPercent" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthIceNorth" 	Name="IceNorth" Description="" Domain="text" DefaultValue="5" ConfigurationGroup="Map" ConfigurationId="IceNorth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="LargestEarthIceSouth" 	Name="IceSouth" Description="" Domain="text" DefaultValue="4" ConfigurationGroup="Map" ConfigurationId="IceSouth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+
+		<!--	Option to force placement of all luxuries		-->
+		<Row Key1="Map" Key2="LargestEarth.lua" 	ParameterId="PlaceAllLuxuries" Name="LOC_MAP_ALL_LUXURIES_NAME" Description="LOC_MAP_ALL_LUXURIES_DESCRIPTION" Domain="PlaceAllLuxuries" DefaultValue="PLACEMENT_DEFAULT" ConfigurationGroup="Map" ConfigurationId="PlaceAllLuxuries" GroupId="MapOptions" SortIndex="271"/>
 	
 	</Parameters>	
 	

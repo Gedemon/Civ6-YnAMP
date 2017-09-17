@@ -153,4 +153,10 @@
 		<Replace MapName="GiantEarth" X="10" Y="73" ConfigurationId="Stonehenge" 		ResourceType="RESOURCE_STONE" />
 	</ExtraPlacement>
 	
+	<NaturalWonderPosition>
+        <Replace MapName="GiantEarth" X="98" Y="58" FeatureType="FEATURE_SUK_FUJI" />		
+        <Replace MapName="GiantEarth" X="76" Y="41" FeatureType="FEATURE_SUK_TONLESAP" />
+        <Replace MapName="GiantEarth" X="77" Y="40" FeatureType="FEATURE_SUK_TONLESAP" />
+    </NaturalWonderPosition>
+	
 </GameData>

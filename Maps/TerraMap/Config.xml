@@ -36,12 +36,14 @@
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="SeaLevel" Name="LOC_MAP_SEA_LEVEL_NAME" Description="LOC_MAP_SEA_LEVEL_LOW_DESCRIPTION" Domain="SeaLevel" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="sea_level" GroupId="MapOptions" Hash="0" SortIndex="260"/>
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="TerraMapIceNorth" 	Name="IceNorth" Description="" Domain="text" DefaultValue="3" ConfigurationGroup="Map" ConfigurationId="IceNorth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="TerraMapIceSouth" 	Name="IceSouth" Description="" Domain="text" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="IceSouth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="CivilizationPlacement" Name="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Description="LOC_MAP_CIVILIZATION_PLACEMENT_DESCRIPTION" Domain="CivilizationPlacement" DefaultValue="PLACEMENT_TSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" GroupId="MapOptions" Hash="0" SortIndex="280"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="TerraMapCivilizationPlacement" Name="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Description="LOC_MAP_CIVILIZATION_PLACEMENT_DESCRIPTION" Domain="TerraMapCivilizationPlacement" DefaultValue="PLACEMENT_OLD_WORLD" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" GroupId="MapOptions" Hash="0" SortIndex="280"/>
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="ForceTSL" Name="LOC_MAP_FORCE_TSL_NAME" Description="LOC_MAP_FORCE_TSL_DESCRIPTION" Domain="ForceTSL" DefaultValue="FORCE_TSL_OFF" ConfigurationGroup="Map" ConfigurationId="ForceTSL" GroupId="MapOptions" Hash="0" SortIndex="281"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="ResourcesExclusion" Name="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" Domain="ResourcesExclusion" DefaultValue="PLACEMENT_EXCLUDE" ConfigurationGroup="Map" ConfigurationId="ResourcesExclusion" GroupId="MapOptions" SortIndex="275"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NaturalWondersPlacement" Name="LOC_MAP_NATURAL_WONDERS_PLACEMENT_NAME" Description="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DESCRIPTION" Domain="NaturalWondersPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="NaturalWondersPlacement" GroupId="MapOptions" Hash="0" SortIndex="244"/>
 
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="AutoCityNaming" Name="LOC_MAP_AUTO_CITY_NAMING_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="AutoCityNaming" GroupId="MapOptions" SortIndex="2000"/>
 				
-		<!--	Special default MapSize (hidden)
+		<!--	Hidden parameters to notify some YnAMP scripts to use rlative placement for this map (you must also set ReferenceMapHeight, ReferenceMapWidth and give that map the same name as the reference map
 		-->
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="UseRelativePlacement"	Name="UseRelativePlacement" Description="" Domain="StandardMapSizes" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="UseRelativePlacement" GroupId="MapOptions" Visible="0" SortIndex="225"/>
 		
@@ -54,6 +56,8 @@
 		-->
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="TerraMapName" 		Name="MapName" Description="" Domain="text" DefaultValue="GiantEarth" 		ConfigurationGroup="Map" ConfigurationId="MapName" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 
+		<!--	Option to force placement of all luxuries		-->
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="PlaceAllLuxuries" Name="LOC_MAP_ALL_LUXURIES_NAME" Description="LOC_MAP_ALL_LUXURIES_DESCRIPTION" Domain="PlaceAllLuxuries" DefaultValue="PLACEMENT_DEFAULT" ConfigurationGroup="Map" ConfigurationId="PlaceAllLuxuries" GroupId="MapOptions" SortIndex="271"/>
 		
 	</Parameters>	
 	
@@ -63,7 +67,11 @@
 		<Row Domain="LandMassOverlay" Value="ADD_OVERLAY" 	Name="LOC_YNAMP_ACTIVATED_NAME" 	Description="LOC_MAP_LANDMASS_OVERLAY_DESCRIPTION" 	SortIndex="20"/>
 		
 		<Row Domain="EarthLandMass" Value="NO_EARTH_BASE" 	Name="LOC_YNAMP_DEACTIVATED_NAME" 	Description="LOC_MAP_EARTH_LANDMASS_DESCRIPTION" 	SortIndex="10"/>
-		<Row Domain="EarthLandMass" Value="ADD_EARTH_BASE" 	Name="LOC_YNAMP_ACTIVATED_NAME" 	Description="LOC_MAP_EARTH_LANDMASS_DESCRIPTION" 	SortIndex="20"/>	
+		<Row Domain="EarthLandMass" Value="ADD_EARTH_BASE" 	Name="LOC_YNAMP_ACTIVATED_NAME" 	Description="LOC_MAP_EARTH_LANDMASS_DESCRIPTION" 	SortIndex="20"/>
+		
+		<Row Domain="TerraMapCivilizationPlacement" Value="PLACEMENT_DEFAULT" 	Name="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_NAME" 	Description="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
+		<Row Domain="TerraMapCivilizationPlacement" Value="PLACEMENT_TSL" 		Name="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_NAME" 		Description="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_DESCRIPTION" 		SortIndex="20"/>
+		<Row Domain="TerraMapCivilizationPlacement" Value="PLACEMENT_OLD_WORLD"	Name="LOC_MAP_CIVILIZATIONS_PLACEMENT_OLD_WORLD_NAME" 	Description="LOC_MAP_CIVILIZATIONS_PLACEMENT_OLD_WORLD_DESCRIPTION" SortIndex="20"/>
 		
 	</DomainValues>
 	
@@ -73,10 +81,7 @@
 	
 	<!-- Only use those values for a domain -->
 	<MapSupportedValues>
-		<!--
-		<Row Map="LargestEarth.lua" Domain="FeaturesPlacement" Value="PLACEMENT_DEFAULT" />
-		<Row Map="LargestEarth.lua" Domain="FeaturesPlacement" Value="PLACEMENT_EMPTY" />
-		-->
+		<Row Map="TerraMap.lua" Domain="PlaceAllLuxuries" Value="PLACEMENT_REQUEST" />
 	</MapSupportedValues>
 	
 	<!-- Don't use those values for a domain -->

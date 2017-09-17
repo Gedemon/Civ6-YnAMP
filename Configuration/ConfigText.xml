@@ -141,7 +141,7 @@
       <Text>Resources Exclusion Zones</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" Language="en_US">
-      <Text>Some Resources won't be placed in predefined areas of the map</Text>
+      <Text>Some Resources will be placed only in predefined areas of the map</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_NAME" Language="en_US">
       <Text>Real World Deposits</Text>
@@ -160,6 +160,12 @@
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" Language="en_US">
       <Text>Place some specific Resources around specific Civilizations starting position</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALL_LUXURIES_NAME" Language="en_US">
+      <Text>Place All Luxuries</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALL_LUXURIES_DESCRIPTION" Language="en_US">
+      <Text>Try to place at least a few of each luxuries on the map.</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_NAME" Language="en_US">
@@ -192,6 +198,12 @@
     </Replace>
     <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_DESCRIPTION" Language="en_US">
       <Text>Civilizations are placed on Real World location when available</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_OLD_WORLD_NAME" Language="en_US">
+      <Text>Map Generator (Old World)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_OLD_WORLD_DESCRIPTION" Language="en_US">
+      <Text>Civilizations are placed only on the Old World landmass</Text>
     </Replace>	
 	
     <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_NAME" Language="en_US">

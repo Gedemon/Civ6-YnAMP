@@ -55,8 +55,8 @@
 
 		<!--	New option for all maps to launch a game without city states
 		<Row ParameterId="NoCityStates" Name="LOC_MAP_NO_CITY_STATE_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="NoCityStates" GroupId="AdvancedOptions" SortIndex="2020"/>
-		-->
-
+		-->		
+		
 		<!--	Some Settings where linked to "RULESET_STANDARD", make them available with all		-->
 		<Row ParameterId="NoGoodyHuts" Name="LOC_GAME_NO_GOODY_HUTS" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAME_NO_GOODY_HUTS" GroupId="AdvancedOptions" SortIndex="2010"/>
 		<Row ParameterId="NoBarbarians" Name="LOC_GAME_NO_BARBARIANS" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAME_NO_BARBARIANS" GroupId="AdvancedOptions" SortIndex="2010"/>
@@ -75,6 +75,9 @@
 		
 		<Row Domain="ResourcesExclusion" Value="PLACEMENT_DEFAULT" 	Name="LOC_YNAMP_DEACTIVATED_NAME" 	Description="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
 		<Row Domain="ResourcesExclusion" Value="PLACEMENT_EXCLUDE" 	Name="LOC_YNAMP_ACTIVATED_NAME" 	Description="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" 	SortIndex="20"/>
+		
+		<Row Domain="PlaceAllLuxuries" Value="PLACEMENT_DEFAULT" 	Name="LOC_YNAMP_DEACTIVATED_NAME" 	Description="LOC_MAP_ALL_LUXURIES_DESCRIPTION" 	SortIndex="10"/>
+		<Row Domain="PlaceAllLuxuries" Value="PLACEMENT_REQUEST" 	Name="LOC_YNAMP_ACTIVATED_NAME" 	Description="LOC_MAP_ALL_LUXURIES_DESCRIPTION" 	SortIndex="20"/>
 		
 		<Row Domain="RealDeposits" Value="PLACEMENT_DEFAULT" 	Name="LOC_YNAMP_DEACTIVATED_NAME" 	Description="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
 		<Row Domain="RealDeposits" Value="PLACEMENT_DEPOSIT" 	Name="LOC_YNAMP_ACTIVATED_NAME" 	Description="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_DESCRIPTION" 	SortIndex="20"/>
@@ -129,7 +132,10 @@
 		<Row ParameterId="AlternateTSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_TSL"/>
 		<Row ParameterId="OnlyGenericCityNames" ConfigurationGroup="Map" ConfigurationId="AutoCityNaming" Operator="Equals" ConfigurationValue="1"/>
 
-		<Row ParameterId="TurnsBeforeBarbarians" ConfigurationGroup="Game" ConfigurationId="GAME_NO_BARBARIANS" Operator="Equals" ConfigurationValue="0" />		
+		<Row ParameterId="TurnsBeforeBarbarians" ConfigurationGroup="Game" ConfigurationId="GAME_NO_BARBARIANS" Operator="Equals" ConfigurationValue="0" />
+		
+		<Row ParameterId="PlaceAllLuxuries" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_IMPORT"/>
+		<Row ParameterId="PlaceAllLuxuries" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_EMPTY"/>
 
 	</ParameterDependencies>	
 	

@@ -15,12 +15,14 @@ include "TerrainGenerator"
 include "NaturalWonderGenerator"
 include "ResourceGenerator"
 include "AssignStartingPlots"
+include "PlotIterators"
 
 local g_iW, g_iH, g_MapSize;
 
 -- The base map is the Largest Earth Map
 local g_LargestMapWidth 	= 230
 local g_LargestMapHeight 	= 116
+local g_LargestMapOldWorldX	= 155
 
 local g_SizeDual      =  44*26
 local g_SizeTiny      =  60*36
@@ -36,6 +38,7 @@ local g_WidthFactor
 local g_HeightFactor
 local g_WidthRatio
 local g_HeightRatio
+local g_ReferenceSizeRatio
 
 -- set values of the reference map for placement
 local g_ReferenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth") or 180
@@ -46,6 +49,7 @@ local g_ReferenceHeightFactor
 local g_ReferenceWidthRatio
 local g_ReferenceHeightRatio
 
+local g_StartingPlotRange
 
 local g_iFlags = {};
 local g_continentsFrac = nil;
@@ -55,6 +59,9 @@ local bEarthLandMass 	= MapConfiguration.GetValue("EarthLandMass") == "ADD_EARTH
 local bDebug			= false--true
 print("LandMassOverlay = ", bLandMassOverlay)
 print("EarthLandMass = ", bEarthLandMass)
+
+local g_NewWorldX
+local bOldWorldOnly 	= MapConfiguration.GetValue("CivilizationPlacement") == "PLACEMENT_OLD_WORLD";
 
 local g_RegionBorderCoastDistance
 
@@ -68,7 +75,7 @@ local seaArgs = {};
 local oceanArgs = {};
 local largeLakesArgs = {};
 
-local BackRegions = {	-- Region size/placement based on the Largest Earth	
+local Regions1stLayer = {	-- Region size/placement based on the Largest Earth	
 	["NORTH_AMERICA"] = 		{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="155", 	Y="66", 	Width="59", Height="32", southAttenuationRange = 0, northAttenuationRange = 0, eastAttenuationRange = 0.25, eastAttenuationFactor = 0.05, westAttenuationRange = 0.25, westAttenuationFactor = 0.05 },
 	["ARCTIC_AMERICA"] = 		{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="155", 	Y="95", 	Width="50", Height="20", southAttenuationRange = 0 },
 	["CENTRAL_AMERICA"] = 		{	Args= islandArgs,			Type="Land",	Pass="3",	X="170", 	Y="49", 	Width="40", Height="17", southAttenuationRange = 0, northAttenuationRange = 0 },
@@ -77,7 +84,7 @@ local BackRegions = {	-- Region size/placement based on the Largest Earth
 	["ANTARCTIC_AMERICA"] = 	{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="200", 	Y="3", 		Width="25", Height="16", northAttenuationRange = 0 },
 	["AUSTRALIA"] = 			{	Args= largeIslandArgs,		Type="Land",	Pass="1",	X="110", 	Y="4", 		Width="50", Height="32" },
 	["OCEANIA"] = 				{	Args= seaArgs,				Type="Land",	Pass="1",	X="100", 	Y="20",		Width="80", Height="33" },
-	["SOUTH_ASIA"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="70", 	Y="30",		Width="65", Height="30", southAttenuationRange = 0.35, northAttenuationRange = 0, westAttenuationRange = 0.25 },
+	["SOUTH_ASIA"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="70", 	Y="30",		Width="65", Height="30", southAttenuationRange = 0.35, southAttenuationFactor = 0.05, northAttenuationRange = 0, westAttenuationRange = 0.25 },
 	["CENTRAL_ASIA"] = 			{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="70", 	Y="60",		Width="55", Height="25", eastAttenuationRange = 0.40, eastAttenuationFactor = 0.80, southAttenuationRange = 0.25, westAttenuationRange = 0, northAttenuationRange = 0    },
 	["EAST_ASIA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="96", 	Y="58",		Width="20", Height="28", eastAttenuationRange = 0.35, westAttenuationRange = 0   },
 	["JAPAN"] = 				{	Args= largeIslandArgs,		Type="Land",	Pass="1",	X="125", 	Y="58",		Width="20", Height="36" },
@@ -95,7 +102,7 @@ local BackRegions = {	-- Region size/placement based on the Largest Earth
 	["MADAGASCAR"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="52", 	Y="12",		Width="10", Height="15" },
 }
 
-local TopRegions = {	-- Region size/placement based on the Largest Earth
+local Regions2ndLayer = {	-- Region size/placement based on the Largest Earth
 	["GROENLAND"] = 			{	Args= islandArgs,			Type="Land",	Pass="1",	X="210", 	Y="98", 	Width="19", Height="17" },
 	["MEDITERRANEAN"] = 		{	Args= seaArgs,				Type="Water",	Pass="1",	X="15", 	Y="65",		Width="10", Height="5" },
 	["MEDITERRANEAN2"] = 		{	Args= seaArgs,				Type="Water",	Pass="1",	X="25", 	Y="65",		Width="12", Height="10" },
@@ -116,39 +123,69 @@ local TopRegions = {	-- Region size/placement based on the Largest Earth
 
 local VerticalCoastRegions = {
 	
-	["NORTH_AMERICA"] = 		BackRegions["NORTH_AMERICA"],
-	["ARCTIC_AMERICA"] = 		BackRegions["ARCTIC_AMERICA"],
-	["CENTRAL_AMERICA"] = 		BackRegions["CENTRAL_AMERICA"],
-	["SOUTH_AMERICA_WEST"] = 	BackRegions["SOUTH_AMERICA_WEST"],
-	["SOUTH_AMERICA_EAST"] = 	BackRegions["SOUTH_AMERICA_EAST"],
-	["ANTARCTIC_AMERICA"] = 	BackRegions["ANTARCTIC_AMERICA"],
-	["SOUTH_ASIA"] = 			BackRegions["SOUTH_ASIA"],
-	--["CENTRAL_ASIA"] = 			BackRegions["CENTRAL_ASIA"],
-	["EAST_ASIA"] = 			BackRegions["EAST_ASIA"],
-	["NORTH_ASIA"] = 			BackRegions["NORTH_ASIA"],
-	--["MIDDLE_EAST"] = 			BackRegions["MIDDLE_EAST"],
-	--["TURKEY"] = 				BackRegions["TURKEY"],
-	--["SOUTH_EUROPA"] = 			BackRegions["SOUTH_EUROPA"],
-	["WEST_EUROPA"] = 			BackRegions["WEST_EUROPA"],
-	--["CENTRAL_EUROPA"] =		BackRegions["CENTRAL_EUROPA"],
-	--["NORTH_EUROPA"] = 			BackRegions["NORTH_EUROPA"],
-	--["EAST_EUROPA"] = 			BackRegions["EAST_EUROPA"],
-	["NORTH_AFRICA"] = 			BackRegions["NORTH_AFRICA"],
-	["CENTRAL_AFRICA"] = 		BackRegions["CENTRAL_AFRICA"],
-	["SOUTH_AFRICA"] = 			BackRegions["SOUTH_AFRICA"],
-	--["MADAGASCAR"] = 			BackRegions["MADAGASCAR"],
-	["NORTH_PACIFIC1"] = 		BackRegions["NORTH_PACIFIC1"],
-	["NORTH_PACIFIC2"] = 		BackRegions["NORTH_PACIFIC2"],
-	["PACIFIC"] = 				BackRegions["PACIFIC"],
-	["NORTH_ATLANTIC1"] = 		BackRegions["NORTH_ATLANTIC1"],
-	["NORTH_ATLANTIC2"] = 		BackRegions["NORTH_ATLANTIC2"],
-	["ATLANTIC1"] = 			BackRegions["ATLANTIC1"],
-	["ATLANTIC2"] = 			BackRegions["ATLANTIC2"],
-	["ATLANTIC3"] = 			BackRegions["ATLANTIC3"],
-	["BERING_STRAIT"] = 		BackRegions["BERING_STRAIT"],
-	["GROENLAND"] = 			BackRegions["GROENLAND"], 
+	["NORTH_AMERICA"] = 		Regions1stLayer["NORTH_AMERICA"],
+	["ARCTIC_AMERICA"] = 		Regions1stLayer["ARCTIC_AMERICA"],
+	["CENTRAL_AMERICA"] = 		Regions1stLayer["CENTRAL_AMERICA"],
+	["SOUTH_AMERICA_WEST"] = 	Regions1stLayer["SOUTH_AMERICA_WEST"],
+	["SOUTH_AMERICA_EAST"] = 	Regions1stLayer["SOUTH_AMERICA_EAST"],
+	["ANTARCTIC_AMERICA"] = 	Regions1stLayer["ANTARCTIC_AMERICA"],
+	["SOUTH_ASIA"] = 			Regions1stLayer["SOUTH_ASIA"],
+	--["CENTRAL_ASIA"] = 			Regions1stLayer["CENTRAL_ASIA"],
+	["EAST_ASIA"] = 			Regions1stLayer["EAST_ASIA"],
+	["NORTH_ASIA"] = 			Regions1stLayer["NORTH_ASIA"],
+	--["MIDDLE_EAST"] = 			Regions1stLayer["MIDDLE_EAST"],
+	--["TURKEY"] = 				Regions1stLayer["TURKEY"],
+	--["SOUTH_EUROPA"] = 			Regions1stLayer["SOUTH_EUROPA"],
+	["WEST_EUROPA"] = 			Regions1stLayer["WEST_EUROPA"],
+	--["CENTRAL_EUROPA"] =		Regions1stLayer["CENTRAL_EUROPA"],
+	--["NORTH_EUROPA"] = 			Regions1stLayer["NORTH_EUROPA"],
+	--["EAST_EUROPA"] = 			Regions1stLayer["EAST_EUROPA"],
+	["NORTH_AFRICA"] = 			Regions1stLayer["NORTH_AFRICA"],
+	["CENTRAL_AFRICA"] = 		Regions1stLayer["CENTRAL_AFRICA"],
+	["SOUTH_AFRICA"] = 			Regions1stLayer["SOUTH_AFRICA"],
+	--["MADAGASCAR"] = 			Regions1stLayer["MADAGASCAR"],
+	["NORTH_PACIFIC1"] = 		Regions1stLayer["NORTH_PACIFIC1"],
+	["NORTH_PACIFIC2"] = 		Regions1stLayer["NORTH_PACIFIC2"],
+	["PACIFIC"] = 				Regions1stLayer["PACIFIC"],
+	["NORTH_ATLANTIC1"] = 		Regions1stLayer["NORTH_ATLANTIC1"],
+	["NORTH_ATLANTIC2"] = 		Regions1stLayer["NORTH_ATLANTIC2"],
+	["ATLANTIC1"] = 			Regions1stLayer["ATLANTIC1"],
+	["ATLANTIC2"] = 			Regions1stLayer["ATLANTIC2"],
+	["ATLANTIC3"] = 			Regions1stLayer["ATLANTIC3"],
+	["BERING_STRAIT"] = 		Regions1stLayer["BERING_STRAIT"],
+	["GROENLAND"] = 			Regions1stLayer["GROENLAND"], 
 
 }
+
+-- Reference map = Giant Earth, to do : move that to Map.xml
+function GetNaturalWonders()
+	local NaturalWonders = {}
+	
+	NaturalWonders[GameInfo.Features["FEATURE_BARRIER_REEF"].Index] 	 = { X = 101, Y = 23}	-- 2 plots, coast, 1st plot is SOUTHEAST	
+	NaturalWonders[GameInfo.Features["FEATURE_CLIFFS_DOVER"].Index] 	 = { X = 11, Y = 71}    -- 2 plots, hills on coast, 1st plot is WEST	
+	NaturalWonders[GameInfo.Features["FEATURE_CRATER_LAKE"].Index] 		 = { X = 132, Y = 64}
+	NaturalWonders[GameInfo.Features["FEATURE_DEAD_SEA"].Index] 		 = { X = 37, Y = 50}    -- 2 plots, flat desert surrounded by desert, 1st plot is SOUTHWEST	
+	NaturalWonders[GameInfo.Features["FEATURE_EVEREST"].Index] 			 = { X = 64, Y = 54}    -- 3 plots, mountains, 1st plot is WEST	
+	NaturalWonders[GameInfo.Features["FEATURE_GALAPAGOS"].Index] 		 = { X = 146, Y = 35}   -- 2 plots, coast, surrounded by coast, 1st plot is SOUTHEAST
+	NaturalWonders[GameInfo.Features["FEATURE_KILIMANJARO"].Index] 		 = { X = 32, Y = 27}    
+	NaturalWonders[GameInfo.Features["FEATURE_PANTANAL"].Index] 		 = { X = 159, Y = 27}   -- 4 plots, flat grass/plains without features, 1st plot is SOUTHWEST	
+	NaturalWonders[GameInfo.Features["FEATURE_PIOPIOTAHI"].Index] 		 = { X = 107, Y = 3}    -- 3 plots, flat grass near coast, 1st plot is WEST	
+	NaturalWonders[GameInfo.Features["FEATURE_TORRES_DEL_PAINE"].Index]  = { X = 154, Y = 7}    -- 2 plots EAST-WEST without features, 1st plot is WEST	
+	NaturalWonders[GameInfo.Features["FEATURE_TSINGY"].Index] 			 = { X = 36, Y = 18}    
+	NaturalWonders[GameInfo.Features["FEATURE_YOSEMITE"].Index] 		 = { X = 132, Y = 62}   -- 2 plots EAST-WEST, flat tundra/plains without features, 1st plot is WEST
+	
+	if GameInfo.Features["FEATURE_EYJAFJALLAJOKULL"] then -- Vikings DLC is loaded
+	NaturalWonders[GameInfo.Features["FEATURE_EYJAFJALLAJOKULL"].Index]	= { X = 2, Y = 83}		-- 2 plots, use YOSEMITE rule
+	NaturalWonders[GameInfo.Features["FEATURE_LYSEFJORDEN"].Index] 		= { X = 18, Y = 80}     -- 3 plots, , flat grass near coast, 1st plot is EAST
+	NaturalWonders[GameInfo.Features["FEATURE_GIANTS_CAUSEWAY"].Index] 	= { X = 6, Y = 77}      -- 2 plots, one on coastal land and one in water, 1st plot is land, SOUTHEAST 
+	end
+	
+	if GameInfo.Features["FEATURE_ULURU"] then -- Australia DLC is loaded
+    NaturalWonders[GameInfo.Features["FEATURE_ULURU"].Index]			= { X = 93, Y = 16}		-- 1 plot, desert, surrounded by desert
+    end
+	
+	return NaturalWonders
+end
 
 -------------------------------------------------------------------------------
 function GenerateMap()
@@ -172,10 +209,34 @@ function GenerateMap()
 	
 	g_RegionBorderCoastDistance = math.max(1, math.ceil(4 * g_WidthRatio))
 	
+	g_ReferenceSizeRatio = math.sqrt(g_iW * g_iH) / math.sqrt(g_ReferenceMapWidth * g_ReferenceMapHeight)
+	
+	g_StartingPlotRange = 16 * g_ReferenceSizeRatio
+	
+	g_NewWorldX = g_LargestMapOldWorldX * g_WidthRatio
+	
+	-- Create the resource exclusion table
+	if bResourceExclusion then
+		for x = 0, g_ReferenceMapWidth - 1, 1 do
+			isResourceExcludedXY[x] = {}
+			isResourceExclusiveXY[x] = {}
+			for y = 0, g_ReferenceMapHeight - 1, 1 do
+				isResourceExcludedXY[x][y] = {}
+				isResourceExclusiveXY[x][y] = {}
+			end
+		end
+	end
+	
+	local naturalWondersPlacement = MapConfiguration.GetValue("NaturalWondersPlacement")
+	print("Natural Wonders placement = "..tostring(naturalWondersPlacement))	
+	local bImportNaturalWonders = naturalWondersPlacement == "PLACEMENT_IMPORT"
+	local bNoNaturalWonders = naturalWondersPlacement == "PLACEMENT_EMPTY"
+	
 	print("g_WidthFactor 	= ", g_WidthFactor)
 	print("g_HeightFactor 	= ", g_HeightFactor)
 	print("g_WidthRatio 	= ", g_WidthRatio)
 	print("g_HeightRatio 	= ", g_HeightRatio)
+	print("g_StartingPlotRange =", g_StartingPlotRange)
 	
 	g_iFlags = TerrainBuilder.GetFractalFlags();
 	local temperature = MapConfiguration.GetValue("temperature"); -- Default setting is Temperate.
@@ -225,12 +286,19 @@ function GenerateMap()
 		AddLakes(numLargeLakes);
 	end
 
-	AddFeatures();
+	AddFeatures();	
 	
-	local args = {
-		numberToPlace = GameInfo.Maps[Map.GetMapSize()].NumNaturalWonders,
-	};
-	--local nwGen = NaturalWonderGenerator.Create(args);
+	-- NW placement is affected by rivers, but when importing placement can be forced
+	if not (bImportNaturalWonders or bNoNaturalWonders)  then
+		local args = {
+			numberToPlace = GameInfo.Maps[Map.GetMapSize()].NumNaturalWonders,
+		};
+		local nwGen = NaturalWonderGenerator.Create(args);
+	end
+	if bImportNaturalWonders then
+		local NaturalWonders = GetNaturalWonders()
+		PlaceRealNaturalWonders(NaturalWonders)
+	end
 
 	AreaBuilder.Recalculate();	
 	
@@ -245,17 +313,36 @@ function GenerateMap()
 --		print ("i: plotType, terrainType, featureType: " .. tostring(i) .. ": " .. tostring(plotTypes[i]) .. ", " .. tostring(terrainTypes[i]) .. ", " .. tostring(pPlot:GetFeatureType(i)));
 --	end
 
-	print("Creating start plot database.")	
+	print("Building TSL database.")	
 	if bTSL then
 		buidTSL()
 	end	
 
+	--[[
 	local resourcesConfig = MapConfiguration.GetValue("resources");
 	local args = {
 		iWaterLux = 4,
 		resources = resourcesConfig,
 	};
 	local resGen = ResourceGenerator.Create(args);
+	--]]
+	
+	if not (bImportResources or bNoResources) then
+		if bResourceExclusion then
+			buildExclusionList()
+			placeExclusiveResources()
+		end
+		resourcesConfig = MapConfiguration.GetValue("resources");
+		local args = {
+			resources = resourcesConfig,
+		};
+		ResourceGenerator.Create(args);
+	else
+		--local resourceType = GameInfo.Resources["RESOURCE_NITER"].Index
+		--print(" Adding Civ6 resource : Niter (TypeID = " .. tostring(resourceType)..")")
+		--PlaceStrategicResources(resourceType)
+	end
+	
 	print("Creating start plot database.");
 	-- START_MIN_Y and START_MAX_Y is the percent of the map ignored for major civs' starting positions.
 	local startConfig = MapConfiguration.GetValue("start");-- Get the start config
@@ -271,7 +358,7 @@ function GenerateMap()
 	local start_plot_database = AssignStartingPlots.Create(args);
 	
 	-- Balance Starting positions for TSL
-	if bTSL then	
+	if bTSL or bOldWorldOnly then	
 		currentTimer = os.clock() - g_startTimer
 		print("Intermediate timer before balancing TSL = "..tostring(currentTimer).." seconds")
 		-- to do : remove magic numbers
@@ -286,12 +373,15 @@ function GenerateMap()
 			end
 		end		
 		
-	end
+	end	
+	
+	-- enforce resource exclusion
+	ResourcesValidation(g_iW, g_iH)
 
 	local GoodyGen = AddGoodies(g_iW, g_iH);
 end
 
-
+-------------------------------------------------------------------------------
 function GeneratePlotTypes()
 	print("Generating Plot Types");
 	local plotTypes = {};
@@ -443,23 +533,23 @@ function GeneratePlotTypes()
 	
 	
 	if bEarthLandMass then
-		TopRegions.SEA_OF_OKHOTSK	= 	{	Args= seaArgs,				Type="Water",	Pass="1",	X="134", 	Y="92",	Width="8", Height="6" }
-		TopRegions.NORTH_SEA		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="15",		Y="95",	Width="6", Height="8" }
-		TopRegions.BALTIC_SEA 		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="30",		Y="92",	Width="3", Height="6" }
-		TopRegions.BAY_OF_BENGAL	=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="90",		Y="40",	Width="8", Height="12" }			
-		TopRegions.SEA_OF_JAPAN		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="123",	Y="75",	Width="5", Height="12" }
-		TopRegions.YELLOW_SEA		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="114",	Y="71",	Width="3", Height="6" }
+		Regions2ndLayer.SEA_OF_OKHOTSK	= 	{	Args= seaArgs,				Type="Water",	Pass="1",	X="134", 	Y="92",	Width="8", Height="6" }
+		Regions2ndLayer.NORTH_SEA		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="15",		Y="95",	Width="6", Height="8" }
+		Regions2ndLayer.BALTIC_SEA 		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="30",		Y="92",	Width="3", Height="6" }
+		Regions2ndLayer.BAY_OF_BENGAL	=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="90",		Y="40",	Width="8", Height="12" }			
+		Regions2ndLayer.SEA_OF_JAPAN		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="123",	Y="75",	Width="5", Height="12" }
+		Regions2ndLayer.YELLOW_SEA		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="114",	Y="71",	Width="3", Height="6" }
 	else
 		if g_MapSize >= g_SizeLudicrous then
-			TopRegions.ISLANDS		=	{	Args= smallIslandsArgs,			Type="Land",	Pass="4",	X="0",	Y="0",		Width= g_LargestMapWidth, Height= g_LargestMapHeight }
+			Regions2ndLayer.ISLANDS		=	{	Args= smallIslandsArgs,			Type="Land",	Pass="4",	X="0",	Y="0",		Width= g_LargestMapWidth, Height= g_LargestMapHeight }
 		elseif g_MapSize >= g_SizeGiant then
-			TopRegions.ISLANDS		=	{	Args= smallIslandsArgs,			Type="Land",	Pass="3",	X="0",	Y="0",		Width= g_LargestMapWidth, Height= g_LargestMapHeight }
+			Regions2ndLayer.ISLANDS		=	{	Args= smallIslandsArgs,			Type="Land",	Pass="3",	X="0",	Y="0",		Width= g_LargestMapWidth, Height= g_LargestMapHeight }
 		elseif g_MapSize >= g_SizeEnormous then
-			TopRegions.ISLANDS		=	{	Args= smallIslandsArgs,			Type="Land",	Pass="3",	X="0",	Y="0",		Width= g_LargestMapWidth, Height= g_LargestMapHeight }
+			Regions2ndLayer.ISLANDS		=	{	Args= smallIslandsArgs,			Type="Land",	Pass="3",	X="0",	Y="0",		Width= g_LargestMapWidth, Height= g_LargestMapHeight }
 		elseif g_MapSize >= g_SizeHuge then
-			TopRegions.ISLANDS		=	{	Args= smallIslandsArgs,			Type="Land",	Pass="2",	X="0",	Y="0",		Width= g_LargestMapWidth, Height= g_LargestMapHeight }
+			Regions2ndLayer.ISLANDS		=	{	Args= smallIslandsArgs,			Type="Land",	Pass="2",	X="0",	Y="0",		Width= g_LargestMapWidth, Height= g_LargestMapHeight }
 		elseif g_MapSize >= g_SizeStandard then
-			TopRegions.ISLANDS		=	{	Args= smallIslandsArgs,			Type="Land",	Pass="1",	X="0",	Y="0",		Width= g_LargestMapWidth, Height= g_LargestMapHeight }
+			Regions2ndLayer.ISLANDS		=	{	Args= smallIslandsArgs,			Type="Land",	Pass="1",	X="0",	Y="0",		Width= g_LargestMapWidth, Height= g_LargestMapHeight }
 		end
 	end	
 	
@@ -529,13 +619,13 @@ function GeneratePlotTypes()
 			
 		end
 		
-		for key, region in pairs(BackRegions) do
+		for key, region in pairs(Regions1stLayer) do
 			print("-----------------------")
 			print(key, region.Type)
 			GenerateRegion(region)
 		end		
 		
-		for key, region in pairs(TopRegions) do
+		for key, region in pairs(Regions2ndLayer) do
 			print("-----------------------")
 			print(key, region.Type)
 			GenerateRegion(region)
@@ -578,7 +668,7 @@ function GeneratePlotTypes()
 				if (plotTypes[index] == g_PLOT_TYPE_MOUNTAIN) then
 					local count = CountAdjacentMountains (plotTypes, iX, iY)
 					if (count > 3 and TerrainBuilder.GetRandomNumber( (7-count), "remove mountains") == 0) then
-						print("removing mountain from mountain range at ", iX, iY, " surrounded by #", count," mountains")
+						--print("removing mountain from mountains range at ", iX, iY, " surrounded by #", count," mountains")
 						table.insert(toHillsPlots, index);
 					end
 				end
@@ -798,7 +888,7 @@ function GenerateTerrainTypes(plotTypes, iW, iH, iFlags, bNoCoastalMountains, te
 								 and x <= iRegionWestX + g_RegionBorderCoastDistance or x >= (iRegionWestX + iRegionWidth) - g_RegionBorderCoastDistance
 								 then
 									if (IsAdjacentToShallowWater(terrainTypes, x, y) and TerrainBuilder.GetRandomNumber(5, "remove land coast") == 0) then
-										print("removing land coast at ", x, y, " region = ", key)
+										--print("removing land coast at ", x, y, " region = ", key)
 										table.insert(shallowWaterPlots, index);
 									end
 								end
@@ -982,7 +1072,7 @@ function GenerateFractalLayerWithoutHills (args, plotTypes)
 				local attenuationFactor = GetAttenuationFactor(args,x,y)
 				elevationMap[i] = val * attenuationFactor
 				if attenuationFactor ~= 1 then
-					print ("x, y = ", x+iRegionWestX, y+iRegionSouthY, ", attenuationFactor = ", attenuationFactor, " initial height =",val, " final height = ", elevationMap[i], " iWaterThreshold = ", iWaterThreshold)
+					--print ("x, y = ", x+iRegionWestX, y+iRegionSouthY, ", attenuationFactor = ", attenuationFactor, " initial height =",val, " final height = ", elevationMap[i], " iWaterThreshold = ", iWaterThreshold)
 				end
 			end
 		end
@@ -1095,7 +1185,7 @@ function GenerateWaterLayer (args, plotTypes)
 				local attenuationFactor = GetAttenuationFactor(args,x,y)
 				elevationMap[i] = val / attenuationFactor
 				if attenuationFactor ~= 1 then
-					print ("x, y = ", x, y, ", attenuationFactor = ", attenuationFactor, " initial height =",val, " final height = ", elevationMap[i], " iWaterThreshold = ", iWaterThreshold)
+					--print ("x, y = ", x, y, ", attenuationFactor = ", attenuationFactor, " initial height =",val, " final height = ", elevationMap[i], " iWaterThreshold = ", iWaterThreshold)
 				end
 			end
 		end
@@ -1168,7 +1258,344 @@ function GenerateWaterLayer (args, plotTypes)
 end
 
 -------------------------------------------------------------------------------
--- Override SetTrueStartingLocations
+function GetPlotFromRefMap(x, y)
+	-- Convert the reference map position to the current map position
+	local iX = Round( g_ReferenceWidthRatio		* x)
+	local iY = Round( g_ReferenceHeightRatio	* y)
+	local plot = Map.GetPlot(iX , iY )
+	return plot
+end
+
+-------------------------------------------------------------------------------
+-- Override YnAMP PlaceRealNaturalWonders
+-------------------------------------------------------------------------------
+function PlaceRealNaturalWonders(NaturalWonders)
+	print("YnAMP Natural Wonders placement...")
+
+	-- Adding custom NW to the table
+	local DirectPlacementPlots = {}
+	for NaturalWonderRow in GameInfo.NaturalWonderPosition() do
+		if NaturalWonderRow.MapName == mapName and GameInfo.Features[NaturalWonderRow.FeatureType] then
+			local eFeatureType = GameInfo.Features[NaturalWonderRow.FeatureType].Index
+			if NaturalWonders[eFeatureType] then
+				-- Seems to be a multiplots feature...
+				if not DirectPlacementPlots[eFeatureType] then
+					-- add original plot entry to the multiplots table
+					DirectPlacementPlots[eFeatureType] = {}
+					local plot = GetPlotFromRefMap(NaturalWonders[eFeatureType].X, NaturalWonders[eFeatureType].Y)
+					if plot then
+						if NaturalWonderRow.TerrainType and GameInfo.Terrains[NaturalWonderRow.TerrainType] then
+							--TerrainBuilder.SetTerrainType(plot, GameInfo.Terrains[NaturalWonderRow.TerrainType].Index)
+						end
+						--TerrainBuilder.SetFeatureType(plot, -1)
+						--ResourceBuilder.SetResourceType(plot, -1)
+						table.insert(DirectPlacementPlots[eFeatureType], plot:GetIndex())
+					end
+				end
+				-- add new plot entry to the multiplots table
+				local plot = GetPlotFromRefMap(NaturalWonderRow.X, NaturalWonderRow.Y)
+				if plot then				
+					if NaturalWonderRow.TerrainType and GameInfo.Terrains[NaturalWonderRow.TerrainType] then
+						TerrainBuilder.SetTerrainType(plot, GameInfo.Terrains[NaturalWonderRow.TerrainType].Index)
+					end
+					--TerrainBuilder.SetFeatureType(plot, -1)
+					--ResourceBuilder.SetResourceType(plot, -1)
+					table.insert(DirectPlacementPlots[eFeatureType], plot:GetIndex())
+				end
+			else
+				-- create original entry in the base table
+				NaturalWonders[GameInfo.Features[NaturalWonderRow.FeatureType].Index] = { X = NaturalWonderRow.X, Y = NaturalWonderRow.Y}
+				print("- Loaded " .. tostring(NaturalWonderRow.FeatureType) .." position from the DB")
+			end
+		end
+	end
+	
+	-- Place all NW from the table
+	for eFeatureType, position in pairs(NaturalWonders) do
+		if GameInfo.Features[eFeatureType] then
+			local featureTypeName = GameInfo.Features[eFeatureType].FeatureType
+			
+			-- Convert the reference map position to the current map position
+			local x = Round( g_ReferenceWidthRatio	* position.X)
+			local y = Round( g_ReferenceHeightRatio	* position.Y)
+			
+			print ("- Trying to place " .. tostring(featureTypeName) .. " at (" .. tostring(x) .. ", " .. tostring(y) .. ")");		
+			local pPlot = Map.GetPlot(x, y);
+			
+			--[[
+			local plotsIndex = {}
+			local plotsList = {}
+			local bUseOnlyPlotListPlacement = false
+			
+			-- Preparing placement
+			if featureTypeName == "FEATURE_DEAD_SEA" then
+				print(" - Preparing position...")
+				-- 2 plots, flat desert surrounded by desert, 1st plot is SOUTHWEST 
+				-- preparing the 2 plot
+				local terrainType = g_TERRAIN_TYPE_DESERT
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST), Terrain = terrainType })
+			end		
+			
+			if featureTypeName == "FEATURE_PIOPIOTAHI" then
+				print(" - Preparing position...")
+				-- 3 plots, flat grass near coast, 1st plot is WEST
+				-- preparing the 3 plots
+				local terrainType = g_TERRAIN_TYPE_GRASS
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST), Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+			end
+			
+			if featureTypeName == "FEATURE_EVEREST" then
+				print(" - Preparing position...")
+				-- 3 plots, mountains, 1st plot is WEST
+				-- preparing the 3 plots
+				local terrainType = g_TERRAIN_TYPE_TUNDRA_MOUNTAIN
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHEAST), Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+			end
+			
+			if featureTypeName == "FEATURE_PANTANAL" then
+				print(" - Preparing position...")
+				-- 4 plots, flat grass/plains without features, 1st plot is SOUTH-WEST
+				-- preparing the 4 plots
+				local terrainType = g_TERRAIN_TYPE_PLAINS
+				local pPlot2 = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST) -- we need plot2 to get plot4
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = pPlot2, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+			end
+
+			if featureTypeName == "FEATURE_CLIFFS_DOVER" then
+				print(" - Preparing position...")
+				-- 2 plots, hills on coast, 1st plot is WEST 
+				-- preparing the 2 plots
+				local terrainType = g_TERRAIN_TYPE_GRASS_HILLS
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+			end
+			
+			if featureTypeName == "FEATURE_YOSEMITE" or featureTypeName == "FEATURE_EYJAFJALLAJOKULL" then
+				print(" - Preparing position...")
+				-- 2 plots EAST-WEST, flat tundra/plains without features, 1st plot is WEST
+				-- preparing the 2 plots
+				local terrainType = g_TERRAIN_TYPE_PLAINS
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+			end
+			
+			if featureTypeName == "FEATURE_TORRES_DEL_PAINE" then
+				print(" - Preparing position...")
+				-- 2 plots EAST-WEST without features, 1st plot is WEST
+				-- preparing the 2 plots
+				local terrainType = g_TERRAIN_TYPE_PLAINS
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+			end		
+
+			if featureTypeName == "FEATURE_BARRIER_REEF" then
+				print(" - Preparing position...")
+				-- 2 plots, coast, 1st plot is SOUTHEAST 
+				-- preparing the 2 plots
+				local terrainType = g_TERRAIN_TYPE_COAST
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = terrainType })
+			end
+
+			if featureTypeName == "FEATURE_GALAPAGOS" then
+				print(" - Preparing position...")
+				-- 2 plots, coast, surrounded by coast, 1st plot is SOUTHWEST 
+				-- preparing the area
+				local terrainType = g_TERRAIN_TYPE_COAST
+				bUseOnlyPlotListPlacement = true
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = terrainType })
+			end
+
+			if featureTypeName == "FEATURE_GIANTS_CAUSEWAY" then
+				print(" - Preparing position...")
+				-- 2 plots, one on coastal land and one in water, 1st plot is land, SOUTHEAST
+				-- preparing the 2 plots
+				bUseOnlyPlotListPlacement = true
+				table.insert(plotsList, { Plot = pPlot, Terrain = g_TERRAIN_TYPE_PLAINS })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = g_TERRAIN_TYPE_COAST })
+			end
+			
+			if featureTypeName == "FEATURE_LYSEFJORDEN"then
+				print(" - Preparing position...")
+				-- 3 plots, flat grass near coast, 1st plot is EAST
+				-- preparing the 3 plots
+				local terrainType = g_TERRAIN_TYPE_GRASS
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHWEST), Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_WEST), Terrain = terrainType })
+			end
+			
+			-- Set terrain, remove features and resources for Civ6 NW
+			for k, data in ipairs(plotsList) do 
+				TerrainBuilder.SetTerrainType(data.Plot, data.Terrain)
+				TerrainBuilder.SetFeatureType(data.Plot, -1)
+				ResourceBuilder.SetResourceType(data.Plot, -1)
+				table.insert(plotsIndex, data.Plot:GetIndex())
+			end	
+
+			 -- now handling custom multiplots NW (terrain type and removing features/resources has already been handled for those)
+			if #plotsList == 0 and DirectPlacementPlots[eFeatureType] then -- plotsList is empty at this point for custom NW
+				plotsIndex = DirectPlacementPlots[eFeatureType]
+				bUseOnlyPlotListPlacement = true
+			end
+			
+			if not(TerrainBuilder.CanHaveFeature(pPlot, eFeatureType)) then			
+				print("  - WARNING : TerrainBuilder.CanHaveFeature says that we can't place that feature here...")
+			end		
+			
+			if not bUseOnlyPlotListPlacement then
+				print("  - Trying Direct Placement...")
+				TerrainBuilder.SetFeatureType(pPlot, eFeatureType);
+			end
+			local bPlaced = pPlot:IsNaturalWonder()
+				
+			if (not bPlaced) and (#plotsIndex > 0) then
+				print("  - Direct Placement has failed, using plot list for placement")
+				TerrainBuilder.SetMultiPlotFeatureType(plotsIndex, eFeatureType)
+				bPlaced = pPlot:IsNaturalWonder()
+			end
+			--]]
+			
+			local bPlaced = false
+			if not(TerrainBuilder.CanHaveFeature(pPlot, eFeatureType)) then			
+				print("  - TerrainBuilder.CanHaveFeature says that we can't place that feature here, looking for possible positions in the area")
+				local PossiblePlot = GetPossibleNaturalWonderPositionAround(pPlot, eFeatureType)
+				TerrainBuilder.SetFeatureType(pPlot, eFeatureType);
+				bPlaced = pPlot:IsNaturalWonder()
+			else
+				print("  - Trying Direct Placement...")
+				TerrainBuilder.SetFeatureType(pPlot, eFeatureType);
+				bPlaced = pPlot:IsNaturalWonder()
+			end
+			
+			if bPlaced then
+				ResetTerrain(pPlot:GetIndex())
+				ResourceBuilder.SetResourceType(pPlot, -1)
+
+				local plotX = pPlot:GetX()
+				local plotY = pPlot:GetY()
+
+				for dx = -2, 2 do
+					for dy = -2,2 do
+						local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, 2)
+						if(otherPlot) then
+							if(otherPlot:IsNaturalWonder() == true) then
+								ResetTerrain(otherPlot:GetIndex())
+								ResourceBuilder.SetResourceType(otherPlot, -1)
+							end
+						end
+					end
+				end
+				print ("  - Success : plot is now a natural wonder !")
+			else
+				print ("  - Failed to place natural wonder here...")		
+			end
+		else
+			print ("  - WARNING : Can't find "..tostring().." in Features tables")
+		end
+	end
+end
+
+function GetPossibleNaturalWonderPositionAround(pPlot, eFeatureType)
+	for pAdjacencyPlot in PlotAreaSpiralIterator(pPlot, g_StartingPlotRange, nil, nil, nil, false) do
+		if TerrainBuilder.CanHaveFeature(pAdjacencyPlot, eFeatureType) then
+			return pAdjacencyPlot
+		end
+	end
+end
+
+-------------------------------------------------------------------------------
+-- Override YnAMP IsResourceExclusion
+-------------------------------------------------------------------------------
+function IsResourceExclusion(pPlot, eResourceType)
+
+	--print("IsResourceExclusion check", pPlot:GetX(), pPlot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
+
+	if not bResourceExclusion then
+		-- exlusion is not activated, so this plot can't be in an exclusion/exclusive zone...
+		return false
+	end
+	
+	-- Convert plot position to the corresponding position on the reference map
+	local x = Round(g_ReferenceWidthFactor * pPlot:GetX())
+	local y = Round(g_ReferenceHeightFactor * pPlot:GetY())
+		
+	if x > g_ReferenceMapWidth or y > g_ReferenceMapHeight then
+		print ("- WARNING : checking IsResourceExclusion for plot out of bound ( x = " ..tostring(x)..", y = ".. tostring(y).." )")
+	end
+	
+	---[[
+	if isResourceExclusive[eResourceType] and not ((isResourceExcludedXY[x] and isResourceExcludedXY[x][y]) and isResourceExclusiveXY[x][y][eResourceType]) then
+		-- resource is exclusive to specific regions, and this plot is not in one of them
+		--print("YnAMP_CanHaveResource(pPlot, eResourceType) isResourceExclusive", pPlot:GetX(), pPlot:GetY(), x, y, GameInfo.Resources[eResourceType].ResourceType)
+		return true
+	end
+	--]]
+	--[[
+	if isResourceExclusive[eResourceType] then -- would require an argument to allow placement now that YnAMP_CanHaveResource replace ResourceBuilder.CanHaveResource
+		-- those are directly placed on the map
+		print("YnAMP_CanHaveResource(pPlot, eResourceType) isResourceExclusive", pPlot:GetX(), pPlot:GetY(), x, y, GameInfo.Resources[eResourceType].ResourceType)
+		return false
+	end
+	--]]
+	
+	if (isResourceExcludedXY[x] and isResourceExcludedXY[x][y]) and isResourceExcludedXY[x][y][eResourceType] then
+		-- this plot is in a region from which this resource is excluded		
+		--print("YnAMP_CanHaveResource(pPlot, eResourceType) isResourceExcludedXY", pPlot:GetX(), pPlot:GetY(), x, y, GameInfo.Resources[eResourceType].ResourceType)
+		return true
+	end
+	
+	return false
+end
+
+-------------------------------------------------------------------------------
+-- Override YnAMP PlaceMissingLuxuries
+-------------------------------------------------------------------------------
+function PlaceMissingLuxuries(luxuryTable)
+	print("Placing missing luxuries...")
+	
+	for _, ressourceType in ipairs(luxuryTable) do
+		local row = GameInfo.Resources[ressourceType]
+		local possiblePlots = {}
+		local startX = 0
+		if bOldWorldOnly then
+			startX = g_NewWorldX
+		end
+		for x = startX, g_iW - 1 do 
+			for y = 0, g_iH - 1 do
+				local plotID = (y * g_iW) + x
+				local plot = Map.GetPlotByIndex(plotID)
+				if YnAMP_CanHaveResource(plot, ressourceType) then
+					table.insert(possiblePlots, plot)					
+				end
+			end
+		end
+		local toPlace = math.max(math.min(1,#possiblePlots), Round(#possiblePlots * row.Frequency * 4 / 100)) -- make sure to place at least 1 unit of resource if #possiblePlots > 0
+		print("Trying to place #".. tostring(toPlace).." resource of " .. tostring(row.ResourceType))
+		aShuffledLuxuryPlots = GetShuffledCopyOfTable(possiblePlots)
+		for i = 1, toPlace do
+			local plot = aShuffledLuxuryPlots[i]
+			if plot then
+				print(" - place #1 at plot ", plot:GetX(), plot:GetY())
+				ResourceBuilder.SetResourceType(plot, ressourceType, 1)
+			else
+				print("WARNING : plot is nil for aShuffledLuxuryPlots[i], i="..tostring(i)..", "..tostring(aShuffledLuxuryPlots[i]))
+			end
+		end
+	end
+end
+
+-------------------------------------------------------------------------------
+-- Override YnAMP SetTrueStartingLocations
 -------------------------------------------------------------------------------
 function SetTrueStartingLocations()
 	print ("-------------------------------------------------------")
@@ -1179,39 +1606,143 @@ function SetTrueStartingLocations()
 		local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
 		local position = getTSL[iPlayer]
 		if position then 
+			-- Convert the reference map position to the current map position
 			local x = Round( g_ReferenceWidthRatio	* position.X)
 			local y = Round( g_ReferenceHeightRatio	* position.Y)
 		
 			print ("- "..tostring(CivilizationTypeName).." at "..tostring(x)..","..tostring(y).." from initial values "..tostring(position.X)..","..tostring(position.Y))
 			local plot = Map.GetPlot(x, y)
+			--[[
 			if plot and plot:IsWater() then
 				print ("WARNING ! Plot is water, trying to switch to a land plot...")
 				plot = plot:GetNearestLandPlot()
 			end
-			if plot and not plot:IsWater() then
+			--]]
+			local bestPlot = GetBestStartingPlotAround(plot, player:IsMajor(), player:IsHuman())
+			if bestPlot and bestPlot ~= plot then
+				print ("Found better position at "..tostring(bestPlot:GetX())..","..tostring(bestPlot:GetY()))
+			end			
+			if bestPlot then
 				if plot:IsStartingPlot() then
 					print ("WARNING ! Plot is already a Starting Position")
 				else					
-					if player:IsMajor() then
-						if IsSafeStartingDistance(plot, true, player:IsHuman()) then
-							player:SetStartingPlot(plot)
-							--table.insert(AssignStartingPlots.majorStartPlots, plot)
-						else
-							print ("WARNING ! Plot is too close from another Starting Position")
-						end
-					else
-						if IsSafeStartingDistance(plot, false, false) then
-							player:SetStartingPlot(plot)
-							--table.insert(AssignStartingPlots.minorStartPlots, plot)
-						else
-							print ("WARNING ! Plot is too close from another Starting Position")
-						end
-					end
+					player:SetStartingPlot(bestPlot)
 				end
+			else
+				print ("WARNING ! Failed to set Starting Position")
 			end
 		end
 	end	
 end
+
+function GetBestStartingPlotAround(pPlot, bIsMajor, bIsHuman)
+	--local potentialPlot = {}
+	local range = 10 * g_ReferenceSizeRatio
+	for pAdjacencyPlot in PlotAreaSpiralIterator(pPlot, g_StartingPlotRange, nil, nil, nil, true) do
+		if (not pAdjacencyPlot:IsWater()) and (not pAdjacencyPlot:IsImpassable()) and pAdjacencyPlot:GetArea():GetPlotCount() > 10 and IsSafeStartingDistance(pAdjacencyPlot, bIsMajor, bIsHuman) then
+			return pAdjacencyPlot
+		end
+	end
+end
+
+-------------------------------------------------------------------------------
+-- Override SetStartMajor
+if bOldWorldOnly then
+------------------------------------------------------------------------------
+function AssignStartingPlots:__SetStartMajor(plots)
+	-- Sort by fertility of all the plots
+	-- eliminate them if they do not meet the following:
+	-- distance to another civilization
+	-- distance to a natural wonder
+	-- minimum production
+	-- minimum food
+	-- minimum luxuries
+	-- minimum strategic
+
+	sortedPlots ={};
+
+	local iSize = #plots;
+	local iContinentIndex = 1;
+
+	for i, plot in ipairs(plots) do
+		row = {};
+		row.Plot = plot;
+		row.Fertility = self:__WeightedFertility(plot);
+		table.insert (sortedPlots, row);
+	end
+
+	if(self.uiStartConfig > 1 ) then
+		table.sort (sortedPlots, function(a, b) return a.Fertility > b.Fertility; end);
+	else
+		self.sortedFertilityArray = {};
+		sortedPlotsFertility = {};
+		sortedPlotsFertility = self:__PreFertilitySort(sortedPlots);
+		self:__SortByFertilityArray(sortedPlots, sortedPlotsFertility);
+		for k, v in pairs(sortedPlots) do
+			sortedPlots[k] = nil;
+		end
+		for i, newPlot in ipairs(self.sortedFertilityArray) do
+			row = {};
+			row.Plot = newPlot.Plot;
+			row.Fertility = newPlot.Fertility;
+			table.insert (sortedPlots, row);
+		end
+	end
+
+	local bValid = false;
+	while bValid == false and iSize >= iContinentIndex do
+		bValid = true;
+		local NWMajor = 0;
+		pTempPlot = Map.GetPlotByIndex(sortedPlots[iContinentIndex].Plot);
+		iContinentIndex = iContinentIndex + 1;
+		--print("Fertility: ", sortedPlots[iContinentIndex].Fertility)
+
+		-- Checks to see if the plot is impassable
+		if(bOldWorldOnly and pTempPlot:GetX() >= g_NewWorldX) then
+			bValid = false;
+		end
+		
+		-- Checks to see if the plot is impassable
+		if(pTempPlot:IsImpassable() == true) then
+			bValid = false;
+		end
+
+		-- Checks to see if the plot is water
+		if(pTempPlot:IsWater() == true) then
+			bValid = false;
+		end
+
+		-- Checks to see if there is fresh water or coast
+		local bWaterCheck = self:__GetWaterCheck(pTempPlot); 
+		if(bWaterCheck == false) then
+			bValid = false;
+		end
+
+		-- Checks to see if there are natural wonders in the given distance
+		local bNaturalWonderCheck = self:__NaturalWonderBuffer(pTempPlot, false); 
+		if(bNaturalWonderCheck == false) then
+			bValid = false;
+		end
+
+		-- Checks to see if there are any major civs in the given distance
+		local bMajorCivCheck = self:__MajorCivBuffer(pTempPlot); 
+		if(bMajorCivCheck == false) then
+			bValid = false;
+		end
+
+		-- If the plots passes all the checks then the plot equals the temp plot
+		if(bValid == true) then
+			self:__TryToRemoveBonusResource(pTempPlot);
+			self:__AddBonusFoodProduction(pTempPlot);
+			return pTempPlot;
+		end
+	end
+ 
+	return nil;
+end
+-------------------------------------------------------------------------------
+end
+-------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------
 function GetMap()

@@ -18,6 +18,7 @@
 			<File>Override/AssignStartingPlots.lua</File>
 			<File>Override/StagingRoom.lua</File>
 			<File>Scripts/YnAMP_Utils.lua</File>
+			<File>Scripts/PlotIterators.lua</File>
 		</ImportFiles>
         <AddGameplayScripts>
                <File>Scripts/YnAMP_Script.lua</File>
@@ -152,7 +153,8 @@
 		<File>Scripts/YnAMP_Script.lua</File>
 		<File>Scripts/YnAMP_Utils.lua</File>
 		<File>Scripts/YnAMP_InGame.lua</File>
-		<File>Scripts/YnAMP_InGame.xml</File>		
+		<File>Scripts/YnAMP_InGame.xml</File>
+		<File>Scripts/PlotIterators.lua</File>
 		<File>custom.sql</File>
 		<File>custom.xml</File>
 	</Files>

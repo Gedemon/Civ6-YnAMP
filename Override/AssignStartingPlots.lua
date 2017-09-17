@@ -19,22 +19,23 @@ ExposedMembers.HistoricalStartingPlots = nil
 -- Globals, can be called from the mapscript
 mapName = MapConfiguration.GetValue("MapName")
 print ("Map Name = " .. tostring(mapName))
-getTSL 				= {} -- primary TSL for each civilization
+getTSL 					= {} -- primary TSL for each civilization
 isInGame 				= {} -- Civilization/Leaders type in game
-tempStartingPlots 	= {} -- Temporary table for starting plots used when Historical Spawn Dates is set.
+tempStartingPlots 		= {} -- Temporary table for starting plots used when Historical Spawn Dates is set.
 isResourceExcludedXY 	= {}
-isResourceExclusiveXY = {}
+isResourceExclusiveXY 	= {}
 isResourceExclusive 	= {}
 -- get options
 bCulturallyLinked 	= MapConfiguration.GetValue("CulturallyLinkedStart") == "PLACEMENT_ETHNIC";
-bTSL 					= MapConfiguration.GetValue("CivilizationPlacement") == "PLACEMENT_TSL";
+bTSL 				= MapConfiguration.GetValue("CivilizationPlacement") == "PLACEMENT_TSL";
 bResourceExclusion 	= MapConfiguration.GetValue("ResourcesExclusion") == "PLACEMENT_EXCLUDE";
-bRequestedResources 	= MapConfiguration.GetValue("RequestedResources") == "PLACEMENT_REQUEST";
+bRequestedResources = MapConfiguration.GetValue("RequestedResources") == "PLACEMENT_REQUEST";
 bRealDeposits 		= MapConfiguration.GetValue("RealDeposits") == "PLACEMENT_DEPOSIT";
-bImportResources		= MapConfiguration.GetValue("ResourcesPlacement") == "PLACEMENT_IMPORT"
+bImportResources	= MapConfiguration.GetValue("ResourcesPlacement") == "PLACEMENT_IMPORT"
 iIceNorth 			= MapConfiguration.GetValue("IceNorth")
 iIceSouth 			= MapConfiguration.GetValue("IceSouth")
 bAnalyseChokepoints	= not GameConfiguration.GetValue("FastLoad")
+bPlaceAllLuxuries	= MapConfiguration.GetValue("PlaceAllLuxuries") == "PLACEMENT_REQUEST"
 
 -- Create list of Civilizations and leaders in game
 for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
@@ -44,7 +45,7 @@ for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 	if LeaderTypeName 		then isInGame[LeaderTypeName] 		= true end
 end
 
-print ("ynAMP Options: Culturally Linked = " .. tostring(bCulturallyLinked) ..", TSL = " .. tostring(bTSL) ..", Exclusion Zones = " .. tostring(bResourceExclusion) ..", Requested Resources = " .. tostring(bRequestedResources)..", Real Deposits = " .. tostring(bRealDeposits)) 
+print ("ynAMP Options: Culturally Linked = " .. tostring(bCulturallyLinked) ..", TSL = " .. tostring(bTSL) ..", Exclusion Zones = " .. tostring(bResourceExclusion) ..", Requested Resources = " .. tostring(bRequestedResources)..", Real Deposits = " .. tostring(bRealDeposits) .. ", Place All Luxuries = ".. tostring(bPlaceAllLuxuries) ) 
 
 ------------------------------------------------------------------------------
 -- YnAMP >>>>>
@@ -2482,7 +2483,7 @@ print ("Loading YnAMP functions ...")
 ------------------------------------------------------------------------------
 -- Create Tables
 ------------------------------------------------------------------------------
-local hasBuildExclusionList = false
+hasBuildExclusionList = false
 function buildExclusionList()
 	print ("Building Region Exclusion list for "..tostring(mapName).."...")
 	
@@ -3530,6 +3531,7 @@ function ResourcesValidation(g_iW, g_iH)
 	print("------------------------------------")
 
 	local landPlots = Map.GetLandPlotCount()
+	local missingLuxuries = {}
 	for resRow in GameInfo.Resources() do
 		local numRes = resTable[resRow.Index]
 		local placedPercent	= Round(numRes / landPlots * 10000) / 100
@@ -3538,10 +3540,42 @@ function ResourcesValidation(g_iW, g_iH)
 		if ratio == 0 then ratio = "0.00" end
 		if resRow.Frequency > 0 then
 			print("Resource = " .. tostring(resRow.ResourceType).."		placed = " .. tostring(numRes).."		(" .. tostring(placedPercent).."% of land)		frequency = " .. tostring(resRow.Frequency).."		ratio = " .. tostring(ratio))
+			if numRes == 0 and luxTable[resRow.Index] and bPlaceAllLuxuries then
+				table.insert(missingLuxuries, resRow.Index)
+			end
 		end
+	end
+	
+	if bPlaceAllLuxuries and #missingLuxuries > 0 then
+		PlaceMissingLuxuries(missingLuxuries)
 	end
 
 	print("------------------------------------")
+end
+
+function PlaceMissingLuxuries(luxuryTable)
+	print("Placing missing luxuries...")
+	
+	for _, ressourceType in ipairs(luxuryTable) do
+		local row = GameInfo.Resources[ressourceType]
+		local possiblePlots = {}
+		for x = 0, g_iW - 1 do 
+			for y = 0, g_iH - 1 do
+				local plotID = (y * g_iW) + x
+				local plot = Map.GetPlotByIndex(plotID)
+				if YnAMP_CanHaveResource(plot, ressourceType) then
+					table.insert(possiblePlots, plot)					
+				end
+			end
+		end
+		local toPlace = math.max(1, Round(#possiblePlots * row.Frequency / 100))
+		print("Trying to place #".. tostring(toPlace).." resource of " .. tostring(resRow.ResourceType))
+		aShuffledLuxuryPlots = GetShuffledCopyOfTable(possiblePlots)
+		for i = 1, toPlace do
+			local plot = aShuffledLuxuryPlots[i]
+			ResourceBuilder.SetResourceType(plot, ressourceType, 1)
+		end
+	end
 end
 
 -----------------
