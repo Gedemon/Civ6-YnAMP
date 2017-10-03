@@ -4375,12 +4375,16 @@ function CalculateDistanceScoreCityStates(bOutput)
 				local civCulture2 = GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity or "ETHNICITY_EURO"
 				if  civCulture2 == civCulture then
 					local startPlot2 = player2:GetStartingPlot()
-					local distance = Map.GetPlotDistance(startPlot1:GetX(), startPlot1:GetY(), startPlot2:GetX(), startPlot2:GetY())
-					if startPlot1:GetArea() ~= startPlot2:GetArea() then
-						distance = distance + OVERSEA_PENALTY
+					if startPlot2 then
+						local distance = Map.GetPlotDistance(startPlot1:GetX(), startPlot1:GetY(), startPlot2:GetX(), startPlot2:GetY())
+						if startPlot1:GetArea() ~= startPlot2:GetArea() then
+							distance = distance + OVERSEA_PENALTY
+						end
+						distanceScore = distanceScore + Round(distance*SAME_GROUP_WEIGHT)
+						if bOutput then print ("      - Distance to same culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (x".. tostring(SAME_GROUP_WEIGHT) .."), total distance score = " .. tostring(distanceScore) ) end
+					else
+						print("      - WARNING: no starting plot available for " .. tostring(playerConfig2:GetPlayerName()))
 					end
-					distanceScore = distanceScore + Round(distance*SAME_GROUP_WEIGHT)
-					if bOutput then print ("      - Distance to same culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (x".. tostring(SAME_GROUP_WEIGHT) .."), total distance score = " .. tostring(distanceScore) ) end
 				else
 					local interGroupMinimizer = 1
 					if g_CultureRelativeDistance[civCulture] and g_CultureRelativeDistance[civCulture2] then

@@ -56,6 +56,8 @@ local g_continentsFrac = nil;
 
 local bLandMassOverlay 	= (MapConfiguration.GetValue("LandMassOverlay") == "ADD_OVERLAY") or (MapConfiguration.GetValue("EarthLandMass") == "NO_EARTH_BASE");
 local bEarthLandMass 	= MapConfiguration.GetValue("EarthLandMass") == "ADD_EARTH_BASE";
+local bEarthOldWorld	= bEarthLandMass --or MapConfiguration.GetValue("EarthLandMass") == "ADD_EARTH_BASE"
+local bEarthNewWorld	= bEarthLandMass --or MapConfiguration.GetValue("EarthLandMass") == "ADD_EARTH_BASE"
 local bDebug			= false--true
 print("LandMassOverlay = ", bLandMassOverlay)
 print("EarthLandMass = ", bEarthLandMass)
@@ -65,15 +67,15 @@ local bOldWorldOnly 	= MapConfiguration.GetValue("CivilizationPlacement") == "PL
 
 local g_RegionBorderCoastDistance
 
-local largeContinentArgs = {};
-local continentArgs = {};
-local smallContinentArgs = {};
-local largeIslandArgs = {};
-local islandArgs = {};
-local smallIslandsArgs = {};
-local seaArgs = {};
-local oceanArgs = {};
-local largeLakesArgs = {};
+local largeContinentArgs 	= {};
+local continentArgs 		= {};
+local smallContinentArgs 	= {};
+local largeIslandArgs		= {};
+local islandArgs			= {};
+local smallIslandsArgs 		= {};
+local seaArgs 				= {};
+local oceanArgs 			= {};
+local largeLakesArgs 		= {};
 
 local Regions1stLayer = {	-- Region size/placement based on the Largest Earth	
 	["NORTH_AMERICA"] = 		{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="155", 	Y="66", 	Width="59", Height="32", southAttenuationRange = 0, northAttenuationRange = 0, eastAttenuationRange = 0.25, eastAttenuationFactor = 0.05, westAttenuationRange = 0.25, westAttenuationFactor = 0.05 },
@@ -424,17 +426,24 @@ function GeneratePlotTypes()
 	for x = 0, g_iW - 1, 1 do
 		MapToConvert[x] = {}		
 		for y = 0, g_iH, 1 do
-			--if y < 2 then
-			--	MapToConvert[x][y] = {16,-1,-1,{{0,-1},{0,-1},{0,-1}},{-1,1},{0,0,0}}
-			--else
-				--MapToConvert[x][y] = LargestMap[Round( x * g_WidthFactor )][Round( (y-2) * g_HeightFactor )]
-				MapToConvert[x][y] = LargestMap[Round( x * g_WidthFactor )][Round( y * g_HeightFactor )]
-			--end
+			MapToConvert[x][y] = LargestMap[Round( x * g_WidthFactor )][Round( y * g_HeightFactor )]
 		end
 	end	
 	
-	if bEarthLandMass then
-		ImportCiv6Map(MapToConvert, g_iW, g_iH, true, false, false, false, true, true)
+	if bEarthLandMass then -- or bEarthOldWorld or bEarthNewWorld
+		ImportCiv6Map(MapToConvert, g_iW, g_iH, true, false, false, false, true, true)		
+		
+		if not bEarthLandMass then -- only a part of the map is using earth-shaped continents, erase the other part
+			for x = 0, g_iW - 1 do
+				for y = 0, g_iH - 1 do
+					if (x >= g_NewWorldX and not bEarthNewWorld) or (x < g_NewWorldX and not bEarthOldWorld) then
+						local i = y * g_iW + x;
+						local pPlot = Map.GetPlotByIndex(i);
+						TerrainBuilder.SetTerrainType(pPlot, g_PLOT_TYPE_OCEAN)
+					end
+				end
+			end
+		end		
 	end
 	
 	for x = 0, g_iW - 1 do
@@ -537,7 +546,7 @@ function GeneratePlotTypes()
 		Regions2ndLayer.NORTH_SEA		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="15",		Y="95",	Width="6", Height="8" }
 		Regions2ndLayer.BALTIC_SEA 		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="30",		Y="92",	Width="3", Height="6" }
 		Regions2ndLayer.BAY_OF_BENGAL	=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="90",		Y="40",	Width="8", Height="12" }			
-		Regions2ndLayer.SEA_OF_JAPAN		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="123",	Y="75",	Width="5", Height="12" }
+		Regions2ndLayer.SEA_OF_JAPAN	=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="123",	Y="75",	Width="5", Height="12" }
 		Regions2ndLayer.YELLOW_SEA		=	{	Args= seaArgs,				Type="Water",	Pass="1",	X="114",	Y="71",	Width="3", Height="6" }
 	else
 		if g_MapSize >= g_SizeLudicrous then

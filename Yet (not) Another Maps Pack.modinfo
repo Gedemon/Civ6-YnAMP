@@ -16,7 +16,6 @@
 			<File>Maps/LargestEarth/LargestEarth.lua</File>
 			<File>Maps/TerraMap/TerraMap.lua</File>
 			<File>Override/AssignStartingPlots.lua</File>
-			<File>Override/StagingRoom.lua</File>
 			<File>Scripts/YnAMP_Utils.lua</File>
 			<File>Scripts/PlotIterators.lua</File>
 		</ImportFiles>
@@ -75,9 +74,6 @@
 	</InGameActions>
 	
 	<FrontEndActions>
-		<ImportFiles id="YNAMP_IMPORT">
-			<File>Override/StagingRoom.lua</File>
-		</ImportFiles>
 		<UpdateDatabase id="YNAMP_SETTING">
 			<File>Configuration/Config.xml</File>
 			<File>Maps/GiantEarth/Config.xml</File>
@@ -149,7 +145,6 @@
 		<File>Maps/LargestEarth/LargestEarth.lua</File>
 		<File>Maps/TerraMap/TerraMap.lua</File>
 		<File>Override/AssignStartingPlots.lua</File>
-		<File>Override/StagingRoom.lua</File>
 		<File>Scripts/YnAMP_Script.lua</File>
 		<File>Scripts/YnAMP_Utils.lua</File>
 		<File>Scripts/YnAMP_InGame.lua</File>

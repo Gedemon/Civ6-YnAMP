@@ -41,7 +41,7 @@
       <Text>Terra Map for YnAMP</Text>
     </Replace>
     <Replace Tag="LOC_TERRAMAP_DESC" Language="en_US">
-      <Text>A map with landmass placement based on a scalable Earth</Text>
+      <Text>A map with customizable landmass placement based on a scalable Earth</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Language="en_US">
@@ -343,6 +343,7 @@
       <Text>Minimum number of turns before allowing Barbarian Scouts</Text>
     </Replace>
 	
+	<!--
     <Replace Tag="LOC_MAP_LANDMASS_OVERLAY_NAME" Language="en_US">
       <Text>Randomized Landmass</Text>
     </Replace>
@@ -356,6 +357,177 @@
     <Replace Tag="LOC_MAP_EARTH_LANDMASS_DESCRIPTION" Language="en_US">
       <Text>Real Earth continents shape the landmasses (scaled down to map size)</Text>
     </Replace>
+	-->
+	
+    <Replace Tag="LOC_MAP_MAP_SHAPE_NAME" Language="en_US">
+      <Text>Map Shape</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MAP_SHAPE_DESCRIPTION" Language="en_US">
+      <Text>How the Terra landmasses are shaped</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_EARTH_ONLY_NAME" Language="en_US">
+      <Text>Earth continents</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EARTH_ONLY_DESCRIPTION" Language="en_US">
+      <Text>The continents will be shaped like the real Earth</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_EARTH_RNG_NAME" Language="en_US">
+      <Text>Earth with Random Coastline</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EARTH_RNG_DESCRIPTION" Language="en_US">
+      <Text>The continents will be shaped like the real Earth, but the coastline will be randomized.</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_2CONTINENTS_NAME" Language="en_US">
+      <Text>Two Scripts >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_2CONTINENTS_DESCRIPTION" Language="en_US">
+      <Text>Two landmasses are generated in separated areas: Old and New World. (add more options)</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_MULTIPLE_CONTINENT_NAME" Language="en_US">
+      <Text>Multiple Scripts >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MULTIPLE_CONTINENT_DESCRIPTION" Language="en_US">
+      <Text>Multiple landmasses are generated in the relative positions of the Real Earth continents. (add more options)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_OLD_WORLD_SHAPE_NAME" Language="en_US">
+      <Text>Old World Shape</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_OLD_WORLD_DESCRIPTION" Language="en_US">
+      <Text>How the Old World landmass is shaped</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NEW_WORLD_SHAPE_NAME" Language="en_US">
+      <Text>New World Shape</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NEW_WORLD_DESCRIPTION" Language="en_US">
+      <Text>How the New World landmass is shaped</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_PANGEA_NAME" Language="en_US">
+      <Text>Pangea</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PANGEA_DESCRIPTION" Language="en_US">
+      <Text>A Massive Continent</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CONTINENT_NAME" Language="en_US">
+      <Text>Continent</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_DESCRIPTION" Language="en_US">
+      <Text>A Continent with some possible smaller separated landmasses</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_LARGE_ISLANDS_NAME" Language="en_US">
+      <Text>Large Islands</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LARGE_ISLANDS_DESCRIPTION" Language="en_US">
+      <Text>A group of Large Islands</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_ISLANDS_NAME" Language="en_US">
+      <Text>Islands</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ISLANDS_DESCRIPTION" Language="en_US">
+      <Text>A group of Islands</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_RANDOM_NAME" Language="en_US">
+      <Text>Random script</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RANDOM_DESCRIPTION" Language="en_US">
+      <Text>One of the above script (but no Real Earth option)</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CUSTOM_NAME" Language="en_US">
+      <Text>Custom >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_DESCRIPTION" Language="en_US">
+      <Text>Customize the landmass generation values</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CUSTOM_TYPE_NAME" Language="en_US">
+      <Text>Layer Type</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_TYPE_DESCRIPTION" Language="en_US">
+      <Text>Select if the layer will replace water tiles (Land layer) or replace land tiles (Water layer)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_WATER_PERCENT_NAME" Language="en_US">
+      <Text>Water Percent</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_WATER_PERCENT_DESCRIPTION" Language="en_US">
+      <Text>Percentage of water for this layer</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_GRAIN_NAME" Language="en_US">
+      <Text>Fractal Grain (0-7)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_GRAIN_DESCRIPTION" Language="en_US">
+      <Text>Amount of grain to add to fractal. 0 is no grain (smooth), 7 is lots of grain (jagged).</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_RIFT_GRAIN_NAME" Language="en_US">
+      <Text>Rift Grain (0-4)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_RIFT_GRAIN_DESCRIPTION" Language="en_US">
+      <Text>good question !</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTX_EXP_NAME" Language="en_US">
+      <Text>FracXExp</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTX_EXP_DESCRIPTION" Language="en_US">
+      <Text>Fractal Width Resolution. Higher values will produce sharper fractals, while lower values will produce blurry ones. Those are exponents raised to powers of two. So a value of FracXExp = 7 means 2^7, which would be 128 units wide. FracXExp = 6 would be 64 units wide.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTY_EXP_NAME" Language="en_US">
+      <Text>FracYExp</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTY_EXP_DESCRIPTION" Language="en_US">
+      <Text>Fractal Height Resolution. Higher values will produce sharper fractals, while lower values will produce blurry ones. Those are exponents raised to powers of two. So a value of FracYExp = 7 means 2^7, which would be 128 units wide. FracYExp = 6 would be 64 units wide.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_LAND_NAME" Language="en_US">
+      <Text>Land</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_LAND_DESCRIPTION" Language="en_US">
+      <Text>This layer add land over water (but does not change existing land)</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_WATER_NAME" Language="en_US">
+      <Text>Water</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_LAND_DESCRIPTION" Language="en_US">
+      <Text>This layer add water over land (but does not change existing water)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_DEFAULT_LANDMASS_NAME" Language="en_US">
+      <Text>Default Landmasses</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DEFAULT_LANDMASS_DESCRIPTION" Language="en_US">
+      <Text>Use default scripts for each landmass.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SELECT_LANDMASS_NAME" Language="en_US">
+      <Text>Select Landmasses >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SELECT_LANDMASS_DESCRIPTION" Language="en_US">
+      <Text>Select each landmass script. (add more options)</Text>
+    </Replace>	
+	
+    <Replace Tag="LOC_MAP_AUSTRALIA_NAME" 			Text="Australia" 			Language="en_US" /> 
+    <Replace Tag="LOC_MAP_OCEANIA_NAME" 			Text="Oceania" 				Language="en_US" /> 
+    <Replace Tag="LOC_MAP_SOUTH_ASIA_NAME"			Text="South Asia" 			Language="en_US" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_ASIA_NAME"		Text="Central Asia" 		Language="en_US" /> 
+    <Replace Tag="LOC_MAP_EAST_ASIA_NAME" 			Text="East Asia" 			Language="en_US" /> 
+    <Replace Tag="LOC_MAP_JAPAN_NAME" 				Text="Japan" 				Language="en_US" /> 
+    <Replace Tag="LOC_MAP_NORTH_ASIA_NAME" 			Text="North Asia" 			Language="en_US" /> 
+    <Replace Tag="LOC_MAP_MIDDLE_EAST_NAME" 		Text="Middle East" 			Language="en_US" /> 
+    <Replace Tag="LOC_MAP_TURKEY_NAME" 				Text="Turkey" 				Language="en_US" /> 
+    <Replace Tag="LOC_MAP_SOUTH_EUROPA_NAME" 		Text="South Europa" 		Language="en_US" /> 
+    <Replace Tag="LOC_MAP_WEST_EUROPA_NAME" 		Text="West Europa" 			Language="en_US" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_EUROPA_NAME" 		Text="Central Europa" 		Language="en_US" /> 
+    <Replace Tag="LOC_MAP_NORTH_EUROPA_NAME" 		Text="North Europa" 		Language="en_US" /> 
+    <Replace Tag="LOC_MAP_EAST_EUROPA_NAME" 		Text="East Europa" 			Language="en_US" /> 
+    <Replace Tag="LOC_MAP_NORTH_AFRICA_NAME" 		Text="North Africa" 		Language="en_US" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_AFRICA_NAME" 		Text="Central Africa" 		Language="en_US" /> 
+    <Replace Tag="LOC_MAP_SOUTH_AFRICA_NAME" 		Text="South Africa" 		Language="en_US" /> 
+    <Replace Tag="LOC_MAP_MADAGASCAR_NAME" 			Text="Madagascar" 			Language="en_US" /> 
+    <Replace Tag="LOC_MAP_NORTH_AMERICA_NAME" 		Text="North America" 		Language="en_US" /> 
+    <Replace Tag="LOC_MAP_ARCTIC_AMERICA_NAME" 		Text="Arctic America" 		Language="en_US" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_AMERICA_NAME"		Text="Central America" 		Language="en_US" /> 
+    <Replace Tag="LOC_MAP_SOUTH_AMERICA_WEST_NAME"	Text="South America (East)"	Language="en_US" /> 
+    <Replace Tag="LOC_MAP_SOUTH_AMERICA_EAST_NAME" 	Text="South America (West)" Language="en_US" /> 
+    <Replace Tag="LOC_MAP_ANTARCTIC_AMERICA_NAME" 	Text="Antarctic America" 	Language="en_US" /> 
 	
   </LocalizedText>
 </GameData>
