@@ -75,33 +75,33 @@
 		
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="MC_OldWorldShape" 	Name="LOC_MAP_OLD_WORLD_SHAPE_NAME" Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="MC_OldWorldShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="OldWorldShape" GroupId="MapOptions" SortIndex="500"/>
 		
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="AUSTRALIA" 		Name="LOC_MAP_AUSTRALIA_NAME" 		Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="AUSTRALIA" 		GroupId="MapOptions" SortIndex="501"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="OCEANIA" 			Name="LOC_MAP_OCEANIA_NAME" 		Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="OCEANIA" 			GroupId="MapOptions" SortIndex="502"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="SOUTH_ASIA" 		Name="LOC_MAP_SOUTH_ASIA_NAME"		Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="SOUTH_ASIA" 		GroupId="MapOptions" SortIndex="503"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="CENTRAL_ASIA" 		Name="LOC_MAP_CENTRAL_ASIA_NAME"	Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="CENTRAL_ASIA" 	GroupId="MapOptions" SortIndex="504"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="EAST_ASIA" 		Name="LOC_MAP_EAST_ASIA_NAME" 		Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="EAST_ASIA" 		GroupId="MapOptions" SortIndex="505"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="JAPAN" 			Name="LOC_MAP_JAPAN_NAME" 			Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="JAPAN" 			GroupId="MapOptions" SortIndex="506"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NORTH_ASIA" 		Name="LOC_MAP_NORTH_ASIA_NAME" 		Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="NORTH_ASIA" 		GroupId="MapOptions" SortIndex="507"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="MIDDLE_EAST" 		Name="LOC_MAP_MIDDLE_EAST_NAME" 	Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="MIDDLE_EAST" 		GroupId="MapOptions" SortIndex="508"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="TURKEY" 			Name="LOC_MAP_TURKEY_NAME" 			Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="TURKEY" 			GroupId="MapOptions" SortIndex="509"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="SOUTH_EUROPA" 		Name="LOC_MAP_SOUTH_EUROPA_NAME" 	Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="SOUTH_EUROPA" 	GroupId="MapOptions" SortIndex="510"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="WEST_EUROPA" 		Name="LOC_MAP_WEST_EUROPA_NAME" 	Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="WEST_EUROPA" 		GroupId="MapOptions" SortIndex="511"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="CENTRAL_EUROPA"	Name="LOC_MAP_CENTRAL_EUROPA_NAME" 	Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="CENTRAL_EUROPA"	GroupId="MapOptions" SortIndex="512"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NORTH_EUROPA" 		Name="LOC_MAP_NORTH_EUROPA_NAME" 	Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="NORTH_EUROPA" 	GroupId="MapOptions" SortIndex="513"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="EAST_EUROPA" 		Name="LOC_MAP_EAST_EUROPA_NAME" 	Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="EAST_EUROPA" 		GroupId="MapOptions" SortIndex="514"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NORTH_AFRICA" 		Name="LOC_MAP_NORTH_AFRICA_NAME" 	Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="NORTH_AFRICA" 	GroupId="MapOptions" SortIndex="515"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="CENTRAL_AFRICA" 	Name="LOC_MAP_CENTRAL_AFRICA_NAME" 	Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="CENTRAL_AFRICA" 	GroupId="MapOptions" SortIndex="516"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="SOUTH_AFRICA" 		Name="LOC_MAP_SOUTH_AFRICA_NAME" 	Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="SOUTH_AFRICA" 	GroupId="MapOptions" SortIndex="517"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="MADAGASCAR" 		Name="LOC_MAP_MADAGASCAR_NAME" 		Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="MADAGASCAR" 		GroupId="MapOptions" SortIndex="518"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="AUSTRALIA" 		Name="LOC_MAP_AUSTRALIA_NAME" 		Domain="LandmassShape" DefaultValue="LARGE_ISLANDS" 	ConfigurationGroup="Map" ConfigurationId="AUSTRALIA" 		GroupId="MapOptions" SortIndex="501"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="OCEANIA" 			Name="LOC_MAP_OCEANIA_NAME" 		Domain="LandmassShape" DefaultValue="SEA" 				ConfigurationGroup="Map" ConfigurationId="OCEANIA" 			GroupId="MapOptions" SortIndex="502"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="SOUTH_ASIA" 		Name="LOC_MAP_SOUTH_ASIA_NAME"		Domain="LandmassShape" DefaultValue="SMALL_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="SOUTH_ASIA" 		GroupId="MapOptions" SortIndex="503"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="CENTRAL_ASIA" 		Name="LOC_MAP_CENTRAL_ASIA_NAME"	Domain="LandmassShape" DefaultValue="LARGE_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="CENTRAL_ASIA" 	GroupId="MapOptions" SortIndex="504"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="EAST_ASIA" 		Name="LOC_MAP_EAST_ASIA_NAME" 		Domain="LandmassShape" DefaultValue="CONTINENT" 		ConfigurationGroup="Map" ConfigurationId="EAST_ASIA" 		GroupId="MapOptions" SortIndex="505"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="JAPAN" 			Name="LOC_MAP_JAPAN_NAME" 			Domain="LandmassShape" DefaultValue="LARGE_ISLANDS" 	ConfigurationGroup="Map" ConfigurationId="JAPAN" 			GroupId="MapOptions" SortIndex="506"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NORTH_ASIA" 		Name="LOC_MAP_NORTH_ASIA_NAME" 		Domain="LandmassShape" DefaultValue="LARGE_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="NORTH_ASIA" 		GroupId="MapOptions" SortIndex="507"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="MIDDLE_EAST" 		Name="LOC_MAP_MIDDLE_EAST_NAME" 	Domain="LandmassShape" DefaultValue="CONTINENT" 		ConfigurationGroup="Map" ConfigurationId="MIDDLE_EAST" 		GroupId="MapOptions" SortIndex="508"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="TURKEY" 			Name="LOC_MAP_TURKEY_NAME" 			Domain="LandmassShape" DefaultValue="CONTINENT" 		ConfigurationGroup="Map" ConfigurationId="TURKEY" 			GroupId="MapOptions" SortIndex="509"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="SOUTH_EUROPA" 		Name="LOC_MAP_SOUTH_EUROPA_NAME" 	Domain="LandmassShape" DefaultValue="CONTINENT" 		ConfigurationGroup="Map" ConfigurationId="SOUTH_EUROPA" 	GroupId="MapOptions" SortIndex="510"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="WEST_EUROPA" 		Name="LOC_MAP_WEST_EUROPA_NAME" 	Domain="LandmassShape" DefaultValue="SMALL_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="WEST_EUROPA" 		GroupId="MapOptions" SortIndex="511"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="CENTRAL_EUROPA"	Name="LOC_MAP_CENTRAL_EUROPA_NAME" 	Domain="LandmassShape" DefaultValue="LARGE_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="CENTRAL_EUROPA"	GroupId="MapOptions" SortIndex="512"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NORTH_EUROPA" 		Name="LOC_MAP_NORTH_EUROPA_NAME" 	Domain="LandmassShape" DefaultValue="SMALL_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="NORTH_EUROPA" 	GroupId="MapOptions" SortIndex="513"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="EAST_EUROPA" 		Name="LOC_MAP_EAST_EUROPA_NAME" 	Domain="LandmassShape" DefaultValue="LARGE_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="EAST_EUROPA" 		GroupId="MapOptions" SortIndex="514"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NORTH_AFRICA" 		Name="LOC_MAP_NORTH_AFRICA_NAME" 	Domain="LandmassShape" DefaultValue="CONTINENT" 		ConfigurationGroup="Map" ConfigurationId="NORTH_AFRICA" 	GroupId="MapOptions" SortIndex="515"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="CENTRAL_AFRICA" 	Name="LOC_MAP_CENTRAL_AFRICA_NAME" 	Domain="LandmassShape" DefaultValue="LARGE_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="CENTRAL_AFRICA" 	GroupId="MapOptions" SortIndex="516"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="SOUTH_AFRICA" 		Name="LOC_MAP_SOUTH_AFRICA_NAME" 	Domain="LandmassShape" DefaultValue="CONTINENT" 		ConfigurationGroup="Map" ConfigurationId="SOUTH_AFRICA" 	GroupId="MapOptions" SortIndex="517"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="MADAGASCAR" 		Name="LOC_MAP_MADAGASCAR_NAME" 		Domain="LandmassShape" DefaultValue="SMALL_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="MADAGASCAR" 		GroupId="MapOptions" SortIndex="518"/>
 		
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="MC_NewWorldShape" 	Name="LOC_MAP_NEW_WORLD_SHAPE_NAME" Description="LOC_MAP_NEW_WORLD_SHAPE_DESCRIPTION" Domain="MC_NewWorldShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="NewWorldShape" GroupId="MapOptions" SortIndex="550"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="MC_NewWorldShape" 	Name="LOC_MAP_NEW_WORLD_SHAPE_NAME" Domain="MC_NewWorldShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="NewWorldShape" GroupId="MapOptions" SortIndex="550"/>
 		
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NORTH_AMERICA" 		Name="LOC_MAP_NORTH_AMERICA_NAME" 		Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="NORTH_AMERICA" 		GroupId="MapOptions" SortIndex="551"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="ARCTIC_AMERICA" 		Name="LOC_MAP_ARCTIC_AMERICA_NAME" 		Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="ARCTIC_AMERICA" 		GroupId="MapOptions" SortIndex="552"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="CENTRAL_AMERICA" 		Name="LOC_MAP_CENTRAL_AMERICA_NAME"		Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="CENTRAL_AMERICA" 		GroupId="MapOptions" SortIndex="553"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="SOUTH_AMERICA_WEST" 	Name="LOC_MAP_SOUTH_AMERICA_WEST_NAME"	Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="SOUTH_AMERICA_WEST" 	GroupId="MapOptions" SortIndex="554"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="SOUTH_AMERICA_EAST" 	Name="LOC_MAP_SOUTH_AMERICA_EAST_NAME" 	Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="SOUTH_AMERICA_EAST" 	GroupId="MapOptions" SortIndex="555"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="ANTARCTIC_AMERICA" 	Name="LOC_MAP_ANTARCTIC_AMERICA_NAME" 	Domain="LandmassShape" DefaultValue="DEFAULT_LANDMASS" 	ConfigurationGroup="Map" ConfigurationId="ANTARCTIC_AMERICA" 	GroupId="MapOptions" SortIndex="556"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NORTH_AMERICA" 		Name="LOC_MAP_NORTH_AMERICA_NAME" 		Domain="LandmassShape" DefaultValue="LARGE_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="NORTH_AMERICA" 		GroupId="MapOptions" SortIndex="551"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="ARCTIC_AMERICA" 		Name="LOC_MAP_ARCTIC_AMERICA_NAME" 		Domain="LandmassShape" DefaultValue="SMALL_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="ARCTIC_AMERICA" 		GroupId="MapOptions" SortIndex="552"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="CENTRAL_AMERICA" 		Name="LOC_MAP_CENTRAL_AMERICA_NAME"		Domain="LandmassShape" DefaultValue="ISLANDS" 			ConfigurationGroup="Map" ConfigurationId="CENTRAL_AMERICA" 		GroupId="MapOptions" SortIndex="553"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="SOUTH_AMERICA_WEST" 	Name="LOC_MAP_SOUTH_AMERICA_WEST_NAME"	Domain="LandmassShape" DefaultValue="LARGE_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="SOUTH_AMERICA_WEST" 	GroupId="MapOptions" SortIndex="554"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="SOUTH_AMERICA_EAST" 	Name="LOC_MAP_SOUTH_AMERICA_EAST_NAME" 	Domain="LandmassShape" DefaultValue="CONTINENT" 		ConfigurationGroup="Map" ConfigurationId="SOUTH_AMERICA_EAST" 	GroupId="MapOptions" SortIndex="555"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="ANTARCTIC_AMERICA" 	Name="LOC_MAP_ANTARCTIC_AMERICA_NAME" 	Domain="LandmassShape" DefaultValue="SMALL_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="ANTARCTIC_AMERICA" 	GroupId="MapOptions" SortIndex="556"/>
 		
 	</Parameters>	
 	
@@ -115,48 +115,54 @@
 		-->
 		
 		<Row Domain="MapShape" Value="EARTH_ONLY" 	Name="LOC_YNAMP_EARTH_ONLY_NAME" 			Description="LOC_MAP_EARTH_ONLY_DESCRIPTION" 			SortIndex="10"/>
-		<Row Domain="MapShape" Value="EARTH_RNG" 	Name="LOC_YNAMP_EARTH_RNG_NAME" 			Description="LOC_MAP_EARTH_RNG_DESCRIPTION" 			SortIndex="20"/>
 		<Row Domain="MapShape" Value="2CONTINENTS" 	Name="LOC_YNAMP_2CONTINENTS_NAME" 			Description="LOC_MAP_2CONTINENTS_DESCRIPTION" 			SortIndex="30"/>
 		<Row Domain="MapShape" Value="MULTIPLE" 	Name="LOC_YNAMP_MULTIPLE_CONTINENT_NAME" 	Description="LOC_MAP_MULTIPLE_CONTINENT_DESCRIPTION" 	SortIndex="40"/>		
 		
-		<Row Domain="2C_OldWorldShape" Value="EARTH_ONLY" 	Name="LOC_YNAMP_EARTH_ONLY_NAME" 			Description="LOC_MAP_EARTH_ONLY_DESCRIPTION" 			SortIndex="10"/>
-		<Row Domain="2C_OldWorldShape" Value="EARTH_RNG" 	Name="LOC_YNAMP_EARTH_RNG_NAME" 			Description="LOC_MAP_EARTH_RNG_DESCRIPTION" 			SortIndex="20"/>
-		<Row Domain="2C_OldWorldShape" Value="PANGEA" 		Name="LOC_YNAMP_PANGEA_NAME" 				Description="LOC_MAP_PANGEA_DESCRIPTION" 				SortIndex="30"/>
-		<Row Domain="2C_OldWorldShape" Value="CONTINENT" 	Name="LOC_YNAMP_CONTINENT_NAME" 			Description="LOC_MAP_CONTINENT_DESCRIPTION" 			SortIndex="40"/>
-		<Row Domain="2C_OldWorldShape" Value="RANDOM" 		Name="LOC_YNAMP_RANDOM_NAME" 				Description="LOC_MAP_RANDOM_DESCRIPTION" 				SortIndex="50"/>
+		<Row Domain="2C_OldWorldShape" Value="EARTH_ONLY" 		Name="LOC_YNAMP_EARTH_ONLY_NAME" 			Description="LOC_MAP_EARTH_ONLY_DESCRIPTION" 			SortIndex="10"/>
+		<Row Domain="2C_OldWorldShape" Value="PANGEA" 			Name="LOC_YNAMP_PANGEA_NAME" 				Description="LOC_MAP_PANGEA_DESCRIPTION" 				SortIndex="30"/>
+		<Row Domain="2C_OldWorldShape" Value="CONTINENT" 		Name="LOC_YNAMP_CONTINENT_NAME" 			Description="LOC_MAP_CONTINENT_DESCRIPTION" 			SortIndex="40"/>
+		<Row Domain="2C_OldWorldShape" Value="SMALL_CONTINENT" 	Name="LOC_YNAMP_SMALL_CONTINENT_NAME"		Description="LOC_MAP_SMALL_CONTINENT_DESCRIPTION" 		SortIndex="45"/>
+		<Row Domain="2C_OldWorldShape" Value="RANDOM" 			Name="LOC_YNAMP_RANDOM_NAME" 				Description="LOC_MAP_RANDOM_DESCRIPTION" 				SortIndex="50"/>
 		<!--
+		<Row Domain="MapShape" Value="EARTH_RNG" 	Name="LOC_YNAMP_EARTH_RNG_NAME" 			Description="LOC_MAP_EARTH_RNG_DESCRIPTION" 			SortIndex="20"/>
 		<Row Domain="2C_OldWorldShape" Value="CUSTOM" 		Name="LOC_YNAMP_CUSTOM_NAME" 				Description="LOC_MAP_CUSTOM_DESCRIPTION" 				SortIndex="60"/>
+		<Row Domain="2C_OldWorldShape" Value="EARTH_RNG" 		Name="LOC_YNAMP_EARTH_RNG_NAME" 			Description="LOC_MAP_EARTH_RNG_DESCRIPTION" 			SortIndex="20"/>
+		<Row Domain="2C_NewWorldShape" Value="EARTH_RNG" 		Name="LOC_YNAMP_EARTH_RNG_NAME" 			Description="LOC_MAP_EARTH_RNG_DESCRIPTION" 			SortIndex="20"/>
+		<Row Domain="MC_OldWorldShape" Value="EARTH_RNG" 		Name="LOC_YNAMP_EARTH_RNG_NAME" 			Description="LOC_MAP_EARTH_RNG_DESCRIPTION" 			SortIndex="20"/>
+		<Row Domain="MC_NewWorldShape" Value="EARTH_RNG" 		Name="LOC_YNAMP_EARTH_RNG_NAME" 			Description="LOC_MAP_EARTH_RNG_DESCRIPTION" 			SortIndex="20"/>
 		-->
 		
 		<Row Domain="2C_NewWorldShape" Value="EARTH_ONLY" 		Name="LOC_YNAMP_EARTH_ONLY_NAME" 			Description="LOC_MAP_EARTH_ONLY_DESCRIPTION" 			SortIndex="10"/>
-		<Row Domain="2C_NewWorldShape" Value="EARTH_RNG" 		Name="LOC_YNAMP_EARTH_RNG_NAME" 			Description="LOC_MAP_EARTH_RNG_DESCRIPTION" 			SortIndex="20"/>
 		<Row Domain="2C_NewWorldShape" Value="PANGEA" 			Name="LOC_YNAMP_PANGEA_NAME" 				Description="LOC_MAP_PANGEA_DESCRIPTION" 				SortIndex="30"/>
 		<Row Domain="2C_NewWorldShape" Value="CONTINENT" 		Name="LOC_YNAMP_CONTINENT_NAME" 			Description="LOC_MAP_CONTINENT_DESCRIPTION" 			SortIndex="40"/>
-		<Row Domain="2C_NewWorldShape" Value="LARGE_ISLANDS"	Name="LOC_YNAMP_LARGE_ISLANDS_NAME" 		Description="LOC_MAP_LARGE_ISLANDS_DESCRIPTION" 		SortIndex="42"/>
-		<Row Domain="2C_NewWorldShape" Value="ISLANDS" 			Name="LOC_YNAMP_ISLANDS_NAME" 				Description="LOC_MAP_ISLANDS_DESCRIPTION" 				SortIndex="44"/>
+		<Row Domain="2C_NewWorldShape" Value="SMALL_CONTINENT" 	Name="LOC_YNAMP_SMALL_CONTINENT_NAME"		Description="LOC_MAP_SMALL_CONTINENT_DESCRIPTION" 		SortIndex="42"/>
+		<Row Domain="2C_NewWorldShape" Value="LARGE_ISLANDS"	Name="LOC_YNAMP_LARGE_ISLANDS_NAME" 		Description="LOC_MAP_LARGE_ISLANDS_DESCRIPTION" 		SortIndex="44"/>
+		<Row Domain="2C_NewWorldShape" Value="ISLANDS" 			Name="LOC_YNAMP_ISLANDS_NAME" 				Description="LOC_MAP_ISLANDS_DESCRIPTION" 				SortIndex="46"/>
+		<Row Domain="2C_NewWorldShape" Value="SMALL_ISLANDS" 	Name="LOC_YNAMP_SMALL_ISLANDS_NAME" 		Description="LOC_MAP_SMALL_ISLANDS_DESCRIPTION" 		SortIndex="48"/>
 		<Row Domain="2C_NewWorldShape" Value="RANDOM" 			Name="LOC_YNAMP_RANDOM_NAME" 				Description="LOC_MAP_RANDOM_DESCRIPTION" 				SortIndex="50"/>
+		<Row Domain="2C_NewWorldShape" Value="RANDOM_VALUES"	Name="LOC_YNAMP_RANDOM_VALUES_NAME" 		Description="LOC_MAP_RANDOM_VALUES_DESCRIPTION" 		SortIndex="55"/>
 		<Row Domain="2C_NewWorldShape" Value="CUSTOM" 			Name="LOC_YNAMP_CUSTOM_NAME" 				Description="LOC_MAP_CUSTOM_DESCRIPTION" 				SortIndex="60"/>
 
 		<Row Domain="MC_OldWorldShape" Value="EARTH_ONLY" 		Name="LOC_YNAMP_EARTH_ONLY_NAME" 			Description="LOC_MAP_EARTH_ONLY_DESCRIPTION" 			SortIndex="10"/>
-		<Row Domain="MC_OldWorldShape" Value="EARTH_RNG" 		Name="LOC_YNAMP_EARTH_RNG_NAME" 			Description="LOC_MAP_EARTH_RNG_DESCRIPTION" 			SortIndex="20"/>
 		<Row Domain="MC_OldWorldShape" Value="DEFAULT_LANDMASS" Name="LOC_YNAMP_DEFAULT_LANDMASS_NAME" 		Description="LOC_MAP_DEFAULT_LANDMASS_DESCRIPTION" 		SortIndex="30"/>
 		<Row Domain="MC_OldWorldShape" Value="SELECT_LANDMASS" 	Name="LOC_YNAMP_SELECT_LANDMASS_NAME" 		Description="LOC_MAP_SELECT_LANDMASS_DESCRIPTION" 		SortIndex="40"/>
 		
 		<Row Domain="MC_NewWorldShape" Value="EARTH_ONLY" 		Name="LOC_YNAMP_EARTH_ONLY_NAME" 			Description="LOC_MAP_EARTH_ONLY_DESCRIPTION" 			SortIndex="10"/>
-		<Row Domain="MC_NewWorldShape" Value="EARTH_RNG" 		Name="LOC_YNAMP_EARTH_RNG_NAME" 			Description="LOC_MAP_EARTH_RNG_DESCRIPTION" 			SortIndex="20"/>
 		<Row Domain="MC_NewWorldShape" Value="DEFAULT_LANDMASS" Name="LOC_YNAMP_DEFAULT_LANDMASS_NAME" 		Description="LOC_MAP_DEFAULT_LANDMASS_DESCRIPTION" 		SortIndex="30"/>
 		<Row Domain="MC_NewWorldShape" Value="SELECT_LANDMASS" 	Name="LOC_YNAMP_SELECT_LANDMASS_NAME" 		Description="LOC_MAP_SELECT_LANDMASS_DESCRIPTION" 		SortIndex="40"/>
 		
-		<Row Domain="LandmassShape" 	Value="largeContinent"	Name="LOC_YNAMP_PANGEA_NAME" 				Description="LOC_MAP_PANGEA_DESCRIPTION" 				SortIndex="10"/>
-		<Row Domain="LandmassShape" 	Value="continent" 		Name="LOC_YNAMP_CONTINENT_NAME" 			Description="LOC_MAP_CONTINENT_DESCRIPTION" 			SortIndex="20"/>
-		<Row Domain="LandmassShape" 	Value="smallContinent" 	Name="LOC_YNAMP_SMALL_CONTINENT_NAME"		Description="LOC_MAP_SMALL_CONTINENT_DESCRIPTION" 		SortIndex="30"/>
-		<Row Domain="LandmassShape" 	Value="largeIslands" 	Name="LOC_YNAMP_LARGE_ISLANDS_NAME" 		Description="LOC_MAP_LARGE_ISLANDS_DESCRIPTION" 		SortIndex="40"/>
-		<Row Domain="LandmassShape" 	Value="islands" 		Name="LOC_YNAMP_ISLANDS_NAME" 				Description="LOC_MAP_ISLANDS_DESCRIPTION" 				SortIndex="50"/>
-		<Row Domain="LandmassShape" 	Value="smallIslands" 	Name="LOC_YNAMP_SMALL_ISLANDS_NAME" 		Description="LOC_MAP_SMALL_ISLANDS_DESCRIPTION" 		SortIndex="60"/>
+		<Row Domain="LandmassShape" 	Value="LARGE_CONTINENT"	Name="LOC_YNAMP_PANGEA_NAME" 				Description="LOC_MAP_PANGEA_DESCRIPTION" 				SortIndex="10"/>
+		<Row Domain="LandmassShape" 	Value="CONTINENT" 		Name="LOC_YNAMP_CONTINENT_NAME" 			Description="LOC_MAP_CONTINENT_DESCRIPTION" 			SortIndex="20"/>
+		<Row Domain="LandmassShape" 	Value="SMALL_CONTINENT" Name="LOC_YNAMP_SMALL_CONTINENT_NAME"		Description="LOC_MAP_SMALL_CONTINENT_DESCRIPTION" 		SortIndex="30"/>
+		<Row Domain="LandmassShape" 	Value="LARGE_ISLANDS" 	Name="LOC_YNAMP_LARGE_ISLANDS_NAME" 		Description="LOC_MAP_LARGE_ISLANDS_DESCRIPTION" 		SortIndex="40"/>
+		<Row Domain="LandmassShape" 	Value="ISLANDS" 		Name="LOC_YNAMP_ISLANDS_NAME" 				Description="LOC_MAP_ISLANDS_DESCRIPTION" 				SortIndex="50"/>
+		<Row Domain="LandmassShape" 	Value="SMALL_ISLANDS" 	Name="LOC_YNAMP_SMALL_ISLANDS_NAME" 		Description="LOC_MAP_SMALL_ISLANDS_DESCRIPTION" 		SortIndex="60"/>
+		<Row Domain="LandmassShape" 	Value="SEA" 			Name="LOC_YNAMP_SEA_NAME" 					Description="LOC_MAP_SEA_DESCRIPTION" 					SortIndex="65"/>
+		<Row Domain="LandmassShape" 	Value="EMPTY" 			Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 		Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 		SortIndex="70"/>
 		
-		<Row Domain="WatermassShape" 	Value="ocean"			Name="LOC_YNAMP_OCEAN_NAME" 				Description="LOC_MAP_OCEAN_DESCRIPTION" 				SortIndex="10"/>
-		<Row Domain="WatermassShape" 	Value="sea" 			Name="LOC_YNAMP_SEA_NAME" 					Description="LOC_MAP_SEA_DESCRIPTION" 					SortIndex="20"/>
-		<Row Domain="WatermassShape" 	Value="largeLakes"	 	Name="LOC_YNAMP_LARGE_LAKES_NAME"			Description="LOC_MAP_LARGE_LAKES_DESCRIPTION" 			SortIndex="30"/>
+		<Row Domain="WatermassShape" 	Value="OCEAN"			Name="LOC_YNAMP_OCEAN_NAME" 				Description="LOC_MAP_OCEAN_DESCRIPTION" 				SortIndex="10"/>
+		<Row Domain="WatermassShape" 	Value="SEA" 			Name="LOC_YNAMP_SEA_NAME" 					Description="LOC_MAP_SEA_DESCRIPTION" 					SortIndex="20"/>
+		<Row Domain="WatermassShape" 	Value="LARGE_LAKES"	 	Name="LOC_YNAMP_LARGE_LAKES_NAME"			Description="LOC_MAP_LARGE_LAKES_DESCRIPTION" 			SortIndex="30"/>
 		
 		
 		<Row Domain="TerraCustomType" Value="LAND" 			Name="LOC_YNAMP_LAND_NAME" 		Description="LOC_MAP_LAND_DESCRIPTION" 			SortIndex="10"/>

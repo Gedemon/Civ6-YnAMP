@@ -416,6 +416,12 @@
     <Replace Tag="LOC_MAP_CONTINENT_DESCRIPTION" Language="en_US">
       <Text>A Continent with some possible smaller separated landmasses</Text>
     </Replace>
+    <Replace Tag="LOC_YNAMP_SMALL_CONTINENT_NAME" Language="en_US">
+      <Text>Small Continent</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SMALL_CONTINENT_DESCRIPTION" Language="en_US">
+      <Text>Small Continent with some possible smaller separated landmasses</Text>
+    </Replace>
     <Replace Tag="LOC_YNAMP_LARGE_ISLANDS_NAME" Language="en_US">
       <Text>Large Islands</Text>
     </Replace>
@@ -427,12 +433,30 @@
     </Replace>
     <Replace Tag="LOC_MAP_ISLANDS_DESCRIPTION" Language="en_US">
       <Text>A group of Islands</Text>
-    </Replace>	
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SMALL_ISLANDS_NAME" Language="en_US">
+      <Text>Small Islands</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SMALL_ISLANDS_DESCRIPTION" Language="en_US">
+      <Text>A group of Small Islands</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SEA_NAME" Language="en_US">
+      <Text>Sea</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SEA_DESCRIPTION" Language="en_US">
+      <Text>Isolated Small Islands</Text>
+    </Replace>
     <Replace Tag="LOC_YNAMP_RANDOM_NAME" Language="en_US">
       <Text>Random script</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RANDOM_DESCRIPTION" Language="en_US">
       <Text>One of the above script (but no Real Earth option)</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_RANDOM_VALUES_NAME" Language="en_US">
+      <Text>Random custom values</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RANDOM_VALUES_DESCRIPTION" Language="en_US">
+      <Text>Could be really anything (including nothing)</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_CUSTOM_NAME" Language="en_US">
       <Text>Custom >></Text>
@@ -481,13 +505,13 @@
     <Replace Tag="LOC_YNAMP_LAND_NAME" Language="en_US">
       <Text>Land</Text>
     </Replace>
-    <Replace Tag="LOC_YNAMP_LAND_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_LAND_DESCRIPTION" Language="en_US">
       <Text>This layer add land over water (but does not change existing land)</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_WATER_NAME" Language="en_US">
       <Text>Water</Text>
     </Replace>
-    <Replace Tag="LOC_YNAMP_LAND_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_WATER_DESCRIPTION" Language="en_US">
       <Text>This layer add water over land (but does not change existing water)</Text>
     </Replace>
 	
