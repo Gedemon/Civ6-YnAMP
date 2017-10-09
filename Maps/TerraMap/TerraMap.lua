@@ -1570,16 +1570,26 @@ function GetPlotFromRefMap(x, y)
 	return plot
 end
 
-function SetAdjacentPlotsToTerrain(pPlot, terrainType, bRemoveFeature)
+function SetAdjacentPlotsToTerrain(pPlot, terrainType, bClean)
 	for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
 		adjacentPlot = Map.GetAdjacentPlot(pPlot:GetX(), pPlot:GetY(), direction);
 		if (adjacentPlot ~= nil and not adjacentPlot:IsNaturalWonder()) then
 			TerrainBuilder.SetTerrainType(adjacentPlot, terrainType)
-			if bRemoveFeature then
-				TerrainBuilder.SetFeatureType(adjacentPlot, -1)
+			if bClean then
+				ClearPlot(adjacentPlot)
 			end
 		end
 	end
+end
+
+function ClearPlot(plot)
+	TerrainBuilder.SetFeatureType(plot, -1)
+	TerrainBuilder.SetWOfRiver(plot, false, -1)
+	TerrainBuilder.SetNWOfRiver(plot, false, -1)
+	TerrainBuilder.SetNEOfRiver(plot, false, -1)
+	TerrainBuilder.SetWOfCliff(plot, false, -1)
+	TerrainBuilder.SetNWOfCliff(plot, false, -1)
+	TerrainBuilder.SetNEOfCliff(plot, false, -1)
 end
 
 -------------------------------------------------------------------------------
@@ -1666,16 +1676,23 @@ function PlaceRealNaturalWonders(NaturalWonders)
 				print(" - Preparing position...")
 				-- 3 plots, flat grass near coast, 1st plot is WEST
 				-- preparing the 3 plots
-				local terrainType = g_TERRAIN_TYPE_TUNDRA
+				local pPlot2 		= Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST)
+				local pPlot3 		= Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST)
+				local terrainType	= g_TERRAIN_TYPE_TUNDRA
 				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
-				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST), Terrain = terrainType })
-				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
+				table.insert(plotsList, { Plot = pPlot2, Terrain = terrainType })
+				table.insert(plotsList, { Plot = pPlot3, Terrain = terrainType })
 				if not bEarthOldWorld then
 					-- make sure to create land around the east plot
 					local centralPlots = {Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST)}
 					for i, plot in ipairs(centralPlots) do
 						SetAdjacentPlotsToTerrain(plot, terrainType)
 					end
+					-- make sure there are water plots on the south/west side
+					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_WEST), g_TERRAIN_TYPE_COAST)
+					ClearPlot( Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_WEST))
+					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), g_TERRAIN_TYPE_COAST)
+					ClearPlot( Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST))
 				end
 			end
 
@@ -1731,9 +1748,9 @@ function PlaceRealNaturalWonders(NaturalWonders)
 					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_NORTHWEST), terrainType)
 					
 					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHEAST), g_TERRAIN_TYPE_COAST)
-					TerrainBuilder.SetFeatureType( Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHEAST), -1)
+					ClearPlot( Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHEAST))
 					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_SOUTHEAST), g_TERRAIN_TYPE_COAST)
-					TerrainBuilder.SetFeatureType( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_SOUTHEAST), -1)
+					ClearPlot( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_SOUTHEAST))
 				end
 			end
 
@@ -1765,11 +1782,20 @@ function PlaceRealNaturalWonders(NaturalWonders)
 				end
 			end
 			
+			if featureTypeName == "FEATURE_TSINGY" then
+				print(" - Preparing position...")
+				local terrainType = g_TERRAIN_TYPE_PLAINS
+				if not bEarthOldWorld then
+					-- make sure to create land under the plot
+					TerrainBuilder.SetTerrainType( pPlot, terrainType)
+				end
+			end
+			
 			if featureTypeName == "FEATURE_EYJAFJALLAJOKULL" then
 				print(" - Preparing position...")
 				-- 2 plots EAST-WEST, flat tundra/plains without features, 1st plot is WEST
 				-- preparing the 2 plots
-				local terrainType = g_TERRAIN_TYPE_PLAINS
+				local terrainType = g_TERRAIN_TYPE_TUNDRA
 				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
 				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), Terrain = terrainType })
 			end
@@ -1794,9 +1820,9 @@ function PlaceRealNaturalWonders(NaturalWonders)
 				if not bEarthOldWorld then
 					-- make sure we're west of coastal sea
 					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), g_TERRAIN_TYPE_COAST)
-					TerrainBuilder.SetFeatureType( Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), -1)
+					ClearPlot( Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST))
 					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_EAST), g_TERRAIN_TYPE_COAST)
-					TerrainBuilder.SetFeatureType( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_EAST), -1)
+					ClearPlot( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_EAST))
 					-- make sure we're east of land
 					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_WEST), g_TERRAIN_TYPE_GRASS)
 					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_WEST), g_TERRAIN_TYPE_GRASS)
@@ -1834,9 +1860,9 @@ function PlaceRealNaturalWonders(NaturalWonders)
 					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHWEST), g_TERRAIN_TYPE_PLAINS)
 					
 					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_NORTHEAST), g_TERRAIN_TYPE_COAST)	
-					TerrainBuilder.SetFeatureType( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_NORTHEAST), -1)				
+					ClearPlot( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_NORTHEAST))
 					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_NORTHWEST), g_TERRAIN_TYPE_COAST)
-					TerrainBuilder.SetFeatureType( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_NORTHWEST), -1)
+					ClearPlot( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_NORTHWEST))
 				end
 			end
 
@@ -1844,16 +1870,24 @@ function PlaceRealNaturalWonders(NaturalWonders)
 				print(" - Preparing position...")
 				-- 3 plots, flat grass near coast, 1st plot is EAST
 				-- preparing the 3 plots
-				local terrainType = g_TERRAIN_TYPE_GRASS
+				local terrainType 	= g_TERRAIN_TYPE_GRASS
+				local pPlot2 		= Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHWEST)
+				local pPlot3 		= Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_WEST)
 				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
-				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHWEST), Terrain = terrainType })
-				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_WEST), Terrain = terrainType })
+				table.insert(plotsList, { Plot = pPlot2, Terrain = terrainType })
+				table.insert(plotsList, { Plot = pPlot3, Terrain = terrainType })
 				if not bEarthOldWorld then
 					-- make sure to create land around the first plot
 					local centralPlots = {pPlot, Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST)}
 					for i, plot in ipairs(centralPlots) do
 						SetAdjacentPlotsToTerrain(plot, g_TERRAIN_TYPE_GRASS_HILLS)
 					end
+					-- make sure there are water plots on the south/west side
+					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_WEST), g_TERRAIN_TYPE_COAST)
+					ClearPlot( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_WEST))
+					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(pPlot3:GetX(), pPlot3:GetY(), DirectionTypes.DIRECTION_WEST), g_TERRAIN_TYPE_COAST)
+					ClearPlot( Map.GetAdjacentPlot(pPlot3:GetX(), pPlot3:GetY(), DirectionTypes.DIRECTION_WEST))
+					
 				end
 			end
 
