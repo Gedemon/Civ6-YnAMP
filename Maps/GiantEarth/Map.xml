@@ -154,9 +154,16 @@
 	</ExtraPlacement>
 	
 	<NaturalWonderPosition>
+	
         <Replace MapName="GiantEarth" X="98" Y="58" FeatureType="FEATURE_SUK_FUJI" />		
         <Replace MapName="GiantEarth" X="76" Y="41" FeatureType="FEATURE_SUK_TONLESAP" />
-        <Replace MapName="GiantEarth" X="77" Y="40" FeatureType="FEATURE_SUK_TONLESAP" />
+        <Replace MapName="GiantEarth" X="77" Y="40" FeatureType="FEATURE_SUK_TONLESAP" />		
+		
+		<!--
+        <Replace MapName="GiantEarth" X="101" Y="23" FeatureType="FEATURE_BARRIER_REEF" TerrainType="TERRAIN_COAST" />
+        <Replace MapName="GiantEarth" X="101" Y="24" FeatureType="FEATURE_BARRIER_REEF" TerrainType="TERRAIN_COAST" />
+		-->		
+		
     </NaturalWonderPosition>
 	
 </GameData>

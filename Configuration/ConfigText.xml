@@ -367,10 +367,10 @@
     </Replace>
 	
     <Replace Tag="LOC_YNAMP_EARTH_ONLY_NAME" Language="en_US">
-      <Text>Earth continents</Text>
+      <Text>Earth-shaped continents</Text>
     </Replace>
     <Replace Tag="LOC_MAP_EARTH_ONLY_DESCRIPTION" Language="en_US">
-      <Text>The continents will be shaped like the real Earth</Text>
+      <Text>The landmasses will be shaped like the real Earth continents</Text>
     </Replace>	
     <Replace Tag="LOC_YNAMP_EARTH_RNG_NAME" Language="en_US">
       <Text>Earth with Random Coastline</Text>

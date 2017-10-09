@@ -61,15 +61,15 @@
 
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="MapShape" 			Name="LOC_MAP_MAP_SHAPE_NAME" Description="LOC_MAP_MAP_SHAPE_DESCRIPTION" Domain="MapShape" DefaultValue="MULTIPLE" ConfigurationGroup="Map" ConfigurationId="MapShape" GroupId="MapOptions" SortIndex="400"/>
 		
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="2C_OldWorldShape" 	Name="LOC_MAP_OLD_WORLD_SHAPE_NAME" Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="2C_OldWorldShape" DefaultValue="PANGEA" 		ConfigurationGroup="Map" ConfigurationId="OldWorldShape" GroupId="MapOptions" SortIndex="500"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="2C_OldWorldShape" 	Name="LOC_MAP_OLD_WORLD_SHAPE_NAME" Description="LOC_MAP_OLD_WORLD_SHAPE_DESCRIPTION" Domain="2C_OldWorldShape" DefaultValue="CONTINENT" 		ConfigurationGroup="Map" ConfigurationId="OldWorldShape" GroupId="MapOptions" SortIndex="500"/>
 		
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="2C_NewWorldShape" 	Name="LOC_MAP_NEW_WORLD_SHAPE_NAME" Description="LOC_MAP_NEW_WORLD_SHAPE_DESCRIPTION" Domain="2C_NewWorldShape" DefaultValue="CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="NewWorldShape" GroupId="MapOptions" SortIndex="550"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="2C_NewWorldShape" 	Name="LOC_MAP_NEW_WORLD_SHAPE_NAME" Description="LOC_MAP_NEW_WORLD_SHAPE_DESCRIPTION" Domain="2C_NewWorldShape" DefaultValue="SMALL_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="NewWorldShape" GroupId="MapOptions" SortIndex="550"/>
 		
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NW_CustomType" 	Name="LOC_MAP_CUSTOM_TYPE_NAME" 			Description="LOC_MAP_CUSTOM_TYPE_DESCRIPTION" 			Domain="TerraCustomType" 	DefaultValue="LAND" ConfigurationGroup="Map" ConfigurationId="TerraCustomType" 	GroupId="MapOptions" SortIndex="555"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NW_WaterPercent" 	Name="LOC_MAP_CUSTOM_WATER_PERCENT_NAME" 	Description="LOC_MAP_CUSTOM_WATER_PERCENT_DESCRIPTION" 	Domain="uint" Hash="0" 		DefaultValue="80" 	ConfigurationGroup="Map" ConfigurationId="NW_WaterPercent" 	GroupId="MapOptions" SortIndex="560"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NW_Grain" 			Name="LOC_MAP_CUSTOM_GRAIN_NAME" 			Description="LOC_MAP_CUSTOM_GRAIN_DESCRIPTION" 			Domain="uint" Hash="0" 		DefaultValue="2" 	ConfigurationGroup="Map" ConfigurationId="NW_Grain" 		GroupId="MapOptions" SortIndex="565"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NW_WaterPercent" 	Name="LOC_MAP_CUSTOM_WATER_PERCENT_NAME" 	Description="LOC_MAP_CUSTOM_WATER_PERCENT_DESCRIPTION" 	Domain="uint" Hash="0" 		DefaultValue="40" 	ConfigurationGroup="Map" ConfigurationId="NW_WaterPercent" 	GroupId="MapOptions" SortIndex="560"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NW_Grain" 			Name="LOC_MAP_CUSTOM_GRAIN_NAME" 			Description="LOC_MAP_CUSTOM_GRAIN_DESCRIPTION" 			Domain="uint" Hash="0" 		DefaultValue="5" 	ConfigurationGroup="Map" ConfigurationId="NW_Grain" 		GroupId="MapOptions" SortIndex="565"/>
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NW_RiftGrain" 		Name="LOC_MAP_CUSTOM_RIFT_GRAIN_NAME" 		Description="LOC_MAP_CUSTOM_RIFT_GRAIN_DESCRIPTION" 	Domain="uint" Hash="0" 		DefaultValue="-1" 	ConfigurationGroup="Map" ConfigurationId="NW_RiftGrain" 	GroupId="MapOptions" SortIndex="570"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NW_FracXExp" 		Name="LOC_MAP_CUSTOM_FRACTX_EXP_NAME" 		Description="LOC_MAP_CUSTOM_FRACTX_EXP_DESCRIPTION" 	Domain="uint" Hash="0" 		DefaultValue="6" 	ConfigurationGroup="Map" ConfigurationId="NW_FracXExp" 		GroupId="MapOptions" SortIndex="575"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NW_FracXExp" 		Name="LOC_MAP_CUSTOM_FRACTX_EXP_NAME" 		Description="LOC_MAP_CUSTOM_FRACTX_EXP_DESCRIPTION" 	Domain="uint" Hash="0" 		DefaultValue="5" 	ConfigurationGroup="Map" ConfigurationId="NW_FracXExp" 		GroupId="MapOptions" SortIndex="575"/>
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NW_FracYExp" 		Name="LOC_MAP_CUSTOM_FRACTY_EXP_NAME" 		Description="LOC_MAP_CUSTOM_FRACTY_EXP_DESCRIPTION" 	Domain="uint" Hash="0" 		DefaultValue="5" 	ConfigurationGroup="Map" ConfigurationId="NW_FracYExp" 		GroupId="MapOptions" SortIndex="580"/>
 		
 		
@@ -98,7 +98,7 @@
 		
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NORTH_AMERICA" 		Name="LOC_MAP_NORTH_AMERICA_NAME" 		Domain="LandmassShape" DefaultValue="LARGE_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="NORTH_AMERICA" 		GroupId="MapOptions" SortIndex="551"/>
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="ARCTIC_AMERICA" 		Name="LOC_MAP_ARCTIC_AMERICA_NAME" 		Domain="LandmassShape" DefaultValue="SMALL_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="ARCTIC_AMERICA" 		GroupId="MapOptions" SortIndex="552"/>
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="CENTRAL_AMERICA" 		Name="LOC_MAP_CENTRAL_AMERICA_NAME"		Domain="LandmassShape" DefaultValue="ISLANDS" 			ConfigurationGroup="Map" ConfigurationId="CENTRAL_AMERICA" 		GroupId="MapOptions" SortIndex="553"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="CENTRAL_AMERICA" 		Name="LOC_MAP_CENTRAL_AMERICA_NAME"		Domain="LandmassShape" DefaultValue="LARGE_ISLANDS" 	ConfigurationGroup="Map" ConfigurationId="CENTRAL_AMERICA" 		GroupId="MapOptions" SortIndex="553"/>
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="SOUTH_AMERICA_WEST" 	Name="LOC_MAP_SOUTH_AMERICA_WEST_NAME"	Domain="LandmassShape" DefaultValue="LARGE_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="SOUTH_AMERICA_WEST" 	GroupId="MapOptions" SortIndex="554"/>
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="SOUTH_AMERICA_EAST" 	Name="LOC_MAP_SOUTH_AMERICA_EAST_NAME" 	Domain="LandmassShape" DefaultValue="CONTINENT" 		ConfigurationGroup="Map" ConfigurationId="SOUTH_AMERICA_EAST" 	GroupId="MapOptions" SortIndex="555"/>
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="ANTARCTIC_AMERICA" 	Name="LOC_MAP_ANTARCTIC_AMERICA_NAME" 	Domain="LandmassShape" DefaultValue="SMALL_CONTINENT" 	ConfigurationGroup="Map" ConfigurationId="ANTARCTIC_AMERICA" 	GroupId="MapOptions" SortIndex="556"/>
@@ -119,7 +119,7 @@
 		<Row Domain="MapShape" Value="MULTIPLE" 	Name="LOC_YNAMP_MULTIPLE_CONTINENT_NAME" 	Description="LOC_MAP_MULTIPLE_CONTINENT_DESCRIPTION" 	SortIndex="40"/>		
 		
 		<Row Domain="2C_OldWorldShape" Value="EARTH_ONLY" 		Name="LOC_YNAMP_EARTH_ONLY_NAME" 			Description="LOC_MAP_EARTH_ONLY_DESCRIPTION" 			SortIndex="10"/>
-		<Row Domain="2C_OldWorldShape" Value="PANGEA" 			Name="LOC_YNAMP_PANGEA_NAME" 				Description="LOC_MAP_PANGEA_DESCRIPTION" 				SortIndex="30"/>
+		<Row Domain="2C_OldWorldShape" Value="LARGE_CONTINENT" 	Name="LOC_YNAMP_PANGEA_NAME" 				Description="LOC_MAP_PANGEA_DESCRIPTION" 				SortIndex="30"/>
 		<Row Domain="2C_OldWorldShape" Value="CONTINENT" 		Name="LOC_YNAMP_CONTINENT_NAME" 			Description="LOC_MAP_CONTINENT_DESCRIPTION" 			SortIndex="40"/>
 		<Row Domain="2C_OldWorldShape" Value="SMALL_CONTINENT" 	Name="LOC_YNAMP_SMALL_CONTINENT_NAME"		Description="LOC_MAP_SMALL_CONTINENT_DESCRIPTION" 		SortIndex="45"/>
 		<Row Domain="2C_OldWorldShape" Value="RANDOM" 			Name="LOC_YNAMP_RANDOM_NAME" 				Description="LOC_MAP_RANDOM_DESCRIPTION" 				SortIndex="50"/>
@@ -133,7 +133,7 @@
 		-->
 		
 		<Row Domain="2C_NewWorldShape" Value="EARTH_ONLY" 		Name="LOC_YNAMP_EARTH_ONLY_NAME" 			Description="LOC_MAP_EARTH_ONLY_DESCRIPTION" 			SortIndex="10"/>
-		<Row Domain="2C_NewWorldShape" Value="PANGEA" 			Name="LOC_YNAMP_PANGEA_NAME" 				Description="LOC_MAP_PANGEA_DESCRIPTION" 				SortIndex="30"/>
+		<Row Domain="2C_NewWorldShape" Value="LARGE_CONTINENT" 	Name="LOC_YNAMP_PANGEA_NAME" 				Description="LOC_MAP_PANGEA_DESCRIPTION" 				SortIndex="30"/>
 		<Row Domain="2C_NewWorldShape" Value="CONTINENT" 		Name="LOC_YNAMP_CONTINENT_NAME" 			Description="LOC_MAP_CONTINENT_DESCRIPTION" 			SortIndex="40"/>
 		<Row Domain="2C_NewWorldShape" Value="SMALL_CONTINENT" 	Name="LOC_YNAMP_SMALL_CONTINENT_NAME"		Description="LOC_MAP_SMALL_CONTINENT_DESCRIPTION" 		SortIndex="42"/>
 		<Row Domain="2C_NewWorldShape" Value="LARGE_ISLANDS"	Name="LOC_YNAMP_LARGE_ISLANDS_NAME" 		Description="LOC_MAP_LARGE_ISLANDS_DESCRIPTION" 		SortIndex="44"/>
