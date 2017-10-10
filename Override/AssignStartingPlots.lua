@@ -36,6 +36,7 @@ iIceNorth 			= MapConfiguration.GetValue("IceNorth")
 iIceSouth 			= MapConfiguration.GetValue("IceSouth")
 bAnalyseChokepoints	= not GameConfiguration.GetValue("FastLoad")
 bPlaceAllLuxuries	= MapConfiguration.GetValue("PlaceAllLuxuries") == "PLACEMENT_REQUEST"
+bAlternatePlacement = MapConfiguration.GetValue("AlternatePlacement")
 
 -- Create list of Civilizations and leaders in game
 for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
@@ -2480,6 +2481,10 @@ end
 
 print ("Loading YnAMP functions ...")
 
+local g_StartingPlotRange
+local g_MinStartDistanceMajor
+local g_MaxStartDistanceMajor
+
 ------------------------------------------------------------------------------
 -- Create Tables
 ------------------------------------------------------------------------------
@@ -2714,6 +2719,11 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	--local pPlot
 	--g_iFlags = TerrainBuilder.GetFractalFlags();
 	
+	g_MaxStartDistanceMajor = math.sqrt(g_iW * g_iH / PlayerManager.GetWasEverAliveMajorsCount())
+	g_MinStartDistanceMajor = g_MaxStartDistanceMajor / 3
+	print("g_MaxStartDistanceMajor = ", g_MaxStartDistanceMajor)
+	print("g_MinStartDistanceMajor = ", g_MinStartDistanceMajor)
+	
 	local bIsCiv5Map = (#MapToConvert[0][0][6] == 2) -- 6th entry is resource for civ5 data ( = 2 : type and number), cliffs positions for civ6 data ( = 3 : all possible positions on a hexagon side)
 	
 	print("Importing Map Data (Civ5 = "..tostring(bIsCiv5Map)..")")
@@ -2858,7 +2868,7 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 		TerrainBuilder.AnalyzeChokepoints();
 	else
 		print("Worldbuilder detected, skipping TerrainBuilder.AnalyzeChokepoints()...")
-		print("WARNING skipping AnalyzeChokepoints may create issues with saved maps (exporting for YnAMP scripts is not affected)")
+		print("WARNING skipping AnalyzeChokepoints may (or may not) create issues with saved maps (exporting for YnAMP scripts is not affected)")
 	end
 		
 	currentTimer = os.clock() - g_startTimer
@@ -2886,6 +2896,11 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")
 	
 	ResourcesValidation(g_iW, g_iH) -- before Civ specific resources may be added (we allow exclusion override then)
+
+	-- Check if all selected civs have been given a Starting Location
+	if not bTSL or bAlternatePlacement then
+		CheckAllCivilizationsStartingLocations()
+	end
 		
 	if bRequestedResources and not bNoResources then
 		AddStartingLocationResources()
@@ -2918,6 +2933,262 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	print("Total time for Map creation = "..tostring(totalTimer).." seconds")
 end
 
+-------------------------------------------------------------------------------
+-- Find backup starting positions if the game's start positioner as failed
+-------------------------------------------------------------------------------
+function CheckAllCivilizationsStartingLocations()
+
+	-- Check for Civilization placement
+	local bNeedPlacementUpdate 	= false
+	local toPlace 				= {}
+	for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+		local player = Players[iPlayer]
+		local plot = player:GetStartingPlot(plot)
+		if not plot and player:IsMajor() then
+			print("WARNING : no starting plot set for player ID#" .. tostring(iPlayer) .. " " .. PlayerConfigurations[iPlayer]:GetPlayerName())
+			table.insert(toPlace, iPlayer)
+		end
+	end
+	
+	if #toPlace > 0 then
+		bExtraStartingPlotPlacement = true -- tell AssignStartingPlots:__SetStartMajor to use a different method for checking space between civs
+		local startPlotList = GetCustomStartingPlots()
+		for i, iPlayer in ipairs(toPlace) do
+			print("Searching custom starting plot for " .. PlayerConfigurations[iPlayer]:GetPlayerName())
+			local pPlot = GetBestStartingPlotFromList(startPlotList)
+			if pPlot then
+				local player = Players[iPlayer]
+				player:SetStartingPlot(pPlot)
+				bNeedPlacementUpdate = true
+			end
+		end
+	end
+	
+	local notPlaced = 0
+	for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+		local player = Players[iPlayer]
+		local plot = player:GetStartingPlot(plot)
+		if not plot then
+			notPlaced = notPlaced + 1
+		end
+	end
+	if notPlaced > 0 then
+		print("WARNING : Still no starting plot for #" .. tostring(notPlaced) .. " major civilizations")
+	else
+		print("All #"..tostring(PlayerManager.GetWasEverAliveMajorsCount()).." major civilizations placed !")
+	end
+	
+	local toPlace 			= {}
+	for _, iPlayer in ipairs(PlayerManager.GetAliveMinorIDs()) do
+		local player = Players[iPlayer]
+		local plot = player:GetStartingPlot(plot)
+		if not plot then
+			print("WARNING : no starting plot set for player ID#" .. tostring(iPlayer) .. " " .. PlayerConfigurations[iPlayer]:GetPlayerName())
+			table.insert(toPlace, iPlayer)
+		end
+	end
+	
+	if #toPlace > 0 then
+		bExtraStartingPlotPlacement = true -- tell AssignStartingPlots:__SetStartMajor to use a different method for checking space between civs
+		local startPlotList = GetCustomStartingPlots()
+		for i, iPlayer in ipairs(toPlace) do
+			print("Searching custom starting plot for " .. PlayerConfigurations[iPlayer]:GetPlayerName())
+			local pPlot = GetBestStartingPlotFromList(startPlotList, true)
+			if pPlot then
+				local player = Players[iPlayer]
+				player:SetStartingPlot(pPlot)
+				bNeedPlacementUpdate = true
+			end
+		end
+	end
+	
+	local notPlaced = 0
+	for _, iPlayer in ipairs(PlayerManager.GetAliveMinorIDs()) do
+		local player = Players[iPlayer]
+		local plot = player:GetStartingPlot(plot)
+		if not plot then
+			notPlaced = notPlaced + 1
+		end
+	end
+	if notPlaced > 0 then
+		print("WARNING : Still no starting plot for #" .. tostring(notPlaced) .. " minor civilizations")
+	elseif PlayerManager.GetAliveMinorsCount() > 0 then
+		print("All #"..tostring(PlayerManager.GetAliveMinorsCount()).." minor civilizations placed !")
+	end
+	
+	
+	if bCulturallyLinked and bNeedPlacementUpdate then
+		print("Updating Culturally Linked placement...")
+		CulturallyLinkedCivilizations(true)	
+		CulturallyLinkedCityStates(true)	
+	end
+end
+
+function GetPlotFertility(plot)
+	-- Calculate the fertility of the starting plot
+	local iRange = 3;
+	local pPlot = plot;
+	local plotX = pPlot:GetX();
+	local plotY = pPlot:GetY();
+
+	local gridWidth, gridHeight = Map.GetGridSize();
+	local gridHeightMinus1 = gridHeight - 1;
+
+	local iFertility = 0;
+	
+	--Rivers are awesome to start next to
+	local terrainType = pPlot:GetTerrainType();
+	if(pPlot:IsFreshWater() == true and terrainType ~= g_TERRAIN_TYPE_SNOW and terrainType ~= g_TERRAIN_TYPE_SNOW_HILLS and pPlot:IsImpassable() ~= true) then
+		iFertility = iFertility + 50;
+		if pPlot:IsRiver() == true then
+			iFertility = iFertility + 50
+		end
+	end	
+	
+	for dx = -iRange, iRange do
+		for dy = -iRange,iRange do
+			local otherPlot = Map.GetPlotXYWithRangeCheck(plotX, plotY, dx, dy, iRange);
+
+			-- Valid plot?  Also, skip plots along the top and bottom edge
+			if(otherPlot) then
+				local otherPlotY = otherPlot:GetY();
+				if(otherPlotY > 0 and otherPlotY < gridHeightMinus1) then
+
+					terrainType = otherPlot:GetTerrainType();
+					featureType = otherPlot:GetFeatureType();
+
+					-- Subtract one if there is snow and no resource. Do not count water plots unless there is a resource
+					if((terrainType == g_TERRAIN_TYPE_SNOW or terrainType == g_TERRAIN_TYPE_SNOW_HILLS or terrainType == g_TERRAIN_TYPE_SNOW_MOUNTAIN) and otherPlot:GetResourceCount() == 0) then
+						iFertility = iFertility - 10;
+					elseif(featureType == g_FEATURE_ICE) then
+						iFertility = iFertility - 20;
+					elseif((otherPlot:IsWater() == false) or otherPlot:GetResourceCount() > 0) then
+						iFertility = iFertility + (otherPlot:GetYield(g_YIELD_PRODUCTION)*3)
+						iFertility = iFertility + (otherPlot:GetYield(g_YIELD_FOOD)*5)
+					end
+				
+					-- Lower the Fertility if the plot is impassable
+					if(iFertility > 5 and otherPlot:IsImpassable() == true) then
+						iFertility = iFertility - 5;
+					end
+
+					-- Lower the Fertility if the plot has Features
+					if(featureType ~= g_FEATURE_NONE) then
+						iFertility = iFertility - 2
+					end	
+
+				else
+					iFertility = iFertility - 20;
+				end
+			else
+				iFertility = iFertility - 20;
+			end
+		end
+	end 
+
+	return iFertility;
+end
+
+function IsStartingDistanceFarEnough(plot, bIsMinor)
+	-- we're using the alternate placement method because the start positioner as failed, maybe because there are too many civs on the map
+	-- so we use a minimum start distance calculated on map size 
+	local MinDistance 				= math.min(g_MinStartDistanceMajor, (GlobalParameters.START_DISTANCE_MAJOR_CIVILIZATION or 9))
+	if bIsMinor then MinDistance 	= math.min(g_MinStartDistanceMajor, (GlobalParameters.START_DISTANCE_MINOR_CIVILIZATION or 5))	end
+	MinDistance 					= math.max(GlobalParameters.CITY_MIN_RANGE, MinDistance)
+	
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		local player = Players[iPlayer]
+		local startingPlot = player:GetStartingPlot()
+		if startingPlot then 
+			local distance 	= Map.GetPlotDistance(plot:GetIndex(), startingPlot:GetIndex())
+			if distance <= MinDistance then
+				--print("Not far enough, distance = ".. tostring(distance) .." <= MinDistance of "..tostring(MinDistance))
+				return false
+			end
+		end
+	end
+	return true
+end
+
+function GetCustomStartingPlots()
+	local g_iW, g_iH 	= Map.GetGridSize()
+	local potentialPlots 	= {}
+
+	for iX = 0, g_iW - 1 do
+		for iY = 0, g_iH - 1 do
+			local index = (iY * g_iW) + iX;
+			pPlot = Map.GetPlotByIndex(index)
+			local fertility = GetPlotFertility(pPlot)
+			if fertility > 50 then
+				--print("fertility = ", fertility)
+				table.insert(potentialPlots, { Plot = pPlot, Fertility = fertility} )
+			end
+		end
+	end
+	print("GetCustomStartingPlots returns "..tostring(#potentialPlots).." plots")
+	
+	table.sort (potentialPlots, function(a, b) return a.Fertility > b.Fertility; end);
+	return potentialPlots
+end
+
+function GetBestStartingPlotFromList(plots, bIsMinor)
+
+	sortedPlots = plots
+
+	if not plots then -- sometime the start positioner fails...
+		print("WARNING: plots is nil for SetStartMajor(plots) !")
+		print("Skipping...")
+		return nil
+	else
+		--print("num plots = " .. tostring(#plots).. " in SetStartMajor(plots)")
+	end
+	
+	local iSize = #plots;
+	local iContinentIndex 	= 1
+	local bValid 			= false;
+	while bValid == false and iSize >= iContinentIndex do
+		bValid = true;
+		local NWMajor = 0;
+		if sortedPlots[iContinentIndex].Plot then
+			pTempPlot = sortedPlots[iContinentIndex].Plot;
+			--print("Fertility: ", sortedPlots[iContinentIndex].Fertility)
+
+			-- Checks to see if the plot is impassable
+			if(pTempPlot:IsImpassable() == true) then
+				bValid = false;
+			end
+
+			-- Checks to see if the plot is water
+			if(pTempPlot:IsWater() == true) then
+				bValid = false;
+			end
+
+			-- Checks to see if there are any major civs in the given distance
+			local bMajorCivCheck = IsStartingDistanceFarEnough(pTempPlot, bIsMinor)
+			if(bMajorCivCheck == false) then
+				bValid = false;
+				sortedPlots[iContinentIndex].Plot = nil -- no need to test that plot again...
+			end
+			
+			iContinentIndex = iContinentIndex + 1;
+
+			-- If the plots passes all the checks then the plot equals the temp plot
+			if(bValid == true) then
+				print("GetBestStartingPlotFromList : returning plot #"..tostring(iContinentIndex).."/"..tostring(iSize).." at fertility = ".. tostring(sortedPlots[iContinentIndex].Fertility))
+				return pTempPlot;
+			end
+		else		
+			iContinentIndex = iContinentIndex + 1;
+			bValid = false
+		end
+	end
+
+	return nil;
+end
+
+-------------------------------------------------------------------------------
+-- Features & Extra placement
+-------------------------------------------------------------------------------
 function PlaceRealNaturalWonders(NaturalWonders)
 	print("YnAMP Natural Wonders placement...")
 
@@ -3368,7 +3639,7 @@ function placeResourceInRegion(eResourceType, region, number, bNumberIsRatio)
 					local pPlot = shuffledPlotTable[i]
 					ResourceBuilder.SetResourceType(pPlot, eResourceType, 1)
 				end
-				print (" - Asked for " .. toPlace .. ", placed " .. placed .. " (available plots = " .. #shuffledPlotTable .. ", total plots in region = ".. plotCount .." )" )
+				--print (" - Asked for " .. toPlace .. ", placed " .. placed .. " (available plots = " .. #shuffledPlotTable .. ", total plots in region = ".. plotCount .." )" )
 			end
 		end
 	end
@@ -3405,7 +3676,7 @@ function AddStartingLocationResources()
 		local player = Players[player_ID]
 		local playerConfig = PlayerConfigurations[player_ID]
 		local civilization = playerConfig:GetCivilizationTypeName()
-		print ("Searching Resources for ".. tostring(civilization))
+		--print ("Searching Resources for ".. tostring(civilization))
 		
 		local startPlot = player:GetStartingPlot()
 		if startPlot then
@@ -3416,7 +3687,7 @@ function AddStartingLocationResources()
 				if row.Civilization == civilization then
 					
 					local resource = row.Resource
-					print ("  - Trying to place ".. tostring(resource))
+					--print ("  - Trying to place ".. tostring(resource))
 					
 					local eResourceType = nil
 					if GameInfo.Resources[resource] then
@@ -3434,7 +3705,7 @@ function AddStartingLocationResources()
 						
 						-- do a second pass if needed, search in range = 4
 						if #plotTable == 0 then
-							print ("  - no result on first pass, trying a larger search...")
+							--print ("  - no result on first pass, trying a larger search...")
 							plotTable, plotCount = getPlotsInAreaForResource(startX - 4, 8, startY - 4, 8, eResourceType)
 						end
 						
@@ -3442,9 +3713,9 @@ function AddStartingLocationResources()
 							local random_index = 1 + TerrainBuilder.GetRandomNumber(#plotTable, "YnAMP - Placing requested resources")
 							local pPlot = plotTable[random_index]
 							ResourceBuilder.SetResourceType(pPlot, eResourceType, 1)
-							print ("  - Resource placed !")
+							--print ("  - Resource placed !")
 						else
-							print ("  - Failed on second pass...")
+							--print ("  - Failed on second pass...")
 						end
 					end
 				end
@@ -3492,7 +3763,7 @@ function ResourcesValidation(g_iW, g_iH)
 			if curTable[eResourceType] then
 				for newResourceType, value in pairs (curTable) do
 					if newResourceType ~= eResourceType and YnAMP_CanHaveResource(plot, newResourceType) then
-						print(" - Found replacement resource for", GameInfo.Resources[eResourceType].ResourceType, "at", plot:GetX(), plot:GetY(), "by resource", GameInfo.Resources[newResourceType].ResourceType)
+						--print(" - Found replacement resource for", GameInfo.Resources[eResourceType].ResourceType, "at", plot:GetX(), plot:GetY(), "by resource", GameInfo.Resources[newResourceType].ResourceType)
 						return newResourceType						
 					end
 				end
@@ -3507,7 +3778,7 @@ function ResourcesValidation(g_iW, g_iH)
 		if (eResourceType ~= -1) then
 			if resTable[eResourceType] then
 				if not bImportResources and IsResourceExclusion(plot, eResourceType) then
-					print("WARNING - Removing unauthorised resource at", plot:GetX(), plot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
+					--print("WARNING - Removing unauthorised resource at", plot:GetX(), plot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
 					ResourceBuilder.SetResourceType(plot, -1)
 					-- find replacement
 					local newResourceType = FindReplacement(eResourceType, plot)
@@ -4150,7 +4421,7 @@ function YnAMP_StartPositions()
 	
 	if bCulturallyLinked then
 		CulturallyLinkedCivilizations()	
-		CulturallyLinkedCityStates(true)
+		CulturallyLinkedCityStates()
 	end
 end
 
@@ -4169,34 +4440,38 @@ function Round(num)
     end
 end
 
-BRUTE_FORCE_TRIES = 3 -- raise this number for better placement but longer initialization. From tests, 3 passes should be more than enough.
-OVERSEA_PENALTY = 50 -- distance penalty for starting plot separated by sea
-SAME_GROUP_WEIGHT = 2 -- factor to use for distance in same cultural group
+BRUTE_FORCE_TRIES 	= 3 -- raise this number for better placement but longer initialization. From tests, 3 passes should be more than enough.
+OVERSEA_PENALTY 	= 50 -- distance penalty for starting plot separated by sea
+SAME_GROUP_WEIGHT 	= 5 -- factor to use for distance in same cultural group
 
 g_CultureRelativeDistance = {
-	["ETHNICITY_EURO"] = 0, -- center of the world (yes, that's a cliché)
-	["ETHNICITY_MEDIT"] = 1,
-	["ETHNICITY_SOUTHAM"] = 20,
-	["ETHNICITY_ASIAN"] = 10,
-	["ETHNICITY_AFRICAN"] = 5,
+	["ETHNICITY_EURO"] 		= 0, -- Eurocentrism confirmed !
+	["ETHNICITY_MEDIT"] 	= 1,
+	["ETHNICITY_SOUTHAM"] 	= 20,
+	["ETHNICITY_ASIAN"] 	= 10,
+	["ETHNICITY_AFRICAN"] 	= 5,
 }
 
-function CalculateDistanceScore(cultureList, bOutput)
+function CalculateDistanceScore(cultureList, bOutput, player1, player2)
+
+	local prevOutput	= bOutput
 	if bOutput then print ("------------------------------------------------------- ") end
 	if bOutput then  print ("Calculating distance score...") end
-	local globalDistanceScore = 0
-	local cultureDistanceScore = {}
+	local globalDistanceScore 	= 0
+	local cultureDistanceScore 	= {}
 	for civCulture, playerList in pairs(cultureList) do
 		if bOutput then  print (" - culture = " .. tostring(civCulture)) end
 		local distanceScore = 0
 		for i, playerID in pairs(playerList) do
-			local player = Players[playerID]
-			local playerConfig = PlayerConfigurations[playerID]
+			bOutput						= prevOutput or playerID == player1 or  playerID == player2
+			local player 				= Players[playerID]
+			local playerConfig 			= PlayerConfigurations[playerID]
+			local initialDistanceScore 	= distanceScore
 			if bOutput then  print ("    - player = " .. tostring(playerConfig:GetPlayerName())) end
 			for _, player_ID2 in ipairs(PlayerManager.GetAliveMajorIDs()) do
-				local player2 = Players[player_ID2]
+				local player2 		= Players[player_ID2]
 				local playerConfig2 = PlayerConfigurations[player_ID2]
-				local civCulture2 = GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity
+				local civCulture2 	= GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity
 				if  civCulture2 == civCulture then
 					local startPlot1 = player:GetStartingPlot()
 					--if not startPlot1 then print("WARNING no starting plot for : " .. tostring(playerConfig:GetPlayerName())) end
@@ -4207,8 +4482,8 @@ function CalculateDistanceScore(cultureList, bOutput)
 						if startPlot1:GetArea() ~= startPlot2:GetArea() then
 							distance = distance + OVERSEA_PENALTY
 						end
-						distanceScore = distanceScore + Round(distance*SAME_GROUP_WEIGHT)
-						if bOutput then print ("      - Distance to same culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (x".. tostring(SAME_GROUP_WEIGHT) .."), total distance score = " .. tostring(distanceScore) ) end
+						distanceScore = distanceScore + Round(distance*SAME_GROUP_WEIGHT) -- we want distance to be a bigger factor between Civilization of the same Ethnicity, so that the global score gets higher when they are far apart
+						if bOutput then print ("      - Distance to same culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (*".. tostring(SAME_GROUP_WEIGHT) .."), total distance score = " .. tostring(distanceScore) ) end
 					end
 				else
 					local interGroupMinimizer = 1
@@ -4223,11 +4498,13 @@ function CalculateDistanceScore(cultureList, bOutput)
 					--if not startPlot2 then print("WARNING no starting plot for : " .. tostring(playerConfig2:GetPlayerName())) end
 					if startPlot1 and startPlot2 then
 						local distance = Map.GetPlotDistance(startPlot1:GetX(), startPlot1:GetY(), startPlot2:GetX(), startPlot2:GetY())
-						distanceScore = distanceScore + Round(distance/interGroupMinimizer)
+						distanceScore = distanceScore + Round(distance/interGroupMinimizer)  -- we want distance to be a smaller factor between Civilization of different Ethnicity, so that the global score doesn't get too high when they are already far apart
 						if bOutput then print ("      - Distance to different culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (/".. tostring(interGroupMinimizer) .." from intergroup relative distance), total distance score = " .. tostring(distanceScore) ) end
 					end
 				end
 			end
+			if bOutput then  print ("         - Player Distance Score = "..tostring(distanceScore - initialDistanceScore).." for " .. tostring(playerConfig:GetPlayerName())) end
+			bOutput	= prevOutput
 		end
 		cultureDistanceScore[civCulture] = distanceScore
 		globalDistanceScore = globalDistanceScore + distanceScore
@@ -4237,42 +4514,55 @@ function CalculateDistanceScore(cultureList, bOutput)
 	return globalDistanceScore
 end
 
-function CulturallyLinkedCivilizations()
+local bAllCivsPlaced
+function CulturallyLinkedCivilizations(bForcePlacement)
 
-	local playerList = {}
-
-	local cultureList = {}
-	local cultureCount = {}
-
-
-	local bestList = {}
-	local bestDistanceScore = 99999
+	local playerList 		= {}
+	local cultureList 		= {}
+	local cultureCount 		= {}
+	local bestList 			= {}
+	local bestDistanceScore = 9999999 -- need to keep that one above 1 million for extrem cases	(ludicrous maps / 63 civilizations)
+	bAllCivsPlaced 			= true
 	
 	print ("------------------------------------------------------- ")
 	print ("Creating Civilization list for Culturally linked startingposition... ")
 	for _, player_ID in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
 
 		-- creating player lists
-		local player = Players[player_ID]
-		local playerConfig = PlayerConfigurations[player_ID]
-		local civCulture = GameInfo.Civilizations[playerConfig:GetCivilizationTypeID()].Ethnicity
-		if not civCulture then
-			print("WARNING : no Ethnicity defined for " .. playerConfig:GetPlayerName() ..", using EURO")
-			civCulture = "ETHNICITY_EURO"
-		end
-		print (" - Adding player " .. tostring(playerConfig:GetPlayerName()) .. " to culture " .. tostring(civCulture))
-		table.insert(playerList, player_ID)
-		if cultureList[civCulture] then
-			table.insert(cultureList[civCulture], player_ID)
-			cultureCount[civCulture] = cultureCount[civCulture] + 1
+		local player 		= Players[player_ID]
+		local playerConfig 	= PlayerConfigurations[player_ID]
+		if not player:GetStartingPlot() then
+			print("WARNING : no Starting Plot defined for " .. playerConfig:GetPlayerName())
+			bAllCivsPlaced = false
 		else
-			cultureList[civCulture] = {}
-			table.insert(cultureList[civCulture], player_ID)
-			cultureCount[civCulture] = 1
+			local civCulture = GameInfo.Civilizations[playerConfig:GetCivilizationTypeID()].Ethnicity
+			if not civCulture then
+				print("WARNING : no Ethnicity defined for " .. playerConfig:GetPlayerName() ..", using EURO")
+				civCulture = "ETHNICITY_EURO"
+			end
+			print (" - Adding player " .. tostring(playerConfig:GetPlayerName()) .. " to culture " .. tostring(civCulture))
+			table.insert(playerList, player_ID)
+			if cultureList[civCulture] then
+				table.insert(cultureList[civCulture], player_ID)
+				cultureCount[civCulture] = cultureCount[civCulture] + 1
+			else
+				cultureList[civCulture] = {}
+				table.insert(cultureList[civCulture], player_ID)
+				cultureCount[civCulture] = 1
+			end
 		end
 
 	end
 	print ("------------------------------------------------------- ")
+	
+	if (not bAllCivsPlaced) then
+		if (not bForcePlacement) then
+			print("Aborting cultural placement...")
+			return
+		else
+			print("Force cultural placement for Civilizations with a Starting Location...")
+		end
+	end
 
 	-- Sort culture table by number of civs...
 	local cultureTable = {}
@@ -4286,7 +4576,7 @@ function CulturallyLinkedCivilizations()
 	print ("------------------------------------------------------- ")
 
 	
-	local initialDistanceScore = CalculateDistanceScore(cultureList, true)
+	local initialDistanceScore = CalculateDistanceScore(cultureList)
 	if  initialDistanceScore < bestDistanceScore then
 		bestDistanceScore = initialDistanceScore
 	end
@@ -4303,8 +4593,8 @@ function CulturallyLinkedCivilizations()
 		for _, player_ID in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
 			local player = Players[player_ID]
 			local playerConfig = PlayerConfigurations[player_ID]
-			--print ("------------------------------------------------------- ")
-			--print ("Testing " .. tostring(playerConfig:GetPlayerName()) )
+			print ("------------------------------------------------------- ")
+			print ("Testing " .. tostring(playerConfig:GetPlayerName()) )
 			local culture = GameInfo.Civilizations[playerConfig:GetCivilizationTypeID()].Ethnicity or "ETHNICITY_EURO"
 			for _, player_ID2 in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do	
 				--print ("in loop 2")
@@ -4321,14 +4611,16 @@ function CulturallyLinkedCivilizations()
 							--print ("trying to switch " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) )	
 							player:SetStartingPlot(startPlot2)
 							player2:SetStartingPlot(startPlot1)
-							local actualdistanceScore = CalculateDistanceScore(cultureList)
+							local actualdistanceScore = CalculateDistanceScore(cultureList, false)--, player_ID, player_ID2)
 							if  actualdistanceScore < bestDistanceScore then
-								bestDistanceScore = actualdistanceScore
 								--print ("------------------------------------------------------- ")
-								--print ("Better score, confirming switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) )
+								--print ("Better score, confirming switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) .. " at new best score = " .. tostring(actualdistanceScore) )
+								print ("Better score, switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) .. " at new best score = " .. tostring(actualdistanceScore) )
+								bestDistanceScore = actualdistanceScore
 							else
 								--print ("------------------------------------------------------- ")
-								--print ("No gain, restoring position of " .. tostring(playerConfig:GetPlayerName()) .. " and " .. tostring(playerConfig2:GetPlayerName()) )								
+								--print ("No gain, restoring position of " .. tostring(playerConfig:GetPlayerName()) .. " and " .. tostring(playerConfig2:GetPlayerName()) .. " at current best score = " .. tostring(bestDistanceScore) )
+								--print ("No gain, keeping position of " .. tostring(playerConfig:GetPlayerName()) .. " and " .. tostring(playerConfig2:GetPlayerName()) .. " at score = "..tostring(actualdistanceScore)..", current best score = " .. tostring(bestDistanceScore) )	
 								player:SetStartingPlot(startPlot1)
 								player2:SetStartingPlot(startPlot2)
 							end
@@ -4342,7 +4634,7 @@ function CulturallyLinkedCivilizations()
 		--print ("Brute Force Pass num " .. tostring(try) )
 		print ("New global distance = " .. tostring(CalculateDistanceScore(cultureList)))
 	end
-	CalculateDistanceScore(cultureList, true)
+	CalculateDistanceScore(cultureList)
 	print ("------------------------------------------------------- ")
 	print ("INITIAL DISTANCE SCORE = " .. tostring(initialDistanceScore))
 	print ("------------------------------------------------------- ")
@@ -4411,9 +4703,18 @@ function CalculateDistanceScoreCityStates(bOutput)
 end
 
 -- try to place city states closes to corresponding culture civs
-function CulturallyLinkedCityStates()
+function CulturallyLinkedCityStates(bForcePlacement)
 
-	local bestDistanceScore = 99999
+	if (not bAllCivsPlaced) then
+		if (not bForcePlacement) then
+			print("Aborting cultural placement...")
+			return
+		else
+			print("Force cultural placement for Civilizations with a Starting Location...")
+		end
+	end
+	
+	local bestDistanceScore = 9999999
 	
 	print ("------------------------------------------------------- ")
 	print ("Set Culturally linked starting positions for City States... ")

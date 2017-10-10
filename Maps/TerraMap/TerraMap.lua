@@ -51,6 +51,14 @@ local g_ReferenceWidthRatio
 local g_ReferenceHeightRatio
 
 local g_StartingPlotRange
+local g_MinStartDistanceMajor
+local g_MaxStartDistanceMajor
+
+local bImportNaturalWonders
+local bNoNaturalWonders
+local bExtraStartingPlotPlacement
+
+local start_plot_database
 
 local g_iFlags = {};
 local g_continentsFrac = nil;
@@ -86,7 +94,8 @@ print("bTwoContinents = ", bTwoContinents)
 print("bMultipleContinents = ", bMultipleContinents)
 
 local g_NewWorldX
-local bOldWorldOnly 	= MapConfiguration.GetValue("CivilizationPlacement") == "PLACEMENT_OLD_WORLD";
+local bOldWorldOnly 	= MapConfiguration.GetValue("CivilizationPlacement") == "PLACEMENT_OLD_WORLD"
+local bAllowNewWorldCS	= MapConfiguration.GetValue("AllowNewWorldCityStates")
 
 local g_RegionBorderCoastDistance
 
@@ -173,6 +182,11 @@ function GenerateMap()
 	g_StartingPlotRange = 16 * g_ReferenceSizeRatio
 
 	g_NewWorldX = g_LargestMapOldWorldX * g_WidthRatio
+	
+	g_MaxStartDistanceMajor = math.sqrt(g_iW * g_iH / PlayerManager.GetWasEverAliveMajorsCount())
+	g_MinStartDistanceMajor = g_MaxStartDistanceMajor / 3
+	print("g_MaxStartDistanceMajor = ", g_MaxStartDistanceMajor)
+	print("g_MinStartDistanceMajor = ", g_MinStartDistanceMajor)
 
 	if bTwoContinents then
 
@@ -361,35 +375,6 @@ function GenerateMap()
 			bPlaceSmallIslands 	= true		
 		end
 		
-		--[[
-		Regions1stLayer = {	-- Region size/placement based on the Largest Earth
-			["NORTH_AMERICA"] = 		{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="155", 	Y="66", 	Width="59", Height="32", southAttenuationRange = 0, northAttenuationRange = 0, eastAttenuationRange = 0.25, eastAttenuationFactor = 0.05, westAttenuationRange = 0.25, westAttenuationFactor = 0.05 },
-			["ARCTIC_AMERICA"] = 		{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="155", 	Y="95", 	Width="50", Height="20", southAttenuationRange = 0 },
-			["CENTRAL_AMERICA"] = 		{	Args= islandArgs,			Type="Land",	Pass="3",	X="170", 	Y="49", 	Width="40", Height="17", southAttenuationRange = 0, northAttenuationRange = 0 },
-			["SOUTH_AMERICA_WEST"] = 	{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="189", 	Y="18", 	Width="20", Height="34", westAttenuationRange = 0.35, eastAttenuationRange = 0, southAttenuationRange = 0.25 },
-			["SOUTH_AMERICA_EAST"] = 	{	Args= continentArgs,		Type="Land",	Pass="1",	X="201", 	Y="18", 	Width="15", Height="34", westAttenuationRange = 0 },
-			["ANTARCTIC_AMERICA"] = 	{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="200", 	Y="3", 		Width="25", Height="16", northAttenuationRange = 0 },
-			["AUSTRALIA"] = 			{	Args= largeIslandArgs,		Type="Land",	Pass="1",	X="110", 	Y="4", 		Width="50", Height="32" },
-			["OCEANIA"] = 				{	Args= seaArgs,				Type="Land",	Pass="1",	X="100", 	Y="20",		Width="80", Height="33" },
-			["SOUTH_ASIA"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="70", 	Y="30",		Width="65", Height="30", southAttenuationRange = 0.35, southAttenuationFactor = 0.05, northAttenuationRange = 0, westAttenuationRange = 0.25 },
-			["CENTRAL_ASIA"] = 			{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="70", 	Y="60",		Width="55", Height="25", eastAttenuationRange = 0.40, eastAttenuationFactor = 0.80, southAttenuationRange = 0.25, westAttenuationRange = 0, northAttenuationRange = 0    },
-			["EAST_ASIA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="96", 	Y="58",		Width="20", Height="28", eastAttenuationRange = 0.35, westAttenuationRange = 0   },
-			["JAPAN"] = 				{	Args= largeIslandArgs,		Type="Land",	Pass="1",	X="125", 	Y="58",		Width="20", Height="36" },
-			["NORTH_ASIA"] = 			{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="68", 	Y="80",		Width="80", Height="35", westAttenuationRange = 0, southAttenuationRange = 0 },
-			["MIDDLE_EAST"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="40", 	Y="45",		Width="32", Height="31", eastAttenuationRange = 0, westAttenuationRange = 0.05, northAttenuationRange = 0 },
-			["TURKEY"] = 				{	Args= continentArgs,		Type="Land",	Pass="1",	X="40", 	Y="67",		Width="19", Height="9" },
-			["SOUTH_EUROPA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="4", 		Y="65",		Width="38", Height="13", eastAttenuationRange = 0, northAttenuationRange = 0 },
-			["WEST_EUROPA"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="2", 		Y="76",		Width="30", Height="17", westAttenuationRange = 0.40, westAttenuationFactor = 0.80, eastAttenuationRange = 0, northAttenuationRange = 0},
-			["CENTRAL_EUROPA"] =		{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="30", 	Y="75",		Width="19", Height="28", eastAttenuationRange = 0, westAttenuationRange = 0, southAttenuationRange = 0, northAttenuationRange = 0 },
-			["NORTH_EUROPA"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="2", 		Y="85",		Width="70", Height="30", eastAttenuationRange = 0, southAttenuationRange = 0 },
-			["EAST_EUROPA"] = 			{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="32", 	Y="76",		Width="58", Height="22", eastAttenuationRange = 0, westAttenuationRange = 0, southAttenuationRange = 0 },
-			["NORTH_AFRICA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="1", 		Y="46",		Width="47", Height="19", westAttenuationRange = 0.40, westAttenuationFactor = 0.80, southAttenuationRange = 0 },
-			["CENTRAL_AFRICA"] = 		{	Args= largeContinentArgs,	Type="Land",	Pass="1",	X="20", 	Y="27",		Width="34", Height="23", eastAttenuationRange = 0.25  },
-			["SOUTH_AFRICA"] = 			{	Args= continentArgs,		Type="Land",	Pass="1",	X="25", 	Y="6",		Width="21", Height="25", northAttenuationRange = 0 },
-			["MADAGASCAR"] = 			{	Args= smallContinentArgs,	Type="Land",	Pass="1",	X="52", 	Y="12",		Width="10", Height="15" },
-		}
-		--]]
-
 		---[[
 		VerticalCoastRegions["NORTH_AMERICA"] = 		Regions1stLayer["NORTH_AMERICA"]
 		VerticalCoastRegions["ARCTIC_AMERICA"] = 		Regions1stLayer["ARCTIC_AMERICA"]
@@ -439,8 +424,8 @@ function GenerateMap()
 
 	local naturalWondersPlacement = MapConfiguration.GetValue("NaturalWondersPlacement")
 	print("Natural Wonders placement = "..tostring(naturalWondersPlacement))
-	local bImportNaturalWonders = naturalWondersPlacement == "PLACEMENT_IMPORT"
-	local bNoNaturalWonders = naturalWondersPlacement == "PLACEMENT_EMPTY"
+	bImportNaturalWonders 	= naturalWondersPlacement == "PLACEMENT_IMPORT"
+	bNoNaturalWonders 		= naturalWondersPlacement == "PLACEMENT_EMPTY"
 
 	print("g_WidthFactor 	= ", g_WidthFactor)
 	print("g_HeightFactor 	= ", g_HeightFactor)
@@ -562,6 +547,7 @@ function GenerateMap()
 		--PlaceStrategicResources(resourceType)
 	end
 
+	
 	print("Creating start plot database.");
 	-- START_MIN_Y and START_MAX_Y is the percent of the map ignored for major civs' starting positions.
 	local startConfig = MapConfiguration.GetValue("start");-- Get the start config
@@ -574,24 +560,22 @@ function GenerateMap()
 		WATER = true,
 		START_CONFIG = startConfig,
 	};
-	local start_plot_database = AssignStartingPlots.Create(args);
+	start_plot_database = AssignStartingPlots.Create(args)	
+	
+	-- Check if all selected civs have been given a Starting Location
+	if not bTSL or bAlternatePlacement then
+		CheckAllCivilizationsStartingLocations()
+	end
 
 	-- Balance Starting positions for TSL
-	if bTSL or bOldWorldOnly then
-		currentTimer = os.clock() - g_startTimer
-		print("Intermediate timer before balancing TSL = "..tostring(currentTimer).." seconds")
-		-- to do : remove magic numbers
-		--if startConfig == 1 then AssignStartingPlots:__AddResourcesBalanced() end
-		--if startConfig == 3 then AssignStartingPlots:__AddResourcesLegendary()() end
-
-		for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
-			local player = Players[iPlayer]
-			local plot = player:GetStartingPlot(plot)
-			if plot then
-				AssignStartingPlots:__AddBonusFoodProduction(plot)
-			end
+	currentTimer = os.clock() - g_startTimer
+	print("Intermediate timer before balancing TSL = "..tostring(currentTimer).." seconds")
+	for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+		local player = Players[iPlayer]
+		local plot = player:GetStartingPlot(plot)
+		if plot then
+			start_plot_database:__AddBonusFoodProduction(plot)
 		end
-
 	end
 
 	-- enforce resource exclusion
@@ -1570,6 +1554,7 @@ function GetPlotFromRefMap(x, y)
 	return plot
 end
 
+-------------------------------------------------------------------------------
 function SetAdjacentPlotsToTerrain(pPlot, terrainType, bClean)
 	for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
 		adjacentPlot = Map.GetAdjacentPlot(pPlot:GetX(), pPlot:GetY(), direction);
@@ -1582,6 +1567,7 @@ function SetAdjacentPlotsToTerrain(pPlot, terrainType, bClean)
 	end
 end
 
+-------------------------------------------------------------------------------
 function ClearPlot(plot)
 	TerrainBuilder.SetFeatureType(plot, -1)
 	TerrainBuilder.SetWOfRiver(plot, false, -1)
@@ -1590,6 +1576,24 @@ function ClearPlot(plot)
 	TerrainBuilder.SetWOfCliff(plot, false, -1)
 	TerrainBuilder.SetNWOfCliff(plot, false, -1)
 	TerrainBuilder.SetNEOfCliff(plot, false, -1)
+end
+
+-------------------------------------------------------------------------------
+function GetBestStartingPlotAround(pPlot, bIsMajor, bIsHuman)
+	local potentialPlots = {}
+	local range = 10 * g_ReferenceSizeRatio
+	for pAdjacencyPlot in PlotAreaSpiralIterator(pPlot, g_StartingPlotRange, nil, nil, nil, true) do
+		if (not pAdjacencyPlot:IsWater()) and (not pAdjacencyPlot:IsImpassable()) and pAdjacencyPlot:GetArea():GetPlotCount() > 10 and IsSafeStartingDistance(pAdjacencyPlot, bIsMajor, bIsHuman) then
+			local fertility 		= GetPlotFertility(pAdjacencyPlot)
+			local distanceFactor 	= (Map.GetPlotDistance(pPlot:GetIndex(), pAdjacencyPlot:GetIndex()) + 1) * 0.5
+			local fertility 		= fertility / distanceFactor 
+			if fertility > 25 then
+				table.insert(potentialPlots, { Plot = pAdjacencyPlot, Fertility = fertility} )
+			end
+		end
+	end
+	table.sort (potentialPlots, function(a, b) return a.Fertility > b.Fertility; end);
+	return GetBestStartingPlotFromList(potentialPlots)
 end
 
 -------------------------------------------------------------------------------
@@ -1937,7 +1941,7 @@ function PlaceRealNaturalWonders(NaturalWonders)
 			end
 
 			if bPlaced then
-				ResetTerrain(pPlot:GetIndex())
+				--ResetTerrain(pPlot:GetIndex())
 				ResourceBuilder.SetResourceType(pPlot, -1)
 
 				local plotX = pPlot:GetX()
@@ -1948,7 +1952,7 @@ function PlaceRealNaturalWonders(NaturalWonders)
 						local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, 2)
 						if(otherPlot) then
 							if(otherPlot:IsNaturalWonder() == true) then
-								ResetTerrain(otherPlot:GetIndex())
+								--ResetTerrain(otherPlot:GetIndex())
 								ResourceBuilder.SetResourceType(otherPlot, -1)
 							end
 						end
@@ -1964,6 +1968,7 @@ function PlaceRealNaturalWonders(NaturalWonders)
 	end
 end
 
+-------------------------------------------------------------------------------
 function GetPossibleNaturalWonderPositionAround(pPlot, eFeatureType)
 	for pAdjacencyPlot in PlotAreaSpiralIterator(pPlot, g_StartingPlotRange, nil, nil, nil, false) do
 		if TerrainBuilder.CanHaveFeature(pAdjacencyPlot, eFeatureType) then
@@ -2094,19 +2099,8 @@ function SetTrueStartingLocations()
 	end
 end
 
-function GetBestStartingPlotAround(pPlot, bIsMajor, bIsHuman)
-	--local potentialPlot = {}
-	local range = 10 * g_ReferenceSizeRatio
-	for pAdjacencyPlot in PlotAreaSpiralIterator(pPlot, g_StartingPlotRange, nil, nil, nil, true) do
-		if (not pAdjacencyPlot:IsWater()) and (not pAdjacencyPlot:IsImpassable()) and pAdjacencyPlot:GetArea():GetPlotCount() > 10 and IsSafeStartingDistance(pAdjacencyPlot, bIsMajor, bIsHuman) then
-			return pAdjacencyPlot
-		end
-	end
-end
-
 -------------------------------------------------------------------------------
--- Override SetStartMajor
-if bOldWorldOnly then
+-- Override SetStartMajor & SetStartMinor
 ------------------------------------------------------------------------------
 function AssignStartingPlots:__SetStartMajor(plots)
 	-- Sort by fertility of all the plots
@@ -2120,6 +2114,14 @@ function AssignStartingPlots:__SetStartMajor(plots)
 
 	sortedPlots ={};
 
+	if not plots then -- sometime the start positioner fails...
+		print("WARNING: plots is nil for SetStartMajor(plots) !")
+		print("Skipping...")
+		return nil
+	else
+		--print("num plots = " .. tostring(#plots).. " in SetStartMajor(plots)")
+	end
+	
 	local iSize = #plots;
 	local iContinentIndex = 1;
 
@@ -2156,7 +2158,7 @@ function AssignStartingPlots:__SetStartMajor(plots)
 		iContinentIndex = iContinentIndex + 1;
 		--print("Fertility: ", sortedPlots[iContinentIndex].Fertility)
 
-		-- Checks to see if the plot is impassable
+		-- Checks to see if the plot is in the old world
 		if(bOldWorldOnly and pTempPlot:GetX() >= g_NewWorldX) then
 			bValid = false;
 		end
@@ -2179,12 +2181,17 @@ function AssignStartingPlots:__SetStartMajor(plots)
 
 		-- Checks to see if there are natural wonders in the given distance
 		local bNaturalWonderCheck = self:__NaturalWonderBuffer(pTempPlot, false);
-		if(bNaturalWonderCheck == false) then
+		if(bNaturalWonderCheck == false and not bImportNaturalWonders) then
 			bValid = false;
 		end
 
 		-- Checks to see if there are any major civs in the given distance
-		local bMajorCivCheck = self:__MajorCivBuffer(pTempPlot);
+		local bMajorCivCheck
+		if bExtraStartingPlotPlacement then
+			bMajorCivCheck = IsStartingDistanceFarEnough(pTempPlot)
+		else
+			bMajorCivCheck = self:__MajorCivBuffer(pTempPlot)
+		end
 		if(bMajorCivCheck == false) then
 			bValid = false;
 		end
@@ -2199,9 +2206,225 @@ function AssignStartingPlots:__SetStartMajor(plots)
 
 	return nil;
 end
--------------------------------------------------------------------------------
+
+function AssignStartingPlots:__SetStartMinor(plots)
+	-- Sort by fertility of all the plots
+	-- eliminate them if they do not meet the following:
+	-- distance to another civilization
+	-- distance to a natural wonder
+	-- minimum production
+	-- minimum food
+
+	sortedPlots ={};
+
+	local iSize = #plots;
+	local iContinentIndex = 1;
+
+	for i, plot in ipairs(plots) do
+		row = {};
+		row.Plot = plot;
+		row.Fertility = self:__WeightedFertility(plot);
+		table.insert (sortedPlots, row);
+	end
+
+	table.sort (sortedPlots, function(a, b) return a.Fertility > b.Fertility; end);
+
+	local bValid = false;
+	while bValid == false and iSize >= iContinentIndex do
+		bValid = true;
+		local NWMinor = 2;
+		pTempPlot = Map.GetPlotByIndex(sortedPlots[iContinentIndex].Plot);
+		iContinentIndex = iContinentIndex + 1;
+		--print("Fertility: ", sortedPlots[iContinentIndex].Fertility)
+
+		-- Checks to see if the plot is impassable
+		if(pTempPlot:IsImpassable() == true) then
+			bValid = false;
+		end
+		
+		-- Checks to see if the plot is in the old world
+		if (not bAllowNewWorldCS) and (bOldWorldOnly and pTempPlot:GetX() >= g_NewWorldX) then
+			bValid = false;
+		end
+
+		-- Checks to see if the plot is water
+		if(pTempPlot:IsWater() == true) then
+			bValid = false;
+		end
+
+		-- Checks to see if there are resources
+		if(pTempPlot:GetResourceCount() > 0) then
+			local bValidResource = self:__BonusResource(pTempPlot);
+			if(bValidResource == false) then
+				bValid = false;
+			end
+		end
+
+		local bValidAdjacentCheck = self:__GetValidAdjacent(pTempPlot, 2); 
+		if(bValidAdjacentCheck == false) then
+			bValid = false;
+		end
+
+		-- Checks to see if there are natural wonders in the given distance
+		local bNaturalWonderCheck = self:__NaturalWonderBuffer(pTempPlot, true); 
+		if(bNaturalWonderCheck == false) then
+			bValid = false;
+		end
+
+		-- Checks to see if there are any minor civs in the given distance
+		local bMinorCivCheck = self:__MinorCivBuffer(pTempPlot, 1); 
+		if(bMinorCivCheck == false) then
+			bValid = false;
+		end
+
+		-- Checks to see if there is an Oasis
+		local featureType = pTempPlot:GetFeatureType();
+		if(featureType == g_FEATURE_OASIS) then
+			bValid = false;
+		end
+
+		-- If the plots passes all the checks then the plot equals the temp plot
+		if(bValid == true) then
+			self:__TryToRemoveBonusResource(pTempPlot);
+			return pTempPlot;
+		end
+	end
+ 
+	return nil;
 end
+
 -------------------------------------------------------------------------------
+-- Override YnAMP backup starting positions functions
+------------------------------------------------------------------------------
+function IsStartingDistanceFarEnough(plot, bIsMinor)
+	-- we're using the alternate placement method because the start positioner as failed, maybe because there are too many civs on the map
+	-- so we use a minimum start distance calculated on map size 
+	local MinDistance 				= math.min(g_MinStartDistanceMajor, (GlobalParameters.START_DISTANCE_MAJOR_CIVILIZATION or 9))
+	if bIsMinor then MinDistance 	= math.min(g_MinStartDistanceMajor, (GlobalParameters.START_DISTANCE_MINOR_CIVILIZATION or 5))	end
+	MinDistance 					= math.max(GlobalParameters.CITY_MIN_RANGE, MinDistance)
+	
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		local player = Players[iPlayer]
+		local startingPlot = player:GetStartingPlot()
+		if startingPlot then 
+			local distance 	= Map.GetPlotDistance(plot:GetIndex(), startingPlot:GetIndex())
+			if distance <= MinDistance then
+				--print("Not far enough, distance = ".. tostring(distance) .." <= MinDistance of "..tostring(MinDistance))
+				return false
+			end
+		end
+	end
+	return true
+end
+
+--[[
+function GetCustomStartingPlots()
+	local startX 			= 0
+	local endX				= g_iW
+	local potentialPlots 	= {}
+	if bOldWorldOnly then endX = g_NewWorldX end
+
+	for iX = startX, endX - 1 do
+		for iY = 0, g_iH - 1 do
+			local index = (iY * g_iW) + iX;
+			pPlot = Map.GetPlotByIndex(index)
+			local fertility = GetPlotFertility(pPlot)
+			if fertility > 50 then
+				--print("fertility = ", fertility)
+				table.insert(potentialPlots, { Plot = pPlot, Fertility = fertility} )
+			end
+		end
+	end
+	print("GetCustomStartingPlots returns "..tostring(#potentialPlots).." plots")
+	
+	table.sort (potentialPlots, function(a, b) return a.Fertility > b.Fertility; end);
+	return potentialPlots
+end
+--]]
+
+function GetBestStartingPlotFromList(plots, bIsMinor)
+	-- Sort by fertility of all the plots
+	-- eliminate them if they do not meet the following:
+	-- distance to another civilization
+	-- distance to a natural wonder
+	-- minimum production
+	-- minimum food
+	-- minimum luxuries
+	-- minimum strategic
+
+	sortedPlots = plots
+
+	if not plots then -- sometime the start positioner fails...
+		print("WARNING: plots is nil for SetStartMajor(plots) !")
+		print("Skipping...")
+		return nil
+	else
+		--print("num plots = " .. tostring(#plots).. " in SetStartMajor(plots)")
+	end
+	
+	local iSize = #plots;
+	local iContinentIndex 	= 1
+	local bValid 			= false;
+	while bValid == false and iSize >= iContinentIndex do
+		bValid = true;
+		local NWMajor = 0;
+		if sortedPlots[iContinentIndex].Plot then
+			pTempPlot = sortedPlots[iContinentIndex].Plot;
+			--print("Fertility: ", sortedPlots[iContinentIndex].Fertility)
+
+			-- Checks to see if the plot is in the old world
+			if(bOldWorldOnly and not(bIsMinor and bAllowNewWorldCS) and pTempPlot:GetX() >= g_NewWorldX) then
+				bValid = false;
+			end
+
+			-- Checks to see if the plot is impassable
+			if(pTempPlot:IsImpassable() == true) then
+				bValid = false;
+			end
+
+			-- Checks to see if the plot is water
+			if(pTempPlot:IsWater() == true) then
+				bValid = false;
+			end
+
+			-- Checks to see if there is fresh water or coast
+			--[[
+			local bWaterCheck = self:__GetWaterCheck(pTempPlot);
+			if(bWaterCheck == false) then
+				bValid = false;
+			end
+			--]]
+
+			-- Checks to see if there are natural wonders in the given distance
+			--[[
+			local bNaturalWonderCheck = self:__NaturalWonderBuffer(pTempPlot, false);
+			if(bNaturalWonderCheck == false and not bImportNaturalWonders) then
+				bValid = false;
+			end
+			--]]
+
+			-- Checks to see if there are any major civs in the given distance
+			local bMajorCivCheck = IsStartingDistanceFarEnough(pTempPlot, bIsMinor)
+			if(bMajorCivCheck == false) then
+				bValid = false;
+				sortedPlots[iContinentIndex].Plot = nil -- no need to test that plot again...
+			end
+			
+			iContinentIndex = iContinentIndex + 1;
+
+			-- If the plots passes all the checks then the plot equals the temp plot
+			if(bValid == true) then
+				print("GetBestStartingPlotFromList : returning plot #"..tostring(iContinentIndex).."/"..tostring(iSize).." at fertility = ".. tostring(sortedPlots[iContinentIndex].Fertility))
+				return pTempPlot;
+			end
+		else		
+			iContinentIndex = iContinentIndex + 1;
+			bValid = false
+		end
+	end
+
+	return nil;
+end
 
 -------------------------------------------------------------------------------
 function GetMap()

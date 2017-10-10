@@ -48,7 +48,10 @@
 		<Row ParameterId="LeaderTSL" Name="LOC_MAP_LEADER_TSL_NAME" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="LeaderTSL" GroupId="MapOptions" SortIndex="296"/>
 
 		<!--	Option to use Alternate TSL if available		-->
-		<Row ParameterId="AlternateTSL" Name="LOC_MAP_ALTERNATE_TSL_NAME" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="AlternateTSL" GroupId="MapOptions" SortIndex="297"/>		
+		<Row ParameterId="AlternateTSL" Name="LOC_MAP_ALTERNATE_TSL_NAME" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="AlternateTSL" GroupId="MapOptions" SortIndex="297"/>
+		
+		<!--	Option to use Alternate placement if no TSL if available		-->
+		<Row ParameterId="AlternatePlacement" Name="LOC_MAP_ALTERNATE_PLACEMENT_NAME" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="AlternatePlacement" GroupId="MapOptions" SortIndex="298"/>	
 		
 		<!--	New option for all maps to prevent Ice adjacent to land (help circumnavigation)		-->
 		<Row ParameterId="NoIceAdjacentToLand" Name="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="NoIceAdjacentToLand" GroupId="MapOptions" SortIndex="2000"/>
@@ -115,27 +118,29 @@
 
 	<ParameterDependencies>
 	
-		<Row ParameterId="Resources" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_IMPORT"/>
-		<Row ParameterId="Resources" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_EMPTY"/>
-		<Row ParameterId="Rainfall" ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_IMPORT"/>
-		<Row ParameterId="Rainfall" ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_EMPTY"/>
-		<Row ParameterId="CulturallyLinkedStart" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_TSL"/>
-		<Row ParameterId="MapSize" ConfigurationGroup="Map" ConfigurationId="HideSize" Operator="NotEquals" ConfigurationValue="1"/>
-		<Row ParameterId="ResourcesExclusion" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_IMPORT"/>
-		<Row ParameterId="ResourcesExclusion" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_EMPTY"/>
-		<Row ParameterId="RealDeposits" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_DEFAULT"/>
-		<Row ParameterId="RequestedResources" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_TSL"/>
-		<Row ParameterId="RequestedResources" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_EMPTY"/>
-		<Row ParameterId="StartPosition" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_TSL"/>
-		<Row ParameterId="ForceTSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_TSL"/>
-		<Row ParameterId="LeaderTSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_TSL"/>
-		<Row ParameterId="AlternateTSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" Operator="Equals" ConfigurationValue="PLACEMENT_TSL"/>
-		<Row ParameterId="OnlyGenericCityNames" ConfigurationGroup="Map" ConfigurationId="AutoCityNaming" Operator="Equals" ConfigurationValue="1"/>
+		<Row ParameterId="Resources"				ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_IMPORT"/>
+		<Row ParameterId="Resources" 				ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_EMPTY"/>
+		<Row ParameterId="Rainfall"					ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_IMPORT"/>
+		<Row ParameterId="Rainfall" 				ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_EMPTY"/>
+		<Row ParameterId="CulturallyLinkedStart" 	ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" 	Operator="NotEquals" 	ConfigurationValue="PLACEMENT_TSL"/>
+		<Row ParameterId="MapSize" 					ConfigurationGroup="Map" ConfigurationId="HideSize" 				Operator="NotEquals" 	ConfigurationValue="1"/>
+		<Row ParameterId="ResourcesExclusion" 		ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_IMPORT"/>
+		<Row ParameterId="ResourcesExclusion" 		ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_EMPTY"/>
+		<Row ParameterId="RealDeposits" 			ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="Equals" 		ConfigurationValue="PLACEMENT_DEFAULT"/>
+		<Row ParameterId="RequestedResources" 		ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" 	Operator="Equals" 		ConfigurationValue="PLACEMENT_TSL"/>
+		<Row ParameterId="RequestedResources" 		ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="NotEquals"	ConfigurationValue="PLACEMENT_EMPTY"/>
+		<Row ParameterId="StartPosition" 			ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" 	Operator="NotEquals" 	ConfigurationValue="PLACEMENT_TSL"/>
+		<Row ParameterId="ForceTSL" 				ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" 	Operator="Equals" 		ConfigurationValue="PLACEMENT_TSL"/>
+		<Row ParameterId="LeaderTSL" 				ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" 	Operator="Equals" 		ConfigurationValue="PLACEMENT_TSL"/>
+		<Row ParameterId="AlternateTSL" 			ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" 	Operator="Equals" 		ConfigurationValue="PLACEMENT_TSL"/>
+		<Row ParameterId="AlternatePlacement" 		ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" 	Operator="Equals" 		ConfigurationValue="PLACEMENT_TSL"/>
+		<Row ParameterId="OnlyGenericCityNames" 	ConfigurationGroup="Map" ConfigurationId="AutoCityNaming" 			Operator="Equals" 		ConfigurationValue="1"/>
+		<Row ParameterId="PlaceAllLuxuries" 		ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_IMPORT"/>
+		<Row ParameterId="PlaceAllLuxuries" 		ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_EMPTY"/>
+		<Row ParameterId="NoIceAdjacentToLand"		ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_IMPORT"/>
 
-		<Row ParameterId="TurnsBeforeBarbarians" ConfigurationGroup="Game" ConfigurationId="GAME_NO_BARBARIANS" Operator="Equals" ConfigurationValue="0" />
+		<Row ParameterId="TurnsBeforeBarbarians" 	ConfigurationGroup="Game" ConfigurationId="GAME_NO_BARBARIANS" 		Operator="Equals" ConfigurationValue="0" />
 		
-		<Row ParameterId="PlaceAllLuxuries" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_IMPORT"/>
-		<Row ParameterId="PlaceAllLuxuries" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" Operator="NotEquals" ConfigurationValue="PLACEMENT_EMPTY"/>
 
 	</ParameterDependencies>	
 	

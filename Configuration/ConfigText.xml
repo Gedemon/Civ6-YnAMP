@@ -204,7 +204,11 @@
     </Replace>
     <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_OLD_WORLD_DESCRIPTION" Language="en_US">
       <Text>Civilizations are placed only on the Old World landmass</Text>
-    </Replace>	
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_ALLOW_NW_CS_NAME" Language="en_US">
+      <Text>Allow City States on the New World</Text>
+    </Replace>
 	
     <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_NAME" Language="en_US">
       <Text>Continents Placement</Text>
@@ -330,6 +334,9 @@
     </Replace>
 	<Replace Tag="LOC_MAP_ALTERNATE_TSL_NAME" Language="en_US">
       <Text>Use Alternate TSL if required and available</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ALTERNATE_PLACEMENT_NAME" Language="en_US">
+      <Text>Allow random placement for civs without TSL</Text>
     </Replace>
 	
 	<Replace Tag="LOC_MAP_HISTORICAL_SPAWN_NAME" Language="en_US">
