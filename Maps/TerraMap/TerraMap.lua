@@ -265,7 +265,9 @@ function GenerateMap()
 			VerticalCoastRegions["NEW_WORLD"] 	= 		Regions1stLayer["NEW_WORLD"]
 		end
 
-		bPlaceSmallIslands = true
+		if not (bEarthOldWorld or bEarthNewWorld) then
+			bPlaceSmallIslands = true
+		end
 
 	end
 
