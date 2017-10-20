@@ -1346,7 +1346,7 @@ function GenerateFractalLayerWithoutHills (args, plotTypes)
 		print("Region plots = ", iRegionWidth * iRegionHeight, " Land plots = ", landPlots, " Real Water Percentage = ", realWaterPercent, " Desired Water Percentage = ", iWaterPercent)
 		local errorRatio = realWaterPercent / iWaterPercent
 		if errorRatio > 1.25 or errorRatio < 0.75 then
-			print("WARNING: errorRatio on water percent = ", errorRatio, " on attempt #", iAttempts)
+			print("WARNING: Ratio on water percent = ", errorRatio, " on attempt #", iAttempts)
 
 			if (higherRatio > errorRatio and errorRatio > 1.25) or (lowerRatio < errorRatio and errorRatio < 0.75) then
 				-- new best ratio
@@ -1498,7 +1498,7 @@ function GenerateWaterLayer (args, plotTypes)
 		print("Region plots = ", iRegionWidth * iRegionHeight, " Land plots = ", landPlots, " Real Water Percentage = ", realWaterPercent, " Desired Water Percentage = ", iWaterPercent)
 		local errorRatio = realWaterPercent / iWaterPercent
 		if errorRatio > 1.25 or errorRatio < 0.75 then
-			print("WARNING: errorRatio on water percent = ", errorRatio, " on attempt #", iAttempts)
+			print("WARNING: Ratio on water percent = ", errorRatio, " on attempt #", iAttempts)
 			if (higherRatio > errorRatio and errorRatio > 1.25) or (lowerRatio < errorRatio and errorRatio < 0.75) then
 				-- new best ratio
 				bestRatio = errorRatio
@@ -1897,6 +1897,43 @@ function PlaceRealNaturalWonders(NaturalWonders)
 				end
 			end
 
+			if featureTypeName == "FEATURE_SUK_TONLESAP" then
+				print(" - Preparing position...")
+				-- 2 plots, flat desert surrounded by plains, 1st plot is NORTHWEST
+				-- preparing the 2 plot
+				local pPlot2		= Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHEAST)
+				
+				if not bEarthOldWorld then
+					-- make sure to create land around the sea
+					local centralPlots = {pPlot, pPlot2}
+					for i, plot in ipairs(centralPlots) do
+						SetAdjacentPlotsToTerrain(plot, g_TERRAIN_TYPE_PLAINS)
+					end
+				end
+				table.insert(plotsList, { Plot = pPlot, Terrain = g_TERRAIN_TYPE_COAST })
+				table.insert(plotsList, { Plot = pPlot2, Terrain = g_TERRAIN_TYPE_COAST })
+			end
+			
+			if featureTypeName == "FEATURE_HA_LONG_BAY" then
+				print(" - Preparing position...")
+				-- 2 plots, coast, 1st plot is SOUTHWEST
+				-- preparing the 2 plots
+				local terrainType 	= g_TERRAIN_TYPE_COAST
+				local pPlot2 		= Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHEAST)
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_NORTHWEST), Terrain = terrainType })
+				if not bEarthOldWorld then
+					-- make sure we're west of coastal sea
+					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST), g_TERRAIN_TYPE_COAST)
+					ClearPlot( Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_EAST))
+					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_EAST), g_TERRAIN_TYPE_COAST)
+					ClearPlot( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_EAST))
+					-- make sure we're east of land
+					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_WEST), g_TERRAIN_TYPE_GRASS)
+					TerrainBuilder.SetTerrainType( Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_WEST), g_TERRAIN_TYPE_GRASS)
+				end
+			end
+			
 			-- Set terrain, remove features and resources for Civ6 NW
 			for k, data in ipairs(plotsList) do
 				TerrainBuilder.SetTerrainType(data.Plot, data.Terrain)
@@ -2412,13 +2449,14 @@ function GetBestStartingPlotFromList(plots, bIsMinor)
 				sortedPlots[iContinentIndex].Plot = nil -- no need to test that plot again...
 			end
 			
-			iContinentIndex = iContinentIndex + 1;
-
 			-- If the plots passes all the checks then the plot equals the temp plot
 			if(bValid == true) then
 				print("GetBestStartingPlotFromList : returning plot #"..tostring(iContinentIndex).."/"..tostring(iSize).." at fertility = ".. tostring(sortedPlots[iContinentIndex].Fertility))
 				return pTempPlot;
 			end
+			
+			iContinentIndex = iContinentIndex + 1;
+			
 		else		
 			iContinentIndex = iContinentIndex + 1;
 			bValid = false

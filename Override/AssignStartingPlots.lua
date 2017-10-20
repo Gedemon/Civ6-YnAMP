@@ -3826,25 +3826,25 @@ end
 
 function PlaceMissingLuxuries(luxuryTable)
 	print("Placing missing luxuries...")
-	
-	for _, ressourceType in ipairs(luxuryTable) do
-		local row = GameInfo.Resources[ressourceType]
+	local g_iW, g_iH 	= Map.GetGridSize()
+	for _, resourceType in ipairs(luxuryTable) do
+		local row = GameInfo.Resources[resourceType]
 		local possiblePlots = {}
 		for x = 0, g_iW - 1 do 
 			for y = 0, g_iH - 1 do
 				local plotID = (y * g_iW) + x
 				local plot = Map.GetPlotByIndex(plotID)
-				if YnAMP_CanHaveResource(plot, ressourceType) then
+				if YnAMP_CanHaveResource(plot, resourceType) then
 					table.insert(possiblePlots, plot)					
 				end
 			end
 		end
 		local toPlace = math.max(1, Round(#possiblePlots * row.Frequency / 100))
-		print("Trying to place #".. tostring(toPlace).." resource of " .. tostring(resRow.ResourceType))
+		print("Trying to place #".. tostring(toPlace).." resource of " .. tostring(resourceType))
 		aShuffledLuxuryPlots = GetShuffledCopyOfTable(possiblePlots)
 		for i = 1, toPlace do
 			local plot = aShuffledLuxuryPlots[i]
-			ResourceBuilder.SetResourceType(plot, ressourceType, 1)
+			ResourceBuilder.SetResourceType(plot, resourceType, 1)
 		end
 	end
 end

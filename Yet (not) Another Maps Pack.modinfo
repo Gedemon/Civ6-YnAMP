@@ -10,10 +10,12 @@
 	
 	<InGameActions>
 		<ImportFiles id="YNAMP_IMPORT">
+           	<Properties>
+				<LoadOrder>2</LoadOrder>
+           	</Properties>
 			<File>Maps/GiantEarth/GiantEarth.lua</File>
 			<File>Maps/GreatestEarthMap/GreatestEarthMap.lua</File>
 			<File>Maps/PlayEuropeAgain/PlayEuropeAgain.lua</File>
-			<File>Maps/LargestEarth/LargestEarth.lua</File>
 			<File>Maps/TerraMap/TerraMap.lua</File>
 			<File>Override/AssignStartingPlots.lua</File>
 			<File>Scripts/YnAMP_Utils.lua</File>
@@ -52,8 +54,6 @@
 			<File>Maps/PlayEuropeAgain/CityMap_Greece.xml</File>
 			<File>Maps/PlayEuropeAgain/CityMap_Macedon.xml</File>
 			<File>Maps/PlayEuropeAgain/CityMap_Rome.xml</File>
-			<File>Maps/LargestEarth/Map.xml</File>
-			<File>Maps/LargestEarth/CityMap.xml</File>
 			<File>Gameplay/Resource.xml</File>
 			<File>Gameplay/CityNameByEra.xml</File>
 		</UpdateDatabase>
@@ -79,7 +79,6 @@
 			<File>Maps/GiantEarth/Config.xml</File>
 			<File>Maps/GreatestEarthMap/Config.xml</File>
 			<File>Maps/PlayEuropeAgain/Config.xml</File>
-			<File>Maps/LargestEarth/Config.xml</File>
 			<File>Maps/TerraMap/Config.xml</File>
 		</UpdateDatabase>		
 		<UpdateText id="YNAMP_SETTING_LOC">
@@ -114,7 +113,6 @@
 		<File>Maps/GiantEarth/Config.xml</File>
 		<File>Maps/GreatestEarthMap/Config.xml</File>
 		<File>Maps/PlayEuropeAgain/Config.xml</File>
-		<File>Maps/LargestEarth/Config.xml</File>
 		<File>Maps/TerraMap/Config.xml</File>
 		<File>Configuration/ConfigText.xml</File>
 		<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
@@ -135,14 +133,11 @@
 		<File>Maps/PlayEuropeAgain/CityMap_Greece.xml</File>
 		<File>Maps/PlayEuropeAgain/CityMap_Macedon.xml</File>
 		<File>Maps/PlayEuropeAgain/CityMap_Rome.xml</File>
-		<File>Maps/LargestEarth/Map.xml</File>
-		<File>Maps/LargestEarth/CityMap.xml</File>
 		<File>Gameplay/Resource.xml</File>
 		<File>Gameplay/CityNameByEra.xml</File>
 		<File>Maps/GiantEarth/GiantEarth.lua</File>
 		<File>Maps/GreatestEarthMap/GreatestEarthMap.lua</File>
 		<File>Maps/PlayEuropeAgain/PlayEuropeAgain.lua</File>
-		<File>Maps/LargestEarth/LargestEarth.lua</File>
 		<File>Maps/TerraMap/TerraMap.lua</File>
 		<File>Override/AssignStartingPlots.lua</File>
 		<File>Scripts/YnAMP_Script.lua</File>

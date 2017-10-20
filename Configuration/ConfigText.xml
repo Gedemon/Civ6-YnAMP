@@ -31,12 +31,6 @@
     <Replace Tag="LOC_PLAYEUROPEAGAIN_DESC" Language="en_US">
       <Text>NiRv4n4's Europe(Hormigas version) (108x98 - Huge)</Text>
     </Replace>
-    <Replace Tag="LOC_LARGESTEARTH_NAME" Language="en_US">
-      <Text>[COLOR_RED]Largest Earth[ENDCOLOR]</Text>
-    </Replace>
-    <Replace Tag="LOC_LARGESTEARTH_DESC" Language="en_US">
-      <Text>Largest Earth (230x116 - Ludicrous)[NEWLINE][ICON_Exclamation] [COLOR_RED]VERY UNSTABLE since summer patch[ENDCOLOR][NEWLINE][COLOR_RED]Slow Loading time ! (~5 mn)[ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]High VRAM usage ![ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]NASA's supercomputers hate it ![ENDCOLOR]</Text>
-    </Replace>
     <Replace Tag="LOC_TERRAMAP_NAME" Language="en_US">
       <Text>Terra Map for YnAMP</Text>
     </Replace>

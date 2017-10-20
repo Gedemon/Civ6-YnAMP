@@ -205,9 +205,7 @@ end
 ----------------------------------------------------------------------------------------
 if MapConfiguration.GetValue("ForceTSL") and MapConfiguration.GetValue("ForceTSL") ~= "FORCE_TSL_OFF" then
 ----------------------------------------------------------------------------------------
-
 print("Enforcing TSL...")
-
 function ForceTSL( iPrevPlayer )
 
 	if Game.GetCurrentGameTurn() > GameConfiguration.GetStartTurn() then -- only called on first turn
@@ -246,10 +244,12 @@ function ForceTSL( iPrevPlayer )
 		end	
 	end
 end
+Events.PlayerTurnDeactivated.Add( ForceTSL ) -- On TurnActivated, it seems the AI has already moved the initial settler...
 
-Events.PlayerTurnDeactivated.Add( ForceTSL ) -- On TurnActivated, it seems the AI has already moved the initial settler
-ForceTSL( -1 ) -- test ForceTSL on player 0
-
+function OnEnterGame()
+	ForceTSL( -1 ) -- test ForceTSL on player 0
+end
+Events.LoadScreenClose.Add(OnEnterGame)
 ----------------------------------------------------------------------------------------
 end
 ----------------------------------------------------------------------------------------

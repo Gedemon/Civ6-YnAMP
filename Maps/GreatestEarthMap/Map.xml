@@ -37,6 +37,7 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_INDONESIA"	X="85" Y="24" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_IROQUOIS" 	X="19" Y="51" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_JAPAN"		X="98" Y="48" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KHMER"		X="83" Y="39" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KONGO"		X="57" Y="17" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KOREA"		X="92" Y="52" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MACEDON"		X="56" Y="44" DisabledByLeader="LEADER_PERICLES" />
@@ -104,10 +105,7 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PALENQUE" 	X="18" Y="35" />
 	</StartPosition>
 	
-	<!-- ++++++++++++++++++++++++ -->
-	<!--     Regions Positions    -->
-	<!-- ++++++++++++++++++++++++ -->
-	
+	<!--     Regions Positions    -->	
 	<RegionPosition>
 		<Replace MapName="GreatestEarthMap" Region="GROENLAND"			X="23" Y="59" Width="7" Height="4" />
 		<Replace MapName="GreatestEarthMap" Region="NORTH_AMERICA"		X="0" Y="41" Width="27" Height="15" />
@@ -135,4 +133,16 @@
 		<Replace MapName="GreatestEarthMap" Region="MADAGASCAR"			X="64" Y="4" Width="8" Height="9" />
 	</RegionPosition>
 
+	
+	<!--     Natural Wonders    -->
+	<NaturalWonderPosition>
+        <Replace MapName="GreatestEarthMap" X="100" Y="50" FeatureType="FEATURE_SUK_FUJI" TerrainType="TERRAIN_GRASS" />
+		<!--
+        <Replace MapName="GreatestEarthMap" X="83" Y="38" FeatureType="FEATURE_SUK_TONLESAP"  TerrainType="TERRAIN_COAST" />
+        <Replace MapName="GreatestEarthMap" X="83" Y="37" FeatureType="FEATURE_SUK_TONLESAP"  TerrainType="TERRAIN_COAST" />
+		-->
+
+        <Replace MapName="GreatestEarthMap" X="85" Y="40" FeatureType="FEATURE_HA_LONG_BAY" TerrainType="TERRAIN_COAST" />
+        <Replace MapName="GreatestEarthMap" X="85" Y="41" FeatureType="FEATURE_HA_LONG_BAY" TerrainType="TERRAIN_COAST" />
+    </NaturalWonderPosition>
 </GameData>
