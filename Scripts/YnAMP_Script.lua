@@ -124,7 +124,7 @@ function ChangeCityName( ownerPlayerID, cityID)
 				local nameMaxDistance = (row.Area or maxRange) + g_ExtraRange
 				-- rough selection in a square first before really testing distance
 				if (math.abs(refMapX - nameX) <= nameMaxDistance) and (math.abs(refMapY - nameY) <= nameMaxDistance) then	
-					print("- testing "..tostring(name).." at "..tostring(nameX)..","..tostring(nameY).." max distance is "..tostring(nameMaxDistance)..", best distance so far is "..tostring(bestDistance))
+					--print("- testing "..tostring(name).." at "..tostring(nameX)..","..tostring(nameY).." max distance is "..tostring(nameMaxDistance)..", best distance so far is "..tostring(bestDistance))
 					
 					local distance = Map.GetPlotDistance(refMapX, refMapY ,nameX, nameY)
 					if distance <= nameMaxDistance and distance < bestDistance then
@@ -257,11 +257,10 @@ end
 ----------------------------------------------------------------------------------------
 -- Limiting Barbarian Scouts <<<<<
 ----------------------------------------------------------------------------------------
-if GameConfiguration.GetValue("TurnsBeforeBarbarians") and GameConfiguration.GetValue("TurnsBeforeBarbarians") > 0 then 
+if GameConfiguration.GetValue("TurnsBeforeBarbarians") and GameConfiguration.GetValue("TurnsBeforeBarbarians") > 0 and GameInfo.Units["UNIT_SCOUT"] then 
 ----------------------------------------------------------------------------------------
 
 print("Limiting Barbarian Scouts is ON...")
-
 function OnUnitAddedToMap( playerID:number, unitID:number )
 	local unit 				= UnitManager.GetUnit(playerID, unitID)
 	local player 			= Players[playerID]

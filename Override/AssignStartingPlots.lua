@@ -3748,11 +3748,11 @@ function ResourcesValidation(g_iW, g_iH)
 		local index = GameInfo.Resources[resRow.ResourceType].Index
 		if not (luxTable[index] or stratTable[index]) then
 			if resRow.YieldType == "YIELD_FOOD" then
-				foodTable[resRow.Index] = resRow.YieldChange
+				foodTable[index] = resRow.YieldChange
 			elseif resRow.YieldType == "YIELD_PRODUCTION" then
-				prodTable[resRow.Index] = resRow.YieldChange
+				prodTable[index] = resRow.YieldChange
 			elseif resRow.YieldType == "YIELD_GOLD" then
-				goldTable[resRow.Index] = resRow.YieldChange
+				goldTable[index] = resRow.YieldChange
 			end
 		end
 	end
@@ -4776,13 +4776,32 @@ function CulturallyLinkedCityStates(bForcePlacement)
 end
 
 ------------------------------------------------------------------------------
--- Override functions
+-- Override/Backup functions
 ------------------------------------------------------------------------------
 
 print ("Replacing ResourceBuilder.CanHaveResource by YnAMP_CanHaveResource...")
 ResourceBuilder.OldCanHaveResource = ResourceBuilder.CanHaveResource
 ResourceBuilder.CanHaveResource = YnAMP_CanHaveResource
 
+------------------------------------------------------------------------------
+-- Detailed Worlds replace MapUtilities.lua with a version missing IsAdjacentToLandPlot
+-- We set a backup function here, only if the original is missing
+function IsAdjacentToLandPlotBackup(x, y)
+	-- Computes IsAdjacentToLand from the plot
+	local plot = Map.GetPlot(x, y);
+	if plot ~= nil then
+		for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+			local testPlot = Map.GetAdjacentPlot(x, y, direction);
+			if testPlot ~= nil then
+				if testPlot:IsWater() == false then -- Adjacent plot is land
+					return true
+				end
+			end
+		end
+	end
+	return false
+end
+IsAdjacentToLandPlot = IsAdjacentToLandPlot or IsAdjacentToLandPlotBackup
 
 ------------------------------------------------------------------------------
 -- Override required to use limits on ice placement for imported maps

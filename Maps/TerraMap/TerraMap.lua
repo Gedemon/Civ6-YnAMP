@@ -17,6 +17,61 @@ include "ResourceGenerator"
 include "AssignStartingPlots"
 include "PlotIterators"
 
+
+------------------------------------------------------------------------------
+-- http://lua-users.org/wiki/SortedIteration
+-- Ordered table iterator, allow to iterate on the natural order of the keys of a table.
+------------------------------------------------------------------------------
+function __genOrderedIndex( t )
+    local orderedIndex = {}
+    for key in pairs (t) do
+        table.insert ( orderedIndex, key )
+    end
+    table.sort ( orderedIndex )
+    return orderedIndex
+end
+
+function orderedNext(t, state)
+    -- Equivalent of the next function, but returns the keys in the alphabetic
+    -- order.  We use a temporary ordered key table that is stored in the
+    -- table being iterated.
+
+    local key = nil
+    --print("orderedNext: state = "..tostring(state) )
+    if state == nil then
+        -- the first time, generate the index
+        t.__orderedIndex = __genOrderedIndex( t )
+        key = t.__orderedIndex[1]
+    else
+        -- fetch the next value
+        for i = 1, #t.__orderedIndex do
+            if t.__orderedIndex[i] == state then
+                key = t.__orderedIndex[i+1]
+            end
+        end
+    end
+
+    if key then
+        return key, t[key]
+    end
+
+    -- no more value to return, cleanup
+    t.__orderedIndex = nil
+    return
+end
+
+function orderedPairs(t)
+    -- Equivalent of the pairs() function on tables.  Allows to iterate
+    -- in order
+    return orderedNext, t, nil
+end
+
+local pairs = orderedPairs
+
+------------------------------------------------------------------------------
+-- Defines
+------------------------------------------------------------------------------
+
 local g_iW, g_iH, g_MapSize;
 
 -- The base map is the Largest Earth Map
@@ -1229,7 +1284,7 @@ function AddFeatures()
 			for iY = 0, g_iH - 1 do
 				local index = (iY * g_iW) + iX;
 				local plot	= Map.GetPlotByIndex(index)
-				if plot:GetFeatureType() ~= g_FEATURE_JUNGLE and not plot:IsWater() then
+				if plot:GetFeatureType() ~= g_FEATURE_JUNGLE and TerrainBuilder.CanHaveFeature(plot, g_FEATURE_JUNGLE) then --not plot:IsWater() then
 					-- Chance for each eligible plot to become an expansion is 1 / iExpansionDiceroll.
 
 					local count = 0
@@ -2170,7 +2225,13 @@ function AssignStartingPlots:__SetStartMajor(plots)
 		row.Fertility = self:__WeightedFertility(plot);
 		table.insert (sortedPlots, row);
 	end
-
+	
+	if #sortedPlots == 0 then -- sometime the start positioner fails...
+		print("WARNING: sortedPlots = 0 for SetStartMajor(plots) !")
+		print("Skipping...")
+		return nil
+	end
+	
 	if(self.uiStartConfig > 1 ) then
 		table.sort (sortedPlots, function(a, b) return a.Fertility > b.Fertility; end);
 	else

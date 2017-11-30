@@ -2,7 +2,7 @@
 <Mod id="36e88483-48fe-4545-b85f-bafc50dde315">
   <Properties>
     <Name>LOC_YNAMP_TITLE</Name>
-    <Stability>Alpha</Stability>
+    <Stability>Beta</Stability>
     <Teaser>LOC_YNAMP_TEASER</Teaser>
     <Description>LOC_YNAMP_DESCRIPTION</Description>
     <Authors>Gedemon</Authors>
@@ -11,7 +11,7 @@
 	<InGameActions>
 		<ImportFiles id="YNAMP_IMPORT">
            	<Properties>
-				<LoadOrder>2</LoadOrder>
+				<LoadOrder>1000002</LoadOrder>
            	</Properties>
 			<File>Maps/GiantEarth/GiantEarth.lua</File>
 			<File>Maps/GreatestEarthMap/GreatestEarthMap.lua</File>
