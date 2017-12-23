@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+
+	<!-- ++++++++++++++++++++++++++++++++++++ -->
+	<!-- "Giant Earth Map" City Map for Spain -->
+	<!-- ++++++++++++++++++++++++++++++++++++ -->
+
+
+
+	<!-- +++++++++++++++ -->
+	<!-- Africa City Map -->
+	<!-- +++++++++++++++ -->
+
+
+	<!-- WESTERN NORTH AFRICA -->
+	<CityMap>
+
+		<Replace MapName="GiantEarth" X="9" Y="50" CityLocaleName="LOC_CITY_NAME_MELILLA" Area="0" Civilization="CIVILIZATION_SPAIN" />
+
+	</CityMap>
+
+</GameData>
