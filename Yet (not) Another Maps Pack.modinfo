@@ -46,6 +46,11 @@
 			<File>Gameplay/GamePlay.xml</File>
 			<File>Maps/GiantEarth/Map.xml</File>
 			<File>Maps/GiantEarth/CityMap.xml</File>
+			<File>Maps/GiantEarth/CityMap_Egypt.xml</File>
+			<File>Maps/GiantEarth/CityMap_Greece.xml</File>
+			<File>Maps/GiantEarth/CityMap_Nubia.xml</File>
+			<File>Maps/GiantEarth/CityMap_Rome.xml</File>
+			<File>Maps/GiantEarth/CityMap_Spain.xml</File>
 			<File>Maps/GreatestEarthMap/Map.xml</File>
 			<File>Maps/GreatestEarthMap/CityMap.xml</File>
 			<File>Maps/PlayEuropeAgain/Map.xml</File>
@@ -125,6 +130,11 @@
 		<File>Gameplay/GamePlayText_pt_BR.xml</File>
 		<File>Maps/GiantEarth/Map.xml</File>
 		<File>Maps/GiantEarth/CityMap.xml</File>
+		<File>Maps/GiantEarth/CityMap_Egypt.xml</File>
+		<File>Maps/GiantEarth/CityMap_Greece.xml</File>
+		<File>Maps/GiantEarth/CityMap_Nubia.xml</File>
+		<File>Maps/GiantEarth/CityMap_Rome.xml</File>
+		<File>Maps/GiantEarth/CityMap_Spain.xml</File>
 		<File>Maps/GreatestEarthMap/Map.xml</File>
 		<File>Maps/GreatestEarthMap/CityMap.xml</File>
 		<File>Maps/PlayEuropeAgain/Map.xml</File>
