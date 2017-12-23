@@ -1,61 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
-	
-	<!-- 
-	
-	"Play Europe Again"
-	
-	-->
+
+	<!-- ++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- "Play Europe Again" City Map for Macedon -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++ -->
 
 	<CityMap>
-		
+
 		<!-- GREEK MAINLAND -->
 		<Replace MapName="PlayEuropeAgain" X="58" Y="20" CityLocaleName="LOC_CITY_NAME_PYLOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="59" Y="20" CityLocaleName="LOC_CITY_NAME_SPARTA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="57" Y="21" CityLocaleName="LOC_CITY_NAME_PYLOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="58" Y="21" CityLocaleName="LOC_CITY_NAME_SPARTA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="59" Y="21" CityLocaleName="LOC_CITY_NAME_SPARTA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="60" Y="21" CityLocaleName="LOC_CITY_NAME_EPIDAUROS_LIMERA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="57" Y="22" CityLocaleName="LOC_CITY_NAME_OLYMPIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="58" Y="22" CityLocaleName="LOC_CITY_NAME_MEGALOPOLIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="59" Y="22" CityLocaleName="LOC_CITY_NAME_ARGOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="60" Y="22" CityLocaleName="LOC_CITY_NAME_MYCENAE" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="56" Y="23" CityLocaleName="LOC_CITY_NAME_ELIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="57" Y="23" CityLocaleName="LOC_CITY_NAME_PATRAS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="58" Y="23" CityLocaleName="LOC_CITY_NAME_SICYON" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="59" Y="23" CityLocaleName="LOC_CITY_NAME_CORINTH" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="60" Y="23" CityLocaleName="LOC_CITY_NAME_MYCENAE" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="60" Y="24" CityLocaleName="LOC_CITY_NAME_CORINTH" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="56" Y="25" CityLocaleName="LOC_CITY_NAME_CALYDON" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="57" Y="25" CityLocaleName="LOC_CITY_NAME_DELPHI" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="58" Y="25" CityLocaleName="LOC_CITY_NAME_DELPHI" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="59" Y="25" CityLocaleName="LOC_CITY_NAME_THEBES" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="60" Y="25" CityLocaleName="LOC_CITY_NAME_ATHENS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="61" Y="25" CityLocaleName="LOC_CITY_NAME_ATHENS" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="56" Y="26" CityLocaleName="LOC_CITY_NAME_ANAKTORION" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="57" Y="26" CityLocaleName="LOC_CITY_NAME_THERMOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="58" Y="26" CityLocaleName="LOC_CITY_NAME_DELPHI" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="59" Y="26" CityLocaleName="LOC_CITY_NAME_THEBES" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="60" Y="26" CityLocaleName="LOC_CITY_NAME_THERMOPYLAI" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="55" Y="27" CityLocaleName="LOC_CITY_NAME_AMBRACIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="56" Y="27" CityLocaleName="LOC_CITY_NAME_CYNOSCEPHALAE" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="57" Y="27" CityLocaleName="LOC_CITY_NAME_PHARSALOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="58" Y="27" CityLocaleName="LOC_CITY_NAME_LARISSA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="59" Y="27" CityLocaleName="LOC_CITY_NAME_IOLCOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="55" Y="28" CityLocaleName="LOC_CITY_NAME_PHOENICE" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="56" Y="28" CityLocaleName="LOC_CITY_NAME_HADRIANOPOLIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="57" Y="28" CityLocaleName="LOC_CITY_NAME_ARGOS_ORESTIKON" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="58" Y="28" CityLocaleName="LOC_CITY_NAME_AIGAI" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="59" Y="28" CityLocaleName="LOC_CITY_NAME_PYDNA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="54" Y="29" CityLocaleName="LOC_CITY_NAME_APOLLONIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="55" Y="29" CityLocaleName="LOC_CITY_NAME_BYLLIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="56" Y="29" CityLocaleName="LOC_CITY_NAME_PELION" Area="0" Civilization="CIVILIZATION_MACEDON" />
@@ -64,7 +62,7 @@
 		<Replace MapName="PlayEuropeAgain" X="59" Y="29" CityLocaleName="LOC_CITY_NAME_THESSALONIKI" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="60" Y="29" CityLocaleName="LOC_CITY_NAME_THESSALONIKI" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="61" Y="29" CityLocaleName="LOC_CITY_NAME_OLYNTHOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="54" Y="30" CityLocaleName="LOC_CITY_NAME_APOLLONIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="55" Y="30" CityLocaleName="LOC_CITY_NAME_BYLLIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="56" Y="30" CityLocaleName="LOC_CITY_NAME_BYLLIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
@@ -75,7 +73,7 @@
 		<Replace MapName="PlayEuropeAgain" X="61" Y="30" CityLocaleName="LOC_CITY_NAME_AMPHIPOLIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="65" Y="30" CityLocaleName="LOC_CITY_NAME_AINOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="66" Y="30" CityLocaleName="LOC_CITY_NAME_LYSIMACHIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="54" Y="31" CityLocaleName="LOC_CITY_NAME_EPIDAMNOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="55" Y="31" CityLocaleName="LOC_CITY_NAME_KORDION" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="56" Y="31" CityLocaleName="LOC_CITY_NAME_LYCHNIDOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
@@ -88,7 +86,7 @@
 		<Replace MapName="PlayEuropeAgain" X="64" Y="31" CityLocaleName="LOC_CITY_NAME_MOSYNOPOLIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="65" Y="31" CityLocaleName="LOC_CITY_NAME_DORISKOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="66" Y="31" CityLocaleName="LOC_CITY_NAME_DORISKOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="55" Y="32" CityLocaleName="LOC_CITY_NAME_EPIDAMNOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="56" Y="32" CityLocaleName="LOC_CITY_NAME_LYCHNIDOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="57" Y="32" CityLocaleName="LOC_CITY_NAME_LYCHNIDOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
@@ -102,48 +100,54 @@
 		<Replace MapName="PlayEuropeAgain" X="67" Y="32" CityLocaleName="LOC_CITY_NAME_PERINTHOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="68" Y="32" CityLocaleName="LOC_CITY_NAME_BYZANTIUM" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="69" Y="32" CityLocaleName="LOC_CITY_NAME_BYZANTIUM" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<!-- AEGEAN ISLANDS -->
 		<Replace MapName="PlayEuropeAgain" X="60" Y="18" CityLocaleName="LOC_CITY_NAME_KYDONIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="61" Y="18" CityLocaleName="LOC_CITY_NAME_KNOSSOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="62" Y="18" CityLocaleName="LOC_CITY_NAME_KNOSSOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="63" Y="18" CityLocaleName="LOC_CITY_NAME_HIERAPYTNA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="62" Y="20" CityLocaleName="LOC_CITY_NAME_THERA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="64" Y="21" CityLocaleName="LOC_CITY_NAME_KOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="66" Y="21" CityLocaleName="LOC_CITY_NAME_RHODES" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="62" Y="23" CityLocaleName="LOC_CITY_NAME_PALEOPOLI" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="64" Y="23" CityLocaleName="LOC_CITY_NAME_SAMOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="65" Y="23" CityLocaleName="LOC_CITY_NAME_SAMOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="63" Y="26" CityLocaleName="LOC_CITY_NAME_SKYROS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="63" Y="29" CityLocaleName="LOC_CITY_NAME_HEPHAISTIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
+		<!-- WESTERN AFRICA (MOROCCO, WESTERN SAHARA, MAURITANIA, & WESTERN ALGERIA) -->
+		<Replace MapName="PlayEuropeAgain" X="19" Y="26" CityLocaleName="LOC_CITY_NAME_MELILLA" Civilization="CIVILIZATION_MACEDON" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="26" CityLocaleName="LOC_CITY_NAME_MELILLA" Area="0" Civilization="CIVILIZATION_MACEDON" />
+
 		<!-- LIBYA & EGYPT -->
+		<Replace MapName="PlayEuropeAgain" X="78" Y="4" CityLocaleName="LOC_CITY_NAME_EL_QUSEIR" Civilization="CIVILIZATION_MACEDON" />
+
 		<Replace MapName="PlayEuropeAgain" X="55" Y="13" CityLocaleName="LOC_CITY_NAME_ARSINOE_CYRENAICA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="56" Y="13" CityLocaleName="LOC_CITY_NAME_PTOLEMAIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="58" Y="13" CityLocaleName="LOC_CITY_NAME_APOLLONIA_CYRENAICA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<!-- ANATOLIA & CYPRUS -->
 		<Replace MapName="PlayEuropeAgain" X="76" Y="18" CityLocaleName="LOC_CITY_NAME_PAPHOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="77" Y="18" CityLocaleName="LOC_CITY_NAME_KITION" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="78" Y="18" CityLocaleName="LOC_CITY_NAME_KITION" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="76" Y="19" CityLocaleName="LOC_CITY_NAME_MARION" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="77" Y="19" CityLocaleName="LOC_CITY_NAME_SALAMIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="78" Y="19" CityLocaleName="LOC_CITY_NAME_SALAMIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="79" Y="20" CityLocaleName="LOC_CITY_NAME_SALAMIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="68" Y="21" CityLocaleName="LOC_CITY_NAME_PHYSKOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="70" Y="21" CityLocaleName="LOC_CITY_NAME_MYRA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="71" Y="21" CityLocaleName="LOC_CITY_NAME_MYRA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="75" Y="21" CityLocaleName="LOC_CITY_NAME_ANEMOURION" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="76" Y="21" CityLocaleName="LOC_CITY_NAME_KELENDERIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="77" Y="21" CityLocaleName="LOC_CITY_NAME_KORYKOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="68" Y="22" CityLocaleName="LOC_CITY_NAME_HALIKARNASSOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="69" Y="22" CityLocaleName="LOC_CITY_NAME_KAUNOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="70" Y="22" CityLocaleName="LOC_CITY_NAME_TELMESSOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
@@ -155,7 +159,7 @@
 		<Replace MapName="PlayEuropeAgain" X="78" Y="22" CityLocaleName="LOC_CITY_NAME_ELAIUSSA_SEBASTE" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="80" Y="22" CityLocaleName="LOC_CITY_NAME_MALLOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="81" Y="22" CityLocaleName="LOC_CITY_NAME_AIGEAI" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="67" Y="23" CityLocaleName="LOC_CITY_NAME_MILETOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="68" Y="23" CityLocaleName="LOC_CITY_NAME_MYLASA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="69" Y="23" CityLocaleName="LOC_CITY_NAME_STRATONIKEIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
@@ -169,7 +173,7 @@
 		<Replace MapName="PlayEuropeAgain" X="78" Y="23" CityLocaleName="LOC_CITY_NAME_TARSOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="80" Y="23" CityLocaleName="LOC_CITY_NAME_ANTIOCHIA_IN_CILICIA" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="81" Y="23" CityLocaleName="LOC_CITY_NAME_MOPSOUHESTIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="67" Y="24" CityLocaleName="LOC_CITY_NAME_EPHESOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="68" Y="24" CityLocaleName="LOC_CITY_NAME_ALABANDA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="69" Y="24" CityLocaleName="LOC_CITY_NAME_PYTHOPOLIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
@@ -179,7 +183,7 @@
 		<Replace MapName="PlayEuropeAgain" X="78" Y="24" CityLocaleName="LOC_CITY_NAME_TYANA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="79" Y="24" CityLocaleName="LOC_CITY_NAME_TYANA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="81" Y="24" CityLocaleName="LOC_CITY_NAME_ANAZARBOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="65" Y="25" CityLocaleName="LOC_CITY_NAME_ERYTHRAI" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="66" Y="25" CityLocaleName="LOC_CITY_NAME_COLOPHON" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="67" Y="25" CityLocaleName="LOC_CITY_NAME_EPHESOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
@@ -191,7 +195,7 @@
 		<Replace MapName="PlayEuropeAgain" X="73" Y="25" CityLocaleName="LOC_CITY_NAME_ANTIOCHIA_PISIDAE" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="76" Y="25" CityLocaleName="LOC_CITY_NAME_IKONION" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="78" Y="25" CityLocaleName="LOC_CITY_NAME_TYANA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="66" Y="26" CityLocaleName="LOC_CITY_NAME_SMYRNA" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="67" Y="26" CityLocaleName="LOC_CITY_NAME_SARDEIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="68" Y="26" CityLocaleName="LOC_CITY_NAME_SARDEIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
@@ -204,14 +208,14 @@
 		<Replace MapName="PlayEuropeAgain" X="78" Y="26" CityLocaleName="LOC_CITY_NAME_ARCHELAIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="79" Y="26" CityLocaleName="LOC_CITY_NAME_ARCHELAIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="80" Y="26" CityLocaleName="LOC_CITY_NAME_NAZIANZUS" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="67" Y="27" CityLocaleName="LOC_CITY_NAME_PERGAMON" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="68" Y="27" CityLocaleName="LOC_CITY_NAME_PERGAMON" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="69" Y="27" CityLocaleName="LOC_CITY_NAME_PHILADELPHIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="70" Y="27" CityLocaleName="LOC_CITY_NAME_PHILADELPHIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="75" Y="27" CityLocaleName="LOC_CITY_NAME_LAODIKEIA_KATAKEKAUMENE" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="78" Y="27" CityLocaleName="LOC_CITY_NAME_ARCHELAIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="66" Y="28" CityLocaleName="LOC_CITY_NAME_TROY" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="67" Y="28" CityLocaleName="LOC_CITY_NAME_CYZICUS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="68" Y="28" CityLocaleName="LOC_CITY_NAME_CYZICUS" Area="0" Civilization="CIVILIZATION_MACEDON" />
@@ -221,21 +225,21 @@
 		<Replace MapName="PlayEuropeAgain" X="72" Y="28" CityLocaleName="LOC_CITY_NAME_PESSINOUS" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="77" Y="28" CityLocaleName="LOC_CITY_NAME_MOKISSOS" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="80" Y="28" CityLocaleName="LOC_CITY_NAME_EUSEBIA_AT_THE_ARGAEUS" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="68" Y="29" CityLocaleName="LOC_CITY_NAME_APAMEIA_MYRLEIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="69" Y="29" CityLocaleName="LOC_CITY_NAME_NIKAIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="70" Y="29" CityLocaleName="LOC_CITY_NAME_NIKAIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="71" Y="29" CityLocaleName="LOC_CITY_NAME_DORYLAION" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="74" Y="29" CityLocaleName="LOC_CITY_NAME_GORDION" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="78" Y="29" CityLocaleName="LOC_CITY_NAME_SEBASTEIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="69" Y="30" CityLocaleName="LOC_CITY_NAME_KIOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="70" Y="30" CityLocaleName="LOC_CITY_NAME_PYLAI" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="71" Y="30" CityLocaleName="LOC_CITY_NAME_NIKOMEDEIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="72" Y="30" CityLocaleName="LOC_CITY_NAME_DORYLAION" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="73" Y="30" CityLocaleName="LOC_CITY_NAME_BITHYNION" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="80" Y="30" CityLocaleName="LOC_CITY_NAME_EUPATORIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="70" Y="31" CityLocaleName="LOC_CITY_NAME_NIKOMEDEIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="71" Y="31" CityLocaleName="LOC_CITY_NAME_NIKOMEDEIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="72" Y="31" CityLocaleName="LOC_CITY_NAME_PRUSIAS" Area="0" Civilization="CIVILIZATION_MACEDON" />
@@ -245,25 +249,25 @@
 		<Replace MapName="PlayEuropeAgain" X="77" Y="31" CityLocaleName="LOC_CITY_NAME_GANGRA" Area="0" Civilization="CIVILIZATION_MACEDON" /> <!-- OVERLAP -->
 		<Replace MapName="PlayEuropeAgain" X="78" Y="31" CityLocaleName="LOC_CITY_NAME_AMASEIA" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="80" Y="31" CityLocaleName="LOC_CITY_NAME_EUPATORIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="70" Y="32" CityLocaleName="LOC_CITY_NAME_CHALCEDON" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="71" Y="32" CityLocaleName="LOC_CITY_NAME_CALPE" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="72" Y="32" CityLocaleName="LOC_CITY_NAME_PRUSIAS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="73" Y="32" CityLocaleName="LOC_CITY_NAME_PRUSIAS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="74" Y="32" CityLocaleName="LOC_CITY_NAME_BITHYNION" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="75" Y="32" CityLocaleName="LOC_CITY_NAME_HADRIANOPOLIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="73" Y="33" CityLocaleName="LOC_CITY_NAME_HERAKLEIA_PONTIKE" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="75" Y="33" CityLocaleName="LOC_CITY_NAME_POMPEIOPOLIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="76" Y="33" CityLocaleName="LOC_CITY_NAME_POMPEIOPOLIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="77" Y="33" CityLocaleName="LOC_CITY_NAME_POMPEIOPOLIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="78" Y="33" CityLocaleName="LOC_CITY_NAME_PTERIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="80" Y="33" CityLocaleName="LOC_CITY_NAME_AMISOS" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="75" Y="34" CityLocaleName="LOC_CITY_NAME_AMASTRIS" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="76" Y="34" CityLocaleName="LOC_CITY_NAME_IONOPOLIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="78" Y="34" CityLocaleName="LOC_CITY_NAME_SINOPE" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<!-- MIDDLE EAST (NORTH) -->
 		<Replace MapName="PlayEuropeAgain" X="82" Y="22" CityLocaleName="LOC_CITY_NAME_ISSUS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="85" Y="22" CityLocaleName="LOC_CITY_NAME_EUROPOS" Area="0" Civilization="CIVILIZATION_MACEDON" />
@@ -275,7 +279,7 @@
 		<Replace MapName="PlayEuropeAgain" X="91" Y="22" CityLocaleName="LOC_CITY_NAME_DARAS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="92" Y="22" CityLocaleName="LOC_CITY_NAME_NISIBIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="93" Y="22" CityLocaleName="LOC_CITY_NAME_NISIBIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="83" Y="23" CityLocaleName="LOC_CITY_NAME_DOLICHE" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="85" Y="23" CityLocaleName="LOC_CITY_NAME_ZEUGMA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="88" Y="23" CityLocaleName="LOC_CITY_NAME_ANTIOCHEIA_ARABIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
@@ -285,53 +289,53 @@
 		<Replace MapName="PlayEuropeAgain" X="92" Y="23" CityLocaleName="LOC_CITY_NAME_DARAS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="93" Y="23" CityLocaleName="LOC_CITY_NAME_DARAS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="94" Y="23" CityLocaleName="LOC_CITY_NAME_BETHZABDE" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="82" Y="24" CityLocaleName="LOC_CITY_NAME_GERMANIKEIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="85" Y="24" CityLocaleName="LOC_CITY_NAME_SAMOSATA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="86" Y="24" CityLocaleName="LOC_CITY_NAME_SAMOSATA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="87" Y="24" CityLocaleName="LOC_CITY_NAME_EDESSA" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="92" Y="24" CityLocaleName="LOC_CITY_NAME_MARIDA" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="93" Y="24" CityLocaleName="LOC_CITY_NAME_DARAS" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="81" Y="25" CityLocaleName="LOC_CITY_NAME_FLAVIOPOLIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="84" Y="25" CityLocaleName="LOC_CITY_NAME_ADATHA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="85" Y="25" CityLocaleName="LOC_CITY_NAME_SAMOSATA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="89" Y="25" CityLocaleName="LOC_CITY_NAME_AMIDA" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="92" Y="25" CityLocaleName="LOC_CITY_NAME_KEPHA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="93" Y="25" CityLocaleName="LOC_CITY_NAME_KEPHA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="83" Y="26" CityLocaleName="LOC_CITY_NAME_KOMANA" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="81" Y="27" CityLocaleName="LOC_CITY_NAME_ARIARATHEIA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="85" Y="27" CityLocaleName="LOC_CITY_NAME_MELITENE" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="86" Y="27" CityLocaleName="LOC_CITY_NAME_MELITENE" Area="0" Civilization="CIVILIZATION_MACEDON" /> <!-- OVERLAP -->
 		<Replace MapName="PlayEuropeAgain" X="87" Y="27" CityLocaleName="LOC_CITY_NAME_CHARPETE" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="91" Y="27" CityLocaleName="LOC_CITY_NAME_TIGRANOKERTA" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="84" Y="28" CityLocaleName="LOC_CITY_NAME_EUSPENA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="83" Y="29" CityLocaleName="LOC_CITY_NAME_SEBASTEIA" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="86" Y="29" CityLocaleName="LOC_CITY_NAME_ARASAMOSATA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="87" Y="29" CityLocaleName="LOC_CITY_NAME_ARASAMOSATA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="89" Y="29" CityLocaleName="LOC_CITY_NAME_ROMANOUPOLIS" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="85" Y="30" CityLocaleName="LOC_CITY_NAME_ACILISENE" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="87" Y="30" CityLocaleName="LOC_CITY_NAME_ARASAMOSATA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="88" Y="30" CityLocaleName="LOC_CITY_NAME_ARASAMOSATA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="81" Y="30" CityLocaleName="LOC_CITY_NAME_KOMANA_PONTIKA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="82" Y="30" CityLocaleName="LOC_CITY_NAME_KOMANA_PONTIKA" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="84" Y="31" CityLocaleName="LOC_CITY_NAME_NIKOPOLIS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="88" Y="31" CityLocaleName="LOC_CITY_NAME_SATALA" Area="0" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="82" Y="32" CityLocaleName="LOC_CITY_NAME_POLEMONION" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="83" Y="32" CityLocaleName="LOC_CITY_NAME_KERASOUS" Area="0" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="87" Y="32" CityLocaleName="LOC_CITY_NAME_BAIBERDON" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="90" Y="32" CityLocaleName="LOC_CITY_NAME_THEODOSIOPOLIS" Civilization="CIVILIZATION_MACEDON" />
-		
+
 		<Replace MapName="PlayEuropeAgain" X="84" Y="33" CityLocaleName="LOC_CITY_NAME_TRAPEZOUS" Civilization="CIVILIZATION_MACEDON" />
 		<Replace MapName="PlayEuropeAgain" X="94" Y="33" CityLocaleName="LOC_CITY_NAME_ARTAXATA" Civilization="CIVILIZATION_MACEDON" />
-		
+
 	</CityMap>
-	
+
 </GameData>
