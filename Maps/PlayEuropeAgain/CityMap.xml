@@ -119,7 +119,7 @@
 		<Replace MapName="PlayEuropeAgain" X="29" Y="56" CityLocaleName="LOC_CITY_NAME_CHERBOURG_OCTEVILLE" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="32" Y="56" CityLocaleName="LOC_CITY_NAME_LE_HAVRE" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="33" Y="56" CityLocaleName="LOC_CITY_NAME_AMIENS" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="36" Y="56" CityLocaleName="LOC_CITY_NAME_SAINT_QUENTIN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="36" Y="56" CityLocaleName="LOC_CITY_NAME_BRUSSELS" Area="0" />
 
 		<Replace MapName="PlayEuropeAgain" X="32" Y="57" CityLocaleName="LOC_CITY_NAME_CALAIS" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="33" Y="57" CityLocaleName="LOC_CITY_NAME_DUNKERQUE" Area="0" />
@@ -2746,6 +2746,7 @@
 		<Replace MapName="PlayEuropeAgain" X="87" Y="54" CityLocaleName="LOC_CITY_NAME_BORISOGLEBSK" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="88" Y="54" CityLocaleName="LOC_CITY_NAME_BORISOGLEBSK" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="90" Y="54" CityLocaleName="LOC_CITY_NAME_SARATOV" />
+		<Replace MapName="PlayEuropeAgain" X="91" Y="54" CityLocaleName="LOC_CITY_NAME_NEW_SARAI" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="92" Y="54" CityLocaleName="LOC_CITY_NAME_KAMYSHIN" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="93" Y="54" CityLocaleName="LOC_CITY_NAME_KAMYSHIN" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="97" Y="54" CityLocaleName="LOC_CITY_NAME_URALSK" />
@@ -2804,6 +2805,7 @@
 		<Replace MapName="PlayEuropeAgain" X="90" Y="37" CityLocaleName="LOC_CITY_NAME_KUTAISI" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="91" Y="37" CityLocaleName="LOC_CITY_NAME_KUTAISI" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="92" Y="37" CityLocaleName="LOC_CITY_NAME_GORI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="93" Y="37" CityLocaleName="LOC_CITY_NAME_TBILISI" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="94" Y="37" CityLocaleName="LOC_CITY_NAME_VANADZOR" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="95" Y="37" CityLocaleName="LOC_CITY_NAME_GAZAKH" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="97" Y="37" CityLocaleName="LOC_CITY_NAME_SHEKI" Area="0" />
@@ -2815,7 +2817,8 @@
 		<Replace MapName="PlayEuropeAgain" X="90" Y="38" CityLocaleName="LOC_CITY_NAME_ZUGDIDI" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="91" Y="38" CityLocaleName="LOC_CITY_NAME_KUTAISI" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="92" Y="38" CityLocaleName="LOC_CITY_NAME_GORI" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="94" Y="38" CityLocaleName="LOC_CITY_NAME_TBILISI" />
+		<Replace MapName="PlayEuropeAgain" X="93" Y="38" CityLocaleName="LOC_CITY_NAME_TBILISI" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="94" Y="38" CityLocaleName="LOC_CITY_NAME_TBILISI" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="96" Y="38" CityLocaleName="LOC_CITY_NAME_ZAQATALA" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="100" Y="38" CityLocaleName="LOC_CITY_NAME_SHAMAKHI" Area="0" />
 
@@ -3107,6 +3110,7 @@
 		<Replace MapName="PlayEuropeAgain" X="107" Y="22" CityLocaleName="LOC_CITY_NAME_QOM" Area="0" />
 
 		<Replace MapName="PlayEuropeAgain" X="102" Y="23" CityLocaleName="LOC_CITY_NAME_MARIVAN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="104" Y="23" CityLocaleName="LOC_CITY_NAME_HAMEDAN" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="105" Y="23" CityLocaleName="LOC_CITY_NAME_SAVEH" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="106" Y="23" CityLocaleName="LOC_CITY_NAME_QOM" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="107" Y="23" CityLocaleName="LOC_CITY_NAME_QOM" Area="0" />
@@ -3143,7 +3147,7 @@
 	<!-- MIDDLE EAST (SOUTH) -->
 	<CityMap>
 
-		<Replace MapName="PlayEuropeAgain" X="83" Y="18" CityLocaleName="LOC_CITY_NAME_DAMASCUS" />
+		<Replace MapName="PlayEuropeAgain" X="84" Y="17" CityLocaleName="LOC_CITY_NAME_DAMASCUS" />
 
 	</CityMap>
 
