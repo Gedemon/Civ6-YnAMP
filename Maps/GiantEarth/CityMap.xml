@@ -3174,7 +3174,7 @@
 		<Replace MapName="GiantEarth" X="74" Y="71" CityLocaleName="LOC_CITY_NAME_KARAKORUM" Area="0" />
 		<Replace MapName="GiantEarth" X="75" Y="71" CityLocaleName="LOC_CITY_NAME_MANDALGOVI" Area="0" />
 		<Replace MapName="GiantEarth" X="77" Y="71" CityLocaleName="LOC_CITY_NAME_ULAANBAATAR" />
-		<Replace MapName="GiantEarth" X="79" Y="71" CityLocaleName="LOC_CITY_NAME_UNDURKHAAN" Area="0" />
+		<Replace MapName="GiantEarth" X="79" Y="71" CityLocaleName="LOC_CITY_NAME_UNDURKHAN" Area="0" />
 		<Replace MapName="GiantEarth" X="80" Y="71" CityLocaleName="LOC_CITY_NAME_BARUUN_URT" Area="0" />
 		
 		<Replace MapName="GiantEarth" X="68" Y="72" CityLocaleName="LOC_CITY_NAME_ULAANGOM" Area="0" />
@@ -3188,7 +3188,7 @@
 		<Replace MapName="GiantEarth" X="76" Y="72" CityLocaleName="LOC_CITY_NAME_DARKHAN" Area="0" />
 		<Replace MapName="GiantEarth" X="79" Y="72" CityLocaleName="LOC_CITY_NAME_UNDURKHAN" Area="0" />
 		<Replace MapName="GiantEarth" X="80" Y="72" CityLocaleName="LOC_CITY_NAME_UNDURKHAN" Area="0" />
-		<Replace MapName="GiantEarth" X="82" Y="72" CityLocaleName="LOC_CITY_NAME_CHOIBALSAN" Area="0" />
+		<Replace MapName="GiantEarth" X="82" Y="72" CityLocaleName="LOC_CITY_NAME_CHOIBALSAN" />
 		
 		<Replace MapName="GiantEarth" X="72" Y="73" CityLocaleName="LOC_CITY_NAME_KHATGAL" Area="0" />
 		<Replace MapName="GiantEarth" X="73" Y="73" CityLocaleName="LOC_CITY_NAME_SLYUDYANKA" Area="0" />
