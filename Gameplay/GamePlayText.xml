@@ -6589,7 +6589,7 @@
 
 		<Replace Tag="LOC_CITY_NAME_BABUSHKIN" Text="Babushkin" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BARUUN_URT" Text="Baruun-Urt" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_BARUUNTUURUN" Text="Baruunturuun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BARUUNTURUUN" Text="Baruunturuun" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BAYAN_UUL" Text="Bayan-Uul" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BAYANKHONGOR" Text="Bayankhongor" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CHOIBALSAN" Text="Choibalsan" Language="en_US" />
@@ -6618,7 +6618,7 @@
 		<Replace Tag="LOC_CITY_NAME_ULAN_UDE" Text="Ulan-Ude" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ULAN_UDE_MONGOLIA" Text="Ulaan Üde" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ULIASTAI" Text="Uliastai" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_UNDURKHAAN" Text="Öndörkhaan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_UNDURKHAN" Text="Öndörkhaan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_UST_BARGUZIN" Text="Ust-Barguzin" Language="en_US" />
 
 	</LocalizedText>
