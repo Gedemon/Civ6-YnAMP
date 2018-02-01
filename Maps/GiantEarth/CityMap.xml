@@ -1215,7 +1215,7 @@
 		<Replace MapName="GiantEarth" X="24" Y="9" CityLocaleName="LOC_CITY_NAME_ALEXANDER_BAY" Area="0" />
 		<Replace MapName="GiantEarth" X="25" Y="9" CityLocaleName="LOC_CITY_NAME_KAKAMAS" Area="0" />
 		<Replace MapName="GiantEarth" X="26" Y="9" CityLocaleName="LOC_CITY_NAME_BLOEMFONTEIN" Area="0" />
-		<Replace MapName="GiantEarth" X="28" Y="9" CityLocaleName="LOC_CITY_NAME_DURBAN" Area="0" />
+		<Replace MapName="GiantEarth" X="28" Y="9" CityLocaleName="LOC_CITY_NAME_ULUNDI" Area="0" />
 		<Replace MapName="GiantEarth" X="56" Y="9" CityLocaleName="LOC_CITY_NAME_KERGUELEN" Area="0" />
 
 		<Replace MapName="GiantEarth" X="23" Y="10" CityLocaleName="LOC_CITY_NAME_LUEDERITZ" Area="0" />
@@ -2520,7 +2520,7 @@
 
 		<Replace MapName="GiantEarth" X="75" Y="40" CityLocaleName="LOC_CITY_NAME_BANGKOK" />
 		<Replace MapName="GiantEarth" X="76" Y="40" CityLocaleName="LOC_CITY_NAME_SEREI_SAOPHOAN" Area="0" />
-		<Replace MapName="GiantEarth" X="77" Y="40" CityLocaleName="LOC_CITY_NAME_SIEM_REAP" Area="0" />
+		<Replace MapName="GiantEarth" X="77" Y="40" CityLocaleName="LOC_CITY_NAME_ANGKOR_THOM" Area="0" />
 		<Replace MapName="GiantEarth" X="78" Y="40" CityLocaleName="LOC_CITY_NAME_SIEM_REAP" Area="0" />
 		<Replace MapName="GiantEarth" X="79" Y="40" CityLocaleName="LOC_CITY_NAME_DALAT" Area="0" />
 		<Replace MapName="GiantEarth" X="78" Y="39" CityLocaleName="LOC_CITY_NAME_DALAT" Area="0" />
@@ -3144,6 +3144,66 @@
 
 		<Replace MapName="GiantEarth" X="99" Y="73" CityLocaleName="LOC_CITY_NAME_ASAHIKAWA" />
 		<Replace MapName="GiantEarth" X="101" Y="71" CityLocaleName="LOC_CITY_NAME_KUSHIRO" />
+
+	</CityMap>
+	
+	<!-- MONGOLIA -->
+	<CityMap>
+
+		<Replace MapName="GiantEarth" X="72" Y="69" CityLocaleName="LOC_CITY_NAME_BAYANKHONGOR" Area="0" />
+		<Replace MapName="GiantEarth" X="73" Y="69" CityLocaleName="LOC_CITY_NAME_BAYANKHONGOR" Area="0" />
+		<Replace MapName="GiantEarth" X="74" Y="69" CityLocaleName="LOC_CITY_NAME_DALANDZADGAD" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="69" CityLocaleName="LOC_CITY_NAME_DALANDZADGAD" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="69" CityLocaleName="LOC_CITY_NAME_DALANDZADGAD" Area="0" />
+		<Replace MapName="GiantEarth" X="77" Y="69" CityLocaleName="LOC_CITY_NAME_MANDAKH" Area="0" />
+		<Replace MapName="GiantEarth" X="78" Y="69" CityLocaleName="LOC_CITY_NAME_MANDAKH" Area="0" />
+		<Replace MapName="GiantEarth" X="79" Y="69" CityLocaleName="LOC_CITY_NAME_ERENHOT" Area="0" />
+		<Replace MapName="GiantEarth" X="80" Y="69" CityLocaleName="LOC_CITY_NAME_ERENHOT" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="73" Y="70" CityLocaleName="LOC_CITY_NAME_BAYANKHONGOR" Area="0" />
+		<Replace MapName="GiantEarth" X="74" Y="70" CityLocaleName="LOC_CITY_NAME_KARAKORUM" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="70" CityLocaleName="LOC_CITY_NAME_MANDALGOVI" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="70" CityLocaleName="LOC_CITY_NAME_MANDALGOVI" Area="0" />
+		<Replace MapName="GiantEarth" X="79" Y="70" CityLocaleName="LOC_CITY_NAME_SAINSHAND" Area="0" />
+		<Replace MapName="GiantEarth" X="80" Y="70" CityLocaleName="LOC_CITY_NAME_BARUUN_URT" Area="0" />
+		<Replace MapName="GiantEarth" X="81" Y="70" CityLocaleName="LOC_CITY_NAME_BARUUN_URT" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="71" Y="71" CityLocaleName="LOC_CITY_NAME_ULIASTAI" Area="0" />
+		<Replace MapName="GiantEarth" X="72" Y="71" CityLocaleName="LOC_CITY_NAME_TSETSERLEG" Area="0" />
+		<Replace MapName="GiantEarth" X="73" Y="71" CityLocaleName="LOC_CITY_NAME_KARAKORUM" Area="0" />
+		<Replace MapName="GiantEarth" X="74" Y="71" CityLocaleName="LOC_CITY_NAME_KARAKORUM" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="71" CityLocaleName="LOC_CITY_NAME_MANDALGOVI" Area="0" />
+		<Replace MapName="GiantEarth" X="77" Y="71" CityLocaleName="LOC_CITY_NAME_ULAANBAATAR" />
+		<Replace MapName="GiantEarth" X="79" Y="71" CityLocaleName="LOC_CITY_NAME_UNDURKHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="80" Y="71" CityLocaleName="LOC_CITY_NAME_BARUUN_URT" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="68" Y="72" CityLocaleName="LOC_CITY_NAME_ULAANGOM" Area="0" />
+		<Replace MapName="GiantEarth" X="69" Y="72" CityLocaleName="LOC_CITY_NAME_ULAANGOM" Area="0" />
+		<Replace MapName="GiantEarth" X="70" Y="72" CityLocaleName="LOC_CITY_NAME_BARUUNTURUUN" Area="0" />
+		<Replace MapName="GiantEarth" X="71" Y="72" CityLocaleName="LOC_CITY_NAME_TONSONTSENGEL" Area="0" />
+		<Replace MapName="GiantEarth" X="72" Y="72" CityLocaleName="LOC_CITY_NAME_MURUN" Area="0" />
+		<Replace MapName="GiantEarth" X="73" Y="72" CityLocaleName="LOC_CITY_NAME_TSETSERLEG" Area="0" />
+		<Replace MapName="GiantEarth" X="74" Y="72" CityLocaleName="LOC_CITY_NAME_ERDENET" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="72" CityLocaleName="LOC_CITY_NAME_ERDENET" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="72" CityLocaleName="LOC_CITY_NAME_DARKHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="79" Y="72" CityLocaleName="LOC_CITY_NAME_UNDURKHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="80" Y="72" CityLocaleName="LOC_CITY_NAME_UNDURKHAN" Area="0" />
+		<Replace MapName="GiantEarth" X="82" Y="72" CityLocaleName="LOC_CITY_NAME_CHOIBALSAN" />
+		
+		<Replace MapName="GiantEarth" X="72" Y="73" CityLocaleName="LOC_CITY_NAME_KHATGAL" Area="0" />
+		<Replace MapName="GiantEarth" X="73" Y="73" CityLocaleName="LOC_CITY_NAME_SLYUDYANKA" Area="0" />
+		<Replace MapName="GiantEarth" X="74" Y="73" CityLocaleName="LOC_CITY_NAME_BABUSHKIN" Area="0" />
+		<Replace MapName="GiantEarth" X="75" Y="73" CityLocaleName="LOC_CITY_NAME_KABANSK" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="73" CityLocaleName="LOC_CITY_NAME_ULAN_UDE" Area="0" />
+		<Replace MapName="GiantEarth" X="77" Y="73" CityLocaleName="LOC_CITY_NAME_ULAN_UDE" Area="0" />
+		<Replace MapName="GiantEarth" X="80" Y="73" CityLocaleName="LOC_CITY_NAME_BAYAN_UUL" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="73" Y="74" CityLocaleName="LOC_CITY_NAME_SLYUDYANKA" Area="0" />
+		<Replace MapName="GiantEarth" X="76" Y="74" CityLocaleName="LOC_CITY_NAME_UST_BARGUZIN" Area="0" />
+		
+		<Replace MapName="GiantEarth" X="72" Y="75" CityLocaleName="LOC_CITY_NAME_TURT" Area="0" />
+		<Replace MapName="GiantEarth" X="73" Y="75" CityLocaleName="LOC_CITY_NAME_IRKUTSK" Area="0" />
+		<Replace MapName="GiantEarth" X="74" Y="75" CityLocaleName="LOC_CITY_NAME_IRKUTSK" Area="0" />
 
 	</CityMap>
 
@@ -4208,45 +4268,48 @@
 
 		<Replace MapName="GiantEarth" X="156" Y="7" CityLocaleName="LOC_CITY_NAME_COMODORO_RIVADAVIA" Area="1" />
 
-		<Replace MapName="GiantEarth" X="154" Y="8" CityLocaleName="LOC_CITY_NAME_GUAITECAS" Area="0" />
+		<Replace MapName="GiantEarth" X="154" Y="8" CityLocaleName="LOC_CITY_NAME_CASTRO" Area="0" />
 		<Replace MapName="GiantEarth" X="156" Y="8" CityLocaleName="LOC_CITY_NAME_RIO_PICO" Area="0" />
 		<Replace MapName="GiantEarth" X="157" Y="8" CityLocaleName="LOC_CITY_NAME_CABO_RASO" Area="0" />
 
-		<Replace MapName="GiantEarth" X="153" Y="9" CityLocaleName="LOC_CITY_NAME_CASTRO" Area="0" />
+		<Replace MapName="GiantEarth" X="153" Y="9" CityLocaleName="LOC_CITY_NAME_PUERTO_MONTT" Area="0" />
 		<Replace MapName="GiantEarth" X="155" Y="9" CityLocaleName="LOC_CITY_NAME_CUSHAMEN" Area="0" />
 		<Replace MapName="GiantEarth" X="156" Y="9" CityLocaleName="LOC_CITY_NAME_TELSEN" Area="0" />
 		<Replace MapName="GiantEarth" X="157" Y="9" CityLocaleName="LOC_CITY_NAME_PUERTO_MADRYN" Area="0" />
 
-		<Replace MapName="GiantEarth" X="154" Y="10" CityLocaleName="LOC_CITY_NAME_PUERTO_MONTT" Area="0" />
+		<Replace MapName="GiantEarth" X="154" Y="10" CityLocaleName="LOC_CITY_NAME_OSORNO" Area="0" />
 		<Replace MapName="GiantEarth" X="155" Y="10" CityLocaleName="LOC_CITY_NAME_EL_CAIN" Area="0" />
 		<Replace MapName="GiantEarth" X="156" Y="10" CityLocaleName="LOC_CITY_NAME_ARROYO_DE_LA_VENTANA" Area="0" />
 		<Replace MapName="GiantEarth" X="157" Y="10" CityLocaleName="LOC_CITY_NAME_SIERRA_GRANDE" Area="0" />
 
-		<Replace MapName="GiantEarth" X="153" Y="11" CityLocaleName="LOC_CITY_NAME_TEMUCO" Area="0" />
+		<Replace MapName="GiantEarth" X="153" Y="11" CityLocaleName="LOC_CITY_NAME_VALDIVIA" Area="0" />
 		<Replace MapName="GiantEarth" X="155" Y="11" CityLocaleName="LOC_CITY_NAME_ZAPALA" Area="0" />
 		<Replace MapName="GiantEarth" X="156" Y="11" CityLocaleName="LOC_CITY_NAME_CIPOLLETTI" Area="0" />
 		<Replace MapName="GiantEarth" X="157" Y="11" CityLocaleName="LOC_CITY_NAME_SAN_ANTONIO" Area="0" />
 		<Replace MapName="GiantEarth" X="158" Y="11" CityLocaleName="LOC_CITY_NAME_VIEDMA" Area="0" />
 
-		<Replace MapName="GiantEarth" X="154" Y="12" CityLocaleName="LOC_CITY_NAME_CONCEPCION" Area="0" />
+		<Replace MapName="GiantEarth" X="154" Y="12" CityLocaleName="LOC_CITY_NAME_TEMUCO" Area="0" />
 		<Replace MapName="GiantEarth" X="156" Y="12" CityLocaleName="LOC_CITY_NAME_CHOS_MALAL" Area="0" />
 		<Replace MapName="GiantEarth" X="158" Y="12" CityLocaleName="LOC_CITY_NAME_SANTA_ROSA" Area="1" />
 		<Replace MapName="GiantEarth" X="160" Y="12" CityLocaleName="LOC_CITY_NAME_MAR_DEL_PLATA" Area="0" />
 
-		<Replace MapName="GiantEarth" X="153" Y="13" CityLocaleName="LOC_CITY_NAME_CONSTITUCION" Area="0" />
-		<Replace MapName="GiantEarth" X="154" Y="13" CityLocaleName="LOC_CITY_NAME_TALCA" Area="0" />
+		<Replace MapName="GiantEarth" X="153" Y="13" CityLocaleName="LOC_CITY_NAME_CONCEPCION" Area="0" />
+		<Replace MapName="GiantEarth" X="154" Y="13" CityLocaleName="LOC_CITY_NAME_CONCEPCION" Area="0" />
 		<Replace MapName="GiantEarth" X="156" Y="13" CityLocaleName="LOC_CITY_NAME_MALARGUE" Area="0" />
 		<Replace MapName="GiantEarth" X="157" Y="13" CityLocaleName="LOC_CITY_NAME_GENERAL_PICO" Area="0" />
 		<Replace MapName="GiantEarth" X="158" Y="13" CityLocaleName="LOC_CITY_NAME_TRENQUE_LAUQUEN" Area="0" />
 		<Replace MapName="GiantEarth" X="159" Y="13" CityLocaleName="LOC_CITY_NAME_AZUL" Area="0" />
 		<Replace MapName="GiantEarth" X="160" Y="13" CityLocaleName="LOC_CITY_NAME_SANTA_TERESITA" Area="0" />
 
+		<Replace MapName="GiantEarth" X="155" Y="14" CityLocaleName="LOC_CITY_NAME_SANTIAGO_CHILE" Area="0" />
 		<Replace MapName="GiantEarth" X="157" Y="14" CityLocaleName="LOC_CITY_NAME_SAN_RAFAEL" Area="0" />
 		<Replace MapName="GiantEarth" X="158" Y="14" CityLocaleName="LOC_CITY_NAME_LOMAS_DE_ZAMORA" Area="0" />
 
-		<Replace MapName="GiantEarth" X="154" Y="15" CityLocaleName="LOC_CITY_NAME_SANTIAGO_CHILE" Area="1" />
+		<Replace MapName="GiantEarth" X="154" Y="15" CityLocaleName="LOC_CITY_NAME_VALPARAISO" Area="0" />
+		<Replace MapName="GiantEarth" X="155" Y="15" CityLocaleName="LOC_CITY_NAME_SANTIAGO_CHILE" Area="0" />
 		<Replace MapName="GiantEarth" X="156" Y="15" CityLocaleName="LOC_CITY_NAME_SAN_LUIS" Area="0" />
 		<Replace MapName="GiantEarth" X="157" Y="15" CityLocaleName="LOC_CITY_NAME_MERCEDES" Area="0" />
+		<Replace MapName="GiantEarth" X="159" Y="15" CityLocaleName="LOC_CITY_NAME_BUENOS_AIRES" Area="1" />
 
 		<Replace MapName="GiantEarth" X="156" Y="16" CityLocaleName="LOC_CITY_NAME_SAN_JUAN_ARGERNTINA" Area="0" />
 		<Replace MapName="GiantEarth" X="157" Y="16" CityLocaleName="LOC_CITY_NAME_CORDOVA" Area="1" />
@@ -4293,6 +4356,7 @@
 		<Replace MapName="GiantEarth" X="160" Y="21" CityLocaleName="LOC_CITY_NAME_BAURU" Area="0" />
 		<Replace MapName="GiantEarth" X="161" Y="21" CityLocaleName="LOC_CITY_NAME_CAMPINAS" Area="0" />
 		<Replace MapName="GiantEarth" X="164" Y="21" CityLocaleName="LOC_CITY_NAME_SAO_JOSE_DOS_CAMPOS" Area="0" />
+		
 		<Replace MapName="GiantEarth" X="157" Y="22" CityLocaleName="LOC_CITY_NAME_MALLCU" Area="0" />
 		<Replace MapName="GiantEarth" X="158" Y="22" CityLocaleName="LOC_CITY_NAME_VILLAMONTES" Area="0" />
 		<Replace MapName="GiantEarth" X="159" Y="22" CityLocaleName="LOC_CITY_NAME_FUERTE_OLIMPO" Area="0" />
@@ -4300,20 +4364,23 @@
 		<Replace MapName="GiantEarth" X="161" Y="22" CityLocaleName="LOC_CITY_NAME_TRES_LAGOAS" Area="0" />
 		<Replace MapName="GiantEarth" X="162" Y="22" CityLocaleName="LOC_CITY_NAME_SAO_JOSE_DO_RIO_PRETO" Area="0" />
 		<Replace MapName="GiantEarth" X="163" Y="22" CityLocaleName="LOC_CITY_NAME_RIBEIRAO_PRETO" Area="0" />
-		<Replace MapName="GiantEarth" X="164" Y="22" CityLocaleName="LOC_CITY_NAME_VOLTA_REDONDA" Area="0" />
-		<Replace MapName="GiantEarth" X="165" Y="22" CityLocaleName="LOC_CITY_NAME_DUKE_OF_CAXIAS" Area="0" />
+		<Replace MapName="GiantEarth" X="164" Y="22" CityLocaleName="LOC_CITY_NAME_CAMPINAS" Area="0" />
+		<Replace MapName="GiantEarth" X="165" Y="22" CityLocaleName="LOC_CITY_NAME_CAMPINAS" Area="0" />
+		<Replace MapName="GiantEarth" X="167" Y="22" CityLocaleName="LOC_CITY_NAME_RIO_DE_JANIERO" Area="1" />
 
 		<Replace MapName="GiantEarth" X="153" Y="23" CityLocaleName="LOC_CITY_NAME_IQUIQUE" Area="0" />
 		<Replace MapName="GiantEarth" X="155" Y="23" CityLocaleName="LOC_CITY_NAME_POTOSI" Area="0" />
 		<Replace MapName="GiantEarth" X="156" Y="23" CityLocaleName="LOC_CITY_NAME_MONTEAGUDO" Area="0" />
 		<Replace MapName="GiantEarth" X="157" Y="23" CityLocaleName="LOC_CITY_NAME_CAMIRI" Area="0" />
 		<Replace MapName="GiantEarth" X="158" Y="23" CityLocaleName="LOC_CITY_NAME_SAO_GABRIEL_DO_OESTE" Area="0" />
-		<Replace MapName="GiantEarth" X="159" Y="23" CityLocaleName="LOC_CITY_NAME_UBERLAND" Area="0" />
-		<Replace MapName="GiantEarth" X="160" Y="23" CityLocaleName="LOC_CITY_NAME_ARAXA" Area="0" />
-		<Replace MapName="GiantEarth" X="161" Y="23" CityLocaleName="LOC_CITY_NAME_DIVINOPOLIS" Area="0" />
-		<Replace MapName="GiantEarth" X="164" Y="23" CityLocaleName="LOC_CITY_NAME_VENDA_NOVA_DO_IMIGRANTE" Area="0" />
-		<Replace MapName="GiantEarth" X="165" Y="23" CityLocaleName="LOC_CITY_NAME_TERESOPOLIS" Area="0" />
-		<Replace MapName="GiantEarth" X="168" Y="23" CityLocaleName="LOC_CITY_NAME_VICTORY_BRAZIL" Area="0" />
+		<Replace MapName="GiantEarth" X="159" Y="23" CityLocaleName="LOC_CITY_NAME_JATAI" Area="0" />
+		<Replace MapName="GiantEarth" X="160" Y="23" CityLocaleName="LOC_CITY_NAME_GOIANIA" Area="0" />
+		<Replace MapName="GiantEarth" X="161" Y="23" CityLocaleName="LOC_CITY_NAME_GOIANIA" Area="0" />
+		<Replace MapName="GiantEarth" X="164" Y="23" CityLocaleName="LOC_CITY_NAME_UBERLANDIA" Area="0" />
+		<Replace MapName="GiantEarth" X="165" Y="23" CityLocaleName="LOC_CITY_NAME_DIVINOPOLIS" Area="0" />
+		<Replace MapName="GiantEarth" X="166" Y="23" CityLocaleName="LOC_CITY_NAME_BELO_HORIZONTE" Area="0" />
+		<Replace MapName="GiantEarth" X="167" Y="23" CityLocaleName="LOC_CITY_NAME_BELO_HORIZONTE" Area="0" />
+		<Replace MapName="GiantEarth" X="168" Y="23" CityLocaleName="LOC_CITY_NAME_VITORIA_ESPIRITO_SANTO" Area="0" />
 
 		<Replace MapName="GiantEarth" X="153" Y="24" CityLocaleName="LOC_CITY_NAME_NAZCA" Area="0" />
 		<Replace MapName="GiantEarth" X="156" Y="24" CityLocaleName="LOC_CITY_NAME_YAURI" Area="0" />
