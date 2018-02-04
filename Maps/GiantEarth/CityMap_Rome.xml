@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+
+	<!-- +++++++++++++++++++++++++++++++++++ -->
+	<!-- "Giant Earth Map" City Map for Rome -->
+	<!-- +++++++++++++++++++++++++++++++++++ -->
+
+
+
+	<!-- +++++++++++++++ -->
+	<!-- Africa City Map -->
+	<!-- +++++++++++++++ -->
+
+
+	<!-- CENTRAL & EAST AFRICA -->
+	<CityMap>
+
+		<Replace MapName="GiantEarth" X="36" Y="35" CityLocaleName="LOC_CITY_NAME_ZEILA" Area="0" Civilization="CIVILIZATION_ROME" />
+
+		<Replace MapName="GiantEarth" X="36" Y="36" CityLocaleName="LOC_CITY_NAME_ZEILA" Area="0" Civilization="CIVILIZATION_ROME" />
+
+	</CityMap>
+
+	<!-- WESTERN NORTH AFRICA -->
+	<CityMap>
+
+		<Replace MapName="GiantEarth" X="7" Y="49" CityLocaleName="LOC_CITY_NAME_MEKNES" Area="0" Civilization="CIVILIZATION_ROME" />
+
+		<Replace MapName="GiantEarth" X="8" Y="50" CityLocaleName="LOC_CITY_NAME_MELILLA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="GiantEarth" X="9" Y="50" CityLocaleName="LOC_CITY_NAME_MELILLA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="GiantEarth" X="10" Y="50" CityLocaleName="LOC_CITY_NAME_PORTUS_SIGENSIS" Area="0" Civilization="CIVILIZATION_ROME" />
+
+		<Replace MapName="GiantEarth" X="10" Y="51" CityLocaleName="LOC_CITY_NAME_MOSTAGANEM" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="GiantEarth" X="13" Y="51" CityLocaleName="LOC_CITY_NAME_RAPIDUM" Area="0" Civilization="CIVILIZATION_ROME" />
+
+	</CityMap>
+
+	<!-- EASTERN NORTH AFRICA -->
+	<CityMap>
+
+		<Replace MapName="GiantEarth" X="33" Y="38" CityLocaleName="LOC_CITY_NAME_MEROE" Area="0" Civilization="CIVILIZATION_ROME" />
+
+		<Replace MapName="GiantEarth" X="30" Y="41" CityLocaleName="LOC_CITY_NAME_CATARACTA_TERTIA" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="GiantEarth" X="32" Y="41" CityLocaleName="LOC_CITY_NAME_CATARACTA_QUARTA" Area="0" Civilization="CIVILIZATION_ROME" />
+
+		<Replace MapName="GiantEarth" X="32" Y="46" CityLocaleName="LOC_CITY_NAME_EL_QUSEIR" Area="0" Civilization="CIVILIZATION_ROME" />
+
+		<Replace MapName="GiantEarth" X="31" Y="47" CityLocaleName="LOC_CITY_NAME_ISMAILIA" Area="0" Civilization="CIVILIZATION_ROME" />
+
+		<Replace MapName="GiantEarth" X="20" Y="49" CityLocaleName="LOC_CITY_NAME_AL_KHUMS" Area="0" Civilization="CIVILIZATION_ROME" />
+		<Replace MapName="GiantEarth" X="27" Y="49" CityLocaleName="LOC_CITY_NAME_BAYDA" Area="0" Civilization="CIVILIZATION_ROME" />
+
+	</CityMap>
+
+</GameData>

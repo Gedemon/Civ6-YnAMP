@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
-	
-	<!-- 
-	
-	"Play Europe Again"
-	
-	-->
+
+	<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<!-- "Play Europe Again" City Map for Arabia -->
+	<!-- +++++++++++++++++++++++++++++++++++++++ -->
 
 	<CityMap>
-	
+
 		<!-- FRANCE -->
-        	<Replace MapName="PlayEuropeAgain" X="35" Y="40" CityLocaleName="LOC_CITY_NAME_FRAXINET" Civilization="CIVILIZATION_ARABIA" Area="0" />
-        	
-        	<!-- IBERIA -->
-        	<Replace MapName="PlayEuropeAgain" X="22" Y="36" CityLocaleName="LOC_CITY_NAME_VALENCIA" Civilization="CIVILIZATION_ARABIA" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="16" Y="41" CityLocaleName="LOC_CITY_NAME_VALLADOLID" Civilization="CIVILIZATION_ARABIA" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="35" Y="40" CityLocaleName="LOC_CITY_NAME_FRAXINET" Area="0" Civilization="CIVILIZATION_ARABIA" />
+
+		<!-- IBERIA -->
+		<Replace MapName="PlayEuropeAgain" X="22" Y="36" CityLocaleName="LOC_CITY_NAME_VALENCIA" Area="0" Civilization="CIVILIZATION_ARABIA" />
+		<Replace MapName="PlayEuropeAgain" X="16" Y="41" CityLocaleName="LOC_CITY_NAME_VALLADOLID" Area="0" Civilization="CIVILIZATION_ARABIA" />
 		<Replace MapName="PlayEuropeAgain" X="14" Y="42" CityLocaleName="LOC_CITY_NAME_PORTO" Area="0" Civilization="CIVILIZATION_ARABIA" />
+
 	</CityMap>
-	
+
 </GameData>

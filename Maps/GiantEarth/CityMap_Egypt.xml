@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+
+	<!-- ++++++++++++++++++++++++++++++++++++ -->
+	<!-- "Giant Earth Map" City Map for Egypt -->
+	<!-- ++++++++++++++++++++++++++++++++++++ -->
+
+
+
+	<!-- +++++++++++++++ -->
+	<!-- Africa City Map -->
+	<!-- +++++++++++++++ -->
+
+
+	<!-- EASTERN NORTH AFRICA -->
+	<CityMap>
+
+		<Replace MapName="GiantEarth" X="33" Y="38" CityLocaleName="LOC_CITY_NAME_MEROE" Area="0" Civilization="CIVILIZATION_EGYPT" />
+
+		<Replace MapName="GiantEarth" X="32" Y="46" CityLocaleName="LOC_CITY_NAME_EL_QUSEIR" Area="0" Civilization="CIVILIZATION_EGYPT" />
+
+		<Replace MapName="GiantEarth" X="31" Y="47" CityLocaleName="LOC_CITY_NAME_ISMAILIA" Area="0" Civilization="CIVILIZATION_EGYPT" />
+
+		<Replace MapName="GiantEarth" X="27" Y="49" CityLocaleName="LOC_CITY_NAME_BAYDA" Area="0" Civilization="CIVILIZATION_EGYPT" />
+
+	</CityMap>
+
+</GameData>

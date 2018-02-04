@@ -21,19 +21,23 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CARTHAGE" 	X="48" Y="36" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CELTS"		X="38" Y="56" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CHINA"		X="87" Y="54" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CHINA"		X="85" Y="50" Leader="LEADER_QIN" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CREE"		X="8" Y="57" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_DENMARK"		X="49" Y="57" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_EGYPT"		X="58" Y="35" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_EGYPT"		X="57" Y="36" Leader="LEADER_CLEOPATRA" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ENGLAND"		X="40" Y="52" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ETHIOPIA" 	X="64" Y="26" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_FRANCE"		X="42" Y="48" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GEORGIA"		X="64" Y="46" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GERMANY"		X="51" Y="53" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GREECE"		X="58" Y="42" Leader="LEADER_PERICLES" DisabledByLeader="LEADER_GORGO" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GREECE"		X="57" Y="44" Leader="LEADER_PERICLES" AlternateStart="1" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GREECE"		X="57" Y="40" Leader="LEADER_GORGO" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_HUNS"		X="67" Y="49" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_INCA"		X="23" Y="17" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_INDIA"		X="75" Y="39" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_INDIA"		X="75" Y="40" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_INDIA"		X="78" Y="38" Leader="LEADER_CHANDRAGUPTA" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_INDONESIA"	X="85" Y="24" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_IROQUOIS" 	X="19" Y="51" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_JAPAN"		X="98" Y="48" />
@@ -42,8 +46,9 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KOREA"		X="92" Y="52" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MACEDON"		X="56" Y="44" DisabledByLeader="LEADER_PERICLES" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MACEDON"		X="60" Y="45" AlternateStart="1" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MAPUCHE"		X="25" Y="8" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MAYA"		X="15" Y="31" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MONGOL"		X="81" Y="57" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MONGOLIA"	X="81" Y="57" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MOROCCO"		X="39" Y="31" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NETHERLANDS" 	X="43" Y="53" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NORWAY"		X="44" Y="60" />
@@ -55,6 +60,7 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PORTUGAL"	X="33" Y="37" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ROME"		X="50" Y="42" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_RUSSIA"		X="63" Y="56" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SCOTLAND"	X="37" Y="57" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SCYTHIA"		X="68" Y="51" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SHOSHONE"	X="5" Y="51" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SIAM"		X="83" Y="38" />
@@ -63,13 +69,16 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SUMERIA"		X="67" Y="39" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SWEDEN"		X="52" Y="61" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_VENICE"		X="51" Y="47" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ZULU"		X="59" Y="5" />		
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ZULU"		X="59" Y="6" />
 	</StartPosition>
 	
 	<!-- City States -->
 	<StartPosition>
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ANTIOCH"		X="63" Y="41" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AMSTERDAM"	X="44" Y="53" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BUENOS_AIRES"	X="27" Y="7" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BABYLON"		X="66" Y="39" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BUENOS_AIRES"	X="27" Y="7" DisabledByLeader="LEADER_LAUTARO" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BUENOS_AIRES"	X="28" Y="6" AlternateStart="1" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CAPE_TOWN"	X="54" Y="4" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CARTHAGE"	X="47" Y="36" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CUBA"		X="22" Y="37" />
@@ -136,13 +145,14 @@
 	
 	<!--     Natural Wonders    -->
 	<NaturalWonderPosition>
-        <Replace MapName="GreatestEarthMap" X="100" Y="50" FeatureType="FEATURE_SUK_FUJI" TerrainType="TERRAIN_GRASS" />
+		<Replace MapName="GreatestEarthMap" X="100" Y="50" FeatureType="FEATURE_SUK_FUJI" TerrainType="TERRAIN_GRASS" />
+
 		<!--
-        <Replace MapName="GreatestEarthMap" X="83" Y="38" FeatureType="FEATURE_SUK_TONLESAP"  TerrainType="TERRAIN_COAST" />
-        <Replace MapName="GreatestEarthMap" X="83" Y="37" FeatureType="FEATURE_SUK_TONLESAP"  TerrainType="TERRAIN_COAST" />
+		<Replace MapName="GreatestEarthMap" X="83" Y="38" FeatureType="FEATURE_SUK_TONLESAP"  TerrainType="TERRAIN_COAST" />
+		<Replace MapName="GreatestEarthMap" X="83" Y="37" FeatureType="FEATURE_SUK_TONLESAP"  TerrainType="TERRAIN_COAST" />
 		-->
 
-        <Replace MapName="GreatestEarthMap" X="85" Y="40" FeatureType="FEATURE_HA_LONG_BAY" TerrainType="TERRAIN_COAST" />
-        <Replace MapName="GreatestEarthMap" X="85" Y="41" FeatureType="FEATURE_HA_LONG_BAY" TerrainType="TERRAIN_COAST" />
-    </NaturalWonderPosition>
+		<Replace MapName="GreatestEarthMap" X="85" Y="40" FeatureType="FEATURE_HA_LONG_BAY" TerrainType="TERRAIN_COAST" />
+		<Replace MapName="GreatestEarthMap" X="85" Y="41" FeatureType="FEATURE_HA_LONG_BAY" TerrainType="TERRAIN_COAST" />
+	</NaturalWonderPosition>
 </GameData>
