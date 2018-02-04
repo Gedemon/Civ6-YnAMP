@@ -9,7 +9,7 @@ include "MapUtilities"
 
 print ("loading modded AssignStartingPlots")
 local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION ?
-print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2017) by Gedemon")
+print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2018) by Gedemon")
 print ("Setting YnAMP globals and cache...")
 
 g_startTimer = os.clock()
@@ -3801,8 +3801,9 @@ function ResourcesValidation(g_iW, g_iH)
 	print("-- Total plots on map = " .. tostring(totalplots))
 	print("------------------------------------")
 
-	local landPlots = Map.GetLandPlotCount()
-	local missingLuxuries = {}
+	local landPlots 		= Map.GetLandPlotCount()
+	local missingLuxuries 	= {}
+	local missingStrategics	= {}
 	for resRow in GameInfo.Resources() do
 		local numRes = resTable[resRow.Index]
 		local placedPercent	= Round(numRes / landPlots * 10000) / 100
@@ -3810,24 +3811,36 @@ function ResourcesValidation(g_iW, g_iH)
 		local ratio = Round(placedPercent * 100 / resRow.Frequency)
 		if ratio == 0 then ratio = "0.00" end
 		if resRow.Frequency > 0 then
-			print("Resource = " .. tostring(resRow.ResourceType).."		placed = " .. tostring(numRes).."		(" .. tostring(placedPercent).."% of land)		frequency = " .. tostring(resRow.Frequency).."		ratio = " .. tostring(ratio))
-			if numRes == 0 and luxTable[resRow.Index] and bPlaceAllLuxuries then
-				table.insert(missingLuxuries, resRow.Index)
+			local sFrequency = tostring(resRow.Frequency)
+			if resRow.Frequency < 10 then sFrequency = " "..sFrequency end
+			print("Resource = " .. tostring(resRow.ResourceType).."		placed = " .. tostring(numRes).."		(" .. tostring(placedPercent).."% of land)		frequency = " .. sFrequency.."		ratio = " .. tostring(ratio))
+			if numRes == 0 then
+				if luxTable[resRow.Index] and bPlaceAllLuxuries then
+					table.insert(missingLuxuries, resRow.Index)
+				end
+				if stratTable[resRow.Index] then
+					table.insert(missingStrategics, resRow.Index)
+				end
+				
 			end
 		end
 	end
 	
 	if bPlaceAllLuxuries and #missingLuxuries > 0 then
-		PlaceMissingLuxuries(missingLuxuries)
+		PlaceMissingResources(missingLuxuries)
+	end
+	
+	if #missingStrategics > 0 then
+		PlaceMissingResources(missingStrategics)
 	end
 
 	print("------------------------------------")
 end
 
-function PlaceMissingLuxuries(luxuryTable)
-	print("Placing missing luxuries...")
+function PlaceMissingResources(missingResourceTable)
+	print("Placing missing resources...")
 	local g_iW, g_iH 	= Map.GetGridSize()
-	for _, resourceType in ipairs(luxuryTable) do
+	for _, resourceType in ipairs(missingResourceTable) do
 		local row = GameInfo.Resources[resourceType]
 		local possiblePlots = {}
 		for x = 0, g_iW - 1 do 
@@ -3838,12 +3851,16 @@ function PlaceMissingLuxuries(luxuryTable)
 					table.insert(possiblePlots, plot)					
 				end
 			end
-		end
-		local toPlace = math.max(1, Round(#possiblePlots * row.Frequency / 100))
-		print("Trying to place #".. tostring(toPlace).." resource of " .. tostring(resourceType))
-		aShuffledLuxuryPlots = GetShuffledCopyOfTable(possiblePlots)
+		end		
+		
+		-- The code below gives a result close to standard numbers, for precise number, we'll have to include parts of ResourceGenerator.lua here, or include this to the core of ResourceGenerator.lua
+		local iMagicFrequency = 14
+		local toPlace = math.max(1, Round(#possiblePlots * (iMagicFrequency / 100) * (row.Frequency / 100)))
+		
+		print("Trying to place ".. tostring(toPlace).." " .. tostring(row.ResourceType))
+		aShuffledResourcePlots = GetShuffledCopyOfTable(possiblePlots)
 		for i = 1, toPlace do
-			local plot = aShuffledLuxuryPlots[i]
+			local plot = aShuffledResourcePlots[i]
 			ResourceBuilder.SetResourceType(plot, resourceType, 1)
 		end
 	end
@@ -4105,42 +4122,42 @@ function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains,
 	
 	local ResourceCiv5toCiv6 = {}
 	for i = 0, 41 do ResourceCiv5toCiv6[i] = -1 end
-	ResourceCiv5toCiv6[4]= 40 -- ALUMINUM
-	ResourceCiv5toCiv6[10]= 0 -- BANANAS
-	ResourceCiv5toCiv6[40]= 16 -- BISON to FURS
-	ResourceCiv5toCiv6[7]= 1 -- CATTLE
-	ResourceCiv5toCiv6[34]= 10 -- CITRUS
-	ResourceCiv5toCiv6[2]= 41 -- COAL
-	ResourceCiv5toCiv6[41]= 11 -- COCOA
-	ResourceCiv5toCiv6[30]= 2 -- COPPER
-	ResourceCiv5toCiv6[25]= 13 -- COTTON
-	ResourceCiv5toCiv6[32]= 3 -- CRABS
-	ResourceCiv5toCiv6[9]= 4 -- DEER
-	ResourceCiv5toCiv6[17]= 14 -- DIAMONDS
-	ResourceCiv5toCiv6[21]= 15 -- DYES
-	ResourceCiv5toCiv6[11]= 5 -- FISH
-	ResourceCiv5toCiv6[20]= 16 -- FURS
-	ResourceCiv5toCiv6[15]= 44 -- GOLD to NITER
-	ResourceCiv5toCiv6[1]= 42 -- HORSES
-	ResourceCiv5toCiv6[27]= 18 -- INCENSE
-	ResourceCiv5toCiv6[0]= 43 -- IRON
-	ResourceCiv5toCiv6[19]= 19 -- IVORY
-	ResourceCiv5toCiv6[28]= 20 -- JADE
-	ResourceCiv5toCiv6[18]= 21 -- MARBLE
-	ResourceCiv5toCiv6[3]= 45 -- OIL
-	ResourceCiv5toCiv6[14]= 23 -- PEARLS
-	ResourceCiv5toCiv6[31]= 24 -- SALT
-	ResourceCiv5toCiv6[8]= 7 -- SHEEP
-	ResourceCiv5toCiv6[23]= 25 -- SILK
-	ResourceCiv5toCiv6[16]= 26 -- SILVER
-	ResourceCiv5toCiv6[22]= 27 -- SPICES
-	ResourceCiv5toCiv6[12]= 8 -- STONE
-	ResourceCiv5toCiv6[24]= 28 -- SUGAR
-	ResourceCiv5toCiv6[33]= 31 -- TRUFFLES
-	ResourceCiv5toCiv6[5]= 46 -- URANIUM
-	ResourceCiv5toCiv6[13]= 32 -- WHALES
-	ResourceCiv5toCiv6[6]= 9 -- WHEAT
-	ResourceCiv5toCiv6[26]= 33 -- WINE
+	ResourceCiv5toCiv6[4]	= 40 	-- ALUMINUM
+	ResourceCiv5toCiv6[10]	= 0 	-- BANANAS
+	ResourceCiv5toCiv6[40]	= 16 	-- BISON to FURS
+	ResourceCiv5toCiv6[7]	= 1 	-- CATTLE
+	ResourceCiv5toCiv6[34]	= 10 	-- CITRUS
+	ResourceCiv5toCiv6[2]	= 41 	-- COAL
+	ResourceCiv5toCiv6[41]	= 11 	-- COCOA
+	ResourceCiv5toCiv6[30]	= 2 	-- COPPER
+	ResourceCiv5toCiv6[25]	= 13 	-- COTTON
+	ResourceCiv5toCiv6[32]	= 3 	-- CRABS
+	ResourceCiv5toCiv6[9]	= 4 	-- DEER
+	ResourceCiv5toCiv6[17]	= 14 	-- DIAMONDS
+	ResourceCiv5toCiv6[21]	= 15 	-- DYES
+	ResourceCiv5toCiv6[11]	= 5 	-- FISH
+	ResourceCiv5toCiv6[20]	= 16 	-- FURS
+	ResourceCiv5toCiv6[15]	= 26 	-- GOLD to SILVER
+	ResourceCiv5toCiv6[1]	= 42 	-- HORSES
+	ResourceCiv5toCiv6[27]	= 18 	-- INCENSE
+	ResourceCiv5toCiv6[0]	= 43 	-- IRON
+	ResourceCiv5toCiv6[19]	= 19 	-- IVORY
+	ResourceCiv5toCiv6[28]	= 20 	-- JEWELRY to JADE
+	ResourceCiv5toCiv6[18]	= 21 	-- MARBLE
+	ResourceCiv5toCiv6[3]	= 45 	-- OIL
+	ResourceCiv5toCiv6[14]	= 23 	-- PEARLS
+	ResourceCiv5toCiv6[31]	= 24 	-- SALT
+	ResourceCiv5toCiv6[8]	= 7		-- SHEEP
+	ResourceCiv5toCiv6[23]	= 25 	-- SILK
+	ResourceCiv5toCiv6[16]	= 26 	-- SILVER
+	ResourceCiv5toCiv6[22]	= 27 	-- SPICES
+	ResourceCiv5toCiv6[12]	= 8 	-- STONE
+	ResourceCiv5toCiv6[24]	= 28 	-- SUGAR
+	ResourceCiv5toCiv6[33]	= 31 	-- TRUFFLES
+	ResourceCiv5toCiv6[5]	= 46 	-- URANIUM
+	ResourceCiv5toCiv6[13]	= 32 	-- WHALES
+	ResourceCiv5toCiv6[6]	= 9 	-- WHEAT
+	ResourceCiv5toCiv6[26]	= 33 	-- WINE
 	
 	local ContinentsCiv5toCiv6 = {}
 	for i = 0, 4 do ContinentsCiv5toCiv6[i] = 0 end

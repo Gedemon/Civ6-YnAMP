@@ -31,6 +31,12 @@
     <Replace Tag="LOC_PLAYEUROPEAGAIN_DESC" Language="en_US">
       <Text>NiRv4n4's Europe(Hormigas version) (108x98 - Huge)</Text>
     </Replace>
+	<Replace Tag="LOC_LARGE_EUROPE_NAME" Language="en_US">
+      <Text>Large Europe</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGE_EUROPE_DESC" Language="en_US">
+      <Text>Dieter VonClam's Large Europe (79x73 - Large)</Text>
+    </Replace>
     <Replace Tag="LOC_TERRAMAP_NAME" Language="en_US">
       <Text>Terra Map for YnAMP</Text>
     </Replace>

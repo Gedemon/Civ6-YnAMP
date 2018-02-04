@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+
+  <!-- ++++++++++++++++++++++++++++++++++ -->
+  <!-- LargeEurope map position           -->
+  <!-- ++++++++++++++++++++++++++++++++++ -->
+
+  <NaturalWonderPosition>
+    <Replace MapName="LargeEurope" X="24" Y="47" FeatureType="FEATURE_CLIFFS_DOVER" />
+    <Replace MapName="LargeEurope" X="25" Y="47" FeatureType="FEATURE_CLIFFS_DOVER" />
+
+    <Replace MapName="LargeEurope" X="62" Y="15" FeatureType="FEATURE_DEAD_SEA" />
+    <Replace MapName="LargeEurope" X="63" Y="16" FeatureType="FEATURE_DEAD_SEA" />
+
+    <Replace MapName="LargeEurope" X="11" Y="71" FeatureType="FEATURE_EYJAFJALLAJOKULL" />
+    <Replace MapName="LargeEurope" X="12" Y="71" FeatureType="FEATURE_EYJAFJALLAJOKULL" />
+
+    <Replace MapName="LargeEurope" X="31" Y="61" FeatureType="FEATURE_LYSEFJORDEN" />
+    <Replace MapName="LargeEurope" X="31" Y="62" FeatureType="FEATURE_LYSEFJORDEN" />
+    <Replace MapName="LargeEurope" X="32" Y="62" FeatureType="FEATURE_LYSEFJORDEN" />
+
+    <Replace MapName="LargeEurope" X="19" Y="54" FeatureType="FEATURE_GIANTS_CAUSEWAY" />
+    <Replace MapName="LargeEurope" X="18" Y="55" FeatureType="FEATURE_GIANTS_CAUSEWAY" />
+  </NaturalWonderPosition>
+
+  <!-- Majors -->
+  <StartPosition>
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_ARABIA"	X="68" Y="2" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_EGYPT"	X="55" Y="14" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_ENGLAND"	X="25" Y="48" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_FRANCE"	X="27" Y="42" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_GEORGIA"	X="69" Y="33" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_GERMANY"	X="37" Y="49" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_GREECE"	X="48" Y="25" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_GREECE"	X="47" Y="23" Leader="LEADER_GORGO" DisabledByLeader="LEADER_PERICLES" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_GREECE"	X="53" Y="26" Leader="LEADER_GORGO" AlternateStart="1" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_MACEDON"	X="46" Y="31" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_MONGOLIA"	X="69" Y="43" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_NETHERLANDS"	X="29" Y="49" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_NORWAY"	X="34" Y="69" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_NUBIA"	X="58" Y="2" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_PERSIA"	X="73" Y="25" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_POLAND"	X="44" Y="47" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_ROME"		X="36" Y="32" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_RUSSIA"	X="62" Y="57" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_RUSSIA"	X="53" Y="62" Leader="LEADER_PETER_GREAT" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_SCOTLAND"	X="22" Y="55" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_SCYTHIA"	X="58" Y="40" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_SPAIN"	X="19" Y="30" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_SUMERIA"	X="73" Y="15" />
+  </StartPosition>
+
+  <!-- Minors -->
+  <StartPosition>
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_AMSTERDAM"	X="29" Y="49" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_ANTIOCH"	X="62" Y="22" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_ARMAGH"	X="18" Y="53"/>
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_BABYLON"	X="71" Y="18" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_BRUSSELS"		X="29" Y="45" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_CARTHAGE"		X="34" Y="22" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_GENEVA"		X="29" Y="39" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_GRANADA"	X="19" Y="24" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_HATTUSA"		X="60" Y="29" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_JERUSALEM"	X="62" Y="16" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_LISBON"		X="13" Y="27" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_PRESLAV"		X="52" Y="35" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_STOCKHOLM"	X="41" Y="61" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_VALLETTA"		X="37" Y="21" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_VILNIUS"		X="48" Y="52" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_YEREVAN"		X="69" Y="29" />
+  </StartPosition>
+
+</GameData>
