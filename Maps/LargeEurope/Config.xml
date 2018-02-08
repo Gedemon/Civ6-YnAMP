@@ -20,6 +20,7 @@
 	
 	<Maps>
 		<Row File="LargeEurope.lua" Name="LOC_LARGE_EUROPE_NAME" Description="LOC_LARGE_EUROPE_DESC" SortIndex="6"/>
+		<Row Domain="Maps:Expansion1Maps" File="LargeEurope.lua" Name="LOC_LARGE_EUROPE_NAME" Description="LOC_LARGE_EUROPE_DESC" SortIndex="6"/>
 	</Maps>
 
 

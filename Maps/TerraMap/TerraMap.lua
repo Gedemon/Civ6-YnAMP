@@ -2196,6 +2196,7 @@ end
 -------------------------------------------------------------------------------
 -- Override SetStartMajor & SetStartMinor
 ------------------------------------------------------------------------------
+--[[
 function AssignStartingPlots:__SetStartMajor(plots, iMajorIndex)
 	-- Sort by fertility of all the plots
 	-- eliminate them if they do not meet the following:
@@ -2392,6 +2393,8 @@ function AssignStartingPlots:__SetStartMinor(plots)
  
 	return nil;
 end
+
+--]]
 
 -------------------------------------------------------------------------------
 -- Override YnAMP backup starting positions functions
