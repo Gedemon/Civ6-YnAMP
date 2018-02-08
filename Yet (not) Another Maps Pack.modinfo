@@ -73,7 +73,7 @@
 		</UpdateDatabase>
 		<UpdateText id="YNAMP_DEFAULT_LOC">
            	<Properties>
-				<LoadOrder>2</LoadOrder>
+				<LoadOrder>2000</LoadOrder>
            	</Properties>
 			<File>Gameplay/GamePlayText.xml</File>
 			<File>Gameplay/GamePlayText_pt_BR.xml</File>
