@@ -20,6 +20,7 @@
 	
 	<Maps>
 		<Row File="GiantEarth.lua" Name="LOC_YNAGEM_NAME" Description="LOC_YNAGEM_DESC" SortIndex="1"/>
+		<Row Domain="Maps:Expansion1Maps" File="GiantEarth.lua" Name="LOC_YNAGEM_NAME" Description="LOC_YNAGEM_DESC" SortIndex="1"/>
 	</Maps>
 
 

@@ -2196,7 +2196,7 @@ end
 -------------------------------------------------------------------------------
 -- Override SetStartMajor & SetStartMinor
 ------------------------------------------------------------------------------
-function AssignStartingPlots:__SetStartMajor(plots)
+function AssignStartingPlots:__SetStartMajor(plots, iMajorIndex)
 	-- Sort by fertility of all the plots
 	-- eliminate them if they do not meet the following:
 	-- distance to another civilization
@@ -2222,7 +2222,7 @@ function AssignStartingPlots:__SetStartMajor(plots)
 	for i, plot in ipairs(plots) do
 		row = {};
 		row.Plot = plot;
-		row.Fertility = self:__WeightedFertility(plot);
+		row.Fertility = self:__WeightedFertility(plot, iMajorIndex, true);
 		table.insert (sortedPlots, row);
 	end
 	
@@ -2323,7 +2323,7 @@ function AssignStartingPlots:__SetStartMinor(plots)
 	for i, plot in ipairs(plots) do
 		row = {};
 		row.Plot = plot;
-		row.Fertility = self:__WeightedFertility(plot);
+		row.Fertility = self:__BaseFertility(plot);
 		table.insert (sortedPlots, row);
 	end
 
@@ -2372,7 +2372,7 @@ function AssignStartingPlots:__SetStartMinor(plots)
 		end
 
 		-- Checks to see if there are any minor civs in the given distance
-		local bMinorCivCheck = self:__MinorCivBuffer(pTempPlot, 1); 
+		local bMinorCivCheck = self:__MinorMinorCivBuffer(pTempPlot, 1); 
 		if(bMinorCivCheck == false) then
 			bValid = false;
 		end
