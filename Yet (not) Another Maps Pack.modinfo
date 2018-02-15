@@ -11,6 +11,7 @@
 	<InGameActions>
 		<ImportFiles id="YNAMP_IMPORT">
            	<Properties>
+				<!-- High load order to make sure YnAMP assignstarting plots is loaded after the one of incompatible mods --> 
 				<LoadOrder>1000002</LoadOrder>
            	</Properties>
 			<File>Maps/GiantEarth/GiantEarth.lua</File>

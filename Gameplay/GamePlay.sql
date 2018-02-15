@@ -15,6 +15,14 @@ UPDATE Civilizations SET Ethnicity = 'ETHNICITY_MEDIT'		WHERE CivilizationType =
 UPDATE Civilizations SET Ethnicity = 'ETHNICITY_MEDIT'		WHERE CivilizationType = 'CIVILIZATION_MACEDON';
 UPDATE Civilizations SET Ethnicity = 'ETHNICITY_ASIAN'		WHERE CivilizationType = 'CIVILIZATION_INDONESIA';
 UPDATE Civilizations SET Ethnicity = 'ETHNICITY_ASIAN'		WHERE CivilizationType = 'CIVILIZATION_KHMER';
+UPDATE Civilizations SET Ethnicity = 'ETHNICITY_SOUTHAM'	WHERE CivilizationType = 'CIVILIZATION_CREE';
+UPDATE Civilizations SET Ethnicity = 'ETHNICITY_MEDIT'		WHERE CivilizationType = 'CIVILIZATION_GEORGIA';
+UPDATE Civilizations SET Ethnicity = 'ETHNICITY_ASIAN'		WHERE CivilizationType = 'CIVILIZATION_KOREA';
+UPDATE Civilizations SET Ethnicity = 'ETHNICITY_SOUTHAM' 	WHERE CivilizationType = 'CIVILIZATION_MAPUCHE';
+UPDATE Civilizations SET Ethnicity = 'ETHNICITY_ASIAN' 		WHERE CivilizationType = 'CIVILIZATION_MONGOLIA';
+UPDATE Civilizations SET Ethnicity = 'ETHNICITY_EURO'		WHERE CivilizationType = 'CIVILIZATION_NETHERLANDS';
+UPDATE Civilizations SET Ethnicity = 'ETHNICITY_EURO'		WHERE CivilizationType = 'CIVILIZATION_SCOTLAND';
+UPDATE Civilizations SET Ethnicity = 'ETHNICITY_AFRICAN'	WHERE CivilizationType = 'CIVILIZATION_ZULU';
 
 -- Euro City States
 UPDATE Civilizations SET Ethnicity = 'ETHNICITY_EURO'		WHERE CivilizationType = 'CIVILIZATION_AMSTERDAM';

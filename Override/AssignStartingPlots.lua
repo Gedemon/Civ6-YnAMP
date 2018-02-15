@@ -4821,16 +4821,16 @@ function FeatureGenerator:AddIceAtPlot(plot, iX, iY)
 	local bNorth = iY > (self.iGridH/2)
 
 	if not bNorth and (iIceSouth and (iIceSouth == 0 or iIceSouth < iY)) then
-		return
+		return false;
 	end
 	
 	if bNorth and iIceNorth and (iIceNorth == 0 or self.iGridH - iIceNorth > iY) then
-		return
+		return false;
 	end
 	
 	local bNoIceAdjacentToLand = MapConfiguration.GetValue("NoIceAdjacentToLand");
 	if bNoIceAdjacentToLand and plot:IsAdjacentToLand() then
-		return
+		return false;
 	end
 
 	local lat = math.abs((self.iGridH/2) - iY)/(self.iGridH/2)
@@ -4842,10 +4842,14 @@ function FeatureGenerator:AddIceAtPlot(plot, iX, iY)
 		
 		if(rand < 8 * (lat - 0.875)) then
 			TerrainBuilder.SetFeatureType(plot, g_FEATURE_ICE);
+			return true;
 		elseif(rand < 4 * (lat - 0.75)) then
 			TerrainBuilder.SetFeatureType(plot, g_FEATURE_ICE);
+			return true;
 		end
 	end
+	
+	return false;
 end
 
 ------------------------------------------------------------------------------
@@ -4885,6 +4889,15 @@ function FeatureGenerator:AddFeatures(allow_mountains_on_coast)
 				elseif(plot:IsWater() == true) then
 					if(TerrainBuilder.CanHaveFeature(plot, g_FEATURE_ICE) == true and IsAdjacentToRiver(x, y) == false) then
 						self:AddIceAtPlot(plot, x, y);
+					end
+					
+					local bIce = false;
+					if(TerrainBuilder.CanHaveFeature(plot, g_FEATURE_ICE) == true and IsAdjacentToRiver(x, y) == false) then
+						bIce = self:AddIceAtPlot(plot, x, y);
+					end
+					
+					if(bIce == false and self.AddReefAtPlot and TerrainBuilder.CanHaveFeature(plot, g_FEATURE_REEF) == true ) then						
+						self:AddReefAtPlot(plot, x, y);
 					end
 				else  -- mark this plot available for land feature
 					self.iNumLandPlots = self.iNumLandPlots + 1
