@@ -2196,7 +2196,7 @@ end
 -------------------------------------------------------------------------------
 -- Override SetStartMajor & SetStartMinor
 ------------------------------------------------------------------------------
---[[
+---[[
 function AssignStartingPlots:__SetStartMajor(plots, iMajorIndex)
 	-- Sort by fertility of all the plots
 	-- eliminate them if they do not meet the following:
@@ -2373,7 +2373,7 @@ function AssignStartingPlots:__SetStartMinor(plots)
 		end
 
 		-- Checks to see if there are any minor civs in the given distance
-		local bMinorCivCheck = self:__MinorMinorCivBuffer(pTempPlot, 1); 
+		local bMinorCivCheck = self:__MinorMinorCivBuffer(pTempPlot, 1) and self:__MinorMajorCivBuffer(pTempPlot); 
 		if(bMinorCivCheck == false) then
 			bValid = false;
 		end

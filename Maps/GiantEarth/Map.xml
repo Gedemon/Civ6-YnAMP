@@ -30,6 +30,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_INDONESIA"	X="80" Y="26" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_JAPAN"		X="96" Y="58" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KHMER"		X="77" Y="40" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KHMER"		X="76" Y="42" AlternateStart="1" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KONGO"		X="21" Y="24" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KOREA"		X="89" Y="61" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MACEDON"	X="26" Y="60" />

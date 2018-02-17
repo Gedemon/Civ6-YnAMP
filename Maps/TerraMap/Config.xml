@@ -235,6 +235,7 @@
 		<Row Map="TerraMap.lua" Domain="StandardMapSizes" Value="MAPSIZE_ENORMOUS21" 	/>
 		<Row Map="TerraMap.lua" Domain="StandardMapSizes" Value="MAPSIZE_GIANT" 		/>
 		<Row Map="TerraMap.lua" Domain="StandardMapSizes" Value="MAPSIZE_LUDICROUS" 	/>
+		<Row Map="TerraMap.lua" Domain="StandardMapSizes" Value="MAPSIZE_MAX" 			/>
 	</MapSupportedValues>
 	
 	<!-- Don't use those values for a domain -->

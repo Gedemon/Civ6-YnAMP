@@ -2620,6 +2620,7 @@ function buidTSL()
 					local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
 					local bCanPlaceHere = true
 					local sWarning = ""
+					local plot = Map.GetPlot(row.X,row.Y)
 					
 					if row.DisabledByCivilization and isInGame[row.DisabledByCivilization] then
 						sWarning = "position disabled by " .. tostring(row.DisabledByCivilization)
@@ -2629,6 +2630,9 @@ function buidTSL()
 						bCanPlaceHere = false
 					elseif InRangeCurrentTSL(row, getTSL) then
 						sWarning = "too close from another TSL"
+						bCanPlaceHere = false
+					elseif plot:IsWater() or plot:IsImpassable() then
+						sWarning = "plot is impassable or water"
 						bCanPlaceHere = false
 					end	
 					

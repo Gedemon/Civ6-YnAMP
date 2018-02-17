@@ -87,6 +87,12 @@
     <Replace Tag="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" Language="en_US">
       <Text>Will you stand the test of time while your computer try to load this ? (200x100)</Text>
     </Replace>
+    <Replace Tag="LOC_MAPSIZE_MAX_NAME" Language="en_US">
+      <Text>Max</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_MAX_DESCRIPTION" Language="en_US">
+      <Text>Max working size for an i7 4770K + MSI GTX 1080 Ti + 16GB Ram (215x112)</Text>
+    </Replace>
 	
     <Replace Tag="LOC_MAPSIZE_SMALL21_NAME" Language="en_US">
       <Text>Small (2:1)</Text>
