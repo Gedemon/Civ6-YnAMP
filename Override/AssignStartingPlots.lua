@@ -2631,7 +2631,7 @@ function buidTSL()
 					elseif InRangeCurrentTSL(row, getTSL) then
 						sWarning = "too close from another TSL"
 						bCanPlaceHere = false
-					elseif plot:IsWater() or plot:IsImpassable() then
+					elseif plot and(plot:IsWater() or plot:IsImpassable()) then
 						sWarning = "plot is impassable or water"
 						bCanPlaceHere = false
 					end	
