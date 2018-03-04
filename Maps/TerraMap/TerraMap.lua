@@ -674,6 +674,7 @@ function GeneratePlotTypes()
 	else
 		world_age = 1 + TerrainBuilder.GetRandomNumber(3, "Random World Age - Lua");
 	end
+	print("world_age = ", world_age);
 
 	local LargestMap = GetMap()
 	local MapToConvert = {}
@@ -904,7 +905,8 @@ function GeneratePlotTypes()
 	args.blendRidge = 5;
 	args.blendFract = 5;
 	args.world_age = world_age + 0.25;
-	mountainRatio = 2 + math.ceil(world_age * 2.5) --2 + world_age * 2;
+	mountainRatio =  8 + world_age * 3
+	print("mountainRatio = ", mountainRatio)
 	if g_MapSize >= g_SizeLudicrous then
 		args.adjust_plates = 7
 	elseif g_MapSize >= g_SizeGiant then
