@@ -1617,6 +1617,14 @@ function SetAdjacentPlotsToTerrain(pPlot, terrainType, bClean)
 		adjacentPlot = Map.GetAdjacentPlot(pPlot:GetX(), pPlot:GetY(), direction);
 		if (adjacentPlot ~= nil and not adjacentPlot:IsNaturalWonder()) then
 			TerrainBuilder.SetTerrainType(adjacentPlot, terrainType)
+			local eFeatureType = pPlot:GetFeatureType()
+			if eFeatureType ~= -1 and (not(TerrainBuilder.CanHaveFeature(pPlot, eFeatureType))) then
+				TerrainBuilder.SetFeatureType(pPlot, -1)
+			end
+			local eResourceType = pPlot:GetResourceType()
+			if eResourceType ~= -1 and (not(TerrainBuilder.CanHaveResource(pPlot, eResourceType))) then
+				TerrainBuilder.SetResourceType(pPlot, -1)
+			end
 			if bClean then
 				ClearPlot(adjacentPlot)
 			end
@@ -1644,7 +1652,7 @@ function GetBestStartingPlotAround(pPlot, bIsMajor, bIsHuman)
 			local fertility 		= GetPlotFertility(pAdjacencyPlot)
 			local distanceFactor 	= (Map.GetPlotDistance(pPlot:GetIndex(), pAdjacencyPlot:GetIndex()) + 1) * 0.5
 			local fertility 		= fertility / distanceFactor 
-			if fertility > 25 then
+			if fertility > 25 or #potentialPlots == 0 then
 				table.insert(potentialPlots, { Plot = pAdjacencyPlot, Fertility = fertility} )
 			end
 		end

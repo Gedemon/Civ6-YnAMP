@@ -95,22 +95,57 @@
 				<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
 				<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
 				<File>Configuration/ConfigText_pt_BR.xml</File>
+				<File>Configuration/ConfigText_ja_JP.xml</File>
 		</UpdateText>
+		<ImportFiles id="YNAMP_SETTING_IMPORT">
+           	<Properties>
+				<!-- High load order to make sure YnAMP assignstarting plots is loaded after the one of incompatible mods --> 
+				<LoadOrder>1000002</LoadOrder>
+           	</Properties>
+			<File>Override/AdvancedSetup.lua</File>
+		</ImportFiles>
 	</FrontEndActions>
 	
 	<LocalizedText>
 		<Text id="LOC_YNAMP_TITLE">
 			<en_US>Yet (not) Another Maps Pack</en_US>
+            <de_DE>Yet (not) Another Maps Pack</de_DE>
+            <es_ES>Yet (not) Another Maps Pack</es_ES>
+            <fr_FR>Yet (not) Another Maps Pack</fr_FR>
+            <it_IT>Yet (not) Another Maps Pack</it_IT>
+            <ja_JP>Yet (not) Another Maps Pack</ja_JP>
+            <ko_KR>Yet (not) Another Maps Pack</ko_KR>
+            <pl_PL>Yet (not) Another Maps Pack</pl_PL>
+            <pt_BR>Yet (not) Another Maps Pack</pt_BR>
+            <ru_RU>Yet (not) Another Maps Pack</ru_RU>
 			<zh_Hans_CN>然而（并非）又一个地图包</zh_Hans_CN>
 			<zh_Hant_HK>然而（並非）又一個地圖包</zh_Hant_HK>
 		</Text>
 		<Text id="LOC_YNAMP_TEASER">
 			<en_US>Maps with True or Culturally Linked Start Locations.</en_US>
+            <de_DE>Maps with True or Culturally Linked Start Locations.</de_DE>
+            <es_ES>Maps with True or Culturally Linked Start Locations.</es_ES>
+            <fr_FR>Maps with True or Culturally Linked Start Locations.</fr_FR>
+            <it_IT>Maps with True or Culturally Linked Start Locations.</it_IT>
+            <ja_JP>史実と同じ場所や文化が近い文明の付近からプレイを始めるマップです。</ja_JP>
+            <ko_KR>Maps with True or Culturally Linked Start Locations.</ko_KR>
+            <pl_PL>Maps with True or Culturally Linked Start Locations.</pl_PL>
+            <pt_BR>Maps with True or Culturally Linked Start Locations.</pt_BR>
+            <ru_RU>Maps with True or Culturally Linked Start Locations.</ru_RU>
 			<zh_Hans_CN>带有现实世界或人文地理关联出生地的地图包。</zh_Hans_CN>
 			<zh_Hant_HK>帶有現實世界或人文地理關聯出生地的地圖包。</zh_Hant_HK>
 		</Text>
 		<Text id="LOC_YNAMP_DESCRIPTION">
 			<en_US>Maps with True or Culturally Linked Starting Location and custom options.</en_US>
+            <de_DE>Maps with True or Culturally Linked Starting Location and custom options.</de_DE>
+            <es_ES>Maps with True or Culturally Linked Starting Location and custom options.</es_ES>
+            <fr_FR>Maps with True or Culturally Linked Starting Location and custom options.</fr_FR>
+            <it_IT>Maps with True or Culturally Linked Starting Location and custom options.</it_IT>
+            <ja_JP>史実と同じ場所や文化が近い文明の付近からプレイを始めるマップです。多数のカスタムオプションあり。</ja_JP>
+            <ko_KR>Maps with True or Culturally Linked Starting Location and custom options.</ko_KR>
+            <pl_PL>Maps with True or Culturally Linked Starting Location and custom options.</pl_PL>
+            <pt_BR>Maps with True or Culturally Linked Starting Location and custom options.</pt_BR>
+            <ru_RU>Maps with True or Culturally Linked Starting Location and custom options.</ru_RU>
 			<zh_Hans_CN>带有现实世界或人文地理关联出生地，以及自定义选项的地图包。</zh_Hans_CN>
 			<zh_Hant_HK>帶有現實世界或人文地理關聯出生地，以及自定義選項的地圖包。</zh_Hant_HK>
 		</Text>
@@ -128,6 +163,7 @@
 		<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
 		<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
 		<File>Configuration/ConfigText_pt_BR.xml</File>
+		<File>Configuration/ConfigText_ja_JP.xml</File>
 		<File>Gameplay/Tables.sql</File>
 		<File>Gameplay/GamePlay.xml</File>
 		<File>Gameplay/GamePlay.sql</File>
@@ -157,6 +193,7 @@
 		<File>Maps/LargeEurope/LargeEurope.lua</File>
 		<File>Maps/TerraMap/TerraMap.lua</File>
 		<File>Override/AssignStartingPlots.lua</File>
+		<File>Override/AdvancedSetup.lua</File>
 		<File>Scripts/YnAMP_Script.lua</File>
 		<File>Scripts/YnAMP_Utils.lua</File>
 		<File>Scripts/YnAMP_InGame.lua</File>

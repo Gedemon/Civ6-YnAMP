@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+  
+	<!-- Replacing -->
+	
+    <Replace Tag="LOC_MAP_RESOURCES_NAME" Language="ja_JP">
+      <Text>資源の量</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_START_POSITION_NAME" Language="ja_JP">
+      <Text>開始地点のバランス</Text>
+    </Replace>
+	
+	<!-- New entries -->
+    
+	<Replace Tag="LOC_YNAGEM_NAME" Language="ja_JP">
+      <Text>Giant Earth</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_DESC" Language="ja_JP">
+      <Text>Genghis Kai氏による特大の地球マップ (Hormigas バージョン) です (180x94 - 特大)。</Text>
+    </Replace>
+    <Replace Tag="LOC_GREATESTEARTH_NAME" Language="ja_JP">
+      <Text>Greatest Earth Map</Text>
+    </Replace>
+    <Replace Tag="LOC_GREATESTEARTH_DESC" Language="ja_JP">
+      <Text>djvandyke氏による大型の地球マップです (104x64 - 大)。</Text>
+    </Replace>
+    <Replace Tag="LOC_PLAYEUROPEAGAIN_NAME" Language="ja_JP">
+      <Text>Play Europe Again</Text>
+    </Replace>
+    <Replace Tag="LOC_PLAYEUROPEAGAIN_DESC" Language="ja_JP">
+      <Text>NiRv4n4氏による巨大なヨーロッパマップ (Hormigas version) です (108x98 - 巨大)。</Text>
+    </Replace>
+	<Replace Tag="LOC_LARGE_EUROPE_NAME" Language="ja_JP">
+      <Text>Large Europe</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGE_EUROPE_DESC" Language="ja_JP">
+      <Text>Dieter VonClam氏による大型のヨーロッパマップです (79x73 - 大)。</Text>
+    </Replace>
+    <Replace Tag="LOC_TERRAMAP_NAME" Language="ja_JP">
+      <Text>Terra Map for YnAMP</Text>
+    </Replace>
+    <Replace Tag="LOC_TERRAMAP_DESC" Language="ja_JP">
+      <Text>旧世界と新世界を生成するマップです。マップの大きさや配置される陸地をカスタムできます。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Language="ja_JP">
+      <Text>文明の配置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_DESCRIPTION" Language="ja_JP">
+      <Text>文明がどのように配置されるかを規定します。</Text>
+    </Replace>
+    <Replace Tag="LOC_CULTURALLY_LINKED_START_NAME" Language="ja_JP">
+      <Text>開始地点の関連性</Text>
+    </Replace>
+    <Replace Tag="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Language="ja_JP">
+      <Text>開始地点と文化的関連性の有無を規定します。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_NAME" Language="ja_JP">
+      <Text>ランダム</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_DESCRIPTION" Language="ja_JP">
+      <Text>文化の関連性がある文明を近くに配置しません。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_NAME" Language="ja_JP">
+      <Text>文化</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_DESCRIPTION" Language="ja_JP">
+      <Text>文化の関連性がある文明を近くに配置します。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS_NAME" Language="ja_JP">
+      <Text>広大</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" Language="ja_JP">
+      <Text>16人プレイ用の広大なマップです (128x80)。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_GIANT_NAME" Language="ja_JP">
+      <Text>特大</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_GIANT_DESCRIPTION" Language="ja_JP">
+      <Text>20+人プレイ用の特大のマップです (184x92)。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LUDICROUS_NAME" Language="ja_JP">
+      <Text>過大</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" Language="ja_JP">
+      <Text>コンピューターが読み込むまでの時の試練に耐えることができるでしょうか？ (200x100)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_MAX_NAME" Language="ja_JP">
+      <Text>最大</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_MAX_DESCRIPTION" Language="ja_JP">
+      <Text>i7 4770K + MSI GTX 1080 Ti + 16GB Ram 向けの最大サイズのマップです (215x112)。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAPSIZE_SMALL21_NAME" Language="ja_JP">
+      <Text>小 (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_SMALL21_DESCRIPTION" Language="ja_JP">
+      <Text>6人プレイ用のやや小型のマップです (84x42)。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_STANDARD21_NAME" Language="ja_JP">
+      <Text>標準 (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_STANDARD21_DESCRIPTION" Language="ja_JP">
+      <Text>8人プレイ用の標準サイズのマップです (96x48)。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LARGE21_NAME" Language="ja_JP">
+      <Text>大 (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LARGE21_DESCRIPTION" Language="ja_JP">
+      <Text>10人プレイ用の大型のマップです (108x54)。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_HUGE21_NAME" Language="ja_JP">
+      <Text>巨大 (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_HUGE21_DESCRIPTION" Language="ja_JP">
+      <Text>12人プレイ用の巨大なマップです (120x60)。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS21_NAME" Language="ja_JP">
+      <Text>広大 (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS21_DESCRIPTION" Language="ja_JP">
+      <Text>16人プレイ用の広大なマップです (148x74)。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_NAME" Language="ja_JP">
+      <Text>資源の配置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Language="ja_JP">
+      <Text>資源がどのように配置されるかを規定します。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_NAME" Language="ja_JP">
+      <Text>マップ・ジェネレーター</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" Language="ja_JP">
+      <Text>Civ6のマップ・ジェネレーターを用いて資源を配置します (ランダム)。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_NAME" Language="ja_JP">
+      <Text>インポート</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_DESCRIPTION" Language="ja_JP">
+      <Text>マップデータを用いて資源を配置します。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_NAME" Language="ja_JP">
+      <Text>資源排除地域</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" Language="ja_JP">
+      <Text>いくつかの資源は事前に決められた地域にしか配置されません。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_NAME" Language="ja_JP">
+      <Text>実世界</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_DESCRIPTION" Language="ja_JP">
+      <Text>いくつかの資源は実世界に対応する地域にしか配置されません。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_ACTIVATED_NAME" Language="ja_JP">
+      <Text>有効</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_DEACTIVATED_NAME" Language="ja_JP">
+      <Text>無効</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_NAME" Language="ja_JP">
+      <Text>文明の資源</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" Language="ja_JP">
+      <Text>特定の資源を特定文明の開始地点に配置します。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALL_LUXURIES_NAME" Language="ja_JP">
+      <Text>全ての高級資源を配置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALL_LUXURIES_DESCRIPTION" Language="ja_JP">
+      <Text>全ての高級資源を最低でも数個は配置します。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_NAME" Language="ja_JP">
+      <Text>地物の配置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Language="ja_JP">
+      <Text>森林やジャングルなどの地物がどのように配置されるかを規定します。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_NAME" Language="ja_JP">
+      <Text>マップ・ジェネレーター</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_DESCRIPTION" Language="ja_JP">
+      <Text>Civ6のマップ・ジェネレーターを用いて地物を配置します (ランダム)。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_NAME" Language="ja_JP">
+      <Text>インポート</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_DESCRIPTION" Language="ja_JP">
+      <Text>マップデータを用いて地物を配置します。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_NAME" Language="ja_JP">
+      <Text>マップ・ジェネレーター</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_DESCRIPTION" Language="ja_JP">
+      <Text>Civ6のマップ・ジェネレーターを用いて文明を配置します (ランダム)。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_NAME" Language="ja_JP">
+      <Text>史実と同じ地点 (TSL)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_DESCRIPTION" Language="ja_JP">
+      <Text>実世界と同じ場所に文明を配置します (可能な場合)。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_OLD_WORLD_NAME" Language="ja_JP">
+      <Text>マップ・ジェネレーター (旧世界)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_OLD_WORLD_DESCRIPTION" Language="ja_JP">
+      <Text>旧世界にのみ文明を配置します。</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_ALLOW_NW_CS_NAME" Language="ja_JP">
+      <Text>新世界にも都市国家が出現</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_NAME" Language="ja_JP">
+      <Text>大陸の配置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_DESCRIPTION" Language="ja_JP">
+      <Text>大陸の名前がどのように決定されるかを規定します。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_NAME" Language="ja_JP">
+      <Text>マップ・ジェネレーター</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_DESCRIPTION" Language="ja_JP">
+      <Text>Civ6のマップ・ジェネレーターを用いて大陸の名前を決定します (ランダム)。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_NAME" Language="ja_JP">
+      <Text>インポート</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_DESCRIPTION" Language="ja_JP">
+      <Text>マップデータを用いて大陸の名前を決定します。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_NAME" Language="ja_JP">
+      <Text>河川の配置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DESCRIPTION" Language="ja_JP">
+      <Text>河川がどのように配置されるかを規定します。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_NAME" Language="ja_JP">
+      <Text>マップ・ジェネレーター</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="ja_JP">
+      <Text>Civ6のマップ・ジェネレーターを用いて河川を配置します (ランダム)。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_NAME" Language="ja_JP">
+      <Text>インポート</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_DESCRIPTION" Language="ja_JP">
+      <Text>マップデータを用いて河川を配置します。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_NAME" Language="ja_JP">
+      <Text>自然遺産の配置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DESCRIPTION" Language="ja_JP">
+      <Text>自然遺産がどのように配置されるかを規定します。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_NAME" Language="ja_JP">
+      <Text>マップ・ジェネレーター</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="ja_JP">
+      <Text>Civ6のマップ・ジェネレーターを用いて自然遺産を配置します (ランダム)。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_NAME" Language="ja_JP">
+      <Text>インポート</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_DESCRIPTION" Language="ja_JP">
+      <Text>マップデータを用いて自然遺産を配置します。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_NAME" Language="ja_JP">
+      <Text>なし</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" Language="ja_JP">
+      <Text>配置しません。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CLOSED_BOSPHORUS_NAME" Language="ja_JP">
+      <Text>ボスポラス海峡を封鎖</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MONT_SAINT_MICHEL_MARSH_NAME" Language="ja_JP">
+      <Text>モン・サン＝ミシェルに湿原を配置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_STONEHENGE_STONE_NAME" Language="ja_JP">
+      <Text>ストーンヘンジに石材を配置</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Language="ja_JP">
+      <Text>陸地近くの氷河を禁止</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NO_CITY_STATE_NAME" Language="ja_JP">
+      <Text>都市国家なし</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_FORCE_TSL_NAME" Language="ja_JP">
+      <Text>史実と同じ地点を強制</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_DESCRIPTION" Language="ja_JP">
+      <Text>史実と同じ地点で強制的に都市を建設させます。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_OFF" Language="ja_JP">
+      <Text>オフ</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_OFF_DESCRIPTION" Language="ja_JP">
+      <Text>最初の開拓者が自由に動けるようにします。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_CS" Language="ja_JP">
+      <Text>都市国家</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_CS_DESCRIPTION" Language="ja_JP">
+      <Text>史実と同じ地点で強制的に都市を建設させます (都市国家のみ)。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_AI" Language="ja_JP">
+      <Text>AI</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_AI_DESCRIPTION" Language="ja_JP">
+      <Text>史実と同じ地点で強制的に都市を建設させます (AIのみ)。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_ALL" Language="ja_JP">
+      <Text>全員</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_ALL_DESCRIPTION" Language="ja_JP">
+      <Text>史実と同じ地点で強制的に都市を建設させます (全員)。</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_AUTO_CITY_NAMING_NAME" Language="ja_JP">
+      <Text>現実の都市名 (未翻訳)</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ONLY_GENERIC_CITY_NAMES_NAME" Language="ja_JP">
+      <Text>一般的な名前だけを用いる (未翻訳)</Text>
+    </Replace>	
+	
+	<Replace Tag="LOC_MAP_LEADER_TSL_NAME" Language="ja_JP">
+      <Text>可能な場合に指導者のTSLを使用</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ALTERNATE_TSL_NAME" Language="ja_JP">
+      <Text>必要かつ可能な場合に代替TSLを使用</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ALTERNATE_PLACEMENT_NAME" Language="ja_JP">
+      <Text>TSLがない文明はランダムに配置</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_HISTORICAL_SPAWN_NAME" Language="ja_JP">
+      <Text>歴史的な出現時期を使用</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_TURNS_BEFORE_BARBARIANS_NAME" Language="ja_JP">
+      <Text>蛮族斥候の出現ターン</Text>
+    </Replace>
+    <Replace Tag="LOC_TURNS_BEFORE_BARBARIANS_DESCRIPTION" Language="ja_JP">
+      <Text>蛮族斥候が出現するまでの最低ターン数を規定します。</Text>
+    </Replace>
+	
+	<!--
+    <Replace Tag="LOC_MAP_LANDMASS_OVERLAY_NAME" Language="ja_JP">
+      <Text>Randomized Landmass</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LANDMASS_OVERLAY_DESCRIPTION" Language="ja_JP">
+      <Text>To generate Landmasses placed over real Earth continents position (randomize coastline)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_EARTH_LANDMASS_NAME" Language="ja_JP">
+      <Text>Use Base Earth</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EARTH_LANDMASS_DESCRIPTION" Language="ja_JP">
+      <Text>Real Earth continents shape the landmasses (scaled down to map size)</Text>
+    </Replace>
+	-->
+	
+    <Replace Tag="LOC_MAP_MAP_SHAPE_NAME" Language="ja_JP">
+      <Text>陸地の形状</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MAP_SHAPE_DESCRIPTION" Language="ja_JP">
+      <Text>陸地がどのように形成されるかを規定します。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_EARTH_ONLY_NAME" Language="ja_JP">
+      <Text>地球</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EARTH_ONLY_DESCRIPTION" Language="ja_JP">
+      <Text>現実の地球のように陸地を形成します。</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_EARTH_RNG_NAME" Language="ja_JP">
+      <Text>地球 + ランダムな海岸線</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EARTH_RNG_DESCRIPTION" Language="ja_JP">
+      <Text>現実の地球のように陸地を形成する一方、海岸線はランダム化させます。</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_2CONTINENTS_NAME" Language="ja_JP">
+      <Text>陸地2つ >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_2CONTINENTS_DESCRIPTION" Language="ja_JP">
+      <Text>離れた場所に2つの陸地 (旧世界と新世界)を形成します。[NEWLINE]追加オプションあり</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_MULTIPLE_CONTINENT_NAME" Language="ja_JP">
+      <Text>陸地複数 >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MULTIPLE_CONTINENT_DESCRIPTION" Language="ja_JP">
+      <Text>実世界と関連する場所に複数の陸地を形成します。[NEWLINE]追加オプションあり</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_OLD_WORLD_SHAPE_NAME" Language="ja_JP">
+      <Text>旧世界の形状</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_OLD_WORLD_DESCRIPTION" Language="ja_JP">
+      <Text>旧世界の陸地がどのように形成されるかを規定します。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NEW_WORLD_SHAPE_NAME" Language="ja_JP">
+      <Text>新世界の形状</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NEW_WORLD_DESCRIPTION" Language="ja_JP">
+      <Text>新世界の陸地がどのように形成されるかを規定します。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_PANGEA_NAME" Language="ja_JP">
+      <Text>パンゲア</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PANGEA_DESCRIPTION" Language="ja_JP">
+      <Text>1つの広大な大陸です。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CONTINENT_NAME" Language="ja_JP">
+      <Text>大陸</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_DESCRIPTION" Language="ja_JP">
+      <Text>1つの大陸と少数の小さな陸地です。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SMALL_CONTINENT_NAME" Language="ja_JP">
+      <Text>小大陸</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SMALL_CONTINENT_DESCRIPTION" Language="ja_JP">
+      <Text>1つの小さな大陸と少数の小さな陸地です。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_LARGE_ISLANDS_NAME" Language="ja_JP">
+      <Text>大きな島々</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LARGE_ISLANDS_DESCRIPTION" Language="ja_JP">
+      <Text>大きな島の集まりです。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_ISLANDS_NAME" Language="ja_JP">
+      <Text>島々</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ISLANDS_DESCRIPTION" Language="ja_JP">
+      <Text>島の集まりです。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SMALL_ISLANDS_NAME" Language="ja_JP">
+      <Text>小さな島々</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SMALL_ISLANDS_DESCRIPTION" Language="ja_JP">
+      <Text>小さな島の集まりです。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SEA_NAME" Language="ja_JP">
+      <Text>海</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SEA_DESCRIPTION" Language="ja_JP">
+      <Text>孤立した小さな島々です。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_RANDOM_NAME" Language="ja_JP">
+      <Text>ランダム</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RANDOM_DESCRIPTION" Language="ja_JP">
+      <Text>上のスクリプトの1つをランダムで選択します (実世界オプションなし)。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_RANDOM_VALUES_NAME" Language="ja_JP">
+      <Text>陸地の生成数値をランダム化</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RANDOM_VALUES_DESCRIPTION" Language="ja_JP">
+      <Text>完全にランダムにします (数値0もあり得る)。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CUSTOM_NAME" Language="ja_JP">
+      <Text>カスタム >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_DESCRIPTION" Language="ja_JP">
+      <Text>陸地の生成数値をカスタムします。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CUSTOM_TYPE_NAME" Language="ja_JP">
+      <Text>レイヤーの種類</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_TYPE_DESCRIPTION" Language="ja_JP">
+      <Text>陸地タイルと水域タイルを置き換える場合に選択します。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_WATER_PERCENT_NAME" Language="ja_JP">
+      <Text>水域の割合</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_WATER_PERCENT_DESCRIPTION" Language="ja_JP">
+      <Text>このレイヤーにおける水域の割合を規定します。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_GRAIN_NAME" Language="ja_JP">
+      <Text>フラクタルの粒子 Grain (0-7)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_GRAIN_DESCRIPTION" Language="ja_JP">
+      <Text>フラクタルに追加する粒子の量を規定します。0はなめらかで、7はギザギザした形状になります。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_RIFT_GRAIN_NAME" Language="ja_JP">
+      <Text>裂け目の粒子 (0-4)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_RIFT_GRAIN_DESCRIPTION" Language="ja_JP">
+      <Text>good question !</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTX_EXP_NAME" Language="ja_JP">
+      <Text>FracXExp</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTX_EXP_DESCRIPTION" Language="ja_JP">
+      <Text>Fractal Width Resolution を規定します。数値が大きいほどシャープに、数値が低いほど曖昧になります。[NEWLINE]FracXExp = 7 では 2^7 → 128ユニット分の広さ。[NEWLINE]FracXExp = 6 では 2^6 → 64ユニット分の広さ。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTY_EXP_NAME" Language="ja_JP">
+      <Text>FracYExp</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTY_EXP_DESCRIPTION" Language="ja_JP">
+      <Text>Fractal Height Resolution を規定します。数値が大きいほどシャープに、数値が低いほど曖昧になります。[NEWLINE]FracYExp = 7 では 2^7 → 128ユニット分の広さ。[NEWLINE]FracYExp = 6 では 2^6 → 64ユニット分の広さ。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_LAND_NAME" Language="ja_JP">
+      <Text>陸地</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LAND_DESCRIPTION" Language="ja_JP">
+      <Text>このレイヤーは陸地を追加します (既存の陸地は変更しません)。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_WATER_NAME" Language="ja_JP">
+      <Text>水域</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_WATER_DESCRIPTION" Language="ja_JP">
+      <Text>このレイヤーは水域を追加します (既存の水域は変更しません)。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_DEFAULT_LANDMASS_NAME" Language="ja_JP">
+      <Text>通常の陸地</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DEFAULT_LANDMASS_DESCRIPTION" Language="ja_JP">
+      <Text>それぞれの陸地にデフォルトのスクリプトを使用します。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SELECT_LANDMASS_NAME" Language="ja_JP">
+      <Text>陸地を選択 >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SELECT_LANDMASS_DESCRIPTION" Language="ja_JP">
+      <Text>それぞれの陸地に使用するスクリプトを選択します。[NEWLINE]追加オプションあり</Text>
+    </Replace>	
+	
+    <Replace Tag="LOC_MAP_AUSTRALIA_NAME" 			Text="オーストラリア" 			Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_OCEANIA_NAME" 			Text="オセアニア" 				Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_SOUTH_ASIA_NAME"			Text="南アジア" 			Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_ASIA_NAME"		Text="中央アジア" 		Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_EAST_ASIA_NAME" 			Text="東アジア" 			Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_JAPAN_NAME" 				Text="日本" 				Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_NORTH_ASIA_NAME" 			Text="北アジア" 			Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_MIDDLE_EAST_NAME" 		Text="中東" 			Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_TURKEY_NAME" 				Text="トルコ" 				Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_SOUTH_EUROPA_NAME" 		Text="南ヨーロッパ" 		Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_WEST_EUROPA_NAME" 		Text="西ヨーロッパ" 			Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_EUROPA_NAME" 		Text="中央ヨーロッパ" 		Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_NORTH_EUROPA_NAME" 		Text="北ヨーロッパ" 		Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_EAST_EUROPA_NAME" 		Text="東ヨーロッパ" 			Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_NORTH_AFRICA_NAME" 		Text="北アフリカ" 		Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_AFRICA_NAME" 		Text="中央アフリカ" 		Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_SOUTH_AFRICA_NAME" 		Text="南アフリカ" 		Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_MADAGASCAR_NAME" 			Text="マダガスカル" 			Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_NORTH_AMERICA_NAME" 		Text="北アメリカ" 		Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_ARCTIC_AMERICA_NAME" 		Text="北極アメリカ" 		Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_AMERICA_NAME"		Text="中央アメリカ" 		Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_SOUTH_AMERICA_WEST_NAME"	Text="南アメリカ (東)"	Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_SOUTH_AMERICA_EAST_NAME" 	Text="南アメリカ (西)" Language="ja_JP" /> 
+    <Replace Tag="LOC_MAP_ANTARCTIC_AMERICA_NAME" 	Text="南極アメリカ" 	Language="ja_JP" /> 
+
+  </LocalizedText>
+</GameData>
