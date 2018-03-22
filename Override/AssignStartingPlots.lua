@@ -2928,6 +2928,10 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_
 	local GoodyGen = AddGoodies(g_iW, g_iH);
 	
 	local totalTimer = os.clock() - g_startTimer
+	
+	-- Restore the original ResourceBuilder.CanHaveResource
+	ResourceBuilder.CanHaveResource = ResourceBuilder.OldCanHaveResource
+	
 	print("Total time for Map creation = "..tostring(totalTimer).." seconds")
 end
 
