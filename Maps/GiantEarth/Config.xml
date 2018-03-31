@@ -44,6 +44,9 @@
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthBosphorus" Name="LOC_MAP_CLOSED_BOSPHORUS_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="ClosedBosphorus" GroupId="MapOptions" SortIndex="1000"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthMontSaintMichel" Name="LOC_MAP_MONT_SAINT_MICHEL_MARSH_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="MontSaintMichel" GroupId="MapOptions" SortIndex="1000"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthStonehenge" Name="LOC_MAP_STONEHENGE_STONE_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="Stonehenge" GroupId="MapOptions" SortIndex="1000"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthArtemisTemple" Name="LOC_MAP_ARTEMIS_TEMPLE_DEER_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="ArtemisTemple" GroupId="MapOptions" SortIndex="1000"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthGreatZimbabwe" Name="LOC_MAP_GREAT_ZIMBABWE_CATTLE_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="GreatZimbabwe" GroupId="MapOptions" SortIndex="1000"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthJebelBarkal" Name="LOC_MAP_JEBEL_BARKAL_HILLS_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="JebelBarkal" GroupId="MapOptions" SortIndex="1000"/>
 		
 		<!--	Auto City Naming
 		-->
