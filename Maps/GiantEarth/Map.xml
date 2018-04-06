@@ -167,8 +167,8 @@
 		<Replace MapName="GiantEarth" X="33" Y="56" ConfigurationId="ArtemisTemple" 	ResourceType="RESOURCE_DEER" />
 		<Replace MapName="GiantEarth" X="29" Y="16" ConfigurationId="GreatZimbabwe" 	ResourceType="RESOURCE_CATTLE" />
 		
-		<!-- Check MapToConvert specifics for this at the end of the GiantEarth.lua file! Removal of floodplains there was additionally required to enable wonder placement -->
-		<Replace MapName="GiantEarth" X="31" Y="41" ConfigurationId="JebelBarkal" 		TerrainType="TERRAIN_DESERT_HILLS" />
+		<!-- When using an invalid type for FeatureType (or ResourceType), the placement code remove the current Feature (or Resource) from the plot -->
+		<Replace MapName="GiantEarth" X="31" Y="41" ConfigurationId="JebelBarkal" 		FeatureType="NONE" TerrainType="TERRAIN_DESERT_HILLS" />
 	</ExtraPlacement>
 	
 	<NaturalWonderPosition>
