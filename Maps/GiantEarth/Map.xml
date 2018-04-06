@@ -164,6 +164,11 @@
 		<Replace MapName="GiantEarth" X="31" Y="59" ConfigurationId="ClosedBosphorus" 	TerrainType="TERRAIN_GRASS_HILLS" />
 		<Replace MapName="GiantEarth" X="10" Y="67" ConfigurationId="MontSaintMichel" 	FeatureType="FEATURE_MARSH" />
 		<Replace MapName="GiantEarth" X="10" Y="73" ConfigurationId="Stonehenge" 		ResourceType="RESOURCE_STONE" />
+		<Replace MapName="GiantEarth" X="33" Y="56" ConfigurationId="ArtemisTemple" 	ResourceType="RESOURCE_DEER" />
+		<Replace MapName="GiantEarth" X="29" Y="16" ConfigurationId="GreatZimbabwe" 	ResourceType="RESOURCE_CATTLE" />
+		
+		<!-- Check MapToConvert specifics for this at the end of the GiantEarth.lua file! Removal of floodplains there was additionally required to enable wonder placement -->
+		<Replace MapName="GiantEarth" X="31" Y="41" ConfigurationId="JebelBarkal" 		TerrainType="TERRAIN_DESERT_HILLS" />
 	</ExtraPlacement>
 	
 	<NaturalWonderPosition>

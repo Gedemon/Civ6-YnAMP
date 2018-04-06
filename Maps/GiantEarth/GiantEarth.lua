@@ -17039,6 +17039,12 @@ function GetMap()
  MapToConvert[177][93]={12,-1,2,{{0,-1},{0,-1},{0,-1}},{-1,1},{0,0,0}}
  MapToConvert[178][93]={12,-1,2,{{0,-1},{0,-1},{0,-1}},{-1,1},{0,0,0}}
  MapToConvert[179][93]={14,-1,2,{{0,-1},{0,-1},{0,-1}},{-1,1},{0,0,0}}
-	
+ 
+ -- Changes plot to no FeatureType if Jebel Barkal game configuration option is selected
+ -- (Refactor candidate: How to make it not messing around with original map data as it does here? Any better options?)
+ if MapConfiguration.GetValue("JebelBarkal") then
+	MapToConvert[31][41]={6,-1,0,{{1,5},{1,3},{1,4}},{-1,1},{0,0,0}}
+ end
+ 
 	return MapToConvert
 end

@@ -289,6 +289,15 @@
     <Replace Tag="LOC_MAP_STONEHENGE_STONE_NAME" Language="en_US">
       <Text>Place stone for Stonehenge</Text>
     </Replace>
+	<Replace Tag="LOC_MAP_ARTEMIS_TEMPLE_DEER_NAME" Language="en_US">
+      <Text>Place deer for Temple of Artemis</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_GREAT_ZIMBABWE_CATTLE_NAME" Language="en_US">
+      <Text>Place cattle for Great Zimbabwe</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_JEBEL_BARKAL_HILLS_NAME" Language="en_US">
+      <Text>Replace floodplains with desert hills for Jebel Barkal</Text>
+    </Replace>
 	
     <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Language="en_US">
       <Text>No ice near land (to help circumnavigation)</Text>
