@@ -3481,14 +3481,24 @@ function ExtraPlacement()
 						print("- Trying to place ".. tostring(terrainType).. " at " .. tostring(x) ..",".. tostring(y))
 						TerrainBuilder.SetTerrainType(plot, GameInfo.Terrains[terrainType].Index)
 					end
-					if featureType and GameInfo.Features[featureType] then
-						print("- Trying to place ".. tostring(featureType).. " at " .. tostring(x) ..",".. tostring(y))
-						TerrainBuilder.SetFeatureType(plot, GameInfo.Features[featureType].Index)
+					if featureType then
+						if GameInfo.Features[featureType] then
+							print("- Trying to place ".. tostring(featureType).. " at " .. tostring(x) ..",".. tostring(y))
+							TerrainBuilder.SetFeatureType(plot, GameInfo.Features[featureType].Index)
+						else -- remove the current feature on the plot if the featureType is invalid
+							print("- Removing current feature at " .. tostring(x) ..",".. tostring(y))
+							TerrainBuilder.SetFeatureType(plot, -1)						
+						end
 					end
-					if resourceType and GameInfo.Resources[resourceType] then
-						print("- Trying to place ".. tostring(resourceType).. " at " .. tostring(x) ..",".. tostring(y))
-						local num = quantity or 1
-						ResourceBuilder.SetResourceType(plot, GameInfo.Resources[resourceType].Index, num)
+					if resourceType then
+						if GameInfo.Resources[resourceType] then
+							print("- Trying to place ".. tostring(resourceType).. " at " .. tostring(x) ..",".. tostring(y))
+							local num = quantity or 1
+							ResourceBuilder.SetResourceType(plot, GameInfo.Resources[resourceType].Index, num)
+						else -- remove the current resource on the plot if the resourceType is invalid
+							print("- Removing current resource at " .. tostring(x) ..",".. tostring(y))
+							ResourceBuilder.SetResourceType(plot, -1)						
+						end
 					end
 				else
 					print("- WARNING, plot is nil at " .. tostring(x) ..",".. tostring(y))
