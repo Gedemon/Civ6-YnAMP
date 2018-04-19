@@ -6623,6 +6623,456 @@
 
 	</LocalizedText>
 
+	<LocalizedText>		<!-- RUSSIAN FAR EAST (KAMCHATKA, CHUKOTKA, MAGADAN, SAKHALIN, EAST SAKHA REPUBLIC, NEW SIBERIAN ISLANDS, ST. LAWRENCE ISLAND) -->
+		
+		<Replace Language="en_US" Text="Ambarchik" Tag="LOC_CITY_NAME_AMBARCHIK"/>
+		<Replace Language="en_US" Text="Ambarkviki" Tag="LOC_CITY_NAME_AMBARCHIK_GEORGIA"/>
+		<Replace Language="en_US" Text="Ambarakika" Tag="LOC_CITY_NAME_AMBARCHIK_INDIA"/>
+		<Replace Language="en_US" Text="Anbaraku" Tag="LOC_CITY_NAME_AMBARCHIK_JAPAN"/>
+		<Replace Language="en_US" Text="Ambaleusig" Tag="LOC_CITY_NAME_AMBARCHIK_KOREA"/>
+		<Replace Language="en_US" Text="Amguema" Tag="LOC_CITY_NAME_AMGUEMA"/>
+		<Replace Language="en_US" Text="Angema" Tag="LOC_CITY_NAME_AMGUEMA_CHINA"/>
+		<Replace Language="en_US" Text="Amaghema" Tag="LOC_CITY_NAME_AMGUEMA_GEORGIA"/>
+		<Replace Language="en_US" Text="Amagima" Tag="LOC_CITY_NAME_AMGUEMA_INDIA"/>
+		<Replace Language="en_US" Text="Anguema" Tag="LOC_CITY_NAME_AMGUEMA_JAPAN"/>
+		<Replace Language="en_US" Text="Suma" Tag="LOC_CITY_NAME_AMGUEMA_KOREA"/>
+		<Replace Language="en_US" Text="Anadyr" Tag="LOC_CITY_NAME_ANADYR"/>
+		<Replace Language="en_US" Text="Anadir" Tag="LOC_CITY_NAME_ANADYR_ARABIA"/>
+		<Replace Language="en_US" Text="Anade'er" Tag="LOC_CITY_NAME_ANADYR_CHINA"/>
+		<Replace Language="en_US" Text="Anadiri" Tag="LOC_CITY_NAME_ANADYR_GEORGIA"/>
+		<Replace Language="en_US" Text="Anadira" Tag="LOC_CITY_NAME_ANADYR_INDIA"/>
+		<Replace Language="en_US" Text="Anadi" Tag="LOC_CITY_NAME_ANADYR_JAPAN"/>
+		<Replace Language="en_US" Text="Anadi" Tag="LOC_CITY_NAME_ANADYR_KHMER"/>
+		<Replace Language="en_US" Text="Anadileu" Tag="LOC_CITY_NAME_ANADYR_KOREA"/>
+		<Replace Language="en_US" Text="Anadir" Tag="LOC_CITY_NAME_ANADYR_MONGOLIA"/>
+		<Replace Language="en_US" Text="Anyuysk" Tag="LOC_CITY_NAME_ANYUYSK"/>
+		<Replace Language="en_US" Text="Anyui" Tag="LOC_CITY_NAME_ANYUYSK_CHINA"/>
+		<Replace Language="en_US" Text="Anhusk" Tag="LOC_CITY_NAME_ANYUYSK_INDIA"/>
+		<Replace Language="en_US" Text="Anuisuku" Tag="LOC_CITY_NAME_ANYUYSK_JAPAN"/>
+		<Replace Language="en_US" Text="Aeniyuseukeu" Tag="LOC_CITY_NAME_ANYUYSK_KOREA"/>
+		<Replace Language="en_US" Text="Arka" Tag="LOC_CITY_NAME_ARKA"/>
+		<Replace Language="en_US" Text="Gong" Tag="LOC_CITY_NAME_ARKA_CHINA"/>
+		<Replace Language="en_US" Text="Aruka" Tag="LOC_CITY_NAME_ARKA_JAPAN"/>
+		<Replace Language="en_US" Text="Achi" Tag="LOC_CITY_NAME_ARKA_KOREA"/>
+		<Replace Language="en_US" Text="Arka" Tag="LOC_CITY_NAME_ARKA_KOREA"/>
+		<Replace Language="en_US" Text="Ayan" Tag="LOC_CITY_NAME_AYAN"/>
+		<Replace Language="en_US" Text="Aiani" Tag="LOC_CITY_NAME_AYAN_GEORGIA"/>
+		<Replace Language="en_US" Text="Ayon" Tag="LOC_CITY_NAME_AYON"/>
+		<Replace Language="en_US" Text="Ayun" Tag="LOC_CITY_NAME_AYON_ARABIA"/>
+		<Replace Language="en_US" Text="Yongheng" Tag="LOC_CITY_NAME_AYON_CHINA"/>
+		<Replace Language="en_US" Text="Aion" Tag="LOC_CITY_NAME_AYON_KHMER"/>
+		<Replace Language="en_US" Text="Aion" Tag="LOC_CITY_NAME_AYON_KOREA"/>
+		<Replace Language="en_US" Text="Baranikha" Tag="LOC_CITY_NAME_BARANIKHA"/>
+		<Replace Language="en_US" Text="Baranika" Tag="LOC_CITY_NAME_BARANIKHA_GEORGIA"/>
+		<Replace Language="en_US" Text="Baranika" Tag="LOC_CITY_NAME_BARANIKHA_JAPAN"/>
+		<Replace Language="en_US" Text="Balanika" Tag="LOC_CITY_NAME_BARANIKHA_KOREA"/>
+		<Replace Language="en_US" Text="Batagay" Tag="LOC_CITY_NAME_BATAGAY"/>
+		<Replace Language="en_US" Text="Bataghay" Tag="LOC_CITY_NAME_BATAGAY_ARABIA"/>
+		<Replace Language="en_US" Text="Batagai" Tag="LOC_CITY_NAME_BATAGAY_CHINA"/>
+		<Replace Language="en_US" Text="Betagaya" Tag="LOC_CITY_NAME_BATAGAY_INDIA"/>
+		<Replace Language="en_US" Text="Batagei" Tag="LOC_CITY_NAME_BATAGAY_JAPAN"/>
+		<Replace Language="en_US" Text="Battyei" Tag="LOC_CITY_NAME_BATAGAY_MONGOLIA"/>
+		<Replace Language="en_US" Text="Belaya Gora" Tag="LOC_CITY_NAME_BELAYA_GORA"/>
+		<Replace Language="en_US" Text="White Mountain" Tag="LOC_CITY_NAME_BELAYA_GORA_AMERICA"/>
+		<Replace Language="en_US" Text="Jabal Abyad" Tag="LOC_CITY_NAME_BELAYA_GORA_ARABIA"/>
+		<Replace Language="en_US" Text="White Mountain" Tag="LOC_CITY_NAME_BELAYA_GORA_AUSTRALIA"/>
+		<Replace Language="en_US" Text="Itzactepetl" Tag="LOC_CITY_NAME_BELAYA_GORA_AZTEC"/>
+		<Replace Language="en_US" Text="Montanha Branca" Tag="LOC_CITY_NAME_BELAYA_GORA_BRAZIL"/>
+		<Replace Language="en_US" Text="Baisedeshan" Tag="LOC_CITY_NAME_BELAYA_GORA_CHINA"/>
+		<Replace Language="en_US" Text="Waciy-Wâpiski" Tag="LOC_CITY_NAME_BELAYA_GORA_CREE"/>
+		<Replace Language="en_US" Text="White Mountain" Tag="LOC_CITY_NAME_BELAYA_GORA_ENGLAND"/>
+		<Replace Language="en_US" Text="Montagne Blanche" Tag="LOC_CITY_NAME_BELAYA_GORA_FRANCE"/>
+		<Replace Language="en_US" Text="Tetri Mta" Tag="LOC_CITY_NAME_BELAYA_GORA_GEORGIA"/>
+		<Replace Language="en_US" Text="Weiserberg" Tag="LOC_CITY_NAME_BELAYA_GORA_GERMANY"/>
+		<Replace Language="en_US" Text="Oros Leukos" Tag="LOC_CITY_NAME_BELAYA_GORA_GREECE"/>
+		<Replace Language="en_US" Text="Saphed Pahaadee" Tag="LOC_CITY_NAME_BELAYA_GORA_INDIA"/>
+		<Replace Language="en_US" Text="Gunung Putih" Tag="LOC_CITY_NAME_BELAYA_GORA_INDONESIA"/>
+		<Replace Language="en_US" Text="Yamashiro" Tag="LOC_CITY_NAME_BELAYA_GORA_JAPAN"/>
+		<Replace Language="en_US" Text="Phnom Pnrs" Tag="LOC_CITY_NAME_BELAYA_GORA_KHMER"/>
+		<Replace Language="en_US" Text="Mpémbé Mazulu" Tag="LOC_CITY_NAME_BELAYA_GORA_KONGO"/>
+		<Replace Language="en_US" Text="Huinsan" Tag="LOC_CITY_NAME_BELAYA_GORA_KOREA"/>
+		<Replace Language="en_US" Text="Oros Leukos" Tag="LOC_CITY_NAME_BELAYA_GORA_MACEDON"/>
+		<Replace Language="en_US" Text="Tsagaan Uul" Tag="LOC_CITY_NAME_BELAYA_GORA_MONGOLIA"/>
+		<Replace Language="en_US" Text="Witteberg" Tag="LOC_CITY_NAME_BELAYA_GORA_NETHERLANDS"/>
+		<Replace Language="en_US" Text="Hvittfjell" Tag="LOC_CITY_NAME_BELAYA_GORA_NORWAY"/>
+		<Replace Language="en_US" Text="Biala Góra" Tag="LOC_CITY_NAME_BELAYA_GORA_POLAND"/>
+		<Replace Language="en_US" Text="Alba Montis" Tag="LOC_CITY_NAME_BELAYA_GORA_ROME"/>
+		<Replace Language="en_US" Text="Montaña Blanca" Tag="LOC_CITY_NAME_BELAYA_GORA_SPAIN"/>
+		<Replace Language="en_US" Text="Beringovsky" Tag="LOC_CITY_NAME_BERINGOVSKY"/>
+		<Replace Language="en_US" Text="Byringhufskyy" Tag="LOC_CITY_NAME_BERINGOVSKY_ARABIA"/>
+		<Replace Language="en_US" Text="Bergenkovski" Tag="LOC_CITY_NAME_BERINGOVSKY_GEORGIA"/>
+		<Replace Language="en_US" Text="Beringowski" Tag="LOC_CITY_NAME_BERINGOVSKY_GERMANY"/>
+		<Replace Language="en_US" Text="Berigovasaki" Tag="LOC_CITY_NAME_BERINGOVSKY_INDIA"/>
+		<Replace Language="en_US" Text="Beringofusuki" Tag="LOC_CITY_NAME_BERINGOVSKY_JAPAN"/>
+		<Replace Language="en_US" Text="Byeringovskii" Tag="LOC_CITY_NAME_BERINGOVSKY_MONGOLIA"/>
+		<Replace Language="en_US" Text="Bilibino" Tag="LOC_CITY_NAME_BILIBINO"/>
+		<Replace Language="en_US" Text="Bylibinu" Tag="LOC_CITY_NAME_BILIBINO_ARABIA"/>
+		<Replace Language="en_US" Text="Bilibinuo" Tag="LOC_CITY_NAME_BILIBINO_CHINA"/>
+		<Replace Language="en_US" Text="Biribino" Tag="LOC_CITY_NAME_BILIBINO_JAPAN"/>
+		<Replace Language="en_US" Text="Chersky" Tag="LOC_CITY_NAME_CHERSKY"/>
+		<Replace Language="en_US" Text="Tshirsiki" Tag="LOC_CITY_NAME_CHERSKY_ARABIA"/>
+		<Replace Language="en_US" Text="Qiersiji" Tag="LOC_CITY_NAME_CHERSKY_CHINA"/>
+		<Replace Language="en_US" Text="Cherkeki" Tag="LOC_CITY_NAME_CHERSKY_GEORGIA"/>
+		<Replace Language="en_US" Text="Serski" Tag="LOC_CITY_NAME_CHERSKY_INDIA"/>
+		<Replace Language="en_US" Text="Chesuki" Tag="LOC_CITY_NAME_CHERSKY_JAPAN"/>
+		<Replace Language="en_US" Text="Cheinseuki" Tag="LOC_CITY_NAME_CHERSKY_KOREA"/>
+		<Replace Language="en_US" Text="Chyerkii" Tag="LOC_CITY_NAME_CHERSKY_MONGOLIA"/>
+		<Replace Language="en_US" Text="Chokurdakh" Tag="LOC_CITY_NAME_CHOKURDAKH"/>
+		<Replace Language="en_US" Text="Chokhardi" Tag="LOC_CITY_NAME_CHOKURDAKH_GEORGIA"/>
+		<Replace Language="en_US" Text="Jokuradaha" Tag="LOC_CITY_NAME_CHOKURDAKH_INDIA"/>
+		<Replace Language="en_US" Text="Chokuruda" Tag="LOC_CITY_NAME_CHOKURDAKH_JAPAN"/>
+		<Replace Language="en_US" Text="Chyokuleuda" Tag="LOC_CITY_NAME_CHOKURDAKH_KOREA"/>
+		<Replace Language="en_US" Text="Chuvanskoye" Tag="LOC_CITY_NAME_CHUVANSKOYE"/>
+		<Replace Language="en_US" Text="Chuyan" Tag="LOC_CITY_NAME_CHUVANSKOYE_CHINA"/>
+		<Replace Language="en_US" Text="Chuchanskio" Tag="LOC_CITY_NAME_CHUVANSKOYE_GEORGIA"/>
+		<Replace Language="en_US" Text="Cucanasko" Tag="LOC_CITY_NAME_CHUVANSKOYE_INDIA"/>
+		<Replace Language="en_US" Text="Chuvanskoe" Tag="LOC_CITY_NAME_CHUVANSKOYE_INDONESIA"/>
+		<Replace Language="en_US" Text="Chubankoe" Tag="LOC_CITY_NAME_CHUVANSKOYE_JAPAN"/>
+		<Replace Language="en_US" Text="Chubaseuko" Tag="LOC_CITY_NAME_CHUVANSKOYE_KOREA"/>
+		<Replace Language="en_US" Text="Deputatsky" Tag="LOC_CITY_NAME_DEPUTATSKY"/>
+		<Replace Language="en_US" Text="Alnnayib" Tag="LOC_CITY_NAME_DEPUTATSKY_ARABIA"/>
+		<Replace Language="en_US" Text="Fu" Tag="LOC_CITY_NAME_DEPUTATSKY_CHINA"/>
+		<Replace Language="en_US" Text="Deputatsiki" Tag="LOC_CITY_NAME_DEPUTATSKY_GEORGIA"/>
+		<Replace Language="en_US" Text="Dipatatski" Tag="LOC_CITY_NAME_DEPUTATSKY_INDIA"/>
+		<Replace Language="en_US" Text="Deputi" Tag="LOC_CITY_NAME_DEPUTATSKY_INDONESIA"/>
+		<Replace Language="en_US" Text="Dairi" Tag="LOC_CITY_NAME_DEPUTATSKY_JAPAN"/>
+		<Replace Language="en_US" Text="Anoubrthean" Tag="LOC_CITY_NAME_DEPUTATSKY_KHMER"/>
+		<Replace Language="en_US" Text="Daeliin" Tag="LOC_CITY_NAME_DEPUTATSKY_KOREA"/>
+		<Replace Language="en_US" Text="Orlogch Darga" Tag="LOC_CITY_NAME_DEPUTATSKY_MONGOLIA"/>
+		<Replace Language="en_US" Text="Egvekinot" Tag="LOC_CITY_NAME_EGVEKINOT"/>
+		<Replace Language="en_US" Text="Egvekinoto" Tag="LOC_CITY_NAME_EGVEKINOT_GEORGIA"/>
+		<Replace Language="en_US" Text="Igvikonota" Tag="LOC_CITY_NAME_EGVEKINOT_INDIA"/>
+		<Replace Language="en_US" Text="Egubikino" Tag="LOC_CITY_NAME_EGVEKINOT_JAPAN"/>
+		<Replace Language="en_US" Text="Egvkinot" Tag="LOC_CITY_NAME_EGVEKINOT_MONGOLIA"/>
+		<Replace Language="en_US" Text="Evensk" Tag="LOC_CITY_NAME_EVENSK"/>
+		<Replace Language="en_US" Text="Evenski" Tag="LOC_CITY_NAME_EVENSK_GEORGIA"/>
+		<Replace Language="en_US" Text="Ovhaska" Tag="LOC_CITY_NAME_EVENSK_INDIA"/>
+		<Replace Language="en_US" Text="Evuensuku" Tag="LOC_CITY_NAME_EVENSK_JAPAN"/>
+		<Replace Language="en_US" Text="Ebenseukeu" Tag="LOC_CITY_NAME_EVENSK_KOREA"/>
+		<Replace Language="en_US" Text="Yevyenk" Tag="LOC_CITY_NAME_EVENSK_MONGOLIA"/>
+		<Replace Language="en_US" Text="Gizhiga" Tag="LOC_CITY_NAME_GIZHIGA"/>
+		<Replace Language="en_US" Text="Gijhiga" Tag="LOC_CITY_NAME_GIZHIGA_INDIA"/>
+		<Replace Language="en_US" Text="Gijiga" Tag="LOC_CITY_NAME_GIZHIGA_JAPAN"/>
+		<Replace Language="en_US" Text="Hkeihka" Tag="LOC_CITY_NAME_GIZHIGA_KHMER"/>
+		<Replace Language="en_US" Text="Gisiga" Tag="LOC_CITY_NAME_GIZHIGA_KOREA"/>
+		<Replace Language="en_US" Text="Gizchig" Tag="LOC_CITY_NAME_GIZHIGA_MONGOLIA"/>
+		<Replace Language="en_US" Text="Ilirney" Tag="LOC_CITY_NAME_ILIRNEY"/>
+		<Replace Language="en_US" Text="Ilinara" Tag="LOC_CITY_NAME_ILIRNEY_INDIA"/>
+		<Replace Language="en_US" Text="Irurini" Tag="LOC_CITY_NAME_ILIRNEY_JAPAN"/>
+		<Replace Language="en_US" Text="Iline" Tag="LOC_CITY_NAME_ILIRNEY_KOREA"/>
+		<Replace Language="en_US" Text="Ilirnye" Tag="LOC_CITY_NAME_ILIRNEY_MONGOLIA"/>
+		<Replace Language="en_US" Text="Kamenskoye" Tag="LOC_CITY_NAME_KAMENSKOYE"/>
+		<Replace Language="en_US" Text="Kemenskoi" Tag="LOC_CITY_NAME_KAMENSKOYE_GEORGIA"/>
+		<Replace Language="en_US" Text="Kamensukoyo" Tag="LOC_CITY_NAME_KAMENSKOYE_JAPAN"/>
+		<Replace Language="en_US" Text="Kamenseu Koye" Tag="LOC_CITY_NAME_KAMENSKOYE_KOREA"/>
+		<Replace Language="en_US" Text="Kamchatkoi" Tag="LOC_CITY_NAME_KAMENSKOYE_MONGOLIA"/>
+		<Replace Language="en_US" Text="Kazachye" Tag="LOC_CITY_NAME_KAZACHYE"/>
+		<Replace Language="en_US" Text="Alqawzaq" Tag="LOC_CITY_NAME_KAZACHYE_ARABIA"/>
+		<Replace Language="en_US" Text="Gesake" Tag="LOC_CITY_NAME_KAZACHYE_CHINA"/>
+		<Replace Language="en_US" Text="Kazakebi" Tag="LOC_CITY_NAME_KAZACHYE_GEORGIA"/>
+		<Replace Language="en_US" Text="Kosaka" Tag="LOC_CITY_NAME_KAZACHYE_INDIA"/>
+		<Replace Language="en_US" Text="Kosakku" Tag="LOC_CITY_NAME_KAZACHYE_JAPAN"/>
+		<Replace Language="en_US" Text="Kosag" Tag="LOC_CITY_NAME_KAZACHYE_KOREA"/>
+		<Replace Language="en_US" Text="Kossak" Tag="LOC_CITY_NAME_KAZACHYE_MONGOLIA"/>
+		<Replace Language="en_US" Text="Kozak" Tag="LOC_CITY_NAME_KAZACHYE_POLAND"/>
+		<Replace Language="en_US" Text="Illic Cosacorum" Tag="LOC_CITY_NAME_KAZACHYE_ROME"/>
+		<Replace Language="en_US" Text="Cosaco" Tag="LOC_CITY_NAME_KAZACHYE_SPAIN"/>
+		<Replace Language="en_US" Text="Khatyrka" Tag="LOC_CITY_NAME_KHATYRKA"/>
+		<Replace Language="en_US" Text="Khaturka" Tag="LOC_CITY_NAME_KHATYRKA_GEORGIA"/>
+		<Replace Language="en_US" Text="Khatiraka" Tag="LOC_CITY_NAME_KHATYRKA_INDIA"/>
+		<Replace Language="en_US" Text="Kashiruka" Tag="LOC_CITY_NAME_KHATYRKA_JAPAN"/>
+		<Replace Language="en_US" Text="Khatsirka" Tag="LOC_CITY_NAME_KHATYRKA_MONGOLIA"/>
+		<Replace Language="en_US" Text="Khonuu" Tag="LOC_CITY_NAME_KHONUU"/>
+		<Replace Language="en_US" Text="Khonu" Tag="LOC_CITY_NAME_KHONUU_INDIA"/>
+		<Replace Language="en_US" Text="Konuu" Tag="LOC_CITY_NAME_KHONUU_JAPAN"/>
+		<Replace Language="en_US" Text="Khuon" Tag="LOC_CITY_NAME_KHONUU_KHMER"/>
+		<Replace Language="en_US" Text="Konuu" Tag="LOC_CITY_NAME_KHONUU_KOREA"/>
+		<Replace Language="en_US" Text="Kotelny" Tag="LOC_CITY_NAME_KOTELNY"/>
+		<Replace Language="en_US" Text="Koteni" Tag="LOC_CITY_NAME_KOTELNY_GEORGIA"/>
+		<Replace Language="en_US" Text="Kotali" Tag="LOC_CITY_NAME_KOTELNY_INDIA"/>
+		<Replace Language="en_US" Text="Koteruni" Tag="LOC_CITY_NAME_KOTELNY_JAPAN"/>
+		<Replace Language="en_US" Text="Kotelni" Tag="LOC_CITY_NAME_KOTELNY_KOREA"/>
+		<Replace Language="en_US" Text="Kotelnii" Tag="LOC_CITY_NAME_KOTELNY_MONGOLIA"/>
+		<Replace Language="en_US" Text="Krestovaya" Tag="LOC_CITY_NAME_KRESTOVAYA"/>
+		<Replace Language="en_US" Text="Filibs" Tag="LOC_CITY_NAME_KRESTOVAYA_ARABIA"/>
+		<Replace Language="en_US" Text="Feilipushi" Tag="LOC_CITY_NAME_KRESTOVAYA_CHINA"/>
+		<Replace Language="en_US" Text="Gadakveta" Tag="LOC_CITY_NAME_KRESTOVAYA_GEORGIA"/>
+		<Replace Language="en_US" Text="Krosa" Tag="LOC_CITY_NAME_KRESTOVAYA_INDIA"/>
+		<Replace Language="en_US" Text="Salib" Tag="LOC_CITY_NAME_KRESTOVAYA_INDONESIA"/>
+		<Replace Language="en_US" Text="Jujika" Tag="LOC_CITY_NAME_KRESTOVAYA_JAPAN"/>
+		<Replace Language="en_US" Text="Kakbat" Tag="LOC_CITY_NAME_KRESTOVAYA_KHMER"/>
+		<Replace Language="en_US" Text="Sibjaga" Tag="LOC_CITY_NAME_KRESTOVAYA_KOREA"/>
+		<Replace Language="en_US" Text="Zagalmai" Tag="LOC_CITY_NAME_KRESTOVAYA_MONGOLIA"/>
+		<Replace Language="en_US" Text="Lamutskoye" Tag="LOC_CITY_NAME_LAMUTSKOYE"/>
+		<Replace Language="en_US" Text="Lamubaozhuang" Tag="LOC_CITY_NAME_LAMUTSKOYE_CHINA"/>
+		<Replace Language="en_US" Text="Lamutski" Tag="LOC_CITY_NAME_LAMUTSKOYE_GEORGIA"/>
+		<Replace Language="en_US" Text="Lutuski" Tag="LOC_CITY_NAME_LAMUTSKOYE_INDIA"/>
+		<Replace Language="en_US" Text="Ramutsuki" Tag="LOC_CITY_NAME_LAMUTSKOYE_JAPAN"/>
+		<Replace Language="en_US" Text="Lamujjeuki" Tag="LOC_CITY_NAME_LAMUTSKOYE_KOREA"/>
+		<Replace Language="en_US" Text="Lamutskii" Tag="LOC_CITY_NAME_LAMUTSKOYE_MONGOLIA"/>
+		<Replace Language="en_US" Text="Lavrentiya" Tag="LOC_CITY_NAME_LAVRENTIYA"/>
+		<Replace Language="en_US" Text="Lawrence" Tag="LOC_CITY_NAME_LAVRENTIYA_AMERICA"/>
+		<Replace Language="en_US" Text="Lurans" Tag="LOC_CITY_NAME_LAVRENTIYA_ARABIA"/>
+		<Replace Language="en_US" Text="Lawrence" Tag="LOC_CITY_NAME_LAVRENTIYA_AUSTRALIA"/>
+		<Replace Language="en_US" Text="Lorenzo" Tag="LOC_CITY_NAME_LAVRENTIYA_BRAZIL"/>
+		<Replace Language="en_US" Text="Lawrence" Tag="LOC_CITY_NAME_LAVRENTIYA_ENGLAND"/>
+		<Replace Language="en_US" Text="Lawrence" Tag="LOC_CITY_NAME_LAVRENTIYA_FRANCE"/>
+		<Replace Language="en_US" Text="Lavrentia" Tag="LOC_CITY_NAME_LAVRENTIYA_GEORGIA"/>
+		<Replace Language="en_US" Text="Lorensa" Tag="LOC_CITY_NAME_LAVRENTIYA_INDIA"/>
+		<Replace Language="en_US" Text="Rorensu" Tag="LOC_CITY_NAME_LAVRENTIYA_JAPAN"/>
+		<Replace Language="en_US" Text="Loklauren" Tag="LOC_CITY_NAME_LAVRENTIYA_KHMER"/>
+		<Replace Language="en_US" Text="Lolenseu" Tag="LOC_CITY_NAME_LAVRENTIYA_KOREA"/>
+		<Replace Language="en_US" Text="Lavryentiia" Tag="LOC_CITY_NAME_LAVRENTIYA_MONGOLIA"/>
+		<Replace Language="en_US" Text="Laurentius" Tag="LOC_CITY_NAME_LAVRENTIYA_ROME"/>
+		<Replace Language="en_US" Text="Lorenzo" Tag="LOC_CITY_NAME_LAVRENTIYA_SPAIN"/>
+		<Replace Language="en_US" Text="Laolunsi" Tag="LOC_CITY_NAME_LAVRTENTIYA_CHINA"/>
+		<Replace Language="en_US" Text="Leningradsky" Tag="LOC_CITY_NAME_LENINGRADSKY"/>
+		<Replace Language="en_US" Text="Lyninghrad" Tag="LOC_CITY_NAME_LENINGRADSKY_ARABIA"/>
+		<Replace Language="en_US" Text="Lieningele" Tag="LOC_CITY_NAME_LENINGRADSKY_CHINA"/>
+		<Replace Language="en_US" Text="Leningradis" Tag="LOC_CITY_NAME_LENINGRADSKY_GEORGIA"/>
+		<Replace Language="en_US" Text="Leninagradaski" Tag="LOC_CITY_NAME_LENINGRADSKY_INDIA"/>
+		<Replace Language="en_US" Text="Reningurafusuki" Tag="LOC_CITY_NAME_LENINGRADSKY_JAPAN"/>
+		<Replace Language="en_US" Text="Leningeuladeuseuki" Tag="LOC_CITY_NAME_LENINGRADSKY_KOREA"/>
+		<Replace Language="en_US" Text="Lyeningradskii" Tag="LOC_CITY_NAME_LENINGRADSKY_MONGOLIA"/>
+		<Replace Language="en_US" Text="Magadan" Tag="LOC_CITY_NAME_MAGADAN"/>
+		<Replace Language="en_US" Text="Majiadan" Tag="LOC_CITY_NAME_MAGADAN_CHINA"/>
+		<Replace Language="en_US" Text="Magadani" Tag="LOC_CITY_NAME_MAGADAN_GEORGIA"/>
+		<Replace Language="en_US" Text="Meakadan" Tag="LOC_CITY_NAME_MAGADAN_KHMER"/>
+		<Replace Language="en_US" Text="Markovo" Tag="LOC_CITY_NAME_MARKOVO"/>
+		<Replace Language="en_US" Text="Marakaho" Tag="LOC_CITY_NAME_MARKOVO_INDIA"/>
+		<Replace Language="en_US" Text="Marukoho" Tag="LOC_CITY_NAME_MARKOVO_JAPAN"/>
+		<Replace Language="en_US" Text="Mys Shmidta" Tag="LOC_CITY_NAME_MYS_SHMIDTA"/>
+		<Replace Language="en_US" Text="Cape Schmidt" Tag="LOC_CITY_NAME_MYS_SHMIDTA_AMERICA"/>
+		<Replace Language="en_US" Text="Kayb Shamit" Tag="LOC_CITY_NAME_MYS_SHMIDTA_ARABIA"/>
+		<Replace Language="en_US" Text="Cape Schmidt" Tag="LOC_CITY_NAME_MYS_SHMIDTA_AUSTRALIA"/>
+		<Replace Language="en_US" Text="Shimitejiao" Tag="LOC_CITY_NAME_MYS_SHMIDTA_CHINA"/>
+		<Replace Language="en_US" Text="Cape Schmidt" Tag="LOC_CITY_NAME_MYS_SHMIDTA_ENGLAND"/>
+		<Replace Language="en_US" Text="Kep Shmidti" Tag="LOC_CITY_NAME_MYS_SHMIDTA_GEORGIA"/>
+		<Replace Language="en_US" Text="Kepshmit" Tag="LOC_CITY_NAME_MYS_SHMIDTA_INDIA"/>
+		<Replace Language="en_US" Text="Tanjung Sumit" Tag="LOC_CITY_NAME_MYS_SHMIDTA_INDONESIA"/>
+		<Replace Language="en_US" Text="Kepu Shumitto" Tag="LOC_CITY_NAME_MYS_SHMIDTA_JAPAN"/>
+		<Replace Language="en_US" Text="Syumiteugoj" Tag="LOC_CITY_NAME_MYS_SHMIDTA_KOREA"/>
+		<Replace Language="en_US" Text="Bulan Shmidta" Tag="LOC_CITY_NAME_MYS_SHMIDTA_MONGOLIA"/>
+		<Replace Language="en_US" Text="Neshkan" Tag="LOC_CITY_NAME_NESHKAN"/>
+		<Replace Language="en_US" Text="Nashihan" Tag="LOC_CITY_NAME_NESHKAN_CHINA"/>
+		<Replace Language="en_US" Text="Nashkani" Tag="LOC_CITY_NAME_NESHKAN_GEORGIA"/>
+		<Replace Language="en_US" Text="Nesna" Tag="LOC_CITY_NAME_NESHKAN_INDIA"/>
+		<Replace Language="en_US" Text="Neshukan" Tag="LOC_CITY_NAME_NESHKAN_JAPAN"/>
+		<Replace Language="en_US" Text="Nesyukan" Tag="LOC_CITY_NAME_NESHKAN_KOREA"/>
+		<Replace Language="en_US" Text="Neshkhan" Tag="LOC_CITY_NAME_NESHKAN_MONGOLIA"/>
+		<Replace Language="en_US" Text="Nizhneyansk" Tag="LOC_CITY_NAME_NIZHNEYANSK"/>
+		<Replace Language="en_US" Text="Nizhniani" Tag="LOC_CITY_NAME_NIZHNEYANSK_GEORGIA"/>
+		<Replace Language="en_US" Text="Nijhanenska" Tag="LOC_CITY_NAME_NIZHNEYANSK_INDIA"/>
+		<Replace Language="en_US" Text="Nijiyansuku" Tag="LOC_CITY_NAME_NIZHNEYANSK_JAPAN"/>
+		<Replace Language="en_US" Text="Nicheunianseukeu" Tag="LOC_CITY_NAME_NIZHNEYANSK_KOREA"/>
+		<Replace Language="en_US" Text="Novaya Sibir" Tag="LOC_CITY_NAME_NOVAYA_SIBIR"/>
+		<Replace Language="en_US" Text="Saybiria Aljadida" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_ARABIA"/>
+		<Replace Language="en_US" Text="New Siberia" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_AUSTRALIA"/>
+		<Replace Language="en_US" Text="Nova Sibéria" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_BRAZIL"/>
+		<Replace Language="en_US" Text="Xin Xiboliya" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_CHINA"/>
+		<Replace Language="en_US" Text="Akhali Tsimbirshi" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_GEORGIA"/>
+		<Replace Language="en_US" Text="Nea Siviria" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_GREECE"/>
+		<Replace Language="en_US" Text="Naya Saiberiya" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_INDIA"/>
+		<Replace Language="en_US" Text="Siberia Baru" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_INDONESIA"/>
+		<Replace Language="en_US" Text="Nyushiberia" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_JAPAN"/>
+		<Replace Language="en_US" Text="Saiberi Thmei" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_KHMER"/>
+		<Replace Language="en_US" Text="Nyu Sibelia" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_KOREA"/>
+		<Replace Language="en_US" Text="Shine Sibiri" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_MONGOLIA"/>
+		<Replace Language="en_US" Text="Nova Siberiae" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_ROME"/>
+		<Replace Language="en_US" Text="Siberia Ùr" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_SCOTLAND"/>
+		<Replace Language="en_US" Text="Nueva Siberia" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_SPAIN"/>
+		<Replace Language="en_US" Text="Isiberia Entsha" Tag="LOC_CITY_NAME_NOVAYA_SIBIR_ZULU"/>
+		<Replace Language="en_US" Text="Okha" Tag="LOC_CITY_NAME_OKHA"/>
+		<Replace Language="en_US" Text="Aoka" Tag="LOC_CITY_NAME_OKHA_CHINA"/>
+		<Replace Language="en_US" Text="Oha" Tag="LOC_CITY_NAME_OKHA_JAPAN"/>
+		<Replace Language="en_US" Text="Auha" Tag="LOC_CITY_NAME_OKHA_KHMER"/>
+		<Replace Language="en_US" Text="Oka" Tag="LOC_CITY_NAME_OKHA_KOREA"/>
+		<Replace Language="en_US" Text="Okkha" Tag="LOC_CITY_NAME_OKHA_MONGOLIA"/>
+		<Replace Language="en_US" Text="Okhotsk" Tag="LOC_CITY_NAME_OKHOTSK"/>
+		<Replace Language="en_US" Text="Ehuocike" Tag="LOC_CITY_NAME_OKHOTSK_CHINA"/>
+		<Replace Language="en_US" Text="Okhotski" Tag="LOC_CITY_NAME_OKHOTSK_GEORGIA"/>
+		<Replace Language="en_US" Text="Ohotsuku" Tag="LOC_CITY_NAME_OKHOTSK_JAPAN"/>
+		<Replace Language="en_US" Text="Ohocheukeu" Tag="LOC_CITY_NAME_OKHOTSK_KOREA"/>
+		<Replace Language="en_US" Text="Okotsk" Tag="LOC_CITY_NAME_OKHOTSK_MONGOLIA"/>
+		<Replace Language="en_US" Text="Omolon" Tag="LOC_CITY_NAME_OMOLON"/>
+		<Replace Language="en_US" Text="Omoloni" Tag="LOC_CITY_NAME_OMOLON_GEORGIA"/>
+		<Replace Language="en_US" Text="Omoron" Tag="LOC_CITY_NAME_OMOLON_JAPAN"/>
+		<Replace Language="en_US" Text="Aumlon" Tag="LOC_CITY_NAME_OMOLON_KHMER"/>
+		<Replace Language="en_US" Text="Ovolon" Tag="LOC_CITY_NAME_OMOLON_MONGOLIA"/>
+		<Replace Language="en_US" Text="Ossora" Tag="LOC_CITY_NAME_OSSORA"/>
+		<Replace Language="en_US" Text="Osora" Tag="LOC_CITY_NAME_OSSORA_INDIA"/>
+		<Replace Language="en_US" Text="Osora" Tag="LOC_CITY_NAME_OSSORA_JAPAN"/>
+		<Replace Language="en_US" Text="Osoli" Tag="LOC_CITY_NAME_OSSORA_KOREA"/>
+		<Replace Language="en_US" Text="Osor" Tag="LOC_CITY_NAME_OSSORA_MONGOLIA"/>
+		<Replace Language="en_US" Text="Ozernovskiy" Tag="LOC_CITY_NAME_OZERNOVSKIY"/>
+		<Replace Language="en_US" Text="Ozenofusuki" Tag="LOC_CITY_NAME_OZERNOVSKIY_CHINA"/>
+		<Replace Language="en_US" Text="Ozernovski" Tag="LOC_CITY_NAME_OZERNOVSKIY_GEORGIA"/>
+		<Replace Language="en_US" Text="Ojharnovaskaya" Tag="LOC_CITY_NAME_OZERNOVSKIY_INDIA"/>
+		<Replace Language="en_US" Text="Ojharonovski" Tag="LOC_CITY_NAME_OZERNOVSKIY_INDONESIA"/>
+		<Replace Language="en_US" Text="Ozenofusuki" Tag="LOC_CITY_NAME_OZERNOVSKIY_JAPAN"/>
+		<Replace Language="en_US" Text="Ojeleunopeuseuki" Tag="LOC_CITY_NAME_OZERNOVSKIY_KOREA"/>
+		<Replace Language="en_US" Text="Ozyernovskii" Tag="LOC_CITY_NAME_OZERNOVSKIY_MONGOLIA"/>
+		<Replace Language="en_US" Text="Palana" Tag="LOC_CITY_NAME_PALANA"/>
+		<Replace Language="en_US" Text="Palaana" Tag="LOC_CITY_NAME_PALANA_INDIA"/>
+		<Replace Language="en_US" Text="Parana" Tag="LOC_CITY_NAME_PALANA_JAPAN"/>
+		<Replace Language="en_US" Text="Pallana" Tag="LOC_CITY_NAME_PALANA_KOREA"/>
+		<Replace Language="en_US" Text="Petropavlovsk" Tag="LOC_CITY_NAME_PETROPAVLOVSK"/>
+		<Replace Language="en_US" Text="Bideluobafuluofusike" Tag="LOC_CITY_NAME_PETROPAVLOVSK_CHINA"/>
+		<Replace Language="en_US" Text="Petropavlovski" Tag="LOC_CITY_NAME_PETROPAVLOVSK_GEORGIA"/>
+		<Replace Language="en_US" Text="Petropavhalovska" Tag="LOC_CITY_NAME_PETROPAVLOVSK_INDIA"/>
+		<Replace Language="en_US" Text="Petoropaburofusuku" Tag="LOC_CITY_NAME_PETROPAVLOVSK_JAPAN"/>
+		<Replace Language="en_US" Text="Pyetropavlovsk" Tag="LOC_CITY_NAME_PETROPAVLOVSK_MONGOLIA"/>
+		<Replace Language="en_US" Text="Pevek" Tag="LOC_CITY_NAME_PEVEK"/>
+		<Replace Language="en_US" Text="Peiweike" Tag="LOC_CITY_NAME_PEVEK_CHINA"/>
+		<Replace Language="en_US" Text="Peveka" Tag="LOC_CITY_NAME_PEVEK_INDIA"/>
+		<Replace Language="en_US" Text="Pebekku" Tag="LOC_CITY_NAME_PEVEK_JAPAN"/>
+		<Replace Language="en_US" Text="Pebeg" Tag="LOC_CITY_NAME_PEVEK_KOREA"/>
+		<Replace Language="en_US" Text="Piivk" Tag="LOC_CITY_NAME_PEVEK_MONGOLIA"/>
+		<Replace Language="en_US" Text="Russkoye Ustye" Tag="LOC_CITY_NAME_RUSSKOYE_USTYE"/>
+		<Replace Language="en_US" Text="Alfamu Alruwsiu" Tag="LOC_CITY_NAME_RUSSKOYE_USTYE_ARABIA"/>
+		<Replace Language="en_US" Text="Eluosizui" Tag="LOC_CITY_NAME_RUSSKOYE_USTYE_CHINA"/>
+		<Replace Language="en_US" Text="Rusuli Pirshi" Tag="LOC_CITY_NAME_RUSSKOYE_USTYE_GEORGIA"/>
+		<Replace Language="en_US" Text="Rasiyana Munh" Tag="LOC_CITY_NAME_RUSSKOYE_USTYE_INDIA"/>
+		<Replace Language="en_US" Text="Mulut Rusia" Tag="LOC_CITY_NAME_RUSSKOYE_USTYE_INDONESIA"/>
+		<Replace Language="en_US" Text="Rusukoei Usuto" Tag="LOC_CITY_NAME_RUSSKOYE_USTYE_JAPAN"/>
+		<Replace Language="en_US" Text="Leosia-ib" Tag="LOC_CITY_NAME_RUSSKOYE_USTYE_KOREA"/>
+		<Replace Language="en_US" Text="Okhu-ynam" Tag="LOC_CITY_NAME_RUSSKOYE_USTYE_MONGOLIA"/>
+		<Replace Language="en_US" Text="Beul na Ruis" Tag="LOC_CITY_NAME_RUSSKOYE_USTYE_SCOTLAND"/>
+		<Replace Language="en_US" Text="Umlomo waseRus" Tag="LOC_CITY_NAME_RUSSKOYE_USTYE_ZULU"/>
+		<Replace Language="en_US" Text="Savoonga" Tag="LOC_CITY_NAME_SAVOONGA"/>
+		<Replace Language="en_US" Text="Sivunga" Tag="LOC_CITY_NAME_SAVOONGA_AZTEC"/>
+		<Replace Language="en_US" Text="Sawuenjia" Tag="LOC_CITY_NAME_SAVOONGA_CHINA"/>
+		<Replace Language="en_US" Text="Sivunga" Tag="LOC_CITY_NAME_SAVOONGA_CREE"/>
+		<Replace Language="en_US" Text="Savoanga" Tag="LOC_CITY_NAME_SAVOONGA_GEORGIA"/>
+		<Replace Language="en_US" Text="Sevonga" Tag="LOC_CITY_NAME_SAVOONGA_INDIA"/>
+		<Replace Language="en_US" Text="Savuonga" Tag="LOC_CITY_NAME_SAVOONGA_JAPAN"/>
+		<Replace Language="en_US" Text="Saung-ga" Tag="LOC_CITY_NAME_SAVOONGA_KOREA"/>
+		<Replace Language="en_US" Text="Sivunga" Tag="LOC_CITY_NAME_SAVOONGA_MAPUCHE"/>
+		<Replace Language="en_US" Text="Savuunga" Tag="LOC_CITY_NAME_SAVOONGA_MONGOLIA"/>
+		<Replace Language="en_US" Text="Seymchan" Tag="LOC_CITY_NAME_SEYMCHAN"/>
+		<Replace Language="en_US" Text="Seimchan" Tag="LOC_CITY_NAME_SEYMCHAN_CHINA"/>
+		<Replace Language="en_US" Text="Semichani" Tag="LOC_CITY_NAME_SEYMCHAN_GEORGIA"/>
+		<Replace Language="en_US" Text="Simakana" Tag="LOC_CITY_NAME_SEYMCHAN_INDIA"/>
+		<Replace Language="en_US" Text="Seichan" Tag="LOC_CITY_NAME_SEYMCHAN_JAPAN"/>
+		<Replace Language="en_US" Text="Seichem" Tag="LOC_CITY_NAME_SEYMCHAN_KOREA"/>
+		<Replace Language="en_US" Text="Syeimchan" Tag="LOC_CITY_NAME_SEYMCHAN_MONGOLIA"/>
+		<Replace Language="en_US" Text="Slautnoye" Tag="LOC_CITY_NAME_SLAUTNOYE"/>
+		<Replace Language="en_US" Text="Sleta" Tag="LOC_CITY_NAME_SLAUTNOYE_INDIA"/>
+		<Replace Language="en_US" Text="Suraunoe" Tag="LOC_CITY_NAME_SLAUTNOYE_JAPAN"/>
+		<Replace Language="en_US" Text="Seulaunoye" Tag="LOC_CITY_NAME_SLAUTNOYE_KOREA"/>
+		<Replace Language="en_US" Text="Slautnoi" Tag="LOC_CITY_NAME_SLAUTNOYE_MONGOLIA"/>
+		<Replace Language="en_US" Text="Srednekolymsk" Tag="LOC_CITY_NAME_SREDNEKOLYMSK"/>
+		<Replace Language="en_US" Text="Srydnkulymsk" Tag="LOC_CITY_NAME_SREDNEKOLYMSK_ARABIA"/>
+		<Replace Language="en_US" Text="Zhongkeleimusike" Tag="LOC_CITY_NAME_SREDNEKOLYMSK_CHINA"/>
+		<Replace Language="en_US" Text="Sadanekoloma" Tag="LOC_CITY_NAME_SREDNEKOLYMSK_INDIA"/>
+		<Replace Language="en_US" Text="Suredonekorimusuku" Tag="LOC_CITY_NAME_SREDNEKOLYMSK_JAPAN"/>
+		<Replace Language="en_US" Text="Syernyekolymsk" Tag="LOC_CITY_NAME_SREDNEKOLYMSK_MONGOLIA"/>
+		<Replace Language="en_US" Text="Susuman" Tag="LOC_CITY_NAME_SUSUMAN"/>
+		<Replace Language="en_US" Text="Suusmani" Tag="LOC_CITY_NAME_SUSUMAN_GEORGIA"/>
+		<Replace Language="en_US" Text="Susumana" Tag="LOC_CITY_NAME_SUSUMAN_INDIA"/>
+		<Replace Language="en_US" Text="Sujan" Tag="LOC_CITY_NAME_SUSUMAN_KOREA"/>
+		<Replace Language="en_US" Text="Takhtoyamsk" Tag="LOC_CITY_NAME_TAKHTOYAMSK"/>
+		<Replace Language="en_US" Text="Tahtoyamsk" Tag="LOC_CITY_NAME_TAKHTOYAMSK_CHINA"/>
+		<Replace Language="en_US" Text="Takhotiaski" Tag="LOC_CITY_NAME_TAKHTOYAMSK_GEORGIA"/>
+		<Replace Language="en_US" Text="Takhauyaska" Tag="LOC_CITY_NAME_TAKHTOYAMSK_INDIA"/>
+		<Replace Language="en_US" Text="Tahoidisuku" Tag="LOC_CITY_NAME_TAKHTOYAMSK_JAPAN"/>
+		<Replace Language="en_US" Text="Tahtoiisk" Tag="LOC_CITY_NAME_TAKHTOYAMSK_KHMER"/>
+		<Replace Language="en_US" Text="Tatudiseukeu" Tag="LOC_CITY_NAME_TAKHTOYAMSK_KOREA"/>
+		<Replace Language="en_US" Text="Takhtopi Khel" Tag="LOC_CITY_NAME_TAKHTOYAMSK_MONGOLIA"/>
+		<Replace Language="en_US" Text="Tilichiki" Tag="LOC_CITY_NAME_TILICHIKI"/>
+		<Replace Language="en_US" Text="Tylytshyka" Tag="LOC_CITY_NAME_TILICHIKI_ARABIA"/>
+		<Replace Language="en_US" Text="Jiliqiji" Tag="LOC_CITY_NAME_TILICHIKI_CHINA"/>
+		<Replace Language="en_US" Text="Tilikaki" Tag="LOC_CITY_NAME_TILICHIKI_INDIA"/>
+		<Replace Language="en_US" Text="Tirihiki" Tag="LOC_CITY_NAME_TILICHIKI_JAPAN"/>
+		<Replace Language="en_US" Text="Tillichiki" Tag="LOC_CITY_NAME_TILICHIKI_KOREA"/>
+		<Replace Language="en_US" Text="Tomtor" Tag="LOC_CITY_NAME_TOMTOR"/>
+		<Replace Language="en_US" Text="Tuomutuoer" Tag="LOC_CITY_NAME_TOMTOR_CHINA"/>
+		<Replace Language="en_US" Text="Totor" Tag="LOC_CITY_NAME_TOMTOR_GEORGIA"/>
+		<Replace Language="en_US" Text="Tomatora" Tag="LOC_CITY_NAME_TOMTOR_INDIA"/>
+		<Replace Language="en_US" Text="Tomutoru" Tag="LOC_CITY_NAME_TOMTOR_JAPAN"/>
+		<Replace Language="en_US" Text="Tomtoleu" Tag="LOC_CITY_NAME_TOMTOR_KOREA"/>
+		<Replace Language="en_US" Text="Tumat" Tag="LOC_CITY_NAME_TUMAT"/>
+		<Replace Language="en_US" Text="Tawmat" Tag="LOC_CITY_NAME_TUMAT_ARABIA"/>
+		<Replace Language="en_US" Text="Tumata" Tag="LOC_CITY_NAME_TUMAT_INDIA"/>
+		<Replace Language="en_US" Text="Toumatto" Tag="LOC_CITY_NAME_TUMAT_JAPAN"/>
+		<Replace Language="en_US" Text="Ust-Bolsheretsk" Tag="LOC_CITY_NAME_UST_BOLSHERETSK"/>
+		<Replace Language="en_US" Text="Ast-Bolshairaitsk" Tag="LOC_CITY_NAME_UST_BOLSHERETSK_INDIA"/>
+		<Replace Language="en_US" Text="Usuto Borusheretsuku" Tag="LOC_CITY_NAME_UST_BOLSHERETSK_JAPAN"/>
+		<Replace Language="en_US" Text="Abboul-Berisak" Tag="LOC_CITY_NAME_UST_BOLSHERETSK_KHMER"/>
+		<Replace Language="en_US" Text="Useu Bollecheucheukeu" Tag="LOC_CITY_NAME_UST_BOLSHERETSK_KOREA"/>
+		<Replace Language="en_US" Text="Ust-Kamchatsk" Tag="LOC_CITY_NAME_UST_KAMCHATSK"/>
+		<Replace Language="en_US" Text="Kou Kamchatsk" Tag="LOC_CITY_NAME_UST_KAMCHATSK_CHINA"/>
+		<Replace Language="en_US" Text="Usuto Kamuchatsuku" Tag="LOC_CITY_NAME_UST_KAMCHATSK_JAPAN"/>
+		<Replace Language="en_US" Text="Useu Kamchacheukeu" Tag="LOC_CITY_NAME_UST_KAMCHATSK_KOREA"/>
+		<Replace Language="en_US" Text="Ust-Khayryuzovo" Tag="LOC_CITY_NAME_UST_KHAYRYUZOVO"/>
+		<Replace Language="en_US" Text="Ast-Khairijhovo" Tag="LOC_CITY_NAME_UST_KHAYRYUZOVO_INDIA"/>
+		<Replace Language="en_US" Text="Usuto Kairyuuvuo" Tag="LOC_CITY_NAME_UST_KHAYRYUZOVO_JAPAN"/>
+		<Replace Language="en_US" Text="Useu Kailyujobo" Tag="LOC_CITY_NAME_UST_KHAYRYUZOVO_KOREA"/>
+		<Replace Language="en_US" Text="Ust-Khryryuzovo" Tag="LOC_CITY_NAME_UST_KHAYRYUZOVO_MONGOLIA"/>
+		<Replace Language="en_US" Text="Ust-Kuyga" Tag="LOC_CITY_NAME_UST_KUYGA"/>
+		<Replace Language="en_US" Text="Wusiji Kuyga" Tag="LOC_CITY_NAME_UST_KUYGA_CHINA"/>
+		<Replace Language="en_US" Text="Ast-Kuyiga" Tag="LOC_CITY_NAME_UST_KUYGA_INDIA"/>
+		<Replace Language="en_US" Text="Usuto Kuiga" Tag="LOC_CITY_NAME_UST_KUYGA_JAPAN"/>
+		<Replace Language="en_US" Text="Aousa-Kuyga" Tag="LOC_CITY_NAME_UST_KUYGA_KHMER"/>
+		<Replace Language="en_US" Text="Useu Kuiga" Tag="LOC_CITY_NAME_UST_KUYGA_KOREA"/>
+		<Replace Language="en_US" Text="Ust-Nera" Tag="LOC_CITY_NAME_UST_NERA"/>
+		<Replace Language="en_US" Text="Uwsatnira" Tag="LOC_CITY_NAME_UST_NERA_ARABIA"/>
+		<Replace Language="en_US" Text="Wusijinuola" Tag="LOC_CITY_NAME_UST_NERA_CHINA"/>
+		<Replace Language="en_US" Text="Ast-Nera" Tag="LOC_CITY_NAME_UST_NERA_INDIA"/>
+		<Replace Language="en_US" Text="Usuto Nera" Tag="LOC_CITY_NAME_UST_NERA_JAPAN"/>
+		<Replace Language="en_US" Text="Ausa Nera" Tag="LOC_CITY_NAME_UST_NERA_KHMER"/>
+		<Replace Language="en_US" Text="Useu Nela" Tag="LOC_CITY_NAME_UST_NERA_KOREA"/>
+		<Replace Language="en_US" Text="Ust-Nyera" Tag="LOC_CITY_NAME_UST_NERA_MONGOLIA"/>
+		<Replace Language="en_US" Text="Vayegi" Tag="LOC_CITY_NAME_VAYEGI"/>
+		<Replace Language="en_US" Text="Bayir" Tag="LOC_CITY_NAME_VAYEGI_ARABIA"/>
+		<Replace Language="en_US" Text="Beier" Tag="LOC_CITY_NAME_VAYEGI_CHINA"/>
+		<Replace Language="en_US" Text="Vaigi" Tag="LOC_CITY_NAME_VAYEGI_GEORGIA"/>
+		<Replace Language="en_US" Text="Vayaigi" Tag="LOC_CITY_NAME_VAYEGI_INDIA"/>
+		<Replace Language="en_US" Text="Vuaigi" Tag="LOC_CITY_NAME_VAYEGI_JAPAN"/>
+		<Replace Language="en_US" Text="Vehkau" Tag="LOC_CITY_NAME_VAYEGI_KHMER"/>
+		<Replace Language="en_US" Text="Begu" Tag="LOC_CITY_NAME_VAYEGI_KOREA"/>
+		<Replace Language="en_US" Text="Vyega" Tag="LOC_CITY_NAME_VAYEGI_MONGOLIA"/>
+		<Replace Language="en_US" Text="Vesenny" Tag="LOC_CITY_NAME_VESENNY"/>
+		<Replace Language="en_US" Text="Rbye" Tag="LOC_CITY_NAME_VESENNY_ARABIA"/>
+		<Replace Language="en_US" Text="Ameyalli" Tag="LOC_CITY_NAME_VESENNY_AZTEC"/>
+		<Replace Language="en_US" Text="Chuntian" Tag="LOC_CITY_NAME_VESENNY_CHINA"/>
+		<Replace Language="en_US" Text="Miyoskamiki" Tag="LOC_CITY_NAME_VESENNY_CREE"/>
+		<Replace Language="en_US" Text="Gazapkhuli" Tag="LOC_CITY_NAME_VESENNY_GEORGIA"/>
+		<Replace Language="en_US" Text="Anoixi" Tag="LOC_CITY_NAME_VESENNY_GREECE"/>
+		<Replace Language="en_US" Text="Vasant" Tag="LOC_CITY_NAME_VESENNY_INDIA"/>
+		<Replace Language="en_US" Text="Musim Semi" Tag="LOC_CITY_NAME_VESENNY_INDONESIA"/>
+		<Replace Language="en_US" Text="Haru" Tag="LOC_CITY_NAME_VESENNY_JAPAN"/>
+		<Replace Language="en_US" Text="Rdauv Phkarik" Tag="LOC_CITY_NAME_VESENNY_KHMER"/>
+		<Replace Language="en_US" Text="Beseli" Tag="LOC_CITY_NAME_VESENNY_KOREA"/>
+		<Replace Language="en_US" Text="Khavar" Tag="LOC_CITY_NAME_VESENNY_MONGOLIA"/>
+		<Replace Language="en_US" Text="Vår" Tag="LOC_CITY_NAME_VESENNY_NORWAY"/>
+		<Replace Language="en_US" Text="Wiosna" Tag="LOC_CITY_NAME_VESENNY_POLAND"/>
+		<Replace Language="en_US" Text="Fons" Tag="LOC_CITY_NAME_VESENNY_ROME"/>
+		<Replace Language="en_US" Text="Yelizovo" Tag="LOC_CITY_NAME_YELIZOVO"/>
+		<Replace Language="en_US" Text="Yelizuowo" Tag="LOC_CITY_NAME_YELIZOVO_CHINA"/>
+		<Replace Language="en_US" Text="Elizovo" Tag="LOC_CITY_NAME_YELIZOVO_GEORGIA"/>
+		<Replace Language="en_US" Text="Yelijhovo" Tag="LOC_CITY_NAME_YELIZOVO_INDIA"/>
+		<Replace Language="en_US" Text="Ierizovu" Tag="LOC_CITY_NAME_YELIZOVO_JAPAN"/>
+		<Replace Language="en_US" Text="Yellijobo" Tag="LOC_CITY_NAME_YELIZOVO_KOREA"/>
+		<Replace Language="en_US" Text="Yukagir" Tag="LOC_CITY_NAME_YUKAGIR"/>
+		<Replace Language="en_US" Text="Uggagiri" Tag="LOC_CITY_NAME_YUKAGIR_GEORGIA"/>
+		<Replace Language="en_US" Text="Yukagira" Tag="LOC_CITY_NAME_YUKAGIR_INDIA"/>
+		<Replace Language="en_US" Text="Yukagiru" Tag="LOC_CITY_NAME_YUKAGIR_JAPAN"/>
+		<Replace Language="en_US" Text="Yuzhno-Sakhalinsk" Tag="LOC_CITY_NAME_YUZHNO_SAKHALINSK"/>
+		<Replace Language="en_US" Text="Fengyuan" Tag="LOC_CITY_NAME_YUZHNO_SAKHALINSK_CHINA"/>
+		<Replace Language="en_US" Text="Iuzhno-Saakhalski" Tag="LOC_CITY_NAME_YUZHNO_SAKHALINSK_GEORGIA"/>
+		<Replace Language="en_US" Text="Toyohara" Tag="LOC_CITY_NAME_YUZHNO_SAKHALINSK_JAPAN"/>
+		<Replace Language="en_US" Text="Tauyauharea" Tag="LOC_CITY_NAME_YUZHNO_SAKHALINSK_KHMER"/>
+		<Replace Language="en_US" Text="Doyohara" Tag="LOC_CITY_NAME_YUZHNO_SAKHALINSK_KOREA"/>
+		<Replace Language="en_US" Text="Zyryanka" Tag="LOC_CITY_NAME_ZYRYANKA"/>
+		<Replace Language="en_US" Text="Jiliangqa" Tag="LOC_CITY_NAME_ZYRYANKA_CHINA"/>
+		<Replace Language="en_US" Text="Ziiranka" Tag="LOC_CITY_NAME_ZYRYANKA_GEORGIA"/>
+		<Replace Language="en_US" Text="Jhirianaka" Tag="LOC_CITY_NAME_ZYRYANKA_INDIA"/>
+		<Replace Language="en_US" Text="Jirianka" Tag="LOC_CITY_NAME_ZYRYANKA_JAPAN"/>
+		<Replace Language="en_US" Text="Jilikanka" Tag="LOC_CITY_NAME_ZYRYANKA_KOREA"/>
+		
+	</LocalizedText>
+	
 
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- The Americas City Names: Default Layer (Modern) <en_US> -->
