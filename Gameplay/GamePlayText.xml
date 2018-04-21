@@ -8858,10 +8858,15 @@
 		
 		<!-- MINNESOTA -->
 		<Replace Tag="LOC_CITY_NAME_BEMIDJI" Text="Bemidji" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BEMIDJI_GERMANY" Text="Werner" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BEMIDJI_FRANCE" Text="Lac Marquette" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BEMIDJI_NORWAY" Text="Rosby" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BEMIDJI_ARABIA" Text="Bimidji" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BEMIDJI_CREE" Text="Gaa-Waabaabgankaag" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BEMIDJI_AZTEC" Text="Gaa-Waabaabgankaag" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BEMIDJI_MAPUCHE" Text="Gaa-Waabaabgankaag" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DULUTH" Text="Duluth" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DULUTH_GERMANY" Text="Hermantown" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DULUTH_CREE" Text="Nagaajiwanaang" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DULUTH_AZTEC" Text="Nagaajiwanaang" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DULUTH_MAPUCHE" Text="Nagaajiwanaang" Language="en_US" />
@@ -8869,6 +8874,24 @@
 		<Replace Tag="LOC_CITY_NAME_DULUTH_JAPAN" Text="Darusu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DULUTH_RUSSIA" Text="Dulut" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DULUTH_ARABIA" Text="Dualuth" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON" Text="Gibbon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_FRANCE" Text="Renville" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_GERMANY" Text="Moltke" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_ARABIA" Text="Alejbewn Qerd" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_NORWAY" Text="Settler's Grove" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA" Text="Grand Rapids" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_FRANCE" Text="La Prairie" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_ARABIA" Text="Almunhadirat Alkubraa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_GERMANY" Text="Große Stromschnellen" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HIBBING" Text="Hibbing" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HIBBING_FRANCE" Text="Calumet" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HIBBING_ARABIA" Text="Hybynj" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANKATO" Text="Mankato" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANKATO_GERMANY" Text="New Ulm" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANKATO_FRANCE" Text="Nicollet" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANKATO_ARABIA" Text="Mankatu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARSHALL" Text="Marshall" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARSHALL_ARABIA" Text="Marishal" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS" Text="Minneapolis" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_CREE" Text="Mdewakanton" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_AZTEC" Text="Mdewakanton" Language="en_US" />
@@ -8876,7 +8899,19 @@
 		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_CHINA" Text="Mingniabolisi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_JAPAN" Text="Mineaporisu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_ARABIA" Text="Miniabulis" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_FRANCE" Text="Fort Beauharnois" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_FRANCE" Text="l'Oeil du Cochon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOORHEAD" Text="Moorhead" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOORHEAD_ARABIA" Text="Murhid" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA" Text="Rochester" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_FRANCE" Text="Fort Beauharnois" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_ARABIA" Text="Rutishstr" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_CREE" Text="Eyota" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_AZTEC" Text="Eyota" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_MAPUCHE" Text="Eyota" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_CLOUD" Text="St. Cloud" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_FRANCE" Text="Saint-Cloud" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_ARABIA" Text="Sahabat Alqidiys" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_GERMANY" Text="Heilige Wolke" Language="en_US" />
 		
 		<!-- WISCONSIN -->
 		<Replace Tag="LOC_CITY_NAME_GREEN_BAY" Text="Green Bay" Language="en_US" />
@@ -9407,14 +9442,27 @@
 		<Replace Tag="LOC_CITY_NAME_LITTLE_ROCK_MAPUCHE" Text="Quapaw" Language="en_US" />
 		
 		<!-- IOWA -->
+		<Replace Tag="LOC_CITY_NAME_AMES" Text="Ames" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_AMES_ARABIA" Text="Amis" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CEDAR_RAPIDS" Text="Cedar Rapids" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CEDAR_RAPIDS_ARABIA" Text="Munhadarat Al'arz" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CEDAR_RAPIDS_NORWAY" Text="Seder Stryk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CEDAR_RAPIDS_GERMANY" Text="Zeder Stromschnellen" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CEDAR_RAPIDS_CREE" Text="Illiniwek" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CEDAR_RAPIDS_AZTEC" Text="Illiniwek" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_CEDAR_RAPIDS_MAPUCHE" Text="Illiniwek" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DES_MOINES" Text="Des Moines" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DES_MOINES_ARABIA" Text="Alrahban" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DES_MOINES_CREE" Text="Báxoǰe" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DES_MOINES_AZTEC" Text="Báxoǰe" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DES_MOINES_MAPUCHE" Text="Báxoǰe" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DUBUQUE" Text="Dubuque" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DUBUQUE_ARABIA" Text="Dubuk" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_IOWA_CITY" Text="Iowa City" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_IOWA_CITY" Text="Madinat Ayu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_IOWA_CITY_GERMANY" Text="Iowa-Stadt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WATERLOO" Text="Waterloo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WATERLOO_ARABIA" Text="Watrlu" Language="en_US" />
 		
 		<!-- NORTH DAKOTA -->
 		<Replace Tag="LOC_CITY_NAME_BISMARCK" Text="Bismarck" Language="en_US" />
@@ -9434,6 +9482,14 @@
 		<Replace Tag="LOC_CITY_NAME_FARGO_CHINA" Text="Fage" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_FARGO_JAPAN" Text="Fago" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_FARGO_ARABIA" Text="Farju" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_FORKS" Text="Grand Forks" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_FORKS_ARABIA" Text="Alshuk Alkubraa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_FORKS_GERMANY" Text="Großartige Gabeln" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_FORKS_NORWAY" Text="Store Gafler" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MINOT" Text="Minot" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MINOT_ARABIA" Text="Maynut" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WILLISTON" Text="Williston" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_WILLISTON_ARABIA" Text="Walaysatun" Language="en_US" />
 		
 		<!-- MONTANA -->
 		<Replace Tag="LOC_CITY_NAME_BILLINGS" Text="Billings" Language="en_US" />
