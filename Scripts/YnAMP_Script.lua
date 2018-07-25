@@ -31,14 +31,38 @@ local g_ReferenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth") or 1
 local g_ReferenceMapHeight 	= MapConfiguration.GetValue("ReferenceMapHeight") or 94
 
 local g_iW, g_iH 	= Map.GetGridSize()
-local g_ReferenceWidthFactor  = g_ReferenceMapWidth / g_iW 
-local g_ReferenceHeightFactor = g_ReferenceMapHeight / g_iH
-local g_ReferenceWidthRatio   = g_iW / g_ReferenceMapWidth 
-local g_ReferenceHeightRatio  = g_iH / g_ReferenceMapHeight
+
+local g_UncutMapWidth 	= MapConfiguration.GetValue("UncutMapWidth") or g_iW
+local g_UncutMapHeight 	= MapConfiguration.GetValue("UncutMapHeight") or g_iH
+
+local g_ReferenceWidthFactor  = g_ReferenceMapWidth / g_UncutMapWidth 
+local g_ReferenceHeightFactor = g_ReferenceMapHeight / g_UncutMapHeight
+local g_ReferenceWidthRatio   = g_UncutMapWidth / g_ReferenceMapWidth 
+local g_ReferenceHeightRatio  = g_UncutMapHeight / g_ReferenceMapHeight
 
 local g_ExtraRange = 0
 if bUseRelativePlacement then
 	g_ExtraRange = 10 --Round(10 * math.sqrt(g_iW * g_iH) / math.sqrt(g_ReferenceMapWidth * g_ReferenceMapHeight))
+end
+
+local scenarioName = MapConfiguration.GetValue("ScenarioName")
+
+-- Convert plot position to the corresponding position on the reference map
+function GetRefMapXY(mapX, mapY)
+	if bUseRelativePlacement then
+		refMapX 	= Round(g_ReferenceWidthFactor * mapX)
+		refMapY 	= Round(g_ReferenceHeightFactor * mapY)
+		return refMapX, refMapY
+	end
+	return mapX, mapY
+end
+
+-- Convert the reference map position to the current map position
+function GetPlotFromRefMap(x, y)
+	local iX = Round( g_ReferenceWidthRatio		* x)
+	local iY = Round( g_ReferenceHeightRatio	* y)
+	local plot = Map.GetPlot(iX , iY )
+	return plot
 end
 
 ----------------------------------------------------------------------------------------
@@ -99,12 +123,7 @@ function ChangeCityName( ownerPlayerID, cityID)
 		SetExistingCityNames(pCity)
 		local mapX = pCity:GetX()
 		local mapY = pCity:GetY()
-		local refMapX, refMapY = mapX, mapY
-		if bUseRelativePlacement then
-			-- Convert plot position to the corresponding position on the reference map
-			refMapX 	= Round(g_ReferenceWidthFactor * mapX)
-			refMapY 	= Round(g_ReferenceHeightFactor * mapY)
-		end
+		local refMapX, refMapY = GetRefMapXY(mapX, mapY)
 		local CivilizationTypeName = PlayerConfigurations[ownerPlayerID]:GetCivilizationTypeName()
 		local startPos, endPos = string.find(CivilizationTypeName, "CIVILIZATION_")
 		local sCivSuffix = string.sub(CivilizationTypeName, endPos)
@@ -277,6 +296,21 @@ end
 ----------------------------------------------------------------------------------------
 -- Limiting Barbarian Scouts >>>>>
 ----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+-- Scenario settings  <<<<<
+----------------------------------------------------------------------------------------
+if scenarioName ~= nil then 
+----------------------------------------------------------------------------------------
+
+print("Setting scenario : ", scenarioName)
+
+
+----------------------------------------------------------------------------------------
+end
+----------------------------------------------------------------------------------------
+-- Scenario settings >>>>>
+----------------------------------------------------------------------------------------
+
 
 -- test
 --[[
