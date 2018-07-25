@@ -38,6 +38,21 @@ bAnalyseChokepoints	= not GameConfiguration.GetValue("FastLoad")
 bPlaceAllLuxuries	= MapConfiguration.GetValue("PlaceAllLuxuries") == "PLACEMENT_REQUEST"
 bAlternatePlacement = MapConfiguration.GetValue("AlternatePlacement")
 
+bUseRelativePlacement 	= MapConfiguration.GetValue("UseRelativePlacement")
+g_ReferenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth") or 180
+g_ReferenceMapHeight 	= MapConfiguration.GetValue("ReferenceMapHeight") or 94
+
+g_iW, g_iH 	= Map.GetGridSize()
+
+g_UncutMapWidth 	= MapConfiguration.GetValue("UncutMapWidth") or g_iW
+g_UncutMapHeight 	= MapConfiguration.GetValue("UncutMapHeight") or g_iH
+
+g_ReferenceWidthFactor  = g_ReferenceMapWidth / g_UncutMapWidth 
+g_ReferenceHeightFactor = g_ReferenceMapHeight / g_UncutMapHeight
+g_ReferenceWidthRatio   = g_UncutMapWidth / g_ReferenceMapWidth 
+g_ReferenceHeightRatio  = g_UncutMapHeight / g_ReferenceMapHeight
+
+
 -- Create list of Civilizations and leaders in game
 for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 	local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
@@ -2709,6 +2724,29 @@ end
 
 
 ------------------------------------------------------------------------------
+-- Helpers for x,y positions when using a reference map
+------------------------------------------------------------------------------
+
+-- Convert plot position to the corresponding position on the reference map
+function GetRefMapXY(mapX, mapY)
+	if bUseRelativePlacement then
+		refMapX 	= Round(g_ReferenceWidthFactor * mapX)
+		refMapY 	= Round(g_ReferenceHeightFactor * mapY)
+		return refMapX, refMapY
+	end
+	return mapX, mapY
+end
+
+-- Convert the reference map position to the current map position
+function GetPlotFromRefMap(x, y)
+	local iX = Round( g_ReferenceWidthRatio		* x)
+	local iY = Round( g_ReferenceHeightRatio	* y)
+	local plot = Map.GetPlot(iX , iY )
+	return plot
+end
+
+
+------------------------------------------------------------------------------
 -- Imported Maps Creation
 ------------------------------------------------------------------------------
 
@@ -3113,7 +3151,7 @@ function IsStartingDistanceFarEnough(plot, bIsMinor)
 end
 
 function GetCustomStartingPlots()
-	local g_iW, g_iH 	= Map.GetGridSize()
+
 	local potentialPlots 	= {}
 
 	for iX = 0, g_iW - 1 do
@@ -3851,7 +3889,6 @@ end
 
 function PlaceMissingResources(missingResourceTable)
 	print("Placing missing resources...")
-	local g_iW, g_iH 	= Map.GetGridSize()
 	for _, resourceType in ipairs(missingResourceTable) do
 		local row = GameInfo.Resources[resourceType]
 		local possiblePlots = {}
