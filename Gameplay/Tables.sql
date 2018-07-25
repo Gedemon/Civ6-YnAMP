@@ -92,6 +92,89 @@ CREATE TABLE IF NOT EXISTS CityMap
 CREATE TABLE IF NOT EXISTS StartBiasCoast
     (   CivilizationType TEXT,
         Tier INT default 1);
+
+
+-- Scenario Civilization Replacements
+-- Replace scenario's <CivilizationType> by the (last) <PreferedType> available
+-- If the scenario use a <PreferedType> and it's not available, try to use the first available <CivilizationType> referencing it.
+CREATE TABLE IF NOT EXISTS ScenarioCivilizationsReplacement
+	(	ScenarioName TEXT NOT NULL,
+		CivilizationType TEXT NOT NULL,
+		PreferedType TEXT NOT NULL);
+		
+-- Scenario Cities
+CREATE TABLE IF NOT EXISTS ScenarioCities
+	(	ScenarioName TEXT NOT NULL,
+		CivilizationType TEXT NOT NULL,
+		CityName TEXT,					-- if not NULL it will override the civilization city list name
+		CitySize INT default 1,
+		X INT NOT NULL,
+		Y INT NOT NULL);
+		
+-- Scenario Territory
+CREATE TABLE IF NOT EXISTS ScenarioTerritory
+	(	ScenarioName TEXT NOT NULL,
+		CivilizationType TEXT NOT NULL,
+		CityName TEXT,					-- if NULL the plot will be owned by the nearest city in that case
+		X INT NOT NULL,
+		Y INT NOT NULL);
+		
+-- Scenario Districts (placed after Territory)
+CREATE TABLE IF NOT EXISTS ScenarioDistricts
+	(	ScenarioName TEXT NOT NULL,
+		DistrictType TEXT NOT NULL,
+		CityName TEXT,					-- if NULL the district will be owned by the nearest city in that case
+		InnerHealth INT,
+		OutterHealth INT,
+		X INT NOT NULL,
+		Y INT NOT NULL);
+		
+-- Scenario Buildings (placed after Districts)
+CREATE TABLE IF NOT EXISTS ScenarioBuildings
+	(	ScenarioName TEXT NOT NULL,
+		BuildingType TEXT NOT NULL,
+		X INT NOT NULL,
+		Y INT NOT NULL);
+		
+-- Scenario Occupied Territory (placed last - can be used only if there is a Get/SetOriginalOwner method for plots)
+CREATE TABLE IF NOT EXISTS ScenarioOccupiedTerritory
+	(	ScenarioName TEXT NOT NULL,
+		CivilizationType TEXT NOT NULL,
+		CityName TEXT,					-- if NULL the plot will be owned by the nearest city in that case
+		X INT NOT NULL,
+		Y INT NOT NULL);
+		
+-- Scenario Improvements
+CREATE TABLE IF NOT EXISTS ScenarioImprovements
+	(	ScenarioName TEXT NOT NULL,
+		ImprovementType TEXT NOT NULL,
+		X INT NOT NULL,
+		Y INT NOT NULL);
+
+-- Scenario Units Replacements
+-- Use <BackupType> if the scenario's <UnitType> is not available 
+CREATE TABLE IF NOT EXISTS ScenarioUnitsReplacement
+	(	ScenarioName TEXT NOT NULL,
+		UnitType TEXT NOT NULL,
+		BackupType TEXT NOT NULL);
+
+-- Scenario Units
+CREATE TABLE IF NOT EXISTS ScenarioUnits
+	(	ScenarioName TEXT NOT NULL,
+		CivilizationType TEXT NOT NULL,
+		UnitType TEXT NOT NULL,
+		UnitName TEXT,
+		PromotionList TEXT,
+		Health INT default 100,
+		X INT NOT NULL,
+		Y INT NOT NULL);
+
+-- Scenario Technologies
+CREATE TABLE IF NOT EXISTS ScenarioTechs
+	(	ScenarioName TEXT NOT NULL,
+		CivilizationType TEXT,			-- If NULL give the tech (or the era's techs depending on which is set) to all civilizations
+		EraType TEXT,
+		TechnologyType TEXT);
 		
 -----------------------------------------------
 -- Temporary Tables for initialization
