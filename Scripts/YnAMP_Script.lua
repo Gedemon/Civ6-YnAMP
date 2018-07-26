@@ -35,10 +35,16 @@ local g_iW, g_iH 	= Map.GetGridSize()
 local g_UncutMapWidth 	= MapConfiguration.GetValue("UncutMapWidth") or g_iW
 local g_UncutMapHeight 	= MapConfiguration.GetValue("UncutMapHeight") or g_iH
 
+local g_OffsetX 		= MapConfiguration.GetValue("OffsetX") or 0
+local g_OffsetY 		= MapConfiguration.GetValue("OffsetY") or 0
+local bUseOffset		= (g_OffsetX + g_OffsetY > 0)
+
 local g_ReferenceWidthFactor  = g_ReferenceMapWidth / g_UncutMapWidth 
 local g_ReferenceHeightFactor = g_ReferenceMapHeight / g_UncutMapHeight
 local g_ReferenceWidthRatio   = g_UncutMapWidth / g_ReferenceMapWidth 
 local g_ReferenceHeightRatio  = g_UncutMapHeight / g_ReferenceMapHeight
+
+
 
 local g_ExtraRange = 0
 if bUseRelativePlacement then
@@ -47,23 +53,71 @@ end
 
 local scenarioName = MapConfiguration.GetValue("ScenarioName")
 
--- Convert plot position to the corresponding position on the reference map
+------------------------------------------------------------------------------
+-- Helpers for x,y positions when using a reference or offset map
+------------------------------------------------------------------------------
+
+-- Convert current map position to the corresponding position on the reference map
+function GetRefMapX(mapX)
+	local refMapX = mapX
+	if bUseRelativePlacement then
+		refMapX 	= Round(g_ReferenceWidthFactor * mapX)
+	end
+	if bUseOffset then
+		refMapX = refMapX + g_OffsetX
+	end
+	return refMapX
+end
+
+function GetRefMapY(mapY)
+	local refMapY = mapY
+	if bUseRelativePlacement then
+		refMapY 	= Round(g_ReferenceHeightFactor * mapY)
+	end
+	if bUseOffset then
+		refMapY = refMapY + g_OffsetY
+	end
+	return refMapY
+end
+
 function GetRefMapXY(mapX, mapY)
+	local refMapX, refMapY = mapX, mapY
 	if bUseRelativePlacement then
 		refMapX 	= Round(g_ReferenceWidthFactor * mapX)
 		refMapY 	= Round(g_ReferenceHeightFactor * mapY)
-		return refMapX, refMapY
 	end
-	return mapX, mapY
+	if bUseOffset then
+		refMapX = refMapX + g_OffsetX
+		refMapY = refMapY + g_OffsetY
+	end
+	return refMapX, refMapY
 end
 
 -- Convert the reference map position to the current map position
-function GetPlotFromRefMap(x, y)
-	local iX = Round( g_ReferenceWidthRatio		* x)
-	local iY = Round( g_ReferenceHeightRatio	* y)
-	local plot = Map.GetPlot(iX , iY )
-	return plot
+function GetXFromRefMapX(x)
+	if bUseRelativePlacement then
+		x = Round( g_ReferenceWidthRatio * x)
+	end
+	if bUseOffset then
+		x = x - g_OffsetX
+	end
+	return x
 end
+
+function GetYFromRefMapY(y)
+	if bUseRelativePlacement then
+		y = Round( g_ReferenceHeightRatio * y)
+	end
+	if bUseOffset then
+		y = y - g_OffsetY
+	end
+	return y
+end
+
+function GetPlotFromRefMap(x, y)
+	return Map.GetPlot(GetXFromRefMapX(x), GetYFromRefMapY(y))
+end
+
 
 ----------------------------------------------------------------------------------------
 -- City renaming <<<<<
