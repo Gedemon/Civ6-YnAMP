@@ -42,19 +42,17 @@ bUseRelativePlacement 	= MapConfiguration.GetValue("UseRelativePlacement")
 g_ReferenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth") or 180
 g_ReferenceMapHeight 	= MapConfiguration.GetValue("ReferenceMapHeight") or 94
 
-g_iW, g_iH 	= Map.GetGridSize()
+g_iW, g_iH 	= 0, 0
 
-g_UncutMapWidth 	= MapConfiguration.GetValue("UncutMapWidth") or g_iW
-g_UncutMapHeight 	= MapConfiguration.GetValue("UncutMapHeight") or g_iH
-
-g_OffsetX 			= MapConfiguration.GetValue("OffsetX") or 0
-g_OffsetY 			= MapConfiguration.GetValue("OffsetY") or 0
-bUseOffset			= (g_OffsetX + g_OffsetY > 0)
-
-g_ReferenceWidthFactor  = g_ReferenceMapWidth / g_UncutMapWidth 
-g_ReferenceHeightFactor = g_ReferenceMapHeight / g_UncutMapHeight
-g_ReferenceWidthRatio   = g_UncutMapWidth / g_ReferenceMapWidth 
-g_ReferenceHeightRatio  = g_UncutMapHeight / g_ReferenceMapHeight
+g_UncutMapWidth 		= 0
+g_UncutMapHeight 		= 0
+g_OffsetX 				= 0
+g_OffsetY 				= 0
+bUseOffset				= false
+g_ReferenceWidthFactor  = 0
+g_ReferenceHeightFactor = 0
+g_ReferenceWidthRatio   = 0
+g_ReferenceHeightRatio  = 0
 
 
 -- Create list of Civilizations and leaders in game
@@ -2504,64 +2502,54 @@ local g_MaxStartDistanceMajor
 ------------------------------------------------------------------------------
 
 -- Convert current map position to the corresponding position on the reference map
-function GetRefMapX(mapX)
-	local refMapX = mapX
-	if bUseRelativePlacement then
-		refMapX 	= Round(g_ReferenceWidthFactor * mapX)
-	end
-	if bUseOffset then
-		refMapX = refMapX + g_OffsetX
-	end
-	return refMapX
-end
-
-function GetRefMapY(mapY)
-	local refMapY = mapY
-	if bUseRelativePlacement then
-		refMapY 	= Round(g_ReferenceHeightFactor * mapY)
-	end
-	if bUseOffset then
-		refMapY = refMapY + g_OffsetY
-	end
-	return refMapY
-end
-
-function GetRefMapXY(mapX, mapY)
+function GetRefMapXY(mapX, mapY, bOnlyOffset)
 	local refMapX, refMapY = mapX, mapY
-	if bUseRelativePlacement then
+	if bUseRelativePlacement and (not bOnlyOffset) then
 		refMapX 	= Round(g_ReferenceWidthFactor * mapX)
 		refMapY 	= Round(g_ReferenceHeightFactor * mapY)
 	end
 	if bUseOffset then
 		refMapX = refMapX + g_OffsetX
 		refMapY = refMapY + g_OffsetY
+		
+		-- the code below assume that the reference map is wrapX
+		if refMapY >= g_UncutMapHeight then
+print("refMapY >= g_UncutMapHeight", mapX, mapY, refMapX, refMapY, g_UncutMapHeight, bOnlyOffset)
+			refMapY = refMapY - g_UncutMapHeight
+			refMapX = refMapX + Round(g_UncutMapWidth / 2)
+print("refMapX, refMapY", refMapX, refMapY)
+		end
+		if refMapX >= g_UncutMapWidth then
+print("refMapX >= g_UncutMapWidth", mapX, mapY, refMapX, refMapY, g_UncutMapHeight, bOnlyOffset)
+			refMapX = refMapX - g_UncutMapWidth
+print("refMapX, refMapY", refMapX, refMapY)
+		end
 	end
 	return refMapX, refMapY
 end
 
 -- Convert the reference map position to the current map position
-function GetXFromRefMapX(x)
+function GetXYFromRefMapXY(x,y)
 	if bUseRelativePlacement then
-		x = Round( g_ReferenceWidthRatio	* x)
+		x = Round( g_ReferenceWidthRatio * x)
+		y = Round( g_ReferenceHeightRatio * y)
 	end
 	if bUseOffset then
 		x = x - g_OffsetX
-	end
-	return x
-end
-
-function GetYFromRefMapY(y)
-	if bUseRelativePlacement then
-		y = Round( g_ReferenceHeightRatio	* y)
-	end
-	if bUseOffset then
 		y = y - g_OffsetY
+		
+		-- the code below assume that the reference map is wrapX
+		if y < 0 then 
+			y = y + g_iH - 1
+			x = x + Round(g_iW / 2)
+		end
+		if x < 0 then x = x + g_iW - 1 end
 	end
-	return y
+	return x, y
 end
 
 function GetPlotFromRefMap(x, y)
-	return Map.GetPlot(GetXFromRefMapX(x), GetYFromRefMapY(y))
+	return Map.GetPlot(GetXYFromRefMapXY(x,y))
 end
 
 
@@ -2615,10 +2603,9 @@ function buildExclusionList()
 				-- fill the exclusion/exclusive table
 				if (#resExclusionTable > 0) or (#resExclusiveTable > 0) then
 				
-					local regionX 		= GetXFromRefMapX(RegionRow.X)
-					local regionY 		= GetYFromRefMapY(RegionRow.Y)
-					local regionWidth 	= g_ReferenceWidthRatio * RegionRow.Width
-					local regionHeight 	= g_ReferenceHeightRatio * RegionRow.Height
+					local regionX, regionY 	= GetXYFromRefMapXY(RegionRow.X, RegionRow.Y)
+					local regionWidth 		= g_ReferenceWidthRatio * RegionRow.Width
+					local regionHeight 		= g_ReferenceHeightRatio * RegionRow.Height
 				
 					for x = regionX, regionX + regionWidth do
 						for y = regionY, regionY + regionHeight do
@@ -2695,10 +2682,9 @@ function buidTSL()
 	local function InRangeCurrentTSL(row, currentTSL)
 		local MinDistance = GlobalParameters.CITY_MIN_RANGE
 		for iPlayer, position in pairs(currentTSL) do
-			local player 	= Players[iPlayer]
-			
-			local rowX 	= GetXFromRefMapX(row.X)
-			local rowY 	= GetYFromRefMapY(row.Y)
+		
+			local player 		= Players[iPlayer]			
+			local rowX, rowY	= GetXYFromRefMapXY(row.X, row.Y)
 			
 			if Map.GetPlotDistance(rowX, rowY, position.X, position.Y) <= MinDistance then
 				return true
@@ -2713,14 +2699,11 @@ function buidTSL()
 			for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do -- players can share a Civilization/Leader, so we can't assume "one TSL by Civilization/Leader" and need to loop the players table
 				local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
 				if row.Civilization == CivilizationTypeName then
-					local LeaderTypeName = PlayerConfigurations[iPlayer]:GetLeaderTypeName()
-					local bCanPlaceHere = true
-					local sWarning = ""
-					
-					local rowX 	= GetXFromRefMapX(row.X)
-					local rowY 	= GetYFromRefMapY(row.Y)
-			
-					local plot = Map.GetPlot(rowX,rowY)
+					local LeaderTypeName	= PlayerConfigurations[iPlayer]:GetLeaderTypeName()
+					local bCanPlaceHere 	= true
+					local sWarning 			= ""
+					local rowX, rowY		= GetXYFromRefMapXY(row.X, row.Y)
+					local plot 				= Map.GetPlot(rowX,rowY)
 					
 					if row.DisabledByCivilization and isInGame[row.DisabledByCivilization] then
 						sWarning = "position disabled by " .. tostring(row.DisabledByCivilization)
@@ -2744,8 +2727,7 @@ function buidTSL()
 								if tAlternateTSL[row.Civilization] then
 									for _, alternateRow in ipairs(tAlternateTSL[row.Civilization]) do
 									
-										local alternateRowX = GetXFromRefMapX(alternateRow.X)
-										local alternateRowY = GetYFromRefMapY(alternateRow.Y)
+										local alternateRowX, alternateRowY = GetXYFromRefMapXY(alternateRow.X, alternateRow.Y)
 					
 										if (not bFound) and alternateRow.Leader and (alternateRow.Leader == LeaderTypeName) then
 											print ("   - Reserving alternative TSL at "..tostring(alternateRowX)..","..tostring(alternateRowY).." (initial TSL "..sWarning..")")
@@ -2775,8 +2757,7 @@ function buidTSL()
 							if tAlternateTSL[row.Civilization] then
 								for _, alternateRow in ipairs(tAlternateTSL[row.Civilization]) do
 									
-									local alternateRowX = GetXFromRefMapX(alternateRow.X)
-									local alternateRowY = GetYFromRefMapY(alternateRow.Y)
+									local alternateRowX, alternateRowY = GetXYFromRefMapXY(alternateRow.X, alternateRow.Y)
 										
 									if (not bFound) and not alternateRow.Leader then
 										print ("   - Reserving alternative TSL at "..tostring(alternateRowX)..","..tostring(alternateRowY).." (initial TSL "..sWarning..")")
@@ -2820,7 +2801,31 @@ end
 -- Imported Maps Creation
 ------------------------------------------------------------------------------
 
-function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, g_iW, g_iH)
+function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, width, height)
+
+	-- Set globals
+	g_iW, g_iH 				= width, height --Map.GetGridSize()
+	g_UncutMapWidth 		= MapConfiguration.GetValue("UncutMapWidth") or g_iW
+	g_UncutMapHeight 		= MapConfiguration.GetValue("UncutMapHeight") or g_iH
+
+	g_OffsetX 				= MapConfiguration.GetValue("StartX") or 0
+	g_OffsetY 				= MapConfiguration.GetValue("StartY") or 0
+	bUseOffset				= (g_OffsetX + g_OffsetY > 0) and (MapConfiguration.GetValue("StartX") ~= MapConfiguration.GetValue("EndX")) and (MapConfiguration.GetValue("StartY") ~= MapConfiguration.GetValue("EndY"))
+
+print("bUseOffset", bUseOffset)	
+print("StartX", MapConfiguration.GetValue("StartX"))
+print("EndX", MapConfiguration.GetValue("EndX"))
+print("StartY", MapConfiguration.GetValue("StartY"))
+print("EndY", MapConfiguration.GetValue("EndY"))
+print("g_UncutMapWidth", g_UncutMapWidth)
+print("g_UncutMapHeight", g_UncutMapHeight)
+print("g_iW", g_iW)
+print("g_iH", g_iH)
+	
+	g_ReferenceWidthFactor  = g_ReferenceMapWidth / g_UncutMapWidth 
+	g_ReferenceHeightFactor = g_ReferenceMapHeight / g_UncutMapHeight
+	g_ReferenceWidthRatio   = g_UncutMapWidth / g_ReferenceMapWidth 
+	g_ReferenceHeightRatio  = g_UncutMapHeight / g_ReferenceMapHeight
 
 	--local pPlot
 	--g_iFlags = TerrainBuilder.GetFractalFlags();
@@ -3347,8 +3352,7 @@ function PlaceRealNaturalWonders(NaturalWonders)
 			local featureTypeName = GameInfo.Features[eFeatureType].FeatureType
 
 			-- Convert the NW coordinates to the current map position if using a reference map or offsets
-			local x = GetXFromRefMapX(position.X)
-			local y = GetYFromRefMapY(position.Y)
+			local x, y = GetXYFromRefMapXY(position.X, position.Y)
 			
 			print ("- Trying to place " .. tostring(featureTypeName) .. " at (" .. tostring(x) .. ", " .. tostring(y) .. ")")
 			local pPlot = Map.GetPlot(x, y)
@@ -3585,13 +3589,12 @@ function ExtraPlacement()
 			end
 			
 			if bDoPlacement then
-				local terrainType = row.TerrainType
-				local featureType = row.FeatureType
-				local resourceType = row.ResourceType
-				local quantity = row.Quantity
-				local x = GetXFromRefMapX(row.X)
-				local y = GetYFromRefMapY(row.Y)
-				local plot = Map.GetPlot(x,y)
+				local terrainType 	= row.TerrainType
+				local featureType 	= row.FeatureType
+				local resourceType	= row.ResourceType
+				local quantity 		= row.Quantity
+				local x, y 			= GetXYFromRefMapXY(row.X, row.Y)
+				local plot 			= Map.GetPlot(x,y)
 				
 				if plot then
 					ResourceBuilder.SetResourceType(plot, -1) -- remove previous resource if any
@@ -3755,8 +3758,7 @@ function placeResourceInRegion(eResourceType, region, number, bNumberIsRatio)
 				local plotTable = {}
 				local plotCount = 0				
 
-				local x 		= GetXFromRefMapX(Data.X)
-				local y 		= GetYFromRefMapY(Data.Y)
+				local x, y 		= GetXYFromRefMapXY(Data.X, Data.Y)
 				local width		= g_ReferenceWidthRatio * Data.Width
 				local height	= g_ReferenceHeightRatio * Data.Height
 				
@@ -3996,7 +3998,9 @@ function PlaceMissingResources(missingResourceTable)
 		aShuffledResourcePlots = GetShuffledCopyOfTable(possiblePlots)
 		for i = 1, toPlace do
 			local plot = aShuffledResourcePlots[i]
-			ResourceBuilder.SetResourceType(plot, resourceType, 1)
+			if plot then
+				ResourceBuilder.SetResourceType(plot, resourceType, 1)
+			end
 		end
 	end
 end
@@ -4304,9 +4308,9 @@ function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains,
 	
 	bOutput = false
 	for i = 0, (g_iW * g_iH) - 1, 1 do
-		local plot 	= Map.GetPlotByIndex(i)
-		local x		= plot:GetX() + g_OffsetX
-		local y 	= plot:GetY() + g_OffsetY
+		local plot 			= Map.GetPlotByIndex(i)
+		local bOnlyOffset 	= true
+		local x, y			= GetRefMapXY(plot:GetX(), plot:GetY(), bOnlyOffset)
 		if bOutput then
 			print("----------")
 			print("Convert plot at "..tostring(plot:GetX())..","..tostring(plot:GetY()))
@@ -4418,14 +4422,14 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 	print("Importing Civ6 Map ( Terrain = "..tostring(bDoTerrains)..", Rivers = "..tostring(bImportRivers)..", Features = "..tostring(bImportFeatures)..", Resources = "..tostring(bImportResources)..", Continents = "..tostring(bImportContinents)..")")
 	local count = 0
 		
-	bOutput = false
+	bOutput = true
 	for i = 0, (g_iW * g_iH) - 1, 1 do
-		local plot 	= Map.GetPlotByIndex(i)
-		local refX	= plot:GetX() + g_OffsetX
-		local refY 	= plot:GetY() + g_OffsetY
+		local plot 			= Map.GetPlotByIndex(i)
+		local bOnlyOffset 	= true
+		local refX, refY	= GetRefMapXY(plot:GetX(), plot:GetY(), bOnlyOffset)
 		if bOutput then
 			print("----------")
-			print("Convert plot at "..tostring(plot:GetX())..","..tostring(plot:GetY()))
+			print("Convert plot at (", plot:GetX(), plot:GetY(),"), (refX, refY = ",refX, refY,")")
 		end
 		-- Map Data
 		-- MapToConvert[x][y] = {civ6TerrainType, civ6FeatureType, civ6ContinentType, {{IsNEOfRiver, flow}, {IsWOfRiver, flow}, {IsNWOfRiver, flow}}, {Civ6ResourceType, num} }

@@ -35,9 +35,9 @@ local g_iW, g_iH 	= Map.GetGridSize()
 local g_UncutMapWidth 	= MapConfiguration.GetValue("UncutMapWidth") or g_iW
 local g_UncutMapHeight 	= MapConfiguration.GetValue("UncutMapHeight") or g_iH
 
-local g_OffsetX 		= MapConfiguration.GetValue("OffsetX") or 0
-local g_OffsetY 		= MapConfiguration.GetValue("OffsetY") or 0
-local bUseOffset		= (g_OffsetX + g_OffsetY > 0)
+local g_OffsetX 		= MapConfiguration.GetValue("StartX") or 0
+local g_OffsetY 		= MapConfiguration.GetValue("StartY") or 0
+local bUseOffset		= (g_OffsetX + g_OffsetY > 0) and (MapConfiguration.GetValue("StartX") ~= MapConfiguration.GetValue("EndX")) and (MapConfiguration.GetValue("StartY") ~= MapConfiguration.GetValue("EndY"))
 
 local g_ReferenceWidthFactor  = g_ReferenceMapWidth / g_UncutMapWidth 
 local g_ReferenceHeightFactor = g_ReferenceMapHeight / g_UncutMapHeight
@@ -58,64 +58,48 @@ local scenarioName = MapConfiguration.GetValue("ScenarioName")
 ------------------------------------------------------------------------------
 
 -- Convert current map position to the corresponding position on the reference map
-function GetRefMapX(mapX)
-	local refMapX = mapX
-	if bUseRelativePlacement then
-		refMapX 	= Round(g_ReferenceWidthFactor * mapX)
-	end
-	if bUseOffset then
-		refMapX = refMapX + g_OffsetX
-	end
-	return refMapX
-end
-
-function GetRefMapY(mapY)
-	local refMapY = mapY
-	if bUseRelativePlacement then
-		refMapY 	= Round(g_ReferenceHeightFactor * mapY)
-	end
-	if bUseOffset then
-		refMapY = refMapY + g_OffsetY
-	end
-	return refMapY
-end
-
-function GetRefMapXY(mapX, mapY)
+function GetRefMapXY(mapX, mapY, bOnlyOffset)
 	local refMapX, refMapY = mapX, mapY
-	if bUseRelativePlacement then
+	if bUseRelativePlacement and (not bOnlyOffset) then
 		refMapX 	= Round(g_ReferenceWidthFactor * mapX)
 		refMapY 	= Round(g_ReferenceHeightFactor * mapY)
 	end
 	if bUseOffset then
 		refMapX = refMapX + g_OffsetX
 		refMapY = refMapY + g_OffsetY
+		
+		-- the code below assume that the reference map is wrapX
+		if refMapY >= g_UncutMapHeight then 
+			refMapY = refMapY - g_UncutMapHeight
+			refMapX = refMapX + Round(g_UncutMapWidth / 2)
+		end
+		if refMapX >= g_UncutMapWidth then refMapX = refMapX - g_UncutMapWidth end
 	end
 	return refMapX, refMapY
 end
 
 -- Convert the reference map position to the current map position
-function GetXFromRefMapX(x)
+function GetXYFromRefMapXY(x,y)
 	if bUseRelativePlacement then
 		x = Round( g_ReferenceWidthRatio * x)
-	end
-	if bUseOffset then
-		x = x - g_OffsetX
-	end
-	return x
-end
-
-function GetYFromRefMapY(y)
-	if bUseRelativePlacement then
 		y = Round( g_ReferenceHeightRatio * y)
 	end
 	if bUseOffset then
+		x = x - g_OffsetX
 		y = y - g_OffsetY
+		
+		-- the code below assume that the reference map is wrapX
+		if y < 0 then 
+			y = y + g_iH - 1
+			x = x + Round(g_iW / 2)
+		end
+		if x < 0 then x = x + g_iW - 1 end
 	end
-	return y
+	return x, y
 end
 
 function GetPlotFromRefMap(x, y)
-	return Map.GetPlot(GetXFromRefMapX(x), GetYFromRefMapY(y))
+	return Map.GetPlot(GetXYFromRefMapXY(x,y))
 end
 
 

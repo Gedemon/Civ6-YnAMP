@@ -573,7 +573,33 @@
     <Replace Tag="LOC_MAP_CENTRAL_AMERICA_NAME"		Text="Central America" 		Language="en_US" /> 
     <Replace Tag="LOC_MAP_SOUTH_AMERICA_WEST_NAME"	Text="South America (East)"	Language="en_US" /> 
     <Replace Tag="LOC_MAP_SOUTH_AMERICA_EAST_NAME" 	Text="South America (West)" Language="en_US" /> 
-    <Replace Tag="LOC_MAP_ANTARCTIC_AMERICA_NAME" 	Text="Antarctic America" 	Language="en_US" /> 
+    <Replace Tag="LOC_MAP_ANTARCTIC_AMERICA_NAME" 	Text="Antarctic America" 	Language="en_US" />
+	
+    <Replace Tag="LOC_MAP_STARTX_NAME" Language="en_US">
+      <Text>WEST Border</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ENDX_NAME" Language="en_US">
+      <Text>EAST Border</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_STARTY_NAME" Language="en_US">
+      <Text>SOUTH Border</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ENDY_NAME" Language="en_US">
+      <Text>NORTH Border</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_GIANTEARTH_LATITUDE_0_NAME" Language="en_US">
+      <Text>West Europe (West default)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIANTEARTH_LATITUDE_179_NAME" Language="en_US">
+      <Text>East America (East default)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIANTEARTH_LONGITUDE_0_NAME" Language="en_US">
+      <Text>South Pole (South default)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIANTEARTH_LONGITUDE_93_NAME" Language="en_US">
+      <Text>North Pole (North default)</Text>
+    </Replace>
 	
   </LocalizedText>
 </GameData>

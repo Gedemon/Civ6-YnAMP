@@ -27,6 +27,11 @@
 	<Parameters>
 		<!--	GiantEarth Options
 		-->
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthStartX" 	Name="LOC_MAP_STARTX_NAME"	Description="LOC_MAP_STARTX_DESCRIPTION" 	Domain="GiantEarthLatitude" 	DefaultValue="0" 	ConfigurationGroup="Map" ConfigurationId="StartX" 	GroupId="MapOptions" SortIndex="221"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthStartY" 	Name="LOC_MAP_STARTY_NAME"	Description="LOC_MAP_STARTY_DESCRIPTION" 	Domain="GiantEarthLongitude" 	DefaultValue="0" 	ConfigurationGroup="Map" ConfigurationId="StartY" 	GroupId="MapOptions" SortIndex="222"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthEndX" 		Name="LOC_MAP_ENDX_NAME"	Description="LOC_MAP_ENDX_DESCRIPTION"		Domain="GiantEarthLatitude" 	DefaultValue="179" 	ConfigurationGroup="Map" ConfigurationId="EndX"		GroupId="MapOptions" SortIndex="223"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthEndY" 		Name="LOC_MAP_ENDY_NAME"	Description="LOC_MAP_ENDY_DESCRIPTION" 		Domain="GiantEarthLongitude" 	DefaultValue="93" 	ConfigurationGroup="Map" ConfigurationId="EndY"		GroupId="MapOptions" SortIndex="224"/>
+
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="RiversPlacement" Name="LOC_MAP_RIVERS_PLACEMENT_NAME" Description="LOC_MAP_RIVERS_PLACEMENT_DESCRIPTION" Domain="RiversPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="RiversPlacement" GroupId="MapOptions" SortIndex="231"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="ContinentsPlacement" Name="LOC_MAP_CONTINENT_PLACEMENT_NAME" Description="LOC_MAP_CONTINENT_PLACEMENT_DESCRIPTION" Domain="ContinentsPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="ContinentsPlacement" GroupId="MapOptions" SortIndex="232"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="NaturalWondersPlacement" Name="LOC_MAP_NATURAL_WONDERS_PLACEMENT_NAME" Description="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DESCRIPTION" Domain="NaturalWondersPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="NaturalWondersPlacement" GroupId="MapOptions" Hash="0" SortIndex="244"/>
@@ -75,8 +80,27 @@
 
 		<!--	Option to force placement of all luxuries		-->
 		<Row Key1="Map" Key2="GiantEarth.lua" 		ParameterId="PlaceAllLuxuries" Name="LOC_MAP_ALL_LUXURIES_NAME" Description="LOC_MAP_ALL_LUXURIES_DESCRIPTION" Domain="PlaceAllLuxuries" DefaultValue="PLACEMENT_DEFAULT" ConfigurationGroup="Map" ConfigurationId="PlaceAllLuxuries" GroupId="MapOptions" SortIndex="271"/>
+
+		<!--	Hidden parameters to specifiy the uncut map size
+		-->
+		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthUncutMapWidth"	Name="UncutMapWidth" 	Description="" Domain="text" DefaultValue="180" ConfigurationGroup="Map" ConfigurationId="UncutMapWidth" 	GroupId="MapOptions" Visible="0" SortIndex="2025"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthUncutMapHeight"	Name="UncutMapHeight" 	Description="" Domain="text" DefaultValue="94" 	ConfigurationGroup="Map" ConfigurationId="UncutMapHeight" 	GroupId="MapOptions" Visible="0" SortIndex="2025"/>
 		
-	</Parameters>	
+	</Parameters>
+	
+	<DomainValues>
+		
+		<Replace Domain="GiantEarthLatitude" Value="0" 		Name="LOC_MAP_GIANTEARTH_LATITUDE_0_NAME" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_0_DESCRIPTION" 	SortIndex="10"/>
+		<Replace Domain="GiantEarthLatitude" Value="50" 	Name="LOC_MAP_GIANTEARTH_LATITUDE_50_NAME" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="20"/>
+		<Replace Domain="GiantEarthLatitude" Value="100" 	Name="LOC_MAP_GIANTEARTH_LATITUDE_100_NAME" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_100_DESCRIPTION" 	SortIndex="30"/>
+		<Replace Domain="GiantEarthLatitude" Value="179" 	Name="LOC_MAP_GIANTEARTH_LATITUDE_179_NAME" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_179_DESCRIPTION" 	SortIndex="100"/>
+		
+		<Replace Domain="GiantEarthLongitude" Value="0" 	Name="LOC_MAP_GIANTEARTH_LONGITUDE_0_NAME" 		Description="LOC_MAP_GIANTEARTH_LONGITUDE_0_DESCRIPTION" 	SortIndex="10"/>
+		<Replace Domain="GiantEarthLongitude" Value="30" 	Name="LOC_MAP_GIANTEARTH_LONGITUDE_30_NAME" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_20_DESCRIPTION" 	SortIndex="20"/>
+		<Replace Domain="GiantEarthLongitude" Value="60" 	Name="LOC_MAP_GIANTEARTH_LONGITUDE_60_NAME" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_60_DESCRIPTION" 	SortIndex="30"/>
+		<Replace Domain="GiantEarthLongitude" Value="93" 	Name="LOC_MAP_GIANTEARTH_LONGITUDE_93_NAME" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_93_DESCRIPTION" 	SortIndex="100"/>
+		
+	</DomainValues>
 	
 	<!-- Only use those values for a domain -->
 	<MapSupportedValues>

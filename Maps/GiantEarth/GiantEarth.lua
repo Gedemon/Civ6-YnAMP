@@ -19,19 +19,31 @@ print("Loading "..tostring(mapName).." script")
 
 local g_iW = 180
 local g_iH = 94
-local g_iFlags = {}
-local g_continentsFrac = nil
+
+local g_iFlags 			= {}
+local g_continentsFrac 	= nil
+
+local g_StartX	= MapConfiguration.GetValue("StartX") or 0
+local g_StartY	= MapConfiguration.GetValue("StartY") or 0
+local g_EndX	= MapConfiguration.GetValue("EndX") or 179
+local g_EndY	= MapConfiguration.GetValue("EndY") or 93
+
+if g_StartX < g_EndX then g_iW = g_EndX - g_StartX + 1 end
+if g_StartX > g_EndX then g_iW = g_StartX - g_EndX + 1 end
+
+if g_StartY < g_EndY then g_iH = g_EndY - g_StartY + 1 end
+if g_StartY > g_EndY then g_iH = g_StartY - g_EndY + 1 end
 
 ------------------------------------------------------------------------------
--- The application side will call GetMapScriptInfo directly to request
+-- The application side will call GetMapScriptInfo and GetMapInitData directly to request
 -- information about the map script.
 -------------------------------------------------------------------------------
 function GetMapInitData(worldSize)
 	return {
-		Width = g_iW,
-		Height = g_iH,
-		WrapX = true,
-		WrapY = false,
+		Width 	= g_iW,
+		Height 	= g_iH,
+		WrapX 	= (g_iW == 180),
+		WrapY 	= false,
 	};      
 end
 
@@ -42,6 +54,7 @@ function GenerateMap()
 	-- Everything has been moved to the modded AssignStartingPlots in the "override" folder, search for "YnAMP" string in that file
 	GenerateImportedMap(GetMap(), GetCiv6DataToConvert(), GetNaturalWonders(), g_iW, g_iH)
 	
+	--[[
 	-- Handle Nile delta flow direction (North)
 	print("Handle Nile delta flow direction...");
 	for x = 29, 32 do
@@ -67,12 +80,16 @@ function GenerateMap()
 	-- Volga direction
 	print("Handle Volga flow direction...");
 	local plot = Map.GetPlot(36,77)
-	TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHEAST);
+	if plot then 
+		TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHEAST)
+	end
 	-- Svir direction
 	print("Handle Svir flow direction...");
 	local plot = Map.GetPlot(32,80)
-	TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHWEST);
-
+	if plot then
+		TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHWEST);
+	end
+	--]]
 end
 
 function GetNaturalWonders()
@@ -112,7 +129,7 @@ end
 function GetMap()
 
 	local MapToConvert = {}
-	for i = 0, g_iW - 1, 1 do
+	for i = 0, 179, 1 do
 		MapToConvert[i] = {}
 	end
 	
