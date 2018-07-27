@@ -79,8 +79,8 @@ function GetRefMapXY(mapX, mapY, bOnlyOffset)
 end
 
 -- Convert the reference map position to the current map position
-function GetXYFromRefMapXY(x,y)
-	if bUseRelativePlacement then
+function GetXYFromRefMapXY(x, y, bOnlyOffset)
+	if bUseRelativePlacement and (not bOnlyOffset) then
 		x = Round( g_ReferenceWidthRatio * x)
 		y = Round( g_ReferenceHeightRatio * y)
 	end
@@ -98,8 +98,8 @@ function GetXYFromRefMapXY(x,y)
 	return x, y
 end
 
-function GetPlotFromRefMap(x, y)
-	return Map.GetPlot(GetXYFromRefMapXY(x,y))
+function GetPlotFromRefMap(x, y, bOnlyOffset)
+	return Map.GetPlot(GetXYFromRefMapXY(x,y, bOnlyOffset))
 end
 
 
