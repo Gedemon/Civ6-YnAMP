@@ -2529,8 +2529,8 @@ print("refMapX, refMapY", refMapX, refMapY)
 end
 
 -- Convert the reference map position to the current map position
-function GetXYFromRefMapXY(x,y)
-	if bUseRelativePlacement then
+function GetXYFromRefMapXY(x, y, bOnlyOffset)
+	if bUseRelativePlacement and (not bOnlyOffset) then
 		x = Round( g_ReferenceWidthRatio * x)
 		y = Round( g_ReferenceHeightRatio * y)
 	end
@@ -2548,8 +2548,8 @@ function GetXYFromRefMapXY(x,y)
 	return x, y
 end
 
-function GetPlotFromRefMap(x, y)
-	return Map.GetPlot(GetXYFromRefMapXY(x,y))
+function GetPlotFromRefMap(x, y, bOnlyOffset)
+	return Map.GetPlot(GetXYFromRefMapXY(x,y, bOnlyOffset))
 end
 
 
@@ -2821,6 +2821,7 @@ print("g_UncutMapWidth", g_UncutMapWidth)
 print("g_UncutMapHeight", g_UncutMapHeight)
 print("g_iW", g_iW)
 print("g_iH", g_iH)
+print("Map.GetGridSize()", Map.GetGridSize())
 	
 	g_ReferenceWidthFactor  = g_ReferenceMapWidth / g_UncutMapWidth 
 	g_ReferenceHeightFactor = g_ReferenceMapHeight / g_UncutMapHeight
