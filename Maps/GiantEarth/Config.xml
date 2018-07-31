@@ -91,14 +91,18 @@
 	<DomainValues>
 		
 		<Replace Domain="GiantEarthLatitude" Value="0" 		Name="LOC_MAP_GIANTEARTH_LATITUDE_0_NAME" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_0_DESCRIPTION" 	SortIndex="10"/>
+		<Replace Domain="GiantEarthLatitude" Value="5" 		Name="5" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="11"/>
+		<Replace Domain="GiantEarthLatitude" Value="10" 	Name="10" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="15"/>
 		<Replace Domain="GiantEarthLatitude" Value="50" 	Name="LOC_MAP_GIANTEARTH_LATITUDE_50_NAME" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="20"/>
 		<Replace Domain="GiantEarthLatitude" Value="100" 	Name="LOC_MAP_GIANTEARTH_LATITUDE_100_NAME" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_100_DESCRIPTION" 	SortIndex="30"/>
+		<Replace Domain="GiantEarthLatitude" Value="111" 	Name="Bering Strait" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_100_DESCRIPTION" 	SortIndex="40"/>
 		<Replace Domain="GiantEarthLatitude" Value="179" 	Name="LOC_MAP_GIANTEARTH_LATITUDE_179_NAME" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_179_DESCRIPTION" 	SortIndex="100"/>
 		
-		<Replace Domain="GiantEarthLongitude" Value="0" 	Name="LOC_MAP_GIANTEARTH_LONGITUDE_0_NAME" 		Description="LOC_MAP_GIANTEARTH_LONGITUDE_0_DESCRIPTION" 	SortIndex="10"/>
+		<Replace Domain="GiantEarthLongitude" Value="0" 	Name="LOC_MAP_DEFAULT_LONGITUDE_0_NAME" 		Description="LOC_MAP_GIANTEARTH_LONGITUDE_0_DESCRIPTION" 	SortIndex="10"/>
 		<Replace Domain="GiantEarthLongitude" Value="30" 	Name="LOC_MAP_GIANTEARTH_LONGITUDE_30_NAME" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_20_DESCRIPTION" 	SortIndex="20"/>
+		<Replace Domain="GiantEarthLongitude" Value="32" 	Name="LOC_MAP_DEFAULT_EQUATOR_NAME" 			Description="LOC_MAP_DEFAULT_EQUATOR_DESCRIPTION" 	SortIndex="25"/>
 		<Replace Domain="GiantEarthLongitude" Value="60" 	Name="LOC_MAP_GIANTEARTH_LONGITUDE_60_NAME" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_60_DESCRIPTION" 	SortIndex="30"/>
-		<Replace Domain="GiantEarthLongitude" Value="93" 	Name="LOC_MAP_GIANTEARTH_LONGITUDE_93_NAME" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_93_DESCRIPTION" 	SortIndex="100"/>
+		<Replace Domain="GiantEarthLongitude" Value="93" 	Name="LOC_MAP_DEFAULT_LONGITUDE_MAX_NAME" 		Description="LOC_MAP_GIANTEARTH_LONGITUDE_93_DESCRIPTION" 	SortIndex="100"/>
 		
 	</DomainValues>
 	

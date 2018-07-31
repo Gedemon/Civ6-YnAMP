@@ -54,6 +54,7 @@ function GenerateMap()
 	-- Everything has been moved to the modded AssignStartingPlots in the "override" folder, search for "YnAMP" string in that file
 	GenerateImportedMap(GetMap(), GetCiv6DataToConvert(), GetNaturalWonders(), g_iW, g_iH)
 	
+	---[[
 	local bOnlyOffset = true -- no need to use relative placement for the code below
 	
 	-- Handle Nile delta flow direction (North)
@@ -90,11 +91,12 @@ function GenerateMap()
 	if plot then
 		TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHWEST);
 	end
+	--]]
 end
 
 function GetNaturalWonders()
 	local NaturalWonders = {}
-	
+	---[[
 	NaturalWonders[GameInfo.Features["FEATURE_BARRIER_REEF"].Index] 	 = { X = 101, Y = 23}	-- 2 plots, coast, 1st plot is SOUTHEAST	
 	NaturalWonders[GameInfo.Features["FEATURE_CLIFFS_DOVER"].Index] 	 = { X = 11, Y = 71}    -- 2 plots, hills on coast, 1st plot is WEST	
 	NaturalWonders[GameInfo.Features["FEATURE_CRATER_LAKE"].Index] 		 = { X = 132, Y = 64}
@@ -117,7 +119,7 @@ function GetNaturalWonders()
 	if GameInfo.Features["FEATURE_ULURU"] then -- Australia DLC is loaded
     NaturalWonders[GameInfo.Features["FEATURE_ULURU"].Index]			= { X = 93, Y = 16}		-- 1 plot, desert, surrounded by desert
     end
-	
+	--]]
 	return NaturalWonders
 end
 

@@ -43,6 +43,12 @@
     <Replace Tag="LOC_TERRAMAP_DESC" Language="en_US">
       <Text>A map with customizable landmass placement based on a scalable Earth</Text>
     </Replace>
+	<Replace Tag="LOC_LARGESTEARTHCUSTOM_NAME" Language="en_US">
+      <Text>[COLOR_RED]Largest Earth Custom[ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGESTEARTHCUSTOM_DESC" Language="en_US">
+      <Text>Largest Earth Custom (230x116 - Ludicrous)[NEWLINE][ICON_Exclamation] [COLOR_RED]VERY UNSTABLE at full size[ENDCOLOR][NEWLINE]Use the custom options to set a game on a region of the map.</Text>
+    </Replace>
 	
     <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Language="en_US">
       <Text>Civilization Placement</Text>
@@ -594,11 +600,14 @@
     <Replace Tag="LOC_MAP_GIANTEARTH_LATITUDE_179_NAME" Language="en_US">
       <Text>East America (East default)</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_GIANTEARTH_LONGITUDE_0_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_DEFAULT_LONGITUDE_0_NAME" Language="en_US">
       <Text>South Pole (South default)</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_GIANTEARTH_LONGITUDE_93_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_DEFAULT_LONGITUDE_MAX_NAME" Language="en_US">
       <Text>North Pole (North default)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DEFAULT_EQUATOR_NAME" Language="en_US">
+      <Text>Equator</Text>
     </Replace>
 	
   </LocalizedText>

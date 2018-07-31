@@ -2514,15 +2514,12 @@ function GetRefMapXY(mapX, mapY, bOnlyOffset)
 		
 		-- the code below assume that the reference map is wrapX
 		if refMapY >= g_UncutMapHeight then
-print("refMapY >= g_UncutMapHeight", mapX, mapY, refMapX, refMapY, g_UncutMapHeight, bOnlyOffset)
 			refMapY = refMapY - g_UncutMapHeight
+			--refMapY = (2*g_UncutMapHeight) - refMapY
 			refMapX = refMapX + Round(g_UncutMapWidth / 2)
-print("refMapX, refMapY", refMapX, refMapY)
 		end
 		if refMapX >= g_UncutMapWidth then
-print("refMapX >= g_UncutMapWidth", mapX, mapY, refMapX, refMapY, g_UncutMapHeight, bOnlyOffset)
 			refMapX = refMapX - g_UncutMapWidth
-print("refMapX, refMapY", refMapX, refMapY)
 		end
 	end
 	return refMapX, refMapY
@@ -2986,6 +2983,7 @@ print("Map.GetGridSize()", Map.GetGridSize())
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")
 	
+	---[[
 	print("Creating start plot database.")	
 	if bTSL then
 		buidTSL()
@@ -3042,6 +3040,19 @@ print("Map.GetGridSize()", Map.GetGridSize())
 	local GoodyGen = AddGoodies(g_iW, g_iH);
 	
 	local totalTimer = os.clock() - g_startTimer
+	--]]
+	
+	-- check the map
+	--[[
+	local iW, iH = Map.GetGridSize()
+	for x = 0, iW - 1, 1 do
+		for y = 0, iH - 1, 1 do
+			local pPlot = Map.GetPlot(x,y)
+			print(pPlot, x, y)
+			print(pPlot:GetTerrainType(),pPlot:GetFeatureType(),pPlot:GetResourceType(),pPlot:IsWater(),pPlot:IsRiver(),pPlot:IsAdjacentToLand())
+		end
+	end
+	--]]
 	
 	-- Restore the original ResourceBuilder.CanHaveResource
 	ResourceBuilder.CanHaveResource = ResourceBuilder.OldCanHaveResource
@@ -3867,6 +3878,8 @@ end
 
 function ResourcesValidation(g_iW, g_iH)
 
+	if bNoResources then return end
+
 	-- replacement tables
 	local resTable 		= {}
 	local luxTable 		= {}
@@ -4423,7 +4436,7 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 	print("Importing Civ6 Map ( Terrain = "..tostring(bDoTerrains)..", Rivers = "..tostring(bImportRivers)..", Features = "..tostring(bImportFeatures)..", Resources = "..tostring(bImportResources)..", Continents = "..tostring(bImportContinents)..")")
 	local count = 0
 		
-	bOutput = true
+	bOutput = false
 	for i = 0, (g_iW * g_iH) - 1, 1 do
 		local plot 			= Map.GetPlotByIndex(i)
 		local bOnlyOffset 	= true
@@ -4490,20 +4503,22 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 		end
 		
 		-- Set Cliffs
+		---[[
 		if Cliffs and not bIgnoreCliffs then
-			if Cliffs[1] == 1 then -- IsNEOfCliff
+			if Cliffs[1] == 1 and Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), DirectionTypes.DIRECTION_SOUTHWEST) then -- IsNEOfCliff and there is a plot in SW
 				TerrainBuilder.SetNEOfCliff(plot, true)
 				if bOutput then print(" - Set is NE of Cliff") end
 			end
-			if Cliffs[2] == 1 then -- IsWOfCliff
+			if Cliffs[2] == 1 and Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), DirectionTypes.DIRECTION_EAST) then -- IsWOfCliff  and there is a plot in E
 				TerrainBuilder.SetWOfCliff(plot, true)
 				if bOutput then print(" - Set is W of Cliff") end
 			end
-			if Cliffs[3] == 1 then -- IsNWOfCliff
+			if Cliffs[3] == 1 and Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), DirectionTypes.DIRECTION_SOUTHEAST) then -- IsNWOfCliff and there is a plot in SE
 				TerrainBuilder.SetNWOfCliff(plot, true)
 				if bOutput then print(" - Set is NW of Cliff") end
 			end	
 		end
+		--]]
 		
 	end	
 	

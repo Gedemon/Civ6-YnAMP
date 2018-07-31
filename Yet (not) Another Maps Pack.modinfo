@@ -19,6 +19,7 @@
 			<File>Maps/PlayEuropeAgain/PlayEuropeAgain.lua</File>
 			<File>Maps/TerraMap/TerraMap.lua</File>
 			<File>Maps/LargeEurope/LargeEurope.lua</File>
+			<File>Maps/LargestEarthCustom/LargestEarthCustom.lua</File>
 			<File>Override/AssignStartingPlots.lua</File>
 			<File>Scripts/YnAMP_Utils.lua</File>
 			<File>Scripts/PlotIterators.lua</File>
@@ -89,6 +90,7 @@
 			<File>Maps/PlayEuropeAgain/Config.xml</File>
 			<File>Maps/LargeEurope/Config.xml</File>
 			<File>Maps/TerraMap/Config.xml</File>
+			<File>Maps/LargestEarthCustom/Config.xml</File>
 		</UpdateDatabase>		
 		<UpdateText id="YNAMP_SETTING_LOC">
 				<File>Configuration/ConfigText.xml</File>
@@ -159,6 +161,7 @@
 		<File>Maps/PlayEuropeAgain/Config.xml</File>
 		<File>Maps/LargeEurope/Config.xml</File>
 		<File>Maps/TerraMap/Config.xml</File>
+		<File>Maps/LargestEarthCustom/Config.xml</File>
 		<File>Configuration/ConfigText.xml</File>
 		<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
 		<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
@@ -192,6 +195,7 @@
 		<File>Maps/PlayEuropeAgain/PlayEuropeAgain.lua</File>
 		<File>Maps/LargeEurope/LargeEurope.lua</File>
 		<File>Maps/TerraMap/TerraMap.lua</File>
+		<File>Maps/LargestEarthCustom/LargestEarthCustom.lua</File>
 		<File>Override/AssignStartingPlots.lua</File>
 		<File>Override/AdvancedSetup.lua</File>
 		<File>Scripts/YnAMP_Script.lua</File>
