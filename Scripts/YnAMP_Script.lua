@@ -70,7 +70,8 @@ function GetRefMapXY(mapX, mapY, bOnlyOffset)
 		
 		-- the code below assume that the reference map is wrapX
 		if refMapY >= g_UncutMapHeight then 
-			refMapY = refMapY - g_UncutMapHeight
+			--refMapY = refMapY - g_UncutMapHeight
+			refMapY = (2*g_UncutMapHeight) - refMapY - 1
 			refMapX = refMapX + Round(g_UncutMapWidth / 2)
 		end
 		if refMapX >= g_UncutMapWidth then refMapX = refMapX - g_UncutMapWidth end
@@ -90,10 +91,12 @@ function GetXYFromRefMapXY(x, y, bOnlyOffset)
 		
 		-- the code below assume that the reference map is wrapX
 		if y < 0 then 
-			y = y + g_iH - 1
+			--y = y + g_iH - 1
+			y = y + g_iH
 			x = x + Round(g_iW / 2)
 		end
-		if x < 0 then x = x + g_iW - 1 end
+		--if x < 0 then x = x + g_iW - 1 end
+		if x < 0 then x = x + g_iW end
 	end
 	return x, y
 end
