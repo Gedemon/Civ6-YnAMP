@@ -2514,12 +2514,12 @@ function GetRefMapXY(mapX, mapY, bOnlyOffset)
 		
 		-- the code below assume that the reference map is wrapX
 		if refMapY >= g_UncutMapHeight then
-			refMapY = refMapY - g_UncutMapHeight
-			--refMapY = (2*g_UncutMapHeight) - refMapY
+			--refMapY = refMapY - g_UncutMapHeight
+			refMapY = (2*g_UncutMapHeight) - refMapY - 1
 			refMapX = refMapX + Round(g_UncutMapWidth / 2)
 		end
 		if refMapX >= g_UncutMapWidth then
-			refMapX = refMapX - g_UncutMapWidth
+			refMapX = refMapX - g_UncutMapWidth -- -1 ?
 		end
 	end
 	return refMapX, refMapY
@@ -2537,10 +2537,12 @@ function GetXYFromRefMapXY(x, y, bOnlyOffset)
 		
 		-- the code below assume that the reference map is wrapX
 		if y < 0 then 
-			y = y + g_iH - 1
+			--y = y + g_iH - 1
+			y = y + g_iH
 			x = x + Round(g_iW / 2)
 		end
-		if x < 0 then x = x + g_iW - 1 end
+		--if x < 0 then x = x + g_iW - 1 end
+		if x < 0 then x = x + g_iW end
 	end
 	return x, y
 end
@@ -4455,10 +4457,10 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 		local Cliffs 			= MapToConvert[refX][refY][6] -- {IsNEOfCliff,IsWOfCliff,IsNWOfCliff}
 		
 		-- Set terrain type
-		if bDoTerrains then
+		if bDoTerrains and GameInfo.Terrains[civ6TerrainType] then
 			if bOutput then print(" - Set Terrain Type = "..tostring(GameInfo.Terrains[civ6TerrainType].TerrainType)) end
 			count = count + 1
-			TerrainBuilder.SetTerrainType(plot, civ6TerrainType)
+			TerrainBuilder.SetTerrainType(plot, GameInfo.Terrains[civ6TerrainType].Index)
 		end
 		
 		-- Set Rivers
@@ -4479,26 +4481,26 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 		
 		-- Set Features
 		if bImportFeatures then
-			if civ6FeatureType ~= g_FEATURE_NONE and civ6FeatureType < GameInfo.Features["FEATURE_BARRIER_REEF"].Index then -- Do not import Natural Wonder here !
+			if GameInfo.Features[civ6FeatureType] and civ6FeatureType < GameInfo.Features["FEATURE_BARRIER_REEF"].Index then -- Do not import Natural Wonder here !
 				if bOutput then print(" - Set Feature Type = "..tostring(GameInfo.Features[civ6FeatureType].FeatureType)) end
-				TerrainBuilder.SetFeatureType(plot, civ6FeatureType)
+				TerrainBuilder.SetFeatureType(plot, GameInfo.Features[civ6FeatureType].Index)
 			end
 		end
 		
 		-- Set Continent
 		if bImportContinents then
-			if civ6ContinentType ~= -1 then		
+			if GameInfo.Continents[civ6ContinentType] then		
 				if bOutput then print(" - Set Continent Type = "..tostring(GameInfo.Continents[civ6ContinentType].ContinentType)) end
-				TerrainBuilder.SetContinentType(plot, civ6ContinentType)
+				TerrainBuilder.SetContinentType(plot, GameInfo.Continents[civ6ContinentType].Index)
 			end
 		end
 		
 		-- Set Resources
 		if bImportResources and not plot:IsNaturalWonder() then
-			if resource[1] ~= -1 then		
+			if GameInfo.Resources[resource[1]] then		
 				if bOutput then print(" - Set Resource Type = "..tostring(GameInfo.Resources[resource[1]].ResourceType)) end
 				--ResourceBuilder.SetResourceType(plot, ResourceCiv5toCiv6[resource[1]], resource[2]) -- maybe an option to import number of resources on one plot even if civ6 use 1 ?
-				ResourceBuilder.SetResourceType(plot, resource[1], 1)
+				ResourceBuilder.SetResourceType(plot, GameInfo.Resources[resource[1]].Index, resource[2])
 			end
 		end
 		
