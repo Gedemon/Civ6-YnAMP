@@ -85,6 +85,12 @@
 		-->
 		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthUncutMapWidth"	Name="UncutMapWidth" 	Description="" Domain="text" DefaultValue="180" ConfigurationGroup="Map" ConfigurationId="UncutMapWidth" 	GroupId="MapOptions" Visible="0" SortIndex="2025"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthUncutMapHeight"	Name="UncutMapHeight" 	Description="" Domain="text" DefaultValue="94" 	ConfigurationGroup="Map" ConfigurationId="UncutMapHeight" 	GroupId="MapOptions" Visible="0" SortIndex="2025"/>
+
+		<!--	Scenario Options
+		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthScenarioType" 	Name="LOC_MAP_SCENARIO_TYPE_NAME"	Description="LOC_MAP_SCENARIO_TYPE_DESCRIPTION" 	Domain="ScenarioType" 	DefaultValue="SCENARIO_NONE" 	ConfigurationGroup="Map" ConfigurationId="ScenarioName" 	GroupId="MapOptions" SortIndex="10000"/>
+		-->
+		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthCityPlacement" 	Name="LOC_MAP_CITY_PLACEMENT_NAME"	Description="LOC_MAP_CITY_PLACEMENT_DESCRIPTION" 	Domain="GiantEarthCityPlacement" 	DefaultValue="IMPORT" 		ConfigurationGroup="Map" ConfigurationId="CityPlacement" 	GroupId="MapOptions" SortIndex="10010"/>
+
 		
 	</Parameters>
 	
@@ -103,7 +109,9 @@
 		<Replace Domain="GiantEarthLongitude" Value="32" 	Name="LOC_MAP_DEFAULT_EQUATOR_NAME" 			Description="LOC_MAP_DEFAULT_EQUATOR_DESCRIPTION" 	SortIndex="25"/>
 		<Replace Domain="GiantEarthLongitude" Value="60" 	Name="LOC_MAP_GIANTEARTH_LONGITUDE_60_NAME" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_60_DESCRIPTION" 	SortIndex="30"/>
 		<Replace Domain="GiantEarthLongitude" Value="93" 	Name="LOC_MAP_DEFAULT_LONGITUDE_MAX_NAME" 		Description="LOC_MAP_GIANTEARTH_LONGITUDE_93_DESCRIPTION" 	SortIndex="100"/>
-		
+
+		<Replace Domain="GiantEarthCityPlacement" Value="TERRAIN" 	Name="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" 		Description="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" 	SortIndex="10"/>
+		<Replace Domain="GiantEarthCityPlacement" Value="CITY_MAP" 	Name="LOC_MAP_CITY_PLACEMENT_CITY_MAP_NAME" 	Description="LOC_MAP_CITY_PLACEMENT_CITY_MAP_DESCRIPTION" 	SortIndex="20"/>
 	</DomainValues>
 	
 	<!-- Only use those values for a domain -->
