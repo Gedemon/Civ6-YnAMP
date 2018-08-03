@@ -610,5 +610,22 @@
       <Text>Equator</Text>
     </Replace>
 	
+	
+    <Replace Tag="LOC_MAP_SCENARIO_TYPE_NAME" Language="en_US">
+      <Text>Scenario</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_NONE_NAME" Language="en_US">
+      <Text>None</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_NONE_DESCRIPTION" Language="en_US">
+      <Text>No Scenario</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_GENERATED_NAME" Language="en_US">
+      <Text>Generated</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_GENERATED_DESCRIPTION" Language="en_US">
+      <Text>Scenario with automated setup</Text>
+    </Replace>
+	
   </LocalizedText>
 </GameData>

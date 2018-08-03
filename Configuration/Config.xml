@@ -71,6 +71,10 @@
 
 		<Replace ParameterId="TurnsBeforeBarbarians" Name="LOC_TURNS_BEFORE_BARBARIANS_NAME" Description="LOC_TURNS_BEFORE_BARBARIANS_DESCRIPTION" Domain="uint" Hash="0" DefaultValue="7" ConfigurationGroup="Game" ConfigurationId="TurnsBeforeBarbarians" GroupId="AdvancedOptions" SortIndex="2999"/>
 
+		<!--	Scenario Options	-->
+		<Replace ParameterId="ScenarioType" 	Name="LOC_MAP_SCENARIO_TYPE_NAME"	Description="LOC_MAP_SCENARIO_TYPE_DESCRIPTION" 	Domain="ScenarioType" 	DefaultValue="SCENARIO_NONE" 	ConfigurationGroup="Map" ConfigurationId="ScenarioName" 	GroupId="MapOptions" SortIndex="10000"/>
+		<Replace ParameterId="CityPlacement" 	Name="LOC_MAP_CITY_PLACEMENT_NAME"	Description="LOC_MAP_CITY_PLACEMENT_DESCRIPTION" 	Domain="CityPlacement" 	DefaultValue="TERRAIN" 			ConfigurationGroup="Map" ConfigurationId="CityPlacement" 	GroupId="MapOptions" SortIndex="10010"/>
+
 	</Parameters>	
 
 	<DomainValues>
@@ -115,6 +119,11 @@
 		<Replace Domain="ForceTSL" Value="FORCE_TSL_CS" 	Name="LOC_MAP_FORCE_TSL_CS" 	Description="LOC_MAP_FORCE_TSL_CS_DESCRIPTION" 		SortIndex="20"/>
 		<Replace Domain="ForceTSL" Value="FORCE_TSL_AI" 	Name="LOC_MAP_FORCE_TSL_AI" 	Description="LOC_MAP_FORCE_TSL_AI_DESCRIPTION" 		SortIndex="30"/>
 		<Replace Domain="ForceTSL" Value="FORCE_TSL_ALL" 	Name="LOC_MAP_FORCE_TSL_ALL" 	Description="LOC_MAP_FORCE_TSL_ALL_DESCRIPTION" 	SortIndex="30"/>
+		
+		<Replace Domain="ScenarioType" Value="SCENARIO_NONE" 		Name="LOC_MAP_SCENARIO_NONE_NAME" 		Description="LOC_MAP_SCENARIO_NONE_DESCRIPTION" 					SortIndex="10"/>
+		<Replace Domain="ScenarioType" Value="SCENARIO_GENERATED" 	Name="LOC_MAP_SCENARIO_GENERATED_NAME" 	Description="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_DESCRIPTION" SortIndex="20"/>
+		
+		<Replace Domain="CityPlacement" Value="TERRAIN" 			Name="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" 		Description="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" 	SortIndex="10"/>
 		
 	</DomainValues>
 
