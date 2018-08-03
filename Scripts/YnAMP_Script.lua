@@ -26,6 +26,9 @@ print ("Map Name = " .. tostring(mapName))
 local bAutoCityNaming 			= MapConfiguration.GetValue("AutoCityNaming")
 local bCanUseCivSpecificName 	= not (MapConfiguration.GetValue("OnlyGenericCityNames"))
 
+local isCityOnMap 	= {} -- helper to check by name if a city has a position set on the city map
+local cityPosition	= {} -- helper to get the first defined position in the city map of a city (by name)
+
 local bUseRelativePlacement = MapConfiguration.GetValue("UseRelativePlacement")
 local g_ReferenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth") or 180
 local g_ReferenceMapHeight 	= MapConfiguration.GetValue("ReferenceMapHeight") or 94
@@ -51,7 +54,9 @@ if bUseRelativePlacement then
 	g_ExtraRange = 10 --Round(10 * math.sqrt(g_iW * g_iH) / math.sqrt(g_ReferenceMapWidth * g_ReferenceMapHeight))
 end
 
-local scenarioName = MapConfiguration.GetValue("ScenarioName")
+-- Scenario Settings
+local scenarioName 	= MapConfiguration.GetValue("ScenarioName")
+local cityPlacement = MapConfiguration.GetValue("CityPlacement")
 
 ------------------------------------------------------------------------------
 -- Helpers for x,y positions when using a reference or offset map
@@ -236,20 +241,25 @@ end
 Events.LoadScreenClose.Add( ListCityWithoutLOC )
 
 function ListCityNotOnMap()
-	local hasMap = {}
 	for row in GameInfo.CityMap() do
 		local name = row.CityLocaleName
-		if name then
-			hasMap[name] = true
-			hasMap[Locale.Lookup(name)] = true
-		else
-			print("ERROR : no name at row "..tostring(row.Index + 1))
+		if MapName == row.MapName then
+			if name then
+				if not isCityOnMap[name] then
+					isCityOnMap[name] 					= true
+					isCityOnMap[Locale.Lookup(name)] 	= true
+					cityPosition[name] 					= {X = row.X, Y = row.Y }
+					cityPosition[Locale.Lookup(name)] 	= {X = row.X, Y = row.Y }
+				end
+			else
+				print("ERROR : no name at row "..tostring(row.Index + 1))
+			end
 		end
 	end
 	for row in GameInfo.CityNames() do
 		local name = row.CityName
 		local civilization = row.CivilizationType
-		if not (hasMap[name] or hasMap[Locale.Lookup(name)]) then
+		if not (isCityOnMap[name] or isCityOnMap[Locale.Lookup(name)]) then
 			print("Not mapped for "..tostring(civilization).." : "..tostring(name))
 		end
 	end
@@ -340,11 +350,41 @@ end
 ----------------------------------------------------------------------------------------
 -- Scenario settings  <<<<<
 ----------------------------------------------------------------------------------------
-if scenarioName ~= nil then 
+if scenarioName and scenarioName ~= "SCENARIO_NONE" then 
 ----------------------------------------------------------------------------------------
 
 print("Setting scenario : ", scenarioName)
 
+-- City Placement
+print("City Placement : ", cityPlacement)
+
+if cityPlacement == "TERRAIN" then
+
+elseif cityPlacement == "CITY_MAP" then
+	-- testing with 5 cities for each major civs
+	for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+		local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+		local counter = 0
+		for row in GameInfo.CityNames() do
+			if counter < 5 then
+				local cityName = row.CityName
+				if CivilizationTypeName == row.CivilizationType then
+					local pos = cityPosition[name]
+					if pos then
+						local player	= Players[iPlayer]
+						local city 		= player:GetCities():Create(GetXYFromRefMapXY(pos.X, pos.Y))
+						if city then
+							counter	= counter + 1
+						end
+					end
+				end
+			end
+		end
+	end
+
+elseif cityPlacement == "IMPORT" then
+
+end
 
 ----------------------------------------------------------------------------------------
 end
