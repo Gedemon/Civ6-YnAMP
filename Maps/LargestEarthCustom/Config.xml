@@ -89,20 +89,22 @@
 	<DomainValues>
 		
 		<Replace Domain="LargestEarthCustomLatitude" Value="0" 		Name="LOC_MAP_GIANTEARTH_LATITUDE_0_NAME" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_0_DESCRIPTION" 	SortIndex="10"/>
-		<Replace Domain="LargestEarthCustomLatitude" Value="5" 		Name="5" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="11"/>
-		<Replace Domain="LargestEarthCustomLatitude" Value="6" 		Name="6" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="12"/>
-		<Replace Domain="LargestEarthCustomLatitude" Value="8" 		Name="8" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="13"/>
-		<Replace Domain="LargestEarthCustomLatitude" Value="9" 		Name="9" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="14"/>
 		<Replace Domain="LargestEarthCustomLatitude" Value="10" 		Name="10" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="15"/>
-		<Replace Domain="LargestEarthCustomLatitude" Value="12" 		Name="12" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="16"/>
-		<Replace Domain="LargestEarthCustomLatitude" Value="13" 		Name="13" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="17"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="25" 		Name="25" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="17"/>
 		<Replace Domain="LargestEarthCustomLatitude" Value="50" 		Name="50" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="20"/>
-		<Replace Domain="LargestEarthCustomLatitude" Value="100" 		Name="120" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_100_DESCRIPTION" 	SortIndex="30"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="100" 		Name="100" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="22"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="153" 		Name="Bering Strait" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_100_DESCRIPTION" 	SortIndex="30"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="160" 		Name="160" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_100_DESCRIPTION" 	SortIndex="32"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="190" 		Name="190" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_100_DESCRIPTION" 	SortIndex="34"/>
 		<Replace Domain="LargestEarthCustomLatitude" Value="229" 		Name="LOC_MAP_GIANTEARTH_LATITUDE_179_NAME" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_179_DESCRIPTION" 	SortIndex="100"/>
 		
 		<Replace Domain="LargestEarthCustomLongitude" Value="0" 		Name="LOC_MAP_DEFAULT_LONGITUDE_0_NAME" 		Description="LOC_MAP_GIANTEARTH_LONGITUDE_0_DESCRIPTION" 	SortIndex="10"/>
-		<Replace Domain="LargestEarthCustomLongitude" Value="30" 		Name="30" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_20_DESCRIPTION" 	SortIndex="20"/>
-		<Replace Domain="LargestEarthCustomLongitude" Value="60" 		Name="60" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_60_DESCRIPTION" 	SortIndex="30"/>
+		<Replace Domain="LargestEarthCustomLongitude" Value="10" 		Name="10" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_20_DESCRIPTION" 	SortIndex="20"/>
+		<Replace Domain="LargestEarthCustomLongitude" Value="30" 		Name="30" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_20_DESCRIPTION" 	SortIndex="25"/>
+		<Replace Domain="LargestEarthCustomLongitude" Value="44" 		Name="LOC_MAP_DEFAULT_EQUATOR_NAME" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_60_DESCRIPTION" 	SortIndex="30"/>
+		<Replace Domain="LargestEarthCustomLongitude" Value="60" 		Name="60" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_60_DESCRIPTION" 	SortIndex="32"/>
+		<Replace Domain="LargestEarthCustomLongitude" Value="80" 		Name="80" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_60_DESCRIPTION" 	SortIndex="34"/>
+		<Replace Domain="LargestEarthCustomLongitude" Value="100" 		Name="100" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_60_DESCRIPTION" 	SortIndex="36"/>
 		<Replace Domain="LargestEarthCustomLongitude" Value="115" 		Name="LOC_MAP_DEFAULT_LONGITUDE_MAX_NAME" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_93_DESCRIPTION" 	SortIndex="100"/>
 		
 	</DomainValues>

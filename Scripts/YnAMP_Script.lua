@@ -396,3 +396,64 @@ function CheckTimer()
 end
 --]]
 
+--[[
+g_Timer = 0
+g_Pause = 3
+g_LoopPerResume = 200
+
+function LaunchScriptWithPause()
+	print("LaunchScriptWithPause")
+	Events.GameCoreEventPublishComplete.Add( CheckTimer )
+end
+--Events.LoadScreenClose.Add( LaunchScriptWithPause ) -- launching the script when the load screen is closed, you can use your own events
+
+function StopScriptWithPause() -- GameCoreEventPublishComplete is called frequently, keep it clean
+
+	print("StopScriptWithPause")
+	Events.GameCoreEventPublishComplete.Remove( CheckTimer )
+end
+
+function ChangePause(value)
+	print("changing pause value to ", value)
+	g_Pause = value
+end
+
+ExploreMap = coroutine.create(function()
+
+	print("ExploreMap")
+
+	if (Game.GetLocalPlayer() ~= -1) then
+		local pVis = PlayersVisibility[Game.GetLocalPlayer()];
+		print("pVis", pVis)
+
+		local counter = 0
+		for iPlotIndex = 0, Map.GetPlotCount()-1, 1 do
+			print("iPlotIndex", iPlotIndex)
+			pVis:ChangeVisibilityCount(iPlotIndex, 0);
+			print("iPlotIndex", iPlotIndex)
+			if counter >= g_LoopPerResume then
+				counter = 0
+				print("requesting pause in script for ", g_Pause, " seconds at time = ".. tostring( Automation.GetTime() ))
+				g_Timer = Automation.GetTime()
+				coroutine.yield()
+				-- after g_Pause seconds, the script will start again from here
+				print("resuming script at time = ".. tostring( Automation.GetTime() ))				
+			end
+				counter = counter + 1
+		end
+	end
+	StopScriptWithPause()
+end)
+
+function CheckTimer()
+	print("CheckTimer")
+	if Automation.GetTime() >= g_Timer + g_Pause then
+		g_Timer = Automation.GetTime()
+		coroutine.resume(ExploreMap)
+	end
+end
+	
+LaunchScriptWithPause()
+--]]
+
+

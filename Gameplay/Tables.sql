@@ -96,11 +96,13 @@ CREATE TABLE IF NOT EXISTS StartBiasCoast
 
 -- Scenario Civilization Replacements
 -- Replace scenario's <CivilizationType> by the (last) <PreferedType> available
+-- Use (last available) <BackupType> when the scenario's <CivilizationType> is not available available
 -- If the scenario use a <PreferedType> and it's not available, try to use the first available <CivilizationType> referencing it.
 CREATE TABLE IF NOT EXISTS ScenarioCivilizationsReplacement
 	(	ScenarioName TEXT NOT NULL,
 		CivilizationType TEXT NOT NULL,
-		PreferedType TEXT NOT NULL);
+		BackupType TEXT,
+		PreferedType TEXT);
 		
 -- Scenario Cities
 CREATE TABLE IF NOT EXISTS ScenarioCities

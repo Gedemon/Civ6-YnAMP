@@ -4481,7 +4481,7 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 		
 		-- Set Features
 		if bImportFeatures then
-			if GameInfo.Features[civ6FeatureType] and civ6FeatureType < GameInfo.Features["FEATURE_BARRIER_REEF"].Index then -- Do not import Natural Wonder here !
+			if GameInfo.Features[civ6FeatureType] and not GameInfo.Features[civ6FeatureType].NaturalWonder then -- Do not import Natural Wonder here !
 				if bOutput then print(" - Set Feature Type = "..tostring(GameInfo.Features[civ6FeatureType].FeatureType)) end
 				TerrainBuilder.SetFeatureType(plot, GameInfo.Features[civ6FeatureType].Index)
 			end
