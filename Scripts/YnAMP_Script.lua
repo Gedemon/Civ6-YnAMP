@@ -283,7 +283,7 @@ function GetXYFromRefMapXY(x, y, bOnlyOffset)
 			--x = x + Round(g_iW / 2)
 		end
 		--if x < 0 then x = x + g_iW - 1 end
-		if x < 0 then x = x + g_iW end
+		if x < 0 and Map.IsWrapX() then x = x + g_iW end
 	end
 	return x, y
 end
