@@ -3987,17 +3987,20 @@
 		<Replace MapName="GiantEarth" X="153" Y="66" CityLocaleName="LOC_CITY_NAME_CLEVELAND" Area="0" />
 		
 		<!-- MINNESOTA -->
-		<Replace MapName="GiantEarth" X="143" Y="67" CityLocaleName="LOC_CITY_NAME_MINNEAPOLIS" Area="0" />
-		<Replace MapName="GiantEarth" X="144" Y="67" CityLocaleName="LOC_CITY_NAME_MINNEAPOLIS" Area="0" />
+		<Replace MapName="GiantEarth" X="143" Y="67" CityLocaleName="LOC_CITY_NAME_MARSHALL" Area="0" />
+		<Replace MapName="GiantEarth" X="145" Y="67" CityLocaleName="LOC_CITY_NAME_ROCHESTER_MINNESOTA" Area="1" />
 		
-		<Replace MapName="GiantEarth" X="143" Y="68" CityLocaleName="LOC_CITY_NAME_MINNEAPOLIS" Area="0" />
-		<Replace MapName="GiantEarth" X="144" Y="68" CityLocaleName="LOC_CITY_NAME_MINNEAPOLIS" Area="1" />
+		<Replace MapName="GiantEarth" X="143" Y="68" CityLocaleName="LOC_CITY_NAME_GIBBON" Area="0" />
+		<Replace MapName="GiantEarth" X="144" Y="68" CityLocaleName="LOC_CITY_NAME_MANKATO" Area="0" />
+		<Replace MapName="GiantEarth" X="145" Y="68" CityLocaleName="LOC_CITY_NAME_MINNEAPOLIS" Area="0" />
 		
-		<Replace MapName="GiantEarth" X="142" Y="69" CityLocaleName="LOC_CITY_NAME_BEMIDJI" Area="1" />
-		<Replace MapName="GiantEarth" X="143" Y="69" CityLocaleName="LOC_CITY_NAME_MINNEAPOLIS" Area="0" />
-		<Replace MapName="GiantEarth" X="144" Y="69" CityLocaleName="LOC_CITY_NAME_DULUTH" Area="0" />
+		<Replace MapName="GiantEarth" X="142" Y="69" CityLocaleName="LOC_CITY_NAME_MOORHEAD" Area="0" />
+		<Replace MapName="GiantEarth" X="143" Y="69" CityLocaleName="LOC_CITY_NAME_ST_CLOUD" Area="0" />
+		<Replace MapName="GiantEarth" X="144" Y="69" CityLocaleName="LOC_CITY_NAME_BRAINERD" Area="0" />
 		
 		<Replace MapName="GiantEarth" X="142" Y="70" CityLocaleName="LOC_CITY_NAME_BEMIDJI" Area="0" />
+		<Replace MapName="GiantEarth" X="143" Y="70" CityLocaleName="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA" Area="0" />
+		<Replace MapName="GiantEarth" X="144" Y="70" CityLocaleName="LOC_CITY_NAME_HIBBING" Area="0" />
 		<Replace MapName="GiantEarth" X="145" Y="70" CityLocaleName="LOC_CITY_NAME_DULUTH" Area="1" />
 		
 		<!-- WISCONSIN -->	
@@ -4179,15 +4182,21 @@
 		<!-- IOWA -->
 		<Replace MapName="GiantEarth" X="142" Y="65" CityLocaleName="LOC_CITY_NAME_DES_MOINES" Area="0" />
 		<Replace MapName="GiantEarth" X="143" Y="65" CityLocaleName="LOC_CITY_NAME_DES_MOINES" Area="0" />
-		<Replace MapName="GiantEarth" X="145" Y="65" CityLocaleName="LOC_CITY_NAME_CEDAR_RAPIDS" Area="0" />	
+		<Replace MapName="GiantEarth" X="145" Y="65" CityLocaleName="LOC_CITY_NAME_IOWA_CITY" Area="0" />	
 		
-		<Replace MapName="GiantEarth" X="143" Y="66" CityLocaleName="LOC_CITY_NAME_DES_MOINES" Area="0" />
-		<Replace MapName="GiantEarth" X="144" Y="66" CityLocaleName="LOC_CITY_NAME_CEDAR_RAPIDS" Area="1" />	
+		<Replace MapName="GiantEarth" X="143" Y="66" CityLocaleName="LOC_CITY_NAME_AMES" Area="0" />
+		<Replace MapName="GiantEarth" X="144" Y="66" CityLocaleName="LOC_CITY_NAME_WATERLOO" Area="0" />
+		<Replace MapName="GiantEarth" X="145" Y="66" CityLocaleName="LOC_CITY_NAME_CEDAR_RAPIDS" Area="0" />
+		<Replace MapName="GiantEarth" X="146" Y="66" CityLocaleName="LOC_CITY_NAME_DUBUQUE" Area="1" />	
 		
 		<!-- NORTH DAKOTA -->	
 		<Replace MapName="GiantEarth" X="139" Y="69" CityLocaleName="LOC_CITY_NAME_BISMARCK" Area="1" />
 		<Replace MapName="GiantEarth" X="140" Y="69" CityLocaleName="LOC_CITY_NAME_BISMARCK" Area="0" />	
 		<Replace MapName="GiantEarth" X="141" Y="69" CityLocaleName="LOC_CITY_NAME_FARGO" Area="1" />
+		
+		<Replace MapName="GiantEarth" X="139" Y="70" CityLocaleName="LOC_CITY_NAME_WILLISTON" Area="0" />
+		<Replace MapName="GiantEarth" X="140" Y="70" CityLocaleName="LOC_CITY_NAME_MINOT" Area="0" />
+		<Replace MapName="GiantEarth" X="141" Y="70" CityLocaleName="LOC_CITY_NAME_GRAND_FORKS" Area="0" />
 		
 		<!-- MONTANA -->	
 		<Replace MapName="GiantEarth" X="135" Y="69" CityLocaleName="LOC_CITY_NAME_MISSOULA" Area="1" />
