@@ -63,6 +63,8 @@
 			<File>Maps/PlayEuropeAgain/CityMap_Macedon.xml</File>
 			<File>Maps/PlayEuropeAgain/CityMap_Rome.xml</File>
 			<File>Maps/LargeEurope/Map.xml</File>
+			<File>Maps/LargestEarthCustom/CityMap.xml</File>
+			<File>Maps/LargestEarthCustom/Map.xml</File>
 			<File>Gameplay/Resource.xml</File>
 			<File>Gameplay/CityNameByEra.xml</File>
 		</UpdateDatabase>
@@ -188,6 +190,8 @@
 		<File>Maps/PlayEuropeAgain/CityMap_Macedon.xml</File>
 		<File>Maps/PlayEuropeAgain/CityMap_Rome.xml</File>
 		<File>Maps/LargeEurope/Map.xml</File>
+		<File>Maps/LargestEarthCustom/CityMap.xml</File>
+		<File>Maps/LargestEarthCustom/Map.xml</File>
 		<File>Gameplay/Resource.xml</File>
 		<File>Gameplay/CityNameByEra.xml</File>
 		<File>Maps/GiantEarth/GiantEarth.lua</File>

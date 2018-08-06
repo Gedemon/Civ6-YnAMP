@@ -594,22 +594,62 @@
       <Text>NORTH Border</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_GIANTEARTH_LATITUDE_0_NAME" Language="en_US">
-      <Text>West Europe (West default)</Text>
+    <Replace Tag="LOC_MAP_LATITUDE_NAME" Language="en_US">
+      <Text>Latitude</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_GIANTEARTH_LATITUDE_179_NAME" Language="en_US">
-      <Text>East America (East default)</Text>
+    <Replace Tag="LOC_MAP_LONGITUDE_NAME" Language="en_US">
+      <Text>Longitude</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_DEFAULT_LONGITUDE_0_NAME" Language="en_US">
-      <Text>South Pole (South default)</Text>
+	
+    <Replace Tag="LOC_MAP_WEST_EUROPE_NAME" Language="en_US">
+      <Text>West Europe</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_DEFAULT_LONGITUDE_MAX_NAME" Language="en_US">
-      <Text>North Pole (North default)</Text>
+    <Replace Tag="LOC_MAP_EAST_AMERICA_NAME" Language="en_US">
+      <Text>East America</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_DEFAULT_EQUATOR_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_SOUTH_POLE_NAME" Language="en_US">
+      <Text>South Pole</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_POLE_NAME" Language="en_US">
+      <Text>North Pole</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EQUATOR_NAME" Language="en_US">
       <Text>Equator</Text>
     </Replace>
 	
+    <Replace Tag="LOC_MAP_EAST_MEDITERRANEA_NAME" Language="en_US">
+      <Text>East Mediterranea</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EAST_EUROPE_AFRICA_NAME" Language="en_US">
+      <Text>East Europe/Africa</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_THE_URALS_WEST_INDIA_NAME" Language="en_US">
+      <Text>The Urals, West India</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CENTRAL_ASIA_NAME" Language="en_US">
+      <Text>Central Asia</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EAST_ASIA_WEST_AUSTRALIA_NAME" Language="en_US">
+      <Text>East Asia, West Australia</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_BERING_STRAIT_NAME" Language="en_US">
+      <Text>Bering Strait</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_WEST_COAST_NAME" Language="en_US">
+      <Text>West Coast</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GULF_OF_MEXICO_NAME" Language="en_US">
+      <Text>Gulf of Mexico</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_AFRICA_SOUTH_ASIA_CARIBBEAN_NAME" Language="en_US">
+      <Text>North Africa, South Asia, Caribbean</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIBRALTAR_SOUTH_JAPAN_CENTRAL_AMERICA_NAME" Language="en_US">
+      <Text>Gibraltar, South Japan, Central America</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_MEDITERRANEA_ASIA_NAME" Language="en_US">
+      <Text>North Mediterranea/Asia</Text>
+    </Replace>
 	
     <Replace Tag="LOC_MAP_SCENARIO_TYPE_NAME" Language="en_US">
       <Text>Scenario</Text>
@@ -624,7 +664,23 @@
       <Text>Generated</Text>
     </Replace>
     <Replace Tag="LOC_MAP_SCENARIO_GENERATED_DESCRIPTION" Language="en_US">
-      <Text>Scenario with automated setup</Text>
+      <Text>Scenario generated automatically</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_NAME" Language="en_US">
+      <Text>Cities Placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" Language="en_US">
+      <Text>Terrain</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" Language="en_US">
+      <Text>Use game's suggestion for best city placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_NAME" Language="en_US">
+      <Text>City Map</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_DESCRIPTION" Language="en_US">
+      <Text>Get cities position from the CityMap table</Text>
     </Replace>
 	
   </LocalizedText>

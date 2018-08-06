@@ -32,7 +32,7 @@
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="NaturalWondersPlacement" Name="LOC_MAP_NATURAL_WONDERS_PLACEMENT_NAME" Description="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DESCRIPTION" Domain="NaturalWondersPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="NaturalWondersPlacement" GroupId="MapOptions" Hash="0" SortIndex="244"/>
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="FeaturesPlacement" Name="LOC_MAP_FEATURES_PLACEMENT_NAME" Description="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Domain="FeaturesPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" GroupId="MapOptions" Hash="0" SortIndex="245"/>		
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="Rainfall" Name="LOC_MAP_RAINFALL_NAME" Description="LOC_MAP_RAINFALL_DESCRIPTION" Domain="Rainfall" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="rainfall" GroupId="MapOptions" Hash="0" SortIndex="250"/>
-		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="ResourcesPlacement" Name="LOC_MAP_RESOURCES_PLACEMENT_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Domain="ResourcesPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" GroupId="MapOptions" Hash="0" SortIndex="269"/>
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomResourcesPlacement" Name="LOC_MAP_RESOURCES_PLACEMENT_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Domain="LargestEarthCustomResourcesPlacement" DefaultValue="PLACEMENT_DEFAULT" ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" GroupId="MapOptions" Hash="0" SortIndex="269"/>
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="Resources" Name="LOC_MAP_RESOURCES_NAME" Description="LOC_MAP_RESOURCES_DESCRIPTION" Domain="Resources" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="resources" GroupId="MapOptions" Hash="0" SortIndex="270"/>
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="ResourcesExclusion" Name="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" Domain="ResourcesExclusion" DefaultValue="PLACEMENT_EXCLUDE" ConfigurationGroup="Map" ConfigurationId="ResourcesExclusion" GroupId="MapOptions" SortIndex="275"/>
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="CivilizationPlacement" Name="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Description="LOC_MAP_CIVILIZATION_PLACEMENT_DESCRIPTION" Domain="CivilizationPlacement" DefaultValue="PLACEMENT_TSL" ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" GroupId="MapOptions" Hash="0" SortIndex="280"/>
@@ -52,8 +52,10 @@
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" 	ParameterId="HideSize" Name="HideSize" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="HideSize" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		
 		<!--	Hidden parameters to notify some YnAMP scripts to use relative placement for this map (you must also set ReferenceMapHeight, ReferenceMapWidth and give that map the same name as the reference map
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="UseOwnDataForNW"			Name="UseOwnDataForNW" 			Description="" Domain="StandardMapSizes" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="UseOwnDataForNW" 		GroupId="MapOptions" Visible="0" SortIndex="225"/>
 		-->
-		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="UseRelativePlacement"	Name="UseRelativePlacement" Description="" Domain="StandardMapSizes" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="UseRelativePlacement" GroupId="MapOptions" Visible="0" SortIndex="225"/>
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="UseRelativePlacement"	Name="UseRelativePlacement" 	Description="" Domain="StandardMapSizes" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="UseRelativePlacement" 	GroupId="MapOptions" Visible="0" SortIndex="225"/>
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="UseRelativeFixedTable"	Name="UseRelativeFixedTable" 	Description="" Domain="StandardMapSizes" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="UseRelativeFixedTable" 	GroupId="MapOptions" Visible="0" SortIndex="225"/>
 		
 		<!--	Hidden parameters to pass the Height/Width of the reference map for TSL
 		-->
@@ -62,7 +64,8 @@
 		
 		<!--	Hidden parameter to set the map name to the reference map that will be used to find the tables for TSL
 		-->
-		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomName" 		Name="MapName" Description="" Domain="text" DefaultValue="GiantEarth" 		ConfigurationGroup="Map" ConfigurationId="MapName" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomName" 				Name="MapName" 		Description="" Domain="text" DefaultValue="LargestEarth" 		ConfigurationGroup="Map" ConfigurationId="MapName" 		GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomReferenceMap" 		Name="ReferenceMap" Description="" Domain="text" DefaultValue="GiantEarth" 			ConfigurationGroup="Map" ConfigurationId="ReferenceMap" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 
 		<!--	Hidden parameters to adjust features placement when they are not imported
 		-->		
@@ -83,31 +86,39 @@
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomStartY" 	Name="LOC_MAP_STARTY_NAME"	Description="LOC_MAP_STARTY_DESCRIPTION" 	Domain="LargestEarthCustomLongitude" 	DefaultValue="0" 	ConfigurationGroup="Map" ConfigurationId="StartY" 	GroupId="MapOptions" SortIndex="222"/>
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomEndX" 		Name="LOC_MAP_ENDX_NAME"	Description="LOC_MAP_ENDX_DESCRIPTION"		Domain="LargestEarthCustomLatitude" 	DefaultValue="229" 	ConfigurationGroup="Map" ConfigurationId="EndX"		GroupId="MapOptions" SortIndex="223"/>
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomEndY" 		Name="LOC_MAP_ENDY_NAME"	Description="LOC_MAP_ENDY_DESCRIPTION" 		Domain="LargestEarthCustomLongitude" 	DefaultValue="115" 	ConfigurationGroup="Map" ConfigurationId="EndY"		GroupId="MapOptions" SortIndex="224"/>
-	
+
 	</Parameters>
 	
 	<DomainValues>
+	
+		<Replace Domain="LargestEarthCustomResourcesPlacement" Value="PLACEMENT_DEFAULT" 	Name="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
+		<Replace Domain="LargestEarthCustomResourcesPlacement" Value="PLACEMENT_EMPTY" 		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 			Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 				SortIndex="30"/>
 		
-		<Replace Domain="LargestEarthCustomLatitude" Value="0" 		Name="LOC_MAP_GIANTEARTH_LATITUDE_0_NAME" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_0_DESCRIPTION" 	SortIndex="10"/>
-		<Replace Domain="LargestEarthCustomLatitude" Value="10" 		Name="10" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="15"/>
-		<Replace Domain="LargestEarthCustomLatitude" Value="25" 		Name="25" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="17"/>
-		<Replace Domain="LargestEarthCustomLatitude" Value="50" 		Name="50" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="20"/>
-		<Replace Domain="LargestEarthCustomLatitude" Value="100" 		Name="100" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="22"/>
-		<Replace Domain="LargestEarthCustomLatitude" Value="153" 		Name="Bering Strait" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_100_DESCRIPTION" 	SortIndex="30"/>
-		<Replace Domain="LargestEarthCustomLatitude" Value="160" 		Name="160" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_100_DESCRIPTION" 	SortIndex="32"/>
-		<Replace Domain="LargestEarthCustomLatitude" Value="190" 		Name="190" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_100_DESCRIPTION" 	SortIndex="34"/>
-		<Replace Domain="LargestEarthCustomLatitude" Value="229" 		Name="LOC_MAP_GIANTEARTH_LATITUDE_179_NAME" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_179_DESCRIPTION" 	SortIndex="100"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="0" 		Name="LOC_MAP_WEST_EUROPE_NAME" 			Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="0"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="44" 	Name="LOC_MAP_EAST_MEDITERRANEA_NAME" 		Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="10"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="50" 	Name="LOC_MAP_EAST_EUROPE_AFRICA_NAME" 		Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="20"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="74" 	Name="LOC_MAP_THE_URALS_WEST_INDIA_NAME" 	Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="30"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="88" 	Name="LOC_MAP_CENTRAL_ASIA_NAME" 			Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="40"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="108" 	Name="LOC_MAP_EAST_ASIA_WEST_AUSTRALIA_NAME"Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="50"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="153" 	Name="LOC_MAP_BERING_STRAIT_NAME" 			Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="60"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="170" 	Name="LOC_MAP_WEST_COAST_NAME" 				Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="70"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="184" 	Name="LOC_MAP_GULF_OF_MEXICO_NAME" 			Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="80"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="229" 	Name="LOC_MAP_EAST_AMERICA_NAME" 			Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="100"/>
 		
-		<Replace Domain="LargestEarthCustomLongitude" Value="0" 		Name="LOC_MAP_DEFAULT_LONGITUDE_0_NAME" 		Description="LOC_MAP_GIANTEARTH_LONGITUDE_0_DESCRIPTION" 	SortIndex="10"/>
-		<Replace Domain="LargestEarthCustomLongitude" Value="10" 		Name="10" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_20_DESCRIPTION" 	SortIndex="20"/>
-		<Replace Domain="LargestEarthCustomLongitude" Value="30" 		Name="30" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_20_DESCRIPTION" 	SortIndex="25"/>
-		<Replace Domain="LargestEarthCustomLongitude" Value="44" 		Name="LOC_MAP_DEFAULT_EQUATOR_NAME" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_60_DESCRIPTION" 	SortIndex="30"/>
-		<Replace Domain="LargestEarthCustomLongitude" Value="60" 		Name="60" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_60_DESCRIPTION" 	SortIndex="32"/>
-		<Replace Domain="LargestEarthCustomLongitude" Value="80" 		Name="80" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_60_DESCRIPTION" 	SortIndex="34"/>
-		<Replace Domain="LargestEarthCustomLongitude" Value="100" 		Name="100" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_60_DESCRIPTION" 	SortIndex="36"/>
-		<Replace Domain="LargestEarthCustomLongitude" Value="115" 		Name="LOC_MAP_DEFAULT_LONGITUDE_MAX_NAME" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_93_DESCRIPTION" 	SortIndex="100"/>
+		<Replace Domain="LargestEarthCustomLongitude" Value="0" 	Name="LOC_MAP_SOUTH_POLE_NAME" 								Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="10"/>
+		<Replace Domain="LargestEarthCustomLongitude" Value="44" 	Name="LOC_MAP_EQUATOR_NAME" 								Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="40"/>
+		<Replace Domain="LargestEarthCustomLongitude" Value="50" 	Name="LOC_MAP_NORTH_AFRICA_SOUTH_ASIA_CARIBBEAN_NAME" 		Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="50"/>
+		<Replace Domain="LargestEarthCustomLongitude" Value="62" 	Name="LOC_MAP_GIBRALTAR_SOUTH_JAPAN_CENTRAL_AMERICA_NAME" 	Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="60"/>
+		<Replace Domain="LargestEarthCustomLongitude" Value="82" 	Name="LOC_MAP_NORTH_MEDITERRANEA_ASIA_NAME" 				Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="70"/>
+		<Replace Domain="LargestEarthCustomLongitude" Value="115" 	Name="LOC_MAP_NORTH_POLE_NAME" 								Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="100"/>
 		
 	</DomainValues>
+	
+	<ParameterDependencies>
+	
+		<Replace ParameterId="ResourcesPlacement"	ConfigurationGroup="Map" ConfigurationId="MapName" 		Operator="NotEquals" 	ConfigurationValue="LargestEarth"/>		
+
+	</ParameterDependencies>
 	
 	<MapSupportedValues>
 		<!--

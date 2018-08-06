@@ -173,15 +173,78 @@
 	
 	<NaturalWonderPosition>
 
-		<Replace MapName="GiantEarth" X="98" Y="58" FeatureType="FEATURE_SUK_FUJI" TerrainType="TERRAIN_GRASS" />
+		<!-- FEATURE_BARRIER_REEF : 2 plots, coast, 1st plot is SOUTHEAST -->
+		<Replace MapName="GiantEarth" X="101" Y="23" FeatureType="FEATURE_BARRIER_REEF" TerrainType="TERRAIN_COAST" />
+		<Replace MapName="GiantEarth" X="101" Y="24" FeatureType="FEATURE_BARRIER_REEF" TerrainType="TERRAIN_COAST" />
+		
+		<!-- FEATURE_CLIFFS_DOVER : 2 plots, hills on coast, 1st plot is WEST -->
+		<Replace MapName="GiantEarth" X="11" Y="71" FeatureType="FEATURE_CLIFFS_DOVER" TerrainType="TERRAIN_GRASS_HILLS" />
+		<Replace MapName="GiantEarth" X="12" Y="71" FeatureType="FEATURE_CLIFFS_DOVER" TerrainType="TERRAIN_GRASS_HILLS" />
+		
+		<Replace MapName="GiantEarth" X="132" Y="64" FeatureType="FEATURE_CRATER_LAKE" TerrainType="TERRAIN_COAST" />
+		
+		<!-- FEATURE_DEAD_SEA : 2 plots, flat desert surrounded by desert, 1st plot is SOUTHWEST -->
+		<Replace MapName="GiantEarth" X="37" Y="50" FeatureType="FEATURE_DEAD_SEA" TerrainType="TERRAIN_DESERT" />
+		<Replace MapName="GiantEarth" X="37" Y="51" FeatureType="FEATURE_DEAD_SEA" TerrainType="TERRAIN_DESERT" />
+		
+		<!-- FEATURE_EVEREST : 3 plots, mountains, 1st plot is WEST -->
+		<Replace MapName="GiantEarth" X="64" Y="54" FeatureType="FEATURE_EVEREST" TerrainType="TERRAIN_TUNDRA_MOUNTAIN" />
+		<Replace MapName="GiantEarth" X="65" Y="54" FeatureType="FEATURE_EVEREST" TerrainType="TERRAIN_TUNDRA_MOUNTAIN" />
+		<Replace MapName="GiantEarth" X="64" Y="53" FeatureType="FEATURE_EVEREST" TerrainType="TERRAIN_TUNDRA_MOUNTAIN" />
+		
+		<!-- FEATURE_GALAPAGOS : 2 plots, coast, surrounded by coast, 1st plot is SOUTHEAST -->
+		<Replace MapName="GiantEarth" X="146" Y="35" FeatureType="FEATURE_GALAPAGOS" TerrainType="TERRAIN_COAST" />
+		<Replace MapName="GiantEarth" X="146" Y="36" FeatureType="FEATURE_GALAPAGOS" TerrainType="TERRAIN_COAST" />
+		
+		<Replace MapName="GiantEarth" X="32" Y="27" FeatureType="FEATURE_KILIMANJARO" TerrainType="TERRAIN_GRASS" />
+		
+		<!-- FEATURE_PANTANAL : 4 plots, flat grass/plains without features, 1st plot is SOUTHWEST -->
+		<Replace MapName="GiantEarth" X="159" Y="27" FeatureType="FEATURE_PANTANAL" TerrainType="TERRAIN_GRASS" />
+		<Replace MapName="GiantEarth" X="159" Y="28" FeatureType="FEATURE_PANTANAL" TerrainType="TERRAIN_GRASS" />
+		<Replace MapName="GiantEarth" X="160" Y="28" FeatureType="FEATURE_PANTANAL" TerrainType="TERRAIN_GRASS" />
+		<Replace MapName="GiantEarth" X="160" Y="29" FeatureType="FEATURE_PANTANAL" TerrainType="TERRAIN_GRASS" />
+		
+		<!-- FEATURE_PIOPIOTAHI : 3 plots, flat grass near coast, 1st plot is WEST -->
+		<Replace MapName="GiantEarth" X="107" Y="3" FeatureType="FEATURE_PIOPIOTAHI" TerrainType="TERRAIN_GRASS" />
+		<Replace MapName="GiantEarth" X="108" Y="3" FeatureType="FEATURE_PIOPIOTAHI" TerrainType="TERRAIN_GRASS" />
+		<Replace MapName="GiantEarth" X="108" Y="4" FeatureType="FEATURE_PIOPIOTAHI" TerrainType="TERRAIN_GRASS" />
+		
+		<!-- FEATURE_TORRES_DEL_PAINE : 2 plots EAST-WEST without features, 1st plot is WEST -->
+		<Replace MapName="GiantEarth" X="154" Y="7" FeatureType="FEATURE_TORRES_DEL_PAINE" TerrainType="TERRAIN_TUNDRA" />
+		<Replace MapName="GiantEarth" X="155" Y="7" FeatureType="FEATURE_TORRES_DEL_PAINE" TerrainType="TERRAIN_TUNDRA" />
+		
+		<Replace MapName="GiantEarth" X="36" Y="18" FeatureType="FEATURE_TSINGY" TerrainType="TERRAIN_GRASS" />
+		
+		<!-- FEATURE_YOSEMITE : 2 plots EAST-WEST, flat tundra/plains without features, 1st plot is WEST -->
+		<Replace MapName="GiantEarth" X="132" Y="62" FeatureType="FEATURE_YOSEMITE" TerrainType="TERRAIN_TUNDRA" />
+		<Replace MapName="GiantEarth" X="133" Y="62" FeatureType="FEATURE_YOSEMITE" TerrainType="TERRAIN_TUNDRA" />
+		
+		<!-- **************** -->
+		<!--     DLC NW       -->
+		<!-- **************** -->
+		
+		<!-- FEATURE_EYJAFJALLAJOKULL : 2 plots EAST-WEST, flat tundra/plains without features, 1st plot is WEST -->
+		<Replace MapName="GiantEarth" X="2" Y="83" FeatureType="FEATURE_EYJAFJALLAJOKULL" TerrainType="TERRAIN_TUNDRA" />
+		<Replace MapName="GiantEarth" X="3" Y="83" FeatureType="FEATURE_EYJAFJALLAJOKULL" TerrainType="TERRAIN_TUNDRA" />
+		
+		<!-- FEATURE_LYSEFJORDEN : 3 plots, , flat grass near coast, 1st plot is EAST -->
+		<Replace MapName="GiantEarth" X="17" Y="79" FeatureType="FEATURE_LYSEFJORDEN" TerrainType="TERRAIN_GRASS" />
+		<Replace MapName="GiantEarth" X="18" Y="79" FeatureType="FEATURE_LYSEFJORDEN" TerrainType="TERRAIN_GRASS" />
+		<Replace MapName="GiantEarth" X="18" Y="78" FeatureType="FEATURE_LYSEFJORDEN" TerrainType="TERRAIN_GRASS" />
+		
+		<!-- FEATURE_GIANTS_CAUSEWAY : 2 plots, one on coastal land and one in water, 1st plot is land, SOUTHEAST -->
+		<Replace MapName="GiantEarth" X="6" Y="77" FeatureType="FEATURE_GIANTS_CAUSEWAY" TerrainType="TERRAIN_GRASS" />
+		<Replace MapName="GiantEarth" X="6" Y="78" FeatureType="FEATURE_GIANTS_CAUSEWAY" TerrainType="TERRAIN_COAST" />		
+		
+		<Replace MapName="GiantEarth" X="93" Y="16" FeatureType="FEATURE_ULURU" TerrainType="TERRAIN_DESERT" />
 
-		<!--
-		<Replace MapName="GiantEarth" X="76" Y="41" FeatureType="FEATURE_SUK_TONLESAP" TerrainType="TERRAIN_COAST" />
-		<Replace MapName="GiantEarth" X="77" Y="40" FeatureType="FEATURE_SUK_TONLESAP" TerrainType="TERRAIN_COAST" />
-		-->
-
+		<!-- FEATURE_HA_LONG_BAY -->
 		<Replace MapName="GiantEarth" X="78" Y="45" FeatureType="FEATURE_HA_LONG_BAY" TerrainType="TERRAIN_COAST" />
 		<Replace MapName="GiantEarth" X="79" Y="46" FeatureType="FEATURE_HA_LONG_BAY" TerrainType="TERRAIN_COAST" />
+		
+		<!-- **************** -->
+		<!-- Rise and Fall NW -->
+		<!-- **************** -->		
 		
 		<Replace MapName="GiantEarth" X="161" Y="35" FeatureType="FEATURE_RORAIMA" TerrainType="TERRAIN_GRASS_HILLS" />
 		<Replace MapName="GiantEarth" X="162" Y="36" FeatureType="FEATURE_RORAIMA" TerrainType="TERRAIN_GRASS_HILLS" />
@@ -203,6 +266,18 @@
 		<Replace MapName="GiantEarth" X="17" Y="64" FeatureType="FEATURE_MATTERHORN" /> 
 		<Replace MapName="GiantEarth" X="136" Y="61" FeatureType="FEATURE_DELICATE_ARCH" />
 		<Replace MapName="GiantEarth" X="8" Y="43" FeatureType="FEATURE_EYE_OF_THE_SAHARA" />
+		
+		
+		<!-- **************** -->
+		<!--    Modded NW     -->
+		<!-- **************** -->
+		
+		<Replace MapName="GiantEarth" X="98" Y="58" FeatureType="FEATURE_SUK_FUJI" TerrainType="TERRAIN_GRASS" />
+
+		<!--
+		<Replace MapName="GiantEarth" X="76" Y="41" FeatureType="FEATURE_SUK_TONLESAP" TerrainType="TERRAIN_COAST" />
+		<Replace MapName="GiantEarth" X="77" Y="40" FeatureType="FEATURE_SUK_TONLESAP" TerrainType="TERRAIN_COAST" />
+		-->
 
 	</NaturalWonderPosition>
 

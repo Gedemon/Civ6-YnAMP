@@ -29,9 +29,10 @@ local bCanUseCivSpecificName 	= not (MapConfiguration.GetValue("OnlyGenericCityN
 local isCityOnMap 	= {} -- helper to check by name if a city has a position set on the city map
 local cityPosition	= {} -- helper to get the first defined position in the city map of a city (by name)
 
-local bUseRelativePlacement = MapConfiguration.GetValue("UseRelativePlacement")
-local g_ReferenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth") or 180
-local g_ReferenceMapHeight 	= MapConfiguration.GetValue("ReferenceMapHeight") or 94
+local bUseRelativePlacement 	= MapConfiguration.GetValue("UseRelativePlacement")
+local bUseRelativeFixedTable 	= bUseRelativePlacement and MapConfiguration.GetValue("UseRelativeFixedTable")
+local g_ReferenceMapWidth 		= MapConfiguration.GetValue("ReferenceMapWidth") or 180
+local g_ReferenceMapHeight 		= MapConfiguration.GetValue("ReferenceMapHeight") or 94
 
 local g_iW, g_iH 	= Map.GetGridSize()
 
@@ -59,27 +60,200 @@ local scenarioName 	= MapConfiguration.GetValue("ScenarioName")
 local cityPlacement = MapConfiguration.GetValue("CityPlacement")
 
 ------------------------------------------------------------------------------
+-- http://lua-users.org/wiki/SortedIteration
+-- Ordered table iterator, allow to iterate on the natural order of the keys of a table.
+------------------------------------------------------------------------------
+function __genOrderedIndex( t )
+    local orderedIndex = {}
+    for key in pairs (t) do
+        table.insert ( orderedIndex, key )
+    end
+    table.sort ( orderedIndex )
+    return orderedIndex
+end
+
+function orderedNext(t, state)
+    -- Equivalent of the next function, but returns the keys in the alphabetic
+    -- order.  We use a temporary ordered key table that is stored in the
+    -- table being iterated.
+
+    local key = nil
+    --print("orderedNext: state = "..tostring(state) )
+    if state == nil then
+        -- the first time, generate the index
+        t.__orderedIndex = __genOrderedIndex( t )
+        key = t.__orderedIndex[1]
+    else
+        -- fetch the next value
+        for i = 1, #t.__orderedIndex do
+            if t.__orderedIndex[i] == state then
+                key = t.__orderedIndex[i+1]
+            end
+        end
+    end
+
+    if key then
+        return key, t[key]
+    end
+
+    -- no more value to return, cleanup
+    t.__orderedIndex = nil
+    return
+end
+
+function orderedPairs(t)
+    -- Equivalent of the pairs() function on tables.  Allows to iterate
+    -- in order
+    return orderedNext, t, nil
+end
+
+--local pairs = orderedPairs
+
+------------------------------------------------------------------------------
+-- Fill helper tables
+------------------------------------------------------------------------------
+for row in GameInfo.CityMap() do
+	local name = row.CityLocaleName
+	if mapName == row.MapName then
+		if name then
+			if not isCityOnMap[name] then
+				isCityOnMap[name] 					= true
+				isCityOnMap[Locale.Lookup(name)] 	= true
+				cityPosition[name] 					= {X = row.X, Y = row.Y }
+				cityPosition[Locale.Lookup(name)] 	= {X = row.X, Y = row.Y }
+			else
+				averageX = (cityPosition[name].X + row.X) / 2
+				averageY = (cityPosition[name].Y + row.Y) / 2
+				cityPosition[name] 					= {X = averageX, Y = averageY }
+				cityPosition[Locale.Lookup(name)] 	= {X = averageX, Y = averageY }
+			end
+		else
+			print("ERROR : no name at row "..tostring(row.Index + 1))
+		end
+	end
+end
+
+
+------------------------------------------------------------------------------
+-- Math functions
+------------------------------------------------------------------------------
+function GetShuffledCopyOfTable(incoming_table)
+	-- Designed to operate on tables with no gaps. Does not affect original table.
+	local len = table.maxn(incoming_table);
+	local copy = {};
+	local shuffledVersion = {};
+	-- Make copy of table.
+	for loop = 1, len do
+		copy[loop] = incoming_table[loop];
+	end
+	-- One at a time, choose a random index from Copy to insert in to final table, then remove it from the copy.
+	local left_to_do = table.maxn(copy);
+	for loop = 1, len do
+		local random_index = 1 + TerrainBuilder.GetRandomNumber(left_to_do, "Shuffling table entry - Lua");
+		table.insert(shuffledVersion, copy[random_index]);
+		table.remove(copy, random_index);
+		left_to_do = left_to_do - 1;
+	end
+	return shuffledVersion
+end
+
+------------------------------------------------------------------------------
+-- Map functions
+------------------------------------------------------------------------------
+function FindNearestPlayerCity( eTargetPlayer, iX, iY )
+
+	local pCity = nil
+    local iShortestDistance = 10000
+	local pPlayer = Players[eTargetPlayer]
+	if pPlayer then
+		local pPlayerCities:table = pPlayer:GetCities()
+		for i, pLoopCity in pPlayerCities:Members() do
+			local iDistance = Map.GetPlotDistance(iX, iY, pLoopCity:GetX(), pLoopCity:GetY())
+			if (iDistance < iShortestDistance) then
+				pCity = pLoopCity
+				iShortestDistance = iDistance
+			end
+		end
+	else
+		print ("WARNING : Player is nil in FindNearestPlayerCity for ID = ".. tostring(eTargetPlayer) .. "at" .. tostring(iX) ..","..tostring(iY))
+	end
+
+	if (not pCity) then
+		--print ("No city found of player " .. tostring(eTargetPlayer) .. " in range of " .. tostring(iX) .. ", " .. tostring(iY));
+	end
+   
+    return pCity, iShortestDistance;
+end
+
+
+------------------------------------------------------------------------------
 -- Helpers for x,y positions when using a reference or offset map
 ------------------------------------------------------------------------------
+
+local XFromRefMapX 	= {}
+local YFromRefMapY 	= {}
+local RefMapXfromX 	= {}
+local RefMapYfromY 	= {}
+local sX, sY 		= 0, 0
+local lX, lY 		= 0, 0
+
+--function BuildRefXY()
+if bUseRelativeFixedTable then
+	for x = 0, g_UncutMapWidth, 1 do
+		--MapToConvert[x] = {}
+		for y = 0, g_UncutMapHeight, 1 do
+			--print (x, y, sX, sY, lX, lY)
+			XFromRefMapX[x] = sX
+			YFromRefMapY[y] = sY
+			
+			RefMapXfromX[sX] = x
+			RefMapYfromY[sY] = y
+			--MapToConvert[x][y] = SmallMap[sX][sY]
+			lY = lY + 1
+			if lY == 5 then
+				lY = 0
+			else
+				sY = sY +1
+			end
+		end
+		sY = 0
+		lX = lX + 1
+		if lX == 4 then
+			lX = 0
+		else
+			sX = sX +1
+		end
+	end
+end
 
 -- Convert current map position to the corresponding position on the reference map
 function GetRefMapXY(mapX, mapY, bOnlyOffset)
 	local refMapX, refMapY = mapX, mapY
 	if bUseRelativePlacement and (not bOnlyOffset) then
-		refMapX 	= Round(g_ReferenceWidthFactor * mapX)
-		refMapY 	= Round(g_ReferenceHeightFactor * mapY)
+		if bUseRelativeFixedTable then
+			refMapX 	= XFromRefMapX[mapX] --Round(g_ReferenceWidthFactor * mapX)
+			refMapY 	= YFromRefMapY[mapY] --Round(g_ReferenceHeightFactor * mapY)
+			if refMapX == nil or refMapY == nil then
+				return -1, -1
+			end
+		else
+			refMapX 	= Round(g_ReferenceWidthFactor * mapX)
+			refMapY 	= Round(g_ReferenceHeightFactor * mapY)		
+		end
 	end
 	if bUseOffset then
 		refMapX = refMapX + g_OffsetX
 		refMapY = refMapY + g_OffsetY
 		
 		-- the code below assume that the reference map is wrapX
-		if refMapY >= g_UncutMapHeight then 
+		if refMapY >= g_UncutMapHeight then
 			--refMapY = refMapY - g_UncutMapHeight
 			refMapY = (2*g_UncutMapHeight) - refMapY - 1
 			refMapX = refMapX + Round(g_UncutMapWidth / 2)
 		end
-		if refMapX >= g_UncutMapWidth then refMapX = refMapX - g_UncutMapWidth end
+		if refMapX >= g_UncutMapWidth then
+			refMapX = refMapX - g_UncutMapWidth -- -1 ?
+		end
 	end
 	return refMapX, refMapY
 end
@@ -87,8 +261,16 @@ end
 -- Convert the reference map position to the current map position
 function GetXYFromRefMapXY(x, y, bOnlyOffset)
 	if bUseRelativePlacement and (not bOnlyOffset) then
-		x = Round( g_ReferenceWidthRatio * x)
-		y = Round( g_ReferenceHeightRatio * y)
+		if bUseRelativeFixedTable then
+			x = RefMapXfromX[x]--Round( g_ReferenceWidthRatio * x)
+			y = RefMapYfromY[y]--Round( g_ReferenceHeightRatio * y)
+			if x == nil or y == nil then
+				return -1, -1
+			end
+		else
+			x = Round( g_ReferenceWidthRatio * x)
+			y = Round( g_ReferenceHeightRatio * y)		
+		end
 	end
 	if bUseOffset then
 		x = x - g_OffsetX
@@ -97,8 +279,8 @@ function GetXYFromRefMapXY(x, y, bOnlyOffset)
 		-- the code below assume that the reference map is wrapX
 		if y < 0 then 
 			--y = y + g_iH - 1
-			y = y + g_iH
-			x = x + Round(g_iW / 2)
+			--y = y + g_iH
+			--x = x + Round(g_iW / 2)
 		end
 		--if x < 0 then x = x + g_iW - 1 end
 		if x < 0 then x = x + g_iW end
@@ -110,6 +292,54 @@ function GetPlotFromRefMap(x, y, bOnlyOffset)
 	return Map.GetPlot(GetXYFromRefMapXY(x,y, bOnlyOffset))
 end
 
+
+------------------------------------------------------------------------------
+-- Handling script with pauses
+------------------------------------------------------------------------------
+
+local g_Timer 			= 0
+local g_Pause 			= 0.1
+local g_LoopPerResume 	= 3
+local CoroutineList		= {}
+
+function AddCoToList(newCo)
+	print("Adding coroutine to script with pause :"..tostring(newCo))
+	table.insert(CoroutineList, newCo)
+end
+
+function LaunchScriptWithPause()
+	print("LaunchScriptWithPause")
+	Events.GameCoreEventPublishComplete.Add( CheckTimer )
+end
+Events.LoadScreenClose.Add( LaunchScriptWithPause ) -- launching the script when the load screen is closed, you can use your own events
+
+function StopScriptWithPause() -- GameCoreEventPublishComplete is called frequently, keep it clean
+
+	print("StopScriptWithPause")
+	Events.GameCoreEventPublishComplete.Remove( CheckTimer )
+end
+
+function ChangePause(value)
+	print("changing pause value to ", value)
+	g_Pause = value
+end
+
+function CheckTimer()
+	if Automation.GetTime() >= g_Timer + g_Pause then
+		local toRemove 	= {}
+		g_Timer 		= Automation.GetTime()
+		for i, runningCo in ipairs(CoroutineList) do
+			if coroutine.status(runningCo)=="dead" then
+				table.insert(toRemove, i)
+			else
+				coroutine.resume(runningCo)
+			end
+		end
+		for _, i in ipairs(toRemove) do
+			table.remove(CoroutineList, i)
+		end
+	end
+end
 
 ----------------------------------------------------------------------------------------
 -- City renaming <<<<<
@@ -241,21 +471,6 @@ end
 Events.LoadScreenClose.Add( ListCityWithoutLOC )
 
 function ListCityNotOnMap()
-	for row in GameInfo.CityMap() do
-		local name = row.CityLocaleName
-		if MapName == row.MapName then
-			if name then
-				if not isCityOnMap[name] then
-					isCityOnMap[name] 					= true
-					isCityOnMap[Locale.Lookup(name)] 	= true
-					cityPosition[name] 					= {X = row.X, Y = row.Y }
-					cityPosition[Locale.Lookup(name)] 	= {X = row.X, Y = row.Y }
-				end
-			else
-				print("ERROR : no name at row "..tostring(row.Index + 1))
-			end
-		end
-	end
 	for row in GameInfo.CityNames() do
 		local name = row.CityName
 		local civilization = row.CivilizationType
@@ -354,146 +569,499 @@ if scenarioName and scenarioName ~= "SCENARIO_NONE" then
 ----------------------------------------------------------------------------------------
 
 print("Setting scenario : ", scenarioName)
+print("City Placement 	: ", cityPlacement)
 
 -- City Placement
-print("City Placement : ", cityPlacement)
+--[[
+function PlaceCities()
+	if cityPlacement == "TERRAIN" then
 
-if cityPlacement == "TERRAIN" then
-
-elseif cityPlacement == "CITY_MAP" then
-	-- testing with 5 cities for each major civs
-	for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
-		local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
-		local counter = 0
-		for row in GameInfo.CityNames() do
-			if counter < 5 then
+	end
+	if cityPlacement == "CITY_MAP" then
+	
+		print("Searching cities with known position for each major civs...")
+		local cityList = {}
+		for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+			local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+			print("-", CivilizationTypeName)
+			-- place capital
+			local player		= Players[iPlayer]
+			local startingPlot 	= player:GetStartingPlot()
+			cityList[iPlayer]	= {}
+			if startingPlot then
+				local city 			= player:GetCities():Create(startingPlot:GetX(), startingPlot:GetY())			
+				if city then
+					print("- CAPITAL PLACED !")
+				end
+			end
+			
+			local counter = 0
+			for row in GameInfo.CityNames() do
 				local cityName = row.CityName
 				if CivilizationTypeName == row.CivilizationType then
-					local pos = cityPosition[name]
+					local pos = cityPosition[cityName]
 					if pos then
-						local player	= Players[iPlayer]
-						local city 		= player:GetCities():Create(GetXYFromRefMapXY(pos.X, pos.Y))
-						if city then
-							counter	= counter + 1
-						end
+					
+						print("    - possible position found for ", Locale.Lookup(cityName))
+						table.insert(cityList[iPlayer], cityName)
+
+					end
+				end
+			end
+		end
+		
+		print("Placing cities for each player...")
+		local bAnyCityPlaced 	= true
+		local playerCounter		= {}
+		
+		while bAnyCityPlaced do
+		
+			bAnyCityPlaced = false
+			
+			
+			for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+			--for player, cityList in pairs(cityList) do
+				
+				local list 		= cityList[iPlayer]
+				local player 	= Players[iPlayer]
+				if not playerCounter[iPlayer] then playerCounter[iPlayer] = 1 end
+			
+				local bPlayerCityPlaced	= false
+				local cityName 			= list[ playerCounter[iPlayer] ]
+				
+				while cityName and not bPlayerCityPlaced do
+					local pos 	= cityPosition[cityName]
+					local x, y	= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y)) -- cityPosition use average value of x, y
+					--print(" 		-posXY =", pos.X, pos.Y, " 	refXY = ", x, y)
+					local city 		= player:GetCities():Create(x, y)
+					if city then
+						print(" - player ID#".. tostring(iPlayer)," : ".. tostring(cityName), " pos#"..tostring(playerCounter[iPlayer]), " PLACED !")
+						city:SetName(cityName)
+						playerCounter[iPlayer] 	= playerCounter[iPlayer] + 1
+						bPlayerCityPlaced 		= true
+						bAnyCityPlaced			= true
+					else
+						cityName = list[ playerCounter[iPlayer] ]
 					end
 				end
 			end
 		end
 	end
+	if cityPlacement == "IMPORT" then
+		local CityPlayerID 			= {}
+		local CityCivilizationType	= {}
+		local CivilizationPlayerID 	= {}
+		
+		print("Pairing Civilization Type with PlayerIDs...")
+		for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do		
+			local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+			CivilizationPlayerID[CivilizationTypeName] = iPlayer
+		end
+		
+		print("Pairing City names with Civilization Type and PlayerIDs...")
+		for row in GameInfo.CityNames() do
+			
+			local cityName 			= row.CityName
+			local civilizationType 	= row.CivilizationType
+			local iPlayer 			= CivilizationPlayerID[row.CivilizationType]
+		
+			CityCivilizationType[cityName] 					= civilizationType
+			CityCivilizationType[Locale.Lookup(cityName)] 	= civilizationType
+				
+			if iPlayer then
+				CityPlayerID[cityName] 					= CivilizationPlayerID[row.CityName]
+				CityPlayerID[Locale.Lookup(cityName)] 	= iPlayer
+			end
+		end
+		
+		print("Placing cities...")
+		for row in GameInfo.ScenarioCities() do
+			if row.ScenarioName == scenarioName then
+				local cityName 			= row.CityName
+				local civilizationType	= row.CivilizationType
+				
+				if cityName == nil and civilizationType == nil then
+					print("ERROR at rowID #"..tostring(row.Index).." : CityName and CivilizationType are NULL")
+				else
+					
+					if civilizationType == nil then
+						civilizationType = CityCivilizationType[cityName]
+					end
 
-elseif cityPlacement == "IMPORT" then
+					if civilizationType then
+						local iPlayer		= CivilizationPlayerID[civilizationType]
+						if iPlayer then
+							local player = Players[iPlayer]
+							local x, y
+							if row.X and row.Y then
+								x, y = GetXYFromRefMapXY(row.X, row.Y)
+								print("    - Getting coordinates from table for ", civilizationType)
+								print(" 		-rowXY =", row.X, row.Y, " 	refXY = ", x, y)
+							elseif cityName then
+								local pos = cityPosition[cityName]
+								if pos then
+									x, y	= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y))
+									print("    - Getting coordinates from city map for ", Locale.Lookup(cityName))
+									print(" 		-posXY =", pos.X, pos.Y, " 	refXY = ", x, y)
+								else
+									print("WARNING at rowID #"..tostring(row.Index).." : no position in city map for "..tostring(cityName))
+								end
+							else
+								print("ERROR at rowID #"..tostring(row.Index).." : CityName and X,Y are NULL")							
+							end
+							
+							if x and y then
+								local city 		= player:GetCities():Create(x, y)
+								if city then
+									print(" 		- PLACED !")
+									if cityName then
+										city:SetName(cityName)
+									end
+								end								
+							end
+						else
+							print("WARNING at rowID #"..tostring(row.Index).." : no playerID for "..tostring(civilizationType).." for city = "..tostring(cityName))
+						end
+					else
+						print("WARNING at rowID #"..tostring(row.Index).." : no civilizationType for "..tostring(cityName), row.X, row.Y)					
+					end
+				end
+			end
+		end
 
+	end
 end
+--]]
+
+
+PlaceCities = coroutine.create(function()
+
+	if cityPlacement == "TERRAIN" then
+
+	end
+	if cityPlacement == "CITY_MAP" then
+	
+		print("Searching cities with known position for each major civs...")
+		local cityList = {}
+		for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+			local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+			print("-", CivilizationTypeName)
+			-- place capital
+			local player		= Players[iPlayer]
+			local startingPlot 	= player:GetStartingPlot()
+			cityList[iPlayer]	= {}
+			if startingPlot then
+				local city 			= player:GetCities():Create(startingPlot:GetX(), startingPlot:GetY())			
+				if city then
+					print("    - CAPITAL PLACED !")
+				end
+			end
+			
+			local counter = 0
+			for row in GameInfo.CityNames() do
+				local cityName = row.CityName
+				if CivilizationTypeName == row.CivilizationType then
+					local pos = cityPosition[cityName]
+					if pos then
+					
+						print("    - possible position found for ", Locale.Lookup(cityName))
+						table.insert(cityList[iPlayer], cityName)
+
+					end
+				end
+			end
+		end
+		
+		print("Placing cities for each player...")
+		local bAnyCityPlaced 	= true
+		local playerCounter		= {}
+		local loop				= 0
+		
+		while bAnyCityPlaced do
+		
+			bAnyCityPlaced = false
+			loop = loop + 1
+			
+			if loop > g_LoopPerResume then				
+				--print("requesting pause in script for ", g_Pause, " seconds at time = ".. tostring( Automation.GetTime() ))
+				loop = 0
+				g_Timer = Automation.GetTime()
+				coroutine.yield()
+				-- after g_Pause seconds, the script will start again from here
+				--print("resuming script at time = ".. tostring( Automation.GetTime() ))
+			end
+			
+			for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+			--for player, cityList in pairs(cityList) do
+				
+				local list 		= cityList[iPlayer]
+				local player 	= Players[iPlayer]
+				if not playerCounter[iPlayer] then playerCounter[iPlayer] = 1 end
+			
+				local bPlayerCityPlaced	= false
+				local cityName 			= list[playerCounter[iPlayer]]
+				
+				while cityName and not bPlayerCityPlaced do
+					playerCounter[iPlayer] 	= playerCounter[iPlayer] + 1
+					local pos 				= cityPosition[cityName]
+					local x, y				= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y)) -- cityPosition use average value of x, y					
+					local city 				= player:GetCities():Create(x, y)
+					if city then
+						print(" - player ID#".. tostring(iPlayer)," : ".. tostring(cityName), " pos#"..tostring(playerCounter[iPlayer]), " PLACED !")
+						city:SetName(cityName)
+						bPlayerCityPlaced 		= true
+						bAnyCityPlaced			= true
+					else
+						cityName = list[playerCounter[iPlayer]]
+					end
+				end				
+			end
+		end
+	end
+print(test)
+	if cityPlacement == "IMPORT" then
+		local CityPlayerID 			= {}
+		local CityCivilizationType	= {}
+		local CivilizationPlayerID 	= {}
+		
+		print("Pairing Civilization Type with PlayerIDs...")
+		for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do		
+			local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+			CivilizationPlayerID[CivilizationTypeName] = iPlayer
+		end
+		
+		print("Pairing City names with Civilization Type and PlayerIDs...")
+		for row in GameInfo.CityNames() do
+			
+			local cityName 			= row.CityName
+			local civilizationType 	= row.CivilizationType
+			local iPlayer 			= CivilizationPlayerID[row.CivilizationType]
+		
+			CityCivilizationType[cityName] 					= civilizationType
+			CityCivilizationType[Locale.Lookup(cityName)] 	= civilizationType
+				
+			if iPlayer then
+				CityPlayerID[cityName] 					= CivilizationPlayerID[row.CityName]
+				CityPlayerID[Locale.Lookup(cityName)] 	= iPlayer
+			end
+		end
+		
+		print("Placing cities...")
+		for row in GameInfo.ScenarioCities() do
+			if row.ScenarioName == scenarioName then
+				local cityName 			= row.CityName
+				local civilizationType	= row.CivilizationType
+				
+				if cityName == nil and civilizationType == nil then
+					print("ERROR at rowID #"..tostring(row.Index).." : CityName and CivilizationType are NULL")
+				else
+					
+					if civilizationType == nil then
+						civilizationType = CityCivilizationType[cityName]
+					end
+
+					if civilizationType then
+						local iPlayer		= CivilizationPlayerID[civilizationType]
+						if iPlayer then
+							local player = Players[iPlayer]
+							local x, y
+							if row.X and row.Y then
+								x, y = GetXYFromRefMapXY(row.X, row.Y)
+								print("    - Getting coordinates from table for ", civilizationType)
+								print(" 		-rowXY =", row.X, row.Y, " 	refXY = ", x, y)
+							elseif cityName then
+								local pos = cityPosition[cityName]
+								if pos then
+									x, y	= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y))
+									print("    - Getting coordinates from city map for ", Locale.Lookup(cityName))
+									print(" 		-posXY =", pos.X, pos.Y, " 	refXY = ", x, y)
+								else
+									print("WARNING at rowID #"..tostring(row.Index).." : no position in city map for "..tostring(cityName))
+								end
+							else
+								print("ERROR at rowID #"..tostring(row.Index).." : CityName and X,Y are NULL")							
+							end
+							
+							if x and y then
+								local city 		= player:GetCities():Create(x, y)
+								if city then
+									print(" 		- PLACED !")
+									if cityName then
+										city:SetName(cityName)
+									end
+								end								
+							end
+						else
+							print("WARNING at rowID #"..tostring(row.Index).." : no playerID for "..tostring(civilizationType).." for city = "..tostring(cityName))
+						end
+					else
+						print("WARNING at rowID #"..tostring(row.Index).." : no civilizationType for "..tostring(cityName), row.X, row.Y)					
+					end
+				end
+			end
+		end
+
+	end
+
+	-- launch next coroutine
+	AddCoToList(PlaceBorders)
+end)
+
+AddCoToList(PlaceCities)
+
+--Events.LoadScreenClose.Add( PlaceCities )
+
+
+PlaceBorders = coroutine.create(function()
+
+
+	if true then -- borderPlacement == "Expand"
+		print("Expanding borders...")
+
+
+		local bAnyBorderExpanded 	= true
+		local loop					= 0
+		
+		while bAnyBorderExpanded do
+		
+			loop 				= loop + 1
+			bAnyBorderExpanded 	= false
+			local plotList		= {}
+			
+			if loop > g_LoopPerResume then
+				loop = 0
+				g_Timer = Automation.GetTime()
+				coroutine.yield()
+			end
+			
+			local iPlotCount = Map.GetPlotCount()
+			for i = 0, iPlotCount - 1 do			
+				local plot = Map.GetPlotByIndex(i)
+				if plot and (not plot:IsWater()) and plot:IsAdjacentOwned() and (not plot:IsOwned()) then					
+					table.insert(plotList, plot)					
+				end			
+			end
+			
+			local aShuffledPlotList = GetShuffledCopyOfTable(plotList)
+			for _, plot in ipairs(aShuffledPlotList) do			
+				local potentialOwner 	= {}
+				local bestAdjacentOwner	= 0
+				local newOwnerID		= nil
+				for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+					local adjacentPlot = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), direction);
+					if (adjacentPlot ~= nil) and (not adjacentPlot:IsWater()) and adjacentPlot:IsOwned() then
+						local ownerID = adjacentPlot:GetOwner()
+						potentialOwner[ownerID] = (potentialOwner[ownerID] or 0) + 1
+						if potentialOwner[ownerID] > bestAdjacentOwner then
+							bestAdjacentOwner = potentialOwner[ownerID]
+							newOwnerID = ownerID
+						end
+					end
+				end	
+				if newOwnerID then
+					local city = FindNearestPlayerCity( newOwnerID, plot:GetX(), plot:GetY() )
+					if city then
+						WorldBuilder.CityManager():SetPlotOwner( plot:GetX(), plot:GetY(), newOwnerID, city:GetID() )
+						bAnyBorderExpanded = true
+					end
+				end
+			end
+		end
+	end
+	if borderPlacement == "IMPORT" then
+		--[[
+		local CityPlayerID 			= {}
+		local CityCivilizationType	= {}
+		local CivilizationPlayerID 	= {}
+		
+		print("Pairing Civilization Type with PlayerIDs...")
+		for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do		
+			local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+			CivilizationPlayerID[CivilizationTypeName] = iPlayer
+		end
+		
+		print("Pairing City names with Civilization Type and PlayerIDs...")
+		for row in GameInfo.CityNames() do
+			
+			local cityName 			= row.CityName
+			local civilizationType 	= row.CivilizationType
+			local iPlayer 			= CivilizationPlayerID[row.CivilizationType]
+		
+			CityCivilizationType[cityName] 					= civilizationType
+			CityCivilizationType[Locale.Lookup(cityName)] 	= civilizationType
+				
+			if iPlayer then
+				CityPlayerID[cityName] 					= CivilizationPlayerID[row.CityName]
+				CityPlayerID[Locale.Lookup(cityName)] 	= iPlayer
+			end
+		end
+		
+		print("Placing cities...")
+		for row in GameInfo.ScenarioCities() do
+			if row.ScenarioName == scenarioName then
+				local cityName 			= row.CityName
+				local civilizationType	= row.CivilizationType
+				
+				if cityName == nil and civilizationType == nil then
+					print("ERROR at rowID #"..tostring(row.Index).." : CityName and CivilizationType are NULL")
+				else
+					
+					if civilizationType == nil then
+						civilizationType = CityCivilizationType[cityName]
+					end
+
+					if civilizationType then
+						local iPlayer		= CivilizationPlayerID[civilizationType]
+						if iPlayer then
+							local player = Players[iPlayer]
+							local x, y
+							if row.X and row.Y then
+								x, y = GetXYFromRefMapXY(row.X, row.Y)
+								print("    - Getting coordinates from table for ", civilizationType)
+								print(" 		-rowXY =", row.X, row.Y, " 	refXY = ", x, y)
+							elseif cityName then
+								local pos = cityPosition[cityName]
+								if pos then
+									x, y	= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y))
+									print("    - Getting coordinates from city map for ", Locale.Lookup(cityName))
+									print(" 		-posXY =", pos.X, pos.Y, " 	refXY = ", x, y)
+								else
+									print("WARNING at rowID #"..tostring(row.Index).." : no position in city map for "..tostring(cityName))
+								end
+							else
+								print("ERROR at rowID #"..tostring(row.Index).." : CityName and X,Y are NULL")							
+							end
+							
+							if x and y then
+								local city 		= player:GetCities():Create(x, y)
+								if city then
+									print(" 		- PLACED !")
+									if cityName then
+										city:SetName(cityName)
+									end
+								end								
+							end
+						else
+							print("WARNING at rowID #"..tostring(row.Index).." : no playerID for "..tostring(civilizationType).." for city = "..tostring(cityName))
+						end
+					else
+						print("WARNING at rowID #"..tostring(row.Index).." : no civilizationType for "..tostring(cityName), row.X, row.Y)					
+					end
+				end
+			end
+		end
+		--]]
+	end
+
+	-- launch next coroutine
+	--AddCoToList(ExpandBorders)
+end)
+
+
 
 ----------------------------------------------------------------------------------------
 end
 ----------------------------------------------------------------------------------------
 -- Scenario settings >>>>>
 ----------------------------------------------------------------------------------------
-
-
--- test
---[[
-local g_Timer = 0
-local g_Pause = 10
-
-function LaunchScriptWithPause()
-	Events.GameCoreEventPublishComplete.Add( CheckTimer )
-end
-Events.LoadScreenClose.Add( LaunchScriptWithPause ) -- launching the script when the load screen is closed, you can use your own events
-
-function StopScriptWithPause() -- GameCoreEventPublishComplete is called frequently, keep it clean
-	Events.GameCoreEventPublishComplete.Remove( CheckTimer )
-end
-
-function ChangePause(value)
-	print("changing pause value to ", value)
-	g_Pause = value
-end
-
-local AttachStuffToUnits = coroutine.create(function()
-	-- lets do stuff for 10 units
-	for unit = 1, 10 do
-		print("Doing stuff on unit #"..tostring(unit))
-		-- 
-		-- attach something to the unit or whatever you want to do before needing a pause
-		--
-		print("requesting pause in script for ", g_Pause, " seconds at time = ".. tostring( Automation.GetTime() ))
-		g_Timer = Automation.GetTime()
-		coroutine.yield()
-		-- after g_Pause seconds, the script will start again from here
-		print("resuming script at time = ".. tostring( Automation.GetTime() ))	
-	end	
-	StopScriptWithPause()
-end)
-
-function CheckTimer()	
-	if Automation.GetTime() >= g_Timer + g_Pause then
-		g_Timer = Automation.GetTime()
-		coroutine.resume(AttachStuffToUnits)
-	end
-end
---]]
-
---[[
-g_Timer = 0
-g_Pause = 3
-g_LoopPerResume = 200
-
-function LaunchScriptWithPause()
-	print("LaunchScriptWithPause")
-	Events.GameCoreEventPublishComplete.Add( CheckTimer )
-end
---Events.LoadScreenClose.Add( LaunchScriptWithPause ) -- launching the script when the load screen is closed, you can use your own events
-
-function StopScriptWithPause() -- GameCoreEventPublishComplete is called frequently, keep it clean
-
-	print("StopScriptWithPause")
-	Events.GameCoreEventPublishComplete.Remove( CheckTimer )
-end
-
-function ChangePause(value)
-	print("changing pause value to ", value)
-	g_Pause = value
-end
-
-ExploreMap = coroutine.create(function()
-
-	print("ExploreMap")
-
-	if (Game.GetLocalPlayer() ~= -1) then
-		local pVis = PlayersVisibility[Game.GetLocalPlayer()];
-		print("pVis", pVis)
-
-		local counter = 0
-		for iPlotIndex = 0, Map.GetPlotCount()-1, 1 do
-			print("iPlotIndex", iPlotIndex)
-			pVis:ChangeVisibilityCount(iPlotIndex, 0);
-			print("iPlotIndex", iPlotIndex)
-			if counter >= g_LoopPerResume then
-				counter = 0
-				print("requesting pause in script for ", g_Pause, " seconds at time = ".. tostring( Automation.GetTime() ))
-				g_Timer = Automation.GetTime()
-				coroutine.yield()
-				-- after g_Pause seconds, the script will start again from here
-				print("resuming script at time = ".. tostring( Automation.GetTime() ))				
-			end
-				counter = counter + 1
-		end
-	end
-	StopScriptWithPause()
-end)
-
-function CheckTimer()
-	print("CheckTimer")
-	if Automation.GetTime() >= g_Timer + g_Pause then
-		g_Timer = Automation.GetTime()
-		coroutine.resume(ExploreMap)
-	end
-end
-	
-LaunchScriptWithPause()
---]]
-
 

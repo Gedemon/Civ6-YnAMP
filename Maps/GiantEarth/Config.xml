@@ -87,32 +87,49 @@
 		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthUncutMapHeight"	Name="UncutMapHeight" 	Description="" Domain="text" DefaultValue="94" 	ConfigurationGroup="Map" ConfigurationId="UncutMapHeight" 	GroupId="MapOptions" Visible="0" SortIndex="2025"/>
 
 		<!--	Scenario Options
-		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthScenarioType" 	Name="LOC_MAP_SCENARIO_TYPE_NAME"	Description="LOC_MAP_SCENARIO_TYPE_DESCRIPTION" 	Domain="ScenarioType" 	DefaultValue="SCENARIO_NONE" 	ConfigurationGroup="Map" ConfigurationId="ScenarioName" 	GroupId="MapOptions" SortIndex="10000"/>
 		-->
-		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthCityPlacement" 	Name="LOC_MAP_CITY_PLACEMENT_NAME"	Description="LOC_MAP_CITY_PLACEMENT_DESCRIPTION" 	Domain="GiantEarthCityPlacement" 	DefaultValue="IMPORT" 		ConfigurationGroup="Map" ConfigurationId="CityPlacement" 	GroupId="MapOptions" SortIndex="10010"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthScenarioType" 	Name="LOC_MAP_SCENARIO_TYPE_NAME"	Description="LOC_MAP_SCENARIO_TYPE_DESCRIPTION" 	Domain="GiantEarthScenarioType" 	DefaultValue="SCENARIO_NONE" 	ConfigurationGroup="Map" ConfigurationId="ScenarioName" 	GroupId="MapOptions" SortIndex="10000"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthCityPlacement" 	Name="LOC_MAP_CITY_PLACEMENT_NAME"	Description="LOC_MAP_CITY_PLACEMENT_DESCRIPTION" 	Domain="GiantEarthCityPlacement" 	DefaultValue="IMPORT" 			ConfigurationGroup="Map" ConfigurationId="CityPlacement" 	GroupId="MapOptions" SortIndex="10010"/>
 
 		
 	</Parameters>
 	
 	<DomainValues>
 		
-		<Replace Domain="GiantEarthLatitude" Value="0" 		Name="LOC_MAP_GIANTEARTH_LATITUDE_0_NAME" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_0_DESCRIPTION" 	SortIndex="10"/>
-		<Replace Domain="GiantEarthLatitude" Value="5" 		Name="5" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="11"/>
-		<Replace Domain="GiantEarthLatitude" Value="10" 	Name="10" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="15"/>
-		<Replace Domain="GiantEarthLatitude" Value="50" 	Name="LOC_MAP_GIANTEARTH_LATITUDE_50_NAME" 		Description="LOC_MAP_GIANTEARTH_LATITUDE_50_DESCRIPTION" 	SortIndex="20"/>
-		<Replace Domain="GiantEarthLatitude" Value="100" 	Name="LOC_MAP_GIANTEARTH_LATITUDE_100_NAME" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_100_DESCRIPTION" 	SortIndex="30"/>
-		<Replace Domain="GiantEarthLatitude" Value="111" 	Name="Bering Strait" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_100_DESCRIPTION" 	SortIndex="40"/>
-		<Replace Domain="GiantEarthLatitude" Value="179" 	Name="LOC_MAP_GIANTEARTH_LATITUDE_179_NAME" 	Description="LOC_MAP_GIANTEARTH_LATITUDE_179_DESCRIPTION" 	SortIndex="100"/>
+		<Replace Domain="GiantEarthLatitude" Value="0" 		Name="LOC_MAP_WEST_EUROPE_NAME" 			Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="0"/>
+		<Replace Domain="GiantEarthLatitude" Value="32" 	Name="LOC_MAP_EAST_MEDITERRANEA_NAME" 		Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="10"/>
+		<Replace Domain="GiantEarthLatitude" Value="38" 	Name="LOC_MAP_EAST_EUROPE_AFRICA_NAME" 		Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="20"/>
+		<Replace Domain="GiantEarthLatitude" Value="52" 	Name="LOC_MAP_THE_URALS_WEST_INDIA_NAME" 	Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="30"/>
+		<Replace Domain="GiantEarthLatitude" Value="66" 	Name="LOC_MAP_CENTRAL_ASIA_NAME" 			Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="40"/>
+		<Replace Domain="GiantEarthLatitude" Value="82" 	Name="LOC_MAP_EAST_ASIA_WEST_AUSTRALIA_NAME"Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="50"/>
+		<Replace Domain="GiantEarthLatitude" Value="111" 	Name="LOC_MAP_BERING_STRAIT_NAME" 			Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="60"/>
+		<Replace Domain="GiantEarthLatitude" Value="128" 	Name="LOC_MAP_WEST_COAST_NAME" 				Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="70"/>
+		<Replace Domain="GiantEarthLatitude" Value="138" 	Name="LOC_MAP_GULF_OF_MEXICO_NAME" 			Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="80"/>
+		<Replace Domain="GiantEarthLatitude" Value="179" 	Name="LOC_MAP_EAST_AMERICA_NAME" 			Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="100"/>
 		
-		<Replace Domain="GiantEarthLongitude" Value="0" 	Name="LOC_MAP_DEFAULT_LONGITUDE_0_NAME" 		Description="LOC_MAP_GIANTEARTH_LONGITUDE_0_DESCRIPTION" 	SortIndex="10"/>
-		<Replace Domain="GiantEarthLongitude" Value="30" 	Name="LOC_MAP_GIANTEARTH_LONGITUDE_30_NAME" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_20_DESCRIPTION" 	SortIndex="20"/>
-		<Replace Domain="GiantEarthLongitude" Value="32" 	Name="LOC_MAP_DEFAULT_EQUATOR_NAME" 			Description="LOC_MAP_DEFAULT_EQUATOR_DESCRIPTION" 	SortIndex="25"/>
-		<Replace Domain="GiantEarthLongitude" Value="60" 	Name="LOC_MAP_GIANTEARTH_LONGITUDE_60_NAME" 	Description="LOC_MAP_GIANTEARTH_LONGITUDE_60_DESCRIPTION" 	SortIndex="30"/>
-		<Replace Domain="GiantEarthLongitude" Value="93" 	Name="LOC_MAP_DEFAULT_LONGITUDE_MAX_NAME" 		Description="LOC_MAP_GIANTEARTH_LONGITUDE_93_DESCRIPTION" 	SortIndex="100"/>
+		<Replace Domain="GiantEarthLongitude" Value="0" 	Name="LOC_MAP_SOUTH_POLE_NAME" 								Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="10"/>
+		<Replace Domain="GiantEarthLongitude" Value="32" 	Name="LOC_MAP_EQUATOR_NAME" 								Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="40"/>
+		<Replace Domain="GiantEarthLongitude" Value="40" 	Name="LOC_MAP_NORTH_AFRICA_SOUTH_ASIA_CARIBBEAN_NAME" 		Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="50"/>
+		<Replace Domain="GiantEarthLongitude" Value="50" 	Name="LOC_MAP_GIBRALTAR_SOUTH_JAPAN_CENTRAL_AMERICA_NAME" 	Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="60"/>
+		<Replace Domain="GiantEarthLongitude" Value="64" 	Name="LOC_MAP_NORTH_MEDITERRANEA_ASIA_NAME" 				Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="70"/>
+		<Replace Domain="GiantEarthLongitude" Value="93" 	Name="LOC_MAP_NORTH_POLE_NAME" 								Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="100"/>		
 
+		<!--
+		<Replace Domain="GiantEarthScenarioType" Value="SCENARIO_NONE" 		Name="LOC_MAP_SCENARIO_NONE_NAME" 		Description="LOC_MAP_SCENARIO_NONE_DESCRIPTION" 		SortIndex="10"/>
+		<Replace Domain="GiantEarthScenarioType" Value="SCENARIO_GENERATED" Name="LOC_MAP_SCENARIO_GENERATED_NAME" 	Description="LOC_MAP_SCENARIO_GENERATED_DESCRIPTION" 	SortIndex="20"/>
+		
 		<Replace Domain="GiantEarthCityPlacement" Value="TERRAIN" 	Name="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" 		Description="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" 	SortIndex="10"/>
 		<Replace Domain="GiantEarthCityPlacement" Value="CITY_MAP" 	Name="LOC_MAP_CITY_PLACEMENT_CITY_MAP_NAME" 	Description="LOC_MAP_CITY_PLACEMENT_CITY_MAP_DESCRIPTION" 	SortIndex="20"/>
+		-->
 	</DomainValues>
+	
+	<ParameterDependencies>
+	
+		<!--
+		<Replace ParameterId="GiantEarthCityPlacement"	ConfigurationGroup="Map" ConfigurationId="ScenarioName" 	Operator="NotEquals" 	ConfigurationValue="SCENARIO_NONE"/>	
+		-->	
+
+	</ParameterDependencies>
 	
 	<!-- Only use those values for a domain -->
 	<MapSupportedValues>

@@ -107,11 +107,11 @@ CREATE TABLE IF NOT EXISTS ScenarioCivilizationsReplacement
 -- Scenario Cities
 CREATE TABLE IF NOT EXISTS ScenarioCities
 	(	ScenarioName TEXT NOT NULL,
-		CivilizationType TEXT NOT NULL,
+		CivilizationType TEXT,			-- if NULL it will search a possible CivilizationType using the GameInfo.CityNames table (CityName must be set in that case)
 		CityName TEXT,					-- if not NULL it will override the civilization city list name
 		CitySize INT default 1,
-		X INT NOT NULL,
-		Y INT NOT NULL);
+		X INT,
+		Y INT);
 		
 -- Scenario Territory
 CREATE TABLE IF NOT EXISTS ScenarioTerritory

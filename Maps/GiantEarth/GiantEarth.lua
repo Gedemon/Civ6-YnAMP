@@ -96,7 +96,8 @@ end
 
 function GetNaturalWonders()
 	local NaturalWonders = {}
-	---[[
+	-- Deprecated, moved to Map.xml
+	--[[
 	NaturalWonders[GameInfo.Features["FEATURE_BARRIER_REEF"].Index] 	 = { X = 101, Y = 23}	-- 2 plots, coast, 1st plot is SOUTHEAST	
 	NaturalWonders[GameInfo.Features["FEATURE_CLIFFS_DOVER"].Index] 	 = { X = 11, Y = 71}    -- 2 plots, hills on coast, 1st plot is WEST	
 	NaturalWonders[GameInfo.Features["FEATURE_CRATER_LAKE"].Index] 		 = { X = 132, Y = 64}

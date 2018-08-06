@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+
+	<!-- ++++++++++++++++++++++++ -->
+	<!-- "Largest Earth" City Map -->
+	<!-- ++++++++++++++++++++++++ -->
+	
+	<!-- CAPITALS -->	
+	<CityMap>	<!-- (temporary section to covert all TSL that doesn't fit the game's capitals names) -->
+		<Replace MapName="LargestEarthCustom" X="48" Y="52" CityLocaleName="LOC_CITY_NAME_MECCA" />
+		<Replace MapName="LargestEarthCustom" X="47" Y="93" CityLocaleName="LOC_CITY_NAME_MOSCOW" />
+		<Replace MapName="LargestEarthCustom" X="42" Y="56" CityLocaleName="LOC_CITY_NAME_THEBES" />		
+	</CityMap>
+	
+	<CityMap><!-- FRANCE -->		
+		<Replace MapName="LargestEarthCustom"	X="18" Y="84" CityLocaleName="LOC_CITY_NAME_PARIS" />
+	</CityMap>
+	
+</GameData>

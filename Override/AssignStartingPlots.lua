@@ -17,8 +17,9 @@ g_startTimer = os.clock()
 ExposedMembers.HistoricalStartingPlots = nil
 
 -- Globals, can be called from the mapscript
-mapName = MapConfiguration.GetValue("MapName")
-print ("Map Name = " .. tostring(mapName))
+mapName = MapConfiguration.GetValue("ReferenceMap") or MapConfiguration.GetValue("MapName")
+print ("Map Name 		= ", MapConfiguration.GetValue("MapName"))
+print ("Reference Map	= ", MapConfiguration.GetValue("ReferenceMap"))
 getTSL 					= {} -- primary TSL for each civilization
 isInGame 				= {} -- Civilization/Leaders type in game
 tempStartingPlots 		= {} -- Temporary table for starting plots used when Historical Spawn Dates is set.
@@ -39,6 +40,7 @@ bPlaceAllLuxuries	= MapConfiguration.GetValue("PlaceAllLuxuries") == "PLACEMENT_
 bAlternatePlacement = MapConfiguration.GetValue("AlternatePlacement")
 
 bUseRelativePlacement 	= MapConfiguration.GetValue("UseRelativePlacement")
+bUseRelativeFixedTable 	= bUseRelativePlacement and MapConfiguration.GetValue("UseRelativeFixedTable")
 g_ReferenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth") or 180
 g_ReferenceMapHeight 	= MapConfiguration.GetValue("ReferenceMapHeight") or 94
 
@@ -64,6 +66,56 @@ for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 end
 
 print ("ynAMP Options: Culturally Linked = " .. tostring(bCulturallyLinked) ..", TSL = " .. tostring(bTSL) ..", Exclusion Zones = " .. tostring(bResourceExclusion) ..", Requested Resources = " .. tostring(bRequestedResources)..", Real Deposits = " .. tostring(bRealDeposits) .. ", Place All Luxuries = ".. tostring(bPlaceAllLuxuries) ) 
+
+------------------------------------------------------------------------------
+-- http://lua-users.org/wiki/SortedIteration
+-- Ordered table iterator, allow to iterate on the natural order of the keys of a table.
+------------------------------------------------------------------------------
+function __genOrderedIndex( t )
+    local orderedIndex = {}
+    for key in pairs (t) do
+        table.insert ( orderedIndex, key )
+    end
+    table.sort ( orderedIndex )
+    return orderedIndex
+end
+
+function orderedNext(t, state)
+    -- Equivalent of the next function, but returns the keys in the alphabetic
+    -- order.  We use a temporary ordered key table that is stored in the
+    -- table being iterated.
+
+    local key = nil
+    --print("orderedNext: state = "..tostring(state) )
+    if state == nil then
+        -- the first time, generate the index
+        t.__orderedIndex = __genOrderedIndex( t )
+        key = t.__orderedIndex[1]
+    else
+        -- fetch the next value
+        for i = 1, #t.__orderedIndex do
+            if t.__orderedIndex[i] == state then
+                key = t.__orderedIndex[i+1]
+            end
+        end
+    end
+
+    if key then
+        return key, t[key]
+    end
+
+    -- no more value to return, cleanup
+    t.__orderedIndex = nil
+    return
+end
+
+function orderedPairs(t)
+    -- Equivalent of the pairs() function on tables.  Allows to iterate
+    -- in order
+    return orderedNext, t, nil
+end
+
+--local pairs = orderedPairs
 
 ------------------------------------------------------------------------------
 -- YnAMP >>>>>
@@ -2501,12 +2553,56 @@ local g_MaxStartDistanceMajor
 -- Helpers for x,y positions when using a reference or offset map
 ------------------------------------------------------------------------------
 
+local XFromRefMapX 	= {}
+local YFromRefMapY 	= {}
+local RefMapXfromX 	= {}
+local RefMapYfromY 	= {}
+local sX, sY 		= 0, 0
+local lX, lY 		= 0, 0
+function BuildRefXY()
+	if bUseRelativeFixedTable then
+		for x = 0, g_UncutMapWidth, 1 do
+			--MapToConvert[x] = {}
+			for y = 0, g_UncutMapHeight, 1 do
+				--print (x, y, sX, sY, lX, lY)
+				XFromRefMapX[x] = sX
+				YFromRefMapY[y] = sY
+				
+				RefMapXfromX[sX] = x
+				RefMapYfromY[sY] = y
+				--MapToConvert[x][y] = SmallMap[sX][sY]
+				lY = lY + 1
+				if lY == 5 then
+					lY = 0
+				else
+					sY = sY +1
+				end
+			end
+			sY = 0
+			lX = lX + 1
+			if lX == 4 then
+				lX = 0
+			else
+				sX = sX +1
+			end
+		end
+	end
+end
+
 -- Convert current map position to the corresponding position on the reference map
 function GetRefMapXY(mapX, mapY, bOnlyOffset)
 	local refMapX, refMapY = mapX, mapY
 	if bUseRelativePlacement and (not bOnlyOffset) then
-		refMapX 	= Round(g_ReferenceWidthFactor * mapX)
-		refMapY 	= Round(g_ReferenceHeightFactor * mapY)
+		if bUseRelativeFixedTable then
+			refMapX 	= XFromRefMapX[mapX] --Round(g_ReferenceWidthFactor * mapX)
+			refMapY 	= YFromRefMapY[mapY] --Round(g_ReferenceHeightFactor * mapY)
+			if refMapX == nil or refMapY == nil then
+				return -1, -1
+			end
+		else
+			refMapX 	= Round(g_ReferenceWidthFactor * mapX)
+			refMapY 	= Round(g_ReferenceHeightFactor * mapY)		
+		end
 	end
 	if bUseOffset then
 		refMapX = refMapX + g_OffsetX
@@ -2528,8 +2624,16 @@ end
 -- Convert the reference map position to the current map position
 function GetXYFromRefMapXY(x, y, bOnlyOffset)
 	if bUseRelativePlacement and (not bOnlyOffset) then
-		x = Round( g_ReferenceWidthRatio * x)
-		y = Round( g_ReferenceHeightRatio * y)
+		if bUseRelativeFixedTable then
+			x = RefMapXfromX[x]--Round( g_ReferenceWidthRatio * x)
+			y = RefMapYfromY[y]--Round( g_ReferenceHeightRatio * y)
+			if x == nil or y == nil then
+				return -1, -1
+			end
+		else
+			x = Round( g_ReferenceWidthRatio * x)
+			y = Round( g_ReferenceHeightRatio * y)		
+		end
 	end
 	if bUseOffset then
 		x = x - g_OffsetX
@@ -2538,8 +2642,8 @@ function GetXYFromRefMapXY(x, y, bOnlyOffset)
 		-- the code below assume that the reference map is wrapX
 		if y < 0 then 
 			--y = y + g_iH - 1
-			y = y + g_iH
-			x = x + Round(g_iW / 2)
+			--y = y + g_iH
+			--x = x + Round(g_iW / 2)
 		end
 		--if x < 0 then x = x + g_iW - 1 end
 		if x < 0 then x = x + g_iW end
@@ -2551,14 +2655,13 @@ function GetPlotFromRefMap(x, y, bOnlyOffset)
 	return Map.GetPlot(GetXYFromRefMapXY(x,y, bOnlyOffset))
 end
 
-
 ------------------------------------------------------------------------------
 -- Create Tables
 ------------------------------------------------------------------------------
 hasBuildExclusionList = false
 function buildExclusionList()
 	print ("Building Region Exclusion list for "..tostring(mapName).."...")
-	
+	 
 	for RegionRow in GameInfo.RegionPosition() do
 		if RegionRow.MapName == mapName  then
 			local region = RegionRow.Region
@@ -2821,7 +2924,8 @@ print("g_UncutMapHeight", g_UncutMapHeight)
 print("g_iW", g_iW)
 print("g_iH", g_iH)
 print("Map.GetGridSize()", Map.GetGridSize())
-	
+BuildRefXY()
+
 	g_ReferenceWidthFactor  = g_ReferenceMapWidth / g_UncutMapWidth 
 	g_ReferenceHeightFactor = g_ReferenceMapHeight / g_UncutMapHeight
 	g_ReferenceWidthRatio   = g_UncutMapWidth / g_ReferenceMapWidth 
@@ -3321,6 +3425,13 @@ end
 function PlaceRealNaturalWonders(NaturalWonders)
 	print("YnAMP Natural Wonders placement...")
 
+	-- Allow override when using a reference map (use current map data instead of reference map data)
+	local bOnlyOffset = false
+	if MapConfiguration.GetValue("UseOwnDataForNW") then
+		mapName 	= MapConfiguration.GetValue("MapName")
+		bOnlyOffset = true
+	end
+	
 	-- Adding custom NW to the table
 	-- The coordinates in that loop are those from the reference map
 	local DirectPlacementPlots = {}
@@ -3332,7 +3443,7 @@ function PlaceRealNaturalWonders(NaturalWonders)
 				if not DirectPlacementPlots[eFeatureType] then
 					-- add original plot entry to the multiplots table
 					DirectPlacementPlots[eFeatureType] = {}
-					local plot = GetPlotFromRefMap(NaturalWonders[eFeatureType].X, NaturalWonders[eFeatureType].Y)
+					local plot = GetPlotFromRefMap(NaturalWonders[eFeatureType].X, NaturalWonders[eFeatureType].Y, bOnlyOffset)
 					if plot then
 						if NaturalWonderRow.TerrainType and GameInfo.Terrains[NaturalWonderRow.TerrainType] then
 							TerrainBuilder.SetTerrainType(plot, GameInfo.Terrains[NaturalWonderRow.TerrainType].Index)
@@ -3343,7 +3454,7 @@ function PlaceRealNaturalWonders(NaturalWonders)
 					end
 				end
 				-- add new plot entry to the multiplots table
-				local plot = GetPlotFromRefMap(NaturalWonderRow.X, NaturalWonderRow.Y)
+				local plot = GetPlotFromRefMap(NaturalWonderRow.X, NaturalWonderRow.Y, bOnlyOffset)
 				if plot then				
 					if NaturalWonderRow.TerrainType and GameInfo.Terrains[NaturalWonderRow.TerrainType] then
 						TerrainBuilder.SetTerrainType(plot, GameInfo.Terrains[NaturalWonderRow.TerrainType].Index)
@@ -3366,9 +3477,12 @@ function PlaceRealNaturalWonders(NaturalWonders)
 			local featureTypeName = GameInfo.Features[eFeatureType].FeatureType
 
 			-- Convert the NW coordinates to the current map position if using a reference map or offsets
-			local x, y = GetXYFromRefMapXY(position.X, position.Y)
+			local x, y = GetXYFromRefMapXY(position.X, position.Y, bOnlyOffset)			
 			
 			print ("- Trying to place " .. tostring(featureTypeName) .. " at (" .. tostring(x) .. ", " .. tostring(y) .. ")")
+			
+			print ("	ref map position:", position.X, position.Y, " check back ref map from x,y:", GetRefMapXY(x,y))
+	
 			local pPlot = Map.GetPlot(x, y)
 			
 			if pPlot then
@@ -3478,6 +3592,7 @@ function PlaceRealNaturalWonders(NaturalWonders)
 					-- 3 plots, flat grass near coast, 1st plot is EAST
 					-- preparing the 3 plots
 					local terrainType = g_TERRAIN_TYPE_GRASS
+					bUseOnlyPlotListPlacement = true
 					table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
 					table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHWEST), Terrain = terrainType })
 					table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_WEST), Terrain = terrainType })
@@ -3508,7 +3623,7 @@ function PlaceRealNaturalWonders(NaturalWonders)
 				local bPlaced = pPlot:IsNaturalWonder()
 					
 				if (not bPlaced) and (#plotsIndex > 0) then
-					print("  - Direct Placement has failed, using plot list for placement")
+					print("  - Using plot list for placement")
 					TerrainBuilder.SetMultiPlotFeatureType(plotsIndex, eFeatureType)
 					bPlaced = pPlot:IsNaturalWonder()
 				end
@@ -3916,6 +4031,7 @@ function ResourcesValidation(g_iW, g_iH)
 		for _, curTable in ipairs(listTable) do
 			if curTable[eResourceType] then
 				for newResourceType, value in pairs (curTable) do
+if type(newResourceType) == "string" then print("Error: newResourceType is string instead of index : "..newResourceType); return; end
 					if newResourceType ~= eResourceType and YnAMP_CanHaveResource(plot, newResourceType) then
 						--print(" - Found replacement resource for", GameInfo.Resources[eResourceType].ResourceType, "at", plot:GetX(), plot:GetY(), "by resource", GameInfo.Resources[newResourceType].ResourceType)
 						return newResourceType						
