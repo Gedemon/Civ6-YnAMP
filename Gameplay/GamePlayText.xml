@@ -8865,6 +8865,7 @@
 		<Replace Tag="LOC_CITY_NAME_BEMIDJI_CREE" Text="Gaa-Waabaabgankaag" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BEMIDJI_AZTEC" Text="Gaa-Waabaabgankaag" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BEMIDJI_MAPUCHE" Text="Gaa-Waabaabgankaag" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRAINERD" Text="Brainerd" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DULUTH" Text="Duluth" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DULUTH_GERMANY" Text="Hermantown" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DULUTH_CREE" Text="Nagaajiwanaang" Language="en_US" />
