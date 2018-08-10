@@ -1,7 +1,7 @@
 /*
 	YnAMP
-	by Gedemon (2016-2017)
+	by Gedemon (2016-2018)
 	
 */
 
-INSERT OR REPLACE INTO GlobalParameters (Name, Value) VALUES ('YNAMP_VERSION', 'Beta .7.0');
+INSERT OR REPLACE INTO GlobalParameters (Name, Value) VALUES ('YNAMP_VERSION', 'Beta .7.1');

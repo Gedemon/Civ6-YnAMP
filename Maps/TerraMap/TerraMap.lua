@@ -72,7 +72,9 @@ local pairs = orderedPairs
 -- Defines
 ------------------------------------------------------------------------------
 
-local g_iW, g_iH, g_MapSize;
+g_iW		= 0
+g_iH		= 0
+g_MapSize	= 0
 
 -- The base map is the Largest Earth Map
 local g_LargestMapWidth 	= 230
@@ -90,20 +92,20 @@ local g_SizeGiant     			= 180*94
 local g_SizeLudicrous 			= 230*115
 local g_LargestEarthOceanWidth 	= 24
 
-local g_WidthFactor
-local g_HeightFactor
-local g_WidthRatio
-local g_HeightRatio
-local g_ReferenceSizeRatio
+g_WidthFactor			= 0
+g_HeightFactor			= 0
+g_WidthRatio			= 0
+g_HeightRatio			= 0
+g_ReferenceSizeRatio	= 0
 
 -- set values of the reference map for placement
-local g_ReferenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth") or 180
-local g_ReferenceMapHeight 	= MapConfiguration.GetValue("ReferenceMapHeight") or 94
-local g_ReferenceMapSize    = g_ReferenceMapWidth*g_ReferenceMapHeight
-local g_ReferenceWidthFactor
-local g_ReferenceHeightFactor
-local g_ReferenceWidthRatio
-local g_ReferenceHeightRatio
+g_ReferenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth") or 180
+g_ReferenceMapHeight 	= MapConfiguration.GetValue("ReferenceMapHeight") or 94
+g_ReferenceMapSize  	= g_ReferenceMapWidth*g_ReferenceMapHeight
+g_ReferenceWidthFactor	= 0
+g_ReferenceHeightFactor	= 0
+g_ReferenceWidthRatio	= 0
+g_ReferenceHeightRatio	= 0
 
 local g_StartingPlotRange
 local g_MinStartDistanceMajor
@@ -183,7 +185,7 @@ local configLandmassArgs = {
 -- Reference map = Giant Earth, to do : move that to Map.xml
 function GetNaturalWonders()
 	local NaturalWonders = {}
-
+--[[
 	NaturalWonders[GameInfo.Features["FEATURE_BARRIER_REEF"].Index] 	 = { X = 107, Y = 21}	-- 2 plots, coast, 1st plot is SOUTHEAST
 	NaturalWonders[GameInfo.Features["FEATURE_CLIFFS_DOVER"].Index] 	 = { X = 12, Y = 73}    -- 2 plots, hills on coast, 1st plot is WEST
 	NaturalWonders[GameInfo.Features["FEATURE_CRATER_LAKE"].Index] 		 = { X = 138, Y = 65}
@@ -206,7 +208,7 @@ function GetNaturalWonders()
 	if GameInfo.Features["FEATURE_ULURU"] then -- Australia DLC is loaded
     NaturalWonders[GameInfo.Features["FEATURE_ULURU"].Index]			= { X = 98, Y = 17}		-- 1 plot, desert, surrounded by desert
     end
-
+--]]
 	return NaturalWonders
 end
 
@@ -229,7 +231,7 @@ function GenerateMap()
 	g_ReferenceHeightFactor = g_ReferenceMapHeight / g_iH
 	g_ReferenceWidthRatio   = g_iW / g_ReferenceMapWidth
 	g_ReferenceHeightRatio  = g_iH / g_ReferenceMapHeight
-
+	
 	g_RegionBorderCoastDistance = math.max(1, math.ceil(4 * g_WidthRatio))
 
 	g_ReferenceSizeRatio = math.sqrt(g_iW * g_iH) / math.sqrt(g_ReferenceMapWidth * g_ReferenceMapHeight)
@@ -2175,8 +2177,8 @@ function SetTrueStartingLocations()
 		local position = getTSL[iPlayer]
 		if position then
 			-- Convert the reference map position to the current map position
-			local x = Round( g_ReferenceWidthRatio	* position.X)
-			local y = Round( g_ReferenceHeightRatio	* position.Y)
+			local x = position.X-- Round( g_ReferenceWidthRatio	* position.X)
+			local y = position.Y-- Round( g_ReferenceHeightRatio	* position.Y)
 
 			print ("- "..tostring(CivilizationTypeName).." at "..tostring(x)..","..tostring(y).." from initial values "..tostring(position.X)..","..tostring(position.Y))
 			local plot = Map.GetPlot(x, y)

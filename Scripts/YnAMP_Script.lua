@@ -565,7 +565,7 @@ end
 ----------------------------------------------------------------------------------------
 -- Scenario settings  <<<<<
 ----------------------------------------------------------------------------------------
-if scenarioName and scenarioName ~= "SCENARIO_NONE" then 
+if scenarioName and scenarioName ~= "SCENARIO_NONE" and not (Game.GetCurrentGameTurn() > GameConfiguration.GetStartTurn())  then 
 ----------------------------------------------------------------------------------------
 
 print("Setting scenario : ", scenarioName)
@@ -736,90 +736,13 @@ end
 
 PlaceCities = coroutine.create(function()
 
+	local CitiesPlacedFor = {}
+	
 	if cityPlacement == "TERRAIN" then
 
 	end
-	if cityPlacement == "CITY_MAP" then
-	
-		print("Searching cities with known position for each major civs...")
-		local cityList = {}
-		for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
-			local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
-			print("-", CivilizationTypeName)
-			-- place capital
-			local player		= Players[iPlayer]
-			local startingPlot 	= player:GetStartingPlot()
-			cityList[iPlayer]	= {}
-			if startingPlot then
-				local city 			= player:GetCities():Create(startingPlot:GetX(), startingPlot:GetY())			
-				if city then
-					print("    - CAPITAL PLACED !")
-				end
-			end
-			
-			local counter = 0
-			for row in GameInfo.CityNames() do
-				local cityName = row.CityName
-				if CivilizationTypeName == row.CivilizationType then
-					local pos = cityPosition[cityName]
-					if pos then
-					
-						print("    - possible position found for ", Locale.Lookup(cityName))
-						table.insert(cityList[iPlayer], cityName)
 
-					end
-				end
-			end
-		end
-		
-		print("Placing cities for each player...")
-		local bAnyCityPlaced 	= true
-		local playerCounter		= {}
-		local loop				= 0
-		
-		while bAnyCityPlaced do
-		
-			bAnyCityPlaced = false
-			loop = loop + 1
-			
-			if loop > g_LoopPerResume then				
-				--print("requesting pause in script for ", g_Pause, " seconds at time = ".. tostring( Automation.GetTime() ))
-				loop = 0
-				g_Timer = Automation.GetTime()
-				coroutine.yield()
-				-- after g_Pause seconds, the script will start again from here
-				--print("resuming script at time = ".. tostring( Automation.GetTime() ))
-			end
-			
-			for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
-			--for player, cityList in pairs(cityList) do
-				
-				local list 		= cityList[iPlayer]
-				local player 	= Players[iPlayer]
-				if not playerCounter[iPlayer] then playerCounter[iPlayer] = 1 end
-			
-				local bPlayerCityPlaced	= false
-				local cityName 			= list[playerCounter[iPlayer]]
-				
-				while cityName and not bPlayerCityPlaced do
-					playerCounter[iPlayer] 	= playerCounter[iPlayer] + 1
-					local pos 				= cityPosition[cityName]
-					local x, y				= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y)) -- cityPosition use average value of x, y					
-					local city 				= player:GetCities():Create(x, y)
-					if city then
-						print(" - player ID#".. tostring(iPlayer)," : ".. tostring(cityName), " pos#"..tostring(playerCounter[iPlayer]), " PLACED !")
-						city:SetName(cityName)
-						bPlayerCityPlaced 		= true
-						bAnyCityPlaced			= true
-					else
-						cityName = list[playerCounter[iPlayer]]
-					end
-				end				
-			end
-		end
-	end
-print(test)
-	if cityPlacement == "IMPORT" then
+	if cityPlacement == "IMPORT" or cityPlacement == "MIXED"  then
 		local CityPlayerID 			= {}
 		local CityCivilizationType	= {}
 		local CivilizationPlayerID 	= {}
@@ -889,6 +812,7 @@ print(test)
 									if cityName then
 										city:SetName(cityName)
 									end
+									CitiesPlacedFor[civilizationType] = true
 								end								
 							end
 						else
@@ -902,12 +826,94 @@ print(test)
 		end
 
 	end
+	
+	if cityPlacement == "CITY_MAP" or cityPlacement == "MIXED" then
+	
+		print("Searching cities with known position for each major civs...")
+		local cityList = {}
+		for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+			local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+			if not CitiesPlacedFor[CivilizationTypeName] then
+				print("-", CivilizationTypeName)
+				-- place capital
+				local player		= Players[iPlayer]
+				local startingPlot 	= player:GetStartingPlot()
+				cityList[iPlayer]	= {}
+				if startingPlot then
+					local city 			= player:GetCities():Create(startingPlot:GetX(), startingPlot:GetY())			
+					if city then
+						print("    - CAPITAL PLACED !")
+					end
+				end
+				
+				local counter = 0
+				for row in GameInfo.CityNames() do
+					local cityName = row.CityName
+					if CivilizationTypeName == row.CivilizationType then
+						local pos = cityPosition[cityName]
+						if pos then
+						
+							print("    - possible position found for ", Locale.Lookup(cityName))
+							table.insert(cityList[iPlayer], cityName)
+
+						end
+					end
+				end
+			end
+		end
+		
+		print("Placing cities for each player...")
+		local bAnyCityPlaced 	= true
+		local playerCounter		= {}
+		local loop				= 0
+		
+		while bAnyCityPlaced do
+		
+			bAnyCityPlaced = false
+			loop = loop + 1
+			
+			if loop > g_LoopPerResume then				
+				--print("requesting pause in script for ", g_Pause, " seconds at time = ".. tostring( Automation.GetTime() ))
+				loop = 0
+				g_Timer = Automation.GetTime()
+				coroutine.yield()
+				-- after g_Pause seconds, the script will start again from here
+				--print("resuming script at time = ".. tostring( Automation.GetTime() ))
+			end
+			
+			for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+			--for player, cityList in pairs(cityList) do
+				
+				local list 		= cityList[iPlayer]
+				if list then
+					local player 	= Players[iPlayer]
+					if not playerCounter[iPlayer] then playerCounter[iPlayer] = 1 end
+				
+					local bPlayerCityPlaced	= false
+					local cityName 			= list[playerCounter[iPlayer]]
+					
+					while cityName and not bPlayerCityPlaced do
+						playerCounter[iPlayer] 	= playerCounter[iPlayer] + 1
+						local pos 				= cityPosition[cityName]
+						local x, y				= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y)) -- cityPosition use average value of x, y					
+						local city 				= player:GetCities():Create(x, y)
+						if city then
+							print(" - player ID#".. tostring(iPlayer)," : ".. tostring(cityName), " pos#"..tostring(playerCounter[iPlayer]), " PLACED !")
+							city:SetName(cityName)
+							bPlayerCityPlaced 		= true
+							bAnyCityPlaced			= true
+						else
+							cityName = list[playerCounter[iPlayer]]
+						end
+					end	
+				end				
+			end
+		end
+	end
 
 	-- launch next coroutine
 	AddCoToList(PlaceBorders)
 end)
-
-AddCoToList(PlaceCities)
 
 --Events.LoadScreenClose.Add( PlaceCities )
 
@@ -1057,7 +1063,8 @@ PlaceBorders = coroutine.create(function()
 	--AddCoToList(ExpandBorders)
 end)
 
-
+-- Launch placement, starting with cities
+AddCoToList(PlaceCities)
 
 ----------------------------------------------------------------------------------------
 end
