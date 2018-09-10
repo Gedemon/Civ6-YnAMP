@@ -5,6 +5,13 @@
 */
 
 -----------------------------------------------
+-- WorldBuilder max brush size
+-----------------------------------------------
+
+INSERT OR REPLACE INTO GlobalParameters (Name, Value) VALUES ('WB_MAX_BRUSH_SIZE', 6);
+
+
+-----------------------------------------------
 -- Fix Ethnicity
 -----------------------------------------------
 

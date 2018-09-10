@@ -62,9 +62,14 @@
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="ReferenceMapHeight" 	Name="ReferenceMapHeight" 	Description="" Domain="text" DefaultValue="94" ConfigurationGroup="Map" ConfigurationId="ReferenceMapHeight" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="ReferenceMapWidth" 	Name="ReferenceMapWidth" 	Description="" Domain="text" DefaultValue="180" ConfigurationGroup="Map" ConfigurationId="ReferenceMapWidth" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		
+		<!--	Hidden parameters to pass the RescaleSkipX/RescaleSkipY value tha were used when upscaling (used to create the correspondance tables between the coordinates of the current map and those of the reference map)
+		-->
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="RescaleSkipX" 	Name="RescaleSkipX" 	Description="" Domain="text" DefaultValue="4" ConfigurationGroup="Map" ConfigurationId="RescaleSkipX" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="RescaleSkipY" 	Name="RescaleSkipY" 	Description="" Domain="text" DefaultValue="5" ConfigurationGroup="Map" ConfigurationId="RescaleSkipY" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		
 		<!--	Hidden parameter to set the map name to the reference map that will be used to find the tables for TSL
 		-->
-		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomName" 				Name="MapName" 		Description="" Domain="text" DefaultValue="LargestEarth" 		ConfigurationGroup="Map" ConfigurationId="MapName" 		GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomName" 				Name="MapName" 		Description="" Domain="text" DefaultValue="LargestEarthCustom" 	ConfigurationGroup="Map" ConfigurationId="MapName" 		GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomReferenceMap" 		Name="ReferenceMap" Description="" Domain="text" DefaultValue="GiantEarth" 			ConfigurationGroup="Map" ConfigurationId="ReferenceMap" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 
 		<!--	Hidden parameters to adjust features placement when they are not imported
@@ -95,6 +100,8 @@
 		<Replace Domain="LargestEarthCustomResourcesPlacement" Value="PLACEMENT_EMPTY" 		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 			Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 				SortIndex="30"/>
 		
 		<Replace Domain="LargestEarthCustomLatitude" Value="0" 		Name="LOC_MAP_WEST_EUROPE_NAME" 			Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="0"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="20" 	Name="LOC_MAP_ALPS_NAME" 					Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="5"/>
+		<Replace Domain="LargestEarthCustomLatitude" Value="34" 	Name="LOC_MAP_MID_MEDITERRANEA_NAME" 		Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="7"/>
 		<Replace Domain="LargestEarthCustomLatitude" Value="44" 	Name="LOC_MAP_EAST_MEDITERRANEA_NAME" 		Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="10"/>
 		<Replace Domain="LargestEarthCustomLatitude" Value="50" 	Name="LOC_MAP_EAST_EUROPE_AFRICA_NAME" 		Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="20"/>
 		<Replace Domain="LargestEarthCustomLatitude" Value="74" 	Name="LOC_MAP_THE_URALS_WEST_INDIA_NAME" 	Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="30"/>
@@ -106,10 +113,13 @@
 		<Replace Domain="LargestEarthCustomLatitude" Value="229" 	Name="LOC_MAP_EAST_AMERICA_NAME" 			Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="100"/>
 		
 		<Replace Domain="LargestEarthCustomLongitude" Value="0" 	Name="LOC_MAP_SOUTH_POLE_NAME" 								Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="10"/>
+		<Replace Domain="LargestEarthCustomLongitude" Value="7" 	Name="LOC_MAP_SOUTH_AFRICA_AMERICA_NAME"					Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="20"/>
+		<Replace Domain="LargestEarthCustomLongitude" Value="22" 	Name="LOC_MAP_MADAGASCAR_NAME"								Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="30"/>
 		<Replace Domain="LargestEarthCustomLongitude" Value="44" 	Name="LOC_MAP_EQUATOR_NAME" 								Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="40"/>
 		<Replace Domain="LargestEarthCustomLongitude" Value="50" 	Name="LOC_MAP_NORTH_AFRICA_SOUTH_ASIA_CARIBBEAN_NAME" 		Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="50"/>
 		<Replace Domain="LargestEarthCustomLongitude" Value="62" 	Name="LOC_MAP_GIBRALTAR_SOUTH_JAPAN_CENTRAL_AMERICA_NAME" 	Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="60"/>
 		<Replace Domain="LargestEarthCustomLongitude" Value="82" 	Name="LOC_MAP_NORTH_MEDITERRANEA_ASIA_NAME" 				Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="70"/>
+		<Replace Domain="LargestEarthCustomLongitude" Value="100" 	Name="LOC_MAP_NORTH_AMERICA_EUROPE_NAME" 					Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="80"/>
 		<Replace Domain="LargestEarthCustomLongitude" Value="115" 	Name="LOC_MAP_NORTH_POLE_NAME" 								Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="100"/>
 		
 	</DomainValues>

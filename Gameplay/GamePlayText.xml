@@ -3,6 +3,174 @@
 
 
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!--                 YnAMP In Game Text                -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	
+
+	<LocalizedText>		<!-- Map Sizes -->
+
+		<Replace Tag="LOC_MAPSIZE_ENORMOUS_NAME" Language="en_US">
+		  <Text>Enormous</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" Language="en_US">
+		  <Text>Really Enormous Map for 16 players (128x80)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_GIANT_NAME" Language="en_US">
+		  <Text>Giant</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_GIANT_DESCRIPTION" Language="en_US">
+		  <Text>Giant Map for 20+ players (184x92)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_LUDICROUS_NAME" Language="en_US">
+		  <Text>Ludicrous</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" Language="en_US">
+		  <Text>Will you stand the test of time while your computer try to load this ? (200x100)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_MAX_NAME" Language="en_US">
+		  <Text>Max</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_MAX_DESCRIPTION" Language="en_US">
+		  <Text>Max working size on my PC (i7 4770K + MSI GTX 1080 Ti + 16GB Ram) (215x112)</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_MAPSIZE_SMALL21_NAME" Language="en_US">
+		  <Text>Small (2:1)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_SMALL21_DESCRIPTION" Language="en_US">
+		  <Text>Small map for 6 players (84x42)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_STANDARD21_NAME" Language="en_US">
+		  <Text>Standard (2:1)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_STANDARD21_DESCRIPTION" Language="en_US">
+		  <Text>Average-sized map for 8 players (96x48)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_LARGE21_NAME" Language="en_US">
+		  <Text>Large (2:1)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_LARGE21_DESCRIPTION" Language="en_US">
+		  <Text>Large map for 10 players (108x54)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_HUGE21_NAME" Language="en_US">
+		  <Text>Huge (2:1)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_HUGE21_DESCRIPTION" Language="en_US">
+		  <Text>Huge map for 12 players (120x60)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_ENORMOUS21_NAME" Language="en_US">
+		  <Text>Enormous (2:1)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_ENORMOUS21_DESCRIPTION" Language="en_US">
+		  <Text>Really Enormous Map for 16 players (148x74)</Text>
+		</Replace>
+
+	</LocalizedText>
+	
+	<LocalizedText>		<!-- Map Names -->
+	
+		<Replace Tag="LOC_YNAGEM_NAME" Language="en_US">
+		  <Text>Giant Earth</Text>
+		</Replace>
+		<Replace Tag="LOC_YNAGEM_DESC" Language="en_US">
+		  <Text>Genghis Kai's GEM (Hormigas version) (180x94 - Giant)</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATESTEARTH_NAME" Language="en_US">
+		  <Text>Greatest Earth Map</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATESTEARTH_DESC" Language="en_US">
+		  <Text>Greatest Earth Map by djvandyke (104x64 - Large)</Text>
+		</Replace>
+		<Replace Tag="LOC_PLAYEUROPEAGAIN_NAME" Language="en_US">
+		  <Text>Play Europe Again</Text>
+		</Replace>
+		<Replace Tag="LOC_PLAYEUROPEAGAIN_DESC" Language="en_US">
+		  <Text>NiRv4n4's Europe(Hormigas version) (108x98 - Huge)</Text>
+		</Replace>
+		<Replace Tag="LOC_LARGE_EUROPE_NAME" Language="en_US">
+		  <Text>Large Europe</Text>
+		</Replace>
+		<Replace Tag="LOC_LARGE_EUROPE_DESC" Language="en_US">
+		  <Text>Dieter VonClam's Large Europe (79x73 - Large)</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAMAP_NAME" Language="en_US">
+		  <Text>Terra Map for YnAMP</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAMAP_DESC" Language="en_US">
+		  <Text>A map with customizable landmass placement based on a scalable Earth</Text>
+		</Replace>
+		<Replace Tag="LOC_LARGESTEARTHCUSTOM_NAME" Language="en_US">
+		  <Text>[COLOR_RED]Largest Earth Custom[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_LARGESTEARTHCUSTOM_DESC" Language="en_US">
+		  <Text>Largest Earth Custom (230x116 - Ludicrous)[NEWLINE][ICON_Exclamation] [COLOR_RED]VERY UNSTABLE at full size[ENDCOLOR][NEWLINE]Use the custom options to set a game on a region of the map.</Text>
+		</Replace>
+
+	</LocalizedText>
+	
+	<LocalizedText>		<!-- Menus -->
+	
+		<Replace Tag="LOC_GAME_MENU_EXPORT_TO_LUA" Language="en_US">
+		  <Text>Export Map to log</Text>
+		</Replace>
+		<Replace Tag="LOC_GAME_MENU_EXPORT_TO_LUA_DESCRIPTION" Language="en_US">
+		  <Text>Export the Map in YnAMP format to the Lua.log file (in the "..\Documents\my games\Sid Meier's Civilization VI\Logs\" folder)</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_WORLD_BUILDER_BRUSH_SIZE" Text="Brush Size = {1_Num}" Language="en_US" />	
+
+	</LocalizedText>
+	
+	<LocalizedText>		<!-- Continents -->			
+		
+		<Replace Tag="LOC_CONTINENT_AFRICA" 			Text="Africa" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_SAHARA" 			Text="Sahara" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_GUINEA" 			Text="Guinea" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_CENTRAL_AFRICA"		Text="Central Africa" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_EAST_AFRICA"		Text="East Africa" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_SOUTH_AFRICA" 		Text="South Africa" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_MADAGASCARIA" 		Text="Madagascaria" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_ANTARCTICA"			Text="Antartica" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_ASIA" 				Text="Asia" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_KAZAKHSTANIA" 		Text="Kazakhstania" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_SIBERIA" 			Text="Siberia" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_CENTRAL_SIBERIA"	Text="Central Siberia" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_WEST_SIBERIA" 		Text="West Siberia" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_ANATOLIA" 			Text="Anatolia" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_ARABIAN_PENINSULA"	Text="Arabian Peninsula" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_PERSIAN_PLATEAU"	Text="Persian Plateau" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_INDIA" 				Text="India" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_CENTRAL_ASIA" 		Text="Central Asia" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_EAST_ASIA" 			Text="East Asia" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_SOUTH_EAST_ASIA"	Text="South East Asia" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_MANCHURIA" 			Text="Manchuria" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_KOLYMA" 			Text="Kolyma" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_EUROPE" 			Text="Europe" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_SCANDINAVIA"		Text="Scandinavia" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_IBERIA" 			Text="Iberia" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_CAUCASIA" 			Text="Caucasia" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_BRITTANIA"			Text="Brittania" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_BALKANIA" 			Text="Balkania" Language="en_US"	/>
+		<Replace Tag="CONTINENT_AMERICA" 				Text="America" Language="en_US"	/>
+		<Replace Tag="CONTINENT_NORTH_AMERICA" 			Text="North America" Language="en_US"	/>
+		<Replace Tag="CONTINENT_ALASKANIA" 				Text="Alaskania" Language="en_US"	/>
+		<Replace Tag="CONTINENT_LABRADORIA" 			Text="Labradoria" Language="en_US"	/>
+		<Replace Tag="CONTINENT_GREENLANDIA" 			Text="Greenlandia" Language="en_US"	/>
+		<Replace Tag="CONTINENT_MESO_AMERICA" 			Text="Meso America" Language="en_US"	/>
+    	<Replace Tag="LOC_CONTINENT_SOUTH_AMERICA" 		Text="South America" Language="en_US"	/>
+    	<Replace Tag="LOC_CONTINENT_CARIBBEANIA" 		Text="Caribbeania" Language="en_US"	/>
+    	<Replace Tag="LOC_CONTINENT_PATAGONIA" 			Text="Patagonia" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_AUSTRALIA" 			Text="Australia" Language="en_US"	/>
+    	<Replace Tag="LOC_CONTINENT_OCEANIA" 			Text="Oceania" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_ZEALANDIA" 			Text="Zealandia" Language="en_US"	/>
+    	<Replace Tag="LOC_CONTINENT_MELANESIA"			Text="Melanesia" Language="en_US"	/>
+    	<Replace Tag="LOC_CONTINENT_MICRONESIA" 		Text="Micronesia" Language="en_US"	/>
+    	<Replace Tag="LOC_CONTINENT_POLYNESIA"			Text="Polynesia" Language="en_US"	/>
+
+	</LocalizedText>
+	
+	
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<!-- Europe City Names: Default Layer (Modern) <en_US> -->
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
 

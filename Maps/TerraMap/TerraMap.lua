@@ -2001,6 +2001,18 @@ function PlaceRealNaturalWonders(NaturalWonders)
 				end
 			end
 			
+			if featureTypeName == "FEATURE_LAKE_VICTORIA" then
+				print(" - Preparing position...")
+				-- 4 plots, coast without features, 1st plot is NORTH-EAST
+				-- preparing the 4 plots
+				local terrainType = g_TERRAIN_TYPE_COAST
+				local pPlot2 = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHWEST) -- we need plot2 to get plot4
+				table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+				table.insert(plotsList, { Plot = pPlot2, Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_WEST), Terrain = terrainType })
+				table.insert(plotsList, { Plot = Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_WEST), Terrain = terrainType })
+			end
+			
 			-- Set terrain, remove features and resources for Civ6 NW
 			for k, data in ipairs(plotsList) do
 				TerrainBuilder.SetTerrainType(data.Plot, data.Terrain)
@@ -2064,7 +2076,33 @@ function PlaceRealNaturalWonders(NaturalWonders)
 						end
 					end
 				end
-				print ("  - Success : plot is now a natural wonder !")
+				print ("  - Success : plot is now a natural wonder !")				
+				
+				-- place jungle plains around lake victoria
+				if featureTypeName == "FEATURE_LAKE_VICTORIA" then				
+					for dx = -3, 3 do
+						for dy = -3,3 do
+							local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, 3)
+							if(otherPlot) then
+								if otherPlot:GetFeatureType() == eFeatureType then
+									RemoveCliffs(otherPlot)
+									local adjacentPlot;
+									for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+										adjacentPlot = Map.GetAdjacentPlot(otherPlot:GetX(), otherPlot:GetY(), direction);
+										if (adjacentPlot ~= nil) then
+											RemoveCliffs(adjacentPlot)
+											if not adjacentPlot:IsNaturalWonder() and adjacentPlot:IsWater() then
+												TerrainBuilder.SetTerrainType( adjacentPlot, g_TERRAIN_TYPE_PLAINS)
+												TerrainBuilder.SetFeatureType( adjacentPlot, g_FEATURE_JUNGLE)
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+				
 			else
 				print ("  - Failed to place natural wonder here...")
 			end

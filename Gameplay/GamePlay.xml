@@ -1,31 +1,353 @@
 <GameInfo>
-	<Maps>	
-		<Row MapSizeType="MAPSIZE_SMALL21" Name="LOC_MAPSIZE_SMALL21_NAME" Description="LOC_MAPSIZE_SMALL21_DESCRIPTION" DefaultPlayers="6" GridWidth="84" GridHeight="42" NumNaturalWonders="4" PlateValue="4" Continents="3"/>
-		<Row MapSizeType="MAPSIZE_STANDARD21" Name="LOC_MAPSIZE_STANDARD21_NAME" Description="LOC_MAPSIZE_STANDARD21_DESCRIPTION" DefaultPlayers="8" GridWidth="96" GridHeight="48" NumNaturalWonders="5" PlateValue="4" Continents="4"/>
-		<Row MapSizeType="MAPSIZE_LARGE21" Name="LOC_MAPSIZE_LARGE21_NAME" Description="LOC_MAPSIZE_LARGE21_DESCRIPTION" DefaultPlayers="10" GridWidth="108" GridHeight="54" NumNaturalWonders="6" PlateValue="5" Continents="5"/>
-		<Row MapSizeType="MAPSIZE_HUGE21" Name="LOC_MAPSIZE_HUGE21_NAME" Description="LOC_MAPSIZE_HUGE21_DESCRIPTION" DefaultPlayers="12" GridWidth="120" GridHeight="60" NumNaturalWonders="7" PlateValue="5" Continents="6"/>
 
-		<Row MapSizeType="MAPSIZE_ENORMOUS" 	Name="LOC_MAPSIZE_ENORMOUS_NAME" 	Description="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" 		DefaultPlayers="19" GridWidth="128" GridHeight="80" NumNaturalWonders="8" PlateValue="5" Continents="6"/>
-		<Row MapSizeType="MAPSIZE_ENORMOUS21" 	Name="LOC_MAPSIZE_ENORMOUS21_NAME" 	Description="LOC_MAPSIZE_ENORMOUS21_DESCRIPTION" 	DefaultPlayers="19" GridWidth="148" GridHeight="74" NumNaturalWonders="8" PlateValue="5" Continents="6"/>
-		<Row MapSizeType="MAPSIZE_GIANT" 		Name="LOC_MAPSIZE_GIANT_NAME" 		Description="LOC_MAPSIZE_GIANT_DESCRIPTION" 		DefaultPlayers="23" GridWidth="184" GridHeight="92" NumNaturalWonders="12" PlateValue="6" Continents="7"/>
-		<Row MapSizeType="MAPSIZE_LUDICROUS" 	Name="LOC_MAPSIZE_LUDICROUS_NAME" 	Description="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" 	DefaultPlayers="23" GridWidth="200" GridHeight="100" NumNaturalWonders="16" PlateValue="7" Continents="8"/>
+	<Types> <!-- Continents -->
+		<!-- Africa -->
+		<Replace Type="CONTINENT_AFRICA" 			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_SAHARA" 			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_GUINEA" 			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_CENTRAL_AFRICA"	Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_EAST_AFRICA"		Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_SOUTH_AFRICA" 		Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_MADAGASCARIA" 		Kind="KIND_CONTINENT"/>
+		<!-- Antartica -->
+		<Replace Type="CONTINENT_ANTARCTICA" 		Kind="KIND_CONTINENT"/>
+		<!-- Asia -->
+		<Replace Type="CONTINENT_ASIA" 				Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_KAZAKHSTANIA" 		Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_SIBERIA" 			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_CENTRAL_SIBERIA"	Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_WEST_SIBERIA" 		Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_ANATOLIA" 			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_ARABIAN_PENINSULA"	Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_PERSIAN_PLATEAU"	Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_INDIA" 			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_CENTRAL_ASIA" 		Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_EAST_ASIA" 		Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_SOUTH_EAST_ASIA"	Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_MANCHURIA" 		Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_KOLYMA" 			Kind="KIND_CONTINENT"/>
+		<!-- Europe -->
+		<Replace Type="CONTINENT_EUROPE" 			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_SCANDINAVIA"		Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_IBERIA" 			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_CAUCASIA" 			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_BRITTANIA"			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_BALKANIA" 			Kind="KIND_CONTINENT"/>
+		<!-- North America -->
+		<Replace Type="CONTINENT_AMERICA" 			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_NORTH_AMERICA" 	Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_ALASKANIA" 		Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_LABRADORIA" 		Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_GREENLANDIA" 		Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_MESO_AMERICA" 		Kind="KIND_CONTINENT"/>
+		<!-- South America -->
+    	<Replace Type="CONTINENT_SOUTH_AMERICA" 	Kind="KIND_CONTINENT"/>
+    	<Replace Type="CONTINENT_CARIBBEANIA" 		Kind="KIND_CONTINENT"/>
+    	<Replace Type="CONTINENT_PATAGONIA" 		Kind="KIND_CONTINENT"/>
+		<!-- Oceania -->
+		<Replace Type="CONTINENT_AUSTRALIA" 		Kind="KIND_CONTINENT"/>
+    	<Replace Type="CONTINENT_OCEANIA" 			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_ZEALANDIA" 		Kind="KIND_CONTINENT"/>
+    	<Replace Type="CONTINENT_MELANESIA"			Kind="KIND_CONTINENT"/>
+    	<Replace Type="CONTINENT_MICRONESIA" 		Kind="KIND_CONTINENT"/>
+    	<Replace Type="CONTINENT_POLYNESIA"			Kind="KIND_CONTINENT"/>
+	</Types>
+	
+	<Types> <!-- Map Sizes -->
+		<Replace Type="MAPSIZE_SMALL21" 	Kind="KIND_MAPSIZE"/>
+		<Replace Type="MAPSIZE_STANDARD21" 	Kind="KIND_MAPSIZE"/>
+		<Replace Type="MAPSIZE_LARGE21" 	Kind="KIND_MAPSIZE"/>
+		<Replace Type="MAPSIZE_HUGE21" 		Kind="KIND_MAPSIZE"/>
+		<Replace Type="MAPSIZE_ENORMOUS" 	Kind="KIND_MAPSIZE"/>
+		<Replace Type="MAPSIZE_ENORMOUS21" 	Kind="KIND_MAPSIZE"/>
+		<Replace Type="MAPSIZE_GIANT" 		Kind="KIND_MAPSIZE"/>
+		<Replace Type="MAPSIZE_LUDICROUS" 	Kind="KIND_MAPSIZE"/>
+		<Replace Type="MAPSIZE_OVERSIZED" 	Kind="KIND_MAPSIZE"/>
+	</Types>
+	
+	<Maps>	
+		<Replace MapSizeType="MAPSIZE_SMALL21" 		Name="LOC_MAPSIZE_SMALL21_NAME" 	Description="LOC_MAPSIZE_SMALL21_DESCRIPTION" 		DefaultPlayers="6" 	GridWidth="84" 	GridHeight="42" NumNaturalWonders="4" PlateValue="4" Continents="3"/>
+		<Replace MapSizeType="MAPSIZE_STANDARD21" 	Name="LOC_MAPSIZE_STANDARD21_NAME" 	Description="LOC_MAPSIZE_STANDARD21_DESCRIPTION" 	DefaultPlayers="8" 	GridWidth="96" 	GridHeight="48" NumNaturalWonders="5" PlateValue="4" Continents="4"/>
+		<Replace MapSizeType="MAPSIZE_LARGE21" 		Name="LOC_MAPSIZE_LARGE21_NAME" 	Description="LOC_MAPSIZE_LARGE21_DESCRIPTION" 		DefaultPlayers="10" GridWidth="108" GridHeight="54" NumNaturalWonders="6" PlateValue="5" Continents="5"/>
+		<Replace MapSizeType="MAPSIZE_HUGE21" 		Name="LOC_MAPSIZE_HUGE21_NAME" 		Description="LOC_MAPSIZE_HUGE21_DESCRIPTION" 		DefaultPlayers="12" GridWidth="120" GridHeight="60" NumNaturalWonders="7" PlateValue="5" Continents="6"/>
+
+		<Replace MapSizeType="MAPSIZE_ENORMOUS" 	Name="LOC_MAPSIZE_ENORMOUS_NAME" 	Description="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" 		DefaultPlayers="19" GridWidth="128" GridHeight="80" NumNaturalWonders="8" PlateValue="5" Continents="6"/>
+		<Replace MapSizeType="MAPSIZE_ENORMOUS21" 	Name="LOC_MAPSIZE_ENORMOUS21_NAME" 	Description="LOC_MAPSIZE_ENORMOUS21_DESCRIPTION" 	DefaultPlayers="19" GridWidth="148" GridHeight="74" NumNaturalWonders="8" PlateValue="5" Continents="6"/>
+		<Replace MapSizeType="MAPSIZE_GIANT" 		Name="LOC_MAPSIZE_GIANT_NAME" 		Description="LOC_MAPSIZE_GIANT_DESCRIPTION" 		DefaultPlayers="23" GridWidth="184" GridHeight="92" NumNaturalWonders="12" PlateValue="6" Continents="7"/>
+		<Replace MapSizeType="MAPSIZE_LUDICROUS" 	Name="LOC_MAPSIZE_LUDICROUS_NAME" 	Description="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" 	DefaultPlayers="23" GridWidth="200" GridHeight="100" NumNaturalWonders="16" PlateValue="7" Continents="8"/>
+		<Replace MapSizeType="MAPSIZE_OVERSIZED" 	Name="LOC_MAPSIZE_OVERSIZED_NAME" 	Description="LOC_MAPSIZE_OVERSIZED_DESCRIPTION" 	DefaultPlayers="23" GridWidth="230" GridHeight="115" NumNaturalWonders="24" PlateValue="8" Continents="10"/>
 		<!--
-		<Row MapSizeType="MAPSIZE_MAX" 			Name="LOC_MAPSIZE_MAX_NAME" 		Description="LOC_MAPSIZE_MAX_DESCRIPTION" 			DefaultPlayers="23" GridWidth="202" GridHeight="101" NumNaturalWonders="16" PlateValue="7" Continents="8"/>
-		<Row MapSizeType="MAPSIZE_LUDICROUS" Name="LOC_MAPSIZE_LUDICROUS_NAME" Description="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" DefaultPlayers="23" GridWidth="230" GridHeight="115" NumNaturalWonders="12" PlateValue="7" Continents="8"/>
+		<Replace MapSizeType="MAPSIZE_MAX" 			Name="LOC_MAPSIZE_MAX_NAME" 		Description="LOC_MAPSIZE_MAX_DESCRIPTION" 			DefaultPlayers="23" GridWidth="202" GridHeight="101" NumNaturalWonders="16" PlateValue="7" Continents="8"/>
 		-->
 	</Maps>
 	<Map_GreatPersonClasses>
-		<Row MapSizeType="MAPSIZE_SMALL21" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="4"/>
-		<Row MapSizeType="MAPSIZE_STANDARD21" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="5"/>
-		<Row MapSizeType="MAPSIZE_LARGE21" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="6"/>
-		<Row MapSizeType="MAPSIZE_HUGE21" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
-		<Row MapSizeType="MAPSIZE_ENORMOUS21" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
+		<Replace MapSizeType="MAPSIZE_SMALL21" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="4"/>
+		<Replace MapSizeType="MAPSIZE_STANDARD21" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="5"/>
+		<Replace MapSizeType="MAPSIZE_LARGE21" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="6"/>
+		<Replace MapSizeType="MAPSIZE_HUGE21" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
+		<Replace MapSizeType="MAPSIZE_ENORMOUS21" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
 		
-		<Row MapSizeType="MAPSIZE_ENORMOUS" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
-		<Row MapSizeType="MAPSIZE_GIANT" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
-		<Row MapSizeType="MAPSIZE_LUDICROUS" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
+		<Replace MapSizeType="MAPSIZE_ENORMOUS" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
+		<Replace MapSizeType="MAPSIZE_GIANT" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
+		<Replace MapSizeType="MAPSIZE_LUDICROUS" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
 		<!--
-		<Row MapSizeType="MAPSIZE_MAX" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
+		<Replace MapSizeType="MAPSIZE_MAX" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
 		-->
 	</Map_GreatPersonClasses>
+	
+	<Colors>
+		<Replace>
+		  <Type>COLOR_CONTINENT_AFRICA</Type>
+		  <Color>255,255,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_AMASIA</Type>
+		  <Color>168,51,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_AMERICA</Type>
+		  <Color>255,33,19,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_ANTARCTICA</Type>
+		  <Color>97,255,38,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_ARCTICA</Type>
+		  <Color>18,204,204,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_ASIA</Type>
+		  <Color>255,227,43,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_ASIAMERICA</Type>
+		  <Color>122,125,38,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_ATLANTICA</Type>
+		  <Color>23,163,38,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_ATLANTIS</Type>
+		  <Color>227,94,41,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_AUSTRALIA</Type>
+		  <Color>51,115,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_AVALONIA</Type>
+		  <Color>8,255,222,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_AZANIA</Type>
+		  <Color>255,8,13,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_BALTICA</Type>
+		  <Color>59,1,222,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_CIMMERIA</Type>
+		  <Color>222,38,1,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_COLUMBIA</Type>
+		  <Color>15,61,92,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_CONGO_CRATON</Type>
+		  <Color>92,31,15,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_EURAMERICA</Type>
+		  <Color>107,102,43,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_EUROPE</Type>
+		  <Color>36,46,92,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_GONDWANA</Type>
+		  <Color>59,20,38,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_KALAHARIA</Type>
+		  <Color>38,28,56,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_KAZAKHSTANIA</Type>
+		  <Color>2,38,48,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_KERNORLAND</Type>
+		  <Color>71,31,84,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_KUMARI_KANDAM</Type>
+		  <Color>20,51,97,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_LAURASIA</Type>
+		  <Color>255,8,13,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_LAURENTIA</Type>
+		  <Color>41,107,46,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_LEMURIA</Type>
+		  <Color>102,82,31,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_MU</Type>
+		  <Color>255,255,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_NENA</Type>
+		  <Color>255,255,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_NOVOPANGAEA</Type>
+		  <Color>255,255,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_NUNA</Type>
+		  <Color>255,255,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_PANGAEA</Type>
+		  <Color>255,255,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_PANGAEA_ULTIMA</Type>
+		  <Color>255,255,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_PANNOTIA</Type>
+		  <Color>255,255,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_RODINIA</Type>
+		  <Color>255,255,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_SIBERIA</Type>
+		  <Color>255,255,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_TERRA_AUSTRALIS</Type>
+		  <Color>255,255,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_UR</Type>
+		  <Color>255,255,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_VAALBARA</Type>
+		  <Color>255,255,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_VENDIAN</Type>
+		  <Color>255,255,255,128</Color>
+		</Replace>
+		<Replace>
+		  <Type>COLOR_CONTINENT_ZEALANDIA</Type>
+		  <Color>255,255,255,128</Color>
+		</Replace>
+		
+		<Replace Type="COLOR_CONTINENT_SAHARA" 				Color="225,255,255,128" />
+		<Replace Type="COLOR_CONTINENT_GUINEA" 				Color="195,255,255,128" />
+		<Replace Type="COLOR_CONTINENT_CENTRAL_AFRICA"		Color="165,255,255,128" />
+		<Replace Type="COLOR_CONTINENT_EAST_AFRICA"			Color="135,255,255,128" />
+		<Replace Type="COLOR_CONTINENT_SOUTH_AFRICA" 		Color="105,255,255,128" />
+		<Replace Type="COLOR_CONTINENT_MADAGASCARIA" 		Color="255,225,255,128" />
+		<Replace Type="COLOR_CONTINENT_CENTRAL_SIBERIA"		Color="255,255,225,128" />
+		<Replace Type="COLOR_CONTINENT_WEST_SIBERIA" 		Color="255,255,195,128" />
+		<Replace Type="COLOR_CONTINENT_ANATOLIA" 			Color="255,255,165,128" />
+		<Replace Type="COLOR_CONTINENT_ARABIAN_PENINSULA"	Color="255,255,135,128" />
+		<Replace Type="COLOR_CONTINENT_PERSIAN_PLATEAU"		Color="255,255,105,128" />
+		<Replace Type="COLOR_CONTINENT_INDIA" 				Color="225,225,255,128" />
+		<Replace Type="COLOR_CONTINENT_CENTRAL_ASIA" 		Color="195,195,255,128" />
+		<Replace Type="COLOR_CONTINENT_EAST_ASIA" 			Color="165,165,255,128" />
+		<Replace Type="COLOR_CONTINENT_SOUTH_EAST_ASIA"		Color="135,135,255,128" />
+		<Replace Type="COLOR_CONTINENT_MANCHURIA" 			Color="105,105,255,128" />
+		<Replace Type="COLOR_CONTINENT_KOLYMA" 				Color="225,255,225,128" />
+		<Replace Type="COLOR_CONTINENT_SCANDINAVIA"			Color="165,255,165,128" />
+		<Replace Type="COLOR_CONTINENT_IBERIA" 				Color="135,255,135,128" />
+		<Replace Type="COLOR_CONTINENT_CAUCASIA" 			Color="105,255,105,128" />
+		<Replace Type="COLOR_CONTINENT_BRITTANIA"			Color="225,225,225,128" />
+		<Replace Type="COLOR_CONTINENT_BALKANIA" 			Color="195,195,195,128" />
+		<Replace Type="COLOR_CONTINENT_NORTH_AMERICA" 		Color="135,135,135,128" />
+		<Replace Type="COLOR_CONTINENT_ALASKANIA" 			Color="105,105,105,128" />
+		<Replace Type="COLOR_CONTINENT_LABRADORIA" 			Color="225,255,105,128" />
+		<Replace Type="COLOR_CONTINENT_GREENLANDIA" 		Color="195,255,135,128" />
+		<Replace Type="COLOR_CONTINENT_MESO_AMERICA" 		Color="165,255,165,128" />
+    	<Replace Type="COLOR_CONTINENT_SOUTH_AMERICA" 		Color="135,255,195,128" />
+    	<Replace Type="COLOR_CONTINENT_CARIBBEANIA" 		Color="105,255,225,128" />
+    	<Replace Type="COLOR_CONTINENT_PATAGONIA" 			Color="225,105,105,128" />
+    	<Replace Type="COLOR_CONTINENT_OCEANIA" 			Color="165,165,165,128" />
+		<Replace Type="COLOR_CONTINENT_ZEALANDIA" 			Color="135,195,195,128" />
+    	<Replace Type="COLOR_CONTINENT_MELANESIA"			Color="105,225,225,128" />
+    	<Replace Type="COLOR_CONTINENT_MICRONESIA" 			Color="255,105,225,128" />
+    	<Replace Type="COLOR_CONTINENT_POLYNESIA"			Color="225,105,225,128" />	
+	</Colors>
+
+	<Continents>
+		<!-- Delete All entries -->
+		<Delete/>
+		
+		<!-- Africa -->
+		<Replace ContinentType="CONTINENT_AFRICA" 			Description="LOC_CONTINENT_AFRICA" 			/>
+		<Replace ContinentType="CONTINENT_SAHARA" 			Description="LOC_CONTINENT_SAHARA" 			/>
+		<Replace ContinentType="CONTINENT_GUINEA" 			Description="LOC_CONTINENT_GUINEA" 			/>
+		<Replace ContinentType="CONTINENT_CENTRAL_AFRICA"	Description="LOC_CONTINENT_CENTRAL_AFRICA"	/>
+		<Replace ContinentType="CONTINENT_EAST_AFRICA"		Description="LOC_CONTINENT_EAST_AFRICA"		/>
+		<Replace ContinentType="CONTINENT_SOUTH_AFRICA" 	Description="LOC_CONTINENT_SOUTH_AFRICA" 	/>
+		<Replace ContinentType="CONTINENT_MADAGASCARIA" 	Description="LOC_CONTINENT_MADAGASCARIA" 	/>
+		<!-- Antartica -->
+		<Replace ContinentType="CONTINENT_ANTARCTICA" 		Description="LOC_CONTINENT_ANTARCTICA"/>
+		<!-- Asia -->
+		<Replace ContinentType="CONTINENT_ASIA" 			Description="LOC_CONTINENT_ASIA" 			/>
+		<Replace ContinentType="CONTINENT_KAZAKHSTANIA" 	Description="LOC_CONTINENT_KAZAKHSTANIA" 	/>
+		<Replace ContinentType="CONTINENT_SIBERIA" 			Description="LOC_CONTINENT_SIBERIA" 		/>
+		<Replace ContinentType="CONTINENT_CENTRAL_SIBERIA"	Description="LOC_CONTINENT_CENTRAL_SIBERIA"	/>
+		<Replace ContinentType="CONTINENT_WEST_SIBERIA" 	Description="LOC_CONTINENT_WEST_SIBERIA" 	/>
+		<Replace ContinentType="CONTINENT_ANATOLIA" 		Description="LOC_CONTINENT_ANATOLIA" 		/>
+		<Replace ContinentType="CONTINENT_ARABIAN_PENINSULA"Description="LOC_CONTINENT_ARABIAN_PENINSULA"/>
+		<Replace ContinentType="CONTINENT_PERSIAN_PLATEAU"	Description="LOC_CONTINENT_PERSIAN_PLATEAU"	/>
+		<Replace ContinentType="CONTINENT_INDIA" 			Description="LOC_CONTINENT_INDIA" 			/>
+		<Replace ContinentType="CONTINENT_CENTRAL_ASIA" 	Description="LOC_CONTINENT_CENTRAL_ASIA" 	/>
+		<Replace ContinentType="CONTINENT_EAST_ASIA" 		Description="LOC_CONTINENT_EAST_ASIA" 		/>
+		<Replace ContinentType="CONTINENT_SOUTH_EAST_ASIA"	Description="LOC_CONTINENT_SOUTH_EAST_ASIA"	/>
+		<Replace ContinentType="CONTINENT_MANCHURIA" 		Description="LOC_CONTINENT_MANCHURIA" 		/>
+		<Replace ContinentType="CONTINENT_KOLYMA" 			Description="LOC_CONTINENT_KOLYMA" 			/>
+		<!-- Europe -->
+		<Replace ContinentType="CONTINENT_EUROPE" 			Description="LOC_CONTINENT_EUROPE" 			/>
+		<Replace ContinentType="CONTINENT_SCANDINAVIA"		Description="LOC_CONTINENT_SCANDINAVIA"		/>
+		<Replace ContinentType="CONTINENT_IBERIA" 			Description="LOC_CONTINENT_IBERIA" 			/>
+		<Replace ContinentType="CONTINENT_CAUCASIA" 		Description="LOC_CONTINENT_CAUCASIA" 		/>
+		<Replace ContinentType="CONTINENT_BRITTANIA"		Description="LOC_CONTINENT_BRITTANIA"		/>
+		<Replace ContinentType="CONTINENT_BALKANIA" 		Description="LOC_CONTINENT_BALKANIA" 		/>
+		<!-- North America -->
+		<Replace ContinentType="CONTINENT_AMERICA" 			Description="CONTINENT_AMERICA" 		/>
+		<Replace ContinentType="CONTINENT_NORTH_AMERICA" 	Description="CONTINENT_NORTH_AMERICA" 	/>
+		<Replace ContinentType="CONTINENT_ALASKANIA" 		Description="CONTINENT_ALASKANIA" 		/>
+		<Replace ContinentType="CONTINENT_LABRADORIA" 		Description="CONTINENT_LABRADORIA" 		/>
+		<Replace ContinentType="CONTINENT_GREENLANDIA" 		Description="CONTINENT_GREENLANDIA" 	/>
+		<Replace ContinentType="CONTINENT_MESO_AMERICA" 	Description="CONTINENT_MESO_AMERICA" 	/>
+		<!-- South America -->
+    	<Replace ContinentType="CONTINENT_SOUTH_AMERICA" 	Description="LOC_CONTINENT_SOUTH_AMERICA" 	/>
+    	<Replace ContinentType="CONTINENT_CARIBBEANIA" 		Description="LOC_CONTINENT_CARIBBEANIA" 	/>
+    	<Replace ContinentType="CONTINENT_PATAGONIA" 		Description="LOC_CONTINENT_PATAGONIA" 		/>
+		<!-- Oceania -->
+		<Replace ContinentType="CONTINENT_AUSTRALIA" 		Description="LOC_CONTINENT_AUSTRALIA" 		/>
+    	<Replace ContinentType="CONTINENT_OCEANIA" 			Description="LOC_CONTINENT_OCEANIA" 		/>
+		<Replace ContinentType="CONTINENT_ZEALANDIA" 		Description="LOC_CONTINENT_ZEALANDIA" 		/>
+    	<Replace ContinentType="CONTINENT_MELANESIA"		Description="LOC_CONTINENT_MELANESIA"		/>
+    	<Replace ContinentType="CONTINENT_MICRONESIA" 		Description="LOC_CONTINENT_MICRONESIA" 		/>
+    	<Replace ContinentType="CONTINENT_POLYNESIA"		Description="LOC_CONTINENT_POLYNESIA"		/>	
+	</Continents>	
+	
 </GameInfo>

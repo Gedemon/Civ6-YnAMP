@@ -11,7 +11,7 @@
 	<InGameActions>
 		<ImportFiles id="YNAMP_IMPORT">
            	<Properties>
-				<!-- High load order to make sure YnAMP assignstarting plots is loaded after the one of incompatible mods --> 
+				<!-- High load order to make sure YnAMP assignstarting plots is loaded after the version of incompatible mods --> 
 				<LoadOrder>1000002</LoadOrder>
            	</Properties>
 			<File>Maps/GiantEarth/GiantEarth.lua</File>
@@ -21,8 +21,9 @@
 			<File>Maps/LargeEurope/LargeEurope.lua</File>
 			<File>Maps/LargestEarthCustom/LargestEarthCustom.lua</File>
 			<File>Override/AssignStartingPlots.lua</File>
-			<File>Scripts/YnAMP_Utils.lua</File>
 			<File>Scripts/PlotIterators.lua</File>
+			<File>Override/WorldBuilderPlacement.lua</File>
+			<File>Override/WorldBuilderPlacement.xml</File>
 		</ImportFiles>
         <AddGameplayScripts>
                <File>Scripts/YnAMP_Script.lua</File>
@@ -103,7 +104,7 @@
 		</UpdateText>
 		<ImportFiles id="YNAMP_SETTING_IMPORT">
            	<Properties>
-				<!-- High load order to make sure YnAMP assignstarting plots is loaded after the one of incompatible mods --> 
+				<!-- High load order to make sure YnAMP AdvancedSetup plots is loaded after the version of other mods --> 
 				<LoadOrder>1000002</LoadOrder>
            	</Properties>
 			<File>Override/AdvancedSetup.lua</File>
@@ -202,8 +203,9 @@
 		<File>Maps/LargestEarthCustom/LargestEarthCustom.lua</File>
 		<File>Override/AssignStartingPlots.lua</File>
 		<File>Override/AdvancedSetup.lua</File>
+		<File>Override/WorldBuilderPlacement.lua</File>
+		<File>Override/WorldBuilderPlacement.xml</File>
 		<File>Scripts/YnAMP_Script.lua</File>
-		<File>Scripts/YnAMP_Utils.lua</File>
 		<File>Scripts/YnAMP_InGame.lua</File>
 		<File>Scripts/YnAMP_InGame.xml</File>
 		<File>Scripts/PlotIterators.lua</File>

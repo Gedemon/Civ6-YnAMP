@@ -15,8 +15,6 @@ if mods ~= nil then
 	end
 end
 
-include ("YnAMP_Utils.lua") -- can't do that ???
-
 local mapName = MapConfiguration.GetValue("MapName")
 print ("Map Name = " .. tostring(mapName))
 
@@ -133,6 +131,17 @@ function OnInputHandler( pInputStruct:table )
 	return false;
 end
 ContextPtr:SetInputHandler( OnInputHandler, true )
+
+
+----------------------------------------------------------------------------------------
+-- Add "Export to Lua" button to the Option Menu
+----------------------------------------------------------------------------------------
+function OnEnterGame()
+	Controls.ExportMapToLua:RegisterCallback( Mouse.eLClick, ExportMap )
+	Controls.ExportMapToLua:SetHide( false )
+	Controls.ExportMapToLua:ChangeParent(ContextPtr:LookUpControl("/InGame/TopOptionsMenu/MainStack"))
+end
+Events.LoadScreenClose.Add(OnEnterGame)
 
 
 

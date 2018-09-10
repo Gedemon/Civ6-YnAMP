@@ -2559,6 +2559,8 @@ local RefMapXfromX 	= {}
 local RefMapYfromY 	= {}
 local sX, sY 		= 0, 0
 local lX, lY 		= 0, 0
+local skipX, skipY	= MapConfiguration.GetValue("RescaleSkipX") or 999, MapConfiguration.GetValue("RescaleSkipY") or 999
+
 function BuildRefXY()
 	if bUseRelativeFixedTable then
 		for x = 0, g_UncutMapWidth, 1 do
@@ -2572,7 +2574,7 @@ function BuildRefXY()
 				RefMapYfromY[sY] = y
 				--MapToConvert[x][y] = SmallMap[sX][sY]
 				lY = lY + 1
-				if lY == 5 then
+				if lY == skipY then
 					lY = 0
 				else
 					sY = sY +1
@@ -2580,7 +2582,7 @@ function BuildRefXY()
 			end
 			sY = 0
 			lX = lX + 1
-			if lX == 4 then
+			if lX == skipX then
 				lX = 0
 			else
 				sX = sX +1
@@ -2816,9 +2818,30 @@ function buidTSL()
 					elseif InRangeCurrentTSL(row, getTSL) then
 						sWarning = "too close from another TSL"
 						bCanPlaceHere = false
-					elseif plot and(plot:IsWater() or plot:IsImpassable()) then
+					elseif plot and (plot:IsWater() or plot:IsImpassable()) then
 						sWarning = "plot is impassable or water"
 						bCanPlaceHere = false
+						if bUseRelativePlacement then
+							-- try to find a suitable replacement plot when relative placement has a bad offset
+							local bestPlot 		= nil
+							local bestFertility = 0
+							for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+								local adjacentPlot = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), direction);								
+								if adjacentPlot and not (adjacentPlot:IsWater() or adjacentPlot:IsImpassable()) then
+									local fertility = GetPlotFertility(adjacentPlot)
+									if fertility > bestFertility then
+										bestPlot 		= adjacentPlot
+										bestFertility	= fertility
+									end
+								end
+							end
+							if bestPlot then
+								rowX, rowY		= bestPlot:GetX(), bestPlot:GetY()
+								sWarning 		= ""
+								bCanPlaceHere 	= true								
+								print ("   - plot was impassable or water, found replacement at "..tostring(rowX)..","..tostring(rowY))
+							end
+						end
 					end	
 					
 					if row.Leader then -- Leaders TSL are exclusive
@@ -3433,15 +3456,22 @@ function PlaceRealNaturalWonders(NaturalWonders)
 	end
 	
 	-- Adding custom NW to the table
-	-- The coordinates in that loop are those from the reference map
-	local DirectPlacementPlots = {}
+	local DirectPlacementPlots 		= {} -- table to list all plots of a multiplot NW
+	local HasMapScriptPosition		= {} -- helper to allow the MapScript table to take priority over DB entries
+	local FirstPlotRelativePosition	= {} -- helper to get the relative positions (from the first plot) of the other plots of a multiplots NW
+	
+	for eFeatureType, data in pairs(NaturalWonders) do
+		HasMapScriptPosition[eFeatureType] = true
+	end
+	
+	-- The coordinates in NaturalWonders table are still those from the reference map
 	for NaturalWonderRow in GameInfo.NaturalWonderPosition() do
 		if NaturalWonderRow.MapName == mapName and GameInfo.Features[NaturalWonderRow.FeatureType] then
 			local eFeatureType = GameInfo.Features[NaturalWonderRow.FeatureType].Index
-			if NaturalWonders[eFeatureType] then
+			if NaturalWonders[eFeatureType] and not HasMapScriptPosition[eFeatureType] then --and not bUseRelativePlacement then 
 				-- Seems to be a multiplots feature...
 				if not DirectPlacementPlots[eFeatureType] then
-					-- add original plot entry to the multiplots table
+					-- add the original plot entry (already added to the NaturalWonders table during at first occurence) to the multiplots table
 					DirectPlacementPlots[eFeatureType] = {}
 					local plot = GetPlotFromRefMap(NaturalWonders[eFeatureType].X, NaturalWonders[eFeatureType].Y, bOnlyOffset)
 					if plot then
@@ -3454,7 +3484,18 @@ function PlaceRealNaturalWonders(NaturalWonders)
 					end
 				end
 				-- add new plot entry to the multiplots table
-				local plot = GetPlotFromRefMap(NaturalWonderRow.X, NaturalWonderRow.Y, bOnlyOffset)
+				
+				local plot
+				if bUseRelativePlacement then
+					-- Get new plots coordinates from original first plot coordinates when using relative placement, IE: plot1 = x,y and plot2 = x+1,y+1
+					local firstPlotX, firstPlotY	= GetXYFromRefMapXY(NaturalWonders[eFeatureType].X, NaturalWonders[eFeatureType].Y, bOnlyOffset)
+					local diffX, diffY				= NaturalWonders[eFeatureType].X - NaturalWonderRow.X, NaturalWonders[eFeatureType].Y - NaturalWonderRow.Y
+					local plotX, plotY				= firstPlotX - diffX, firstPlotY - diffY
+					plot = Map.GetPlot(plotX, plotY)
+					print("  Multiplots NW, first plot at ", firstPlotX, firstPlotY, " new plot at ", plotX, plotY, plot)				
+				else
+					plot = GetPlotFromRefMap(NaturalWonderRow.X, NaturalWonderRow.Y, bOnlyOffset)
+				end
 				if plot then				
 					if NaturalWonderRow.TerrainType and GameInfo.Terrains[NaturalWonderRow.TerrainType] then
 						TerrainBuilder.SetTerrainType(plot, GameInfo.Terrains[NaturalWonderRow.TerrainType].Index)
@@ -3464,9 +3505,13 @@ function PlaceRealNaturalWonders(NaturalWonders)
 					table.insert(DirectPlacementPlots[eFeatureType], plot:GetIndex())
 				end
 			else
-				-- create original entry in the base table
-				NaturalWonders[GameInfo.Features[NaturalWonderRow.FeatureType].Index] = { X = NaturalWonderRow.X, Y = NaturalWonderRow.Y}
-				print("- Loaded " .. tostring(NaturalWonderRow.FeatureType) .." position from the DB")
+				if HasMapScriptPosition[eFeatureType] then
+					print("- Skipping " .. tostring(NaturalWonderRow.FeatureType) .." position from the DB, has position already set in MapScript")				
+				else
+					-- create original entry in the base table
+					NaturalWonders[GameInfo.Features[NaturalWonderRow.FeatureType].Index] = { X = NaturalWonderRow.X, Y = NaturalWonderRow.Y}
+					print("- Loading " .. tostring(NaturalWonderRow.FeatureType) .." position from the DB")
+				end
 			end
 		end
 	end
@@ -3477,7 +3522,7 @@ function PlaceRealNaturalWonders(NaturalWonders)
 			local featureTypeName = GameInfo.Features[eFeatureType].FeatureType
 
 			-- Convert the NW coordinates to the current map position if using a reference map or offsets
-			local x, y = GetXYFromRefMapXY(position.X, position.Y, bOnlyOffset)			
+			local x, y = GetXYFromRefMapXY(position.X, position.Y, (bOnlyOffset or HasMapScriptPosition[eFeatureType])) -- if the NW has a true position from the MapScript table, don't use relative placement, only offset)
 			
 			print ("- Trying to place " .. tostring(featureTypeName) .. " at (" .. tostring(x) .. ", " .. tostring(y) .. ")")
 			
@@ -3598,6 +3643,18 @@ function PlaceRealNaturalWonders(NaturalWonders)
 					table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_WEST), Terrain = terrainType })
 				end
 				
+				if featureTypeName == "FEATURE_LAKE_VICTORIA" then
+					print(" - Preparing position...")
+					-- 4 plots, coast without features, 1st plot is NORTH-EAST
+					-- preparing the 4 plots
+					local terrainType = g_TERRAIN_TYPE_COAST
+					local pPlot2 = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_SOUTHWEST) -- we need plot2 to get plot4
+					table.insert(plotsList, { Plot = pPlot, Terrain = terrainType })
+					table.insert(plotsList, { Plot = pPlot2, Terrain = terrainType })
+					table.insert(plotsList, { Plot = Map.GetAdjacentPlot(x, y, DirectionTypes.DIRECTION_WEST), Terrain = terrainType })
+					table.insert(plotsList, { Plot = Map.GetAdjacentPlot(pPlot2:GetX(), pPlot2:GetY(), DirectionTypes.DIRECTION_WEST), Terrain = terrainType })
+				end
+				
 				-- Set terrain, remove features and resources for Civ6 NW
 				for k, data in ipairs(plotsList) do 
 					TerrainBuilder.SetTerrainType(data.Plot, data.Terrain)
@@ -3647,6 +3704,32 @@ function PlaceRealNaturalWonders(NaturalWonders)
 						end
 					end
 					print ("  - Success : plot is now a natural wonder !")
+					
+					-- Extra placement:					
+					-- Replace water by jungle plains around lake victoria and remove cliffs
+					if featureTypeName == "FEATURE_LAKE_VICTORIA" then				
+						for dx = -3, 3 do
+							for dy = -3,3 do
+								local otherPlot = Map.GetPlotXY(plotX, plotY, dx, dy, 3)
+								if(otherPlot) then
+									if otherPlot:GetFeatureType() == eFeatureType then
+										RemoveCliffs(otherPlot)
+										local adjacentPlot;
+										for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+											adjacentPlot = Map.GetAdjacentPlot(otherPlot:GetX(), otherPlot:GetY(), direction);
+											if (adjacentPlot ~= nil) then
+												RemoveCliffs(adjacentPlot)
+												if not adjacentPlot:IsNaturalWonder() and adjacentPlot:IsWater() then
+													TerrainBuilder.SetTerrainType( adjacentPlot, g_TERRAIN_TYPE_PLAINS)
+													TerrainBuilder.SetFeatureType( adjacentPlot, g_FEATURE_JUNGLE)
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
 				else
 					print ("  - Failed to place natural wonder here...")		
 				end
@@ -3774,6 +3857,11 @@ function MakeRiverFlowToEast(plot)
 	end
 end
 
+function RemoveCliffs(plot)
+	TerrainBuilder.SetWOfCliff(plot, false)
+	TerrainBuilder.SetNWOfCliff(plot, false)
+	TerrainBuilder.SetNEOfCliff(plot, false)
+end
 ------------------------------------------------------------------------------
 -- Resources
 ------------------------------------------------------------------------------
@@ -4553,6 +4641,71 @@ end
 function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bImportFeatures, bImportResources, bImportContinents, bIgnoreCliffs)
 	print("Importing Civ6 Map ( Terrain = "..tostring(bDoTerrains)..", Rivers = "..tostring(bImportRivers)..", Features = "..tostring(bImportFeatures)..", Resources = "..tostring(bImportResources)..", Continents = "..tostring(bImportContinents)..")")
 	local count = 0
+	
+	local ContinentConvertion = {}
+	for row in GameInfo.Continents() do
+		ContinentConvertion[row.ContinentType] = row.Index
+	end
+	
+	-- merge Subcontinents and Region into Continents if required
+	if MapConfiguration.GetValue("ContinentModel") == "SEVEN_CONTINENT" then
+	
+		-- Africa
+		local AfricaID = GameInfo.Continents["CONTINENT_AFRICA"].Index
+		ContinentConvertion["CONTINENT_SAHARA"]			= AfricaID
+		ContinentConvertion["CONTINENT_GUINEA"]			= AfricaID
+		ContinentConvertion["CONTINENT_CENTRAL_AFRICA"]	= AfricaID
+		ContinentConvertion["CONTINENT_EAST_AFRICA"]	= AfricaID
+		ContinentConvertion["CONTINENT_SOUTH_AFRICA"]	= AfricaID
+		ContinentConvertion["CONTINENT_MADAGASCARIA"]	= AfricaID
+		
+		-- Antartica
+		-- There is only one entry for Antartica, no subcontinent...
+		
+		-- Asia
+		local AsiaID = GameInfo.Continents["CONTINENT_ASIA"].Index
+		ContinentConvertion["CONTINENT_KAZAKHSTANIA"]		= AsiaID
+		ContinentConvertion["CONTINENT_SIBERIA"]			= AsiaID
+		ContinentConvertion["CONTINENT_CENTRAL_SIBERIA"]	= AsiaID
+		ContinentConvertion["CONTINENT_WEST_SIBERIA"]		= AsiaID
+		ContinentConvertion["CONTINENT_ANATOLIA"]			= AsiaID
+		ContinentConvertion["CONTINENT_ARABIAN_PENINSULA"]	= AsiaID
+		ContinentConvertion["CONTINENT_PERSIAN_PLATEAU"]	= AsiaID
+		ContinentConvertion["CONTINENT_INDIA"]				= AsiaID
+		ContinentConvertion["CONTINENT_CENTRAL_ASIA"]		= AsiaID
+		ContinentConvertion["CONTINENT_EAST_ASIA"]			= AsiaID
+		ContinentConvertion["CONTINENT_SOUTH_EAST_ASIA"]	= AsiaID
+		ContinentConvertion["CONTINENT_MANCHURIA"]			= AsiaID
+		ContinentConvertion["CONTINENT_KOLYMA"]				= AsiaID
+		
+		-- Europe
+		local EuropeID = GameInfo.Continents["CONTINENT_EUROPE"].Index
+		ContinentConvertion["CONTINENT_SCANDINAVIA"]	= EuropeID
+		ContinentConvertion["CONTINENT_IBERIA"]			= EuropeID
+		ContinentConvertion["CONTINENT_CAUCASIA"]		= EuropeID
+		ContinentConvertion["CONTINENT_BRITTANIA"]		= EuropeID
+		ContinentConvertion["CONTINENT_BALKANIA"]		= EuropeID
+	
+		-- North America
+		local NorthAmericaID = GameInfo.Continents["CONTINENT_NORTH_AMERICA"].Index
+		ContinentConvertion["CONTINENT_ALASKANIA"]		= NorthAmericaID
+		ContinentConvertion["CONTINENT_LABRADORIA"]		= NorthAmericaID
+		ContinentConvertion["CONTINENT_GREENLANDIA"]	= NorthAmericaID
+		ContinentConvertion["CONTINENT_MESO_AMERICA"]	= NorthAmericaID
+		
+		-- South America
+		local SouthAmericaID = GameInfo.Continents["CONTINENT_SOUTH_AMERICA"].Index
+		ContinentConvertion["CONTINENT_CARIBBEANIA"]	= SouthAmericaID
+		ContinentConvertion["CONTINENT_PATAGONIA"]		= SouthAmericaID
+		
+		-- Oceania
+		local OceaniaID = GameInfo.Continents["CONTINENT_OCEANIA"].Index
+		ContinentConvertion["CONTINENT_AUSTRALIA"]	= OceaniaID
+		ContinentConvertion["CONTINENT_ZEALANDIA"]	= OceaniaID
+		ContinentConvertion["CONTINENT_MELANESIA"]	= OceaniaID
+		ContinentConvertion["CONTINENT_MICRONESIA"]	= OceaniaID
+		ContinentConvertion["CONTINENT_POLYNESIA"]	= OceaniaID
+	end
 		
 	bOutput = false
 	for i = 0, (g_iW * g_iH) - 1, 1 do
@@ -4607,7 +4760,7 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 		if bImportContinents then
 			if GameInfo.Continents[civ6ContinentType] then		
 				if bOutput then print(" - Set Continent Type = "..tostring(GameInfo.Continents[civ6ContinentType].ContinentType)) end
-				TerrainBuilder.SetContinentType(plot, GameInfo.Continents[civ6ContinentType].Index)
+				TerrainBuilder.SetContinentType(plot, ContinentConvertion[GameInfo.Continents[civ6ContinentType].ContinentType])
 			end
 		end
 		

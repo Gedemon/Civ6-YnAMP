@@ -46,6 +46,9 @@ function GetMapInitData(worldSize)
 	};      
 end
 
+function GetIndexFromXY(iY, iX)
+	return (iY * g_iW) + iX;
+end
 
 -------------------------------------------------------------------------------
 function GenerateMap()
@@ -90,7 +93,7 @@ end
 
 function GetNaturalWonders()
 	local NaturalWonders = {}
-	--[[
+	---[[
 	NaturalWonders[GameInfo.Features["FEATURE_BARRIER_REEF"].Index] 	 = { X = 134, Y = 28}	-- 2 plots, coast, 1st plot is SOUTHEAST	
 	NaturalWonders[GameInfo.Features["FEATURE_CLIFFS_DOVER"].Index] 	 = { X = 15, Y = 89}	-- 2 plots, hills on coast, 1st plot is WEST	
 	NaturalWonders[GameInfo.Features["FEATURE_CRATER_LAKE"].Index] 		 = { X = 176, Y = 80}	
@@ -113,9 +116,15 @@ function GetNaturalWonders()
 	if GameInfo.Features["FEATURE_ULURU"] then -- Australia DLC is loaded
     NaturalWonders[GameInfo.Features["FEATURE_ULURU"].Index]			= { X = 124, Y = 20} 	-- 1 plot, desert, surrounded by desert
     end
+	
+	if GameInfo.Features["FEATURE_GIBRALTAR"] then -- Terra Mirabilis is loaded
+    NaturalWonders[GameInfo.Features["FEATURE_GIBRALTAR"].Index]		= { X = 9, Y = 64} 		-- 1 plot
+    NaturalWonders[GameInfo.Features["FEATURE_LAKE_VICTORIA"].Index]	= { X = 42, Y = 36} 	-- 4 plots, coast, 1st plot is NORTHEAST
+    end
 	--]]
 	return NaturalWonders
 end
+
 
 function GetCiv6DataToConvert()
 	-- Map data is exported from Civ6 WB, cliffs are included in MapToConvert

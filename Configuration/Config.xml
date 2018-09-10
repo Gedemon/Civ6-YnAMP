@@ -108,6 +108,9 @@
 		<Replace Domain="ContinentsPlacement" Value="PLACEMENT_DEFAULT" 	Name="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_NAME" 	Description="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
 		<Replace Domain="ContinentsPlacement" Value="PLACEMENT_IMPORT" 		Name="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_NAME" 	Description="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_DESCRIPTION" 	SortIndex="20"/>
 		
+		<Replace Domain="ContinentModel" Value="SEVEN_CONTINENT" 	Name="LOC_MAP_CONTINENTS_MODEL_SEVEN_CONTINENT_NAME" 	Description="LOC_MAP_CONTINENTS_MODEL_SEVEN_CONTINENT_DESCRIPTION" SortIndex="10"/>
+		<Replace Domain="ContinentModel" Value="SUB_CONTINENT" 		Name="LOC_MAP_CONTINENTS_MODEL_SUBCONTINENT_NAME" 		Description="LOC_MAP_CONTINENTS_MODEL_SUBCONTINENT_DESCRIPTION" 	SortIndex="20"/>
+		
 		<Replace Domain="RiversPlacement" Value="PLACEMENT_DEFAULT" 	Name="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_NAME" 	Description="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
 		<Replace Domain="RiversPlacement" Value="PLACEMENT_IMPORT" 		Name="LOC_MAP_RIVERS_PLACEMENT_IMPORT_NAME" 	Description="LOC_MAP_RIVERS_PLACEMENT_IMPORT_DESCRIPTION" 	SortIndex="20"/>
 		<Replace Domain="RiversPlacement" Value="PLACEMENT_EMPTY" 		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 			Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 				SortIndex="30"/>
@@ -145,6 +148,7 @@
 		<Replace ParameterId="PlaceAllLuxuries" 		ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_IMPORT"/>
 		<Replace ParameterId="PlaceAllLuxuries" 		ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_EMPTY"/>
 		<Replace ParameterId="NoIceAdjacentToLand"		ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_IMPORT"/>
+		<Replace ParameterId="ContinentModel"			ConfigurationGroup="Map" ConfigurationId="ContinentsPlacement" 		Operator="Equals" 		ConfigurationValue="PLACEMENT_IMPORT"/>
 
 		<Replace ParameterId="TurnsBeforeBarbarians" 	ConfigurationGroup="Game" ConfigurationId="GAME_NO_BARBARIANS" 		Operator="Equals" ConfigurationValue="0" />
 		

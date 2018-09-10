@@ -196,6 +196,7 @@ local RefMapXfromX 	= {}
 local RefMapYfromY 	= {}
 local sX, sY 		= 0, 0
 local lX, lY 		= 0, 0
+local skipX, skipY	= MapConfiguration.GetValue("RescaleSkipX") or 999, MapConfiguration.GetValue("RescaleSkipY") or 999
 
 --function BuildRefXY()
 if bUseRelativeFixedTable then
@@ -210,7 +211,7 @@ if bUseRelativeFixedTable then
 			RefMapYfromY[sY] = y
 			--MapToConvert[x][y] = SmallMap[sX][sY]
 			lY = lY + 1
-			if lY == 5 then
+			if lY == skipY then
 				lY = 0
 			else
 				sY = sY +1
@@ -218,7 +219,7 @@ if bUseRelativeFixedTable then
 		end
 		sY = 0
 		lX = lX + 1
-		if lX == 4 then
+		if lX == skipX then
 			lX = 0
 		else
 			sX = sX +1
