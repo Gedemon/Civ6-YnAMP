@@ -9026,6 +9026,10 @@
 		
 		<!-- MINNESOTA -->
 		<Replace Tag="LOC_CITY_NAME_BEMIDJI" Text="Bemidji" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BEMIDJI_KOREA" Text="Bemiji" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BEMIDJI_MONGOLIA" Text="Byemidji" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BEMIDJI_ZULU" Text="I-Bemidji" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BEMIDJI_CHINA" Text="Bèi Mì Jí" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BEMIDJI_GERMANY" Text="Werner" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BEMIDJI_FRANCE" Text="Lac Marquette" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BEMIDJI_NORWAY" Text="Rosby" Language="en_US" />
@@ -9033,7 +9037,21 @@
 		<Replace Tag="LOC_CITY_NAME_BEMIDJI_CREE" Text="Gaa-Waabaabgankaag" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BEMIDJI_AZTEC" Text="Gaa-Waabaabgankaag" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BEMIDJI_MAPUCHE" Text="Gaa-Waabaabgankaag" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BEMIDJI_JAPAN" Text="Bemiji" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRAINERD" Text="Brainerd" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRAINERD_ARABIA" Text="Barinrd" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRAINERD_KOREA" Text="Beuleineodeu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRAINERD_ZULU" Text="I-Brainerd" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRAINERD_RUSSIA" Text="Breynerd" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRAINERD_CHINA" Text="Bùléi Nà Dé" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BRAINERD_JAPAN" Text="Burenado" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DULUTH" Text="Duluth" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DULUTH_KOREA" Text="Deol Luseu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DULUTH_MONGOLIA" Text="Dulut" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DULUTH_ZULU" Text="I-Duluth" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DULUTH_KHMER" Text="Dou Lou" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DULUTH_GEORGIA" Text="Dulut'i" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DULUTH_MACEDON" Text="Dulut" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DULUTH_GERMANY" Text="Hermantown" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DULUTH_CREE" Text="Nagaajiwanaang" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DULUTH_AZTEC" Text="Nagaajiwanaang" Language="en_US" />
@@ -9043,24 +9061,81 @@
 		<Replace Tag="LOC_CITY_NAME_DULUTH_RUSSIA" Text="Dulut" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DULUTH_ARABIA" Text="Dualuth" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GIBBON" Text="Gibbon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_INDIA" Text="Langoor" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_INDONESIA" Text="Siamang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_KOREA" Text="Ginpal Wonsung-i" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_BRAZIL" Text="Gibão" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_SPAIN" Text="Gibón" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_KHMER" Text="Tea" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_GEORGIA" Text="Giboni" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_POLAND" Text="Gibon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_SCOTLAND" Text="Mcloed" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_ENGLAND" Text="Winthrop" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_CHINA" Text="Chángbìyuán" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_GREECE" Text="Gívvon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GIBBON_JAPAN" Text="Tentomushi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GIBBON_FRANCE" Text="Renville" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GIBBON_GERMANY" Text="Moltke" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GIBBON_ARABIA" Text="Alejbewn Qerd" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GIBBON_NORWAY" Text="Settler's Grove" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA" Text="Grand Rapids" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTAINDIA" Text="Graind Repids" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_INDONESIA" Text="Jeram Besar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_KOREA" Text="Geulaendeu Lae Pijeu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_MONGOLIA" Text="Ikh Khemjeenii Davalgaa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_SPAIN" Text="Grandes Rapidos" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_ZULU" Text="I-Rapids Enkulu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_KHMER" Text="Luen" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_GEORGIA" Text="Didi Radidebi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_RUSSIA" Text="Velikiye Porogi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_CHINA" Text="Dà Jíliú Chéng" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_GREECE" Text="Megála Rémata" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_JAPAN" Text="Gurandorapizzu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_FRANCE" Text="La Prairie" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_CREE" Text="Cohasset" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_AZTEC" Text="Cohasset" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_MAPUCHE" Text="Cohasset" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_ARABIA" Text="Almunhadirat Alkubraa" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_GRAND_RAPIDS_MINNESOTA_GERMANY" Text="Große Stromschnellen" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_HIBBING" Text="Hibbing" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HIBBING_ZULU" Text="Ukuzibamba" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HIBBING_CHINA" Text="Xī Bīn" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HIBBING_JAPAN" Text="Hibingu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_HIBBING_FRANCE" Text="Calumet" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HIBBING_CREE" Text="Keewatin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HIBBING_AZTEC" Text="Keewatin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HIBBING_MAPUCHE" Text="Keewatin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HIBBING_SCOTLAND" Text="Chisholm" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_HIBBING_ARABIA" Text="Hybynj" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MANKATO" Text="Mankato" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANKATO_GEORGIA" Text="Mank'amo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANKATO_RUSSIA" Text="Mankeyto" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANKATO_CHINA" Text="Màn Kǎi Tuō" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANKATO_GREECE" Text="Mantáto" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MANKATO_JAPAN" Text="Manketo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MANKATO_GERMANY" Text="New Ulm" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MANKATO_FRANCE" Text="Nicollet" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MANKATO_ARABIA" Text="Mankatu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MARSHALL" Text="Marshall" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARSHALL_ROME" Text="Florus" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARSHALL_KOREA" Text="Masyal" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARSHALL_BRAZIL" Text="Marechal" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARSHALL_GEORGIA" Text="Marshali" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARSHALL_MACEDON" Text="Maršal" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARSHALL_CHINA" Text="Mǎxiē'ěr" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARSHALL_GREECE" Text="Mársal" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MARSHALL_JAPAN" Text="Masharu" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MARSHALL_ARABIA" Text="Marishal" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS" Text="Minneapolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_INDIA" Text="Mineeapolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_ROME" Text="Consectetur" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_KOREA" Text="Miniaepolliseu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_BRAZIL" Text="Mineápolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_ZULU" Text="I-Minneapolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_KHMER" Text="Mi Nie Bau Li S" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_GEORGFIA" Text="Mineap'olisi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_MACEDON" Text="Mineapolis" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_GREECE" Text="Mineápoli" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_CREE" Text="Mdewakanton" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_AZTEC" Text="Mdewakanton" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_MAPUCHE" Text="Mdewakanton" Language="en_US" />
@@ -9069,14 +9144,41 @@
 		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_ARABIA" Text="Miniabulis" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MINNEAPOLIS_FRANCE" Text="l'Oeil du Cochon" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MOORHEAD" Text="Moorhead" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOORHEAD_ROME" Text="Bodner" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOORHEAD_KOREA" Text="Meuo Hedeu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOORHEAD_MONGOLIA" Text="Moid Tolgoi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOORHEAD_ZULU" Text="I-Moorhead" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOORHEAD_RUSSIA" Text="Murkhed" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOORHEAD_CHINA" Text="Mó'ěr Hǎidé" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MOORHEAD_JAPAN" Text="Muaheddo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MOORHEAD_ARABIA" Text="Murhid" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA" Text="Rochester" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_INDIA" Text="Rochestar" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_KOREA" Text="Locheseuto" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_MONGOLIA" Text="Rochyestyer Khot" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_KHMER" Text="Rau Che Steu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_GEORGIA" Text="Rochest'eri" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_MACEDON" Text="Ročester" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_CHINA" Text="Luōqièsītè" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_GREECE" Text="Rotsester" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_JAPAN" Text="Rochesuta" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_FRANCE" Text="Fort Beauharnois" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_ARABIA" Text="Rutishstr" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_CREE" Text="Eyota" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_AZTEC" Text="Eyota" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ROCHESTER_MINNESOTA_MAPUCHE" Text="Eyota" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ST_CLOUD" Text="St. Cloud" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_INDIA" Text="Sent Klaud" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_KOREA" Text="Seinteu Keullaudeu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_MONGOLIA" Text="Gegeenten Cloud" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_SCOTLAND" Text="Naomh Cloud" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_ZULU" Text="I-Saint Cloud" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_GEORGIA" Text="Ts’minda Ghrubeli" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_MACEDON" Text="Sveti Oblak" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_RUSSIA" Text="Svyatoy Oblako" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_CHINA" Text="Shèng Yún" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_GREECE" Text="Ágios Noúnt" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_JAPAN" Text="Sentokuraudo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_FRANCE" Text="Saint-Cloud" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_ARABIA" Text="Sahabat Alqidiys" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ST_CLOUD_GERMANY" Text="Heilige Wolke" Language="en_US" />
