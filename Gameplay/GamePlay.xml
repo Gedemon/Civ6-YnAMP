@@ -295,8 +295,10 @@
 	</Colors>
 
 	<Continents>
-		<!-- Delete All entries -->
+		<!-- Delete All entries
 		<Delete/>
+		-->
+		
 		
 		<!-- Africa -->
 		<Replace ContinentType="CONTINENT_AFRICA" 			Description="LOC_CONTINENT_AFRICA" 			/>

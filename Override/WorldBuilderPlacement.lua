@@ -865,43 +865,48 @@ ContextPtr:SetInitHandler( OnInit );
 -- Add "Export to Lua" button to the Option Menu
 ----------------------------------------------------------------------------------------
 function ExportMap()
+	--[[
 	local iPlotCount = Map.GetPlotCount();
 	for iPlotLoop = 0, iPlotCount-1, 1 do
-		local bData = false
-		local plot = Map.GetPlotByIndex(iPlotLoop)
-		local NEOfCliff = 0
-		local WOfCliff = 0
-		local NWOfCliff = 0
-		if plot:IsNEOfCliff() then NEOfCliff = 1 end 
-		if plot:IsWOfCliff() then WOfCliff = 1 end 
-		if plot:IsNWOfCliff() then NWOfCliff = 1 end 
-		local NEOfRiver = 0
-		local WOfRiver = 0
-		local NWOfRiver = 0
-		if plot:IsNEOfRiver() then NEOfRiver = 1 end -- GetRiverSWFlowDirection()
-		if plot:IsWOfRiver() then WOfRiver = 1 end -- GetRiverEFlowDirection()
-		if plot:IsNWOfRiver() then NWOfRiver = 1 end -- GetRiverSEFlowDirection()
-		local terrainType 	= plot:GetTerrainType()
-		local featureType	= plot:GetFeatureType()
-		local continentType	= plot:GetContinentType()
-		local resourceType	= plot:GetResourceType(-1)
-		if terrainType ~= -1 then
-			terrainType = "\""..GameInfo.Terrains[terrainType].TerrainType.."\""
-		else
-			print("Error: terrainType = -1 at ["..plot:GetX().."]["..plot:GetY().."]")
-			break
+	--]]
+	local g_iW, g_iH = Map.GetGridSize()
+	for iX = g_iW - 1, 0, -1  do
+		for iY = 0, g_iH - 1 do
+			local plot = Map.GetPlot(iX,iY)
+			local NEOfCliff = 0
+			local WOfCliff = 0
+			local NWOfCliff = 0
+			if plot:IsNEOfCliff() then NEOfCliff = 1 end 
+			if plot:IsWOfCliff() then WOfCliff = 1 end 
+			if plot:IsNWOfCliff() then NWOfCliff = 1 end 
+			local NEOfRiver = 0
+			local WOfRiver = 0
+			local NWOfRiver = 0
+			if plot:IsNEOfRiver() then NEOfRiver = 1 end -- GetRiverSWFlowDirection()
+			if plot:IsWOfRiver() then WOfRiver = 1 end -- GetRiverEFlowDirection()
+			if plot:IsNWOfRiver() then NWOfRiver = 1 end -- GetRiverSEFlowDirection()
+			local terrainType 	= plot:GetTerrainType()
+			local featureType	= plot:GetFeatureType()
+			local continentType	= plot:GetContinentType()
+			local resourceType	= plot:GetResourceType(-1)
+			if terrainType ~= -1 then
+				terrainType = "\""..GameInfo.Terrains[terrainType].TerrainType.."\""
+			else
+				print("Error: terrainType = -1 at ["..plot:GetX().."]["..plot:GetY().."]")
+				break
+			end
+			
+			if featureType ~= -1 then
+				featureType = "\""..GameInfo.Features[featureType].FeatureType.."\""
+			end
+			if continentType ~= -1 then
+				continentType = "\""..GameInfo.Continents[continentType].ContinentType.."\""
+			end
+			if resourceType ~= -1 then
+				resourceType = "\""..GameInfo.Resources[resourceType].ResourceType.."\""
+			end
+			print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..terrainType..","..featureType..","..continentType..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{".. resourceType ..","..tostring(1).."},{"..NEOfCliff..","..WOfCliff..","..NWOfCliff.."}}")
 		end
-		
-		if featureType ~= -1 then
-			featureType = "\""..GameInfo.Features[featureType].FeatureType.."\""
-		end
-		if continentType ~= -1 then
-			continentType = "\""..GameInfo.Continents[continentType].ContinentType.."\""
-		end
-		if resourceType ~= -1 then
-			resourceType = "\""..GameInfo.Resources[resourceType].ResourceType.."\""
-		end
-		print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..terrainType..","..featureType..","..continentType..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{".. resourceType ..","..tostring(1).."},{"..NEOfCliff..","..WOfCliff..","..NWOfCliff.."}}")
 	end
 end
 function OnEnterGame()
