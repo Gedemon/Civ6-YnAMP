@@ -4692,10 +4692,10 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 		ContinentConvertion["CONTINENT_LABRADORIA"]		= NorthAmericaID
 		ContinentConvertion["CONTINENT_GREENLANDIA"]	= NorthAmericaID
 		ContinentConvertion["CONTINENT_MESO_AMERICA"]	= NorthAmericaID
+		ContinentConvertion["CONTINENT_CARIBBEANIA"]	= NorthAmericaID
 		
 		-- South America
 		local SouthAmericaID = GameInfo.Continents["CONTINENT_SOUTH_AMERICA"].Index
-		ContinentConvertion["CONTINENT_CARIBBEANIA"]	= SouthAmericaID
 		ContinentConvertion["CONTINENT_PATAGONIA"]		= SouthAmericaID
 		
 		-- Oceania

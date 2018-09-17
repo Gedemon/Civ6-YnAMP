@@ -300,20 +300,23 @@
 		-->
 		
 		
-		<!-- Africa -->
+		<!-- Africa 
 		<Replace ContinentType="CONTINENT_AFRICA" 			Description="LOC_CONTINENT_AFRICA" 			/>
+		-->
 		<Replace ContinentType="CONTINENT_SAHARA" 			Description="LOC_CONTINENT_SAHARA" 			/>
 		<Replace ContinentType="CONTINENT_GUINEA" 			Description="LOC_CONTINENT_GUINEA" 			/>
 		<Replace ContinentType="CONTINENT_CENTRAL_AFRICA"	Description="LOC_CONTINENT_CENTRAL_AFRICA"	/>
 		<Replace ContinentType="CONTINENT_EAST_AFRICA"		Description="LOC_CONTINENT_EAST_AFRICA"		/>
 		<Replace ContinentType="CONTINENT_SOUTH_AFRICA" 	Description="LOC_CONTINENT_SOUTH_AFRICA" 	/>
 		<Replace ContinentType="CONTINENT_MADAGASCARIA" 	Description="LOC_CONTINENT_MADAGASCARIA" 	/>
-		<!-- Antartica -->
+		<!-- Antartica 
 		<Replace ContinentType="CONTINENT_ANTARCTICA" 		Description="LOC_CONTINENT_ANTARCTICA"/>
-		<!-- Asia -->
+		-->
+		<!-- Asia 
 		<Replace ContinentType="CONTINENT_ASIA" 			Description="LOC_CONTINENT_ASIA" 			/>
 		<Replace ContinentType="CONTINENT_KAZAKHSTANIA" 	Description="LOC_CONTINENT_KAZAKHSTANIA" 	/>
 		<Replace ContinentType="CONTINENT_SIBERIA" 			Description="LOC_CONTINENT_SIBERIA" 		/>
+		-->
 		<Replace ContinentType="CONTINENT_CENTRAL_SIBERIA"	Description="LOC_CONTINENT_CENTRAL_SIBERIA"	/>
 		<Replace ContinentType="CONTINENT_WEST_SIBERIA" 	Description="LOC_CONTINENT_WEST_SIBERIA" 	/>
 		<Replace ContinentType="CONTINENT_ANATOLIA" 		Description="LOC_CONTINENT_ANATOLIA" 		/>
@@ -325,28 +328,32 @@
 		<Replace ContinentType="CONTINENT_SOUTH_EAST_ASIA"	Description="LOC_CONTINENT_SOUTH_EAST_ASIA"	/>
 		<Replace ContinentType="CONTINENT_MANCHURIA" 		Description="LOC_CONTINENT_MANCHURIA" 		/>
 		<Replace ContinentType="CONTINENT_KOLYMA" 			Description="LOC_CONTINENT_KOLYMA" 			/>
-		<!-- Europe -->
+		<!-- Europe 
 		<Replace ContinentType="CONTINENT_EUROPE" 			Description="LOC_CONTINENT_EUROPE" 			/>
+		-->
 		<Replace ContinentType="CONTINENT_SCANDINAVIA"		Description="LOC_CONTINENT_SCANDINAVIA"		/>
 		<Replace ContinentType="CONTINENT_IBERIA" 			Description="LOC_CONTINENT_IBERIA" 			/>
 		<Replace ContinentType="CONTINENT_CAUCASIA" 		Description="LOC_CONTINENT_CAUCASIA" 		/>
 		<Replace ContinentType="CONTINENT_BRITTANIA"		Description="LOC_CONTINENT_BRITTANIA"		/>
 		<Replace ContinentType="CONTINENT_BALKANIA" 		Description="LOC_CONTINENT_BALKANIA" 		/>
-		<!-- North America -->
+		<!-- North America 
 		<Replace ContinentType="CONTINENT_AMERICA" 			Description="CONTINENT_AMERICA" 		/>
 		<Replace ContinentType="CONTINENT_NORTH_AMERICA" 	Description="CONTINENT_NORTH_AMERICA" 	/>
+		-->
 		<Replace ContinentType="CONTINENT_ALASKANIA" 		Description="CONTINENT_ALASKANIA" 		/>
 		<Replace ContinentType="CONTINENT_LABRADORIA" 		Description="CONTINENT_LABRADORIA" 		/>
 		<Replace ContinentType="CONTINENT_GREENLANDIA" 		Description="CONTINENT_GREENLANDIA" 	/>
 		<Replace ContinentType="CONTINENT_MESO_AMERICA" 	Description="CONTINENT_MESO_AMERICA" 	/>
-		<!-- South America -->
-    	<Replace ContinentType="CONTINENT_SOUTH_AMERICA" 	Description="LOC_CONTINENT_SOUTH_AMERICA" 	/>
     	<Replace ContinentType="CONTINENT_CARIBBEANIA" 		Description="LOC_CONTINENT_CARIBBEANIA" 	/>
+		<!-- South America 
+    	<Replace ContinentType="CONTINENT_SOUTH_AMERICA" 	Description="LOC_CONTINENT_SOUTH_AMERICA" 	/>
+		-->
     	<Replace ContinentType="CONTINENT_PATAGONIA" 		Description="LOC_CONTINENT_PATAGONIA" 		/>
-		<!-- Oceania -->
-		<Replace ContinentType="CONTINENT_AUSTRALIA" 		Description="LOC_CONTINENT_AUSTRALIA" 		/>
+		<!-- Oceania 
     	<Replace ContinentType="CONTINENT_OCEANIA" 			Description="LOC_CONTINENT_OCEANIA" 		/>
 		<Replace ContinentType="CONTINENT_ZEALANDIA" 		Description="LOC_CONTINENT_ZEALANDIA" 		/>
+		-->
+		<Replace ContinentType="CONTINENT_AUSTRALIA" 		Description="LOC_CONTINENT_AUSTRALIA" 		/>
     	<Replace ContinentType="CONTINENT_MELANESIA"		Description="LOC_CONTINENT_MELANESIA"		/>
     	<Replace ContinentType="CONTINENT_MICRONESIA" 		Description="LOC_CONTINENT_MICRONESIA" 		/>
     	<Replace ContinentType="CONTINENT_POLYNESIA"		Description="LOC_CONTINENT_POLYNESIA"		/>	
