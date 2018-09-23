@@ -907,7 +907,9 @@ function ExportMap()
 			if resourceType ~= -1 then
 				resourceType = "\""..GameInfo.Resources[resourceType].ResourceType.."\""
 			end
-			print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..terrainType..","..featureType..","..continentType..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{".. resourceType ..","..tostring(1).."},{"..NEOfCliff..","..WOfCliff..","..NWOfCliff.."}}")
+			local endStr =""
+			if plot:IsLake() then endStr = " -- Lake" end
+			print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..terrainType..","..featureType..","..continentType..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{".. resourceType ..","..tostring(1).."},{"..NEOfCliff..","..WOfCliff..","..NWOfCliff.."}}"..endStr)
 		end
 	end
 end
