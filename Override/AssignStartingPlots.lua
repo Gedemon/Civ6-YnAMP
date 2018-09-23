@@ -4405,21 +4405,25 @@ end
 	[4] = DIRECTION_WEST		
 	[5] = DIRECTION_NORTHWEST
 --]]	
--- Code to export a civ5 map
---[[
-	for iPlotLoop = 0, Map.GetNumPlots()-1, 1 do
-		local plot = Map.GetPlotByIndex(iPlotLoop)
-		local NEOfRiver = 0
-		local WOfRiver = 0
-		local NWOfRiver = 0
-		if plot:IsNEOfRiver() then NEOfRiver = 1 end -- GetRiverSWFlowDirection()
-		if plot:IsWOfRiver() then WOfRiver = 1 end -- GetRiverEFlowDirection()
-		if plot:IsNWOfRiver() then NWOfRiver = 1 end -- GetRiverSEFlowDirection()
-		print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..plot:GetTerrainType()..","..plot:GetPlotType()..","..plot:GetFeatureType()..","..plot:GetContinentArtType()..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{"..plot:GetResourceType(-1)..","..plot:GetNumResource().."}}")
+
+--[[ -- Code to export a civ5 map
+
+	local g_iW, g_iH = Map.GetGridSize()
+	for iY = 0, g_iH - 1 do
+		for iX = g_iW - 1, 0, -1  do
+			local plot = Map.GetPlot(iX, iY)
+			local NEOfRiver = 0
+			local WOfRiver = 0
+			local NWOfRiver = 0
+			if plot:IsNEOfRiver() then NEOfRiver = 1 end -- GetRiverSWFlowDirection()
+			if plot:IsWOfRiver() then WOfRiver = 1 end -- GetRiverEFlowDirection()
+			if plot:IsNWOfRiver() then NWOfRiver = 1 end -- GetRiverSEFlowDirection()
+			print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..plot:GetTerrainType()..","..plot:GetPlotType()..","..plot:GetFeatureType()..","..plot:GetContinentArtType()..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{"..plot:GetResourceType(-1)..","..plot:GetNumResource().."}}")
+		end
 	end
 --]]
--- Code to export a civ6 cliffs map
---[[
+
+--[[ -- Code to export a civ6 cliffs map
 	local iPlotCount = Map.GetPlotCount();
 	for iPlotLoop = 0, iPlotCount-1, 1 do
 		local bData = false
@@ -4438,8 +4442,7 @@ end
 	end
 --]]
 
--- Code to export a civ6 complete map
---[[
+--[[ -- Code to export a civ6 complete map
 	local iPlotCount = Map.GetPlotCount();
 	for iPlotLoop = 0, iPlotCount-1, 1 do
 		local bData = false
