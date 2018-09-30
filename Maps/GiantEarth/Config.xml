@@ -61,7 +61,7 @@
 		
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthColonizationStartX" 	Name="LOC_MAP_STARTX_NAME"	Description="LOC_MAP_STARTX_DESCRIPTION" 	Domain="text"	 Visible="0"	DefaultValue="132" 	ConfigurationGroup="Map" ConfigurationId="StartX" 	GroupId="MapOptions" SortIndex="222"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthColonizationStartY" 	Name="LOC_MAP_STARTY_NAME"	Description="LOC_MAP_STARTY_DESCRIPTION" 	Domain="text" 	 Visible="0"	DefaultValue="16" 	ConfigurationGroup="Map" ConfigurationId="StartY" 	GroupId="MapOptions" SortIndex="223"/>
-		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthColonizationEndX"		Name="LOC_MAP_ENDX_NAME"	Description="LOC_MAP_ENDX_DESCRIPTION"		Domain="text"	 Visible="0"	DefaultValue="24" 	ConfigurationGroup="Map" ConfigurationId="EndX"		GroupId="MapOptions" SortIndex="224"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthColonizationEndX"		Name="LOC_MAP_ENDX_NAME"	Description="LOC_MAP_ENDX_DESCRIPTION"		Domain="text"	 Visible="0"	DefaultValue="48" 	ConfigurationGroup="Map" ConfigurationId="EndX"		GroupId="MapOptions" SortIndex="224"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthColonizationEndY"		Name="LOC_MAP_ENDY_NAME"	Description="LOC_MAP_ENDY_DESCRIPTION" 		Domain="text" 	 Visible="0"	DefaultValue="93" 	ConfigurationGroup="Map" ConfigurationId="EndY"		GroupId="MapOptions" SortIndex="225"/>
 		
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthOldWorldStartX" 	Name="LOC_MAP_STARTX_NAME"	Description="LOC_MAP_STARTX_DESCRIPTION" 	Domain="text"	 Visible="0"	DefaultValue="0" 	ConfigurationGroup="Map" ConfigurationId="StartX" 	GroupId="MapOptions" SortIndex="222"/>

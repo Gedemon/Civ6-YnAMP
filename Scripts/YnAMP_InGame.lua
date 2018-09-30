@@ -46,13 +46,7 @@ end
 -- Export a complete civ6 map to Lua.log
 ----------------------------------------------------------------------------------------
 function ExportMap()
-	--[[
-	local iPlotCount = Map.GetPlotCount();
-	for iPlotLoop = 0, iPlotCount-1, 1 do
-	--]]
 	local g_iW, g_iH = Map.GetGridSize()
-	--for iX = g_iW - 1, 0, -1  do
-		--for iY = 0, g_iH - 1 do
 	for iY = 0, g_iH - 1 do
 		for iX = g_iW - 1, 0, -1  do
 			local plot = Map.GetPlot(iX,iY)

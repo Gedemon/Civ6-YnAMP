@@ -2648,7 +2648,10 @@ function GetXYFromRefMapXY(x, y, bOnlyOffset)
 			--x = x + Round(g_iW / 2)
 		end
 		--if x < 0 then x = x + g_iW - 1 end
-		if x < 0 and Map.IsWrapX() then x = x + g_iW end
+		--if x < 0 and Map.IsWrapX() then x = x + g_iW end
+		if x < 0 then
+			x = x + g_UncutMapWidth
+		end
 	end
 	return x, y
 end
@@ -2721,7 +2724,7 @@ function buildExclusionList()
 									isResourceExclusiveXY[x][y][resourceID] = true
 								end
 							else
-								print ("  - WARNING : Region out of bound ( x = " ..tostring(x)..", y = ".. tostring(y).." )")
+								--print ("  - WARNING : Region out of bound ( x = " ..tostring(x)..", y = ".. tostring(y).." )") -- happens a lot on cropped maps...
 							end
 						end
 					end
@@ -4418,7 +4421,9 @@ end
 			if plot:IsNEOfRiver() then NEOfRiver = 1 end -- GetRiverSWFlowDirection()
 			if plot:IsWOfRiver() then WOfRiver = 1 end -- GetRiverEFlowDirection()
 			if plot:IsNWOfRiver() then NWOfRiver = 1 end -- GetRiverSEFlowDirection()
-			print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..plot:GetTerrainType()..","..plot:GetPlotType()..","..plot:GetFeatureType()..","..plot:GetContinentArtType()..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{"..plot:GetResourceType(-1)..","..plot:GetNumResource().."}}")
+			local endStr =""
+			if plot:IsLake() then endStr = " -- Lake" end
+			print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..plot:GetTerrainType()..","..plot:GetPlotType()..","..plot:GetFeatureType()..","..plot:GetContinentArtType()..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{"..plot:GetResourceType(-1)..","..plot:GetNumResource().."}}"..endStr)
 		end
 	end
 --]]
@@ -4443,23 +4448,46 @@ end
 --]]
 
 --[[ -- Code to export a civ6 complete map
-	local iPlotCount = Map.GetPlotCount();
-	for iPlotLoop = 0, iPlotCount-1, 1 do
-		local bData = false
-		local plot = Map.GetPlotByIndex(iPlotLoop)
-		local NEOfCliff = 0
-		local WOfCliff = 0
-		local NWOfCliff = 0
-		if plot:IsNEOfCliff() then NEOfCliff = 1 end 
-		if plot:IsWOfCliff() then WOfCliff = 1 end 
-		if plot:IsNWOfCliff() then NWOfCliff = 1 end 
-		local NEOfRiver = 0
-		local WOfRiver = 0
-		local NWOfRiver = 0
-		if plot:IsNEOfRiver() then NEOfRiver = 1 end -- GetRiverSWFlowDirection()
-		if plot:IsWOfRiver() then WOfRiver = 1 end -- GetRiverEFlowDirection()
-		if plot:IsNWOfRiver() then NWOfRiver = 1 end -- GetRiverSEFlowDirection()
-		print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..plot:GetTerrainType()..","..plot:GetFeatureType()..","..plot:GetContinentType()..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{"..plot:GetResourceType(-1)..","..tostring(1).."},{"..NEOfCliff..","..WOfCliff..","..NWOfCliff.."}}")
+	local g_iW, g_iH = Map.GetGridSize()
+	for iY = 0, g_iH - 1 do
+		for iX = g_iW - 1, 0, -1  do
+			local plot = Map.GetPlot(iX,iY)
+			local NEOfCliff = 0
+			local WOfCliff = 0
+			local NWOfCliff = 0
+			if plot:IsNEOfCliff() then NEOfCliff = 1 end 
+			if plot:IsWOfCliff() then WOfCliff = 1 end 
+			if plot:IsNWOfCliff() then NWOfCliff = 1 end 
+			local NEOfRiver = 0
+			local WOfRiver = 0
+			local NWOfRiver = 0
+			if plot:IsNEOfRiver() then NEOfRiver = 1 end -- GetRiverSWFlowDirection()
+			if plot:IsWOfRiver() then WOfRiver = 1 end -- GetRiverEFlowDirection()
+			if plot:IsNWOfRiver() then NWOfRiver = 1 end -- GetRiverSEFlowDirection()
+			local terrainType 	= plot:GetTerrainType()
+			local featureType	= plot:GetFeatureType()
+			local continentType	= plot:GetContinentType()
+			local resourceType	= plot:GetResourceType(-1)
+			if terrainType ~= -1 then
+				terrainType = "\""..GameInfo.Terrains[terrainType].TerrainType.."\""
+			else
+				print("Error: terrainType = -1 at ["..plot:GetX().."]["..plot:GetY().."]")
+				break
+			end
+			
+			if featureType ~= -1 then
+				featureType = "\""..GameInfo.Features[featureType].FeatureType.."\""
+			end
+			if continentType ~= -1 then
+				continentType = "\""..GameInfo.Continents[continentType].ContinentType.."\""
+			end
+			if resourceType ~= -1 then
+				resourceType = "\""..GameInfo.Resources[resourceType].ResourceType.."\""
+			end
+			local endStr =""
+			if plot:IsLake() then endStr = " -- Lake" end
+			print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..terrainType..","..featureType..","..continentType..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{".. resourceType ..","..tostring(1).."},{"..NEOfCliff..","..WOfCliff..","..NWOfCliff.."}}"..endStr)
+		end
 	end
 --]]
 
