@@ -56,8 +56,9 @@ if bUseRelativePlacement then
 end
 
 -- Scenario Settings
-local scenarioName 	= MapConfiguration.GetValue("ScenarioName")
-local cityPlacement = MapConfiguration.GetValue("CityPlacement")
+local scenarioName 		= MapConfiguration.GetValue("ScenarioName")
+local cityPlacement 	= MapConfiguration.GetValue("CityPlacement")
+local borderPlacement	= MapConfiguration.GetValue("BorderPlacement")
 
 ------------------------------------------------------------------------------
 -- http://lua-users.org/wiki/SortedIteration
@@ -569,175 +570,33 @@ end
 ----------------------------------------------------------------------------------------
 -- Scenario settings  <<<<<
 ----------------------------------------------------------------------------------------
-if scenarioName and scenarioName ~= "SCENARIO_NONE" and not (Game.GetCurrentGameTurn() > GameConfiguration.GetStartTurn())  then 
+if not (Game.GetCurrentGameTurn() > GameConfiguration.GetStartTurn())  then 
 ----------------------------------------------------------------------------------------
 
 print("Setting scenario : ", scenarioName)
 print("City Placement 	: ", cityPlacement)
+print("Border Placement : ", borderPlacement)
 
--- City Placement
---[[
-function PlaceCities()
-	if cityPlacement == "TERRAIN" then
-
+function IsRowValid(row)
+	if not (row.ScenarioName) and not (row.MapName) then
+		print("ERROR at rowID #"..tostring(row.Index).." : ScenarioName AND MapName are NULL")
+		for k, v in pairs(row) do print("  - ", k, v) end
 	end
-	if cityPlacement == "CITY_MAP" then
-	
-		print("Searching cities with known position for each major civs...")
-		local cityList = {}
-		for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
-			local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
-			print("-", CivilizationTypeName)
-			-- place capital
-			local player		= Players[iPlayer]
-			local startingPlot 	= player:GetStartingPlot()
-			cityList[iPlayer]	= {}
-			if startingPlot then
-				local city 			= player:GetCities():Create(startingPlot:GetX(), startingPlot:GetY())			
-				if city then
-					print("- CAPITAL PLACED !")
-				end
-			end
-			
-			local counter = 0
-			for row in GameInfo.CityNames() do
-				local cityName = row.CityName
-				if CivilizationTypeName == row.CivilizationType then
-					local pos = cityPosition[cityName]
-					if pos then
-					
-						print("    - possible position found for ", Locale.Lookup(cityName))
-						table.insert(cityList[iPlayer], cityName)
-
-					end
-				end
-			end
-		end
-		
-		print("Placing cities for each player...")
-		local bAnyCityPlaced 	= true
-		local playerCounter		= {}
-		
-		while bAnyCityPlaced do
-		
-			bAnyCityPlaced = false
-			
-			
-			for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
-			--for player, cityList in pairs(cityList) do
-				
-				local list 		= cityList[iPlayer]
-				local player 	= Players[iPlayer]
-				if not playerCounter[iPlayer] then playerCounter[iPlayer] = 1 end
-			
-				local bPlayerCityPlaced	= false
-				local cityName 			= list[ playerCounter[iPlayer] ]
-				
-				while cityName and not bPlayerCityPlaced do
-					local pos 	= cityPosition[cityName]
-					local x, y	= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y)) -- cityPosition use average value of x, y
-					--print(" 		-posXY =", pos.X, pos.Y, " 	refXY = ", x, y)
-					local city 		= player:GetCities():Create(x, y)
-					if city then
-						print(" - player ID#".. tostring(iPlayer)," : ".. tostring(cityName), " pos#"..tostring(playerCounter[iPlayer]), " PLACED !")
-						city:SetName(cityName)
-						playerCounter[iPlayer] 	= playerCounter[iPlayer] + 1
-						bPlayerCityPlaced 		= true
-						bAnyCityPlaced			= true
-					else
-						cityName = list[ playerCounter[iPlayer] ]
-					end
-				end
-			end
-		end
-	end
-	if cityPlacement == "IMPORT" then
-		local CityPlayerID 			= {}
-		local CityCivilizationType	= {}
-		local CivilizationPlayerID 	= {}
-		
-		print("Pairing Civilization Type with PlayerIDs...")
-		for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do		
-			local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
-			CivilizationPlayerID[CivilizationTypeName] = iPlayer
-		end
-		
-		print("Pairing City names with Civilization Type and PlayerIDs...")
-		for row in GameInfo.CityNames() do
-			
-			local cityName 			= row.CityName
-			local civilizationType 	= row.CivilizationType
-			local iPlayer 			= CivilizationPlayerID[row.CivilizationType]
-		
-			CityCivilizationType[cityName] 					= civilizationType
-			CityCivilizationType[Locale.Lookup(cityName)] 	= civilizationType
-				
-			if iPlayer then
-				CityPlayerID[cityName] 					= CivilizationPlayerID[row.CityName]
-				CityPlayerID[Locale.Lookup(cityName)] 	= iPlayer
-			end
-		end
-		
-		print("Placing cities...")
-		for row in GameInfo.ScenarioCities() do
-			if row.ScenarioName == scenarioName then
-				local cityName 			= row.CityName
-				local civilizationType	= row.CivilizationType
-				
-				if cityName == nil and civilizationType == nil then
-					print("ERROR at rowID #"..tostring(row.Index).." : CityName and CivilizationType are NULL")
-				else
-					
-					if civilizationType == nil then
-						civilizationType = CityCivilizationType[cityName]
-					end
-
-					if civilizationType then
-						local iPlayer		= CivilizationPlayerID[civilizationType]
-						if iPlayer then
-							local player = Players[iPlayer]
-							local x, y
-							if row.X and row.Y then
-								x, y = GetXYFromRefMapXY(row.X, row.Y)
-								print("    - Getting coordinates from table for ", civilizationType)
-								print(" 		-rowXY =", row.X, row.Y, " 	refXY = ", x, y)
-							elseif cityName then
-								local pos = cityPosition[cityName]
-								if pos then
-									x, y	= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y))
-									print("    - Getting coordinates from city map for ", Locale.Lookup(cityName))
-									print(" 		-posXY =", pos.X, pos.Y, " 	refXY = ", x, y)
-								else
-									print("WARNING at rowID #"..tostring(row.Index).." : no position in city map for "..tostring(cityName))
-								end
-							else
-								print("ERROR at rowID #"..tostring(row.Index).." : CityName and X,Y are NULL")							
-							end
-							
-							if x and y then
-								local city 		= player:GetCities():Create(x, y)
-								if city then
-									print(" 		- PLACED !")
-									if cityName then
-										city:SetName(cityName)
-									end
-								end								
-							end
-						else
-							print("WARNING at rowID #"..tostring(row.Index).." : no playerID for "..tostring(civilizationType).." for city = "..tostring(cityName))
-						end
-					else
-						print("WARNING at rowID #"..tostring(row.Index).." : no civilizationType for "..tostring(cityName), row.X, row.Y)					
-					end
-				end
-			end
-		end
-
-	end
+	return (row.ScenarioName == scenarioName) or (not (row.ScenarioName) and row.MapName == mapName)
 end
---]]
 
+function CanPlace(row, player)
+	return player and ((player:IsHuman() and (not row.OnlyAI)) or ((not player:IsHuman()) and (not row.OnlyHuman)))
+end
 
+print("Pairing Civilization Type with PlayerIDs...")
+local CivilizationPlayerID 	= {}
+for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do		
+	local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+	CivilizationPlayerID[CivilizationTypeName] = iPlayer
+end
+
+-- City
 PlaceCities = coroutine.create(function()
 
 	local CitiesPlacedFor = {}
@@ -749,13 +608,6 @@ PlaceCities = coroutine.create(function()
 	if cityPlacement == "IMPORT" or cityPlacement == "MIXED"  then
 		local CityPlayerID 			= {}
 		local CityCivilizationType	= {}
-		local CivilizationPlayerID 	= {}
-		
-		print("Pairing Civilization Type with PlayerIDs...")
-		for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do		
-			local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
-			CivilizationPlayerID[CivilizationTypeName] = iPlayer
-		end
 		
 		print("Pairing City names with Civilization Type and PlayerIDs...")
 		for row in GameInfo.CityNames() do
@@ -775,12 +627,13 @@ PlaceCities = coroutine.create(function()
 		
 		print("Placing cities...")
 		for row in GameInfo.ScenarioCities() do
-			if row.ScenarioName == scenarioName then
+			if IsRowValid(row) then
 				local cityName 			= row.CityName
 				local civilizationType	= row.CivilizationType
 				
 				if cityName == nil and civilizationType == nil then
 					print("ERROR at rowID #"..tostring(row.Index).." : CityName and CivilizationType are NULL")
+					for k, v in pairs(row) do print("  - ", k, v) end
 				else
 					
 					if civilizationType == nil then
@@ -788,36 +641,38 @@ PlaceCities = coroutine.create(function()
 					end
 
 					if civilizationType then
-						local iPlayer		= CivilizationPlayerID[civilizationType]
+						local iPlayer = CivilizationPlayerID[civilizationType]
 						if iPlayer then
 							local player = Players[iPlayer]
-							local x, y
-							if row.X and row.Y then
-								x, y = GetXYFromRefMapXY(row.X, row.Y)
-								print("    - Getting coordinates from table for ", civilizationType)
-								print(" 		-rowXY =", row.X, row.Y, " 	refXY = ", x, y)
-							elseif cityName then
-								local pos = cityPosition[cityName]
-								if pos then
-									x, y	= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y))
-									print("    - Getting coordinates from city map for ", Locale.Lookup(cityName))
-									print(" 		-posXY =", pos.X, pos.Y, " 	refXY = ", x, y)
-								else
-									print("WARNING at rowID #"..tostring(row.Index).." : no position in city map for "..tostring(cityName))
-								end
-							else
-								print("ERROR at rowID #"..tostring(row.Index).." : CityName and X,Y are NULL")							
-							end
-							
-							if x and y then
-								local city 		= player:GetCities():Create(x, y)
-								if city then
-									print(" 		- PLACED !")
-									if cityName then
-										city:SetName(cityName)
+							if CanPlace(row, player) then
+								local x, y
+								if row.X and row.Y then
+									x, y = GetXYFromRefMapXY(row.X, row.Y)
+									print("    - Getting coordinates from table for ", civilizationType)
+									print(" 		-rowXY =", row.X, row.Y, " 	refXY = ", x, y)
+								elseif cityName then
+									local pos = cityPosition[cityName]
+									if pos then
+										x, y	= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y))
+										print("    - Getting coordinates from city map for ", Locale.Lookup(cityName))
+										print(" 		-posXY =", pos.X, pos.Y, " 	refXY = ", x, y)
+									else
+										print("WARNING at rowID #"..tostring(row.Index).." : no position in city map for "..tostring(cityName))
 									end
-									CitiesPlacedFor[civilizationType] = true
-								end								
+								else
+									print("ERROR at rowID #"..tostring(row.Index).." : CityName and X,Y are NULL")							
+								end
+								
+								if x and y then
+									local city 		= player:GetCities():Create(x, y)
+									if city then
+										print(" 		- PLACED !")
+										if cityName then
+											city:SetName(cityName)
+										end
+										CitiesPlacedFor[civilizationType] = true
+									end								
+								end
 							end
 						else
 							print("WARNING at rowID #"..tostring(row.Index).." : no playerID for "..tostring(civilizationType).." for city = "..tostring(cityName))
@@ -919,13 +774,10 @@ PlaceCities = coroutine.create(function()
 	AddCoToList(PlaceBorders)
 end)
 
---Events.LoadScreenClose.Add( PlaceCities )
-
-
+-- Borders
 PlaceBorders = coroutine.create(function()
 
-
-	if true then -- borderPlacement == "Expand"
+	if borderPlacement == "EXPAND" then
 		print("Expanding borders...")
 
 
@@ -980,35 +832,10 @@ PlaceBorders = coroutine.create(function()
 	end
 	if borderPlacement == "IMPORT" then
 		--[[
-		local CityPlayerID 			= {}
-		local CityCivilizationType	= {}
-		local CivilizationPlayerID 	= {}
-		
-		print("Pairing Civilization Type with PlayerIDs...")
-		for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do		
-			local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
-			CivilizationPlayerID[CivilizationTypeName] = iPlayer
-		end
-		
-		print("Pairing City names with Civilization Type and PlayerIDs...")
-		for row in GameInfo.CityNames() do
-			
-			local cityName 			= row.CityName
-			local civilizationType 	= row.CivilizationType
-			local iPlayer 			= CivilizationPlayerID[row.CivilizationType]
-		
-			CityCivilizationType[cityName] 					= civilizationType
-			CityCivilizationType[Locale.Lookup(cityName)] 	= civilizationType
-				
-			if iPlayer then
-				CityPlayerID[cityName] 					= CivilizationPlayerID[row.CityName]
-				CityPlayerID[Locale.Lookup(cityName)] 	= iPlayer
-			end
-		end
 		
 		print("Placing cities...")
 		for row in GameInfo.ScenarioCities() do
-			if row.ScenarioName == scenarioName then
+			if IsRowValid(row) then
 				local cityName 			= row.CityName
 				local civilizationType	= row.CivilizationType
 				
@@ -1064,10 +891,58 @@ PlaceBorders = coroutine.create(function()
 	end
 
 	-- launch next coroutine
-	--AddCoToList(ExpandBorders)
+	AddCoToList(PlaceUnits)
 end)
 
--- Launch placement, starting with cities
+-- Units
+PlaceUnits = coroutine.create(function()
+
+	if true then --	unitPlacement == "IMPORT"
+		
+		print("Placing units...")
+		for row in GameInfo.ScenarioUnits() do
+			if IsRowValid(row) then
+				local unitType = row.UnitType
+				if GameInfo.Units[unitType] then
+					local unitTypeID		= GameInfo.Units[unitType].Index
+					local unitName 			= row.UnitName
+					local civilizationType	= row.CivilizationType				
+
+					local iPlayer = CivilizationPlayerID[civilizationType]
+					if iPlayer then
+						local player = Players[iPlayer]
+						if CanPlace(row, player) then
+							local x, y
+							x, y = GetXYFromRefMapXY(row.X, row.Y)
+							print("    - Getting coordinates from table for ", tostring(unitType), tostring(civilizationType))
+							print(" 		-rowXY =", row.X, row.Y, " 	refXY = ", x, y)
+							
+							if x and y then
+								local unit = player:GetUnits():Create(unitTypeID, x, y)
+								if unit then
+									print(" 		- PLACED !")
+									if unitName then
+										unit:SetName(unitName)
+									end
+								end								
+							end
+						end
+					else
+						print("WARNING at rowID #"..tostring(row.Index).." : no playerID for "..tostring(civilizationType), tostring(unitType))
+					end				
+				else
+					print("WARNING at rowID #"..tostring(row.Index).." : no DB entry in Units table for "..tostring(unitType))
+				end
+			end
+		end
+	end
+	
+	-- Call next function
+	--AddCoToList(PlaceBorders)
+end)
+
+
+-- Launch all placements, starting with cities
 AddCoToList(PlaceCities)
 
 ----------------------------------------------------------------------------------------
