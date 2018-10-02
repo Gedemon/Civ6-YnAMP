@@ -106,50 +106,68 @@ CREATE TABLE IF NOT EXISTS ScenarioCivilizationsReplacement
 		
 -- Scenario Cities
 CREATE TABLE IF NOT EXISTS ScenarioCities
-	(	ScenarioName TEXT NOT NULL,
+	(	ScenarioName TEXT,
+		MapName TEXT,
 		CivilizationType TEXT,			-- if NULL it will search a possible CivilizationType using the GameInfo.CityNames table (CityName must be set in that case)
 		CityName TEXT,					-- if not NULL it will override the civilization city list name
 		CitySize INT default 1,
+		OnlyAI BOOLEAN NOT NULL CHECK (OnlyAI IN (0,1)) DEFAULT 0,
+		OnlyHuman BOOLEAN NOT NULL CHECK (OnlyHuman IN (0,1)) DEFAULT 0,
 		X INT,
 		Y INT);
 		
 -- Scenario Territory
 CREATE TABLE IF NOT EXISTS ScenarioTerritory
-	(	ScenarioName TEXT NOT NULL,
+	(	ScenarioName TEXT,
+		MapName TEXT,
 		CivilizationType TEXT NOT NULL,
 		CityName TEXT,					-- if NULL the plot will be owned by the nearest city in that case
+		OnlyAI BOOLEAN NOT NULL CHECK (OnlyAI IN (0,1)) DEFAULT 0,
+		OnlyHuman BOOLEAN NOT NULL CHECK (OnlyHuman IN (0,1)) DEFAULT 0,
 		X INT NOT NULL,
 		Y INT NOT NULL);
 		
 -- Scenario Districts (placed after Territory)
 CREATE TABLE IF NOT EXISTS ScenarioDistricts
-	(	ScenarioName TEXT NOT NULL,
+	(	ScenarioName TEXT,
+		MapName TEXT,
 		DistrictType TEXT NOT NULL,
 		CityName TEXT,					-- if NULL the district will be owned by the nearest city in that case
 		InnerHealth INT,
 		OutterHealth INT,
+		OnlyAI BOOLEAN NOT NULL CHECK (OnlyAI IN (0,1)) DEFAULT 0,
+		OnlyHuman BOOLEAN NOT NULL CHECK (OnlyHuman IN (0,1)) DEFAULT 0,
 		X INT NOT NULL,
 		Y INT NOT NULL);
 		
 -- Scenario Buildings (placed after Districts)
 CREATE TABLE IF NOT EXISTS ScenarioBuildings
-	(	ScenarioName TEXT NOT NULL,
+	(	ScenarioName TEXT,
+		MapName TEXT,
 		BuildingType TEXT NOT NULL,
+		OnlyAI BOOLEAN NOT NULL CHECK (OnlyAI IN (0,1)) DEFAULT 0,
+		OnlyHuman BOOLEAN NOT NULL CHECK (OnlyHuman IN (0,1)) DEFAULT 0,
 		X INT NOT NULL,
 		Y INT NOT NULL);
 		
 -- Scenario Occupied Territory (placed last - can be used only if there is a Get/SetOriginalOwner method for plots)
 CREATE TABLE IF NOT EXISTS ScenarioOccupiedTerritory
-	(	ScenarioName TEXT NOT NULL,
+	(	ScenarioName TEXT,
+		MapName TEXT,
 		CivilizationType TEXT NOT NULL,
 		CityName TEXT,					-- if NULL the plot will be owned by the nearest city in that case
+		OnlyAI BOOLEAN NOT NULL CHECK (OnlyAI IN (0,1)) DEFAULT 0,
+		OnlyHuman BOOLEAN NOT NULL CHECK (OnlyHuman IN (0,1)) DEFAULT 0,
 		X INT NOT NULL,
 		Y INT NOT NULL);
 		
 -- Scenario Improvements
 CREATE TABLE IF NOT EXISTS ScenarioImprovements
-	(	ScenarioName TEXT NOT NULL,
+	(	ScenarioName TEXT,
+		MapName TEXT,
 		ImprovementType TEXT NOT NULL,
+		OnlyAI BOOLEAN NOT NULL CHECK (OnlyAI IN (0,1)) DEFAULT 0,
+		OnlyHuman BOOLEAN NOT NULL CHECK (OnlyHuman IN (0,1)) DEFAULT 0,
 		X INT NOT NULL,
 		Y INT NOT NULL);
 
@@ -162,12 +180,15 @@ CREATE TABLE IF NOT EXISTS ScenarioUnitsReplacement
 
 -- Scenario Units
 CREATE TABLE IF NOT EXISTS ScenarioUnits
-	(	ScenarioName TEXT NOT NULL,
+	(	ScenarioName TEXT,
+		MapName TEXT,
 		CivilizationType TEXT NOT NULL,
 		UnitType TEXT NOT NULL,
 		UnitName TEXT,
 		PromotionList TEXT,
 		Health INT default 100,
+		OnlyAI BOOLEAN NOT NULL CHECK (OnlyAI IN (0,1)) DEFAULT 0,
+		OnlyHuman BOOLEAN NOT NULL CHECK (OnlyHuman IN (0,1)) DEFAULT 0,
 		X INT NOT NULL,
 		Y INT NOT NULL);
 
@@ -176,6 +197,8 @@ CREATE TABLE IF NOT EXISTS ScenarioTechs
 	(	ScenarioName TEXT NOT NULL,
 		CivilizationType TEXT,			-- If NULL give the tech (or the era's techs depending on which is set) to all civilizations
 		EraType TEXT,
+		OnlyAI BOOLEAN NOT NULL CHECK (OnlyAI IN (0,1)) DEFAULT 0,
+		OnlyHuman BOOLEAN NOT NULL CHECK (OnlyHuman IN (0,1)) DEFAULT 0,
 		TechnologyType TEXT);
 		
 -----------------------------------------------
