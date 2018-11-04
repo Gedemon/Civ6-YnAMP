@@ -65,7 +65,8 @@ for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 	if LeaderTypeName 		then isInGame[LeaderTypeName] 		= true end
 end
 
-print ("ynAMP Options: Culturally Linked = " .. tostring(bCulturallyLinked) ..", TSL = " .. tostring(bTSL) ..", Exclusion Zones = " .. tostring(bResourceExclusion) ..", Requested Resources = " .. tostring(bRequestedResources)..", Real Deposits = " .. tostring(bRealDeposits) .. ", Place All Luxuries = ".. tostring(bPlaceAllLuxuries) ) 
+print ("YnAMP Options:")
+print ("- Culturally Linked = " .. tostring(bCulturallyLinked) ..", TSL = " .. tostring(bTSL) ..", Exclusion Zones = " .. tostring(bResourceExclusion) ..", Requested Resources = " .. tostring(bRequestedResources)..", Real Deposits = " .. tostring(bRealDeposits) .. ", Place All Luxuries = ".. tostring(bPlaceAllLuxuries) ) 
 
 ------------------------------------------------------------------------------
 -- http://lua-users.org/wiki/SortedIteration
@@ -4022,6 +4023,7 @@ function getPlotsInAreaForResource(iX, iWidth, iY, iHeight, eResourceType)
 end
 
 -- add civ's specific resources
+local bStartinglocationResourcesAdded = false
 function AddStartingLocationResources()
 
 	print("-----------------------------------------")
@@ -4073,13 +4075,14 @@ function AddStartingLocationResources()
 							ResourceBuilder.SetResourceType(pPlot, eResourceType, 1)
 							--print ("  - Resource placed !")
 						else
-							--print ("  - Failed on second pass...")
+							print ("  - Placement failed after two passes for " .. tostring(civilization) .. " requesting ".. tostring(resource))
 						end
 					end
 				end
 			end
 		end
 	end
+	bStartinglocationResourcesAdded = true
 	print("-------------------------------")
 end
 
@@ -4900,6 +4903,10 @@ function YnAMP_StartPositions()
 	if bCulturallyLinked then
 		CulturallyLinkedCivilizations()	
 		CulturallyLinkedCityStates()
+	end
+	
+	if bRequestedResources and (not bNoResources) and (not bStartinglocationResourcesAdded) then
+		AddStartingLocationResources()
 	end
 end
 
