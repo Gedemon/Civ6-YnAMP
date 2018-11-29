@@ -52,6 +52,8 @@
 			<File>Maps/GiantEarth/CityMap.xml</File>
 			<File>Maps/GiantEarth/CityMap_Egypt.xml</File>
 			<File>Maps/GiantEarth/CityMap_Greece.xml</File>
+			<File>Maps/GiantEarth/CityMap_Japan.xml</File>
+			<File>Maps/GiantEarth/CityMap_Korea.xml</File>
 			<File>Maps/GiantEarth/CityMap_Nubia.xml</File>
 			<File>Maps/GiantEarth/CityMap_Rome.xml</File>
 			<File>Maps/GiantEarth/CityMap_Spain.xml</File>
@@ -179,6 +181,8 @@
 		<File>Maps/GiantEarth/CityMap.xml</File>
 		<File>Maps/GiantEarth/CityMap_Egypt.xml</File>
 		<File>Maps/GiantEarth/CityMap_Greece.xml</File>
+		<File>Maps/GiantEarth/CityMap_Japan.xml</File>
+		<File>Maps/GiantEarth/CityMap_Korea.xml</File>
 		<File>Maps/GiantEarth/CityMap_Nubia.xml</File>
 		<File>Maps/GiantEarth/CityMap_Rome.xml</File>
 		<File>Maps/GiantEarth/CityMap_Spain.xml</File>
