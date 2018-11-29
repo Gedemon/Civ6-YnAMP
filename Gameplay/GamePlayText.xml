@@ -6681,6 +6681,49 @@
 		<Replace Tag="LOC_CITY_NAME_SUIHUA" Text="Suihua" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_DAXINGANLING" Text="Daxing'anling" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_MAGDAGACHI" Text="Magdagachi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DAELYEON" Text="Daelyeon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SHIMYANG" Text="Shimyang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YEONBYEON" Text="Yeonbyeon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PAEKSAN" Text="Paeksan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YOWON" Text="Yowon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HABIBIN" Text="Habibin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JANGCHUN" Text="Jangchun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MODANGANG" Text="Modangang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KAMOKSA" Text="Kamoksa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GYESEO" Text="Gyeseo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SSANGAPSAN" Text="Ssangapsan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HAKGANG" Text="Hakgang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_IJUN" Text="Ijun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SUWA" Text="Suwa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DAEHEUNGANLYEONG" Text="Daeheunganlyeong" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JEJEHABI" Text="Jejehabi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JONGWON" Text="Jongwon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PAEKSEONG" Text="Paekseong" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DANGSAN" Text="Dangsan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TONGRYO" Text="Tongryo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BUSHIN" Text="Bushin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JEOKBONG" Text="Jeokbong" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YEHA" Text="Yeha" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BUKGYUNG" Text="Bukgyung" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BOJEONG" Text="Bojeong" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHEONJIN" Text="Cheonjin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEOKGAJANG" Text="Seokgajang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JANGJA" Text="Jangja" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JEONGJU" Text="Jeongju" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GAEBONG" Text="Gaebong" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YUBANG" Text="Yubang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JENAM" Text="Jenam" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHEONGDO" Text="Cheongdo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YEONDAE" Text="Yeondae" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JENYEONG" Text="Jenyeong" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_PAENGSEONG" Text="Paengseong" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_IMEUN" Text="Imeun" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_YEOMSEONG" Text="Yeomseong" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SANGHAE" Text="Sanghae" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAMGYEONG" Text="Namgyeong" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DAIREN" Text="Dairen" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TAIHOKU" Text="Taihoku" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TAKAO" Text="Takao" Language="en_US" />
 
 	</LocalizedText>
 
@@ -6750,6 +6793,48 @@
 		<Replace Tag="LOC_CITY_NAME_SAPPORO" Text="Sapporo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ASAHIKAWA" Text="Asahikawa" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_KUSHIRO" Text="Kushiro" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DONGGYEONG" Text="Donggyeong" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_CHEONYEOP" Text="Cheonyeop" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GYEONGDO" Text="Gyeongdo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JONGBON" Text="Jongbon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DAEJIN" Text="Daejin" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GWANGBYEONG" Text="Gwangbyeong" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MYEONGGO" Text="Myeonggo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DAEPAN" Text="Daepan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAYANG" Text="Nayang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HWAGASAN" Text="Hwagasan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GYE" Text="Gye" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SHINHO" Text="Shinho" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_MUHAK" Text="Muhak" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_DOCHWI" Text="Dochwi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HUINAK" Text="Huinak" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GANGSAN" Text="Gangsan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SONGGANG" Text="Songgang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GWANGDO" Text="Gwangdo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SANKU" Text="Sanku" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BUKGYUJU" Text="Bukgyuju" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BUGANG" Text="Bugang" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GOMBON" Text="Gombon" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GUNGGI" Text="Gunggi" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NOKYEDO" Text="Nokyedo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_GOJONG" Text="Gojong" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SONGSAN" Text="Songsan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAISHU" Text="Saishu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KOSHU" Text="Koshu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_FUSAN" Text="Fusan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KEIJO" Text="Keijo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TAIKYU" Text="Taikyu" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_URUSAN" Text="Urusan" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JINSEN" Text="Jinsen" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_TAIDEN" Text="Taiden" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HOKO" Text="Hoko" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KORYO" Text="Koryo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_HEIJO" Text="Heijo" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_JUNGAWA" Text="Jungawa" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KANKO" Text="Kanko" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KAISEN" Text="Kaisen" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_KOKAI" Text="Kokai" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SEISHIN" Text="Seishin" Language="en_US" />
 
 	</LocalizedText>
 
