@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+
+	<!-- +++++++++++++++++++++++++++++++++++ -->
+	<!-- "Giant Earth Map" City Map for Japan -->
+	<!-- +++++++++++++++++++++++++++++++++++ -->
+
+
+
+	<!-- +++++++++++++++ -->
+	<!-- Asia City Map -->
+	<!-- +++++++++++++++ -->
+
+
+	<!-- KOREA -->
+	<CityMap>
+
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_SAISHU" X="89" Y="57" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_KOSHU" X="89" Y="59" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_FUSAN" X="90" Y="59" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_ZENSHU" X="90" Y="60" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_FUSAN" X="91" Y="60" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_KEIJO" X="89" Y="61" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_TAIKYU" X="90" Y="61" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_URUSAN" X="91" Y="61" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_JINSEN" X="89" Y="62" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_TAIDEN" X="90" Y="62" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_HOKO" X="91" Y="62" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_JINSEN" X="88" Y="63" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_JINSEN" X="89" Y="63" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_KORYO" X="90" Y="63" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_HEIJO" X="89" Y="64" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_HEIJO" X="88" Y="65" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_JUNGAWA" X="89" Y="65" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_KANKO" X="91" Y="65" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_KAISEN" X="89" Y="66" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_KOKAI" X="90" Y="66" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_KANKO" X="91" Y="66" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_KANKO" X="92" Y="66" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_KOKAI" X="89" Y="67" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_SEISHIN" X="92" Y="67" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_SEISHIN" X="93" Y="68" MapName="GiantEarth"/>
+
+	</CityMap>
+
+	<!-- CHINA -->
+	<CityMap>
+
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_DAIREN" X="87" Y="64" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_DAIREN" X="87" Y="65" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_DAIREN" X="87" Y="66" MapName="GiantEarth"/>
+
+	</CityMap>
+
+	<!-- TAIWAN -->
+	<CityMap>
+
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_TAIHOKU" X="87" Y="49" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_TAIHOKU" X="88" Y="49" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_JAPAN" Area="0" CityLocaleName="LOC_CITY_NAME_TAKAO" X="88" Y="48" MapName="GiantEarth"/>
+
+
+	</CityMap>
+
+</GameData>

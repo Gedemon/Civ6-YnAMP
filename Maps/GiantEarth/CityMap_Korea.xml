@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+
+	<!-- +++++++++++++++++++++++++++++++++++ -->
+	<!-- "Giant Earth Map" City Map for Korea -->
+	<!-- +++++++++++++++++++++++++++++++++++ -->
+
+
+
+	<!-- +++++++++++++++ -->
+	<!-- Asia City Map -->
+	<!-- +++++++++++++++ -->
+
+
+	<!-- CHINA -->
+	<CityMap>
+
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DAELYEON" X="87" Y="64" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DAELYEON" X="87" Y="65" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DAELYEON" X="87" Y="66" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SHIMYANG" X="88" Y="66" MapName="GiantEarth"/> 
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SHIMYANG" X="87" Y="67" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SHIMYANG" X="88" Y="67" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SHIMYANG" X="86" Y="67" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_YEONBYEON" X="91" Y="68" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_YEONBYEON" X="91" Y="69" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_YEONBYEON" X="92" Y="69" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_PAEKSAN" X="90" Y="68" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_YOWON" X="89" Y="68" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_HABIBIN" X="88" Y="69" MapName="GiantEarth"/> 
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_HABIBIN" X="89" Y="69" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_HABIBIN" X="88" Y="70" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_HABIBIN" X="89" Y="70" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_HABIBIN" X="90" Y="70" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_HABIBIN" X="88" Y="71" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_HABIBIN" X="89" Y="71" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JANGCHUN" X="87" Y="68" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JANGCHUN" X="88" Y="68" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JANGCHUN" X="87" Y="69" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_MODANGANG" X="93" Y="70" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_MODANGANG" X="92" Y="70" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_KAMOKSA" X="91" Y="70" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_GYESEO" X="93" Y="71" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SSANGAPSAN" X="92" Y="71" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_HAKGANG" X="91" Y="71" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_IJUN" X="90" Y="71" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_IJUN" X="90" Y="72" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SUWA" X="89" Y="72" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SUWA" X="89" Y="73" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DAEHEUNGANLYEONG" X="87" Y="73" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DAEHEUNGANLYEONG" X="88" Y="73" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DAEHEUNGANLYEONG" X="87" Y="74" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DAEHEUNGANLYEONG" X="88" Y="74" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DAEHEUNGANLYEONG" X="89" Y="74" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DAEHEUNGANLYEONG" X="87" Y="75" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DAEKYUNG" X="87" Y="72" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DAEKYUNG" X="88" Y="72" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JEJEHABI" X="86" Y="72" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JONGWON" X="87" Y="71" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JONGWON" X="87" Y="70" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_PAEKSEONG" X="86" Y="71" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DANGSAN" X="86" Y="66" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DANGSAN" X="85" Y="65" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DANGSAN" X="85" Y="66" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DANGSAN" X="84" Y="65" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_TONGRYO" X="86" Y="69" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_BUSHIN" X="86" Y="68" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JEOKBONG" X="85" Y="67" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JEOKBONG" X="85" Y="68" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_YEHA" X="84" Y="67" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_YEHA" X="84" Y="68" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_BUKGYUNG" X="83" Y="67" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_BUKGYUNG" X="84" Y="66" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_BUKGYUNG" X="83" Y="66" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_BUKGYUNG" X="82" Y="66" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_BUKGYUNG" X="83" Y="65" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_BUKGYUNG" X="82" Y="65" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_BOJEONG" X="81" Y="65" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_BOJEONG" X="81" Y="64" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_BOJEONG" X="82" Y="64" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_BOJEONG" X="81" Y="63" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_CHEONJIN" X="84" Y="64" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_CHEONJIN" X="83" Y="64" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_CHEONJIN" X="83" Y="63" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_CHEONJIN" X="82" Y="63" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_CHEONJIN" X="84" Y="62" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_CHEONJIN" X="83" Y="62" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SEOKGAJANG" X="79" Y="65" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SEOKGAJANG" X="80" Y="65" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SEOKGAJANG" X="80" Y="64" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SEOKGAJANG" X="79" Y="63" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SEOKGAJANG" X="80" Y="63" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JANGJA" X="81" Y="62" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JEONGJU" X="80" Y="61" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JEONGJU" X="81" Y="61" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JEONGJU" X="81" Y="60" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JEONGJU" X="82" Y="60" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JEONGJU" X="81" Y="59" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_GAEBONG" X="82" Y="61" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_YUBANG" X="84" Y="61" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_YUBANG" X="85" Y="61" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JENAM" X="83" Y="61" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JENAM" X="84" Y="60" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_CHEONGDO" X="85" Y="60" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_CHEONGDO" X="86" Y="60" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_YEONDAE" X="86" Y="61" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JENYEONG" X="83" Y="60" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JENYEONG" X="82" Y="59" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_PAENGSEONG" X="83" Y="59" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_PAENGSEONG" X="83" Y="58" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_PAENGSEONG" X="84" Y="58" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_IMEUN" X="84" Y="59" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_YEOMSEONG" X="85" Y="58" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_YEOMSEONG" X="86" Y="58" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SANGHAE" X="86" Y="57" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SANGHAE" X="86" Y="56" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SANGHAE" X="87" Y="56" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SANGHAE" X="86" Y="55" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_NAMGYEONG" X="85" Y="57" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_NAMGYEONG" X="84" Y="57" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_NAMGYEONG" X="85" Y="56" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_NAMGYEONG" X="84" Y="56" MapName="GiantEarth"/>
+
+	</CityMap>
+
+	<!-- JAPAN -->
+	<CityMap>
+
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DONGGYEONG" X="100" Y="60" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DONGGYEONG" X="99" Y="60" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DONGGYEONG" X="98" Y="59" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_CHEONYEOP" X="100" Y="59" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_CHEONYEOP" X="100" Y="58" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_GYEONGDO" X="96" Y="58" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_GYEONGDO" X="96" Y="59" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_JONGBON" X="97" Y="59" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DAEJIN" X="97" Y="58" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DAEJIN" X="97" Y="57" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_GWANGBYEONG" X="98" Y="58" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_MYEONGGO" X="98" Y="57" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_MYEONGGO" X="99" Y="56" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DAEPAN" X="96" Y="57" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DAEPAN" X="97" Y="56" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_NAYANG" X="98" Y="56" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_HWAGASAN" X="97" Y="55" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_GYE" X="96" Y="55" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SHINHO" X="95" Y="58" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SHINHO" X="95" Y="57" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_MUHAK" X="95" Y="59" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DOCHWI" X="94" Y="59" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_DOCHWI" X="94" Y="58" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_HUINAK" X="94" Y="57" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_GANGSAN" X="93" Y="57" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SONGGANG" X="93" Y="58" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_GWANGDO" X="92" Y="57" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_GWANGDO" X="92" Y="56" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SANKU" X="91" Y="57" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_BUKGYUJU" X="91" Y="56" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_BUKGYUJU" X="90" Y="55" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_BUGANG" X="90" Y="54" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_BUGANG" X="91" Y="54" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_GOMBON" X="90" Y="53" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_GOMBON" X="90" Y="52" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_GUNGGI" X="91" Y="53" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_NOKYEDO" X="91" Y="52" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_GOJONG" X="94" Y="55" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_GOJONG" X="94" Y="54" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SONGSAN" X="93" Y="54" MapName="GiantEarth"/>
+		<Replace Civilization="CIVILIZATION_KOREA" Area="0" CityLocaleName="LOC_CITY_NAME_SONGSAN" X="93" Y="52" MapName="GiantEarth"/>
+
+	</CityMap>
+
+</GameData>
