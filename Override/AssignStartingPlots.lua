@@ -3418,6 +3418,11 @@ function GetBestStartingPlotFromList(plots, bIsMinor)
 				bValid = false;
 			end
 
+			-- Checks to see if the plot is a Natural Wonder
+			if(pTempPlot:IsNaturalWonder() == true) then
+				bValid = false;
+			end
+
 			-- Checks to see if the plot is water
 			if(pTempPlot:IsWater() == true) then
 				bValid = false;
