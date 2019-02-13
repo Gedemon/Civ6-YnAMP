@@ -49,6 +49,25 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PERSIA"	X="46" Y="54" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_POLAND"	X="26" Y="71" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ZULU"		X="28" Y="9" />
+		<!-- Gathering Storm -->
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SWEDEN"	X="24"	Y="79" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MALI"		X="7" 	Y="39" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MAORI"		X="120"	Y="16" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_HUNGARY"	X="25"	Y="65" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CANADA"	X="153"	Y="71" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_FRANCE"	X="11"	Y="64" Leader="LEADER_ELEANOR" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PHOENICIA"	X="36"	Y="52" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_INCAN"		X="155"	Y="25" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_OTTOMAN"	X="32"	Y="60" />		
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AKKAD"			X="42"	Y="52" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BOLOGNA"		X="19"	Y="61" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CAHOKIA"		X="146"	Y="64" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CARDIFF"		X="8"	Y="73" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_FEZ"			X="7"	Y="49" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MEXICO_CITY"	X="138"	Y="49" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_NAZCA"			X="153"	Y="24" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_NGAZARGAMU"	X="21"	Y="39" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_RAPA_NUI"		X="7"	Y="49" />
 	</StartPosition>	
 	
 	<!-- Minors -->
@@ -181,7 +200,8 @@
 		<Replace MapName="GiantEarth" X="11" Y="71" FeatureType="FEATURE_CLIFFS_DOVER" TerrainType="TERRAIN_GRASS_HILLS" />
 		<Replace MapName="GiantEarth" X="12" Y="71" FeatureType="FEATURE_CLIFFS_DOVER" TerrainType="TERRAIN_GRASS_HILLS" />
 		
-		<Replace MapName="GiantEarth" X="132" Y="64" FeatureType="FEATURE_CRATER_LAKE" TerrainType="TERRAIN_COAST" />
+		<!-- FEATURE_CRATER_LAKE : 1 plot -->
+		<Replace MapName="GiantEarth" X="131" Y="66" FeatureType="FEATURE_CRATER_LAKE" TerrainType="TERRAIN_COAST" />
 		
 		<!-- FEATURE_DEAD_SEA : 2 plots, flat desert surrounded by desert, 1st plot is SOUTHWEST -->
 		<Replace MapName="GiantEarth" X="37" Y="50" FeatureType="FEATURE_DEAD_SEA" TerrainType="TERRAIN_DESERT" />
@@ -196,6 +216,7 @@
 		<Replace MapName="GiantEarth" X="146" Y="35" FeatureType="FEATURE_GALAPAGOS" TerrainType="TERRAIN_COAST" />
 		<Replace MapName="GiantEarth" X="146" Y="36" FeatureType="FEATURE_GALAPAGOS" TerrainType="TERRAIN_COAST" />
 		
+		<!-- FEATURE_KILIMANJARO : 1 plot -->
 		<Replace MapName="GiantEarth" X="32" Y="27" FeatureType="FEATURE_KILIMANJARO" TerrainType="TERRAIN_GRASS" />
 		
 		<!-- FEATURE_PANTANAL : 4 plots, flat grass/plains without features, 1st plot is SOUTHWEST -->
@@ -213,6 +234,7 @@
 		<Replace MapName="GiantEarth" X="154" Y="7" FeatureType="FEATURE_TORRES_DEL_PAINE" TerrainType="TERRAIN_TUNDRA" />
 		<Replace MapName="GiantEarth" X="155" Y="7" FeatureType="FEATURE_TORRES_DEL_PAINE" TerrainType="TERRAIN_TUNDRA" />
 		
+		<!-- FEATURE_TSINGY : 1 plot -->
 		<Replace MapName="GiantEarth" X="36" Y="18" FeatureType="FEATURE_TSINGY" TerrainType="TERRAIN_GRASS" />
 		
 		<!-- FEATURE_YOSEMITE : 2 plots EAST-WEST, flat tundra/plains without features, 1st plot is WEST -->
@@ -236,6 +258,7 @@
 		<Replace MapName="GiantEarth" X="6" Y="77" FeatureType="FEATURE_GIANTS_CAUSEWAY" TerrainType="TERRAIN_GRASS" />
 		<Replace MapName="GiantEarth" X="6" Y="78" FeatureType="FEATURE_GIANTS_CAUSEWAY" TerrainType="TERRAIN_COAST" />		
 		
+		<!-- FEATURE_ULURU : 1 plot -->
 		<Replace MapName="GiantEarth" X="93" Y="16" FeatureType="FEATURE_ULURU" TerrainType="TERRAIN_DESERT" />
 
 		<!-- FEATURE_HA_LONG_BAY -->

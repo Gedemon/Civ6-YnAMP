@@ -42,6 +42,17 @@
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_PERSIA"		X="100" Y="30" AlternateStart="1" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_POLAND"		X="58" Y="53" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_POLAND"		X="65" Y="58" AlternateStart="1" />
+		<!-- Gathering Storm -->
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SWEDEN"		X="55"	Y="72" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_HUNGARY"		X="55"	Y="44" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FRANCE"		X="27"	Y="49" Leader="LEADER_ELEANOR" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_PHOENICIA"	X="82"	Y="16" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_OTTOMAN"		X="69"	Y="32" />
+		
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_AKKAD"		X="99"	Y="19" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_BOLOGNA"		X="44"	Y="40" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_CARDIFF"		X="26"	Y="62" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FEZ"			X="15"	Y="25" />
 		
 		<!-- City States -->
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ANTIOCH" 		X="82" Y="20" />

@@ -4,6 +4,10 @@
 	<!--   Largest Earth start position   -->
 	<!-- ++++++++++++++++++++++++++++++ -->
 	
+	<ExtraPlacement>
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_OTTOMAN"		X="41"	Y="74" TerrainType="TERRAIN_PLAINS" />
+	</ExtraPlacement>
+	
 	<!-- Majors -->
 	<StartPosition>
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_AMERICA"		X="206" Y="80" />
@@ -39,6 +43,25 @@
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_SUMERIA"		X="53" Y="63" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_PERSIA"		X="61" Y="68" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_POLAND"		X="33" Y="89" />
+		<!-- Gathering Storm -->
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_SWEDEN"	X="32"	Y="99" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_MALI"		X="9" 	Y="47" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_MAORI"		X="162"	Y="17" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_HUNGARY"	X="32"	Y="81" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_CANADA"	X="206"	Y="87" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_FRANCE"	X="13"	Y="80" Leader="LEADER_ELEANOR" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_PHOENICIA"	X="47"	Y="64" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_INCAN"		X="203"	Y="31" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_OTTOMAN"	X="41"	Y="74" />		
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_AKKAD"			X="55"	Y="65" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_BOLOGNA"		X="25"	Y="77" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_CAHOKIA"		X="194"	Y="80" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_CARDIFF"		X="11"	Y="90" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_FEZ"			X="9"	Y="61" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_MEXICO_CITY"	X="184"	Y="61" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_NAZCA"			X="203"	Y="30" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_NGAZARGAMU"	X="28"	Y="47" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_RAPA_NUI"		X="179"	Y="22" />
 	</StartPosition>
 		
 	<!-- Minors from Civ6 -->

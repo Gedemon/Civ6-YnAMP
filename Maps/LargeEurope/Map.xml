@@ -5,6 +5,10 @@
   <!-- LargeEurope map position           -->
   <!-- ++++++++++++++++++++++++++++++++++ -->
 
+	<ExtraPlacement>
+		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_OTTOMAN"		X="51"	Y="31" TerrainType="TERRAIN_GRASS" />
+	</ExtraPlacement>
+	
   <NaturalWonderPosition>
     <Replace MapName="LargeEurope" X="24" Y="47" FeatureType="FEATURE_CLIFFS_DOVER" />
     <Replace MapName="LargeEurope" X="25" Y="47" FeatureType="FEATURE_CLIFFS_DOVER" />
@@ -48,6 +52,17 @@
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_SCYTHIA"	X="58" Y="40" />
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_SPAIN"	X="19" Y="30" />
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_SUMERIA"	X="73" Y="15" />
+		<!-- Gathering Storm -->
+		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_SWEDEN"	X="41"	Y="61" />
+		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_MALI"		X="10" 	Y="1" />
+		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_HUNGARY"	X="43"	Y="40" />
+		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_FRANCE"	X="24"	Y="39" Leader="LEADER_ELEANOR" />
+		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_PHOENICIA"X="61"	Y="19" />
+		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_OTTOMAN"	X="51"	Y="31" />		
+		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_AKKAD"		X="70"	Y="21" />
+		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_BOLOGNA"		X="35"	Y="36" />
+		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_CARDIFF"		X="21"	Y="48" />
+		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_FEZ"			X="18"	Y="18" />
   </StartPosition>
 
   <!-- Minors -->

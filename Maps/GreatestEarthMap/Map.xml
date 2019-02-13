@@ -70,6 +70,25 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SWEDEN"		X="52" Y="61" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_VENICE"		X="51" Y="47" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ZULU"		X="59" Y="6" />
+		<!-- Gathering Storm -->
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SWEDEN"		X="53"	Y="62" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MALI"		X="41" 	Y="24" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MAORI"		X="8"	Y="15" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_HUNGARY"		X="54"	Y="49" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CANADA"		X="20"	Y="54" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_FRANCE"		X="39"	Y="45" Leader="LEADER_ELEANOR" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PHOENICIA"	X="62"	Y="39" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_INCAN"		X="23"	Y="17" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_OTTOMAN"		X="58"	Y="45" />		
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AKKAD"			X="65"	Y="41" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BOLOGNA"			X="50"	Y="46" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CAHOKIA"			X="13"	Y="47" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CARDIFF"			X="36"	Y="52" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_FEZ"				X="41"	Y="33" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MEXICO_CITY"		X="11"	Y="34" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NAZCA"			X="22"	Y="15" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NGAZARGAMU"		X="49"	Y="26" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_RAPA_NUI"		X="15"	Y="9" />
 	</StartPosition>
 	
 	<!-- City States -->
@@ -141,6 +160,11 @@
 		<Replace MapName="GreatestEarthMap" Region="SOUTH_AFRICA"		X="49" Y="1" Width="13" Height="14" />
 		<Replace MapName="GreatestEarthMap" Region="MADAGASCAR"			X="64" Y="4" Width="8" Height="9" />
 	</RegionPosition>
+	
+	
+	<ExtraPlacement>
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_RAPA_NUI"		X="15"	Y="9" TerrainType="TERRAIN_GRASS" />
+	</ExtraPlacement>
 
 	
 	<!--     Natural Wonders    -->
