@@ -1639,12 +1639,12 @@ end
 -------------------------------------------------------------------------------
 function ClearPlot(plot)
 	TerrainBuilder.SetFeatureType(plot, -1)
-	TerrainBuilder.SetWOfRiver(plot, false, -1)
-	TerrainBuilder.SetNWOfRiver(plot, false, -1)
-	TerrainBuilder.SetNEOfRiver(plot, false, -1)
-	TerrainBuilder.SetWOfCliff(plot, false, -1)
-	TerrainBuilder.SetNWOfCliff(plot, false, -1)
-	TerrainBuilder.SetNEOfCliff(plot, false, -1)
+	TerrainBuilder.SetWOfRiver(	plot, false, -1, 0)
+	TerrainBuilder.SetNWOfRiver(plot, false, -1, 0)
+	TerrainBuilder.SetNEOfRiver(plot, false, -1, 0)
+	TerrainBuilder.SetWOfCliff(	plot, false, -1, 0)
+	TerrainBuilder.SetNWOfCliff(plot, false, -1, 0)
+	TerrainBuilder.SetNEOfCliff(plot, false, -1, 0)
 end
 
 -------------------------------------------------------------------------------

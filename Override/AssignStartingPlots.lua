@@ -5342,7 +5342,7 @@ end
 ------------------------------------------------------------------------------
 -- The original function was placing forest and marshs on every available plots in the south of the Europe map, maybe because all the first land plots tested were deserts ?
 -- It has been changed here to randomize the order in which the land plots are tested for features placement.
-function FeatureGenerator:AddFeatures(allow_mountains_on_coast)
+function FeatureGenerator:AddFeatures_(allow_mountains_on_coast)
 	print("YnAMP : FeatureGenerator:AddFeatures() override")
 	local flag = allow_mountains_on_coast or true;
 
