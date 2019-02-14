@@ -3852,17 +3852,25 @@ end
 
 function MakeRiverFlowToNorth(plot)
 	if plot then
-		if plot:IsNEOfRiver() then TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHWEST) end
-		if plot:IsWOfRiver() then TerrainBuilder.SetWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTH) end
-		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHEAST) end
+		if plot:IsNEOfRiver() then TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHWEST, 0) end
+		if plot:IsWOfRiver() then TerrainBuilder.SetWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTH, 0) end
+		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHEAST, 0) end
 	end
 end
 
-function MakeRiverFlowToEast(plot)
+function MakeRiverFlowToSouthOrEast(plot)
 	if plot then
-		if plot:IsNEOfRiver() then TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHEAST) end
-		if plot:IsWOfRiver() then TerrainBuilder.SetWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTH) end
-		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHEAST) end
+		if plot:IsNEOfRiver() then TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHEAST, 0) end
+		if plot:IsWOfRiver() then TerrainBuilder.SetWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTH, 0) end
+		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHEAST, 0) end
+	end
+end
+
+function MakeRiverFlowToSouthOrWest(plot)
+	if plot then
+		if plot:IsNEOfRiver() then TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHWEST, 0) end
+		if plot:IsWOfRiver() then TerrainBuilder.SetWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTH, 0) end
+		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHWEST, 0) end
 	end
 end
 
@@ -4612,15 +4620,15 @@ function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains,
 		-- Set Rivers
 		if bImportRivers then
 			if Rivers[1][1] == 1 then -- IsNEOfRiver
-				TerrainBuilder.SetNEOfRiver(plot, true, Rivers[1][2])
+				TerrainBuilder.SetNEOfRiver(plot, true, Rivers[1][2], 0)
 				if bOutput then print(" - Set is NE of River, flow = "..tostring(Rivers[1][2])) end
 			end
 			if Rivers[2][1] == 1 then -- IsWOfRiver
-				TerrainBuilder.SetWOfRiver(plot, true, Rivers[2][2])
+				TerrainBuilder.SetWOfRiver(plot, true, Rivers[2][2], 0)
 				if bOutput then print(" - Set is W of River, flow = "..tostring(Rivers[2][2])) end
 			end
 			if Rivers[3][1] == 1 then -- IsNWOfRiver
-				TerrainBuilder.SetNWOfRiver(plot, true, Rivers[3][2])
+				TerrainBuilder.SetNWOfRiver(plot, true, Rivers[3][2], 0)
 				if bOutput then print(" - Set is NW of River, flow = "..tostring(Rivers[3][2])) end
 			end
 		end
@@ -4774,15 +4782,15 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 		-- Set Rivers
 		if bImportRivers then
 			if Rivers[1][1] == 1 then -- IsNEOfRiver
-				TerrainBuilder.SetNEOfRiver(plot, true, Rivers[1][2])
+				TerrainBuilder.SetNEOfRiver(plot, true, Rivers[1][2], 0)
 				if bOutput then print(" - Set is NE of River, flow = "..tostring(Rivers[1][2])) end
 			end
 			if Rivers[2][1] == 1 then -- IsWOfRiver
-				TerrainBuilder.SetWOfRiver(plot, true, Rivers[2][2])
+				TerrainBuilder.SetWOfRiver(plot, true, Rivers[2][2], 0)
 				if bOutput then print(" - Set is W of River, flow = "..tostring(Rivers[2][2])) end
 			end
 			if Rivers[3][1] == 1 then -- IsNWOfRiver
-				TerrainBuilder.SetNWOfRiver(plot, true, Rivers[3][2])
+				TerrainBuilder.SetNWOfRiver(plot, true, Rivers[3][2], 0)
 				if bOutput then print(" - Set is NW of River, flow = "..tostring(Rivers[3][2])) end
 			end
 		end

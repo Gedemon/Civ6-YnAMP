@@ -81,12 +81,12 @@ function GenerateMap()
 	-- Volga direction
 	local plot = GetPlotFromRefMap(47,96, bOnlyOffset)
 	if plot then
-		TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHEAST)
+		MakeRiverFlowToSouthOrEast(plot)
 	end
 	-- Svir direction
 	local plot = GetPlotFromRefMap(39,97, bOnlyOffset)
 	if plot then
-		TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHWEST)
+		MakeRiverFlowToSouthOrWest(plot)
 	end
 
 end
