@@ -6,6 +6,7 @@
     <Teaser>LOC_YNAMP_TEASER</Teaser>
     <Description>LOC_YNAMP_DESCRIPTION</Description>
     <Authors>Gedemon</Authors>
+	<CompatibleVersions>2.0</CompatibleVersions>
   </Properties>	
 	
 	<InGameActions>
