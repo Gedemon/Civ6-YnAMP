@@ -2242,14 +2242,17 @@ function SetTrueStartingLocations()
 			local y = position.Y-- Round( g_ReferenceHeightRatio	* position.Y)
 
 			print ("- "..tostring(CivilizationTypeName).." at "..tostring(x)..","..tostring(y).." from initial values "..tostring(position.X)..","..tostring(position.Y))
-			local plot = Map.GetPlot(x, y)
-			--[[
-			if plot and plot:IsWater() then
-				print ("WARNING ! Plot is water, trying to switch to a land plot...")
-				plot = plot:GetNearestLandPlot()
+			local plot 				= Map.GetPlot(x, y)
+			local waterStartingPlot	= nil
+			local LeaderTypeName 	= PlayerConfigurations[iPlayer]:GetLeaderTypeName()
+			local bWaterStart 		= (GameInfo.Leaders_XP2 and GameInfo.Leaders_XP2[LeaderTypeName] ~= nil and GameInfo.Leaders_XP2[LeaderTypeName].OceanStart == true)
+			---[[
+			if plot and plot:IsWater() and bWaterStart then --(plot:GetTerrainType() == g_TERRAIN_TYPE_OCEAN) then
+				print ("Plot is Water and Civilization has Ocean Start...")
+				waterStartingPlot = plot
 			end
 			--]]
-			local bestPlot = GetBestStartingPlotAround(plot, player:IsMajor(), player:IsHuman())
+			local bestPlot = waterStartingPlot or GetBestStartingPlotAround(plot, player:IsMajor(), player:IsHuman())
 			if bestPlot and bestPlot ~= plot then
 				print ("Found better position at "..tostring(bestPlot:GetX())..","..tostring(bestPlot:GetY()))
 			end
