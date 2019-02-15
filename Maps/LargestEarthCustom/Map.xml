@@ -51,7 +51,7 @@
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_CANADA"	X="206"	Y="87" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_FRANCE"	X="13"	Y="80" Leader="LEADER_ELEANOR" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_PHOENICIA"	X="47"	Y="64" />
-		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_INCAN"		X="203"	Y="31" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_INCA"		X="203"	Y="31" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_OTTOMAN"	X="41"	Y="74" />		
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_AKKAD"			X="55"	Y="65" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_BOLOGNA"		X="25"	Y="77" />

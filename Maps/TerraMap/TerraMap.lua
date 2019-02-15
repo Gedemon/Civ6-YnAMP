@@ -516,7 +516,7 @@ function GenerateMap()
 	AreaBuilder.Recalculate();
 	local biggest_area = Areas.FindBiggestArea(false);
 	print("After Adding Hills: ", biggest_area:GetPlotCount());
-
+	
 	---[[
 	for iX = 0, g_iW - 1 do
 		for iY = 0, g_iH - 1 do
@@ -530,6 +530,30 @@ function GenerateMap()
 		end
 	end
 	--]]
+	
+	TerrainBuilder.StampContinents();
+	if GetContinentBoundaryPlotCount then
+	
+		-- to do : only get world age once
+		local world_age_new = 3;
+		local world_age_normal = 2;
+		local world_age_old = 1;
+		
+		--	local world_age
+		local world_age = MapConfiguration.GetValue("world_age");
+		if (world_age == 1) then
+			world_age = world_age_new;
+		elseif (world_age == 2) then
+			world_age = world_age_normal;
+		elseif (world_age == 3) then
+			world_age = world_age_old;
+		else
+			world_age = 1 + TerrainBuilder.GetRandomNumber(3, "Random World Age - Lua");
+		end		
+		
+		local iContinentBoundaryPlots = GetContinentBoundaryPlotCount(g_iW, g_iH);
+		AddTerrainFromContinents(plotTypes, terrainTypes, world_age, g_iW, g_iH, iContinentBoundaryPlots);
+	end
 
 	-- River generation is affected by plot types, originating from highlands and preferring to traverse lowlands.
 	AddRivers();
@@ -574,7 +598,6 @@ function GenerateMap()
 	AddCliffs(plotTypes, terrainTypes);
 
 	TerrainBuilder.AnalyzeChokepoints();
-	TerrainBuilder.StampContinents();
 
 	print("Building TSL database.")
 	if bTSL then

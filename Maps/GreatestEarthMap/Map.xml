@@ -78,7 +78,7 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CANADA"		X="20"	Y="54" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_FRANCE"		X="39"	Y="45" Leader="LEADER_ELEANOR" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PHOENICIA"	X="62"	Y="39" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_INCAN"		X="23"	Y="17" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_INCA"		X="23"	Y="17" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_OTTOMAN"		X="58"	Y="45" />		
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AKKAD"			X="65"	Y="41" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BOLOGNA"			X="50"	Y="46" />

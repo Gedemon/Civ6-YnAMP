@@ -2823,27 +2823,32 @@ function buidTSL()
 						sWarning = "too close from another TSL"
 						bCanPlaceHere = false
 					elseif plot and (plot:IsWater() or plot:IsImpassable()) then
-						sWarning = "plot is impassable or water"
-						bCanPlaceHere = false
-						if bUseRelativePlacement then
-							-- try to find a suitable replacement plot when relative placement has a bad offset
-							local bestPlot 		= nil
-							local bestFertility = 0
-							for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
-								local adjacentPlot = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), direction);								
-								if adjacentPlot and not (adjacentPlot:IsWater() or adjacentPlot:IsImpassable()) then
-									local fertility = GetPlotFertility(adjacentPlot)
-									if fertility > bestFertility then
-										bestPlot 		= adjacentPlot
-										bestFertility	= fertility
+						if plot:IsWater() and (GameInfo.Leaders_XP2 and GameInfo.Leaders_XP2[LeaderTypeName] ~= nil and GameInfo.Leaders_XP2[LeaderTypeName].OceanStart == true) then
+							print ("   - plot is water, but Leader has <OceanStart> at "..tostring(rowX)..","..tostring(rowY))
+						else
+					
+							sWarning = "plot is impassable or water"
+							bCanPlaceHere = false
+							if bUseRelativePlacement then
+								-- try to find a suitable replacement plot when relative placement has a bad offset
+								local bestPlot 		= nil
+								local bestFertility = 0
+								for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+									local adjacentPlot = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), direction);								
+									if adjacentPlot and not (adjacentPlot:IsWater() or adjacentPlot:IsImpassable()) then
+										local fertility = GetPlotFertility(adjacentPlot)
+										if fertility > bestFertility then
+											bestPlot 		= adjacentPlot
+											bestFertility	= fertility
+										end
 									end
 								end
-							end
-							if bestPlot then
-								rowX, rowY		= bestPlot:GetX(), bestPlot:GetY()
-								sWarning 		= ""
-								bCanPlaceHere 	= true								
-								print ("   - plot was impassable or water, found replacement at "..tostring(rowX)..","..tostring(rowY))
+								if bestPlot then
+									rowX, rowY		= bestPlot:GetX(), bestPlot:GetY()
+									sWarning 		= ""
+									bCanPlaceHere 	= true
+									print ("   - plot was impassable or water, found replacement at "..tostring(rowX)..","..tostring(rowY))
+								end
 							end
 						end
 					end	
@@ -3062,7 +3067,17 @@ BuildRefXY()
 	if not (bImportFeatures or bNoFeatures) then
 		AddFeatures()
 	end
-
+	
+	-- Add GS flood plains
+	if TerrainBuilder.GenerateFloodplains then
+		local bRiversStartInland	= true
+		local iMinFloodplainSize 	= 4;
+		local iMaxFloodplainSize 	= 10;
+		TerrainBuilder.GenerateFloodplains(bRiversStartInland, iMinFloodplainSize, iMaxFloodplainSize);
+	end
+	
+	-- to do: loop on rivers to apply unique IDs
+	
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer before AreaBuilder.Recalculate() = "..tostring(currentTimer).." seconds")
 	
@@ -3780,7 +3795,7 @@ function AddFeatures()
 	local args = {rainfall = rainfall, iEquatorAdjustment = iEquatorAdjustment, iJunglePercent = iJunglePercent, iForestPercent = iForestPercent, iMarshPercent = iMarshPercent, iOasisPercent = iOasisPercent }
 	local featuregen = FeatureGenerator.Create(args);
 
-	featuregen:AddFeatures();
+	featuregen:AddFeatures(true, true);
 end
 
 function ExtraPlacement()
@@ -4875,12 +4890,14 @@ function SetTrueStartingLocations()
 	print ("Beginning True Starting Location placement for "..tostring(mapName))
 	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 		local player = Players[iPlayer]
-		local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
-		local position = getTSL[iPlayer]
+		local CivilizationTypeName 	= PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+		local LeaderTypeName 		= PlayerConfigurations[iPlayer]:GetLeaderTypeName()
+		local position 				= getTSL[iPlayer]
 		if position then 
 			print ("- "..tostring(CivilizationTypeName).." at "..tostring(position.X)..","..tostring(position.Y))
-			local plot = Map.GetPlot(position.X, position.Y)
-			if plot and not plot:IsWater() then
+			local plot 			= Map.GetPlot(position.X, position.Y)
+			local bWaterStart 	= (GameInfo.Leaders_XP2 and GameInfo.Leaders_XP2[LeaderTypeName] ~= nil and GameInfo.Leaders_XP2[LeaderTypeName].OceanStart == true)
+			if plot and (not plot:IsWater() or bWaterStart) then
 				if plot:IsStartingPlot() then
 					print ("WARNING ! Plot is already a Starting Position")
 				else					

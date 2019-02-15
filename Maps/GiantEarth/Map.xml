@@ -57,8 +57,8 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CANADA"	X="153"	Y="71" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_FRANCE"	X="11"	Y="64" Leader="LEADER_ELEANOR" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PHOENICIA"	X="36"	Y="52" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_INCAN"		X="155"	Y="25" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_OTTOMAN"	X="32"	Y="60" />		
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_INCA"		X="155"	Y="25" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_OTTOMAN"	X="31"	Y="59" />		
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AKKAD"			X="42"	Y="52" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BOLOGNA"		X="19"	Y="61" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CAHOKIA"		X="146"	Y="64" />
@@ -188,6 +188,8 @@
 		
 		<!-- When using an invalid type for FeatureType (or ResourceType), the placement code remove the current Feature (or Resource) from the plot -->
 		<Replace MapName="GiantEarth" X="31" Y="41" ConfigurationId="JebelBarkal" 		FeatureType="NONE" TerrainType="TERRAIN_DESERT_HILLS" />
+		
+		<Replace MapName="GiantEarth" X="31" Y="59" Civilization="CIVILIZATION_OTTOMAN" 	TerrainType="TERRAIN_GRASS_HILLS" />
 	</ExtraPlacement>
 	
 	<NaturalWonderPosition>
