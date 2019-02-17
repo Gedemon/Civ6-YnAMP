@@ -720,10 +720,11 @@ function OnStartButton()
 	local player_ids 	= GameConfiguration.GetParticipatingPlayerIDs();
 	local numPlayers 	= #player_ids
 	local numCS			= GameConfiguration.GetValue("CITY_STATE_COUNT")
+	local maxPlayer		= 60
 	print("YnAMP check for players limit on Start");
 	print("num players = ".. tostring(numPlayers) .. ", num CS = ".. tostring(numCS))
-	if (GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_1" or GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_2") and numPlayers + numCS > 62 then
-		local newCS = 62 - numPlayers
+	if (GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_1" or GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_2") and numPlayers + numCS > maxPlayer then
+		local newCS = maxPlayer - numPlayers
 		print("new CS num = ".. tostring(newCS))
 		GameConfiguration.SetValue("CITY_STATE_COUNT", newCS)
 	end

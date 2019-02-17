@@ -19,9 +19,9 @@ local mapName = MapConfiguration.GetValue("MapName")
 print ("Map Name = " .. tostring(mapName))
 
 
-----------------------------------------------------------------------------------------
+--=====================================================================================--
 -- Export Cliffs positions from a civ6 map to Lua.log
-----------------------------------------------------------------------------------------
+--=====================================================================================--
 function ExportCliffs()
 	local iPlotCount = Map.GetPlotCount();
 	for iPlotLoop = 0, iPlotCount-1, 1 do
@@ -42,9 +42,9 @@ function ExportCliffs()
 end
 
 
-----------------------------------------------------------------------------------------
+--=====================================================================================--
 -- Export a complete civ6 map to Lua.log
-----------------------------------------------------------------------------------------
+--=====================================================================================--
 function ExportMap()
 	local g_iW, g_iH = Map.GetGridSize()
 	for iY = 0, g_iH - 1 do
@@ -89,7 +89,7 @@ function ExportMap()
 	end
 end
 
-----------------------------------------------------------------------------------------
+--=====================================================================================--
 function ResourcesStatistics(g_iW, g_iH)
 	print("------------------------------------")
 	print("-- Resources Placement Statistics --")
@@ -141,30 +141,27 @@ function Round(num)
 end
 
 
-----------------------------------------------------------------------------------------
--- Allow to force EndTurn...
-----------------------------------------------------------------------------------------
-function OnInputHandler( pInputStruct:table )
-	local uiMsg:number = pInputStruct:GetMessageType();
-	if uiMsg == KeyEvents.KeyUp then 
-		if pInputStruct:GetKey() == Keys.E and pInputStruct:IsShiftDown() and pInputStruct:IsControlDown() then	-- pInputStruct:IsShiftDown() and pInputStruct:IsAltDown() and pInputStruct:IsControlDown()			
-			UI.RequestAction(ActionTypes.ACTION_ENDTURN)
-		end
-	end
-	return false;
-end
-ContextPtr:SetInputHandler( OnInputHandler, true )
-
-
-----------------------------------------------------------------------------------------
+--=====================================================================================--
 -- Add "Export to Lua" button to the Option Menu
-----------------------------------------------------------------------------------------
+--=====================================================================================--
 function OnEnterGame()
 	Controls.ExportMapToLua:RegisterCallback( Mouse.eLClick, ExportMap )
 	Controls.ExportMapToLua:SetHide( false )
 	Controls.ExportMapToLua:ChangeParent(ContextPtr:LookUpControl("/InGame/TopOptionsMenu/MainStack"))
 end
 Events.LoadScreenClose.Add(OnEnterGame)
+
+
+--=====================================================================================--
+-- Cleaning on exit
+--=====================================================================================--
+function Cleaning()
+	print ("Cleaning YnAMP table on Leave Game...")
+	-- 
+	ExposedMembers.YNAMP = nil
+end
+Events.LeaveGameComplete.Add(Cleaning)
+LuaEvents.RestartGame.Add(Cleaning)
 
 
 

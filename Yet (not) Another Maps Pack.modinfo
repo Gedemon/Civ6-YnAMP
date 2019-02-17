@@ -8,6 +8,12 @@
     <Authors>Gedemon</Authors>
 	<CompatibleVersions>2.0</CompatibleVersions>
   </Properties>	
+  
+    <ActionCriteria>
+        <Criteria id="YNAMP_Expansion2">
+			<GameCoreInUse>Expansion2</GameCoreInUse>
+        </Criteria>
+    </ActionCriteria>
 	
 	<InGameActions>
 		<ImportFiles id="YNAMP_IMPORT">
@@ -105,7 +111,13 @@
 			<File>Maps/LargeEurope/Config.xml</File>
 			<File>Maps/TerraMap/Config.xml</File>
 			<File>Maps/LargestEarthCustom/Config.xml</File>
-		</UpdateDatabase>		
+		</UpdateDatabase>
+		<UpdateDatabase id="YNAMP_SETTING" criteria="YNAMP_Expansion2">
+           	<Properties>
+				<LoadOrder>10</LoadOrder>
+           	</Properties>
+			<File>Configuration/ConfigXP2.sql</File>
+		</UpdateDatabase>
 		<UpdateText id="YNAMP_SETTING_LOC">
 				<File>Configuration/ConfigText.xml</File>
 				<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
@@ -170,6 +182,7 @@
 	<Files>
 		<File>Version.sql</File>
 		<File>Configuration/Config.xml</File>
+		<File>Configuration/ConfigXP2.sql</File>
 		<File>Maps/GiantEarth/Config.xml</File>
 		<File>Maps/GreatestEarthMap/Config.xml</File>
 		<File>Maps/PlayEuropeAgain/Config.xml</File>

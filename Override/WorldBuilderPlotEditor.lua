@@ -21,7 +21,7 @@ local FlowDirectionString = {
 	[FlowDirectionTypes.FLOWDIRECTION_NORTHWEST] 	= "NORTHWEST"
 	}
 	
-local RiverMap = ExposedMembers.RiverMap
+local RiverMap = ExposedMembers.YNAMP.RiverMap
 
 function plotToNode(plot, edge)
 	return tostring(plot:GetIndex()) .."," .. tostring(edge)

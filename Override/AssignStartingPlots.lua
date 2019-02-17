@@ -14,10 +14,10 @@ print ("Setting YnAMP globals and cache...")
 
 g_startTimer = os.clock()
 
-ExposedMembers.HistoricalStartingPlots 	= nil
-ExposedMembers.RiverMap 				= {}
+--ExposedMembers.HistoricalStartingPlots 	= nil
+ExposedMembers.YNAMP	= { RiverMap = {}, }
 
-local RiverMap 			= ExposedMembers.RiverMap
+local RiverMap 			= ExposedMembers.YNAMP.RiverMap
 local DefaultRiverID	= 9999
 
 -- Globals, can be called from the mapscript
@@ -3073,6 +3073,7 @@ end
 
 function GetRiverIdForNode(plot, edge)
 	local node = plotToNode(plot, edge)
+	if not RiverMap[node] then print("Error: River Map entry is nil for node#"..tostring(node).." in direction ".. tostring(DirectionString[edge]) .." for plot"..string.format("(%i, %i)", plot:GetX(), plot:GetY())) end
 	return RiverMap[node]
 end
 
