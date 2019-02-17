@@ -16,6 +16,7 @@ include "NaturalWonderGenerator"
 include "ResourceGenerator"
 include "AssignStartingPlots"
 include "PlotIterators"
+include "CoastalLowlands"
 
 
 ------------------------------------------------------------------------------
@@ -181,6 +182,8 @@ local configLandmassArgs = {
 	["SEA"] 			= seaArgs
 
 }
+
+local featuregen
 
 -- Reference map = Giant Earth, to do : move that to Map.xml
 function GetNaturalWonders()
@@ -596,6 +599,14 @@ function GenerateMap()
 
 	print("Adding cliffs");
 	AddCliffs(plotTypes, terrainTypes);
+	
+	-- 
+	AddFeaturesFromContinents()
+	
+	-- Low lands
+	if MarkCoastalLowlands then
+		MarkCoastalLowlands()
+	end
 
 	TerrainBuilder.AnalyzeChokepoints();
 
@@ -1300,7 +1311,7 @@ function AddFeatures()
 
 
 	local args = {rainfall = rainfall, iEquatorAdjustment = iEquatorAdjustment, iJunglePercent = iJunglePercent, iForestPercent = iForestPercent, iMarshPercent = iMarshPercent, iOasisPercent = iOasisPercent }
-	local featuregen = FeatureGenerator.Create(args);
+	featuregen = FeatureGenerator.Create(args);
 
 	featuregen:AddFeatures();
 	
@@ -1333,6 +1344,13 @@ function AddFeatures()
 		for i, plot in ipairs(junglePlots) do
 			TerrainBuilder.SetFeatureType(plot, g_FEATURE_JUNGLE)
 		end
+	end
+end
+
+function AddFeaturesFromContinents()
+	print("Adding Features from Continents");
+	if featuregen.AddFeaturesFromContinents then
+		featuregen:AddFeaturesFromContinents();
 	end
 end
 

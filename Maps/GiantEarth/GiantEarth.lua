@@ -55,7 +55,7 @@ function GenerateMap()
 	GenerateImportedMap(GetMap(), GetCiv6DataToConvert(), GetNaturalWonders(), g_iW, g_iH)
 	
 	---[[
-	local bOnlyOffset = true -- no need to use relative placement for the code below
+	local bOnlyOffset = true -- relative placement is not used for the code below
 	
 	-- Handle Nile delta flow direction (North)
 	print("Handle Nile delta flow direction...");

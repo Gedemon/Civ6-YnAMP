@@ -25,6 +25,8 @@
 			<File>Scripts/PlotIterators.lua</File>
 			<File>Override/WorldBuilderPlacement.lua</File>
 			<File>Override/WorldBuilderPlacement.xml</File>
+			<File>Override/WorldBuilderPlotEditor.lua</File>
+			<File>Override/WorldBuilderPlotEditor.xml</File>
 		</ImportFiles>
         <AddGameplayScripts>
                <File>Scripts/YnAMP_Script.lua</File>
@@ -217,6 +219,8 @@
 		<File>Override/AdvancedSetup.lua</File>
 		<File>Override/WorldBuilderPlacement.lua</File>
 		<File>Override/WorldBuilderPlacement.xml</File>
+		<File>Override/WorldBuilderPlotEditor.lua</File>
+		<File>Override/WorldBuilderPlotEditor.xml</File>
 		<File>Scripts/YnAMP_Script.lua</File>
 		<File>Scripts/YnAMP_InGame.lua</File>
 		<File>Scripts/YnAMP_InGame.xml</File>

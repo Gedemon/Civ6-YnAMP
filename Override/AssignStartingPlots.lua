@@ -14,7 +14,11 @@ print ("Setting YnAMP globals and cache...")
 
 g_startTimer = os.clock()
 
-ExposedMembers.HistoricalStartingPlots = nil
+ExposedMembers.HistoricalStartingPlots 	= nil
+ExposedMembers.RiverMap 				= {}
+
+local RiverMap 			= ExposedMembers.RiverMap
+local DefaultRiverID	= 9999
 
 -- Globals, can be called from the mapscript
 mapName = MapConfiguration.GetValue("ReferenceMap") or MapConfiguration.GetValue("MapName")
@@ -2930,12 +2934,179 @@ function buidTSL()
 	print ("------------------------------------------------------------------------------")
 end
 
+-----------------------------------------------------------------------------------------
+-- Rivers Functions
+-----------------------------------------------------------------------------------------
+local DirectionString = {
+	[DirectionTypes.DIRECTION_NORTHEAST] 	= "NORTHEAST",
+	[DirectionTypes.DIRECTION_EAST] 		= "EAST",
+	[DirectionTypes.DIRECTION_SOUTHEAST] 	= "SOUTHEAST",
+    [DirectionTypes.DIRECTION_SOUTHWEST] 	= "SOUTHWEST",
+	[DirectionTypes.DIRECTION_WEST] 		= "WEST",
+	[DirectionTypes.DIRECTION_NORTHWEST] 	= "NORTHWEST"
+	}
+	
+function IsEOfRiver(plot)
+	if not plot:IsRiver() then return false	end
+	local pAdjacentPlot = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), DirectionTypes.DIRECTION_WEST)
+	if pAdjacentPlot and pAdjacentPlot:IsWOfRiver() then return true end
+	return false
+end
+
+function IsSEOfRiver(plot)
+	if not plot:IsRiver() then return false	end
+	local pAdjacentPlot = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), DirectionTypes.DIRECTION_NORTHWEST)
+	if pAdjacentPlot and pAdjacentPlot:IsNWOfRiver() then return true end
+	return false
+end
+
+function IsSWOfRiver(plot)
+	if not plot:IsRiver() then return false	end
+	local pAdjacentPlot = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), DirectionTypes.DIRECTION_NORTHEAST)
+	if pAdjacentPlot and pAdjacentPlot:IsNEOfRiver() then return true end
+	return false
+end
+
+function GetOppositeFlowDirection(dir)
+	local numTypes = FlowDirectionTypes.NUM_FLOWDIRECTION_TYPES;
+	return ((dir + 3) % numTypes);
+end
+
+function IsEdgeRiver(plot, edge)
+	return (edge == DirectionTypes.DIRECTION_NORTHEAST 	and IsSWOfRiver(plot)) 
+		or (edge == DirectionTypes.DIRECTION_EAST 		and plot:IsWOfRiver())
+		or (edge == DirectionTypes.DIRECTION_SOUTHEAST 	and plot:IsNWOfRiver())
+		or (edge == DirectionTypes.DIRECTION_SOUTHWEST 	and plot:IsNEOfRiver())
+		or (edge == DirectionTypes.DIRECTION_WEST	 	and IsEOfRiver(plot))
+		or (edge == DirectionTypes.DIRECTION_NORTHWEST 	and IsSEOfRiver(plot))
+end
+
+function GetNextClockRiverPlot(plot, edge)
+	local nextPlotEdge 	= (edge + 3 + 1) % 6
+	local nextPlot		= Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), edge)
+	if nextPlot then	
+		if IsEdgeRiver(nextPlot, nextPlotEdge) then return nextPlot, nextPlotEdge end
+	end
+end
+
+function GetNextCounterClockRiverPlot(plot, edge)
+	local nextPlotEdge 	= (edge + 3 - 1) % 6
+	local nextPlot		= Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), edge)
+	if nextPlot then
+		if IsEdgeRiver(nextPlot, nextPlotEdge) then return nextPlot, nextPlotEdge end
+	end
+end
+
+function plotToNode(plot, edge)
+	return tostring(plot:GetIndex()) .."," .. tostring(edge)
+end
+
+function nodeToPlot(node)
+	local pos = string.find(node, ",")
+	local plotIndex = tonumber(string.sub(node, 1 , pos -1))
+	return Map.GetPlotByIndex(plotIndex)
+end
+
+function nodeToPlotEdge(node)
+	local pos  = string.find(node, ",")
+	local plotIndex = tonumber(string.sub(node, 1 , pos -1))
+	local edge = tonumber(string.sub(node, pos +1))
+	return Map.GetPlotByIndex(plotIndex), edge
+end
+
+function CheckValidRiver(plot, edge)
+	if edge == DirectionTypes.DIRECTION_EAST 		and plot:GetRiverEFlowDirection() 	then return true end
+	if edge == DirectionTypes.DIRECTION_SOUTHEAST 	and plot:GetRiverSEFlowDirection() 	then return true end
+	if edge == DirectionTypes.DIRECTION_SOUTHWEST	and plot:GetRiverSWFlowDirection()	then return true end
+	print("invalid river in direction ".. tostring(DirectionString[edge]) .." for plot"..string.format("(%i, %i)", plot:GetX(), plot:GetY()))
+end
+
+
+function GetRiverNeighbors(node)
+
+	local neighbors 	= {}
+	local change 		= { [DirectionTypes.DIRECTION_WEST] = true, [DirectionTypes.DIRECTION_NORTHEAST] = true, [DirectionTypes.DIRECTION_NORTHWEST] = true }
+	local plot, edge	= nodeToPlotEdge(node)
+	local nextEdge 		= (edge + 1) % 6
+	local prevEdge 		= (edge - 1) % 6
+	
+	-- 
+	if change[nextEdge] and IsEdgeRiver(plot, nextEdge) then 
+		local newPlot 	= Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), nextEdge)
+		local newEdge	= (nextEdge + 3) % 6
+		if CheckValidRiver(newPlot, newEdge) then table.insert( neighbors, plotToNode(newPlot, newEdge) ) end
+	elseif IsEdgeRiver(plot, nextEdge) then
+		if CheckValidRiver(plot, nextEdge) then table.insert( neighbors, plotToNode(plot, nextEdge) ) end
+	end
+	
+	-- 
+	if change[prevEdge] and IsEdgeRiver(plot, prevEdge) then 
+		local newPlot 	= Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), prevEdge)
+		local newEdge	= (prevEdge + 3) % 6
+		if CheckValidRiver(newPlot, newEdge) then table.insert( neighbors, plotToNode(newPlot, newEdge) ) end
+	elseif IsEdgeRiver(plot, prevEdge) then
+		if CheckValidRiver(plot, prevEdge) then table.insert( neighbors, plotToNode(plot, prevEdge) ) end
+	end
+	
+	-- Test diverging edge on next plot (clock direction)
+	local clockPlot, clockEdge	= GetNextClockRiverPlot(plot, nextEdge)
+	if clockPlot and change[clockEdge] then
+		local newPlot 	= Map.GetAdjacentPlot(clockPlot:GetX(), clockPlot:GetY(), clockEdge)
+		local newEdge	= (clockEdge + 3) % 6
+		if CheckValidRiver(newPlot, newEdge) then table.insert( neighbors, plotToNode(newPlot, newEdge) ) end
+	elseif clockPlot then
+		if CheckValidRiver(clockPlot, clockEdge) then table.insert( neighbors, plotToNode(clockPlot, clockEdge) ) end
+	end
+	
+	-- Test diverging edge on previous plot (counter-clock direction)
+	local counterPlot, counterEdge	= GetNextCounterClockRiverPlot(plot, prevEdge)
+	if counterPlot and change[counterEdge] then
+		local newPlot 	= Map.GetAdjacentPlot(counterPlot:GetX(), counterPlot:GetY(), counterEdge)
+		local newEdge	= (counterEdge + 3) % 6
+		if CheckValidRiver(newPlot, newEdge) then table.insert( neighbors, plotToNode(newPlot, newEdge) ) end
+	elseif counterPlot then
+		if CheckValidRiver(counterPlot, counterEdge) then table.insert( neighbors, plotToNode(counterPlot, counterEdge) ) end
+	end
+	
+	return neighbors
+end
+
+function GetRiverIdForNode(plot, edge)
+	local node = plotToNode(plot, edge)
+	return RiverMap[node]
+end
+
+function MakeRiverFlowToNorth(plot)
+	if plot then
+		if plot:IsNEOfRiver() then TerrainBuilder.SetNEOfRiver(	plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHWEST, 	GetRiverIdForNode(plot, DirectionTypes.DIRECTION_SOUTHWEST)) 	end
+		if plot:IsWOfRiver() then TerrainBuilder.SetWOfRiver(	plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTH, 		GetRiverIdForNode(plot, DirectionTypes.DIRECTION_EAST)) 		end
+		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(	plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHEAST, 	GetRiverIdForNode(plot, DirectionTypes.DIRECTION_SOUTHEAST)) 	end
+	end
+end
+
+function MakeRiverFlowToSouthOrEast(plot)
+	if plot then
+		if plot:IsNEOfRiver() then TerrainBuilder.SetNEOfRiver(	plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHEAST,	GetRiverIdForNode(plot, DirectionTypes.DIRECTION_SOUTHWEST)) 	end
+		if plot:IsWOfRiver() then TerrainBuilder.SetWOfRiver(	plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTH,		GetRiverIdForNode(plot, DirectionTypes.DIRECTION_EAST)) 		end
+		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(	plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHEAST,	GetRiverIdForNode(plot, DirectionTypes.DIRECTION_SOUTHEAST)) 	end
+	end
+end
+
+function MakeRiverFlowToSouthOrWest(plot)
+	if plot then
+		if plot:IsNEOfRiver() then TerrainBuilder.SetNEOfRiver(	plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHWEST,	GetRiverIdForNode(plot, DirectionTypes.DIRECTION_SOUTHWEST)) 	end
+		if plot:IsWOfRiver() then TerrainBuilder.SetWOfRiver(	plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTH,		GetRiverIdForNode(plot, DirectionTypes.DIRECTION_EAST)) 		end
+		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(	plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHWEST,	GetRiverIdForNode(plot, DirectionTypes.DIRECTION_SOUTHEAST)) 	end
+	end
+end
 
 ------------------------------------------------------------------------------
 -- Imported Maps Creation
 ------------------------------------------------------------------------------
 
 function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, width, height)
+
+include "CoastalLowlands"
 
 	-- Set globals
 	g_iW, g_iH 				= width, height --Map.GetGridSize()
@@ -3068,15 +3239,77 @@ BuildRefXY()
 		AddFeatures()
 	end
 	
+	-- loop on every rivers to apply IDs
+	if bImportRivers then
+		print("Set rivers IDs...")
+		local riverID 	= 0		
+		
+		function MarkRiver(node)
+			RiverMap[node] 		= riverID		
+			local plot, edge 	= nodeToPlotEdge(node)
+			
+			if edge == DirectionTypes.DIRECTION_EAST 		then TerrainBuilder.SetWOfRiver(	plot, true, plot:GetRiverEFlowDirection(),	riverID)  end
+			if edge == DirectionTypes.DIRECTION_SOUTHEAST	then TerrainBuilder.SetNWOfRiver(	plot, true, plot:GetRiverSEFlowDirection(),	riverID)  end
+			if edge == DirectionTypes.DIRECTION_SOUTHWEST 	then TerrainBuilder.SetNEOfRiver(	plot, true, plot:GetRiverSWFlowDirection(), riverID)  end
+			
+			for _, nextNode in ipairs(GetRiverNeighbors(node)) do
+				if not RiverMap[nextNode] then MarkRiver(nextNode) end
+			end
+		end
+		
+		-- mark all rivers
+		local iW, iH = Map.GetGridSize()
+		for x = 0, iW - 1, 1 do
+			for y = 0, iH - 1, 1 do
+				local pPlot = Map.GetPlot(x,y)
+				if pPlot:IsWOfRiver() then
+					local node = plotToNode(pPlot, DirectionTypes.DIRECTION_EAST)
+					if not RiverMap[node] then
+						MarkRiver(node)
+						riverID = riverID  + 1
+					end
+				end
+				if pPlot:IsNWOfRiver() then
+					local node = plotToNode(pPlot, DirectionTypes.DIRECTION_SOUTHEAST)
+					if not RiverMap[node] then
+						MarkRiver(node)
+						riverID = riverID  + 1
+					end
+				end
+				if pPlot:IsNEOfRiver() then
+					local node = plotToNode(pPlot, DirectionTypes.DIRECTION_SOUTHWEST)
+					if not RiverMap[node] then
+						MarkRiver(node)
+						riverID = riverID  + 1
+					end
+				end
+			end
+		end
+		
+		print("Added ID to "..tostring(riverID).." rivers")
+	end
+	
 	-- Add GS flood plains
 	if TerrainBuilder.GenerateFloodplains then
+		print("Generate Floodplains...")
+
+		-- Remove map current flood plains
+		local iW, iH = Map.GetGridSize()
+		for x = 0, iW - 1, 1 do
+			for y = 0, iH - 1, 1 do
+				local plot = Map.GetPlot(x,y)
+				if plot:GetFeatureType() == GameInfo.Features["FEATURE_FLOODPLAINS"].Index then
+					TerrainBuilder.SetFeatureType(plot, -1)
+				end
+			end
+		end
+		
+		-- Generate GS flood plains
 		local bRiversStartInland	= true
 		local iMinFloodplainSize 	= 4;
 		local iMaxFloodplainSize 	= 10;
 		TerrainBuilder.GenerateFloodplains(bRiversStartInland, iMinFloodplainSize, iMaxFloodplainSize);
 	end
-	
-	-- to do: loop on rivers to apply unique IDs
 	
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer before AreaBuilder.Recalculate() = "..tostring(currentTimer).." seconds")
@@ -3089,10 +3322,15 @@ BuildRefXY()
 		TerrainBuilder.StampContinents();
 	end
 	
+	-- Low lands
+	if MarkCoastalLowlands then
+		MarkCoastalLowlands()
+	end
+	
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")
 	
-	if bRealDeposits then
+	if bRealDeposits then	
 		AddDeposits()
 		-- to do : how to balance with normal placement ?
 		-- Deposits should be mostly strategic, so call AddDeposit after ResourceGenerator.Create and remove a number of previous resources ?
@@ -3865,30 +4103,6 @@ function ExtraPlacement()
 	end
 end
 
-function MakeRiverFlowToNorth(plot)
-	if plot then
-		if plot:IsNEOfRiver() then TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHWEST, 0) end
-		if plot:IsWOfRiver() then TerrainBuilder.SetWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTH, 0) end
-		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHEAST, 0) end
-	end
-end
-
-function MakeRiverFlowToSouthOrEast(plot)
-	if plot then
-		if plot:IsNEOfRiver() then TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHEAST, 0) end
-		if plot:IsWOfRiver() then TerrainBuilder.SetWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTH, 0) end
-		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHEAST, 0) end
-	end
-end
-
-function MakeRiverFlowToSouthOrWest(plot)
-	if plot then
-		if plot:IsNEOfRiver() then TerrainBuilder.SetNEOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_NORTHWEST, 0) end
-		if plot:IsWOfRiver() then TerrainBuilder.SetWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTH, 0) end
-		if plot:IsNWOfRiver() then TerrainBuilder.SetNWOfRiver(plot, true, FlowDirectionTypes.FLOWDIRECTION_SOUTHWEST, 0) end
-	end
-end
-
 function RemoveCliffs(plot)
 	TerrainBuilder.SetWOfCliff(plot, false)
 	TerrainBuilder.SetNWOfCliff(plot, false)
@@ -4635,15 +4849,15 @@ function ImportCiv5Map(MapToConvert, Civ6DataToConvert, g_iW, g_iH, bDoTerrains,
 		-- Set Rivers
 		if bImportRivers then
 			if Rivers[1][1] == 1 then -- IsNEOfRiver
-				TerrainBuilder.SetNEOfRiver(plot, true, Rivers[1][2], 0)
+				TerrainBuilder.SetNEOfRiver(plot, true, Rivers[1][2], DefaultRiverID)
 				if bOutput then print(" - Set is NE of River, flow = "..tostring(Rivers[1][2])) end
 			end
 			if Rivers[2][1] == 1 then -- IsWOfRiver
-				TerrainBuilder.SetWOfRiver(plot, true, Rivers[2][2], 0)
+				TerrainBuilder.SetWOfRiver(plot, true, Rivers[2][2], DefaultRiverID)
 				if bOutput then print(" - Set is W of River, flow = "..tostring(Rivers[2][2])) end
 			end
 			if Rivers[3][1] == 1 then -- IsNWOfRiver
-				TerrainBuilder.SetNWOfRiver(plot, true, Rivers[3][2], 0)
+				TerrainBuilder.SetNWOfRiver(plot, true, Rivers[3][2], DefaultRiverID)
 				if bOutput then print(" - Set is NW of River, flow = "..tostring(Rivers[3][2])) end
 			end
 		end
@@ -4797,15 +5011,15 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 		-- Set Rivers
 		if bImportRivers then
 			if Rivers[1][1] == 1 then -- IsNEOfRiver
-				TerrainBuilder.SetNEOfRiver(plot, true, Rivers[1][2], 0)
+				TerrainBuilder.SetNEOfRiver(plot, true, Rivers[1][2], DefaultRiverID)
 				if bOutput then print(" - Set is NE of River, flow = "..tostring(Rivers[1][2])) end
 			end
 			if Rivers[2][1] == 1 then -- IsWOfRiver
-				TerrainBuilder.SetWOfRiver(plot, true, Rivers[2][2], 0)
+				TerrainBuilder.SetWOfRiver(plot, true, Rivers[2][2], DefaultRiverID)
 				if bOutput then print(" - Set is W of River, flow = "..tostring(Rivers[2][2])) end
 			end
 			if Rivers[3][1] == 1 then -- IsNWOfRiver
-				TerrainBuilder.SetNWOfRiver(plot, true, Rivers[3][2], 0)
+				TerrainBuilder.SetNWOfRiver(plot, true, Rivers[3][2], DefaultRiverID)
 				if bOutput then print(" - Set is NW of River, flow = "..tostring(Rivers[3][2])) end
 			end
 		end

@@ -8,18 +8,19 @@
     <Label Anchor="C,T" Offset="0,6" Align="center" Style="FontNormal18" String="LOC_WORLD_BUILDER_PLACEMENT_HELP"/>
     
     <Stack ID="Root" Anchor="R,T" Offset="16,36" StackGrowth="Bottom" Padding="14">
-    
+
+      <GridButton ID="RegenResourcesButton"  Style="TabButton" Size="160,35" String="Clear Resources" />
+
 		    <!-- YnAMP <<<<< -->
               <SimplePullDown ID="BrushSizePullDown" Anchor="R,T" Style="PullDownBlue" ScrollThreshold="400" Size="250,24" Offset="0,0" SpaceForScroll="0" AutoFlip="1" EntryInstance="InstanceOne"/>
 			<!-- YnAMP >>>>> -->
       <SimplePullDown Anchor="R,T" ID="PlacementPullDown" Style="PullDownBlue" ScrollThreshold="400" Size="250,24" Offset="0,0" SpaceForScroll="0" EntryInstance="InstanceOne"/>
 
-      <TabControl ID="TabControl" Anchor="R,T"  Size="320,200">
+      <Tab ID="TabControl" Anchor="R,T"  Size="320,200">
       
           <!--Tab Container-->
           <Container ID="TabContainer" Size="parent,parent">
 		  
-          
             <Container ID="PlaceTerrain" Size="parent,parent">
               <SimplePullDown ID="TerrainPullDown" Anchor="R,T" Style="PullDownBlue" ScrollThreshold="400" Size="250,24" Offset="0,0" SpaceForScroll="0" AutoFlip="1" EntryInstance="InstanceOne"/>
             </Container>
@@ -62,7 +63,7 @@
             </Container>
 
             <Container ID="PlaceBuilding" Size="parent,parent">
-              <Stack Anchor="R,T" Size="parent,parent" StackGrowth="Bottom" Padding="10">
+            <Stack Anchor="R,T" Size="parent,auto" StackGrowth="Bottom" Padding="10">
                 <SimplePullDown ID="BuildingCityPullDown" Style="PullDownBlue" ScrollThreshold="400" Size="250,24" Offset="0,0" SpaceForScroll="0" EntryInstance="InstanceOne"/>
                 <SimplePullDown ID="BuildingPullDown" Style="PullDownBlue" ScrollThreshold="400" Size="250,24" Offset="0,0" SpaceForScroll="0" EntryInstance="InstanceOne"/>
               </Stack>
@@ -104,7 +105,7 @@
           
           </Container>
 
-      </TabControl>
+      </Tab>
 
     </Stack>
   </Container>

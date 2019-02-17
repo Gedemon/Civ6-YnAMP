@@ -1,3 +1,5 @@
+include "ResourceGenerator"
+
 -- ===========================================================================
 --	World Builder Placement
 -- ===========================================================================
@@ -25,6 +27,8 @@ local m_ScenarioPlayerEntries  : table = {}; -- Scenario players are players tha
 local m_CityEntries            : table = {};
 local m_UnitTypeEntries        : table = {};
 
+-- Resource Regen variables
+local NO_RESOURCE = -1;
 -- YnAMP <<<<<
 local m_BrushSizeEntries     : table = {};
 -- YnAMP >>>>>
@@ -212,16 +216,18 @@ function UpdatePlayerEntries()
 	m_PlayerEntries = {};
 	m_ScenarioPlayerEntries = {};
 	
-	for i = 0, GameDefines.MAX_PLAYERS-2 do -- Use MAX_PLAYERS-2 to ignore the barbarian player
+	for i = 0, GameDefines.MAX_PLAYERS-1 do 
 
 		local eStatus = WorldBuilder.PlayerManager():GetSlotStatus(i); 
 		if eStatus ~= SlotStatus.SS_CLOSED then
 			local playerConfig = WorldBuilder.PlayerManager():GetPlayerConfig(i);
+			if playerConfig.IsBarbarian == false then	-- Skipping the Barbarian player
 			table.insert(m_PlayerEntries, { Text=playerConfig.Name, PlayerIndex=i });
 			if playerConfig.Civ ~= nil then
 				table.insert(m_ScenarioPlayerEntries, { Text=playerConfig.Name, PlayerIndex=i });
 			end
 		end
+	end
 	end
 	
 	local hasPlayers = m_PlayerEntries[1] ~= nil;
@@ -751,6 +757,20 @@ function OnWorldBuilderSignal(eType)
 end
 
 -- ===========================================================================
+function OnRegenResources()
+	print("Regen resources!");
+
+	for plotIndex = 0, Map.GetPlotCount()-1, 1 do
+		local plot = Map.GetPlotByIndex(plotIndex);
+		WorldBuilder.MapManager():SetResourceType(plot, NO_RESOURCE);
+	end
+
+	-- TODO: add data to this table to mimic the options provided in Advanced Setup
+	--local args = {};
+	--local resGen = ResourceGenerator.Create(args);
+end
+
+-- ===========================================================================
 --	Init
 -- ===========================================================================
 function OnInit()
@@ -821,7 +841,7 @@ function OnInit()
 
 	-- BuildingPullDown
 	for type in GameInfo.Buildings() do
-		if type.RequiresPlacement == true then
+		if type.RequiresPlacement ~= true then
 			table.insert(m_BuildingTypeEntries, { Text=type.Name, Type=type });
 		end
 	end
@@ -839,6 +859,9 @@ function OnInit()
 	-- VisibilityPullDown
 	Controls.VisibilityPullDown:SetEntrySelectedCallback( OnVisibilityPlayerChanged );
 	Controls.VisibilityRevealAllButton:RegisterCallback( Mouse.eLClick, OnVisibilityPlayerRevealAll );
+
+	-- Regen Resources Button
+	Controls.RegenResourcesButton:RegisterCallback(Mouse.eLClick, OnRegenResources);
 
 	-- Register for events
 	ContextPtr:SetShowHandler( OnShow );

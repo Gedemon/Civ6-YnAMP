@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Context Name="WorldBuilderPlotEditor">
+  <ScrollPanel ID="PlotEditorScrollPanel" Size="360,490" Vertical="1" AutoScrollBar="1">
+    
+    <Stack ID="PlotEditorStack" Anchor="C,T" StackGrowth="Bottom" Padding="10">
+
+      <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
+        <Label Anchor="R,C" Style="ShellOptionText" String="Selected Plot:"/>
+        <Container Size="220,24">
+          <Label ID="SelectedPlotLabel" Anchor="C,C" Style="FontNormal16" String="LOC_WORLD_BUILDER_NO_PLOT_SELECTED_HELP"/>
+        </Container>
+      </Stack>
+    
+      <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
+        <Label Anchor="L,C" Size="125,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_ATTRIBUTE_TERRAIN"/>
+        <SimplePullDown ID="TerrainPullDown" Style="PullDownBlue" ScrollThreshold="300" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
+      </Stack>
+
+      <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
+        <Label Anchor="L,C" Size="125,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_ATTRIBUTE_FEATURE"/>
+        <SimplePullDown ID="FeaturePullDown" Style="PullDownBlue" ScrollThreshold="300" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
+      </Stack>
+
+      <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
+        <Label Anchor="L,C" Size="125,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_ATTRIBUTE_RESOURCE"/>
+        <SimplePullDown ID="ResourcePullDown" Style="PullDownBlue" ScrollThreshold="280" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
+      </Stack>
+
+      <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
+        <Label Anchor="L,C" Size="200,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_ATTRIBUTE_RESOURCE_AMOUNT"/>
+        <Grid Style="EditTextArea" Size="220,30" InnerPadding="6,6">
+          <EditBox ID="ResourceAmount" Offset="0,0" Size="parent,23" EditMode="1" String="" NumberInput="1"/>
+        </Grid>
+      </Stack>
+    
+      <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
+        <Label Anchor="L,C" Size="125,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_ATTRIBUTE_IMPROVEMENT"/>
+        <SimplePullDown ID="ImprovementPullDown" Style="PullDownBlue" ScrollThreshold="400" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
+      </Stack>
+
+      <GridButton Anchor="R,T" ID="ImprovementPillagedButton" Offset="0,0" Size="220,24" Style="CheckBoxControl" String="LOC_WORLDBUILDER_ATTRIBUTE_IMPROVEMENT_PILLAGED" />
+
+      <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
+        <Label Anchor="L,C" Size="125,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_ATTRIBUTE_ROUTE"/>
+        <SimplePullDown ID="RoutePullDown" Style="PullDownBlue" ScrollThreshold="400" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
+      </Stack>
+
+      <GridButton Anchor="R,T" ID="RoutePillagedButton" Offset="0,0" Size="220,24" Style="CheckBoxControl" String="LOC_WORLDBUILDER_ATTRIBUTE_ROUTE_PILLAGED" />
+    
+      <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
+        <Label Size="125,29" Style="ShellOptionText" String="Start Position:"/>
+        <SimplePullDown ID="StartPosPulldown" Style="PullDownBlue" ScrollThreshold="400" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
+      </Stack>
+
+      <Tab Anchor="R,T" ID="StartPosTabControl" Size="220,24">
+        <Container ID="TabContainer" Size="parent,parent">
+          <SimplePullDown ID="StartPosPlayerPulldown" Style="PullDownBlue" ScrollThreshold="400" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
+          <SimplePullDown ID="StartPosLeaderPulldown" Style="PullDownBlue" ScrollThreshold="400" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
+          <SimplePullDown ID="StartPosCivPulldown" Style="PullDownBlue" ScrollThreshold="400" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
+        </Container>
+      </Tab>
+
+      <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
+        <Label Anchor="L,C" Size="125,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_ATTRIBUTE_OWNER"/>
+        <SimplePullDown ID="OwnerPulldown" Style="PullDownBlue" ScrollThreshold="400" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
+      </Stack>
+
+      <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
+        <Label Anchor="L,C" Size="125,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_ATTRIBUTE_FEATURE_DIRECTION"/>
+        <SimplePullDown ID="FeatureDirectionPulldown" Style="PullDownBlue" ScrollThreshold="400" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
+      </Stack>
+
+      <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
+        <Label ID="LowlandLabel" Anchor="L,C" Size="125,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_ATTRIBUTE_LOWLAND_TYPE"/>
+        <SimplePullDown ID="LowlandTypePulldown" Style="PullDownBlue" ScrollThreshold="400" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
+      </Stack>
+	  
+	  <!-- YnAMP <<<<< -->
+	  <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
+        <Label Anchor="R,C" Style="ShellOptionText" String="IsWOfRiver:"/>
+        <Container Size="220,24">
+          <Label ID="IsWOfRiver" Anchor="C,C" Style="FontNormal16" String="nil"/>
+        </Container>
+      </Stack>
+	  
+	  <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
+        <Label Anchor="R,C" Style="ShellOptionText" String="IsNWOfRiver:"/>
+        <Container Size="220,24">
+          <Label ID="IsNWOfRiver" Anchor="C,C" Style="FontNormal16" String="nil"/>
+        </Container>
+      </Stack>
+	  
+	  <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
+        <Label Anchor="R,C" Style="ShellOptionText" String="IsNEOfRiver:"/>
+        <Container Size="220,24">
+          <Label ID="IsNEOfRiver" Anchor="C,C" Style="FontNormal16" String="nil"/>
+        </Container>
+      </Stack>
+	  <!-- YnAMP >>>>> -->
+
+    </Stack>
+    
+    <ScrollBar Anchor="R,C" Size="11,parent+4" Offset="2,0" AnchorSide="O,I" Style="ScrollVerticalBar"/>
+  </ScrollPanel>
+</Context>
