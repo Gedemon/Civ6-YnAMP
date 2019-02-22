@@ -8,4 +8,4 @@
 -- Remove invalid choices for GS
 -----------------------------------------------
 
-DELETE FROM DomainValues WHERE Domain='RiversPlacement' AND Value='PLACEMENT_IMPORT' AND EXISTS (SELECT * FROM GameCores WHERE GameCore = 'Expansion2');
+--DELETE FROM DomainValues WHERE Domain='RiversPlacement' AND Value='PLACEMENT_IMPORT' AND EXISTS (SELECT * FROM GameCores WHERE GameCore = 'Expansion2');

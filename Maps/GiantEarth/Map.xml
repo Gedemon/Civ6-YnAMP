@@ -58,16 +58,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_FRANCE"	X="11"	Y="64" Leader="LEADER_ELEANOR" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PHOENICIA"	X="36"	Y="52" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_INCA"		X="155"	Y="25" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_OTTOMAN"	X="31"	Y="59" />		
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AKKAD"			X="42"	Y="52" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BOLOGNA"		X="19"	Y="61" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CAHOKIA"		X="146"	Y="64" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CARDIFF"		X="8"	Y="73" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_FEZ"			X="7"	Y="49" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MEXICO_CITY"	X="138"	Y="49" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_NAZCA"			X="153"	Y="24" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_NGAZARGAMU"	X="21"	Y="39" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_RAPA_NUI"		X="7"	Y="49" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_OTTOMAN"	X="31"	Y="59" />
 	</StartPosition>	
 	
 	<!-- Minors -->
@@ -106,6 +97,15 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GRANADA" 		X="8" Y="54" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MUSCAT" 		X="45" Y="43" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PALENQUE" 		X="144" Y="46" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AKKAD"			X="42"	Y="52" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BOLOGNA"		X="19"	Y="61" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CAHOKIA"		X="146"	Y="64" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CARDIFF"		X="8"	Y="73" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_FEZ"			X="7"	Y="49" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MEXICO_CITY"	X="138"	Y="49" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_NAZCA"			X="153"	Y="24" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_NGAZARGAMU"	X="21"	Y="39" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_RAPA_NUI"		X="7"	Y="49" />
 		
 	</StartPosition>
 
@@ -353,18 +353,18 @@
 		<Replace MapName="GiantEarth" X="136" Y="61" FeatureType="FEATURE_DELICATE_ARCH" />
 		<Replace MapName="GiantEarth" X="8" Y="43" FeatureType="FEATURE_EYE_OF_THE_SAHARA" TerrainType="TERRAIN_DESERT" />
 		
-		<!-- **************** -->
-		<!-- Rise and Fall NW -->
-		<!-- **************** -->
+		<!-- ****************** -->
+		<!-- Gathering Storm NW -->
+		<!-- ****************** -->
 		
 		<Replace MapName="GiantEarth" X="89" Y="39" FeatureType="FEATURE_CHOCOLATEHILLS" TerrainType="TERRAIN_GRASS_HILLS" />
 		<Replace MapName="GiantEarth" X="90" Y="40" FeatureType="FEATURE_CHOCOLATEHILLS" TerrainType="TERRAIN_GRASS_HILLS" />
 		<Replace MapName="GiantEarth" X="90" Y="39" FeatureType="FEATURE_CHOCOLATEHILLS" TerrainType="TERRAIN_GRASS_HILLS" />
 		<Replace MapName="GiantEarth" X="90" Y="38" FeatureType="FEATURE_CHOCOLATEHILLS" TerrainType="TERRAIN_GRASS_HILLS" />
 		
-		<Replace MapName="GiantEarth" X="71" Y="58" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS_MOUNTAIN" />
-		<Replace MapName="GiantEarth" X="72" Y="58" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS_MOUNTAIN" />
-		<Replace MapName="GiantEarth" X="73" Y="58" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS_MOUNTAIN" />
+		<Replace MapName="GiantEarth" X="44" Y="60" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
+		<Replace MapName="GiantEarth" X="44" Y="61" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
+		<Replace MapName="GiantEarth" X="45" Y="60" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
 		
 		<Replace MapName="GiantEarth" X="32" Y="57" FeatureType="FEATURE_PAMUKKALE" TerrainType="TERRAIN_PLAINS_HILLS" />
 		<Replace MapName="GiantEarth" X="33" Y="57" FeatureType="FEATURE_PAMUKKALE" TerrainType="TERRAIN_PLAINS_HILLS" />
