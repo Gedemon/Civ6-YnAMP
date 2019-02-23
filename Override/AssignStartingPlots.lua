@@ -3252,15 +3252,19 @@ BuildRefXY()
 	if bImportRivers then
 		print("Set rivers IDs...")
 		local riverID 	= 0
+		local bOnlyOffset 	= true
 		
 		function IsNEOfRiver(plot)
-			return MapToConvert[plot:GetX()][plot:GetY()][g_MapDataRiverIndex][1][1] == 1
+			local x, y	= GetRefMapXY(plot:GetX(), plot:GetY(), bOnlyOffset)
+			return MapToConvert[x][y][g_MapDataRiverIndex][1][1] == 1
 		end
 		function IsWOfRiver(plot)
-			return MapToConvert[plot:GetX()][plot:GetY()][g_MapDataRiverIndex][2][1] == 1
+			local x, y	= GetRefMapXY(plot:GetX(), plot:GetY(), bOnlyOffset)
+			return MapToConvert[x][y][g_MapDataRiverIndex][2][1] == 1
 		end
 		function IsNWOfRiver(plot)
-			return MapToConvert[plot:GetX()][plot:GetY()][g_MapDataRiverIndex][3][1] == 1
+			local x, y	= GetRefMapXY(plot:GetX(), plot:GetY(), bOnlyOffset)
+			return MapToConvert[x][y][g_MapDataRiverIndex][3][1] == 1
 		end
 		
 		function IsEOfRiver(plot)
@@ -3357,13 +3361,16 @@ BuildRefXY()
 		end
 		
 		function GetRiverEFlowDirection(plot)
-			return MapToConvert[plot:GetX()][plot:GetY()][g_MapDataRiverIndex][2][2]
+			local x, y	= GetRefMapXY(plot:GetX(), plot:GetY(), bOnlyOffset)
+			return MapToConvert[x][y][g_MapDataRiverIndex][2][2]
 		end
 		function GetRiverSEFlowDirection(plot)
-			return MapToConvert[plot:GetX()][plot:GetY()][g_MapDataRiverIndex][3][2]
+			local x, y	= GetRefMapXY(plot:GetX(), plot:GetY(), bOnlyOffset)
+			return MapToConvert[x][y][g_MapDataRiverIndex][3][2]
 		end
 		function GetRiverSWFlowDirection(plot)
-			return MapToConvert[plot:GetX()][plot:GetY()][g_MapDataRiverIndex][1][2]
+			local x, y	= GetRefMapXY(plot:GetX(), plot:GetY(), bOnlyOffset)
+			return MapToConvert[x][y][g_MapDataRiverIndex][1][2]
 		end
 		
 		function MarkRiver(node)
@@ -3477,6 +3484,8 @@ BuildRefXY()
 	
 	-- The map may require some specific placement...
 	ExtraPlacement()
+	
+	AreaBuilder.Recalculate();
 	
 	-- Analyse Chokepoints after extra placement...
 	currentTimer = os.clock() - g_startTimer
