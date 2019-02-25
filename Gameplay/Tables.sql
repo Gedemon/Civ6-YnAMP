@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS ExtraPlacement
 		Y INT default 0,
 		ConfigurationId TEXT,
 		ConfigurationValue TEXT,
+		RuleSet TEXT,
 		Civilization TEXT,
 		TerrainType TEXT,
 		FeatureType TEXT,

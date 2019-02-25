@@ -9,7 +9,7 @@ include "MapUtilities"
 
 print ("loading modded AssignStartingPlots")
 local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION ?
-print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2018) by Gedemon")
+print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2019) by Gedemon")
 print ("Setting YnAMP globals and cache...")
 
 g_startTimer = os.clock()
@@ -19,6 +19,8 @@ ExposedMembers.YNAMP	= { RiverMap = {}, }
 
 local RiverMap 			= ExposedMembers.YNAMP.RiverMap
 local DefaultRiverID	= 9999
+local bExpansion2		= GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_2"
+local IsOceanStart		= {}	-- table to list Civilization with a starting plot set on ocean (for not swapping them when doing culturally linked placement)
 
 -- Globals, can be called from the mapscript
 mapName = MapConfiguration.GetValue("ReferenceMap") or MapConfiguration.GetValue("MapName")
@@ -207,8 +209,9 @@ function AssignStartingPlots.Create(args)
 	-- YnAMP <<<<<
 	if not bTSL then
 		instance:__InitStartingData()
-	end	
-	YnAMP_StartPositions()	
+	end
+	YnAMP_ApplySharedMapOptions()
+	YnAMP_StartPositions()
 	-- YnAMP >>>>>					
 
 	return instance
@@ -993,7 +996,7 @@ function AssignStartingPlots:__MajorCivBuffer(plot)
 	-- Checks to see if there are major civs in the given distance for this major civ
 
 	local iMaxStart = GlobalParameters.START_DISTANCE_MAJOR_CIVILIZATION or 9;
-	iMaxStart = iMaxStart - GlobalParameters.START_DISTANCE_RANGE_MAJOR or 2;
+	--iMaxStart = iMaxStart - GlobalParameters.START_DISTANCE_RANGE_MAJOR or 2;
 
 	local iSourceIndex = plot:GetIndex();
 	for i, majorPlot in ipairs(self.majorStartPlots) do
@@ -1031,7 +1034,7 @@ function AssignStartingPlots:__MinorMinorCivBuffer(plot)
 	-- Checks to see if there are minors in the given distance for this minor civ
 
 	local iMaxStart = GlobalParameters.START_DISTANCE_MINOR_CIVILIZATION_START or 5;
-	iMaxStart = iMaxStart - GlobalParameters.START_DISTANCE_RANGE_MINOR or 2;
+	--iMaxStart = iMaxStart - GlobalParameters.START_DISTANCE_RANGE_MINOR or 2;
 
 	local iSourceIndex = plot:GetIndex();
 
@@ -2666,6 +2669,7 @@ function GetPlotFromRefMap(x, y, bOnlyOffset)
 	return Map.GetPlot(GetXYFromRefMapXY(x,y, bOnlyOffset))
 end
 
+
 ------------------------------------------------------------------------------
 -- Create Tables
 ------------------------------------------------------------------------------
@@ -2935,6 +2939,7 @@ function buidTSL()
 	print ("------------------------------------------------------------------------------")
 end
 
+
 -----------------------------------------------------------------------------------------
 -- Rivers Functions
 -----------------------------------------------------------------------------------------
@@ -3106,10 +3111,10 @@ function MakeRiverFlowToSouthOrWest(plot)
 	end
 end
 
+
 ------------------------------------------------------------------------------
 -- Imported Maps Creation
 ------------------------------------------------------------------------------
-
 function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, width, height)
 
 include "CoastalLowlands"
@@ -3424,6 +3429,7 @@ BuildRefXY()
 		print("Generate Floodplains...")
 
 		-- Remove map current flood plains
+		---[[
 		local iW, iH = Map.GetGridSize()
 		for x = 0, iW - 1, 1 do
 			for y = 0, iH - 1, 1 do
@@ -3433,6 +3439,7 @@ BuildRefXY()
 				end
 			end
 		end
+		--]]
 		
 		-- Generate GS flood plains
 		local bRiversStartInland	= true
@@ -3577,6 +3584,7 @@ BuildRefXY()
 	
 	print("Total time for Map creation = "..tostring(totalTimer).." seconds")
 end
+
 
 -------------------------------------------------------------------------------
 -- Find backup starting positions if the game's start positioner as failed
@@ -3835,6 +3843,7 @@ function GetBestStartingPlotFromList(plots, bIsMinor)
 
 	return nil;
 end
+
 
 -------------------------------------------------------------------------------
 -- Features & Extra placement
@@ -4194,6 +4203,13 @@ function ExtraPlacement()
 				end
 			end
 			
+			-- The placement may require a specific ruleset
+			if row.RuleSet then
+				if GameConfiguration.GetValue("RULESET") ~= row.RuleSet then
+					bDoPlacement = false
+				end
+			end
+			
 			if bDoPlacement then
 				local terrainType 	= row.TerrainType
 				local featureType 	= row.FeatureType
@@ -4240,6 +4256,28 @@ function RemoveCliffs(plot)
 	TerrainBuilder.SetNWOfCliff(plot, false)
 	TerrainBuilder.SetNEOfCliff(plot, false)
 end
+
+
+------------------------------------------------------------------------------
+-- Map Options
+------------------------------------------------------------------------------
+function YnAMP_ApplySharedMapOptions()
+	
+	-- Remove ice near land for navigation
+	local bNoIceAdjacentToLand = MapConfiguration.GetValue("NoIceAdjacentToLand");
+	if bNoIceAdjacentToLand then
+		print("Removing Ice adjacent to Land...")
+		local g_iW, g_iH = Map.GetGridSize()
+		for i = 0, (g_iW * g_iH) - 1, 1 do
+			plot = Map.GetPlotByIndex(i)
+			if plot:IsAdjacentToLand() and plot:GetFeatureType() == g_FEATURE_ICE then
+				TerrainBuilder.SetFeatureType(plot, -1);
+			end
+		end
+	end
+end
+
+
 ------------------------------------------------------------------------------
 -- Resources
 ------------------------------------------------------------------------------
@@ -4459,7 +4497,6 @@ function AddStartingLocationResources()
 	bStartinglocationResourcesAdded = true
 	print("-------------------------------")
 end
-
 
 function ResourcesValidation(g_iW, g_iH)
 
@@ -5280,10 +5317,63 @@ function SetTrueStartingLocations()
 	end	
 end
 
+function SetOceanStartingLocation()
+	print ("-------------------------------------------------------")
+	print ("Checking Ocean Starting Location...")
+
+	local oceanStart = {}
+	local g_iW, g_iH = Map.GetGridSize()
+	
+	for i = 0, (g_iW * g_iH) - 1, 1 do
+		local plot = Map.GetPlotByIndex(i)
+		if plot:IsWater() then
+			local landPlot			= plot:GetNearestLandPlot()
+			local iMinLandDistance	= 5
+			local iMinDistFromPole	= g_iH / 4
+			if(Map.GetPlotDistance(i, landPlot:GetIndex()) >= iMinLandDistance) then
+				if plot:GetY() > iMinDistFromPole and  plot:GetY() < (g_iH - iMinDistFromPole) then
+					table.insert(oceanStart, i)
+				end
+			end
+		end
+	end
+	print ("Found "..tostring(#oceanStart).." potential Ocean Starting Locations")
+	
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		local player 			= Players[iPlayer]
+		local LeaderTypeName	= PlayerConfigurations[iPlayer]:GetLeaderTypeName()
+		if (GameInfo.Leaders_XP2 and GameInfo.Leaders_XP2[LeaderTypeName] ~= nil and GameInfo.Leaders_XP2[LeaderTypeName].OceanStart == true) then
+			local startingPlot 	= player:GetStartingPlot()
+			print ("- "..tostring(LeaderTypeName).." at "..tostring(startingPlot:GetX())..","..tostring(startingPlot:GetY()))
+			local bestPlot		= nil
+			local bestDistance	= 999
+			for _, plotId in ipairs(oceanStart) do
+				local distance = Map.GetPlotDistance(plotId, startingPlot:GetIndex())
+				if(distance < bestDistance) then
+					bestDistance 	= distance
+					bestPlot		= Map.GetPlotByIndex(plotId)
+				end
+			end
+			if bestPlot then
+				player:SetStartingPlot(bestPlot)
+				IsOceanStart[iPlayer]	= true
+				print ("   - Water Starting Position found at "..tostring(bestPlot:GetX())..","..tostring(bestPlot:GetY()))
+			else
+				print ("WARNING ! Can't find a water Starting Position")
+			end
+		end
+	end
+end
+
+
 function YnAMP_StartPositions()
 
 	if bTSL then
 		SetTrueStartingLocations()	
+	end
+	
+	if bExpansion2 and not bTSL then
+		SetOceanStartingLocation()
 	end
 	
 	if bCulturallyLinked then
@@ -5462,38 +5552,40 @@ function CulturallyLinkedCivilizations(bForcePlacement)
 		print ("------------------------------------------------------- ")
 		print ("Brute Force Pass num = " .. tostring(try) )
 		for _, player_ID in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
-			local player = Players[player_ID]
-			local playerConfig = PlayerConfigurations[player_ID]
-			print ("------------------------------------------------------- ")
-			print ("Testing " .. tostring(playerConfig:GetPlayerName()) )
-			local culture = GameInfo.Civilizations[playerConfig:GetCivilizationTypeID()].Ethnicity or "ETHNICITY_EURO"
-			for _, player_ID2 in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do	
-				--print ("in loop 2")
-				if player_ID ~= player_ID2 then
-					local player2 = Players[player_ID2]
-					local playerConfig2 = PlayerConfigurations[player_ID2]
-					local culture2 = GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity or "ETHNICITY_EURO"
-					if culture ~= culture2 then -- don't try to swith civs from same culture style, we can gain better score from different culture only...
-						--print ("culture ~= culture2")
-						local startPlot1 = player:GetStartingPlot()
-						local startPlot2 = player2:GetStartingPlot()					
-						if startPlot1 and startPlot2 then
-							--print ("------------------------------------------------------- ")
-							--print ("trying to switch " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) )	
-							player:SetStartingPlot(startPlot2)
-							player2:SetStartingPlot(startPlot1)
-							local actualdistanceScore = CalculateDistanceScore(cultureList, false)--, player_ID, player_ID2)
-							if  actualdistanceScore < bestDistanceScore then
+			if not IsOceanStart[player_ID] then
+				local player = Players[player_ID]
+				local playerConfig = PlayerConfigurations[player_ID]
+				print ("------------------------------------------------------- ")
+				print ("Testing " .. tostring(playerConfig:GetPlayerName()) )
+				local culture = GameInfo.Civilizations[playerConfig:GetCivilizationTypeID()].Ethnicity or "ETHNICITY_EURO"
+				for _, player_ID2 in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do	
+					--print ("in loop 2")
+					if player_ID ~= player_ID2 and not IsOceanStart[player_ID2] then
+						local player2 = Players[player_ID2]
+						local playerConfig2 = PlayerConfigurations[player_ID2]
+						local culture2 = GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity or "ETHNICITY_EURO"
+						if culture ~= culture2 then -- don't try to swith civs from same culture style, we can gain better score from different culture only...
+							--print ("culture ~= culture2")
+							local startPlot1 = player:GetStartingPlot()
+							local startPlot2 = player2:GetStartingPlot()					
+							if startPlot1 and startPlot2 then
 								--print ("------------------------------------------------------- ")
-								--print ("Better score, confirming switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) .. " at new best score = " .. tostring(actualdistanceScore) )
-								print ("Better score, switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) .. " at new best score = " .. tostring(actualdistanceScore) )
-								bestDistanceScore = actualdistanceScore
-							else
-								--print ("------------------------------------------------------- ")
-								--print ("No gain, restoring position of " .. tostring(playerConfig:GetPlayerName()) .. " and " .. tostring(playerConfig2:GetPlayerName()) .. " at current best score = " .. tostring(bestDistanceScore) )
-								--print ("No gain, keeping position of " .. tostring(playerConfig:GetPlayerName()) .. " and " .. tostring(playerConfig2:GetPlayerName()) .. " at score = "..tostring(actualdistanceScore)..", current best score = " .. tostring(bestDistanceScore) )	
-								player:SetStartingPlot(startPlot1)
-								player2:SetStartingPlot(startPlot2)
+								--print ("trying to switch " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) )	
+								player:SetStartingPlot(startPlot2)
+								player2:SetStartingPlot(startPlot1)
+								local actualdistanceScore = CalculateDistanceScore(cultureList, false)--, player_ID, player_ID2)
+								if  actualdistanceScore < bestDistanceScore then
+									--print ("------------------------------------------------------- ")
+									--print ("Better score, confirming switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) .. " at new best score = " .. tostring(actualdistanceScore) )
+									print ("Better score, switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) .. " at new best score = " .. tostring(actualdistanceScore) )
+									bestDistanceScore = actualdistanceScore
+								else
+									--print ("------------------------------------------------------- ")
+									--print ("No gain, restoring position of " .. tostring(playerConfig:GetPlayerName()) .. " and " .. tostring(playerConfig2:GetPlayerName()) .. " at current best score = " .. tostring(bestDistanceScore) )
+									--print ("No gain, keeping position of " .. tostring(playerConfig:GetPlayerName()) .. " and " .. tostring(playerConfig2:GetPlayerName()) .. " at score = "..tostring(actualdistanceScore)..", current best score = " .. tostring(bestDistanceScore) )	
+									player:SetStartingPlot(startPlot1)
+									player2:SetStartingPlot(startPlot2)
+								end
 							end
 						end
 					end

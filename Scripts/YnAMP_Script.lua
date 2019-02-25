@@ -4,7 +4,7 @@
 ------------------------------------------------------------------------------
 
 local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value
-print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2018) by Gedemon")
+print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2019) by Gedemon")
 print ("loading YnAMP_Script.lua")
 
 function Round(num)
@@ -514,7 +514,7 @@ function ForceTSL( iPrevPlayer )
 	   and not player:IsBarbarian() then
 		print("- Checking for Settler on TSL for player #".. tostring(iPlayer))
 		local startingPlot = player:GetStartingPlot()
-		if startingPlot and not startingPlot:IsCity() then
+		if startingPlot and not startingPlot:IsCity() and not startingPlot:IsWater() then
 			local unitsInPlot = Units.GetUnitsInPlot(startingPlot)
 			if unitsInPlot ~= nil then
 				for _, unit in ipairs(unitsInPlot) do

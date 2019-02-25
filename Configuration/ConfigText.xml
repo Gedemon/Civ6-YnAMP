@@ -14,10 +14,10 @@
 	<!-- New entries -->
     
 	<Replace Tag="LOC_YNAGEM_NAME" Language="en_US">
-      <Text>Giant Earth</Text>
+      <Text>[COLOR_RED]Giant Earth[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_DESC" Language="en_US">
-      <Text>Genghis Kai's GEM (Hormigas version) (180x94 - Giant)</Text>
+      <Text>Genghis Kai's GEM (Hormigas version) (180x94 - Giant)[NEWLINE][ICON_Exclamation] [COLOR_RED]UNSTABLE in late game[ENDCOLOR][NEWLINE]Lower your graphic options to reduce random crashes.[NEWLINE]6+ GB of VRAM recommended</Text>
     </Replace>
     <Replace Tag="LOC_GREATESTEARTH_NAME" Language="en_US">
       <Text>Greatest Earth Map</Text>
@@ -47,7 +47,7 @@
       <Text>[COLOR_RED]Largest Earth Custom[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_LARGESTEARTHCUSTOM_DESC" Language="en_US">
-      <Text>Largest Earth Custom (230x116 - Ludicrous)[NEWLINE][ICON_Exclamation] [COLOR_RED]VERY UNSTABLE at full size[ENDCOLOR][NEWLINE]Use the custom options to set a game on a region of the map.</Text>
+      <Text>Largest Earth Custom (230x116 - Ludicrous)[NEWLINE][ICON_Exclamation] [COLOR_RED]WILL NOT LOAD AT FULL SIZE ![ENDCOLOR][NEWLINE]Use the custom options to set a game on smaller regions of the map.</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Language="en_US">
@@ -82,16 +82,16 @@
       <Text>Really Enormous Map for 16 players (128x80)</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_GIANT_NAME" Language="en_US">
-      <Text>Giant</Text>
+      <Text>[COLOR_RED]Giant[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_GIANT_DESCRIPTION" Language="en_US">
-      <Text>Giant Map for 20+ players (184x92)</Text>
+      <Text>Giant Map for 20+ players (184x92)[NEWLINE][ICON_Exclamation] [COLOR_RED]UNSTABLE in late game[ENDCOLOR][NEWLINE]Lower your graphic options to reduce random crashes.[NEWLINE]6+ GB of VRAM recommended</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_LUDICROUS_NAME" Language="en_US">
-      <Text>Ludicrous</Text>
+      <Text>[COLOR_RED]Ludicrous[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" Language="en_US">
-      <Text>Will you stand the test of time while your computer try to load this ? (200x100)</Text>
+      <Text>Will you stand the test of time while the map is loading ? (200x100)[NEWLINE][ICON_Exclamation] [COLOR_RED]UNSTABLE in late game[ENDCOLOR][NEWLINE]Lower your graphic options to reduce random crashes.[NEWLINE]8+ GB of VRAM recommended</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_MAX_NAME" Language="en_US">
       <Text>Max</Text>
@@ -388,6 +388,22 @@
     </Replace>
     <Replace Tag="LOC_TURNS_BEFORE_BARBARIANS_DESCRIPTION" Language="en_US">
       <Text>Minimum number of turns before allowing Barbarian Scouts</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_REFERENCE_DB_NAME" Language="en_US">
+      <Text>Reference Database</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIANT_DB_NAME" Language="en_US">
+      <Text>GiantEarth Database</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LARGESTEARTH_DB_NAME" Language="en_US">
+      <Text>LargestEarth Database</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIANT_DB_DESCRIPTION" Language="en_US">
+      <Text>Use the GiantEarth Database to get City names, custom Civilizations TSL, custom NW positions, ...[NEWLINE]Less precision for placement but a lot more data available</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LARGESTEARTH_DB_DESCRIPTION" Language="en_US">
+      <Text>Use the LargestEarth Database[NEWLINE]Perfect placement, but less data available.</Text>
     </Replace>
 	
 	<!--

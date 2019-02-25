@@ -75,4 +75,18 @@
 		
 	</StartPosition>
 	
+	<ExtraPlacement>
+		<!-- +++++++++++++++++++++++++++ -->
+		<!--   PlayEuropeAgain Volcanos  -->
+		<!-- +++++++++++++++++++++++++++ -->
+
+		<Replace MapName="PlayEuropeAgain" X="92" Y="39"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="PlayEuropeAgain" X="85" Y="25"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="PlayEuropeAgain" X="45" Y="24"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="PlayEuropeAgain" X="62" Y="20"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="PlayEuropeAgain" X="89" Y="39"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="PlayEuropeAgain" X="46" Y="26"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="PlayEuropeAgain" X="90" Y="29"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+	</ExtraPlacement>
+	
 </GameData>

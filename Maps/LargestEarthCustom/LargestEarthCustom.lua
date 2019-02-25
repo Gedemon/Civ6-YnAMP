@@ -59,8 +59,8 @@ function GenerateMap()
 	local bOnlyOffset = true -- no need to use relative placement for the code below
 	
 	-- Handle Nile delta flow direction (North)
-	for x = 38, 41 do
-		for y = 58, 62 do
+	for x = 36, 41 do
+		for y = 58, 64 do
 			local plot = GetPlotFromRefMap(x,y, bOnlyOffset)
 			if plot then
 				MakeRiverFlowToNorth(plot)			

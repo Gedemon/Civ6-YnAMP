@@ -70,9 +70,10 @@
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="RescaleSkipY" 	Name="RescaleSkipY" 	Description="" Domain="text" DefaultValue="5" ConfigurationGroup="Map" ConfigurationId="RescaleSkipY" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		
 		<!--	Hidden parameter to set the map name to the reference map that will be used to find the tables for TSL
-		-->
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomName" 				Name="MapName" 		Description="" Domain="text" DefaultValue="LargestEarthCustom" 	ConfigurationGroup="Map" ConfigurationId="MapName" 		GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomReferenceMap" 		Name="ReferenceMap" Description="" Domain="text" DefaultValue="GiantEarth" 			ConfigurationGroup="Map" ConfigurationId="ReferenceMap" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		-->
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomName" 				Name="LOC_MAP_REFERENCE_DB_NAME" 		Description="" Domain="LargestEarthCustomDBName" DefaultValue="GiantEarth" 	ConfigurationGroup="Map" ConfigurationId="MapName" 		GroupId="MapOptions" SortIndex="230"/>
 
 		<!--	Hidden parameters to adjust features placement when they are not imported
 		-->		
@@ -98,6 +99,9 @@
 	
 	<DomainValues>
 	
+		<Replace Domain="LargestEarthCustomDBName" Value="GiantEarth" 			Name="LOC_MAP_GIANT_DB_NAME" 		Description="LOC_MAP_GIANT_DB_DESCRIPTION"			SortIndex="10"/>
+		<Replace Domain="LargestEarthCustomDBName" Value="LargestEarthCustom" 	Name="LOC_MAP_LARGESTEARTH_DB_NAME" Description="LOC_MAP_LARGESTEARTH_DB_DESCRIPTION"	SortIndex="30"/>
+		
 		<Replace Domain="LargestEarthCustomResourcesPlacement" Value="PLACEMENT_DEFAULT" 	Name="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
 		<Replace Domain="LargestEarthCustomResourcesPlacement" Value="PLACEMENT_EMPTY" 		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 			Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 				SortIndex="30"/>
 		
@@ -126,9 +130,13 @@
 		
 	</DomainValues>
 	
+
 	<ParameterDependencies>
 	
-		<Replace ParameterId="ResourcesPlacement"	ConfigurationGroup="Map" ConfigurationId="MapName" 		Operator="NotEquals" 	ConfigurationValue="LargestEarth"/>		
+		<Replace ParameterId="UseRelativePlacement"		ConfigurationGroup="Map" ConfigurationId="MapName" 		Operator="Equals" 		ConfigurationValue="GiantEarth"/>
+		<Replace ParameterId="UseRelativeFixedTable"	ConfigurationGroup="Map" ConfigurationId="MapName" 		Operator="Equals" 		ConfigurationValue="GiantEarth"/>
+	
+		<Replace ParameterId="ResourcesPlacement"		ConfigurationGroup="Map" ConfigurationId="MapName" 		Operator="NotEquals" 	ConfigurationValue="LargestEarth"/>		
 
 	</ParameterDependencies>
 	
