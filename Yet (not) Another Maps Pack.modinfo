@@ -80,6 +80,12 @@
 			<File>Gameplay/Resource.xml</File>
 			<File>Gameplay/CityNameByEra.xml</File>
 		</UpdateDatabase>
+		<UpdateDatabase id="YNAMP_XP2" criteria="YNAMP_Expansion2">
+           	<Properties>
+				<LoadOrder>10</LoadOrder>
+           	</Properties>
+			<File>Gameplay/GamePlayXP2.xml</File>
+		</UpdateDatabase>
 		<UpdateDatabase id="YNAMP_COLORS">
            	<Properties>
 				<LoadOrder>1000</LoadOrder>
@@ -99,6 +105,9 @@
            	</Properties>
 			<File>Gameplay/GamePlayText.xml</File>
 			<File>Gameplay/GamePlayText_pt_BR.xml</File>
+			<File>Gameplay/GamePlayText_de_DE.xml</File>
+			<File>Gameplay/GamePlayText_fr_FR.xml</File>
+			<File>Gameplay/GamePlayText_ja_JP.xml</File>
 		</UpdateText>
 	</InGameActions>
 	
@@ -196,6 +205,7 @@
 		<File>Configuration/ConfigText_ja_JP.xml</File>
 		<File>Gameplay/Tables.sql</File>
 		<File>Gameplay/GamePlay.xml</File>
+		<File>Gameplay/GamePlayXP2.xml</File>
 		<File>Gameplay/GamePlay.sql</File>
 		<File>Gameplay/GamePlayText.xml</File>
 		<File>Gameplay/GamePlayText_pt_BR.xml</File>

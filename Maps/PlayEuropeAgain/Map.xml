@@ -89,4 +89,38 @@
 		<Replace MapName="PlayEuropeAgain" X="90" Y="29"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 	</ExtraPlacement>
 	
+	<!--     Natural Wonders    -->
+	<NaturalWonderPosition>
+		<!---->
+		<Replace MapName="PlayEuropeAgain" X="12" Y="88" FeatureType="FEATURE_EYJAFJALLAJOKULL" />
+		<Replace MapName="PlayEuropeAgain" X="13" Y="88" FeatureType="FEATURE_EYJAFJALLAJOKULL" />
+
+		<Replace MapName="PlayEuropeAgain" X="43" Y="72" FeatureType="FEATURE_LYSEFJORDEN" TerrainType="TERRAIN_GRASS" />
+		<Replace MapName="PlayEuropeAgain" X="42" Y="71" FeatureType="FEATURE_LYSEFJORDEN" TerrainType="TERRAIN_GRASS" />
+		<Replace MapName="PlayEuropeAgain" X="42" Y="72" FeatureType="FEATURE_LYSEFJORDEN" TerrainType="TERRAIN_GRASS" />
+
+		<Replace MapName="PlayEuropeAgain" X="21" Y="70" FeatureType="FEATURE_GIANTS_CAUSEWAY" />
+		<Replace MapName="PlayEuropeAgain" X="20" Y="71" FeatureType="FEATURE_GIANTS_CAUSEWAY" />
+		<!---->
+	
+		<!-- ****************** -->
+		<!-- Gathering Storm NW -->
+		<!-- ****************** -->
+		
+		
+		<Replace MapName="PlayEuropeAgain" X="99" Y="35" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
+		<Replace MapName="PlayEuropeAgain" X="100" Y="36" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
+		<Replace MapName="PlayEuropeAgain" X="100" Y="35" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
+		
+		<Replace MapName="PlayEuropeAgain" X="69" Y="24" FeatureType="FEATURE_PAMUKKALE" TerrainType="TERRAIN_PLAINS_HILLS" />
+		<Replace MapName="PlayEuropeAgain" X="70" Y="24" FeatureType="FEATURE_PAMUKKALE" TerrainType="TERRAIN_PLAINS_HILLS" />
+		
+		<Replace MapName="PlayEuropeAgain" X="64" Y="5" FeatureType="FEATURE_WHITEDESERT" TerrainType="TERRAIN_DESERT" />
+		<Replace MapName="PlayEuropeAgain" X="65" Y="5" FeatureType="FEATURE_WHITEDESERT" TerrainType="TERRAIN_DESERT" />
+		<Replace MapName="PlayEuropeAgain" X="65" Y="6" FeatureType="FEATURE_WHITEDESERT" TerrainType="TERRAIN_DESERT" />
+		<Replace MapName="PlayEuropeAgain" X="66" Y="6" FeatureType="FEATURE_WHITEDESERT" TerrainType="TERRAIN_DESERT" />
+		
+		<Replace MapName="PlayEuropeAgain" X="46" Y="31" FeatureType="FEATURE_VESUVIUS" TerrainType="TERRAIN_PLAINS_MOUNTAIN" />
+	</NaturalWonderPosition>
+	
 </GameData>

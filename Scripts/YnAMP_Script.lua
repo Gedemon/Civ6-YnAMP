@@ -304,7 +304,7 @@ end
 
 local g_Timer 			= 0
 local g_Pause 			= 0.1
-local g_LoopPerResume 	= 3
+local g_LoopPerResume 	= 1
 local CoroutineList		= {}
 
 function AddCoToList(newCo)
@@ -735,7 +735,7 @@ PlaceCities = coroutine.create(function()
 				--print("requesting pause in script for ", g_Pause, " seconds at time = ".. tostring( Automation.GetTime() ))
 				loop = 0
 				g_Timer = Automation.GetTime()
-				coroutine.yield()
+				--coroutine.yield()
 				-- after g_Pause seconds, the script will start again from here
 				--print("resuming script at time = ".. tostring( Automation.GetTime() ))
 			end
@@ -754,14 +754,22 @@ PlaceCities = coroutine.create(function()
 					while cityName and not bPlayerCityPlaced do
 						playerCounter[iPlayer] 	= playerCounter[iPlayer] + 1
 						local pos 				= cityPosition[cityName]
-						local x, y				= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y)) -- cityPosition use average value of x, y					
-						local city 				= player:GetCities():Create(x, y)
-						if city then
-							print(" - player ID#".. tostring(iPlayer)," : ".. tostring(cityName), " pos#"..tostring(playerCounter[iPlayer]), " PLACED !")
-							city:SetName(cityName)
-							bPlayerCityPlaced 		= true
-							bAnyCityPlaced			= true
+						local x, y				= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y)) -- cityPosition use average value of x, y
+						local plot = Map.GetPlot(x, y)
+						if plot and not (plot:IsWater() or plot:IsImpassable()) then
+							print(" - Trying to place city for player ID#".. tostring(iPlayer)," at (".. tostring(x).. ","..tostring(y)..") from average position (".. tostring(pos.X), ","..tostring(pos.Y), ")")
+							local city = player:GetCities():Create(x, y)
+							if city then
+								print("  - ".. tostring(cityName), " entry#"..tostring(playerCounter[iPlayer]-1), " PLACED !")
+								city:SetName(cityName)
+								bPlayerCityPlaced 		= true
+								bAnyCityPlaced			= true
+							else
+								print("  - Placement failed at entry#"..tostring(playerCounter[iPlayer]-1))
+								cityName = list[playerCounter[iPlayer]]
+							end
 						else
+							print("  - Invalid plot at entry#"..tostring(playerCounter[iPlayer]-1))
 							cityName = list[playerCounter[iPlayer]]
 						end
 					end	
@@ -793,7 +801,7 @@ PlaceBorders = coroutine.create(function()
 			if loop > g_LoopPerResume then
 				loop = 0
 				g_Timer = Automation.GetTime()
-				coroutine.yield()
+				--coroutine.yield()
 			end
 			
 			local iPlotCount = Map.GetPlotCount()

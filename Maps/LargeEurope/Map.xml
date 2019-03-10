@@ -97,6 +97,25 @@
 
     <Replace MapName="LargeEurope" X="19" Y="54" FeatureType="FEATURE_GIANTS_CAUSEWAY" />
     <Replace MapName="LargeEurope" X="18" Y="55" FeatureType="FEATURE_GIANTS_CAUSEWAY" />
+	
+		
+		<!-- ****************** -->
+		<!-- Gathering Storm NW -->
+		<!-- ****************** -->
+				
+		<Replace MapName="LargeEurope" X="73" Y="30" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
+		<Replace MapName="LargeEurope" X="73" Y="31" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
+		<Replace MapName="LargeEurope" X="74" Y="30" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
+		
+		<Replace MapName="LargeEurope" X="55" Y="26" FeatureType="FEATURE_PAMUKKALE" TerrainType="TERRAIN_PLAINS_HILLS" />
+		<Replace MapName="LargeEurope" X="56" Y="26" FeatureType="FEATURE_PAMUKKALE" TerrainType="TERRAIN_PLAINS_HILLS" />
+		
+		<Replace MapName="LargeEurope" X="52" Y="8" FeatureType="FEATURE_WHITEDESERT" TerrainType="TERRAIN_DESERT" />
+		<Replace MapName="LargeEurope" X="53" Y="8" FeatureType="FEATURE_WHITEDESERT" TerrainType="TERRAIN_DESERT" />
+		<Replace MapName="LargeEurope" X="53" Y="9" FeatureType="FEATURE_WHITEDESERT" TerrainType="TERRAIN_DESERT" />
+		<Replace MapName="LargeEurope" X="54" Y="9" FeatureType="FEATURE_WHITEDESERT" TerrainType="TERRAIN_DESERT" />
+		
+		<Replace MapName="LargeEurope" X="38" Y="29" FeatureType="FEATURE_VESUVIUS" TerrainType="TERRAIN_PLAINS_MOUNTAIN" />
   </NaturalWonderPosition>
 
 </GameData>

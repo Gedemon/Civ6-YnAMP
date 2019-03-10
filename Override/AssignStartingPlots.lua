@@ -3430,12 +3430,15 @@ BuildRefXY()
 
 		-- Remove map current flood plains
 		---[[
+		local tempFloodPlains	= {}
+		local floodPlainID		= GameInfo.Features["FEATURE_FLOODPLAINS"].Index
 		local iW, iH = Map.GetGridSize()
 		for x = 0, iW - 1, 1 do
 			for y = 0, iH - 1, 1 do
 				local plot = Map.GetPlot(x,y)
-				if plot:GetFeatureType() == GameInfo.Features["FEATURE_FLOODPLAINS"].Index then
+				if plot:GetFeatureType() == floodPlainID then
 					TerrainBuilder.SetFeatureType(plot, -1)
+					table.insert(tempFloodPlains, plot)
 				end
 			end
 		end
@@ -3446,12 +3449,27 @@ BuildRefXY()
 		local iMinFloodplainSize 	= 2;
 		local iMaxFloodplainSize 	= 10;
 		TerrainBuilder.GenerateFloodplains(bRiversStartInland, iMinFloodplainSize, iMaxFloodplainSize);
+		
+		-- Restore map initial flood plains
+		for _, plot in ipairs(tempFloodPlains) do
+			if plot:GetFeatureType() ~= floodPlainID then
+				TerrainBuilder.SetFeatureType(plot, floodPlainID)
+			end
+		end
 	end
 	
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer before AreaBuilder.Recalculate() = "..tostring(currentTimer).." seconds")
 	
 	AreaBuilder.Recalculate();
+
+	--[[
+	if not WorldBuilder:IsActive() and bAnalyseChokepoints then -- to do : must use an option here, is this added to saved map ? will they work without this ? But it saves a lot of time for editing and exporting terrain data for YnAMP
+		currentTimer = os.clock() - g_startTimer
+		print("Intermediate timer before first call to TerrainBuilder.AnalyzeChokepoints(); = "..tostring(currentTimer).." seconds")
+		TerrainBuilder.AnalyzeChokepoints();
+	end
+	--]]
 	
 	if not bImportContinents then
 		currentTimer = os.clock() - g_startTimer
@@ -3492,13 +3510,11 @@ BuildRefXY()
 	-- The map may require some specific placement...
 	ExtraPlacement()
 	
-	AreaBuilder.Recalculate();
-	
 	-- Analyse Chokepoints after extra placement...
-	currentTimer = os.clock() - g_startTimer
-	print("Intermediate timer before TerrainBuilder.AnalyzeChokepoints() = "..tostring(currentTimer).." seconds")
-	
+	AreaBuilder.Recalculate();	
+	currentTimer = os.clock() - g_startTimer	
 	if not WorldBuilder:IsActive() and bAnalyseChokepoints then -- to do : must use an option here, is this added to saved map ? will they work without this ? But it saves a lot of time for editing and exporting terrain data for YnAMP
+		print("Intermediate timer before second call to TerrainBuilder.AnalyzeChokepoints() = "..tostring(currentTimer).." seconds")
 		TerrainBuilder.AnalyzeChokepoints();
 	else
 		print("Worldbuilder detected, skipping TerrainBuilder.AnalyzeChokepoints()...")
@@ -3581,6 +3597,16 @@ BuildRefXY()
 	
 	-- Restore the original ResourceBuilder.CanHaveResource
 	ResourceBuilder.CanHaveResource = ResourceBuilder.OldCanHaveResource
+	
+	--[[
+	-- ...
+	currentTimer = os.clock() - g_startTimer
+	if not WorldBuilder:IsActive() and bAnalyseChokepoints then -- to do : must use an option here, is this added to saved map ? will they work without this ? But it saves a lot of time for editing and exporting terrain data for YnAMP
+		print("Intermediate timer before third call to TerrainBuilder.AnalyzeChokepoints() = "..tostring(currentTimer).." seconds")
+		AreaBuilder.Recalculate();
+		TerrainBuilder.AnalyzeChokepoints();
+	end
+	--]]
 	
 	print("Total time for Map creation = "..tostring(totalTimer).." seconds")
 end

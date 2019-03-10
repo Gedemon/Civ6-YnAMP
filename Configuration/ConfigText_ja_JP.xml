@@ -2,7 +2,7 @@
 <GameData>
   <LocalizedText>
   
-	<!-- Replacing -->
+	<!-- Replacing --><!-- 2019.02.26 -->
 	
     <Replace Tag="LOC_MAP_RESOURCES_NAME" Language="ja_JP">
       <Text>資源の量</Text>
@@ -13,11 +13,11 @@
 	
 	<!-- New entries -->
     
-	<Replace Tag="LOC_YNAGEM_NAME" Language="ja_JP">
-      <Text>Giant Earth</Text>
+    <Replace Tag="LOC_YNAGEM_NAME" Language="ja_JP">
+      <Text>[COLOR_RED]Giant Earth[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_DESC" Language="ja_JP">
-      <Text>Genghis Kai氏による特大の地球マップ (Hormigas バージョン) です (180x94 - 特大)。</Text>
+      <Text>Genghis Kai氏による特大の地球マップ (Hormigas バージョン) です (180x94 - 特大)。[NEWLINE][ICON_Exclamation] [COLOR_RED]ゲーム終盤で不安定になります。[ENDCOLOR][NEWLINE]強制終了を抑制するため、グラフィックの設定を低くしてください。[NEWLINE]VRAM 6GB以上が推奨です。</Text>
     </Replace>
     <Replace Tag="LOC_GREATESTEARTH_NAME" Language="ja_JP">
       <Text>Greatest Earth Map</Text>
@@ -42,6 +42,12 @@
     </Replace>
     <Replace Tag="LOC_TERRAMAP_DESC" Language="ja_JP">
       <Text>旧世界と新世界を生成するマップです。マップの大きさや配置される陸地をカスタムできます。</Text>
+    </Replace>
+	<Replace Tag="LOC_LARGESTEARTHCUSTOM_NAME" Language="ja_JP">
+      <Text>[COLOR_RED]Largest Earth Custom[ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGESTEARTHCUSTOM_DESC" Language="ja_JP">
+      <Text>とてつもなく広いカスタム地球マップです (230x116 - 過大)。[NEWLINE][ICON_Exclamation] [COLOR_RED]マップ全体は読み込みません！[ENDCOLOR][NEWLINE]カスタム・オプションからマップの一部地域を設定してください。</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Language="ja_JP">
@@ -76,22 +82,22 @@
       <Text>16人プレイ用の広大なマップです (128x80)。</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_GIANT_NAME" Language="ja_JP">
-      <Text>特大</Text>
+      <Text>[COLOR_RED]特大[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_GIANT_DESCRIPTION" Language="ja_JP">
-      <Text>20+人プレイ用の特大のマップです (184x92)。</Text>
+      <Text>20+人プレイ用の特大のマップです (184x92)。[NEWLINE][ICON_Exclamation] [COLOR_RED]ゲーム終盤で不安定になります。[ENDCOLOR][NEWLINE]強制終了を抑制するため、グラフィックの設定を低くしてください。[NEWLINE]VRAM 6GB以上が推奨です。</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_LUDICROUS_NAME" Language="ja_JP">
-      <Text>過大</Text>
+      <Text>[COLOR_RED]過大[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" Language="ja_JP">
-      <Text>コンピューターが読み込むまでの時の試練に耐えることができるでしょうか？ (200x100)</Text>
+      <Text>コンピューターが読み込むまでの時の試練に耐えることができるでしょうか？ (200x100)[NEWLINE][ICON_Exclamation] [COLOR_RED]ゲーム終盤で不安定になります。[ENDCOLOR][NEWLINE]強制終了を抑制するため、グラフィックの設定を低くしてください。[NEWLINE]VRAM 8GB以上が推奨です。</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_MAX_NAME" Language="ja_JP">
       <Text>最大</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_MAX_DESCRIPTION" Language="ja_JP">
-      <Text>i7 4770K + MSI GTX 1080 Ti + 16GB Ram 向けの最大サイズのマップです (215x112)。</Text>
+      <Text>製作者のPCで機能する最大サイズのマップです。[NEWLINE](i7 4770K + MSI GTX 1080 Ti + 16GB Ram)</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAPSIZE_SMALL21_NAME" Language="ja_JP">
@@ -235,6 +241,25 @@
       <Text>マップデータを用いて大陸の名前を決定します。</Text>
     </Replace>
 	
+    <Replace Tag="LOC_MAP_CONTINENT_MODEL_NAME" Language="ja_JP">
+      <Text>大陸モデル</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_MODEL_DESCRIPTION" Language="ja_JP">
+      <Text>使用する大陸モデルを規定します。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SEVEN_CONTINENT_NAME" Language="ja_JP">
+      <Text>7大陸</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SEVEN_CONTINENT_DESCRIPTION" Language="ja_JP">
+      <Text>アフリカ、アジア、ヨーロッパ、北アメリカ、南アメリカ、南極、オセアニア。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SUBCONTINENT_NAME" Language="ja_JP">
+      <Text>亜大陸と地域</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SUBCONTINENT_DESCRIPTION" Language="ja_JP">
+      <Text>複数の亜大陸と地域を配置します。</Text>
+    </Replace>
+	
     <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_NAME" Language="ja_JP">
       <Text>河川の配置</Text>
     </Replace>
@@ -284,10 +309,19 @@
       <Text>ボスポラス海峡を封鎖</Text>
     </Replace>
     <Replace Tag="LOC_MAP_MONT_SAINT_MICHEL_MARSH_NAME" Language="ja_JP">
-      <Text>モン・サン＝ミシェルに湿原を配置</Text>
+      <Text>モン・サン＝ミシェル用に湿原を配置</Text>
     </Replace>
     <Replace Tag="LOC_MAP_STONEHENGE_STONE_NAME" Language="ja_JP">
-      <Text>ストーンヘンジに石材を配置</Text>
+      <Text>ストーンヘンジ用に石材を配置</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ARTEMIS_TEMPLE_DEER_NAME" Language="ja_JP">
+      <Text>アルテミス神殿用に鹿を配置</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_GREAT_ZIMBABWE_CATTLE_NAME" Language="ja_JP">
+      <Text>グレート・ジンバブエ用に家畜を配置</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_JEBEL_BARKAL_HILLS_NAME" Language="ja_JP">
+      <Text>ゲベル・バルカル用に砂漠丘陵を配置</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Language="ja_JP">
@@ -354,6 +388,22 @@
     </Replace>
     <Replace Tag="LOC_TURNS_BEFORE_BARBARIANS_DESCRIPTION" Language="ja_JP">
       <Text>蛮族斥候が出現するまでの最低ターン数を規定します。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_REFERENCE_DB_NAME" Language="ja_JP">
+      <Text>データベースの参照</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIANT_DB_NAME" Language="ja_JP">
+      <Text>GiantEarthのデータベース</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LARGESTEARTH_DB_NAME" Language="ja_JP">
+      <Text>LargestEarthのデータベース</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIANT_DB_DESCRIPTION" Language="ja_JP">
+      <Text>GiantEarthのデータベースを利用して都市の名前、カスタム文明の開始地点、カスタム自然遺産の出現地点を規定します。[NEWLINE]配置地点の正確性は低くなりますが、多くのデータが利用可能です。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LARGESTEARTH_DB_DESCRIPTION" Language="ja_JP">
+      <Text>LargestEarthのデータベースを利用します。[NEWLINE]配置地点は正確ですが、利用可能なデータは多くありません。</Text>
     </Replace>
 	
 	<!--
@@ -566,5 +616,138 @@
     <Replace Tag="LOC_MAP_SOUTH_AMERICA_EAST_NAME" 	Text="南アメリカ (西)" Language="ja_JP" /> 
     <Replace Tag="LOC_MAP_ANTARCTIC_AMERICA_NAME" 	Text="南極アメリカ" 	Language="ja_JP" /> 
 
+    <Replace Tag="LOC_MAP_SECTION_NAME" 					Text="マップの部分"																	Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_DESCRIPTION" 				Text="プレイするマップの部分を選択します。" 									Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_FULL_NAME" 				Text="マップ全体" 																	Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_FULL_DESCRIPTION" 		Text="オリジナルのマップ全体でプレイします。"															Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_CUSTOM_NAME" 				Text="カスタム"																		Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_CUSTOM_DESCRIPTION" 		Text="マップの東側・西側・南側・北側を選択します。"	Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_EUROPE_NAME" 				Text="ヨーロッパ" 																		Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_EUROPE_DESCRIPTION" 		Text="マップのヨーロッパ地域でプレイします。" 										Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_MEDITERRANEA_NAME" 		Text="地中海" 																Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_MEDITERRANEA_DESCRIPTION" Text="マップの地中海地域でプレイします。"	 										Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_MIDDLE_EAST_NAME" 		Text="中東" 																	Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_MIDDLE_EAST_DESCRIPTION" 	Text="マップの中東地域でプレイします。"									Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_AMERICAS_NAME" 			Text="アメリカ" 																	Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_AMERICAS_DESCRIPTION" 	Text="マップのアメリカ大陸でプレイします。"		 										Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_COLONIZATION_NAME" 		Text="植民地" 																Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_COLONIZATION_DESCRIPTION" Text="マップのヨーロッパ地域とアメリカ地域でプレイします。"		Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_OLD_WORLD_NAME" 			Text="旧世界" 																	Language="ja_JP"/>
+    <Replace Tag="LOC_MAP_SECTION_OLD_WORLD_DESCRIPTION" 	Text="マップのヨーロッパ地域、アフリカ地域、アジア地域でプレイします。"									Language="ja_JP"/>
+	
+    <Replace Tag="LOC_MAP_STARTX_NAME" Language="ja_JP">
+      <Text>西側</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ENDX_NAME" Language="ja_JP">
+      <Text>東側</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_STARTY_NAME" Language="ja_JP">
+      <Text>南側</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ENDY_NAME" Language="ja_JP">
+      <Text>北側</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_LATITUDE_NAME" Language="ja_JP">
+      <Text>緯度</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LONGITUDE_NAME" Language="ja_JP">
+      <Text>経度</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_WEST_EUROPE_NAME" Language="ja_JP">
+      <Text>西ヨーロッパ</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EAST_AMERICA_NAME" Language="ja_JP">
+      <Text>東アメリカ</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SOUTH_POLE_NAME" Language="ja_JP">
+      <Text>南極</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_POLE_NAME" Language="ja_JP">
+      <Text>北極</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EQUATOR_NAME" Language="ja_JP">
+      <Text>赤道</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_EAST_MEDITERRANEA_NAME" Language="ja_JP">
+      <Text>東地中海</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EAST_EUROPE_AFRICA_NAME" Language="ja_JP">
+      <Text>東ヨーロッパ / アフリカ</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_THE_URALS_WEST_INDIA_NAME" Language="ja_JP">
+      <Text>ウラル山脈 / 西インド</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CENTRAL_ASIA_NAME" Language="ja_JP">
+      <Text>中央アジア</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EAST_ASIA_WEST_AUSTRALIA_NAME" Language="ja_JP">
+      <Text>東アジア / 西オーストラリア</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_BERING_STRAIT_NAME" Language="ja_JP">
+      <Text>ベーリング海峡</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_WEST_COAST_NAME" Language="ja_JP">
+      <Text>アメリカ西海岸</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GULF_OF_MEXICO_NAME" Language="ja_JP">
+      <Text>メキシコ湾</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_AFRICA_SOUTH_ASIA_CARIBBEAN_NAME" Language="ja_JP">
+      <Text>北アフリカ / 南アジア / カリブ海</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIBRALTAR_SOUTH_JAPAN_CENTRAL_AMERICA_NAME" Language="ja_JP">
+      <Text>ジブラルタル / 南日本 / 中央アメリカ</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_MEDITERRANEA_ASIA_NAME" Language="ja_JP">
+      <Text>北地中海 / アジア</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SOUTH_AFRICA_AMERICA_NAME" Language="ja_JP">
+      <Text>南アフリカ / アメリカ</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_AMERICA_EUROPE_NAME" Language="ja_JP">
+      <Text>北アメリカ / ヨーロッパ</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MID_MEDITERRANEA_NAME" Language="ja_JP">
+      <Text>中央地中海 (西ギリシャ)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALPS_NAME" Language="ja_JP">
+      <Text>アルプス (西イタリア)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_SCENARIO_TYPE_NAME" Language="ja_JP">
+      <Text>シナリオ</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_NONE_NAME" Language="ja_JP">
+      <Text>なし</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_NONE_DESCRIPTION" Language="ja_JP">
+      <Text>シナリオなし。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_GENERATED_NAME" Language="ja_JP">
+      <Text>生成</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_GENERATED_DESCRIPTION" Language="ja_JP">
+      <Text>自動的に生成されたシナリオです。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_NAME" Language="ja_JP">
+      <Text>都市の配置</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" Language="ja_JP">
+      <Text>地形</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" Language="ja_JP">
+      <Text>ゲームの推奨を利用して最適な都市配置を行います。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_NAME" Language="ja_JP">
+      <Text>都市マップ</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_DESCRIPTION" Language="ja_JP">
+      <Text>都市マップテーブルを利用して都市配置を行います。</Text>
+    </Replace>
+	
   </LocalizedText>
 </GameData>
