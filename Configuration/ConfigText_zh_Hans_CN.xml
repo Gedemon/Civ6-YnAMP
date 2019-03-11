@@ -1,161 +1,159 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <GameData>
   <LocalizedText>
- 
+  
 	<!-- Replacing -->
+	
     <Replace Tag="LOC_MAP_RESOURCES_NAME" Language="zh_Hans_CN">
-      <Text>资源数量</Text>
+      <Text>资源</Text>
     </Replace>
     <Replace Tag="LOC_MAP_START_POSITION_NAME" Language="zh_Hans_CN">
-      <Text>出生地平衡</Text>
+      <Text>启动位置</Text>
     </Replace>
 	
 	<!-- New entries -->
-	
-    <Replace Tag="LOC_YNAGEM_RULESET1_NAME" Language="zh_Hans_CN">
-      <Text>地球 1：小型</Text>
-    </Replace>
-    <Replace Tag="LOC_YNAGEM_RULESET2_NAME" Language="zh_Hans_CN">
-      <Text>地球 2：中型</Text>
-    </Replace>
-    <Replace Tag="LOC_YNAGEM_RULESET3_NAME" Language="zh_Hans_CN">
-      <Text>地球 3：大型</Text>
-    </Replace>
-	
-    <Replace Tag="LOC_EURO_RULESET0_NAME" Language="zh_Hans_CN">
-      <Text>欧洲：文明限定</Text>
-    </Replace>
-    <Replace Tag="LOC_EURO_RULESET1_NAME" Language="zh_Hans_CN">
-      <Text>欧洲 1：小型</Text>
-    </Replace>
-    <Replace Tag="LOC_EURO_RULESET2_NAME" Language="zh_Hans_CN">
-      <Text>欧洲 2：中型</Text>
-    </Replace>
-    <Replace Tag="LOC_EURO_RULESET3_NAME" Language="zh_Hans_CN">
-      <Text>欧洲 3：大型</Text>
-    </Replace>
-	
-    <Replace Tag="LOC_OLDWORLD_RULESET1_NAME" Language="zh_Hans_CN">
-      <Text>旧世界 1：小型</Text>
-    </Replace>
-    <Replace Tag="LOC_OLDWORLD_RULESET2_NAME" Language="zh_Hans_CN">
-      <Text>旧世界 2：中型</Text>
-    </Replace>
-    <Replace Tag="LOC_OLDWORLD_RULESET3_NAME" Language="zh_Hans_CN">
-      <Text>旧世界 3：大型</Text>
-    </Replace>
-	
-    <Replace Tag="LOC_YNAGEM_RULESET0_DESC" Language="zh_Hans_CN">
-      <Text>使用标准的文明VI游戏规则</Text>
-    </Replace>
-    <Replace Tag="LOC_YNAGEM_RULESET1_DESC" Language="zh_Hans_CN">
-      <Text>适用于小型地图[NEWLINE]- 专用规则：[NEWLINE][ICON_Bullet]城市最小距离改为2格[NEWLINE][ICON_Bullet]移除布鲁塞尔，日内瓦和里斯本城邦[NEWLINE]- 通用规则：[NEWLINE][ICON_Bullet]蛮族营地减少33%（2/文明）[NEWLINE][ICON_Bullet]蛮族营地与城市间的最小距离提高到7格[NEWLINE][ICON_Bullet]调整部分首都名称[NEWLINE][ICON_Bullet]调整资源放置规则[NEWLINE][ICON_Bullet]调整多佛白崖产出（2[ICON_Food]，1[ICON_Culture]，1[ICON_Gold]）</Text>
-    </Replace>
-    <Replace Tag="LOC_YNAGEM_RULESET2_DESC" Language="zh_Hans_CN">
-      <Text>适用于中型地图[NEWLINE]- 专用规则：[NEWLINE][ICON_Bullet]移除布鲁塞尔和日内瓦城邦[NEWLINE]- 通用规则：[NEWLINE][ICON_Bullet]蛮族营地减少33%（2/文明）[NEWLINE][ICON_Bullet]蛮族营地与城市间的最小距离提高到7格[NEWLINE][ICON_Bullet]调整部分首都名称[NEWLINE][ICON_Bullet]调整资源放置规则[NEWLINE][ICON_Bullet]调整多佛白崖产出（2[ICON_Food]，1[ICON_Culture]，1[ICON_Gold]）</Text>
-    </Replace>
-    <Replace Tag="LOC_YNAGEM_RULESET3_DESC" Language="zh_Hans_CN">
-      <Text>适用于大型地图[NEWLINE]- 专用规则：[NEWLINE][ICON_Bullet]海洋地格双倍[ICON_Movement]移动力[NEWLINE][ICON_Bullet]提高道路[ICON_Movement]移动力[NEWLINE][ICON_Bullet]提高文明间的最小距离[NEWLINE]- 通用规则：[NEWLINE][ICON_Bullet]蛮族营地减少33%（2/文明）[NEWLINE][ICON_Bullet]蛮族营地与城市间的最小距离提高到7格[NEWLINE][ICON_Bullet]调整部分首都名称[NEWLINE][ICON_Bullet]调整资源放置规则[NEWLINE][ICON_Bullet]调整多佛白崖产出（2[ICON_Food]，1[ICON_Culture]，1[ICON_Gold]）</Text>
-    </Replace>
     
 	<Replace Tag="LOC_YNAGEM_NAME" Language="zh_Hans_CN">
-      <Text>地球（特大）</Text>
+      <Text>[COLOR:Civ6Red]地球加大型[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_DESC" Language="zh_Hans_CN">
-      <Text>Genghis Kai的特大地球地图（Hormigas版）（180x94）</Text>
+      <Text>玩家Genghis Kai制作的庞大地球地图(Hormigas改版)。(180x94)[NEWLINE][ICON_Exclamation] [COLOR_RED]游戏后期不稳定[ENDCOLOR][NEWLINE]降低图像性能防止崩溃[NEWLINE]推荐6G以上显存作死</Text>
     </Replace>
     <Replace Tag="LOC_GREATESTEARTH_NAME" Language="zh_Hans_CN">
-      <Text>最伟大的地球</Text>
+      <Text>地球大型</Text>
     </Replace>
     <Replace Tag="LOC_GREATESTEARTH_DESC" Language="zh_Hans_CN">
-      <Text>djvandyke的最伟大的地球地图（104x64）</Text>
+      <Text>玩家djvandyke制作的大型地球地图。(104x64)</Text>
     </Replace>
     <Replace Tag="LOC_PLAYEUROPEAGAIN_NAME" Language="zh_Hans_CN">
-      <Text>欧洲再临</Text>
+      <Text>欧洲加大型</Text>
     </Replace>
     <Replace Tag="LOC_PLAYEUROPEAGAIN_DESC" Language="zh_Hans_CN">
-      <Text>NiRv4n4的欧洲地图（Hormigas版）（108x98）</Text>
+      <Text>玩家NiRv4n4制作的欧洲加大型地图(Hormigas改版)。(108x98)</Text>
     </Replace>
-    <Replace Tag="LOC_LARGESTEARTH_NAME" Language="zh_Hans_CN">
-      <Text>[COLOR_RED]地球（最大）[ENDCOLOR]</Text>
+	<Replace Tag="LOC_LARGE_EUROPE_NAME" Language="zh_Hans_CN">
+      <Text>欧洲大型</Text>
     </Replace>
-    <Replace Tag="LOC_LARGESTEARTH_DESC" Language="zh_Hans_CN">
-      <Text>最大的地球地图（230x116）[NEWLINE][ICON_Exclamation] [COLOR_RED]极长的加载时间！（约5分钟）[ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]高显存占用！[ENDCOLOR][NEWLINE][ICON_Exclamation] [COLOR_RED]NASA的超级计算机恨死它了！[ENDCOLOR]</Text>
+    <Replace Tag="LOC_LARGE_EUROPE_DESC" Language="zh_Hans_CN">
+      <Text>玩家Dieter VonClam制作的大型欧洲地图。(79x73)</Text>
+    </Replace>
+    <Replace Tag="LOC_TERRAMAP_NAME" Language="zh_Hans_CN">
+      <Text>YnAMP定制地图</Text>
+    </Replace>
+    <Replace Tag="LOC_TERRAMAP_DESC" Language="zh_Hans_CN">
+      <Text>高自由度的地图，地图大小可选择。</Text>
+    </Replace>
+	<Replace Tag="LOC_LARGESTEARTHCUSTOM_NAME" Language="zh_Hans_CN">
+      <Text>[COLOR:Civ6Red]区域地图[ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGESTEARTHCUSTOM_DESC" Language="zh_Hans_CN">
+      <Text>一张大地图。(230x116)[NEWLINE][ICON_Exclamation] [COLOR_RED]可能不用加载全尺寸[ENDCOLOR][NEWLINE]选择地图中一块区域开始游戏</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Language="zh_Hans_CN">
       <Text>文明位置</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>决定在地图上放置文明的规则</Text>
+      <Text>地图上的文明位置</Text>
     </Replace>
     <Replace Tag="LOC_CULTURALLY_LINKED_START_NAME" Language="zh_Hans_CN">
-      <Text>出生地关联</Text>
-    </Replace>
-    <Replace Tag="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>是否依据人文地理来关联文明出生地</Text>
+      <Text>人文类型</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">
-      <Text>随机</Text>
+      <Text>默认</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>不依据种族来关联出生地（文明VI原版规则）</Text>
+      <Text>无关联启动位置</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_NAME" Language="zh_Hans_CN">
-      <Text>人文地理</Text>
+      <Text>社会文化</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>依据种族来关联文明出生地</Text>
+      <Text>社会文化地理关联启动位置</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAPSIZE_ENORMOUS_NAME" Language="zh_Hans_CN">
-      <Text>特大</Text>
+      <Text>庞大</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>供16名玩家使用的特大地图（128x80）</Text>
+      <Text>供16名玩家使用的庞大地图。(128x80)</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_GIANT_NAME" Language="zh_Hans_CN">
-      <Text>极大</Text>
+      <Text>[COLOR:Civ6Red]特大[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_GIANT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>供20名或更多玩家使用的极大地图（180x94）</Text>
+      <Text>供20+玩家使用的特大地图。(184x92)[NEWLINE][ICON_Exclamation] [COLOR_RED]游戏后期不稳定[ENDCOLOR][NEWLINE]降低图像性能防止崩溃[NEWLINE]推荐6G以上显存作死</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_LUDICROUS_NAME" Language="zh_Hans_CN">
-      <Text>最大</Text>
+      <Text>[COLOR:Civ6Red]超大[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>你的电脑玩命加载时你能经受得起时间的考验吗？（230x115）</Text>
+      <Text>供大量作死玩家使用的超大地图。(200x100)[NEWLINE][ICON_Exclamation] [COLOR_RED]游戏后期不稳定[ENDCOLOR][NEWLINE]降低图像性能防止崩溃[NEWLINE]欢迎8G显存以上作死</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_MAX_NAME" Language="zh_Hans_CN">
+      <Text>最大</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_MAX_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>目前作者电脑上最大的地图(215x112)[NEWLINE](作者配置: i7 4770K + MSI GTX 1080Ti + 16GB内存)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAPSIZE_SMALL21_NAME" Language="zh_Hans_CN">
+      <Text>小 (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_SMALL21_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>供6名玩家使用的小地图。(84x42)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_STANDARD21_NAME" Language="zh_Hans_CN">
+      <Text>标准 (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_STANDARD21_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>供8名玩家使用的中型地图。(96x48)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LARGE21_NAME" Language="zh_Hans_CN">
+      <Text>大 (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LARGE21_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>供10名玩家使用的大地图。(108x54)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_HUGE21_NAME" Language="zh_Hans_CN">
+      <Text>巨大 (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_HUGE21_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>供12名玩家使用的巨大地图。(120x60)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS21_NAME" Language="zh_Hans_CN">
+      <Text>庞大 (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS21_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>供16名玩家使用的庞大地图。(148x74)</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_NAME" Language="zh_Hans_CN">
-      <Text>资源放置</Text>
-    </Replace>
-    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>决定在地图上放置资源的规则</Text>
+      <Text>资源位置</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">
-      <Text>随机</Text>
+      <Text>默认</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>使用标准的文明VI地图生成规则</Text>
+      <Text>随机资源。</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_NAME" Language="zh_Hans_CN">
-      <Text>导入</Text>
+      <Text>预设</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>从原始地图数据中导入资源位置</Text>
+      <Text>玩家导入的地图中的预设资源。</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_NAME" Language="zh_Hans_CN">
-      <Text>资源禁区</Text>
+      <Text>资源限制</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>部分资源将不会被放置在地图上某些预定的区域</Text>
+      <Text>某些资源只会在地图预设地区产出。</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_NAME" Language="zh_Hans_CN">
-      <Text>现实世界资源储藏</Text>
+      <Text>矿藏资源</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>某些资源储藏将被放置在对应的现实世界区域</Text>
+      <Text>某些矿藏资源会在相对真实世界的地区产出。</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_ACTIVATED_NAME" Language="zh_Hans_CN">
       <Text>启用</Text>
@@ -164,120 +162,633 @@
       <Text>禁用</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_NAME" Language="zh_Hans_CN">
-      <Text>文明特产</Text>
+      <Text>专属资源</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>为某些特定文明的出生地周围放置其现实世界特产资源</Text>
+      <Text>文明启动位置附近会产出特殊资源。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALL_LUXURIES_NAME" Language="zh_Hans_CN">
+      <Text>全奢侈品</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALL_LUXURIES_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>地图上每种奢侈品都或多或少有些。</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_NAME" Language="zh_Hans_CN">	
-      <Text>地貌特征</Text>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_NAME" Language="zh_Hans_CN">
+      <Text>地形地貌</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Language="zh_Hans_CN">	
-      <Text>决定在地图上放置地貌（森林，雨林……）的规则</Text>
-    </Replace>
-    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">	
-      <Text>随机</Text>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">
+      <Text>默认</Text>
     </Replace>
     <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>使用标准的文明VI地图生成规则</Text>
+      <Text>地形地貌随机。</Text>
     </Replace>
     <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_NAME" Language="zh_Hans_CN">
-      <Text>导入</Text>
+      <Text>预设</Text>
     </Replace>
     <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>从原始地图数据中导入地貌位置</Text>
+      <Text>玩家导入的地图中的预设地形地貌。</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">
-      <Text>随机</Text>
+      <Text>默认</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>使用标准的文明VI地图生成规则</Text>
+      <Text>启动位置随机。</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_NAME" Language="zh_Hans_CN">
-      <Text>现实世界</Text>
+      <Text>真实</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>尽可能将文明放置在其现实世界中的位置</Text>
-    </Replace>	
+      <Text>文明在真实世界中的启动位置。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_OLD_WORLD_NAME" Language="zh_Hans_CN">
+      <Text>旧世界</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_OLD_WORLD_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>文明在旧世界中的启动位置。</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_ALLOW_NW_CS_NAME" Language="zh_Hans_CN">
+      <Text>城邦在新世界存在</Text>
+    </Replace>
 	
     <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_NAME" Language="zh_Hans_CN">
-      <Text>大陆名称</Text>
-    </Replace>
-    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>决定在地图上划分大陆名称的规则</Text>
+      <Text>大陆命名</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">
-      <Text>随机名称</Text>
+      <Text>默认</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>使用标准的文明VI地图生成规则</Text>
+      <Text>大陆命名随机。</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_NAME" Language="zh_Hans_CN">
-      <Text>导入</Text>
+      <Text>预设</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>从原始地图数据中导入大陆名称</Text>
+      <Text>玩家导入的地图中的预设大陆命名。</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_NAME" Language="zh_Hans_CN">	
-      <Text>河流放置</Text>
+    <Replace Tag="LOC_MAP_CONTINENT_MODEL_NAME" Language="zh_Hans_CN">
+      <Text>大陆板块</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DESCRIPTION" Language="zh_Hans_CN">	
-      <Text>决定在地图上放置河流的规则</Text>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SEVEN_CONTINENT_NAME" Language="zh_Hans_CN">
+      <Text>七大洲</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">	
-      <Text>随机</Text>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SEVEN_CONTINENT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>亚洲、欧洲、北美洲、南美洲、南极洲、非洲、大洋洲</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SUBCONTINENT_NAME" Language="zh_Hans_CN">
+      <Text>次大陆、地区</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SUBCONTINENT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>多个次大陆、地区。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_NAME" Language="zh_Hans_CN">
+      <Text>河流分布</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">
+      <Text>默认</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>使用标准的文明VI地图生成规则</Text>
+      <Text>河流分布随机。</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_NAME" Language="zh_Hans_CN">
-      <Text>导入</Text>
+      <Text>预设</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>从原始地图数据中导入河流位置</Text>
+      <Text>玩家导入的地图中的预设河流分布。</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_NAME" Language="zh_Hans_CN">
       <Text>自然奇观</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>决定在地图上放置自然奇观的规则</Text>
-    </Replace>
     <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">
-      <Text>随机</Text>
+      <Text>默认</Text>
     </Replace>
     <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>使用标准的文明VI地图生成规则</Text>
+      <Text>自然奇观分布随机。</Text>
     </Replace>
     <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_NAME" Language="zh_Hans_CN">
-      <Text>导入</Text>
+      <Text>预设</Text>
     </Replace>
     <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>从原始地图数据中导入自然奇观位置</Text>
+      <Text>玩家导入的地图中的预设自然奇观分布。</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_NAME" Language="zh_Hans_CN">
-      <Text>无</Text>
+      <Text>空置</Text>
     </Replace>
     <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>不放置</Text>
+      <Text>无。</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CLOSED_BOSPHORUS_NAME" Language="zh_Hans_CN">
-      <Text>关闭伊斯坦布尔海峡</Text>
+      <Text>取消[COLOR:ResScienceLabelCS]伊斯坦布尔海峡[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_MAP_MONT_SAINT_MICHEL_MARSH_NAME" Language="zh_Hans_CN">
-      <Text>为圣米歇尔山放置沼泽</Text>
+      <Text>[COLOR:ResScienceLabelCS]圣米歇尔山[ENDCOLOR]附近有沼泽</Text>
     </Replace>
     <Replace Tag="LOC_MAP_STONEHENGE_STONE_NAME" Language="zh_Hans_CN">
-      <Text>为巨石阵放置石头</Text>
+      <Text>[COLOR:ResScienceLabelCS]巨石阵[ENDCOLOR]附近有石头</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ARTEMIS_TEMPLE_DEER_NAME" Language="zh_Hans_CN">
+      <Text>[COLOR:ResScienceLabelCS]阿尔忒弥斯神庙[ENDCOLOR]附近有鹿群</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_GREAT_ZIMBABWE_CATTLE_NAME" Language="zh_Hans_CN">
+      <Text>[COLOR:ResScienceLabelCS]大津巴布韦遗址[ENDCOLOR]附近有牛群</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_JEBEL_BARKAL_HILLS_NAME" Language="zh_Hans_CN">
+      <Text>[COLOR_LIGHTBLUE]荒芜的河漫滩[ENDCOLOR]替换[COLOR:ResScienceLabelCS]博尔戈尔山[ENDCOLOR]</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Language="zh_Hans_CN">
-      <Text>陆地周围无冰层（以便环球航行）</Text>
+      <Text>两极冰层不与陆地连接(便于环球航行)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NO_CITY_STATE_NAME" Language="zh_Hans_CN">
+      <Text>取消城邦</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_FORCE_TSL_NAME" Language="zh_Hans_CN">
+      <Text>开局建城</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_OFF" Language="zh_Hans_CN">
+      <Text>禁用</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_OFF_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>在建城前开拓者允许自由行动。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_CS" Language="zh_Hans_CN">
+      <Text>城邦</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_CS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>真实启动位置开启后，城邦开局建城。(取消第一回合的开拓者)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_AI" Language="zh_Hans_CN">
+      <Text>电脑</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_AI_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>真实启动位置开启后，电脑开局建城。(取消第一回合的开拓者)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_ALL" Language="zh_Hans_CN">
+      <Text>全部</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_ALL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>真实启动位置开启后，玩家、城邦、电脑均开局建城。(取消第一回合的开拓者)</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_AUTO_CITY_NAMING_NAME" Language="zh_Hans_CN">
+      <Text>真实城市命名</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ONLY_GENERIC_CITY_NAMES_NAME" Language="zh_Hans_CN">
+      <Text>使用通用城市名</Text>
+    </Replace>	
+	
+	<Replace Tag="LOC_MAP_LEADER_TSL_NAME" Language="zh_Hans_CN">
+      <Text>开启领袖真实启动位置</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ALTERNATE_TSL_NAME" Language="zh_Hans_CN">
+      <Text>备用启动位置</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ALTERNATE_PLACEMENT_NAME" Language="zh_Hans_CN">
+      <Text>无真实启动位置则随机分配启动位置</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_HISTORICAL_SPAWN_NAME" Language="zh_Hans_CN">
+      <Text>使用基于史实的发展时期</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_TURNS_BEFORE_BARBARIANS_NAME" Language="zh_Hans_CN">
+      <Text>蛮族待定回合数</Text>
+    </Replace>
+    <Replace Tag="LOC_TURNS_BEFORE_BARBARIANS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>允许蛮族侦察前的最小回合数。[玩家这么多个回合后蛮子才能动。]</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_REFERENCE_DB_NAME" Language="zh_Hans_CN">
+      <Text>数据引用</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIANT_DB_NAME" Language="zh_Hans_CN">
+      <Text>[COLOR:ConnectionStatus_Connecting]地球加大型[ENDCOLOR]数据</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LARGESTEARTH_DB_NAME" Language="zh_Hans_CN">
+      <Text>[COLOR:ConnectionStatus_Connecting]地图区块[ENDCOLOR]数据</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIANT_DB_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>引用[COLOR:Civ6Yellow]地球加大型[ENDCOLOR]数据库获得城市名、文明启动位置、新世界位置...[NEWLINE]分布精度低但可用数据多。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LARGESTEARTH_DB_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>引用[COLOR:Civ6Yellow]地图区块[ENDCOLOR]数据库[NEWLINE]完美分布但可用数据少。</Text>
+    </Replace>
+	
+	<!--
+    <Replace Tag="LOC_MAP_LANDMASS_OVERLAY_NAME" Language="zh_Hans_CN">
+      <Text>Randomized Landmass</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LANDMASS_OVERLAY_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>To generate Landmasses placed over real Earth continents position (randomize coastline)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_EARTH_LANDMASS_NAME" Language="zh_Hans_CN">
+      <Text>Use Base Earth</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EARTH_LANDMASS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>Real Earth continents shape the landmasses (scaled down to map size)</Text>
+    </Replace>
+	-->
+	
+    <Replace Tag="LOC_MAP_MAP_SHAPE_NAME" Language="zh_Hans_CN">
+      <Text>地图布局</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_EARTH_ONLY_NAME" Language="zh_Hans_CN">
+      <Text>类地球</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EARTH_ONLY_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>形似真实地球布局。</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_EARTH_RNG_NAME" Language="zh_Hans_CN">
+      <Text>随机海岸线的地球</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EARTH_RNG_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>海岸线随机分布的形似真实地球布局。</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_2CONTINENTS_NAME" Language="zh_Hans_CN">
+      <Text>二合一</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_2CONTINENTS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>分离的两个地块合成一张新旧世界的地图。(可自定义配置)</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_MULTIPLE_CONTINENT_NAME" Language="zh_Hans_CN">
+      <Text>多合一</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MULTIPLE_CONTINENT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>多个独立的地块合成一张相对真实地球布局的地图。(可自定义配置)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_OLD_WORLD_SHAPE_NAME" Language="zh_Hans_CN">
+      <Text>旧世界布局</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NEW_WORLD_SHAPE_NAME" Language="zh_Hans_CN">
+      <Text>新世界布局</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_PANGEA_NAME" Language="zh_Hans_CN">
+      <Text>盘古</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PANGEA_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>一个大型地块。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CONTINENT_NAME" Language="zh_Hans_CN">
+      <Text>大洲</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>周围有岛屿的大型地块。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SMALL_CONTINENT_NAME" Language="zh_Hans_CN">
+      <Text>大陆</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SMALL_CONTINENT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>周围有岛屿的地块。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_LARGE_ISLANDS_NAME" Language="zh_Hans_CN">
+      <Text>大群岛</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LARGE_ISLANDS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>很多大小岛屿。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_ISLANDS_NAME" Language="zh_Hans_CN">
+      <Text>群岛</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ISLANDS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>很多小岛屿和一些更大的岛屿。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SMALL_ISLANDS_NAME" Language="zh_Hans_CN">
+      <Text>小群岛</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SMALL_ISLANDS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>很多小岛屿。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SEA_NAME" Language="zh_Hans_CN">
+      <Text>海岛</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SEA_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>偏远小岛。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_RANDOM_NAME" Language="zh_Hans_CN">
+      <Text>随机</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RANDOM_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>随机选择以上一种(不含类地球)。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_RANDOM_VALUES_NAME" Language="zh_Hans_CN">
+      <Text>默认</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RANDOM_VALUES_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>电脑自动生成。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CUSTOM_NAME" Language="zh_Hans_CN">
+      <Text>自定义</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>自定义地块属性。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CUSTOM_TYPE_NAME" Language="zh_Hans_CN">
+      <Text>区域类型</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_WATER_PERCENT_NAME" Language="zh_Hans_CN">
+      <Text>含水量</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_GRAIN_NAME" Language="zh_Hans_CN">
+      <Text>碎片化分形(0-7)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_GRAIN_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>众多小区域无规则分形生成地块。[NEWLINE]0 - 无碎片(看似规整)。[NEWLINE]7 - 大量小区域(排列很乱)。[NEWLINE][有差异，游戏中自行体会。]</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_RIFT_GRAIN_NAME" Language="zh_Hans_CN">
+      <Text>区域性分形(0-4)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_RIFT_GRAIN_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>无解释。[NEWLINE][搬运者测试：有问题，默认为-1，不知道！]</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTX_EXP_NAME" Language="zh_Hans_CN">
+      <Text>分形宽度</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTX_EXP_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>分形宽度数值。[NEWLINE]值越大分形越密，反之越疏。[NEWLINE]底数为2的指数形式，如：当分形宽度为7 --> 2^7 生成128单位的宽度；为6 --> 2^6 生成64单位的宽度。[NEWLINE][搬运测试：设置后感觉没变化]</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTY_EXP_NAME" Language="zh_Hans_CN">
+      <Text>分形高度</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTY_EXP_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>分形高度数值。[NEWLINE]值越大分形越密，反之越疏。[NEWLINE]底数为2的指数形式，如：当分形高度为7 --> 2^7 生成128单位的高度；为6 --> 2^6 生成64单位的高度。[NEWLINE][搬运测试：设置后感觉没变化]</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_LAND_NAME" Language="zh_Hans_CN">
+      <Text>填海造地</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LAND_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>在原有的水域中填海(不改变现有的地块情况)。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_WATER_NAME" Language="zh_Hans_CN">
+      <Text>退田还湖</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_WATER_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>在原有的陆地中造湖(不改变现有的水域情况)。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_DEFAULT_LANDMASS_NAME" Language="zh_Hans_CN">
+      <Text>默认</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DEFAULT_LANDMASS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>默认每个地块布局。</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SELECT_LANDMASS_NAME" Language="zh_Hans_CN">
+      <Text>自定义</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SELECT_LANDMASS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>对每个地块单独布局。(自定义布局)</Text>
+    </Replace>	
+	
+    <Replace Tag="LOC_MAP_AUSTRALIA_NAME" Language="zh_Hans_CN">
+      <Text>澳洲</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_OCEANIA_NAME" Language="zh_Hans_CN">
+      <Text>大洋洲</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_SOUTH_ASIA_NAME" Language="zh_Hans_CN">
+      <Text>南亚</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_CENTRAL_ASIA_NAME" Language="zh_Hans_CN">
+      <Text>中亚</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_EAST_ASIA_NAME" Language="zh_Hans_CN">
+      <Text>东亚</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_JAPAN_NAME" Language="zh_Hans_CN">
+      <Text>日本</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_NORTH_ASIA_NAME" Language="zh_Hans_CN">
+      <Text>北亚</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_MIDDLE_EAST_NAME" Language="zh_Hans_CN">
+      <Text>中东</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_TURKEY_NAME" Language="zh_Hans_CN">
+      <Text>土耳其</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_SOUTH_EUROPA_NAME" Language="zh_Hans_CN">
+      <Text>南欧</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_WEST_EUROPA_NAME" Language="zh_Hans_CN">
+      <Text>西欧</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_CENTRAL_EUROPA_NAME" Language="zh_Hans_CN">
+      <Text>中欧</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_NORTH_EUROPA_NAME" Language="zh_Hans_CN">
+      <Text>北欧</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_EAST_EUROPA_NAME" Language="zh_Hans_CN">
+      <Text>东欧</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_NORTH_AFRICA_NAME" Language="zh_Hans_CN">
+      <Text>北非</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_CENTRAL_AFRICA_NAME" Language="zh_Hans_CN">
+      <Text>中非</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_SOUTH_AFRICA_NAME" Language="zh_Hans_CN">
+      <Text>南非</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_MADAGASCAR_NAME" Language="zh_Hans_CN">
+      <Text>马达加斯加</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_NORTH_AMERICA_NAME" Language="zh_Hans_CN">
+      <Text>北美</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_ARCTIC_AMERICA_NAME" Language="zh_Hans_CN">
+      <Text>美洲北极地区</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_CENTRAL_AMERICA_NAME" Language="zh_Hans_CN">
+      <Text>中美洲</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_SOUTH_AMERICA_WEST_NAME" Language="zh_Hans_CN">
+      <Text>南美东部</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_SOUTH_AMERICA_EAST_NAME" Language="zh_Hans_CN">
+      <Text>南美西部</Text>
+    </Replace>  
+    <Replace Tag="LOC_MAP_ANTARCTIC_AMERICA_NAME" Language="zh_Hans_CN">
+      <Text>美洲南极地区</Text>
+    </Replace>  
+	
+    <Replace Tag="LOC_MAP_SECTION_NAME" Language="zh_Hans_CN">
+      <Text>地图区域</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_FULL_NAME" Language="zh_Hans_CN">
+      <Text>完整地图</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_FULL_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>原始的完整地图。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_CUSTOM_NAME" Language="zh_Hans_CN">
+      <Text>自定义</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_CUSTOM_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>玩家设置区域的四个边界。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_EUROPE_NAME" Language="zh_Hans_CN">
+      <Text>欧洲</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_EUROPE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>地图上的欧洲区域。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_MEDITERRANEA_NAME" Language="zh_Hans_CN">
+      <Text>地中海</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_MEDITERRANEA_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>地图上的地中海区域。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_MIDDLE_EAST_NAME" Language="zh_Hans_CN">
+      <Text>中东</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_MIDDLE_EAST_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>地图上的中东区域。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_AMERICAS_NAME" Language="zh_Hans_CN">
+      <Text>美洲</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_AMERICAS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>地图上的美洲区域。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_COLONIZATION_NAME" Language="zh_Hans_CN">
+      <Text>殖民</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_COLONIZATION_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>地图上的大西洋半球。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_OLD_WORLD_NAME" Language="zh_Hans_CN">
+      <Text>旧世界</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SECTION_OLD_WORLD_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>地图上的旧世界（亚欧非）区域。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_STARTX_NAME" Language="zh_Hans_CN">
+      <Text>西方边界</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ENDX_NAME" Language="zh_Hans_CN">
+      <Text>东方边界</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_STARTY_NAME" Language="zh_Hans_CN">
+      <Text>南方边界</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ENDY_NAME" Language="zh_Hans_CN">
+      <Text>北方边界</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_LATITUDE_NAME" Language="zh_Hans_CN">
+      <Text>纬度</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LONGITUDE_NAME" Language="zh_Hans_CN">
+      <Text>经度</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_WEST_EUROPE_NAME" Language="zh_Hans_CN">
+      <Text>西欧</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EAST_AMERICA_NAME" Language="zh_Hans_CN">
+      <Text>美洲东部</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SOUTH_POLE_NAME" Language="zh_Hans_CN">
+      <Text>南极</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_POLE_NAME" Language="zh_Hans_CN">
+      <Text>北极</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EQUATOR_NAME" Language="zh_Hans_CN">
+      <Text>赤道</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_EAST_MEDITERRANEA_NAME" Language="zh_Hans_CN">
+      <Text>地中海东部</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EAST_EUROPE_AFRICA_NAME" Language="zh_Hans_CN">
+      <Text>东欧/非洲</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_THE_URALS_WEST_INDIA_NAME" Language="zh_Hans_CN">
+      <Text>乌拉尔山脉，印度西部</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CENTRAL_ASIA_NAME" Language="zh_Hans_CN">
+      <Text>中亚</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EAST_ASIA_WEST_AUSTRALIA_NAME" Language="zh_Hans_CN">
+      <Text>东亚、澳大利亚西部</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_BERING_STRAIT_NAME" Language="zh_Hans_CN">
+      <Text>白令海峡</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_WEST_COAST_NAME" Language="zh_Hans_CN">
+      <Text>美洲西海岸</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GULF_OF_MEXICO_NAME" Language="zh_Hans_CN">
+      <Text>墨西哥湾</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_AFRICA_SOUTH_ASIA_CARIBBEAN_NAME" Language="zh_Hans_CN">
+      <Text>北非、南亚、加勒比海</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIBRALTAR_SOUTH_JAPAN_CENTRAL_AMERICA_NAME" Language="zh_Hans_CN">
+      <Text>直布罗陀、日本南部、美洲中部</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_MEDITERRANEA_ASIA_NAME" Language="zh_Hans_CN">
+      <Text>地中海北部/亚洲</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SOUTH_AFRICA_AMERICA_NAME" Language="zh_Hans_CN">
+      <Text>南非/美洲</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_AMERICA_EUROPE_NAME" Language="zh_Hans_CN">
+      <Text>北美/欧洲</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MID_MEDITERRANEA_NAME" Language="zh_Hans_CN">
+      <Text>地中海中部（希腊西部）</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALPS_NAME" Language="zh_Hans_CN">
+      <Text>阿尔卑斯山（意大利西部）</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_SCENARIO_TYPE_NAME" Language="zh_Hans_CN">
+      <Text>情景模式</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_NONE_NAME" Language="zh_Hans_CN">
+      <Text>无</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_NONE_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>无情景。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_GENERATED_NAME" Language="zh_Hans_CN">
+      <Text>自动生成</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_GENERATED_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>自动生成情景。</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_NAME" Language="zh_Hans_CN">
+      <Text>建城环境</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" Language="zh_Hans_CN">
+      <Text>地形</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>根据游戏实际环境建城。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_NAME" Language="zh_Hans_CN">
+      <Text>地图</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>根据地图坐标数据建城。</Text>
     </Replace>
 	
   </LocalizedText>
