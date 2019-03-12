@@ -189,7 +189,7 @@
 		  <Text>满洲</Text>
 		</Replace>
 		<Replace Tag="LOC_CONTINENT_KOLYMA" Language="zh_Hans_CN">
-		  <Text>科累马河</Text>
+		  <Text>科累马河地区</Text>
 		</Replace>
 		<Replace Tag="LOC_CONTINENT_EUROPE" Language="zh_Hans_CN">
 		  <Text>欧洲</Text>
@@ -198,10 +198,10 @@
 		  <Text>斯堪的纳维亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CONTINENT_IBERIA" Language="zh_Hans_CN">
-		  <Text>古西班牙</Text>
+		  <Text>伊比利亚半岛</Text>
 		</Replace>
 		<Replace Tag="LOC_CONTINENT_CAUCASIA" Language="zh_Hans_CN">
-		  <Text>高加索</Text>
+		  <Text>高加索地区</Text>
 		</Replace>
 		<Replace Tag="LOC_CONTINENT_BRITTANIA" Language="zh_Hans_CN">
 		  <Text>布里塔尼亚</Text>
@@ -231,10 +231,10 @@
 		  <Text>美洲南部</Text>
 		</Replace>
     	<Replace Tag="LOC_CONTINENT_CARIBBEANIA" Language="zh_Hans_CN">
-		  <Text>加勒比海</Text>
+		  <Text>加勒比地区</Text>
 		</Replace>
     	<Replace Tag="LOC_CONTINENT_PATAGONIA" Language="zh_Hans_CN">
-		  <Text>巴塔哥尼亚</Text>
+		  <Text>巴塔哥尼亚地区</Text>
 		</Replace>
 		<Replace Tag="LOC_CONTINENT_AUSTRALIA" Language="zh_Hans_CN">
 		  <Text>澳大利亚</Text>
@@ -263,2297 +263,2291 @@
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 
-	<LocalizedText>		<!-- IBERIA -->
+	<LocalizedText>		<!-- IBERIA 伊比利亚半岛 -->
 
 		<Replace Tag="LOC_CITY_NAME_ALBACETE" Language="zh_Hans_CN">
-		  <Text>Albacete</Text>
+		  <Text>阿尔瓦塞特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALBACETE_ARABIA" Language="zh_Hans_CN">
-		  <Text>al-Basīt</Text>
+		  <Text>阿尔瓦塞特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALBACETE_FRANCE" Language="zh_Hans_CN">
-		  <Text>Albacète</Text>
+		  <Text>阿尔瓦塞特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALBACETE_ROME" Language="zh_Hans_CN">
-		  <Text>Libisosa</Text>
+		  <Text>阿尔瓦塞特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALICANTE" Language="zh_Hans_CN">
-		  <Text>Alicante</Text>
+		  <Text>阿利坎特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALICANTE_ARABIA" Language="zh_Hans_CN">
-		  <Text>al-Laqant</Text>
+		  <Text>阿利坎特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALICANTE_ROME" Language="zh_Hans_CN">
-		  <Text>Lucentum</Text>
+		  <Text>阿利坎特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALMANSA" Language="zh_Hans_CN">
-		  <Text>Almansa</Text>
+		  <Text>阿尔曼萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALMANSA_ARABIA" Language="zh_Hans_CN">
-		  <Text>al-Mansa</Text>
+		  <Text>阿尔曼萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALMANSA_ROME" Language="zh_Hans_CN">
-		  <Text>Sætabis</Text>
+		  <Text>阿尔曼萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALMERIA" Language="zh_Hans_CN">
-		  <Text>Almería</Text>
+		  <Text>阿尔梅里亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALMERIA_ARABIA" Language="zh_Hans_CN">
-		  <Text>al-Mari'yah</Text>
+		  <Text>阿尔梅里亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALMERIA_ROME" Language="zh_Hans_CN">
-		  <Text>Portus Magnus</Text>
+		  <Text>阿尔梅里亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ANGRA" Language="zh_Hans_CN">
-		  <Text>Angra</Text>
+		  <Text>安格拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AQUAE_FLAVIAE" Language="zh_Hans_CN">
-		  <Text>Aquæ Flaviæ</Text>
+		  <Text>阿克弗拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AVILA" Language="zh_Hans_CN">
-		  <Text>Avila</Text>
+		  <Text>阿维拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AVILA_SPAIN" Language="zh_Hans_CN">
-		  <Text>Ávila</Text>
+		  <Text>阿维拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_A_CORUNA" Language="zh_Hans_CN">
-		  <Text>A Coruña</Text>
+		  <Text>拉科鲁尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_A_CORUNA_FRANCE" Language="zh_Hans_CN">
-		  <Text>La Corogne</Text>
+		  <Text>拉科鲁尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_A_CORUNA_ROME" Language="zh_Hans_CN">
-		  <Text>Flavium Brigantium</Text>
+		  <Text>拉科鲁尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_A_CORUNA_SPAIN" Language="zh_Hans_CN">
-		  <Text>La Coruña</Text>
+		  <Text>拉科鲁尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BADAJOZ" Language="zh_Hans_CN">
-		  <Text>Badajoz</Text>
+		  <Text>巴达霍斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BADAJOZ_ARABIA" Language="zh_Hans_CN">
-		  <Text>Batalyaws</Text>
+		  <Text>巴达霍斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BADAJOZ_ROME" Language="zh_Hans_CN">
-		  <Text>Emerita Augusta</Text>
+		  <Text>巴达霍斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BAELO_CLAUDIA" Language="zh_Hans_CN">
-		  <Text>Bælo Claudia</Text>
+		  <Text>巴埃洛克劳蒂亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BARCELONA" Language="zh_Hans_CN">
-		  <Text>Barcelona</Text>
+		  <Text>巴塞罗纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BARCELONA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Baršalūnâ</Text>
+		  <Text>巴塞罗纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BARCELONA_CHINA" Language="zh_Hans_CN">
-		  <Text>Basailuona</Text>
+		  <Text>巴塞罗纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BARCELONA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Barcelone</Text>
+		  <Text>巴塞罗纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BARCELONA_GREECE" Language="zh_Hans_CN">
-		  <Text>Varkelóni</Text>
+		  <Text>巴塞罗纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BARCELONA_JAPAN" Language="zh_Hans_CN">
-		  <Text>Baruserona</Text>
+		  <Text>巴塞罗纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BARCELONA_ROME" Language="zh_Hans_CN">
-		  <Text>Barcino</Text>
+		  <Text>巴塞罗纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BEJA" Language="zh_Hans_CN">
-		  <Text>Beja</Text>
+		  <Text>贝哈尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BEJA_ARABIA" Language="zh_Hans_CN">
-		  <Text>al-Bajah</Text>
+		  <Text>贝哈尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BEJA_ROME" Language="zh_Hans_CN">
-		  <Text>Pax Iulia</Text>
+		  <Text>贝哈尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BERGA" Language="zh_Hans_CN">
-		  <Text>Berga</Text>
+		  <Text>贝尔加</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BERGA_ROME" Language="zh_Hans_CN">
-		  <Text>Castrum Bergum</Text>
+		  <Text>贝尔加</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BILBAO" Language="zh_Hans_CN">
-		  <Text>Bilbao</Text>
+		  <Text>毕尔巴鄂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BILBAO_ROME" Language="zh_Hans_CN">
-		  <Text>Flaviobriga</Text>
+		  <Text>毕尔巴鄂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BILBILIS" Language="zh_Hans_CN">
-		  <Text>Augusta Bilbilis</Text>
+		  <Text>比尔比利斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BRAGA" Language="zh_Hans_CN">
-		  <Text>Braga</Text>
+		  <Text>布拉加</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BRAGA_ROME" Language="zh_Hans_CN">
-		  <Text>Bracara Augusta</Text>
+		  <Text>布拉加</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BURGOS" Language="zh_Hans_CN">
-		  <Text>Burgos</Text>
+		  <Text>布尔戈斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BURGOS_ARABIA" Language="zh_Hans_CN">
-		  <Text>Burġuš</Text>
+		  <Text>布尔戈斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BURGOS_ROME" Language="zh_Hans_CN">
-		  <Text>Palantia</Text>
+		  <Text>布尔戈斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CACERES" Language="zh_Hans_CN">
-		  <Text>Cáceres</Text>
+		  <Text>卡塞雷斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CACERES_ARABIA" Language="zh_Hans_CN">
-		  <Text>Qazrix</Text>
+		  <Text>卡塞雷斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CACERES_ROME" Language="zh_Hans_CN">
-		  <Text>Castra Cæcilia</Text>
+		  <Text>卡塞雷斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CADIZ" Language="zh_Hans_CN">
-		  <Text>Cádiz</Text>
+		  <Text>加的斯市</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CADIZ_ARABIA" Language="zh_Hans_CN">
-		  <Text>Qādis</Text>
+		  <Text>加的斯市</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CADIZ_CHINA" Language="zh_Hans_CN">
-		  <Text>Jiādesī</Text>
+		  <Text>加的斯市</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CADIZ_FRANCE" Language="zh_Hans_CN">
-		  <Text>Cadix</Text>
+		  <Text>加的斯市</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CADIZ_GREECE" Language="zh_Hans_CN">
-		  <Text>Gádeira</Text>
+		  <Text>加的斯市</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CADIZ_JAPAN" Language="zh_Hans_CN">
-		  <Text>Kadisu</Text>
+		  <Text>加的斯市</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CADIZ_POLAND" Language="zh_Hans_CN">
-		  <Text>Kadyks</Text>
+		  <Text>加的斯市</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CADIZ_ROME" Language="zh_Hans_CN">
-		  <Text>Gades</Text>
+		  <Text>加的斯市</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CARTAGENA" Language="zh_Hans_CN">
-		  <Text>Cartagena</Text>
+		  <Text>卡塔赫纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CARTAGENA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Qartājanna</Text>
+		  <Text>卡塔赫纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CARTAGENA_ROME" Language="zh_Hans_CN">
-		  <Text>Carthago Nova</Text>
+		  <Text>卡塔赫纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CASTELO_BRANCO" Language="zh_Hans_CN">
-		  <Text>Castelo Branco</Text>
+		  <Text>布朗库堡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CASTELO_BRANCO_ARABIA" Language="zh_Hans_CN">
-		  <Text>al-Antaniya</Text>
+		  <Text>布朗库堡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CASTELO_BRANCO_ROME" Language="zh_Hans_CN">
-		  <Text>Igæditania</Text>
+		  <Text>布朗库堡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CIUDAD_REAL" Language="zh_Hans_CN">
-		  <Text>Ciudad Real</Text>
+		  <Text>雷亚尔城</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CIUTADELLA_DE_MENORCA" Language="zh_Hans_CN">
-		  <Text>Ciutadella de Menorca</Text>
+		  <Text>梅诺卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CIUTADELLA_DE_MENORCA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Medīna Menūrqa</Text>
+		  <Text>梅诺卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CIUTADELLA_DE_MENORCA_ROME" Language="zh_Hans_CN">
-		  <Text>Iamo</Text>
+		  <Text>梅诺卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_COIMBRA" Language="zh_Hans_CN">
-		  <Text>Coimbra</Text>
+		  <Text>科英布拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_COIMBRA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Qulumriyah</Text>
+		  <Text>科英布拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_COIMBRA_ROME" Language="zh_Hans_CN">
-		  <Text>Conimbriga</Text>
+		  <Text>科英布拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CORDOBA" Language="zh_Hans_CN">
-		  <Text>Córdoba</Text>
+		  <Text>科尔多瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CORDOBA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Qurtubah</Text>
+		  <Text>科尔多瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CORDOBA_ENGLAND" Language="zh_Hans_CN">
-		  <Text>Cordova</Text>
+		  <Text>科尔多瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CORDOBA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Cordoue</Text>
+		  <Text>科尔多瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CORDOBA_POLAND" Language="zh_Hans_CN">
-		  <Text>Kordowa</Text>
+		  <Text>科尔多瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CORDOBA_ROME" Language="zh_Hans_CN">
-		  <Text>Corduba</Text>
+		  <Text>科尔多瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CUENCA" Language="zh_Hans_CN">
-		  <Text>Cuenca</Text>
+		  <Text>昆卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CUENCA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Kunka</Text>
+		  <Text>昆卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CUENCA_ROME" Language="zh_Hans_CN">
-		  <Text>Valeria</Text>
+		  <Text>昆卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CULLERA" Language="zh_Hans_CN">
-		  <Text>Cullera</Text>
+		  <Text>库列拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CULLERA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Colla-Aeria</Text>
+		  <Text>库列拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CULLERA_ROME" Language="zh_Hans_CN">
-		  <Text>Portus Sucronis</Text>
+		  <Text>库列拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_DENIA" Language="zh_Hans_CN">
-		  <Text>Dénia</Text>
+		  <Text>德尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_DENIA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Dāniyah</Text>
+		  <Text>德尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_DENIA_ROME" Language="zh_Hans_CN">
-		  <Text>Dianium</Text>
+		  <Text>德尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_DONOSTIA_SAN_SEBASTIAN" Language="zh_Hans_CN">
-		  <Text>Donostia</Text>
+		  <Text>圣塞瓦斯蒂安</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_DONOSTIA_SAN_SEBASTIAN_FRANCE" Language="zh_Hans_CN">
-		  <Text>Saint Sébastien</Text>
+		  <Text>圣塞瓦斯蒂安</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_DONOSTIA_SAN_SEBASTIAN_ROME" Language="zh_Hans_CN">
-		  <Text>Oiasso</Text>
+		  <Text>圣塞瓦斯蒂安</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_DONOSTIA_SAN_SEBASTIAN_SPAIN" Language="zh_Hans_CN">
-		  <Text>San Sebastián</Text>
+		  <Text>圣塞瓦斯蒂安</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_EVORA" Language="zh_Hans_CN">
-		  <Text>Évora</Text>
+		  <Text>埃武拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_EVORA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Yaburah</Text>
+		  <Text>埃武拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_EVORA_ROME" Language="zh_Hans_CN">
-		  <Text>Ebora</Text>
+		  <Text>埃武拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FARO" Language="zh_Hans_CN">
-		  <Text>Faro</Text>
+		  <Text>法鲁</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FARO_ARABIA" Language="zh_Hans_CN">
-		  <Text>Uhsunubah</Text>
+		  <Text>法鲁</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FARO_ROME" Language="zh_Hans_CN">
-		  <Text>Ossonoba</Text>
+		  <Text>法鲁</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FARO_ROME" Language="zh_Hans_CN">
-		  <Text>Ossonoba</Text>
+		  <Text>法鲁</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GIBRALTAR" Language="zh_Hans_CN">
-		  <Text>Gibraltar</Text>
+		  <Text>直布罗陀</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GIBRALTAR_ARABIA" Language="zh_Hans_CN">
-		  <Text>Jabal Tāriq</Text>
+		  <Text>直布罗陀</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GIBRALTAR_ROME" Language="zh_Hans_CN">
-		  <Text>Carteia</Text>
+		  <Text>直布罗陀</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GIJON" Language="zh_Hans_CN">
-		  <Text>Gijón</Text>
+		  <Text>希洪</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GIJON_ROME" Language="zh_Hans_CN">
-		  <Text>Gigia</Text>
+		  <Text>希洪</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GIRONA" Language="zh_Hans_CN">
-		  <Text>Girona</Text>
+		  <Text>赫罗纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GIRONA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Ǧarundâ</Text>
+		  <Text>赫罗纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GIRONA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Gérone</Text>
+		  <Text>赫罗纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GIRONA_ROME" Language="zh_Hans_CN">
-		  <Text>Gerunda</Text>
+		  <Text>赫罗纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GRANADA" Language="zh_Hans_CN">
-		  <Text>Granada</Text>
+		  <Text>格拉纳达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GRANADA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Ġarnātah</Text>
+		  <Text>格拉纳达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GRANADA_ROME" Language="zh_Hans_CN">
-		  <Text>Iliberitanum</Text>
+		  <Text>格拉纳达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GUADALAJARA" Language="zh_Hans_CN">
-		  <Text>Guadalajara</Text>
+		  <Text>瓜达拉哈拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GUADALAJARA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Wādī-al-Hajāra</Text>
+		  <Text>瓜达拉哈拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GUADALAJARA_ROME" Language="zh_Hans_CN">
-		  <Text>Arriaca</Text>
+		  <Text>瓜达拉哈拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GUARDA" Language="zh_Hans_CN">
-		  <Text>Guarda</Text>
+		  <Text>瓜达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_HELLIN" Language="zh_Hans_CN">
-		  <Text>Hellín</Text>
+		  <Text>埃林</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_HUELVA" Language="zh_Hans_CN">
-		  <Text>Huelva</Text>
+		  <Text>韦尔瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_HUELVA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Walbah</Text>
+		  <Text>韦尔瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_HUELVA_ROME" Language="zh_Hans_CN">
-		  <Text>Onoba Æstuaria</Text>
+		  <Text>韦尔瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_HUESCA" Language="zh_Hans_CN">
-		  <Text>Huesca</Text>
+		  <Text>韦斯卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_HUESCA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Washqah</Text>
+		  <Text>韦斯卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_HUESCA_ROME" Language="zh_Hans_CN">
-		  <Text>Osca</Text>
+		  <Text>韦斯卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_IBIZA" Language="zh_Hans_CN">
-		  <Text>Ibiza</Text>
+		  <Text>伊比沙岛</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_IBIZA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Yebisah</Text>
+		  <Text>伊比沙岛</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_IBIZA_ROME" Language="zh_Hans_CN">
-		  <Text>Ebusus</Text>
+		  <Text>伊比沙岛</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ITALICA" Language="zh_Hans_CN">
-		  <Text>Italica</Text>
+		  <Text>意大利卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_JAEN" Language="zh_Hans_CN">
-		  <Text>Jaén</Text>
+		  <Text>哈恩</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_JAEN_ARABIA" Language="zh_Hans_CN">
-		  <Text>Yayyan</Text>
+		  <Text>哈恩</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_JAEN_ROME" Language="zh_Hans_CN">
-		  <Text>Aurgi</Text>
+		  <Text>哈恩</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LAGOS" Language="zh_Hans_CN">
-		  <Text>Lagos</Text>
+		  <Text>拉古什</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LAGOS_ARABIA" Language="zh_Hans_CN">
-		  <Text>Zawaia</Text>
+		  <Text>拉古什</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LAGOS_ROME" Language="zh_Hans_CN">
-		  <Text>Lacobriga</Text>
+		  <Text>拉古什</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LALIN" Language="zh_Hans_CN">
-		  <Text>Lalín</Text>
+		  <Text>拉林</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LEON" Language="zh_Hans_CN">
-		  <Text>León</Text>
+		  <Text>利昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LEON_ARABIA" Language="zh_Hans_CN">
-		  <Text>Liyūn</Text>
+		  <Text>利昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LEON_ROME" Language="zh_Hans_CN">
-		  <Text>Legio</Text>
+		  <Text>利昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LINARES" Language="zh_Hans_CN">
-		  <Text>Linares</Text>
+		  <Text>利纳雷斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LINARES_ARABIA" Language="zh_Hans_CN">
-		  <Text>Qastuluna</Text>
+		  <Text>利纳雷斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LINARES_ROME" Language="zh_Hans_CN">
-		  <Text>Castulo</Text>
+		  <Text>利纳雷斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LIRIA" Language="zh_Hans_CN">
-		  <Text>Liria</Text>
+		  <Text>利里亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LIRIA_ROME" Language="zh_Hans_CN">
-		  <Text>Edeta</Text>
+		  <Text>利里亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LISBOA" Language="zh_Hans_CN">
-		  <Text>Lisbon</Text>
+		  <Text>里斯本</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LISBOA_ARABIA" Language="zh_Hans_CN">
-		  <Text>al-Ushbuna</Text>
+		  <Text>里斯本</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LISBOA_CHINA" Language="zh_Hans_CN">
-		  <Text>Lisiben</Text>
+		  <Text>里斯本</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LISBOA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Lisbonne</Text>
+		  <Text>里斯本</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LISBOA_GERMANY" Language="zh_Hans_CN">
-		  <Text>Lissabon</Text>
+		  <Text>里斯本</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LISBOA_GREECE" Language="zh_Hans_CN">
-		  <Text>Lissavóna</Text>
+		  <Text>里斯本</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LISBOA_JAPAN" Language="zh_Hans_CN">
-		  <Text>Risubon</Text>
+		  <Text>里斯本</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LISBOA_LISBON" Language="zh_Hans_CN">
-		  <Text>Lisboa</Text>
+		  <Text>里斯本</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LISBOA_ROME" Language="zh_Hans_CN">
-		  <Text>Olissipo</Text>
+		  <Text>里斯本</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LLEIDA" Language="zh_Hans_CN">
-		  <Text>Lleida</Text>
+		  <Text>莱里达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LLEIDA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Lāridâ</Text>
+		  <Text>莱里达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LLEIDA_ROME" Language="zh_Hans_CN">
-		  <Text>Ilerda</Text>
+		  <Text>莱里达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LOGRONO" Language="zh_Hans_CN">
-		  <Text>Logroño</Text>
+		  <Text>洛格罗尼奥</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LOGRONO_ROME" Language="zh_Hans_CN">
-		  <Text>Vareia</Text>
+		  <Text>洛格罗尼奥</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LORCA" Language="zh_Hans_CN">
-		  <Text>Lorca</Text>
+		  <Text>洛尔卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LORCA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Lorqa</Text>
+		  <Text>洛尔卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LORCA_ROME" Language="zh_Hans_CN">
-		  <Text>Eliocroca</Text>
+		  <Text>洛尔卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LUGANO" Language="zh_Hans_CN">
-		  <Text>Lugano</Text>
+		  <Text>卢加诺</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LUGANO_GERMANY" Language="zh_Hans_CN">
-		  <Text>Lauis</Text>
+		  <Text>卢加诺</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LUGANO_ROME" Language="zh_Hans_CN">
-		  <Text>Luganum</Text>
+		  <Text>卢加诺</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MADRID" Language="zh_Hans_CN">
-		  <Text>Madrid</Text>
+		  <Text>马德里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MADRID_ARABIA" Language="zh_Hans_CN">
-		  <Text>Majrīt</Text>
+		  <Text>马德里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MADRID_CHINA" Language="zh_Hans_CN">
-		  <Text>Madeli</Text>
+		  <Text>马德里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MADRID_JAPAN" Language="zh_Hans_CN">
-		  <Text>Madorido</Text>
+		  <Text>马德里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MADRID_POLAND" Language="zh_Hans_CN">
-		  <Text>Madryt</Text>
+		  <Text>马德里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MADRID_ROME" Language="zh_Hans_CN">
-		  <Text>Segovia</Text>
+		  <Text>马德里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MALAGA" Language="zh_Hans_CN">
-		  <Text>Málaga</Text>
+		  <Text>马拉加</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MALAGA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Mālaqah</Text>
+		  <Text>马拉加</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MALAGA_ROME" Language="zh_Hans_CN">
-		  <Text>Malaca</Text>
+		  <Text>马拉加</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MENDE" Language="zh_Hans_CN">
-		  <Text>Mende</Text>
+		  <Text>芒德</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MENDE_ROME" Language="zh_Hans_CN">
-		  <Text>Mimate</Text>
+		  <Text>芒德</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MERIDA" Language="zh_Hans_CN">
-		  <Text>Mérida</Text>
+		  <Text>梅里达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MERIDA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Marida</Text>
+		  <Text>梅里达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MERIDA_ROME" Language="zh_Hans_CN">
-		  <Text>Emerita Augusta</Text>
+		  <Text>梅里达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MOTRIL" Language="zh_Hans_CN">
-		  <Text>Motril</Text>
+		  <Text>莫特里尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MURCIA" Language="zh_Hans_CN">
-		  <Text>Murcia</Text>
+		  <Text>穆尔西亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MURCIA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Mursiyah</Text>
+		  <Text>穆尔西亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_OURENSE" Language="zh_Hans_CN">
-		  <Text>Ourense</Text>
+		  <Text>奥伦塞</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_OURENSE_ROME" Language="zh_Hans_CN">
-		  <Text>Aurium</Text>
+		  <Text>奥伦塞</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PALMA_DE_MALLORCA" Language="zh_Hans_CN">
-		  <Text>Palma de Mallorca</Text>
+		  <Text>马略卡岛帕尔马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PALMA_DE_MALLORCA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Medina Mayurqa</Text>
+		  <Text>马略卡岛帕尔马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PALMA_DE_MALLORCA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Palma de Majorque</Text>
+		  <Text>马略卡岛帕尔马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PALMA_DE_MALLORCA_ROME" Language="zh_Hans_CN">
-		  <Text>Palma</Text>
+		  <Text>马略卡岛帕尔马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PAMPLONA" Language="zh_Hans_CN">
-		  <Text>Pamplona</Text>
+		  <Text>潘普洛纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PAMPLONA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Banbalūnâ</Text>
+		  <Text>潘普洛纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PAMPLONA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Pampelune</Text>
+		  <Text>潘普洛纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PAMPLONA_ROME" Language="zh_Hans_CN">
-		  <Text>Pompælo</Text>
+		  <Text>潘普洛纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_POLLENTIA" Language="zh_Hans_CN">
-		  <Text>Pollentia</Text>
+		  <Text>波伦提亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PONFERRADA" Language="zh_Hans_CN">
-		  <Text>Ponferrada</Text>
+		  <Text>蓬费拉达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PONFERRADA_ROME" Language="zh_Hans_CN">
-		  <Text>Asturica Augusta</Text>
+		  <Text>蓬费拉达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PONTA_DELGADA" Language="zh_Hans_CN">
-		  <Text>Ponta Delgada</Text>
+		  <Text>蓬塔德尔加达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PONTA_DELGADA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Açores</Text>
+		  <Text>蓬塔德尔加达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PONTA_DELGADA_GERMANY" Language="zh_Hans_CN">
-		  <Text>Schmale Spitze</Text>
+		  <Text>蓬塔德尔加达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PONTA_DELGADA_NORWAY" Language="zh_Hans_CN">
-		  <Text>Asóreyjar</Text>
+		  <Text>蓬塔德尔加达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PONTEVEDRA" Language="zh_Hans_CN">
-		  <Text>Pontevedra</Text>
+		  <Text>蓬特韦德拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PONTEVEDRA_ROME" Language="zh_Hans_CN">
-		  <Text>Ponte Vetera</Text>
+		  <Text>蓬特韦德拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PORTO" Language="zh_Hans_CN">
-		  <Text>Porto</Text>
+		  <Text>波尔图</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PORTO_ARABIA" Language="zh_Hans_CN">
-		  <Text>Burtuqal</Text>
+		  <Text>波尔图</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PORTO_ENGLAND" Language="zh_Hans_CN">
-		  <Text>Oporto</Text>
+		  <Text>波尔图</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PORTO_ROME" Language="zh_Hans_CN">
-		  <Text>Portus Cale</Text>
+		  <Text>波尔图</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_REQUENA" Language="zh_Hans_CN">
-		  <Text>Requena</Text>
+		  <Text>雷克纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAGUNTO" Language="zh_Hans_CN">
-		  <Text>Sagunto</Text>
+		  <Text>萨贡托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAGUNTO_ARABIA" Language="zh_Hans_CN">
-		  <Text>Morvedre</Text>
+		  <Text>萨贡托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAGUNTO_ROME" Language="zh_Hans_CN">
-		  <Text>Saguntum</Text>
+		  <Text>萨贡托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SALAMANCA" Language="zh_Hans_CN">
-		  <Text>Salamanca</Text>
+		  <Text>萨拉曼卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SALAMANCA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Šalamantiqâ</Text>
+		  <Text>萨拉曼卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SALAMANCA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Salamanque</Text>
+		  <Text>萨拉曼卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SALAMANCA_ROME" Language="zh_Hans_CN">
-		  <Text>Salmantica</Text>
+		  <Text>萨拉曼卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SANTANDER" Language="zh_Hans_CN">
-		  <Text>Santander</Text>
+		  <Text>桑坦德</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SANTANDER_ROME" Language="zh_Hans_CN">
-		  <Text>Iuliobriga</Text>
+		  <Text>桑坦德</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SANTIAGO_DE_COMPOSTELA" Language="zh_Hans_CN">
-		  <Text>Santiago de Compostela</Text>
+		  <Text>圣地亚哥德孔波斯特拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SANTIAGO_DE_COMPOSTELA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Šānt Yāqūb</Text>
+		  <Text>圣地亚哥德孔波斯特拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SANTIAGO_DE_COMPOSTELA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Saint-Jacques-de-Compostelle</Text>
+		  <Text>圣地亚哥德孔波斯特拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SANTIAGO_DE_COMPOSTELA_GERMANY" Language="zh_Hans_CN">
-		  <Text>Sankt Jakob</Text>
+		  <Text>圣地亚哥德孔波斯特拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SANTIAGO_DE_COMPOSTELA_ROME" Language="zh_Hans_CN">
-		  <Text>Lucus Augusti</Text>
+		  <Text>圣地亚哥德孔波斯特拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAN_SEBASTIAN" Language="zh_Hans_CN">
-		  <Text>San Sebastián</Text>
+		  <Text>圣塞瓦斯蒂安</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAN_SEBASTIAN_FRANCE" Language="zh_Hans_CN">
-		  <Text>Saint-Sébastien</Text>
+		  <Text>圣塞瓦斯蒂安</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAN_SEBASTIAN_GERMANY" Language="zh_Hans_CN">
-		  <Text>Sankt Bastian</Text>
+		  <Text>圣塞瓦斯蒂安</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAN_SEBASTIAN_ROME" Language="zh_Hans_CN">
-		  <Text>Oeasso</Text>
+		  <Text>圣塞瓦斯蒂安</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SEGOVIA" Language="zh_Hans_CN">
-		  <Text>Segovia</Text>
+		  <Text>塞哥维亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SEGOVIA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Šiqūbiyyah</Text>
+		  <Text>塞哥维亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SEGOVIA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Ségovie</Text>
+		  <Text>塞哥维亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SETUBAL" Language="zh_Hans_CN">
-		  <Text>Setúbal</Text>
+		  <Text>塞图巴尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SETUBAL_ARABIA" Language="zh_Hans_CN">
-		  <Text>Shetūbar</Text>
+		  <Text>塞图巴尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SETUBAL_ENGLAND" Language="zh_Hans_CN">
-		  <Text>Saint Ubes</Text>
+		  <Text>塞图巴尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SETUBAL_FRANCE" Language="zh_Hans_CN">
-		  <Text>Saint-Yves</Text>
+		  <Text>塞图巴尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SETUBAL_ROME" Language="zh_Hans_CN">
-		  <Text>Cætobriga</Text>
+		  <Text>塞图巴尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SEVILLA" Language="zh_Hans_CN">
-		  <Text>Seville</Text>
+		  <Text>塞维利亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SEVILLA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Ishbiliya</Text>
+		  <Text>塞维利亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SEVILLA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Séville</Text>
+		  <Text>塞维利亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SEVILLA_ROME" Language="zh_Hans_CN">
-		  <Text>Hispalis</Text>
+		  <Text>塞维利亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SEVILLA_SPAIN" Language="zh_Hans_CN">
-		  <Text>Sevilla</Text>
+		  <Text>塞维利亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SINES" Language="zh_Hans_CN">
-		  <Text>Sines</Text>
+		  <Text>锡尼什</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SINES_ROME" Language="zh_Hans_CN">
-		  <Text>Mirobriga</Text>
+		  <Text>锡尼什</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SORIA" Language="zh_Hans_CN">
-		  <Text>Soria</Text>
+		  <Text>索里亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SORIA_ROME" Language="zh_Hans_CN">
-		  <Text>Numantia</Text>
+		  <Text>索里亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TARRAGONA" Language="zh_Hans_CN">
-		  <Text>Tarragona</Text>
+		  <Text>塔拉戈纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TARRAGONA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Tarrākūnâ</Text>
+		  <Text>塔拉戈纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TARRAGONA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Tarragone</Text>
+		  <Text>塔拉戈纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TARRAGONA_ROME" Language="zh_Hans_CN">
-		  <Text>Tarraco</Text>
+		  <Text>塔拉戈纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TERUEL" Language="zh_Hans_CN">
-		  <Text>Teruel</Text>
+		  <Text>特鲁埃尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TERUEL_ARABIA" Language="zh_Hans_CN">
-		  <Text>Tīrwāl</Text>
+		  <Text>特鲁埃尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TOLEDO" Language="zh_Hans_CN">
-		  <Text>Toledo</Text>
+		  <Text>托莱多</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TOLEDO_ARABIA" Language="zh_Hans_CN">
-		  <Text>Tulaytulah</Text>
+		  <Text>托莱多</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TOLEDO_FRANCE" Language="zh_Hans_CN">
-		  <Text>Tolède</Text>
+		  <Text>托莱多</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TOLEDO_ROME" Language="zh_Hans_CN">
-		  <Text>Toletum</Text>
+		  <Text>托莱多</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TORDESILLAS" Language="zh_Hans_CN">
-		  <Text>Tordesillas</Text>
+		  <Text>托德西利亚斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TORDESILLAS_ROME" Language="zh_Hans_CN">
-		  <Text>Turris Sillæ</Text>
+		  <Text>托德西利亚斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TORTOSA" Language="zh_Hans_CN">
-		  <Text>Tortosa</Text>
+		  <Text>托尔托萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TORTOSA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Turtūšah</Text>
+		  <Text>托尔托萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TORTOSA_ROME" Language="zh_Hans_CN">
-		  <Text>Dertosa</Text>
+		  <Text>托尔托萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TRUJILLO" Language="zh_Hans_CN">
-		  <Text>Trujillo</Text>
+		  <Text>特鲁希略</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TRUJILLO_ARABIA" Language="zh_Hans_CN">
-		  <Text>Turjalah</Text>
+		  <Text>特鲁希略</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TRUJILLO_ROME" Language="zh_Hans_CN">
-		  <Text>Turgalium</Text>
+		  <Text>特鲁希略</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VALENCIA" Language="zh_Hans_CN">
-		  <Text>Valencia</Text>
+		  <Text>巴伦西亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VALENCIA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Balansiya</Text>
+		  <Text>巴伦西亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VALENCIA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Valence</Text>
+		  <Text>巴伦西亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VALENCIA_ROME" Language="zh_Hans_CN">
-		  <Text>Valentia</Text>
+		  <Text>巴伦西亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VALLADOLID" Language="zh_Hans_CN">
-		  <Text>Valladolid</Text>
+		  <Text>巴利亚多利德</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VALLADOLID_ARABIA" Language="zh_Hans_CN">
-		  <Text>Balad al-Walīd</Text>
+		  <Text>巴利亚多利德</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VALLADOLID_ROME" Language="zh_Hans_CN">
-		  <Text>Vallis Tolitum</Text>
+		  <Text>巴利亚多利德</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VIGO" Language="zh_Hans_CN">
-		  <Text>Vigo</Text>
+		  <Text>维哥</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VILA_REAL" Language="zh_Hans_CN">
-		  <Text>Vila Real</Text>
+		  <Text>雷阿尔城</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ZAMORA" Language="zh_Hans_CN">
-		  <Text>Zamora</Text>
+		  <Text>萨莫拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ZAMORA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Semurah</Text>
+		  <Text>萨莫拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ZAMORA_ROME" Language="zh_Hans_CN">
-		  <Text>Occelum Durii</Text>
+		  <Text>萨莫拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ZARAGOZA" Language="zh_Hans_CN">
-		  <Text>Zaragoza</Text>
+		  <Text>萨拉戈萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ZARAGOZA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Saraqustâ</Text>
+		  <Text>萨拉戈萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ZARAGOZA_ENGLAND" Language="zh_Hans_CN">
-		  <Text>Saragossa</Text>
+		  <Text>萨拉戈萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ZARAGOZA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Saragosse</Text>
+		  <Text>萨拉戈萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ZARAGOZA_GERMANY" Language="zh_Hans_CN">
-		  <Text>Saragossa</Text>
+		  <Text>萨拉戈萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ZARAGOZA_ROME" Language="zh_Hans_CN">
-		  <Text>Cæsaraugusta</Text>
+		  <Text>萨拉戈萨</Text>
 		</Replace>
 
 	</LocalizedText>
 
-	<LocalizedText>		<!-- FRANCE -->
+	<LocalizedText>		<!-- FRANCE 法国 -->
 
 		<Replace Tag="LOC_CITY_NAME_AIX_EN_PROVENCE" Language="zh_Hans_CN">
-		  <Text>Aix-en-Provence</Text>
+		  <Text>普罗旺斯地区艾克斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AIX_EN_PROVENCE_ROME" Language="zh_Hans_CN">
-		  <Text>Aquae Sextiae</Text>
+		  <Text>普罗旺斯地区艾克斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AJACCIO" Language="zh_Hans_CN">
-		  <Text>Ajaccio</Text>
+		  <Text>阿雅克肖</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AJACCIO_ROME" Language="zh_Hans_CN">
-		  <Text>Adiacium</Text>
+		  <Text>阿雅克肖</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALBI" Language="zh_Hans_CN">
-		  <Text>Albi</Text>
+		  <Text>阿尔比</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALBI_ROME" Language="zh_Hans_CN">
-		  <Text>Albiga</Text>
+		  <Text>阿尔比</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALENCON" Language="zh_Hans_CN">
-		  <Text>Alencon</Text>
+		  <Text>阿朗松</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALENCON_FRANCE" Language="zh_Hans_CN">
-		  <Text>Alençon</Text>
+		  <Text>阿朗松</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALENCON_ROME" Language="zh_Hans_CN">
-		  <Text>Noeodunum</Text>
+		  <Text>阿朗松</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AMIENS" Language="zh_Hans_CN">
-		  <Text>Amiens</Text>
+		  <Text>亚眠</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AMIENS_ROME" Language="zh_Hans_CN">
-		  <Text>Samarobriva Ambianorum</Text>
+		  <Text>亚眠</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ANGOULEME" Language="zh_Hans_CN">
-		  <Text>Angouleme</Text>
+		  <Text>昂古莱姆</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ANGOULEME_FRANCE" Language="zh_Hans_CN">
-		  <Text>Angoulême</Text>
+		  <Text>昂古莱姆</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ANGOULEME_ROME" Language="zh_Hans_CN">
-		  <Text>Engolisma</Text>
+		  <Text>昂古莱姆</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ANGOULEME_SPAIN" Language="zh_Hans_CN">
-		  <Text>Angulema</Text>
+		  <Text>昂古莱姆</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ARLES" Language="zh_Hans_CN">
-		  <Text>Arles</Text>
+		  <Text>阿尔勒</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ARLES_ROME" Language="zh_Hans_CN">
-		  <Text>Arelate</Text>
+		  <Text>阿尔勒</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ARRAS" Language="zh_Hans_CN">
-		  <Text>Arras</Text>
+		  <Text>阿拉斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ARRAS_ROME" Language="zh_Hans_CN">
-		  <Text>Nemetacum</Text>
+		  <Text>阿拉斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AUGUSTODURUM" Language="zh_Hans_CN">
-		  <Text>Augustodurum</Text>
+		  <Text>巴约 拉丁</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AUXERRE" Language="zh_Hans_CN">
-		  <Text>Auxerre</Text>
+		  <Text>欧塞尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AUXERRE_ROME" Language="zh_Hans_CN">
-		  <Text>Autissiodorum</Text>
+		  <Text>欧塞尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AVIGNON" Language="zh_Hans_CN">
-		  <Text>Avignon</Text>
+		  <Text>阿维尼翁</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AVIGNON_GREECE" Language="zh_Hans_CN">
-		  <Text>Aouennion</Text>
+		  <Text>阿维尼翁</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AVIGNON_ROME" Language="zh_Hans_CN">
-		  <Text>Avennio Cavarum</Text>
+		  <Text>阿维尼翁</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BAYONNE" Language="zh_Hans_CN">
-		  <Text>Bayonne</Text>
+		  <Text>巴约讷</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BAYONNE_ROME" Language="zh_Hans_CN">
-		  <Text>Aquæ Tarbellicæ</Text>
+		  <Text>巴约讷</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BAYONNE_SPAIN" Language="zh_Hans_CN">
-		  <Text>Bayona</Text>
+		  <Text>巴约讷</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BESANCON" Language="zh_Hans_CN">
-		  <Text>Besancon</Text>
+		  <Text>贝桑松</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BESANCON_FRANCE" Language="zh_Hans_CN">
-		  <Text>Besançon</Text>
+		  <Text>贝桑松</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BESANCON_GERMANY" Language="zh_Hans_CN">
-		  <Text>Bisanz</Text>
+		  <Text>贝桑松</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BESANCON_ROME" Language="zh_Hans_CN">
-		  <Text>Vesontio</Text>
+		  <Text>贝桑松</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BLOIS" Language="zh_Hans_CN">
-		  <Text>Blois</Text>
+		  <Text>布洛瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BLOIS_ROME" Language="zh_Hans_CN">
-		  <Text>Castrum Blesum</Text>
+		  <Text>布洛瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BORDEAUX" Language="zh_Hans_CN">
-		  <Text>Bordeaux</Text>
+		  <Text>波尔多</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BORDEAUX_ROME" Language="zh_Hans_CN">
-		  <Text>Burdigala</Text>
+		  <Text>波尔多</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BORDEAUX_SPAIN" Language="zh_Hans_CN">
-		  <Text>Burdeos</Text>
+		  <Text>波尔多</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BOURGES" Language="zh_Hans_CN">
-		  <Text>Bourges</Text>
+		  <Text>博格斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BOURGES_ROME" Language="zh_Hans_CN">
-		  <Text>Avaricum</Text>
+		  <Text>博格斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BREST" Language="zh_Hans_CN">
-		  <Text>Brest</Text>
+		  <Text>布雷斯特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BREST_ROME" Language="zh_Hans_CN">
-		  <Text>Gesocribate</Text>
+		  <Text>布雷斯特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CAEN" Language="zh_Hans_CN">
-		  <Text>Caen</Text>
+		  <Text>卡昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CAEN_ROME" Language="zh_Hans_CN">
-		  <Text>Noviomagus Lexoviorum</Text>
+		  <Text>卡昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CALAIS" Language="zh_Hans_CN">
-		  <Text>Calais</Text>
+		  <Text>加来</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CALAIS_ROME" Language="zh_Hans_CN">
-		  <Text>Gesoriacum</Text>
+		  <Text>加来</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CARCASSONNE" Language="zh_Hans_CN">
-		  <Text>Carcassonne</Text>
+		  <Text>卡尔卡松</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CARCASSONNE_ROME" Language="zh_Hans_CN">
-		  <Text>Carcasum</Text>
+		  <Text>卡尔卡松</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CHALONS_EN_CHAMPAGNE" Language="zh_Hans_CN">
-		  <Text>Chalons-en-Champagne</Text>
+		  <Text>香槟沙隆</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CHALONS_EN_CHAMPAGNE_ROME" Language="zh_Hans_CN">
-		  <Text>Durocatalaunum</Text>
+		  <Text>香槟沙隆</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CHATEAUROUX" Language="zh_Hans_CN">
-		  <Text>Chateauroux</Text>
+		  <Text>沙托鲁</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CHATEAUROUX_FRANCE" Language="zh_Hans_CN">
-		  <Text>Châteauroux</Text>
+		  <Text>沙托鲁</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CHERBOURG_OCTEVILLE" Language="zh_Hans_CN">
-		  <Text>Cherbourg</Text>
+		  <Text>瑟堡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CHERBOURG_OCTEVILLE_ROME" Language="zh_Hans_CN">
-		  <Text>Coriallum</Text>
+		  <Text>瑟堡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_COUTANCES" Language="zh_Hans_CN">
-		  <Text>Coutances</Text>
+		  <Text>库唐斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_COUTANCES_ROME" Language="zh_Hans_CN">
-		  <Text>Constantia</Text>
+		  <Text>库唐斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_DARIORITUM" Language="zh_Hans_CN">
-		  <Text>Darioritum</Text>
+		  <Text>瓦讷 拉丁</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_DIJON" Language="zh_Hans_CN">
-		  <Text>Dijon</Text>
+		  <Text>第戎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_DIJON_GERMANY" Language="zh_Hans_CN">
-		  <Text>Dision</Text>
+		  <Text>第戎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_DIJON_ROME" Language="zh_Hans_CN">
-		  <Text>Castrum Divionense</Text>
+		  <Text>第戎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_DUNKERQUE" Language="zh_Hans_CN">
-		  <Text>Dunkerque</Text>
+		  <Text>敦刻尔克</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_DUNKERQUE_ENGLAND" Language="zh_Hans_CN">
-		  <Text>Dunkirk</Text>
+		  <Text>敦刻尔克</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_DUNKERQUE_ROME" Language="zh_Hans_CN">
-		  <Text>Castellum Menapiorum</Text>
+		  <Text>敦刻尔克</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FRAXINET" Language="zh_Hans_CN">
-		  <Text>Farakhshanīt</Text>
+		  <Text>法拉克山尼</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GRENOBLE" Language="zh_Hans_CN">
-		  <Text>Grenoble</Text>
+		  <Text>格勒诺布尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GRENOBLE_ROME" Language="zh_Hans_CN">
-		  <Text>Cularo</Text>
+		  <Text>格勒诺布尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LA_ROCHELLE" Language="zh_Hans_CN">
-		  <Text>La Rochelle</Text>
+		  <Text>拉罗切利</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LA_ROCHELLE_ROME" Language="zh_Hans_CN">
-		  <Text>Mediolanum Santonum</Text>
+		  <Text>拉罗切利</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LE_HAVRE" Language="zh_Hans_CN">
-		  <Text>Le Havre</Text>
+		  <Text>勒阿弗尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LE_HAVRE_ROME" Language="zh_Hans_CN">
-		  <Text>Iuliobona</Text>
+		  <Text>勒阿弗尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LE_MANS" Language="zh_Hans_CN">
-		  <Text>Le Mans</Text>
+		  <Text>勒芒</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LE_MANS_ROME" Language="zh_Hans_CN">
-		  <Text>Vindinium</Text>
+		  <Text>勒芒</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LILLE" Language="zh_Hans_CN">
-		  <Text>Lille</Text>
+		  <Text>里尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LILLE_GERMANY" Language="zh_Hans_CN">
-		  <Text>Ryssel</Text>
+		  <Text>里尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LILLE_ROME" Language="zh_Hans_CN">
-		  <Text>Turnacum</Text>
+		  <Text>里尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LIMOGES" Language="zh_Hans_CN">
-		  <Text>Limoges</Text>
+		  <Text>里摩日</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LIMOGES_ROME" Language="zh_Hans_CN">
-		  <Text>Augustoritum</Text>
+		  <Text>里摩日</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LONS_LE_SAUNIER" Language="zh_Hans_CN">
-		  <Text>Lons-le-Saunier</Text>
+		  <Text>隆勒索涅</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LONS_LE_SAUNIER_ROME" Language="zh_Hans_CN">
-		  <Text>Ledo</Text>
+		  <Text>隆勒索涅</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LOURDES" Language="zh_Hans_CN">
-		  <Text>Lourdes</Text>
+		  <Text>卢尔德</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LOURDES_ROME" Language="zh_Hans_CN">
-		  <Text>Tarba</Text>
+		  <Text>卢尔德</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LYON" Language="zh_Hans_CN">
-		  <Text>Lyon</Text>
+		  <Text>里昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LYON_ENGLAND" Language="zh_Hans_CN">
-		  <Text>Lyons</Text>
+		  <Text>里昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LYON_POLAND" Language="zh_Hans_CN">
-		  <Text>Lwów Francuski</Text>
+		  <Text>里昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LYON_ROME" Language="zh_Hans_CN">
-		  <Text>Lugdunum</Text>
+		  <Text>里昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LYON_SPAIN" Language="zh_Hans_CN">
-		  <Text>León de Francia</Text>
+		  <Text>里昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MARSEILLE" Language="zh_Hans_CN">
-		  <Text>Marseille</Text>
+		  <Text>马赛</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MARSEILLE_ARABIA" Language="zh_Hans_CN">
-		  <Text>Marsīliyā</Text>
+		  <Text>马赛</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MARSEILLE_ENGLAND" Language="zh_Hans_CN">
-		  <Text>Marseilles</Text>
+		  <Text>马赛</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MARSEILLE_GERMANY" Language="zh_Hans_CN">
-		  <Text>Massilien</Text>
+		  <Text>马赛</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MARSEILLE_GREECE" Language="zh_Hans_CN">
-		  <Text>Massalia</Text>
+		  <Text>马赛</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MARSEILLE_POLAND" Language="zh_Hans_CN">
-		  <Text>Marsylia</Text>
+		  <Text>马赛</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MARSEILLE_ROME" Language="zh_Hans_CN">
-		  <Text>Massalia</Text>
+		  <Text>马赛</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MARSEILLE_RUSSIA" Language="zh_Hans_CN">
-		  <Text>Marsel'</Text>
+		  <Text>马赛</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MARSEILLE_SPAIN" Language="zh_Hans_CN">
-		  <Text>Marsella</Text>
+		  <Text>马赛</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_METZ" Language="zh_Hans_CN">
-		  <Text>Metz</Text>
+		  <Text>梅斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_METZ_ROME" Language="zh_Hans_CN">
-		  <Text>Divodurum Mediomatricum</Text>
+		  <Text>梅斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MONTPELLIER" Language="zh_Hans_CN">
-		  <Text>Montpellier</Text>
+		  <Text>蒙彼利埃</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MONTPELLIER_ROME" Language="zh_Hans_CN">
-		  <Text>Bæterræ</Text>
+		  <Text>蒙彼利埃</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MORLAIX" Language="zh_Hans_CN">
-		  <Text>Morlaix</Text>
+		  <Text>莫尔莱</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MORLAIX_ROME" Language="zh_Hans_CN">
-		  <Text>Vorganium</Text>
+		  <Text>莫尔莱</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MULHOUSE" Language="zh_Hans_CN">
-		  <Text>Mulhouse</Text>
+		  <Text>牟罗兹</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MULHOUSE_GERMANY" Language="zh_Hans_CN">
-		  <Text>Mülhausen</Text>
+		  <Text>牟罗兹</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MULHOUSE_ROME" Language="zh_Hans_CN">
-		  <Text>Uruncis</Text>
+		  <Text>牟罗兹</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NANTES" Language="zh_Hans_CN">
-		  <Text>Nantes</Text>
+		  <Text>南特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NANTES_ROME" Language="zh_Hans_CN">
-		  <Text>Portus Namnetum</Text>
+		  <Text>南特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NARBONNE" Language="zh_Hans_CN">
-		  <Text>Narbonne</Text>
+		  <Text>纳巴达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NARBONNE_ROME" Language="zh_Hans_CN">
-		  <Text>Narbo</Text>
+		  <Text>纳巴达</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NICE" Language="zh_Hans_CN">
-		  <Text>Nice</Text>
+		  <Text>尼斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NICE_GREECE" Language="zh_Hans_CN">
-		  <Text>Nikaia</Text>
+		  <Text>尼斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NICE_ROME" Language="zh_Hans_CN">
-		  <Text>Cemenelum</Text>
+		  <Text>尼斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NIMES" Language="zh_Hans_CN">
-		  <Text>Nimes</Text>
+		  <Text>尼姆</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NIMES_ROME" Language="zh_Hans_CN">
-		  <Text>Nemausus</Text>
+		  <Text>尼姆</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NOVIOMAGUS_NEMETUM" Language="zh_Hans_CN">
-		  <Text>Noviomagus Nemetum</Text>
+		  <Text>斯派尔 拉丁</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ORLEANS" Language="zh_Hans_CN">
-		  <Text>Orleans</Text>
+		  <Text>奥尔良</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ORLEANS_FRANCE" Language="zh_Hans_CN">
-		  <Text>Orléans</Text>
+		  <Text>奥尔良</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ORLEANS_ENGLAND" Language="zh_Hans_CN">
-		  <Text>Orleans</Text>
+		  <Text>奥尔良</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ORLEANS_ROME" Language="zh_Hans_CN">
-		  <Text>Aurelianum</Text>
+		  <Text>奥尔良</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PARIS" Language="zh_Hans_CN">
-		  <Text>Paris</Text>
+		  <Text>巴黎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PARIS_ARABIA" Language="zh_Hans_CN">
-		  <Text>Bārīs</Text>
+		  <Text>巴黎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PARIS_GREECE" Language="zh_Hans_CN">
-		  <Text>Parísii</Text>
+		  <Text>巴黎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PARIS_JAPAN" Language="zh_Hans_CN">
-		  <Text>Pari</Text>
+		  <Text>巴黎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PARIS_NORWAY" Language="zh_Hans_CN">
-		  <Text>París</Text>
+		  <Text>巴黎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PARIS_POLAND" Language="zh_Hans_CN">
-		  <Text>Paryż</Text>
+		  <Text>巴黎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PARIS_ROME" Language="zh_Hans_CN">
-		  <Text>Lutetia Parisiorum</Text>
+		  <Text>巴黎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PERPIGNAN" Language="zh_Hans_CN">
-		  <Text>Perpignan</Text>
+		  <Text>佩皮尼昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PERPIGNAN_ROME" Language="zh_Hans_CN">
-		  <Text>Ruscino</Text>
+		  <Text>佩皮尼昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PERPIGNAN_SPAIN" Language="zh_Hans_CN">
-		  <Text>Perpiñán</Text>
+		  <Text>佩皮尼昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_POITIERS" Language="zh_Hans_CN">
-		  <Text>Poitiers</Text>
+		  <Text>普瓦捷</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_POITIERS_ARABIA" Language="zh_Hans_CN">
-		  <Text>Buatiih</Text>
+		  <Text>普瓦捷</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_POITIERS_ROME" Language="zh_Hans_CN">
-		  <Text>Pictavium</Text>
+		  <Text>普瓦捷</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PONTIVY" Language="zh_Hans_CN">
-		  <Text>Pontivy</Text>
+		  <Text>蓬蒂维</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PONTIVY_ROME" Language="zh_Hans_CN">
-		  <Text>Vorgium</Text>
+		  <Text>蓬蒂维</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PORTUS_RATIATUS" Language="zh_Hans_CN">
-		  <Text>Portus Ratiatus</Text>
+		  <Text>勒泽 拉丁</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_QUIMPER" Language="zh_Hans_CN">
-		  <Text>Quimper</Text>
+		  <Text>坎佩尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_QUIMPER_ROME" Language="zh_Hans_CN">
-		  <Text>Corisopitum</Text>
+		  <Text>坎佩尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_REIMS" Language="zh_Hans_CN">
-		  <Text>Reims</Text>
+		  <Text>兰斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_REIMS_ENGLAND" Language="zh_Hans_CN">
-		  <Text>Rheims</Text>
+		  <Text>兰斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_REIMS_ROME" Language="zh_Hans_CN">
-		  <Text>Durocortorum</Text>
+		  <Text>兰斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_RENNES" Language="zh_Hans_CN">
-		  <Text>Rennes</Text>
+		  <Text>雷恩</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_RENNES_ROME" Language="zh_Hans_CN">
-		  <Text>Condate Redonum</Text>
+		  <Text>雷恩</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROANNE" Language="zh_Hans_CN">
-		  <Text>Roanne</Text>
+		  <Text>罗阿讷</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROANNE_ROME" Language="zh_Hans_CN">
-		  <Text>Augustodunum</Text>
+		  <Text>罗阿讷</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROCHEFORT" Language="zh_Hans_CN">
-		  <Text>Rochefort</Text>
+		  <Text>罗什福尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROCHEFORT_ROME" Language="zh_Hans_CN">
-		  <Text>Mediolanum Santonum</Text>
+		  <Text>罗什福尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROUEN" Language="zh_Hans_CN">
-		  <Text>Rouen</Text>
+		  <Text>鲁昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROUEN_NORWAY" Language="zh_Hans_CN">
-		  <Text>Rúðuborg</Text>
+		  <Text>鲁昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROUEN_ROME" Language="zh_Hans_CN">
-		  <Text>Rotomagnus</Text>
+		  <Text>鲁昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROUEN_SPAIN" Language="zh_Hans_CN">
-		  <Text>Ruán</Text>
+		  <Text>鲁昂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_BRIEUC" Language="zh_Hans_CN">
-		  <Text>Saint-Brieuc</Text>
+		  <Text>圣布里厄</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_BRIEUC_ROME" Language="zh_Hans_CN">
-		  <Text>Fanum Martis</Text>
+		  <Text>圣布里厄</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_ETIENNE" Language="zh_Hans_CN">
-		  <Text>Saint-Etienne</Text>
+		  <Text>圣艾蒂安</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_ETIENNE_GERMANY" Language="zh_Hans_CN">
-		  <Text>Sankt Steffen</Text>
+		  <Text>圣艾蒂安</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_ETIENNE_ROME" Language="zh_Hans_CN">
-		  <Text>Ruessium</Text>
+		  <Text>圣艾蒂安</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_ETIENNE_SPAIN" Language="zh_Hans_CN">
-		  <Text>San Esteban</Text>
+		  <Text>圣艾蒂安</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_MALO" Language="zh_Hans_CN">
-		  <Text>Saint-Malo</Text>
+		  <Text>圣马洛</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_MALO_ROME" Language="zh_Hans_CN">
-		  <Text>Reginca</Text>
+		  <Text>圣马洛</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_MALO_SPAIN" Language="zh_Hans_CN">
-		  <Text>Reginca</Text>
+		  <Text>圣马洛</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_NAZAIRE" Language="zh_Hans_CN">
-		  <Text>Saint-Nazaire</Text>
+		  <Text>圣纳泽尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_NAZAIRE_GERMANY" Language="zh_Hans_CN">
-		  <Text>Sankt Nazarius</Text>
+		  <Text>圣纳泽尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_NAZAIRE_ROME" Language="zh_Hans_CN">
-		  <Text>Corbilo</Text>
+		  <Text>圣纳泽尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_NAZAIRE_SPAIN" Language="zh_Hans_CN">
-		  <Text>San Nazaire</Text>
+		  <Text>圣纳泽尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_NICOLAS_DE_LA_GRAVE" Language="zh_Hans_CN">
-		  <Text>Saint-Nicolas-de-la-Grave</Text>
+		  <Text>圣尼古拉－德拉格拉沃</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_NICOLAS_DE_LA_GRAVE_ROME" Language="zh_Hans_CN">
-		  <Text>Aginnum</Text>
+		  <Text>圣尼古拉－德拉格拉沃</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_QUENTIN" Language="zh_Hans_CN">
-		  <Text>Brussels</Text>
+		  <Text>圣康坦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_QUENTIN_FRANCE" Language="zh_Hans_CN">
-		  <Text>Bruxelles</Text>
+		  <Text>圣康坦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_QUENTIN_GERMANY" Language="zh_Hans_CN">
-		  <Text>Brüssel</Text>
+		  <Text>圣康坦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_QUENTIN_NETHERLANDS" Language="zh_Hans_CN">
-		  <Text>Brussel</Text>
+		  <Text>圣康坦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAINT_QUENTIN_ROME" Language="zh_Hans_CN">
-		  <Text>Augusta Viromanduorum</Text>
+		  <Text>圣康坦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SENS" Language="zh_Hans_CN">
-		  <Text>Sens</Text>
+		  <Text>桑斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SENS_ROME" Language="zh_Hans_CN">
-		  <Text>Agedincum</Text>
+		  <Text>桑斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_STRASBOURG" Language="zh_Hans_CN">
-		  <Text>Strasbourg</Text>
+		  <Text>斯特拉斯堡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_STRASBOURG_GERMANY" Language="zh_Hans_CN">
-		  <Text>Straßburg</Text>
+		  <Text>斯特拉斯堡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_STRASBOURG_NORWAY" Language="zh_Hans_CN">
-		  <Text>Strassborg</Text>
+		  <Text>斯特拉斯堡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_STRASBOURG_ROME" Language="zh_Hans_CN">
-		  <Text>Argentoratum</Text>
+		  <Text>斯特拉斯堡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_STRASBOURG_SPAIN" Language="zh_Hans_CN">
-		  <Text>Estrasburgo</Text>
+		  <Text>斯特拉斯堡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TOULOUSE" Language="zh_Hans_CN">
-		  <Text>Toulouse</Text>
+		  <Text>图卢兹</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TOULOUSE_POLAND" Language="zh_Hans_CN">
-		  <Text>Tuluza</Text>
+		  <Text>图卢兹</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TOULOUSE_ROME" Language="zh_Hans_CN">
-		  <Text>Tolosa</Text>
+		  <Text>图卢兹</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TOULOUSE_SPAIN" Language="zh_Hans_CN">
-		  <Text>Tolosa</Text>
+		  <Text>图卢兹</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TOURS" Language="zh_Hans_CN">
-		  <Text>Tours</Text>
+		  <Text>图尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TOURS_ROME" Language="zh_Hans_CN">
-		  <Text>Cæsarodunum</Text>
+		  <Text>图尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TROYES" Language="zh_Hans_CN">
-		  <Text>Troyes</Text>
+		  <Text>特鲁瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TROYES_ROME" Language="zh_Hans_CN">
-		  <Text>Augustobona Tricassium</Text>
+		  <Text>特鲁瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VICHY" Language="zh_Hans_CN">
-		  <Text>Vichy</Text>
+		  <Text>维希</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VICHY_ROME" Language="zh_Hans_CN">
-		  <Text>Augustonementum</Text>
+		  <Text>维希</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VIRE" Language="zh_Hans_CN">
-		  <Text>Vire</Text>
+		  <Text>维尔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VIRE_ROME" Language="zh_Hans_CN">
-		  <Text>Ingena</Text>
+		  <Text>维尔</Text>
 		</Replace>
 
 	</LocalizedText>
 
-	<LocalizedText>		<!-- ITALY, SICILY, SARDINIA & CORSICA -->
+	<LocalizedText>		<!-- ITALY, SICILY, SARDINIA & CORSICA 意大利、西西里岛、撒丁岛、科西嘉岛 -->
 
 		<Replace Tag="LOC_CITY_NAME_AGRIGENTO" Language="zh_Hans_CN">
-		  <Text>Agrigento</Text>
+		  <Text>阿格里真托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AGRIGENTO_ARABIA" Language="zh_Hans_CN">
-		  <Text>Kirkent</Text>
+		  <Text>阿格里真托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AGRIGENTO_GREECE" Language="zh_Hans_CN">
-		  <Text>Akragas</Text>
+		  <Text>阿格里真托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AGRIGENTO_ROME" Language="zh_Hans_CN">
-		  <Text>Agrigentum</Text>
-		</Replace>
-		<Replace Tag="LOC_CITY_NAME_AJACCIO" Language="zh_Hans_CN">
-		  <Text>Ajaccio</Text>
-		</Replace>
-		<Replace Tag="LOC_CITY_NAME_AJACCIO_ROME" Language="zh_Hans_CN">
-		  <Text>Adiacium</Text>
+		  <Text>阿格里真托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALGHERO" Language="zh_Hans_CN">
-		  <Text>Alghero</Text>
+		  <Text>阿尔盖罗</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALGHERO_ROME" Language="zh_Hans_CN">
-		  <Text>Aleguerium</Text>
+		  <Text>阿尔盖罗</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ALGHERO_SPAIN" Language="zh_Hans_CN">
-		  <Text>L'Alguer</Text>
+		  <Text>阿尔盖罗</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ANCONA" Language="zh_Hans_CN">
-		  <Text>Ancona</Text>
+		  <Text>安科纳省</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ANCONA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Ancône</Text>
+		  <Text>安科纳省</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ANTIUM" Language="zh_Hans_CN">
-		  <Text>Anzio</Text>
+		  <Text>安齐奥</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ANTIUM_ROME" Language="zh_Hans_CN">
-		  <Text>Antium</Text>
+		  <Text>安齐奥</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AQUILA" Language="zh_Hans_CN">
-		  <Text>L'Aquila</Text>
+		  <Text>阿奎拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AQUILA_ROME" Language="zh_Hans_CN">
-		  <Text>Corfinium</Text>
+		  <Text>阿奎拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AQUILEIA" Language="zh_Hans_CN">
-		  <Text>Aquileia</Text>
+		  <Text>阿奎莱亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AQUILEIA_GERMANY" Language="zh_Hans_CN">
-		  <Text>Aglar</Text>
+		  <Text>阿奎莱亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ARBATAX" Language="zh_Hans_CN">
-		  <Text>Arbatax</Text>
+		  <Text>阿尔巴塔克斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ARBATAX_ROME" Language="zh_Hans_CN">
-		  <Text>Portus Ilii</Text>
+		  <Text>阿尔巴塔克斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AREZZO" Language="zh_Hans_CN">
-		  <Text>Arezzo</Text>
+		  <Text>阿雷佐</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_AREZZO_ROME" Language="zh_Hans_CN">
-		  <Text>Arretium</Text>
+		  <Text>阿雷佐</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ATRIA" Language="zh_Hans_CN">
-		  <Text>Atria</Text>
+		  <Text>阿特里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BARI" Language="zh_Hans_CN">
-		  <Text>Bari</Text>
+		  <Text>巴里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BARI_GREECE" Language="zh_Hans_CN">
-		  <Text>Barion</Text>
+		  <Text>巴里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BARI_ROME" Language="zh_Hans_CN">
-		  <Text>Barium</Text>
+		  <Text>巴里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BASTIA" Language="zh_Hans_CN">
-		  <Text>Bastia</Text>
+		  <Text>巴斯蒂亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BASTIA_ROME" Language="zh_Hans_CN">
-		  <Text>Mariana</Text>
+		  <Text>巴斯蒂亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BENEVENTO" Language="zh_Hans_CN">
-		  <Text>Benevento</Text>
+		  <Text>贝内文托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BENEVENTO_GREECE" Language="zh_Hans_CN">
-		  <Text>Beneventum</Text>
+		  <Text>贝内文托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BENEVENTO_ROME" Language="zh_Hans_CN">
-		  <Text>Beneventum</Text>
+		  <Text>贝内文托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BERGAMO" Language="zh_Hans_CN">
-		  <Text>Bergamo</Text>
+		  <Text>贝加莫</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BERGAMO_FRANCE" Language="zh_Hans_CN">
-		  <Text>Bergame</Text>
+		  <Text>贝加莫</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BERGAMO_ROME" Language="zh_Hans_CN">
-		  <Text>Bergomum</Text>
+		  <Text>贝加莫</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BOLOGNA" Language="zh_Hans_CN">
-		  <Text>Bologna</Text>
+		  <Text>博洛尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BOLOGNA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Bologne</Text>
+		  <Text>博洛尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BOLOGNA_POLAND" Language="zh_Hans_CN">
-		  <Text>Bolonia</Text>
+		  <Text>博洛尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BOLOGNA_ROME" Language="zh_Hans_CN">
-		  <Text>Bononia</Text>
+		  <Text>博洛尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BOLOGNA_SPAIN" Language="zh_Hans_CN">
-		  <Text>Bolonia</Text>
+		  <Text>博洛尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BOLZANO" Language="zh_Hans_CN">
-		  <Text>Bolzano</Text>
+		  <Text>博尔扎诺</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BOLZANO_GERMANY" Language="zh_Hans_CN">
-		  <Text>Bozen</Text>
+		  <Text>博尔扎诺</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BOLZANO_ROME" Language="zh_Hans_CN">
-		  <Text>Bauzanum</Text>
+		  <Text>博尔扎诺</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BONIFACIO" Language="zh_Hans_CN">
-		  <Text>Bonifacio</Text>
+		  <Text>博尼法乔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BONIFACIO_ROME" Language="zh_Hans_CN">
-		  <Text>Aleria</Text>
+		  <Text>博尼法乔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BRESCIA" Language="zh_Hans_CN">
-		  <Text>Brescia</Text>
+		  <Text>布雷西亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BRESCIA_ROME" Language="zh_Hans_CN">
-		  <Text>Brixia</Text>
+		  <Text>布雷西亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BRINDISI" Language="zh_Hans_CN">
-		  <Text>Brindisi</Text>
+		  <Text>布林迪西</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BRINDISI_GREECE" Language="zh_Hans_CN">
-		  <Text>Brentesion</Text>
+		  <Text>布林迪西</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_BRINDISI_ROME" Language="zh_Hans_CN">
-		  <Text>Brundisium</Text>
+		  <Text>布林迪西</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CAGLIARI" Language="zh_Hans_CN">
-		  <Text>Cagliari</Text>
+		  <Text>卡利亚里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CAGLIARI_FRANCE" Language="zh_Hans_CN">
-		  <Text>Caglier</Text>
+		  <Text>卡利亚里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CAGLIARI_ROME" Language="zh_Hans_CN">
-		  <Text>Caralis</Text>
+		  <Text>卡利亚里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CALTANISSETTA" Language="zh_Hans_CN">
-		  <Text>Caltanissetta</Text>
+		  <Text>卡尔塔尼塞塔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CALTANISSETTA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Qal'at al-Nisā'</Text>
+		  <Text>卡尔塔尼塞塔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CALTANISSETTA_GREECE" Language="zh_Hans_CN">
-		  <Text>Castra Nicia</Text>
+		  <Text>卡尔塔尼塞塔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CALTANISSETTA_ROME" Language="zh_Hans_CN">
-		  <Text>Castra Nicia</Text>
+		  <Text>卡尔塔尼塞塔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CALVI" Language="zh_Hans_CN">
-		  <Text>Calvi</Text>
+		  <Text>卡尔维</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CANOSA" Language="zh_Hans_CN">
-		  <Text>Canosa</Text>
+		  <Text>卡诺萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CANOSA_GREECE" Language="zh_Hans_CN">
-		  <Text>Kanysion</Text>
+		  <Text>卡诺萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CANOSA_ROME" Language="zh_Hans_CN">
-		  <Text>Canusium</Text>
+		  <Text>卡诺萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CAPO_DORLANDO" Language="zh_Hans_CN">
-		  <Text>Capo d'Orlando</Text>
+		  <Text>卡波多尔兰多</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CAPO_DORLANDO_GREECE" Language="zh_Hans_CN">
-		  <Text>Tyndarion</Text>
+		  <Text>卡波多尔兰多</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CAPO_DORLANDO_ROME" Language="zh_Hans_CN">
-		  <Text>Tyndaris</Text>
+		  <Text>卡波多尔兰多</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CARRARA" Language="zh_Hans_CN">
-		  <Text>Carrara</Text>
+		  <Text>卡拉拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CARRARA_ROME" Language="zh_Hans_CN">
-		  <Text>Luna</Text>
+		  <Text>卡拉拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CASTROVILLARI" Language="zh_Hans_CN">
-		  <Text>Castrovillari</Text>
+		  <Text>卡斯特罗维拉里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CASTROVILLARI_ROME" Language="zh_Hans_CN">
-		  <Text>Castrum Villarum</Text>
+		  <Text>卡斯特罗维拉里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CATANIA" Language="zh_Hans_CN">
-		  <Text>Catania</Text>
+		  <Text>卡塔尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CATANIA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Madinat al-fīl</Text>
+		  <Text>卡塔尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CATANIA_GREECE" Language="zh_Hans_CN">
-		  <Text>Katane</Text>
+		  <Text>卡塔尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CATANZARO" Language="zh_Hans_CN">
-		  <Text>Catanzaro</Text>
+		  <Text>卡坦扎罗</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CATANZARO_GREECE" Language="zh_Hans_CN">
-		  <Text>Katantzarion</Text>
+		  <Text>卡坦扎罗</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CATANZARO_ROME" Language="zh_Hans_CN">
-		  <Text>Chatacium</Text>
+		  <Text>卡坦扎罗</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CONCORDIA_SAGITTARIA" Language="zh_Hans_CN">
-		  <Text>Concordia Sagittaria</Text>
+		  <Text>孔科尔迪亚萨吉塔里亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CONCORDIA_SAGITTARIA_ROME" Language="zh_Hans_CN">
-		  <Text>Iulia Concordia</Text>
+		  <Text>孔科尔迪亚萨吉塔里亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CORIGLIANO_CALABRO" Language="zh_Hans_CN">
-		  <Text>Corigliano Calabro</Text>
+		  <Text>科里利亚诺卡拉布罗</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CORIGLIANO_CALABRO_GREECE" Language="zh_Hans_CN">
-		  <Text>Thurii</Text>
+		  <Text>科里利亚诺卡拉布罗</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CORIGLIANO_CALABRO_ROME" Language="zh_Hans_CN">
-		  <Text>Thurii</Text>
+		  <Text>科里利亚诺卡拉布罗</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CORTE" Language="zh_Hans_CN">
-		  <Text>Corte</Text>
+		  <Text>科尔特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CORTE_ROME" Language="zh_Hans_CN">
-		  <Text>Aleria</Text>
+		  <Text>科尔特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_COSENZA" Language="zh_Hans_CN">
-		  <Text>Cosenza</Text>
+		  <Text>科森扎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_COSENZA_GREECE" Language="zh_Hans_CN">
-		  <Text>Cosentia</Text>
+		  <Text>科森扎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_COSENZA_ROME" Language="zh_Hans_CN">
-		  <Text>Cosentia</Text>
+		  <Text>科森扎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CREMONA" Language="zh_Hans_CN">
-		  <Text>Cremona</Text>
+		  <Text>克雷莫纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CREMONA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Crémone</Text>
+		  <Text>克雷莫纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CROTONE" Language="zh_Hans_CN">
-		  <Text>Crotone</Text>
+		  <Text>克罗托内</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CROTONE_GREECE" Language="zh_Hans_CN">
-		  <Text>Kroton</Text>
+		  <Text>克罗托内</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_CROTONE_ROME" Language="zh_Hans_CN">
-		  <Text>Crotona</Text>
+		  <Text>克罗托内</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ELEA" Language="zh_Hans_CN">
-		  <Text>Elea</Text>
+		  <Text>埃里亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ELEA_GREECE" Language="zh_Hans_CN">
-		  <Text>Hyele</Text>
+		  <Text>埃里亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ELEA_ROME" Language="zh_Hans_CN">
-		  <Text>Velia</Text>
+		  <Text>埃里亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ENNA" Language="zh_Hans_CN">
-		  <Text>Enna</Text>
+		  <Text>恩纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ENNA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Qas'r Ianni</Text>
+		  <Text>恩纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ENNA_ROME" Language="zh_Hans_CN">
-		  <Text>Henna</Text>
+		  <Text>恩纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FAENZA" Language="zh_Hans_CN">
-		  <Text>Fænza</Text>
+		  <Text>法恩扎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FAENZA_ROME" Language="zh_Hans_CN">
-		  <Text>Faventia</Text>
+		  <Text>法恩扎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FERMO" Language="zh_Hans_CN">
-		  <Text>Fermo</Text>
+		  <Text>费尔莫</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FERMO_ROME" Language="zh_Hans_CN">
-		  <Text>Fermum Picenum</Text>
+		  <Text>费尔莫</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FERRARA" Language="zh_Hans_CN">
-		  <Text>Ferrara</Text>
+		  <Text>费拉拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FERRARA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Ferrare</Text>
+		  <Text>费拉拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FIRENZE" Language="zh_Hans_CN">
-		  <Text>Florence</Text>
+		  <Text>佛罗伦萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FIRENZE_GERMANY" Language="zh_Hans_CN">
-		  <Text>Florenz</Text>
+		  <Text>佛罗伦萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FIRENZE_GREECE" Language="zh_Hans_CN">
-		  <Text>Florentia</Text>
+		  <Text>佛罗伦萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FIRENZE_POLAND" Language="zh_Hans_CN">
-		  <Text>Florencja</Text>
+		  <Text>佛罗伦萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FIRENZE_ROME" Language="zh_Hans_CN">
-		  <Text>Florentia</Text>
+		  <Text>佛罗伦萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FIRENZE_SPAIN" Language="zh_Hans_CN">
-		  <Text>Florencia</Text>
+		  <Text>佛罗伦萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FOGGIA" Language="zh_Hans_CN">
-		  <Text>Foggia</Text>
+		  <Text>福贾</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FOGGIA_GREECE" Language="zh_Hans_CN">
-		  <Text>Argos Hippium</Text>
+		  <Text>福贾</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FOGGIA_ROME" Language="zh_Hans_CN">
-		  <Text>Herdoniæ</Text>
+		  <Text>福贾</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FOLIGNO" Language="zh_Hans_CN">
-		  <Text>Foligno</Text>
+		  <Text>福利尼奥</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FOLIGNO_ROME" Language="zh_Hans_CN">
-		  <Text>Fulginiæ</Text>
+		  <Text>福利尼奥</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FROSINONE" Language="zh_Hans_CN">
-		  <Text>Frosinone</Text>
+		  <Text>弗罗西诺内</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FROSINONE_GREECE" Language="zh_Hans_CN">
-		  <Text>Setia</Text>
+		  <Text>弗罗西诺内</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_FROSINONE_ROME" Language="zh_Hans_CN">
-		  <Text>Setia</Text>
+		  <Text>弗罗西诺内</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GELA" Language="zh_Hans_CN">
-		  <Text>Gela</Text>
+		  <Text>杰拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GENOA" Language="zh_Hans_CN">
-		  <Text>Genoa</Text>
+		  <Text>热那亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GENOA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Gênes</Text>
+		  <Text>热那亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GENOA_GERMANY" Language="zh_Hans_CN">
-		  <Text>Genua</Text>
+		  <Text>热那亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GENOA_NORWAY" Language="zh_Hans_CN">
-		  <Text>Genúa</Text>
+		  <Text>热那亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GENOA_ROME" Language="zh_Hans_CN">
-		  <Text>Genua</Text>
+		  <Text>热那亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GENOA_SPAIN" Language="zh_Hans_CN">
-		  <Text>Génova</Text>
+		  <Text>热那亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GENOVA" Language="zh_Hans_CN">
-		  <Text>Genoa</Text>
+		  <Text>热那亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GENOVA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Gênes</Text>
+		  <Text>热那亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GENOVA_ROME" Language="zh_Hans_CN">
-		  <Text>Genua</Text>
+		  <Text>热那亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GROSSETO" Language="zh_Hans_CN">
-		  <Text>Grosseto</Text>
+		  <Text>格罗塞托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GROSSETO_ROME" Language="zh_Hans_CN">
-		  <Text>Vetulonia</Text>
+		  <Text>格罗塞托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GRUMENTO_NOVA" Language="zh_Hans_CN">
-		  <Text>Grumento Nova</Text>
+		  <Text>新格鲁门托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GRUMENTO_NOVA_GREECE" Language="zh_Hans_CN">
-		  <Text>Grumentum</Text>
+		  <Text>新格鲁门托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_GRUMENTO_NOVA_ROME" Language="zh_Hans_CN">
-		  <Text>Grumentum</Text>
+		  <Text>新格鲁门托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ISERNIA" Language="zh_Hans_CN">
-		  <Text>Isernia</Text>
+		  <Text>伊塞尔尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ISERNIA_ROME" Language="zh_Hans_CN">
-		  <Text>Æsernia</Text>
+		  <Text>伊塞尔尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_IULIA_CONCORDIA" Language="zh_Hans_CN">
-		  <Text>Iulia Concordia</Text>
+		  <Text>孔科尔迪亚萨吉塔里亚 拉丁</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LATINA" Language="zh_Hans_CN">
-		  <Text>Latina</Text>
+		  <Text>拉蒂纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LATINA_GREECE" Language="zh_Hans_CN">
-		  <Text>Circei</Text>
+		  <Text>拉蒂纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LATINA_ROME" Language="zh_Hans_CN">
-		  <Text>Circei</Text>
+		  <Text>拉蒂纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LA_SPEZIA" Language="zh_Hans_CN">
-		  <Text>La Spezia</Text>
+		  <Text>拉斯佩齐亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LA_SPEZIA_ROME" Language="zh_Hans_CN">
-		  <Text>Luna</Text>
+		  <Text>拉斯佩齐亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LECCE" Language="zh_Hans_CN">
-		  <Text>Lecce</Text>
+		  <Text>莱切</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LECCE_ROME" Language="zh_Hans_CN">
-		  <Text>Lupiæ</Text>
+		  <Text>莱切</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LIVORNO" Language="zh_Hans_CN">
-		  <Text>Livorno</Text>
+		  <Text>里窝那</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LIVORNO_ENGLAND" Language="zh_Hans_CN">
-		  <Text>Leghorn</Text>
+		  <Text>里窝那</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LIVORNO_ROME" Language="zh_Hans_CN">
-		  <Text>Liburna</Text>
+		  <Text>里窝那</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LUCCA" Language="zh_Hans_CN">
-		  <Text>Lucca</Text>
+		  <Text>卢卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LUCCA_ROME" Language="zh_Hans_CN">
-		  <Text>Luca</Text>
+		  <Text>卢卡</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LUCERA" Language="zh_Hans_CN">
-		  <Text>Lucera</Text>
+		  <Text>卢切拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LUCERA_ROME" Language="zh_Hans_CN">
-		  <Text>Luceria</Text>
+		  <Text>卢切拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LUGANO" Language="zh_Hans_CN">
-		  <Text>Lugano</Text>
+		  <Text>卢加诺</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_LUGANO_ROME" Language="zh_Hans_CN">
-		  <Text>Comum</Text>
+		  <Text>卢加诺</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_L_AQUILA" Language="zh_Hans_CN">
-		  <Text>L'Aquila</Text>
+		  <Text>拉奎拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_L_AQUILA_FRANCE" Language="zh_Hans_CN">
-		  <Text>L'Aigle</Text>
+		  <Text>拉奎拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_L_AQUILA_GERMANY" Language="zh_Hans_CN">
-		  <Text>Der Adler</Text>
+		  <Text>拉奎拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_L_AQUILA_ROME" Language="zh_Hans_CN">
-		  <Text>Aquila Aprutiorum</Text>
+		  <Text>拉奎拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_L_AQUILA_SPAIN" Language="zh_Hans_CN">
-		  <Text>El Águila</Text>
+		  <Text>拉奎拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MALLES_VENOSTA" Language="zh_Hans_CN">
-		  <Text>Malles Venosta</Text>
+		  <Text>马莱斯韦诺斯塔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MALLES_VENOSTA_GERMANY" Language="zh_Hans_CN">
-		  <Text>Mals</Text>
+		  <Text>马莱斯韦诺斯塔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MALLES_VENOSTA_ROME" Language="zh_Hans_CN">
-		  <Text>Aquæ Bormiæ</Text>
+		  <Text>马莱斯韦诺斯塔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MANTOVA" Language="zh_Hans_CN">
-		  <Text>Mantua</Text>
+		  <Text>曼托瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MANTOVA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Mantoue</Text>
+		  <Text>曼托瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MARSALA" Language="zh_Hans_CN">
-		  <Text>Marsala</Text>
+		  <Text>马尔萨拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MARSALA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Marsa 'Alī</Text>
+		  <Text>马尔萨拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MARSALA_GREECE" Language="zh_Hans_CN">
-		  <Text>Lilybaion</Text>
+		  <Text>马尔萨拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MARSALA_ROME" Language="zh_Hans_CN">
-		  <Text>Lilybæum</Text>
+		  <Text>马尔萨拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MELFI" Language="zh_Hans_CN">
-		  <Text>Melfi</Text>
+		  <Text>梅尔菲</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MELFI_GREECE" Language="zh_Hans_CN">
-		  <Text>Aphrodisia</Text>
+		  <Text>梅尔菲</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MELFI_ROME" Language="zh_Hans_CN">
-		  <Text>Venusia</Text>
+		  <Text>梅尔菲</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MESSINA" Language="zh_Hans_CN">
-		  <Text>Messina</Text>
+		  <Text>墨西拿</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MESSINA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Tabarmīn</Text>
+		  <Text>墨西拿</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MESSINA_GREECE" Language="zh_Hans_CN">
-		  <Text>Zancle</Text>
+		  <Text>墨西拿</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MESSINA_ROME" Language="zh_Hans_CN">
-		  <Text>Messana</Text>
+		  <Text>墨西拿</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MILANO" Language="zh_Hans_CN">
-		  <Text>Milan</Text>
+		  <Text>米兰</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MILANO_GERMANY" Language="zh_Hans_CN">
-		  <Text>Mailand</Text>
+		  <Text>米兰</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MILANO_POLAND" Language="zh_Hans_CN">
-		  <Text>Mediolan</Text>
+		  <Text>米兰</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MILANO_ROME" Language="zh_Hans_CN">
-		  <Text>Mediolanum</Text>
+		  <Text>米兰</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MONTELEONE" Language="zh_Hans_CN">
-		  <Text>Monteleone</Text>
+		  <Text>维博瓦伦蒂亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MONTELEONE_GREECE" Language="zh_Hans_CN">
-		  <Text>Hipponion</Text>
+		  <Text>维博瓦伦蒂亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MONTELEONE_ROME" Language="zh_Hans_CN">
-		  <Text>Vibo Valentia</Text>
+		  <Text>维博瓦伦蒂亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NAPOLI" Language="zh_Hans_CN">
-		  <Text>Naples</Text>
+		  <Text>那不勒斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NAPOLI_GERMANY" Language="zh_Hans_CN">
-		  <Text>Neapel</Text>
+		  <Text>那不勒斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NAPOLI_GREECE" Language="zh_Hans_CN">
-		  <Text>Parthenope</Text>
+		  <Text>那不勒斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NAPOLI_ROME" Language="zh_Hans_CN">
-		  <Text>Neapolis</Text>
+		  <Text>那不勒斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NAPOLI_RUSSIA" Language="zh_Hans_CN">
-		  <Text>Neapol</Text>
+		  <Text>那不勒斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_NAPOLI_SPAIN" Language="zh_Hans_CN">
-		  <Text>Nápoles</Text>
+		  <Text>那不勒斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_OLBIA" Language="zh_Hans_CN">
-		  <Text>Olbia</Text>
+		  <Text>奥尔比亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ORISTANO" Language="zh_Hans_CN">
-		  <Text>Oristano</Text>
+		  <Text>奥里斯塔诺</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ORISTANO_ROME" Language="zh_Hans_CN">
-		  <Text>Aristanis</Text>
+		  <Text>奥里斯塔诺</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PADOVA" Language="zh_Hans_CN">
-		  <Text>Padua</Text>
+		  <Text>帕多瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PADOVA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Padoue</Text>
+		  <Text>帕多瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PADOVA_ROME" Language="zh_Hans_CN">
-		  <Text>Patavium</Text>
+		  <Text>帕多瓦</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PALERMO" Language="zh_Hans_CN">
-		  <Text>Palermo</Text>
+		  <Text>巴勒莫</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PALERMO_ARABIA" Language="zh_Hans_CN">
-		  <Text>Balarm</Text>
+		  <Text>巴勒莫</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PALERMO_GREECE" Language="zh_Hans_CN">
-		  <Text>Panormos</Text>
+		  <Text>巴勒莫</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PALERMO_ROME" Language="zh_Hans_CN">
-		  <Text>Panormus</Text>
+		  <Text>巴勒莫</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PARMA" Language="zh_Hans_CN">
-		  <Text>Parma</Text>
+		  <Text>帕尔马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PARMA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Parme</Text>
+		  <Text>帕尔马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PAVIA" Language="zh_Hans_CN">
-		  <Text>Pavia</Text>
+		  <Text>帕维亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PAVIA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Pavie</Text>
+		  <Text>帕维亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PAVIA_ROME" Language="zh_Hans_CN">
-		  <Text>Ticinum</Text>
+		  <Text>帕维亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PERUGIA" Language="zh_Hans_CN">
-		  <Text>Perugia</Text>
+		  <Text>佩鲁贾</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PERUGIA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Pérouse</Text>
+		  <Text>佩鲁贾</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PERUGIA_ROME" Language="zh_Hans_CN">
-		  <Text>Perusia</Text>
+		  <Text>佩鲁贾</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PESCARA" Language="zh_Hans_CN">
-		  <Text>Pescara</Text>
+		  <Text>佩斯卡拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PESCARA_ROME" Language="zh_Hans_CN">
-		  <Text>Aternum</Text>
+		  <Text>佩斯卡拉</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PIACENZA" Language="zh_Hans_CN">
-		  <Text>Piacenza</Text>
+		  <Text>皮亚琴察</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PIACENZA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Plaisance</Text>
+		  <Text>皮亚琴察</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PIACENZA_ROME" Language="zh_Hans_CN">
-		  <Text>Placentia</Text>
+		  <Text>皮亚琴察</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PIOMBINO" Language="zh_Hans_CN">
-		  <Text>Piombino</Text>
+		  <Text>皮翁比诺</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PIOMBINO_ROME" Language="zh_Hans_CN">
-		  <Text>Populonia</Text>
+		  <Text>皮翁比诺</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PISA" Language="zh_Hans_CN">
-		  <Text>Pisa</Text>
+		  <Text>比萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PISA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Pise</Text>
+		  <Text>比萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_PISA_ROME" Language="zh_Hans_CN">
-		  <Text>Pisæ</Text>
+		  <Text>比萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_POLICORO" Language="zh_Hans_CN">
-		  <Text>Policoro</Text>
+		  <Text>波利科罗</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_POLICORO_GREECE" Language="zh_Hans_CN">
-		  <Text>Herakleia</Text>
+		  <Text>波利科罗</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_POLICORO_ROME" Language="zh_Hans_CN">
-		  <Text>Heraclea</Text>
+		  <Text>波利科罗</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_POTENZA" Language="zh_Hans_CN">
-		  <Text>Potenza</Text>
+		  <Text>波坦察</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_POTENZA_ROME" Language="zh_Hans_CN">
-		  <Text>Potentia</Text>
+		  <Text>波坦察</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_RAGUSA" Language="zh_Hans_CN">
-		  <Text>Ragusa</Text>
+		  <Text>拉古萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_RAGUSA_GREECE" Language="zh_Hans_CN">
-		  <Text>Gela</Text>
+		  <Text>拉古萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_RAGUSA_ROME" Language="zh_Hans_CN">
-		  <Text>Gela</Text>
+		  <Text>拉古萨</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_RAVENNA" Language="zh_Hans_CN">
-		  <Text>Ravenna</Text>
+		  <Text>拉文纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_RAVENNA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Ravenne</Text>
+		  <Text>拉文纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_RAVENNA_GERMANY" Language="zh_Hans_CN">
-		  <Text>Raben</Text>
+		  <Text>拉文纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_RAVENNA_SPAIN" Language="zh_Hans_CN">
-		  <Text>Rávena</Text>
+		  <Text>拉文纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_REGGIO_CALABRIA" Language="zh_Hans_CN">
-		  <Text>Reggio Calabria</Text>
+		  <Text>勒佐卡拉布里亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_REGGIO_CALABRIA_GREECE" Language="zh_Hans_CN">
-		  <Text>Rhegium</Text>
+		  <Text>勒佐卡拉布里亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_REGGIO_CALABRIA_ROME" Language="zh_Hans_CN">
-		  <Text>Rhegium</Text>
+		  <Text>勒佐卡拉布里亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_RIETI" Language="zh_Hans_CN">
-		  <Text>Rieti</Text>
+		  <Text>列蒂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_RIETI_ROME" Language="zh_Hans_CN">
-		  <Text>Reate</Text>
+		  <Text>列蒂</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_RIMINI" Language="zh_Hans_CN">
-		  <Text>Rimini</Text>
+		  <Text>里米尼</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_RIMINI_ROME" Language="zh_Hans_CN">
-		  <Text>Ariminum</Text>
+		  <Text>里米尼</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROMA" Language="zh_Hans_CN">
-		  <Text>Rome</Text>
+		  <Text>罗马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROMA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Rūmiya</Text>
+		  <Text>罗马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROMA_CHINA" Language="zh_Hans_CN">
-		  <Text>Luoma</Text>
+		  <Text>罗马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROMA_GERMANY" Language="zh_Hans_CN">
-		  <Text>Rom</Text>
+		  <Text>罗马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROMA_GREECE" Language="zh_Hans_CN">
-		  <Text>Rómi</Text>
+		  <Text>罗马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROMA_JAPAN" Language="zh_Hans_CN">
-		  <Text>Rōma</Text>
+		  <Text>罗马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROMA_NORWAY" Language="zh_Hans_CN">
-		  <Text>Rómaborg</Text>
+		  <Text>罗马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROMA_POLAND" Language="zh_Hans_CN">
-		  <Text>Rzym</Text>
+		  <Text>罗马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROMA_ROME" Language="zh_Hans_CN">
-		  <Text>Roma</Text>
+		  <Text>罗马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROMA_RUSSIA" Language="zh_Hans_CN">
-		  <Text>Rim</Text>
+		  <Text>罗马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_ROMA_SPAIN" Language="zh_Hans_CN">
-		  <Text>Roma</Text>
+		  <Text>罗马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SALERNO" Language="zh_Hans_CN">
-		  <Text>Salerno</Text>
+		  <Text>萨勒诺</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SALERNO_ROME" Language="zh_Hans_CN">
-		  <Text>Salernum</Text>
+		  <Text>萨勒诺</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAN_BENEDETTO_DEL_TRONTO" Language="zh_Hans_CN">
-		  <Text>San Benedetto del Tronto</Text>
+		  <Text>圣贝内代托－德尔特龙托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAN_BENEDETTO_DEL_TRONTO_FRANCE" Language="zh_Hans_CN">
-		  <Text>Saint-Benoît</Text>
+		  <Text>圣贝内代托－德尔特龙托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAN_BENEDETTO_DEL_TRONTO_GERMANY" Language="zh_Hans_CN">
-		  <Text>Sankt Benedikt</Text>
+		  <Text>圣贝内代托－德尔特龙托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAN_BENEDETTO_DEL_TRONTO_ROME" Language="zh_Hans_CN">
-		  <Text>Asculum</Text>
+		  <Text>圣贝内代托－德尔特龙托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAN_SEVERO" Language="zh_Hans_CN">
-		  <Text>San Severo</Text>
+		  <Text>圣塞韦罗</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAN_SEVERO_ROME" Language="zh_Hans_CN">
-		  <Text>Teanum Apulum</Text>
+		  <Text>圣塞韦罗</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SASSARI" Language="zh_Hans_CN">
-		  <Text>Sassari</Text>
+		  <Text>萨萨里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SASSARI_ROME" Language="zh_Hans_CN">
-		  <Text>Turris Libyssonis</Text>
+		  <Text>萨萨里</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAVONA" Language="zh_Hans_CN">
-		  <Text>Savona</Text>
+		  <Text>萨沃纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAVONA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Savone</Text>
+		  <Text>萨沃纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SAVONA_ROME" Language="zh_Hans_CN">
-		  <Text>Albingaunum</Text>
+		  <Text>萨沃纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SIENA" Language="zh_Hans_CN">
-		  <Text>Siena</Text>
+		  <Text>锡耶纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SIENA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Sienne</Text>
+		  <Text>锡耶纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SIENA_ROME" Language="zh_Hans_CN">
-		  <Text>Sæna Julia</Text>
+		  <Text>锡耶纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SIRACUSA" Language="zh_Hans_CN">
-		  <Text>Siracusa</Text>
+		  <Text>锡拉库扎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SIRACUSA_ENGLAND" Language="zh_Hans_CN">
-		  <Text>Syracuse</Text>
+		  <Text>锡拉库扎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SIRACUSA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Syracuse</Text>
+		  <Text>锡拉库扎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SIRACUSA_GREECE" Language="zh_Hans_CN">
-		  <Text>Syrakousai</Text>
+		  <Text>锡拉库扎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SIRACUSA_ROME" Language="zh_Hans_CN">
-		  <Text>Syracusæ</Text>
+		  <Text>锡拉库扎</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TARANTO" Language="zh_Hans_CN">
-		  <Text>Taranto</Text>
+		  <Text>塔兰托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TARANTO_GREECE" Language="zh_Hans_CN">
-		  <Text>Taras</Text>
+		  <Text>塔兰托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TARANTO_ROME" Language="zh_Hans_CN">
-		  <Text>Tarentum</Text>
+		  <Text>塔兰托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TARQUINIA" Language="zh_Hans_CN">
-		  <Text>Tarquinia</Text>
+		  <Text>塔尔奎尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TARQUINIA_ROME" Language="zh_Hans_CN">
-		  <Text>Tarquinii</Text>
+		  <Text>塔尔奎尼亚</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TERNI" Language="zh_Hans_CN">
-		  <Text>Terni</Text>
+		  <Text>特尔尼</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TERNI_ROME" Language="zh_Hans_CN">
-		  <Text>Interamma Nahartium</Text>
+		  <Text>特尔尼</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TORINO" Language="zh_Hans_CN">
-		  <Text>Turin</Text>
+		  <Text>都灵</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TORINO_POLAND" Language="zh_Hans_CN">
-		  <Text>Turyn</Text>
+		  <Text>都灵</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TORINO_ROME" Language="zh_Hans_CN">
-		  <Text>Augusta Taurinorum</Text>
+		  <Text>都灵</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TORINO_SPAIN" Language="zh_Hans_CN">
-		  <Text>Turín</Text>
+		  <Text>都灵</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TORTONA" Language="zh_Hans_CN">
-		  <Text>Tortona</Text>
+		  <Text>托尔托纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TORTONA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Tortone</Text>
+		  <Text>托尔托纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TORTONA_ROME" Language="zh_Hans_CN">
-		  <Text>Dertona</Text>
+		  <Text>托尔托纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TRENTO" Language="zh_Hans_CN">
-		  <Text>Trento</Text>
+		  <Text>特伦特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TRENTO_ENGLAND" Language="zh_Hans_CN">
-		  <Text>Trent</Text>
+		  <Text>特伦特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TRENTO_GERMANY" Language="zh_Hans_CN">
-		  <Text>Trient</Text>
+		  <Text>特伦特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TRENTO_ROME" Language="zh_Hans_CN">
-		  <Text>Tridentum</Text>
+		  <Text>特伦特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TREVISO" Language="zh_Hans_CN">
-		  <Text>Treviso</Text>
+		  <Text>特雷维索</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TREVISO_ROME" Language="zh_Hans_CN">
-		  <Text>Tarvisium</Text>
+		  <Text>特雷维索</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TRIESTE" Language="zh_Hans_CN">
-		  <Text>Trieste</Text>
+		  <Text>的里雅斯特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TRIESTE_GERMANY" Language="zh_Hans_CN">
-		  <Text>Triest</Text>
+		  <Text>的里雅斯特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_TRIESTE_ROME" Language="zh_Hans_CN">
-		  <Text>Tergestum</Text>
+		  <Text>的里雅斯特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_UDINE" Language="zh_Hans_CN">
-		  <Text>Udine</Text>
+		  <Text>乌迪内</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_UDINE_GERMANY" Language="zh_Hans_CN">
-		  <Text>Weiden</Text>
+		  <Text>乌迪内</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_UDINE_ROME" Language="zh_Hans_CN">
-		  <Text>Utinum</Text>
+		  <Text>乌迪内</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VALLETTA" Language="zh_Hans_CN">
-		  <Text>Valletta</Text>
+		  <Text>瓦莱塔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VALLETTA_ARABIA" Language="zh_Hans_CN">
-		  <Text>Fālītā</Text>
+		  <Text>瓦莱塔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VALLETTA_FRANCE" Language="zh_Hans_CN">
-		  <Text>La Valette</Text>
+		  <Text>瓦莱塔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VALLETTA_GREECE" Language="zh_Hans_CN">
-		  <Text>Valéta</Text>
+		  <Text>瓦莱塔</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VASTO" Language="zh_Hans_CN">
-		  <Text>Vasto</Text>
+		  <Text>瓦斯托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VASTO_ROME" Language="zh_Hans_CN">
-		  <Text>Larinum</Text>
+		  <Text>瓦斯托</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VENETIA" Language="zh_Hans_CN">
-		  <Text>Venice</Text>
+		  <Text>威尼斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VENETIA_GERMANY" Language="zh_Hans_CN">
-		  <Text>Venedig</Text>
+		  <Text>威尼斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VENETIA_ROME" Language="zh_Hans_CN">
-		  <Text>Altinum</Text>
+		  <Text>威尼斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VERONA" Language="zh_Hans_CN">
-		  <Text>Verona</Text>
+		  <Text>维罗纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VERONA_FRANCE" Language="zh_Hans_CN">
-		  <Text>Vérone</Text>
+		  <Text>维罗纳</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VICENZA" Language="zh_Hans_CN">
-		  <Text>Vicenza</Text>
+		  <Text>维琴察</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VICENZA_ROME" Language="zh_Hans_CN">
-		  <Text>Vicetia</Text>
+		  <Text>维琴察</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VIESTE" Language="zh_Hans_CN">
-		  <Text>Vieste</Text>
+		  <Text>维耶斯泰</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VIESTE_GREECE" Language="zh_Hans_CN">
-		  <Text>Apeneste</Text>
+		  <Text>维耶斯泰</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VIESTE_ROME" Language="zh_Hans_CN">
-		  <Text>Vesta</Text>
+		  <Text>维耶斯泰</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VITERBO" Language="zh_Hans_CN">
-		  <Text>Viterbo</Text>
+		  <Text>维泰博</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VITERBO_ROME" Language="zh_Hans_CN">
-		  <Text>Ferentium</Text>
+		  <Text>维泰博</Text>
 		</Replace>
 
 	</LocalizedText>
