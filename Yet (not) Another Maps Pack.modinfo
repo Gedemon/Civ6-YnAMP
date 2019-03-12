@@ -104,6 +104,7 @@
 				<LoadOrder>2000</LoadOrder>
            	</Properties>
 			<File>Gameplay/GamePlayText.xml</File>
+			<File>Gameplay/GamePlayText_zh_Hans_CN.xml</File>
 			<File>Gameplay/GamePlayText_pt_BR.xml</File>
 			<File>Gameplay/GamePlayText_de_DE.xml</File>
 			<File>Gameplay/GamePlayText_fr_FR.xml</File>
@@ -155,7 +156,7 @@
             <pl_PL>Yet (not) Another Maps Pack</pl_PL>
             <pt_BR>Yet (not) Another Maps Pack</pt_BR>
             <ru_RU>Yet (not) Another Maps Pack</ru_RU>
-			<zh_Hans_CN>然而（并非）又一个地图包</zh_Hans_CN>
+			<zh_Hans_CN>MOD：YnAMP地图</zh_Hans_CN>
 			<zh_Hant_HK>然而（並非）又一個地圖包</zh_Hant_HK>
 		</Text>
 		<Text id="LOC_YNAMP_TEASER">
@@ -169,7 +170,7 @@
             <pl_PL>Maps with True or Culturally Linked Start Locations.</pl_PL>
             <pt_BR>Maps with True or Culturally Linked Start Locations.</pt_BR>
             <ru_RU>Maps with True or Culturally Linked Start Locations.</ru_RU>
-			<zh_Hans_CN>带有现实世界或人文地理关联出生地的地图包。</zh_Hans_CN>
+			<zh_Hans_CN>话不多说！再来一回合！</zh_Hans_CN>
 			<zh_Hant_HK>帶有現實世界或人文地理關聯出生地的地圖包。</zh_Hant_HK>
 		</Text>
 		<Text id="LOC_YNAMP_DESCRIPTION">
@@ -183,7 +184,10 @@
             <pl_PL>Maps with True or Culturally Linked Starting Location and custom options.</pl_PL>
             <pt_BR>Maps with True or Culturally Linked Starting Location and custom options.</pt_BR>
             <ru_RU>Maps with True or Culturally Linked Starting Location and custom options.</ru_RU>
-			<zh_Hans_CN>带有现实世界或人文地理关联出生地，以及自定义选项的地图包。</zh_Hans_CN>
+			<zh_Hans_CN>模拟真实世界中的文明开局，包含各种大小的真实世界地图、部分优化设置及一些高自由度配置的作死地图。
+			[NEWLINE][NEWLINE]古罗马时期的城市名字对应现在的城市名字，
+			[NEWLINE]格式：XXX → XXX 拉丁。
+			[NEWLINE]    例：巴黎 → 巴黎 拉丁</zh_Hans_CN>
 			<zh_Hant_HK>帶有現實世界或人文地理關聯出生地，以及自定義選項的地圖包。</zh_Hant_HK>
 		</Text>
 	</LocalizedText>
@@ -208,6 +212,7 @@
 		<File>Gameplay/GamePlayXP2.xml</File>
 		<File>Gameplay/GamePlay.sql</File>
 		<File>Gameplay/GamePlayText.xml</File>
+		<File>Gameplay/GamePlayText_zh_Hans_CN.xml</File>
 		<File>Gameplay/GamePlayText_pt_BR.xml</File>
 		<File>Maps/GiantEarth/Map.xml</File>
 		<File>Maps/GiantEarth/CityMap.xml</File>
