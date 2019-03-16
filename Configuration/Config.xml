@@ -34,7 +34,6 @@
 		<!--
 		<Replace MapSizeType="MAPSIZE_MAX" 			Name="LOC_MAPSIZE_MAX_NAME" Description="LOC_MAPSIZE_MAX_DESCRIPTION" MinPlayers="2" MaxPlayers="62" DefaultPlayers="26" MinCityStates="0" MaxCityStates="60" DefaultCityStates="37" SortIndex="95" />	
 		-->
-		<Replace Domain="CustomMapSizes" MapSizeType="MAPSIZE_GREATESTEARTH" Name="LOC_GREATESTEARTH_NAME" Description="LOC_GREATESTEARTH_NAME" MinPlayers="2" MaxPlayers="62" DefaultPlayers="16" MinCityStates="0" MaxCityStates="60" DefaultCityStates="20" SortIndex="90" />	
 	</MapSizes>
 
 	<Parameters>

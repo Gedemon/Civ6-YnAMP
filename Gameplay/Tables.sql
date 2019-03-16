@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS ExtraPlacement
 		TerrainType TEXT,
 		FeatureType TEXT,
 		ResourceType TEXT,
+		Elevation INT,
 		Quantity INT default 0);
 		
 -- Natural Wonder Positions

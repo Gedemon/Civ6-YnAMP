@@ -3197,6 +3197,10 @@ BuildRefXY()
 	local continentsPlacement = MapConfiguration.GetValue("ContinentsPlacement")
 	print("Continents naming = "..tostring(continentsPlacement))	
 	local bImportContinents = continentsPlacement == "PLACEMENT_IMPORT"
+	
+	local lowLandPlacement = MapConfiguration.GetValue("LowLandPlacement")
+	print("Lowland placement = "..tostring(lowLandPlacement))	
+	local bDeepLowLand = lowLandPlacement == "PLACEMENT_DEEP"
 
 	-- We'll do importation of Rivers after Natural Wonders placement, as they can create incompatibilities and Resources come after Rivers (in case Rivers are generated instead of imported)
 	-- We do Features now to prevent overriding the NW placement
@@ -3245,11 +3249,6 @@ BuildRefXY()
 	else
 		-- 										(	bDoTerrains, 	bImportRivers, 	bImportFeatures, 	bImportResources, bImportContinents)
 		ImportCiv6Map(MapToConvert, g_iW, g_iH, 	false, 			bImportRivers, 	false, 				bImportResources, bImportContinents)	
-	end
-
-	-- Now that we are certain that rivers were placed we can add features if they were not imported
-	if not (bImportFeatures or bNoFeatures) then
-		AddFeatures()
 	end
 	
 	-- loop on every rivers to apply IDs
@@ -3422,10 +3421,15 @@ BuildRefXY()
 		
 		print("Added ID to "..tostring(riverID).." rivers")
 	end
-	--]]
+	--]]	
+
+	-- Now that we are certain that rivers were placed we can add features if they were not imported
+	if not (bImportFeatures or bNoFeatures) then
+		AddFeatures()
+	end
 	
 	-- Add GS flood plains
-	if TerrainBuilder.GenerateFloodplains then
+	if bExpansion2 then
 		print("Generate Floodplains...")
 
 		-- Remove map current flood plains
@@ -3478,8 +3482,12 @@ BuildRefXY()
 	end
 	
 	-- Low lands
-	if MarkCoastalLowlands then
-		MarkCoastalLowlands()
+	if bExpansion2 then
+		if bDeepLowLand then
+			MarkDeepCoastalLowlands()
+		else
+			MarkCoastalLowlands()
+		end
 	end
 	
 	currentTimer = os.clock() - g_startTimer
@@ -4201,6 +4209,11 @@ function AddFeatures()
 	local featuregen = FeatureGenerator.Create(args);
 
 	featuregen:AddFeatures(true, true);
+	
+	if bExpansion2 then
+		print("Adding Features from Continents");
+		featuregen:AddFeaturesFromContinents();
+	end
 end
 
 function ExtraPlacement()
@@ -4241,6 +4254,7 @@ function ExtraPlacement()
 				local featureType 	= row.FeatureType
 				local resourceType	= row.ResourceType
 				local quantity 		= row.Quantity
+				local iElevation	= row.Elevation
 				local x, y 			= GetXYFromRefMapXY(row.X, row.Y)
 				local plot 			= Map.GetPlot(x,y)
 				
@@ -4269,6 +4283,15 @@ function ExtraPlacement()
 							ResourceBuilder.SetResourceType(plot, -1)						
 						end
 					end
+					if bExpansion2 and iElevation then
+						if iElevation >= 0 and iElevation < 3 then
+							print("- Trying to set lowland elevation at ".. tostring(iElevation+1).. "m at " .. tostring(x) ..",".. tostring(y))
+							TerrainBuilder.AddCoastalLowland(plot:GetIndex(), iElevation)
+						else
+							print("- Removing current lowland setting at " .. tostring(x) ..",".. tostring(y))
+							TerrainBuilder.AddCoastalLowland(plot:GetIndex(), -1)
+						end
+					end
 				else
 					print("- WARNING, plot is nil at " .. tostring(x) ..",".. tostring(y))
 				end
@@ -4281,6 +4304,80 @@ function RemoveCliffs(plot)
 	TerrainBuilder.SetWOfCliff(plot, false)
 	TerrainBuilder.SetNWOfCliff(plot, false)
 	TerrainBuilder.SetNEOfCliff(plot, false)
+end
+
+function MarkDeepCoastalLowlands()
+
+	-- Sea rising level can reach further in land, following flatlands
+	
+	print("YnAMP - Deep Coastal Lowlands");
+	
+	function IsEOfCliff(plot)
+		local pAdjacentPlot = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), DirectionTypes.DIRECTION_WEST)
+		if pAdjacentPlot and pAdjacentPlot:IsWOfCliff() then return true end
+		return false
+	end
+
+	function IsSEOfCliff(plot)
+		local pAdjacentPlot = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), DirectionTypes.DIRECTION_NORTHWEST)
+		if pAdjacentPlot and pAdjacentPlot:IsNWOfCliff() then return true end
+		return false
+	end
+
+	function IsSWOfCliff(plot)
+		local pAdjacentPlot = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), DirectionTypes.DIRECTION_NORTHEAST)
+		if pAdjacentPlot and pAdjacentPlot:IsNEOfCliff() then return true end
+		return false
+	end
+
+	function IsCliff(plot)
+		return (IsSWOfCliff(plot)) 
+			or (plot:IsWOfCliff())
+			or (plot:IsNWOfCliff())
+			or (plot:IsNEOfCliff())
+			or (IsEOfCliff(plot))
+			or (IsSEOfCliff(plot))
+	end
+
+	local level1Plots	= {}
+	local level2Plots	= {}
+
+	-- mark level 1 plots
+	local iElevation = 0
+	for iX = 0, g_iW - 1 do
+		for iY = 0, g_iH - 1 do
+			local index = (iY * g_iW) + iX;
+			pPlot = Map.GetPlotByIndex(index)
+			local fertility = GetPlotFertility(pPlot)
+			if pPlot:IsFlatlands() and pPlot:IsCoastalLand() and not IsCliff(pPlot) then
+				TerrainBuilder.AddCoastalLowland(index, iElevation)
+				level1Plots[pPlot] =  true
+			end
+		end
+	end
+	
+	-- mark level 2 plots
+	local iElevation = 1
+	for pPlot, _ in pairs(level1Plots) do
+		for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+			local adjacentPlot = Map.GetAdjacentPlot(pPlot:GetX(), pPlot:GetY(), direction);
+			if adjacentPlot ~= nil and adjacentPlot:IsFlatlands() and (not (level1Plots[adjacentPlot] or level2Plots[adjacentPlot])) then
+				TerrainBuilder.AddCoastalLowland(adjacentPlot:GetIndex(), iElevation)
+				level2Plots[adjacentPlot] =  true
+			end
+		end
+	end
+	
+	-- mark level 3 plots
+	local iElevation = 2
+	for pPlot, _ in pairs(level2Plots) do
+		for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+			local adjacentPlot = Map.GetAdjacentPlot(pPlot:GetX(), pPlot:GetY(), direction);
+			if adjacentPlot ~= nil and adjacentPlot:IsFlatlands() and (not (level1Plots[adjacentPlot] or level2Plots[adjacentPlot])) then
+				TerrainBuilder.AddCoastalLowland(adjacentPlot:GetIndex(), iElevation)
+			end
+		end
+	end
 end
 
 

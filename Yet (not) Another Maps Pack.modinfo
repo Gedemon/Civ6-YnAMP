@@ -108,6 +108,7 @@
 			<File>Gameplay/GamePlayText_de_DE.xml</File>
 			<File>Gameplay/GamePlayText_fr_FR.xml</File>
 			<File>Gameplay/GamePlayText_ja_JP.xml</File>
+			<File>Gameplay/GamePlayText_ko_KR.xml</File>
 		</UpdateText>
 	</InGameActions>
 	
@@ -125,6 +126,7 @@
            	<Properties>
 				<LoadOrder>10</LoadOrder>
            	</Properties>
+			<File>Configuration/ConfigXP2.xml</File>
 			<File>Configuration/ConfigXP2.sql</File>
 		</UpdateDatabase>
 		<UpdateText id="YNAMP_SETTING_LOC">
@@ -133,6 +135,7 @@
 				<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
 				<File>Configuration/ConfigText_pt_BR.xml</File>
 				<File>Configuration/ConfigText_ja_JP.xml</File>
+				<File>Configuration/ConfigText_ko_KR.xml</File>
 		</UpdateText>
 		<ImportFiles id="YNAMP_SETTING_IMPORT">
            	<Properties>
@@ -151,7 +154,7 @@
             <fr_FR>Yet (not) Another Maps Pack</fr_FR>
             <it_IT>Yet (not) Another Maps Pack</it_IT>
             <ja_JP>Yet (not) Another Maps Pack</ja_JP>
-            <ko_KR>Yet (not) Another Maps Pack</ko_KR>
+            <ko_KR>Yet (not) Another Maps Pack (YnAMP 맵팩)</ko_KR>
             <pl_PL>Yet (not) Another Maps Pack</pl_PL>
             <pt_BR>Yet (not) Another Maps Pack</pt_BR>
             <ru_RU>Yet (not) Another Maps Pack</ru_RU>
@@ -165,7 +168,7 @@
             <fr_FR>Maps with True or Culturally Linked Start Locations.</fr_FR>
             <it_IT>Maps with True or Culturally Linked Start Locations.</it_IT>
             <ja_JP>史実と同じ場所や文化が近い文明の付近からプレイを始めるマップです。</ja_JP>
-            <ko_KR>Maps with True or Culturally Linked Start Locations.</ko_KR>
+            <ko_KR>실제 혹은 문화적 연관성이 있는 시작 지점을 보유한 지도들입니다.</ko_KR>
             <pl_PL>Maps with True or Culturally Linked Start Locations.</pl_PL>
             <pt_BR>Maps with True or Culturally Linked Start Locations.</pt_BR>
             <ru_RU>Maps with True or Culturally Linked Start Locations.</ru_RU>
@@ -179,7 +182,7 @@
             <fr_FR>Maps with True or Culturally Linked Starting Location and custom options.</fr_FR>
             <it_IT>Maps with True or Culturally Linked Starting Location and custom options.</it_IT>
             <ja_JP>史実と同じ場所や文化が近い文明の付近からプレイを始めるマップです。多数のカスタムオプションあり。</ja_JP>
-            <ko_KR>Maps with True or Culturally Linked Starting Location and custom options.</ko_KR>
+            <ko_KR>실제 혹은 문화적 연관성이 있는 시작 지점을 보유한 지도들입니다.</ko_KR>
             <pl_PL>Maps with True or Culturally Linked Starting Location and custom options.</pl_PL>
             <pt_BR>Maps with True or Culturally Linked Starting Location and custom options.</pt_BR>
             <ru_RU>Maps with True or Culturally Linked Starting Location and custom options.</ru_RU>
@@ -192,6 +195,7 @@
 		<File>Version.sql</File>
 		<File>Configuration/Config.xml</File>
 		<File>Configuration/ConfigXP2.sql</File>
+		<File>Configuration/ConfigXP2.xml</File>
 		<File>Maps/GiantEarth/Config.xml</File>
 		<File>Maps/GreatestEarthMap/Config.xml</File>
 		<File>Maps/PlayEuropeAgain/Config.xml</File>
@@ -203,12 +207,14 @@
 		<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
 		<File>Configuration/ConfigText_pt_BR.xml</File>
 		<File>Configuration/ConfigText_ja_JP.xml</File>
+		<File>Configuration/ConfigText_ko_KR.xml</File>
 		<File>Gameplay/Tables.sql</File>
 		<File>Gameplay/GamePlay.xml</File>
 		<File>Gameplay/GamePlayXP2.xml</File>
 		<File>Gameplay/GamePlay.sql</File>
 		<File>Gameplay/GamePlayText.xml</File>
 		<File>Gameplay/GamePlayText_pt_BR.xml</File>
+		<File>Gameplay/GamePlayText_ko_KR.xml</File>
 		<File>Maps/GiantEarth/Map.xml</File>
 		<File>Maps/GiantEarth/CityMap.xml</File>
 		<File>Maps/GiantEarth/CityMap_Egypt.xml</File>
