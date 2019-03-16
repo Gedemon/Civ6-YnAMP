@@ -1,0 +1,51 @@
+<!--
+
+	Map Size reference
+
+			  Civ V       Civ VI 
+	 
+	Dual       40x24       44x26 
+	Tiny       55x36       60x36 
+	Small      66x42       74x46 
+	Standard   80x52       84x54 
+	Large     104x64       96x60
+	Huge      128x80      106x66  
+	Enormous              128x80
+	Giant     180x94      180x94
+	Ludicrous N/A        230x115 
+
+-->
+
+<GameInfo>
+	
+
+	<Parameters>
+
+		<!--	Water Rising		-->
+		<Replace Key1="Map" Key2="GiantEarth.lua" 			ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="LOWLAND_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
+		<Replace Key1="Map" Key2="LargeEurope.lua" 			ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="LOWLAND_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
+		<Replace Key1="Map" Key2="GreatestEarthMap.lua" 	ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="LOWLAND_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
+		<Replace Key1="Map" Key2="PlayEuropeAgain.lua" 		ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="LOWLAND_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
+		<Replace Key1="Map" Key2="LargestEarthCustom.lua" 	ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="LOWLAND_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
+
+	</Parameters>	
+
+	<DomainValues>
+		
+		<Replace Domain="LowLandPlacement" Value="PLACEMENT_DEFAULT"	Name="LOC_MAP_PLACEMENT_DEFAULT_NAME" 		Description="LOC_MAP_LOWLAND_PLACEMENT_DEFAULT_DESCRIPTION" SortIndex="10"/>
+		<Replace Domain="LowLandPlacement" Value="PLACEMENT_DEEP"		Name="LOC_MAP_LOWLAND_PLACEMENT_DEEP_NAME" 	Description="LOC_MAP_LOWLAND_PLACEMENT_DEEP_DESCRIPTION" 	SortIndex="20"/>
+	
+	</DomainValues>
+
+	<ParameterDependencies>
+	</ParameterDependencies>
+	
+	<!-- doesn't works as expected ?
+	<MapUnSupportedValues>
+	</MapUnSupportedValues>
+	-->	
+	
+	<MapSupportedValues>
+	</MapSupportedValues>
+	
+</GameInfo>

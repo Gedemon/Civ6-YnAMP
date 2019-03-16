@@ -194,7 +194,8 @@
 	<!-- +++++++++++++++++++++++++++ -->
 	<!--     Giant Earth Volcanos    -->
 	<!-- +++++++++++++++++++++++++++ -->
-
+	
+		<!-- ConfigurationId="FeaturesPlacement"	ConfigurationValue="PLACEMENT_IMPORT"	 -->
 
 		<Replace MapName="GiantEarth" X="35" Y="37"		RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 		<Replace MapName="GiantEarth" X="73" Y="32"		RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />

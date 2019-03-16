@@ -298,11 +298,30 @@
       <Text>Natural Wonders are imported from the map data</Text>
     </Replace>
 	
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_NAME" Language="en_US">
+      <Text>Coastal Lowland</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Language="en_US">
+      <Text>How Land altitude (for Water Rising) is determined.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
+      <Text>Lowland plots are determined using the Civ6 Map Generator (random)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEEP_NAME" Language="en_US">
+      <Text>Matching flatland</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEEP_DESCRIPTION" Language="en_US">
+      <Text>Sea rising can reach further inland, following flatland plots</Text>
+    </Replace>
+	
     <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_NAME" Language="en_US">
       <Text>Empty</Text>
     </Replace>
     <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" Language="en_US">
       <Text>No placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_DEFAULT_NAME" Language="en_US">
+      <Text>Map Generator</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CLOSED_BOSPHORUS_NAME" Language="en_US">
