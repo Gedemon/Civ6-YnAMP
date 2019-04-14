@@ -20,9 +20,6 @@
 	
 	<Maps>
 		<Row File="PlayEuropeAgain.lua" Name="LOC_PLAYEUROPEAGAIN_NAME" Description="LOC_PLAYEUROPEAGAIN_DESC" SortIndex="4"/>
-		<Row Domain="Maps:Expansion1Maps" File="PlayEuropeAgain.lua" Name="LOC_PLAYEUROPEAGAIN_NAME" Description="LOC_PLAYEUROPEAGAIN_DESC" SortIndex="4"/>
-		<Row Domain="Maps:Expansion2Maps" File="PlayEuropeAgain.lua" Name="LOC_PLAYEUROPEAGAIN_NAME" Description="LOC_PLAYEUROPEAGAIN_DESC" SortIndex="4"/>
-		<Row Domain="Maps:Expansion3Maps" File="PlayEuropeAgain.lua" Name="LOC_PLAYEUROPEAGAIN_NAME" Description="LOC_PLAYEUROPEAGAIN_DESC" SortIndex="4"/>
 	</Maps>
 
 	<Parameters>

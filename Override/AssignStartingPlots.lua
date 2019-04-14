@@ -10,6 +10,17 @@ include "MapUtilities"
 print ("loading modded AssignStartingPlots")
 local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION ?
 print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2019) by Gedemon")
+if ExposedMembers.YnAMP_Loading ~= nil then
+	print ("Game version: ".. tostring(ExposedMembers.YnAMP_Loading.GameVersion))
+	print("Active mods:")
+	if ExposedMembers.YnAMP_Loading.ListMods then
+		for i,v in ipairs(ExposedMembers.YnAMP_Loading.ListMods) do
+			print(" - ".. Locale.Lookup(v.Name))
+		end
+	end
+end
+ExposedMembers.YnAMP_Loading = nil
+
 print ("Setting YnAMP globals and cache...")
 
 g_startTimer = os.clock()
@@ -63,7 +74,6 @@ g_ReferenceWidthRatio   = 0
 g_ReferenceHeightRatio  = 0
 g_MapDataRiverIndex		= 4 -- Rivers entry in MapData, checked in GenerateImportedMap() based on the table passed (civ5 data or civ6 data)
 
-
 -- Create list of Civilizations and leaders in game
 for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 	local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
@@ -74,6 +84,33 @@ end
 
 print ("YnAMP Options:")
 print ("- Culturally Linked = " .. tostring(bCulturallyLinked) ..", TSL = " .. tostring(bTSL) ..", Exclusion Zones = " .. tostring(bResourceExclusion) ..", Requested Resources = " .. tostring(bRequestedResources)..", Real Deposits = " .. tostring(bRealDeposits) .. ", Place All Luxuries = ".. tostring(bPlaceAllLuxuries) ) 
+	
+local featuresPlacement = MapConfiguration.GetValue("FeaturesPlacement")
+print("- Features placement = "..tostring(featuresPlacement))	
+local bImportFeatures = featuresPlacement == "PLACEMENT_IMPORT"
+local bNoFeatures = featuresPlacement == "PLACEMENT_EMPTY"
+
+local riversPlacement = MapConfiguration.GetValue("RiversPlacement")
+print("- Rivers Placement = "..tostring(riversPlacement))	
+local bImportRivers = riversPlacement == "PLACEMENT_IMPORT"
+local bNoRivers = riversPlacement == "PLACEMENT_EMPTY"
+
+local resourcePlacement = MapConfiguration.GetValue("ResourcesPlacement")
+print("- Resource placement = "..tostring(resourcePlacement))	
+local bNoResources = resourcePlacement == "PLACEMENT_EMPTY"
+
+local naturalWondersPlacement = MapConfiguration.GetValue("NaturalWondersPlacement")
+print("- Natural Wonders placement = "..tostring(naturalWondersPlacement))	
+local bImportNaturalWonders = naturalWondersPlacement == "PLACEMENT_IMPORT"
+local bNoNaturalWonders = naturalWondersPlacement == "PLACEMENT_EMPTY"
+
+local continentsPlacement = MapConfiguration.GetValue("ContinentsPlacement")
+print("- Continents naming = "..tostring(continentsPlacement))	
+local bImportContinents = continentsPlacement == "PLACEMENT_IMPORT"
+
+local lowLandPlacement = MapConfiguration.GetValue("LowLandPlacement")
+print("- Lowland placement = "..tostring(lowLandPlacement))	
+local bDeepLowLand = lowLandPlacement == "PLACEMENT_DEEP"
 
 ------------------------------------------------------------------------------
 -- http://lua-users.org/wiki/SortedIteration
@@ -3174,33 +3211,6 @@ BuildRefXY()
 			end
 		end
 	end
-		
-	local featuresPlacement = MapConfiguration.GetValue("FeaturesPlacement")
-	print("Features placement = "..tostring(featuresPlacement))	
-	local bImportFeatures = featuresPlacement == "PLACEMENT_IMPORT"
-	local bNoFeatures = featuresPlacement == "PLACEMENT_EMPTY"
-	
-	local riversPlacement = MapConfiguration.GetValue("RiversPlacement")
-	print("Rivers Placement = "..tostring(riversPlacement))	
-	local bImportRivers = riversPlacement == "PLACEMENT_IMPORT"
-	local bNoRivers = riversPlacement == "PLACEMENT_EMPTY"
-	
-	local resourcePlacement = MapConfiguration.GetValue("ResourcesPlacement")
-	print("Resource placement = "..tostring(resourcePlacement))	
-	local bNoResources = resourcePlacement == "PLACEMENT_EMPTY"
-	
-	local naturalWondersPlacement = MapConfiguration.GetValue("NaturalWondersPlacement")
-	print("Natural Wonders placement = "..tostring(naturalWondersPlacement))	
-	local bImportNaturalWonders = naturalWondersPlacement == "PLACEMENT_IMPORT"
-	local bNoNaturalWonders = naturalWondersPlacement == "PLACEMENT_EMPTY"
-	
-	local continentsPlacement = MapConfiguration.GetValue("ContinentsPlacement")
-	print("Continents naming = "..tostring(continentsPlacement))	
-	local bImportContinents = continentsPlacement == "PLACEMENT_IMPORT"
-	
-	local lowLandPlacement = MapConfiguration.GetValue("LowLandPlacement")
-	print("Lowland placement = "..tostring(lowLandPlacement))	
-	local bDeepLowLand = lowLandPlacement == "PLACEMENT_DEEP"
 
 	-- We'll do importation of Rivers after Natural Wonders placement, as they can create incompatibilities and Resources come after Rivers (in case Rivers are generated instead of imported)
 	-- We do Features now to prevent overriding the NW placement
@@ -4245,6 +4255,13 @@ function ExtraPlacement()
 			-- The placement may require a specific ruleset
 			if row.RuleSet then
 				if GameConfiguration.GetValue("RULESET") ~= row.RuleSet then
+					bDoPlacement = false
+				end
+			end
+			
+			-- Existing Features can prevent placement (custom NW for example)
+			if row.DisabledByFeature then
+				if GameInfo.Features[row.DisabledByFeature] then
 					bDoPlacement = false
 				end
 			end

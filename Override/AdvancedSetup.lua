@@ -23,7 +23,7 @@ local PULLDOWN_TRUNCATE_OFFSET:number = 40;
 g_SimpleBooleanParameterManager = InstanceManager:new("SimpleBooleanParameterInstance", "CheckBox", Controls.CheckBoxParent);
 g_SimplePullDownParameterManager = InstanceManager:new("SimplePullDownParameterInstance", "Root", Controls.PullDownParent);
 g_SimpleSliderParameterManager = InstanceManager:new("SimpleSliderParameterInstance", "Root", Controls.SliderParent);
-g_SimpleStringParameterManager = InstanceManager:new("SimpleStringParameterInstance", "StringRoot", Controls.EditBoxParent);
+g_SimpleStringParameterManager = InstanceManager:new("SimpleStringParameterInstance", "Root", Controls.EditBoxParent);
 
 local m_NonLocalPlayerSlotManager	:table = InstanceManager:new("NonLocalPlayerSlotInstance", "Root", Controls.NonLocalPlayersSlotStack);
 local m_singlePlayerID				:number = 0;			-- The player ID of the human player in singleplayer.
@@ -56,6 +56,20 @@ function OnInputHandler( pInputStruct:table )
 		end
 	end
 	return true;
+end
+
+local _UI_BeforeRefresh = UI_BeforeRefresh;
+function UI_BeforeRefresh()
+	
+	if(_UI_BeforeRefresh) then
+		_UI_BeforeRefresh();
+	end
+
+	-- Reset basic setup container states
+	Controls.CreateGame_GameDifficultyContainer:SetHide(true);
+	Controls.CreateGame_SpeedPulldownContainer:SetHide(true);
+	Controls.CreateGame_MapTypeContainer:SetHide(true);
+	Controls.CreateGame_MapSizeContainer:SetHide(true);
 end
 
 -- Override for SetupParameters to filter ruleset values by non-scenario only.
@@ -147,10 +161,12 @@ function CreatePulldownDriver(o, parameter, c, container)
 				end
 			end			
 		end,
-		SetEnabled = function(enabled)
-			c:SetDisabled(not enabled);
+		SetEnabled = function(enabled, parameter)
+			c:SetDisabled(not enabled or #parameter.Values <= 1);
 		end,
-		SetVisible = nil,	-- Never hide the basic pulldown.
+		SetVisible = function(visible, parameter)
+			container:SetHide(not visible or parameter.Value == nil);
+		end,
 		Destroy = nil,		-- It's a fixed control, no need to delete.
 	};
 	
@@ -296,7 +312,7 @@ function CreateSimpleParameterDriver(o, parameter, parent)
 
 		local name = Locale.ToUpper(parameter.Name);	
 		c.StringName:SetText(name);
-		c.StringRoot:SetToolTipString(parameter.Description);
+		c.Root:SetToolTipString(parameter.Description);
 		c.StringEdit:SetEnabled(true);
 
 		local canChangeEnableState = true;
@@ -330,21 +346,21 @@ function CreateSimpleParameterDriver(o, parameter, parent)
 			end
 		end
 
-		c.StringRoot:ChangeParent(parent);
+		c.Root:ChangeParent(parent);
 
 		control = {
 			Control = c,
 			UpdateValue = function(value)
-				c.StringEdit:SetText(value);
+				c.StringEdit:SetText(Locale.Lookup(value));
 			end,
 			SetEnabled = function(enabled)
 				if canChangeEnableState then
-					c.StringRoot:SetDisabled(not enabled);
+					c.Root:SetDisabled(not enabled);
 					c.StringEdit:SetDisabled(not enabled);
 				end
 			end,
 			SetVisible = function(visible)
-				c.StringRoot:SetHide(not visible);
+				c.Root:SetHide(not visible);
 			end,
 			Destroy = function()
 				g_SimpleStringParameterManager:ReleaseInstance(c);
@@ -623,12 +639,28 @@ end
 
 -- ===========================================================================
 function OnShow()
-	if (GameConfiguration.IsWorldBuilderEditor()) then
+	local bWorldBuilder = GameConfiguration.IsWorldBuilderEditor();
+
+	if (bWorldBuilder) then
+		Controls.WindowTitle:LocalizeAndSetText("{LOC_SETUP_CREATE_MAP:upper}");
+
         if (MapConfiguration.GetScript() == "WBImport.lua") then
             m_WorldBuilderImport = true;
         else
             m_WorldBuilderImport = false;
         end
+
+		-- KLUDGE: Ideally setup parameters in a group should have some sort of control mechanism for whether or not the group should show.
+		Controls.CreateGame_LocalPlayerContainer:SetHide(true);
+		Controls.PlayersSection:SetHide(true);
+		Controls.VictoryParametersHeader:SetHide(true);
+		
+    else
+		Controls.CreateGame_LocalPlayerContainer:SetHide(false);
+		Controls.PlayersSection:SetHide(false);
+		Controls.VictoryParametersHeader:SetHide(false);
+		
+		Controls.WindowTitle:LocalizeAndSetText("{LOC_SETUP_CREATE_GAME:upper}");
     end
 
 	RefreshPlayerSlots();	-- Will trigger a game parameter refresh.
@@ -636,11 +668,16 @@ function OnShow()
 	AutoSizeGridButton(Controls.CloseButton,133,36,10,"H");
 
 	-- the map size and type dropdowns don't make sense on a map import
+
     if (m_WorldBuilderImport) then
         Controls.CreateGame_MapType:SetDisabled(true);
         Controls.CreateGame_MapSize:SetDisabled(true);
         Controls.StartButton:LocalizeAndSetText("LOC_LOAD_TILED");
 		MapConfiguration.SetScript("WBImport.lua");
+    elseif(bWorldBuilder) then
+		 Controls.CreateGame_MapType:SetDisabled(false);
+        Controls.CreateGame_MapSize:SetDisabled(false);
+        Controls.StartButton:LocalizeAndSetText("LOC_SETUP_WORLDBUILDER_START");
     else
         Controls.CreateGame_MapType:SetDisabled(false);
         Controls.CreateGame_MapSize:SetDisabled(false);
@@ -690,10 +727,12 @@ end
 
 -- ===========================================================================
 function OnAdvancedSetup()
+	local bWorldBuilder = GameConfiguration.IsWorldBuilderEditor();
+
 	Controls.CreateGameWindow:SetHide(true);
 	Controls.AdvancedOptionsWindow:SetHide(false);
-	Controls.LoadConfig:SetHide(false);
-	Controls.SaveConfig:SetHide(false);
+	Controls.LoadConfig:SetHide(bWorldBuilder);
+	Controls.SaveConfig:SetHide(bWorldBuilder);
 	Controls.ButtonStack:CalculateSize();
 
 	m_AdvancedMode = true;
@@ -728,6 +767,11 @@ function OnStartButton()
 		print("new CS num = ".. tostring(newCS))
 		GameConfiguration.SetValue("CITY_STATE_COUNT", newCS)
 	end
+	-- Make some debugging info available during map creation 
+	ExposedMembers.YnAMP_Loading	= {
+		ListMods 	= Modding.GetActiveMods(),
+		GameVersion = UI.GetAppVersion()
+	}
 	-- YNAMP >>>>>
 	
 	-- Is WorldBuilder active?
@@ -768,13 +812,10 @@ end
 function OnLoadConfig()
 
 	local loadGameMenu = ContextPtr:LookUpControl( "/FrontEnd/MainMenu/LoadGameMenu" );
-	local kParameters = {};
+	local kParameters = {
+		FileType = SaveFileTypes.GAME_CONFIGURATION
+	};
 
-    if (m_WorldBuilderImport) then
-		MapConfiguration.SetScript("WBImport.lua");
-    end
-
-	kParameters.FileType = SaveFileTypes.GAME_CONFIGURATION;
 	UIManager:QueuePopup(loadGameMenu, PopupPriority.Current, kParameters);
 end
 
@@ -782,16 +823,12 @@ end
 function OnSaveConfig()
 
 	local saveGameMenu = ContextPtr:LookUpControl( "/FrontEnd/MainMenu/SaveGameMenu" );
-	local kParameters = {};
-    
-    if (m_WorldBuilderImport) then
-		MapConfiguration.SetScript("WBImport.lua");
-    end
+	local kParameters = {
+		FileType = SaveFileTypes.GAME_CONFIGURATION
+	};
 
-	kParameters.FileType = SaveFileTypes.GAME_CONFIGURATION;
 	UIManager:QueuePopup(saveGameMenu, PopupPriority.Current, kParameters);
-	
-end
+				end
 
 ----------------------------------------------------------------    
 -- ===========================================================================

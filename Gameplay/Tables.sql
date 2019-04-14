@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS ExtraPlacement
 		TerrainType TEXT,
 		FeatureType TEXT,
 		ResourceType TEXT,
+		DisabledByFeature TEXT,
 		Elevation INT,
 		Quantity INT default 0);
 		
@@ -97,8 +98,9 @@ CREATE TABLE IF NOT EXISTS StartBiasCoast
 
 
 -- Scenario Civilization Replacements
+-- To code:
 -- Replace scenario's <CivilizationType> by the (last) <PreferedType> available
--- Use (last available) <BackupType> when the scenario's <CivilizationType> is not available available
+-- Use (last available) <BackupType> when the scenario's <CivilizationType> is not available
 -- If the scenario use a <PreferedType> and it's not available, try to use the first available <CivilizationType> referencing it.
 CREATE TABLE IF NOT EXISTS ScenarioCivilizationsReplacement
 	(	ScenarioName TEXT NOT NULL,
@@ -110,7 +112,7 @@ CREATE TABLE IF NOT EXISTS ScenarioCivilizationsReplacement
 CREATE TABLE IF NOT EXISTS ScenarioCities
 	(	ScenarioName TEXT,
 		MapName TEXT,
-		CivilizationType TEXT,			-- if NULL it will search a possible CivilizationType using the GameInfo.CityNames table (CityName must be set in that case)
+		CivilizationType TEXT,			-- to code : if NULL it will search a possible CivilizationType using the GameInfo.CityNames table (CityName must be set in that case)
 		CityName TEXT,					-- if not NULL it will override the civilization city list name
 		CitySize INT default 1,
 		OnlyAI BOOLEAN NOT NULL CHECK (OnlyAI IN (0,1)) DEFAULT 0,
@@ -123,7 +125,9 @@ CREATE TABLE IF NOT EXISTS ScenarioTerritory
 	(	ScenarioName TEXT,
 		MapName TEXT,
 		CivilizationType TEXT NOT NULL,
-		CityName TEXT,					-- if NULL the plot will be owned by the nearest city in that case
+		CityName TEXT,					-- if NULL the plot will be owned by the nearest city
+		CityX INT,
+		CityY INT,
 		OnlyAI BOOLEAN NOT NULL CHECK (OnlyAI IN (0,1)) DEFAULT 0,
 		OnlyHuman BOOLEAN NOT NULL CHECK (OnlyHuman IN (0,1)) DEFAULT 0,
 		X INT NOT NULL,
@@ -135,6 +139,8 @@ CREATE TABLE IF NOT EXISTS ScenarioDistricts
 		MapName TEXT,
 		DistrictType TEXT NOT NULL,
 		CityName TEXT,					-- if NULL the district will be owned by the nearest city in that case
+		CityX INT,
+		CityY INT,
 		InnerHealth INT,
 		OutterHealth INT,
 		OnlyAI BOOLEAN NOT NULL CHECK (OnlyAI IN (0,1)) DEFAULT 0,
@@ -158,16 +164,19 @@ CREATE TABLE IF NOT EXISTS ScenarioOccupiedTerritory
 		MapName TEXT,
 		CivilizationType TEXT NOT NULL,
 		CityName TEXT,					-- if NULL the plot will be owned by the nearest city in that case
+		CityX INT,
+		CityY INT,
 		OnlyAI BOOLEAN NOT NULL CHECK (OnlyAI IN (0,1)) DEFAULT 0,
 		OnlyHuman BOOLEAN NOT NULL CHECK (OnlyHuman IN (0,1)) DEFAULT 0,
 		X INT NOT NULL,
 		Y INT NOT NULL);
 		
 -- Scenario Improvements
-CREATE TABLE IF NOT EXISTS ScenarioImprovements
+CREATE TABLE IF NOT EXISTS ScenarioInfrastructure
 	(	ScenarioName TEXT,
 		MapName TEXT,
-		ImprovementType TEXT NOT NULL,
+		ImprovementType TEXT,
+		RouteType TEXT,
 		OnlyAI BOOLEAN NOT NULL CHECK (OnlyAI IN (0,1)) DEFAULT 0,
 		OnlyHuman BOOLEAN NOT NULL CHECK (OnlyHuman IN (0,1)) DEFAULT 0,
 		X INT NOT NULL,
@@ -186,9 +195,9 @@ CREATE TABLE IF NOT EXISTS ScenarioUnits
 		MapName TEXT,
 		CivilizationType TEXT NOT NULL,
 		UnitType TEXT NOT NULL,
-		UnitName TEXT,
+		Name TEXT,
+		Damage INT default 0,
 		PromotionList TEXT,
-		Health INT default 100,
 		OnlyAI BOOLEAN NOT NULL CHECK (OnlyAI IN (0,1)) DEFAULT 0,
 		OnlyHuman BOOLEAN NOT NULL CHECK (OnlyHuman IN (0,1)) DEFAULT 0,
 		X INT NOT NULL,

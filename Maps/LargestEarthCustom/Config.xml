@@ -20,9 +20,6 @@
 	
 	<Maps>
 		<Row File="LargestEarthCustom.lua" Name="LOC_LARGESTEARTHCUSTOM_NAME" Description="LOC_LARGESTEARTHCUSTOM_DESC" SortIndex="2"/>
-		<Row Domain="Maps:Expansion1Maps" File="LargestEarthCustom.lua" Name="LOC_LARGESTEARTHCUSTOM_NAME" Description="LOC_LARGESTEARTHCUSTOM_DESC" SortIndex="2"/>
-		<Row Domain="Maps:Expansion2Maps" File="LargestEarthCustom.lua" Name="LOC_LARGESTEARTHCUSTOM_NAME" Description="LOC_LARGESTEARTHCUSTOM_DESC" SortIndex="2"/>
-		<Row Domain="Maps:Expansion3Maps" File="LargestEarthCustom.lua" Name="LOC_LARGESTEARTHCUSTOM_NAME" Description="LOC_LARGESTEARTHCUSTOM_DESC" SortIndex="2"/>
 	</Maps>	
 
 	<Parameters>
