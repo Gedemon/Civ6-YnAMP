@@ -8220,7 +8220,7 @@
 		<Replace Tag="LOC_CITY_NAME_RADISSON_MAPUCHE" Text="Chisasibi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RADISSON_CREE" Text="Chisasibi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAGUENAY" Text="Saguenay" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SAINT_AUGUSTIN" Text="Saint-Augustin" Language="en_US" 
+		<Replace Tag="LOC_CITY_NAME_SAINT_AUGUSTIN" Text="Saint-Augustin" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAINT_AUGUSTIN_CREE" Text="Pakuashipi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAINT_AUGUSTIN_AZTEC" Text="Pakuashipi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAINT_AUGUSTIN_MAPUCHE" Text="Pakuashipi" Language="en_US" />

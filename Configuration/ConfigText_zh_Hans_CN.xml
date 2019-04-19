@@ -276,12 +276,28 @@
     <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_DESCRIPTION" Language="zh_Hans_CN">
       <Text>玩家导入的地图中的预设自然奇观分布。</Text>
     </Replace>
+
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_NAME" Language="zh_Hans_CN">
+      <Text>沿海低地</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEFAULT_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>海平面上升，受灾区域随机，影响较小。</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEEP_NAME" Language="zh_Hans_CN">
+      <Text>梯式</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEEP_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>海平面上升，受灾区域更广(约沿海3格，具体视地势情况)，影响大。[NEWLINE]3段上升时内陆也会被淹没。如果勾选此项，[COLOR_RED]谨慎沿海建城！[ENDCOLOR]</Text>
+    </Replace>
 	
     <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_NAME" Language="zh_Hans_CN">
       <Text>空置</Text>
     </Replace>
     <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" Language="zh_Hans_CN">
-      <Text>无。</Text>
+      <Text></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_DEFAULT_NAME" Language="zh_Hans_CN">
+      <Text>默认</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CLOSED_BOSPHORUS_NAME" Language="zh_Hans_CN">
