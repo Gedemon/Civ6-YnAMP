@@ -5,28 +5,6 @@
   <!-- LargeEurope map position           -->
   <!-- ++++++++++++++++++++++++++++++++++ -->
 
-	<ExtraPlacement>
-		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_OTTOMAN"		X="51"	Y="31" TerrainType="TERRAIN_GRASS" />
-	</ExtraPlacement>
-	
-  <NaturalWonderPosition>
-    <Replace MapName="LargeEurope" X="24" Y="47" FeatureType="FEATURE_CLIFFS_DOVER" />
-    <Replace MapName="LargeEurope" X="25" Y="47" FeatureType="FEATURE_CLIFFS_DOVER" />
-
-    <Replace MapName="LargeEurope" X="62" Y="15" FeatureType="FEATURE_DEAD_SEA" />
-    <Replace MapName="LargeEurope" X="63" Y="16" FeatureType="FEATURE_DEAD_SEA" />
-
-    <Replace MapName="LargeEurope" X="11" Y="71" FeatureType="FEATURE_EYJAFJALLAJOKULL" />
-    <Replace MapName="LargeEurope" X="12" Y="71" FeatureType="FEATURE_EYJAFJALLAJOKULL" />
-
-    <Replace MapName="LargeEurope" X="31" Y="61" FeatureType="FEATURE_LYSEFJORDEN" />
-    <Replace MapName="LargeEurope" X="31" Y="62" FeatureType="FEATURE_LYSEFJORDEN" />
-    <Replace MapName="LargeEurope" X="32" Y="62" FeatureType="FEATURE_LYSEFJORDEN" />
-
-    <Replace MapName="LargeEurope" X="19" Y="54" FeatureType="FEATURE_GIANTS_CAUSEWAY" />
-    <Replace MapName="LargeEurope" X="18" Y="55" FeatureType="FEATURE_GIANTS_CAUSEWAY" />
-  </NaturalWonderPosition>
-
   <!-- Majors -->
   <StartPosition>
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_ARABIA"	X="68" Y="2" />
@@ -53,16 +31,16 @@
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_SPAIN"	X="19" Y="30" />
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_SUMERIA"	X="73" Y="15" />
 		<!-- Gathering Storm -->
-		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_SWEDEN"	X="41"	Y="61" />
-		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_MALI"		X="10" 	Y="1" />
-		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_HUNGARY"	X="43"	Y="40" />
-		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_FRANCE"	X="24"	Y="39" Leader="LEADER_ELEANOR" />
-		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_PHOENICIA"X="61"	Y="19" />
-		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_OTTOMAN"	X="51"	Y="31" />		
-		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_AKKAD"		X="70"	Y="21" />
-		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_BOLOGNA"		X="35"	Y="36" />
-		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_CARDIFF"		X="21"	Y="48" />
-		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_FEZ"			X="18"	Y="18" />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_SWEDEN"	X="41"	Y="61" />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_MALI"		X="10" 	Y="1" />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_HUNGARY"	X="43"	Y="40" />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_FRANCE"	X="24"	Y="39" Leader="LEADER_ELEANOR" />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_PHOENICIA"X="61"	Y="19" />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_OTTOMAN"	X="53"	Y="31" />		
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_AKKAD"		X="70"	Y="21" />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_BOLOGNA"		X="35"	Y="36" />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_CARDIFF"		X="21"	Y="48" />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_FEZ"			X="18"	Y="18" />
   </StartPosition>
 
   <!-- Minors -->
@@ -84,5 +62,60 @@
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_VILNIUS"		X="48" Y="52" />
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_YEREVAN"		X="69" Y="29" />
   </StartPosition>
+
+	<ExtraPlacement>
+		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_OTTOMAN"		X="53"	Y="31" TerrainType="TERRAIN_GRASS" />
+		
+		<!-- +++++++++++++++++++++++++++ -->
+		<!--     LargeEurope Volcanos    -->
+		<!-- +++++++++++++++++++++++++++ -->
+
+		<Replace MapName="LargeEurope" X="69" Y="35"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="64" Y="25"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="38" Y="25"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="50" Y="23"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="5" Y="12"		RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="66" Y="35"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="38" Y="27"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="66" Y="25"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		
+	</ExtraPlacement>
+	
+  <NaturalWonderPosition>
+    <Replace MapName="LargeEurope" X="24" Y="47" FeatureType="FEATURE_CLIFFS_DOVER" />
+    <Replace MapName="LargeEurope" X="25" Y="47" FeatureType="FEATURE_CLIFFS_DOVER" />
+
+    <Replace MapName="LargeEurope" X="62" Y="15" FeatureType="FEATURE_DEAD_SEA" />
+    <Replace MapName="LargeEurope" X="63" Y="16" FeatureType="FEATURE_DEAD_SEA" />
+
+    <Replace MapName="LargeEurope" X="11" Y="71" FeatureType="FEATURE_EYJAFJALLAJOKULL" />
+    <Replace MapName="LargeEurope" X="12" Y="71" FeatureType="FEATURE_EYJAFJALLAJOKULL" />
+
+    <Replace MapName="LargeEurope" X="31" Y="61" FeatureType="FEATURE_LYSEFJORDEN" />
+    <Replace MapName="LargeEurope" X="31" Y="62" FeatureType="FEATURE_LYSEFJORDEN" />
+    <Replace MapName="LargeEurope" X="32" Y="62" FeatureType="FEATURE_LYSEFJORDEN" />
+
+    <Replace MapName="LargeEurope" X="19" Y="54" FeatureType="FEATURE_GIANTS_CAUSEWAY" />
+    <Replace MapName="LargeEurope" X="18" Y="55" FeatureType="FEATURE_GIANTS_CAUSEWAY" />
+	
+		
+		<!-- ****************** -->
+		<!-- Gathering Storm NW -->
+		<!-- ****************** -->
+				
+		<Replace MapName="LargeEurope" X="73" Y="30" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
+		<Replace MapName="LargeEurope" X="73" Y="31" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
+		<Replace MapName="LargeEurope" X="74" Y="30" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
+		
+		<Replace MapName="LargeEurope" X="55" Y="26" FeatureType="FEATURE_PAMUKKALE" TerrainType="TERRAIN_PLAINS_HILLS" />
+		<Replace MapName="LargeEurope" X="56" Y="26" FeatureType="FEATURE_PAMUKKALE" TerrainType="TERRAIN_PLAINS_HILLS" />
+		
+		<Replace MapName="LargeEurope" X="52" Y="8" FeatureType="FEATURE_WHITEDESERT" TerrainType="TERRAIN_DESERT" />
+		<Replace MapName="LargeEurope" X="53" Y="8" FeatureType="FEATURE_WHITEDESERT" TerrainType="TERRAIN_DESERT" />
+		<Replace MapName="LargeEurope" X="53" Y="9" FeatureType="FEATURE_WHITEDESERT" TerrainType="TERRAIN_DESERT" />
+		<Replace MapName="LargeEurope" X="54" Y="9" FeatureType="FEATURE_WHITEDESERT" TerrainType="TERRAIN_DESERT" />
+		
+		<Replace MapName="LargeEurope" X="38" Y="29" FeatureType="FEATURE_VESUVIUS" TerrainType="TERRAIN_PLAINS_MOUNTAIN" />
+  </NaturalWonderPosition>
 
 </GameData>

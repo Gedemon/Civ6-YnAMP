@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+
+
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!--                 YnAMP In Game Text                -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	
+
+	<LocalizedText>		<!-- Map Sizes --><!-- 2019.02.26 -->
+
+		<Replace Tag="LOC_MAPSIZE_ENORMOUS_NAME" Language="ja_JP">
+		  <Text>広大</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" Language="ja_JP">
+		  <Text>16人プレイ用の広大なマップです (128x80)。</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_GIANT_NAME" Language="ja_JP">
+		  <Text>特大</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_GIANT_DESCRIPTION" Language="ja_JP">
+		  <Text>20+人プレイ用の特大のマップです (184x92)。[NEWLINE][ICON_Exclamation] [COLOR_RED]ゲーム終盤で不安定になります。[ENDCOLOR][NEWLINE]強制終了を抑制するため、グラフィックの設定を低くしてください。[NEWLINE]VRAM 6GB以上が推奨です。</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_LUDICROUS_NAME" Language="ja_JP">
+		  <Text>[COLOR_RED]過大[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" Language="ja_JP">
+		  <Text>コンピューターが読み込むまでの時の試練に耐えることができるでしょうか？ (200x100)[NEWLINE][ICON_Exclamation] [COLOR_RED]ゲーム終盤で不安定になります。[ENDCOLOR][NEWLINE]強制終了を抑制するため、グラフィックの設定を低くしてください。[NEWLINE]VRAM 8GB以上が推奨です。</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_MAX_NAME" Language="ja_JP">
+		  <Text>最大</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_MAX_DESCRIPTION" Language="ja_JP">
+		  <Text>製作者のPCで機能する最大サイズのマップです。[NEWLINE](i7 4770K + MSI GTX 1080 Ti + 16GB Ram)</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_MAPSIZE_SMALL21_NAME" Language="ja_JP">
+		  <Text>小 (2:1)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_SMALL21_DESCRIPTION" Language="ja_JP">
+		  <Text>6人プレイ用のやや小型のマップです (84x42)。</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_STANDARD21_NAME" Language="ja_JP">
+		  <Text>標準 (2:1)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_STANDARD21_DESCRIPTION" Language="ja_JP">
+		  <Text>8人プレイ用の標準サイズのマップです (96x48)。</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_LARGE21_NAME" Language="ja_JP">
+		  <Text>大 (2:1)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_LARGE21_DESCRIPTION" Language="ja_JP">
+		  <Text>10人プレイ用の大型のマップです (108x54)。</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_HUGE21_NAME" Language="ja_JP">
+		  <Text>巨大 (2:1)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_HUGE21_DESCRIPTION" Language="ja_JP">
+		  <Text>12人プレイ用の巨大なマップです (120x60)。</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_ENORMOUS21_NAME" Language="ja_JP">
+		  <Text>広大 (2:1)</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_ENORMOUS21_DESCRIPTION" Language="ja_JP">
+		  <Text>16人プレイ用の広大なマップです (148x74)。</Text>
+		</Replace>
+
+	</LocalizedText>
+	
+	<LocalizedText>		<!-- Map Names -->
+	
+		<Replace Tag="LOC_YNAGEM_NAME" Language="ja_JP">
+		  <Text>[COLOR_RED]Giant Earth[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_YNAGEM_DESC" Language="ja_JP">
+		  <Text>Genghis Kai氏による特大の地球マップ (Hormigas バージョン) です (180x94 - 特大)。[NEWLINE][ICON_Exclamation] [COLOR_RED]ゲーム終盤で不安定になります。[ENDCOLOR][NEWLINE]強制終了を抑制するため、グラフィックの設定を低くしてください。[NEWLINE]VRAM 6GB以上が推奨です。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATESTEARTH_NAME" Language="ja_JP">
+		  <Text>Greatest Earth Map</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATESTEARTH_DESC" Language="ja_JP">
+		  <Text>djvandyke氏による大型の地球マップです (104x64 - 大)。</Text>
+		</Replace>
+		<Replace Tag="LOC_PLAYEUROPEAGAIN_NAME" Language="ja_JP">
+		  <Text>Play Europe Again</Text>
+		</Replace>
+		<Replace Tag="LOC_PLAYEUROPEAGAIN_DESC" Language="ja_JP">
+		  <Text>NiRv4n4氏による巨大なヨーロッパマップ (Hormigas version) です (108x98 - 巨大)。</Text>
+		</Replace>
+		<Replace Tag="LOC_LARGE_EUROPE_NAME" Language="ja_JP">
+		  <Text>Large Europe</Text>
+		</Replace>
+		<Replace Tag="LOC_LARGE_EUROPE_DESC" Language="ja_JP">
+		  <Text>Dieter VonClam氏による大型のヨーロッパマップです (79x73 - 大)。</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAMAP_NAME" Language="ja_JP">
+		  <Text>Terra Map for YnAMP</Text>
+		</Replace>
+		<Replace Tag="LOC_TERRAMAP_DESC" Language="ja_JP">
+		  <Text>旧世界と新世界を生成するマップです。マップの大きさや配置される陸地をカスタムできます。</Text>
+		</Replace>
+		<Replace Tag="LOC_LARGESTEARTHCUSTOM_NAME" Language="ja_JP">
+		  <Text>[COLOR_RED]Largest Earth Custom[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_LARGESTEARTHCUSTOM_DESC" Language="ja_JP">
+		  <Text>とてつもなく広いカスタム地球マップです (230x116 - 過大)。[NEWLINE][ICON_Exclamation] [COLOR_RED]マップ全体は読み込みません！[ENDCOLOR][NEWLINE]カスタム・オプションからマップの一部地域を設定してください。</Text>
+		</Replace>
+
+	</LocalizedText>
+	
+	<LocalizedText>		<!-- Menus -->
+	
+		<Replace Tag="LOC_GAME_MENU_EXPORT_TO_LUA" Language="ja_JP">
+		  <Text>マップをログに出力</Text>
+		</Replace>
+		<Replace Tag="LOC_GAME_MENU_EXPORT_TO_LUA_DESCRIPTION" Language="ja_JP">
+		  <Text>YnAMPのマップを Lua.log ファイルに出力します。[NEWLINE]"..\Documents\my games\Sid Meier's Civilization VI\Logs\" フォルダ</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_WORLD_BUILDER_BRUSH_SIZE" Text="Brush Size = {1_Num}" Language="ja_JP" />	
+
+	</LocalizedText>
+	
+	<LocalizedText>		<!-- Continents -->			
+		
+		<Replace Tag="LOC_CONTINENT_AFRICA" 			Text="アフリカ" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_SAHARA" 			Text="サハラ" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_GUINEA" 			Text="ギニア" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_CENTRAL_AFRICA"		Text="中央アフリカ" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_EAST_AFRICA"		Text="東アフリカ" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_SOUTH_AFRICA" 		Text="南アフリカ" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_MADAGASCARIA" 		Text="マダガスカル" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_ANTARCTICA"			Text="南極" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_ASIA" 				Text="アジア" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_KAZAKHSTANIA" 		Text="カザフスタニア" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_SIBERIA" 			Text="シベリア" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_CENTRAL_SIBERIA"	Text="中央シベリア" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_WEST_SIBERIA" 		Text="西シベリア" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_ANATOLIA" 			Text="アナトリア" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_ARABIAN_PENINSULA"	Text="アラビア半島" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_PERSIAN_PLATEAU"	Text="ペルシア高原" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_INDIA" 				Text="インド" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_CENTRAL_ASIA" 		Text="中央アジア" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_EAST_ASIA" 			Text="東アジア" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_SOUTH_EAST_ASIA"	Text="東南アジア" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_MANCHURIA" 			Text="満州" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_KOLYMA" 			Text="コリマ" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_EUROPE" 			Text="ヨーロッパ" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_SCANDINAVIA"		Text="スカンジナビア" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_IBERIA" 			Text="イベリア" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_CAUCASIA" 			Text="コーカサス" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_BRITTANIA"			Text="ブリタニア" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_BALKANIA" 			Text="バルカン" Language="ja_JP"	/>
+		<Replace Tag="CONTINENT_AMERICA" 				Text="アメリカ" Language="ja_JP"	/>
+		<Replace Tag="CONTINENT_NORTH_AMERICA" 			Text="北アメリカ" Language="ja_JP"	/>
+		<Replace Tag="CONTINENT_ALASKANIA" 				Text="アラスカ" Language="ja_JP"	/>
+		<Replace Tag="CONTINENT_LABRADORIA" 			Text="ラブラドール" Language="ja_JP"	/>
+		<Replace Tag="CONTINENT_GREENLANDIA" 			Text="グリーンランド" Language="ja_JP"	/>
+		<Replace Tag="CONTINENT_MESO_AMERICA" 			Text="メソアメリカ" Language="ja_JP"	/>
+    	<Replace Tag="LOC_CONTINENT_SOUTH_AMERICA" 		Text="南アメリカ" Language="ja_JP"	/>
+    	<Replace Tag="LOC_CONTINENT_CARIBBEANIA" 		Text="カリブ" Language="ja_JP"	/>
+    	<Replace Tag="LOC_CONTINENT_PATAGONIA" 			Text="パタゴニア" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_AUSTRALIA" 			Text="オーストラリア" Language="ja_JP"	/>
+    	<Replace Tag="LOC_CONTINENT_OCEANIA" 			Text="オセアニア" Language="ja_JP"	/>
+		<Replace Tag="LOC_CONTINENT_ZEALANDIA" 			Text="ジーランディア" Language="ja_JP"	/>
+    	<Replace Tag="LOC_CONTINENT_MELANESIA"			Text="メラネシア" Language="ja_JP"	/>
+    	<Replace Tag="LOC_CONTINENT_MICRONESIA" 		Text="ミクロネシア" Language="ja_JP"	/>
+    	<Replace Tag="LOC_CONTINENT_POLYNESIA"			Text="ポリネシア" Language="ja_JP"	/>
+
+	</LocalizedText>
+
+</GameData>

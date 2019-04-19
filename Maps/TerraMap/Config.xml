@@ -20,9 +20,6 @@
 	
 	<Maps>
 		<Row File="TerraMap.lua" Name="LOC_TERRAMAP_NAME" Description="LOC_TERRAMAP_DESC" SortIndex="0"/>
-		<Row Domain="Maps:Expansion1Maps" File="TerraMap.lua" Name="LOC_TERRAMAP_NAME" Description="LOC_TERRAMAP_DESC" SortIndex="0"/>
-		<Row Domain="Maps:Expansion2Maps" File="TerraMap.lua" Name="LOC_TERRAMAP_NAME" Description="LOC_TERRAMAP_DESC" SortIndex="0"/>
-		<Row Domain="Maps:Expansion3Maps" File="TerraMap.lua" Name="LOC_TERRAMAP_NAME" Description="LOC_TERRAMAP_DESC" SortIndex="0"/>
 	</Maps>
 
 

@@ -20,9 +20,6 @@
 	
 	<Maps>
 		<Row File="GreatestEarthMap.lua" Name="LOC_GREATESTEARTH_NAME" Description="LOC_GREATESTEARTH_DESC" SortIndex="3"/>
-		<Row Domain="Maps:Expansion1Maps" File="GreatestEarthMap.lua" Name="LOC_GREATESTEARTH_NAME" Description="LOC_GREATESTEARTH_DESC" SortIndex="3"/>
-		<Row Domain="Maps:Expansion2Maps" File="GreatestEarthMap.lua" Name="LOC_GREATESTEARTH_NAME" Description="LOC_GREATESTEARTH_DESC" SortIndex="3"/>
-		<Row Domain="Maps:Expansion3Maps" File="GreatestEarthMap.lua" Name="LOC_GREATESTEARTH_NAME" Description="LOC_GREATESTEARTH_DESC" SortIndex="3"/>
 	</Maps>
 
 	<Parameters>

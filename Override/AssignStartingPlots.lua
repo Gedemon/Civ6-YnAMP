@@ -9,7 +9,18 @@ include "MapUtilities"
 
 print ("loading modded AssignStartingPlots")
 local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION ?
-print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2018) by Gedemon")
+print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2019) by Gedemon")
+if ExposedMembers.YnAMP_Loading ~= nil then
+	print ("Game version: ".. tostring(ExposedMembers.YnAMP_Loading.GameVersion))
+	print("Active mods:")
+	if ExposedMembers.YnAMP_Loading.ListMods then
+		for i,v in ipairs(ExposedMembers.YnAMP_Loading.ListMods) do
+			print(" - ".. Locale.Lookup(v.Name))
+		end
+	end
+end
+ExposedMembers.YnAMP_Loading = nil
+
 print ("Setting YnAMP globals and cache...")
 
 g_startTimer = os.clock()
@@ -19,6 +30,8 @@ ExposedMembers.YNAMP	= { RiverMap = {}, }
 
 local RiverMap 			= ExposedMembers.YNAMP.RiverMap
 local DefaultRiverID	= 9999
+local bExpansion2		= GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_2"
+local IsOceanStart		= {}	-- table to list Civilization with a starting plot set on ocean (for not swapping them when doing culturally linked placement)
 
 -- Globals, can be called from the mapscript
 mapName = MapConfiguration.GetValue("ReferenceMap") or MapConfiguration.GetValue("MapName")
@@ -61,7 +74,6 @@ g_ReferenceWidthRatio   = 0
 g_ReferenceHeightRatio  = 0
 g_MapDataRiverIndex		= 4 -- Rivers entry in MapData, checked in GenerateImportedMap() based on the table passed (civ5 data or civ6 data)
 
-
 -- Create list of Civilizations and leaders in game
 for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 	local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
@@ -72,6 +84,33 @@ end
 
 print ("YnAMP Options:")
 print ("- Culturally Linked = " .. tostring(bCulturallyLinked) ..", TSL = " .. tostring(bTSL) ..", Exclusion Zones = " .. tostring(bResourceExclusion) ..", Requested Resources = " .. tostring(bRequestedResources)..", Real Deposits = " .. tostring(bRealDeposits) .. ", Place All Luxuries = ".. tostring(bPlaceAllLuxuries) ) 
+	
+local featuresPlacement = MapConfiguration.GetValue("FeaturesPlacement")
+print("- Features placement = "..tostring(featuresPlacement))	
+local bImportFeatures = featuresPlacement == "PLACEMENT_IMPORT"
+local bNoFeatures = featuresPlacement == "PLACEMENT_EMPTY"
+
+local riversPlacement = MapConfiguration.GetValue("RiversPlacement")
+print("- Rivers Placement = "..tostring(riversPlacement))	
+local bImportRivers = riversPlacement == "PLACEMENT_IMPORT"
+local bNoRivers = riversPlacement == "PLACEMENT_EMPTY"
+
+local resourcePlacement = MapConfiguration.GetValue("ResourcesPlacement")
+print("- Resource placement = "..tostring(resourcePlacement))	
+local bNoResources = resourcePlacement == "PLACEMENT_EMPTY"
+
+local naturalWondersPlacement = MapConfiguration.GetValue("NaturalWondersPlacement")
+print("- Natural Wonders placement = "..tostring(naturalWondersPlacement))	
+local bImportNaturalWonders = naturalWondersPlacement == "PLACEMENT_IMPORT"
+local bNoNaturalWonders = naturalWondersPlacement == "PLACEMENT_EMPTY"
+
+local continentsPlacement = MapConfiguration.GetValue("ContinentsPlacement")
+print("- Continents naming = "..tostring(continentsPlacement))	
+local bImportContinents = continentsPlacement == "PLACEMENT_IMPORT"
+
+local lowLandPlacement = MapConfiguration.GetValue("LowLandPlacement")
+print("- Lowland placement = "..tostring(lowLandPlacement))	
+local bDeepLowLand = lowLandPlacement == "PLACEMENT_DEEP"
 
 ------------------------------------------------------------------------------
 -- http://lua-users.org/wiki/SortedIteration
@@ -207,8 +246,9 @@ function AssignStartingPlots.Create(args)
 	-- YnAMP <<<<<
 	if not bTSL then
 		instance:__InitStartingData()
-	end	
-	YnAMP_StartPositions()	
+	end
+	YnAMP_ApplySharedMapOptions()
+	YnAMP_StartPositions()
 	-- YnAMP >>>>>					
 
 	return instance
@@ -993,7 +1033,7 @@ function AssignStartingPlots:__MajorCivBuffer(plot)
 	-- Checks to see if there are major civs in the given distance for this major civ
 
 	local iMaxStart = GlobalParameters.START_DISTANCE_MAJOR_CIVILIZATION or 9;
-	iMaxStart = iMaxStart - GlobalParameters.START_DISTANCE_RANGE_MAJOR or 2;
+	--iMaxStart = iMaxStart - GlobalParameters.START_DISTANCE_RANGE_MAJOR or 2;
 
 	local iSourceIndex = plot:GetIndex();
 	for i, majorPlot in ipairs(self.majorStartPlots) do
@@ -1031,7 +1071,7 @@ function AssignStartingPlots:__MinorMinorCivBuffer(plot)
 	-- Checks to see if there are minors in the given distance for this minor civ
 
 	local iMaxStart = GlobalParameters.START_DISTANCE_MINOR_CIVILIZATION_START or 5;
-	iMaxStart = iMaxStart - GlobalParameters.START_DISTANCE_RANGE_MINOR or 2;
+	--iMaxStart = iMaxStart - GlobalParameters.START_DISTANCE_RANGE_MINOR or 2;
 
 	local iSourceIndex = plot:GetIndex();
 
@@ -2666,6 +2706,7 @@ function GetPlotFromRefMap(x, y, bOnlyOffset)
 	return Map.GetPlot(GetXYFromRefMapXY(x,y, bOnlyOffset))
 end
 
+
 ------------------------------------------------------------------------------
 -- Create Tables
 ------------------------------------------------------------------------------
@@ -2935,6 +2976,7 @@ function buidTSL()
 	print ("------------------------------------------------------------------------------")
 end
 
+
 -----------------------------------------------------------------------------------------
 -- Rivers Functions
 -----------------------------------------------------------------------------------------
@@ -3106,10 +3148,10 @@ function MakeRiverFlowToSouthOrWest(plot)
 	end
 end
 
+
 ------------------------------------------------------------------------------
 -- Imported Maps Creation
 ------------------------------------------------------------------------------
-
 function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, width, height)
 
 include "CoastalLowlands"
@@ -3169,29 +3211,6 @@ BuildRefXY()
 			end
 		end
 	end
-		
-	local featuresPlacement = MapConfiguration.GetValue("FeaturesPlacement")
-	print("Features placement = "..tostring(featuresPlacement))	
-	local bImportFeatures = featuresPlacement == "PLACEMENT_IMPORT"
-	local bNoFeatures = featuresPlacement == "PLACEMENT_EMPTY"
-	
-	local riversPlacement = MapConfiguration.GetValue("RiversPlacement")
-	print("Rivers Placement = "..tostring(riversPlacement))	
-	local bImportRivers = riversPlacement == "PLACEMENT_IMPORT"
-	local bNoRivers = riversPlacement == "PLACEMENT_EMPTY"
-	
-	local resourcePlacement = MapConfiguration.GetValue("ResourcesPlacement")
-	print("Resource placement = "..tostring(resourcePlacement))	
-	local bNoResources = resourcePlacement == "PLACEMENT_EMPTY"
-	
-	local naturalWondersPlacement = MapConfiguration.GetValue("NaturalWondersPlacement")
-	print("Natural Wonders placement = "..tostring(naturalWondersPlacement))	
-	local bImportNaturalWonders = naturalWondersPlacement == "PLACEMENT_IMPORT"
-	local bNoNaturalWonders = naturalWondersPlacement == "PLACEMENT_EMPTY"
-	
-	local continentsPlacement = MapConfiguration.GetValue("ContinentsPlacement")
-	print("Continents naming = "..tostring(continentsPlacement))	
-	local bImportContinents = continentsPlacement == "PLACEMENT_IMPORT"
 
 	-- We'll do importation of Rivers after Natural Wonders placement, as they can create incompatibilities and Resources come after Rivers (in case Rivers are generated instead of imported)
 	-- We do Features now to prevent overriding the NW placement
@@ -3240,11 +3259,6 @@ BuildRefXY()
 	else
 		-- 										(	bDoTerrains, 	bImportRivers, 	bImportFeatures, 	bImportResources, bImportContinents)
 		ImportCiv6Map(MapToConvert, g_iW, g_iH, 	false, 			bImportRivers, 	false, 				bImportResources, bImportContinents)	
-	end
-
-	-- Now that we are certain that rivers were placed we can add features if they were not imported
-	if not (bImportFeatures or bNoFeatures) then
-		AddFeatures()
 	end
 	
 	-- loop on every rivers to apply IDs
@@ -3417,34 +3431,59 @@ BuildRefXY()
 		
 		print("Added ID to "..tostring(riverID).." rivers")
 	end
-	--]]
+	--]]	
+
+	-- Now that we are certain that rivers were placed we can add features if they were not imported
+	if not (bImportFeatures or bNoFeatures) then
+		AddFeatures()
+	end
 	
 	-- Add GS flood plains
-	if TerrainBuilder.GenerateFloodplains then
+	if bExpansion2 then
 		print("Generate Floodplains...")
 
 		-- Remove map current flood plains
+		---[[
+		local tempFloodPlains	= {}
+		local floodPlainID		= GameInfo.Features["FEATURE_FLOODPLAINS"].Index
 		local iW, iH = Map.GetGridSize()
 		for x = 0, iW - 1, 1 do
 			for y = 0, iH - 1, 1 do
 				local plot = Map.GetPlot(x,y)
-				if plot:GetFeatureType() == GameInfo.Features["FEATURE_FLOODPLAINS"].Index then
+				if plot:GetFeatureType() == floodPlainID then
 					TerrainBuilder.SetFeatureType(plot, -1)
+					table.insert(tempFloodPlains, plot)
 				end
 			end
 		end
+		--]]
 		
 		-- Generate GS flood plains
 		local bRiversStartInland	= true
 		local iMinFloodplainSize 	= 2;
 		local iMaxFloodplainSize 	= 10;
 		TerrainBuilder.GenerateFloodplains(bRiversStartInland, iMinFloodplainSize, iMaxFloodplainSize);
+		
+		-- Restore map initial flood plains
+		for _, plot in ipairs(tempFloodPlains) do
+			if plot:GetFeatureType() ~= floodPlainID then
+				TerrainBuilder.SetFeatureType(plot, floodPlainID)
+			end
+		end
 	end
 	
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer before AreaBuilder.Recalculate() = "..tostring(currentTimer).." seconds")
 	
 	AreaBuilder.Recalculate();
+
+	--[[
+	if not WorldBuilder:IsActive() and bAnalyseChokepoints then -- to do : must use an option here, is this added to saved map ? will they work without this ? But it saves a lot of time for editing and exporting terrain data for YnAMP
+		currentTimer = os.clock() - g_startTimer
+		print("Intermediate timer before first call to TerrainBuilder.AnalyzeChokepoints(); = "..tostring(currentTimer).." seconds")
+		TerrainBuilder.AnalyzeChokepoints();
+	end
+	--]]
 	
 	if not bImportContinents then
 		currentTimer = os.clock() - g_startTimer
@@ -3453,8 +3492,12 @@ BuildRefXY()
 	end
 	
 	-- Low lands
-	if MarkCoastalLowlands then
-		MarkCoastalLowlands()
+	if bExpansion2 then
+		if bDeepLowLand then
+			MarkDeepCoastalLowlands()
+		else
+			MarkCoastalLowlands()
+		end
 	end
 	
 	currentTimer = os.clock() - g_startTimer
@@ -3485,13 +3528,11 @@ BuildRefXY()
 	-- The map may require some specific placement...
 	ExtraPlacement()
 	
-	AreaBuilder.Recalculate();
-	
 	-- Analyse Chokepoints after extra placement...
-	currentTimer = os.clock() - g_startTimer
-	print("Intermediate timer before TerrainBuilder.AnalyzeChokepoints() = "..tostring(currentTimer).." seconds")
-	
+	AreaBuilder.Recalculate();	
+	currentTimer = os.clock() - g_startTimer	
 	if not WorldBuilder:IsActive() and bAnalyseChokepoints then -- to do : must use an option here, is this added to saved map ? will they work without this ? But it saves a lot of time for editing and exporting terrain data for YnAMP
+		print("Intermediate timer before second call to TerrainBuilder.AnalyzeChokepoints() = "..tostring(currentTimer).." seconds")
 		TerrainBuilder.AnalyzeChokepoints();
 	else
 		print("Worldbuilder detected, skipping TerrainBuilder.AnalyzeChokepoints()...")
@@ -3575,8 +3616,19 @@ BuildRefXY()
 	-- Restore the original ResourceBuilder.CanHaveResource
 	ResourceBuilder.CanHaveResource = ResourceBuilder.OldCanHaveResource
 	
+	--[[
+	-- ...
+	currentTimer = os.clock() - g_startTimer
+	if not WorldBuilder:IsActive() and bAnalyseChokepoints then -- to do : must use an option here, is this added to saved map ? will they work without this ? But it saves a lot of time for editing and exporting terrain data for YnAMP
+		print("Intermediate timer before third call to TerrainBuilder.AnalyzeChokepoints() = "..tostring(currentTimer).." seconds")
+		AreaBuilder.Recalculate();
+		TerrainBuilder.AnalyzeChokepoints();
+	end
+	--]]
+	
 	print("Total time for Map creation = "..tostring(totalTimer).." seconds")
 end
+
 
 -------------------------------------------------------------------------------
 -- Find backup starting positions if the game's start positioner as failed
@@ -3835,6 +3887,7 @@ function GetBestStartingPlotFromList(plots, bIsMinor)
 
 	return nil;
 end
+
 
 -------------------------------------------------------------------------------
 -- Features & Extra placement
@@ -4166,6 +4219,11 @@ function AddFeatures()
 	local featuregen = FeatureGenerator.Create(args);
 
 	featuregen:AddFeatures(true, true);
+	
+	if bExpansion2 then
+		print("Adding Features from Continents");
+		featuregen:AddFeaturesFromContinents();
+	end
 end
 
 function ExtraPlacement()
@@ -4194,11 +4252,26 @@ function ExtraPlacement()
 				end
 			end
 			
+			-- The placement may require a specific ruleset
+			if row.RuleSet then
+				if GameConfiguration.GetValue("RULESET") ~= row.RuleSet then
+					bDoPlacement = false
+				end
+			end
+			
+			-- Existing Features can prevent placement (custom NW for example)
+			if row.DisabledByFeature then
+				if GameInfo.Features[row.DisabledByFeature] then
+					bDoPlacement = false
+				end
+			end
+			
 			if bDoPlacement then
 				local terrainType 	= row.TerrainType
 				local featureType 	= row.FeatureType
 				local resourceType	= row.ResourceType
 				local quantity 		= row.Quantity
+				local iElevation	= row.Elevation
 				local x, y 			= GetXYFromRefMapXY(row.X, row.Y)
 				local plot 			= Map.GetPlot(x,y)
 				
@@ -4227,6 +4300,15 @@ function ExtraPlacement()
 							ResourceBuilder.SetResourceType(plot, -1)						
 						end
 					end
+					if bExpansion2 and iElevation then
+						if iElevation >= 0 and iElevation < 3 then
+							print("- Trying to set lowland elevation at ".. tostring(iElevation+1).. "m at " .. tostring(x) ..",".. tostring(y))
+							TerrainBuilder.AddCoastalLowland(plot:GetIndex(), iElevation)
+						else
+							print("- Removing current lowland setting at " .. tostring(x) ..",".. tostring(y))
+							TerrainBuilder.AddCoastalLowland(plot:GetIndex(), -1)
+						end
+					end
 				else
 					print("- WARNING, plot is nil at " .. tostring(x) ..",".. tostring(y))
 				end
@@ -4240,6 +4322,102 @@ function RemoveCliffs(plot)
 	TerrainBuilder.SetNWOfCliff(plot, false)
 	TerrainBuilder.SetNEOfCliff(plot, false)
 end
+
+function MarkDeepCoastalLowlands()
+
+	-- Sea rising level can reach further in land, following flatlands
+	
+	print("YnAMP - Deep Coastal Lowlands");
+	
+	function IsEOfCliff(plot)
+		local pAdjacentPlot = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), DirectionTypes.DIRECTION_WEST)
+		if pAdjacentPlot and pAdjacentPlot:IsWOfCliff() then return true end
+		return false
+	end
+
+	function IsSEOfCliff(plot)
+		local pAdjacentPlot = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), DirectionTypes.DIRECTION_NORTHWEST)
+		if pAdjacentPlot and pAdjacentPlot:IsNWOfCliff() then return true end
+		return false
+	end
+
+	function IsSWOfCliff(plot)
+		local pAdjacentPlot = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), DirectionTypes.DIRECTION_NORTHEAST)
+		if pAdjacentPlot and pAdjacentPlot:IsNEOfCliff() then return true end
+		return false
+	end
+
+	function IsCliff(plot)
+		return (IsSWOfCliff(plot)) 
+			or (plot:IsWOfCliff())
+			or (plot:IsNWOfCliff())
+			or (plot:IsNEOfCliff())
+			or (IsEOfCliff(plot))
+			or (IsSEOfCliff(plot))
+	end
+
+	local level1Plots	= {}
+	local level2Plots	= {}
+
+	-- mark level 1 plots
+	local iElevation = 0
+	for iX = 0, g_iW - 1 do
+		for iY = 0, g_iH - 1 do
+			local index = (iY * g_iW) + iX;
+			pPlot = Map.GetPlotByIndex(index)
+			local fertility = GetPlotFertility(pPlot)
+			if pPlot:IsFlatlands() and pPlot:IsCoastalLand() and not IsCliff(pPlot) then
+				TerrainBuilder.AddCoastalLowland(index, iElevation)
+				level1Plots[pPlot] =  true
+			end
+		end
+	end
+	
+	-- mark level 2 plots
+	local iElevation = 1
+	for pPlot, _ in pairs(level1Plots) do
+		for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+			local adjacentPlot = Map.GetAdjacentPlot(pPlot:GetX(), pPlot:GetY(), direction);
+			if adjacentPlot ~= nil and adjacentPlot:IsFlatlands() and (not (level1Plots[adjacentPlot] or level2Plots[adjacentPlot])) then
+				TerrainBuilder.AddCoastalLowland(adjacentPlot:GetIndex(), iElevation)
+				level2Plots[adjacentPlot] =  true
+			end
+		end
+	end
+	
+	-- mark level 3 plots
+	local iElevation = 2
+	for pPlot, _ in pairs(level2Plots) do
+		for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+			local adjacentPlot = Map.GetAdjacentPlot(pPlot:GetX(), pPlot:GetY(), direction);
+			if adjacentPlot ~= nil and adjacentPlot:IsFlatlands() and (not (level1Plots[adjacentPlot] or level2Plots[adjacentPlot])) then
+				TerrainBuilder.AddCoastalLowland(adjacentPlot:GetIndex(), iElevation)
+			end
+		end
+	end
+end
+
+
+------------------------------------------------------------------------------
+-- Map Options
+------------------------------------------------------------------------------
+function YnAMP_ApplySharedMapOptions()
+	
+	-- Remove ice near land for navigation
+	local bNoIceAdjacentToLand = MapConfiguration.GetValue("NoIceAdjacentToLand");
+	if bNoIceAdjacentToLand then
+		print("Removing Ice adjacent to Land...")
+		local g_iW, g_iH = Map.GetGridSize()
+		for i = 0, (g_iW * g_iH) - 1, 1 do
+			plot = Map.GetPlotByIndex(i)
+			if plot:IsAdjacentToLand() and plot:GetFeatureType() == g_FEATURE_ICE then
+				TerrainBuilder.SetFeatureType(plot, -1);
+			end
+		end
+	end
+end
+
+
 ------------------------------------------------------------------------------
 -- Resources
 ------------------------------------------------------------------------------
@@ -4459,7 +4637,6 @@ function AddStartingLocationResources()
 	bStartinglocationResourcesAdded = true
 	print("-------------------------------")
 end
-
 
 function ResourcesValidation(g_iW, g_iH)
 
@@ -5280,10 +5457,63 @@ function SetTrueStartingLocations()
 	end	
 end
 
+function SetOceanStartingLocation()
+	print ("-------------------------------------------------------")
+	print ("Checking Ocean Starting Location...")
+
+	local oceanStart = {}
+	local g_iW, g_iH = Map.GetGridSize()
+	
+	for i = 0, (g_iW * g_iH) - 1, 1 do
+		local plot = Map.GetPlotByIndex(i)
+		if plot:IsWater() then
+			local landPlot			= plot:GetNearestLandPlot()
+			local iMinLandDistance	= 5
+			local iMinDistFromPole	= g_iH / 4
+			if(Map.GetPlotDistance(i, landPlot:GetIndex()) >= iMinLandDistance) then
+				if plot:GetY() > iMinDistFromPole and  plot:GetY() < (g_iH - iMinDistFromPole) then
+					table.insert(oceanStart, i)
+				end
+			end
+		end
+	end
+	print ("Found "..tostring(#oceanStart).." potential Ocean Starting Locations")
+	
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		local player 			= Players[iPlayer]
+		local LeaderTypeName	= PlayerConfigurations[iPlayer]:GetLeaderTypeName()
+		if (GameInfo.Leaders_XP2 and GameInfo.Leaders_XP2[LeaderTypeName] ~= nil and GameInfo.Leaders_XP2[LeaderTypeName].OceanStart == true) then
+			local startingPlot 	= player:GetStartingPlot()
+			print ("- "..tostring(LeaderTypeName).." at "..tostring(startingPlot:GetX())..","..tostring(startingPlot:GetY()))
+			local bestPlot		= nil
+			local bestDistance	= 999
+			for _, plotId in ipairs(oceanStart) do
+				local distance = Map.GetPlotDistance(plotId, startingPlot:GetIndex())
+				if(distance < bestDistance) then
+					bestDistance 	= distance
+					bestPlot		= Map.GetPlotByIndex(plotId)
+				end
+			end
+			if bestPlot then
+				player:SetStartingPlot(bestPlot)
+				IsOceanStart[iPlayer]	= true
+				print ("   - Water Starting Position found at "..tostring(bestPlot:GetX())..","..tostring(bestPlot:GetY()))
+			else
+				print ("WARNING ! Can't find a water Starting Position")
+			end
+		end
+	end
+end
+
+
 function YnAMP_StartPositions()
 
 	if bTSL then
 		SetTrueStartingLocations()	
+	end
+	
+	if bExpansion2 and not bTSL then
+		SetOceanStartingLocation()
 	end
 	
 	if bCulturallyLinked then
@@ -5462,38 +5692,40 @@ function CulturallyLinkedCivilizations(bForcePlacement)
 		print ("------------------------------------------------------- ")
 		print ("Brute Force Pass num = " .. tostring(try) )
 		for _, player_ID in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
-			local player = Players[player_ID]
-			local playerConfig = PlayerConfigurations[player_ID]
-			print ("------------------------------------------------------- ")
-			print ("Testing " .. tostring(playerConfig:GetPlayerName()) )
-			local culture = GameInfo.Civilizations[playerConfig:GetCivilizationTypeID()].Ethnicity or "ETHNICITY_EURO"
-			for _, player_ID2 in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do	
-				--print ("in loop 2")
-				if player_ID ~= player_ID2 then
-					local player2 = Players[player_ID2]
-					local playerConfig2 = PlayerConfigurations[player_ID2]
-					local culture2 = GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity or "ETHNICITY_EURO"
-					if culture ~= culture2 then -- don't try to swith civs from same culture style, we can gain better score from different culture only...
-						--print ("culture ~= culture2")
-						local startPlot1 = player:GetStartingPlot()
-						local startPlot2 = player2:GetStartingPlot()					
-						if startPlot1 and startPlot2 then
-							--print ("------------------------------------------------------- ")
-							--print ("trying to switch " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) )	
-							player:SetStartingPlot(startPlot2)
-							player2:SetStartingPlot(startPlot1)
-							local actualdistanceScore = CalculateDistanceScore(cultureList, false)--, player_ID, player_ID2)
-							if  actualdistanceScore < bestDistanceScore then
+			if not IsOceanStart[player_ID] then
+				local player = Players[player_ID]
+				local playerConfig = PlayerConfigurations[player_ID]
+				print ("------------------------------------------------------- ")
+				print ("Testing " .. tostring(playerConfig:GetPlayerName()) )
+				local culture = GameInfo.Civilizations[playerConfig:GetCivilizationTypeID()].Ethnicity or "ETHNICITY_EURO"
+				for _, player_ID2 in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do	
+					--print ("in loop 2")
+					if player_ID ~= player_ID2 and not IsOceanStart[player_ID2] then
+						local player2 = Players[player_ID2]
+						local playerConfig2 = PlayerConfigurations[player_ID2]
+						local culture2 = GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity or "ETHNICITY_EURO"
+						if culture ~= culture2 then -- don't try to swith civs from same culture style, we can gain better score from different culture only...
+							--print ("culture ~= culture2")
+							local startPlot1 = player:GetStartingPlot()
+							local startPlot2 = player2:GetStartingPlot()					
+							if startPlot1 and startPlot2 then
 								--print ("------------------------------------------------------- ")
-								--print ("Better score, confirming switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) .. " at new best score = " .. tostring(actualdistanceScore) )
-								print ("Better score, switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) .. " at new best score = " .. tostring(actualdistanceScore) )
-								bestDistanceScore = actualdistanceScore
-							else
-								--print ("------------------------------------------------------- ")
-								--print ("No gain, restoring position of " .. tostring(playerConfig:GetPlayerName()) .. " and " .. tostring(playerConfig2:GetPlayerName()) .. " at current best score = " .. tostring(bestDistanceScore) )
-								--print ("No gain, keeping position of " .. tostring(playerConfig:GetPlayerName()) .. " and " .. tostring(playerConfig2:GetPlayerName()) .. " at score = "..tostring(actualdistanceScore)..", current best score = " .. tostring(bestDistanceScore) )	
-								player:SetStartingPlot(startPlot1)
-								player2:SetStartingPlot(startPlot2)
+								--print ("trying to switch " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) )	
+								player:SetStartingPlot(startPlot2)
+								player2:SetStartingPlot(startPlot1)
+								local actualdistanceScore = CalculateDistanceScore(cultureList, false)--, player_ID, player_ID2)
+								if  actualdistanceScore < bestDistanceScore then
+									--print ("------------------------------------------------------- ")
+									--print ("Better score, confirming switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) .. " at new best score = " .. tostring(actualdistanceScore) )
+									print ("Better score, switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) .. " at new best score = " .. tostring(actualdistanceScore) )
+									bestDistanceScore = actualdistanceScore
+								else
+									--print ("------------------------------------------------------- ")
+									--print ("No gain, restoring position of " .. tostring(playerConfig:GetPlayerName()) .. " and " .. tostring(playerConfig2:GetPlayerName()) .. " at current best score = " .. tostring(bestDistanceScore) )
+									--print ("No gain, keeping position of " .. tostring(playerConfig:GetPlayerName()) .. " and " .. tostring(playerConfig2:GetPlayerName()) .. " at score = "..tostring(actualdistanceScore)..", current best score = " .. tostring(bestDistanceScore) )	
+									player:SetStartingPlot(startPlot1)
+									player2:SetStartingPlot(startPlot2)
+								end
 							end
 						end
 					end

@@ -1,0 +1,18 @@
+<GameInfo>
+	
+	<Maps_XP2>	
+		<Replace MapSizeType="MAPSIZE_SMALL21" 		CO2For1DegreeTempRise="1500000"	DesertPlotCountToLabel="4"	MountainPlotCountToLabel="3"	/>
+		<Replace MapSizeType="MAPSIZE_STANDARD21" 	CO2For1DegreeTempRise="2000000"	DesertPlotCountToLabel="4"	MountainPlotCountToLabel="3"	/>
+		<Replace MapSizeType="MAPSIZE_LARGE21" 		CO2For1DegreeTempRise="2500000"	DesertPlotCountToLabel="5"	MountainPlotCountToLabel="3"	/>
+		<Replace MapSizeType="MAPSIZE_HUGE21" 		CO2For1DegreeTempRise="3000000"	DesertPlotCountToLabel="5"	MountainPlotCountToLabel="3"	/>
+		<Replace MapSizeType="MAPSIZE_ENORMOUS" 	CO2For1DegreeTempRise="3500000"	DesertPlotCountToLabel="5"	MountainPlotCountToLabel="3"	/>
+		<Replace MapSizeType="MAPSIZE_ENORMOUS21" 	CO2For1DegreeTempRise="3500000"	DesertPlotCountToLabel="5"	MountainPlotCountToLabel="3"	/>
+		<Replace MapSizeType="MAPSIZE_GIANT" 		CO2For1DegreeTempRise="4000000"	DesertPlotCountToLabel="5"	MountainPlotCountToLabel="3"	/>
+		<Replace MapSizeType="MAPSIZE_LUDICROUS" 	CO2For1DegreeTempRise="4500000"	DesertPlotCountToLabel="5"	MountainPlotCountToLabel="3"	/>
+		<Replace MapSizeType="MAPSIZE_OVERSIZED" 	CO2For1DegreeTempRise="4500000"	DesertPlotCountToLabel="5"	MountainPlotCountToLabel="3"	/>
+		<!--
+		<Replace MapSizeType="MAPSIZE_MAX" 			Name="LOC_MAPSIZE_MAX_NAME" 		Description="LOC_MAPSIZE_MAX_DESCRIPTION" 			DefaultPlayers="23" GridWidth="202" GridHeight="101" NumNaturalWonders="16" PlateValue="7" Continents="8"/>
+		-->
+	</Maps_XP2>
+
+</GameInfo>

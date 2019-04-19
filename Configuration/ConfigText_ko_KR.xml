@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+  
+	<!-- Replacing -->
+	
+    <Replace Tag="LOC_MAP_RESOURCES_NAME" Language="ko_KR">
+      <Text>자원량</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_START_POSITION_NAME" Language="ko_KR">
+      <Text>시작 지점 밸런스</Text>
+    </Replace>
+	
+	<!-- New entries -->
+    
+	<Replace Tag="LOC_YNAGEM_NAME" Language="ko_KR">
+      <Text>[COLOR_RED]거대한 지구[ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_DESC" Language="ko_KR">
+      <Text>Genghis Kai의 거대한 지구 맵 (Hormigas 버전) (180x94 - 거대함)[NEWLINE][ICON_Exclamation] [COLOR_RED]후반에 게임이 매우 불안정 할 수 있습니다[ENDCOLOR][NEWLINE]튕김 및 충돌 방지를 위해 그래픽 옵션을 낮추세요.[NEWLINE]6+ GB 이상의 VRAM 사양이 요구됩니다</Text>
+    </Replace>
+    <Replace Tag="LOC_GREATESTEARTH_NAME" Language="ko_KR">
+      <Text>최대 크기의 지구 지도</Text>
+    </Replace>
+    <Replace Tag="LOC_GREATESTEARTH_DESC" Language="ko_KR">
+      <Text>djvandyke의 최대 크기 지구 지도 (104x64 - Large)</Text>
+    </Replace>
+    <Replace Tag="LOC_PLAYEUROPEAGAIN_NAME" Language="ko_KR">
+      <Text>다시 유럽으로 플레이</Text>
+    </Replace>
+    <Replace Tag="LOC_PLAYEUROPEAGAIN_DESC" Language="ko_KR">
+      <Text>NiRv4n4의 유럽(Hormigas 버전) (108x98 - 초대형)</Text>
+    </Replace>
+	<Replace Tag="LOC_LARGE_EUROPE_NAME" Language="ko_KR">
+      <Text>대형 유럽</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGE_EUROPE_DESC" Language="ko_KR">
+      <Text>Dieter VonClam의 대형 유럽 (79x73 - 대형)</Text>
+    </Replace>
+    <Replace Tag="LOC_TERRAMAP_NAME" Language="ko_KR">
+      <Text>YnAMP 테라 지도</Text>
+    </Replace>
+    <Replace Tag="LOC_TERRAMAP_DESC" Language="ko_KR">
+      <Text>확장된 지구를 기반으로 사용자 정의 대륙 배치가 가능한 지도입니다.</Text>
+    </Replace>
+	<Replace Tag="LOC_LARGESTEARTHCUSTOM_NAME" Language="ko_KR">
+      <Text>[COLOR_RED]최대 크기의 커스텀 지구[ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGESTEARTHCUSTOM_DESC" Language="ko_KR">
+      <Text>최대 크기의 커스텀 지구 지도입니다 (230x116 - 터무니 없는)[NEWLINE][ICON_Exclamation] [COLOR_RED]최대 크기로 실행시킬 경우 게임이 매우 불안정할 것입니다[ENDCOLOR][NEWLINE]커스텀 옵션을 사용해 게임을 지도의 특정 지역에 국한시키세요.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Language="ko_KR">
+      <Text>문명 배치</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_DESCRIPTION" Language="ko_KR">
+      <Text>지도 상에 문명들을 어떻게 배치할 것인가를 결정합니다</Text>
+    </Replace>
+    <Replace Tag="LOC_CULTURALLY_LINKED_START_NAME" Language="ko_KR">
+      <Text>시작 지점 연결</Text>
+    </Replace>
+    <Replace Tag="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Language="ko_KR">
+      <Text>문화적으로 연결된 시작 지점</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_NAME" Language="ko_KR">
+      <Text>무작위</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_DESCRIPTION" Language="ko_KR">
+      <Text>민족성에 따른 문명의 재편성을 금지</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_NAME" Language="ko_KR">
+      <Text>문화적</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_DESCRIPTION" Language="ko_KR">
+      <Text>민족성에 따라 문명들의 시작 지점을 재편성함</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS_NAME" Language="ko_KR">
+      <Text>특대형</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" Language="ko_KR">
+      <Text>16인의 플레이어를 위한 특대형 지도입니다 (128x80)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_GIANT_NAME" Language="ko_KR">
+      <Text>[COLOR_RED]거대함[ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_GIANT_DESCRIPTION" Language="ko_KR">
+      <Text>20명 이상의 플레이어를 위한 거대한 지도입니다 (184x92)[NEWLINE][ICON_Exclamation] [COLOR_RED]후반에 게임이 매우 불안정 할 수 있습니다[ENDCOLOR][NEWLINE]튕김 및 충돌 방지를 위해 그래픽 옵션을 낮추세요.[NEWLINE]6+ GB 이상의 VRAM 사양이 요구됩니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LUDICROUS_NAME" Language="ko_KR">
+      <Text>터무니 없는</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" Language="ko_KR">
+      <Text>당신의 컴퓨터가 이걸 로드하다 터지나 안 터지나 시험 해보시겠습니까? (200x100)[NEWLINE][ICON_Exclamation] [COLOR_RED]후반에 게임이 매우 불안정 할 수 있습니다[ENDCOLOR][NEWLINE]튕김 및 충돌 방지를 위해 그래픽 옵션을 낮추세요.[NEWLINE]8+ GB 이상의 VRAM 사양이 요구됩니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_MAX_NAME" Language="ko_KR">
+      <Text>최대한도</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_MAX_DESCRIPTION" Language="ko_KR">
+      <Text>제 PC에서 돌아가는 최대 사이즈입니다! (i7 4770K + MSI GTX 1080 Ti + 16GB Ram) (215x112)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAPSIZE_SMALL21_NAME" Language="ko_KR">
+      <Text>소형 (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_SMALL21_DESCRIPTION" Language="ko_KR">
+      <Text>6인의 플레이어를 위한 소형 지도입니다 (84x42)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_STANDARD21_NAME" Language="ko_KR">
+      <Text>중형 (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_STANDARD21_DESCRIPTION" Language="ko_KR">
+      <Text>8인의 플레이어를 위한 중형 지도입니다 (96x48)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LARGE21_NAME" Language="ko_KR">
+      <Text>대형 (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LARGE21_DESCRIPTION" Language="ko_KR">
+      <Text>10인의 플레이어를 위한 대형 지도입니다 (108x54)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_HUGE21_NAME" Language="ko_KR">
+      <Text>초대형 (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_HUGE21_DESCRIPTION" Language="ko_KR">
+      <Text>12인의 플레이어를 위한 초대형 지도입니다 (120x60)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS21_NAME" Language="ko_KR">
+      <Text>특대형 (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS21_DESCRIPTION" Language="ko_KR">
+      <Text>16인의 플레이어를 위한 특대형 지도입니다 (148x74)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_NAME" Language="ko_KR">
+      <Text>자원 배치</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Language="ko_KR">
+      <Text>지도 상 자원이 어떻게 배치될 것인가를 정합니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_NAME" Language="ko_KR">
+      <Text>지도 생성기</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" Language="ko_KR">
+      <Text>문명6의 지도 생성기를 이용해 자원들을 배치합니다 (무작위)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_NAME" Language="ko_KR">
+      <Text>불러오기</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_DESCRIPTION" Language="ko_KR">
+      <Text>자원 위치를 원본 지도 데이터에서 불러옵니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_NAME" Language="ko_KR">
+      <Text>자원 제외 지역</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" Language="ko_KR">
+      <Text>일부 자원들이 지도에 미리 정의된 영역에만 배치됩니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_NAME" Language="ko_KR">
+      <Text>실제 지구의 매장위치</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_DESCRIPTION" Language="ko_KR">
+      <Text>몇몇 자원들은 현실의 지구 지역에서 발견되는 위치에만 배치될 것입니다</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_ACTIVATED_NAME" Language="ko_KR">
+      <Text>활성화됨</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_DEACTIVATED_NAME" Language="ko_KR">
+      <Text>비활성화됨</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_NAME" Language="ko_KR">
+      <Text>문명 자원</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" Language="ko_KR">
+      <Text>특정한 문명의 시작 지점에 특정한 자원을 배치합니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALL_LUXURIES_NAME" Language="ko_KR">
+      <Text>모든 사치 자원 배치</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALL_LUXURIES_DESCRIPTION" Language="ko_KR">
+      <Text>지도 상에 최소한의 몇 개 이상의 모든 사치 자원을 배치합니다</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_NAME" Language="ko_KR">
+      <Text>지형 배치</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Language="ko_KR">
+      <Text>지형이 (숲, 열대우림, ...) 지도상에 어떻게 배치될 것이냐를 정합니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_NAME" Language="ko_KR">
+      <Text>지도 생성기</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_DESCRIPTION" Language="ko_KR">
+      <Text>문명6의 지도 생성기를 이용해 지형들을 배치합니다 (무작위)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_NAME" Language="ko_KR">
+      <Text>불러오기</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_DESCRIPTION" Language="ko_KR">
+      <Text>지형 위치를 원본 지도 데이터에서 불러옵니다</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_NAME" Language="ko_KR">
+      <Text>지도 생성기</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_DESCRIPTION" Language="ko_KR">
+      <Text>문명6의 지도 생성기를 이용해 문명들을 배치합니다 (무작위)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_NAME" Language="ko_KR">
+      <Text>실제 시작 지점</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_DESCRIPTION" Language="ko_KR">
+      <Text>가능한 한 문명들을 실제 지구의 위치에 배치될 것입니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_OLD_WORLD_NAME" Language="ko_KR">
+      <Text>지도 생성기 (구대륙)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_OLD_WORLD_DESCRIPTION" Language="ko_KR">
+      <Text>문명들을 구대륙에만 배치할 것입니다.</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_ALLOW_NW_CS_NAME" Language="ko_KR">
+      <Text>신대륙에 도시 국가들을 허용</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_NAME" Language="ko_KR">
+      <Text>대륙 배치</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_DESCRIPTION" Language="ko_KR">
+      <Text>대륙이 지도상에 어떻게 배치될 것이냐를 결정합니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_NAME" Language="ko_KR">
+      <Text>지도 생성기</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_DESCRIPTION" Language="ko_KR">
+      <Text>문명6의 지도 생성기를 이용해 대륙들을 배치합니다 (무작위 이름)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_NAME" Language="ko_KR">
+      <Text>불러오기</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_DESCRIPTION" Language="ko_KR">
+      <Text>대륙 이름들을 원본 지도 데이터에서 불러옵니다</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CONTINENT_MODEL_NAME" Language="ko_KR">
+      <Text>대륙 모델</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_MODEL_DESCRIPTION" Language="ko_KR">
+      <Text>사용할 대륙 모델을 선택합니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SEVEN_CONTINENT_NAME" Language="ko_KR">
+      <Text>7 대륙</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SEVEN_CONTINENT_DESCRIPTION" Language="ko_KR">
+      <Text>7 대륙의 모델입니다 (아프리카, 아시아, 유럽, 북아메리카, 남아메리카, 남극, 오세아니아)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SUBCONTINENT_NAME" Language="ko_KR">
+      <Text>아대륙 및 지역들</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SUBCONTINENT_DESCRIPTION" Language="ko_KR">
+      <Text>다수의 아대륙과 지역들을 지정합니다</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_NAME" Language="ko_KR">
+      <Text>강 배치</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DESCRIPTION" Language="ko_KR">
+      <Text>강이 지도상에 어떻게 배치될 것이냐를 결정합니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_NAME" Language="ko_KR">
+      <Text>지도 생성기</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="ko_KR">
+      <Text>문명6의 지도 생성기를 이용해 강을 배치합니다 (무작위)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_NAME" Language="ko_KR">
+      <Text>불러오기</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_DESCRIPTION" Language="ko_KR">
+      <Text>강 위치를 원본 지도 데이터에서 불러옵니다</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_NAME" Language="ko_KR">
+      <Text>자연 불가사의 배치</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DESCRIPTION" Language="ko_KR">
+      <Text>자연 불가사의가 지도상에 어떻게 배치될 것이냐를 결정합니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_NAME" Language="ko_KR">
+      <Text>지도 생성기</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="ko_KR">
+      <Text>문명6의 지도 생성기를 이용해 자연 불가사의들을 배치합니다 (무작위)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_NAME" Language="ko_KR">
+      <Text>불러오기</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_DESCRIPTION" Language="ko_KR">
+      <Text>자연 불가사의들의 위치를 원본 지도 데이터에서 불러옵니다</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_NAME" Language="ko_KR">
+      <Text>없음</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" Language="ko_KR">
+      <Text>배치하지 않습니다</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CLOSED_BOSPHORUS_NAME" Language="ko_KR">
+      <Text>보스포러스 해협 닫기</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MONT_SAINT_MICHEL_MARSH_NAME" Language="ko_KR">
+      <Text>몽생미셸 수도원을 위한 습지 배치</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_STONEHENGE_STONE_NAME" Language="ko_KR">
+      <Text>스톤헨지를 위한 석재 배치</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ARTEMIS_TEMPLE_DEER_NAME" Language="ko_KR">
+      <Text>아르테미스 사원을 위한 사슴 배치</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_GREAT_ZIMBABWE_CATTLE_NAME" Language="ko_KR">
+      <Text>그레이트 짐바브웨를 위한 소 배치</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_JEBEL_BARKAL_HILLS_NAME" Language="ko_KR">
+      <Text>게벨 바르칼을 위해 범람원들을 사막 언덕들로 교체</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Language="ko_KR">
+      <Text>대륙 근처에 빙하 없음 (항해 탐험에 도움이 됩니다)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NO_CITY_STATE_NAME" Language="ko_KR">
+      <Text>도시 국가 없음</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_FORCE_TSL_NAME" Language="ko_KR">
+      <Text>강제적 실제 시작 지점 적용</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_DESCRIPTION" Language="ko_KR">
+      <Text>첫 개척자가 실제 시작 지점에 곧바로 도시를 건설합니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_OFF" Language="ko_KR">
+      <Text>해제</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_OFF_DESCRIPTION" Language="ko_KR">
+      <Text>첫 개척자가 도시를 건설하기 전 자유롭게 주변을 돌아다닐 수 있습니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_CS" Language="ko_KR">
+      <Text>도시 국가</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_CS_DESCRIPTION" Language="ko_KR">
+      <Text>도시 국가의 개척자들이 실제 시작 지점에 곧바로 도시를 건설합니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_AI" Language="ko_KR">
+      <Text>인공지능(A.I.)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_AI_DESCRIPTION" Language="ko_KR">
+      <Text>인공지능의 (문명 및 도시 국가) 첫 개척자들이 실제 시작 지점에 도시를 건설합니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_ALL" Language="ko_KR">
+      <Text>모두</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_ALL_DESCRIPTION" Language="ko_KR">
+      <Text>모든 첫 개척자들이 (인간 플레이어를 포함) 실제 시작 지점에 도시를 건설합니다</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_AUTO_CITY_NAMING_NAME" Language="ko_KR">
+      <Text>실제 도시 이름 명명</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ONLY_GENERIC_CITY_NAMES_NAME" Language="ko_KR">
+      <Text>생성된 도시 이름만을 사용합니다</Text>
+    </Replace>	
+	
+	<Replace Tag="LOC_MAP_LEADER_TSL_NAME" Language="ko_KR">
+      <Text>이용가능할 때 지도자들의 실제 시작 지점을 사용합니다</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ALTERNATE_TSL_NAME" Language="ko_KR">
+      <Text>필요하고, 가능한 시점에 대체 실제 시작 지점을 사용합니다</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ALTERNATE_PLACEMENT_NAME" Language="ko_KR">
+      <Text>실제 시작 지점 없이 무작위로 문명들을 배치합니다</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_HISTORICAL_SPAWN_NAME" Language="ko_KR">
+      <Text>역사적 출현 시기들 적용</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_TURNS_BEFORE_BARBARIANS_NAME" Language="ko_KR">
+      <Text>야만인 정찰병 턴</Text>
+    </Replace>
+    <Replace Tag="LOC_TURNS_BEFORE_BARBARIANS_DESCRIPTION" Language="ko_KR">
+      <Text>야만인 정찰병들이 처음 등장하기 전까지의 최소 턴 수를 결정합니다</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_REFERENCE_DB_NAME" Language="en_US">
+      <Text>참조 데이터베이스</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIANT_DB_NAME" Language="en_US">
+      <Text>거대한 지구 데이터베이스</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LARGESTEARTH_DB_NAME" Language="en_US">
+      <Text>최대 크기 지구 데이터베이스</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIANT_DB_DESCRIPTION" Language="en_US">
+      <Text>거대한 지구용 데이터베이스를 사용해 도시명, 문명 TSL 좌표, 신대륙 위치등을 불러옵니다 ...[NEWLINE]위치가 덜 정확하나, 훨씬 많은 데이터 양을 자랑합니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LARGESTEARTH_DB_DESCRIPTION" Language="en_US">
+      <Text>최대 크기 지구용 데이터베이스를 사용합니다[NEWLINE]좌표등의 배치가 완벽하지만, 데이터량이 훨씬 적습니다.</Text>
+    </Replace>
+	
+	<!--
+    <Replace Tag="LOC_MAP_LANDMASS_OVERLAY_NAME" Language="ko_KR">
+      <Text>Randomized Landmass</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LANDMASS_OVERLAY_DESCRIPTION" Language="ko_KR">
+      <Text>To generate Landmasses placed over real Earth continents position (randomize coastline)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_EARTH_LANDMASS_NAME" Language="ko_KR">
+      <Text>Use Base Earth</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EARTH_LANDMASS_DESCRIPTION" Language="ko_KR">
+      <Text>Real Earth continents shape the landmasses (scaled down to map size)</Text>
+    </Replace>
+	-->
+	
+    <Replace Tag="LOC_MAP_MAP_SHAPE_NAME" Language="ko_KR">
+      <Text>지도 형태</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MAP_SHAPE_DESCRIPTION" Language="ko_KR">
+      <Text>테라 지도가 어떤 모습으로 형성될지를 결정합니다</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_EARTH_ONLY_NAME" Language="ko_KR">
+      <Text>지구 형태의 대륙</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EARTH_ONLY_DESCRIPTION" Language="ko_KR">
+      <Text>대륙들이 실제 지구 대륙들의 형태로 배치됩니다</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_EARTH_RNG_NAME" Language="ko_KR">
+      <Text>무작위 해안선을 가진 지구</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EARTH_RNG_DESCRIPTION" Language="ko_KR">
+      <Text>대륙들이 실제 지구의 형태를 취할 것이나, 해안선 형태가 무작위로 형성될 것입니다.</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_2CONTINENTS_NAME" Language="ko_KR">
+      <Text>두 개의 대륙 >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_2CONTINENTS_DESCRIPTION" Language="ko_KR">
+      <Text>두개의 육지가 분리된 지역에서 생성됩니다: 구대륙과 신대륙. (추가적 설정 가능)</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_MULTIPLE_CONTINENT_NAME" Language="ko_KR">
+      <Text>다수의 대륙 >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MULTIPLE_CONTINENT_DESCRIPTION" Language="ko_KR">
+      <Text>다수의 대륙들이 실제 지구의 대륙들에 대응하는 위치에서 생성됩니다. (추가적 설정 가능)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_OLD_WORLD_SHAPE_NAME" Language="ko_KR">
+      <Text>구대륙 형태</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_OLD_WORLD_DESCRIPTION" Language="ko_KR">
+      <Text>구대륙의 형태를 어떻게 할 것인지 결정합니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NEW_WORLD_SHAPE_NAME" Language="ko_KR">
+      <Text>신대륙 형태</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NEW_WORLD_DESCRIPTION" Language="ko_KR">
+      <Text>신대륙의 형태를 어떻게 할 것인지 결정합니다</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_PANGEA_NAME" Language="ko_KR">
+      <Text>판게아</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PANGEA_DESCRIPTION" Language="ko_KR">
+      <Text>하나의 거대한 땅덩이입니다</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CONTINENT_NAME" Language="ko_KR">
+      <Text>대륙</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_DESCRIPTION" Language="ko_KR">
+      <Text>하나의 대륙이 보다 작은 분리된 섬들과 출현합니다</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SMALL_CONTINENT_NAME" Language="ko_KR">
+      <Text>작은 대륙</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SMALL_CONTINENT_DESCRIPTION" Language="ko_KR">
+      <Text>작은 대륙이 보다 작고 분리된 섬들과 출현합니다</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_LARGE_ISLANDS_NAME" Language="ko_KR">
+      <Text>대형 군도</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LARGE_ISLANDS_DESCRIPTION" Language="ko_KR">
+      <Text>큰 섬들의 모임입니다</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_ISLANDS_NAME" Language="ko_KR">
+      <Text>군도</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ISLANDS_DESCRIPTION" Language="ko_KR">
+      <Text>섬들의 모임입니다</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SMALL_ISLANDS_NAME" Language="ko_KR">
+      <Text>소형 군도</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SMALL_ISLANDS_DESCRIPTION" Language="ko_KR">
+      <Text>작은 섬들의 모임입니다</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SEA_NAME" Language="ko_KR">
+      <Text>대양</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SEA_DESCRIPTION" Language="ko_KR">
+      <Text>고립된 작은 섬들입니다</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_RANDOM_NAME" Language="ko_KR">
+      <Text>무작위 대륙</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RANDOM_DESCRIPTION" Language="ko_KR">
+      <Text>위의 대륙 설정 중 하나를 따릅니다 (하지만 실제 지구는 선택되지 않습니다)</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_RANDOM_VALUES_NAME" Language="ko_KR">
+      <Text>무작위 수치 설정</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RANDOM_VALUES_DESCRIPTION" Language="ko_KR">
+      <Text>아무 수치나 변경할 수 있습니다 (이는 아무것도 안 하는것도 포함됩니다.)</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CUSTOM_NAME" Language="ko_KR">
+      <Text>유저 설정 >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_DESCRIPTION" Language="ko_KR">
+      <Text>육지 생성 수치를 설정할 수 있습니다</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CUSTOM_TYPE_NAME" Language="ko_KR">
+      <Text>레이어 유형</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_TYPE_DESCRIPTION" Language="ko_KR">
+      <Text>레이어가 물 타일들을 대체하거나 (육지 레이어) 또는 육지 타일들을 대체할지를 결정합니다 (물 레이어)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_WATER_PERCENT_NAME" Language="ko_KR">
+      <Text>물 비율</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_WATER_PERCENT_DESCRIPTION" Language="ko_KR">
+      <Text>이 레이어에서 물이 차지하는 비중(%)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_GRAIN_NAME" Language="ko_KR">
+      <Text>프랙탈 결 (0-7)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_GRAIN_DESCRIPTION" Language="ko_KR">
+      <Text>프랙탈에 추가될 결의 양을 정합니다. 0은 결이 없음을 의미하고 (매끄러움), 7은 결이 많음을 의미합니다. (들쭉날쭉).</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_RIFT_GRAIN_NAME" Language="ko_KR">
+      <Text>균열 결 (0-4)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_RIFT_GRAIN_DESCRIPTION" Language="ko_KR">
+      <Text>좋은 질문입니다!</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTX_EXP_NAME" Language="ko_KR">
+      <Text>FracXExp</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTX_EXP_DESCRIPTION" Language="ko_KR">
+      <Text>프랙탈의 가로 길이를 결정합니다. 보다 높은 값은 보다 뾰족한 프랙탈을 생성하며, 낮은 값은 뭉뚝한 프랙탈을 생성합니다. 이 수치들은 2의 승수입니다. 따라서 FracXExp = 7은 2^7을 의미하며, 128 단위의 너비를 의미합니다. FracXExp = 6라면 64 단위의 너비가 될 것입니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTY_EXP_NAME" Language="ko_KR">
+      <Text>FracYExp</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTY_EXP_DESCRIPTION" Language="ko_KR">
+      <Text>프랙탈의 세로 길이를 결정합니다. 보다 높은 값은 보다 뾰족한 프랙탈을 생성하며, 낮은 값은 뭉뚝한 프랙탈을 생성합니다. 이 수치들은 2의 승수입니다. 따라서 FracXExp = 7은 2^7을 의미하며, 128 단위의 너비를 의미합니다. FracXExp = 6라면 64 단위의 너비가 될 것입니다.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_LAND_NAME" Language="ko_KR">
+      <Text>육지</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LAND_DESCRIPTION" Language="ko_KR">
+      <Text>이 레이어는 물 위에 육지를 생성합니다 (그러나 이미 존재하는 육지를 변경하진 않습니다)</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_WATER_NAME" Language="ko_KR">
+      <Text>물</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_WATER_DESCRIPTION" Language="ko_KR">
+      <Text>이 레이어는 육지 위에 물을 생성합니다 (러나 이미 존재하는 물을 변경하진 않습니다)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_DEFAULT_LANDMASS_NAME" Language="ko_KR">
+      <Text>기본 땅덩이</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DEFAULT_LANDMASS_DESCRIPTION" Language="ko_KR">
+      <Text>각 육지별로 기본 대륙의 기본 설정을 이용합니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SELECT_LANDMASS_NAME" Language="ko_KR">
+      <Text>대륙별 선택 >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SELECT_LANDMASS_DESCRIPTION" Language="ko_KR">
+      <Text>각 대륙별 설정을 선택합니다. (추가 설정 가능)</Text>
+    </Replace>	
+	
+    <Replace Tag="LOC_MAP_AUSTRALIA_NAME" 			Text="오스트레일리아" 			Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_OCEANIA_NAME" 			Text="오세아니아" 				Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_SOUTH_ASIA_NAME"			Text="남아시아" 			Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_ASIA_NAME"		Text="중앙아시아" 		Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_EAST_ASIA_NAME" 			Text="동아시아" 			Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_JAPAN_NAME" 				Text="일본" 				Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_NORTH_ASIA_NAME" 			Text="북아시아" 			Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_MIDDLE_EAST_NAME" 		Text="중동" 			Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_TURKEY_NAME" 				Text="터키" 				Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_SOUTH_EUROPA_NAME" 		Text="남유럽" 		Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_WEST_EUROPA_NAME" 		Text="서유럽" 			Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_EUROPA_NAME" 		Text="중앙유럽" 		Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_NORTH_EUROPA_NAME" 		Text="북유럽" 		Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_EAST_EUROPA_NAME" 		Text="동유럽" 			Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_NORTH_AFRICA_NAME" 		Text="북아프리카" 		Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_AFRICA_NAME" 		Text="중앙아프리카" 		Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_SOUTH_AFRICA_NAME" 		Text="남아프리카" 		Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_MADAGASCAR_NAME" 			Text="마다가스카르" 			Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_NORTH_AMERICA_NAME" 		Text="북아메리카" 		Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_ARCTIC_AMERICA_NAME" 		Text="북극 아메리카" 		Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_AMERICA_NAME"		Text="중앙아메리카" 		Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_SOUTH_AMERICA_WEST_NAME"	Text="남아메리카 (동부)"	Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_SOUTH_AMERICA_EAST_NAME" 	Text="남아메리카 (서부)" Language="ko_KR" /> 
+    <Replace Tag="LOC_MAP_ANTARCTIC_AMERICA_NAME" 	Text="남극 아메리카" 	Language="ko_KR" />	
+	
+    <Replace Tag="LOC_MAP_SECTION_NAME" 					Text="지도 구획"																	Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_DESCRIPTION" 				Text="플레이할 지도의 구획 선택" 									Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_FULL_NAME" 				Text="전체 지도" 																	Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_FULL_DESCRIPTION" 		Text="원본 지도의 전체 크기입니다"															Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_CUSTOM_NAME" 				Text="사용자 지정"																		Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_CUSTOM_DESCRIPTION" 		Text="당신이 플레이하고 싶은 지역의 동/서/남/북의 경계중 하나를 선택합니다"	Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_EUROPE_NAME" 				Text="유럽" 																		Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_EUROPE_DESCRIPTION" 		Text="지도의 유럽 지역에서 플레이합니다" 										Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_MEDITERRANEA_NAME" 		Text="지중해" 																Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_MEDITERRANEA_DESCRIPTION" Text="지중해 주변에서 플레이합니다"	 										Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_MIDDLE_EAST_NAME" 		Text="중동" 																	Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_MIDDLE_EAST_DESCRIPTION" 	Text="지도의 중동 지역에서 플레이합니다"									Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_AMERICAS_NAME" 			Text="아메리카" 																	Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_AMERICAS_DESCRIPTION" 	Text="아메리카 대륙들에서 플레이합니다"		 										Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_COLONIZATION_NAME" 		Text="식민지 시대" 																Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_COLONIZATION_DESCRIPTION" Text="지도의 대서양 구역이 있는 구획을 플레이하며, 유럽과 아메리카 대륙의 일부가 포함됩니다"		Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_OLD_WORLD_NAME" 			Text="구대륙" 																	Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_OLD_WORLD_DESCRIPTION" 	Text="구대륙에서 플레이합니다 (유럽, 아프리카, 아시아)"									Language="ko_KR"/>
+	
+    <Replace Tag="LOC_MAP_STARTX_NAME" Language="ko_KR">
+      <Text>서쪽 경계</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ENDX_NAME" Language="ko_KR">
+      <Text>동쪽 경계</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_STARTY_NAME" Language="ko_KR">
+      <Text>남쪽 경계</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ENDY_NAME" Language="ko_KR">
+      <Text>북쪽 경계</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_LATITUDE_NAME" Language="ko_KR">
+      <Text>위도</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LONGITUDE_NAME" Language="ko_KR">
+      <Text>경도</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_WEST_EUROPE_NAME" Language="ko_KR">
+      <Text>서유럽</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EAST_AMERICA_NAME" Language="ko_KR">
+      <Text>동아메리카</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SOUTH_POLE_NAME" Language="ko_KR">
+      <Text>남극점</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_POLE_NAME" Language="ko_KR">
+      <Text>북극점</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EQUATOR_NAME" Language="ko_KR">
+      <Text>적도</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_EAST_MEDITERRANEA_NAME" Language="ko_KR">
+      <Text>동지중해</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EAST_EUROPE_AFRICA_NAME" Language="ko_KR">
+      <Text>동유럽/아프리카</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_THE_URALS_WEST_INDIA_NAME" Language="ko_KR">
+      <Text>우랄, 서인도령</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CENTRAL_ASIA_NAME" Language="ko_KR">
+      <Text>중앙아시아</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EAST_ASIA_WEST_AUSTRALIA_NAME" Language="ko_KR">
+      <Text>동아시아, 서오스트레일리아</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_BERING_STRAIT_NAME" Language="ko_KR">
+      <Text>베링해협</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_WEST_COAST_NAME" Language="ko_KR">
+      <Text>서부 해안</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GULF_OF_MEXICO_NAME" Language="ko_KR">
+      <Text>멕시코 만</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_AFRICA_SOUTH_ASIA_CARIBBEAN_NAME" Language="ko_KR">
+      <Text>북아프리카, 남아시아, 카리브해</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIBRALTAR_SOUTH_JAPAN_CENTRAL_AMERICA_NAME" Language="ko_KR">
+      <Text>지브롤터, 남일본, 중앙아메리카</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_MEDITERRANEA_ASIA_NAME" Language="ko_KR">
+      <Text>북지중해/아시아</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SOUTH_AFRICA_AMERICA_NAME" Language="ko_KR">
+      <Text>남아프리카/아메리카</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_AMERICA_EUROPE_NAME" Language="ko_KR">
+      <Text>북아메리카/유럽</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MID_MEDITERRANEA_NAME" Language="ko_KR">
+      <Text>중지중해 (그리스 서부)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALPS_NAME" Language="ko_KR">
+      <Text>알프스 (이탈리아 서부)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_SCENARIO_TYPE_NAME" Language="ko_KR">
+      <Text>시나리오</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_NONE_NAME" Language="ko_KR">
+      <Text>없음</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_NONE_DESCRIPTION" Language="ko_KR">
+      <Text>시나리오 없음</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_GENERATED_NAME" Language="ko_KR">
+      <Text>생성 시나리오</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_GENERATED_DESCRIPTION" Language="ko_KR">
+      <Text>시나리오가 자동으로 생성됩니다</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_NAME" Language="ko_KR">
+      <Text>도시 배치</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" Language="ko_KR">
+      <Text>지형</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" Language="ko_KR">
+      <Text>게임내 최적의 도시 배치 추천을 사용</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_NAME" Language="ko_KR">
+      <Text>도시 지도</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_DESCRIPTION" Language="ko_KR">
+      <Text>도시 위치들을 CityMap 표로부터 불러옵니다</Text>
+    </Replace>
+	
+  </LocalizedText>
+</GameData>
