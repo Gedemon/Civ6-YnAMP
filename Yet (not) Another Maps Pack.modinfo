@@ -188,9 +188,15 @@
             <pt_BR>Maps with True or Culturally Linked Starting Location and custom options.</pt_BR>
             <ru_RU>Maps with True or Culturally Linked Starting Location and custom options.</ru_RU>
 			<zh_Hans_CN>模拟真实世界中的文明开局，包含各种大小的真实世界地图、部分优化设置及一些高自由度配置的作死地图。
-			[NEWLINE][NEWLINE]古罗马时期的城市名字对应现在的城市名字，
-			[NEWLINE]格式：XXX → XXX 拉丁。
-			[NEWLINE]    例：巴黎 → 巴黎 拉丁</zh_Hans_CN>
+			[NEWLINE][NEWLINE][NEWLINE]
+			_________________________________________________
+			[NEWLINE][NEWLINE]古罗马时期的城市名字对应现在的城市名字。
+			[NEWLINE]例：XXXX → XXXX 罗城
+			[NEWLINE]古欧洲遗迹或地区的城市名字对应现在的城市名字。
+			[NEWLINE]例：XXXX → XXXX 古城
+			[NEWLINE]
+			_________________________________________________
+			[NEWLINE][COLOR_Grey][SIZE_10]城市名称仅供参考[ENDCOLOR][SIZE_16]</zh_Hans_CN>
 			<zh_Hant_HK>帶有現實世界或人文地理關聯出生地，以及自定義選項的地圖包。</zh_Hant_HK>
 		</Text>
 	</LocalizedText>
