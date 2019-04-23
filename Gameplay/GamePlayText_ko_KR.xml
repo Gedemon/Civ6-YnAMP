@@ -4983,7 +4983,7 @@
 		<Replace Tag="LOC_CITY_NAME_BAWKU" Text="바우쿠" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_BENIN" Text="베닌" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_BENIN_AMERICA" Text="베닌시티" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_BENIN_AUSTRALIA" Text="베닌시티"" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_BENIN_AUSTRALIA" Text="베닌시티" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_BENIN_BOER" Text="베닌-스타드" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_BENIN_BRAZIL" Text="시다데 두 베닌" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_BENIN_ENGLAND" Text="베닌시티" Language="ko_KR" />
@@ -5101,7 +5101,7 @@
 		<Replace Tag="LOC_CITY_NAME_SEKONDI_TAKORADI" Text="세콘디-타코라디" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SEKONDI_TAKORADI_BOER" Text="포트 오라녜" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SEKONDI_TAKORADI_ENGLAND" Text="포트 세콘디" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_SEKONDI_TAKORADI_NETHERLANDS" Text="포트 오라녜"" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_SEKONDI_TAKORADI_NETHERLANDS" Text="포트 오라녜" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SEREKUNDA" Text="세레쿤다" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SEREKUNDA_FRANCE" Text="세렉쿤다" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SIKASSO" Text="시카쏘" Language="ko_KR" />
@@ -8219,7 +8219,7 @@
 		<Replace Tag="LOC_CITY_NAME_RADISSON_MAPUCHE" Text="치사시비" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_RADISSON_CREE" Text="치사시비" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SAGUENAY" Text="사두엔나이" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_SAINT_AUGUSTIN" Text="생-어거스틴" Language="ko_KR" 
+		<Replace Tag="LOC_CITY_NAME_SAINT_AUGUSTIN" Text="생-어거스틴" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SAINT_AUGUSTIN_CREE" Text="파콰시피" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SAINT_AUGUSTIN_AZTEC" Text="파콰시피" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SAINT_AUGUSTIN_MAPUCHE" Text="파콰시피" Language="ko_KR" />
@@ -10508,7 +10508,7 @@
 		<Replace Tag="LOC_CITY_NAME_SAN_SALVADOR_AZTEC" Text="타즈말" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SAN_SALVADOR_MAPUCHE" Text="타즈말" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SAN_SALVADOR_TIKAL" Text="타즈말" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_SAN_SALVADOR_PALENQUE" Text="타즈말
+		<Replace Tag="LOC_CITY_NAME_SAN_SALVADOR_PALENQUE" Text="타즈말" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SAN_SALVADOR_LA_VENTA" Text="타즈말" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SAYAXCHE" Text="사약체" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SAYAXCHE_CREE" Text="세이발" Language="ko_KR" />
