@@ -7,6 +7,9 @@ local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value
 print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2019) by Gedemon")
 print ("loading YnAMP_InGame.lua")
 
+-- Sharing UI/Gameplay context (ExposedMembers.YnAMP is initialized in AssignStartingPlots.lua)
+local YnAMP = ExposedMembers.YnAMP
+
 local mods = Modding.GetActiveMods()
 if mods ~= nil then
 	print("Active mods:")
@@ -153,15 +156,28 @@ Events.LoadScreenClose.Add(OnEnterGame)
 
 
 --=====================================================================================--
+-- Sharing UI function with Gameplay context
+--=====================================================================================--
+
+function GetGrandStrategicAI(iPlayer)
+	local player = Players[iPlayer]
+	return player and player:GetGrandStrategicAI()
+end
+YnAMP.GetGrandStrategicAI = GetGrandStrategicAI
+
+
+--=====================================================================================--
 -- Cleaning on exit
 --=====================================================================================--
 function Cleaning()
 	print ("Cleaning YnAMP table on Leave Game...")
 	-- 
-	ExposedMembers.YNAMP = nil
+	ExposedMembers.YnAMP = nil
 end
 Events.LeaveGameComplete.Add(Cleaning)
 LuaEvents.RestartGame.Add(Cleaning)
+
+
 
 
 

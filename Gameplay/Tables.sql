@@ -108,6 +108,36 @@ CREATE TABLE IF NOT EXISTS ScenarioCivilizationsReplacement
 		BackupType TEXT,
 		PreferedType TEXT);
 		
+-- Scenario Civilizations
+CREATE TABLE IF NOT EXISTS ScenarioCivilizations
+	(	ScenarioName TEXT NOT NULL,
+		MapName TEXT,
+		CivilizationType TEXT NOT NULL,
+		CityPlacement TEXT,
+		NumberOfCity INT,
+		CapitalSize INT,
+		OtherCitySize INT,
+		DecreasePerCity TEXT,
+		RoadPlacement TEXT,
+		RoadMaxDistance INT,
+		MaxRoadPerCity INT,
+		InternationalRoads TEXT,
+		InternationalRoadMaxDistance INT,
+		NationalRailPlacement TEXT,
+		InternationalRails TEXT,
+		RailsMaxDistance INT,
+		Improvments TEXT,
+		MaxNumImprovments INT,
+		ImprovmentsPerSize TEXT,
+		MaxImprovmentsDistance INT,
+		Districts TEXT,
+		MaxNumDistricts INT,
+		DistrictsPerSize TEXT,
+		MaxDistrictsDistance INT,
+		Buildings TEXT,
+		BuildingsPerSize TEXT,
+		MaxNumBuildings INT);
+		
 -- Scenario Cities
 CREATE TABLE IF NOT EXISTS ScenarioCities
 	(	ScenarioName TEXT,

@@ -71,12 +71,61 @@
 		<Replace ParameterId="TurnsBeforeBarbarians" Name="LOC_TURNS_BEFORE_BARBARIANS_NAME" Description="LOC_TURNS_BEFORE_BARBARIANS_DESCRIPTION" Domain="uint" Hash="0" DefaultValue="7" ConfigurationGroup="Game" ConfigurationId="TurnsBeforeBarbarians" GroupId="AdvancedOptions" SortIndex="2999"/>
 
 		<!--	Scenario Options
-		<Replace ParameterId="CityPlacement" 	Name="LOC_MAP_CITY_PLACEMENT_NAME"	Description="LOC_MAP_CITY_PLACEMENT_DESCRIPTION" 	Domain="CityPlacement" 	DefaultValue="TERRAIN" 			ConfigurationGroup="Map" ConfigurationId="CityPlacement" 	GroupId="MapOptions" SortIndex="10010"/>
-		<Replace ParameterId="ScenarioType" 	Name="LOC_MAP_SCENARIO_TYPE_NAME"	Description="LOC_MAP_SCENARIO_TYPE_DESCRIPTION" 	Domain="ScenarioType" 	DefaultValue="SCENARIO_NONE" 	ConfigurationGroup="Map" ConfigurationId="ScenarioName" 	GroupId="MapOptions" SortIndex="10000"/>
+
+		<Replace ParameterId="InterRoadMaxDistance"		Name="LOC_MAP_INTER_ROAD_DISTANCE_NAME"		Description="LOC_MAP_INTER_ROAD_DISTANCE_DESCRIPTION"		Domain="InterRoadMaxDistance" DefaultValue="8"						ConfigurationGroup="Map" ConfigurationId="InterRoadMaxDistance"		GroupId="MapOptions" SortIndex="10120"/>
+		<Replace ParameterId="CustomizeValues"	Name="LOC_MAP_CUSTOM_SCENARIO_VALUES_NAME"	Description="LOC_MAP_CUSTOM_SCENARIO_VALUES_DESCRIPTION"Domain="bool" 			DefaultValue="0" 				ConfigurationGroup="Map" ConfigurationId="CustomizeValues"	GroupId="MapOptions" SortIndex="10005"/>
+
+		Infrastructure : domain, NONE, GENERATED (IMPORT set at scenario level) 
+		MaxRoadPerCity : uint, RoadPlacement Equals PERCITY (default = 1, 0 not allowed) OR domain, 1, 2 ,3 (default = 1), RoadPlacement Equals PERCITY
+		InternationalRoads : bool, Infrastructure Equals GENERATED, RoadPlacement NotEquals NONE (can link to foreign cities, capital to capital if RoadPlacement = CENTRALIZED) OR domain, NONE, CENTRALIZED (capital to capitals), PERCITY (city to closest non linked international city)
+		InternationalRoadMaxDistance : uint, InternationalRoads NotEquals NONE (0 = no limit) OR domain, 4, 6, 8, 12, 16, 24, unlimited (default = 12)
+		NationalRailPlacement : domain, NONE, CENTRALIZED (capital to all cities), LONGEST (Capital to farther possible city), Infrastructure Equals GENERATED
+		InternationalRails : domain, NONE, CENTRALIZED (capital to all capitals), Infrastructure Equals GENERATED
+		RailsMaxDistance : uint, (0 = no limit) OR domain, 4, 6, 8, 12, 16, 24, 32 unlimited (default = 12)
+		Improvments : domain, NONE, CENTRALIZED (capital only), ALL, SIZE_RELATED (num dependant of city size), Infrastructure Equals GENERATED
+		MaxNumImprovments : Improvments NotEquals NONE/SIZE_RELATED
+		ImprovmentsPerSize : domain, 1 per 1, 1 per 2, 1 per 3, 1 per 6 (default = "1 per 2"), Improvments Equals SIZE_RELATED
+		MaxImprovmentsDistance : domain, 1, 2, 3, 6 (default = 3), Improvments NotEquals NONE
+		Districts : domain, NONE, CENTRALIZED (capital only), ALL, SIZE_RELATED (num dependant of city size), Infrastructure Equals GENERATED
+		MaxNumDistricts : Districts NotEquals NONE/SIZE_RELATED
+		DistrictsPerSize : domain, 1 per 1, 1 per 2, 1 per 3, 1 per 6 (default = "1 per 6"), Districts Equals SIZE_RELATED
+		MaxDistrictsDistance : domain, 1, 2, 3 (default = 3), Districts NotEquals NONE
+		Buildings : domain, NONE, CENTRALIZED (capital only), ALL, SIZE_RELATED (num dependant of city size)
+		BuildingsPerSize : domain, 1 per 1, 1 per 2, 1 per 3, 1 per 6 (default = "1 per 2"), Buildings Equals SIZE_RELATED
+		MaxNumBuildings : Buildings NotEquals NONE/SIZE_RELATED
 		-->
 
+		<Replace ParameterId="ScenarioType" 	Name="LOC_MAP_SCENARIO_TYPE_NAME"			Description="LOC_MAP_SCENARIO_TYPE_DESCRIPTION" 		Domain="ScenarioType" 	DefaultValue="SCENARIO_NONE" 	ConfigurationGroup="Map" ConfigurationId="ScenarioType" 	GroupId="ScenarioOptions" SortIndex="10000"/>
+		<Replace ParameterId="CityPlacement" 	Name="LOC_MAP_CITY_PLACEMENT_NAME"			Description="LOC_MAP_CITY_PLACEMENT_DESCRIPTION" 		Domain="CityPlacement" 	DefaultValue="PLACEMENT_TERRAIN"ConfigurationGroup="Map" ConfigurationId="CityPlacement" 	GroupId="ScenarioOptions" SortIndex="10010"/>
+		
+		<Replace ParameterId="NumberOfCity"		Name="LOC_MAP_NUMBER_OF_CITY_NAME"			Description="LOC_MAP_NUMBER_OF_CITY_DESCRIPTION"		Domain="NumberOfCity" 		DefaultValue="4" ConfigurationGroup="Map" ConfigurationId="NumberOfCity"		GroupId="ScenarioOptions" SortIndex="10020"/>
+		<Replace ParameterId="NumberOfMinorCity"Name="LOC_MAP_NUMBER_OF_MINOR_CITY_NAME"	Description="LOC_MAP_NUMBER_OF_MINOR_CITY_DESCRIPTION"	Domain="NumberOfMinorCity" 	DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="NumberOfMinorCity"	GroupId="ScenarioOptions" SortIndex="10020"/>
+		<Replace ParameterId="CapitalSize"		Name="LOC_MAP_CAPITAL_SIZE_NAME"			Description="LOC_MAP_CAPITAL_SIZE_DESCRIPTION"			Domain="CapitalSize" 		DefaultValue="6" ConfigurationGroup="Map" ConfigurationId="CapitalSize"			GroupId="ScenarioOptions" SortIndex="10030"/>
+		<Replace ParameterId="OtherCitySize"	Name="LOC_MAP_OTHER_CITY_SIZE_NAME"			Description="LOC_MAP_OTHER_CITY_SIZE_DESCRIPTION"		Domain="OtherCitySize" 		DefaultValue="3" ConfigurationGroup="Map" ConfigurationId="OtherCitySize"		GroupId="ScenarioOptions" SortIndex="10040"/>
+		
+		<Replace ParameterId="DecreaseOtherCitySize"	Name="LOC_MAP_DECREASE_OTHER_CITY_SIZE_NAME"Description="LOC_MAP_DECREASE_OTHER_CITY_SIZE_DESCRIPTION"	Domain="bool" 				DefaultValue="1"						ConfigurationGroup="Map" ConfigurationId="DecreaseOtherCitySize"	GroupId="ScenarioOptions" SortIndex="10050"/>
+		<Replace ParameterId="DecreasePerCity"			Name="LOC_MAP_DECREASE_PER_CITY_NAME"		Description="LOC_MAP_DECREASE_PER_CITY_DESCRIPTION"			Domain="DecreasePerCity" 	DefaultValue="1_PER_2"					ConfigurationGroup="Map" ConfigurationId="DecreasePerCity"			GroupId="ScenarioOptions" SortIndex="10060"/>
+
+		<Replace ParameterId="Infrastructure" 			Name="LOC_MAP_INFRASTRUCTURE_NAME"			Description="LOC_MAP_INFRASTRUCTURE_DESCRIPTION" 			Domain="Infrastructure" 	DefaultValue="PLACEMENT_GENERATED"		ConfigurationGroup="Map" ConfigurationId="Infrastructure" 			GroupId="ScenarioOptions" SortIndex="10070"/>
+
+		<Replace ParameterId="RoadPlacement"			Name="LOC_MAP_ROAD_PLACEMENT_NAME"			Description="LOC_MAP_ROAD_PLACEMENT_DESCRIPTION"			Domain="RoadPlacement" 		DefaultValue="PLACEMENT_CENTRALIZED"	ConfigurationGroup="Map" ConfigurationId="RoadPlacement"			GroupId="ScenarioOptions" SortIndex="10080"/>
+		<Replace ParameterId="InternationalRoads"		Name="LOC_MAP_INTERNATIONAL_ROADS_NAME"		Description="LOC_MAP_INTERNATIONAL_ROADS_DESCRIPTION"		Domain="bool" 				DefaultValue="1"						ConfigurationGroup="Map" ConfigurationId="InternationalRoads"		GroupId="ScenarioOptions" SortIndex="10090"/>
+		<Replace ParameterId="UnlimitedRoadDistance"	Name="LOC_MAP_UNLIMITED_ROAD_DISTANCE_NAME"	Description="LOC_MAP_UNLIMITED_ROAD_DISTANCE_DESCRIPTION"	Domain="bool" 				DefaultValue="0"						ConfigurationGroup="Map" ConfigurationId="UnlimitedRoadDistance"	GroupId="ScenarioOptions" SortIndex="10100"/>
+		<Replace ParameterId="RoadMaxDistance"			Name="LOC_MAP_ROAD_DISTANCE_NAME"			Description="LOC_MAP_ROAD_DISTANCE_DESCRIPTION"				Domain="RoadMaxDistance" 	DefaultValue="6"						ConfigurationGroup="Map" ConfigurationId="RoadMaxDistance"			GroupId="ScenarioOptions" SortIndex="10110"/>
+		<Replace ParameterId="MaxRoadPerCity"			Name="LOC_MAP_MAX_ROAD_PER_CITY_NAME"		Description="LOC_MAP_MAX_ROAD_PER_CITY_DESCRIPTION"			Domain="MaxRoadPerCity" 	DefaultValue="1"						ConfigurationGroup="Map" ConfigurationId="MaxRoadPerCity"			GroupId="ScenarioOptions" SortIndex="10130"/>
+		
 	</Parameters>	
 
+	<DomainRanges>
+		<Replace Domain="NumberOfCity" 			MinimumValue="1" MaximumValue="30"/>
+		<Replace Domain="NumberOfMinorCity" 	MinimumValue="1" MaximumValue="30"/>
+		<Replace Domain="CapitalSize" 			MinimumValue="1" MaximumValue="30"/>
+		<Replace Domain="OtherCitySize" 		MinimumValue="1" MaximumValue="30"/>
+		<Replace Domain="RoadMaxDistance" 		MinimumValue="1" MaximumValue="30"/>
+		<Replace Domain="InterRoadMaxDistance" 	MinimumValue="1" MaximumValue="30"/>
+		<Replace Domain="MaxRoadPerCity" 		MinimumValue="1" MaximumValue="6"/>
+	</DomainRanges>
+	
 	<DomainValues>
 		<Replace Domain="ResourcesPlacement" Value="PLACEMENT_DEFAULT" 	Name="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
 		<Replace Domain="ResourcesPlacement" Value="PLACEMENT_IMPORT" 	Name="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_NAME" 	Description="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_DESCRIPTION" 	SortIndex="20"/>
@@ -121,7 +170,26 @@
 		<Replace Domain="ForceTSL" Value="FORCE_TSL_OFF" 	Name="LOC_MAP_FORCE_TSL_OFF" 	Description="LOC_MAP_FORCE_TSL_OFF_DESCRIPTION" 	SortIndex="10"/>
 		<Replace Domain="ForceTSL" Value="FORCE_TSL_CS" 	Name="LOC_MAP_FORCE_TSL_CS" 	Description="LOC_MAP_FORCE_TSL_CS_DESCRIPTION" 		SortIndex="20"/>
 		<Replace Domain="ForceTSL" Value="FORCE_TSL_AI" 	Name="LOC_MAP_FORCE_TSL_AI" 	Description="LOC_MAP_FORCE_TSL_AI_DESCRIPTION" 		SortIndex="30"/>
-		<Replace Domain="ForceTSL" Value="FORCE_TSL_ALL" 	Name="LOC_MAP_FORCE_TSL_ALL" 	Description="LOC_MAP_FORCE_TSL_ALL_DESCRIPTION" 	SortIndex="30"/>		
+		<Replace Domain="ForceTSL" Value="FORCE_TSL_ALL" 	Name="LOC_MAP_FORCE_TSL_ALL" 	Description="LOC_MAP_FORCE_TSL_ALL_DESCRIPTION" 	SortIndex="40"/>
+
+		<Replace Domain="CityPlacement" Value="PLACEMENT_EMPTY" 		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 			Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 				SortIndex="10"/>
+		<Replace Domain="CityPlacement" Value="PLACEMENT_TERRAIN" 		Name="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" 		Description="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" 		SortIndex="20"/>
+
+		<Replace Domain="ScenarioType"	Value="SCENARIO_NONE" 		Name="LOC_MAP_SCENARIO_NONE_NAME" 		Description="LOC_MAP_SCENARIO_NONE_DESCRIPTION" 		SortIndex="10"/>
+		<Replace Domain="ScenarioType"	Value="SCENARIO_GENERATED"	Name="LOC_MAP_SCENARIO_GENERATED_NAME" 	Description="LOC_MAP_SCENARIO_GENERATED_DESCRIPTION" 	SortIndex="20"/>
+		
+		<Replace Domain="DecreasePerCity" Value="2_PER_1" 	Name="LOC_RATIO_2_PER_1" 	Description="LOC_RATIO_2_PER_1_DESCRIPTION" 	SortIndex="10"/>
+		<Replace Domain="DecreasePerCity" Value="1_PER_1" 	Name="LOC_RATIO_1_PER_1" 	Description="LOC_RATIO_1_PER_1_DESCRIPTION" 	SortIndex="20"/>
+		<Replace Domain="DecreasePerCity" Value="1_PER_2" 	Name="LOC_RATIO_1_PER_2" 	Description="LOC_RATIO_1_PER_2_DESCRIPTION" 	SortIndex="30"/>
+		<Replace Domain="DecreasePerCity" Value="1_PER_3" 	Name="LOC_RATIO_1_PER_3" 	Description="LOC_RATIO_1_PER_3_DESCRIPTION" 	SortIndex="40"/>
+		<Replace Domain="DecreasePerCity" Value="1_PER_6" 	Name="LOC_RATIO_1_PER_6" 	Description="LOC_RATIO_1_PER_6_DESCRIPTION" 	SortIndex="50"/>
+		
+		<Replace Domain="Infrastructure"	Value="PLACEMENT_EMPTY" 	Name="LOC_MAP_PLACEMENT_EMPTY_NAME" Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 	SortIndex="10"/>
+		<Replace Domain="Infrastructure"	Value="PLACEMENT_GENERATED"	Name="LOC_MAP_GENERATED_NAME" 		Description="LOC_MAP_GENERATED_DESCRIPTION" 		SortIndex="20"/>
+		
+		<Replace Domain="RoadPlacement"		Value="PLACEMENT_EMPTY" 		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 		Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 		SortIndex="10"/>
+		<Replace Domain="RoadPlacement"		Value="PLACEMENT_CENTRALIZED"	Name="LOC_MAP_PLACEMENT_CENTRALIZED_NAME" 	Description="LOC_MAP_PLACEMENT_CENTRALIZED_DESCRIPTION" SortIndex="20"/>
+		<Replace Domain="RoadPlacement"		Value="PLACEMENT_PER_CITY"		Name="LOC_MAP_PLACEMENT_PER_CITY_NAME" 		Description="LOC_MAP_PLACEMENT_PER_CITY_DESCRIPTION" 	SortIndex="30"/>
 		
 	</DomainValues>
 
@@ -151,6 +219,40 @@
 
 		<Replace ParameterId="TurnsBeforeBarbarians" 	ConfigurationGroup="Game" ConfigurationId="GAME_NO_BARBARIANS" 		Operator="Equals" ConfigurationValue="0" />
 		
+		<Replace ParameterId="CityPlacement"			ConfigurationGroup="Map" ConfigurationId="ScenarioType" 			Operator="NotEquals"	ConfigurationValue="SCENARIO_NONE"/>
+		<Replace ParameterId="CustomizeValues"			ConfigurationGroup="Map" ConfigurationId="ScenarioType" 			Operator="NotEquals"	ConfigurationValue="SCENARIO_NONE"/>
+		<Replace ParameterId="NumberOfCity"				ConfigurationGroup="Map" ConfigurationId="ScenarioType" 			Operator="NotEquals"	ConfigurationValue="SCENARIO_NONE"/>
+		<Replace ParameterId="NumberOfMinorCity"		ConfigurationGroup="Map" ConfigurationId="ScenarioType" 			Operator="NotEquals"	ConfigurationValue="SCENARIO_NONE"/>
+		<Replace ParameterId="CapitalSize"				ConfigurationGroup="Map" ConfigurationId="ScenarioType" 			Operator="NotEquals"	ConfigurationValue="SCENARIO_NONE"/>
+		<Replace ParameterId="OtherCitySize"			ConfigurationGroup="Map" ConfigurationId="ScenarioType" 			Operator="NotEquals"	ConfigurationValue="SCENARIO_NONE"/>
+		<Replace ParameterId="DecreaseOtherCitySize"	ConfigurationGroup="Map" ConfigurationId="ScenarioType" 			Operator="NotEquals"	ConfigurationValue="SCENARIO_NONE"/>
+		
+		<Replace ParameterId="NumberOfCity"				ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_EMPTY"/>
+		<Replace ParameterId="NumberOfMinorCity"		ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_EMPTY"/>
+		<Replace ParameterId="CapitalSize"				ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_EMPTY"/>
+		<Replace ParameterId="OtherCitySize"			ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_EMPTY"/>
+		<Replace ParameterId="DecreaseOtherCitySize"	ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_EMPTY"/>
+		
+		<Replace ParameterId="NumberOfCity"				ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_IMPORT"/>
+		<Replace ParameterId="NumberOfMinorCity"		ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_IMPORT"/>
+		<Replace ParameterId="CapitalSize"				ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_IMPORT"/>
+		<Replace ParameterId="OtherCitySize"			ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_IMPORT"/>
+		<Replace ParameterId="DecreaseOtherCitySize"	ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_IMPORT"/>
+		
+		<Replace ParameterId="DecreasePerCity"			ConfigurationGroup="Map" ConfigurationId="DecreaseOtherCitySize" 	Operator="Equals"		ConfigurationValue="1"/>
+		
+		<Replace ParameterId="Infrastructure"			ConfigurationGroup="Map" ConfigurationId="ScenarioType" 			Operator="NotEquals"	ConfigurationValue="SCENARIO_NONE"/>
+		<Replace ParameterId="Infrastructure"			ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_EMPTY"/>
+		
+		<Replace ParameterId="RoadPlacement"			ConfigurationGroup="Map" ConfigurationId="Infrastructure" 			Operator="Equals"		ConfigurationValue="PLACEMENT_GENERATED"/>
+		<Replace ParameterId="UnlimitedRoadDistance"	ConfigurationGroup="Map" ConfigurationId="RoadPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_EMPTY"/>
+		<Replace ParameterId="UnlimitedRoadDistance"	ConfigurationGroup="Map" ConfigurationId="Infrastructure" 			Operator="Equals"		ConfigurationValue="PLACEMENT_GENERATED"/>
+		<Replace ParameterId="RoadMaxDistance"			ConfigurationGroup="Map" ConfigurationId="UnlimitedRoadDistance" 	Operator="NotEquals"	ConfigurationValue="1"/>
+		<Replace ParameterId="RoadMaxDistance"			ConfigurationGroup="Map" ConfigurationId="RoadPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_EMPTY"/>
+		<Replace ParameterId="RoadMaxDistance"			ConfigurationGroup="Map" ConfigurationId="Infrastructure" 			Operator="Equals"		ConfigurationValue="PLACEMENT_GENERATED"/>
+		<Replace ParameterId="MaxRoadPerCity"			ConfigurationGroup="Map" ConfigurationId="RoadPlacement" 			Operator="Equals"		ConfigurationValue="PLACEMENT_PER_CITY"/>
+		<Replace ParameterId="InternationalRoads"		ConfigurationGroup="Map" ConfigurationId="RoadPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_EMPTY"/>
+		<Replace ParameterId="InternationalRoads"		ConfigurationGroup="Map" ConfigurationId="Infrastructure" 			Operator="Equals"		ConfigurationValue="PLACEMENT_GENERATED"/>
 
 	</ParameterDependencies>
 	

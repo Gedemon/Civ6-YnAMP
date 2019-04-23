@@ -26,9 +26,9 @@ print ("Setting YnAMP globals and cache...")
 g_startTimer = os.clock()
 
 --ExposedMembers.HistoricalStartingPlots 	= nil
-ExposedMembers.YNAMP	= { RiverMap = {}, }
+ExposedMembers.YnAMP	= { RiverMap = {}, }
 
-local RiverMap 			= ExposedMembers.YNAMP.RiverMap
+local RiverMap 			= ExposedMembers.YnAMP.RiverMap
 local DefaultRiverID	= 9999
 local bExpansion2		= GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_2"
 local IsOceanStart		= {}	-- table to list Civilization with a starting plot set on ocean (for not swapping them when doing culturally linked placement)

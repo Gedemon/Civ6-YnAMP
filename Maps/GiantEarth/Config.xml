@@ -125,10 +125,9 @@
 		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthUncutMapHeight"	Name="UncutMapHeight" 	Description="" Domain="text" DefaultValue="94" 	ConfigurationGroup="Map" ConfigurationId="UncutMapHeight" 	GroupId="MapOptions" Visible="0" SortIndex="2025"/>
 
 		<!--	Scenario Options
+		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthScenarioType" 	Name="LOC_MAP_SCENARIO_TYPE_NAME"	Description="LOC_MAP_SCENARIO_TYPE_DESCRIPTION" 	Domain="GiantEarthScenarioType" 	DefaultValue="SCENARIO_NONE" 	ConfigurationGroup="Map" ConfigurationId="ScenarioName" 	GroupId="ScenarioOptions" SortIndex="10000"/>
 		-->
-		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthScenarioType" 	Name="LOC_MAP_SCENARIO_TYPE_NAME"	Description="LOC_MAP_SCENARIO_TYPE_DESCRIPTION" 	Domain="GiantEarthScenarioType" 	DefaultValue="SCENARIO_NONE" 	ConfigurationGroup="Map" ConfigurationId="ScenarioName" 	GroupId="MapOptions" SortIndex="10000"/>
-		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthCityPlacement" 	Name="LOC_MAP_CITY_PLACEMENT_NAME"	Description="LOC_MAP_CITY_PLACEMENT_DESCRIPTION" 	Domain="GiantEarthCityPlacement" 	DefaultValue="IMPORT" 			ConfigurationGroup="Map" ConfigurationId="CityPlacement" 	GroupId="MapOptions" SortIndex="10010"/>
-
+		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthCityPlacement" 	Name="LOC_MAP_CITY_PLACEMENT_NAME"	Description="LOC_MAP_CITY_PLACEMENT_DESCRIPTION" 	Domain="GiantEarthCityPlacement" 	DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="CityPlacement" 	GroupId="ScenarioOptions" SortIndex="10010"/>
 		
 	</Parameters>
 	
@@ -166,20 +165,19 @@
 		<Replace Domain="GiantEarthLongitude" Value="88" 	Name="LOC_MAP_NORTH_AMERICA_EUROPE_NAME" 					Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="80"/>
 		<Replace Domain="GiantEarthLongitude" Value="93" 	Name="LOC_MAP_NORTH_POLE_NAME" 								Description="LOC_MAP_LONGITUDE_NAME" 	SortIndex="100"/>		
 
-		<!--
+		<!-- 
 		<Replace Domain="GiantEarthScenarioType" Value="SCENARIO_NONE" 		Name="LOC_MAP_SCENARIO_NONE_NAME" 		Description="LOC_MAP_SCENARIO_NONE_DESCRIPTION" 		SortIndex="10"/>
 		<Replace Domain="GiantEarthScenarioType" Value="SCENARIO_GENERATED" Name="LOC_MAP_SCENARIO_GENERATED_NAME" 	Description="LOC_MAP_SCENARIO_GENERATED_DESCRIPTION" 	SortIndex="20"/>
-		
-		<Replace Domain="GiantEarthCityPlacement" Value="TERRAIN" 	Name="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" 		Description="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" 	SortIndex="10"/>
-		<Replace Domain="GiantEarthCityPlacement" Value="CITY_MAP" 	Name="LOC_MAP_CITY_PLACEMENT_CITY_MAP_NAME" 	Description="LOC_MAP_CITY_PLACEMENT_CITY_MAP_DESCRIPTION" 	SortIndex="20"/>
 		-->
+		
+		<Replace Domain="GiantEarthCityPlacement" Value="PLACEMENT_EMPTY" 		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 			Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 			SortIndex="10"/>
+		<Replace Domain="GiantEarthCityPlacement" Value="PLACEMENT_TERRAIN" 	Name="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" 		Description="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" 	SortIndex="20"/>
+		<Replace Domain="GiantEarthCityPlacement" Value="PLACEMENT_CITY_MAP"	Name="LOC_MAP_CITY_PLACEMENT_CITY_MAP_NAME" 	Description="LOC_MAP_CITY_PLACEMENT_CITY_MAP_DESCRIPTION" 	SortIndex="20"/>
+
 	</DomainValues>
 	
 	<ParameterDependencies>
 	
-		<!--
-		<Replace ParameterId="GiantEarthCityPlacement"	ConfigurationGroup="Map" ConfigurationId="ScenarioName" 	Operator="NotEquals" 	ConfigurationValue="SCENARIO_NONE"/>
-		-->	
 		<Replace ParameterId="GiantEarthCustomStartX" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_CUSTOM"/>
 		<Replace ParameterId="GiantEarthCustomStartY" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_CUSTOM"/>
 		<Replace ParameterId="GiantEarthCustomEndX" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_CUSTOM"/>
@@ -219,6 +217,11 @@
 		<Replace ParameterId="GiantEarthOldWorldStartY" ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_OLD_WORLD"/>
 		<Replace ParameterId="GiantEarthOldWorldEndX" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_OLD_WORLD"/>
 		<Replace ParameterId="GiantEarthOldWorldEndY" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_OLD_WORLD"/>
+		
+		<!--
+		-->	
+		<Replace ParameterId="GiantEarthCityPlacement"	ConfigurationGroup="Map" ConfigurationId="ScenarioType" Operator="NotEquals" 	ConfigurationValue="SCENARIO_NONE"/>
+		<Replace ParameterId="CityPlacement"			ConfigurationGroup="Map" ConfigurationId="MapName" 		Operator="NotEquals"	ConfigurationValue="GiantEarth"/>
 
 	</ParameterDependencies>
 	

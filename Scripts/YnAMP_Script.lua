@@ -3,9 +3,14 @@
 --  Gedemon (2016-2017)
 ------------------------------------------------------------------------------
 
+include "MapEnums"
+
 local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value
 print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2019) by Gedemon")
 print ("loading YnAMP_Script.lua")
+
+-- Sharing UI/Gameplay context (ExposedMembers.YnAMP is initialized in AssignStartingPlots.lua)
+local YnAMP = ExposedMembers.YnAMP
 
 function Round(num)
     under = math.floor(num)
@@ -54,10 +59,12 @@ if bUseRelativePlacement then
 end
 
 -- Scenario Settings
-local scenarioName 				= MapConfiguration.GetValue("ScenarioName")
+local scenarioName 				= MapConfiguration.GetValue("ScenarioType")
 local cityPlacement 			= MapConfiguration.GetValue("CityPlacement")
 local borderPlacement			= MapConfiguration.GetValue("BorderPlacement")
 local infrastructurePlacement	= MapConfiguration.GetValue("InfrastructurePlacement")
+local numberOfMajorCity			= MapConfiguration.GetValue("NumberOfCity")
+local numberOfMinorCity			= MapConfiguration.GetValue("NumberOfMinorCity")
 
 ------------------------------------------------------------------------------
 -- http://lua-users.org/wiki/SortedIteration
@@ -577,6 +584,8 @@ print("City Placement 	: ", cityPlacement)
 print("Border Placement : ", borderPlacement)
 print("WorldBuilder : ", WorldBuilder)
 print("WorldBuilder.CityManager : ", WorldBuilder.CityManager)
+print("Number Major Cities : ", numberOfMajorCity)
+print("Number Minor Cities : ", numberOfMinorCity)
 
 local isCityOnMap 	= {} -- helper to check by name if a city has a position set on the city map
 local cityPosition	= {} -- helper to get the first defined position in the city map of a city (by name)
@@ -602,6 +611,7 @@ for row in GameInfo.CityMap() do
 end
 
 function IsRowValid(row)
+	if not row then return false end
 	if not (row.ScenarioName) and not (row.MapName) then
 		print("ERROR at rowID #"..tostring(row.Index).." : ScenarioName AND MapName are NULL")
 		for k, v in pairs(row) do print("  - ", k, v) end
@@ -613,15 +623,195 @@ function CanPlace(row, player)
 	return player and ((player:IsHuman() and (not row.OnlyAI)) or ((not player:IsHuman()) and (not row.OnlyHuman)))
 end
 
+
 print("Pairing Civilization Type with PlayerIDs...")
 local CivilizationPlayerID 	= {}
 for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do -- for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
 	local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
 	if CivilizationTypeName then
-		CivilizationPlayerID[CivilizationTypeName] = iPlayer
+		CivilizationPlayerID[CivilizationTypeName]	= iPlayer
+		CivilizationPlayerID[iPlayer] 				= CivilizationTypeName
 	else
 		print("WARNING for playerID #"..tostring(iPlayer).." : CivilizationTypeName is NIL")
 	end
+end
+
+-- City Placement Weight
+function GetPlotFertility(plot)
+	-- Calculate the fertility of the plot
+	local iRange 					= 3
+	local pPlot 					= plot
+	local plotX 					= pPlot:GetX()
+	local plotY 					= pPlot:GetY()
+	local iProductionYieldWeight	= 3
+	local iFoodYieldWeight 			= 5
+
+	local gridWidth, gridHeight = Map.GetGridSize()
+	local gridHeightMinus1 = gridHeight - 1
+
+	local iFertility = 0
+	
+	--Rivers are awesome to start next to
+	local terrainType = pPlot:GetTerrainType()
+	if(pPlot:IsFreshWater() == true and terrainType ~= g_TERRAIN_TYPE_SNOW and terrainType ~= g_TERRAIN_TYPE_SNOW_HILLS and pPlot:IsImpassable() ~= true) then
+		iFertility = iFertility + 50
+		if pPlot:IsRiver() == true then
+			iFertility = iFertility + 50
+		end
+	end	
+	
+	for dx = -iRange, iRange do
+		for dy = -iRange,iRange do
+			local otherPlot = Map.GetPlotXYWithRangeCheck(plotX, plotY, dx, dy, iRange);
+
+			-- Valid plot?  Also, skip plots along the top and bottom edge
+			if(otherPlot) then
+				local otherPlotY = otherPlot:GetY();
+				if(otherPlotY > 0 and otherPlotY < gridHeightMinus1) then
+
+					terrainType = otherPlot:GetTerrainType();
+					featureType = otherPlot:GetFeatureType();
+
+					-- Subtract one if there is snow and no resource. Do not count water plots unless there is a resource
+					if((terrainType == g_TERRAIN_TYPE_SNOW or terrainType == g_TERRAIN_TYPE_SNOW_HILLS or terrainType == g_TERRAIN_TYPE_SNOW_MOUNTAIN) and otherPlot:GetResourceCount() == 0) then
+						iFertility = iFertility - 10
+					elseif(featureType == g_FEATURE_ICE) then
+						iFertility = iFertility - 20
+					elseif((otherPlot:IsWater() == false) or otherPlot:GetResourceCount() > 0) then
+						iFertility = iFertility + (otherPlot:GetYield(g_YIELD_PRODUCTION)*iProductionYieldWeight)
+						iFertility = iFertility + (otherPlot:GetYield(g_YIELD_FOOD)*iFoodYieldWeight)
+					end
+				
+					-- Lower the Fertility if the plot is impassable
+					if(iFertility > 5 and otherPlot:IsImpassable() == true) then
+						iFertility = iFertility - 5
+					end
+
+					-- Lower the Fertility if the plot has Features
+					if(featureType ~= g_FEATURE_NONE) then
+						iFertility = iFertility - 2
+					end	
+
+				else
+					iFertility = iFertility - 5
+				end
+			else
+				iFertility = iFertility - 10
+			end
+		end
+	end 
+
+	return iFertility
+end
+
+function IsPotentialCityPlotFarEnough(plot, iThisPlayer)
+	-- we're using the alternate placement method because the start positioner as failed, maybe because there are too many civs on the map
+	-- so we use a minimum start distance calculated on map size 
+	local minDistance 	= math.max(GlobalParameters.CITY_MIN_RANGE, (MapConfiguration.GetValue("CityMinDistance") or 0))
+	local homeDistance	= 9999 -- distance from this player's Civilization closest city
+	local civDistance	= 9999 -- distance from other Civilizations closest city
+	local bHasCity		= false
+	
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		local player = Players[iPlayer]
+		if player then
+			local playerCities 	= player:GetCities()
+			if playerCities and playerCities.Members then
+				for i, city in playerCities:Members() do
+					local cityPlot	= city:GetPlot()
+					local distance 	= Map.GetPlotDistance(plot:GetIndex(), cityPlot:GetIndex())
+					if distance <= minDistance then
+						print("     - Not far enough, distance = ".. tostring(distance) .." <= minDistance of "..tostring(minDistance))
+						return false
+					end
+					if iThisPlayer == iPlayer then
+						bHasCity = true
+						if distance < homeDistance then
+							homeDistance = distance
+						end
+					elseif player:IsMajor() then -- to do : option ?
+						if distance < civDistance then
+							civDistance = distance
+						end
+					end
+				end
+			end
+		end
+	end
+	if bHasCity and homeDistance >= civDistance then
+		print("     - Closer of other civs : Home distance of ".. tostring(homeDistance) .." >= other Civilization distance of "..tostring(civDistance))
+		return false
+	end
+--print(CivilizationPlayerID[iThisPlayer], bHasCity, homeDistance, civDistance, plot:GetX(), plot:GetY())
+	return true
+end
+
+function GetPotentialCityPlots()
+
+	local potentialPlots 	= {}
+	local minFertility		= -250
+
+	for iX = 0, g_iW - 1 do
+		for iY = 0, g_iH - 1 do
+			local index = (iY * g_iW) + iX;
+			pPlot = Map.GetPlotByIndex(index)
+			if pPlot:GetResourceCount() == 0 and (not pPlot:IsImpassable()) and (not pPlot:IsNaturalWonder()) and (not pPlot:IsWater()) then
+				local fertility = GetPlotFertility(pPlot)
+				if fertility > minFertility then
+					--print("fertility = ", fertility)
+					table.insert(potentialPlots, { Plot = pPlot, Fertility = fertility} )
+				end
+			end
+		end
+	end
+	print("GetPotentialCityPlots returns "..tostring(#potentialPlots).." plots")
+	
+	table.sort (potentialPlots, function(a, b) return a.Fertility > b.Fertility; end);
+	return potentialPlots
+end
+
+function GetBestCityPlotFromList(potentialPlots, iPlayer)
+
+	-- to do : use iPlayer and differentiate MinDistanceForeignCity and MinDistanceCity
+
+	if not potentialPlots then 
+		print("WARNING: plots is nil for GetBestCityPlotFromList(plots) !")
+		print("Skipping...")
+		return nil
+	end
+	
+	local iSize		= #potentialPlots;
+	local iIndex 	= 1
+	local bValid 	= false;
+	
+	while bValid == false and iSize >= iIndex do
+		bValid = true
+		if potentialPlots[iIndex].Plot then
+			pTempPlot = potentialPlots[iIndex].Plot
+			
+			print("   - testing plot#"..tostring(iIndex) .. ", Fertility = " .. tostring(potentialPlots[iIndex].Fertility))
+
+			-- Checks to see if there are any cities in the given distance
+			local bDistanceCheck = IsPotentialCityPlotFarEnough(pTempPlot, iPlayer)
+			if(bDistanceCheck == false) then
+				bValid = false;
+				potentialPlots[iIndex].Plot = nil -- no need to test that plot again...
+			end
+			
+			iIndex = iIndex + 1
+
+			-- If the plots passes all the checks then the plot equals the temp plot
+			if(bValid == true) then
+				print("GetBestCityPlotFromList : returning plot #"..tostring(iIndex).."/"..tostring(iSize).." at fertility = ".. tostring(potentialPlots[iIndex].Fertility))
+				return pTempPlot;
+			end
+		else		
+			iIndex = iIndex + 1;
+			bValid = false
+		end
+	end
+
+	return nil;
 end
 
 -- City
@@ -630,11 +820,95 @@ function PlaceCities()
 	print("Starting City placement for Scenario...")
 	local CitiesPlacedFor = {}
 	
-	if cityPlacement == "TERRAIN" then
+	if cityPlacement == "PLACEMENT_TERRAIN" then
+	
+		print("Placing cities using Terrain fertility...")
+		
+		local citiesToPlace 	= {}
+		local startingPlots 	= {}
+		local potentialplots	= GetPotentialCityPlots()
+		local playerPlots		= {}
+		
+		-- Get number of cities to place and  potential cities plots for all Civilizations
+		for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 
+			local civilizationType	= CivilizationPlayerID[iPlayer]
+			local ScenarioRow		= civilizationType and GameInfo.ScenarioCivilizations[civilizationType]
+			local player			= Players[iPlayer]
+			local bIsMajor			= player and player:IsMajor()
+			local bIsMinor			= player and (not bIsMajor) and (not player:IsBarbarian())
+			if player then
+			
+				-- first check Scenario settings, then Config settings
+				local numberCities = (IsRowValid(ScenarioRow) and ScenarioRow.NumberOfCity) or (bIsMajor and numberOfMajorCity) or (bIsMinor and numberOfMinorCity) or nil
+				print(" - Number of cities to place for " .. tostring(CivilizationPlayerID[iPlayer]) .. " = " .. tostring(numberCities))
+				
+				-- place capital
+				if numberCities then
+					print("   - Trying to place Capital on starting plot...")
+					local startingPlot = player:GetStartingPlot()
+					if startingPlot then
+						--startingPlots[iPlayer] = startingPlot:GetIndex()
+						local city = player:GetCities():Create(startingPlot:GetX(), startingPlot:GetY())			
+						if city then
+							print("    - CAPITAL PLACED !")
+							numberCities = numberCities - 1
+						end
+						if numberCities > 0 then 
+							citiesToPlace[iPlayer] = numberCities
+							-- Sort potential cities plots for that player
+							local minDistance 				= GlobalParameters.CITY_MIN_RANGE
+							local distanceWeigthMultiplier	= 0.15
+							playerPlots[iPlayer]			= {}
+							local plotList					= playerPlots[iPlayer]
+							
+							print("   - Get and Sort potential plots for this player cities...")
+							for i, row in ipairs(potentialplots) do
+								local distance	= Map.GetPlotDistance(row.Plot:GetIndex(), startingPlot:GetIndex())
+								if distance > minDistance or city == nil then
+									local distanceWeight = distance * distanceWeigthMultiplier
+									table.insert(plotList, { Plot = row.Plot, Fertility = row.Fertility / (1 + distanceWeight)} )
+								end
+							end
+							table.sort (plotList, function(a, b) return a.Fertility > b.Fertility; end);
+						end
+					end
+				end
+			end
+		end
+		
+		-- Place 1 city per civilization per loop, until no more cities can be founded
+		local bPlacedCity = true
+		while (bPlacedCity) do
+			local toRemove 	= {}
+			bPlacedCity 	= false
+			for iPlayer, num in pairs(citiesToPlace) do
+				print(" - Finding next City position for " .. tostring(CivilizationPlayerID[iPlayer]) .. ", cities to place = " .. tostring(num))
+
+				local plotList	= playerPlots[iPlayer]
+				local pBestPlot = GetBestCityPlotFromList(plotList, iPlayer)	
+				if pBestPlot then
+					local player 	= Players[iPlayer]
+					local city 		= player:GetCities():Create(pBestPlot:GetX(), pBestPlot:GetY())			
+					if city then
+						print("    - City placed !")
+						bPlacedCity = true
+						num			= num - 1
+						if num <= 0 then
+							table.insert(toRemove, iPlayer)
+						else
+							citiesToPlace[iPlayer] = num
+						end
+					end
+				end
+			end
+			for _, iPlayer in ipairs(toRemove) do
+				citiesToPlace[iPlayer] = nil
+			end
+		end
 	end
 
-	if cityPlacement == "IMPORT" or cityPlacement == "MIXED"  then
+	if cityPlacement == "PLACEMENT_IMPORT" or cityPlacement == "PLACEMENT_MIXED"  then
 		local CityPlayerID 			= {}
 		local CityCivilizationType	= {}
 		
@@ -715,7 +989,7 @@ function PlaceCities()
 
 	end
 	
-	if cityPlacement == "CITY_MAP" or cityPlacement == "MIXED" then
+	if cityPlacement == "PLACEMENT_CITY_MAP" or cityPlacement == "PLACEMENT_MIXED" then
 	
 		print("Searching cities with known position for each major civs...")
 		local cityList = {}
@@ -854,7 +1128,7 @@ function PlaceBorders()
 		end
 	end
 	
-	if borderPlacement == "IMPORT" then
+	if borderPlacement == "PLACEMENT_IMPORT" then
 		---[[
 		
 		print("Placing Territory...")
@@ -902,7 +1176,7 @@ end
 function PlaceUnits()
 
 	print("Starting Units placement for Scenario...")
-	if true then --	unitPlacement == "IMPORT"
+	if true then --	unitPlacement == "PLACEMENT_IMPORT"
 		print("Create replacement table")
 		local backup = {}
 		for row in GameInfo.ScenarioUnitsReplacement() do
@@ -957,7 +1231,7 @@ function PlaceInfrastructure()
 
 	print("Starting Infrastructure placement for Scenario...")
 	
-	if infrastructurePlacement == "IMPORT" then
+	if infrastructurePlacement == "PLACEMENT_IMPORT" then
 		
 		print("Placing Infrastructure...")
 		local alreadyWarnedFor	= {}

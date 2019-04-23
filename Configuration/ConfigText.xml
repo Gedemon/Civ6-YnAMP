@@ -736,6 +736,10 @@
       <Text>Alps (West Italy)</Text>
     </Replace>
 	
+    <Replace Tag="LOC_SCENARIO_OPTIONS" Language="en_US">
+      <Text>Scenario Options</Text>
+    </Replace>
+	
     <Replace Tag="LOC_MAP_SCENARIO_TYPE_NAME" Language="en_US">
       <Text>Scenario</Text>
     </Replace>
@@ -746,10 +750,16 @@
       <Text>No Scenario</Text>
     </Replace>
     <Replace Tag="LOC_MAP_SCENARIO_GENERATED_NAME" Language="en_US">
-      <Text>Generated</Text>
+      <Text>Generated [ICON_Exclamation][COLOR_RED] Alpha Testing [ENDCOLOR][ICON_Exclamation]</Text>
     </Replace>
     <Replace Tag="LOC_MAP_SCENARIO_GENERATED_DESCRIPTION" Language="en_US">
       <Text>Scenario generated automatically</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GENERATED_NAME" Language="en_US">
+      <Text>Generated</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GENERATED_DESCRIPTION" Language="en_US">
+      <Text>Automatic placement by the Scenario Generator</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CITY_PLACEMENT_NAME" Language="en_US">
@@ -767,6 +777,145 @@
     <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_DESCRIPTION" Language="en_US">
       <Text>Get cities position from the CityMap table</Text>
     </Replace>
+	
+    <Replace Tag="LOC_MAP_CUSTOM_SCENARIO_VALUES_NAME" Language="en_US">
+      <Text>Use input boxes ([ICON_Exclamation] reset values !)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_SCENARIO_VALUES_DESCRIPTION" Language="en_US">
+      <Text>Use input boxes instead of dropdown menu for scenario parameters when possible</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NUMBER_OF_CITY_NAME" Language="en_US">
+      <Text>Max. Num. of Cities (Major)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NUMBER_OF_CITY_DESCRIPTION" Language="en_US">
+      <Text>The Scenario Generator will try to place this number of cities for Major Civilizations</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NUMBER_OF_MINOR_CITY_NAME" Language="en_US">
+      <Text>Max. Num. of Cities (Minor)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NUMBER_OF_MINOR_CITY_DESCRIPTION" Language="en_US">
+      <Text>The Scenario Generator will try to place this number of cities for Minor Civilizations</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CAPITAL_SIZE_NAME" Language="en_US">
+      <Text>Capital city size</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CAPITAL_SIZE_DESCRIPTION" Language="en_US">
+      <Text>Size of the Capitals</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_OTHER_CITY_SIZE_NAME" Language="en_US">
+      <Text>Other cities size</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_OTHER_CITY_SIZE_DESCRIPTION" Language="en_US">
+      <Text>Maximum size of the other cities</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_DECREASE_OTHER_CITY_SIZE_NAME" Language="en_US">
+      <Text>Decrease other city sizes</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DECREASE_OTHER_CITY_SIZE_DESCRIPTION" Language="en_US">
+      <Text>When checked, first placed cities are bigger than last placed cities, initial cities use the "Other cities size" values, then the size is reduced using the "X reduction every Y cities" ratio.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_DECREASE_PER_CITY_NAME" Language="en_US">
+      <Text>X reduction every Y cities</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DECREASE_PER_CITY_DESCRIPTION" Language="en_US">
+      <Text>Ratio to use for each reduction in size</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_RATIO_2_PER_1" Language="en_US">
+      <Text>2 per 1</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_2_PER_1_DESCRIPTION" Language="en_US">
+      <Text>Use a 2/1 ratio for changing that value</Text>
+    </Replace>	
+    <Replace Tag="LOC_RATIO_1_PER_1" Language="en_US">
+      <Text>1 per 1</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_1_DESCRIPTION" Language="en_US">
+      <Text>Use a 1/1 ratio for changing that value</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_2" Language="en_US">
+      <Text>1 per 2</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_2_DESCRIPTION" Language="en_US">
+      <Text>Use a 1/2 ratio for changing that value</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_3" Language="en_US">
+      <Text>1 per 3</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_3_DESCRIPTION" Language="en_US">
+      <Text>Use a 1/3 ratio for changing that value</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_6" Language="en_US">
+      <Text>1 per 6</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_6_DESCRIPTION" Language="en_US">
+      <Text>Use a 1/6 ratio for changing that value</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_INFRASTRUCTURE_NAME" Language="en_US">
+      <Text>Infrastructure Placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_INFRASTRUCTURE_DESCRIPTION" Language="en_US">
+      <Text>How to place the infrastructure (roads, rails, improvments, districts, buildings) on the map</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_ROAD_PLACEMENT_NAME" Language="en_US">
+      <Text>Roads Placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ROAD_PLACEMENT_DESCRIPTION" Language="en_US">
+      <Text>How to place the roads on the map</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_ROAD_DISTANCE_NAME" Language="en_US">
+      <Text>Unlimited roads length</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ROAD_DISTANCE_DESCRIPTION" Language="en_US">
+      <Text>No distance limit between two Cities to try to place a road</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_ROAD_DISTANCE_NAME" Language="en_US">
+      <Text>Max. distance for roads</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ROAD_DISTANCE_DESCRIPTION" Language="en_US">
+      <Text>Maximum distance between two Cities to try to place a road</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MAX_ROAD_PER_CITY_NAME" Language="en_US">
+      <Text>Max. roads per City</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MAX_ROAD_PER_CITY_DESCRIPTION" Language="en_US">
+      <Text>Maximum number of Roads going out of a City</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_PLACEMENT_CENTRALIZED_NAME" Language="en_US">
+      <Text>Centralized</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_CENTRALIZED_DESCRIPTION" Language="en_US">
+      <Text>From Capitals to all other cities</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_PER_CITY_NAME" Language="en_US">
+      <Text>City to City</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_PER_CITY_DESCRIPTION" Language="en_US">
+      <Text>Each City to the closest cities</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_INTERNATIONAL_ROADS_NAME" Language="en_US">
+      <Text>International Roads</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_INTERNATIONAL_ROADS_DESCRIPTION" Language="en_US">
+      <Text>When checked, allows roads placement to foreign cities (only Capital to Capital when the "Centralized" Road Placement option is chosen).</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_UNLIMITED_ROAD_DISTANCE_NAME" Language="en_US">
+      <Text>Unlimited Road Distance</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_UNLIMITED_ROAD_DISTANCE_DESCRIPTION" Language="en_US">
+      <Text>When checked, no distance limit is used when trying to place a road between two cities. May slow down Scenario Generation on larger maps.</Text>
+    </Replace>
+	
 	
   </LocalizedText>
 </GameData>
