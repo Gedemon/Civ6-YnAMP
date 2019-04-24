@@ -30,6 +30,7 @@ g_XP2WasEnabled = nil;					-- Track whether the expansion was enabled to avoid r
 -- YnAMP <<<<<
 g_ModWasEnabled	= {}
 print("Loading MainMenu.lua for YnAMP...")
+print("Game version : ".. tostring(UI.GetAppVersion()))
 -- YnAMP >>>>>
 
 -- ===========================================================================
@@ -1178,7 +1179,7 @@ end
 local bMenuHadCustomLogo 	= false
 local bMenuHadCustomMovie	= false
 function CheckMainMenuMedia()
-	print("CheckMainMenuMedia")
+	print("Checking Mods status for MainMenu Media...")
 	
 	local logoTexture
 	local logoMovie
@@ -1190,16 +1191,16 @@ function CheckMainMenuMedia()
 
 	---[[
 	if installedMods ~= nil then
-		print("Active mods:")
 		for i, modData in ipairs(installedMods) do
-			if modData.Enabled then
+			if modData.Enabled and modData.Allowance then
 				--local info	= Modding.GetModInfo(modData.Handle)
 				modTexture			= Modding.GetModProperty(modData.Handle, "MainMenuLogo")
 				modMovie			= Modding.GetModProperty(modData.Handle, "MainMenuVideo")
 				bModHasCustomLogo	= modTexture or bModHasCustomLogo
 				bModHasCustomMovie	= modMovie or bModHasCustomMovie
-				print("- ".. Locale.Lookup(modData.Name), modTexture, modMovie)
+				--for k, v in pairs(modData) do print (k,v) end
 				if not g_ModWasEnabled[modData.Handle] then
+					print("- Enabled : ".. Locale.Lookup(modData.Name), modTexture and " - Logo : ".. tostring(modTexture) or "", modMovie and " - Movie : ".. tostring(modMovie) or "")
 					logoTexture						= modTexture or logoTexture
 					logoMovie						= modMovie or logoMovie
 					g_ModWasEnabled[modData.Handle] = true
@@ -1207,11 +1208,14 @@ function CheckMainMenuMedia()
 					bMenuHadCustomMovie				= logoMovie ~= nil
 				end
 			else
+				if g_ModWasEnabled[modData.Handle] then
+					print("- Disabled : ".. Locale.Lookup(modData.Name), modTexture or "", modMovie or "")
+				end
 				g_ModWasEnabled[modData.Handle] = nil
 			end
 		end
 	end
-print(bMenuHadCustomLogo, bModHasCustomLogo, bMenuHadCustomMovie, bModHasCustomMovie)
+--print(bMenuHadCustomLogo, bModHasCustomLogo, bMenuHadCustomMovie, bModHasCustomMovie)
 	if bMenuHadCustomLogo and not bModHasCustomLogo then
 		if(Expansion2IsEnabled()) then
 			logoTexture = "Shell_LogoEXP2.dds"
@@ -1232,7 +1236,7 @@ print(bMenuHadCustomLogo, bModHasCustomLogo, bMenuHadCustomMovie, bModHasCustomM
 		end
 	end
 	
-print(logoTexture, logoMovie)
+--print(logoTexture, logoMovie)
 	---[[
 	-- If there are changes, apply them.
 	if logoTexture then

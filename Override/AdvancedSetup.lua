@@ -11,7 +11,6 @@ include("SupportFunctions");
 
 -- YnAMP <<<<<<
 print ("loading AdvancedSetup for Yet (not) Another Maps Pack...")
-print ("Game version : ".. tostring(UI.GetAppVersion()))
 -- YnAMP >>>>>
 
 -- ===========================================================================
