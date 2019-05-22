@@ -41,6 +41,10 @@
 			<Where Name="LOC_MAP_RESOURCES_NAME"/>
 			<Set SortIndex="270"/>
 		</Update>
+		
+		<!--	Hidden entry to know which XP is active		-->
+		<Replace Key1="Ruleset" Key2="RULESET_EXPANSION_1"	ParameterId="XP1" Name="XP1" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="XP1" GroupId="MapOptions" Visible="0" SortIndex="100"/>
+		<Replace Key1="Ruleset" Key2="RULESET_EXPANSION_2"	ParameterId="XP2" Name="XP2" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="XP2" GroupId="MapOptions" Visible="0" SortIndex="100"/>
 
 		<!--	Culturally Linked Start Position		-->
 		<Replace ParameterId="CulturallyLinkedStart" Name="LOC_CULTURALLY_LINKED_START_NAME" Description="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Domain="CulturallyLinkedStart" DefaultValue="PLACEMENT_ETHNIC" ConfigurationGroup="Map" ConfigurationId="CulturallyLinkedStart" GroupId="MapOptions" Hash="0" SortIndex="287"/>
@@ -75,13 +79,16 @@
 		<Replace ParameterId="InterRoadMaxDistance"		Name="LOC_MAP_INTER_ROAD_DISTANCE_NAME"		Description="LOC_MAP_INTER_ROAD_DISTANCE_DESCRIPTION"		Domain="InterRoadMaxDistance" DefaultValue="8"						ConfigurationGroup="Map" ConfigurationId="InterRoadMaxDistance"		GroupId="MapOptions" SortIndex="10120"/>
 		<Replace ParameterId="CustomizeValues"	Name="LOC_MAP_CUSTOM_SCENARIO_VALUES_NAME"	Description="LOC_MAP_CUSTOM_SCENARIO_VALUES_DESCRIPTION"Domain="bool" 			DefaultValue="0" 				ConfigurationGroup="Map" ConfigurationId="CustomizeValues"	GroupId="MapOptions" SortIndex="10005"/>
 
+		to do : 
+		Replace all single X per Y ratio domain by 2 variables for X, Y, with sliders selection
 		Infrastructure : domain, NONE, GENERATED (IMPORT set at scenario level) 
 		MaxRoadPerCity : uint, RoadPlacement Equals PERCITY (default = 1, 0 not allowed) OR domain, 1, 2 ,3 (default = 1), RoadPlacement Equals PERCITY
 		InternationalRoads : bool, Infrastructure Equals GENERATED, RoadPlacement NotEquals NONE (can link to foreign cities, capital to capital if RoadPlacement = CENTRALIZED) OR domain, NONE, CENTRALIZED (capital to capitals), PERCITY (city to closest non linked international city)
 		InternationalRoadMaxDistance : uint, InternationalRoads NotEquals NONE (0 = no limit) OR domain, 4, 6, 8, 12, 16, 24, unlimited (default = 12)
-		NationalRailPlacement : domain, NONE, CENTRALIZED (capital to all cities), LONGEST (Capital to farther possible city), Infrastructure Equals GENERATED
+		NationalRailPlacement : domain, NONE, CENTRALIZED (capital to all cities), LONGEST (Capital to farther possible city), SIZE_RELATED (num dependant of city size), Infrastructure Equals GENERATED
 		InternationalRails : domain, NONE, CENTRALIZED (capital to all capitals), Infrastructure Equals GENERATED
 		RailsMaxDistance : uint, (0 = no limit) OR domain, 4, 6, 8, 12, 16, 24, 32 unlimited (default = 12)
+		RailsPerSize : domain, 1 per 1, 1 per 2, 1 per 3, 1 per 6, 1 per 9, 1 per 12 (default = "1 per 6"), NationalRailPlacement Equals SIZE_RELATED
 		Improvments : domain, NONE, CENTRALIZED (capital only), ALL, SIZE_RELATED (num dependant of city size), Infrastructure Equals GENERATED
 		MaxNumImprovments : Improvments NotEquals NONE/SIZE_RELATED
 		ImprovmentsPerSize : domain, 1 per 1, 1 per 2, 1 per 3, 1 per 6 (default = "1 per 2"), Improvments Equals SIZE_RELATED
@@ -102,9 +109,14 @@
 		<Replace ParameterId="NumberOfMinorCity"Name="LOC_MAP_NUMBER_OF_MINOR_CITY_NAME"	Description="LOC_MAP_NUMBER_OF_MINOR_CITY_DESCRIPTION"	Domain="NumberOfMinorCity" 	DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="NumberOfMinorCity"	GroupId="ScenarioOptions" SortIndex="10020"/>
 		<Replace ParameterId="CapitalSize"		Name="LOC_MAP_CAPITAL_SIZE_NAME"			Description="LOC_MAP_CAPITAL_SIZE_DESCRIPTION"			Domain="CapitalSize" 		DefaultValue="6" ConfigurationGroup="Map" ConfigurationId="CapitalSize"			GroupId="ScenarioOptions" SortIndex="10030"/>
 		<Replace ParameterId="OtherCitySize"	Name="LOC_MAP_OTHER_CITY_SIZE_NAME"			Description="LOC_MAP_OTHER_CITY_SIZE_DESCRIPTION"		Domain="OtherCitySize" 		DefaultValue="3" ConfigurationGroup="Map" ConfigurationId="OtherCitySize"		GroupId="ScenarioOptions" SortIndex="10040"/>
-		
-		<Replace ParameterId="DecreaseOtherCitySize"	Name="LOC_MAP_DECREASE_OTHER_CITY_SIZE_NAME"Description="LOC_MAP_DECREASE_OTHER_CITY_SIZE_DESCRIPTION"	Domain="bool" 				DefaultValue="1"						ConfigurationGroup="Map" ConfigurationId="DecreaseOtherCitySize"	GroupId="ScenarioOptions" SortIndex="10050"/>
-		<Replace ParameterId="DecreasePerCity"			Name="LOC_MAP_DECREASE_PER_CITY_NAME"		Description="LOC_MAP_DECREASE_PER_CITY_DESCRIPTION"			Domain="DecreasePerCity" 	DefaultValue="1_PER_2"					ConfigurationGroup="Map" ConfigurationId="DecreasePerCity"			GroupId="ScenarioOptions" SortIndex="10060"/>
+
+		<!--  -->
+		<Replace ParameterId="DecreaseOtherCitySize"	Name="LOC_MAP_DECREASE_OTHER_CITY_SIZE"		Description="LOC_MAP_DECREASE_OTHER_CITY_SIZE_DESCRIPTION"	Domain="bool" 				DefaultValue="1"						ConfigurationGroup="Map" ConfigurationId="DecreaseOtherCitySize"	GroupId="ScenarioOptions" SortIndex="10050"/>
+		<Replace ParameterId="CitySizeDecrement"		Name="LOC_MAP_CITY_SIZE_DECREMENT"			Description="LOC_MAP_CITY_SIZE_DECREMENT_DESCRIPTION"		Domain="CitySizeDecrement" 			DefaultValue="1"				ConfigurationGroup="Map" ConfigurationId="CitySizeDecrement"		GroupId="ScenarioOptions" SortIndex="10060"/>
+		<Replace ParameterId="NumCityPerSizeDecrement"	Name="LOC_MAP_NUM_CITY_PER_DECREMENT"		Description="LOC_MAP_NUM_CITY_PER_DECREMENT_DESCRIPTION"	Domain="NumCityPerSizeDecrement" 	DefaultValue="1"				ConfigurationGroup="Map" ConfigurationId="NumCityPerSizeDecrement"	GroupId="ScenarioOptions" SortIndex="10061"/>
+
+		<Replace ParameterId="BorderPlacement"			Name="LOC_MAP_BORDER_PLACEMENT_NAME"		Description="LOC_MAP_BORDER_PLACEMENT_DESCRIPTION"			Domain="BorderPlacement" 	DefaultValue="PLACEMENT_EXPAND"			ConfigurationGroup="Map" ConfigurationId="BorderPlacement"			GroupId="ScenarioOptions" SortIndex="10065"/>
+		<Replace ParameterId="BorderMaxDistance"		Name="LOC_MAP_BORDER_DISTANCE_NAME"			Description="LOC_MAP_BORDER_DISTANCE_DESCRIPTION"			Domain="BorderMaxDistance" 	DefaultValue="4"						ConfigurationGroup="Map" ConfigurationId="BorderMaxDistance"		GroupId="ScenarioOptions" SortIndex="10067"/>
 
 		<Replace ParameterId="Infrastructure" 			Name="LOC_MAP_INFRASTRUCTURE_NAME"			Description="LOC_MAP_INFRASTRUCTURE_DESCRIPTION" 			Domain="Infrastructure" 	DefaultValue="PLACEMENT_GENERATED"		ConfigurationGroup="Map" ConfigurationId="Infrastructure" 			GroupId="ScenarioOptions" SortIndex="10070"/>
 
@@ -114,13 +126,17 @@
 		<Replace ParameterId="RoadMaxDistance"			Name="LOC_MAP_ROAD_DISTANCE_NAME"			Description="LOC_MAP_ROAD_DISTANCE_DESCRIPTION"				Domain="RoadMaxDistance" 	DefaultValue="6"						ConfigurationGroup="Map" ConfigurationId="RoadMaxDistance"			GroupId="ScenarioOptions" SortIndex="10110"/>
 		<Replace ParameterId="MaxRoadPerCity"			Name="LOC_MAP_MAX_ROAD_PER_CITY_NAME"		Description="LOC_MAP_MAX_ROAD_PER_CITY_DESCRIPTION"			Domain="MaxRoadPerCity" 	DefaultValue="1"						ConfigurationGroup="Map" ConfigurationId="MaxRoadPerCity"			GroupId="ScenarioOptions" SortIndex="10130"/>
 		
-	</Parameters>	
+	</Parameters>
 
 	<DomainRanges>
 		<Replace Domain="NumberOfCity" 			MinimumValue="1" MaximumValue="30"/>
 		<Replace Domain="NumberOfMinorCity" 	MinimumValue="1" MaximumValue="30"/>
 		<Replace Domain="CapitalSize" 			MinimumValue="1" MaximumValue="30"/>
 		<Replace Domain="OtherCitySize" 		MinimumValue="1" MaximumValue="30"/>
+		<Replace Domain="CitySizeDecrement" 		MinimumValue="1" MaximumValue="30"/>
+		<Replace Domain="NumCityPerSizeDecrement" 	MinimumValue="1" MaximumValue="10"/>
+		<Replace Domain="OtherCitySize" 			MinimumValue="1" MaximumValue="30"/>
+		<Replace Domain="BorderMaxDistance" 	MinimumValue="1" MaximumValue="12"/>
 		<Replace Domain="RoadMaxDistance" 		MinimumValue="1" MaximumValue="30"/>
 		<Replace Domain="InterRoadMaxDistance" 	MinimumValue="1" MaximumValue="30"/>
 		<Replace Domain="MaxRoadPerCity" 		MinimumValue="1" MaximumValue="6"/>
@@ -174,22 +190,29 @@
 
 		<Replace Domain="CityPlacement" Value="PLACEMENT_EMPTY" 		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 			Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 				SortIndex="10"/>
 		<Replace Domain="CityPlacement" Value="PLACEMENT_TERRAIN" 		Name="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" 		Description="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" 		SortIndex="20"/>
-
+		
+		<!-- seems that the setup screen don't like what's below (CityPlacement option invisible)... so stick to specific map option and domains overriding the default options 
+		<Replace Key1="Map" Key2="LargestEarthCustom.lua" 		Domain="CityPlacement" Value="PLACEMENT_TEST" 		Name="Test" 		Description="Test" 		SortIndex="30"/>
+		-->
+		
 		<Replace Domain="ScenarioType"	Value="SCENARIO_NONE" 		Name="LOC_MAP_SCENARIO_NONE_NAME" 		Description="LOC_MAP_SCENARIO_NONE_DESCRIPTION" 		SortIndex="10"/>
 		<Replace Domain="ScenarioType"	Value="SCENARIO_GENERATED"	Name="LOC_MAP_SCENARIO_GENERATED_NAME" 	Description="LOC_MAP_SCENARIO_GENERATED_DESCRIPTION" 	SortIndex="20"/>
-		
-		<Replace Domain="DecreasePerCity" Value="2_PER_1" 	Name="LOC_RATIO_2_PER_1" 	Description="LOC_RATIO_2_PER_1_DESCRIPTION" 	SortIndex="10"/>
-		<Replace Domain="DecreasePerCity" Value="1_PER_1" 	Name="LOC_RATIO_1_PER_1" 	Description="LOC_RATIO_1_PER_1_DESCRIPTION" 	SortIndex="20"/>
-		<Replace Domain="DecreasePerCity" Value="1_PER_2" 	Name="LOC_RATIO_1_PER_2" 	Description="LOC_RATIO_1_PER_2_DESCRIPTION" 	SortIndex="30"/>
-		<Replace Domain="DecreasePerCity" Value="1_PER_3" 	Name="LOC_RATIO_1_PER_3" 	Description="LOC_RATIO_1_PER_3_DESCRIPTION" 	SortIndex="40"/>
-		<Replace Domain="DecreasePerCity" Value="1_PER_6" 	Name="LOC_RATIO_1_PER_6" 	Description="LOC_RATIO_1_PER_6_DESCRIPTION" 	SortIndex="50"/>
-		
+		<!-- -->
+		<Replace Domain="DecreasePerCity" Value="0" 	Name="2/1" 	Description="LOC_MAP_RATIO_PER_CITY_DESCRIPTION" 	SortIndex="10"/>
+		<Replace Domain="DecreasePerCity" Value="1" 	Name="1/1" 	Description="LOC_MAP_RATIO_PER_CITY_DESCRIPTION" 	SortIndex="20"/>
+		<Replace Domain="DecreasePerCity" Value="2" 	Name="1/2" 	Description="LOC_MAP_RATIO_PER_CITY_DESCRIPTION" 	SortIndex="30"/>
+		<Replace Domain="DecreasePerCity" Value="3" 	Name="1/3" 	Description="LOC_MAP_RATIO_PER_CITY_DESCRIPTION" 	SortIndex="40"/>
+		<Replace Domain="DecreasePerCity" Value="6" 	Name="1/6" 	Description="LOC_MAP_RATIO_PER_CITY_DESCRIPTION" 	SortIndex="50"/>
+		<!-- -->
 		<Replace Domain="Infrastructure"	Value="PLACEMENT_EMPTY" 	Name="LOC_MAP_PLACEMENT_EMPTY_NAME" Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 	SortIndex="10"/>
 		<Replace Domain="Infrastructure"	Value="PLACEMENT_GENERATED"	Name="LOC_MAP_GENERATED_NAME" 		Description="LOC_MAP_GENERATED_DESCRIPTION" 		SortIndex="20"/>
 		
 		<Replace Domain="RoadPlacement"		Value="PLACEMENT_EMPTY" 		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 		Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 		SortIndex="10"/>
 		<Replace Domain="RoadPlacement"		Value="PLACEMENT_CENTRALIZED"	Name="LOC_MAP_PLACEMENT_CENTRALIZED_NAME" 	Description="LOC_MAP_PLACEMENT_CENTRALIZED_DESCRIPTION" SortIndex="20"/>
 		<Replace Domain="RoadPlacement"		Value="PLACEMENT_PER_CITY"		Name="LOC_MAP_PLACEMENT_PER_CITY_NAME" 		Description="LOC_MAP_PLACEMENT_PER_CITY_DESCRIPTION" 	SortIndex="30"/>
+		
+		<Replace Domain="BorderPlacement"	Value="PLACEMENT_EMPTY" 		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 		Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 		SortIndex="10"/>
+		<Replace Domain="BorderPlacement"	Value="PLACEMENT_EXPAND"		Name="LOC_MAP_PLACEMENT_EXPAND_NAME" 		Description="LOC_MAP_PLACEMENT_EXPAND_DESCRIPTION"		SortIndex="20"/>
 		
 	</DomainValues>
 
@@ -208,6 +231,10 @@
 		<Replace ParameterId="RequestedResources" 		ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="NotEquals"	ConfigurationValue="PLACEMENT_EMPTY"/>
 		<Replace ParameterId="StartPosition" 			ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" 	Operator="NotEquals" 	ConfigurationValue="PLACEMENT_TSL"/>
 		<Replace ParameterId="ForceTSL" 				ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" 	Operator="Equals" 		ConfigurationValue="PLACEMENT_TSL"/>
+		<Replace ParameterId="ForceTSL" 				ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals" 	ConfigurationValue="PLACEMENT_IMPORT"/>
+		<Replace ParameterId="ForceTSL" 				ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals" 	ConfigurationValue="PLACEMENT_TERRAIN"/>
+		<Replace ParameterId="ForceTSL" 				ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals" 	ConfigurationValue="PLACEMENT_MIXED"/>
+		<Replace ParameterId="ForceTSL" 				ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals" 	ConfigurationValue="PLACEMENT_CITY_MAP"/>
 		<Replace ParameterId="LeaderTSL" 				ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" 	Operator="Equals" 		ConfigurationValue="PLACEMENT_TSL"/>
 		<Replace ParameterId="AlternateTSL" 			ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" 	Operator="Equals" 		ConfigurationValue="PLACEMENT_TSL"/>
 		<Replace ParameterId="AlternatePlacement" 		ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" 	Operator="Equals" 		ConfigurationValue="PLACEMENT_TSL"/>
@@ -239,7 +266,14 @@
 		<Replace ParameterId="OtherCitySize"			ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_IMPORT"/>
 		<Replace ParameterId="DecreaseOtherCitySize"	ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_IMPORT"/>
 		
-		<Replace ParameterId="DecreasePerCity"			ConfigurationGroup="Map" ConfigurationId="DecreaseOtherCitySize" 	Operator="Equals"		ConfigurationValue="1"/>
+		<Replace ParameterId="CitySizeDecrement"		ConfigurationGroup="Map" ConfigurationId="DecreaseOtherCitySize" 	Operator="Equals"		ConfigurationValue="1"/>
+		<Replace ParameterId="NumCityPerSizeDecrement"	ConfigurationGroup="Map" ConfigurationId="DecreaseOtherCitySize" 	Operator="Equals"		ConfigurationValue="1"/>
+		
+		<Replace ParameterId="BorderPlacement"			ConfigurationGroup="Map" ConfigurationId="ScenarioType" 			Operator="NotEquals"	ConfigurationValue="SCENARIO_NONE"/>
+		<Replace ParameterId="BorderPlacement"			ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_EMPTY"/>
+		<Replace ParameterId="BorderMaxDistance"		ConfigurationGroup="Map" ConfigurationId="ScenarioType" 			Operator="NotEquals"	ConfigurationValue="SCENARIO_NONE"/>
+		<Replace ParameterId="BorderMaxDistance"		ConfigurationGroup="Map" ConfigurationId="BorderPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_EMPTY"/>
+		<Replace ParameterId="BorderMaxDistance"		ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_EMPTY"/>
 		
 		<Replace ParameterId="Infrastructure"			ConfigurationGroup="Map" ConfigurationId="ScenarioType" 			Operator="NotEquals"	ConfigurationValue="SCENARIO_NONE"/>
 		<Replace ParameterId="Infrastructure"			ConfigurationGroup="Map" ConfigurationId="CityPlacement" 			Operator="NotEquals"	ConfigurationValue="PLACEMENT_EMPTY"/>
@@ -256,7 +290,7 @@
 
 	</ParameterDependencies>
 	
-	<!-- doesn't works as expected ?
+	<!-- doesn't works as expected ? Use the MapSupportedValues instead...
 	<MapUnSupportedValues>
 		<Replace Map="InlandSea.lua" Domain="StandardMapSizes" Value="MAPSIZE_ENORMOUS" />
 		<Replace Map="InlandSea.lua" Domain="StandardMapSizes" Value="MAPSIZE_GIANT" />
@@ -273,4 +307,177 @@
 		<Replace Map="InlandSea.lua" Domain="StandardMapSizes" Value="MAPSIZE_HUGE" 		/>
 	</MapSupportedValues>
 	
+	
+	
+	<!-- City States Configuration -->
+	<Parameters>
+		<Update>
+			<Where ParameterId="CityStateCount"/>
+			<Set GroupId="CityStatesOptions"/>
+		</Update>
+		
+		<!--	Option to toggle manual selection of City States -->
+		<Replace ParameterId="SelectCityStates" Name="LOC_MAP_SELECT_CITY_STATES_NAME" Description="LOC_MAP_SELECT_CITY_STATES_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="SelectCityStates" GroupId="CityStatesOptions" SortIndex="100"/>
+
+		<!--	Base Game list -->
+		<Replace ParameterId="LEADER_MINOR_CIV_AMSTERDAM"		Name="LOC_CIVILIZATION_AMSTERDAM_NAME"		Description="LOC_CIVILIZATION_AMSTERDAM_DESCRIPTION"		Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_AMSTERDAM"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_BRUSSELS"		Name="LOC_CIVILIZATION_BRUSSELS_NAME"		Description="LOC_CIVILIZATION_BRUSSELS_DESCRIPTION" 		Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_BRUSSELS"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_BUENOS_AIRES"	Name="LOC_CIVILIZATION_BUENOS_AIRES_NAME"	Description="LOC_CIVILIZATION_BUENOS_AIRES_DESCRIPTION" 	Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_BUENOS_AIRES"	GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_CARTHAGE"		Name="LOC_CIVILIZATION_CARTHAGE_NAME"		Description="LOC_CIVILIZATION_CARTHAGE_DESCRIPTION" 		Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_CARTHAGE"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_GENEVA"			Name="LOC_CIVILIZATION_GENEVA_NAME"			Description="LOC_CIVILIZATION_GENEVA_DESCRIPTION" 			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_GENEVA"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_HATTUSA"			Name="LOC_CIVILIZATION_HATTUSA_NAME"		Description="LOC_CIVILIZATION_HATTUSA_DESCRIPTION" 			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_HATTUSA"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_HONG_KONG"		Name="LOC_CIVILIZATION_HONG_KONG_NAME"		Description="LOC_CIVILIZATION_HONG_KONG_DESCRIPTION" 		Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_HONG_KONG"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_JAKARTA"			Name="LOC_CIVILIZATION_BANDAR_BRUNEI_NAME"	Description="LOC_CIVILIZATION_BANDAR_BRUNEI_DESCRIPTION" 	Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_JAKARTA"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_JERUSALEM"		Name="LOC_CIVILIZATION_JERUSALEM_NAME"		Description="LOC_CIVILIZATION_JERUSALEM_DESCRIPTION" 		Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_JERUSALEM"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_KABUL"			Name="LOC_CIVILIZATION_KABUL_NAME"			Description="LOC_CIVILIZATION_KABUL_DESCRIPTION" 			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_KABUL"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_KANDY"			Name="LOC_CIVILIZATION_KANDY_NAME"			Description="LOC_CIVILIZATION_KANDY_DESCRIPTION" 			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_KANDY"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_KUMASI"			Name="LOC_CIVILIZATION_KUMASI_NAME"			Description="LOC_CIVILIZATION_KUMASI_DESCRIPTION" 			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_KUMASI"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_LA_VENTA"		Name="LOC_CIVILIZATION_LA_VENTA_NAME"		Description="LOC_CIVILIZATION_LA_VENTA_DESCRIPTION" 		Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_LA_VENTA"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_LISBON"			Name="LOC_CIVILIZATION_LISBON_NAME"			Description="LOC_CIVILIZATION_LISBON_DESCRIPTION" 			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_LISBON"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_MOHENJO_DARO"	Name="LOC_CIVILIZATION_MOHENJO_DARO_NAME"	Description="LOC_CIVILIZATION_MOHENJO_DARO_DESCRIPTION" 	Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_MOHENJO_DARO"	GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_NAN_MADOL"		Name="LOC_CIVILIZATION_NAN_MADOL_NAME"		Description="LOC_CIVILIZATION_NAN_MADOL_DESCRIPTION" 		Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_NAN_MADOL"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_PRESLAV"			Name="LOC_CIVILIZATION_PRESLAV_NAME"		Description="LOC_CIVILIZATION_PRESLAV_DESCRIPTION" 			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_PRESLAV"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_SEOUL"			Name="LOC_CIVILIZATION_SEOUL_NAME"			Description="LOC_CIVILIZATION_SEOUL_DESCRIPTION" 			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_SEOUL"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_STOCKHOLM"		Name="LOC_CIVILIZATION_STOCKHOLM_NAME"		Description="LOC_CIVILIZATION_STOCKHOLM_DESCRIPTION" 		Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_STOCKHOLM"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_TORONTO"			Name="LOC_CIVILIZATION_TORONTO_NAME"		Description="LOC_CIVILIZATION_TORONTO_DESCRIPTION" 			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_TORONTO"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_VALLETTA"		Name="LOC_CIVILIZATION_VALLETTA_NAME"		Description="LOC_CIVILIZATION_VALLETTA_DESCRIPTION" 		Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_VALLETTA"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_VILNIUS"			Name="LOC_CIVILIZATION_VILNIUS_NAME"		Description="LOC_CIVILIZATION_VILNIUS_DESCRIPTION" 			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_VILNIUS"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_YEREVAN"			Name="LOC_CIVILIZATION_YEREVAN_NAME"		Description="LOC_CIVILIZATION_YEREVAN_DESCRIPTION" 			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_YEREVAN"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_ZANZIBAR"		Name="LOC_CIVILIZATION_ZANZIBAR_NAME"		Description="LOC_CIVILIZATION_ZANZIBAR_DESCRIPTION" 		Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_ZANZIBAR"		GroupId="CityStatesOptions" SortIndex="200"/>
+
+		<!--	Vikings list -->
+		<Replace ParameterId="LEADER_MINOR_CIV_AUCKLAND"		Name="LOC_CIVILIZATION_AUCKLAND_NAME"		Description="LOC_CIVILIZATION_AUCKLAND_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_AUCKLAND"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_ANTANANARIVO"	Name="LOC_CIVILIZATION_ANTANANARIVO_NAME"	Description="LOC_CIVILIZATION_ANTANANARIVO_DESCRIPTION"		Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_ANTANANARIVO"	GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_ARMAGH"			Name="LOC_CIVILIZATION_ARMAGH_NAME"			Description="LOC_CIVILIZATION_ARMAGH_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_ARMAGH"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_GRANADA"			Name="LOC_CIVILIZATION_GRANADA_NAME"		Description="LOC_CIVILIZATION_GRANADA_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_GRANADA"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_MUSCAT"			Name="LOC_CIVILIZATION_MUSCAT_NAME"			Description="LOC_CIVILIZATION_MUSCAT_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_MUSCAT"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_PALENQUE"		Name="LOC_CIVILIZATION_PALENQUE_NAME"		Description="LOC_CIVILIZATION_PALENQUE_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_PALENQUE"		GroupId="CityStatesOptions" SortIndex="200"/>
+		
+		<!--	R&F list -->
+		<Replace ParameterId="LEADER_MINOR_CIV_ANTIOCH"			Name="LOC_CIVILIZATION_ANTIOCH_NAME"		Description="LOC_CIVILIZATION_ANTIOCH_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_ANTIOCH"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_BABYLON"			Name="LOC_CIVILIZATION_BABYLON_NAME"		Description="LOC_CIVILIZATION_BABYLON_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_BABYLON"		GroupId="CityStatesOptions" SortIndex="200"/>
+		
+		<!--	GS list -->
+		<Replace ParameterId="LEADER_MINOR_CIV_AKKAD"			Name="LOC_CIVILIZATION_AKKAD_NAME"			Description="LOC_CIVILIZATION_AKKAD_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_AKKAD"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_BOLOGNA"			Name="LOC_CIVILIZATION_BOLOGNA_NAME"		Description="LOC_CIVILIZATION_BOLOGNA_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_BOLOGNA"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_CAHOKIA"			Name="LOC_CIVILIZATION_CAHOKIA_NAME"		Description="LOC_CIVILIZATION_CAHOKIA_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_CAHOKIA"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_CARDIFF"			Name="LOC_CIVILIZATION_CARDIFF_NAME"		Description="LOC_CIVILIZATION_CARDIFF_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_CARDIFF"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_FEZ"				Name="LOC_CIVILIZATION_FEZ_NAME"			Description="LOC_CIVILIZATION_FEZ_DESCRIPTION"				Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_FEZ"			GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_MEXICO_CITY"		Name="LOC_CIVILIZATION_MEXICO_CITY_NAME"	Description="LOC_CIVILIZATION_MEXICO_CITY_DESCRIPTION"		Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_MEXICO_CITY"	GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_NAZCA"			Name="LOC_CIVILIZATION_NAZCA_NAME"			Description="LOC_CIVILIZATION_NAZCA_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_NAZCA"		GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_NGAZARGAMU"		Name="LOC_CIVILIZATION_NGAZARGAMU_NAME"		Description="LOC_CIVILIZATION_NGAZARGAMU_DESCRIPTION"		Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_NGAZARGAMU"	GroupId="CityStatesOptions" SortIndex="200"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_RAPA_NUI"		Name="LOC_CIVILIZATION_RAPA_NUI_NAME"		Description="LOC_CIVILIZATION_RAPA_NUI_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_RAPA_NUI"	GroupId="CityStatesOptions" SortIndex="200"/>
+
+	</Parameters>
+	
+	<ParameterDependencies>
+	
+		<Replace ParameterId="LEADER_MINOR_CIV_AMSTERDAM"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_BRUSSELS"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_BUENOS_AIRES"	ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_CARTHAGE"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_GENEVA"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_HATTUSA"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_HONG_KONG"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_JAKARTA"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_JERUSALEM"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_KABUL"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_KANDY"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_KUMASI"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_LA_VENTA"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_LISBON"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_MOHENJO_DARO"	ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_NAN_MADOL"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_PRESLAV"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_SEOUL"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_STOCKHOLM"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_TORONTO"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_VALLETTA"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_VILNIUS"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_YEREVAN"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_ZANZIBAR"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		
+		<Replace ParameterId="LEADER_MINOR_CIV_AUCKLAND"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_ANTANANARIVO"	ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_ARMAGH"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_GRANADA"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_MUSCAT"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_PALENQUE"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		
+		<Replace ParameterId="LEADER_MINOR_CIV_ANTIOCH"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_BABYLON"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		
+		<Replace ParameterId="LEADER_MINOR_CIV_AKKAD"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_BOLOGNA"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_CAHOKIA"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_CARDIFF"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_FEZ"				ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_MEXICO_CITY"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_NAZCA"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_NGAZARGAMU"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_RAPA_NUI"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		
+		<!--	Require R&F -->
+		<Replace ParameterId="LEADER_MINOR_CIV_ANTIOCH"			ConfigurationGroup="Map" ConfigurationId="XP1" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_BABYLON"			ConfigurationGroup="Map" ConfigurationId="XP1" 		Operator="Equals" 	ConfigurationValue="1"/>
+		
+		<!--	Require Vikings DLC -->
+		<Replace ParameterId="LEADER_MINOR_CIV_AUCKLAND"		ConfigurationGroup="Map" ConfigurationId="VikingDLC" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_ANTANANARIVO"	ConfigurationGroup="Map" ConfigurationId="VikingDLC" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_ARMAGH"			ConfigurationGroup="Map" ConfigurationId="VikingDLC" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_GRANADA"			ConfigurationGroup="Map" ConfigurationId="VikingDLC" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_MUSCAT"			ConfigurationGroup="Map" ConfigurationId="VikingDLC" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_PALENQUE"		ConfigurationGroup="Map" ConfigurationId="VikingDLC" 		Operator="Equals" 	ConfigurationValue="1"/>
+		
+		<!--	Require GS -->
+		<Replace ParameterId="LEADER_MINOR_CIV_AKKAD"			ConfigurationGroup="Map" ConfigurationId="XP2" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_BOLOGNA"			ConfigurationGroup="Map" ConfigurationId="XP2" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_CAHOKIA"			ConfigurationGroup="Map" ConfigurationId="XP2" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_CARDIFF"			ConfigurationGroup="Map" ConfigurationId="XP2" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_FEZ"				ConfigurationGroup="Map" ConfigurationId="XP2" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_MEXICO_CITY"		ConfigurationGroup="Map" ConfigurationId="XP2" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_NAZCA"			ConfigurationGroup="Map" ConfigurationId="XP2" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_NGAZARGAMU"		ConfigurationGroup="Map" ConfigurationId="XP2" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_RAPA_NUI"		ConfigurationGroup="Map" ConfigurationId="XP2" 		Operator="Equals" 	ConfigurationValue="1"/>
+		
+		<!--	Replaced in R&F -->
+		<Replace ParameterId="LEADER_MINOR_CIV_AMSTERDAM"		ConfigurationGroup="Map" ConfigurationId="XP1" 		Operator="NotEquals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_SEOUL"			ConfigurationGroup="Map" ConfigurationId="XP1" 		Operator="NotEquals" 	ConfigurationValue="1"/>
+		
+		<!--	Replaced in GS -->
+		<Replace ParameterId="LEADER_MINOR_CIV_CARTHAGE"		ConfigurationGroup="Map" ConfigurationId="XP2" 		Operator="NotEquals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_STOCKHOLM"		ConfigurationGroup="Map" ConfigurationId="XP2" 		Operator="NotEquals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_TORONTO"			ConfigurationGroup="Map" ConfigurationId="XP2" 		Operator="NotEquals" 	ConfigurationValue="1"/>
+
+	</ParameterDependencies>
+	
+	<!-- Test ->
+	<Players>
+		<Row CivilizationType="CIVILIZATION_AMSTERDAM"		LeaderType="LEADER_MINOR_CIV_AMSTERDAM"		CivilizationName="LOC_CIVILIZATION_AMSTERDAM_NAME"		CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_AMSTERDAM_NAME"		LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_BRUSSELS"		LeaderType="LEADER_MINOR_CIV_BRUSSELS"		CivilizationName="LOC_CIVILIZATION_BRUSSELS_NAME"		CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_BRUSSELS_NAME"		LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_BUENOS_AIRES"	LeaderType="LEADER_MINOR_CIV_BUENOS_AIRES"	CivilizationName="LOC_CIVILIZATION_BUENOS_AIRES_NAME"	CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_BUENOS_AIRES_NAME"	LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_CARTHAGE"		LeaderType="LEADER_MINOR_CIV_CARTHAGE"		CivilizationName="LOC_CIVILIZATION_CARTHAGE_NAME"		CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_CARTHAGE_NAME"		LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_GENEVA"			LeaderType="LEADER_MINOR_CIV_GENEVA"		CivilizationName="LOC_CIVILIZATION_GENEVA_NAME"			CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_GENEVA_NAME"			LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_HATTUSA"		LeaderType="LEADER_MINOR_CIV_HATTUSA"		CivilizationName="LOC_CIVILIZATION_HATTUSA_NAME"		CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_HATTUSA_NAME"			LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_HONG_KONG"		LeaderType="LEADER_MINOR_CIV_HONG_KONG"		CivilizationName="LOC_CIVILIZATION_HONG_KONG_NAME"		CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_HONG_KONG_NAME"		LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_JAKARTA"		LeaderType="LEADER_MINOR_CIV_JAKARTA"		CivilizationName="LOC_CIVILIZATION_BANDAR_BRUNEI_NAME"	CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_BANDAR_BRUNEI_NAME"	LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_JERUSALEM"		LeaderType="LEADER_MINOR_CIV_JERUSALEM"		CivilizationName="LOC_CIVILIZATION_JERUSALEM_NAME"		CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_JERUSALEM_NAME"		LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_KABUL"			LeaderType="LEADER_MINOR_CIV_KABUL"			CivilizationName="LOC_CIVILIZATION_KABUL_NAME"			CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_KABUL_NAME"			LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_KANDY"			LeaderType="LEADER_MINOR_CIV_KANDY"			CivilizationName="LOC_CIVILIZATION_KANDY_NAME"			CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_KANDY_NAME"			LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_KUMASI"			LeaderType="LEADER_MINOR_CIV_KUMASI"		CivilizationName="LOC_CIVILIZATION_KUMASI_NAME"			CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_KUMASI_NAME"			LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_LA_VENTA"		LeaderType="LEADER_MINOR_CIV_LA_VENTA"		CivilizationName="LOC_CIVILIZATION_LA_VENTA_NAME"		CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_LA_VENTA_NAME"		LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_LISBON"			LeaderType="LEADER_MINOR_CIV_LISBON"		CivilizationName="LOC_CIVILIZATION_LISBON_NAME"			CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_LISBON_NAME"			LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_MOHENJO_DARO"	LeaderType="LEADER_MINOR_CIV_MOHENJO_DARO"	CivilizationName="LOC_CIVILIZATION_MOHENJO_DARO_NAME"	CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_MOHENJO_DARO_NAME"	LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_NAN_MADOL"		LeaderType="LEADER_MINOR_CIV_NAN_MADOL"		CivilizationName="LOC_CIVILIZATION_NAN_MADOL_NAME"		CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_NAN_MADOL_NAME"		LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_PRESLAV"		LeaderType="LEADER_MINOR_CIV_PRESLAV"		CivilizationName="LOC_CIVILIZATION_PRESLAV_NAME"		CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_PRESLAV_NAME"			LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_SEOUL"			LeaderType="LEADER_MINOR_CIV_SEOUL"			CivilizationName="LOC_CIVILIZATION_SEOUL_NAME"			CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_SEOUL_NAME"			LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_STOCKHOLM"		LeaderType="LEADER_MINOR_CIV_STOCKHOLM"		CivilizationName="LOC_CIVILIZATION_STOCKHOLM_NAME"		CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_STOCKHOLM_NAME"		LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_TORONTO"		LeaderType="LEADER_MINOR_CIV_TORONTO"		CivilizationName="LOC_CIVILIZATION_TORONTO_NAME"		CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_TORONTO_NAME"			LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_VALLETTA"		LeaderType="LEADER_MINOR_CIV_VALLETTA"		CivilizationName="LOC_CIVILIZATION_VALLETTA_NAME"		CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_VALLETTA_NAME"		LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_VILNIUS"		LeaderType="LEADER_MINOR_CIV_VILNIUS"		CivilizationName="LOC_CIVILIZATION_VILNIUS_NAME"		CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_VILNIUS_NAME"			LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_YEREVAN"		LeaderType="LEADER_MINOR_CIV_YEREVAN"		CivilizationName="LOC_CIVILIZATION_YEREVAN_NAME"		CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_YEREVAN_NAME"			LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+		<Row CivilizationType="CIVILIZATION_ZANZIBAR"		LeaderType="LEADER_MINOR_CIV_ZANZIBAR"		CivilizationName="LOC_CIVILIZATION_ZANZIBAR_NAME"		CivilizationIcon="ICON_CIVILIZATION_AMERICA" LeaderName="LOC_CIVILIZATION_ZANZIBAR_NAME"		LeaderIcon="ICON_LEADER_T_ROOSEVELT" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_FOUNDING_FATHERS_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_AMERICA" LeaderAbilityName="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_ROOSEVELT_COROLLARY_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_T_ROOSEVELT" HumanPlayable="0"/>
+
+	</Players>
+	<!-- -->
 </GameInfo>

@@ -156,6 +156,35 @@ Events.LoadScreenClose.Add(OnEnterGame)
 
 
 --=====================================================================================--
+-- Updating Loading text
+--=====================================================================================--
+
+local sCurrentText = "test"
+function StartLoadingTextUpdate()
+	print("Starting Loading Text Update...")
+	Events.GameCoreEventPublishComplete.Add( CheckLoadingTextUpdate )
+end
+--Events.LoadScreenClose.Add( LaunchScriptWithPause ) -- launching the script when the load screen is closed, you can use your own events
+
+function StopLoadingTextUpdate() -- GameCoreEventPublishComplete is called frequently, keep it clean
+
+	print("Stopping Loading Text Update...")
+	Events.GameCoreEventPublishComplete.Remove( CheckLoadingTextUpdate )
+end
+Events.LoadScreenClose.Add( StopLoadingTextUpdate )
+
+function CheckLoadingTextUpdate()
+	if sCurrentText ~= YnAMP.LoadingText then
+		sCurrentText = YnAMP.LoadingText
+		print("LoadScreen LoadScreen Context = ", ContextPtr:LookUpControl("/LoadScreen/"))
+		print("LoadScreen InGame Context = ", ContextPtr:LookUpControl("/InGame/LoadScreen/"))
+		print("LoadScreen FrontEnd Context = ", ContextPtr:LookUpControl("/FrontEnd/LoadScreen/"))
+		print("FrontEnd Context = ", ContextPtr:LookUpControl("/FrontEnd/"))
+		print("InGame Context = ", ContextPtr:LookUpControl("/InGame/"))
+	end
+end
+
+--=====================================================================================--
 -- Sharing UI function with Gameplay context
 --=====================================================================================--
 
@@ -163,8 +192,7 @@ function GetGrandStrategicAI(iPlayer)
 	local player = Players[iPlayer]
 	return player and player:GetGrandStrategicAI()
 end
-YnAMP.GetGrandStrategicAI = GetGrandStrategicAI
-
+--YnAMP.GetGrandStrategicAI = GetGrandStrategicAI -- move to initialize
 
 --=====================================================================================--
 -- Cleaning on exit
@@ -177,6 +205,10 @@ end
 Events.LeaveGameComplete.Add(Cleaning)
 LuaEvents.RestartGame.Add(Cleaning)
 
+function Initialize()
+	StartLoadingTextUpdate()
+end
+Initialize()
 
 
 

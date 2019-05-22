@@ -1,20 +1,3 @@
-<!--
-
-	Map Size reference
-
-			  Civ V       Civ VI 
-	 
-	Dual       40x24       44x26 
-	Tiny       55x36       60x36 
-	Small      66x42       74x46 
-	Standard   80x52       84x54 
-	Large     104x64       96x60
-	Huge      128x80      106x66  
-	Enormous              128x80
-	Giant     180x94      180x94
-	Ludicrous N/A        230x115 
-
--->
 
 <GameInfo>
 	

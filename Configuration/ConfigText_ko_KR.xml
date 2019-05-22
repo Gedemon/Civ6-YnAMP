@@ -390,19 +390,19 @@
       <Text>야만인 정찰병들이 처음 등장하기 전까지의 최소 턴 수를 결정합니다</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_REFERENCE_DB_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_REFERENCE_DB_NAME" Language="ko_KR">
       <Text>참조 데이터베이스</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_GIANT_DB_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_GIANT_DB_NAME" Language="ko_KR">
       <Text>거대한 지구 데이터베이스</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_LARGESTEARTH_DB_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_LARGESTEARTH_DB_NAME" Language="ko_KR">
       <Text>최대 크기 지구 데이터베이스</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_GIANT_DB_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_GIANT_DB_DESCRIPTION" Language="ko_KR">
       <Text>거대한 지구용 데이터베이스를 사용해 도시명, 문명 TSL 좌표, 신대륙 위치등을 불러옵니다 ...[NEWLINE]위치가 덜 정확하나, 훨씬 많은 데이터 양을 자랑합니다</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_LARGESTEARTH_DB_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_LARGESTEARTH_DB_DESCRIPTION" Language="ko_KR">
       <Text>최대 크기 지구용 데이터베이스를 사용합니다[NEWLINE]좌표등의 배치가 완벽하지만, 데이터량이 훨씬 적습니다.</Text>
     </Replace>
 	

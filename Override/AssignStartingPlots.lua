@@ -4104,10 +4104,12 @@ function PlaceRealNaturalWonders(NaturalWonders)
 				
 				-- Set terrain, remove features and resources for Civ6 NW
 				for k, data in ipairs(plotsList) do 
-					TerrainBuilder.SetTerrainType(data.Plot, data.Terrain)
-					TerrainBuilder.SetFeatureType(data.Plot, -1)
-					ResourceBuilder.SetResourceType(data.Plot, -1)
-					table.insert(plotsIndex, data.Plot:GetIndex())
+					if data.Plot then -- NW can be truncated by custom map regions
+						TerrainBuilder.SetTerrainType(data.Plot, data.Terrain)
+						TerrainBuilder.SetFeatureType(data.Plot, -1)
+						ResourceBuilder.SetResourceType(data.Plot, -1)
+						table.insert(plotsIndex, data.Plot:GetIndex())
+					end
 				end	
 
 				 -- now handling custom multiplots NW (terrain type and removing features/resources has already been handled for those)
@@ -5482,24 +5484,28 @@ function SetOceanStartingLocation()
 	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 		local player 			= Players[iPlayer]
 		local LeaderTypeName	= PlayerConfigurations[iPlayer]:GetLeaderTypeName()
-		if (GameInfo.Leaders_XP2 and GameInfo.Leaders_XP2[LeaderTypeName] ~= nil and GameInfo.Leaders_XP2[LeaderTypeName].OceanStart == true) then
+		if (LeaderTypeName and GameInfo.Leaders_XP2 and GameInfo.Leaders_XP2[LeaderTypeName] and GameInfo.Leaders_XP2[LeaderTypeName].OceanStart == true) then
 			local startingPlot 	= player:GetStartingPlot()
-			print ("- "..tostring(LeaderTypeName).." at "..tostring(startingPlot:GetX())..","..tostring(startingPlot:GetY()))
-			local bestPlot		= nil
-			local bestDistance	= 999
-			for _, plotId in ipairs(oceanStart) do
-				local distance = Map.GetPlotDistance(plotId, startingPlot:GetIndex())
-				if(distance < bestDistance) then
-					bestDistance 	= distance
-					bestPlot		= Map.GetPlotByIndex(plotId)
+			if startingPlot then
+				print ("- "..tostring(LeaderTypeName).." at "..tostring(startingPlot:GetX())..","..tostring(startingPlot:GetY()))
+				local bestPlot		= nil
+				local bestDistance	= 999
+				for _, plotId in ipairs(oceanStart) do
+					local distance = Map.GetPlotDistance(plotId, startingPlot:GetIndex())
+					if(distance < bestDistance) then
+						bestDistance 	= distance
+						bestPlot		= Map.GetPlotByIndex(plotId)
+					end
 				end
-			end
-			if bestPlot then
-				player:SetStartingPlot(bestPlot)
-				IsOceanStart[iPlayer]	= true
-				print ("   - Water Starting Position found at "..tostring(bestPlot:GetX())..","..tostring(bestPlot:GetY()))
+				if bestPlot then
+					player:SetStartingPlot(bestPlot)
+					IsOceanStart[iPlayer]	= true
+					print ("   - Water Starting Position found at "..tostring(bestPlot:GetX())..","..tostring(bestPlot:GetY()))
+				else
+					print ("WARNING ! Can't find a water Starting Position")
+				end
 			else
-				print ("WARNING ! Can't find a water Starting Position")
+				print ("- "..tostring(LeaderTypeName).." has no initial starting position, can't search for nearest ocean position !")
 			end
 		end
 	end

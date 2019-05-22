@@ -757,23 +757,59 @@ end
 function OnStartButton()
 
 	-- <<<<< YNAMP
-	-- Limit number of players for R&F	
+	
 	local player_ids 	= GameConfiguration.GetParticipatingPlayerIDs();
 	local numPlayers 	= #player_ids
 	local numCS			= GameConfiguration.GetValue("CITY_STATE_COUNT")
-	local maxPlayer		= 60
-	print("YnAMP check for players limit on Start");
-	print("num players = ".. tostring(numPlayers) .. ", num CS = ".. tostring(numCS))
+	local maxPlayer		= 60 			-- max is 62 but 1 slot is required for barbarian and 1 slot for free cities
+	local cityStateID	= numPlayers 	-- IDs start at 0, major IDs are from 0 to numPlayers-1, CS IDs start at numPlayers
+	local maxCS 		= maxPlayer - numPlayers
+	
+	-- Limit number of players for R&F and GS	
+	print("YnAMP checking for number of players limit on Start...")
+	print("num. players = ".. tostring(numPlayers) .. ", num. CS = ".. tostring(numCS))
 	if (GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_1" or GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_2") and numPlayers + numCS > maxPlayer then
-		local newCS = maxPlayer - numPlayers
-		print("new CS num = ".. tostring(newCS))
-		GameConfiguration.SetValue("CITY_STATE_COUNT", newCS)
+		numCS = maxCS
+		print("new num. CS = ".. tostring(numCS))
+		GameConfiguration.SetValue("CITY_STATE_COUNT", numCS)
 	end
+	
+	-- Get the City States list
+	local query		= "SELECT * from Parameters where ConfigurationId LIKE 'LEADER_MINOR_CIV%' and GroupId='CityStatesOptions'"
+	local results	= DB.ConfigurationQuery(query)
+	if(results and #results > 0) then
+		local CityStateSlots = numCS
+		print("YnAMP setting specific CS slots...")
+		print("free slots = "..tostring(CityStateSlots))
+		for i, row in ipairs(results) do
+			--print(i)
+			--for k, v in pairs(row) do print(k, v) end
+			local leaderType = row.ConfigurationId
+			local leaderName = row.Name
+			if MapConfiguration.GetValue(leaderType) then -- true if this CS was checked
+				if CityStateSlots > 0 then
+					print(" - Reserving player slot#"..tostring(cityStateID).." for ".. Locale.Lookup(leaderName) )
+					local playerConfig = PlayerConfigurations[cityStateID]
+					playerConfig:SetSlotStatus(SlotStatus.SS_COMPUTER)
+					playerConfig:SetLeaderName(leaderName)
+					playerConfig:SetLeaderTypeName(leaderType)
+					CityStateSlots	= CityStateSlots - 1
+					cityStateID		= cityStateID + 1
+				else
+					print(" - No free slots left for ".. Locale.Lookup(leaderName) )					
+				end
+			end
+		end
+		print(" - Free slots left for random CS = ".. Locale.Lookup(CityStateSlots) )
+		GameConfiguration.SetValue("CITY_STATE_COUNT", CityStateSlots)
+	end
+	
 	-- Make some debugging info available during map creation 
 	ExposedMembers.YnAMP_Loading	= {
 		ListMods 	= Modding.GetActiveMods(),
 		GameVersion = UI.GetAppVersion()
 	}
+	
 	-- YNAMP >>>>>
 	
 	-- Is WorldBuilder active?

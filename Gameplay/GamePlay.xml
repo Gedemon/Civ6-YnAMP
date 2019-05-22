@@ -160,4 +160,7 @@
     	<Replace ContinentType="CONTINENT_POLYNESIA"		Description="LOC_CONTINENT_POLYNESIA"		/>	
 	</Continents>	
 	
+	<ReplacedCivilization>
+		<Replace Civilization="CIVILIZATION_JAKARTA"	ReplacedBy="CIVILIZATION_BANDAR_BRUNEI"		WhenNameTag="LOC_CIVILIZATION_BANDAR_BRUNEI_NAME"	/>
+	</ReplacedCivilization>
 </GameInfo>

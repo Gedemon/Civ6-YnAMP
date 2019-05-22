@@ -1,0 +1,12 @@
+
+
+<GameInfo>
+	<Parameters>
+
+		<!--	Hidden entry to know if the Viking DLC is active		-->
+		<Replace ParameterId="VikingDLC" Name="VikingDLC" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="VikingDLC" GroupId="MapOptions" Visible="0" SortIndex="260"/>
+
+	</Parameters>
+
+	
+</GameInfo>

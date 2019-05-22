@@ -13,6 +13,12 @@
         <Criteria id="YNAMP_Expansion2">
 			<GameCoreInUse>Expansion2</GameCoreInUse>
         </Criteria>
+        <Criteria id="YNAMP_Expansion1">
+			<GameCoreInUse>Expansion1</GameCoreInUse>
+        </Criteria>
+        <Criteria id="YNAMP_VikingsDLC">
+			<ModInUse>2F6E858A-28EF-46B3-BEAC-B985E52E9BC1</ModInUse>
+        </Criteria>
     </ActionCriteria>
 	
 	<InGameActions>
@@ -130,6 +136,18 @@
 			<File>Configuration/ConfigXP2.xml</File>
 			<File>Configuration/ConfigXP2.sql</File>
 		</UpdateDatabase>
+		<UpdateDatabase id="YNAMP_SETTING" criteria="YNAMP_Expansion1">
+           	<Properties>
+				<LoadOrder>10</LoadOrder>
+           	</Properties>
+			<File>Configuration/ConfigXP1.xml</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="YNAMP_SETTING" criteria="YNAMP_VikingsDLC">
+           	<Properties>
+				<LoadOrder>10</LoadOrder>
+           	</Properties>
+			<File>Configuration/ConfigVikingDLC.xml</File>
+		</UpdateDatabase>
 		<UpdateText id="YNAMP_SETTING_LOC">
 				<File>Configuration/ConfigText.xml</File>
 				<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
@@ -209,6 +227,8 @@
 		<File>Configuration/Config.xml</File>
 		<File>Configuration/ConfigXP2.sql</File>
 		<File>Configuration/ConfigXP2.xml</File>
+		<File>Configuration/ConfigXP1.xml</File>
+		<File>Configuration/ConfigVikingDLC.xml</File>
 		<File>Maps/GiantEarth/Config.xml</File>
 		<File>Maps/GreatestEarthMap/Config.xml</File>
 		<File>Maps/PlayEuropeAgain/Config.xml</File>
@@ -228,6 +248,9 @@
 		<File>Gameplay/GamePlayText.xml</File>
 		<File>Gameplay/GamePlayText_zh_Hans_CN.xml</File>
 		<File>Gameplay/GamePlayText_pt_BR.xml</File>
+		<File>Gameplay/GamePlayText_de_DE.xml</File>
+		<File>Gameplay/GamePlayText_fr_FR.xml</File>
+		<File>Gameplay/GamePlayText_ja_JP.xml</File>
 		<File>Gameplay/GamePlayText_ko_KR.xml</File>
 		<File>Maps/GiantEarth/Map.xml</File>
 		<File>Maps/GiantEarth/CityMap.xml</File>

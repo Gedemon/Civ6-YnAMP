@@ -31,6 +31,7 @@ function GetControlStack(group)
 		["AdvancedOptions"] = Controls.SecondaryParametersStack,
 		-- YnAMP <<<<<
 		["ScenarioOptions"] = Controls.ScenarioParametersStack,
+		["CityStatesOptions"] = Controls.CityStatesParametersStack,
 		-- YnAMP >>>>>
 	};
 

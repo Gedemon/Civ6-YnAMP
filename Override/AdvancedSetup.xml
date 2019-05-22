@@ -214,8 +214,14 @@
 										<Image Texture="Controls_Gradient_HalfRadial" Color="20,144,140,100" FlipY="1" Anchor="C,T" Size="225,94"/>
 										<Label Anchor="C,C" Style="ShellOptionText" WrapWidth="320" String="LOC_SCENARIO_OPTIONS"/>
 									</Grid>
-
 									<Stack Anchor="L,T" Padding="0" Size="parent,auto" StackGrowth="Bottom" ID="ScenarioParametersStack"/>
+									
+									<!-- CityStates Parameters Stack -->
+									<Grid ID="CityStatesParametersHeader" Size="parent,21" Texture="Shell_SectionHeader" SliceCorner="154,10" SliceTextureSize="308,21" Color="20,144,140,100" Offset="0,8">
+										<Image Texture="Controls_Gradient_HalfRadial" Color="20,144,140,100" FlipY="1" Anchor="C,T" Size="225,94"/>
+										<Label Anchor="C,C" Style="ShellOptionText" WrapWidth="320" String="LOC_CITYSTATES_OPTIONS"/>
+									</Grid>
+									<Stack Anchor="L,T" Padding="0" Size="parent,auto" StackGrowth="Bottom" ID="CityStatesParametersStack"/>
 									<!-- YnAMP >>>>>-->
 
 									<Grid ID="VictoryParametersHeader" Size="parent,21" Texture="Shell_SectionHeader" SliceCorner="154,10" SliceTextureSize="308,21" Color="20,144,140,100" Offset="0,8">

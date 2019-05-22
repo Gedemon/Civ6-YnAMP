@@ -72,6 +72,12 @@ CREATE TABLE IF NOT EXISTS StartPosition
 		AlternateStart INT default 0,		
 		X INT default 0,
 		Y INT default 0);
+		
+-- Replaced civilization (Civilization type still exist, but is used to represent another Civilization, for example CIVILIZATION_JAKARTA is now representing Bandar Brunei)
+CREATE TABLE IF NOT EXISTS ReplacedCivilization
+	(	Civilization TEXT NOT NULL,
+		ReplacedBy TEXT NOT NULL,
+		WhenNameTag TEXT NOT NULL);
 
 -- Regions positions
 CREATE TABLE IF NOT EXISTS RegionPosition
@@ -110,14 +116,17 @@ CREATE TABLE IF NOT EXISTS ScenarioCivilizationsReplacement
 		
 -- Scenario Civilizations
 CREATE TABLE IF NOT EXISTS ScenarioCivilizations
-	(	ScenarioName TEXT NOT NULL,
+	(	ScenarioName TEXT,
 		MapName TEXT,
+		SpecificEra TEXT,
 		CivilizationType TEXT NOT NULL,
+		Priority INT default 0, -- higher means first selected for placement in loops
 		CityPlacement TEXT,
 		NumberOfCity INT,
 		CapitalSize INT,
 		OtherCitySize INT,
-		DecreasePerCity TEXT,
+		CitySizeDecrement INT,
+		NumCityPerSizeDecrement INT,
 		RoadPlacement TEXT,
 		RoadMaxDistance INT,
 		MaxRoadPerCity INT,

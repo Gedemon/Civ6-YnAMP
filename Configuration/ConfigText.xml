@@ -736,6 +736,16 @@
       <Text>Alps (West Italy)</Text>
     </Replace>
 	
+    <Replace Tag="LOC_CITYSTATES_OPTIONS" Language="en_US">
+      <Text>City States Options</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SELECT_CITY_STATES_NAME" Language="en_US">
+      <Text>Manual Selection</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SELECT_CITY_STATES_DESCRIPTION" Language="en_US">
+      <Text>When enabled you can manually select which City States you want to be placed on the map from a list.[NEWLINE][NEWLINE]Note that DLCs, Expansions, scenarios and mods can add or remove City States, the list does not reflect which ones are actually available.[NEWLINE][NEWLINE]When a City State is not available, its slot is free for a random CS.</Text>
+    </Replace>
+	
     <Replace Tag="LOC_SCENARIO_OPTIONS" Language="en_US">
       <Text>Scenario Options</Text>
     </Replace>
@@ -811,18 +821,25 @@
       <Text>Maximum size of the other cities</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_DECREASE_OTHER_CITY_SIZE_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_DECREASE_OTHER_CITY_SIZE" Language="en_US">
       <Text>Decrease other city sizes</Text>
     </Replace>
     <Replace Tag="LOC_MAP_DECREASE_OTHER_CITY_SIZE_DESCRIPTION" Language="en_US">
-      <Text>When checked, first placed cities are bigger than last placed cities, initial cities use the "Other cities size" values, then the size is reduced using the "X reduction every Y cities" ratio.</Text>
+      <Text>When checked, first placed cities are bigger than last placed cities, initial cities use the "Other cities size" values, then the size is reduced using the "Reduction by placed cities" ratio.</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_DECREASE_PER_CITY_NAME" Language="en_US">
-      <Text>X reduction every Y cities</Text>
+    <Replace Tag="LOC_MAP_CITY_SIZE_DECREMENT" Language="en_US">
+      <Text>Size Decrement</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_DECREASE_PER_CITY_DESCRIPTION" Language="en_US">
-      <Text>Ratio to use for each reduction in size</Text>
+    <Replace Tag="LOC_MAP_CITY_SIZE_DECREMENT_DESCRIPTION" Language="en_US">
+      <Text>Decrement City Size by this value</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NUM_CITY_PER_DECREMENT" Language="en_US">
+      <Text>Cities per Decrement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NUM_CITY_PER_DECREMENT_DESCRIPTION" Language="en_US">
+      <Text>Number of cities placed for each size decrement</Text>
     </Replace>
 	
     <Replace Tag="LOC_RATIO_2_PER_1" Language="en_US">
@@ -854,6 +871,37 @@
     </Replace>
     <Replace Tag="LOC_RATIO_1_PER_6_DESCRIPTION" Language="en_US">
       <Text>Use a 1/6 ratio for changing that value</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_10_DESCRIPTION" Language="en_US">
+      <Text>Use a 1/10 ratio for changing that value</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RATIO_PLACEMENT_DESCRIPTION" Language="en_US">
+      <Text>Use a 1/X ratio for that value. Higher X means less placed</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RATIO_PER_CITY_DESCRIPTION" Language="en_US">
+      <Text>Use a X/Y ratio for that value. Higher Y means that later placed city sizes decrease slower.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_BORDER_PLACEMENT_NAME" Language="en_US">
+      <Text>Borders Placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_BORDER_PLACEMENT_DESCRIPTION" Language="en_US">
+      <Text>How to place the borders on the map</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_BORDER_DISTANCE_NAME" Language="en_US">
+      <Text>Borders max. distance</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_BORDER_DISTANCE_DESCRIPTION" Language="en_US">
+      <Text>Maximum distance from a city center for the territory border.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_PLACEMENT_EXPAND_NAME" Language="en_US">
+      <Text>Expansion</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_EXPAND_DESCRIPTION" Language="en_US">
+      <Text>Expansion on free territory in rings from each city center, until the maximum distance is reached</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_INFRASTRUCTURE_NAME" Language="en_US">
@@ -916,6 +964,112 @@
       <Text>When checked, no distance limit is used when trying to place a road between two cities. May slow down Scenario Generation on larger maps.</Text>
     </Replace>
 	
+	<!--City-States-->
+	<Replace Tag="LOC_CIVILIZATION_AKKAD_NAME" Language="en_US">
+		<Text>Akkad</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_AKKAD_DESCRIPTION" Language="en_US">
+		<Text>Akkad city-state</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_BOLOGNA_NAME" Language="en_US">
+		<Text>Bologna</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_BOLOGNA_DESCRIPTION" Language="en_US">
+		<Text>Bologna city-state</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_CAHOKIA_NAME" Language="en_US">
+		<Text>Cahokia</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_CAHOKIA_DESCRIPTION" Language="en_US">
+		<Text>Cahokia city-state</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_CARDIFF_NAME" Language="en_US">
+		<Text>Cardiff</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_CARDIFF_DESCRIPTION" Language="en_US">
+		<Text>Cardiff city-state</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_FEZ_NAME" Language="en_US">
+		<Text>Fez</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_FEZ_DESCRIPTION" Language="en_US">
+		<Text>Fez city-state</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_MEXICO_CITY_NAME" Language="en_US">
+		<Text>Mexico City</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_MEXICO_CITY_DESCRIPTION" Language="en_US">
+		<Text>Mexico City city-state</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_NAZCA_NAME" Language="en_US">
+		<Text>Nazca</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_NAZCA_DESCRIPTION" Language="en_US">
+		<Text>Nazca city-state</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_NGAZARGAMU_NAME" Language="en_US">
+		<Text>Ngazargamu</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_NGAZARGAMU_DESCRIPTION" Language="en_US">
+		<Text>Ngazargamu city-state</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_RAPA_NUI_NAME" Language="en_US">
+		<Text>Rapa Nui</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_RAPA_NUI_DESCRIPTION" Language="en_US">
+		<Text>Rapa Nui city-state</Text>
+	</Replace>
+	
+	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_NAME" Language="en_US">
+		<Text>Antioch</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_DESCRIPTION" Language="en_US">
+		<Text>Antioch city-state</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_BABYLON_NAME" Language="en_US">
+		<Text>Babylon </Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_BABYLON_DESCRIPTION" Language="en_US">
+		<Text>Babylon city-state</Text>
+	</Replace>
+	
+	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_NAME" Language="en_US">
+		<Text>Auckland</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_ANTANANARIVO_NAME" Language="en_US">
+		<Text>Antananarivo</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_ARMAGH_NAME" Language="en_US">
+		<Text>Armagh</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_GRANADA_NAME" Language="en_US">
+		<Text>Granada</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_MUSCAT_NAME" Language="en_US">
+		<Text>Muscat</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_PALENQUE_NAME" Language="en_US">
+		<Text>Palenque</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_DESCRIPTION" Language="en_US">
+		<Text>Auckland city-state</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_ANTANANARIVO_DESCRIPTION" Language="en_US">
+		<Text>Antananarivo city-state</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_ARMAGH_DESCRIPTION" Language="en_US">
+		<Text>Armagh city-state</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_GRANADA_DESCRIPTION" Language="en_US">
+		<Text>Granada city-state</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_MUSCAT_DESCRIPTION" Language="en_US">
+		<Text>Muscat city-state</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_PALENQUE_DESCRIPTION" Language="en_US">
+		<Text>Palenque city-state</Text>
+	</Replace>
+
 	
   </LocalizedText>
 </GameData>
