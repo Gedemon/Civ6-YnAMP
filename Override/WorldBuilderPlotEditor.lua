@@ -111,6 +111,18 @@ function UpdatePlotInfo()
 		Controls.ImprovementPullDown:SetSelectedIndex( plot:GetImprovementType()+2, false );
 		Controls.RoutePullDown:SetSelectedIndex(       plot:GetRouteType()+2,       false );
 
+		-- don't allow to pillage when there's no feature
+		if plotFeature:GetType() < 3 then
+			Controls.ImprovementPillagedButton:SetDisabled(true);
+		end
+
+		local resType = m_ResourceTypeEntries[plot:GetResourceType()+2];
+		if resType.Class == "RESOURCECLASS_STRATEGIC" then
+			Controls.ResourceAmount:SetHide(false);
+		else
+			Controls.ResourceAmount:SetHide(true);
+		end
+
         if IsExpansion2() then
             local eCoastalLowlandType:number = TerrainManager.GetCoastalLowlandType( m_SelectedPlot );
             Controls.LowlandTypePulldown:SetSelectedIndex( eCoastalLowlandType + 2, false );
@@ -214,7 +226,7 @@ function UpdateSelectedPlot(plotID)
 			Controls.IsWOfRiver:SetHide(false);
 			local riverID 	= GetRiverIdForNode(plot, DirectionTypes.DIRECTION_EAST)
 			local dirString	= FlowDirectionString[plot:GetRiverEFlowDirection()] or plot:GetRiverEFlowDirection()
-			Controls.IsWOfRiver:SetText("River# "..tostring(riverID)..", "..tostring(dirString));
+			Controls.IsWOfRiver:SetText((riverID and "ID# "..tostring(riverID) or "true")..", Flow "..tostring(dirString));
 		else
 			Controls.IsWOfRiver:SetText("false");
 		end
@@ -222,7 +234,7 @@ function UpdateSelectedPlot(plotID)
 			Controls.IsNWOfRiver:SetHide(false);
 			local riverID 	= GetRiverIdForNode(plot, DirectionTypes.DIRECTION_SOUTHEAST)
 			local dirString	= FlowDirectionString[plot:GetRiverSEFlowDirection()] or plot:GetRiverSEFlowDirection()
-			Controls.IsNWOfRiver:SetText("River# "..tostring(riverID)..", "..tostring(dirString));
+			Controls.IsNWOfRiver:SetText((riverID and "ID# "..tostring(riverID) or "true")..", Flow "..tostring(dirString));
 		else
 			Controls.IsNWOfRiver:SetText("false");
 		end
@@ -230,7 +242,7 @@ function UpdateSelectedPlot(plotID)
 			Controls.IsNEOfRiver:SetHide(false);
 			local riverID 	= GetRiverIdForNode(plot, DirectionTypes.DIRECTION_SOUTHWEST)
 			local dirString	= FlowDirectionString[plot:GetRiverSWFlowDirection()] or plot:GetRiverSWFlowDirection()
-			Controls.IsNEOfRiver:SetText("River# "..tostring(riverID)..", "..tostring(dirString));
+			Controls.IsNEOfRiver:SetText((riverID and "ID# "..tostring(riverID) or "true")..", Flow "..tostring(dirString));
 		else
 			Controls.IsNEOfRiver:SetText("false");
 		end
@@ -429,9 +441,7 @@ function OnImprovementTypeSelected(entry)
 	if m_SelectedPlot ~= nil then
 		if entry.Type~= nil then
 			WorldBuilder.MapManager():SetImprovementType( m_SelectedPlot, entry.Type.Index, Map.GetPlotByIndex( m_SelectedPlot ):GetOwner() );
-			if Controls.ImprovementPillagedButton:IsSelected() then
-				--WorldBuilder.MapManager():SetImprovementPillaged( plot, true );
-			end
+			WorldBuilder.MapManager():SetImprovementPillaged( m_SelectedPlot, Controls.ImprovementPillagedButton:IsSelected() );
 		else
 			WorldBuilder.MapManager():SetImprovementType( m_SelectedPlot, -1 );
 		end
@@ -445,7 +455,7 @@ function OnImprovementPillagedButton()
 	if m_SelectedPlot ~= nil then
 		local plot = Map.GetPlotByIndex( m_SelectedPlot );
 		if plot:GetImprovementType() ~= -1 then
-			--WorldBuilder.MapManager():SetImprovementPillaged(plot, Controls.ImprovementPillagedButton:IsSelected());
+			WorldBuilder.MapManager():SetImprovementPillaged( plot, Controls.ImprovementPillagedButton:IsSelected());
 		end
 	end
 end
@@ -482,6 +492,7 @@ function OnOwnerSelected(entry)
 		if entry.ID ~= -1 then
 			WorldBuilder.CityManager():SetPlotOwner( plot:GetX(), plot:GetY(), entry.Player, entry.ID );
 		else
+			WorldBuilder.MapManager():SetImprovementType( m_SelectedPlot, -1 );
 			WorldBuilder.CityManager():SetPlotOwner( plot:GetX(), plot:GetY(), false );
 		end
 	end
@@ -555,10 +566,42 @@ function OnStartPositionChanged(plot)
 end
 
 -- ===========================================================================
+function OnModeChanged()
+	-- hide things we don't allow in Basic Mode
+	if not WorldBuilder.GetWBAdvancedMode() then
+		Controls.ImprovementPullDown:SetHide(true);
+		Controls.ImprovementPillagedButton:SetHide(true);
+		Controls.RoutePullDown:SetHide(true);
+		Controls.RoutePillagedButton:SetHide(true);
+		Controls.StartPosPulldown:SetHide(true);
+		Controls.StartPosTabControl:SetHide(true);
+		Controls.OwnerPulldown:SetHide(true);
+		Controls.ImprovementLabel:SetHide(true);
+		Controls.RouteLabel:SetHide(true);
+		Controls.StartPosLabel:SetHide(true);
+		Controls.OwnerLabel:SetHide(true);
+	else	-- and show them in Advanced Mode
+		Controls.ImprovementPullDown:SetHide(false);
+		Controls.ImprovementPillagedButton:SetHide(false);
+		Controls.RoutePullDown:SetHide(false);
+		Controls.RoutePillagedButton:SetHide(false);
+		Controls.StartPosPulldown:SetHide(false);
+		Controls.StartPosTabControl:SetHide(false);
+		Controls.OwnerPulldown:SetHide(false);
+		Controls.ImprovementLabel:SetHide(false);
+		Controls.RouteLabel:SetHide(false);
+		Controls.StartPosLabel:SetHide(false);
+		Controls.OwnerLabel:SetHide(false);
+
+		UpdatePlayerEntries();
+		UpdateCityEntries();
+	end
+end
+
+-- ===========================================================================
 --	Init
 -- ===========================================================================
 function OnInit()
-
 	-- TerrainPullDown
 	for type in GameInfo.Terrains() do
 		table.insert(m_TerrainTypeEntries, { Text=type.Name, Type=type });
@@ -581,7 +624,7 @@ function OnInit()
 	-- ResourcePullDown
 	table.insert(m_ResourceTypeEntries, { Text="LOC_WORLDBUILDER_NO_RESOURCE" });
 	for type in GameInfo.Resources() do
-		table.insert(m_ResourceTypeEntries, { Text=type.Name, Type=type });
+		table.insert(m_ResourceTypeEntries, { Text=type.Name, Type=type, Class=type.ResourceClassType });
 	end
 	Controls.ResourcePullDown:SetEntries( m_ResourceTypeEntries, 1 );
 	Controls.ResourcePullDown:SetEntrySelectedCallback( OnResourceTypeSelected );
@@ -594,6 +637,7 @@ function OnInit()
 	end
 	Controls.ImprovementPullDown:SetEntries( m_ImprovementTypeEntries, 1 );
 	Controls.ImprovementPullDown:SetEntrySelectedCallback( OnImprovementTypeSelected );
+	Controls.ImprovementPillagedButton:RegisterCallback( Mouse.eLClick, OnImprovementPillagedButton );
 
 	-- RoutePullDown
 	table.insert(m_RouteTypeEntries, { Text="LOC_WORLDBUILDER_NO_ROUTE" });
@@ -645,6 +689,33 @@ function OnInit()
         Controls.LowlandLabel:SetHide(true);
     end
 
+	-- hide things we don't allow in Basic Mode
+	if not WorldBuilder.GetWBAdvancedMode() then
+		Controls.ImprovementPullDown:SetHide(true);
+		Controls.ImprovementPillagedButton:SetHide(true);
+		Controls.RoutePullDown:SetHide(true);
+		Controls.RoutePillagedButton:SetHide(true);
+		Controls.StartPosPulldown:SetHide(true);
+		Controls.StartPosTabControl:SetHide(true);
+		Controls.OwnerPulldown:SetHide(true);
+		Controls.ImprovementLabel:SetHide(true);
+		Controls.RouteLabel:SetHide(true);
+		Controls.StartPosLabel:SetHide(true);
+		Controls.OwnerLabel:SetHide(true);
+	else
+		Controls.ImprovementPullDown:SetHide(false);
+		Controls.ImprovementPillagedButton:SetHide(false);
+		Controls.RoutePullDown:SetHide(false);
+		Controls.RoutePillagedButton:SetHide(false);
+		Controls.StartPosPulldown:SetHide(false);
+		Controls.StartPosTabControl:SetHide(false);
+		Controls.OwnerPulldown:SetHide(false);
+		Controls.ImprovementLabel:SetHide(false);
+		Controls.RouteLabel:SetHide(false);
+		Controls.StartPosLabel:SetHide(false);
+		Controls.OwnerLabel:SetHide(false);
+	end
+
 	-- Register for events
 	ContextPtr:SetShowHandler( OnShow );
 	ContextPtr:SetHideHandler( OnHide );
@@ -676,5 +747,6 @@ function OnInit()
 	LuaEvents.WorldBuilder_PlayerRemoved.Add( UpdatePlayerEntries );
 	LuaEvents.WorldBuilder_PlayerEdited.Add( UpdatePlayerEntries );
 	LuaEvents.WorldBuilder_StartPositionChanged.Add( OnStartPositionChanged );
+	LuaEvents.WorldBuilder_ModeChanged.Add( OnModeChanged );
 end
 ContextPtr:SetInitHandler( OnInit );

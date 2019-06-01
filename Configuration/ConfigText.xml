@@ -340,7 +340,10 @@
       <Text>Place cattle for Great Zimbabwe</Text>
     </Replace>
 	<Replace Tag="LOC_MAP_JEBEL_BARKAL_HILLS_NAME" Language="en_US">
-      <Text>Replace floodplains with desert hills for Jebel Barkal</Text>
+      <Text>Replace floodplains with hills for Jebel Barkal</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_PANAMA_CANAL_NAME" Language="en_US">
+      <Text>Replace hills with flatland for a canal in Panama</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Language="en_US">
@@ -776,16 +779,46 @@
       <Text>Cities Placement</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" Language="en_US">
-      <Text>Terrain</Text>
+      <Text>Default: Terrain</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" Language="en_US">
-      <Text>Use game's suggestion for best city placement</Text>
+      <Text>Use terrain's Fertility values for city placement for Civilization that don't have a placement type defined in the ScenarioCivilizations table.</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_NAME" Language="en_US">
-      <Text>City Map</Text>
+      <Text>Default: City Map</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_DESCRIPTION" Language="en_US">
-      <Text>Get cities position from the CityMap table</Text>
+      <Text>Get cities position from the CityMap table for Civilization that don't have a placement type defined in the ScenarioCivilizations table.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_MIXED_NAME" Language="en_US">
+      <Text>Default: Mixed</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_MIXED_DESCRIPTION" Language="en_US">
+      <Text>Get cities position from all possible sources (ScenarioCities first, then CityMap, then Fertility values) for Civilization that don't have a placement type defined in the ScenarioCivilizations table.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_NAME" Language="en_US">
+      <Text>Default: Import</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_DESCRIPTION" Language="en_US">
+      <Text>Get cities position from the ScenarioCities table for Civilization that don't have a placement type defined in the ScenarioCivilizations table.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_ONLY_NAME" Language="en_US">
+      <Text>Restricted: Terrain</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_ONLY_DESCRIPTION" Language="en_US">
+      <Text>Only use terrain's Fertility values for city placement, overriding all the placement types from the ScenarioCivilizations table.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_ONLY_NAME" Language="en_US">
+      <Text>Restricted: City Map</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_ONLY_DESCRIPTION" Language="en_US">
+      <Text>Only get cities position from the CityMap table, overriding all the placement types from the ScenarioCivilizations table.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_ONLY_NAME" Language="en_US">
+      <Text>Restricted: Import</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_ONLY_DESCRIPTION" Language="en_US">
+      <Text>Only place cities defined in the ScenarioCities table, overriding all the placement types from the ScenarioCivilizations table.</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CUSTOM_SCENARIO_VALUES_NAME" Language="en_US">

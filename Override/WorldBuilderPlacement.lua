@@ -1,4 +1,4 @@
-include "ResourceGenerator"
+include "WorldBuilderResourceGen"
 
 -- ===========================================================================
 --	World Builder Placement
@@ -26,12 +26,23 @@ local m_PlayerEntries          : table = {};
 local m_ScenarioPlayerEntries  : table = {}; -- Scenario players are players that don't have a random civ and can therefore have cities and units
 local m_CityEntries            : table = {};
 local m_UnitTypeEntries        : table = {};
+local m_GoodyHutTypeEntries	   : table = {};
+local m_BrushSize			   : number = 1;
+local m_BrushEnabled		   : boolean = true;
 
 -- Resource Regen variables
 local NO_RESOURCE = -1;
--- YnAMP <<<<<
-local m_BrushSizeEntries     : table = {};
--- YnAMP >>>>>
+
+-- 19-hex large brush assist table
+local m_19HexTable			   : table = 
+{
+	{ Dir1=DirectionTypes.DIRECTION_NORTHWEST, Dir2=DirectionTypes.DIRECTION_NORTHEAST },
+	{ Dir1=DirectionTypes.DIRECTION_NORTHEAST , Dir2=DirectionTypes.DIRECTION_EAST },
+	{ Dir1=DirectionTypes.DIRECTION_EAST , Dir2=DirectionTypes.DIRECTION_SOUTHEAST },
+	{ Dir1=DirectionTypes.DIRECTION_SOUTHEAST , Dir2=DirectionTypes.DIRECTION_SOUTHWEST },
+	{ Dir1=DirectionTypes.DIRECTION_SOUTHWEST , Dir2=DirectionTypes.DIRECTION_WEST },
+	{ Dir1=DirectionTypes.DIRECTION_WEST , Dir2=DirectionTypes.DIRECTION_NORTHWEST },
+};
 
 -- ===========================================================================
 --	FUNCTIONS
@@ -41,11 +52,12 @@ local m_BrushSizeEntries     : table = {};
 -- ===========================================================================
 function GetBrushSize()
 	local entry = Controls.BrushSizePullDown:GetSelectedEntry();
+	--local entry = Controls.BrushPullDown:GetSelectedEntry();
 	return entry.Size
 end
 
 -- ===========================================================================
-function ApplyLargerBrush(centralPlotIndex, ValidationFunction, CurrentBrushFunction, typeIndex)
+function ApplyLargerBrush(centralPlotIndex, ValidationFunction, FunctionClass, CurrentBrushFunction, typeIndex, value)
 	if not ValidationFunction then
 		ValidationFunction = function() return true end		
 	end
@@ -56,7 +68,11 @@ function ApplyLargerBrush(centralPlotIndex, ValidationFunction, CurrentBrushFunc
 			if otherPlot then
 				local plotIndex	= otherPlot:GetIndex()
 				if ValidationFunction(plotIndex) then
-					CurrentBrushFunction(WorldBuilder.MapManager(), plotIndex, typeIndex )
+					if value then
+						CurrentBrushFunction(FunctionClass, plotIndex, typeIndex, value )
+					else
+						CurrentBrushFunction(FunctionClass, plotIndex, typeIndex )
+					end
 				end
 			end
 		end
@@ -70,6 +86,37 @@ local UseLargerBrush : table = {
 	[WorldBuilderModes.PLACE_FEATURES] 		= true,
 }
 -- YnAMP >>>>>
+
+-- ===========================================================================
+function PlacementSetResults(bStatus: boolean, sStatus: table, name: string)
+	local result : string;
+
+	if bStatus then
+		UI.PlaySound("UI_WB_Placement_Succeeded");
+		result = Locale.Lookup(name) .. " " .. Locale.Lookup("LOC_WORLDBUILDER_BLANK_PLACEMENT_OK");
+	else
+		if sStatus.NeededDistrict ~= -1 then
+			result = Locale.Lookup("LOC_WORLDBUILDER_PLACEMENT_NEEDED", m_DistrictTypeEntries[sStatus.NeededDistrict].Text);
+		elseif sStatus.NeededPopulation > 0 then
+			result = Locale.Lookup("LOC_WORLDBUILDER_DISTRICT_REQUIRES") .. " " .. sStatus.NeededPopulation .. " " .. Locale.Lookup("LOC_WORLDBUILDER_POPULATION");
+		elseif sStatus.bInProgress then
+			result=Locale.Lookup("LOC_WORLDBUILDER_IN_PROGRESS");
+		elseif sStatus.AlreadyExists then
+			result=Locale.Lookup("LOC_WORLDBUILDER_ALREADY_EXISTS");
+		elseif sStatus.IsOccupied then
+			result=Locale.Lookup("LOC_WORLDBUILDER_OCCUPIED_BY_ENEMY");
+		elseif sStatus.DistrictIsPillaged then
+			result=Locale.Lookup("LOC_WORLDBUILDER_IS_PILLAGED");
+		elseif sStatus.LocationIsContaminated then
+			result=Locale.Lookup("LOC_WORLDBUILDER_IS_CONTAMINATED");
+		else
+			result=Locale.Lookup("LOC_WORLDBUILDER_FAILURE_UNKNOWN");
+		end
+		UI.PlaySound("UI_WB_Placement_Failed");
+	end
+
+	LuaEvents.WorldBuilder_SetPlacementStatus(result);
+end
 
 -- ===========================================================================
 function PlacementValid(plotID, mode)
@@ -93,8 +140,69 @@ function UpdateMouseOverHighlight(plotID, mode, on)
 		else
 			highlight = PlotHighlightTypes.ATTACK;
 		end
-
 		UI.HighlightPlots(highlight, on, { plotID } );
+		
+		-- YnAMP <<<<<
+		local range = GetBrushSize() - 1
+		if m_BrushEnabled and range > 0 then
+			local pPlot = Map.GetPlotByIndex(plotID)
+			for otherPlot in PlotAreaSpiralIterator(pPlot, range, nil, nil, nil, false) do		
+				if otherPlot then
+					local plotIndex	= otherPlot:GetIndex()
+					if PlacementValid(plotIndex, mode) then
+						highlight = PlotHighlightTypes.MOVEMENT;
+					else
+						highlight = PlotHighlightTypes.ATTACK;
+					end
+					UI.HighlightPlots(highlight, on, { plotIndex } );
+				end
+			end
+		end
+		-- YnAMP >>>>>
+
+		if m_BrushEnabled and m_BrushSize == 7 then
+			local kPlot : table = Map.GetPlotByIndex(plotID);
+			local adjPlots : table = Map.GetAdjacentPlots(kPlot:GetX(), kPlot:GetY());
+
+			for i = 1, 6, 1 do
+				if adjPlots[i] ~= nil then
+					if PlacementValid(adjPlots[i]:GetIndex(), mode) then
+						highlight = PlotHighlightTypes.MOVEMENT;
+					else
+						highlight = PlotHighlightTypes.ATTACK;
+					end
+					UI.HighlightPlots(highlight, on, { adjPlots[i]:GetIndex() } );
+				end
+			end
+		elseif m_BrushEnabled and m_BrushSize == 19 then
+			local kPlot : table = Map.GetPlotByIndex(plotID);
+			local adjPlots : table = Map.GetAdjacentPlots(kPlot:GetX(), kPlot:GetY());
+			
+			for _,direction in pairs(DirectionTypes) do
+				if adjPlots[direction] ~= nil then
+					local adjPlot1 :table = Map.GetAdjacentPlot(adjPlots[direction]:GetX(), adjPlots[direction]:GetY(), m_19HexTable[direction].Dir1);
+					local adjPlot2 :table = Map.GetAdjacentPlot(adjPlots[direction]:GetX(), adjPlots[direction]:GetY(), m_19HexTable[direction].Dir2);
+
+					if adjPlot1 ~= nil then
+						table.insert(adjPlots, adjPlot1);
+					end
+					if adjPlot2 ~= nil then
+						table.insert(adjPlots, adjPlot2);
+					end
+				end
+			end
+
+			for i = 1, 19, 1 do
+				if adjPlots[i] ~= nil then
+					if PlacementValid(adjPlots[i]:GetIndex(), mode) then
+						highlight = PlotHighlightTypes.MOVEMENT;
+					else
+						highlight = PlotHighlightTypes.ATTACK;
+					end
+					UI.HighlightPlots(highlight, on, { adjPlots[i]:GetIndex() } );
+				end
+			end
+		end
 	end
 end
 
@@ -123,6 +231,42 @@ function OnPlacementTypeSelected(mode)
 	m_Mode = mode;
 	Controls.TabControl:SelectTab( mode.Tab );
 
+	if mode.ID == WorldBuilderModes.PLACE_TERRAIN or mode.ID == WorldBuilderModes.PLACE_CONTINENTS then
+		Controls.BrushPullDown:SetDisabled(false);
+		Controls.BrushPullDown:SetColor(1.0, 1.0, 1.0);
+		m_BrushEnabled = true;
+	else
+		Controls.BrushPullDown:SetDisabled(true);
+		Controls.BrushPullDown:SetColor(0.5, 0.5, 0.5);
+		m_BrushEnabled = false;
+	end
+	
+	-- YnAMP <<<<<
+	-- More brush use
+	local BrushModes = {
+		[WorldBuilderModes.PLACE_TERRAIN] = true,
+		[WorldBuilderModes.PLACE_CONTINENTS] = true,
+		[WorldBuilderModes.PLACE_RESOURCES] = true,
+		[WorldBuilderModes.PLACE_FEATURES] = true,
+		[WorldBuilderModes.PLACE_TERRAIN_OWNER] = true,
+		[WorldBuilderModes.PLACE_IMPROVEMENTS] = true,
+		[WorldBuilderModes.SET_VISIBILITY] = true,
+	}
+	if BrushModes[mode.ID] then
+		Controls.BrushSizePullDown:SetDisabled(false);
+		Controls.BrushSizePullDown:SetColor(1.0, 1.0, 1.0);
+		m_BrushEnabled = true;
+	else
+		Controls.BrushSizePullDown:SetDisabled(true);
+		Controls.BrushSizePullDown:SetColor(0.5, 0.5, 0.5);
+		m_BrushEnabled = false;
+	end
+	-- YnAMP >>>>>
+	
+	if mode.ID == WorldBuilderModes.PLACE_RESOURCES then
+		OnResourceTypeSelected(Controls.ResourcePullDown:GetSelectedEntry());
+	end
+
 	if m_MouseOverPlot ~= nil then
 		UpdateMouseOverHighlight(m_MouseOverPlot, m_Mode, true);
 	end
@@ -139,7 +283,40 @@ function OnPlotSelected(plotID, edge, lbutton)
 	
 	if not ContextPtr:IsHidden() then
 		local mode = Controls.PlacementPullDown:GetSelectedEntry();
+		local kPlot : table = Map.GetPlotByIndex(plotID);
 		mode.PlacementFunc( plotID, edge, lbutton );
+
+		if m_BrushEnabled and m_BrushSize == 7 then
+			local adjPlots : table = Map.GetAdjacentPlots(kPlot:GetX(), kPlot:GetY());
+
+			for i = 1, 6, 1 do
+				if adjPlots[i] ~= nil and PlacementValid(adjPlots[i]:GetIndex(), mode) then
+					mode.PlacementFunc(adjPlots[i]:GetIndex(), edge, lbutton);
+				end
+			end
+		elseif m_BrushEnabled and m_BrushSize == 19 then
+			local adjPlots : table = Map.GetAdjacentPlots(kPlot:GetX(), kPlot:GetY());
+
+			for _,direction in pairs(DirectionTypes) do
+				if adjPlots[direction] ~= nil then
+					local adjPlot1 :table = Map.GetAdjacentPlot(adjPlots[direction]:GetX(), adjPlots[direction]:GetY(), m_19HexTable[direction].Dir1);
+					local adjPlot2 :table = Map.GetAdjacentPlot(adjPlots[direction]:GetX(), adjPlots[direction]:GetY(), m_19HexTable[direction].Dir2);
+
+					if adjPlot1 ~= nil then
+						table.insert(adjPlots, adjPlot1);
+					end
+					if adjPlot2 ~= nil then
+						table.insert(adjPlots, adjPlot2);
+					end
+				end
+			end
+
+			for i = 1, 19, 1 do
+				if adjPlots[i] ~= nil then
+					mode.PlacementFunc(adjPlots[i]:GetIndex(), edge, lbutton);
+				end
+			end
+		end
 	end
 end
 
@@ -169,7 +346,7 @@ function OnShow()
 		UI.SetInterfaceMode( InterfaceModeTypes.WB_SELECT_PLOT );
 	end
 
-	LuaEvents.WorldBuilderMapTools_SetTabHeader("Place Plot");
+	LuaEvents.WorldBuilderMapTools_SetTabHeader(Locale.Lookup("LOC_WORLDBUILDER_PLACEMENT_PLACE_PLOT"));
 end
 
 -- ===========================================================================
@@ -185,6 +362,13 @@ function OnLoadGameViewStateDone()
 
 	if not ContextPtr:IsHidden() then
 		OnShow();
+	end
+end
+
+-- ===========================================================================
+function OnBrushSizeChanged(entry)
+	if entry ~= nil then
+		m_BrushSize = entry.HexSize;
 	end
 end
 
@@ -238,12 +422,14 @@ function UpdatePlayerEntries()
 	Controls.UnitOwnerPullDown:SetEntries( m_ScenarioPlayerEntries, hasScenarioPlayers and 1 or 0 );
 	Controls.VisibilityPullDown:SetEntries( m_ScenarioPlayerEntries, hasScenarioPlayers and 1 or 0 );
 
+	if WorldBuilder.GetWBAdvancedMode() then
+		m_TabButtons[Controls.PlaceUnit]:SetDisabled( not hasScenarioPlayers );
+		m_TabButtons[Controls.PlaceBuilding]:SetDisabled( not hasScenarioPlayers );
 	m_TabButtons[Controls.PlaceStartPos]:SetDisabled( not hasPlayers );
-	m_TabButtons[Controls.PlaceCity]:SetDisabled( not hasScenarioPlayers );
 	m_TabButtons[Controls.PlaceDistrict]:SetDisabled( not hasScenarioPlayers );
-	m_TabButtons[Controls.PlaceBuilding]:SetDisabled( not hasScenarioPlayers );
-	m_TabButtons[Controls.PlaceUnit]:SetDisabled( not hasScenarioPlayers );
 	m_TabButtons[Controls.PlaceVisibility]:SetDisabled( not hasScenarioPlayers );
+		m_TabButtons[Controls.PlaceCity]:SetDisabled( not hasScenarioPlayers );
+	end
 
 	OnVisibilityPlayerChanged(Controls.VisibilityPullDown:GetSelectedEntry());
 end
@@ -267,7 +453,6 @@ function UpdateCityEntries()
 	Controls.OwnerPullDown:SetEntries( m_CityEntries, hasCities and 1 or 0 );
 	Controls.DistrictCityPullDown:SetEntries( m_CityEntries, hasCities and 1 or 0 );
 	Controls.BuildingCityPullDown:SetEntries( m_CityEntries, hasCities and 1 or 0 );
-	m_TabButtons[Controls.PlaceOwnership]:SetDisabled( not hasCities );
 end
 
 -- ===========================================================================
@@ -275,11 +460,32 @@ function PlaceTerrain(plot, edge, bAdd)
 
 	if bAdd then
 		local entry = Controls.TerrainPullDown:GetSelectedEntry();
+		local pkPlot = Map.GetPlotByIndex( plot );
+		local resType :number = nil; 
+		local featureType :number = nil;
+
+		if (pkPlot:GetResourceType() > 1) then
+			resType = m_ResourceTypeEntries[pkPlot:GetResourceType()+1].Type.Index; 
+		end
+		if (pkPlot:GetFeatureType() >= 0) then
+			featureType = m_FeatureTypeEntries[pkPlot:GetFeatureType()+1].Type.Index;
+		end
+
 		WorldBuilder.MapManager():SetTerrainType( plot, entry.Type.Index );
 		
 		-- YnAMP <<<<<
-		ApplyLargerBrush(plot, nil, WorldBuilder.MapManager().SetTerrainType, entry.Type.Index)
+		ApplyLargerBrush(plot, nil, WorldBuilder.MapManager(), WorldBuilder.MapManager().SetTerrainType, entry.Type.Index)
 		-- YnAMP >>>>>
+
+		-- will the existing resource work with the new terrain?
+		if resType ~= nil and not WorldBuilder.MapManager():CanPlaceResource( plot, resType, true ) then
+			WorldBuilder.MapManager():SetResourceType( plot, -1 );
+		end
+
+		-- how about the existing feature?
+		if featureType ~= nil and not WorldBuilder.MapManager():CanPlaceFeature( plot, featureType, true ) then
+			WorldBuilder.MapManager():SetFeatureType( plot, -1 );
+		end
 	end
 end
 
@@ -297,7 +503,7 @@ function PlaceContinent(plot, edge, bAdd)
 		WorldBuilder.MapManager():SetContinentType( plot, entry.Type.Index );
 		
 		-- YnAMP <<<<<
-		ApplyLargerBrush(plot, PlaceContinent_Valid, WorldBuilder.MapManager().SetContinentType, entry.Type.Index)
+		ApplyLargerBrush(plot, PlaceContinent_Valid, WorldBuilder.MapManager(), WorldBuilder.MapManager().SetContinentType, entry.Type.Index)
 		-- YnAMP >>>>>
 	end
 end
@@ -315,16 +521,21 @@ function PlaceFeature(plot, edge, bAdd)
 		local entry = Controls.FeaturePullDown:GetSelectedEntry();
 		if WorldBuilder.MapManager():CanPlaceFeature( plot, entry.Type.Index ) then
 			WorldBuilder.MapManager():SetFeatureType( plot, entry.Type.Index );
+			LuaEvents.WorldBuilder_SetPlacementStatus(Locale.Lookup(entry.Text) .. " " .. Locale.Lookup("LOC_WORLDBUILDER_BLANK_PLACEMENT_OK"));
+			UI.PlaySound("UI_WB_Placement_Succeeded");
+		else
+			LuaEvents.WorldBuilder_SetPlacementStatus(Locale.Lookup("LOC_WORLDBUILDER_FAILURE_FEATURE"));
+			UI.PlaySound("UI_WB_Placement_Failed");
 		end
 		-- YnAMP <<<<<
 		if not entry.Type.NaturalWonder then
-			ApplyLargerBrush(plot, PlaceFeature_Valid, WorldBuilder.MapManager().SetFeatureType, entry.Type.Index)
+			ApplyLargerBrush(plot, PlaceFeature_Valid, WorldBuilder.MapManager(), WorldBuilder.MapManager().SetFeatureType, entry.Type.Index)
 		end
 		-- YnAMP >>>>>
 	else
 		WorldBuilder.MapManager():SetFeatureType( plot, -1 );
 		-- YnAMP <<<<<
-		ApplyLargerBrush(plot, nil, WorldBuilder.MapManager().SetFeatureType, -1)
+		ApplyLargerBrush(plot, nil, WorldBuilder.MapManager(), WorldBuilder.MapManager().SetFeatureType, -1)
 		-- YnAMP >>>>>
 	end
 end
@@ -353,10 +564,13 @@ function PlaceResource(plot, edge, bAdd)
 		if WorldBuilder.MapManager():CanPlaceResource( plot, entry.Type.Index ) then
 			WorldBuilder.MapManager():SetResourceType( plot, entry.Type.Index, Controls.ResourceAmount:GetText() );
 		end
+		-- YnAMP <<<<<
+		ApplyLargerBrush(plot, PlaceResource_Valid, WorldBuilder.MapManager(), WorldBuilder.MapManager().SetResourceType, entry.Type.Index, Controls.ResourceAmount:GetText())
+		-- YnAMP >>>>>
 	else
 		WorldBuilder.MapManager():SetResourceType( plot, -1 );
 		-- YnAMP <<<<<
-		ApplyLargerBrush(plot, nil, WorldBuilder.MapManager().SetResourceType, -1)
+		ApplyLargerBrush(plot, nil, WorldBuilder.MapManager(), WorldBuilder.MapManager().SetResourceType, -1)
 		-- YnAMP >>>>>
 	end
 end
@@ -368,6 +582,8 @@ function PlaceCity(plot, edge, bAdd)
 		local playerEntry = Controls.CityOwnerPullDown:GetSelectedEntry();
 		if playerEntry ~= nil then
 			WorldBuilder.CityManager():Create(playerEntry.PlayerIndex, plot);
+			LuaEvents.WorldBuilder_SetPlacementStatus(Locale.Lookup("LOC_WORLDBUILDER_PLACEMENT_OK"));
+			UI.PlaySound("UI_WB_Placement_Succeeded");
 		end
 	else
 		WorldBuilder.CityManager():RemoveAt(plot);
@@ -376,6 +592,8 @@ end
 
 -- ===========================================================================
 function PlaceDistrict(plot, edge, bAdd)
+	local bStatus : boolean;
+	local sStatus : table;
 
 	if bAdd then
 		local cityEntry = Controls.DistrictCityPullDown:GetSelectedEntry();
@@ -383,7 +601,8 @@ function PlaceDistrict(plot, edge, bAdd)
 			local city = CityManager.GetCity(cityEntry.PlayerIndex, cityEntry.ID);
 			if city ~= nil then
 				local districtEntry = Controls.DistrictPullDown:GetSelectedEntry();
-				WorldBuilder.CityManager():CreateDistrict(city, districtEntry.Type.DistrictType, 100, plot);
+				bStatus, sStatus = WorldBuilder.CityManager():CreateDistrict(city, districtEntry.Type.DistrictType, 100, plot);
+				PlacementSetResults(bStatus, sStatus, districtEntry.Text);
 			end
 
 		end
@@ -398,6 +617,8 @@ end
 
 -- ===========================================================================
 function PlaceBuilding(plot, edge, bAdd)
+	local bStatus : boolean;
+	local sStatus : table;
 
 	if bAdd then
 		local cityEntry = Controls.BuildingCityPullDown:GetSelectedEntry();
@@ -406,7 +627,8 @@ function PlaceBuilding(plot, edge, bAdd)
 			if city ~= nil then
 				local buildingEntry = Controls.BuildingPullDown:GetSelectedEntry();
 				if buildingEntry ~= nil then
-					WorldBuilder.CityManager():CreateBuilding(city, buildingEntry.Type.BuildingType, 100, plot);
+					bStatus, sStatus = WorldBuilder.CityManager():CreateBuilding(city, buildingEntry.Type.BuildingType, 100, plot);
+					PlacementSetResults(bStatus, sStatus, buildingEntry.Text);
 				end
 			end
 
@@ -436,6 +658,8 @@ function PlaceUnit(plot, edge, bAdd)
 		local unitEntry = Controls.UnitPullDown:GetSelectedEntry();
 		if playerEntry ~= nil and unitEntry ~= nil then
 			WorldBuilder.UnitManager():Create(unitEntry.Type.Index, playerEntry.PlayerIndex, plot);
+			LuaEvents.WorldBuilder_SetPlacementStatus(Locale.Lookup("LOC_WORLDBUILDER_UNIT_PLACED"));
+			UI.PlaySound("UI_WB_Placement_Succeeded");
 		end
 	else
 		WorldBuilder.UnitManager():RemoveAt(plot);
@@ -448,6 +672,27 @@ function PlaceImprovement(plot, edge, bAdd)
 	if bAdd then
 		local entry = Controls.ImprovementPullDown:GetSelectedEntry();
 		WorldBuilder.MapManager():SetImprovementType( plot, entry.Type.Index, Map.GetPlotByIndex( m_SelectedPlot ):GetOwner() );
+		LuaEvents.WorldBuilder_SetPlacementStatus(Locale.Lookup(entry.Text) .. " " .. Locale.Lookup("LOC_WORLDBUILDER_BLANK_PLACEMENT_OK"));
+		UI.PlaySound("UI_WB_Placement_Succeeded");
+		-- YnAMP <<<<<
+		ApplyLargerBrush(plot, nil, WorldBuilder.MapManager(), WorldBuilder.MapManager().SetImprovementType, entry.Type.Index, Map.GetPlotByIndex( m_SelectedPlot ):GetOwner())
+		-- YnAMP >>>>>
+	else
+		WorldBuilder.MapManager():SetImprovementType( plot, -1 );
+		-- YnAMP <<<<<
+		ApplyLargerBrush(plot, nil, WorldBuilder.MapManager(), WorldBuilder.MapManager().SetImprovementType, -1)
+		-- YnAMP >>>>>
+	end
+end
+
+-- ===========================================================================
+function PlaceGoodyHut(plot, edge, bAdd)
+
+	if bAdd then
+		local entry = Controls.GoodyHutPullDown:GetSelectedEntry();
+		WorldBuilder.MapManager():SetImprovementType( plot, entry.Type.Index, Map.GetPlotByIndex( m_SelectedPlot ):GetOwner() );
+		LuaEvents.WorldBuilder_SetPlacementStatus(Locale.Lookup(entry.Text) .. " " .. Locale.Lookup("LOC_WORLDBUILDER_BLANK_PLACEMENT_OK"));
+		UI.PlaySound("UI_WB_Placement_Succeeded");
 	else
 		WorldBuilder.MapManager():SetImprovementType( plot, -1 );
 	end
@@ -459,6 +704,8 @@ function PlaceRoute(plot, edge, bAdd)
 	if bAdd then
 		local entry = Controls.RoutePullDown:GetSelectedEntry();
 		WorldBuilder.MapManager():SetRouteType( plot, entry.Type.Index, Controls.RoutePillagedCheck:IsChecked() );
+		LuaEvents.WorldBuilder_SetPlacementStatus(Locale.Lookup(entry.Text) .. " " .. Locale.Lookup("LOC_WORLDBUILDER_BLANK_PLACEMENT_OK"));
+		UI.PlaySound("UI_WB_Placement_Succeeded");
 	else
 		WorldBuilder.MapManager():SetRouteType( plot, RouteTypes.NONE );
 	end
@@ -471,6 +718,8 @@ function PlaceStartPos(plot, edge, bAdd)
 		local entry = Controls.StartPosPlayerPulldown:GetSelectedEntry();
 		if entry ~= nil then
 			WorldBuilder.PlayerManager():SetPlayerStartingPosition( entry.PlayerIndex, plot );
+			LuaEvents.WorldBuilder_SetPlacementStatus(Locale.Lookup("LOC_WORLDBUILDER_START_POS_SET"));
+			UI.PlaySound("UI_WB_Placement_Succeeded");
 		end
 	else
 		local prevStartPosPlayer = WorldBuilder.PlayerManager():GetStartPositionPlayer( plot );
@@ -488,6 +737,8 @@ function PlaceOwnership(iPlot, edge, bAdd)
 		local entry = Controls.OwnerPullDown:GetSelectedEntry();
 		if entry ~= nil then
 			WorldBuilder.CityManager():SetPlotOwner( plot:GetX(), plot:GetY(), entry.PlayerIndex, entry.ID );
+			LuaEvents.WorldBuilder_SetPlacementStatus(Locale.Lookup("LOC_WORLDBUILDER_OWNERSHIP_SET"));
+			UI.PlaySound("UI_WB_Placement_Succeeded");
 			-- YnAMP <<<<<
 			local range = GetBrushSize() - 1
 			if range > 0 then
@@ -595,6 +846,15 @@ function OnContinentTypeEdited( plotID, continentType )
 end
 
 -- ===========================================================================
+function OnResourceTypeSelected( entry )
+	if entry.Class == "RESOURCECLASS_STRATEGIC" then
+		Controls.ResourceAmount:SetHide(false);
+	else
+		Controls.ResourceAmount:SetHide(true);
+	end
+end
+
+-- ===========================================================================
 --	Placement Modes
 -- ===========================================================================
 local m_PlacementModes : table =
@@ -614,6 +874,24 @@ local m_PlacementModes : table =
 	{ ID=WorldBuilderModes.PLACE_START_POSITIONS, Text="LOC_WORLDBUILDER_PLACEMENT_MODE_START_POSITIONS",  Tab=Controls.PlaceStartPos,     PlacementFunc=PlaceStartPos,    PlacementValid=nil                   },
 	{ ID=WorldBuilderModes.PLACE_TERRAIN_OWNER,	Text="LOC_WORLDBUILDER_PLACEMENT_MODE_OWNER",           Tab=Controls.PlaceOwnership,    PlacementFunc=PlaceOwnership,   PlacementValid=nil                   },
 	{ ID=WorldBuilderModes.SET_VISIBILITY,		Text="LOC_WORLDBUILDER_PLACEMENT_MODE_SET_VISIBILITY",	Tab=Controls.PlaceVisibility,   PlacementFunc=PlaceVisibility,  PlacementValid=nil,                  OnEntered=OnVisibilityToolEntered, OnLeft=OnVisibilityToolLeft },
+};
+
+local m_BasicPlacementModes : table =
+{
+	{ ID=WorldBuilderModes.PLACE_TERRAIN,		Text="LOC_WORLDBUILDER_PLACEMENT_MODE_TERRAIN",         Tab=Controls.PlaceTerrain,      PlacementFunc=PlaceTerrain,     PlacementValid=nil                   },
+	{ ID=WorldBuilderModes.PLACE_FEATURES,		Text="LOC_WORLDBUILDER_PLACEMENT_MODE_FEATURES",        Tab=Controls.PlaceFeatures,     PlacementFunc=PlaceFeature,     PlacementValid=PlaceFeature_Valid    },
+	{ ID=WorldBuilderModes.PLACE_CONTINENTS,	Text="LOC_WORLDBUILDER_PLACEMENT_MODE_CONTINENT",       Tab=Controls.PlaceContinent,    PlacementFunc=PlaceContinent,   PlacementValid=PlaceContinent_Valid, OnEntered=OnContinentToolEntered, OnLeft=OnContinentToolLeft, NoMouseOverHighlight=true },
+	{ ID=WorldBuilderModes.PLACE_RIVERS,		Text="LOC_WORLDBUILDER_PLACEMENT_MODE_RIVERS",          Tab=Controls.PlaceRivers,       PlacementFunc=PlaceRiver,       PlacementValid=nil,                  NoMouseOverHighlight=true },
+	{ ID=WorldBuilderModes.PLACE_CLIFFS,		Text="LOC_WORLDBUILDER_PLACEMENT_MODE_CLIFFS",          Tab=Controls.PlaceCliffs,       PlacementFunc=PlaceCliff,       PlacementValid=nil                   },
+	{ ID=WorldBuilderModes.PLACE_RESOURCES,		Text="LOC_WORLDBUILDER_PLACEMENT_MODE_RESOURCES",       Tab=Controls.PlaceResources,    PlacementFunc=PlaceResource,    PlacementValid=PlaceResource_Valid   },
+	{ ID=WorldBuilderModes.PLACE_IMPROVEMENTS,	Text="LOC_WORLDBUILDER_PLACEMENT_MODE_GOODY_HUTS",		Tab=Controls.PlaceGoodyHuts,	PlacementFunc=PlaceGoodyHut,	PlacementValid=nil                   },
+};
+
+local m_BrushSizeEntries : table =
+{
+	{ ID=1,		Text="LOC_WORLDBUILDER_BRUSH_SMALL", HexSize=1 },
+	{ ID=2,		Text="LOC_WORLDBUILDER_BRUSH_MEDIUM",  HexSize=7 },
+	{ ID=3,		Text="LOC_WORLDBUILDER_BRUSH_LARGE",  HexSize=19 },
 };
 
 local m_PlacementModesByID = {};
@@ -758,16 +1036,52 @@ end
 
 -- ===========================================================================
 function OnRegenResources()
-	print("Regen resources!");
-
 	for plotIndex = 0, Map.GetPlotCount()-1, 1 do
 		local plot = Map.GetPlotByIndex(plotIndex);
 		WorldBuilder.MapManager():SetResourceType(plot, NO_RESOURCE);
 	end
+	LuaEvents.WorldBuilder_SetPlacementStatus(Locale.Lookup("LOC_WORLDBUILDER_STATUS_RESOURCES_CLEARED"));
+end
 
-	-- TODO: add data to this table to mimic the options provided in Advanced Setup
-	--local args = {};
-	--local resGen = ResourceGenerator.Create(args);
+-- ===========================================================================
+function OnGenResources()
+	-- reuse OnRegenResources' clear function
+	OnRegenResources();
+
+	-- and run the generate
+	local resourcesConfig = MapConfiguration.GetValue("resources");
+    local args = {
+        resources = resourcesConfig,
+    };
+    local resGen = WorldBuilderResourceGenerator.Create(args);
+	LuaEvents.WorldBuilder_SetPlacementStatus(Locale.Lookup("LOC_WORLDBUILDER_STATUS_RESOURCES_SCATTERED"));
+end
+
+-- ===========================================================================
+function OnAdvancedModeChanged()
+	if not WorldBuilder.GetWBAdvancedMode() then
+		Controls.PlacementPullDown:SetEntries( m_BasicPlacementModes, 1 );
+		for i,tabEntry in ipairs(m_BasicPlacementModes) do
+			m_TabButtons[tabEntry.Tab] = tabEntry.Button;
+		end
+
+		for i,entry in ipairs(m_BasicPlacementModes) do
+			m_PlacementModesByID[entry.ID] = entry;
+		end
+	else
+		Controls.PlacementPullDown:SetEntries( m_PlacementModes, 1 );
+		for i,tabEntry in ipairs(m_PlacementModes) do
+			m_TabButtons[tabEntry.Tab] = tabEntry.Button;
+		end
+
+		for i,entry in ipairs(m_PlacementModes) do
+			m_PlacementModesByID[entry.ID] = entry;
+		end
+	end
+	Controls.PlacementPullDown:SetEntrySelectedCallback( OnPlacementTypeSelected );
+
+	UpdatePlayerEntries();
+	UpdateCityEntries();
 end
 
 -- ===========================================================================
@@ -776,7 +1090,11 @@ end
 function OnInit()
 
 	-- PlacementPullDown
-	Controls.PlacementPullDown:SetEntries( m_PlacementModes, 1 );
+	if not WorldBuilder.GetWBAdvancedMode() then
+		Controls.PlacementPullDown:SetEntries( m_BasicPlacementModes, 1 );
+	else
+		Controls.PlacementPullDown:SetEntries( m_PlacementModes, 1 );
+	end
 	Controls.PlacementPullDown:SetEntrySelectedCallback( OnPlacementTypeSelected );
 
 	-- Track Tab Buttons
@@ -809,9 +1127,10 @@ function OnInit()
 
 	-- ResourcePullDown
 	for type in GameInfo.Resources() do
-		table.insert(m_ResourceTypeEntries, { Text=type.Name, Type=type });
+		table.insert(m_ResourceTypeEntries, { Text=type.Name, Type=type, Class=type.ResourceClassType });
 	end
 	Controls.ResourcePullDown:SetEntries( m_ResourceTypeEntries, 1 );
+	Controls.ResourcePullDown:SetEntrySelectedCallback( OnResourceTypeSelected );
 
 	-- UnitPullDown
 	for type in GameInfo.Units() do
@@ -819,11 +1138,16 @@ function OnInit()
 	end
 	Controls.UnitPullDown:SetEntries( m_UnitTypeEntries, 1 );
 
-	-- ImprovementPullDown
+	-- ImprovementPullDown and GoodyHutPullDown
 	for type in GameInfo.Improvements() do
 		table.insert(m_ImprovementTypeEntries, { Text=type.Name, Type=type });
+
+		if type.ImprovementType == "IMPROVEMENT_GOODY_HUT" then
+			table.insert(m_GoodyHutTypeEntries, { Text=type.Name, Type=type });
+		end
 	end
 	Controls.ImprovementPullDown:SetEntries( m_ImprovementTypeEntries, 1 );
+	Controls.GoodyHutPullDown:SetEntries( m_GoodyHutTypeEntries, 1 );
 
 	-- RoutePullDown
 	for type in GameInfo.Routes() do
@@ -846,22 +1170,35 @@ function OnInit()
 		end
 	end
 	Controls.BuildingPullDown:SetEntries( m_BuildingTypeEntries, 1 );
-	
-	-- YnAMP <<<<<
-	-- BrushSizePullDown
-	local maxBrushSize= tonumber(GameInfo.GlobalParameters["WB_MAX_BRUSH_SIZE"].Value)
-	for i=1, maxBrushSize do
-		table.insert(m_BrushSizeEntries, { Text=Locale.Lookup("LOC_WORLD_BUILDER_BRUSH_SIZE", i), Size=i });
-	end
-	Controls.BrushSizePullDown:SetEntries( m_BrushSizeEntries, 1 );
-	-- YnAMP >>>>>
 
 	-- VisibilityPullDown
 	Controls.VisibilityPullDown:SetEntrySelectedCallback( OnVisibilityPlayerChanged );
 	Controls.VisibilityRevealAllButton:RegisterCallback( Mouse.eLClick, OnVisibilityPlayerRevealAll );
 
-	-- Regen Resources Button
+	-- YnAMP <<<<<
+	--[[
+	-- YnAMP >>>>>
+	-- Brush size
+	Controls.BrushPullDown:SetEntries( m_BrushSizeEntries, 1 );
+	Controls.BrushPullDown:SetEntrySelectedCallback( OnBrushSizeChanged );
+	
+	-- YnAMP <<<<<
+	--]]
+	-- Brush Size override
+	Controls.PlacementSize:SetHide( true );
+	local maxBrushSize			= tonumber(GameInfo.GlobalParameters["WB_MAX_BRUSH_SIZE"].Value)
+	local m_BrushSizeEntries 	= {}
+	for i=1, maxBrushSize do
+		table.insert(m_BrushSizeEntries, { Text=Locale.Lookup("LOC_WORLD_BUILDER_BRUSH_SIZE", i), Size=i });
+		--table.insert(m_BrushSizeEntries, { Text=i, Size=i });
+	end
+	Controls.BrushSizePullDown:SetEntries( m_BrushSizeEntries, 1 );
+	--Controls.BrushPullDown:SetEntries( m_BrushSizeEntries, 1 );
+	-- YnAMP >>>>>
+
+	-- Clear and Generate Resources Buttons
 	Controls.RegenResourcesButton:RegisterCallback(Mouse.eLClick, OnRegenResources);
+	Controls.GenResourcesButton:RegisterCallback(Mouse.eLClick, OnGenResources);
 
 	-- Register for events
 	ContextPtr:SetShowHandler( OnShow );
@@ -879,6 +1216,7 @@ function OnInit()
 	LuaEvents.WorldBuilder_PlayerAdded.Add( UpdatePlayerEntries );
 	LuaEvents.WorldBuilder_PlayerRemoved.Add( UpdatePlayerEntries );
 	LuaEvents.WorldBuilder_PlayerEdited.Add( UpdatePlayerEntries );
+	LuaEvents.WorldBuilder_ModeChanged.Add( OnAdvancedModeChanged );
 
 end
 ContextPtr:SetInitHandler( OnInit );

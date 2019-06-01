@@ -189,6 +189,10 @@
 		<!-- When using an invalid type for FeatureType (or ResourceType), the placement code remove the current Feature (or Resource) from the plot -->
 		<Replace MapName="GiantEarth" X="31" Y="41" ConfigurationId="JebelBarkal" 		FeatureType="NONE" TerrainType="TERRAIN_DESERT_HILLS" />
 		
+		<Replace MapName="GiantEarth" X="149" Y="41" ConfigurationId="PanamaCanal" 		TerrainType="TERRAIN_GRASS" />
+		<Replace MapName="GiantEarth" X="150" Y="40" ConfigurationId="PanamaCanal" 		TerrainType="TERRAIN_GRASS" />
+		<Replace MapName="GiantEarth" X="151" Y="40" ConfigurationId="PanamaCanal" 		TerrainType="TERRAIN_PLAINS" />
+		
 		<Replace MapName="GiantEarth" X="31" Y="59" Civilization="CIVILIZATION_OTTOMAN" 	TerrainType="TERRAIN_GRASS_HILLS" />
 		
 	<!-- +++++++++++++++++++++++++++ -->

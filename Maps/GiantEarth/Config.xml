@@ -90,6 +90,7 @@
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthArtemisTemple" 	Name="LOC_MAP_ARTEMIS_TEMPLE_DEER_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="ArtemisTemple" GroupId="MapOptions" SortIndex="1000"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthGreatZimbabwe" 	Name="LOC_MAP_GREAT_ZIMBABWE_CATTLE_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="GreatZimbabwe" GroupId="MapOptions" SortIndex="1000"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthJebelBarkal" 		Name="LOC_MAP_JEBEL_BARKAL_HILLS_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="JebelBarkal" GroupId="MapOptions" SortIndex="1000"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthPanama" 			Name="LOC_MAP_PANAMA_CANAL_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="PanamaCanal" GroupId="MapOptions" SortIndex="1000"/>
 		
 		<!--	Auto City Naming
 		-->
@@ -126,8 +127,8 @@
 
 		<!--	Scenario Options
 		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthScenarioType" 	Name="LOC_MAP_SCENARIO_TYPE_NAME"	Description="LOC_MAP_SCENARIO_TYPE_DESCRIPTION" 	Domain="GiantEarthScenarioType" 	DefaultValue="SCENARIO_NONE" 	ConfigurationGroup="Map" ConfigurationId="ScenarioName" 	GroupId="ScenarioOptions" SortIndex="10000"/>
-		-->
 		<Row Key1="Map" Key2="GiantEarth.lua" 	ParameterId="GiantEarthCityPlacement" 	Name="LOC_MAP_CITY_PLACEMENT_NAME"	Description="LOC_MAP_CITY_PLACEMENT_DESCRIPTION" 	Domain="GiantEarthCityPlacement" 	DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="CityPlacement" 	GroupId="ScenarioOptions" SortIndex="10010"/>
+		-->
 		
 	</Parameters>
 	
@@ -168,11 +169,12 @@
 		<!-- 
 		<Replace Domain="GiantEarthScenarioType" Value="SCENARIO_NONE" 		Name="LOC_MAP_SCENARIO_NONE_NAME" 		Description="LOC_MAP_SCENARIO_NONE_DESCRIPTION" 		SortIndex="10"/>
 		<Replace Domain="GiantEarthScenarioType" Value="SCENARIO_GENERATED" Name="LOC_MAP_SCENARIO_GENERATED_NAME" 	Description="LOC_MAP_SCENARIO_GENERATED_DESCRIPTION" 	SortIndex="20"/>
-		-->
 		
 		<Replace Domain="GiantEarthCityPlacement" Value="PLACEMENT_EMPTY" 		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 			Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 			SortIndex="10"/>
 		<Replace Domain="GiantEarthCityPlacement" Value="PLACEMENT_TERRAIN" 	Name="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" 		Description="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" 	SortIndex="20"/>
 		<Replace Domain="GiantEarthCityPlacement" Value="PLACEMENT_CITY_MAP"	Name="LOC_MAP_CITY_PLACEMENT_CITY_MAP_NAME" 	Description="LOC_MAP_CITY_PLACEMENT_CITY_MAP_DESCRIPTION" 	SortIndex="20"/>
+		-->
+		
 
 	</DomainValues>
 	
@@ -219,9 +221,9 @@
 		<Replace ParameterId="GiantEarthOldWorldEndY" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_OLD_WORLD"/>
 		
 		<!--
-		-->	
 		<Replace ParameterId="GiantEarthCityPlacement"	ConfigurationGroup="Map" ConfigurationId="ScenarioType" Operator="NotEquals" 	ConfigurationValue="SCENARIO_NONE"/>
 		<Replace ParameterId="CityPlacement"			ConfigurationGroup="Map" ConfigurationId="MapName" 		Operator="NotEquals"	ConfigurationValue="GiantEarth"/>
+		-->	
 
 	</ParameterDependencies>
 	

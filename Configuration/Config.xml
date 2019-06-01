@@ -103,7 +103,7 @@
 		-->
 
 		<Replace ParameterId="ScenarioType" 	Name="LOC_MAP_SCENARIO_TYPE_NAME"			Description="LOC_MAP_SCENARIO_TYPE_DESCRIPTION" 		Domain="ScenarioType" 	DefaultValue="SCENARIO_NONE" 	ConfigurationGroup="Map" ConfigurationId="ScenarioType" 	GroupId="ScenarioOptions" SortIndex="10000"/>
-		<Replace ParameterId="CityPlacement" 	Name="LOC_MAP_CITY_PLACEMENT_NAME"			Description="LOC_MAP_CITY_PLACEMENT_DESCRIPTION" 		Domain="CityPlacement" 	DefaultValue="PLACEMENT_TERRAIN"ConfigurationGroup="Map" ConfigurationId="CityPlacement" 	GroupId="ScenarioOptions" SortIndex="10010"/>
+		<Replace ParameterId="CityPlacement" 	Name="LOC_MAP_CITY_PLACEMENT_NAME"			Description="LOC_MAP_CITY_PLACEMENT_DESCRIPTION" 		Domain="CityPlacement" 	DefaultValue="PLACEMENT_MIXED"	ConfigurationGroup="Map" ConfigurationId="CityPlacement" 	GroupId="ScenarioOptions" SortIndex="10010"/>
 		
 		<Replace ParameterId="NumberOfCity"		Name="LOC_MAP_NUMBER_OF_CITY_NAME"			Description="LOC_MAP_NUMBER_OF_CITY_DESCRIPTION"		Domain="NumberOfCity" 		DefaultValue="4" ConfigurationGroup="Map" ConfigurationId="NumberOfCity"		GroupId="ScenarioOptions" SortIndex="10020"/>
 		<Replace ParameterId="NumberOfMinorCity"Name="LOC_MAP_NUMBER_OF_MINOR_CITY_NAME"	Description="LOC_MAP_NUMBER_OF_MINOR_CITY_DESCRIPTION"	Domain="NumberOfMinorCity" 	DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="NumberOfMinorCity"	GroupId="ScenarioOptions" SortIndex="10020"/>
@@ -125,6 +125,14 @@
 		<Replace ParameterId="UnlimitedRoadDistance"	Name="LOC_MAP_UNLIMITED_ROAD_DISTANCE_NAME"	Description="LOC_MAP_UNLIMITED_ROAD_DISTANCE_DESCRIPTION"	Domain="bool" 				DefaultValue="0"						ConfigurationGroup="Map" ConfigurationId="UnlimitedRoadDistance"	GroupId="ScenarioOptions" SortIndex="10100"/>
 		<Replace ParameterId="RoadMaxDistance"			Name="LOC_MAP_ROAD_DISTANCE_NAME"			Description="LOC_MAP_ROAD_DISTANCE_DESCRIPTION"				Domain="RoadMaxDistance" 	DefaultValue="6"						ConfigurationGroup="Map" ConfigurationId="RoadMaxDistance"			GroupId="ScenarioOptions" SortIndex="10110"/>
 		<Replace ParameterId="MaxRoadPerCity"			Name="LOC_MAP_MAX_ROAD_PER_CITY_NAME"		Description="LOC_MAP_MAX_ROAD_PER_CITY_DESCRIPTION"			Domain="MaxRoadPerCity" 	DefaultValue="1"						ConfigurationGroup="Map" ConfigurationId="MaxRoadPerCity"			GroupId="ScenarioOptions" SortIndex="10130"/>
+
+		<!--	Hidden entry to set citymap option disabled	by default
+		1/ use this and a ActiveCityMap <ConfigurationId> set for each map supporting it which would disable the NoCityMap option and use chekboxes for each placement method to be activated/deactivated depending on that option
+		2/ or set ActiveCityMap <ConfigurationId> for each map supporting it, and use SQL to build a specific "CityPlacement" domain for each of them including the base values and the city map values
+		Same method could be used for the Import values.
+		
+		<Replace ParameterId="NoCityMap" Name="NoCityMap" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="NoCityMap" GroupId="MapOptions" Visible="0" SortIndex="100"/>
+		-->
 		
 	</Parameters>
 
@@ -188,10 +196,16 @@
 		<Replace Domain="ForceTSL" Value="FORCE_TSL_AI" 	Name="LOC_MAP_FORCE_TSL_AI" 	Description="LOC_MAP_FORCE_TSL_AI_DESCRIPTION" 		SortIndex="30"/>
 		<Replace Domain="ForceTSL" Value="FORCE_TSL_ALL" 	Name="LOC_MAP_FORCE_TSL_ALL" 	Description="LOC_MAP_FORCE_TSL_ALL_DESCRIPTION" 	SortIndex="40"/>
 
-		<Replace Domain="CityPlacement" Value="PLACEMENT_EMPTY" 		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 			Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 				SortIndex="10"/>
-		<Replace Domain="CityPlacement" Value="PLACEMENT_TERRAIN" 		Name="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" 		Description="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" 		SortIndex="20"/>
+		<Replace Domain="CityPlacement" Value="PLACEMENT_EMPTY" 		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 				Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 				SortIndex="10"/>
+		<Replace Domain="CityPlacement" Value="PLACEMENT_TERRAIN" 		Name="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" 			Description="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" 		SortIndex="20"/>
+		<Replace Domain="CityPlacement" Value="PLACEMENT_CITY_MAP"		Name="LOC_MAP_CITY_PLACEMENT_CITY_MAP_NAME" 		Description="LOC_MAP_CITY_PLACEMENT_CITY_MAP_DESCRIPTION" 		SortIndex="30"/>
+		<Replace Domain="CityPlacement" Value="PLACEMENT_IMPORT" 		Name="LOC_MAP_CITY_PLACEMENT_IMPORT_NAME" 			Description="LOC_MAP_CITY_PLACEMENT_IMPORT_DESCRIPTION" 		SortIndex="40"/>
+		<Replace Domain="CityPlacement" Value="PLACEMENT_MIXED" 		Name="LOC_MAP_CITY_PLACEMENT_MIXED_NAME" 			Description="LOC_MAP_CITY_PLACEMENT_MIXED_DESCRIPTION" 			SortIndex="50"/>
+		<Replace Domain="CityPlacement" Value="PLACEMENT_TERRAIN_ONLY" 	Name="LOC_MAP_CITY_PLACEMENT_TERRAIN_ONLY_NAME" 	Description="LOC_MAP_CITY_PLACEMENT_TERRAIN_ONLY_DESCRIPTION" 	SortIndex="100"/>
+		<Replace Domain="CityPlacement" Value="PLACEMENT_CITY_MAP_ONLY"	Name="LOC_MAP_CITY_PLACEMENT_CITY_MAP_ONLY_NAME" 	Description="LOC_MAP_CITY_PLACEMENT_CITY_MAP_ONLY_DESCRIPTION" 	SortIndex="110"/>
+		<Replace Domain="CityPlacement" Value="PLACEMENT_IMPORT_ONLY" 	Name="LOC_MAP_CITY_PLACEMENT_IMPORT_ONLY_NAME" 		Description="LOC_MAP_CITY_PLACEMENT_IMPORT_ONLY_DESCRIPTION" 	SortIndex="120"/>
 		
-		<!-- seems that the setup screen don't like what's below (CityPlacement option invisible)... so stick to specific map option and domains overriding the default options 
+		<!-- seems that the setup screen don't handle what's below... so stick to specific map option and domains overriding the default options 
 		<Replace Key1="Map" Key2="LargestEarthCustom.lua" 		Domain="CityPlacement" Value="PLACEMENT_TEST" 		Name="Test" 		Description="Test" 		SortIndex="30"/>
 		-->
 		

@@ -6,7 +6,7 @@
     <Stack ID="PlotEditorStack" Anchor="C,T" StackGrowth="Bottom" Padding="10">
 
       <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
-        <Label Anchor="R,C" Style="ShellOptionText" String="Selected Plot:"/>
+        <Label Anchor="R,C" Style="ShellOptionText" String="LOC_WORLDBUILDER_SELECTED_PLOT"/>
         <Container Size="220,24">
           <Label ID="SelectedPlotLabel" Anchor="C,C" Style="FontNormal16" String="LOC_WORLD_BUILDER_NO_PLOT_SELECTED_HELP"/>
         </Container>
@@ -35,21 +35,21 @@
       </Stack>
     
       <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
-        <Label Anchor="L,C" Size="125,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_ATTRIBUTE_IMPROVEMENT"/>
+        <Label ID="ImprovementLabel" Anchor="L,C" Size="125,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_ATTRIBUTE_IMPROVEMENT"/>
         <SimplePullDown ID="ImprovementPullDown" Style="PullDownBlue" ScrollThreshold="400" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
       </Stack>
 
       <GridButton Anchor="R,T" ID="ImprovementPillagedButton" Offset="0,0" Size="220,24" Style="CheckBoxControl" String="LOC_WORLDBUILDER_ATTRIBUTE_IMPROVEMENT_PILLAGED" />
 
       <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
-        <Label Anchor="L,C" Size="125,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_ATTRIBUTE_ROUTE"/>
+        <Label ID="RouteLabel" Anchor="L,C" Size="125,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_ATTRIBUTE_ROUTE"/>
         <SimplePullDown ID="RoutePullDown" Style="PullDownBlue" ScrollThreshold="400" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
       </Stack>
 
       <GridButton Anchor="R,T" ID="RoutePillagedButton" Offset="0,0" Size="220,24" Style="CheckBoxControl" String="LOC_WORLDBUILDER_ATTRIBUTE_ROUTE_PILLAGED" />
     
       <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
-        <Label Size="125,29" Style="ShellOptionText" String="Start Position:"/>
+        <Label ID="StartPosLabel" Size="125,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_START_POSITION"/>
         <SimplePullDown ID="StartPosPulldown" Style="PullDownBlue" ScrollThreshold="400" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
       </Stack>
 
@@ -62,7 +62,7 @@
       </Tab>
 
       <Stack Anchor="R,T" StackGrowth="Right" Padding="5">
-        <Label Anchor="L,C" Size="125,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_ATTRIBUTE_OWNER"/>
+        <Label ID="OwnerLabel" Anchor="L,C" Size="125,29" Style="ShellOptionText" String="LOC_WORLDBUILDER_ATTRIBUTE_OWNER"/>
         <SimplePullDown ID="OwnerPulldown" Style="PullDownBlue" ScrollThreshold="400" Size="220,24" SpaceForScroll="0" EntryInstance="InstanceOne" AutoFlip="1"/>
       </Stack>
 

@@ -189,7 +189,7 @@ function FindNearestPlayerCity( eTargetPlayer, iX, iY )
     return pCity, iShortestDistance;
 end
 
-function FindNearestCityForNewRoad( eTargetPlayer, iX, iY, bIsForeign )
+function FindNearestCityForNewRoad( eTargetPlayer, iX, iY, bAllowForeign )
 
 	local pCity 			= nil
     local iShortestDistance = 10000
@@ -261,6 +261,7 @@ function GetRoadPath(plot, destPlot, sRoute, maxRange, iPlayer)
 	local fScore	= {}
 	
 	local startNode	= startPlot
+	local bestCost	= 0.5
 	
 	function GetPath(currentNode)
 		local path 		= {}
@@ -300,9 +301,9 @@ function GetRoadPath(plot, destPlot, sRoute, maxRange, iPlayer)
 					local nodeDistance = node:GetMovementCost() --1 --Map.GetPlotDistance(data.Plot:GetX(), data.Plot:GetY(), currentPlot:GetX(), currentPlot:GetY())
 
 					if data.Plot:IsRiverCrossingToPlot(currentPlot) then nodeDistance = nodeDistance + 1 end
-					if data.Plot:GetRouteType() ~= -1 then nodeDistance = nodeDistance * 0.5 end -- to do : real cost
+					if data.Plot:GetRouteType() ~= -1 then nodeDistance = nodeDistance * bestCost end -- to do : real cost
 					
-					local destDistance		= Map.GetPlotDistance(data.Plot:GetX(), data.Plot:GetY(), destPlot:GetX(), destPlot:GetY())
+					local destDistance		= Map.GetPlotDistance(data.Plot:GetX(), data.Plot:GetY(), destPlot:GetX(), destPlot:GetY()) * bestCost
 					local tentative_gscore 	= (gScore[currentNode] or math.huge) + nodeDistance
 				
 					table.insert (openSet, {Node = node, Score = tentative_gscore + destDistance})
@@ -857,9 +858,13 @@ local bDecreaseOtherCitySize	= MapConfiguration.GetValue("DecreaseOtherCitySize"
 local citySizeDecrement			= MapConfiguration.GetValue("CitySizeDecrement")
 local numCityPerSizeDecrement	= MapConfiguration.GetValue("NumCityPerSizeDecrement")
 local roadPlacement				= MapConfiguration.GetValue("RoadPlacement")
+local bInternationalRoads		= MapConfiguration.GetValue("InternationalRoads")
 local roadMaxDistance			= MapConfiguration.GetValue("RoadMaxDistance")
 
-print("Setting scenario : ", scenarioName)
+print("===========================================================================")
+print("Scenario Settings")
+print("===========================================================================")
+print("Scenario Name : ", scenarioName)
 print("City Placement 	: ", cityPlacement)
 print("Border Placement : ", borderPlacement)
 print("Number Major Cities : ", numberOfMajorCity)
@@ -869,7 +874,52 @@ print("WorldBuilder.CityManager : ", WorldBuilder.CityManager)
 local NotCityPlot			= {} -- helper to store all plots that are too close from other cities
 local PlayersSettings		= {} -- player specific setting and variables
 local CivTypePlayerID 		= {} -- helper to get playerID <-> CivilizationType
+local RouteIndexForEra		= {} -- helper to get the best RouteType for a specific era
 
+
+-- ===========================================================================
+-- Get a RouteIndex for each Era
+print("Initializing the RouteIndexForEra table...")
+for eraRow in GameInfo.Eras() do
+
+	-- Searching best route type available for that era
+	local bestEraRoute = nil
+	for testRouteRow in GameInfo.Routes() do
+	
+		local testEraRow = testRouteRow.PrereqEra and GameInfo.Eras[testRouteRow.PrereqEra]
+	
+		-- If we already know of a possible route from a previous loop...
+		if bestEraRoute then
+		
+			-- ... and the new route PlacementValue > previous route ...
+			if (testRouteRow.PlacementValue > bestEraRoute.PlacementValue) then
+			
+				-- ... and the new route has a prereqEra and that era is coming before or is the current era...
+				if testEraRow then
+					if testEraRow.ChronologyIndex <= eraRow.ChronologyIndex then
+						-- ... mark it as the new best candidate
+						bestEraRoute = testRouteRow
+					end
+					
+				-- when there is no prereqEra for the new route with a better placement value...
+				else
+					-- ... mark it as the new best candidate
+					bestEraRoute = testRouteRow
+				end
+			end
+			
+		-- If there is no known route yet...
+		else
+			-- ... and there is no prereqEra for the tested route or if that prereqEra is coming before or is the current eraRow...
+			if testRouteRow.PrereqEra == nil or (testEraRow and testEraRow.ChronologyIndex <= eraRow.ChronologyIndex) then
+				-- ... mark it as the new best candidate
+				bestEraRoute = testRouteRow
+			end
+		end
+	end
+	
+	RouteIndexForEra[eraRow.EraType] = bestEraRoute and bestEraRoute.Index
+end
 
 -- ===========================================================================
 -- Initialize players tables
@@ -1038,17 +1088,20 @@ function SetScenarioPlayers()
 			playerData.StartingPlot 	= player and player:GetStartingPlot()
 			
 			playerData.RoadPlacement 		= playerData.RoadPlacement or roadPlacement
+			playerData.InternationalRoads 	= playerData.InternationalRoads or bInternationalRoads
 			playerData.RoadMaxDistance 		= playerData.RoadMaxDistance or roadMaxDistance
 			
-			if playerData.CityUseImport then
+			playerData.RouteIndex 			= (playerData.SpecificEra and RouteIndexForEra[playerData.SpecificEra]) or RouteIndexForEra[startingEraType]
+			
+			if playerData.CityUseImport or bOnlyImport then
 				bDoImportPlacement	= true
 				table.insert(PlacementImport, {Player = iPlayer, Priority = playerData.Priority})
 			end
-			if playerData.CityUseCityMap then
+			if playerData.CityUseCityMap or bOnlyCityMap then
 				bDoCityNamePlacement = true
 				table.insert(PlacementCityMap, {Player = iPlayer, Priority = playerData.Priority})
 			end
-			if playerData.CityUseTerrain then
+			if playerData.CityUseTerrain or bOnlyGenerated then
 				bDoTerrainPlacement = true
 				table.insert(PlacementTerrain, {Player = iPlayer, Priority = playerData.Priority})
 			end
@@ -1340,13 +1393,10 @@ function PlaceCities()
 			local cityName 			= row.CityName
 			local civilizationType 	= row.CivilizationType
 			local iPlayer 			= CivTypePlayerID[row.CivilizationType]
-		
-			CityCivilizationType[cityName] 					= civilizationType
-			--CityCivilizationType[Locale.Lookup(cityName)] 	= civilizationType
+			CityCivilizationType[cityName] 	= civilizationType	-- CityCivilizationType[Locale.Lookup(cityName)] = civilizationType
 				
 			if iPlayer then
-				CityPlayerID[cityName] 					= iPlayer --CivTypePlayerID[row.CityName] <- what was that ???
-				--CityPlayerID[Locale.Lookup(cityName)] 	= iPlayer
+				CityPlayerID[cityName] 	= iPlayer --CivTypePlayerID[row.CityName] <- what was that ??? -- CityPlayerID[Locale.Lookup(cityName)] 	= iPlayer
 			end
 		end
 		
@@ -1361,6 +1411,11 @@ function PlaceCities()
 					print("ERROR at rowID #"..tostring(row.Index).." : CityName and CivilizationType are NULL")
 					for k, v in pairs(row) do print("  - ", k, v) end
 				else
+					
+					-- Change name to locale tag name if needed (ie Paris -> LOC_CITY_NAME_PARIS)
+					if cityName and string.find(cityName, "LOC_CITY_NAME_") == nil then
+						cityName = "LOC_CITY_NAME_" .. string.upper(string.gsub(cityName, "[%- %.]", "_" )) -- string.upper(string.gsub(cityName, "%W", "_" ))
+					end
 					
 					if civilizationType == nil then
 						civilizationType = CityCivilizationType[cityName]
@@ -1418,7 +1473,7 @@ function PlaceCities()
 				local playerData	= ScenarioPlayer[iPlayer]
 				if playerData and playerData.CitiesToPlace and playerData.CitiesToPlace > 0 then
 					local cityIndex		= 1 -- get first entry in list
-					local cityData		= ImportedCities[iPlayer][cityIndex] 
+					local cityData		= ImportedCities[iPlayer] and ImportedCities[iPlayer][cityIndex] 
 					if cityData then
 						table.remove(ImportedCities[iPlayer], cityIndex)
 						local player	= Players[iPlayer]
@@ -1958,6 +2013,7 @@ function PlaceInfrastructure()
 							local capitalPlot	= capitalCity and capitalCity:GetPlot()
 							
 							if capitalPlot then
+								print("  - Internal roads:")
 								local cityList		= {}
 								
 								for i, pLoopCity in playerCities:Members() do
@@ -1987,6 +2043,48 @@ function PlaceInfrastructure()
 										print("     - No path...")
 									end
 								end
+								
+					
+								--
+								if playerData.InternationalRoads then
+									print("  - International roads:")
+									local capitalList = {}
+									for iOtherPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+										if iOtherPlayer ~= iPlayer then
+										local otherPlayer = Players[iOtherPlayer]
+											if otherPlayer then
+												local otherPlayerCities 	= otherPlayer:GetCities()
+												if otherPlayerCities and playerCities.Members then
+													local otherCapitalCity	= otherPlayerCities:GetCapitalCity()
+													local otherCapitalPlot	= otherCapitalCity and otherCapitalCity:GetPlot()
+												
+													if otherCapitalPlot and otherCapitalPlot:GetArea() == capitalPlot:GetArea() then
+														local distance = Map.GetPlotDistance(capitalPlot:GetX(), capitalPlot:GetY(), otherCapitalPlot:GetX(), otherCapitalPlot:GetY())
+														if playerData.RoadMaxDistance == nil or playerData.RoadMaxDistance >= distance then
+															table.insert(capitalList, {Plot = otherCapitalPlot, Distance = distance, Name = otherCapitalCity:GetName() })
+														end
+													end
+												end
+											end
+										end
+									end
+									
+									table.sort (capitalList, function(a, b) return a.Distance < b.Distance; end)
+									
+									for i, cityRow in ipairs(capitalList) do
+										print("   - Testing from "..Locale.Lookup(capitalCity:GetName()).." to "..Locale.Lookup(cityRow.Name).." at distance = ".. tostring(cityRow.Distance))
+										local path = GetRoadPath(capitalPlot, cityRow.Plot, "Land", nil, iPlayer)
+										if path then 
+											print("     - Found path, placing roads of length = " .. tostring(#path))
+											for j, plotIndex in ipairs(path) do
+												local plot = Map.GetPlotByIndex(plotIndex)
+												RouteBuilder.SetRouteType(plot, 1) -- to do : select route type
+											end
+										else
+											print("     - No path...")
+										end
+									end
+								end
 							end				
 						end
 					end
@@ -2000,7 +2098,7 @@ function PlaceInfrastructure()
 							for i, pLoopCity in playerCities:Members() do
 								--table.insert(cityList, pLoopCity)
 								local pCityPlot				= pLoopCity:GetPlot()
-								local pTargetCity, distance	= FindNearestCityForNewRoad( iPlayer, pCityPlot:GetX(), pCityPlot:GetY() )
+								local pTargetCity, distance	= FindNearestCityForNewRoad( iPlayer, pCityPlot:GetX(), pCityPlot:GetY(), playerData.InternationalRoads )
 								local path 					= pTargetCity and GetRoadPath(pCityPlot, pTargetCity:GetPlot(), "Land", nil, iPlayer)
 								print("   - Testing from "..Locale.Lookup(pLoopCity:GetName()).." to "..tostring(pTargetCity and Locale.Lookup(pTargetCity:GetName())).." at distance = ".. tostring(distance))
 								if path then 

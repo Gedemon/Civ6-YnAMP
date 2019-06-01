@@ -5,15 +5,17 @@
 	<GridButton ID="ExportMapToLua"				Anchor="C,T" Style="PauseMenuButton" Size="250,36" String="{LOC_GAME_MENU_EXPORT_TO_LUA:upper}" ToolTip="LOC_GAME_MENU_EXPORT_TO_LUA_DESCRIPTION" Hidden="1" />
  <!-- YnAMP >>>>> -->
   <Container Size="376,470">
-    <Label Anchor="C,T" Offset="0,6" Align="center" Style="FontNormal18" String="LOC_WORLD_BUILDER_PLACEMENT_HELP"/>
+    <Label Anchor="C,T" Offset="0,6" Align="center" Style="FontNormal14" String="LOC_WORLD_BUILDER_PLACEMENT_HELP" Size="340,35"/>
     
     <Stack ID="Root" Anchor="R,T" Offset="16,36" StackGrowth="Bottom" Padding="14">
 
-      <GridButton ID="RegenResourcesButton"  Style="TabButton" Size="160,35" String="Clear Resources" />
+      <GridButton ID="RegenResourcesButton"  Style="TabButton" Size="160,35" Offset="-20,20" String="LOC_WORLDBUILDER_CLEAR_RESOURCES" />
+      <GridButton ID="GenResourcesButton"  Style="TabButton" Size="170,35" Offset="160,-50" String="LOC_WORLDBUILDER_SCATTER_RESOURCES" ToolTip="LOC_WORLDBUILDER_SCATTER_RESOURCES_HELP"/>
 
-		    <!-- YnAMP <<<<< -->
-              <SimplePullDown ID="BrushSizePullDown" Anchor="R,T" Style="PullDownBlue" ScrollThreshold="400" Size="250,24" Offset="0,0" SpaceForScroll="0" AutoFlip="1" EntryInstance="InstanceOne"/>
-			<!-- YnAMP >>>>> -->
+		<!-- YnAMP <<<<< -->
+		  <SimplePullDown ID="BrushSizePullDown" Anchor="R,T" Style="PullDownBlue" ScrollThreshold="400" Size="250,24" Offset="0,0" SpaceForScroll="0" AutoFlip="1" EntryInstance="InstanceOne"/>
+		<!-- YnAMP >>>>> -->
+		
       <SimplePullDown Anchor="R,T" ID="PlacementPullDown" Style="PullDownBlue" ScrollThreshold="400" Size="250,24" Offset="0,0" SpaceForScroll="0" EntryInstance="InstanceOne"/>
 
       <Tab ID="TabControl" Anchor="R,T"  Size="320,200">
@@ -103,6 +105,18 @@
 			  <GridButton  Size="200,24" Style="ButtonControl" Anchor="C,C" ID="VisibilityRevealAllButton" String="LOC_WORLDBUILDER_REVEAL_ALL"/>
 			</Container>
           
+          <Container ID="PlaceGoodyHuts" Size="parent,parent">
+            <Stack Anchor="R,T" StackGrowth="Bottom" Padding="10">
+              <SimplePullDown ID="GoodyHutPullDown" Style="PullDownBlue" ScrollThreshold="400" Size="250,24" Offset="0,0" SpaceForScroll="0" EntryInstance="InstanceOne"/>
+            </Stack>
+          </Container>
+        </Container>
+
+		<Container ID="PlacementSize" Size="parent,parent">
+		  <Stack Anchor="R,T" StackGrowth="Bottom" Padding="10" Offset="-100,320">
+			  <Label Anchor="L,C" Align="center" Style="FontNormal14" String="LOC_WORLDBUILDER_BRUSH_LABEL" Size="340,24" Offset="-170,-28"/>
+              <SimplePullDown Anchor="L,T" ID="BrushPullDown" Style="PullDownBlue" ScrollThreshold="400" Size="235,24" Offset="-45,-32" SpaceForScroll="0" EntryInstance="InstanceOne"/>
+		  </Stack>
           </Container>
 
       </Tab>
