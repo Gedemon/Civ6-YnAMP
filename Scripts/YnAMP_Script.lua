@@ -195,20 +195,36 @@ function FindNearestCityForNewRoad( eTargetPlayer, iX, iY, bAllowForeign )
     local iShortestDistance = 10000
 	local pPlayer 			= Players[eTargetPlayer]
 	local pPlot				= Map.GetPlot(iX, iY)
-	if pPlayer then
-		local pPlayerCities:table = pPlayer:GetCities()
-		for i, pLoopCity in pPlayerCities:Members() do
-			local pCityPlot = pLoopCity:GetPlot()
-			if pPlot:GetArea() == pCityPlot:GetArea() then
-				local iDistance = Map.GetPlotDistance(iX, iY, pLoopCity:GetX(), pLoopCity:GetY())
-				if (iDistance < iShortestDistance and not GetRoadPath(pPlot, pCityPlot, "Road", nil, iPlayer)) then
-					pCity = pLoopCity
-					iShortestDistance = iDistance
+	
+	function CheckForNearestCityWithoutRoadOf(iPlayer)
+		local pPlayer = Players[iPlayer]
+		if pPlayer then
+			local pPlayerCities:table = pPlayer:GetCities()
+			if pPlayerCities and pPlayerCities.Members then
+				for i, pLoopCity in pPlayerCities:Members() do
+					local pCityPlot = pLoopCity:GetPlot()
+					if pPlot ~= pCityPlot and pPlot:GetArea() == pCityPlot:GetArea() then
+						local iDistance 	= Map.GetPlotDistance(iX, iY, pLoopCity:GetX(), pLoopCity:GetY())
+						local path			= GetRoadPath(pPlot, pCityPlot, "Road", nil, nil)
+						local bNoShortPath	= not path or (#path > iDistance * 2) -- check path when there is no road or when an existing road length is more than double the straigth distance 
+						if (iDistance < iShortestDistance and bNoShortPath) then
+							pCity = pLoopCity
+							iShortestDistance = iDistance
+						end
+					end
 				end
 			end
+		else
+			print ("WARNING : Player is nil in FindNearestPlayerCity for ID = ".. tostring(iPlayer) .. "at" .. tostring(iX) ..","..tostring(iY))
+		end
+	end
+	
+	if bAllowForeign then
+		for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+			CheckForNearestCityWithoutRoadOf(iPlayer)
 		end
 	else
-		print ("WARNING : Player is nil in FindNearestPlayerCity for ID = ".. tostring(eTargetPlayer) .. "at" .. tostring(iX) ..","..tostring(iY))
+		CheckForNearestCityWithoutRoadOf(eTargetPlayer)
 	end
 
 	if (not pCity) then
@@ -261,7 +277,7 @@ function GetRoadPath(plot, destPlot, sRoute, maxRange, iPlayer)
 	local fScore	= {}
 	
 	local startNode	= startPlot
-	local bestCost	= 0.5
+	local bestCost	= 0.10
 	
 	function GetPath(currentNode)
 		local path 		= {}
@@ -860,6 +876,7 @@ local numCityPerSizeDecrement	= MapConfiguration.GetValue("NumCityPerSizeDecreme
 local roadPlacement				= MapConfiguration.GetValue("RoadPlacement")
 local bInternationalRoads		= MapConfiguration.GetValue("InternationalRoads")
 local roadMaxDistance			= MapConfiguration.GetValue("RoadMaxDistance")
+local maxRoadPerCity			= MapConfiguration.GetValue("MaxRoadPerCity")
 
 print("===========================================================================")
 print("Scenario Settings")
@@ -1090,6 +1107,7 @@ function SetScenarioPlayers()
 			playerData.RoadPlacement 		= playerData.RoadPlacement or roadPlacement
 			playerData.InternationalRoads 	= playerData.InternationalRoads or bInternationalRoads
 			playerData.RoadMaxDistance 		= playerData.RoadMaxDistance or roadMaxDistance
+			playerData.MaxRoadPerCity 		= playerData.MaxRoadPerCity or maxRoadPerCity or 1
 			
 			playerData.RouteIndex 			= (playerData.SpecificEra and RouteIndexForEra[playerData.SpecificEra]) or RouteIndexForEra[startingEraType]
 			
@@ -2073,7 +2091,7 @@ function PlaceInfrastructure()
 									
 									for i, cityRow in ipairs(capitalList) do
 										print("   - Testing from "..Locale.Lookup(capitalCity:GetName()).." to "..Locale.Lookup(cityRow.Name).." at distance = ".. tostring(cityRow.Distance))
-										local path = GetRoadPath(capitalPlot, cityRow.Plot, "Land", nil, iPlayer)
+										local path = GetRoadPath(capitalPlot, cityRow.Plot, "Land", nil, nil)
 										if path then 
 											print("     - Found path, placing roads of length = " .. tostring(#path))
 											for j, plotIndex in ipairs(path) do
@@ -2097,18 +2115,21 @@ function PlaceInfrastructure()
 						if playerCities and playerCities.Members then
 							for i, pLoopCity in playerCities:Members() do
 								--table.insert(cityList, pLoopCity)
-								local pCityPlot				= pLoopCity:GetPlot()
-								local pTargetCity, distance	= FindNearestCityForNewRoad( iPlayer, pCityPlot:GetX(), pCityPlot:GetY(), playerData.InternationalRoads )
-								local path 					= pTargetCity and GetRoadPath(pCityPlot, pTargetCity:GetPlot(), "Land", nil, iPlayer)
-								print("   - Testing from "..Locale.Lookup(pLoopCity:GetName()).." to "..tostring(pTargetCity and Locale.Lookup(pTargetCity:GetName())).." at distance = ".. tostring(distance))
-								if path then 
-									print("     - Found path, placing roads of length = " .. tostring(#path))
-									for j, plotIndex in ipairs(path) do
-										local plot = Map.GetPlotByIndex(plotIndex)
-										RouteBuilder.SetRouteType(plot, 1) -- to do : select route type
+								local bAllowForeign			= playerData.InternationalRoads
+								for j = 1, playerData.MaxRoadPerCity do
+									local pCityPlot				= pLoopCity:GetPlot()
+									local pTargetCity, distance	= FindNearestCityForNewRoad( iPlayer, pCityPlot:GetX(), pCityPlot:GetY(), bAllowForeign )
+									local path 					= pTargetCity and GetRoadPath(pCityPlot, pTargetCity:GetPlot(), "Land", nil, (not bAllowForeign and iPlayer) or nil)
+									print("   - Testing from "..Locale.Lookup(pLoopCity:GetName()).." to "..tostring(pTargetCity and Locale.Lookup(pTargetCity:GetName())).." at distance = ".. tostring(distance))
+									if path then 
+										print("     - Found path, placing roads of length = " .. tostring(#path))
+										for j, plotIndex in ipairs(path) do
+											local plot = Map.GetPlotByIndex(plotIndex)
+											RouteBuilder.SetRouteType(plot, 1) -- to do : select route type
+										end
+									else
+										print("     - No path...")
 									end
-								else
-									print("     - No path...")
 								end
 							end				
 						end

@@ -162,8 +162,10 @@
 				<LoadOrder>1000002</LoadOrder>
            	</Properties>
 			<File>Override/AdvancedSetup.lua</File>
+			<!--- ->
 			<File>Override/AdvancedSetup.xml</File>
 			<File>Override/GameSetupLogic.lua</File>
+			<!---->
 			<File>Override/MainMenu.lua</File>
 		</ImportFiles>
 	</FrontEndActions>
@@ -283,8 +285,10 @@
 		<File>Maps/LargestEarthCustom/LargestEarthCustom.lua</File>
 		<File>Override/AssignStartingPlots.lua</File>
 		<File>Override/AdvancedSetup.lua</File>
+		<!--- ->
 		<File>Override/AdvancedSetup.xml</File>
 		<File>Override/GameSetupLogic.lua</File>
+		<!---->
 		<File>Override/MainMenu.lua</File>
 		<File>Override/WorldBuilderPlacement.lua</File>
 		<File>Override/WorldBuilderPlacement.xml</File>

@@ -743,14 +743,17 @@
       <Text>City States Options</Text>
     </Replace>
     <Replace Tag="LOC_MAP_SELECT_CITY_STATES_NAME" Language="en_US">
-      <Text>Manual Selection</Text>
+      <Text>Manual City States Selection</Text>
     </Replace>
     <Replace Tag="LOC_MAP_SELECT_CITY_STATES_DESCRIPTION" Language="en_US">
       <Text>When enabled you can manually select which City States you want to be placed on the map from a list.[NEWLINE][NEWLINE]Note that DLCs, Expansions, scenarios and mods can add or remove City States, the list does not reflect which ones are actually available.[NEWLINE][NEWLINE]When a City State is not available, its slot is free for a random CS.</Text>
     </Replace>
 	
     <Replace Tag="LOC_SCENARIO_OPTIONS" Language="en_US">
-      <Text>Scenario Options</Text>
+      <Text>[ICON_PressureDownLarge] SCENARIO OPTIONS [ICON_PressureDownLarge]</Text>
+    </Replace>
+    <Replace Tag="LOC_SCENARIO_OPTIONS_DESCRIPTION" Language="en_US">
+      <Text>Scenario Options Below[NEWLINE][ICON_Exclamation][COLOR_RED] Alpha Testing [ENDCOLOR][ICON_Exclamation]</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_SCENARIO_TYPE_NAME" Language="en_US">
