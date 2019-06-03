@@ -9,7 +9,8 @@ include("SupportFunctions");
 -- ===========================================================================
 -- ===========================================================================
 
--- YnAMP <<<<<<
+-- YnAMP <<<<<
+--print ("loading AdvancedSetup with include for mods... (from Yet (not) Another Maps Pack)")
 print ("loading AdvancedSetup for Yet (not) Another Maps Pack...")
 -- YnAMP >>>>>
 
@@ -757,7 +758,7 @@ end
 function OnStartButton()
 
 	-- <<<<< YNAMP
-	
+	---[[
 	local player_ids 	= GameConfiguration.GetParticipatingPlayerIDs();
 	local numPlayers 	= #player_ids
 	local numCS			= GameConfiguration.GetValue("CITY_STATE_COUNT")
@@ -775,7 +776,7 @@ function OnStartButton()
 	end
 	
 	-- Get the City States list
-	local query		= "SELECT * from Parameters where ConfigurationId LIKE 'LEADER_MINOR_CIV%' and GroupId='CityStatesOptions'"
+	local query		= "SELECT * from Parameters where ConfigurationId LIKE 'LEADER_MINOR_CIV%' and GroupId='MapOptions'"
 	local results	= DB.ConfigurationQuery(query)
 	if(results and #results > 0) then
 		local CityStateSlots = numCS
@@ -809,7 +810,7 @@ function OnStartButton()
 		ListMods 	= Modding.GetActiveMods(),
 		GameVersion = UI.GetAppVersion()
 	}
-	
+	--]]
 	-- YNAMP >>>>>
 	
 	-- Is WorldBuilder active?
@@ -925,4 +926,8 @@ function Initialize()
 	Events.BeforeMultiplayerInviteProcessing.Add( OnBeforeMultiplayerInviteProcessing );
 	Resize();
 end
+-- Mod Compatibility <<<<<
+--print("Including AdvancedSetup_* files...")
+--include("AdvancedSetup_", true);
+-- Mod Compatibility >>>>>
 Initialize();

@@ -174,7 +174,7 @@ end
 Events.LoadScreenClose.Add( StopLoadingTextUpdate )
 
 function CheckLoadingTextUpdate()
-	if sCurrentText ~= YnAMP.LoadingText then
+	if YnAMP and sCurrentText ~= YnAMP.LoadingText then
 		sCurrentText = YnAMP.LoadingText
 		print("LoadScreen LoadScreen Context = ", ContextPtr:LookUpControl("/LoadScreen/"))
 		print("LoadScreen InGame Context = ", ContextPtr:LookUpControl("/InGame/LoadScreen/"))
