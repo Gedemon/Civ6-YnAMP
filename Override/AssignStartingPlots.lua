@@ -54,6 +54,7 @@ iIceNorth 			= MapConfiguration.GetValue("IceNorth")
 iIceSouth 			= MapConfiguration.GetValue("IceSouth")
 bAnalyseChokepoints	= not GameConfiguration.GetValue("FastLoad")
 bPlaceAllLuxuries	= MapConfiguration.GetValue("PlaceAllLuxuries") == "PLACEMENT_REQUEST"
+bPlaceAllStrategics	= MapConfiguration.GetValue("PlaceAllStrategics")
 bAlternatePlacement = MapConfiguration.GetValue("AlternatePlacement")
 
 bUseRelativePlacement 	= MapConfiguration.GetValue("UseRelativePlacement")
@@ -3492,13 +3493,15 @@ BuildRefXY()
 	end
 	
 	-- Low lands
+	--[[
 	if bExpansion2 then
 		if bDeepLowLand then
-			MarkDeepCoastalLowlands()
+			MarkDeepCoastalLowlands(g_iW, g_iH)
 		else
 			MarkCoastalLowlands()
 		end
 	end
+	--]]
 	
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")
@@ -4325,7 +4328,7 @@ function RemoveCliffs(plot)
 	TerrainBuilder.SetNEOfCliff(plot, false)
 end
 
-function MarkDeepCoastalLowlands()
+function MarkDeepCoastalLowlands(g_iW, g_iH)
 
 	-- Sea rising level can reach further in land, following flatlands
 	
@@ -4357,6 +4360,15 @@ function MarkDeepCoastalLowlands()
 			or (IsEOfCliff(plot))
 			or (IsSEOfCliff(plot))
 	end
+	
+	function IsNearOcean(plot)
+		for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+			local adjacentPlot = Map.GetAdjacentPlot(pPlot:GetX(), pPlot:GetY(), direction);
+			if adjacentPlot and adjacentPlot:IsWater() and not adjacentPlot:IsLake() then
+				return true
+			end
+		end
+	end
 
 	local level1Plots	= {}
 	local level2Plots	= {}
@@ -4368,7 +4380,7 @@ function MarkDeepCoastalLowlands()
 			local index = (iY * g_iW) + iX;
 			pPlot = Map.GetPlotByIndex(index)
 			local fertility = GetPlotFertility(pPlot)
-			if pPlot:IsFlatlands() and pPlot:IsCoastalLand() and not IsCliff(pPlot) then
+			if pPlot:IsFlatlands() and IsNearOcean(pPlot) and not IsCliff(pPlot) then
 				TerrainBuilder.AddCoastalLowland(index, iElevation)
 				level1Plots[pPlot] =  true
 			end
@@ -4406,15 +4418,30 @@ end
 function YnAMP_ApplySharedMapOptions()
 	
 	-- Remove ice near land for navigation
-	local bNoIceAdjacentToLand = MapConfiguration.GetValue("NoIceAdjacentToLand");
-	if bNoIceAdjacentToLand then
-		print("Removing Ice adjacent to Land...")
-		local g_iW, g_iH = Map.GetGridSize()
-		for i = 0, (g_iW * g_iH) - 1, 1 do
-			plot = Map.GetPlotByIndex(i)
-			if plot:IsAdjacentToLand() and plot:GetFeatureType() == g_FEATURE_ICE then
-				TerrainBuilder.SetFeatureType(plot, -1);
-			end
+	local bNoIceAdjacentToLand 	= MapConfiguration.GetValue("NoIceAdjacentToLand")
+	
+	if bNoIceAdjacentToLand then print("Removing Ice adjacent to Land...") end
+	print("Removing default LowLands...")
+	local g_iW, g_iH = Map.GetGridSize()
+	for plotIndex = 0, (g_iW * g_iH) - 1, 1 do
+		plot = Map.GetPlotByIndex(plotIndex)
+		if bNoIceAdjacentToLand and plot:IsAdjacentToLand() and plot:GetFeatureType() == g_FEATURE_ICE then
+			TerrainBuilder.SetFeatureType(plot, -1);
+		end
+		-- remove default lowland that may have been placed by non-WB map scripts
+		if bExpansion2 then
+			WorldBuilder.MapManager():SetCoastalLowland( plotIndex, -1 )
+		end
+	end
+	
+	-- Placing lowland now
+	if bExpansion2 then
+		if bDeepLowLand then
+			print("Placing LowLands matching FlatLands...")
+			MarkDeepCoastalLowlands(g_iW, g_iH)
+		elseif lowLandPlacement == "PLACEMENT_DEFAULT" then
+			print("Placing default LowLands...")
+			MarkCoastalLowlands()
 		end
 	end
 end
@@ -4747,7 +4774,7 @@ if type(newResourceType) == "string" then print("Error: newResourceType is strin
 		PlaceMissingResources(missingLuxuries)
 	end
 	
-	if #missingStrategics > 0 then
+	if bPlaceAllStrategics and #missingStrategics > 0 then
 		PlaceMissingResources(missingStrategics)
 	end
 

@@ -46,6 +46,9 @@
 		<Replace Key1="Ruleset" Key2="RULESET_EXPANSION_1"	ParameterId="XP1" Name="XP1" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="XP1" GroupId="MapOptions" Visible="0" SortIndex="100"/>
 		<Replace Key1="Ruleset" Key2="RULESET_EXPANSION_2"	ParameterId="XP2" Name="XP2" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="XP2" GroupId="MapOptions" Visible="0" SortIndex="100"/>
 
+		<!--	Add missing Strategic resources on import		-->
+		<Replace ParameterId="PlaceAllStrategics" 		Name="LOC_MAP_ALL_STRATEGICS_NAME" Description="LOC_MAP_ALL_STRATEGICS_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="PlaceAllStrategics" GroupId="MapOptions" SortIndex="269"/>
+		
 		<!--	Culturally Linked Start Position		-->
 		<Replace ParameterId="CulturallyLinkedStart" Name="LOC_CULTURALLY_LINKED_START_NAME" Description="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Domain="CulturallyLinkedStart" DefaultValue="PLACEMENT_ETHNIC" ConfigurationGroup="Map" ConfigurationId="CulturallyLinkedStart" GroupId="MapOptions" Hash="0" SortIndex="287"/>
 
@@ -258,6 +261,7 @@
 		<Replace ParameterId="OnlyGenericCityNames" 	ConfigurationGroup="Map" ConfigurationId="AutoCityNaming" 			Operator="Equals" 		ConfigurationValue="1"/>
 		<Replace ParameterId="PlaceAllLuxuries" 		ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_IMPORT"/>
 		<Replace ParameterId="PlaceAllLuxuries" 		ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_EMPTY"/>
+		<Replace ParameterId="PlaceAllStrategics" 		ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="Equals" 		ConfigurationValue="PLACEMENT_IMPORT"/>
 		<Replace ParameterId="NoIceAdjacentToLand"		ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_IMPORT"/>
 		<Replace ParameterId="ContinentModel"			ConfigurationGroup="Map" ConfigurationId="ContinentsPlacement" 		Operator="Equals" 		ConfigurationValue="PLACEMENT_IMPORT"/>
 

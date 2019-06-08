@@ -179,6 +179,12 @@
     <Replace Tag="LOC_MAP_ALL_LUXURIES_DESCRIPTION" Language="en_US">
       <Text>Try to place at least a few of each luxuries on the map.</Text>
     </Replace>
+    <Replace Tag="LOC_MAP_ALL_STRATEGICS_NAME" Language="en_US">
+      <Text>Add Missing Strategics</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALL_STRATEGICS_DESCRIPTION" Language="en_US">
+      <Text>When importing a resource map from civ5, you may miss some strategic resources, this option allows to force random placement of the missing resources.</Text>
+    </Replace>
 	
     <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_NAME" Language="en_US">
       <Text>Features Placement</Text>
@@ -312,6 +318,9 @@
     </Replace>
     <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEEP_DESCRIPTION" Language="en_US">
       <Text>Sea rising can reach further inland, following flatland plots</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_EMPTY_DESCRIPTION" Language="en_US">
+      <Text>No lowland placement (no sea rising)</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_NAME" Language="en_US">

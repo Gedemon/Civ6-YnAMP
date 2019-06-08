@@ -4,23 +4,27 @@
 
 	<Parameters>
 
-		<!--	Water Rising		-->
-		<Replace Key1="Map" Key2="GiantEarth.lua" 			ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="LOWLAND_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
-		<Replace Key1="Map" Key2="LargeEurope.lua" 			ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="LOWLAND_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
-		<Replace Key1="Map" Key2="GreatestEarthMap.lua" 	ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="LOWLAND_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
-		<Replace Key1="Map" Key2="PlayEuropeAgain.lua" 		ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="LOWLAND_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
-		<Replace Key1="Map" Key2="LargestEarthCustom.lua" 	ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="LOWLAND_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
+		<!--	Water Rising
+		<Replace Key1="Map" Key2="GiantEarth.lua" 			ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="PLACEMENT_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
+		<Replace Key1="Map" Key2="LargeEurope.lua" 			ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="PLACEMENT_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
+		<Replace Key1="Map" Key2="GreatestEarthMap.lua" 	ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="PLACEMENT_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
+		<Replace Key1="Map" Key2="PlayEuropeAgain.lua" 		ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="PLACEMENT_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
+		<Replace Key1="Map" Key2="LargestEarthCustom.lua" 	ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="PLACEMENT_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
+		-->
+		<Replace ParameterId="LowLandPlacement" Name="LOC_MAP_LOWLAND_PLACEMENT_NAME" Description="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Domain="LowLandPlacement" DefaultValue="PLACEMENT_DEFAULT" ConfigurationGroup="Map" ConfigurationId="LowLandPlacement" GroupId="MapOptions" Hash="0" SortIndex="260"/>
 
 	</Parameters>	
 
 	<DomainValues>
 		
+		<Replace Domain="LowLandPlacement" Value="PLACEMENT_EMPTY"		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 		Description="LOC_MAP_LOWLAND_PLACEMENT_EMPTY_DESCRIPTION" 	SortIndex="5"/>
 		<Replace Domain="LowLandPlacement" Value="PLACEMENT_DEFAULT"	Name="LOC_MAP_PLACEMENT_DEFAULT_NAME" 		Description="LOC_MAP_LOWLAND_PLACEMENT_DEFAULT_DESCRIPTION" SortIndex="10"/>
 		<Replace Domain="LowLandPlacement" Value="PLACEMENT_DEEP"		Name="LOC_MAP_LOWLAND_PLACEMENT_DEEP_NAME" 	Description="LOC_MAP_LOWLAND_PLACEMENT_DEEP_DESCRIPTION" 	SortIndex="20"/>
 	
 	</DomainValues>
 
 	<ParameterDependencies>
+		<Replace ParameterId="LowLandPlacement"		ConfigurationGroup="Map" ConfigurationId="XP2" 		Operator="Equals" 	ConfigurationValue="1"/>
 	</ParameterDependencies>
 	
 	<!-- doesn't works as expected ?
