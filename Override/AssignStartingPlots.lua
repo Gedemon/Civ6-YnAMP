@@ -4,6 +4,8 @@ include "MapEnums"
 include "MapUtilities"
 
 ------------------------------------------------------------------------------
+-- YnAMP <<<<<
+------------------------------------------------------------------------------
 -- **************************** YnAMP globals ******************************
 ------------------------------------------------------------------------------
 
@@ -113,6 +115,9 @@ local lowLandPlacement = MapConfiguration.GetValue("LowLandPlacement")
 print("- Lowland placement = "..tostring(lowLandPlacement))	
 local bDeepLowLand = lowLandPlacement == "PLACEMENT_DEEP"
 
+local floodPlainsPlacement = MapConfiguration.GetValue("FloodPlainsPlacement")
+print("- Flood Plains placement = "..tostring(FloodPlainsPlacement))
+
 ------------------------------------------------------------------------------
 -- http://lua-users.org/wiki/SortedIteration
 -- Ordered table iterator, allow to iterate on the natural order of the keys of a table.
@@ -165,7 +170,6 @@ end
 
 ------------------------------------------------------------------------------
 -- YnAMP >>>>>
-------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
 AssignStartingPlots = {};
@@ -3440,7 +3444,7 @@ BuildRefXY()
 	end
 	
 	-- Add GS flood plains
-	if bExpansion2 then
+	if bExpansion2 and floodPlainsPlacement == "PLACEMENT_DEFAULT" then
 		print("Generate Floodplains...")
 
 		-- Remove map current flood plains
@@ -4419,6 +4423,7 @@ function YnAMP_ApplySharedMapOptions()
 	
 	-- Remove ice near land for navigation
 	local bNoIceAdjacentToLand 	= MapConfiguration.GetValue("NoIceAdjacentToLand")
+	local bRemoveLowLand		= bExpansion2 and lowLandPlacement ~= "PLACEMENT_IMPORT"
 	
 	if bNoIceAdjacentToLand then print("Removing Ice adjacent to Land...") end
 	print("Removing default LowLands...")
@@ -4429,7 +4434,7 @@ function YnAMP_ApplySharedMapOptions()
 			TerrainBuilder.SetFeatureType(plot, -1);
 		end
 		-- remove default lowland that may have been placed by non-WB map scripts
-		if bExpansion2 then
+		if bRemoveDefaultLowLand then
 			WorldBuilder.MapManager():SetCoastalLowland( plotIndex, -1 )
 		end
 	end
@@ -4440,7 +4445,7 @@ function YnAMP_ApplySharedMapOptions()
 			print("Placing LowLands matching FlatLands...")
 			MarkDeepCoastalLowlands(g_iW, g_iH)
 		elseif lowLandPlacement == "PLACEMENT_DEFAULT" then
-			print("Placing default LowLands...")
+			print("Placing LowLands using map generator...")
 			MarkCoastalLowlands()
 		end
 	end
@@ -5343,6 +5348,7 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 		local Rivers 			= MapToConvert[refX][refY][4] -- = {{IsNEOfRiver, flow}, {IsWOfRiver, flow}, {IsNWOfRiver, flow}}
 		local resource 			= MapToConvert[refX][refY][5] -- = {Civ6ResourceType, num}
 		local Cliffs 			= MapToConvert[refX][refY][6] -- {IsNEOfCliff,IsWOfCliff,IsNWOfCliff}
+		local lowlandType 		= MapToConvert[refX][refY][7] -- -1 = none
 		
 		-- Set terrain type
 		if bDoTerrains and GameInfo.Terrains[civ6TerrainType] then
@@ -5415,6 +5421,9 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 		end
 		--]]
 		
+		if lowLandPlacement == "PLACEMENT_IMPORT" and bExpansion2 and lowlandType ~= -1 then
+			TerrainBuilder.AddCoastalLowland(plot:GetIndex(), lowlandType)
+		end
 	end	
 	
 	print("Placed terrain on "..tostring(count) .. " tiles")

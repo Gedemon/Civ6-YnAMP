@@ -137,6 +137,7 @@ local bPlaceAdditionalRealWorldSeas = false
 
 local bDebug				= false--true
 
+local MapToConvert = {}
 
 print("MapShape = ", MapConfiguration.GetValue("MapShape"))
 print("OldWorldShape = ", MapConfiguration.GetValue("OldWorldShape"))
@@ -713,10 +714,9 @@ function GeneratePlotTypes()
 	print("world_age = ", world_age);
 
 	local LargestMap = GetMap()
-	local MapToConvert = {}
 	for x = 0, g_iW - 1, 1 do
 		MapToConvert[x] = {}
-		for y = 0, g_iH, 1 do
+		for y = 0, g_iH - 1, 1 do
 			MapToConvert[x][y] = LargestMap[Round( x * g_WidthFactor )][Round( y * g_HeightFactor )]
 		end
 	end
@@ -1432,6 +1432,19 @@ function GenerateFractalLayerWithoutHills (args, plotTypes)
 		for x = 0, iRegionWidth - 1, 1 do
 			for y = 0, iRegionHeight - 1, 1 do
 				local i = y * iRegionWidth + x + 1; -- Lua arrays start at 1.
+				
+				if false then -- blend real world 
+					local wholeworldX 		= math.min(x + iRegionWestX, g_iW - 1);
+					local wholeworldY 		= math.min(y + iRegionSouthY, g_iH - 1);
+					local civ6TerrainType 	= MapToConvert[wholeworldX][wholeworldY][1]
+					local terrainType		= GameInfo.Terrains[civ6TerrainType].Index
+					if (terrainType ~= g_TERRAIN_TYPE_OCEAN and terrainType ~= g_TERRAIN_TYPE_COAST) then
+						elevationMap[i] = elevationMap[i] + 10000
+					else
+						elevationMap[i] = elevationMap[i] - 10000
+					end
+				end
+				
 				if elevationMap[i] <= iWaterThreshold then
 					--do nothing
 				else
@@ -1443,7 +1456,7 @@ function GenerateFractalLayerWithoutHills (args, plotTypes)
 
 		local numPlots 			= iRegionWidth * iRegionHeight
 		local realWaterPercent 	= (numPlots - landPlots) / numPlots * 100
-		print("Region plots = ", iRegionWidth * iRegionHeight, " Land plots = ", landPlots, " Real Water Percentage = ", realWaterPercent, " Desired Water Percentage = ", iWaterPercent)
+		print("Region plots = ", iRegionWidth * iRegionHeight, " Land plots = ", landPlots, " Real Water Percentage = ", realWaterPercent, " Desired Water Percentage = ", iWaterPercent, " iWaterThreshold = ", iWaterThreshold)
 		local errorRatio = realWaterPercent / iWaterPercent
 		if errorRatio > 1.25 or errorRatio < 0.75 then
 			print("WARNING: Ratio on water percent = ", errorRatio, " on attempt #", iAttempts)
@@ -1475,7 +1488,7 @@ function GenerateFractalLayerWithoutHills (args, plotTypes)
 	end
 
 	if bShift then -- Shift plots to obtain a more natural shape.
-		ShiftPlotTypes(plotTypes);
+		ShiftPlotTypes(plotTypes2);
 		print("Shifted Plots - Width: ", iRegionWidth, "Height: ", iRegionHeight);
 	end
 
@@ -1567,6 +1580,20 @@ function GenerateWaterLayer (args, plotTypes)
 		for x = 0, iRegionWidth - 1, 1 do
 			for y = 0, iRegionHeight - 1, 1 do
 				local i = y * iRegionWidth + x + 1; -- Lua arrays start at 1.
+				
+				if false then -- blend real world 
+					local wholeworldX 		= math.min(x + iRegionWestX, g_iW - 1);
+					local wholeworldY 		= math.min(y + iRegionSouthY, g_iH - 1);
+
+					local civ6TerrainType 	= MapToConvert[wholeworldX][wholeworldY][1]
+					local terrainType		= GameInfo.Terrains[civ6TerrainType].Index
+					if (terrainType ~= g_TERRAIN_TYPE_OCEAN and terrainType ~= g_TERRAIN_TYPE_COAST) then
+						elevationMap[i] = elevationMap[i] + 10000
+					else
+						elevationMap[i] = elevationMap[i] - 10000
+					end
+				end
+				
 				if elevationMap[i] <= iWaterThreshold then
 					--do nothing
 				else
@@ -1627,7 +1654,7 @@ function GenerateWaterLayer (args, plotTypes)
 	end
 
 	if bShift then -- Shift plots to obtain a more natural shape.
-		ShiftPlotTypes(plotTypes);
+		ShiftPlotTypes(plotTypes2);
 	end
 
 	-- Apply the region's plots to the global plot array.

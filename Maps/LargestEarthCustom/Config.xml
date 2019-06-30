@@ -142,6 +142,9 @@
 		<Row Map="LargestEarthCustom.lua" Domain="ResourcesPlacement" Value="PLACEMENT_DEFAULT" />
 		<Row Map="LargestEarthCustom.lua" Domain="ResourcesPlacement" Value="PLACEMENT_EMPTY" />
 		 -->
+		<Row Map="LargestEarthCustom.lua" Domain="LowLandPlacement" Value="PLACEMENT_EMPTY" />
+		<Row Map="LargestEarthCustom.lua" Domain="LowLandPlacement" Value="PLACEMENT_DEFAULT" />
+		<Row Map="LargestEarthCustom.lua" Domain="LowLandPlacement" Value="PLACEMENT_DEEP" />
 		
 	</MapSupportedValues>
 	

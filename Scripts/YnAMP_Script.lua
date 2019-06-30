@@ -235,22 +235,23 @@ function FindNearestCityForNewRoad( eTargetPlayer, iX, iY, bAllowForeign )
 end
 
 function ChangePlotOwner(pPlot, ownerID, cityID)
-	local ownerID	= ownerID or -1
-	local iX, iY	= pPlot:GetX(), pPlot:GetY()
+	local ownerID		= ownerID or -1
+	local iX, iY		= pPlot:GetX(), pPlot:GetY()
+	local CityManager	= WorldBuilder.CityManager or ExposedMembers.CityManager
 	
 	if not cityID and ownerID ~= -1 then
 		local city	= FindNearestPlayerCity( ownerID, iX, iY )
 		cityID		= city:GetID()
 	end
 	
-	if WorldBuilder.CityManager then
+	if CityManager then
 		if ownerID ~= -1 then
 			if cityID then
-				WorldBuilder.CityManager():SetPlotOwner( iX, iY, false )
-				WorldBuilder.CityManager():SetPlotOwner( iX, iY, ownerID, cityID)
+				CityManager():SetPlotOwner( iX, iY, false )
+				CityManager():SetPlotOwner( iX, iY, ownerID, cityID)
 			end
 		else
-			WorldBuilder.CityManager():SetPlotOwner( iX, iY, false )
+			CityManager():SetPlotOwner( iX, iY, false )
 		end
 	else
 		if ownerID ~= -1 then
@@ -263,6 +264,52 @@ function ChangePlotOwner(pPlot, ownerID, cityID)
 		end
 	end
 end
+
+-- Export a complete civ6 map to Lua.log
+function ExportMap()
+	local g_iW, g_iH = Map.GetGridSize()
+	for iY = 0, g_iH - 1 do
+		for iX = g_iW - 1, 0, -1  do
+		
+			local plot			= Map.GetPlot(iX,iY)
+			local NEOfCliff 	= plot:IsNEOfCliff() and 1 or 0
+			local WOfCliff		= plot:IsWOfCliff() and 1 or 0
+			local NWOfCliff 	= plot:IsNWOfCliff() and 1 or 0
+			local NEOfRiver		= plot:IsNEOfRiver() and 1 or 0 -- GetRiverSWFlowDirection()
+			local WOfRiver		= plot:IsWOfRiver() and 1 or 0	-- GetRiverEFlowDirection()
+			local NWOfRiver		= plot:IsNWOfRiver() and 1 or 0	-- GetRiverSEFlowDirection()
+			local terrainType 	= plot:GetTerrainType()
+			local featureType	= plot:GetFeatureType()
+			local continentType	= plot:GetContinentType()
+			local resourceType	= plot:GetResourceType(-1)
+			local lowlandType	= TerrainManager.GetCoastalLowlandType and TerrainManager.GetCoastalLowlandType( plot:GetIndex() ) or -1
+			local numResource	= plot:GetResourceCount()
+			
+			if terrainType ~= -1 then
+				terrainType = "\""..GameInfo.Terrains[terrainType].TerrainType.."\""
+			else
+				print("Error: terrainType = -1 at ["..plot:GetX().."]["..plot:GetY().."]")
+				break
+			end
+			
+			if featureType ~= -1 then
+				featureType = "\""..GameInfo.Features[featureType].FeatureType.."\""
+			end
+			if continentType ~= -1 then
+				continentType = "\""..GameInfo.Continents[continentType].ContinentType.."\""
+			end
+			if resourceType ~= -1 then
+				resourceType = "\""..GameInfo.Resources[resourceType].ResourceType.."\""
+			end
+			
+			local endStr =""
+			if plot:IsLake() then endStr = " -- Lake" end
+
+			print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..terrainType..","..featureType..","..continentType..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{".. resourceType ..","..tostring(numResource).."},{"..NEOfCliff..","..WOfCliff..","..NWOfCliff.."},".. tostring(lowlandType).."}"..endStr)
+		end
+	end
+end
+YnAMP.ExportMap = ExportMap
 
 -----------------------------------------------------------------------------------------
 -- Pathfinder Functions
@@ -887,6 +934,7 @@ print("Border Placement : ", borderPlacement)
 print("Number Major Cities : ", numberOfMajorCity)
 print("Number Minor Cities : ", numberOfMinorCity)
 print("WorldBuilder.CityManager : ", WorldBuilder.CityManager)
+print("ExposedMembers.CityManager : ", ExposedMembers.CityManager)
 
 local NotCityPlot			= {} -- helper to store all plots that are too close from other cities
 local PlayersSettings		= {} -- player specific setting and variables

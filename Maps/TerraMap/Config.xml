@@ -235,6 +235,10 @@
 		<Row Map="TerraMap.lua" Domain="StandardMapSizes" Value="MAPSIZE_GIANT" 		/>
 		<Row Map="TerraMap.lua" Domain="StandardMapSizes" Value="MAPSIZE_LUDICROUS" 	/>
 		<Row Map="TerraMap.lua" Domain="StandardMapSizes" Value="MAPSIZE_MAX" 			/>
+		
+		<Row Map="TerraMap.lua" Domain="LowLandPlacement" Value="PLACEMENT_EMPTY" />
+		<Row Map="TerraMap.lua" Domain="LowLandPlacement" Value="PLACEMENT_DEFAULT" />
+		<Row Map="TerraMap.lua" Domain="LowLandPlacement" Value="PLACEMENT_DEEP" />
 	</MapSupportedValues>
 	
 	<!-- Don't use those values for a domain -->

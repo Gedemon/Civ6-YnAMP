@@ -313,6 +313,12 @@
     <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
       <Text>Lowland plots are determined using the Civ6 Map Generator (random)</Text>
     </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_IMPORT_NAME" Language="en_US">
+      <Text>Import</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_IMPORT_DESCRIPTION" Language="en_US">
+      <Text>Lowland plots are imported from the map data, if they exist</Text>
+    </Replace>
     <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEEP_NAME" Language="en_US">
       <Text>Matching flatland</Text>
     </Replace>
@@ -321,6 +327,19 @@
     </Replace>
     <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_EMPTY_DESCRIPTION" Language="en_US">
       <Text>No lowland placement (no sea rising)</Text>
+    </Replace>
+
+	<Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_NAME" Language="en_US">
+      <Text>Rivers Flooding</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_DESCRIPTION" Language="en_US">
+      <Text>How special Floodplains (for rivers flooding) placement is determined.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
+      <Text>Special Floodplains are placed using the Civ6 Map Generator (random)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_EMPTY_DESCRIPTION" Language="en_US">
+      <Text>No special Floodplains (no rivers flooding)</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_NAME" Language="en_US">

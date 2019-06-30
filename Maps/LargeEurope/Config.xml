@@ -72,6 +72,9 @@
 		<Row Map="LargeEurope.lua" Domain="FeaturesPlacement" Value="PLACEMENT_DEFAULT" />
 		<Row Map="LargeEurope.lua" Domain="FeaturesPlacement" Value="PLACEMENT_EMPTY" />
 		-->
+		<Row Map="LargeEurope.lua" Domain="LowLandPlacement" Value="PLACEMENT_EMPTY" />
+		<Row Map="LargeEurope.lua" Domain="LowLandPlacement" Value="PLACEMENT_DEFAULT" />
+		<Row Map="LargeEurope.lua" Domain="LowLandPlacement" Value="PLACEMENT_DEEP" />
 	</MapSupportedValues>
 	
 	<!-- Don't use those values for a domain -->

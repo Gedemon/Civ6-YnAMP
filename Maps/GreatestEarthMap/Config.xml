@@ -70,6 +70,10 @@
 	<MapSupportedValues>
 		<Row Map="GreatestEarthMap.lua" Domain="ResourcesPlacement" Value="PLACEMENT_DEFAULT" />
 		<Row Map="GreatestEarthMap.lua" Domain="ResourcesPlacement" Value="PLACEMENT_EMPTY" />
+		
+		<Row Map="GreatestEarthMap.lua" Domain="LowLandPlacement" Value="PLACEMENT_EMPTY" />
+		<Row Map="GreatestEarthMap.lua" Domain="LowLandPlacement" Value="PLACEMENT_DEFAULT" />
+		<Row Map="GreatestEarthMap.lua" Domain="LowLandPlacement" Value="PLACEMENT_DEEP" />
 	</MapSupportedValues>
 	
 	<!-- Don't use those values for a domain -->

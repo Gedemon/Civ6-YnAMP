@@ -48,6 +48,8 @@ end
 --=====================================================================================--
 -- Export a complete civ6 map to Lua.log
 --=====================================================================================--
+-- now set in YnAMP_Script.lua and shared for InGame and WB context
+--[[
 function ExportMap()
 	local g_iW, g_iH = Map.GetGridSize()
 	for iY = 0, g_iH - 1 do
@@ -91,6 +93,7 @@ function ExportMap()
 		end
 	end
 end
+--]]
 
 --=====================================================================================--
 function ResourcesStatistics(g_iW, g_iH)
@@ -148,7 +151,7 @@ end
 -- Add "Export to Lua" button to the Option Menu
 --=====================================================================================--
 function OnEnterGame()
-	Controls.ExportMapToLua:RegisterCallback( Mouse.eLClick, ExportMap )
+	Controls.ExportMapToLua:RegisterCallback( Mouse.eLClick, YnAMP.ExportMap )
 	Controls.ExportMapToLua:SetHide( false )
 	Controls.ExportMapToLua:ChangeParent(ContextPtr:LookUpControl("/InGame/TopOptionsMenu/MainStack"))
 end

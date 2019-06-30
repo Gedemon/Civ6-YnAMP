@@ -73,6 +73,9 @@
 		<Row Map="LargestEarth.lua" Domain="FeaturesPlacement" Value="PLACEMENT_DEFAULT" />
 		<Row Map="LargestEarth.lua" Domain="FeaturesPlacement" Value="PLACEMENT_EMPTY" />
 		-->
+		<Row Map="PlayEuropeAgain.lua" Domain="LowLandPlacement" Value="PLACEMENT_EMPTY" />
+		<Row Map="PlayEuropeAgain.lua" Domain="LowLandPlacement" Value="PLACEMENT_DEFAULT" />
+		<Row Map="PlayEuropeAgain.lua" Domain="LowLandPlacement" Value="PLACEMENT_DEEP" />
 	</MapSupportedValues>	
 	
 	<MapUnSupportedValues>

@@ -4,4 +4,4 @@
 	
 */
 
-INSERT OR REPLACE INTO GlobalParameters (Name, Value) VALUES ('YNAMP_VERSION', '7.6.5');
+INSERT OR REPLACE INTO GlobalParameters (Name, Value) VALUES ('YNAMP_VERSION', '7.6.6');

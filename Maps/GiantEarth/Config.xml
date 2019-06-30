@@ -229,16 +229,15 @@
 	
 	<!-- Only use those values for a domain -->
 	<MapSupportedValues>
-		<!--
-		<Row Map="LargestEarth.lua" Domain="FeaturesPlacement" Value="PLACEMENT_DEFAULT" />
-		<Row Map="LargestEarth.lua" Domain="FeaturesPlacement" Value="PLACEMENT_EMPTY" />
-		-->
+		<Row Map="GiantEarth.lua" Domain="LowLandPlacement" Value="PLACEMENT_EMPTY" />
+		<Row Map="GiantEarth.lua" Domain="LowLandPlacement" Value="PLACEMENT_DEFAULT" />
+		<Row Map="GiantEarth.lua" Domain="LowLandPlacement" Value="PLACEMENT_DEEP" />
 	</MapSupportedValues>
 	
 	<!-- Don't use those values for a domain -->
 	<MapUnSupportedValues>
 		<!--
-		<Row Map="PlayEuropeAgain.lua" Domain="StandardPlayers" Value="CIVILIZATION_AMERICA" />
+		<Row Map="GiantEarth.lua" Domain="LowLandPlacement" Value="PLACEMENT_IMPORT" />
 		-->
 	</MapUnSupportedValues>
 	
