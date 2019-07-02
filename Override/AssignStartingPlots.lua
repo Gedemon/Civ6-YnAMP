@@ -28,9 +28,10 @@ print ("Setting YnAMP globals and cache...")
 g_startTimer = os.clock()
 
 --ExposedMembers.HistoricalStartingPlots 	= nil
-ExposedMembers.YnAMP	= { RiverMap = {}, }
+ExposedMembers.YnAMP	= { RiverMap = {}, PlayerToRemove = {}}
 
-local RiverMap 			= ExposedMembers.YnAMP.RiverMap
+local YnAMP				= ExposedMembers.YnAMP
+local RiverMap 			= YnAMP.RiverMap
 local DefaultRiverID	= 9999
 local bExpansion2		= GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_2"
 local IsOceanStart		= {}	-- table to list Civilization with a starting plot set on ocean (for not swapping them when doing culturally linked placement)
@@ -3574,9 +3575,9 @@ BuildRefXY()
 	ResourcesValidation(g_iW, g_iH) -- before Civ specific resources may be added (we allow exclusion override then)
 
 	-- Check if all selected civs have been given a Starting Location
-	if not bTSL or bAlternatePlacement then
+	--if not bTSL or bAlternatePlacement then
 		CheckAllCivilizationsStartingLocations()
-	end
+	--end
 		
 	if bRequestedResources and not bNoResources then
 		AddStartingLocationResources()
@@ -3658,12 +3659,24 @@ function CheckAllCivilizationsStartingLocations()
 		bExtraStartingPlotPlacement = true -- tell AssignStartingPlots:__SetStartMajor to use a different method for checking space between civs
 		local startPlotList = GetCustomStartingPlots()
 		for i, iPlayer in ipairs(toPlace) do
-			print("Searching custom starting plot for " .. PlayerConfigurations[iPlayer]:GetPlayerName())
-			local pPlot = GetBestStartingPlotFromList(startPlotList)
-			if pPlot then
-				local player = Players[iPlayer]
-				player:SetStartingPlot(pPlot)
-				bNeedPlacementUpdate = true
+			local player = Players[iPlayer]
+			if not bTSL or bAlternatePlacement then
+				print("Searching custom starting plot for " .. PlayerConfigurations[iPlayer]:GetPlayerName())
+				local pPlot = GetBestStartingPlotFromList(startPlotList)
+				if pPlot then
+					print("  - Set starting plot at ", pPlot:GetX(), pPlot:GetY())
+					player:SetStartingPlot(pPlot)
+					bNeedPlacementUpdate = true -- tell culturally linked scode to update
+				end
+			else
+				table.insert(YnAMP.PlayerToRemove, iPlayer)
+				print("Set temporary starting plot for " .. PlayerConfigurations[iPlayer]:GetPlayerName())
+				--local pPlot = Map.GetPlot(0,0)
+				local pPlot = GetBestStartingPlotFromList(startPlotList, true)
+				if pPlot then
+					print("  - Set starting plot at ", pPlot:GetX(), pPlot:GetY())
+					player:SetStartingPlot(pPlot)
+				end
 			end
 		end
 	end
@@ -3696,12 +3709,23 @@ function CheckAllCivilizationsStartingLocations()
 		bExtraStartingPlotPlacement = true -- tell AssignStartingPlots:__SetStartMajor to use a different method for checking space between civs
 		local startPlotList = GetCustomStartingPlots()
 		for i, iPlayer in ipairs(toPlace) do
-			print("Searching custom starting plot for " .. PlayerConfigurations[iPlayer]:GetPlayerName())
-			local pPlot = GetBestStartingPlotFromList(startPlotList, true)
-			if pPlot then
-				local player = Players[iPlayer]
-				player:SetStartingPlot(pPlot)
-				bNeedPlacementUpdate = true
+			local player = Players[iPlayer]
+			if not bTSL or bAlternatePlacement then
+				print("Searching custom starting plot for " .. PlayerConfigurations[iPlayer]:GetPlayerName())
+				local pPlot = GetBestStartingPlotFromList(startPlotList, true)
+				if pPlot then
+					player:SetStartingPlot(pPlot)
+					bNeedPlacementUpdate = true
+				end
+			else
+				table.insert(YnAMP.PlayerToRemove, iPlayer)
+				print("Set temporary starting plot for " .. PlayerConfigurations[iPlayer]:GetPlayerName())
+				--local pPlot = Map.GetPlot(0,0)
+				local pPlot = GetBestStartingPlotFromList(startPlotList, true)
+				if pPlot then
+					print("  - Set starting plot at ", pPlot:GetX(), pPlot:GetY())
+					player:SetStartingPlot(pPlot)
+				end
 			end
 		end
 	end
@@ -4444,7 +4468,7 @@ function YnAMP_ApplySharedMapOptions()
 		if bDeepLowLand then
 			print("Placing LowLands matching FlatLands...")
 			MarkDeepCoastalLowlands(g_iW, g_iH)
-		elseif lowLandPlacement == "PLACEMENT_DEFAULT" then
+		elseif MarkCoastalLowlands and lowLandPlacement == "PLACEMENT_DEFAULT" then
 			print("Placing LowLands using map generator...")
 			MarkCoastalLowlands()
 		end

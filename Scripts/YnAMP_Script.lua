@@ -32,8 +32,13 @@ print ("Map Name = " .. tostring(mapName))
 local bAutoCityNaming 			= MapConfiguration.GetValue("AutoCityNaming")
 local bCanUseCivSpecificName 	= not (MapConfiguration.GetValue("OnlyGenericCityNames"))
 
-local IsCityOnMap 	= {} -- helper to check by name if a city has a position set on the city map
-local CityPosition	= {} -- helper to get the first defined position in the city map of a city (by name)
+local IsCityOnMap 			= {} -- helper to check by name if a city has a position set on the city map
+local CityPosition			= {} -- helper to get the first defined position in the city map of a city (by name)
+
+local NotCityPlot			= {} -- helper to store all plots that are too close from other cities
+local PlayersSettings		= {} -- player specific setting and variables
+local CivTypePlayerID 		= {} -- helper to get playerID <-> CivilizationType
+local RouteIndexForEra		= {} -- helper to get the best RouteType for a specific era
 
 local numCitiesOnMap	= 0
 
@@ -111,11 +116,11 @@ end
 
 --local pairs = orderedPairs
 
-------------------------------------------------------------------------------
+-- ===========================================================================
 -- Fill helper tables
 --
 -- Those helpers are used for both the City AutoNaming and some of the Scenario generation options (CityMap placement or with the "Import" option when no position is defined in the Scenario)
-------------------------------------------------------------------------------
+-- ===========================================================================
 for row in GameInfo.CityMap() do
 	local name = row.CityLocaleName
 	if mapName == row.MapName then
@@ -137,6 +142,17 @@ for row in GameInfo.CityMap() do
 	end
 end
 
+-- Initialize players tables
+print("Pairing Civilization Type with PlayerIDs...")
+for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do -- for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+	local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+	if CivilizationTypeName then
+		CivTypePlayerID[CivilizationTypeName]	= iPlayer
+		CivTypePlayerID[iPlayer] 				= CivilizationTypeName
+	else
+		print("WARNING for playerID #"..tostring(iPlayer).." : CivilizationTypeName is NIL")
+	end
+end
 
 ------------------------------------------------------------------------------
 -- Math functions
@@ -183,7 +199,7 @@ function FindNearestPlayerCity( eTargetPlayer, iX, iY )
 	end
 
 	if (not pCity) then
-		--print ("No city found of player " .. tostring(eTargetPlayer) .. " in range of " .. tostring(iX) .. ", " .. tostring(iY));
+		print ("WARNING : No city found of player " .. tostring(eTargetPlayer) .. " in range of " .. tostring(iX) .. ", " .. tostring(iY));
 	end
    
     return pCity, iShortestDistance;
@@ -241,7 +257,7 @@ function ChangePlotOwner(pPlot, ownerID, cityID)
 	
 	if not cityID and ownerID ~= -1 then
 		local city	= FindNearestPlayerCity( ownerID, iX, iY )
-		cityID		= city:GetID()
+		cityID		= city and city:GetID()
 	end
 	
 	if CityManager then
@@ -308,6 +324,107 @@ function ExportMap()
 			print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..terrainType..","..featureType..","..continentType..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{".. resourceType ..","..tostring(numResource).."},{"..NEOfCliff..","..WOfCliff..","..NWOfCliff.."},".. tostring(lowlandType).."}"..endStr)
 		end
 	end
+	
+	-- export Scenario
+	local scenarioString 	= ScenarioName and "ScenarioName=\""..tostring(ScenarioName).."\"" or ""
+	local mapString 		= ScenarioName and "ScenarioName=\""..tostring(ScenarioName).."\"" or ""
+	local stringTable 		= {}
+	local cityNames 		= {}
+	local pPlot
+	local iOwner
+	
+	print("<!--******************************---->")
+	print("<!--*******   City list   ********---->")
+	print("<!--******************************---->")
+	print("<ScenarioCities>")
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		local civilizationType	= CivTypePlayerID[iPlayer]
+		if civilizationType then
+			local player	= Players[iPlayer]
+			local Cities	= player and player:GetCities()
+			if Cities and Cities.Members then
+				for i, pCity in Cities:Members() do
+					table.insert( cityNames ,"	<Replace Tag=\"".. tostring(pCity:GetName()) .."\" Text=\"".. Locale.Lookup(pCity:GetName()) .."\" Language=\"en_US\" />")
+					print("	<Replace ".. scenarioString .. mapString .." CivilizationType=\"".. tostring(civilizationType).."\" CitySize=\""..tostring(pCity:GetPopulation()) .."\"	CityName=\"".. tostring(pCity:GetName()) .."\"	X=\"".. tostring(pCity:GetX()) .."\" Y=\"".. tostring(pCity:GetY()) .."\"	/>")
+				end
+			end
+		end
+	end	
+	print("</ScenarioCities>")
+	--[[
+	print("<!--******************************---->")
+	print("<!--*******   City Names  ********---->")
+	print("<!--******************************---->")
+	print("<LocalizedText>")
+	for i, str in ipairs(cityNames) do print(str) end
+	print("</LocalizedText>")
+	--]]
+	
+	print("<!--******************************---->")
+	print("<!--*******   Territory   ********---->")
+	print("<!--******************************---->")
+	print("<ScenarioTerritory>")
+	for iY = 0, g_iH - 1 do
+		for iX = g_iW - 1, 0, -1  do
+			pPlot 	= Map.GetPlot(iX,iY)
+			iOwner	= pPlot:GetOwner()
+			if iOwner ~= -1 then
+				local civilizationType	= CivTypePlayerID[iOwner]
+				if civilizationType then
+					print("	<Replace ".. scenarioString .. mapString .." CivilizationType=\"".. tostring(civilizationType).."\" X=\"".. tostring(pPlot:GetX()) .."\" Y=\"".. tostring(pPlot:GetY()) .."\"		/>")
+				end
+			end
+		end
+	end	
+	print("</ScenarioTerritory>")	
+	
+	print("<!--******************************---->")
+	print("<!--*******   Unit list   ********---->")
+	print("<!--******************************---->")
+	print("<ScenarioUnits>")
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		local civilizationType	= CivTypePlayerID[iPlayer]
+		if civilizationType then
+			local player	= Players[iPlayer]
+			local units		= player and player:GetUnits()
+			if units then
+				for i, unit in units:Members() do
+					print("	<Replace ".. scenarioString .. mapString .." CivilizationType=\"".. tostring(civilizationType).."\" UnitType=\""..tostring(GameInfo.Units[unit:GetType()].UnitType) .."\"	Name=\"".. tostring(unit:GetName()) .."\"	Damage=\"".. tostring(unit:GetDamage()) .."\"	X=\"".. tostring(unit:GetX()) .."\" Y=\"".. tostring(unit:GetY()) .."\"	/>")
+				end
+			end
+		end
+	end	
+	print("</ScenarioUnits>")
+	
+	print("<!--******************************---->")
+	print("<!--******* Infrastructure *******---->")
+	print("<!--******************************---->")
+	print("<ScenarioInfrastructure>")
+	local iImprovmentType
+	local iRouteType
+	for iY = 0, g_iH - 1 do
+		for iX = g_iW - 1, 0, -1  do
+			pPlot 					= Map.GetPlot(iX,iY)
+			iImprovmentType 		= pPlot:GetImprovementType()
+			iRouteType 				= pPlot:GetRouteType()
+			local improvementStr 	= ""
+			local routeStr 			= ""
+			local bRow = false
+			if iImprovmentType ~= -1 then
+				improvementStr = "ImprovementType=\"".. tostring(GameInfo.Improvements[iImprovmentType].ImprovementType).."\""
+				bRow = true
+			end
+			if iRouteType ~= -1 then
+				routeStr = "RouteType=\"".. tostring(iRouteType).."\""
+				bRow = true
+			end
+			if bRow then
+				print("	<Replace ".. scenarioString .. mapString .." "..improvementStr.." ".. routeStr .." X=\"".. tostring(pPlot:GetX()) .."\" Y=\"".. tostring(pPlot:GetY()) .."\"		/>")
+			end
+		end
+	end
+	print("</ScenarioInfrastructure>")
+	
 end
 YnAMP.ExportMap = ExportMap
 
@@ -678,6 +795,22 @@ function CheckTimer()
 	end
 end
 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Removing Civilizations that shouldn't have been placed <<<<<
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+for _, iPlayer in ipairs(YnAMP.PlayerToRemove) do
+	local player 	= Players[iPlayer]
+	local units		= player:GetUnits()
+	if units then
+		for i, unit in units:Members() do
+			units:Destroy(unit)
+		end
+	end
+end
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Removin Civilizations >>>>>
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- City renaming <<<<<
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -936,11 +1069,6 @@ print("Number Minor Cities : ", numberOfMinorCity)
 print("WorldBuilder.CityManager : ", WorldBuilder.CityManager)
 print("ExposedMembers.CityManager : ", ExposedMembers.CityManager)
 
-local NotCityPlot			= {} -- helper to store all plots that are too close from other cities
-local PlayersSettings		= {} -- player specific setting and variables
-local CivTypePlayerID 		= {} -- helper to get playerID <-> CivilizationType
-local RouteIndexForEra		= {} -- helper to get the best RouteType for a specific era
-
 
 -- ===========================================================================
 -- Get a RouteIndex for each Era
@@ -984,19 +1112,6 @@ for eraRow in GameInfo.Eras() do
 	end
 	
 	RouteIndexForEra[eraRow.EraType] = bestEraRoute and bestEraRoute.Index
-end
-
--- ===========================================================================
--- Initialize players tables
-print("Pairing Civilization Type with PlayerIDs...")
-for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do -- for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
-	local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
-	if CivilizationTypeName then
-		CivTypePlayerID[CivilizationTypeName]	= iPlayer
-		CivTypePlayerID[iPlayer] 				= CivilizationTypeName
-	else
-		print("WARNING for playerID #"..tostring(iPlayer).." : CivilizationTypeName is NIL")
-	end
 end
 
 -- ===========================================================================
@@ -1089,6 +1204,7 @@ end
 -- Set Scenario Players options and variables
 
 local ScenarioPlayer		= {}
+local bDoCapitalPlacement	= false
 local bDoImportPlacement	= false
 local bDoCityNamePlacement	= false
 local bDoTerrainPlacement	= false
@@ -1096,6 +1212,7 @@ local bDoRoadPlacement		= false
 local PlacementImport		= {}
 local PlacementCityMap		= {}
 local PlacementTerrain		= {}
+local CapitalPlacement		= {}
 
 function SetScenarioPlayers()
 	
@@ -1140,8 +1257,10 @@ function SetScenarioPlayers()
 			playerData.CityUseImport		= bImportValid		and ((ScenarioRow and (ScenarioRow.CityPlacement == "PLACEMENT_IMPORT"	or ScenarioRow.CityPlacement == "PLACEMENT_MIXED")) or bImport or bMixed)
 			playerData.CityUseCityMap		= bCityMapValid		and ((ScenarioRow and (ScenarioRow.CityPlacement == "PLACEMENT_CITY_MAP" or ScenarioRow.CityPlacement == "PLACEMENT_MIXED")) or bCityMap or bMixed)
 			playerData.CityUseTerrain		= bGeneratedValid	and ((ScenarioRow and (ScenarioRow.CityPlacement == "PLACEMENT_TERRAIN"	or ScenarioRow.CityPlacement == "PLACEMENT_MIXED")) or bGenerated or bMixed)
+			
+			playerData.PlaceCapital			= ((ScenarioRow and (ScenarioRow.CityPlacement == "PLACEMENT_TERRAIN" or ScenarioRow.CityPlacement == "PLACEMENT_MIXED")) or bGenerated or bMixed)
 
-			playerData.CitiesToPlace		= (ScenarioRow and ScenarioRow.NumberOfCity) or (bIsMajor and numberOfMajorCity) or (bIsMinor and numberOfMinorCity) or 0
+			playerData.CitiesToPlace		= (ScenarioRow and ScenarioRow.NumberOfCity) or (bIsMajor and numberOfMajorCity) or (bIsMinor and numberOfMinorCity) -- can be nil, which means unlimited.
 			playerData.Priority				= (ScenarioRow and ScenarioRow.Priority) or (bIsMajor and 1) or (bIsMinor and 0) or -1
 			
 			playerData.CapitalSize			= playerData.CapitalSize or capitalSize
@@ -1174,6 +1293,10 @@ function SetScenarioPlayers()
 			if playerData.RoadPlacement and playerData.RoadPlacement ~= "PLACEMENT_EMPTY" then
 				bDoRoadPlacement = true
 			end
+			if playerData.PlaceCapital then
+				bDoCapitalPlacement = true
+				table.insert(CapitalPlacement, {Player = iPlayer, Priority = playerData.Priority})
+			end			
 			
 			print("Scenario settings for "..tostring(civilizationType))
 			for key, value in orderedPairs(playerData) do
@@ -1417,24 +1540,27 @@ function PlaceCities()
 	print("===========================================================================")
 	
 	-- Place capitals on starting positions
-	-- to do : option to skip that placement
-	print("--------------------------------------------")
-	print("Placing Capitals on Starting Location...")
-	print("--------------------------------------------")
-	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
-		local playerData	= ScenarioPlayer[iPlayer]
-		local player		= Players[iPlayer]
-		if playerData and playerData.CitiesToPlace and playerData.StartingPlot and playerData.CitiesToPlace > 0 then
-			print("-", CivTypePlayerID[iPlayer])
-			if playerData.StartingPlot:IsWater() or playerData.StartingPlot:IsImpassable() then
-				print("    - PLACEMENT IMPOSSIBLE (Water or Impassable plot)")
-			else
-				local city = player:GetCities():Create(playerData.StartingPlot:GetX(), playerData.StartingPlot:GetY())			
-				if city then
-					print("    - CAPITAL PLACED !")
-					InitializeCity(city)
+	if bDoCapitalPlacement then -- to do : option for that placement ?
+		print("--------------------------------------------")
+		print("Placing Capitals on Starting Location...")
+		print("--------------------------------------------")
+		table.sort (CapitalPlacement, function(a, b) return a.Priority > b.Priority; end)
+		
+		for playerIndex, data in ipairs(CapitalPlacement) do
+			local iPlayer 		= data.Player
+			local playerData	= ScenarioPlayer[iPlayer]
+			if playerData and playerData.StartingPlot and ((not playerData.CitiesToPlace) or (playerData.CitiesToPlace and playerData.CitiesToPlace > 0)) then
+				print("-", CivTypePlayerID[iPlayer])
+				if playerData.StartingPlot:IsWater() or playerData.StartingPlot:IsImpassable() then
+					print("    - PLACEMENT IMPOSSIBLE (Water or Impassable plot)")
 				else
-					print("    - PLACEMENT FAILED !")
+					local city = player:GetCities():Create(playerData.StartingPlot:GetX(), playerData.StartingPlot:GetY())			
+					if city then
+						print("    - CAPITAL PLACED !")
+						InitializeCity(city)
+					else
+						print("    - PLACEMENT FAILED !")
+					end
 				end
 			end
 		end
@@ -1537,7 +1663,7 @@ function PlaceCities()
 			for playerIndex, data in ipairs(PlacementImport) do
 				local iPlayer 		= data.Player
 				local playerData	= ScenarioPlayer[iPlayer]
-				if playerData and playerData.CitiesToPlace and playerData.CitiesToPlace > 0 then
+				if playerData and ((not playerData.CitiesToPlace) or (playerData.CitiesToPlace and playerData.CitiesToPlace > 0)) then
 					local cityIndex		= 1 -- get first entry in list
 					local cityData		= ImportedCities[iPlayer] and ImportedCities[iPlayer][cityIndex] 
 					if cityData then
@@ -1582,7 +1708,7 @@ function PlaceCities()
 			local playerData		= ScenarioPlayer[iPlayer]
 			local civilizationType 	= CivTypePlayerID[iPlayer]
 
-			if playerData and playerData.CitiesToPlace and playerData.CitiesToPlace > 0 then
+			if playerData and ((not playerData.CitiesToPlace) or (playerData.CitiesToPlace and playerData.CitiesToPlace > 0)) then
 				print("-", civilizationType)
 				
 				for row in GameInfo.CityNames() do
@@ -1916,9 +2042,12 @@ function PlaceBorders()
 						if x and y then
 							local plot 		= Map.GetPlot(x, y)
 							if plot then
-								print(" 		- PLACED !")
 								ChangePlotOwner(plot, iPlayer)
-								--plot:SetOwner(iPlayer)
+								if plot:GetOwner() == iPlayer then
+									print(" 		- PLACED !")
+								else
+									print(" 		- PLACEMENT FAILED !")
+								end
 							end								
 						end
 					else
