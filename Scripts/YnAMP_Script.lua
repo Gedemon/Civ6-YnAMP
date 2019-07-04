@@ -39,8 +39,11 @@ local NotCityPlot			= {} -- helper to store all plots that are too close from ot
 local PlayersSettings		= {} -- player specific setting and variables
 local CivTypePlayerID 		= {} -- helper to get playerID <-> CivilizationType
 local RouteIndexForEra		= {} -- helper to get the best RouteType for a specific era
+local IsTemporaryStartPos	= {} -- helper to check if a Civ "alive" was placed only to prevent the crash from civilizations without starting position
+local AliveList				= {} -- helper to get the list of civilization minus the fake startying position civs
 
-local numCitiesOnMap	= 0
+local numCitiesOnMap		= 0
+local g_MaxDistance			= 999
 
 local bUseRelativePlacement 	= MapConfiguration.GetValue("UseRelativePlacement")
 local bUseRelativeFixedTable 	= bUseRelativePlacement and MapConfiguration.GetValue("UseRelativeFixedTable")
@@ -298,7 +301,7 @@ function ExportMap()
 			local featureType	= plot:GetFeatureType()
 			local continentType	= plot:GetContinentType()
 			local resourceType	= plot:GetResourceType(-1)
-			local lowlandType	= TerrainManager.GetCoastalLowlandType and TerrainManager.GetCoastalLowlandType( plot:GetIndex() ) or -1
+			local lowlandType	= (TerrainManager and TerrainManager.GetCoastalLowlandType and TerrainManager.GetCoastalLowlandType( plot:GetIndex() )) or -1
 			local numResource	= plot:GetResourceCount()
 			
 			if terrainType ~= -1 then
@@ -431,7 +434,7 @@ YnAMP.ExportMap = ExportMap
 -----------------------------------------------------------------------------------------
 -- Pathfinder Functions
 -----------------------------------------------------------------------------------------
-function GetRoadPath(plot, destPlot, sRoute, maxRange, iPlayer)
+function GetRoadPath(plot, destPlot, sRoute, maxRange, iPlayer, bAllowHiddenRoute)
 	
 	local startPlot	= plot
 	local closedSet = {}
@@ -473,7 +476,7 @@ function GetRoadPath(plot, destPlot, sRoute, maxRange, iPlayer)
 			return GetPath(currentNode)
 		end
 		
-		local neighbors = GetNeighbors(currentNode, iPlayer, sRoute, startPlot, destPlot, maxRange)
+		local neighbors = GetNeighbors(currentNode, iPlayer, sRoute, startPlot, destPlot, maxRange, bAllowHiddenRoute)
 		for i, data in ipairs(neighbors) do
 			local node = data.Plot
 			if not closedSet[node] then
@@ -510,7 +513,7 @@ function GetRoadPath(plot, destPlot, sRoute, maxRange, iPlayer)
 end
 
 local routes = {"Land", "Road", "Railroad", "Coastal", "Ocean", "Submarine"}
-function GetNeighbors(node, iPlayer, sRoute, startPlot, destPlot, maxRange)
+function GetNeighbors(node, iPlayer, sRoute, startPlot, destPlot, maxRange, bAllowHiddenRoute)
 
 	local neighbors 				= {}
 	local plot 						= node
@@ -526,7 +529,7 @@ function GetNeighbors(node, iPlayer, sRoute, startPlot, destPlot, maxRange)
 				local distanceFromDest	= Map.GetPlotDistance(adjacentPlot:GetX(), adjacentPlot:GetY(), destPlot:GetX(), destPlot:GetY())				
 				if maxRange == nil or distanceFromDest <= maxRange then
 			
-					local IsPlotRevealed 	= false
+					local IsPlotRevealed 	= bAllowHiddenRoute
 					local pPlayer 			= Players[iPlayer]
 					if pPlayer then
 						local pPlayerVis = PlayersVisibility[pPlayer:GetID()]
@@ -807,6 +810,13 @@ for _, iPlayer in ipairs(YnAMP.PlayerToRemove) do
 			units:Destroy(unit)
 		end
 	end
+	IsTemporaryStartPos[iPlayer] = true
+end
+
+for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+	if not IsTemporaryStartPos[iPlayer] then
+		table.insert(AliveList, iPlayer)
+	end
 end
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1036,7 +1046,7 @@ end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Scenario Placement  <<<<<
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-do	--if not Game:GetProperty("YnAMP_ScenarioInitialized") then 
+if MapConfiguration.GetValue("ScenarioType") ~= "SCENARIO_NONE" then	--if not Game:GetProperty("YnAMP_ScenarioInitialized") then -- can't use YnAMP_ScenarioInitialized if we want to use a kind of reinforcement table
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- Scenario Settings
@@ -1045,6 +1055,7 @@ local scenarioName 				= MapConfiguration.GetValue("ScenarioType")
 local cityPlacement 			= MapConfiguration.GetValue("CityPlacement")
 local borderPlacement			= MapConfiguration.GetValue("BorderPlacement")
 local borderMaxDistance			= MapConfiguration.GetValue("BorderMaxDistance")
+local borderAbsoluteMaxDistance	= borderMaxDistance
 local infrastructurePlacement	= MapConfiguration.GetValue("InfrastructurePlacement")
 local numberOfMajorCity			= MapConfiguration.GetValue("NumberOfCity")
 local numberOfMinorCity			= MapConfiguration.GetValue("NumberOfMinorCity")
@@ -1057,6 +1068,8 @@ local roadPlacement				= MapConfiguration.GetValue("RoadPlacement")
 local bInternationalRoads		= MapConfiguration.GetValue("InternationalRoads")
 local roadMaxDistance			= MapConfiguration.GetValue("RoadMaxDistance")
 local maxRoadPerCity			= MapConfiguration.GetValue("MaxRoadPerCity")
+local maxDistanceFromCapital	= MapConfiguration.GetValue("MaxDistanceFromCapital")
+local onlySameLandMass			= MapConfiguration.GetValue("OnlySameLandMass")
 
 print("===========================================================================")
 print("Scenario Settings")
@@ -1129,7 +1142,8 @@ end
 --]] 
 function IsRowValid(row, bWithLevel)
 	if not row then return false end
-	
+print(row.SpecificEra, row.ScenarioName, row.MapName)
+print(startingEraType, scenarioName, mapName)
 	if not (row.ScenarioName) and not (row.MapName) then
 		print("Warning at rowID #"..tostring(row.Index).." : ScenarioName AND MapName are NULL, this is a wild row, valid on all maps/scenario :")
 		for k, v in pairs(row) do print("  - ", k, v) end
@@ -1188,6 +1202,8 @@ function GetScenarioRow(CivilizationType)
 		if row.CivilizationType == CivilizationType then
 			local bReturnMatchingLevel 		= true
 			local bIsValid, newMatchLevel 	= IsRowValid(row, bReturnMatchingLevel)
+print(bIsValid, newMatchLevel)
+print("----------------------------")
 			if bIsValid then
 				if newMatchLevel > matchingLevel then --matchingRow == nil or newMatchLevel > matchingLevel then
 					matchingRow 	= row
@@ -1235,28 +1251,36 @@ function SetScenarioPlayers()
 	-- We place Import first, then by name, then by terrain
 	-- players with "PLACEMENT_MIXED" setting are in all tables
 	
-	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+	for _, iPlayer in ipairs(AliveList) do -- for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 		local civilizationType	= CivTypePlayerID[iPlayer]
 		if civilizationType then
 			ScenarioPlayer[iPlayer]	= {}
 			local playerData		= ScenarioPlayer[iPlayer]
-			local ScenarioRow		= GetScenarioRow(CivilizationType)
+			local ScenarioRow		= GetScenarioRow(civilizationType)
 			local player			= Players[iPlayer]
 			local bIsMajor			= player and player:IsMajor()
 			local bIsMinor			= player and (not bIsMajor) and (not player:IsBarbarian())
 			
+			print("Scenario settings for "..tostring(civilizationType))
 			if ScenarioRow then
-				for key, value in pairs(ScenarioRow) do
+				print("ScenarioRow:")
+				for key, value in orderedPairs(ScenarioRow) do
+					print(" - ", key, value)
 					playerData[key] = value
 				end
+				print("-----")
+			else
+				print("No Scenario row")
 			end
 			
 			-- a placement type is possible if : 
 			-- (1) it's allowed at scenario/setup level AND
 			-- (2) it's also set at Civilization level or is default value at scenario/setup level if the option is nil at the Civilization level 
-			playerData.CityUseImport		= bImportValid		and ((ScenarioRow and (ScenarioRow.CityPlacement == "PLACEMENT_IMPORT"	or ScenarioRow.CityPlacement == "PLACEMENT_MIXED")) or bImport or bMixed)
-			playerData.CityUseCityMap		= bCityMapValid		and ((ScenarioRow and (ScenarioRow.CityPlacement == "PLACEMENT_CITY_MAP" or ScenarioRow.CityPlacement == "PLACEMENT_MIXED")) or bCityMap or bMixed)
-			playerData.CityUseTerrain		= bGeneratedValid	and ((ScenarioRow and (ScenarioRow.CityPlacement == "PLACEMENT_TERRAIN"	or ScenarioRow.CityPlacement == "PLACEMENT_MIXED")) or bGenerated or bMixed)
+			local bNoCityPlacement 			= not (ScenarioRow and ScenarioRow.CityPlacement)
+			
+			playerData.CityUseImport		= bImportValid		and ((ScenarioRow and (ScenarioRow.CityPlacement == "PLACEMENT_IMPORT"	or ScenarioRow.CityPlacement == "PLACEMENT_MIXED")) 	or (bNoCityPlacement and bImport)		or (bNoCityPlacement and bMixed))
+			playerData.CityUseCityMap		= bCityMapValid		and ((ScenarioRow and (ScenarioRow.CityPlacement == "PLACEMENT_CITY_MAP" or ScenarioRow.CityPlacement == "PLACEMENT_MIXED"))	or (bNoCityPlacement and bCityMap)		or (bNoCityPlacement and bMixed))
+			playerData.CityUseTerrain		= bGeneratedValid	and ((ScenarioRow and (ScenarioRow.CityPlacement == "PLACEMENT_TERRAIN"	or ScenarioRow.CityPlacement == "PLACEMENT_MIXED"))		or (bNoCityPlacement and bGenerated)	or (bNoCityPlacement and bMixed))
 			
 			playerData.PlaceCapital			= ((ScenarioRow and (ScenarioRow.CityPlacement == "PLACEMENT_TERRAIN" or ScenarioRow.CityPlacement == "PLACEMENT_MIXED")) or bGenerated or bMixed)
 
@@ -1275,6 +1299,11 @@ function SetScenarioPlayers()
 			playerData.InternationalRoads 	= playerData.InternationalRoads or bInternationalRoads
 			playerData.RoadMaxDistance 		= playerData.RoadMaxDistance or roadMaxDistance
 			playerData.MaxRoadPerCity 		= playerData.MaxRoadPerCity or maxRoadPerCity or 1
+			
+			playerData.BorderMaxDistance 	= (ScenarioRow and ScenarioRow.BorderMaxDistance) or (bIsMajor and borderMaxDistance) or (bIsMinor and 1)
+			
+			playerData.MaxDistanceFromCapital 	= playerData.MaxDistanceFromCapital or maxDistanceFromCapital or 1
+			playerData.OnlySameLandMass 		= playerData.OnlySameLandMass or OnlySameLandMass or false
 			
 			playerData.RouteIndex 			= (playerData.SpecificEra and RouteIndexForEra[playerData.SpecificEra]) or RouteIndexForEra[startingEraType]
 			
@@ -1296,9 +1325,11 @@ function SetScenarioPlayers()
 			if playerData.PlaceCapital then
 				bDoCapitalPlacement = true
 				table.insert(CapitalPlacement, {Player = iPlayer, Priority = playerData.Priority})
-			end			
+			end
+			if playerData.BorderMaxDistance and playerData.BorderMaxDistance > borderAbsoluteMaxDistance then
+				borderAbsoluteMaxDistance = playerData.BorderMaxDistance
+			end
 			
-			print("Scenario settings for "..tostring(civilizationType))
 			for key, value in orderedPairs(playerData) do
 				print(" - ", key, value)
 			end
@@ -1376,19 +1407,52 @@ function GetPlotFertility(plot)
 	return iFertility
 end
 
-function IsPotentialCityPlotFarEnough(plot, iThisPlayer, bNoCloserCheck)
+function CheckPotentialCityPlotDistance(plot, iThisPlayer, bNoCloserCheck, bNoLongDistanceCheck)
 
-	if not plot then return false end 
+	if not plot then return false, false end 
 
 	local minDistance 	= math.max(GlobalParameters.CITY_MIN_RANGE, (MapConfiguration.GetValue("CityMinDistance") or 0))
-	local homeDistance	= 9999 -- distance from this player's Civilization closest city
-	local civDistance	= 9999 -- distance from other Civilizations closest city
+	local homeDistance	= g_MaxDistance -- distance from this player's Civilization closest city
+	local civDistance	= g_MaxDistance -- distance from other Civilizations closest city
 	local bHasCity		= false
 	local bMarkForAll	= true
 	local bCheckCloser	= not bNoCloserCheck
+	local bCheckFarAway	= not bNoLongDistanceCheck
+	local bCloseEnough	= true	-- by default assume that the plot distance is close enough
+	local playerData	= ScenarioPlayer[iThisPlayer]
+	local thisPriority	= playerData and playerData.Priority or 0
 	
-	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
-		local player = Players[iPlayer]
+	if playerData and bCheckFarAway and playerData.MaxDistanceFromCapital then
+		local maxDistance	= playerData.MaxDistanceFromCapital
+		local player 		= Players[iThisPlayer]
+		local playerCities 	= player:GetCities()
+		if playerCities and playerCities.GetCapitalCity then
+			local capitalCity	= playerCities:GetCapitalCity()
+			if capitalCity then
+				local cityPlot	= capitalCity:GetPlot()
+				local distance	= g_MaxDistance
+				
+				if playerData.OnlySameLandMass then
+					local path	= GetRoadPath(plot, cityPlot, "Land", maxDistance, nil)
+					distance 	= path and (#path-1) or distance
+				else
+					distance 	= Map.GetPlotDistance(plot:GetIndex(), cityPlot:GetIndex())
+				end
+
+				if distance > maxDistance then
+					print("     - To far from Capital, distance = ".. tostring(distance) .." > maxDistance of "..tostring(maxDistance))
+					bCloseEnough = false
+				else
+					print("     - Check Capital distance = ".. tostring(distance) .." <= maxDistance of "..tostring(maxDistance))
+				end
+			end
+		end
+	end
+	
+	for _, iPlayer in ipairs(AliveList) do -- for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		local player 		= Players[iPlayer]
+		local otherData		= ScenarioPlayer[iPlayer]
+		local otherPriority	= otherData and otherData.Priority or 0
 		if player then
 			local playerCities 	= player:GetCities()
 			if playerCities and playerCities.Members then
@@ -1398,14 +1462,14 @@ function IsPotentialCityPlotFarEnough(plot, iThisPlayer, bNoCloserCheck)
 					if distance <= minDistance then
 						print("     - Not far enough, distance = ".. tostring(distance) .." <= minDistance of "..tostring(minDistance))
 						NotCityPlot[plot] = true
-						return false
+						return false, bCloseEnough
 					end
 					if iThisPlayer == iPlayer then
 						bHasCity = true
 						if distance < homeDistance then
 							homeDistance = distance
 						end
-					elseif player:IsMajor() then -- to do : option ?
+					elseif (otherPriority > thisPriority) or (otherPriority == thisPriority and player:IsMajor()) then
 						if distance < civDistance then
 							civDistance = distance
 						end
@@ -1416,10 +1480,31 @@ function IsPotentialCityPlotFarEnough(plot, iThisPlayer, bNoCloserCheck)
 	end
 	if bCheckCloser and bHasCity and homeDistance >= civDistance then
 		print("     - Closer of other civs : Home distance of ".. tostring(homeDistance) .." >= other Civilization distance of "..tostring(civDistance))
-		return false
+		return false, bCloseEnough
 	end
 --print(CivTypePlayerID[iThisPlayer], bHasCity, homeDistance, civDistance, plot:GetX(), plot:GetY())
-	return true
+	return true, bCloseEnough
+end
+
+function CheckLandMassValid(plot, iPlayer)
+
+	if not plot then return false end
+	
+	local playerData = ScenarioPlayer[iPlayer]
+	
+	if playerData and playerData.OnlySameLandMass then
+		local player = Players[iPlayer]
+		local playerCities 	= player and player:GetCities()
+		if playerCities and playerCities.GetCapitalCity then
+		
+			local capitalCity	= playerCities:GetCapitalCity()
+			local cityPlot		= capitalCity:GetPlot()
+			
+			return cityPlot:GetArea() == plot:GetArea()
+		end
+	else
+		return true
+	end
 end
 
 function GetPotentialCityPlots()
@@ -1431,7 +1516,7 @@ function GetPotentialCityPlots()
 		for iY = 0, g_iH - 1 do
 			local index = (iY * g_iW) + iX;
 			pPlot = Map.GetPlotByIndex(index)
-			if pPlot:GetResourceCount() == 0 and (not pPlot:IsImpassable()) and (not pPlot:IsNaturalWonder()) and (not pPlot:IsWater()) then
+			if pPlot:GetResourceCount() == 0 and (not pPlot:IsImpassable()) and (not pPlot:IsNaturalWonder()) and (not pPlot:IsWater()) and pPlot:GetFeatureType() ~= g_FEATURE_OASIS then
 				local fertility = GetPlotFertility(pPlot)
 				if fertility > minFertility then
 					--print("fertility = ", fertility)
@@ -1468,10 +1553,16 @@ function GetBestCityPlotFromList(potentialPlots, iPlayer)
 			print("   - testing plot#"..tostring(iIndex) .. ", Fertility = " .. tostring(potentialPlots[iIndex].Fertility))
 
 			-- Distance check with other cities, must be closer from own cities than foreign cities...
-			local bDistanceCheck = IsPotentialCityPlotFarEnough(pTempPlot, iPlayer)
-			if(bDistanceCheck == false) then
+			local bFarEnough, bCloseEnough	= CheckPotentialCityPlotDistance(pTempPlot, iPlayer)
+			local bLandMassCheck			= CheckLandMassValid(pTempPlot, iPlayer)
+			
+			if (bFarEnough == false) or (bLandMassCheck == false) then
 				bValid = false;
 				potentialPlots[iIndex].Plot = nil -- no need to test that plot again...
+			end
+			
+			if(bCloseEnough == false) then
+				bValid = false	-- just mark invalid, we may need to test that plot again...
 			end
 
 			-- If the plots passes all the checks then the plot equals the temp plot
@@ -1548,13 +1639,14 @@ function PlaceCities()
 		
 		for playerIndex, data in ipairs(CapitalPlacement) do
 			local iPlayer 		= data.Player
+			local player 		= Players[iPlayer]
 			local playerData	= ScenarioPlayer[iPlayer]
 			if playerData and playerData.StartingPlot and ((not playerData.CitiesToPlace) or (playerData.CitiesToPlace and playerData.CitiesToPlace > 0)) then
 				print("-", CivTypePlayerID[iPlayer])
 				if playerData.StartingPlot:IsWater() or playerData.StartingPlot:IsImpassable() then
 					print("    - PLACEMENT IMPOSSIBLE (Water or Impassable plot)")
 				else
-					local city = player:GetCities():Create(playerData.StartingPlot:GetX(), playerData.StartingPlot:GetY())			
+					local city = player and player:GetCities():Create(playerData.StartingPlot:GetX(), playerData.StartingPlot:GetY())			
 					if city then
 						print("    - CAPITAL PLACED !")
 						InitializeCity(city)
@@ -1766,10 +1858,12 @@ function PlaceCities()
 						
 							print(" - Trying to place : ", cityName and Locale.Lookup(cityName))
 							
-							cityIndex[iPlayer] 	= cityIndex[iPlayer] + 1
-							local plot 			= Map.GetPlot(cityRow.X, cityRow.Y)
+							cityIndex[iPlayer] 				= cityIndex[iPlayer] + 1
+							local plot 						= Map.GetPlot(cityRow.X, cityRow.Y)
+							local bFarEnough, bCloseEnough	= CheckPotentialCityPlotDistance(plot, iPlayer, bNoCloserCivCheck)
+							local bLandMassCheck			= CheckLandMassValid(plot, iPlayer)
 							
-							if IsPotentialCityPlotFarEnough(plot, iPlayer, bNoCloserCivCheck) then
+							if bFarEnough and bCloseEnough and bLandMassCheck then
 								if plot and not (plot:IsWater() or plot:IsImpassable()) then
 									print("    - Placing at (".. tostring(cityRow.X).. ","..tostring(cityRow.X)..")")
 									local city = player:GetCities():Create(cityRow.X, cityRow.Y)
@@ -1864,12 +1958,13 @@ function PlaceCities()
 				local playerData	= ScenarioPlayer[iPlayer]
 			
 				if playerData and playerData.CitiesToPlace and playerData.CitiesToPlace > 0 then
-					print("    - Finding next City position for " .. tostring(CivTypePlayerID[iPlayer]) .. ", cities to place = " .. tostring(playerData and playerData.CitiesToPlace))
+					print("    - Finding next City position for " .. tostring(CivTypePlayerID[iPlayer]) .. ", cities to place = " .. tostring(playerData and playerData.CitiesToPlace).. ", priority = " .. tostring(playerData and playerData.Priority))
 
 					local plotList	= playerPlots[iPlayer]
 					local pBestPlot = GetBestCityPlotFromList(plotList, iPlayer)
 					
 					if pBestPlot then
+print(pBestPlot:GetX(), pBestPlot:GetY())
 						local player 	= Players[iPlayer]
 						local city 		= player:GetCities():Create(pBestPlot:GetX(), pBestPlot:GetY())			
 						if city then
@@ -1956,9 +2051,10 @@ function PlaceBorders()
 		print("--------------------------------------------")
 		print("- Expanding Territory from cities positions")
 		print("--------------------------------------------")
+		print("borderAbsoluteMaxDistance = ", borderAbsoluteMaxDistance)
 		
 		local cityList = {}
-		for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		for _, iPlayer in ipairs(AliveList) do -- for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 			local player = Players[iPlayer]
 			if player then
 				local playerCities 	= player:GetCities()
@@ -1974,8 +2070,8 @@ function PlaceBorders()
 		local bAnyBorderExpanded 	= true
 		local iLoop					= 0
 		local iRing					= 2
-		local iMaxDistance			= borderMaxDistance -- to do : change that to the max value between default (borderMaxDistance) and all Civilization settings
-		while bAnyBorderExpanded and iRing <= iMaxDistance do
+		
+		while bAnyBorderExpanded and iRing <= borderAbsoluteMaxDistance do
 			
 			print("  - Check for ownership on ring#"..tostring(iRing))
 			
@@ -1988,11 +2084,16 @@ function PlaceBorders()
 				
 				print("   - City : "..Locale.Lookup(city:GetName()))
 				
-				local ownerID 	= city:GetOwner()
-				local pPlot		= city:GetPlot()
+				local ownerID 		= city:GetOwner()
+				local pPlot			= city:GetPlot()
+				local playerData	= ScenarioPlayer[ownerID]
+				local iMaxDistance	= playerData and playerData.BorderMaxDistance or borderMaxDistance
+				print("   	- Max distance : ", iMaxDistance)
+				
 				for pEdgePlot in PlotRingIterator(pPlot, iRing) do
-					if pEdgePlot:GetOwner() == -1 and not pEdgePlot:IsWater() then
+					if pEdgePlot:GetOwner() == -1 and pPlot:GetArea() == pEdgePlot:GetArea() and not pEdgePlot:IsWater() then
 						local bAquirePlot = false
+						--[[
 						for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
 							local adjacentPlot = Map.GetAdjacentPlot(pEdgePlot:GetX(), pEdgePlot:GetY(), direction);
 							if (adjacentPlot ~= nil) and (not adjacentPlot:IsWater()) then --and adjacentPlot:IsOwned() then
@@ -2002,6 +2103,13 @@ function PlaceBorders()
 								end
 							end
 						end
+						--]]
+						local path		= GetRoadPath(pEdgePlot, pPlot, "Land", nil, nil)
+						local distance 	= path and (#path-1) or g_MaxDistance
+						bAquirePlot		= distance <= iMaxDistance
+						print("   	- Testing Plot at : ", pEdgePlot:GetX(),pEdgePlot:GetY())
+						print("   	- Landpath Distance : ", distance)
+						print("   	- bAquirePlot	= Landpath <= Max distance : ", bAquirePlot)
 						if bAquirePlot then
 							ChangePlotOwner(pEdgePlot, ownerID, city:GetID())
 							bAnyBorderExpanded = true
@@ -2190,7 +2298,7 @@ function PlaceInfrastructure()
 		
 		-- Create a list of cities with roads out
 		local cityList = {}
-		for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		for _, iPlayer in ipairs(AliveList) do -- for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 		
 			local playerData	= ScenarioPlayer[iPlayer]
 			if playerData and playerData.RoadPlacement and playerData.RoadPlacement ~= "PLACEMENT_EMPTY" then
@@ -2244,7 +2352,7 @@ function PlaceInfrastructure()
 								if playerData.InternationalRoads then
 									print("  - International roads:")
 									local capitalList = {}
-									for iOtherPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+									for _, iOtherPlayer in ipairs(AliveList) do -- for iOtherPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 										if iOtherPlayer ~= iPlayer then
 										local otherPlayer = Players[iOtherPlayer]
 											if otherPlayer then

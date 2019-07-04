@@ -791,19 +791,31 @@
       <Text>None</Text>
     </Replace>
     <Replace Tag="LOC_MAP_SCENARIO_NONE_DESCRIPTION" Language="en_US">
-      <Text>No Scenario</Text>
+      <Text>Do not allow any Scenario placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_DEFAULT_NAME" Language="en_US">
+      <Text>Default</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_DEFAULT_DESCRIPTION" Language="en_US">
+      <Text>Scenario imported from Database when available</Text>
     </Replace>
     <Replace Tag="LOC_MAP_SCENARIO_GENERATED_NAME" Language="en_US">
-      <Text>Generated [ICON_Exclamation][COLOR_RED] Alpha Testing [ENDCOLOR][ICON_Exclamation]</Text>
+      <Text>Generated/Mixed (Beta Testing)</Text>
     </Replace>
     <Replace Tag="LOC_MAP_SCENARIO_GENERATED_DESCRIPTION" Language="en_US">
-      <Text>Scenario generated automatically</Text>
+      <Text>Scenario generated automatically and/or imported from Database</Text>
     </Replace>
     <Replace Tag="LOC_MAP_GENERATED_NAME" Language="en_US">
       <Text>Generated</Text>
     </Replace>
     <Replace Tag="LOC_MAP_GENERATED_DESCRIPTION" Language="en_US">
       <Text>Automatic placement by the Scenario Generator</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_GENERATED_PRESET_NAME" Language="en_US">
+      <Text>YnAMP generated placement</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_GENERATED_PRESET_DESC" Language="en_US">
+      <Text>Placement presets to generate starting Civilizations[NEWLINE]This scenario replaces the setup screen default values to civ-specific values for the following settings:[NEWLINE][ICON_BULLET]Number of Cities[NEWLINE][ICON_BULLET]Max. Distance From Capital[NEWLINE][ICON_BULLET]Only on the same landmass[NEWLINE][NEWLINE]Custom Civilizations will use the default settings (unless added separatly by the custom civ mod)[NEWLINE][NEWLINE]The settings are optimized for the Giant Earth map (or regions of it) but can be used with any map.</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CITY_PLACEMENT_NAME" Language="en_US">
@@ -904,6 +916,19 @@
     </Replace>
     <Replace Tag="LOC_MAP_NUM_CITY_PER_DECREMENT_DESCRIPTION" Language="en_US">
       <Text>Number of cities placed for each size decrement</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_MAX_CAPITAL_DISTANCE" Language="en_US">
+      <Text>Max. Distance from Capital</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MAX_CAPITAL_DISTANCE_DESCRIPTION" Language="en_US">
+      <Text>Maximum distance from Capital for the other cities (this is not checked for cities imported from the ScenarioCities table)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SAME_LANDMASS" Language="en_US">
+      <Text>Only on the same landmass</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SAME_LANDMASS_DESCRIPTION" Language="en_US">
+      <Text>Cities must be placed on the same landmass as the capital (this is not checked for cities imported from the ScenarioCities table)</Text>
     </Replace>
 	
     <Replace Tag="LOC_RATIO_2_PER_1" Language="en_US">

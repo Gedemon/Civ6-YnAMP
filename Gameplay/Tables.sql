@@ -122,6 +122,8 @@ CREATE TABLE IF NOT EXISTS ScenarioCivilizations
 		CivilizationType TEXT NOT NULL,
 		Priority INT default 0, -- higher means first selected for placement in loops
 		CityPlacement TEXT,
+		MaxDistanceFromCapital INT, -- if OnlySameLandMass is true, then this is the land path distance, else it's the air distance
+		OnlySameLandMass BOOLEAN NOT NULL CHECK (OnlySameLandMass IN (0,1)) DEFAULT 0,
 		NumberOfCity INT,
 		CapitalSize INT,
 		OtherCitySize INT,
