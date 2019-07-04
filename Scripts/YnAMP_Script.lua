@@ -40,7 +40,7 @@ local PlayersSettings		= {} -- player specific setting and variables
 local CivTypePlayerID 		= {} -- helper to get playerID <-> CivilizationType
 local RouteIndexForEra		= {} -- helper to get the best RouteType for a specific era
 local IsTemporaryStartPos	= {} -- helper to check if a Civ "alive" was placed only to prevent the crash from civilizations without starting position
-local AliveList				= {} -- helper to get the list of civilization minus the fake startying position civs
+local AliveList				= {} -- helper to get the list of civilization minus the fake starting position civs
 
 local numCitiesOnMap		= 0
 local g_MaxDistance			= 999
