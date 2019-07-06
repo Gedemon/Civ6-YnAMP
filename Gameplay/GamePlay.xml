@@ -168,13 +168,13 @@
 	<!--                 Scenario Settings                -->
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<ScenarioCivilizations>
-		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_AMERICA"		Priority="75"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="15"	MaxDistanceFromCapital="99"	OnlySameLandMass="true"		/>
+		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_AMERICA"		Priority="75"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="15"	MaxDistanceFromCapital="45"	OnlySameLandMass="true"		/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_ARABIA"		Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="5"	MaxDistanceFromCapital="12"	OnlySameLandMass="true"		/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_AUSTRALIA"	Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="10"	MaxDistanceFromCapital="20"	OnlySameLandMass="true"		/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_AZTEC"		Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="5"	MaxDistanceFromCapital="7"	OnlySameLandMass="true"		/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_BRAZIL"		Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="6"	MaxDistanceFromCapital="20"	OnlySameLandMass="true"		/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_CANADA"		Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="8"	MaxDistanceFromCapital="50"	OnlySameLandMass="true"		/>
-		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_CHINA"		Priority="75"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="15"	MaxDistanceFromCapital="99"	OnlySameLandMass="true"		/>
+		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_CHINA"		Priority="75"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="15"	MaxDistanceFromCapital="40"	OnlySameLandMass="true"		/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_CREE"			Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="4"	MaxDistanceFromCapital="12"	OnlySameLandMass="true"		/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_EGYPT"		Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="5"	MaxDistanceFromCapital="20"	OnlySameLandMass="true"		/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_ENGLAND"		Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="4"	MaxDistanceFromCapital="12"	OnlySameLandMass="true"		/>
@@ -203,7 +203,7 @@
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_PHOENICIA"	Priority="10"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="4"	MaxDistanceFromCapital="40"	OnlySameLandMass="false"	/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_POLAND"		Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="4"	MaxDistanceFromCapital="5"	OnlySameLandMass="true"		/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_ROME"			Priority="75"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="5"	MaxDistanceFromCapital="16"	OnlySameLandMass="true"		/>
-		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_RUSSIA"		Priority="75"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="15"	MaxDistanceFromCapital="99"	OnlySameLandMass="true"		/>
+		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_RUSSIA"		Priority="75"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="15"	MaxDistanceFromCapital="50"	OnlySameLandMass="true"		/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_SCOTLAND"		Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="3"	MaxDistanceFromCapital="4"	OnlySameLandMass="true"		/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_SCYTHIA"		Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="4"	MaxDistanceFromCapital="30"	OnlySameLandMass="true"		/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_SPAIN"		Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="5"	MaxDistanceFromCapital="5"	OnlySameLandMass="true"		/>

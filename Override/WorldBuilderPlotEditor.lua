@@ -7,12 +7,58 @@ print ("loading WorldBuilderPlotEditor.lua for Yet (not) Another Maps Pack")
 local YnAMP		= ExposedMembers.YnAMP
 
 ----------------------------------------------------------------------------------------
--- Add "Export to Lua" button to the Option Menu
+-- Manage "Restart" button
+----------------------------------------------------------------------------------------
+local bRestartInitialized	= false
+local bNeedToSave			= true
+local restartTimer			= 0
+local waitBeforeRestart		= 9.9
+function RestartTimer()
+	if bRestartInitialized then
+		if bNeedToSave and Automation.GetTime() - restartTimer > 0.1 then -- give time to update menu text
+			bNeedToSave				= false
+			local saveGame 			= {};
+			saveGame.Name 			= "AutoSaveOnRestart"
+			saveGame.Location 		= SaveLocations.LOCAL_STORAGE
+			saveGame.Type			= SaveTypes.WORLDBUILDER_MAP
+			saveGame.IsAutosave 	= false
+			saveGame.IsQuicksave 	= false
+			Network.SaveGame(saveGame)		
+		end
+		if Automation.GetTime() - restartTimer > waitBeforeRestart then
+			Events.GameCoreEventPublishComplete.Remove( RestartTimer )
+			Network.RestartGame()
+		else
+			Controls.Restart:SetText( Locale.Lookup("LOC_GAME_MENU_YNAMP_RESTART_TIMER", math.floor(math.max(0, waitBeforeRestart - (Automation.GetTime() - restartTimer)))) )
+		end
+	end
+end
+
+function OnRestart()
+	if bRestartInitialized then
+		bRestartInitialized = false
+		bNeedToSave			= true
+		Controls.Restart:SetText( Locale.Lookup("LOC_GAME_MENU_YNAMP_RESTART") )
+		Events.GameCoreEventPublishComplete.Remove( RestartTimer )
+	else
+		bRestartInitialized = true
+		Controls.Restart:SetText( Locale.Lookup("LOC_GAME_MENU_YNAMP_RESTART_TIMER", waitBeforeRestart) )
+		restartTimer = Automation.GetTime()
+		Events.GameCoreEventPublishComplete.Add( RestartTimer )
+	end
+end
+
+----------------------------------------------------------------------------------------
+-- Add "Export to Lua" and "Restart" button to the Option Menu
 ----------------------------------------------------------------------------------------
 function OnEnterGame()
 	Controls.ExportMapToLua:RegisterCallback( Mouse.eLClick, YnAMP.ExportMap )
 	Controls.ExportMapToLua:SetHide( false )
 	Controls.ExportMapToLua:ChangeParent(ContextPtr:LookUpControl("/WorldBuilder/TopOptionsMenu/MainStack"))
+	
+	Controls.Restart:RegisterCallback( Mouse.eLClick, OnRestart )
+	Controls.Restart:SetHide( false )
+	Controls.Restart:ChangeParent(ContextPtr:LookUpControl("/WorldBuilder/TopOptionsMenu/MainStack"))
 end
 Events.LoadScreenClose.Add(OnEnterGame)
 

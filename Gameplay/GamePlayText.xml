@@ -117,6 +117,17 @@
 		  <Text>Export the Map in YnAMP format to the Lua.log file (in the "..\Documents\my games\Sid Meier's Civilization VI\Logs\" folder)</Text>
 		</Replace>
 		
+		<Replace Tag="LOC_GAME_MENU_YNAMP_RESTART" Language="en_US">
+		  <Text>[ICON_Exclamation] RESTART MAP [ICON_Exclamation]</Text>
+		</Replace>
+		<Replace Tag="LOC_GAME_MENU_YNAMP_RESTART_TOOLTIP" Language="en_US">
+		  <Text>Press to restart the map using the same settings[NEWLINE][NEWLINE][COLOR_RED][ICON_Exclamation] WARNING [ICON_Exclamation][NEWLINE][NEWLINE]This option was disabled by Firaxis for the following reason:[ENDCOLOR][NEWLINE]"Restarting in worldbuilder can cause a bunch of problems, disabling for now."</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_GAME_MENU_YNAMP_RESTART_TIMER" Language="en_US">
+		  <Text>Restart in {1Num}sec (Press to cancel)</Text>
+		</Replace>
+		
 		<Replace Tag="LOC_WORLD_BUILDER_BRUSH_SIZE" Text="Brush Size = {1_Num}" Language="en_US" />	
 
 	</LocalizedText>
