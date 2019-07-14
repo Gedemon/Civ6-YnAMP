@@ -10,7 +10,8 @@ print ("loading YnAMP_Script.lua")
 include "MapEnums"
 include "PlotIterators"
 
--- Sharing UI/Gameplay context (ExposedMembers.YnAMP is initialized in AssignStartingPlots.lua)
+-- Sharing UI/Gameplay context (ExposedMembers.YnAMP is initialized in AssignStartingPlots.lua on first launch, or here on reload)
+ExposedMembers.YnAMP = ExposedMembers.YnAMP or {}
 local YnAMP = ExposedMembers.YnAMP
 
 function Round(num)
@@ -1055,7 +1056,7 @@ local scenarioName 				= MapConfiguration.GetValue("ScenarioType")
 local cityPlacement 			= MapConfiguration.GetValue("CityPlacement")
 local borderPlacement			= MapConfiguration.GetValue("BorderPlacement")
 local borderMaxDistance			= MapConfiguration.GetValue("BorderMaxDistance")
-local borderAbsoluteMaxDistance	= borderMaxDistance
+local borderAbsoluteMaxDistance	= borderMaxDistance or g_MaxDistance
 local infrastructurePlacement	= MapConfiguration.GetValue("InfrastructurePlacement")
 local numberOfMajorCity			= MapConfiguration.GetValue("NumberOfCity")
 local numberOfMinorCity			= MapConfiguration.GetValue("NumberOfMinorCity")

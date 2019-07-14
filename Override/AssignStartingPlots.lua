@@ -3576,7 +3576,7 @@ BuildRefXY()
 
 	-- Check if all selected civs have been given a Starting Location
 	--if not bTSL or bAlternatePlacement then
-		CheckAllCivilizationsStartingLocations()
+	--	CheckAllCivilizationsStartingLocations()
 	--end
 		
 	if bRequestedResources and not bNoResources then
@@ -4473,6 +4473,9 @@ function YnAMP_ApplySharedMapOptions()
 			MarkCoastalLowlands()
 		end
 	end
+	
+	-- Force a starting position on everyone
+	CheckAllCivilizationsStartingLocations()
 end
 
 
