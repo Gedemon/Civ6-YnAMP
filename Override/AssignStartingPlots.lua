@@ -255,6 +255,9 @@ function AssignStartingPlots.Create(args)
 	end
 	YnAMP_ApplySharedMapOptions()
 	YnAMP_StartPositions()
+	
+	-- Force a starting position on everyone
+	CheckAllCivilizationsStartingLocations()
 	-- YnAMP >>>>>					
 
 	return instance
@@ -4473,9 +4476,6 @@ function YnAMP_ApplySharedMapOptions()
 			MarkCoastalLowlands()
 		end
 	end
-	
-	-- Force a starting position on everyone
-	CheckAllCivilizationsStartingLocations()
 end
 
 
@@ -5372,10 +5372,10 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 		local civ6TerrainType 	= MapToConvert[refX][refY][1]
 		local civ6FeatureType 	= MapToConvert[refX][refY][2]
 		local civ6ContinentType	= MapToConvert[refX][refY][3]
-		local Rivers 			= MapToConvert[refX][refY][4] -- = {{IsNEOfRiver, flow}, {IsWOfRiver, flow}, {IsNWOfRiver, flow}}
-		local resource 			= MapToConvert[refX][refY][5] -- = {Civ6ResourceType, num}
-		local Cliffs 			= MapToConvert[refX][refY][6] -- {IsNEOfCliff,IsWOfCliff,IsNWOfCliff}
-		local lowlandType 		= MapToConvert[refX][refY][7] -- -1 = none
+		local Rivers 			= MapToConvert[refX][refY][4] 		-- = {{IsNEOfRiver, flow}, {IsWOfRiver, flow}, {IsNWOfRiver, flow}}
+		local resource 			= MapToConvert[refX][refY][5] 		-- = {Civ6ResourceType, num}
+		local Cliffs 			= MapToConvert[refX][refY][6] 		-- {IsNEOfCliff,IsWOfCliff,IsNWOfCliff}
+		local lowlandType 		= MapToConvert[refX][refY][7] or -1	-- -1 = none
 		
 		-- Set terrain type
 		if bDoTerrains and GameInfo.Terrains[civ6TerrainType] then
