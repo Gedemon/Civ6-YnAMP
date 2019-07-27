@@ -804,15 +804,17 @@ end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Removing Civilizations that shouldn't have been placed <<<<<
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-for _, iPlayer in ipairs(YnAMP.PlayerToRemove) do
-	local player 	= Players[iPlayer]
-	local units		= player:GetUnits()
-	if units then
-		for i, unit in units:Members() do
-			units:Destroy(unit)
+if YnAMP.PlayerToRemove then
+	for _, iPlayer in ipairs(YnAMP.PlayerToRemove) do
+		local player 	= Players[iPlayer]
+		local units		= player:GetUnits()
+		if units then
+			for i, unit in units:Members() do
+				units:Destroy(unit)
+			end
 		end
+		IsTemporaryStartPos[iPlayer] = true
 	end
-	IsTemporaryStartPos[iPlayer] = true
 end
 
 for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
@@ -1144,8 +1146,8 @@ end
 --]] 
 function IsRowValid(row, bWithLevel)
 	if not row then return false end
-print(row.SpecificEra, row.ScenarioName, row.MapName)
-print(startingEraType, scenarioName, mapName)
+--print(row.SpecificEra, row.ScenarioName, row.MapName)
+--print(startingEraType, scenarioName, mapName)
 	if not (row.ScenarioName) and not (row.MapName) then
 		print("Warning at rowID #"..tostring(row.Index).." : ScenarioName AND MapName are NULL, this is a wild row, valid on all maps/scenario :")
 		for k, v in pairs(row) do print("  - ", k, v) end
@@ -1204,7 +1206,7 @@ function GetScenarioRow(CivilizationType)
 		if row.CivilizationType == CivilizationType then
 			local bReturnMatchingLevel 		= true
 			local bIsValid, newMatchLevel 	= IsRowValid(row, bReturnMatchingLevel)
-print(bIsValid, newMatchLevel)
+print("GetScenarioRow:", row.Index, CivilizationType, bIsValid, newMatchLevel)
 print("----------------------------")
 			if bIsValid then
 				if newMatchLevel > matchingLevel then --matchingRow == nil or newMatchLevel > matchingLevel then
