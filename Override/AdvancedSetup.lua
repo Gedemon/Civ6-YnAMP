@@ -766,7 +766,8 @@ function OnStartButton()
 	local cityStateID	= numPlayers 	-- IDs start at 0, major IDs are from 0 to numPlayers-1, CS IDs start at numPlayers
 	local maxCS 		= maxPlayer - numPlayers
 	
-	-- Limit number of players for R&F and GS	
+	-- Limit number of players for R&F and GS
+	print("------------------------------------------------------")
 	print("YnAMP checking for number of players limit on Start...")
 	print("num. players = ".. tostring(numPlayers) .. ", num. CS = ".. tostring(numCS))
 	if (GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_1" or GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_2") and numPlayers + numCS > maxPlayer then
@@ -776,10 +777,11 @@ function OnStartButton()
 	end
 	
 	-- Get the City States list
-	local query		= "SELECT * from Parameters where ConfigurationId LIKE 'LEADER_MINOR_CIV%' and GroupId='MapOptions'"
+	local query		= "SELECT * from Parameters where ConfigurationId LIKE '%LEADER_MINOR_CIV%' and GroupId='MapOptions'"
 	local results	= DB.ConfigurationQuery(query)
 	if(results and #results > 0) then
 		local CityStateSlots = numCS
+		print("------------------------------------------------------")
 		print("YnAMP setting specific CS slots...")
 		print("free slots = "..tostring(CityStateSlots))
 		for i, row in ipairs(results) do
@@ -803,6 +805,23 @@ function OnStartButton()
 		end
 		print(" - Free slots left for random CS = ".. Locale.Lookup(CityStateSlots) )
 		GameConfiguration.SetValue("CITY_STATE_COUNT", CityStateSlots)
+	end
+	
+	-- List the player slots
+	local slotStatusString	= {}
+	local civLevelString	= {}
+	for key, v in pairs(SlotStatus) do
+		slotStatusString[v] = key
+	end
+	for key, v in pairs(CivilizationLevelTypes) do
+		civLevelString[v] = key
+	end
+		
+	print("------------------------------------------------------")
+	print("Setup Player slots :")
+	for slotID = 0, 63 do
+		local playerConfig = PlayerConfigurations[slotID]
+		print(slotID, playerConfig and playerConfig:GetLeaderTypeName(), playerConfig and playerConfig:GetLeaderTypeName(), playerConfig and playerConfig:GetCivilizationTypeName(), playerConfig and playerConfig:GetSlotName(), playerConfig and (slotStatusString[playerConfig:GetSlotStatus()] or "UNK STATUS"), playerConfig and (civLevelString[playerConfig:GetCivilizationLevelTypeID()] or "UNK LEVEL"),  playerConfig and playerConfig:IsAI())
 	end
 	
 	-- Make some debugging info available during map creation 

@@ -9,10 +9,13 @@ include "MapUtilities"
 -- **************************** YnAMP globals ******************************
 ------------------------------------------------------------------------------
 
+print("------------------------------------------------------")
 print ("loading modded AssignStartingPlots")
 local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION ?
 print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2019) by Gedemon")
+
 if ExposedMembers.YnAMP_Loading ~= nil then
+	print("------------------------------------------------------")
 	print ("Game version: ".. tostring(ExposedMembers.YnAMP_Loading.GameVersion))
 	print("Active mods:")
 	if ExposedMembers.YnAMP_Loading.ListMods then
@@ -23,6 +26,23 @@ if ExposedMembers.YnAMP_Loading ~= nil then
 end
 ExposedMembers.YnAMP_Loading = nil
 
+-- List the player slots
+local slotStatusString	= {}
+local civLevelString	= {}
+for key, v in pairs(SlotStatus) do
+	slotStatusString[v] = key
+end
+for key, v in pairs(CivilizationLevelTypes) do
+	civLevelString[v] = key
+end
+print("------------------------------------------------------")
+print("InGame Player slots :")
+for slotID = 0, 63 do
+	local playerConfig = PlayerConfigurations[slotID]
+	print(slotID, playerConfig and playerConfig:GetLeaderTypeName(), playerConfig and playerConfig:GetLeaderTypeName(), playerConfig and playerConfig:GetCivilizationTypeName(), playerConfig and playerConfig:GetSlotName(), playerConfig and (slotStatusString[playerConfig:GetSlotStatus()] or "UNK STATUS"))--, playerConfig and (civLevelString[playerConfig:GetCivilizationLevelTypeID()] or "UNK LEVEL"),  playerConfig and playerConfig:IsAI())
+end
+
+print("------------------------------------------------------")
 print ("Setting YnAMP globals and cache...")
 
 g_startTimer = os.clock()
@@ -2769,6 +2789,10 @@ function buildExclusionList()
 					local regionX, regionY 	= GetXYFromRefMapXY(RegionRow.X, RegionRow.Y)
 					local regionWidth 		= g_ReferenceWidthRatio * RegionRow.Width
 					local regionHeight 		= g_ReferenceHeightRatio * RegionRow.Height
+					
+					print ("    - Bottom Left (X,Y) = ", regionX, regionY)
+					print ("    - Width (used, default, map ratio) = ", regionWidth, RegionRow.Width, g_ReferenceWidthRatio)
+					print ("    - Height (used, default, map ratio) = ", regionHeight, RegionRow.Height, g_ReferenceHeightRatio)
 				
 					for x = regionX, regionX + regionWidth do
 						for y = regionY, regionY + regionHeight do
@@ -2786,13 +2810,13 @@ function buildExclusionList()
 					end
 				end
 				if (#resExclusionTable > 0) then
-					print("   - Exluded resources :")
+					print("   - Excluded resources :")
 					for i, resourceID in ipairs(resExclusionTable) do
 						print("      "..tostring(GameInfo.Resources[resourceID].ResourceType))
 					end
 				end
 				if (#resExclusiveTable > 0) then
-					print("   - Exlusive resources :")
+					print("   - Exclusive resources :")
 					for i, resourceID in ipairs(resExclusiveTable) do
 						print("      "..tostring(GameInfo.Resources[resourceID].ResourceType))
 					end	
@@ -3184,12 +3208,14 @@ print("g_UncutMapHeight", g_UncutMapHeight)
 print("g_iW", g_iW)
 print("g_iH", g_iH)
 print("Map.GetGridSize()", Map.GetGridSize())
+print("bUseRelativePlacement",bUseRelativePlacement)
+print("bUseRelativeFixedTable",bUseRelativeFixedTable)
 BuildRefXY()
 
-	g_ReferenceWidthFactor  = g_ReferenceMapWidth / g_UncutMapWidth 
-	g_ReferenceHeightFactor = g_ReferenceMapHeight / g_UncutMapHeight
-	g_ReferenceWidthRatio   = g_UncutMapWidth / g_ReferenceMapWidth 
-	g_ReferenceHeightRatio  = g_UncutMapHeight / g_ReferenceMapHeight
+	g_ReferenceWidthFactor  = (bUseRelativePlacement and g_ReferenceMapWidth / g_UncutMapWidth) or 1
+	g_ReferenceHeightFactor = (bUseRelativePlacement and g_ReferenceMapHeight / g_UncutMapHeight) or 1
+	g_ReferenceWidthRatio   = (bUseRelativePlacement and g_UncutMapWidth / g_ReferenceMapWidth) or 1
+	g_ReferenceHeightRatio  = (bUseRelativePlacement and g_UncutMapHeight / g_ReferenceMapHeight) or 1
 
 	--local pPlot
 	--g_iFlags = TerrainBuilder.GetFractalFlags();
@@ -3713,7 +3739,7 @@ function CheckAllCivilizationsStartingLocations()
 		local startPlotList = GetCustomStartingPlots()
 		for i, iPlayer in ipairs(toPlace) do
 			local player = Players[iPlayer]
-			if not bTSL or bAlternatePlacement then
+			if (not bTSL) or bAlternatePlacement then
 				print("Searching custom starting plot for " .. PlayerConfigurations[iPlayer]:GetPlayerName())
 				local pPlot = GetBestStartingPlotFromList(startPlotList, true)
 				if pPlot then
@@ -3850,10 +3876,10 @@ function GetCustomStartingPlots()
 			local index = (iY * g_iW) + iX;
 			pPlot = Map.GetPlotByIndex(index)
 			local fertility = GetPlotFertility(pPlot)
-			if fertility > 50 then
+			--if fertility > 50 then
 				--print("fertility = ", fertility)
 				table.insert(potentialPlots, { Plot = pPlot, Fertility = fertility} )
-			end
+			--end
 		end
 	end
 	print("GetCustomStartingPlots returns "..tostring(#potentialPlots).." plots")
@@ -4541,23 +4567,26 @@ function YnAMP_CanHaveResource(pPlot, eResourceType, bOverrideExclusion)
 end
 
 function placeExclusiveResources()
+	print("-------------------------------")
 	print("Placing Exclusive resources...")
-	print("-------------------------------")	
+	local IsRegionUndefined = {}
 	for row in GameInfo.ResourceRegionExclusive() do
 		local region = row.Region
-		local resource = row.Resource
-		print ("Trying to place ".. tostring(resource) .." in "..tostring(region))
-		
-		local eResourceType = nil
-		if GameInfo.Resources[resource] then
-			eResourceType = GameInfo.Resources[resource].Index
-		else
-			print (" - WARNING : can't find "..tostring(resource).." in Resources")
-		end	
-		
-		if region and eResourceType then
-			placeResourceInRegion(eResourceType, region, 5, true)
-		end		
+		if not IsRegionUndefined[region] then
+			local resource = row.Resource
+			print ("Trying to place ".. tostring(resource) .." in "..tostring(region))
+			
+			local eResourceType = nil
+			if GameInfo.Resources[resource] then
+				eResourceType = GameInfo.Resources[resource].Index
+			else
+				print (" - WARNING : can't find "..tostring(resource).." in Resources")
+			end	
+			
+			if region and eResourceType then
+				IsRegionUndefined[region] = placeResourceInRegion(eResourceType, region, 5, true) -- placeResourceInRegion returns "true" if the region doesn't exists for this map
+			end
+		end
 	end
 	print("-------------------------------")
 end
@@ -4585,6 +4614,7 @@ function AddDeposits()
 end
 
 function placeResourceInRegion(eResourceType, region, number, bNumberIsRatio)
+	local IsRegionUndefined = true
 	for Data in GameInfo.RegionPosition() do
 		if Data.MapName == mapName  then
 			if Data.Region == region then
@@ -4611,10 +4641,13 @@ function placeResourceInRegion(eResourceType, region, number, bNumberIsRatio)
 					local pPlot = shuffledPlotTable[i]
 					ResourceBuilder.SetResourceType(pPlot, eResourceType, 1)
 				end
-				--print (" - Asked for " .. toPlace .. ", placed " .. placed .. " (available plots = " .. #shuffledPlotTable .. ", total plots in region = ".. plotCount .." )" )
+				print (" - Asked for " .. toPlace .. ", placed " .. placed .. " (available plots = " .. #shuffledPlotTable .. ", total plots in region = ".. plotCount .." )" )
+				IsRegionUndefined = false
 			end
 		end
 	end
+	if IsRegionUndefined then print(" - This region ("..tostring(region)..") is not defined for the map : "..tostring(mapName)) end
+	return IsRegionUndefined
 end
 
 function getPlotsInAreaForResource(iX, iWidth, iY, iHeight, eResourceType)
@@ -4703,6 +4736,9 @@ function ResourcesValidation(g_iW, g_iH)
 
 	if bNoResources then return end
 
+	print("------------------------------------")
+	print("-- Resources Validation --")
+	
 	-- replacement tables
 	local resTable 		= {}
 	local luxTable 		= {}
@@ -4739,7 +4775,7 @@ function ResourcesValidation(g_iW, g_iH)
 				for newResourceType, value in pairs (curTable) do
 if type(newResourceType) == "string" then print("Error: newResourceType is string instead of index : "..newResourceType); return; end
 					if newResourceType ~= eResourceType and YnAMP_CanHaveResource(plot, newResourceType) then
-						--print(" - Found replacement resource for", GameInfo.Resources[eResourceType].ResourceType, "at", plot:GetX(), plot:GetY(), "by resource", GameInfo.Resources[newResourceType].ResourceType)
+						print(" - Found replacement resource for", GameInfo.Resources[eResourceType].ResourceType, "at", plot:GetX(), plot:GetY(), "by resource", GameInfo.Resources[newResourceType].ResourceType)
 						return newResourceType						
 					end
 				end
@@ -4754,7 +4790,7 @@ if type(newResourceType) == "string" then print("Error: newResourceType is strin
 		if (eResourceType ~= -1) then
 			if resTable[eResourceType] then
 				if not bImportResources and IsResourceExclusion(plot, eResourceType) then
-					--print("WARNING - Removing unauthorised resource at", plot:GetX(), plot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
+					print("WARNING - Removing unauthorised resource at", plot:GetX(), plot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
 					ResourceBuilder.SetResourceType(plot, -1)
 					-- find replacement
 					local newResourceType = FindReplacement(eResourceType, plot)
