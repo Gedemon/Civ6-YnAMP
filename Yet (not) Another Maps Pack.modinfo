@@ -17,6 +17,7 @@
 			<GameCoreInUse>Expansion1</GameCoreInUse>
         </Criteria>
         <Criteria id="YNAMP_VikingsDLC">
+			<!-- that criteria is not working as supposed, files using it are always loaded --> 
 			<ModInUse>2F6E858A-28EF-46B3-BEAC-B985E52E9BC1</ModInUse>
         </Criteria>
     </ActionCriteria>
@@ -129,6 +130,12 @@
 			<File>Maps/TerraMap/Config.xml</File>
 			<File>Maps/LargestEarthCustom/Config.xml</File>
 		</UpdateDatabase>
+		<UpdateDatabase id="YNAMP_POST_SETTING">
+           	<Properties>
+				<LoadOrder>10</LoadOrder>
+           	</Properties>
+			<File>Configuration/PostConfig.sql</File>
+		</UpdateDatabase>
 		<UpdateDatabase id="YNAMP_SETTING" criteria="YNAMP_Expansion2">
            	<Properties>
 				<LoadOrder>10</LoadOrder>
@@ -224,6 +231,7 @@
 	<Files>
 		<File>Version.sql</File>
 		<File>Configuration/Config.xml</File>
+		<File>Configuration/PostConfig.sql</File>
 		<File>Configuration/ConfigXP2.sql</File>
 		<File>Configuration/ConfigXP2.xml</File>
 		<File>Configuration/ConfigXP1.xml</File>

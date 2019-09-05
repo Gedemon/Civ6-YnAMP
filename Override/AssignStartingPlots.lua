@@ -3329,7 +3329,6 @@ BuildRefXY()
 		end
 
 		function IsSWOfRiver(plot)
-			if not plot:IsRiver() then return false	end
 			local pAdjacentPlot = Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), DirectionTypes.DIRECTION_NORTHEAST)
 			if pAdjacentPlot and IsNEOfRiver(pAdjacentPlot) then return true end
 			return false
@@ -3368,13 +3367,18 @@ BuildRefXY()
 			local nextEdge 		= (edge + 1) % 6
 			local prevEdge 		= (edge - 1) % 6
 			
+			--print("Get River Neighbors from plot at ", plot:GetX(), plot:GetY(), " current edge = ", DirectionString[edge], " next edge = ", DirectionString[nextEdge], " previous edge = ", DirectionString[prevEdge])
+			
 			-- 
 			if change[nextEdge] and IsEdgeRiver(plot, nextEdge) then 
 				local newPlot 	= Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), nextEdge)
 				local newEdge	= (nextEdge + 3) % 6
 				table.insert( neighbors, plotToNode(newPlot, newEdge) )
+				--print(" - Find neighbor on next edge, converted to opposing plot at ", newPlot:GetX(), newPlot:GetY(), " with opposing edge = ", DirectionString[newEdge])
+
 			elseif IsEdgeRiver(plot, nextEdge) then
 				table.insert( neighbors, plotToNode(plot, nextEdge) )
+				--print(" - Find neighbor on next edge, same plot")
 			end
 			
 			-- 
@@ -3382,28 +3386,36 @@ BuildRefXY()
 				local newPlot 	= Map.GetAdjacentPlot(plot:GetX(), plot:GetY(), prevEdge)
 				local newEdge	= (prevEdge + 3) % 6
 				table.insert( neighbors, plotToNode(newPlot, newEdge) )
+				--print(" - Find neighbor on previous edge, converted to opposing plot at ", newPlot:GetX(), newPlot:GetY(), " with opposing edge = ", DirectionString[newEdge])
 			elseif IsEdgeRiver(plot, prevEdge) then
 				table.insert( neighbors, plotToNode(plot, prevEdge) )
+				--print(" - Find neighbor on previous edge, same plot")
 			end
 			
 			-- Test diverging edge on next plot (clock direction)
 			local clockPlot, clockEdge	= GetNextClockRiverPlot(plot, nextEdge)
+			--print(" - Testing diverging edge on next plot (clock direction) at ", clockPlot and clockPlot:GetX(), clockPlot and clockPlot:GetY(), clockEdge and DirectionString[clockEdge])
 			if clockPlot and change[clockEdge] then
 				local newPlot 	= Map.GetAdjacentPlot(clockPlot:GetX(), clockPlot:GetY(), clockEdge)
 				local newEdge	= (clockEdge + 3) % 6
 				table.insert( neighbors, plotToNode(newPlot, newEdge) )
+				--print(" - Find diverging edge converted to opposing plot at ", newPlot:GetX(), newPlot:GetY(), " with opposing edge = ", DirectionString[newEdge])
 			elseif clockPlot then
 				table.insert( neighbors, plotToNode(clockPlot, clockEdge) )
+				--print(" - Find diverging edge on next plot (clock direction)")
 			end
 			
 			-- Test diverging edge on previous plot (counter-clock direction)
 			local counterPlot, counterEdge	= GetNextCounterClockRiverPlot(plot, prevEdge)
+			--print(" - Testing diverging edge on next plot (counter-clock direction) at ", counterPlot and counterPlot:GetX(), counterPlot and counterPlot:GetY(), counterEdge and DirectionString[counterEdge])
 			if counterPlot and change[counterEdge] then
 				local newPlot 	= Map.GetAdjacentPlot(counterPlot:GetX(), counterPlot:GetY(), counterEdge)
 				local newEdge	= (counterEdge + 3) % 6
 				table.insert( neighbors, plotToNode(newPlot, newEdge) )
+				--print(" - Find diverging edge converted to opposing plot at ", newPlot:GetX(), newPlot:GetY(), " with opposing edge = ", DirectionString[newEdge])
 			elseif counterPlot then
 				table.insert( neighbors, plotToNode(counterPlot, counterEdge) )
+				--print(" - Find diverging edge on next plot (counter-clock direction)")
 			end
 			
 			return neighbors

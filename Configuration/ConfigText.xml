@@ -777,6 +777,25 @@
       <Text>When enabled you can manually select which City States you want to be placed on the map from a list.[NEWLINE][NEWLINE]Note that DLCs, Expansions, scenarios and mods can add or remove City States, the list does not reflect which ones are actually available.[NEWLINE][NEWLINE]When a City State is not available, its slot is free for a random CS.</Text>
     </Replace>
 	
+    <Replace Tag="LOC_XP1_CHECK_NAME" Language="en_US">
+      <Text>Update CS list for Rise and Fall</Text>
+    </Replace>
+    <Replace Tag="LOC_XP1_CHECK_DESCRIPTION" Language="en_US">
+      <Text>Check this if the Rise and Fall Expansion is active.[NEWLINE]Uncheck this if the Rise and Fall Expansion is not installed or inactive.[NEWLINE]The City State list will be updated based on your selection.</Text>
+    </Replace>
+    <Replace Tag="LOC_XP2_CHECK_NAME" Language="en_US">
+      <Text>Update CS list for Gathering Storm</Text>
+    </Replace>
+    <Replace Tag="LOC_XP2_CHECK_DESCRIPTION" Language="en_US">
+      <Text>Check this if the Gathering Storm Expansion is active.[NEWLINE]Uncheck this if the Gathering Storm Expansion is not installed or inactive.[NEWLINE]The City State list will be updated based on your selection.</Text>
+    </Replace>
+    <Replace Tag="LOC_DLC2_CHECK_NAME" Language="en_US">
+      <Text>Update CS list for the Viking DLC</Text>
+    </Replace>
+    <Replace Tag="LOC_DLC2_CHECK_DESCRIPTION" Language="en_US">
+      <Text>Check this if the Viking DLC is active.[NEWLINE]Uncheck this if the Viking DLC is not installed or inactive.[NEWLINE]The City State list will be updated based on your selection.</Text>
+    </Replace>
+	
     <Replace Tag="LOC_SCENARIO_OPTIONS" Language="en_US">
       <Text>[ICON_PressureDownLarge] SCENARIO OPTIONS [ICON_PressureDownLarge]</Text>
     </Replace>
@@ -1116,7 +1135,7 @@
 		<Text>Antioch city-state</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_BABYLON_NAME" Language="en_US">
-		<Text>Babylon </Text>
+		<Text>Babylon</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_BABYLON_DESCRIPTION" Language="en_US">
 		<Text>Babylon city-state</Text>

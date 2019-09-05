@@ -41,10 +41,6 @@
 			<Where Name="LOC_MAP_RESOURCES_NAME"/>
 			<Set SortIndex="270"/>
 		</Update>
-		
-		<!--	Hidden entry to know which XP is active		-->
-		<Replace Key1="Ruleset" Key2="RULESET_EXPANSION_1"	ParameterId="XP1" Name="XP1" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="XP1" GroupId="MapOptions" Visible="0" SortIndex="100"/>
-		<Replace Key1="Ruleset" Key2="RULESET_EXPANSION_2"	ParameterId="XP2" Name="XP2" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="XP2" GroupId="MapOptions" Visible="0" SortIndex="100"/>
 
 		<!--	Add missing Strategic resources on import		-->
 		<Replace ParameterId="PlaceAllStrategics" 		Name="LOC_MAP_ALL_STRATEGICS_NAME" Description="LOC_MAP_ALL_STRATEGICS_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="PlaceAllStrategics" GroupId="MapOptions" SortIndex="269"/>
@@ -372,6 +368,13 @@
 		<!--	Option to toggle manual selection of City States -->
 		<Replace ParameterId="SelectCityStates" Name="LOC_MAP_SELECT_CITY_STATES_NAME" Description="LOC_MAP_SELECT_CITY_STATES_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="SelectCityStates" GroupId="MapOptions" SortIndex="82"/>
 		<!-- -->
+				
+		<!--	Checkbox to set which XP/DLC is active	-->
+		<Replace ParameterId="XP1"	Name="LOC_XP1_CHECK_NAME"	Description="LOC_XP1_CHECK_DESCRIPTION" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="XP1"	GroupId="MapOptions" Visible="1" SortIndex="82"/>
+		<Replace ParameterId="XP2"	Name="LOC_XP2_CHECK_NAME"	Description="LOC_XP2_CHECK_DESCRIPTION" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="XP2"	GroupId="MapOptions" Visible="1" SortIndex="82"/>
+		<Replace ParameterId="DLC2"	Name="LOC_DLC2_CHECK_NAME"	Description="LOC_DLC2_CHECK_DESCRIPTION" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="DLC2"	GroupId="MapOptions" Visible="1" SortIndex="82"/>
+
+
 		
 		<!--	Base Game list -->
 		<Replace ParameterId="LEADER_MINOR_CIV_AMSTERDAM"		Name="LOC_CIVILIZATION_AMSTERDAM_NAME"		Description="LOC_CIVILIZATION_AMSTERDAM_DESCRIPTION"		Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_AMSTERDAM"		GroupId="MapOptions" SortIndex="83"/>
@@ -426,6 +429,10 @@
 	
 	<ParameterDependencies>
 	
+		<Replace ParameterId="XP1"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="XP2"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="DLC2"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
+		
 		<Replace ParameterId="LEADER_MINOR_CIV_AMSTERDAM"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
 		<Replace ParameterId="LEADER_MINOR_CIV_BRUSSELS"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
 		<Replace ParameterId="LEADER_MINOR_CIV_BUENOS_AIRES"	ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="Equals" 	ConfigurationValue="1"/>
@@ -476,12 +483,12 @@
 		<Replace ParameterId="LEADER_MINOR_CIV_BABYLON"			ConfigurationGroup="Map" ConfigurationId="XP1" 		Operator="Equals" 	ConfigurationValue="1"/>
 		
 		<!--	Require Vikings DLC -->
-		<Replace ParameterId="LEADER_MINOR_CIV_AUCKLAND"		ConfigurationGroup="Map" ConfigurationId="VikingDLC" 		Operator="Equals" 	ConfigurationValue="1"/>
-		<Replace ParameterId="LEADER_MINOR_CIV_ANTANANARIVO"	ConfigurationGroup="Map" ConfigurationId="VikingDLC" 		Operator="Equals" 	ConfigurationValue="1"/>
-		<Replace ParameterId="LEADER_MINOR_CIV_ARMAGH"			ConfigurationGroup="Map" ConfigurationId="VikingDLC" 		Operator="Equals" 	ConfigurationValue="1"/>
-		<Replace ParameterId="LEADER_MINOR_CIV_GRANADA"			ConfigurationGroup="Map" ConfigurationId="VikingDLC" 		Operator="Equals" 	ConfigurationValue="1"/>
-		<Replace ParameterId="LEADER_MINOR_CIV_MUSCAT"			ConfigurationGroup="Map" ConfigurationId="VikingDLC" 		Operator="Equals" 	ConfigurationValue="1"/>
-		<Replace ParameterId="LEADER_MINOR_CIV_PALENQUE"		ConfigurationGroup="Map" ConfigurationId="VikingDLC" 		Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_AUCKLAND"		ConfigurationGroup="Map" ConfigurationId="DLC2" 	Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_ANTANANARIVO"	ConfigurationGroup="Map" ConfigurationId="DLC2" 	Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_ARMAGH"			ConfigurationGroup="Map" ConfigurationId="DLC2" 	Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_GRANADA"			ConfigurationGroup="Map" ConfigurationId="DLC2" 	Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_MUSCAT"			ConfigurationGroup="Map" ConfigurationId="DLC2" 	Operator="Equals" 	ConfigurationValue="1"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_PALENQUE"		ConfigurationGroup="Map" ConfigurationId="DLC2" 	Operator="Equals" 	ConfigurationValue="1"/>
 		
 		<!--	Require GS -->
 		<Replace ParameterId="LEADER_MINOR_CIV_AKKAD"			ConfigurationGroup="Map" ConfigurationId="XP2" 		Operator="Equals" 	ConfigurationValue="1"/>
