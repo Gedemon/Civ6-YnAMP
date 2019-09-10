@@ -22,12 +22,16 @@ local m_multiplayerButton:table = nil;	--Cache multiplayer button so it can be u
 local m_cloudGamesButton:table = nil;	--Cache cloud games button so it can be updated if a new cloud turn comes in.
 local m_resumeButton:table = nil;		--Cache resume button so it can be updated when FileListQueryResults event fires
 local m_scenariosButton:table = nil;	--Cache scenarios button so it can be updated later.
+local m_matchMakeButton:table = nil;	--Cache CivRoyale matchmaking button so it can be updated later.
+local m_howToRoyaleControl:table = nil;	--Cache CivRoyale how-to button so that it can be updated later.
 local m_isQuitting :boolean = false;	-- Is the application shutting down (after user approval.)
 
+g_LogoTexture = nil;	-- Custom Logo texture override.
+g_LogoMovie = nil;		-- Custom Logo movie override.
+-- YnAMP <<<<<
 g_XP1WasEnabled = nil;					-- Track whether the expansion was enabled to avoid resetting the movie/logo.
 g_XP2WasEnabled = nil;					-- Track whether the expansion was enabled to avoid resetting the movie/logo.
 
--- YnAMP <<<<<
 g_ModWasEnabled	= {}
 print("Loading MainMenu.lua for YnAMP...")
 print("Game version : ".. tostring(UI.GetAppVersion()))
@@ -37,7 +41,8 @@ print("Game version : ".. tostring(UI.GetAppVersion()))
 --	Constants
 -- ===========================================================================
 local PAUSE_INCREMENT = .18;			--How long to wait (in seconds) between main menu flyouts - length of the menu cascade
-local TRACK_PADDING = 40;				--The amount of Y pixels to add to the track on top of the list heigh
+local TRACK_PADDING = 40;				--The amount of Y pixels to add to the track on top of the list height
+local OPTION_SEEN_CIVROYALE_INTRO :string = "HasSeenCivRoyaleIntro";	-- Option key for having seen the CivRoyale How to Play screen.
 
 -- ===========================================================================
 --	Globals
@@ -296,12 +301,53 @@ local MultiplayerButtonHaveTurnTTStr : string = Locale.Lookup("LOC_MAINMENU_MULT
 local MultiplayerButtonGameReadyTTStr : string = Locale.Lookup("LOC_MAINMENU_MULTIPLAYER_GAME_READY_TT");
 local MultiplayerButtonUnseenCompleteTTStr : string = Locale.Lookup("LOC_MAINMENU_MULTIPLAYER_UNSEEN_COMPLETE_GAME_TT");
 local MultiplayerButtonNewMPModeTTStr : string = Locale.Lookup("LOC_MAINMENU_MULTIPLAYER_NEW_MP_MODE_TT");
+local CivRoyaleButtonOnlineStr : string = Locale.Lookup("LOC_MULTIPLAYER_MATCHMAKE_CIVROYALE_TT");
+local CivRoyaleButtonOfflineStr : string = Locale.Lookup("LOC_MULTIPLAYER_MATCHMAKE_CIVROYALE_OFFLINE_TT");
+
 
 -- ===========================================================================
 function OnInternet()
 	LuaEvents.ChangeMPLobbyMode(MPLobbyTypes.STANDARD_INTERNET);
 	UIManager:QueuePopup( Controls.Lobby, PopupPriority.Current );
 	Close();	
+end
+
+-- ===========================================================================
+function OnCivRoyaleMatchMake()
+	local skipIntroScreen =  Options.GetUserOption("Tutorial", OPTION_SEEN_CIVROYALE_INTRO) == 1;
+	if(skipIntroScreen) then
+		StartMatchMaking();
+	else
+		LuaEvents.MainMenu_ShowCivRoyaleIntro();
+	end
+end
+
+function OnCivRoyaleHowToPlay()
+	LuaEvents.MainMenu_ShowCivRoyaleIntro();
+end
+
+function StartMatchMaking()
+	GameConfiguration.SetToDefaults(GameModeTypes.INTERNET);	
+	GameConfiguration.ClearEnabledMods();
+	GameConfiguration.AddEnabledMods("F264EE10-F21B-4A9A-BBCD-D534E9843E90");
+	GameConfiguration.SetRuleSet("RULESET_SCENARIO_CIV_ROYALE");
+
+	-- Many game setup values are driven by Lua-implemented parameter logic.
+	do
+		-- Generate setup parameters that lack any sort of UI.
+		BuildHeadlessGameSetup();
+		RebuildPlayerParameters(true);
+
+		-- Trigger a refresh.
+		GameSetup_RefreshParameters();
+
+		-- Cleanup.
+		ReleasePlayerParameters();
+		HideGameSetup();
+	end
+
+	GameConfiguration.SetMatchMaking(true);
+	Network.MatchMake();
 end
 
 -- ===========================================================================
@@ -408,6 +454,11 @@ function UpdateExp2GraphicsBenchmark(buttonControl)
 	end
 end
 
+function UpdateInternetControls()
+	UpdateInternetButton();
+	UpdateCivRoyaleMatchMakeButton();
+end
+
 function UpdateInternetButton(buttonControl: table)
 	if (buttonControl ~=nil) then
 		m_internetButton = buttonControl;
@@ -428,6 +479,50 @@ function UpdateInternetButton(buttonControl: table)
 	end
 end
 
+function UpdateCivRoyaleHowToButton(buttonControl: table)
+	if (buttonControl ~=nil) then
+		m_howToRoyaleControl = buttonControl;
+	end
+	
+	if(m_howToRoyaleControl ~= nil) then
+		-- Is CivRoyale enabled?
+		local id = "F264EE10-F21B-4A9A-BBCD-D534E9843E90";
+
+		local enabled = Modding.IsModEnabled(id);
+		m_howToRoyaleControl.Top:SetHide(not enabled);
+	end
+end
+
+function UpdateCivRoyaleMatchMakeButton(buttonControl: table)
+	if (buttonControl ~=nil) then
+		m_matchMakeButton = buttonControl;
+	end
+	
+	if(m_matchMakeButton ~= nil) then
+		-- Is CivRoyale enabled?
+		local id = "F264EE10-F21B-4A9A-BBCD-D534E9843E90";
+
+		if(Modding.IsModEnabled(id)) then
+			m_matchMakeButton.Top:SetHide(false);
+
+			-- Internet available?
+			if (Network.IsInternetLobbyServiceAvailable()) then
+				m_matchMakeButton.OptionButton:SetDisabled(false);
+				m_matchMakeButton.Top:SetToolTipString(CivRoyaleButtonOnlineStr);
+				m_matchMakeButton.ButtonLabel:SetText(Locale.Lookup("LOC_MULTIPLAYER_MATCHMAKE_CIVROYALE"));
+				m_matchMakeButton.ButtonLabel:SetColorByName( "ButtonCS" );
+			else
+				m_matchMakeButton.OptionButton:SetDisabled(true);
+				m_matchMakeButton.Top:SetToolTipString(CivRoyaleButtonOfflineStr);
+				m_matchMakeButton.ButtonLabel:SetText(Locale.Lookup("LOC_MULTIPLAYER_MATCHMAKE_CIVROYALE_OFFLINE"));
+				m_matchMakeButton.ButtonLabel:SetColorByName( "ButtonDisabledCS" );
+			end
+		else
+			m_matchMakeButton.Top:SetHide(true);
+		end
+	end
+end
+
 function UpdateCloudGamesButton(buttonControl: table)
 	if (buttonControl ~=nil) then
 		m_cloudGamesButton = buttonControl;
@@ -442,7 +537,7 @@ function UpdateCloudGamesButton(buttonControl: table)
 			m_cloudGamesButton.Top:SetToolTipString(CloudNotLoggedInTTStr);
 			m_cloudGamesButton.ButtonLabel:SetColorByName( "ButtonDisabledCS" );
 		elseif (seenPBC == nil or seenPBC == 0) then
-			-- Player has never looked at the PBC lobby, show explaination point to indicate this is a new multiplayer mode.
+			-- Player has never looked at the PBC lobby, show explanation point to indicate this is a new multiplayer mode.
 			m_cloudGamesButton.OptionButton:SetDisabled(false);
 			m_cloudGamesButton.Top:SetToolTipString(CloudButtonNewMPModeTTStr);
 			m_cloudGamesButton.ButtonLabel:SetText(Locale.Lookup("LOC_MULTIPLAYER_CLOUD_NEW_MODE"));
@@ -670,11 +765,37 @@ function OnMultiPlayer( optionIndex:number, submenu:table )
 	ToggleOption(optionIndex, submenu);
 end
 
+function OnAdditionalContent( optionIndex:number, submenu:table )	
+	ToggleOption(optionIndex, submenu);
+end
+
 function OnBenchmark( optionIndex:number, submenu:table )	
 	ToggleOption(optionIndex, submenu);
 end
 
+function OnWorldBuilder( optionIndex:number, submenu:table )
+	ToggleOption(optionIndex, submenu);
+end
 
+
+function OnNewWorldBuilderMap()
+	GameConfiguration.SetToDefaults();
+	GameConfiguration.SetWorldBuilderEditor(true);
+	local advancedSetup = ContextPtr:LookUpControl( "/FrontEnd/MainMenu/AdvancedSetup" );
+	UIManager:QueuePopup(advancedSetup, PopupPriority.Current);
+end
+
+function OnLoadWorldBuilderMap()
+	GameConfiguration.SetToDefaults();
+	LuaEvents.MainMenu_SetLoadGameServerType(ServerType.SERVER_TYPE_NONE);
+	GameConfiguration.SetWorldBuilderEditor(true);
+	local loadGameMenu = ContextPtr:LookUpControl( "/FrontEnd/MainMenu/LoadGameMenu" );
+	UIManager:QueuePopup(loadGameMenu, PopupPriority.Current);
+end
+
+function OnImportWorldBuilderMap()
+	UIManager:QueuePopup(Controls.WorldBuilder, PopupPriority.Current);
+end
 
 -- *******************************************************************************
 --	MENUS need to be defined here as the callbacks reference functions which
@@ -701,11 +822,19 @@ local m_SinglePlayerSubMenu :table = {
 							};
 
 local m_MultiPlayerSubMenu :table = {
-								{label = "LOC_MULTIPLAYER_CLOUD_GAME",		callback = OnPlayByCloud,	tooltip = "LOC_MULTIPLAYER_CLOUD_GAME_TT", buttonState = UpdateCloudGamesButton},
-								{label = "LOC_MULTIPLAYER_INTERNET_GAME",	callback = OnInternet,		tooltip = "LOC_MULTIPLAYER_INTERNET_GAME_TT", buttonState = UpdateInternetButton},
-								{label = "LOC_MULTIPLAYER_LAN_GAME",		callback = OnLANGame,		tooltip = "LOC_MULTIPLAYER_LAN_GAME_TT"},
-								{label = "LOC_MULTIPLAYER_HOTSEAT_GAME",	callback = OnHotSeat,		tooltip = "LOC_MULTIPLAYER_HOTSEAT_GAME_TT"},
-								--{label = "LOC_MULTIPLAYER_CLOUD_GAME",		callback = OnCloud,			tooltip = "LOC_MULTIPLAYER_CLOUD_GAME_TT"},
+								{label = "LOC_MULTIPLAYER_CLOUD_GAME",			callback = OnPlayByCloud,			tooltip = "LOC_MULTIPLAYER_CLOUD_GAME_TT", buttonState = UpdateCloudGamesButton},
+								{label = "LOC_MULTIPLAYER_INTERNET_GAME",		callback = OnInternet,				tooltip = "LOC_MULTIPLAYER_INTERNET_GAME_TT", buttonState = UpdateInternetButton},
+								{label = "LOC_MULTIPLAYER_LAN_GAME",			callback = OnLANGame,				tooltip = "LOC_MULTIPLAYER_LAN_GAME_TT"},
+								{label = "LOC_MULTIPLAYER_HOTSEAT_GAME",		callback = OnHotSeat,				tooltip = "LOC_MULTIPLAYER_HOTSEAT_GAME_TT"},
+								{space = true},
+								{label = "LOC_MULTIPLAYER_MATCHMAKE_CIVROYALE",	callback = OnCivRoyaleMatchMake,	tooltip = "LOC_MULTIPLAYER_MATCHMAKE_CIVROYALE_TT", colorName = "RoyaleButtonCS", buttonState = UpdateCivRoyaleMatchMakeButton},
+								{label = "LOC_MULTIPLAYER_HOWTOPLAY_CIVROYALE",	callback = OnCivRoyaleHowToPlay,	tooltip = "LOC_MULTIPLAYER_HOWTOPLAY_CIVROYALE_TT", colorName = "RoyaleButtonCS", buttonState = UpdateCivRoyaleHowToButton},
+							};
+
+local m_AdditionalSubMenu :table = {
+								{label = "LOC_MAIN_MENU_MODS",					callback = OnMods,					tooltip = "LOC_MAIN_MENU_MODS_AND_DLC_TT"},
+								{label = "LOC_MAIN_MENU_HALL_OF_FAME",			callback = OnHallofFame,			tooltip = "LOC_MAIN_MENU_HALL_OF_FAME_TT"},
+								{label = "LOC_MAIN_MENU_CREDITS",				callback = OnCredits,				tooltip = "LOC_MAINMENU_CREDITS_TT"},
 							};
 
 local m_BenchmarkSubMenu :table = {
@@ -713,6 +842,12 @@ local m_BenchmarkSubMenu :table = {
 								{label = "LOC_BENCHMARK_AI",				callback = OnAIBenchmark,			tooltip = "LOC_BENCHMARK_AI_TT", buttonState = UpdateAIBenchmark},
 								{label = "LOC_BENCHMARK_EXP2_GRAPHICS",		callback = OnExp2GraphicsBenchmark,	tooltip = "LOC_BENCHMARK_EXP2_GRAPHICS_TT", buttonState = UpdateExp2GraphicsBenchmark},
 								{label = "LOC_BENCHMARK_EXP2_AI",			callback = OnExp2AIBenchmark,		tooltip = "LOC_BENCHMARK_EXP2_AI_TT", buttonState = UpdateExp2AIBenchmark},
+							};
+
+local m_WorldBuilderSubMenu :table = {
+								{label = "LOC_WORLD_BUILDER_START_NEW",			callback = OnNewWorldBuilderMap,   	tooltip = "LOC_WORLD_BUILDER_START_NEW_TOOLTIP"},
+								{label = "LOC_WORLD_BUILDER_LOAD",				callback = OnLoadWorldBuilderMap, 	tooltip = "LOC_WORLD_BUILDER_LOAD_TOOLTIP"},
+								{label = "LOC_WORLD_BUILDER_IMPORT",		    callback = OnImportWorldBuilderMap,	tooltip = "LOC_WORLD_BUILDER_IMPORT_TOOLTIP"},
 							};
 
 -- ===========================================================================
@@ -725,14 +860,13 @@ local m_BenchmarkSubMenu :table = {
 -- ===========================================================================
 local m_preSaveMainMenuOptions :table = {	{label = "LOC_PLAY_CIVILIZATION_6",			callback = OnPlayCiv6}};  
 local m_defaultMainMenuOptions :table = {	
-								{label = "LOC_SINGLE_PLAYER",				callback = OnSinglePlayer,	tooltip = "LOC_MAINMENU_SINGLE_PLAYER_TT",	submenu = m_SinglePlayerSubMenu}, 
-								{label = "LOC_PLAY_MULTIPLAYER",			callback = OnMultiPlayer,	tooltip = "LOC_MAINMENU_MULTIPLAYER_TT",	submenu = m_MultiPlayerSubMenu, buttonState = UpdateMultiplayerButton},
-								{label = "LOC_MAIN_MENU_OPTIONS",			callback = OnOptions,	tooltip = "LOC_MAINMENU_GAME_OPTIONS_TT"},
-								{label = "LOC_MAIN_MENU_ADDITIONAL_CONTENT", callback = OnMods,	tooltip = "LOC_MAIN_MENU_ADDITIONAL_CONTENT_TT"},
-								{label = "LOC_MAIN_MENU_HALL_OF_FAME",		callback = OnHallofFame, tooltip = "LOC_MAIN_MENU_HALL_OF_FAME_TT"},
-								{label = "LOC_MAIN_MENU_TUTORIAL",			callback = OnTutorial,	tooltip = "LOC_MAINMENU_TUTORIAL_TT"},
-								{label = "LOC_MAIN_MENU_BENCH",				callback = OnBenchmark,	tooltip = "LOC_MAINMENU_BENCHMARK_TT",			submenu = m_BenchmarkSubMenu},
-								{label = "LOC_MAIN_MENU_CREDITS",			callback = OnCredits,	tooltip = "LOC_MAINMENU_CREDITS_TT"},
+								{label = "LOC_SINGLE_PLAYER",				callback = OnSinglePlayer,		tooltip = "LOC_MAINMENU_SINGLE_PLAYER_TT",			submenu = m_SinglePlayerSubMenu}, 
+								{label = "LOC_PLAY_MULTIPLAYER",			callback = OnMultiPlayer,		tooltip = "LOC_MAINMENU_MULTIPLAYER_TT",			submenu = m_MultiPlayerSubMenu, buttonState = UpdateMultiplayerButton},
+								{label = "LOC_MAIN_MENU_OPTIONS",			callback = OnOptions,			tooltip = "LOC_MAINMENU_GAME_OPTIONS_TT"},
+								{label = "LOC_MAIN_MENU_ADDITIONAL_CONTENT",callback = OnAdditionalContent,	tooltip = "LOC_MAIN_MENU_ADDITIONAL_CONTENT_TT",	submenu = m_AdditionalSubMenu},
+								{label = "LOC_MAIN_MENU_TUTORIAL",			callback = OnTutorial,			tooltip = "LOC_MAINMENU_TUTORIAL_TT"},
+								{label = "LOC_MAIN_MENU_BENCH",				callback = OnBenchmark,			tooltip = "LOC_MAINMENU_BENCHMARK_TT",				submenu = m_BenchmarkSubMenu},
+								{label = "LOC_WORLDBUILDER_TITLE",		    callback = OnWorldBuilder,		tooltip = "LOC_MAINMENU_WORLDBUILDER_TT", 			submenu = m_WorldBuilderSubMenu},								
 								{label = "LOC_MAIN_MENU_EXIT_TO_DESKTOP",	callback = OnUserRequestClose,	tooltip = "LOC_MAINMENU_EXIT_GAME_TT"}
 							};
 
@@ -832,7 +966,6 @@ function BuildMenu(menuOptions:table)
 		m_currentOptions[i] = {control = option, isSelected = false};
 	end
 	Controls.MainMenuOptionStack:CalculateSize();
-	Controls.MainMenuOptionStack:ReprocessAnchoring();
 
 
 	local trackHeight = Controls.MainMenuOptionStack:GetSizeY() + TRACK_PADDING;
@@ -854,42 +987,55 @@ end
 -- ===========================================================================
 function BuildSubMenu(menuOptions:table)
 	m_subOptionIM:ResetInstances();
+	for i, kMenuOption in ipairs(menuOptions) do
 
-	for i, menuOption in ipairs(menuOptions) do
-		-- Add the instances to the table and play the animations and add the sounds
-		-- * Submenu options animate in all at once, instead of one at at a time
-		local option = m_subOptionIM:GetInstance();
-		option.ButtonLabel:LocalizeAndSetText(menuOption.label);
-		option.SelectedLabel:LocalizeAndSetText(menuOption.label);
-		option.LabelAlphaAnim:SetToBeginning();
-		option.LabelAlphaAnim:Play();
-		option.LabelAlphaAnim:SetPauseTime(0);
-		option.OptionButton:RegisterCallback( Mouse.eLClick, menuOption.callback);
-		option.OptionButton:RegisterCallback( Mouse.eMouseEnter, MenuOptionMouseEnterCallback);
-
-		-- * Submenu options have a slightly different animation curve as well as a different animation sound
-		option.FlagAnim:RegisterAnimCallback(SubMenuOptionAnimationCallback);
-
-		-- Will not be called due to "Bounce" cycle being used: option.FlagAnim:RegisterEndCallback( function() print("done!"); end ); 
-		option.FlagAnim:SetSpeed(4);
-		option.FlagAnim:SetToBeginning();
-		option.FlagAnim:Play();
-
-		option.Top:LocalizeAndSetToolTip(menuOption.tooltip);
-		
-		-- Set a special disabled state for buttons (right now, only the Internet button has this function)
-		if (menuOption.buttonState ~= nil) then
-			menuOption.buttonState(option); 
+		local uiOption = m_subOptionIM:GetInstance();
+		if kMenuOption.space then
+			-- Do nothing, animate nothing.
+			uiOption.FlagAnim:SetToBeginning();
+			uiOption.FlagAnim:Stop();
+			uiOption.OptionButton:SetHide(true);
+			uiOption.Top:LocalizeAndSetToolTip("");		-- Clear any prior tooltip
 		else
-			--ATTN:TRON For some reason my instances are not being completely reset when I rebuild the my list here
-			-- So I have to reset my tooltip string and button state.
-			option.OptionButton:SetDisabled(false);
-			option.ButtonLabel:SetColorByName( "ButtonCS" );
+			-- Add the instances to the table and play the animations and add the sounds
+			-- * Submenu options animate in all at once, instead of one at at a time	
+			
+			uiOption.ButtonLabel:LocalizeAndSetText(kMenuOption.label);
+			uiOption.SelectedLabel:LocalizeAndSetText(kMenuOption.label);			
+			uiOption.LabelAlphaAnim:SetToBeginning();
+			uiOption.LabelAlphaAnim:Play();
+			uiOption.LabelAlphaAnim:SetPauseTime(0);
+			uiOption.OptionButton:RegisterCallback( Mouse.eLClick, kMenuOption.callback);
+			uiOption.OptionButton:RegisterCallback( Mouse.eMouseEnter, MenuOptionMouseEnterCallback);
+			uiOption.OptionButton:SetHide(false);
+
+			-- * Submenu options have a slightly different animation curve as well as a different animation sound
+			uiOption.FlagAnim:RegisterAnimCallback(SubMenuOptionAnimationCallback);
+
+			-- Will not be called due to "Bounce" cycle being used: option.FlagAnim:RegisterEndCallback( function() print("done!"); end ); 
+			uiOption.FlagAnim:SetSpeed(4);
+			uiOption.FlagAnim:SetToBeginning();
+			uiOption.FlagAnim:Play();
+
+			uiOption.Top:LocalizeAndSetToolTip(kMenuOption.tooltip);
+		
+			-- Set a special disabled state for buttons (right now, only the Internet button has this function)
+			if (kMenuOption.buttonState ~= nil) then
+				kMenuOption.buttonState(uiOption); 
+			else
+				--ATTN:TRON For some reason my instances are not being completely reset when I rebuild the my list here
+				-- So I have to reset my tooltip string and button state.
+				uiOption.OptionButton:SetDisabled(false);
+				uiOption.ButtonLabel:SetColorByName( "ButtonCS" );
+			end
+			if kMenuOption.colorName then
+				uiOption.ButtonLabel:SetColorByName( kMenuOption.colorName );
+			end
+
 		end		
 	end
 
 	Controls.SubMenuOptionStack:CalculateSize();
-	Controls.SubMenuOptionStack:ReprocessAnchoring();
 	local trackHeight = Controls.SubMenuOptionStack:GetSizeY() + TRACK_PADDING;
 	Controls.SubButtonTrack:SetSizeY(trackHeight);
 	Controls.SubButtonTrackAnim:SetBeginVal(0,-trackHeight);
@@ -963,6 +1109,8 @@ function BuildAllMenus()
 	m_scenariosButton = nil;
 	m_multiplayerButton = nil;
 	m_cloudGamesButton = nil;
+	m_matchMakeButton = nil;
+	m_howToRoyaleControl = nil;
 
 	-- WISHLIST: When we rebuild the menus, let's check to see if there are ANY saved games whatsoever.  
 	-- If none exist, then do not display the option in the submenu. (See: OnFileListQueryResults)
@@ -1100,74 +1248,27 @@ function UpdateCheckCloudNotify()
 	end
 end
 
--- ===========================================================================
-function OnMy2KLinkAccountResult(bSuccess)
-	-- account link status changes can toggle the cloud games button.
-	UpdateCloudGamesButton();
-end
+function UpdateMenuLogo()
+	local logos = DB.ConfigurationQuery("SELECT LogoTexture, LogoMovie from Logos ORDER BY Priority DESC LIMIT 1");
+	if(logos and #logos > 0) then
+		local logo = logos[1];
+		if(logo and g_LogoTexture ~= logo.LogoTexture and g_LogoMovie ~= logo.LogoMovie) then
+			g_LogoTexture = logo.LogoTexture
+			g_LogoMovie = logo.LogoMovie
 
--- ===========================================================================
--- Quick utility function to determine if Rise and Fall is installed.
-function Expansion1IsEnabled()
-	local id = "1B28771A-C749-434B-9053-D1380C553DE9";
-	return Modding.IsModEnabled(id);
-end
-
--- Quick utility function to determine if Gathering Storm is installed.
-function Expansion2IsEnabled()
-	local id = "4873eb62-8ccc-4574-b784-dda455e74e68";
-	return Modding.IsModEnabled(id);
-end
-
--- ===========================================================================
-function OnGameplayContentChanged( kEvent )
-
-	if(kEvent.Success and kEvent.ConfigurationChanged) then
-
-		local logoTexture;
-		local logoMovie;
-		local xp1Enabled = Expansion1IsEnabled();
-		local xp2Enabled = Expansion2IsEnabled();
-		
-		--change image logo.
-		if(Expansion2IsEnabled()) then
-			if(not g_XP2WasEnabled) then	-- Only update, if changed.
-				logoTexture = "Shell_LogoEXP2.dds";
-				logoMovie = "Expansion2FrontEndBackground.bk2";
-			end
-		elseif( Expansion1IsEnabled() ) then
-			if(not g_XP1WasEnabled) then	-- Only update, if changed.
-				logoTexture = "Shell_LogoEXP.dds";
-				logoMovie = "Expansion1FrontEndBackground.bk2";
-			end
-		else
-			-- Only update, if changed.
-			if(g_XP2WasEnabled or g_XP1WasEnabled) then
-				logoTexture = "MainLogo.dds";
-				logoMovie = "TitleBG.bk2";
-			end
-		end
-
-		-- Update cache.
-		g_XP1WasEnabled = xp1Enabled;
-		g_XP2WasEnabled = xp2Enabled;
-	
-		-- If there are changes, apply them.
-		if(logoTexture and logoMovie) then
-			
 			-- change texture
-			Controls.Logo:SetTexture(logoTexture);
+			Controls.Logo:SetTexture(g_LogoTexture);
 
 			-- change movie
 			local movieControl:table = ContextPtr:LookUpControl("/FrontEnd/BackgroundMovie");
 			if(movieControl ~= nil) then
-				movieControl:SetMovie(logoMovie, true);
+				movieControl:SetMovie(g_LogoMovie, true);
 			end
 		
 			-- YnAMP <<<<<
 			-- reset mod status and check for custom medias
 			g_ModWasEnabled = {}
-			CheckMainMenuMedia()
+			--CheckMainMenuMedia()
 			-- YnAMP >>>>>
 
 		end
@@ -1256,6 +1357,26 @@ end
 -- YnAMP >>>>>
 
 -- ===========================================================================
+function OnMy2KLinkAccountResult(bSuccess)
+	-- account link status changes can toggle the cloud games button.
+	UpdateCloudGamesButton();
+end
+
+-- ===========================================================================
+function OnGameplayContentChanged( kEvent )
+	if(kEvent.Success and kEvent.ConfigurationChanged) then
+		UpdateMenuLogo();
+	end
+end
+
+-- ===========================================================================
+function OnShutdown()
+	if Controls.Logo:IsTextureLoaded() then
+		Controls.Logo:UnloadTexture();
+	end	
+end
+
+-- ===========================================================================
 function Initialize()
 
 	UI.CheckUserSetup();
@@ -1272,6 +1393,7 @@ function Initialize()
 	end
 
 	ContextPtr:SetShowHandler( OnShow );
+	ContextPtr:SetShutdown( OnShutdown );
 	
 	Controls.VersionLabel:SetText( UI.GetAppVersion() );
 	Controls.My2KLogin:RegisterCallback( Mouse.eLClick, OnMy2KLogin );
@@ -1281,12 +1403,14 @@ function Initialize()
 		Controls.MotDLogo:RegisterCallback( Mouse.eLClick, OnCycleMotD );
 	end
 
-	g_XP1WasEnabled = Expansion1IsEnabled();
-	g_XP2WasEnabled = Expansion2IsEnabled();
-
+	-- YnAMP <<<<<
+	--g_XP1WasEnabled = Expansion1IsEnabled();
+	--g_XP2WasEnabled = Expansion2IsEnabled();
+	-- YnAMP >>>>>
+	
 	-- Game Events
-	Events.SteamServersConnected.Add( UpdateInternetButton );
-	Events.SteamServersDisconnected.Add( UpdateInternetButton );
+	Events.SteamServersConnected.Add( UpdateInternetControls );
+	Events.SteamServersDisconnected.Add( UpdateInternetControls );
 	Events.MultiplayerGameLaunched.Add( OnGameLaunched );
     Events.UserRequestClose.Add( OnUserRequestClose );
 	Events.UserConfirmedClose.Add( OnUserConfirmedClose );
@@ -1301,14 +1425,16 @@ function Initialize()
 	-- LUA Events
 	LuaEvents.FileListQueryResults.Add( OnFileListQueryResults );
 	LuaEvents.MainMenu_ShowAdditionalContent.Add(OnMods);
+	LuaEvents.CivRoyaleIntro_StartMatchMaking.Add(StartMatchMaking);
 
 	BuildAllMenus();
 	UpdateMotD();
+	UpdateMenuLogo();
 	
 	-- YnAMP <<<<<
 	--Events.ModStatusUpdated.Add( CheckMainMenuMedia )
-	Events.FinishedGameplayContentConfigure.Add( CheckMainMenuMedia );
-	CheckMainMenuMedia()
+	--Events.FinishedGameplayContentConfigure.Add( CheckMainMenuMedia );
+	--CheckMainMenuMedia()
 	-- YnAMP >>>>>
 end
 Initialize();
