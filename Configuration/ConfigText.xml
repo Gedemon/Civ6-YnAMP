@@ -14,37 +14,37 @@
 	<!-- New entries -->
     
 	<Replace Tag="LOC_YNAGEM_NAME" Language="en_US">
-      <Text>[COLOR_RED]Giant Earth[ENDCOLOR]</Text>
+      <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - [COLOR_RED]Giant Earth[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_YNAGEM_DESC" Language="en_US">
       <Text>Genghis Kai's GEM (Hormigas version) (180x94 - Giant)[NEWLINE][ICON_Exclamation] [COLOR_RED]UNSTABLE in late game[ENDCOLOR][NEWLINE]Lower your graphic options to reduce random crashes.[NEWLINE]6+ GB of VRAM recommended</Text>
     </Replace>
     <Replace Tag="LOC_GREATESTEARTH_NAME" Language="en_US">
-      <Text>Greatest Earth Map</Text>
+      <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - Greatest Earth Map</Text>
     </Replace>
     <Replace Tag="LOC_GREATESTEARTH_DESC" Language="en_US">
       <Text>Greatest Earth Map by djvandyke (104x64 - Large)</Text>
     </Replace>
     <Replace Tag="LOC_PLAYEUROPEAGAIN_NAME" Language="en_US">
-      <Text>Play Europe Again</Text>
+      <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - Play Europe Again</Text>
     </Replace>
     <Replace Tag="LOC_PLAYEUROPEAGAIN_DESC" Language="en_US">
       <Text>NiRv4n4's Europe(Hormigas version) (108x98 - Huge)</Text>
     </Replace>
 	<Replace Tag="LOC_LARGE_EUROPE_NAME" Language="en_US">
-      <Text>Large Europe</Text>
+      <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - Large Europe</Text>
     </Replace>
     <Replace Tag="LOC_LARGE_EUROPE_DESC" Language="en_US">
       <Text>Dieter VonClam's Large Europe (79x73 - Large)</Text>
     </Replace>
     <Replace Tag="LOC_TERRAMAP_NAME" Language="en_US">
-      <Text>Terra Map for YnAMP</Text>
+      <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - Terra Map</Text>
     </Replace>
     <Replace Tag="LOC_TERRAMAP_DESC" Language="en_US">
       <Text>A map with customizable landmass placement based on a scalable Earth</Text>
     </Replace>
 	<Replace Tag="LOC_LARGESTEARTHCUSTOM_NAME" Language="en_US">
-      <Text>[COLOR_RED]Largest Earth Custom[ENDCOLOR]</Text>
+      <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - [COLOR_RED]Largest Earth Custom[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_LARGESTEARTHCUSTOM_DESC" Language="en_US">
       <Text>Largest Earth Custom (230x116 - Ludicrous)[NEWLINE][ICON_Exclamation] [COLOR_RED]WILL NOT LOAD AT FULL SIZE ![ENDCOLOR][NEWLINE]Use the custom options to set a game on smaller regions of the map.</Text>
