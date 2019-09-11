@@ -10528,7 +10528,7 @@
 		<Replace Tag="LOC_CITY_NAME_GOIANIA" Text="고이아니아" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_JATAI" Text="야타이" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_OSORNO" Text="오소르노" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_RIO_DE_JANIERO" Text="리오 데 자네이루" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_RIO_DE_JANEIRO" Text="리오 데 자네이루" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_VALDIVIA" Text="발디비아" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_VALPARAISO" Text="발파라이소" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_VITORIA_ESPIRITO_SANTO" Text="비토리아" Language="ko_KR" />
