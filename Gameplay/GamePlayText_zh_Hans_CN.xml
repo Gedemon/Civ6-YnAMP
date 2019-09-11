@@ -30240,7 +30240,7 @@
 		<Replace Tag="LOC_CITY_NAME_OSORNO" Language="zh_Hans_CN">
 			<Text>奥索尔诺</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_RIO_DE_JANIERO" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_RIO_DE_JANEIRO" Language="zh_Hans_CN">
 			<Text>里约热内卢</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VALDIVIA" Language="zh_Hans_CN">
