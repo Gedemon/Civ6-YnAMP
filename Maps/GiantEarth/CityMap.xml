@@ -4523,7 +4523,7 @@
 		<Replace MapName="GiantEarth" X="163" Y="22" CityLocaleName="LOC_CITY_NAME_RIBEIRAO_PRETO" Area="0" />
 		<Replace MapName="GiantEarth" X="164" Y="22" CityLocaleName="LOC_CITY_NAME_CAMPINAS" Area="0" />
 		<Replace MapName="GiantEarth" X="165" Y="22" CityLocaleName="LOC_CITY_NAME_CAMPINAS" Area="0" />
-		<Replace MapName="GiantEarth" X="167" Y="22" CityLocaleName="LOC_CITY_NAME_RIO_DE_JANIERO" Area="1" />
+		<Replace MapName="GiantEarth" X="167" Y="22" CityLocaleName="LOC_CITY_NAME_RIO_DE_JANEIRO" Area="1" />
 
 		<Replace MapName="GiantEarth" X="153" Y="23" CityLocaleName="LOC_CITY_NAME_IQUIQUE" Area="0" />
 		<Replace MapName="GiantEarth" X="155" Y="23" CityLocaleName="LOC_CITY_NAME_POTOSI" Area="0" />
