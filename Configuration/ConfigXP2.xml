@@ -34,7 +34,9 @@
 	</DomainValues>
 
 	<ParameterDependencies>
+		<!--
 		<Replace ParameterId="LowLandPlacement"		ConfigurationGroup="Map" ConfigurationId="XP2" 		Operator="Equals" 	ConfigurationValue="1"/>
+		-->
 	</ParameterDependencies>
 	
 	<!-- doesn't works as expected ?

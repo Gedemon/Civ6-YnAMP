@@ -177,7 +177,7 @@
       <Text>Place All Luxuries</Text>
     </Replace>
     <Replace Tag="LOC_MAP_ALL_LUXURIES_DESCRIPTION" Language="en_US">
-      <Text>Try to place at least a few of each luxuries on the map.</Text>
+      <Text>When this is activated, the mod tries to place at least a few of each Luxury Resource on the map.</Text>
     </Replace>
     <Replace Tag="LOC_MAP_ALL_STRATEGICS_NAME" Language="en_US">
       <Text>Add Missing Strategics</Text>
