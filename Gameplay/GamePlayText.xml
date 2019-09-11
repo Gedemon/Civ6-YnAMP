@@ -10541,7 +10541,7 @@
 		<Replace Tag="LOC_CITY_NAME_GOIANIA" Text="Goiânia" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_JATAI" Text="Jataí" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OSORNO" Text="Osorno" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_RIO_DE_JANIERO" Text="Rio de Janiero" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_RIO_DE_JANEIRO" Text="Rio de Janeiro" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_VALDIVIA" Text="Valdivia" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_VALPARAISO" Text="Valparaíso" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_VITORIA_ESPIRITO_SANTO" Text="Vitória" Language="en_US" />
