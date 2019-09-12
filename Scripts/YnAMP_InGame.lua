@@ -148,12 +148,25 @@ end
 
 
 --=====================================================================================--
--- Add "Export to Lua" button to the Option Menu
+-- Add "Export to Lua" button to the Option Menu and add keyboard shortcut (ctrl+alt+E)
 --=====================================================================================--
+function OnInputHandler( pInputStruct:table )
+	local uiMsg:number = pInputStruct:GetMessageType();
+	if uiMsg == KeyEvents.KeyUp then
+		if pInputStruct:GetKey() == Keys.E and pInputStruct:IsControlDown() and pInputStruct:IsAltDown() then
+			YnAMP.ExportMap()
+			UI.PlaySound("Alert_Neutral")
+		end
+		-- pInputStruct:IsShiftDown() and pInputStruct:IsAltDown() and  pInputStruct:IsControlDown()
+	end
+	return false
+end
+
 function OnEnterGame()
 	Controls.ExportMapToLua:RegisterCallback( Mouse.eLClick, YnAMP.ExportMap )
 	Controls.ExportMapToLua:SetHide( false )
 	Controls.ExportMapToLua:ChangeParent(ContextPtr:LookUpControl("/InGame/TopOptionsMenu/MainStack"))
+	Automation.SetInputHandler( OnInputHandler )
 end
 Events.LoadScreenClose.Add(OnEnterGame)
 
@@ -201,9 +214,11 @@ end
 -- Cleaning on exit
 --=====================================================================================--
 function Cleaning()
-	print ("Cleaning YnAMP table on Leave Game...")
+	print ("Cleaning YnAMP table...")
 	-- 
 	ExposedMembers.YnAMP = nil
+	print ("Cleaning InputHandler...")
+	Automation.RemoveInputHandler( OnInputHandler )
 end
 Events.LeaveGameComplete.Add(Cleaning)
 LuaEvents.RestartGame.Add(Cleaning)
