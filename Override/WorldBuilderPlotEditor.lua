@@ -1016,13 +1016,13 @@ function OnEnterGame()
 	Controls.ExportMapToLua:RegisterCallback( Mouse.eLClick, YnAMP.ExportMap )
 	Controls.ExportMapToLua:SetHide( false )
 	Controls.ExportMapToLua:ChangeParent(ContextPtr:LookUpControl("/WorldBuilder/TopOptionsMenu/MainStack"))
-	Automation.SetInputHandler( OnInputHandler )
+	--Automation.SetInputHandler( OnInputHandler )
 end
 Events.LoadScreenClose.Add(OnEnterGame)
 
 function Cleaning()
-	print ("Cleaning InputHandler on LeaveGameComplete...")
-	Automation.RemoveInputHandler( OnInputHandler )
+	--print ("Cleaning InputHandler on LeaveGameComplete...")
+	--Automation.RemoveInputHandler( OnInputHandler )
 end
 Events.LeaveGameComplete.Add(Cleaning)
 -- YnAMP >>>>>

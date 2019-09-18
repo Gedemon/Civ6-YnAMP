@@ -166,7 +166,8 @@ function OnEnterGame()
 	Controls.ExportMapToLua:RegisterCallback( Mouse.eLClick, YnAMP.ExportMap )
 	Controls.ExportMapToLua:SetHide( false )
 	Controls.ExportMapToLua:ChangeParent(ContextPtr:LookUpControl("/InGame/TopOptionsMenu/MainStack"))
-	Automation.SetInputHandler( OnInputHandler )
+	--Automation.SetInputHandler( OnInputHandler )
+	--ContextPtr:SetInputHandler(OnInputHandler, true) -- still not working (16-sept-2019)
 end
 Events.LoadScreenClose.Add(OnEnterGame)
 
@@ -217,8 +218,8 @@ function Cleaning()
 	print ("Cleaning YnAMP table...")
 	-- 
 	ExposedMembers.YnAMP = nil
-	print ("Cleaning InputHandler...")
-	Automation.RemoveInputHandler( OnInputHandler )
+	--print ("Cleaning InputHandler...")
+	--Automation.RemoveInputHandler( OnInputHandler )
 end
 Events.LeaveGameComplete.Add(Cleaning)
 LuaEvents.RestartGame.Add(Cleaning)
