@@ -179,10 +179,10 @@
     <Replace Tag="LOC_MAP_ALL_LUXURIES_DESCRIPTION" Language="ko_KR">
       <Text>지도 상에 최소한의 몇 개 이상의 모든 사치 자원을 배치합니다</Text>
     </Replace>
-	<Replace Tag="LOC_MAP_ALL_STRATEGICS_NAME" Language="en_US">
+	<Replace Tag="LOC_MAP_ALL_STRATEGICS_NAME" Language="ko_KR">
       <Text>누락된 전략 자원 추가</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_ALL_STRATEGICS_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_ALL_STRATEGICS_DESCRIPTION" Language="ko_KR">
       <Text>문명5의 자원 맵을 불러올 때, 일부 전략 자원이 누락될 수 있습니다, 이 옵션을 켜두면 누락된 전략 자원을 무작위로 배치하게 될 것입니다.</Text>
     </Replace>
 	
@@ -304,41 +304,41 @@
       <Text>자연 불가사의들의 위치를 원본 지도 데이터에서 불러옵니다</Text>
     </Replace>
 	
-	<Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_NAME" Language="en_US">
+	<Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_NAME" Language="ko_KR">
       <Text>연안 저지대</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Language="ko_KR">
       <Text>지면의 수위가 어떻게 정해지는지를 결정합니다 (해수면 상승에 관련된).</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEFAULT_DESCRIPTION" Language="ko_KR">
       <Text>저지대의 위치가 문명6 맵 생성기에 의해 결정됩니다 (무작위)</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_IMPORT_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_IMPORT_NAME" Language="ko_KR">
       <Text>불러오기</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_IMPORT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_IMPORT_DESCRIPTION" Language="ko_KR">
       <Text>표시되어 있을 경우에만, 저지대들의 위치를 원본 지도 데이터에서 불러옵니다.</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEEP_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEEP_NAME" Language="ko_KR">
       <Text>평지 맞춤화</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEEP_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEEP_DESCRIPTION" Language="ko_KR">
       <Text>해수면 상승이 더 깊은 내륙에도 영향을 미칩니다, 평지 표시가 된 곳에만 영향을 줍니다</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_EMPTY_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_EMPTY_DESCRIPTION" Language="ko_KR">
       <Text>저지대 배치 안함 (해수면 상승 없음)</Text>
     </Replace>
 
-	<Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_NAME" Language="en_US">
+	<Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_NAME" Language="ko_KR">
       <Text>강 범람</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_DESCRIPTION" Language="ko_KR">
       <Text>어떻게 특수 범람원의 (강 범람을 위한) 배치가 이루어지는지를 결정합니다.</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_DEFAULT_DESCRIPTION" Language="ko_KR">
       <Text>범람원의 위치가 문명6 맵 생성기에 의해 결정됩니다 (무작위)</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_EMPTY_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_EMPTY_DESCRIPTION" Language="ko_KR">
       <Text>특수 범람원 없음 (강이 범람하지 않음)</Text>
     </Replace>
 	
@@ -348,7 +348,7 @@
     <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" Language="ko_KR">
       <Text>배치하지 않습니다</Text>
     </Replace>
-	<Replace Tag="LOC_MAP_PLACEMENT_DEFAULT_NAME" Language="en_US">
+	<Replace Tag="LOC_MAP_PLACEMENT_DEFAULT_NAME" Language="ko_KR">
       <Text>맵 생성기</Text>
     </Replace>
 	
@@ -370,7 +370,7 @@
 	<Replace Tag="LOC_MAP_JEBEL_BARKAL_HILLS_NAME" Language="ko_KR">
       <Text>게벨 바르칼을 위해 범람원들을 사막 언덕들로 교체</Text>
     </Replace>
-	<Replace Tag="LOC_MAP_PANAMA_CANAL_NAME" Language="en_US">
+	<Replace Tag="LOC_MAP_PANAMA_CANAL_NAME" Language="ko_KR">
       <Text>파나마 운하를 위해 언덕들을 평지로 교체</Text>
     </Replace>
 	

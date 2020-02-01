@@ -124,7 +124,7 @@
 		  <Text>같은 설정을 유지한 채 재시작을 하시려면 누르세요[NEWLINE][NEWLINE][COLOR_RED][ICON_Exclamation] 경고 [ICON_Exclamation][NEWLINE][NEWLINE]해당 선택사항은 파이락시스에 의하여 다음 이유에 의거해 비활성화되었습니다:[ENDCOLOR][NEWLINE]"월드 빌더 상에서 재시작을 하는 행위는 다양한 문제점을 불러 일으킵니다, 현재로서 비활성해둡니다."</Text>
 		 </Replace>
 	
-		<Replace Tag="LOC_GAME_MENU_YNAMP_RESTART_TIMER" Language="en_US">
+		<Replace Tag="LOC_GAME_MENU_YNAMP_RESTART_TIMER" Language="ko_KR">
 		  <Text>{1Num}초 후 재시작합니다 (취소하려면 다시 누르세요)</Text>
 		</Replace>
 		
@@ -182,7 +182,7 @@
 	
 	
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!-- Europe City Names: Default Layer (Modern) <en_US> -->
+	<!-- Europe City Names: Default Layer (Modern) <ko_KR> -->
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 
@@ -3506,7 +3506,7 @@
 
 
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!-- Europe City Names: Civ-Specific Layer <en_US> -->
+	<!-- Europe City Names: Civ-Specific Layer <ko_KR> -->
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++ -->
 
 
@@ -3619,7 +3619,7 @@
 
 
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!-- Middle East City Names: Default Layer (Modern) <en_US> -->
+	<!-- Middle East City Names: Default Layer (Modern) <ko_KR> -->
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 
@@ -4126,7 +4126,7 @@
 
 
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!-- Middle East City Names: Civ-Specific Layer <en_US> -->
+	<!-- Middle East City Names: Civ-Specific Layer <ko_KR> -->
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 
@@ -4353,7 +4353,7 @@
 
 
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!-- Africa City Names: Default Layer (Modern) <en_US> -->
+	<!-- Africa City Names: Default Layer (Modern) <ko_KR> -->
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 	<LocalizedText>		<!-- SUB-EQUATORIAL AFRICA -->
@@ -5993,7 +5993,7 @@
 
 
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!-- Asia-Pacific City Names: Default Layer (Modern) <en_US> -->
+	<!-- Asia-Pacific City Names: Default Layer (Modern) <ko_KR> -->
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 
@@ -7338,7 +7338,7 @@
 	
 
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!-- The Americas City Names: Default Layer (Modern) <en_US> -->
+	<!-- The Americas City Names: Default Layer (Modern) <ko_KR> -->
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 
