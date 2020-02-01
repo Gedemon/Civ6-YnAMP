@@ -115,6 +115,7 @@
 			<File>Gameplay/GamePlayText_pt_BR.xml</File>
 			<File>Gameplay/GamePlayText_de_DE.xml</File>
 			<File>Gameplay/GamePlayText_fr_FR.xml</File>
+			<File>Gameplay/GamePlayText_it_IT.xml</File>
 			<File>Gameplay/GamePlayText_ja_JP.xml</File>
 			<File>Gameplay/GamePlayText_ko_KR.xml</File>
 		</UpdateText>
@@ -160,6 +161,7 @@
 				<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
 				<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
 				<File>Configuration/ConfigText_pt_BR.xml</File>
+				<File>Configuration/ConfigText_it_IT.xml</File>
 				<File>Configuration/ConfigText_ja_JP.xml</File>
 				<File>Configuration/ConfigText_ko_KR.xml</File>
 		</UpdateText>
@@ -246,6 +248,7 @@
 		<File>Configuration/ConfigText_zh_Hans_CN.xml</File>
 		<File>Configuration/ConfigText_zh_Hant_HK.xml</File>
 		<File>Configuration/ConfigText_pt_BR.xml</File>
+		<File>Configuration/ConfigText_it_IT.xml</File>
 		<File>Configuration/ConfigText_ja_JP.xml</File>
 		<File>Configuration/ConfigText_ko_KR.xml</File>
 		<File>Gameplay/Tables.sql</File>
@@ -257,6 +260,7 @@
 		<File>Gameplay/GamePlayText_pt_BR.xml</File>
 		<File>Gameplay/GamePlayText_de_DE.xml</File>
 		<File>Gameplay/GamePlayText_fr_FR.xml</File>
+		<File>Gameplay/GamePlayText_it_IT.xml</File>
 		<File>Gameplay/GamePlayText_ja_JP.xml</File>
 		<File>Gameplay/GamePlayText_ko_KR.xml</File>
 		<File>Maps/GiantEarth/Map.xml</File>
