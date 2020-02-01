@@ -767,39 +767,39 @@
       <Text>알프스 (이탈리아 서부)</Text>
     </Replace>
 	
-	<Replace Tag="LOC_CITYSTATES_OPTIONS" Language="en_US">
+	<Replace Tag="LOC_CITYSTATES_OPTIONS" Language="ko_KR">
       <Text>도시 국가 설정</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_SELECT_CITY_STATES_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_SELECT_CITY_STATES_NAME" Language="ko_KR">
       <Text>등장 도시국가를 수동으로 설정합니다</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_SELECT_CITY_STATES_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_SELECT_CITY_STATES_DESCRIPTION" Language="ko_KR">
       <Text>이를 활성화 시키면, 목록으로부터 당신이 등장시키길 원하는 도시국가들을 선택할 수 있습니다.[NEWLINE][NEWLINE]DLC, 확장팩, 시나리오 및 모드에 의해 도시국가가 추가되거나 삭제될 수 있음을 명심하세요, 목록은 어떤 도시국가들이 실제로 배치 가능한지 여부는 반영하고 있지 않습니다.[NEWLINE][NEWLINE]만일 도시 국가가 배치 불가할 경우, 그 슬롯은 빈 것으로 간주되어 무작위 도시국가가 생성됩니다.</Text>
     </Replace>
 	
-	<Replace Tag="LOC_XP1_CHECK_NAME" Language="en_US">
+	<Replace Tag="LOC_XP1_CHECK_NAME" Language="ko_KR">
       <Text>흥망성쇠를 위한 도시국가 목록을 업데이트합니다</Text>
     </Replace>
-    <Replace Tag="LOC_XP1_CHECK_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_XP1_CHECK_DESCRIPTION" Language="ko_KR">
       <Text>흥망성쇠 확장팩이 활성화 되 있다면 이를 선택하세요.[NEWLINE]만일 흥망성쇠 확장팩이 미설치되었거나 비활성화 되었다면 이를 해제하세요.[NEWLINE]당신의 선택에 따라 도시국가 목록이 업데이트될 것입니다.</Text>
     </Replace>
-    <Replace Tag="LOC_XP2_CHECK_NAME" Language="en_US">
+    <Replace Tag="LOC_XP2_CHECK_NAME" Language="ko_KR">
       <Text>몰려오는 폭풍을 위한 도시국가 목록을 업데이트합니다</Text>
     </Replace>
-    <Replace Tag="LOC_XP2_CHECK_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_XP2_CHECK_DESCRIPTION" Language="ko_KR">
       <Text>몰려오는 폭풍 확장팩이 활성화 되 있다면 이를 선택하세요.[NEWLINE]만일 몰려오는 폭풍 확장팩이 미설치되었거나 비활성화 되었다면 이를 해제하세요.[NEWLINE]당신의 선택에 따라 도시국가 목록이 업데이트될 것입니다.</Text>
     </Replace>
-    <Replace Tag="LOC_DLC2_CHECK_NAME" Language="en_US">
+    <Replace Tag="LOC_DLC2_CHECK_NAME" Language="ko_KR">
       <Text>바이킹 DLC를 위한 도시국가 목록을 업데이트합니다</Text>
     </Replace>
-    <Replace Tag="LOC_DLC2_CHECK_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_DLC2_CHECK_DESCRIPTION" Language="ko_KR">
       <Text>바이킹 DLC가 활성화 되 있다면 이를 선택하세요.[NEWLINE]만일 바이킹 DLC가 미설치되었거나 비활성화 되었다면 이를 해제하세요.[NEWLINE]당신의 선택에 따라 도시국가 목록이 업데이트될 것입니다.</Text>
     </Replace>
 	
-    <Replace Tag="LOC_SCENARIO_OPTIONS" Language="en_US">
+    <Replace Tag="LOC_SCENARIO_OPTIONS" Language="ko_KR">
       <Text>[ICON_PressureDownLarge] 시나리오 설정 [ICON_PressureDownLarge]</Text>
     </Replace>
-    <Replace Tag="LOC_SCENARIO_OPTIONS_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_SCENARIO_OPTIONS_DESCRIPTION" Language="ko_KR">
       <Text>아래의 시나리오 설정들은[NEWLINE][ICON_Exclamation][COLOR_RED] 알파 테스팅 중입니다 [ENDCOLOR][ICON_Exclamation]</Text>
     </Replace>
 	
@@ -812,10 +812,10 @@
     <Replace Tag="LOC_MAP_SCENARIO_NONE_DESCRIPTION" Language="ko_KR">
       <Text>아무런 시나리오 배치도 허용하지 않습니다.</Text>
     </Replace>
-	<Replace Tag="LOC_MAP_SCENARIO_DEFAULT_NAME" Language="en_US">
+	<Replace Tag="LOC_MAP_SCENARIO_DEFAULT_NAME" Language="ko_KR">
       <Text>기본 설정</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_SCENARIO_DEFAULT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_SCENARIO_DEFAULT_DESCRIPTION" Language="ko_KR">
       <Text>데이터베이스에 시나리오가 존재할 경우에만 불러옵니다</Text>
 	</Replace>
     <Replace Tag="LOC_MAP_SCENARIO_GENERATED_NAME" Language="ko_KR">
@@ -824,16 +824,16 @@
     <Replace Tag="LOC_MAP_SCENARIO_GENERATED_DESCRIPTION" Language="ko_KR">
       <Text>시나리오가 자동으로 생성되거나 및/혹은 데이터베이스로부터 불러와집니다.</Text>
     </Replace>
-	<Replace Tag="LOC_MAP_GENERATED_NAME" Language="en_US">
+	<Replace Tag="LOC_MAP_GENERATED_NAME" Language="ko_KR">
       <Text>생성</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_GENERATED_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_GENERATED_DESCRIPTION" Language="ko_KR">
       <Text>시나리오 생성기에 의한 자동 배치</Text>
     </Replace>
-    <Replace Tag="LOC_YNAMP_GENERATED_PRESET_NAME" Language="en_US">
+    <Replace Tag="LOC_YNAMP_GENERATED_PRESET_NAME" Language="ko_KR">
       <Text>YnAMP 배치 생성</Text>
     </Replace>
-    <Replace Tag="LOC_YNAMP_GENERATED_PRESET_DESC" Language="en_US">
+    <Replace Tag="LOC_YNAMP_GENERATED_PRESET_DESC" Language="ko_KR">
       <Text>문명들의 시작 위치가 미리 지정해둔 값을 이용하여 생성됩니다[NEWLINE]이 시나리오는 설정 창에 표시된 다음을 위한 기본 값들을 문명별로 미리 지정된 값으로 치환해줍니다:[NEWLINE][ICON_BULLET]도시 배치[NEWLINE][ICON_BULLET]도시 숫자[NEWLINE][ICON_BULLET]수도로부터의 최대 거리[NEWLINE][ICON_BULLET]동일 대륙에서만[NEWLINE][NEWLINE]제작된 모드 문명들은 기본 설정들이 적용됩니다 (문명 모드에 의해 자체적으로 값을 지정하지 않는 한)[NEWLINE][NEWLINE]설정들은 거대한 지구 맵 (또는 일부를)을 위하여 최적화 되어 있지만, 모든 맵과 함께 사용될 수도 있습니다.</Text>
     </Replace>
 	
@@ -852,329 +852,329 @@
     <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_DESCRIPTION" Language="ko_KR">
       <Text>ScenarioCivilizations 표에 포함되지 않는 도시 위치들을 CityMap 표로부터 불러옵니다</Text>
     </Replace>
-	    <Replace Tag="LOC_MAP_CITY_PLACEMENT_MIXED_NAME" Language="en_US">
+	    <Replace Tag="LOC_MAP_CITY_PLACEMENT_MIXED_NAME" Language="ko_KR">
       <Text>기본: 혼합</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_CITY_PLACEMENT_MIXED_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_MIXED_DESCRIPTION" Language="ko_KR">
       <Text>ScenarioCivilizations에 배치 유형이 등록되지 못한 문명들을 위해, 가능한 모든 파일로부터 도시 위치 정보를 불러옵니다 (제일 먼저 ScenarioCities, 이후 CityMap, 그리고 비옥도 값을 이용한 생성).</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_NAME" Language="ko_KR">
       <Text>기본: 불러오기</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_DESCRIPTION" Language="ko_KR">
       <Text>ScenarioCivilizations에 배치 유형이 등록되지 못한 문명들을 위해서, ScenarioCities 표로부터 도시 위치 정보들을 불러옵니다.</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_ONLY_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_ONLY_NAME" Language="ko_KR">
       <Text>제한적인: 지형</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_ONLY_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_ONLY_DESCRIPTION" Language="ko_KR">
       <Text>지형들의 비옥도 값만을 사용해 도시 배치를 결정하며, ScenarioCivilizations 표의 값들을 무시합니다.</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_ONLY_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_ONLY_NAME" Language="ko_KR">
       <Text>제한적인: 도시 지도 </Text>
     </Replace>
-    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_ONLY_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_ONLY_DESCRIPTION" Language="ko_KR">
       <Text>CityMap 표만을 사용해 도시 배치를 결정하며, ScenarioCivilizations 표의 값들을 무시합니다.</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_ONLY_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_ONLY_NAME" Language="ko_KR">
       <Text>제한적인: 불러오기</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_ONLY_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_ONLY_DESCRIPTION" Language="ko_KR">
       <Text>ScenarioCities 표에 등록된 도시들만을 배치하며, ScenarioCivilizations 표의 값들을 무시합니다.</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_CUSTOM_SCENARIO_VALUES_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_CUSTOM_SCENARIO_VALUES_NAME" Language="ko_KR">
       <Text>입력 상자 사용([ICON_Exclamation] 값을 초기화 합니다 !)</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_CUSTOM_SCENARIO_VALUES_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_CUSTOM_SCENARIO_VALUES_DESCRIPTION" Language="ko_KR">
       <Text>드롭다운 선택 대신 입력상자를 사용하여 입력 가능한 시나리오 파라메터들을 입력합니다.</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_NUMBER_OF_CITY_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_NUMBER_OF_CITY_NAME" Language="ko_KR">
       <Text>최대 도시 숫자 (주요)</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_NUMBER_OF_CITY_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_NUMBER_OF_CITY_DESCRIPTION" Language="ko_KR">
       <Text>시나리오 생성기가 주요 문명들을 위해 입력된 값 숫자 만큼의 도시를 배치하려 시도할 것입니다.</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_NUMBER_OF_MINOR_CITY_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_NUMBER_OF_MINOR_CITY_NAME" Language="ko_KR">
       <Text>최대 도시 숫자 (군소)</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_NUMBER_OF_MINOR_CITY_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_NUMBER_OF_MINOR_CITY_DESCRIPTION" Language="ko_KR">
       <Text>시나리오 생성기가 군소 문명들을 위해 입력된 값 숫자 만큼의 도시를 배치하려 시도할 것입니다.</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_CAPITAL_SIZE_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_CAPITAL_SIZE_NAME" Language="ko_KR">
       <Text>수도 크기</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_CAPITAL_SIZE_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_CAPITAL_SIZE_DESCRIPTION" Language="ko_KR">
       <Text>수도들의 크기</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_OTHER_CITY_SIZE_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_OTHER_CITY_SIZE_NAME" Language="ko_KR">
       <Text>기타 도시 크기</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_OTHER_CITY_SIZE_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_OTHER_CITY_SIZE_DESCRIPTION" Language="ko_KR">
       <Text>다른 도시들의 최대 크기</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_DECREASE_OTHER_CITY_SIZE" Language="en_US">
+    <Replace Tag="LOC_MAP_DECREASE_OTHER_CITY_SIZE" Language="ko_KR">
       <Text>기타 도시 크기 경감</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_DECREASE_OTHER_CITY_SIZE_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_DECREASE_OTHER_CITY_SIZE_DESCRIPTION" Language="ko_KR">
       <Text>체크되었을 시, 먼저 개척한 도시들이 나중에 개척한 도시들보다 크게 되며, 첫 도시들의 크기는 "기타 도시 크기"에 입력된 값을 사용하고, 나중에 배치할 도시들은 "이미 배치된 도시 수에 따른 경감" 배율에 따라 크기가 줄어들게 됩니다.</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_CITY_SIZE_DECREMENT" Language="en_US">
+    <Replace Tag="LOC_MAP_CITY_SIZE_DECREMENT" Language="ko_KR">
       <Text>크기 경감</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_CITY_SIZE_DECREMENT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_CITY_SIZE_DECREMENT_DESCRIPTION" Language="ko_KR">
       <Text>도시 크기를 이 수치만큼 줄입니다</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_NUM_CITY_PER_DECREMENT" Language="en_US">
+    <Replace Tag="LOC_MAP_NUM_CITY_PER_DECREMENT" Language="ko_KR">
       <Text>경감 주기 별 도시 숫자</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_NUM_CITY_PER_DECREMENT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_NUM_CITY_PER_DECREMENT_DESCRIPTION" Language="ko_KR">
       <Text>매 크기 경감이 돌아오기까지 배치될 수 있는 도시의 수입니다.</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_MAX_CAPITAL_DISTANCE" Language="en_US">
+    <Replace Tag="LOC_MAP_MAX_CAPITAL_DISTANCE" Language="ko_KR">
       <Text>수도로부터 최대 거리</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_MAX_CAPITAL_DISTANCE_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_MAX_CAPITAL_DISTANCE_DESCRIPTION" Language="ko_KR">
       <Text>기타 도시들이 수도로부터 멀어질 수 있는 최대 거리 (ScenarioCities 표로 불러온 도시들에는 적용되지 않습니다)</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_SAME_LANDMASS" Language="en_US">
+    <Replace Tag="LOC_MAP_SAME_LANDMASS" Language="ko_KR">
       <Text>같은 대륙에만</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_SAME_LANDMASS_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_SAME_LANDMASS_DESCRIPTION" Language="ko_KR">
       <Text>도시들은 수도와 같은 대륙에 개척되어야만 합니다 (ScenarioCities 표로 불러온 도시들에는 적용되지 않습니다)</Text>
     </Replace>
 	
-    <Replace Tag="LOC_RATIO_2_PER_1" Language="en_US">
+    <Replace Tag="LOC_RATIO_2_PER_1" Language="ko_KR">
       <Text>2배</Text>
     </Replace>
-    <Replace Tag="LOC_RATIO_2_PER_1_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_RATIO_2_PER_1_DESCRIPTION" Language="ko_KR">
       <Text>해당 값을 위하여 2/1의 배율을 사용합니다</Text>
     </Replace>	
-    <Replace Tag="LOC_RATIO_1_PER_1" Language="en_US">
+    <Replace Tag="LOC_RATIO_1_PER_1" Language="ko_KR">
       <Text>1대1</Text>
     </Replace>
-    <Replace Tag="LOC_RATIO_1_PER_1_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_RATIO_1_PER_1_DESCRIPTION" Language="ko_KR">
       <Text>해당 값을 위하여 1/1의 배율을 사용합니다</Text>
     </Replace>
-    <Replace Tag="LOC_RATIO_1_PER_2" Language="en_US">
+    <Replace Tag="LOC_RATIO_1_PER_2" Language="ko_KR">
       <Text>1대2</Text>
     </Replace>
-    <Replace Tag="LOC_RATIO_1_PER_2_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_RATIO_1_PER_2_DESCRIPTION" Language="ko_KR">
       <Text>해당 값을 위하여 1/2의 배율을 사용합니다</Text>
     </Replace>
-    <Replace Tag="LOC_RATIO_1_PER_3" Language="en_US">
+    <Replace Tag="LOC_RATIO_1_PER_3" Language="ko_KR">
       <Text>1대3</Text>
     </Replace>
-    <Replace Tag="LOC_RATIO_1_PER_3_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_RATIO_1_PER_3_DESCRIPTION" Language="ko_KR">
       <Text>해당 값을 위하여 1/3의 배율을 사용합니다</Text>
     </Replace>
-    <Replace Tag="LOC_RATIO_1_PER_6" Language="en_US">
+    <Replace Tag="LOC_RATIO_1_PER_6" Language="ko_KR">
       <Text>1대6</Text>
     </Replace>
-    <Replace Tag="LOC_RATIO_1_PER_6_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_RATIO_1_PER_6_DESCRIPTION" Language="ko_KR">
       <Text>해당 값을 위하여 1/6의 배율을 사용합니다</Text>
     </Replace>
-    <Replace Tag="LOC_RATIO_1_PER_10_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_RATIO_1_PER_10_DESCRIPTION" Language="ko_KR">
       <Text>해당 값을 위하여 1/10의 배율을 사용합니다</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_RATIO_PLACEMENT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_RATIO_PLACEMENT_DESCRIPTION" Language="ko_KR">
       <Text>그 값에 대해서 1/X의 배율 법칙을 사용합니다. X수치가 높아질수록 배치해야할 숫자가 줄어듭니다</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_RATIO_PER_CITY_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_RATIO_PER_CITY_DESCRIPTION" Language="ko_KR">
       <Text>그 값에 대해서 X/Y의 배율 법칙을 사용합니다. Y수치가 높아질수록 나중에 배치될 도시의 크기 경감 속도가 줄어듦을 의미합니다.</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_BORDER_PLACEMENT_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_BORDER_PLACEMENT_NAME" Language="ko_KR">
       <Text>국경 배치</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_BORDER_PLACEMENT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_BORDER_PLACEMENT_DESCRIPTION" Language="ko_KR">
       <Text>지도의 국경을 어떻게 배치할지를 결정합니다</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_BORDER_DISTANCE_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_BORDER_DISTANCE_NAME" Language="ko_KR">
       <Text>최대 거리의 국경</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_BORDER_DISTANCE_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_BORDER_DISTANCE_DESCRIPTION" Language="ko_KR">
       <Text>도심부로부터 국경선까지 최대 거리입니다.</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_PLACEMENT_EXPAND_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_PLACEMENT_EXPAND_NAME" Language="ko_KR">
       <Text>확장</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_PLACEMENT_EXPAND_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_PLACEMENT_EXPAND_DESCRIPTION" Language="ko_KR">
       <Text>각 도심부의 무료 영토 확장이, 최대 거리에 도달할 때 까지 확장이 계속될 것입니다.</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_INFRASTRUCTURE_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_INFRASTRUCTURE_NAME" Language="ko_KR">
       <Text>기반 시설 배치</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_INFRASTRUCTURE_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_INFRASTRUCTURE_DESCRIPTION" Language="ko_KR">
       <Text>지도 상의 기반 시설들을 어떻게 배치할 지를 결정합니다 (도로, 철도, 개발물/시설, 지구, 건물)</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_ROAD_PLACEMENT_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_ROAD_PLACEMENT_NAME" Language="ko_KR">
       <Text>도로 배치</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_ROAD_PLACEMENT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_ROAD_PLACEMENT_DESCRIPTION" Language="ko_KR">
       <Text>지도에 도로를 어떻게 배치할 지를 결정합니다</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_ROAD_DISTANCE_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_ROAD_DISTANCE_NAME" Language="ko_KR">
       <Text>도로 길이 무제한</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_ROAD_DISTANCE_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_ROAD_DISTANCE_DESCRIPTION" Language="ko_KR">
       <Text>길을 놓으려는 두 도시간의 거리 제한이 사라집니다.</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_ROAD_DISTANCE_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_ROAD_DISTANCE_NAME" Language="ko_KR">
       <Text>도로를 위한 최대 거리</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_ROAD_DISTANCE_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_ROAD_DISTANCE_DESCRIPTION" Language="ko_KR">
       <Text>두 도시간에 길을 놓을 수 있는 최대 거리</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_MAX_ROAD_PER_CITY_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_MAX_ROAD_PER_CITY_NAME" Language="ko_KR">
       <Text>도시별 연결 가능한 최대 도로 수</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_MAX_ROAD_PER_CITY_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_MAX_ROAD_PER_CITY_DESCRIPTION" Language="ko_KR">
       <Text>도시로부터 시작될 수 있는 도로 숫자의 최대치입니다.
     </Replace>
 	
-    <Replace Tag="LOC_MAP_PLACEMENT_CENTRALIZED_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_PLACEMENT_CENTRALIZED_NAME" Language="ko_KR">
       <Text>중앙화</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_PLACEMENT_CENTRALIZED_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_PLACEMENT_CENTRALIZED_DESCRIPTION" Language="ko_KR">
       <Text>수도로부터 모든 기타 도시들을 향합니다.</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_PLACEMENT_PER_CITY_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_PLACEMENT_PER_CITY_NAME" Language="ko_KR">
       <Text>도시간</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_PLACEMENT_PER_CITY_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_PLACEMENT_PER_CITY_DESCRIPTION" Language="ko_KR">
       <Text>각 도시들로부터 가장 가까운 도시들에게로 이어집니다.</Text>
     </Replace>
 	
-    <Replace Tag="LOC_MAP_INTERNATIONAL_ROADS_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_INTERNATIONAL_ROADS_NAME" Language="ko_KR">
       <Text>국제 도로</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_INTERNATIONAL_ROADS_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_INTERNATIONAL_ROADS_DESCRIPTION" Language="ko_KR">
       <Text>설정 선택시, 외국 도시들을 향한 도로의 건설을 허용합니다. (도로 배치 설정에서 "중앙화" 선택 시, 수도와 다른 수도들만이 연결됩니다.).</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_UNLIMITED_ROAD_DISTANCE_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_UNLIMITED_ROAD_DISTANCE_NAME" Language="ko_KR">
       <Text>도로 길이 무제한</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_UNLIMITED_ROAD_DISTANCE_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_MAP_UNLIMITED_ROAD_DISTANCE_DESCRIPTION" Language="ko_KR">
       <Text>설정 선택시, 두 도시간 도로 배치 시도시 거리의 제한이 사라집니다. 대형 지도에서의 시나리오 생성이 더 오래걸릴 수 있습니다.</Text>
     </Replace>
 	
 	<!--City-States-->
-	<Replace Tag="LOC_CIVILIZATION_AKKAD_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_AKKAD_NAME" Language="ko_KR">
 		<Text>아카드</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_AKKAD_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_AKKAD_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 아카드</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_BOLOGNA_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_BOLOGNA_NAME" Language="ko_KR">
 		<Text>볼로냐</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_BOLOGNA_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_BOLOGNA_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 볼로냐</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_CAHOKIA_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_CAHOKIA_NAME" Language="ko_KR">
 		<Text>카호키아</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_CAHOKIA_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_CAHOKIA_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 카호키아</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_CARDIFF_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_CARDIFF_NAME" Language="ko_KR">
 		<Text>카디프</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_CARDIFF_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_CARDIFF_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 카디프</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_FEZ_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_FEZ_NAME" Language="ko_KR">
 		<Text>페즈</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_FEZ_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_FEZ_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 페즈</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_MEXICO_CITY_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_MEXICO_CITY_NAME" Language="ko_KR">
 		<Text>멕시코시티</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_MEXICO_CITY_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_MEXICO_CITY_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 멕시코시티</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_NAZCA_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_NAZCA_NAME" Language="ko_KR">
 		<Text>나스카</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_NAZCA_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_NAZCA_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 나스카</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_NGAZARGAMU_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_NGAZARGAMU_NAME" Language="ko_KR">
 		<Text>느가자르가무</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_NGAZARGAMU_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_NGAZARGAMU_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 느가자르가무</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_RAPA_NUI_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_RAPA_NUI_NAME" Language="ko_KR">
 		<Text>라파누이</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_RAPA_NUI_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_RAPA_NUI_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 라파누이</Text>
 	</Replace>
 	
-	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_NAME" Language="ko_KR">
 		<Text>안디옥</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 안디옥</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_BABYLON_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_BABYLON_NAME" Language="ko_KR">
 		<Text>바빌론</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_BABYLON_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_BABYLON_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 바빌론</Text>
 	</Replace>
 	
-	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_NAME" Language="ko_KR">
 		<Text>오클랜드</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_ANTANANARIVO_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_ANTANANARIVO_NAME" Language="ko_KR">
 		<Text>안타나나리보</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_ARMAGH_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_ARMAGH_NAME" Language="ko_KR">
 		<Text>아마</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_GRANADA_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_GRANADA_NAME" Language="ko_KR">
 		<Text>그라나다</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_MUSCAT_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_MUSCAT_NAME" Language="ko_KR">
 		<Text>무스카트</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_PALENQUE_NAME" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_PALENQUE_NAME" Language="ko_KR">
 		<Text>팔렝케</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 오클랜드</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_ANTANANARIVO_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_ANTANANARIVO_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 안타나나리보</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_ARMAGH_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_ARMAGH_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 아마</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_GRANADA_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_GRANADA_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 그라나다</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_MUSCAT_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_MUSCAT_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 무스카트</Text>
 	</Replace>
-	<Replace Tag="LOC_CIVILIZATION_PALENQUE_DESCRIPTION" Language="en_US">
+	<Replace Tag="LOC_CIVILIZATION_PALENQUE_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 팔렝케</Text>
 	</Replace>
 	
