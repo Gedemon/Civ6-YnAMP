@@ -117,6 +117,17 @@
 		  <Text>YnAMP 양식의 지도를 Lua. 로그 파일로 내보냅니다 (내보내는 경로는 "..\Documents\my games\Sid Meier's Civilization VI\Logs\" 폴더입니다)</Text>
 		</Replace>
 		
+		<Replace Tag="LOC_GAME_MENU_YNAMP_RESTART" Language="ko_KR">
+		  <Text>[ICON_Exclamation] 맵 재시작 [ICON_Exclamation]</Text>
+		</Replace>
+		<Replace Tag="LOC_GAME_MENU_YNAMP_RESTART_TOOLTIP" Language="ko_KR">
+		  <Text>같은 설정을 유지한 채 재시작을 하시려면 누르세요[NEWLINE][NEWLINE][COLOR_RED][ICON_Exclamation] 경고 [ICON_Exclamation][NEWLINE][NEWLINE]해당 선택사항은 파이락시스에 의하여 다음 이유에 의거해 비활성화되었습니다:[ENDCOLOR][NEWLINE]"월드 빌더 상에서 재시작을 하는 행위는 다양한 문제점을 불러 일으킵니다, 현재로서 비활성해둡니다."</Text>
+		 </Replace>
+	
+		<Replace Tag="LOC_GAME_MENU_YNAMP_RESTART_TIMER" Language="en_US">
+		  <Text>{1Num}초 후 재시작합니다 (취소하려면 다시 누르세요)</Text>
+		</Replace>
+		
 		<Replace Tag="LOC_WORLD_BUILDER_BRUSH_SIZE" Text="브러시 사이즈 = {1_Num}" Language="ko_KR" />	
 
 	</LocalizedText>
@@ -10899,7 +10910,7 @@
 		<Replace Tag="LOC_CITY_NAME_PUNTO_FIJO" Text="푼토 피호" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_PORTO_SAN_CARLOS" Text="포르토 산 카를로스" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_PORT_STEPHENS" Text="포트 스테판" Language="ko_KR" />
-
+		
 	</LocalizedText>
 
 </GameData>
