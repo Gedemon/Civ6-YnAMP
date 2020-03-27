@@ -53,8 +53,8 @@
 		<!--	Hidden parameters to notify some YnAMP scripts to use relative placement for this map (you must also set ReferenceMapHeight, ReferenceMapWidth and give that map the same name as the reference map
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="UseOwnDataForNW"			Name="UseOwnDataForNW" 			Description="" Domain="StandardMapSizes" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="UseOwnDataForNW" 		GroupId="MapOptions" Visible="0" SortIndex="225"/>
 		-->
-		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="UseRelativePlacement"	Name="UseRelativePlacement" 	Description="" Domain="StandardMapSizes" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="UseRelativePlacement" 	GroupId="MapOptions" Visible="0" SortIndex="225"/>
-		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="UseRelativeFixedTable"	Name="UseRelativeFixedTable" 	Description="" Domain="StandardMapSizes" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="UseRelativeFixedTable" 	GroupId="MapOptions" Visible="0" SortIndex="225"/>
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="UseRelativePlacement"	Name="UseRelativePlacement" 	Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="UseRelativePlacement" 	GroupId="MapOptions" Visible="0" SortIndex="225"/>
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="UseRelativeFixedTable"	Name="UseRelativeFixedTable" 	Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="UseRelativeFixedTable" 	GroupId="MapOptions" Visible="0" SortIndex="225"/>
 		
 		<!--	Hidden parameters to pass the Height/Width of the reference map for TSL
 		-->

@@ -13,7 +13,9 @@ include "CoastalLowlands"
 print("------------------------------------------------------")
 print ("loading modded AssignStartingPlots")
 local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION ?
-print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2019) by Gedemon")
+print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2020) by Gedemon")
+
+include "YnAMP_Common"
 
 if ExposedMembers.YnAMP_Loading ~= nil then
 	print("------------------------------------------------------")
@@ -81,6 +83,7 @@ bPlaceAllLuxuries	= MapConfiguration.GetValue("PlaceAllLuxuries") == "PLACEMENT_
 bPlaceAllStrategics	= MapConfiguration.GetValue("PlaceAllStrategics")
 bAlternatePlacement = MapConfiguration.GetValue("AlternatePlacement")
 
+--[[
 bUseRelativePlacement 	= MapConfiguration.GetValue("UseRelativePlacement")
 bUseRelativeFixedTable 	= bUseRelativePlacement and MapConfiguration.GetValue("UseRelativeFixedTable")
 g_ReferenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth") or 180
@@ -97,6 +100,7 @@ g_ReferenceWidthFactor  = 0
 g_ReferenceHeightFactor = 0
 g_ReferenceWidthRatio   = 0
 g_ReferenceHeightRatio  = 0
+--]]
 g_MapDataRiverIndex		= 4 -- Rivers entry in MapData, checked in GenerateImportedMap() based on the table passed (civ5 data or civ6 data)
 
 -- Create list of Civilizations and leaders in game
@@ -2776,15 +2780,18 @@ end
 
 print ("Loading YnAMP functions ...")
 
+--[[
 local g_StartingPlotRange
 local g_MinStartDistanceMajor
 local g_MaxStartDistanceMajor
+--]]
 
 
 ------------------------------------------------------------------------------
 -- Helpers for x,y positions when using a reference or offset map
 ------------------------------------------------------------------------------
 
+--[[
 local XFromRefMapX 	= {}
 local YFromRefMapY 	= {}
 local RefMapXfromX 	= {}
@@ -2891,7 +2898,7 @@ end
 function GetPlotFromRefMap(x, y, bOnlyOffset)
 	return Map.GetPlot(GetXYFromRefMapXY(x,y, bOnlyOffset))
 end
-
+--]]
 
 ------------------------------------------------------------------------------
 -- Create Tables
@@ -3345,32 +3352,8 @@ end
 function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, width, height)
 
 	-- Set globals
-	g_iW, g_iH 				= width, height --Map.GetGridSize()
-	g_UncutMapWidth 		= MapConfiguration.GetValue("UncutMapWidth") or g_iW
-	g_UncutMapHeight 		= MapConfiguration.GetValue("UncutMapHeight") or g_iH
-
-	g_OffsetX 				= MapConfiguration.GetValue("StartX") or 0
-	g_OffsetY 				= MapConfiguration.GetValue("StartY") or 0
-	bUseOffset				= (g_OffsetX + g_OffsetY > 0) and (MapConfiguration.GetValue("StartX") ~= MapConfiguration.GetValue("EndX")) and (MapConfiguration.GetValue("StartY") ~= MapConfiguration.GetValue("EndY"))
-
-print("bUseOffset", bUseOffset)	
-print("StartX", MapConfiguration.GetValue("StartX"))
-print("EndX", MapConfiguration.GetValue("EndX"))
-print("StartY", MapConfiguration.GetValue("StartY"))
-print("EndY", MapConfiguration.GetValue("EndY"))
-print("g_UncutMapWidth", g_UncutMapWidth)
-print("g_UncutMapHeight", g_UncutMapHeight)
-print("g_iW", g_iW)
-print("g_iH", g_iH)
-print("Map.GetGridSize()", Map.GetGridSize())
-print("bUseRelativePlacement",bUseRelativePlacement)
-print("bUseRelativeFixedTable",bUseRelativeFixedTable)
-BuildRefXY()
-
-	g_ReferenceWidthFactor  = (bUseRelativePlacement and g_ReferenceMapWidth / g_UncutMapWidth) or 1
-	g_ReferenceHeightFactor = (bUseRelativePlacement and g_ReferenceMapHeight / g_UncutMapHeight) or 1
-	g_ReferenceWidthRatio   = (bUseRelativePlacement and g_UncutMapWidth / g_ReferenceMapWidth) or 1
-	g_ReferenceHeightRatio  = (bUseRelativePlacement and g_UncutMapHeight / g_ReferenceMapHeight) or 1
+	SetGlobals()
+	BuildRefXY()
 
 	--local pPlot
 	--g_iFlags = TerrainBuilder.GetFractalFlags();

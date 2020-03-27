@@ -2,17 +2,17 @@
 
 	Map Size reference
 
-			  Civ V       Civ VI 
+			  Civ V       Civ VI 	YnAMP (2:1)
 	 
-	Dual       40x24       44x26 
-	Tiny       55x36       60x36 
-	Small      66x42       74x46 
-	Standard   80x52       84x54 
-	Large     104x64       96x60
-	Huge      128x80      106x66  
-	Enormous              128x80
-	Giant     180x94      180x94
-	Ludicrous N/A        230x115 
+	Dual       40x24       44x26 	-
+	Tiny       55x36       60x36 	-
+	Small      66x42       74x46 	84x44
+	Standard   80x52       84x54 	96x50
+	Large     104x64       96x60	108x56
+	Huge      128x80      106x66  	120x62
+	Enormous              128x80	140x74
+	Giant     180x94      180x94	180x94
+	Ludicrous N/A        230x115	200x104
 
 -->
 
@@ -55,10 +55,10 @@
 		<Replace ParameterId="AlternateTSL" Name="LOC_MAP_ALTERNATE_TSL_NAME" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="AlternateTSL" GroupId="MapOptions" SortIndex="297"/>
 		
 		<!--	Option to use Alternate placement if no TSL if available		-->
-		<Replace ParameterId="AlternatePlacement" Name="LOC_MAP_ALTERNATE_PLACEMENT_NAME" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="AlternatePlacement" GroupId="MapOptions" SortIndex="298"/>	
+		<Replace ParameterId="AlternatePlacement" Name="LOC_MAP_ALTERNATE_PLACEMENT_NAME" Description="LOC_MAP_ALTERNATE_PLACEMENT_DESC" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="AlternatePlacement" GroupId="MapOptions" SortIndex="298"/>	
 		
 		<!--	New option for all maps to prevent Ice adjacent to land (help circumnavigation)		-->
-		<Replace ParameterId="NoIceAdjacentToLand" Name="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="NoIceAdjacentToLand" GroupId="MapOptions" SortIndex="2000"/>
+		<Replace ParameterId="NoIceAdjacentToLand" Name="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Description="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_DESC" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="NoIceAdjacentToLand" GroupId="MapOptions" SortIndex="2000"/>
 
 		<!--	New option for all maps to launch a game without city states
 		<Replace ParameterId="NoCityStates" Name="LOC_MAP_NO_CITY_STATE_NAME" Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="NoCityStates" GroupId="AdvancedOptions" SortIndex="2020"/>
@@ -101,8 +101,10 @@
 		MaxNumBuildings : Buildings NotEquals NONE/SIZE_RELATED
 		-->
 
-		<!--  -->
+		<!--
 		<Replace ParameterId="ScenarioTitle" 	Name="LOC_SCENARIO_OPTIONS"			Description="LOC_SCENARIO_OPTIONS_DESCRIPTION" 		Domain="text" 	DefaultValue="==v==v==v==v==v==v==v==v==v==v==v==" 	ConfigurationGroup="Map" ConfigurationId="ScenarioTitle" 	ReadOnly="1" GroupId="MapOptions" SortIndex="10000"/>
+		-->
+		<Replace ParameterId="ScenarioTitle" 	Name="LOC_SCENARIO_OPTIONS"			Description="LOC_SCENARIO_OPTIONS_DESCRIPTION" 		Domain="bool" 	DefaultValue="1" 	ConfigurationGroup="Map" ConfigurationId="ScenarioTitle" 	ReadOnly="1" GroupId="MapOptions" SortIndex="10000"/>
 		
 		<Replace ParameterId="ScenarioType" 	Name="LOC_MAP_SCENARIO_TYPE_NAME"			Description="LOC_MAP_SCENARIO_TYPE_DESCRIPTION" 		Domain="ScenarioType" 	DefaultValue="SCENARIO_DEFAULT" 	ConfigurationGroup="Map" ConfigurationId="ScenarioType" 	GroupId="MapOptions" SortIndex="10001"/>
 		<Replace ParameterId="CityPlacement" 	Name="LOC_MAP_CITY_PLACEMENT_NAME"			Description="LOC_MAP_CITY_PLACEMENT_DESCRIPTION" 		Domain="CityPlacement" 	DefaultValue="PLACEMENT_MIXED"	ConfigurationGroup="Map" ConfigurationId="CityPlacement" 	GroupId="MapOptions" SortIndex="10010"/>

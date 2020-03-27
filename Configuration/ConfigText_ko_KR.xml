@@ -1043,7 +1043,7 @@
       <Text>도시별 연결 가능한 최대 도로 수</Text>
     </Replace>
     <Replace Tag="LOC_MAP_MAX_ROAD_PER_CITY_DESCRIPTION" Language="ko_KR">
-      <Text>도시로부터 시작될 수 있는 도로 숫자의 최대치입니다.
+      <Text>도시로부터 시작될 수 있는 도로 숫자의 최대치입니다.</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_PLACEMENT_CENTRALIZED_NAME" Language="ko_KR">

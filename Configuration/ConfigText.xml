@@ -75,6 +75,31 @@
       <Text>Try to regroup Civilizations by Ethnicity on the Starting Positions</Text>
     </Replace>
 	
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_NAME" Language="en_US">
+      <Text>TSL Replacement Range</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_DESCRIPTION" Language="en_US">
+      <Text>Distance at which a TSL can be moved if the relative position is not good enough. This parameters scale with map size.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_SHORT_NAME" Language="en_US">
+      <Text>Short Range</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_SHORT_DESCRIPTION" Language="en_US">
+      <Text>Stay relatively close to the position from the reference map, but this may prevent a Civilization to be in game.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_MEDIUM_NAME" Language="en_US">
+      <Text>Medium Range</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_MEDIUM_DESCRIPTION" Language="en_US">
+      <Text>This will allow a TSL replacement for most cases.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_HIGH_NAME" Language="en_US">
+      <Text>High Range</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_HIGH_DESCRIPTION" Language="en_US">
+      <Text>A Civilization may get placed relatively far from its original region.</Text>
+    </Replace>
+	
     <Replace Tag="LOC_MAPSIZE_ENORMOUS_NAME" Language="en_US">
       <Text>Enormous</Text>
     </Replace>
@@ -85,13 +110,13 @@
       <Text>[COLOR_RED]Giant[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_GIANT_DESCRIPTION" Language="en_US">
-      <Text>Giant Map for 20+ players (184x92)[NEWLINE][ICON_Exclamation] [COLOR_RED]UNSTABLE in late game[ENDCOLOR][NEWLINE]Lower your graphic options to reduce random crashes.[NEWLINE]6+ GB of VRAM recommended</Text>
+      <Text>Giant Map for 20+ players (180x94)[NEWLINE][ICON_Exclamation] [COLOR_RED]UNSTABLE in late game[ENDCOLOR][NEWLINE]Lower your graphic options to reduce random crashes.[NEWLINE]6+ GB of VRAM recommended</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_LUDICROUS_NAME" Language="en_US">
       <Text>[COLOR_RED]Ludicrous[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" Language="en_US">
-      <Text>Will you stand the test of time while the map is loading ? (200x100)[NEWLINE][ICON_Exclamation] [COLOR_RED]UNSTABLE in late game[ENDCOLOR][NEWLINE]Lower your graphic options to reduce random crashes.[NEWLINE]8+ GB of VRAM recommended</Text>
+      <Text>Will you stand the test of time while the map is loading ? (200x104)[NEWLINE][ICON_Exclamation] [COLOR_RED]UNSTABLE in late game[ENDCOLOR][NEWLINE]Lower your graphic options to reduce random crashes.[NEWLINE]8+ GB of VRAM recommended</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_MAX_NAME" Language="en_US">
       <Text>Max</Text>
@@ -104,31 +129,31 @@
       <Text>Small (2:1)</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_SMALL21_DESCRIPTION" Language="en_US">
-      <Text>Small map for 6 players (84x42)</Text>
+      <Text>Small map for 6 players (84x44)</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_STANDARD21_NAME" Language="en_US">
       <Text>Standard (2:1)</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_STANDARD21_DESCRIPTION" Language="en_US">
-      <Text>Average-sized map for 8 players (96x48)</Text>
+      <Text>Average-sized map for 8 players (96x50)</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_LARGE21_NAME" Language="en_US">
       <Text>Large (2:1)</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_LARGE21_DESCRIPTION" Language="en_US">
-      <Text>Large map for 10 players (108x54)</Text>
+      <Text>Large map for 10 players (108x56)</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_HUGE21_NAME" Language="en_US">
       <Text>Huge (2:1)</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_HUGE21_DESCRIPTION" Language="en_US">
-      <Text>Huge map for 12 players (120x60)</Text>
+      <Text>Huge map for 12 players (120x62)</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_ENORMOUS21_NAME" Language="en_US">
       <Text>Enormous (2:1)</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_ENORMOUS21_DESCRIPTION" Language="en_US">
-      <Text>Really Enormous Map for 16 players (148x74)</Text>
+      <Text>Really Enormous Map for 16 players (140x74)</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_NAME" Language="en_US">
@@ -377,6 +402,9 @@
     <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Language="en_US">
       <Text>No ice near land (to help circumnavigation)</Text>
     </Replace>
+    <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_DESC" Language="en_US">
+      <Text>This will delete Ice features placed near land tiles to help circumnavigation. This doesn't remove land tiles on the north and south edge of the map.</Text>
+    </Replace>
     <Replace Tag="LOC_MAP_NO_CITY_STATE_NAME" Language="en_US">
       <Text>No City States</Text>
     </Replace>
@@ -427,6 +455,16 @@
     </Replace>
 	<Replace Tag="LOC_MAP_ALTERNATE_PLACEMENT_NAME" Language="en_US">
       <Text>Allow random placement for civs without TSL</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ALTERNATE_PLACEMENT_DESC" Language="en_US">
+      <Text>Civilizations without TSL will be placed randomly on the map. This allows all selected players to have a starting position, uncheck this when using Random slots if you want to have only TSL Civilizations in game and don't mind if the number of players is lower than what you've selected.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_LAND_AROUND_TSL_NAME" Language="en_US">
+      <Text>More Land around TSL</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LAND_AROUND_TSL_DESC" Language="en_US">
+      <Text>Try to raise the probability of having land around a Civilization relative TSL, except for Civilizations starting at sea.</Text>
     </Replace>
 	
 	<Replace Tag="LOC_MAP_HISTORICAL_SPAWN_NAME" Language="en_US">
@@ -521,19 +559,61 @@
       <Text>Pangea</Text>
     </Replace>
     <Replace Tag="LOC_MAP_PANGEA_DESCRIPTION" Language="en_US">
-      <Text>A Massive Continent</Text>
+      <Text>A Massive Continent for a large region of the map, with some rifts.[NEWLINE][NEWLINE]May generate straight coasts if used for a small region of the map.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_PANGEA_REGION_NAME" Language="en_US">
+      <Text>Pangea (Region)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PANGEA_REGION_DESCRIPTION" Language="en_US">
+      <Text>A Massive Continent for a small region of the map, with some rifts.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_COMPACT_PANGEA_NAME" Language="en_US">
+      <Text>Compact Pangea</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_COMPACT_PANGEA_DESCRIPTION" Language="en_US">
+      <Text>A Massive Continent for a small region of the map, without rift.[NEWLINE][NEWLINE]May generate a very uniform landscape if used for a large region of the map.</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_CONTINENT_NAME" Language="en_US">
       <Text>Continent</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CONTINENT_DESCRIPTION" Language="en_US">
-      <Text>A Continent with some possible smaller separated landmasses</Text>
+      <Text>A Continent with some possible smaller separated landmasses.[NEWLINE][NEWLINE]May generate a very fractionned landscape if used for a small region of the map.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_MINI_CONTINENT_NAME" Language="en_US">
+      <Text>Continent (Region)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MINI_CONTINENT_DESCRIPTION" Language="en_US">
+      <Text>A Continent for a small region of the map.[NEWLINE][NEWLINE]May generate a very uniform landscape if used for a large region of the map.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_COMPACT_CONTINENT_NAME" Language="en_US">
+      <Text>Compact Continent (Region)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_COMPACT_CONTINENT_DESCRIPTION" Language="en_US">
+      <Text>A Continent for a small region of the map, without rift.[NEWLINE][NEWLINE]May generate a very uniform landscape if used for a large region of the map.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SLIM_CONTINENT_NAME" Language="en_US">
+      <Text>Tall Continent</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SLIM_CONTINENT_DESCRIPTION" Language="en_US">
+      <Text>A Continent for a large region of the map which has more height than width, where other Continent scripts may generate too much vertical rifts.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SLIM_CONTINENT_R_NAME" Language="en_US">
+      <Text>Tall Continent (Region)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SLIM_CONTINENT_R_DESCRIPTION" Language="en_US">
+      <Text>A Continent for a small region of the map which has more height than width.</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_SMALL_CONTINENT_NAME" Language="en_US">
       <Text>Small Continent</Text>
     </Replace>
     <Replace Tag="LOC_MAP_SMALL_CONTINENT_DESCRIPTION" Language="en_US">
-      <Text>Small Continent with some possible smaller separated landmasses</Text>
+      <Text>Small Continent with some possible smaller separated landmasses.[NEWLINE][NEWLINE]May generate a very fractionned landscape if used for a small region of the map.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SMALL_CONTINENT_R_NAME" Language="en_US">
+      <Text>Small Continent (Region)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SMALL_CONTINENT_R_DESCRIPTION" Language="en_US">
+      <Text>Small Continent for a small area of the map.</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_LARGE_ISLANDS_NAME" Language="en_US">
       <Text>Large Islands</Text>
@@ -559,6 +639,7 @@
     <Replace Tag="LOC_MAP_SEA_DESCRIPTION" Language="en_US">
       <Text>Isolated Small Islands</Text>
     </Replace>
+	
     <Replace Tag="LOC_YNAMP_RANDOM_NAME" Language="en_US">
       <Text>Random script</Text>
     </Replace>
@@ -600,7 +681,7 @@
       <Text>Rift Grain (0-4)</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CUSTOM_RIFT_GRAIN_DESCRIPTION" Language="en_US">
-      <Text>good question !</Text>
+      <Text>What's this you ask ? That's a good question !</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CUSTOM_FRACTX_EXP_NAME" Language="en_US">
       <Text>FracXExp</Text>
@@ -639,7 +720,39 @@
     </Replace>
     <Replace Tag="LOC_MAP_SELECT_LANDMASS_DESCRIPTION" Language="en_US">
       <Text>Select each landmass script. (add more options)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_REAL_LAND_BLEND_NAME" Language="en_US">
+      <Text>[ICON_PressureHigh] Real Land Blending [ICON_PressureHigh]</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_REAL_LAND_BLEND_DESCRIPTION" Language="en_US">
+      <Text>Blend Real Land Shape over the selected script(s) (0 = no blending, 100 = real world shape)</Text>
     </Replace>	
+    <Replace Tag="LOC_MAP_REAL_SEA_BLEND_NAME" Language="en_US">
+      <Text>[ICON_PressureHigh] Real Sea Blending [ICON_PressureHigh]</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_REAL_SEA_BLEND_DESCRIPTION" Language="en_US">
+      <Text>Blend Real Sea Shape over the selected script(s) (0 = no blending, 100 = real world shape)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_ADD_LAKES_NAME" Language="en_US">
+      <Text>Additional large lakes</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ADD_LAKES_DESC" Language="en_US">
+      <Text>Add a few large lakes on the map.[NEWLINE][NEWLINE]This parameter is not affected by the Real Land/Sea Shape Blending option.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ADD_ISLANDS_NAME" Language="en_US">
+      <Text>Allows islands</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ADD_ISLANDS_DESC" Language="en_US">
+      <Text>Allows islands placement on the map. This may raise a bit the probability of reaching the new world before Oceanic travel is available.[NEWLINE][NEWLINE]This parameter is affected by the Real Land/Sea Shape Blending option.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ADDITIONAL_SEAS_NAME" Language="en_US">
+      <Text>Additional seas</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ADDITIONAL_SEAS_DESC" Language="en_US">
+      <Text>Add randomly shaped seas at those locations (relative to real world):[NEWLINE][NEWLINE][ICON_BULLET]Sea of Okhotsk[NEWLINE][ICON_BULLET]North Sea[NEWLINE][ICON_BULLET]Baltic Sea[NEWLINE][ICON_BULLET]Bay of Bengal[NEWLINE][ICON_BULLET]Sea of Japan[NEWLINE][ICON_BULLET]Yellow Sea[NEWLINE][ICON_BULLET]Gulf of Mexico[NEWLINE][NEWLINE]The shape of those seas is influenced by the Real Land/Sea Shape Blending option.</Text>
+    </Replace>
 	
     <Replace Tag="LOC_MAP_AUSTRALIA_NAME" 			Text="Australia" 			Language="en_US" /> 
     <Replace Tag="LOC_MAP_OCEANIA_NAME" 			Text="Oceania" 				Language="en_US" /> 
@@ -797,7 +910,7 @@
     </Replace>
 	
     <Replace Tag="LOC_SCENARIO_OPTIONS" Language="en_US">
-      <Text>[ICON_PressureDownLarge] SCENARIO OPTIONS [ICON_PressureDownLarge]</Text>
+      <Text>[ICON_DownloadContent][ICON_DownloadContent][ICON_DownloadContent][ICON_DownloadContent] SCENARIO OPTIONS [ICON_DownloadContent][ICON_DownloadContent][ICON_DownloadContent][ICON_DownloadContent]</Text>
     </Replace>
     <Replace Tag="LOC_SCENARIO_OPTIONS_DESCRIPTION" Language="en_US">
       <Text>Scenario Options Below[NEWLINE][ICON_Exclamation][COLOR_RED] Alpha Testing [ENDCOLOR][ICON_Exclamation]</Text>

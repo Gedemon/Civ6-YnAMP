@@ -3,6 +3,7 @@
 <Context Name="WorldBuilderPlotEditor">
  <!-- YnAMP <<<<< -->
 	<GridButton ID="ExportMapToLua"				Anchor="C,T" Style="PauseMenuButton" Size="250,36" String="{LOC_GAME_MENU_EXPORT_TO_LUA:upper}" ToolTip="LOC_GAME_MENU_EXPORT_TO_LUA_DESCRIPTION" Hidden="1" />
+	<GridButton ID="Restart"					Anchor="C,T" Style="PauseMenuButton" Size="250,36" String="{LOC_GAME_MENU_YNAMP_RESTART:upper}" ToolTip="LOC_GAME_MENU_YNAMP_RESTART_TOOLTIP"		Hidden="1" />
  <!-- YnAMP >>>>> -->
   <ScrollPanel ID="PlotEditorScrollPanel" Size="320,455" Vertical="1" AutoScrollBar="1" >
     

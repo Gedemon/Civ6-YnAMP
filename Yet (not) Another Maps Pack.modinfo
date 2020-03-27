@@ -36,6 +36,7 @@
 			<File>Maps/LargestEarthCustom/LargestEarthCustom.lua</File>
 			<File>Override/AssignStartingPlots.lua</File>
 			<File>Scripts/PlotIterators.lua</File>
+			<File>Scripts/YnAMP_Common.lua</File>
 			<File>Override/WorldBuilderPlacement.lua</File>
 			<File>Override/WorldBuilderPlacement.xml</File>
 			<File>Override/WorldBuilderPlotEditor.lua</File>
@@ -300,6 +301,7 @@
 		<File>Override/WorldBuilderPlacement.xml</File>
 		<File>Override/WorldBuilderPlotEditor.lua</File>
 		<File>Override/WorldBuilderPlotEditor.xml</File>
+		<File>Scripts/YnAMP_Common.lua</File>
 		<File>Scripts/YnAMP_Script.lua</File>
 		<File>Scripts/YnAMP_InGame.lua</File>
 		<File>Scripts/YnAMP_InGame.xml</File>

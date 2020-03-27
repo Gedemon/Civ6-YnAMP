@@ -7,7 +7,7 @@ local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value
 print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2019) by Gedemon")
 print ("loading YnAMP_InGame.lua")
 
--- Sharing UI/Gameplay context (ExposedMembers.YnAMP is initialized in AssignStartingPlots.lua)
+-- Sharing UI/Gameplay context (ExposedMembers.YnAMP is initialized in YnAMP_Common.lua, included in YnAMP_Script.lua)
 local YnAMP = ExposedMembers.YnAMP
 
 local mods = Modding.GetActiveMods()

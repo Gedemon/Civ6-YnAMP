@@ -9,10 +9,7 @@ print ("loading YnAMP_Script.lua")
 
 include "MapEnums"
 include "PlotIterators"
-
--- Sharing UI/Gameplay context (ExposedMembers.YnAMP is initialized in AssignStartingPlots.lua on first launch, or here on reload)
-ExposedMembers.YnAMP = ExposedMembers.YnAMP or {}
-local YnAMP = ExposedMembers.YnAMP
+include "YnAMP_Common"
 
 function Round(num)
     under = math.floor(num)
@@ -46,6 +43,7 @@ local AliveList				= {} -- helper to get the list of civilization minus the fake
 local numCitiesOnMap		= 0
 local g_MaxDistance			= 999
 
+--[[
 local bUseRelativePlacement 	= MapConfiguration.GetValue("UseRelativePlacement")
 local bUseRelativeFixedTable 	= bUseRelativePlacement and MapConfiguration.GetValue("UseRelativeFixedTable")
 local g_ReferenceMapWidth 		= MapConfiguration.GetValue("ReferenceMapWidth") or 180
@@ -64,6 +62,8 @@ local g_ReferenceWidthFactor  = g_ReferenceMapWidth / g_UncutMapWidth
 local g_ReferenceHeightFactor = g_ReferenceMapHeight / g_UncutMapHeight
 local g_ReferenceWidthRatio   = g_UncutMapWidth / g_ReferenceMapWidth 
 local g_ReferenceHeightRatio  = g_UncutMapHeight / g_ReferenceMapHeight
+--]]
+SetGlobals()
 
 local g_ExtraRange = 0
 if bUseRelativePlacement then
@@ -285,152 +285,6 @@ function ChangePlotOwner(pPlot, ownerID, cityID)
 	end
 end
 
--- Export a complete civ6 map to Lua.log
-function ExportMap()
-	local g_iW, g_iH = Map.GetGridSize()
-	for iY = 0, g_iH - 1 do
-		for iX = g_iW - 1, 0, -1  do
-		
-			local plot			= Map.GetPlot(iX,iY)
-			local NEOfCliff 	= plot:IsNEOfCliff() and 1 or 0
-			local WOfCliff		= plot:IsWOfCliff() and 1 or 0
-			local NWOfCliff 	= plot:IsNWOfCliff() and 1 or 0
-			local NEOfRiver		= plot:IsNEOfRiver() and 1 or 0 -- GetRiverSWFlowDirection()
-			local WOfRiver		= plot:IsWOfRiver() and 1 or 0	-- GetRiverEFlowDirection()
-			local NWOfRiver		= plot:IsNWOfRiver() and 1 or 0	-- GetRiverSEFlowDirection()
-			local terrainType 	= plot:GetTerrainType()
-			local featureType	= plot:GetFeatureType()
-			local continentType	= plot:GetContinentType()
-			local resourceType	= plot:GetResourceType(-1)
-			local lowlandType	= (TerrainManager and TerrainManager.GetCoastalLowlandType and TerrainManager.GetCoastalLowlandType( plot:GetIndex() )) or -1
-			local numResource	= plot:GetResourceCount()
-			
-			if terrainType ~= -1 then
-				terrainType = "\""..GameInfo.Terrains[terrainType].TerrainType.."\""
-			else
-				print("Error: terrainType = -1 at ["..plot:GetX().."]["..plot:GetY().."]")
-				break
-			end
-			
-			if featureType ~= -1 then
-				featureType = "\""..GameInfo.Features[featureType].FeatureType.."\""
-			end
-			if continentType ~= -1 then
-				continentType = "\""..GameInfo.Continents[continentType].ContinentType.."\""
-			end
-			if resourceType ~= -1 then
-				resourceType = "\""..GameInfo.Resources[resourceType].ResourceType.."\""
-			end
-			
-			local endStr =""
-			if plot:IsLake() then endStr = " -- Lake" end
-
-			print("MapToConvert["..plot:GetX().."]["..plot:GetY().."]={"..terrainType..","..featureType..","..continentType..",{{"..NEOfRiver..","..plot:GetRiverSWFlowDirection().. "},{"..WOfRiver..","..plot:GetRiverEFlowDirection().."},{"..NWOfRiver..","..plot:GetRiverSEFlowDirection().."}},{".. resourceType ..","..tostring(numResource).."},{"..NEOfCliff..","..WOfCliff..","..NWOfCliff.."},".. tostring(lowlandType).."}"..endStr)
-		end
-	end
-	
-	-- export Scenario
-	local scenarioString 	= ScenarioName and "ScenarioName=\""..tostring(ScenarioName).."\"" or ""
-	local mapString 		= ScenarioName and "ScenarioName=\""..tostring(ScenarioName).."\"" or ""
-	local stringTable 		= {}
-	local cityNames 		= {}
-	local pPlot
-	local iOwner
-	
-	print("<!--******************************---->")
-	print("<!--*******   City list   ********---->")
-	print("<!--******************************---->")
-	print("<ScenarioCities>")
-	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
-		local civilizationType	= CivTypePlayerID[iPlayer]
-		if civilizationType then
-			local player	= Players[iPlayer]
-			local Cities	= player and player:GetCities()
-			if Cities and Cities.Members then
-				for i, pCity in Cities:Members() do
-					table.insert( cityNames ,"	<Replace Tag=\"".. tostring(pCity:GetName()) .."\" Text=\"".. Locale.Lookup(pCity:GetName()) .."\" Language=\"en_US\" />")
-					print("	<Replace ".. scenarioString .. mapString .." CivilizationType=\"".. tostring(civilizationType).."\" CitySize=\""..tostring(pCity:GetPopulation()) .."\"	CityName=\"".. tostring(pCity:GetName()) .."\"	X=\"".. tostring(pCity:GetX()) .."\" Y=\"".. tostring(pCity:GetY()) .."\"	/>")
-				end
-			end
-		end
-	end	
-	print("</ScenarioCities>")
-	--[[
-	print("<!--******************************---->")
-	print("<!--*******   City Names  ********---->")
-	print("<!--******************************---->")
-	print("<LocalizedText>")
-	for i, str in ipairs(cityNames) do print(str) end
-	print("</LocalizedText>")
-	--]]
-	
-	print("<!--******************************---->")
-	print("<!--*******   Territory   ********---->")
-	print("<!--******************************---->")
-	print("<ScenarioTerritory>")
-	for iY = 0, g_iH - 1 do
-		for iX = g_iW - 1, 0, -1  do
-			pPlot 	= Map.GetPlot(iX,iY)
-			iOwner	= pPlot:GetOwner()
-			if iOwner ~= -1 then
-				local civilizationType	= CivTypePlayerID[iOwner]
-				if civilizationType then
-					print("	<Replace ".. scenarioString .. mapString .." CivilizationType=\"".. tostring(civilizationType).."\" X=\"".. tostring(pPlot:GetX()) .."\" Y=\"".. tostring(pPlot:GetY()) .."\"		/>")
-				end
-			end
-		end
-	end	
-	print("</ScenarioTerritory>")	
-	
-	print("<!--******************************---->")
-	print("<!--*******   Unit list   ********---->")
-	print("<!--******************************---->")
-	print("<ScenarioUnits>")
-	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
-		local civilizationType	= CivTypePlayerID[iPlayer]
-		if civilizationType then
-			local player	= Players[iPlayer]
-			local units		= player and player:GetUnits()
-			if units then
-				for i, unit in units:Members() do
-					print("	<Replace ".. scenarioString .. mapString .." CivilizationType=\"".. tostring(civilizationType).."\" UnitType=\""..tostring(GameInfo.Units[unit:GetType()].UnitType) .."\"	Name=\"".. tostring(unit:GetName()) .."\"	Damage=\"".. tostring(unit:GetDamage()) .."\"	X=\"".. tostring(unit:GetX()) .."\" Y=\"".. tostring(unit:GetY()) .."\"	/>")
-				end
-			end
-		end
-	end	
-	print("</ScenarioUnits>")
-	
-	print("<!--******************************---->")
-	print("<!--******* Infrastructure *******---->")
-	print("<!--******************************---->")
-	print("<ScenarioInfrastructure>")
-	local iImprovmentType
-	local iRouteType
-	for iY = 0, g_iH - 1 do
-		for iX = g_iW - 1, 0, -1  do
-			pPlot 					= Map.GetPlot(iX,iY)
-			iImprovmentType 		= pPlot:GetImprovementType()
-			iRouteType 				= pPlot:GetRouteType()
-			local improvementStr 	= ""
-			local routeStr 			= ""
-			local bRow = false
-			if iImprovmentType ~= -1 then
-				improvementStr = "ImprovementType=\"".. tostring(GameInfo.Improvements[iImprovmentType].ImprovementType).."\""
-				bRow = true
-			end
-			if iRouteType ~= -1 then
-				routeStr = "RouteType=\"".. tostring(iRouteType).."\""
-				bRow = true
-			end
-			if bRow then
-				print("	<Replace ".. scenarioString .. mapString .." "..improvementStr.." ".. routeStr .." X=\"".. tostring(pPlot:GetX()) .."\" Y=\"".. tostring(pPlot:GetY()) .."\"		/>")
-			end
-		end
-	end
-	print("</ScenarioInfrastructure>")
-	
-end
-YnAMP.ExportMap = ExportMap
 
 -----------------------------------------------------------------------------------------
 -- Pathfinder Functions
@@ -605,7 +459,7 @@ end
 ------------------------------------------------------------------------------
 -- Helpers for x,y positions when using a reference or offset map
 ------------------------------------------------------------------------------
-
+--[[
 local XFromRefMapX 	= {}
 local YFromRefMapY 	= {}
 local RefMapXfromX 	= {}
@@ -711,6 +565,8 @@ end
 function GetPlotFromRefMap(x, y, bOnlyOffset)
 	return Map.GetPlot(GetXYFromRefMapXY(x,y, bOnlyOffset))
 end
+--]]
+BuildRefXY()
 
 function IncrementCityCount()
 	numCitiesOnMap = numCitiesOnMap + 1
@@ -1049,7 +905,7 @@ end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Scenario Placement  <<<<<
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-if MapConfiguration.GetValue("ScenarioType") ~= "SCENARIO_NONE" then	--if not Game:GetProperty("YnAMP_ScenarioInitialized") then -- can't use YnAMP_ScenarioInitialized if we want to use a kind of reinforcement table
+if MapConfiguration.GetValue("ScenarioType") ~= "SCENARIO_NONE" then --and not GameConfiguration.IsWorldBuilderEditor() then	--if not Game:GetProperty("YnAMP_ScenarioInitialized") then -- can't use YnAMP_ScenarioInitialized if we want to use a kind of reinforcement table
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 -- Scenario Settings
