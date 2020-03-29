@@ -119,6 +119,13 @@
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="AddLargeLakes" 		Name="LOC_MAP_ADD_LAKES_NAME" 		Description="LOC_MAP_ADD_LAKES_DESC"	  	Domain="bool"	 DefaultValue="1"	ConfigurationGroup="Map" ConfigurationId="AddLargeLakes" 		GroupId="MapOptions" SortIndex="600"/>
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="PlaceSmallIslands" 	Name="LOC_MAP_ADD_ISLANDS_NAME"		Description="LOC_MAP_ADD_ISLANDS_DESC"	  	Domain="bool"	 DefaultValue="1"	ConfigurationGroup="Map" ConfigurationId="PlaceSmallIslands" 	GroupId="MapOptions" SortIndex="610"/>
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="AdditionalRealSeas" 	Name="LOC_MAP_ADDITIONAL_SEAS_NAME"	Description="LOC_MAP_ADDITIONAL_SEAS_DESC"	Domain="bool"	 DefaultValue="1"	ConfigurationGroup="Map" ConfigurationId="AdditionalRealSeas" 	GroupId="MapOptions" SortIndex="620"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="2C_LimitSnowTundra" 	Name="LOC_MAP_LIMIT_TUNDRA_NAME"	Description="LOC_MAP_LIMIT_TUNDRA_DESC"		Domain="bool"	 DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LimitSnowTundra" 		GroupId="MapOptions" SortIndex="630"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="MC_LimitSnowTundra" 	Name="LOC_MAP_LIMIT_TUNDRA_NAME"	Description="LOC_MAP_LIMIT_TUNDRA_DESC"		Domain="bool"	 DefaultValue="1"	ConfigurationGroup="Map" ConfigurationId="LimitSnowTundra" 		GroupId="MapOptions" SortIndex="630"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="2C_AllowLandOnPoles"	Name="LOC_MAP_LAND_ON_POLES_NAME"	Description="LOC_MAP_LAND_ON_POLES_DESC"	Domain="bool"	 DefaultValue="1"	ConfigurationGroup="Map" ConfigurationId="AllowLandOnPoles" 	GroupId="MapOptions" SortIndex="640"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="MC_AllowLandOnPoles"	Name="LOC_MAP_LAND_ON_POLES_NAME"	Description="LOC_MAP_LAND_ON_POLES_DESC"	Domain="bool"	 DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="AllowLandOnPoles" 	GroupId="MapOptions" SortIndex="640"/>
+		
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="ImportRealWorldTerrain"	Name="LOC_MAP_REAL_TERRAIN_NAME"	Description="LOC_MAP_REAL_TERRAIN_DESC"		Domain="bool"	 DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="ImportRealWorldTerrain" 	GroupId="MapOptions" SortIndex="650"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="ImportRealWorldFeatures"	Name="LOC_MAP_REAL_FEATURES_NAME"	Description="LOC_MAP_REAL_FEATURES_DESC"	Domain="bool"	 DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="ImportRealWorldFeatures" 	GroupId="MapOptions" SortIndex="655"/>
 		
 		<!--	Option to use Leaders TSL if available		-->
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="MoreLandAroundTSL" Name="LOC_MAP_LAND_AROUND_TSL_NAME" Description="LOC_MAP_LAND_AROUND_TSL_DESC" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="MoreLandAroundTSL" GroupId="MapOptions" SortIndex="295"/>
@@ -220,6 +227,8 @@
 		<Row ParameterId="2C_NewWorldShape" 	ConfigurationGroup="Map" ConfigurationId="MapShape" 		Operator="Equals" 		ConfigurationValue="2CONTINENTS"/>
 		<Row ParameterId="2C_NewWorldLandBlend" ConfigurationGroup="Map" ConfigurationId="MapShape" 		Operator="Equals" 		ConfigurationValue="2CONTINENTS"/>
 		<Row ParameterId="2C_NewWorldSeaBlend" 	ConfigurationGroup="Map" ConfigurationId="MapShape" 		Operator="Equals" 		ConfigurationValue="2CONTINENTS"/>
+		<Row ParameterId="2C_LimitSnowTundra"	ConfigurationGroup="Map" ConfigurationId="MapShape" 		Operator="Equals" 		ConfigurationValue="2CONTINENTS"/>
+		<Row ParameterId="2C_AllowLandOnPoles"	ConfigurationGroup="Map" ConfigurationId="MapShape" 		Operator="Equals" 		ConfigurationValue="2CONTINENTS"/>
 		
 		<Row ParameterId="MC_OldWorldShape" 	ConfigurationGroup="Map" ConfigurationId="MapShape" 		Operator="Equals" 		ConfigurationValue="MULTIPLE"/>
 		<Row ParameterId="MC_NewWorldShape" 	ConfigurationGroup="Map" ConfigurationId="MapShape" 		Operator="Equals" 		ConfigurationValue="MULTIPLE"/>
@@ -227,9 +236,9 @@
 		<Row ParameterId="MC_OldWorldSeaBlend"	ConfigurationGroup="Map" ConfigurationId="MapShape" 		Operator="Equals" 		ConfigurationValue="MULTIPLE"/>
 		<Row ParameterId="MC_NewWorldLandBlend" ConfigurationGroup="Map" ConfigurationId="MapShape" 		Operator="Equals" 		ConfigurationValue="MULTIPLE"/>
 		<Row ParameterId="MC_NewWorldSeaBlend"	ConfigurationGroup="Map" ConfigurationId="MapShape" 		Operator="Equals" 		ConfigurationValue="MULTIPLE"/>
-		
+		<Row ParameterId="MC_LimitSnowTundra"	ConfigurationGroup="Map" ConfigurationId="MapShape" 		Operator="Equals" 		ConfigurationValue="MULTIPLE"/>
+		<Row ParameterId="MC_AllowLandOnPoles"	ConfigurationGroup="Map" ConfigurationId="MapShape" 		Operator="Equals" 		ConfigurationValue="MULTIPLE"/>
 		<Row ParameterId="AdditionalRealSeas"	ConfigurationGroup="Map" ConfigurationId="MapShape" 		Operator="Equals" 		ConfigurationValue="MULTIPLE"/>
-		
 		
 		<Row ParameterId="AUSTRALIA" 		ConfigurationGroup="Map" ConfigurationId="OldWorldShape" 		Operator="Equals" 		ConfigurationValue="SELECT_LANDMASS"/>
 		<Row ParameterId="OCEANIA" 			ConfigurationGroup="Map" ConfigurationId="OldWorldShape" 		Operator="Equals" 		ConfigurationValue="SELECT_LANDMASS"/>
@@ -266,6 +275,8 @@
 		
 		<Row ParameterId="MoreLandAroundTSL" 		ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" 	Operator="Equals" 		ConfigurationValue="PLACEMENT_TSL"/>
 		<Row ParameterId="ReplacementRangeForTSL" 	ConfigurationGroup="Map" ConfigurationId="CivilizationPlacement" 	Operator="Equals" 		ConfigurationValue="PLACEMENT_TSL"/>
+		
+		<Row ParameterId="ImportRealWorldFeatures"	ConfigurationGroup="Map" ConfigurationId="ImportRealWorldTerrain" 		Operator="Equals" 		ConfigurationValue="1"/>
 		
 	</ParameterDependencies>
 	

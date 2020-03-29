@@ -753,6 +753,30 @@
     <Replace Tag="LOC_MAP_ADDITIONAL_SEAS_DESC" Language="en_US">
       <Text>Add randomly shaped seas at those locations (relative to real world):[NEWLINE][NEWLINE][ICON_BULLET]Sea of Okhotsk[NEWLINE][ICON_BULLET]North Sea[NEWLINE][ICON_BULLET]Baltic Sea[NEWLINE][ICON_BULLET]Bay of Bengal[NEWLINE][ICON_BULLET]Sea of Japan[NEWLINE][ICON_BULLET]Yellow Sea[NEWLINE][ICON_BULLET]Gulf of Mexico[NEWLINE][NEWLINE]The shape of those seas is influenced by the Real Land/Sea Shape Blending option.</Text>
     </Replace>
+    <Replace Tag="LOC_MAP_LIMIT_TUNDRA_NAME" Language="en_US">
+      <Text>Limit Tundra and Snow</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LIMIT_TUNDRA_DESC" Language="en_US">
+      <Text>The map generator may place too much Tundra and Snow terrains types in some areas when using a land shape similar to the real world (especially in the south that is a bit cropped to save space on the reference map), when checked this option allows to limit Tundra and Snow latitudes to be relative to the real world reference map.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LAND_ON_POLES_NAME" Language="en_US">
+      <Text>Allows Land tiles on Poles</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LAND_ON_POLES_DESC" Language="en_US">
+      <Text>By default, the Terra Map scripts use a small buffer to the North and South to prevent land tiles blocking circumnavigation. When this option is checked, land tiles may be placed even on the North and South poles areas. But this doesn't force land tiles placement if the Fractal function has generated a landmass with no lands on poles.</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_REAL_TERRAIN_NAME" Language="en_US">
+      <Text>Use real terrain when possible</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_REAL_TERRAIN_DESC" Language="en_US">
+      <Text>Use the reference real World map to determine the terrain type (Grass, Plains, Desert, Tundra, Snow and Hills/mountains) of a land plot, based on its relative (to real Earth) position when possible.[NEWLINE][NEWLINE]This setting doesn't affect land plot that are generated where there is Water on the reference map.</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_REAL_FEATURES_NAME" Language="en_US">
+      <Text>Use real features when possible</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_REAL_FEATURES_DESC" Language="en_US">
+      <Text>Use the reference real World map to determine the feature type (Forest, Jungle, Oasis, ...) of a land plot, based on its relative (to real Earth) position when possible.[NEWLINE][NEWLINE]This setting doesn't affect land plot that are generated where there is Water on the reference map, and doesn't include Natural Wonders.</Text>
+    </Replace>
 	
     <Replace Tag="LOC_MAP_AUSTRALIA_NAME" 			Text="Australia" 			Language="en_US" /> 
     <Replace Tag="LOC_MAP_OCEANIA_NAME" 			Text="Oceania" 				Language="en_US" /> 

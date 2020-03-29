@@ -446,6 +446,11 @@ g_ParameterFactories["Map"] = function(o, parameter)
 	
 	-- Advanced setup version.	
 	table.insert( drivers, CreateButtonPopupDriver(o, parameter, OnMapSelect) );
+	
+	-- YNAMP <<<<<
+	-- Restore pulldown menu for map selection, less clicks = good UI
+	table.insert(drivers, GameParameters_UI_DefaultCreateParameterDriver(o, parameter));
+	-- YNAMP >>>>>
 
 	return drivers;
 end
