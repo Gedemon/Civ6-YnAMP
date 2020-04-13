@@ -62,7 +62,7 @@
     <Replace Tag="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Language="en_US">
       <Text>Culturally Linked Starting Positions</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_NAME" Language="en_US">
+    <Replace Tag="LOC_MAP_PLACEMENT_RANDOM_NAME" Language="en_US">
       <Text>Random</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
@@ -443,9 +443,15 @@
 	<Replace Tag="LOC_MAP_AUTO_CITY_NAMING_NAME" Language="en_US">
       <Text>Real City Naming</Text>
     </Replace>
+	<Replace Tag="LOC_MAP_AUTO_CITY_NAMING_DESC" Language="en_US">
+      <Text>When checked the mod will try to set the name of a city based on the real world names relative to its location. Uncheck this to use the default city list for each Civilizations.</Text>
+    </Replace>
 	<Replace Tag="LOC_MAP_ONLY_GENERIC_CITY_NAMES_NAME" Language="en_US">
       <Text>Use only generic city names</Text>
-    </Replace>	
+    </Replace>
+	<Replace Tag="LOC_MAP_ONLY_GENERIC_CITY_NAMES_DESC" Language="en_US">
+      <Text>When unchecked the mod will try to set the name of a city based on what would be the real world name of a city created by a Civilization at its location. Check this to use the default (ie english) city name at the city's location.</Text>
+    </Replace>
 	
 	<Replace Tag="LOC_MAP_LEADER_TSL_NAME" Language="en_US">
       <Text>Use Leaders TSL when available</Text>
@@ -476,6 +482,20 @@
     </Replace>
     <Replace Tag="LOC_TURNS_BEFORE_BARBARIANS_DESCRIPTION" Language="en_US">
       <Text>Minimum number of turns before allowing Barbarian Scouts</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAJOR_CIVILIZATION_COUNT_NAME" Language="en_US">
+      <Text>Civilizations Slots</Text>
+    </Replace>
+    <Replace Tag="LOC_MAJOR_CIVILIZATION_COUNT_DESCRIPTION" Language="en_US">
+      <Text>Number of Major Civilization slots.[NEWLINE][NEWLINE]To prevent User Interface lag or accidental change when using the mouse wheel in the menu, this setting is not immediatly applied.[NEWLINE][NEWLINE]Usage: set a higher number and click on the "+" (Add) button or set a lower number and click on one of the "X" (Delete) buttons in the "Players" section.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_BAN_LEADERS_NAME" Language="en_US">
+      <Text>Leaders Ban List for Random Slots</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_BAN_LEADERS_DESCRIPTION" Language="en_US">
+      <Text>Select Leaders to ban for Random slots, you can still select them manually for the player or the AI.</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_REFERENCE_DB_NAME" Language="en_US">
@@ -904,14 +924,36 @@
       <Text>Alps (West Italy)</Text>
     </Replace>
 	
-    <Replace Tag="LOC_CITYSTATES_OPTIONS" Language="en_US">
-      <Text>City States Options</Text>
-    </Replace>
     <Replace Tag="LOC_MAP_SELECT_CITY_STATES_NAME" Language="en_US">
       <Text>Manual City States Selection</Text>
     </Replace>
     <Replace Tag="LOC_MAP_SELECT_CITY_STATES_DESCRIPTION" Language="en_US">
       <Text>When enabled you can manually select which City States you want to be placed on the map from a list.[NEWLINE][NEWLINE]Note that DLCs, Expansions, scenarios and mods can add or remove City States, the list does not reflect which ones are actually available.[NEWLINE][NEWLINE]When a City State is not available, its slot is free for a random CS.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_CITYSTATES_OPTIONS_NAME" Language="en_US">
+      <Text>City States Selection</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_DEFAULT_DESCRIPTION" Language="en_US">
+      <Text>City States are selected by the Civ6 Map Generator (random)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_SELECTION_NAME" Language="en_US">
+      <Text>Selection and Random</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_SELECTION_DESCRIPTION" Language="en_US">
+      <Text>Select which City States you want to be placed, the total number of CS will still be capped at the slider value and when you select less CS in the list than the slider value, the empty slots will be filled with random CS. If you select more CS than the slider value, the mod will pick a limited random list from your selection.[NEWLINE][NEWLINE]Note that DLCs, Expansions, scenarios and mods can add or remove City States, the list does not reflect which ones are actually available.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_UNCAPPED_SELECTION_NAME" Language="en_US">
+      <Text>Uncapped Selection</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_UNCAPPED_SELECTION_DESCRIPTION" Language="en_US">
+      <Text>Select which City States you want to be placed on the map from a list, the mod will try to find a slot for all selected City States, ignoring the slider value when you select more. When you select less CS in the list than the slider value, the empty slots will be filled with random CS.[NEWLINE][NEWLINE]Note that DLCs, Expansions, scenarios and mods can add or remove City States, the list does not reflect which ones are actually available.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_ONLY_SELECTION_NAME" Language="en_US">
+      <Text>Only Selection</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_ONLY_SELECTION_DESCRIPTION" Language="en_US">
+      <Text>Select which City States you want to be placed on the map from a list, the mod will try to find a slot only for the selected City States, ignoring the slider value when you select more or less.[NEWLINE][NEWLINE]Note that DLCs, Expansions, scenarios and mods can add or remove City States, the list does not reflect which ones are actually available.</Text>
     </Replace>
 	
     <Replace Tag="LOC_XP1_CHECK_NAME" Language="en_US">
@@ -1079,6 +1121,12 @@
     </Replace>
     <Replace Tag="LOC_MAP_MAX_CAPITAL_DISTANCE_DESCRIPTION" Language="en_US">
       <Text>Maximum distance from Capital for the other cities (this is not checked for cities imported from the ScenarioCities table)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MIN_CITY_SEPARATION" Language="en_US">
+      <Text>Min. Cities Separation</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MIN_CITY_SEPARATION_DESCRIPTION" Language="en_US">
+      <Text>Minimum distance between cities (this is not checked for cities imported from the ScenarioCities table and is ignored when lower than the core game limit)</Text>
     </Replace>
     <Replace Tag="LOC_MAP_SAME_LANDMASS" Language="en_US">
       <Text>Only on the same landmass</Text>
@@ -1314,7 +1362,36 @@
 	<Replace Tag="LOC_CIVILIZATION_PALENQUE_DESCRIPTION" Language="en_US">
 		<Text>Palenque city-state</Text>
 	</Replace>
-
 	
+    <Replace Tag="LOC_SETUP_DATABASE_LOADED_YNAMP" Language="en_US">
+      <Text>YnAMP - [COLOR_Civ6Green]Database loaded[ENDCOLOR] [ICON_CheckSuccess]</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_LOADED_YNAMP_TT" Language="en_US">
+      <Text>The Database has been loaded.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_NOT_LOADED_YNAMP" Language="en_US">
+      <Text>YnAMP - [COLOR_Civ6Yellow]Database not loaded[ENDCOLOR] [ICON_CheckFail]</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_NOT_LOADED_YNAMP_TT" Language="en_US">
+      <Text>The Database has not been loaded yet.[NEWLINE][NEWLINE]A game need to be launched to get the data required for some of YnAMP advanced options.[NEWLINE][NEWLINE]You can click the "Load Database" button to launch a quick game in 2D mode.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_CHANGED_YNAMP" Language="en_US">
+      <Text>YnAMP - [COLOR_Civ6Yellow]Database changed[ENDCOLOR] [ICON_CheckFail]</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_CHANGED_YNAMP_TT" Language="en_US">
+      <Text>The Database has been changed (by activating Mods, DLCs or Expansions)[NEWLINE][NEWLINE]A game may need to be launched to update the data required for some of YnAMP advanced options.[NEWLINE][NEWLINE]You can click the "Load Database" button to launch a quick game in 2D mode.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_LOCK_YNAMP" Language="en_US">
+      <Text>YnAMP - [COLOR_Civ6Red]Map size unsupported[ENDCOLOR] [ICON_Not]</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_LOCK_YNAMP_TT" Language="en_US">
+      <Text>Map size warning[NEWLINE][NEWLINE]Warning.[NEWLINE][NEWLINE]Seriously, Warning.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_LOAD_DATA_YNAMP" Language="en_US">
+      <Text>Load Database</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_LOAD_DATA_YNAMP_TT" Language="en_US">
+      <Text>Launch a quick game in 2D mode to load all data used by YnAMP for the setting menu then quit automatically and return to the Main Menu.[NEWLINE][NEWLINE]Navigate back to this setup screen, it should then show "Database Loaded" and activate the related YnAMP advanced options.[NEWLINE][NEWLINE]A saved file of the current settings named "AutoSaveYnAMP" should be available to reload if needed, but the suggested order of action should be:[NEWLINE][ICON_BULLET] Activate mods[NEWLINE][ICON_BULLET] Load the database[NEWLINE][ICON_BULLET] Change your settings</Text>
+    </Replace>
   </LocalizedText>
 </GameData>

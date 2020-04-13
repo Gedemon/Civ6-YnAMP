@@ -1,18 +1,16 @@
 <!--
 
-	Map Size reference
-
-			  Civ V       Civ VI 
+			  Civ V       Civ VI 	YnAMP (2:1)
 	 
-	Dual       40x24       44x26 
-	Tiny       55x36       60x36 
-	Small      66x42       74x46 
-	Standard   80x52       84x54 
-	Large     104x64       96x60
-	Huge      128x80      106x66  
-	Enormous              128x80
-	Giant     180x94      180x94
-	Ludicrous N/A        230x115 (220x110 for summer patch)
+	Dual       40x24       44x26 	-
+	Tiny       55x36       60x36 	-
+	Small      66x42       74x46 	84x44
+	Standard   80x52       84x54 	96x50
+	Large     104x64       96x60	108x56
+	Huge      128x80      106x66  	120x62
+	Enormous              128x80	140x74
+	Giant     180x94      180x94	180x94
+	Ludicrous N/A        230x115	200x104
 
 -->
 
@@ -40,7 +38,7 @@
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="ResourcesExclusion" 			Name="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_NAME" Description="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" Domain="ResourcesExclusion" 			 DefaultValue="PLACEMENT_EXCLUDE" 	ConfigurationGroup="Map" ConfigurationId="ResourcesExclusion" 		GroupId="MapOptions" 				SortIndex="275"/>
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="NaturalWondersPlacement" 		Name="LOC_MAP_NATURAL_WONDERS_PLACEMENT_NAME" 	Description="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DESCRIPTION"   Domain="NaturalWondersPlacement" 		 DefaultValue="PLACEMENT_IMPORT" 	ConfigurationGroup="Map" ConfigurationId="NaturalWondersPlacement" 	GroupId="MapOptions" Hash="0" 		SortIndex="244"/>
 
-		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="AutoCityNaming" 				Name="LOC_MAP_AUTO_CITY_NAMING_NAME" 			Description="" 												  Domain="bool" 						 DefaultValue="0" 					ConfigurationGroup="Map" ConfigurationId="AutoCityNaming" 			GroupId="MapOptions" SortIndex="2000"/>
+		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="AutoCityNaming" 				Name="LOC_MAP_AUTO_CITY_NAMING_NAME" 			Description="LOC_MAP_AUTO_CITY_NAMING_DESC" 				  Domain="bool" 						 DefaultValue="0" 					ConfigurationGroup="Map" ConfigurationId="AutoCityNaming" 			GroupId="MapOptions" SortIndex="2000"/>
 		<Row Key1="Map" Key2="TerraMap.lua" ParameterId="AllowNewWorldCityStates" 		Name="LOC_MAP_ALLOW_NW_CS_NAME" 				Description="" 												  Domain="bool" 						 DefaultValue="1" 					ConfigurationGroup="Map" ConfigurationId="AllowNewWorldCityStates" 	GroupId="MapOptions" SortIndex="279"/>
 		
 		<!--	Hidden parameters to notify some YnAMP scripts to use rlative placement for this map (you must also set ReferenceMapHeight, ReferenceMapWidth and give that map the same name as the reference map
@@ -282,8 +280,9 @@
 	
 	<!-- Only use those values for a domain -->
 	<MapSupportedValues>
+		<!--
 		<Row Map="TerraMap.lua" Domain="PlaceAllLuxuries" Value="PLACEMENT_REQUEST" />
-		
+		-->
 		<Row Map="TerraMap.lua" Domain="StandardMapSizes" Value="MAPSIZE_SMALL21" 		/>
 		<Row Map="TerraMap.lua" Domain="StandardMapSizes" Value="MAPSIZE_STANDARD21" 	/>
 		<Row Map="TerraMap.lua" Domain="StandardMapSizes" Value="MAPSIZE_LARGE21" 		/>

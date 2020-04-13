@@ -4,7 +4,7 @@ Yet (not) Another Maps Pack (YnAMP) provides Earth maps in different sizes with 
 
 ## Installation Instructions
 
-If you run Civ6 on a PC, see the forum post above for installation instructions.
+If you run Civ6 on a PC, see the forum post above for installation instructions. Do not use the "releases" tab here, as it's not updated.
 
 Mac **Steam** Users use the following command:
 

@@ -40,7 +40,7 @@
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="RequestedResources" Name="LOC_MAP_RESOURCES_REQUESTED_NAME" Description="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" Domain="RequestedResources" DefaultValue="PLACEMENT_REQUEST" ConfigurationGroup="Map" ConfigurationId="RequestedResources" GroupId="MapOptions" SortIndex="295"/>
 		
 		<!--	Auto City Naming -->
-		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="AutoCityNaming" Name="LOC_MAP_AUTO_CITY_NAMING_NAME" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="AutoCityNaming" GroupId="MapOptions" SortIndex="2000"/>
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="AutoCityNaming" Name="LOC_MAP_AUTO_CITY_NAMING_NAME" Description="LOC_MAP_AUTO_CITY_NAMING_DESC" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="AutoCityNaming" GroupId="MapOptions" SortIndex="2000"/>
 
 		<!--	Special default MapSize (hidden)
 		-->

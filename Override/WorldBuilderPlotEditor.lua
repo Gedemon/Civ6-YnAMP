@@ -1066,6 +1066,7 @@ function OnEnterGame()
 	Controls.Restart:SetHide( false )
 	Controls.Restart:ChangeParent(ContextPtr:LookUpControl("/WorldBuilder/TopOptionsMenu/MainStack"))
 	--Automation.SetInputHandler( OnInputHandler ) --<- deactivated, cause crash on restart ?
+	LoadGameplayDatabaseForConfig()
 end
 Events.LoadScreenClose.Add(OnEnterGame)
 

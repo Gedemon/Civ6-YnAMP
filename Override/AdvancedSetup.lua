@@ -13,6 +13,115 @@ include("SupportFunctions");
 --print ("loading AdvancedSetup with include for mods... (from Yet (not) Another Maps Pack)")
 print("loading AdvancedSetup for Yet (not) Another Maps Pack...")
 print("Game version : ".. tostring(UI.GetAppVersion()))
+ExposedMembers.ConfigYnAMP = ExposedMembers.ConfigYnAMP or {}
+ConfigYnAMP = ExposedMembers.ConfigYnAMP
+
+
+------------------------------------------------------------------------------
+-- YnAMP defines
+------------------------------------------------------------------------------
+local currentSelectedNumberMajorCivs	= 2		-- To track change to the number of selected player
+local bUpdatePlayerCount				= false	-- To tell when to update player count to prevent UI lag
+local bFinishedGameplayContentConfigure	= false	-- Wait before starting to check parameters for YnAMP
+local autoSaveConfigName				= "AutoSaveYnAMP"
+local filteredRandomLeaderList			= {}	-- List of leaders available for Random slots
+local maxWorkingMapSize					= 128*80
+local maxLoadingMapSize					= 200*104
+
+
+-- There must be a cleaner way to get that...
+local RulesetDomain	= {
+	["RULESET_STANDARD"]	= "Players:StandardPlayers",
+	["RULESET_EXPANSION_1"]	= "Players:Expansion1_Players",
+	["RULESET_EXPANSION_2"]	= "Players:Expansion2_Players"
+}
+
+-- MapSizeS default table, rebuild and completed by custom map sizes when loading the database
+ConfigYnAMP.MapSizes = ConfigYnAMP.MapSizes or {
+	["MAPSIZE_DUEL"] 		= {Width = 44 ,	Height = 26 , Size = 44 * 26 },
+	["MAPSIZE_TINY"] 		= {Width = 60 ,	Height = 36 , Size = 60 * 36 },
+	["MAPSIZE_SMALL"] 		= {Width = 74 ,	Height = 46 , Size = 74 * 46 },
+	["MAPSIZE_STANDARD"] 	= {Width = 84 ,	Height = 54 , Size = 84 * 54 },
+	["MAPSIZE_LARGE"] 		= {Width = 96 ,	Height = 60 , Size = 96 * 60 },
+	["MAPSIZE_HUGE"] 		= {Width = 106,	Height = 66 , Size = 106* 66 },
+	["MAPSIZE_SMALL21"] 	= {Width = 84 ,	Height = 44 , Size = 84 * 44 },
+	["MAPSIZE_STANDARD21"] 	= {Width = 95 ,	Height = 50 , Size = 95 * 50 },
+	["MAPSIZE_LARGE21"] 	= {Width = 108,	Height = 56 , Size = 108* 56 },
+	["MAPSIZE_HUGE21"]		= {Width = 120,	Height = 62 , Size = 120* 62 },
+	["MAPSIZE_ENORMOUS21"] 	= {Width = 140,	Height = 74 , Size = 140* 74 },
+	["MAPSIZE_ENORMOUS"] 	= {Width = 128,	Height = 80 , Size = 128* 80 },
+	["MAPSIZE_GIANT"] 		= {Width = 180,	Height = 94 , Size = 180* 94 },
+	["MAPSIZE_LUDICROUS"] 	= {Width = 200,	Height = 104, Size = 200* 104}
+}
+
+-- Add known CS to config DB
+if ConfigYnAMP.CityStatesList then
+
+	print("Check City States Selection list after Loading GamePlay DB...")
+	local IsAvailable = {}
+
+	-- Add CS imported from GamePlay DB to the config DB
+	for i, row in ipairs(ConfigYnAMP.CityStatesList) do
+		local LeaderType 		= row.LeaderType
+		local LeaderName 		= row.LeaderName
+		local CivilizationName 	= row.CivilizationName
+		IsAvailable[LeaderType]	= true
+	
+		local query		= "SELECT * FROM Parameters WHERE ConfigurationId = ?"
+		local results	= DB.ConfigurationQuery(query, LeaderType)
+		
+		if results and #results == 0 then
+			print("- Adding new City State leader to Selection List: ", LeaderType)
+			query = "INSERT INTO Parameters (ParameterId, Name, Description, Domain, DefaultValue, ConfigurationGroup, ConfigurationId, GroupId, SortIndex) VALUES (?, ?, ?, 'bool', 0, 'Map', ?, 'MapOptions', 99)"
+			DB.ConfigurationQuery(query, LeaderType, LeaderName, CivilizationName, LeaderType)
+			
+			query = "INSERT INTO ParameterDependencies (ParameterId, ConfigurationGroup, ConfigurationId, Operator, ConfigurationValue) VALUES (?, 'Map', 'SelectCityStates', 'NotEquals', 'RANDOM')"
+			DB.ConfigurationQuery(query, LeaderType)
+		end
+	end
+	
+	-- Remove CS missing in GamePlay DB from the Config DB
+	local query		= "SELECT * from Parameters where ConfigurationId LIKE '%LEADER_MINOR_CIV%' and GroupId='MapOptions'"
+	local results	= DB.ConfigurationQuery(query)
+	if results and #results > 0 then
+		for i, row in ipairs(results) do
+			if not (IsAvailable[row.ConfigurationId]) then
+				print("- Removing missing City State Leader from Selection List: ", row.ConfigurationId)
+				DB.ConfigurationQuery("DELETE FROM Parameters WHERE ConfigurationId = ? ", row.ConfigurationId)
+				--local query		= "SELECT * from Parameters where ConfigurationId LIKE '%LEADER_MINOR_CIV%' and GroupId='MapOptions'"
+				--local results	= DB.ConfigurationQuery(query)
+			end
+		end
+	end
+end
+
+
+------------------------------------------------------------------------------
+-- YnAMP Math functions
+------------------------------------------------------------------------------
+function GetShuffledCopyOfTable(incoming_table)
+	-- Designed to operate on tables with no gaps. Does not affect original table.
+	local len = table.maxn(incoming_table);
+	local copy = {};
+	local shuffledVersion = {};
+	local seed = MapConfiguration.GetValue("RANDOM_SEED")
+	print("Using Map Random seed for GetShuffledCopyOfTable :", seed )
+	math.randomseed(seed)
+	print("random first call = ", math.random(1,10))
+	-- Make copy of table.
+	for loop = 1, len do
+		copy[loop] = incoming_table[loop];
+	end
+	-- One at a time, choose a random index from Copy to insert in to final table, then remove it from the copy.
+	local left_to_do = table.maxn(copy);
+	for loop = 1, len do
+		local random_index = math.random(1,left_to_do)--1 + TerrainBuilder.GetRandomNumber(left_to_do, "Shuffling table entry - Lua");
+		table.insert(shuffledVersion, copy[random_index]);
+		table.remove(copy, random_index);
+		left_to_do = left_to_do - 1;
+	end
+	return shuffledVersion
+end
 -- YnAMP >>>>>
 
 -- ===========================================================================
@@ -709,6 +818,19 @@ function RemovePlayer(voidValue1, voidValue2, control)
 	local playerConfig = PlayerConfigurations[voidValue1];
 	playerConfig:SetLeaderTypeName(nil);
 	
+	-- YnAMP <<<<<
+	local nextNumPlayer = GameConfiguration.GetParticipatingPlayerCount() - 1
+	if currentSelectedNumberMajorCivs > nextNumPlayer then
+		currentSelectedNumberMajorCivs 	= nextNumPlayer
+		bUpdatePlayerCount 				= true
+		GameConfiguration.SetValue("MajorCivilizationsCount", currentSelectedNumberMajorCivs)
+		GameConfiguration.SetParticipatingPlayerCount(currentSelectedNumberMajorCivs)
+	elseif currentSelectedNumberMajorCivs < nextNumPlayer then
+		GameConfiguration.SetValue("MajorCivilizationsCount", currentSelectedNumberMajorCivs)
+		GameConfiguration.SetParticipatingPlayerCount(currentSelectedNumberMajorCivs)
+	end
+	-- YnAMP >>>>>
+	
 	GameConfiguration.RemovePlayer(voidValue1);
 
 	GameSetup_PlayerCountChanged();
@@ -819,6 +941,9 @@ function UI_PostRefreshParameters()
 
 	local game_err = GetGameParametersError();
 	if(game_err) then
+	-- YnAMP <<<<<
+	print("GetGameParametersError = ",game_err)
+	-- YnAMP >>>>>
 		Controls.StartButton:SetDisabled(true);
 		Controls.StartButton:LocalizeAndSetToolTip("LOC_SETUP_PARAMETER_ERROR");
 	end
@@ -827,6 +952,9 @@ function UI_PostRefreshParameters()
 	for i, player_id in ipairs(player_ids) do	
 		local err = GetPlayerParameterError(player_id);
 		if(err) then
+			-- YnAMP <<<<<
+			print("GetPlayerParameterError = ", err)
+			-- YnAMP >>>>>
 			Controls.StartButton:SetDisabled(true);
 			Controls.StartButton:LocalizeAndSetToolTip("LOC_SETUP_PLAYER_PARAMETER_ERROR");
 		end
@@ -874,11 +1002,17 @@ function OnShow()
         if (MapConfiguration.GetScript() == "WBImport.lua") then
             m_WorldBuilderImport = true;
         end
-
+		
 		-- KLUDGE: Ideally setup parameters in a group should have some sort of control mechanism for whether or not the group should show.
 		Controls.CreateGame_LocalPlayerContainer:SetHide(true);
 		Controls.PlayersSection:SetHide(true);
 		Controls.VictoryParametersHeader:SetHide(true);
+		-- YnAMP <<<<<
+		-- Unhide for faster testing of map and scenario settings using the WB
+		Controls.CreateGame_LocalPlayerContainer:SetHide(false);
+		Controls.PlayersSection:SetHide(false);
+		Controls.VictoryParametersHeader:SetHide(false);
+		-- ynAMP >>>>>
 		
     else
 		Controls.CreateGame_LocalPlayerContainer:SetHide(false);
@@ -891,6 +1025,11 @@ function OnShow()
 	RefreshPlayerSlots();	-- Will trigger a game parameter refresh.
 	AutoSizeGridButton(Controls.DefaultButton,133,36,15,"H");
 	AutoSizeGridButton(Controls.CloseButton,133,36,10,"H");
+	-- YnAMP <<<<<
+	AutoSizeGridButton(Controls.LoadDataYnAMP,133,36,15,"H");
+	local offsetX = Controls.CloseButton:GetSizeX()
+	Controls.LoadDataYnAMP:SetOffsetX(offsetX)
+	-- ynAMP >>>>>
 
 	-- the map size and type dropdowns don't make sense on a map import
 
@@ -939,6 +1078,20 @@ function OnAddAIButton()
 		if (playerConfig:GetSlotStatus() == SlotStatus.SS_CLOSED) then
 			playerConfig:SetSlotStatus(SlotStatus.SS_COMPUTER);
 			playerConfig:SetMajorCiv();
+			
+			-- YnAMP <<<<<
+			-- todo : clean implementation with a counter in the while loop until currentSelectedNumberMajorCivs is reached.
+			local nextNumPlayer = GameConfiguration.GetParticipatingPlayerCount()
+			if currentSelectedNumberMajorCivs < nextNumPlayer then
+				currentSelectedNumberMajorCivs 	= nextNumPlayer
+				bUpdatePlayerCount 				= true
+				GameConfiguration.SetValue("MajorCivilizationsCount", currentSelectedNumberMajorCivs)
+				GameConfiguration.SetParticipatingPlayerCount(currentSelectedNumberMajorCivs)
+			elseif currentSelectedNumberMajorCivs > nextNumPlayer then
+				GameConfiguration.SetValue("MajorCivilizationsCount", currentSelectedNumberMajorCivs)
+				GameConfiguration.SetParticipatingPlayerCount(currentSelectedNumberMajorCivs)
+			end
+			-- YnAMP >>>>>
 
 			GameSetup_PlayerCountChanged();
 			break;
@@ -958,6 +1111,10 @@ function OnAdvancedSetup()
 	Controls.AdvancedOptionsWindow:SetHide(false);
 	Controls.LoadConfig:SetHide(bWorldBuilder);
 	Controls.SaveConfig:SetHide(bWorldBuilder);
+	-- YnAMP <<<<<
+	Controls.LoadConfig:SetHide(false);
+	Controls.SaveConfig:SetHide(false);
+	-- YnAMP >>>>>
 	Controls.ButtonStack:CalculateSize();
 
 	m_AdvancedMode = true;
@@ -997,49 +1154,289 @@ function OnStartButton()
 	local player_ids 	= GameConfiguration.GetParticipatingPlayerIDs();
 	local numPlayers 	= #player_ids
 	local numCS			= GameConfiguration.GetValue("CITY_STATE_COUNT")
-	local maxPlayer		= 60 			-- max is 62 but 1 slot is required for barbarian and 1 slot for free cities
-	local cityStateID	= numPlayers 	-- IDs start at 0, major IDs are from 0 to numPlayers-1, CS IDs start at numPlayers
+	local newNumCS		= numCS
+	local maxPlayer		= 62 			-- max is 64 but 1 slot is required for barbarian and 1 slot for free cities
+	local cityStateID	= 0 			-- Player slots IDs start at 0, Human is 0, so we should start at 1, but start at 0 in case some mod (spectator ?) change that
 	local maxCS 		= maxPlayer - numPlayers
+	local bSelectCS		= MapConfiguration.GetValue("SelectCityStates") ~= "RANDOM"
+	local bBanLeaders	= MapConfiguration.GetValue("BanLeaders")
+	local ruleset		= GameConfiguration.GetValue("RULESET")
+	local playerDomain	= ruleset and RulesetDomain[ruleset] or "Players:StandardPlayers"
 	
 	-- Limit number of players for R&F and GS
 	print("------------------------------------------------------")
 	print("YnAMP checking for number of players limit on Start...")
-	print("num. players = ".. tostring(numPlayers) .. ", num. CS = ".. tostring(numCS))
+	print("num. players = ".. tostring(numPlayers) .. ", num. CS = ".. tostring(numCS), ", Selection type = ", MapConfiguration.GetValue("SelectCityStates"), ", Do selection =", bSelectCS)
 	if (GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_1" or GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_2") and numPlayers + numCS > maxPlayer then
-		numCS = maxCS
-		print("new num. CS = ".. tostring(numCS))
-		GameConfiguration.SetValue("CITY_STATE_COUNT", numCS)
+		newNumCS = maxCS
+		print("new num. CS = ".. tostring(newNumCS))
+		GameConfiguration.SetValue("CITY_STATE_COUNT", newNumCS)
 	end
 	
-	-- Get the City States list
-	local query		= "SELECT * from Parameters where ConfigurationId LIKE '%LEADER_MINOR_CIV%' and GroupId='MapOptions'"
-	local results	= DB.ConfigurationQuery(query)
-	if(results and #results > 0) then
-		local CityStateSlots = numCS
+	if bBanLeaders then
 		print("------------------------------------------------------")
-		print("YnAMP setting specific CS slots...")
-		print("free slots = "..tostring(CityStateSlots))
-		for i, row in ipairs(results) do
-			--print(i)
-			--for k, v in pairs(row) do print(k, v) end
-			local leaderType = row.ConfigurationId
-			local leaderName = row.Name
-			if MapConfiguration.GetValue(leaderType) then -- true if this CS was checked
-				if CityStateSlots > 0 then
-					print(" - Reserving player slot#"..tostring(cityStateID).." for ".. Locale.Lookup(leaderName) )
-					local playerConfig = PlayerConfigurations[cityStateID]
-					playerConfig:SetSlotStatus(SlotStatus.SS_COMPUTER)
-					playerConfig:SetLeaderName(leaderName)
-					playerConfig:SetLeaderTypeName(leaderType)
-					CityStateSlots	= CityStateSlots - 1
-					cityStateID		= cityStateID + 1
+		print("Applying Leader Ban list on Random slots...")
+		
+		local IsUsedCiv		= {}
+		local IsUsedLeader 	= {}
+		
+		-- Taken from SetupParameters:Parameter_FilterValues
+		-- <<<
+		local unique_leaders 		= GameConfiguration.GetValue("NO_DUPLICATE_LEADERS");
+		local unique_civilizations 	= GameConfiguration.GetValue("NO_DUPLICATE_CIVILIZATIONS");
+
+		local leaders_in_use;
+		local civilizations_in_use;
+
+		local InsertIntoDuplicateBucket = function(map, key, other_key)
+			local bucketA = map[key];
+			local bucketB = map[other_key];
+
+			if(bucketA == nil and bucketB == nil) then
+				bucketA = {key, other_key};
+				map[key] = bucketA;
+				map[other_key] = bucketA;
+
+			elseif(bucketA == nil and bucketB ~= nil) then
+				table.insert(bucketB, key);
+				map[key] = bucketB;
+
+			elseif(bucketA ~= nil and bucketB == nil) then
+				table.insert(bucketA, other_key);
+				map[other_key] = bucketA;
+			
+			elseif(bucketA ~= nil and bucketB ~= nil and bucketA ~= bucketB) then
+				-- consolidate buckets
+				-- if A is a dupe of B and B is a dupe of C, then A is a dupe of C.
+				for i,v in ipairs(bucketB) do
+					table.insert(bucketA, v);
+					map[v] = bucketA;
+				end
+
+			elseif(bucketA == bucketB) then
+				-- buckets are same, no need to do anything since they are already dupes of each other
+			end
+		end;
+
+		local duplicate_civilizations;
+		if(unique_civilizations) then
+			duplicate_civilizations = {};
+			for i, row in ipairs(CachedQuery("SELECT CivilizationType, OtherCivilizationType from DuplicateCivilizations where Domain = ?", playerDomain)) do
+				InsertIntoDuplicateBucket(duplicate_civilizations, row.CivilizationType, row.OtherCivilizationType);
+			end
+		end
+
+		local duplicate_leaders;
+		if(unique_leaders) then
+			duplicate_leaders = {};
+			for i, row in ipairs(CachedQuery("SELECT LeaderType, OtherLeaderType from DuplicateLeaders where Domain = ?", playerDomain)) do
+				InsertIntoDuplicateBucket(duplicate_leaders, row.LeaderType, row.OtherLeaderType);
+			end
+		end
+		-->>>
+		
+		local function MarkUsedCiv(civilizationType)
+			IsUsedCiv[civilizationType] = true
+			local dupes = duplicate_civilizations and duplicate_civilizations[civilizationType]
+			if(dupes) then
+				for i,v in ipairs(dupes) do
+					IsUsedCiv[v] = true
+				end
+			end 
+		end
+		
+		local function MarkUsedLeader(leaderType)
+			IsUsedLeader[leaderType] = true
+			local dupes = duplicate_leaders and duplicate_leaders[leaderType]
+			if(dupes) then
+				for i,v in ipairs(dupes) do
+					IsUsedLeader[v] = true
+				end
+			end 
+		end
+			
+		-- Get Random slots and used leaders and Civs
+		local randomSlots = {}
+		for i, slotID in ipairs(player_ids) do	
+			local playerConfig = PlayerConfigurations[slotID];
+			if playerConfig:GetSlotName() == "LOC_RANDOM_LEADER" then
+				table.insert(randomSlots, slotID)
+			else
+				local civilizationType 	= playerConfig:GetCivilizationTypeName()
+				local leaderType 		= playerConfig:GetLeaderTypeName()
+				MarkUsedCiv(civilizationType)
+				MarkUsedLeader(leaderType)
+			end
+		end
+		print("Random Leaders Slots = ", #randomSlots)
+		
+		if #randomSlots > 0 then -- don't waste time if there are no random slots...
+			
+			local shuffledList 	= GetShuffledCopyOfTable(filteredRandomLeaderList)
+			local listIndex		= 1
+		
+			-- Helper to get the CivilizationType of a LeaderType
+			local function GetPlayerCivilization(leaderType)
+				for i, row in ipairs(CachedQuery("SELECT CivilizationType from Players where LeaderType = ? LIMIT 1", leaderType)) do
+					return row.CivilizationType
+				end
+			end
+			--
+			local function GetLeaderName(leaderType)
+				for i, row in ipairs(CachedQuery("SELECT LeaderName from Players where LeaderType = ? LIMIT 1", leaderType)) do
+					return row.LeaderName
+				end
+			end
+			-- 			
+			local function GetNextLeaderType(bSecondLoop)
+				local leaderType 		= shuffledList[listIndex]
+				local bNoDupeLeaders 	= unique_leaders or (not bSecondLoop) 		-- avoid duplicate leaders on first loop, even if allowaed
+				local bNoDupeCivs 		= unique_civilizations or (not bSecondLoop) -- avoid duplicate civs on first loop, even if allowed
+				while(leaderType) do
+					if not MapConfiguration.GetValue(leaderType) then -- this leaderType is not banned
+						if (not IsUsedLeader[leaderType]) or (not bNoDupeLeaders) then
+							local civilizationType = GetPlayerCivilization(leaderType)
+							if (not IsUsedCiv[civilizationType]) or (not bNoDupeCivs) then
+								MarkUsedCiv(civilizationType)
+								MarkUsedLeader(leaderType)
+								listIndex 	= listIndex + 1
+								return leaderType
+							else
+								print(" - Can't use leader because of duplicate Civilization : ", leaderType, civilizationType)
+							end
+						else
+							print(" - Can't use duplicate leader : ", leaderType)
+						end
+					else
+						print(" - Can't use banned leader : ", leaderType)
+					end
+					listIndex 	= listIndex + 1
+					leaderType 	= shuffledList[listIndex]
+				end
+				if not bSecondLoop then -- in case duplicates are allowed
+					print(" - Can't find next leader, trying second loop")
+					listIndex = 1
+					return GetNextLeaderType(true)
 				else
-					print(" - No free slots left for ".. Locale.Lookup(leaderName) )					
+					print(" - Can't find next leader after second loop")
+				end
+			end
+			
+			print("Setting random slots...")
+			for i, slotID in ipairs(randomSlots) do
+				local playerConfig 	= PlayerConfigurations[slotID]
+				local leaderType 	= GetNextLeaderType()
+				if leaderType then
+					print("- Placing ", leaderType, " in slot#", slotID)
+					playerConfig:SetSlotStatus(SlotStatus.SS_COMPUTER)
+					playerConfig:SetLeaderName(GetLeaderName(leaderType))
+					playerConfig:SetLeaderTypeName(leaderType)
+					playerConfig:SetMajorCiv()
+				else
+					print("- No LeaderType available, clearing slot#", slotID)
+					playerConfig:SetLeaderTypeName(nil)
+					GameConfiguration.RemovePlayer(slotID)
 				end
 			end
 		end
-		print(" - Free slots left for random CS = ".. Locale.Lookup(CityStateSlots) )
-		GameConfiguration.SetValue("CITY_STATE_COUNT", CityStateSlots)
+	end
+	
+	-- Get available player slots list for CS
+	if bSelectCS then
+		print("------------------------------------------------------")
+		print("Generate available slots list for CS...")
+		local CityStatesSlotsList	= {}
+		while(cityStateID < maxPlayer) do
+			local playerConfig = PlayerConfigurations[cityStateID];
+			
+			-- If we've reached the end of the line, exit.
+			if(playerConfig == nil) then
+				print("playerConfig is nil at cityStateID#", cityStateID)
+				--break;
+			end
+
+			-- Check for free slots to add to the CS list.
+			if (playerConfig:GetSlotStatus() == SlotStatus.SS_CLOSED) then
+				table.insert(CityStatesSlotsList, cityStateID)
+			end
+
+			-- Increment the AI, this assumes that either player config will hit nil 
+			-- or we'll reach a suitable slot.
+			cityStateID = cityStateID + 1;
+		end
+		
+		-- Get the City States list
+		local query		= "SELECT * from Parameters where ConfigurationId LIKE '%LEADER_MINOR_CIV%' and GroupId='MapOptions'"
+		local results	= DB.ConfigurationQuery(query)
+		
+		if(results and #results > 0) then
+			local bCapped			= MapConfiguration.GetValue("SelectCityStates") == "SELECTION"
+			local bOnlySelection	= MapConfiguration.GetValue("SelectCityStates") == "ONLY_SELECTION"
+			local cityStateSlots 	= (bCapped and numCS) or maxCS
+			local shuffledList 		= GetShuffledCopyOfTable(results)
+			local randomList		= {}
+			local slotListID		= 1
+			print("------------------------------------------------------")
+			print("YnAMP setting specific CS slots...")
+			print("Trying to reserve slots for selected CS, available slots = "..tostring(#CityStatesSlotsList)..", maxCS = "..tostring(cityStateSlots).. ", bCapped = ", bCapped, " bOnlySelection = ", bOnlySelection)
+			for i, row in ipairs(shuffledList) do
+				--print(i)
+				--for k, v in pairs(row) do print(k, v) end
+				local leaderType = row.ConfigurationId
+				local leaderName = row.Name
+				if MapConfiguration.GetValue(leaderType) then -- true if this CS was checked
+					if cityStateSlots > 0 then
+						local slotID = CityStatesSlotsList[slotListID]
+						if slotID then
+							print(" - Reserving player slot#"..tostring(slotID).." for ".. Locale.Lookup(leaderName) )
+							local playerConfig = PlayerConfigurations[slotID]
+							playerConfig:SetSlotStatus(SlotStatus.SS_COMPUTER)
+							playerConfig:SetLeaderName(leaderName)
+							playerConfig:SetLeaderTypeName(leaderType)
+							cityStateSlots	= cityStateSlots - 1
+							slotListID		= slotListID + 1
+						else
+							print(" - ERROR, No slots found for ".. Locale.Lookup(leaderName) .." at slotListID#"..tostring(slotListID).."/".. tostring(#CityStatesSlotsList) .." but calculated slots left = ".. tostring(cityStateSlots) )
+						end
+					else
+						print(" - Maximum #CS reached, can't set a slot for ".. Locale.Lookup(leaderName) .." at slotListID#"..tostring(slotListID).."/".. tostring(#CityStatesSlotsList) )					
+					end
+				else -- add unselected CS to the random pool
+					table.insert(randomList, row)
+				end
+			end
+			local placedCS	= slotListID - 1
+			local newNumCS 	= bOnlySelection and 0 or math.max(0, numCS - placedCS)
+			print("Unused slots left = ", cityStateSlots )
+			print("Setting Random CS to number of slots = ", newNumCS )
+			--GameConfiguration.SetValue("CITY_STATE_COUNT", newNumCS)
+			---[[
+			if newNumCS > 0 then
+				local nextIndex	= 1
+				for slotListID = slotListID, slotListID + newNumCS - 1 do --cityStateSlots do
+					local slotID 		= CityStatesSlotsList[slotListID]
+					local playerConfig 	= PlayerConfigurations[slotID]
+					if playerConfig then
+						-- get next entry in the random pool
+						local row	= randomList[nextIndex]
+						nextIndex	= nextIndex + 1
+						if row then
+							local leaderType = row.ConfigurationId
+							local leaderName = row.Name
+							print(" - Reserving player slot#"..tostring(slotID).." for ".. Locale.Lookup(leaderName) )
+							playerConfig:SetSlotStatus(SlotStatus.SS_COMPUTER)
+							playerConfig:SetLeaderName(leaderName)
+							playerConfig:SetLeaderTypeName(leaderType)
+						else
+							print(" - No more CS in Random pool, can't set a CS at slotListID#"..tostring(slotListID).."/".. tostring(#CityStatesSlotsList) )
+						end
+					else
+						print(" - No more Slot available, can't set a CS at slotListID#"..tostring(slotListID).."/".. tostring(#CityStatesSlotsList) )
+					end
+				end
+			end
+			--]]
+		end
 	end
 	
 	-- List the player slots
@@ -1059,9 +1456,21 @@ function OnStartButton()
 		print(slotID, playerConfig and playerConfig:GetLeaderTypeName(), playerConfig and playerConfig:GetLeaderTypeName(), playerConfig and playerConfig:GetCivilizationTypeName(), playerConfig and playerConfig:GetSlotName(), playerConfig and (slotStatusString[playerConfig:GetSlotStatus()] or "UNK STATUS"), playerConfig and (civLevelString[playerConfig:GetCivilizationLevelTypeID()] or "UNK LEVEL"),  playerConfig and playerConfig:IsAI())
 	end
 	
-	-- Make some debugging info available during map creation 
+	-- Make some debugging info available during map creation
+	--local listMods	= Modding.GetActiveMods()
+	local listMods		= {}
+	local installedMods = Modding.GetInstalledMods()
+
+	---[[
+	if installedMods ~= nil then
+		for i, modData in ipairs(installedMods) do
+			if modData.Enabled then
+				table.insert(listMods, modData)
+			end
+		end
+	end
 	ExposedMembers.YnAMP_Loading	= {
-		ListMods 	= Modding.GetActiveMods(),
+		ListMods 	= listMods,
 		GameVersion = UI.GetAppVersion()
 	}
 	--]]
@@ -1071,7 +1480,7 @@ function OnStartButton()
 	if (GameConfiguration.IsWorldBuilderEditor()) then
         if (m_WorldBuilderImport) then
             MapConfiguration.SetScript("WBImport.lua");
-			local loadGameMenu = ContextPtr:LookUpControl( "/FrontEnd/MainMenu/LoadGameMenu" );
+			local loadGameMenu 		= ContextPtr:LookUpControl( "/FrontEnd/MainMenu/LoadGameMenu" );
 			UIManager:QueuePopup(loadGameMenu, PopupPriority.Current);	
 		else
 			UI.SetWorldRenderView( WorldRenderView.VIEW_2D );
@@ -1198,11 +1607,392 @@ function Initialize()
 	Events.BeforeMultiplayerInviteProcessing.Add( OnBeforeMultiplayerInviteProcessing );
 
 	LuaEvents.AdvancedSetup_SetMapByHash.Add( OnSetMapByHash );
+	-- YnAMP <<<<<
+	Controls.LoadDataYnAMP:RegisterCallback( Mouse.eLClick, LoadDatabase);
+	Controls.LoadDataYnAMP:RegisterCallback( Mouse.eMouseEnter, function() UI.PlaySound("Main_Menu_Mouse_Over"); end);
+	-- YnAMP >>>>>
 
 	Resize();
 end
--- Mod Compatibility <<<<<
+-- YnAMP <<<<<
+
+-- ===========================================================================
+-- YnAMP settings functions
+-- ===========================================================================
+local bCheckModList 	= true
+function ValidateSettingsYnAMP()
+	if ConfigYnAMP.IsDatabaseLoaded then
+		Controls.WindowTitle:SetText(Locale.Lookup("LOC_SETUP_DATABASE_LOADED_YNAMP"))
+		Controls.WindowTitle:SetToolTipString(Locale.Lookup("LOC_SETUP_DATABASE_LOADED_YNAMP_TT"))
+		Controls.LoadDataYnAMP:SetHide(true)
+	else
+		Controls.WindowTitle:SetText(Locale.Lookup("LOC_SETUP_DATABASE_NOT_LOADED_YNAMP"))
+		Controls.WindowTitle:SetToolTipString(Locale.Lookup("LOC_SETUP_DATABASE_NOT_LOADED_YNAMP_TT"))
+		Controls.LoadDataYnAMP:SetHide(false)
+	end
+	
+	if ConfigYnAMP.IsDatabaseLoaded and bCheckModList then
+	
+		bCheckModList		= false -- don't check each time a setting is changed...
+		local bFoundChange	= false
+		local listMods		= {}
+		local installedMods = Modding.GetInstalledMods()
+
+		---[[
+		if installedMods ~= nil then
+			for i, modData in ipairs(installedMods) do
+				if modData.Enabled then
+					table.insert(listMods, modData)
+				end
+			end
+		end
+
+		print("Checking mod list...")
+		for i, v in ipairs(listMods) do
+			--print("Modding.GetActiveMods() :" .. Locale.Lookup(v.Name))
+			if not ConfigYnAMP.ModList[v.Id] then
+				print("New Mod was activated :" .. Locale.Lookup(v.Name))
+				bFoundChange = true
+				--ConfigYnAMP.ModList[v.Id]	= v
+			end
+		end
+		for modID, v in pairs(ConfigYnAMP.ModList) do
+			--print("ConfigYnAMP.ModList :" .. Locale.Lookup(v.Name))
+			if not Modding.IsModEnabled(modID) then
+				print("Previous Mod was deactivated :" .. Locale.Lookup(v.Name))
+				bFoundChange = true
+				--ConfigYnAMP.ModList[modID]	= nil
+			end
+		end
+		ConfigYnAMP.IsDatabaseChanged = bFoundChange
+	end
+		
+	if ConfigYnAMP.IsDatabaseChanged then
+		print("Database may have changed...")
+		Controls.WindowTitle:SetText(Locale.Lookup("LOC_SETUP_DATABASE_CHANGED_YNAMP"))
+		Controls.WindowTitle:SetToolTipString(Locale.Lookup("LOC_SETUP_DATABASE_CHANGED_YNAMP_TT"))
+		Controls.LoadDataYnAMP:SetHide(false)
+	end
+end
+
+-- ===========================================================================
+function OnGameplayContentConfigure()
+	--print("Mark to check mods on FinishedGameplayContentConfigure")
+	bCheckModList = true
+end
+Events.FinishedGameplayContentConfigure.Add(OnGameplayContentConfigure)
+--GameConfigurationRebuilt
+--FinishedGameplayContentChange
+--FinishedGameplayContentConfigure
+
+-- ===========================================================================
+function LoadDatabase()
+	print("Set and Launch a quick game to get YnAMP Data...");
+	ConfigYnAMP.LoadingDatabase = true
+	
+	-- save config
+	local saveGame 			= {}
+	saveGame.Name 			= autoSaveConfigName
+	saveGame.Location 		= SaveLocations.LOCAL_STORAGE
+	saveGame.Type			= SaveTypes.SINGLE_PLAYER
+	saveGame.FileType		= SaveFileTypes.GAME_CONFIGURATION
+	saveGame.IsAutosave 	= false
+	saveGame.IsQuicksave 	= false
+	Network.SaveGame(saveGame)
+
+	GameConfiguration.SetToDefaults();
+	GameConfiguration.SetWorldBuilderEditor(true)
+	
+	GameConfiguration.SetValue("MapSize", "MAPSIZE_DUEL")
+	MapConfiguration.SetScript("WorldBuilderMap.lua")
+	MapConfiguration.SetValue("ScenarioType", "SCENARIO_NONE")
+	GameConfiguration.SetValue("CITY_STATE_COUNT", 0)
+	GameConfiguration.SetParticipatingPlayerCount(2)
+	GameSetup_PlayerCountChanged()
+
+	UI.SetWorldRenderView( WorldRenderView.VIEW_2D )
+	UI.PlaySound("Set_View_2D")
+	Network.HostGame(ServerType.SERVER_TYPE_NONE)
+end
+
+-- ===========================================================================
+-- Mod Compatibility (not working, files are nil when reloading advanced setup as of sept 2019 patch)
+-- ===========================================================================
 --print("Including AdvancedSetup_* files...")
 --include("AdvancedSetup_", true);
--- Mod Compatibility >>>>>
+
+
+-- ===========================================================================
+-- Override vanilla setting functions
+-- ===========================================================================
+---[[
+local bMajorCountChanged				= false	-- 
+OldGameSetup_RefreshParameters 			= GameSetup_RefreshParameters 
+function GameSetup_RefreshParameters()
+
+	if bFinishedGameplayContentConfigure then
+		--print("Calling YnAMP GameSetup_RefreshParameters override", bUpdatePlayerCount, bMajorCountChanged)
+		
+		local minNumberPlayers 	= GameConfiguration.GetValue("MajorCivilizationsCount")
+		bMajorCountChanged		= minNumberPlayers and minNumberPlayers ~= currentSelectedNumberMajorCivs			
+		if bMajorCountChanged then
+			print("Player count slider changed to "..tostring(minNumberPlayers))
+			currentSelectedNumberMajorCivs = minNumberPlayers
+		end
+	end
+	
+	OldGameSetup_RefreshParameters()
+	ValidateSettingsYnAMP()
+end
+--]]
+
+
+-- ===========================================================================
+function MapSize_ValueChanged(p)
+	SetupParameters_Log("MAP SIZE CHANGED");
+
+	-- The map size has changed!
+	-- Adjust the number of players to match the default players of the map size.
+	local results = CachedQuery("SELECT * from MapSizes where Domain = ? and MapSizeType = ? LIMIT 1", p.Value.Domain, p.Value.Value);
+
+	local minPlayers = 2;
+	local maxPlayers = 2;
+	local defPlayers = 2;
+	local minCityStates = 0;
+	local maxCityStates = 0;
+	local defCityStates = 0;
+
+	if(results) then
+		for i, v in ipairs(results) do
+			minPlayers = v.MinPlayers;
+			maxPlayers = v.MaxPlayers;
+			defPlayers = math.max(GameConfiguration.GetParticipatingPlayerCount(), v.DefaultPlayers); --YnAMP currentSelectedNumberMajorCivs
+			minCityStates = v.MinCityStates;
+			maxCityStates = v.MaxCityStates;
+			defCityStates = v.DefaultCityStates;
+		end
+	end
+
+	MapConfiguration.SetMinMajorPlayers(minPlayers);
+	MapConfiguration.SetMaxMajorPlayers(maxPlayers);
+	MapConfiguration.SetMinMinorPlayers(minCityStates);
+	MapConfiguration.SetMaxMinorPlayers(maxCityStates);
+	GameConfiguration.SetValue("CITY_STATE_COUNT", defCityStates);
+	
+	-- Clamp participating player count in network multiplayer so we only ever auto-spawn players up to the supported limit. 
+	local mpMaxSupportedPlayers = 8; -- The officially supported number of players in network multiplayer games.
+	local participatingCount = defPlayers + GameConfiguration.GetHiddenPlayerCount();
+	if GameConfiguration.IsNetworkMultiplayer() or GameConfiguration.IsPlayByCloud() then
+		participatingCount = math.clamp(participatingCount, 0, mpMaxSupportedPlayers);
+	end
+
+	SetupParameters_Log("Setting participating player count to " .. tonumber(participatingCount));
+	local playerCountChange = GameConfiguration.SetParticipatingPlayerCount(participatingCount);
+	Network.BroadcastGameConfig(true);
+
+
+	-- NOTE: This used to only be called if playerCountChange was non-zero.
+	-- This needs to be called more frequently than that because each player slot entry's add/remove button
+	-- needs to be potentially updated to reflect the min/max player constraints.
+	if(GameSetup_PlayerCountChanged) then
+		GameSetup_PlayerCountChanged();
+	end
+end
+
+-- ===========================================================================
+local OldGetRelevantParameters = GetRelevantParameters
+function GetRelevantParameters(o, parameter)
+	
+	-- Hack to use parameters to determine if a Mod/DLC/Expansion is enabled
+	-- 1/ Define a hidden Parameter with Name="RequireMod" and Description="REQUIRED_MOD_ID": 
+	-- <Replace ParameterId="DLC2" Name="RequireMod" Description="2F6E858A-28EF-46B3-BEAC-B985E52E9BC1" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="DLC2"	GroupId="MapOptions" Visible="0" SortIndex="82"/>
+	-- 2/ Use it as a ParameterDependencies for your settings that require the mod to be enabled:
+	-- <Replace ParameterId="LEADER_MINOR_CIV_AUCKLAND"	ConfigurationGroup="Map" ConfigurationId="DLC2" Operator="Equals" ConfigurationValue="1"/>
+	-- 3/ Your hidden Parameter can have its own dependencies
+	-- <Replace ParameterId="DLC2"	ConfigurationGroup="Map" ConfigurationId="SelectCityStates" Operator="NotEquals" ConfigurationValue="RANDOM"/>
+	if parameter.Name == "RequireMod" and not Modding.IsModEnabled(parameter.Description) then
+		return false
+	end
+	
+	return OldGetRelevantParameters(o, parameter);
+end
+
+-- ===========================================================================
+-- for player, create list on start button and fill selection using a mod selection
+-- but this could be useful for preventing selection of civs without TSL when the DB is loaded
+-------------------------------------------------------------------------------
+SetupParameters.OldParameter_FilterValues = SetupParameters.Parameter_FilterValues
+function SetupParameters:Parameter_FilterValues(parameter, values)
+	values = self:OldParameter_FilterValues(parameter, values)
+	
+	-- Use the already filtered Leader list to build the list for random slots if the Ban Leader option is active
+	if (parameter.ParameterId == "PlayerLeader" and MapConfiguration.GetValue("BanLeaders") and self.PlayerId == 0) then -- and don't update for every player slots
+		--print("Building filtered Available Leader List for Random Slots...", self.PlayerId)
+		local curPlayerConfig 	= PlayerConfigurations[self.PlayerId]
+		local curLeadertype		= curPlayerConfig:GetLeaderTypeName()
+		for i,v in ipairs(values) do
+			local leaderType = v.Value
+			if curLeadertype ~= leaderType and not v.Invalid then
+				table.insert(filteredRandomLeaderList,leaderType)
+			else
+				--print(leaderType, v.InvalidReason and Locale.Lookup(v.InvalidReason) or Locale.Lookup("LOC_SETUP_ERROR_NO_DUPLICATE_LEADERS"))
+			end
+		end
+	end
+	--[[
+	if false then --(parameter.ParameterId == "PlayerLeader") then
+		local unique_leaders = GameConfiguration.GetValue("NO_DUPLICATE_LEADERS");
+		local unique_civilizations = GameConfiguration.GetValue("NO_DUPLICATE_CIVILIZATIONS");
+
+		local leaders_in_use;
+		local civilizations_in_use;
+
+		local InsertIntoDuplicateBucket = function(map, key, other_key)
+			local bucketA = map[key];
+			local bucketB = map[other_key];
+
+			if(bucketA == nil and bucketB == nil) then
+				bucketA = {key, other_key};
+				map[key] = bucketA;
+				map[other_key] = bucketA;
+
+			elseif(bucketA == nil and bucketB ~= nil) then
+				table.insert(bucketB, key);
+				map[key] = bucketB;
+
+			elseif(bucketA ~= nil and bucketB == nil) then
+				table.insert(bucketA, other_key);
+				map[other_key] = bucketA;
+			
+			elseif(bucketA ~= nil and bucketB ~= nil and bucketA ~= bucketB) then
+				-- consolidate buckets
+				-- if A is a dupe of B and B is a dupe of C, then A is a dupe of C.
+				for i,v in ipairs(bucketB) do
+					table.insert(bucketA, v);
+					map[v] = bucketA;
+				end
+
+			elseif(bucketA == bucketB) then
+				-- buckets are same, no need to do anything since they are already dupes of each other
+			end
+		end;
+
+		local duplicate_civilizations;
+		if(unique_civilizations) then
+			duplicate_civilizations = {};
+			for i, row in ipairs(CachedQuery("SELECT CivilizationType, OtherCivilizationType from DuplicateCivilizations where Domain = ?", parameter.Domain)) do
+				InsertIntoDuplicateBucket(duplicate_civilizations, row.CivilizationType, row.OtherCivilizationType);
+			end
+		end
+
+		local duplicate_leaders;
+		if(unique_leaders) then
+			duplicate_leaders = {};
+			for i, row in ipairs(CachedQuery("SELECT LeaderType, OtherLeaderType from DuplicateLeaders where Domain = ?", parameter.Domain)) do
+				InsertIntoDuplicateBucket(duplicate_leaders, row.LeaderType, row.OtherLeaderType);
+			end
+		end
+
+		if(unique_civilizations or unique_leaders) then
+
+			civilizations_in_use = {};
+			leaders_in_use = {};
+
+			local player_ids = GameConfiguration.GetParticipatingPlayerIDs();
+			for i, player_id in ipairs(player_ids) do	
+				if(player_id ~= self.PlayerId) then
+					local playerConfig = PlayerConfigurations[player_id];
+					if(playerConfig) then
+						local civilization = playerConfig:GetCivilizationTypeName();
+						if(type(civilization) == "string") then
+							civilizations_in_use[civilization] = true;
+
+							local dupes = duplicate_civilizations and duplicate_civilizations[civilization];
+							if(dupes) then
+								for i,v in ipairs(dupes) do
+									civilizations_in_use[v] = true;
+								end
+							end 
+						end
+
+						local leader = playerConfig:GetLeaderTypeName();
+						if(type(leader) == "string") then
+							leaders_in_use[leader] = true;
+
+							local dupes = duplicate_leaders and duplicate_leaders[leader];
+							if(dupes) then
+								for i,v in ipairs(dupes) do
+									leaders_in_use[v] = true;
+								end
+							end 
+						end
+					end
+				end
+			end
+		end
+
+		local new_values = {};
+		
+		local gameInProgress = GameConfiguration.GetGameState() ~= GameStateTypes.GAMESTATE_PREGAME;
+	
+		local checkOwnership = true;
+		if(GameConfiguration.IsAnyMultiplayer()) then
+			local checkComputerSlots = Network.IsGameHost() and not gameInProgress;
+
+			local curPlayerConfig = PlayerConfigurations[self.PlayerId];
+			local curSlotStatus = curPlayerConfig:GetSlotStatus();
+			local localPlayerId = Network.GetLocalPlayerID();
+			checkOwnership = self.PlayerId == localPlayerId or (checkComputerSlots and curSlotStatus == SlotStatus.SS_COMPUTER);
+		end
+
+		for i,v in ipairs(values) do
+			local reason;
+			if(checkOwnership and not Modding.IsLeaderAllowed(self.PlayerId, v.Value)) then
+				reason = "LOC_SETUP_ERROR_LEADER_NOT_OWNED";
+			elseif(unique_leaders and leaders_in_use[v.Value]) then
+				reason = "LOC_SETUP_ERROR_NO_DUPLICATE_LEADERS";
+			elseif(unique_civilizations) then
+				local civilization = GetPlayerCivilization(v.Domain, v.Value);
+				if(civilization and civilizations_in_use[civilization]) then
+					reason = "LOC_SETUP_ERROR_NO_DUPLICATE_CIVILIZATIONS";
+				end
+			end
+
+			if(reason == nil) then
+				table.insert(new_values, v);
+			else
+				local new_value = {};
+
+				-- Copy data from value.
+				for k,v in pairs(v) do
+					new_value[k] = v;
+				end
+
+				-- Mark value as invalid.
+				new_value.Invalid = true;
+				new_value.InvalidReason = reason;
+				table.insert(new_values, new_value);
+			end
+		end
+		return new_values;
+	else
+		return values;
+	end
+	--]]
+	return values;
+end
+
+
+function InitializeYnAMP()
+	bFinishedGameplayContentConfigure = true
+
+	currentSelectedNumberMajorCivs = GameConfiguration.GetParticipatingPlayerCount()
+	print("Initial player count =  "..tostring(currentSelectedNumberMajorCivs))
+	GameConfiguration.SetValue("MajorCivilizationsCount", currentSelectedNumberMajorCivs)
+	
+	Events.FinishedGameplayContentConfigure.Remove(InitializeYnAMP)
+end
+Events.FinishedGameplayContentConfigure.Add(InitializeYnAMP)
+
+-- YnAMP >>>>>
 Initialize();

@@ -223,7 +223,7 @@ function GenerateMap()
 
 	print("Building TSL database.") -- this is done before the map is generated for Land Blending around TSL
 	if bTSL then
-		buidTSL()
+		buildTSL()
 		SetLandBlendRatioFromTSL()
 	end
 
@@ -690,7 +690,7 @@ function GenerateMap()
 	end
 
 	-- enforce resource exclusion
-	ResourcesValidation(g_iW, g_iH)
+	MapValidation(g_iW, g_iH)
 	
 	if bDebug then
 		for _, data in ipairs(DebugBorder) do

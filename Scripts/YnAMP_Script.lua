@@ -1,28 +1,15 @@
 ------------------------------------------------------------------------------
 --	FILE:	 YnAMP_Script.lua
---  Gedemon (2016-2019)
+--  Gedemon (2016-2020)
 ------------------------------------------------------------------------------
 
 local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value
-print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2019) by Gedemon")
+print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2020) by Gedemon")
 print ("loading YnAMP_Script.lua")
 
 include "MapEnums"
 include "PlotIterators"
 include "YnAMP_Common"
-
-function Round(num)
-    under = math.floor(num)
-    upper = math.floor(num) + 1
-    underV = -(under - num)
-    upperV = upper - num
-    if (upperV > underV) then
-        return under
-    else
-        return upper
-    end
-end
-
 
 local mapName = MapConfiguration.GetValue("MapName")
 print ("Map Name = " .. tostring(mapName))
@@ -40,29 +27,12 @@ local RouteIndexForEra		= {} -- helper to get the best RouteType for a specific 
 local IsTemporaryStartPos	= {} -- helper to check if a Civ "alive" was placed only to prevent the crash from civilizations without starting position
 local AliveList				= {} -- helper to get the list of civilization minus the fake starting position civs
 
+local NoRenamingOnPlot		= {} -- helper to list the plots on which a city has been named by a separate event (like a scenario) and should not be renamed by the City Autonaming feature 
+
 local numCitiesOnMap		= 0
 local g_MaxDistance			= 999
 
---[[
-local bUseRelativePlacement 	= MapConfiguration.GetValue("UseRelativePlacement")
-local bUseRelativeFixedTable 	= bUseRelativePlacement and MapConfiguration.GetValue("UseRelativeFixedTable")
-local g_ReferenceMapWidth 		= MapConfiguration.GetValue("ReferenceMapWidth") or 180
-local g_ReferenceMapHeight 		= MapConfiguration.GetValue("ReferenceMapHeight") or 94
-
-local g_iW, g_iH 	= Map.GetGridSize()
-
-local g_UncutMapWidth 	= MapConfiguration.GetValue("UncutMapWidth") or g_iW
-local g_UncutMapHeight 	= MapConfiguration.GetValue("UncutMapHeight") or g_iH
-
-local g_OffsetX 		= MapConfiguration.GetValue("StartX") or 0
-local g_OffsetY 		= MapConfiguration.GetValue("StartY") or 0
-local bUseOffset		= (g_OffsetX + g_OffsetY > 0) and (MapConfiguration.GetValue("StartX") ~= MapConfiguration.GetValue("EndX")) and (MapConfiguration.GetValue("StartY") ~= MapConfiguration.GetValue("EndY"))
-
-local g_ReferenceWidthFactor  = g_ReferenceMapWidth / g_UncutMapWidth 
-local g_ReferenceHeightFactor = g_ReferenceMapHeight / g_UncutMapHeight
-local g_ReferenceWidthRatio   = g_UncutMapWidth / g_ReferenceMapWidth 
-local g_ReferenceHeightRatio  = g_UncutMapHeight / g_ReferenceMapHeight
---]]
+-- Set Common Globals
 SetGlobals()
 
 local g_ExtraRange = 0
@@ -181,6 +151,7 @@ function GetShuffledCopyOfTable(incoming_table)
 	return shuffledVersion
 end
 
+
 ------------------------------------------------------------------------------
 -- Map functions
 ------------------------------------------------------------------------------
@@ -283,6 +254,114 @@ function ChangePlotOwner(pPlot, ownerID, cityID)
 			pPlot:SetOwner(-1)
 		end
 	end
+end
+
+function MapStatistics()
+		
+	local totalplots 		= Map.GetPlotCount()
+	local iW, iH	 		= Map.GetGridSize()
+	local landPlots 		= Map.GetLandPlotCount()
+	local waterPlots		= totalplots - landPlots
+	local hills				= 0
+	local mountains			= 0
+	local flatLand			= 0
+	local missingLuxuries 	= {}
+	local missingStrategics	= {}
+	local terrainCount		= {}
+	local featureCount		= {}
+	local ressourceCount	= {}	
+		
+	for i = 0, (totalplots) - 1, 1 do
+		plot = Map.GetPlotByIndex(i)
+		local eResourceType = plot:GetResourceType()
+		local eTerrainType	= plot:GetTerrainType()
+		local eFeatureType	= plot:GetFeatureType()
+		
+		if (eResourceType ~= -1) then
+			local count = ressourceCount[eResourceType] or 0
+			ressourceCount[eResourceType] = count + 1
+		end
+		
+		if (eTerrainType ~= -1) then
+			local count = terrainCount[eTerrainType] or 0
+			terrainCount[eTerrainType] = count + 1
+		end
+		
+		if (eFeatureType ~= -1) then
+			if not GameInfo.Features[eFeatureType].NaturalWonder then
+				local count = featureCount[eFeatureType] or 0
+				featureCount[eFeatureType] = count + 1
+			end
+		end
+		
+		if plot:IsHills() 		then hills 		= hills + 1 end
+		if plot:IsMountain()	then mountains 	= mountains + 1 end
+		
+		if not (plot:IsHills() or plot:IsMountain() or plot:IsWater()) then
+			flatLand = flatLand + 1
+		end
+	end
+
+	print("======================================")
+	print("====== Generated Map Statistics ======")
+	print("======================================")
+	print("-- Map Dimensions		= ", Indentation(tostring(iW).."x"..tostring(iH),8,true))
+	print("-- Total plots on map = ", Indentation(totalplots,8,true))
+	print("-- Land plots 		= ", Indentation(landPlots,8,true).."	 (" .. Indentation(Round(landPlots / totalplots * 10000) / 100,5,true).." map percent)")
+	print("-- Water plots 		= ", Indentation(waterPlots,8,true).."	 (" .. Indentation(Round(waterPlots / totalplots * 10000) / 100,5,true).." map percent)")
+	print("-- Hills plots 		= ", Indentation(hills,8,true).."	 (" .. Indentation(Round(hills / landPlots * 10000) / 100,5,true).." land percent)")
+	print("-- Mountains plots 	= ", Indentation(mountains,8,true).."	 (" .. Indentation(Round(mountains / landPlots * 10000) / 100,5,true).." land percent)")
+	print("-- Flatland plots 	= ", Indentation(flatLand,8,true).."	 (" .. Indentation(Round(flatLand / landPlots * 10000) / 100,5,true).." land percent)")
+	
+	print("--------------------------------------")
+	print("-------- Resources Statistics --------")
+	print("--------------------------------------")
+	for resRow in GameInfo.Resources() do
+		local numRes 		= ressourceCount[resRow.Index] or 0
+		local placedPercent	= Round(numRes / landPlots * 10000) / 100
+		local frequency		= math.max(resRow.Frequency, resRow.SeaFrequency)
+		local ratio 		= frequency > 0 and Round(placedPercent * 100 / frequency) or "---"
+		--if placedPercent == 0 then placedPercent = "0.00" end
+		--if ratio == 0 then ratio = "0.00" end
+		if frequency > 0 then
+			--local sFrequency = tostring(frequency)
+			--if frequency < 10 then sFrequency = " "..sFrequency end
+			--Indentation(str, maxLength, bAlignRight, bShowSpace)
+			--print("Resource = " .. tostring(resRow.ResourceType).."		placed = " .. tostring(numRes).."		(" .. tostring(placedPercent).." % of land)		frequency = " .. sFrequency.."		ratio = " .. tostring(ratio))
+			print(Indentation(resRow.ResourceType,25,false, true).." placed = " .. Indentation(numRes,6,true),"	 (" .. Indentation(placedPercent,5,true).." land percent), frequency = " .. Indentation(frequency,3, true)..", ratio = " .. Indentation(ratio, 3, true))
+		end
+	end
+		
+	print("--------------------------------------")
+	print("--------- Terrain Statistics ---------")
+	print("--------------------------------------")
+	for row in GameInfo.Terrains() do
+		local number 		= terrainCount[row.Index] or 0
+		local percent		= Round(number / totalplots * 10000) / 100
+		local landPercent	= Round(number / landPlots * 10000) / 100
+		local waterPercent	= Round(number / waterPlots * 10000) / 100
+		print(Indentation(row.TerrainType,25,false, true).." placed = " .. Indentation(number,6,true).."	 (" .. Indentation(percent,5,true).." map percent, ".. Indentation(landPercent,5,true).." land percent, ".. Indentation(waterPercent,5,true).." water percent)")
+	end
+		
+	print("--------------------------------------")
+	print("-------- Features Statistics ---------")
+	print("--------------------------------------")
+	for row in GameInfo.Features() do
+		if not row.NaturalWonder then
+			local number 		= featureCount[row.Index] or 0
+			local percent		= Round(number / totalplots * 10000) / 100
+			local landPercent	= Round(number / landPlots * 10000) / 100
+			local waterPercent	= Round(number / waterPlots * 10000) / 100
+			--print(tostring(row.FeatureType).."		placed = " .. tostring(number).."		" .. tostring(percent).." map percent, ",	tostring(landPercent).." land percent, ", tostring(waterPercent).." water percent)")
+			print(Indentation(row.FeatureType,25,false, true).." placed = " .. Indentation(number,6,true).." 	(" .. Indentation(percent,5,true).." map percent, ".. Indentation(landPercent,5,true).." land percent, ".. Indentation(waterPercent,5,true).." water percent)")
+		end
+	end
+	print("--------------------------------------")
+end
+
+function IncrementCityCount()
+	numCitiesOnMap = numCitiesOnMap + 1
+	print("City count = "..tostring(numCitiesOnMap))
 end
 
 
@@ -457,124 +536,6 @@ end
 
 
 ------------------------------------------------------------------------------
--- Helpers for x,y positions when using a reference or offset map
-------------------------------------------------------------------------------
---[[
-local XFromRefMapX 	= {}
-local YFromRefMapY 	= {}
-local RefMapXfromX 	= {}
-local RefMapYfromY 	= {}
-local sX, sY 		= 0, 0
-local lX, lY 		= 0, 0
-local skipX, skipY	= MapConfiguration.GetValue("RescaleSkipX") or 999, MapConfiguration.GetValue("RescaleSkipY") or 999
-
---function BuildRefXY()
-if bUseRelativeFixedTable then
-	for x = 0, g_UncutMapWidth, 1 do
-		--MapToConvert[x] = {}
-		for y = 0, g_UncutMapHeight, 1 do
-			--print (x, y, sX, sY, lX, lY)
-			XFromRefMapX[x] = sX
-			YFromRefMapY[y] = sY
-			
-			RefMapXfromX[sX] = x
-			RefMapYfromY[sY] = y
-			--MapToConvert[x][y] = SmallMap[sX][sY]
-			lY = lY + 1
-			if lY == skipY then
-				lY = 0
-			else
-				sY = sY +1
-			end
-		end
-		sY = 0
-		lX = lX + 1
-		if lX == skipX then
-			lX = 0
-		else
-			sX = sX +1
-		end
-	end
-end
-
--- Convert current map position to the corresponding position on the reference map
-function GetRefMapXY(mapX, mapY, bOnlyOffset)
-	local refMapX, refMapY = mapX, mapY
-	if bUseRelativePlacement and (not bOnlyOffset) then
-		if bUseRelativeFixedTable then
-			refMapX 	= XFromRefMapX[mapX] --Round(g_ReferenceWidthFactor * mapX)
-			refMapY 	= YFromRefMapY[mapY] --Round(g_ReferenceHeightFactor * mapY)
-			if refMapX == nil or refMapY == nil then
-				return -1, -1
-			end
-		else
-			refMapX 	= Round(g_ReferenceWidthFactor * mapX)
-			refMapY 	= Round(g_ReferenceHeightFactor * mapY)		
-		end
-	end
-	if bUseOffset then
-		refMapX = refMapX + g_OffsetX
-		refMapY = refMapY + g_OffsetY
-		
-		-- the code below assume that the reference map is wrapX
-		if refMapY >= g_UncutMapHeight then
-			--refMapY = refMapY - g_UncutMapHeight
-			refMapY = (2*g_UncutMapHeight) - refMapY - 1
-			refMapX = refMapX + Round(g_UncutMapWidth / 2)
-		end
-		if refMapX >= g_UncutMapWidth then
-			refMapX = refMapX - g_UncutMapWidth -- -1 ?
-		end
-	end
-	return refMapX, refMapY
-end
-
--- Convert the reference map position to the current map position
-function GetXYFromRefMapXY(x, y, bOnlyOffset)
-	if bUseRelativePlacement and (not bOnlyOffset) then
-		if bUseRelativeFixedTable then
-			x = RefMapXfromX[x]--Round( g_ReferenceWidthRatio * x)
-			y = RefMapYfromY[y]--Round( g_ReferenceHeightRatio * y)
-			if x == nil or y == nil then
-				return -1, -1
-			end
-		else
-			x = Round( g_ReferenceWidthRatio * x)
-			y = Round( g_ReferenceHeightRatio * y)		
-		end
-	end
-	if bUseOffset then
-		x = x - g_OffsetX
-		y = y - g_OffsetY
-		
-		-- the code below assume that the reference map is wrapX
-		if y < 0 then 
-			--y = y + g_iH - 1
-			--y = y + g_iH
-			--x = x + Round(g_iW / 2)
-		end
-		--if x < 0 then x = x + g_iW - 1 end
-		--if x < 0 and Map.IsWrapX() then x = x + g_iW end
-		if x < 0 then
-			x = x + g_UncutMapWidth
-		end
-	end
-	return x, y
-end
-
-function GetPlotFromRefMap(x, y, bOnlyOffset)
-	return Map.GetPlot(GetXYFromRefMapXY(x,y, bOnlyOffset))
-end
---]]
-BuildRefXY()
-
-function IncrementCityCount()
-	numCitiesOnMap = numCitiesOnMap + 1
-	print("City count = "..tostring(numCitiesOnMap))
-end
-
-
-------------------------------------------------------------------------------
 -- Handling script with pauses
 --
 -- When Lua takes too much time to process something, it seems to cause the game to crash
@@ -583,11 +544,16 @@ end
 ------------------------------------------------------------------------------
 
 local g_LastPause 		= 0
-local g_TimeForPause	= 0.1	-- running time in seconds before yielding
-local g_TickBeforeResume= 5		-- number of call to GameCoreEventPublishComplete before resuming the coroutine
+local g_TimeForPause	= 0.05--0.1	-- running time in seconds before yielding
+local g_TickBeforeResume= 5--5		-- number of call to GameCoreEventPublishComplete before resuming the coroutine
 local g_Tick			= 0
 local bLoadScreenClosed	= false
 local CoroutineList		= {}
+
+local bFirstCheck		= true
+local g_FirstCheckTime	= 0
+local g_FirstCheckPause	= 3
+
 
 function AddCoToList(newCo)
 	print("Adding coroutine to script with pause :"..tostring(newCo))
@@ -617,14 +583,35 @@ function ChangePause(value)
 end
 
 function CheckCoroutinePause()
-	if g_LastPause + g_TimeForPause < Automation.GetTime() then
+	if bFirstCheck or (g_LastPause + g_TimeForPause < Automation.GetTime()) then
 		print("**** coroutine.yield at ", Automation.GetTime() - g_LastPause, g_TimeForPause)
+		if bFirstCheck then
+			print("**** Delayed start, pause for ", g_FirstCheckPause)
+			g_FirstCheckTime = Automation.GetTime()
+		end
 		coroutine.yield()
 		--return true
 	end
 end
 
+local countdown = 999
 function CheckTimer()
+
+	if bFirstCheck then
+		if g_FirstCheckTime > 0 then
+			if (g_FirstCheckTime + g_FirstCheckPause > Automation.GetTime()) then
+				local t = g_FirstCheckPause - Round(Automation.GetTime()-g_FirstCheckTime)
+				if t < countdown then
+					print(t)
+					countdown = t
+				end
+				return
+			else
+				print("**** Starting...")
+				bFirstCheck = false
+			end
+		end
+	end
 
 	g_Tick	= g_Tick + 1
 	
@@ -649,7 +636,7 @@ function CheckTimer()
 		for _, i in ipairs(toRemove) do
 			table.remove(CoroutineList, i)
 		end
-		if #CoroutineList == 0 and bLoadScreenClosed then
+		if #CoroutineList == 0 and bLoadScreenClosed and not bFirstCheck then
 			StopScriptWithPause()
 		end
 	end
@@ -679,7 +666,7 @@ for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 end
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- Removin Civilizations >>>>>
+-- Removing Civilizations >>>>>
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- City renaming <<<<<
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -735,21 +722,29 @@ end
 function ChangeCityName( ownerPlayerID, cityID)
 	local pCity = CityManager.GetCity(ownerPlayerID, cityID)	
 	if pCity then
+	
+		local mapX 		= pCity:GetX()
+		local mapY 		= pCity:GetY()
+		local cityPlot 	= Map.GetPlot(mapX, mapY)
+		
+		if NoRenamingOnPlot[cityPlot:GetIndex()] then
+			print("No renaming authorized at "..tostring(mapX)..","..tostring(mapY))
+			return
+		end
+		
 		SetExistingCityNames(pCity)
-		local mapX = pCity:GetX()
-		local mapY = pCity:GetY()
-		local refMapX, refMapY = GetRefMapXY(mapX, mapY)
-		local CivilizationTypeName = PlayerConfigurations[ownerPlayerID]:GetCivilizationTypeName()
-		local startPos, endPos = string.find(CivilizationTypeName, "CIVILIZATION_")
-		local sCivSuffix = string.sub(CivilizationTypeName, endPos)
+		
+		local refMapX, refMapY 		= GetRefMapXY(mapX, mapY)
+		local CivilizationTypeName 	= PlayerConfigurations[ownerPlayerID]:GetCivilizationTypeName()
+		local startPos, endPos 		= string.find(CivilizationTypeName, "CIVILIZATION_")
+		local sCivSuffix 			= string.sub(CivilizationTypeName, endPos)
 		print("Trying to find name for city of ".. tostring(CivilizationTypeName) .." at "..tostring(mapX)..","..tostring(mapY))
-		local possibleName = {}
-		local maxRange = 1
-		local bestDistance = 99
-		local bestDefaultDistance = 99
-		local bestName = nil
-		local bestDefaultName = nil
-		local cityPlot = Map.GetPlot(mapX, mapY)
+		local possibleName 			= {}
+		local maxRange 				= 1
+		local bestDistance 			= 99
+		local bestDefaultDistance 	= 99
+		local bestName 				= nil
+		local bestDefaultName 		= nil
 		for row in GameInfo.CityMap() do
 			if row.MapName == mapName  then
 				local name = row.CityLocaleName
@@ -913,7 +908,7 @@ local startingEraType			= GameInfo.Eras[GameConfiguration.GetStartEra()].EraType
 local scenarioName 				= MapConfiguration.GetValue("ScenarioType")
 local cityPlacement 			= MapConfiguration.GetValue("CityPlacement")
 local borderPlacement			= MapConfiguration.GetValue("BorderPlacement")
-local borderMaxDistance			= MapConfiguration.GetValue("BorderMaxDistance")
+local borderMaxDistance			= MapConfiguration.GetValue("BorderMaxDistance") or 1
 local borderAbsoluteMaxDistance	= borderMaxDistance or g_MaxDistance
 local infrastructurePlacement	= MapConfiguration.GetValue("InfrastructurePlacement")
 local numberOfMajorCity			= MapConfiguration.GetValue("NumberOfCity")
@@ -928,6 +923,7 @@ local bInternationalRoads		= MapConfiguration.GetValue("InternationalRoads")
 local roadMaxDistance			= MapConfiguration.GetValue("RoadMaxDistance")
 local maxRoadPerCity			= MapConfiguration.GetValue("MaxRoadPerCity")
 local maxDistanceFromCapital	= MapConfiguration.GetValue("MaxDistanceFromCapital")
+local minCitySeparation			= MapConfiguration.GetValue("MinCitySeparation")
 local onlySameLandMass			= MapConfiguration.GetValue("OnlySameLandMass")
 
 print("===========================================================================")
@@ -1105,12 +1101,26 @@ function SetScenarioPlayers()
 	local bCityMapValid			= not (bOnlyGenerated or bOnlyImport)
 	local bGeneratedValid		= not (bOnlyCityMap or bOnlyImport)
 	
+	print("- Global Scenario settings")
+	print(" bOnlyImport			= ", bOnlyImport	)
+	print(" bOnlyCityMap		= ", bOnlyCityMap	)
+	print(" bOnlyGenerated		= ", bOnlyGenerated	)
+	print(" bImport				= ", bImport		)
+	print(" bCityMap			= ", bCityMap		)
+	print(" bGenerated			= ", bGenerated		)
+	print(" bMixed				= ", bMixed			)
+	print(" bImportValid		= ", bImportValid	)
+	print(" bCityMapValid		= ", bCityMapValid	)
+	print(" bGeneratedValid		= ", bGeneratedValid)
+	
+
 	-- We allow placement type per civilization from ScenarioCivilization table, building a player table for each placement type then,
 	-- in the placement functions, loop each players using that type...
 	-- We place Import first, then by name, then by terrain
 	-- players with "PLACEMENT_MIXED" setting are in all tables
 	
 	for _, iPlayer in ipairs(AliveList) do -- for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+	
 		local civilizationType	= CivTypePlayerID[iPlayer]
 		if civilizationType then
 			ScenarioPlayer[iPlayer]	= {}
@@ -1120,7 +1130,18 @@ function SetScenarioPlayers()
 			local bIsMajor			= player and player:IsMajor()
 			local bIsMinor			= player and (not bIsMajor) and (not player:IsBarbarian())
 			
-			print("Scenario settings for "..tostring(civilizationType))
+			print("- Scenario settings for "..tostring(civilizationType))
+			
+			--[[
+			--debug
+			local pPlayerDiplo : object = player:GetDiplomacy()
+			for k,iOtherPlayerID : number in ipairs(PlayerManager.GetAliveIDs()) do
+				if (iOtherPlayerID ~= iPlayer) then
+					pPlayerDiplo:SetHasMet(iOtherPlayerID);
+				end
+			end
+			--]]
+			
 			if ScenarioRow then
 				print("ScenarioRow:")
 				for key, value in orderedPairs(ScenarioRow) do
@@ -1159,10 +1180,13 @@ function SetScenarioPlayers()
 			playerData.RoadMaxDistance 		= playerData.RoadMaxDistance or roadMaxDistance
 			playerData.MaxRoadPerCity 		= playerData.MaxRoadPerCity or maxRoadPerCity or 1
 			
-			playerData.BorderMaxDistance 	= (ScenarioRow and ScenarioRow.BorderMaxDistance) or (bIsMajor and borderMaxDistance) or (bIsMinor and 1)
+			playerData.BorderMaxDistance 	= (ScenarioRow and ScenarioRow.BorderMaxDistance) or (bIsMajor and borderMaxDistance) or (bIsMinor and Round(borderMaxDistance/2))
 			
 			playerData.MaxDistanceFromCapital 	= playerData.MaxDistanceFromCapital or maxDistanceFromCapital or 1
+			playerData.MinCitySeparation 		= playerData.MinCitySeparation or minCitySeparation or GlobalParameters.CITY_MIN_RANGE
 			playerData.OnlySameLandMass 		= playerData.OnlySameLandMass or OnlySameLandMass or false
+			playerData.SouthernLatitude 		= playerData.SouthernLatitude or false
+			playerData.NorthernLatitude 		= playerData.NorthernLatitude or false
 			
 			playerData.RouteIndex 			= (playerData.SpecificEra and RouteIndexForEra[playerData.SpecificEra]) or RouteIndexForEra[startingEraType]
 			
@@ -1270,7 +1294,6 @@ function CheckPotentialCityPlotDistance(plot, iThisPlayer, bNoCloserCheck, bNoLo
 
 	if not plot then return false, false end 
 
-	local minDistance 	= math.max(GlobalParameters.CITY_MIN_RANGE, (MapConfiguration.GetValue("CityMinDistance") or 0))
 	local homeDistance	= g_MaxDistance -- distance from this player's Civilization closest city
 	local civDistance	= g_MaxDistance -- distance from other Civilizations closest city
 	local bHasCity		= false
@@ -1279,6 +1302,7 @@ function CheckPotentialCityPlotDistance(plot, iThisPlayer, bNoCloserCheck, bNoLo
 	local bCheckFarAway	= not bNoLongDistanceCheck
 	local bCloseEnough	= true	-- by default assume that the plot distance is close enough
 	local playerData	= ScenarioPlayer[iThisPlayer]
+	local minDistance 	= math.max(GlobalParameters.CITY_MIN_RANGE, playerData and playerData.MinCitySeparation or 0)
 	local thisPriority	= playerData and playerData.Priority or 0
 	
 	if playerData and bCheckFarAway and playerData.MaxDistanceFromCapital then
@@ -1357,13 +1381,41 @@ function CheckLandMassValid(plot, iPlayer)
 		if playerCities and playerCities.GetCapitalCity then
 		
 			local capitalCity	= playerCities:GetCapitalCity()
-			local cityPlot		= capitalCity:GetPlot()
-			
-			return cityPlot:GetArea() == plot:GetArea()
+			if capitalCity then
+				local cityPlot	= capitalCity:GetPlot()
+				return cityPlot:GetArea() == plot:GetArea()
+			else
+				print("WARNING in CheckLandMassValid : no capital city for ", CivTypePlayerID[iPlayer])
+			end
 		end
 	else
 		return true
 	end
+end
+
+function CheckLatitudeValid(plot, iPlayer)
+
+	if not plot then return false end
+	
+	local playerData = ScenarioPlayer[iPlayer]
+	
+	if playerData then
+	
+		local minLatitude	= playerData and playerData.SouthernLatitude
+		local maxLatitude	= playerData and playerData.NorthernLatitude
+		local plotLatitude	= GetLatitude(plot:GetY())
+		
+		if minLatitude and plotLatitude < minLatitude then
+			return false
+		end
+
+		if maxLatitude and plotLatitude > maxLatitude then
+			return false
+		end
+
+	end
+	
+	return true
 end
 
 function GetPotentialCityPlots()
@@ -1395,7 +1447,7 @@ function GetBestCityPlotFromList(potentialPlots, iPlayer)
 	-- to do : use iPlayer and differentiate MinDistanceForeignCity and MinDistanceCity
 
 	if not potentialPlots then 
-		print("WARNING: plots is nil for GetBestCityPlotFromList(plots) !")
+		print("WARNING: potentialPlots is nil for GetBestCityPlotFromList(plots) !")
 		print("Skipping...")
 		return nil
 	end
@@ -1414,8 +1466,9 @@ function GetBestCityPlotFromList(potentialPlots, iPlayer)
 			-- Distance check with other cities, must be closer from own cities than foreign cities...
 			local bFarEnough, bCloseEnough	= CheckPotentialCityPlotDistance(pTempPlot, iPlayer)
 			local bLandMassCheck			= CheckLandMassValid(pTempPlot, iPlayer)
+			local bLatitudeCheck			= CheckLatitudeValid(pTempPlot, iPlayer)
 			
-			if (bFarEnough == false) or (bLandMassCheck == false) then
+			if (bFarEnough == false) or (bLandMassCheck == false) or (bLatitudeCheck == false) then
 				bValid = false;
 				potentialPlots[iIndex].Plot = nil -- no need to test that plot again...
 			end
@@ -1427,7 +1480,7 @@ function GetBestCityPlotFromList(potentialPlots, iPlayer)
 			-- If the plots passes all the checks then the plot equals the temp plot
 			if(bValid == true) then
 				print("GetBestCityPlotFromList : returning plot #"..tostring(iIndex).."/"..tostring(iSize).." at fertility = ".. tostring(potentialPlots[iIndex].Fertility))
-				return pTempPlot;
+				return pTempPlot, iIndex;
 			end
 		else
 			bValid = false
@@ -1454,6 +1507,8 @@ function InitializeCity(city, name, size)
 	
 	if name then
 		city:SetName(name)
+		local pPlot 						= city:GetPlot()
+		NoRenamingOnPlot[pPlot:GetIndex()] 	= true
 	end
 
 	if size then
@@ -1484,6 +1539,8 @@ function InitializeCity(city, name, size)
 end
 
 function PlaceCities()
+
+	CheckCoroutinePause()
 
 	print("===========================================================================")
 	print("Starting City placement for Scenario...")
@@ -1625,7 +1682,7 @@ function PlaceCities()
 							bPlacedCity		= true
 							local cityName	= cityData.Name
 							InitializeCity(city, cityData.Name, cityData.Size)
-							print(" 		- ".. tostring(Locale.Lookup(city:GetName())) .." PLACED !")
+							print(" 		- ".. tostring(Locale.Lookup(city:GetName())) .." PLACED at ", city:GetX(), city:GetY())
 						end
 					else
 						table.insert(toRemove, playerIndex)
@@ -1721,8 +1778,9 @@ function PlaceCities()
 							local plot 						= Map.GetPlot(cityRow.X, cityRow.Y)
 							local bFarEnough, bCloseEnough	= CheckPotentialCityPlotDistance(plot, iPlayer, bNoCloserCivCheck)
 							local bLandMassCheck			= CheckLandMassValid(plot, iPlayer)
+							local bLatitudeCheck			= CheckLatitudeValid(plot, iPlayer)
 							
-							if bFarEnough and bCloseEnough and bLandMassCheck then
+							if bFarEnough and bCloseEnough and bLandMassCheck and bLatitudeCheck then
 								if plot and not (plot:IsWater() or plot:IsImpassable()) then
 									print("    - Placing at (".. tostring(cityRow.X).. ","..tostring(cityRow.X)..")")
 									local city = player:GetCities():Create(cityRow.X, cityRow.Y)
@@ -1738,7 +1796,7 @@ function PlaceCities()
 									print("    - Invalid plot at entry#"..tostring(cityIndex[iPlayer]-1))
 								end
 							else
-								print("    - Distance check failed at entry#"..tostring(cityIndex[iPlayer]-1))
+								print("    - Checks failed at entry#"..tostring(cityIndex[iPlayer]-1), " bFarEnough = ",bFarEnough, " bCloseEnough = ",bCloseEnough, " bLandMassCheck = ",bLandMassCheck, " bLatitudeCheck = ",bLatitudeCheck)
 							end
 							
 							if not bPlayerCityPlaced then
@@ -1819,17 +1877,19 @@ function PlaceCities()
 				if playerData and playerData.CitiesToPlace and playerData.CitiesToPlace > 0 then
 					print("    - Finding next City position for " .. tostring(CivTypePlayerID[iPlayer]) .. ", cities to place = " .. tostring(playerData and playerData.CitiesToPlace).. ", priority = " .. tostring(playerData and playerData.Priority))
 
-					local plotList	= playerPlots[iPlayer]
-					local pBestPlot = GetBestCityPlotFromList(plotList, iPlayer)
+					local plotList			= playerPlots[iPlayer]
+					local pBestPlot, iIndex = GetBestCityPlotFromList(plotList, iPlayer)
 					
 					if pBestPlot then
-print(pBestPlot:GetX(), pBestPlot:GetY())
 						local player 	= Players[iPlayer]
 						local city 		= player:GetCities():Create(pBestPlot:GetX(), pBestPlot:GetY())			
 						if city then
 							InitializeCity(city)
 							bPlacedCity = true
 							print("     - ".. tostring(Locale.Lookup(city:GetName())) .." PLACED !")
+						else
+							print("     - WARNING, can't place city at ", pBestPlot:GetX(), pBestPlot:GetY(), " removing entry from plotList")
+							plotList[iIndex].Plot = nil
 						end
 						
 					else
@@ -1916,16 +1976,20 @@ function PlaceBorders()
 		for _, iPlayer in ipairs(AliveList) do -- for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
 			local player = Players[iPlayer]
 			if player then
+				local playerData	= ScenarioPlayer[iPlayer]
+				local priority		= playerData and playerData.Priority or 0
 				local playerCities 	= player:GetCities()
 				if playerCities and playerCities.Members then
 					for i, pLoopCity in playerCities:Members() do
-						table.insert(cityList, pLoopCity)
+						table.insert(cityList, {City = pLoopCity, Priority = priority})
 					end				
 				end
 			end
 		end
 		
-		local shuffledCityList		= GetShuffledCopyOfTable(cityList) -- to do : sort using Priority tag from Civilization settings
+		table.sort (cityList, function(a, b) return a.Priority > b.Priority; end);
+		
+		--local shuffledCityList		= GetShuffledCopyOfTable(cityList) -- to do : sort using Priority tag from Civilization settings
 		local bAnyBorderExpanded 	= true
 		local iLoop					= 0
 		local iRing					= 2
@@ -1937,9 +2001,11 @@ function PlaceBorders()
 			iLoop 				= iLoop + 1
 			bAnyBorderExpanded 	= false
 			
-			for _, city in ipairs(shuffledCityList) do
+			for _, data in ipairs(cityList) do
 		
 				CheckCoroutinePause()
+				
+				local city = data.City
 				
 				print("   - City : "..Locale.Lookup(city:GetName()))
 				
@@ -2295,15 +2361,15 @@ function YnAMP_SetScenario()
 	PlaceInfrastructure()
 	--]]
 	if not Game:GetProperty("YnAMP_ScenarioInitialized") then
-	SetScenarioPlayers()
+		SetScenarioPlayers()
 		-- Launch coroutines, each calls the next one...
-	AddCoToList(coroutine.create(PlaceCities))
-	Game:SetProperty("YnAMP_ScenarioInitialized", true)
+		AddCoToList(coroutine.create(PlaceCities))
+		Game:SetProperty("YnAMP_ScenarioInitialized", true)
 	end
 end
 Events.LoadGameViewStateDone.Add( YnAMP_SetScenario )
-
 --Events.LoadScreenClose.Add( YnAMP_SetScenario )
+
 --Events.LoadScreenContentReady.Add(  );		-- Ready to show player info
 --Events.LoadGameViewStateDone.Add(  );			-- Ready to start game
 
@@ -2316,5 +2382,7 @@ end
 -- ===========================================================================
 function Initialize()
 	LaunchScriptWithPause()
+	--
+	Events.LoadScreenClose.Add( MapStatistics )
 end
 Initialize()

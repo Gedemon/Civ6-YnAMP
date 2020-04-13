@@ -27,7 +27,7 @@ if ExposedMembers.YnAMP_Loading ~= nil then
 		end
 	end
 end
-ExposedMembers.YnAMP_Loading = nil
+--ExposedMembers.YnAMP_Loading = nil
 
 -- List the player slots
 local slotStatusString	= {}
@@ -2925,7 +2925,7 @@ function buildExclusionList()
 								print ("  - WARNING : can't find "..tostring(exclusionList.Resource).." in Resources")
 							end
 						else
-							print ("  - WARNING : found nil Resource")
+							print ("  - WARNING : Resource column is NIL in ResourceRegionExclude")
 						end
 					end
 				end
@@ -2954,9 +2954,9 @@ function buildExclusionList()
 					local regionWidth 		= g_ReferenceWidthRatio * RegionRow.Width
 					local regionHeight 		= g_ReferenceHeightRatio * RegionRow.Height
 					
-					print ("    - Bottom Left (X,Y) = ", regionX, regionY)
-					print ("    - Width (used, default, map ratio) = ", regionWidth, RegionRow.Width, g_ReferenceWidthRatio)
-					print ("    - Height (used, default, map ratio) = ", regionHeight, RegionRow.Height, g_ReferenceHeightRatio)
+					--print ("    - Bottom Left (X,Y) = ", regionX, regionY)
+					--print ("    - Width (used, default, map ratio) = ", regionWidth, RegionRow.Width, g_ReferenceWidthRatio)
+					--print ("    - Height (used, default, map ratio) = ", regionHeight, RegionRow.Height, g_ReferenceHeightRatio)
 				
 					for x = regionX, regionX + regionWidth do
 						for y = regionY, regionY + regionHeight do
@@ -2974,15 +2974,15 @@ function buildExclusionList()
 					end
 				end
 				if (#resExclusionTable > 0) then
-					print("   - Excluded resources :")
+					--print("   - Excluded resources :")
 					for i, resourceID in ipairs(resExclusionTable) do
-						print("      "..tostring(GameInfo.Resources[resourceID].ResourceType))
+						--print("      "..tostring(GameInfo.Resources[resourceID].ResourceType))
 					end
 				end
 				if (#resExclusiveTable > 0) then
-					print("   - Exclusive resources :")
+					--print("   - Exclusive resources :")
 					for i, resourceID in ipairs(resExclusiveTable) do
-						print("      "..tostring(GameInfo.Resources[resourceID].ResourceType))
+						--print("      "..tostring(GameInfo.Resources[resourceID].ResourceType))
 					end	
 				end			
 			else
@@ -2993,7 +2993,7 @@ function buildExclusionList()
 	hasBuildExclusionList = true
 end
 
-function buidTSL()
+function buildTSL()
 	print ("------------------------------------------------------------------------------")
 	print ("Building TSL list for "..tostring(mapName).."...")
 	
@@ -3353,7 +3353,7 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, wi
 
 	-- Set globals
 	SetGlobals()
-	BuildRefXY()
+	--BuildRefXY()
 
 	--local pPlot
 	--g_iFlags = TerrainBuilder.GetFractalFlags();
@@ -3732,7 +3732,7 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, wi
 	---[[
 	print("Creating start plot database.")	
 	if bTSL then
-		buidTSL()
+		buildTSL()
 	end	
 	local startConfig = MapConfiguration.GetValue("start");-- Get the start config
 	-- START_MIN_Y and START_MAX_Y is the percent of the map ignored for major civs' starting positions.
@@ -3751,7 +3751,7 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, wi
 	currentTimer = os.clock() - g_startTimer
 	print("Intermediate timer = "..tostring(currentTimer).." seconds")
 	
-	ResourcesValidation(g_iW, g_iH) -- before Civ specific resources may be added (we allow exclusion override then)
+	MapValidation(g_iW, g_iH) -- before Civ specific resources may be added (we allow exclusion override then)
 
 	-- Check if all selected civs have been given a Starting Location
 	--if not bTSL or bAlternatePlacement then
@@ -4882,12 +4882,23 @@ function AddStartingLocationResources()
 	print("-------------------------------")
 end
 
-function ResourcesValidation(g_iW, g_iH)
+function MapValidation(g_iW, g_iH)
 
 	if bNoResources then return end
 
-	print("------------------------------------")
-	print("-- Resources Validation --")
+	print("--------------------------------------")
+	print("-- Map Validation...")
+		
+	local totalplots 		= g_iW * g_iH
+	local landPlots 		= Map.GetLandPlotCount()
+	local waterPlots		= totalplots - landPlots
+	local hills				= 0
+	local mountains			= 0
+	local flatLand			= 0
+	local missingLuxuries 	= {}
+	local missingStrategics	= {}
+	local terrainCount		= {}
+	local featureCount		= {}
 	
 	-- replacement tables
 	local resTable 		= {}
@@ -4933,11 +4944,13 @@ if type(newResourceType) == "string" then print("Error: newResourceType is strin
 		end	
 	end
 		
-	local totalplots = g_iW * g_iH
 	for i = 0, (totalplots) - 1, 1 do
 		plot = Map.GetPlotByIndex(i)
 		local eResourceType = plot:GetResourceType()
+		local eTerrainType	= plot:GetTerrainType()
+		local eFeatureType	= plot:GetFeatureType()
 		if (eResourceType ~= -1) then
+			-- todo : sea/land resource check
 			if resTable[eResourceType] then
 				if not bImportResources and IsResourceExclusion(plot, eResourceType) then
 					print("WARNING - Removing unauthorised resource at", plot:GetX(), plot:GetY(), GameInfo.Resources[eResourceType].ResourceType)
@@ -4955,27 +4968,47 @@ if type(newResourceType) == "string" then print("Error: newResourceType is strin
 				print("WARNING - resTable[eResourceType] is nil for eResourceType = " .. tostring(eResourceType))
 			end
 		end
+		
+		if (eTerrainType ~= -1) then
+			local count = terrainCount[eTerrainType] or 0
+			terrainCount[eTerrainType] = count + 1
+		end
+		
+		if (eFeatureType ~= -1) then
+			if not GameInfo.Features[eFeatureType].NaturalWonder then
+				-- todo: sea/land feature check
+				local count = featureCount[eFeatureType] or 0
+				featureCount[eFeatureType] = count + 1
+			end
+		end
+		
+		if plot:IsHills() 		then hills 		= hills + 1 end
+		if plot:IsMountain()	then mountains 	= mountains + 1 end
+		
 	end
 
-	print("------------------------------------")
-	print("-- Resources Placement Statistics --")
-	print("------------------------------------")
-	print("-- Total plots on map = " .. tostring(totalplots))
-	print("------------------------------------")
-
-	local landPlots 		= Map.GetLandPlotCount()
-	local missingLuxuries 	= {}
-	local missingStrategics	= {}
+	--print("======================================")
+	--print("====== Generated Map Statistics ======")
+	--print("======================================")
+	--print("-- Total plots on map = " .. tostring(totalplots))
+	--print("-- Land plots 			= ", tostring(landPlots).."		(" .. tostring(Round(landPlots / totalplots * 10000) / 100).."% of map)")
+	--print("-- Water plots 	= ", tostring(waterPlots).."		(" .. tostring(Round(waterPlots / totalplots * 10000) / 100).."% of map)")
+	--print("-- Hills plots 	= ", tostring(hills).."		(" .. tostring(Round(hills / landPlots * 10000) / 100).."% of land)")
+	--print("-- Mountains plots 	= ", tostring(mountains).."		(" .. tostring(Round(mountains / landPlots * 10000) / 100).."% of land)")
+	
+	--print("--------------------------------------")
+	--print("-------- Resources Statistics --------")
 	for resRow in GameInfo.Resources() do
-		local numRes = resTable[resRow.Index]
+		local numRes 		= resTable[resRow.Index]
 		local placedPercent	= Round(numRes / landPlots * 10000) / 100
+		local frequency		= math.max(resRow.Frequency, resRow.SeaFrequency)
+		local ratio 		= frequency > 0 and Round(placedPercent * 100 / frequency) or "---"
 		if placedPercent == 0 then placedPercent = "0.00" end
-		local ratio = Round(placedPercent * 100 / resRow.Frequency)
 		if ratio == 0 then ratio = "0.00" end
-		if resRow.Frequency > 0 then
-			local sFrequency = tostring(resRow.Frequency)
-			if resRow.Frequency < 10 then sFrequency = " "..sFrequency end
-			print("Resource = " .. tostring(resRow.ResourceType).."		placed = " .. tostring(numRes).."		(" .. tostring(placedPercent).."% of land)		frequency = " .. sFrequency.."		ratio = " .. tostring(ratio))
+		if frequency > 0 then
+			local sFrequency = tostring(frequency)
+			if frequency < 10 then sFrequency = " "..sFrequency end
+			--print("Resource = " .. tostring(resRow.ResourceType).."		placed = " .. tostring(numRes).."		(" .. tostring(placedPercent).."% of land)		frequency = " .. sFrequency.."		ratio = " .. tostring(ratio))
 			if numRes == 0 then
 				if luxTable[resRow.Index] and bPlaceAllLuxuries then
 					table.insert(missingLuxuries, resRow.Index)
@@ -5000,6 +5033,7 @@ if type(newResourceType) == "string" then print("Error: newResourceType is strin
 end
 
 function PlaceMissingResources(missingResourceTable)
+	print("--------------------------------------")
 	print("Placing missing resources...")
 	for _, resourceType in ipairs(missingResourceTable) do
 		local row = GameInfo.Resources[resourceType]
@@ -5018,14 +5052,17 @@ function PlaceMissingResources(missingResourceTable)
 		local iMagicFrequency = 14
 		local toPlace = math.max(1, Round(#possiblePlots * (iMagicFrequency / 100) * (row.Frequency / 100)))
 		
-		print("Trying to place ".. tostring(toPlace).." " .. tostring(row.ResourceType))
+		print("Trying to place ".. tostring(toPlace), tostring(row.ResourceType), ", available plots = ".. tostring(#possiblePlots))
 		aShuffledResourcePlots = GetShuffledCopyOfTable(possiblePlots)
+		local placed = 0
 		for i = 1, toPlace do
 			local plot = aShuffledResourcePlots[i]
 			if plot then
 				ResourceBuilder.SetResourceType(plot, resourceType, 1)
+				placed = placed + 1
 			end
 		end
+		print("  - placed: ".. tostring(placed))
 	end
 end
 
@@ -5784,17 +5821,6 @@ end
 ------------------------------------------------------------------------------
 -- Culturally Linked Start Locations
 ------------------------------------------------------------------------------
-function Round(num)
-    under = math.floor(num)
-    upper = math.floor(num) + 1
-    underV = -(under - num)
-    upperV = upper - num
-    if (upperV > underV) then
-        return under
-    else
-        return upper
-    end
-end
 
 BRUTE_FORCE_TRIES 	= 3 -- raise this number for better placement but longer initialization. From tests, 3 passes should be more than enough.
 OVERSEA_PENALTY 	= 50 -- distance penalty for starting plot separated by sea
@@ -6012,7 +6038,7 @@ function CalculateDistanceScoreCityStates(bOutput)
 		local startPlot1 = player:GetStartingPlot()
 		local civCulture = GameInfo.Civilizations[playerConfig:GetCivilizationTypeID()].Ethnicity		
 		if not civCulture then
-			print("WARNING : no Ethnicity defined for " .. playerConfig:GetPlayerName() ..", using EURO")
+			if bOutput then print("WARNING : no Ethnicity defined for " .. playerConfig:GetPlayerName() ..", using EURO") end
 			civCulture = "ETHNICITY_EURO"
 		end
 		if startPlot1 ~= nil then
@@ -6033,7 +6059,7 @@ function CalculateDistanceScoreCityStates(bOutput)
 						distanceScore = distanceScore + Round(distance*SAME_GROUP_WEIGHT)
 						if bOutput then print ("      - Distance to same culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (x".. tostring(SAME_GROUP_WEIGHT) .."), total distance score = " .. tostring(distanceScore) ) end
 					else
-						print("      - WARNING: no starting plot available for " .. tostring(playerConfig2:GetPlayerName()))
+						if bOutput then print("      - WARNING: no starting plot available for " .. tostring(playerConfig2:GetPlayerName())) end
 					end
 				else
 					local interGroupMinimizer = 1
@@ -6048,7 +6074,7 @@ function CalculateDistanceScoreCityStates(bOutput)
 						distanceScore = distanceScore + Round(distance/interGroupMinimizer)
 						if bOutput then print ("      - Distance to different culture (" .. tostring(playerConfig2:GetPlayerName()) .. ") = " .. tostring(distance) .. " (/".. tostring(interGroupMinimizer) .." from intergroup relative distance), total distance score = " .. tostring(distanceScore) ) end
 					else
-						print("      - WARNING: no starting plot available for " .. tostring(playerConfig2:GetPlayerName()))
+						if bOutput then print("      - WARNING: no starting plot available for " .. tostring(playerConfig2:GetPlayerName())) end
 					end
 				end
 			end
@@ -6077,7 +6103,7 @@ function CulturallyLinkedCityStates(bForcePlacement)
 	print ("------------------------------------------------------- ")
 	print ("Set Culturally linked starting positions for City States... ")
 
-	local initialDistanceScore = CalculateDistanceScoreCityStates()
+	local initialDistanceScore = CalculateDistanceScoreCityStates(true)
 	if  initialDistanceScore < bestDistanceScore then
 		bestDistanceScore = initialDistanceScore
 	end

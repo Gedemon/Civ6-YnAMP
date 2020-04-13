@@ -8,8 +8,11 @@ print ("loading YnAMP_Common.lua")
 -- Sharing UI/Gameplay context
 ------------------------------------------------------------------------------
 
-ExposedMembers.YnAMP = ExposedMembers.YnAMP or {}
-YnAMP = ExposedMembers.YnAMP
+ExposedMembers.YnAMP 		= ExposedMembers.YnAMP or {}
+ExposedMembers.ConfigYnAMP 	= ExposedMembers.ConfigYnAMP or {}
+
+YnAMP 		= ExposedMembers.YnAMP
+ConfigYnAMP = ExposedMembers.ConfigYnAMP
 
 
 ------------------------------------------------------------------------------
@@ -76,13 +79,16 @@ sX, sY 			= 0, 0
 lX, lY 			= 0, 0
 skipX, skipY	= MapConfiguration.GetValue("RescaleSkipX") or 999, MapConfiguration.GetValue("RescaleSkipY") or 999
 
+g_LatitudeDegreesPerY	= nil
+g_OriginLatitude		= nil
 
 ------------------------------------------------------------------------------
 -- Set globals
 ------------------------------------------------------------------------------
-
 function SetGlobals()
 
+	print("Setting common Globals")
+	print("----------------------")
 	g_iW, g_iH 	= Map.GetGridSize();
 	g_MapSize	= g_iW * g_iH
 	
@@ -114,6 +120,9 @@ function SetGlobals()
 	
 	g_MaxStartDistanceMajor = math.sqrt(g_iW * g_iH / PlayerManager.GetWasEverAliveMajorsCount())
 	g_MinStartDistanceMajor = g_MaxStartDistanceMajor / 3
+
+	BuildRefXY()
+	SetLatitudesGlobals()
 	
 	print("g_iW 	= ", g_iW)
 	print("g_iH 	= ", g_iH)
@@ -147,14 +156,70 @@ function SetGlobals()
 	print("bUseRelativeFixedTable",bUseRelativeFixedTable)
 	print("skipX",skipX)
 	print("skipY",skipY)
+	print("g_LatitudeDegreesPerY",g_LatitudeDegreesPerY)
+	print("g_OriginLatitude",g_OriginLatitude)
 
+end
+
+
+------------------------------------------------------------------------------
+-- Math
+------------------------------------------------------------------------------
+function Round(num)
+    under = math.floor(num)
+    upper = math.floor(num) + 1
+    underV = -(under - num)
+    upperV = upper - num
+    if (upperV > underV) then
+        return under
+    else
+        return upper
+    end
+end
+
+
+------------------------------------------------------------------------------
+-- Strings
+------------------------------------------------------------------------------
+local indentationString	= ".............................." -- maxLength = 30 car
+local indentationSpaces	= "                              "
+
+function Indentation(str, maxLength, bAlignRight, bShowSpace)
+	local bIsNumber	= type(str) == "number"
+	local minLength	= 2
+	local indentStr	= (bShowSpace and indentationString) or indentationSpaces
+	local maxLength = math.max(maxLength or string.len(indentStr))
+	--local str 		= (bIsNumber and str > math.pow(10,maxLength-2)-1 and tostring(math.floor(str))) or tostring(str)
+	--local str 		= (bIsNumber and str > 9 and tostring(math.floor(str))) or tostring(str)
+	local str 		= tostring(str)
+	local length 	= string.len(str)
+	
+	if length > maxLength and bIsNumber then
+		str		= tostring(math.floor(tonumber(str)))
+		length 	= string.len(str)
+	end
+	
+	if length < maxLength then
+		if bAlignRight then
+			return string.sub(indentStr, 1, maxLength - length) .. str
+		else
+			return str.. string.sub(indentStr, 1, maxLength - length)
+		end
+	elseif length > maxLength and length > minLength then
+		if bIsNumber then
+			return tostring(math.pow(10,maxLength)-1)  -- return 999 for value >= 1000 when maxLength = 3
+		else
+			return string.sub(str, 1, maxLength-1).."."
+		end
+	else
+		return str
+	end
 end
 
 
 ------------------------------------------------------------------------------
 -- Export a complete civ6 map to Lua.log
 ------------------------------------------------------------------------------
-
 function ExportMap()
 	local g_iW, g_iH = Map.GetGridSize()
 	for iY = 0, g_iH - 1 do
@@ -304,7 +369,6 @@ YnAMP.ExportMap = ExportMap
 ------------------------------------------------------------------------------
 -- Helpers for x,y positions when using a reference or offset map
 ------------------------------------------------------------------------------
-
 function BuildRefXY()
 	if bUseRelativeFixedTable then
 		for x = 0, g_UncutMapWidth, 1 do
@@ -345,6 +409,9 @@ function GetRefMapXY(mapX, mapY, bOnlyOffset, customWidthFactor, customHeightFac
 			refMapX 	= XFromRefMapX[mapX] and Round(XFromRefMapX[mapX]*customWidthFactor) --Round(g_ReferenceWidthFactor * mapX)
 			refMapY 	= YFromRefMapY[mapY] and Round(YFromRefMapY[mapY]*customHeightFactor) --Round(g_ReferenceHeightFactor * mapY)
 			if refMapX == nil or refMapY == nil then
+print("Warning, can't find refMap y,x for ", mapX, mapY," returning ",  XFromRefMapX[mapX] and Round(XFromRefMapX[mapX]*customWidthFactor), YFromRefMapY[mapY] and Round(YFromRefMapY[mapY]*customHeightFactor))
+--for k, v in pairs(XFromRefMapX) do print(k,v) end
+--for k, v in pairs(YFromRefMapY) do print(k,v) end
 				return -1, -1
 			end
 		else
@@ -411,3 +478,104 @@ function GetPlotFromRefMap(x, y, bOnlyOffset)
 	return Map.GetPlot(GetXYFromRefMapXY(x,y, bOnlyOffset))
 end
 
+
+------------------------------------------------------------------------------
+-- Map functions
+------------------------------------------------------------------------------
+function SetLatitudesGlobals()
+	local southPoleLatitude = -90
+	local northPoleLatitude	= 90
+	local _, southernY = GetRefMapXY(0,0)
+	local _, northernY = GetRefMapXY(0, g_iH - 1)
+	
+	local southernLatitude	= MapConfiguration.GetValue("SouthernLatitude") or southPoleLatitude
+	local northernLatitude	= MapConfiguration.GetValue("NorthernLatitude") or northPoleLatitude
+	
+	local height			= (bUseOffset and g_UncutMapHeight) or g_iH
+print("SetLatitudesGlobals: southernLatitude = ", southernLatitude, "northernLatitude = ", northernLatitude, "bUseOffset = ", bUseOffset, "g_UncutMapHeight = ", g_UncutMapHeight, "g_iH = ", g_iH, "height = ", height, "southernY = ", southernY )
+	g_LatitudeDegreesPerY 	= (northernLatitude - southernLatitude) / height  -- but there are 181° of latitudes from -90 to 90, shouldn't we add 1° when crossing the equator ?
+	g_OriginLatitude		= (southernY * g_LatitudeDegreesPerY) + southernLatitude
+end
+
+function GetLatitude(y)
+	return Round((y*g_LatitudeDegreesPerY)+g_OriginLatitude)
+end
+
+
+-----------------------------------------------------------------------------------------
+-- Setup Screen Functions
+-----------------------------------------------------------------------------------------
+function LoadGameplayDatabaseForConfig()
+
+	print("Loading Data For YnAMP Setup Screen...")
+	ConfigYnAMP.ModList			= {}
+	ConfigYnAMP.CityStatesList	= {}
+	ConfigYnAMP.TSL				= {}
+	ConfigYnAMP.MapSizes		= {}
+	
+	-- Load TSL
+	for row in GameInfo.StartPosition() do
+		table.insert(ConfigYnAMP.TSL, row)
+	end
+	print("TSL list loaded, rows = ", #ConfigYnAMP.TSL)
+	
+	-- Load MapSizes
+	for row in GameInfo.Maps() do
+		ConfigYnAMP.MapSizes[row.MapSizeType] = {Width = row.GridWidth,	Height = row.GridHeight , Size = row.GridWidth * row.GridHeight } 
+	end
+	print("MapSizes loaded")
+	
+	-- Load CityStates
+	for row in GameInfo.CivilizationLeaders() do
+		local civilizationRow 	= GameInfo.Civilizations[row.CivilizationType]
+		local leaderRow 		= GameInfo.Leaders[row.LeaderType]
+		if civilizationRow and civilizationRow.StartingCivilizationLevelType =="CIVILIZATION_LEVEL_CITY_STATE" then
+			table.insert(ConfigYnAMP.CityStatesList, {LeaderType = row.LeaderType, CivilizationType = civilizationRow.CivilizationType, LeaderName = leaderRow.Name, CivilizationName = civilizationRow.Name })
+		end
+	end
+	print("CityState list loaded, rows = ", #ConfigYnAMP.CityStatesList)
+	
+	-- Load mod list
+	--print("Loading mod list...")
+	local listMods		= {}
+	local installedMods = Modding.GetInstalledMods()
+
+	if installedMods ~= nil then
+		for i, modData in ipairs(installedMods) do
+			if modData.Enabled then
+				table.insert(listMods, modData)
+			end
+		end
+	end
+	
+	for i, v in ipairs(listMods) do
+		--print("Set mod activated :" .. Locale.Lookup(v.Name))
+		ConfigYnAMP.ModList[v.Id] = v
+	end
+	print("Mod list loaded, rows = ", #listMods)
+	
+	ConfigYnAMP.IsDatabaseLoaded 	= true
+	ConfigYnAMP.IsDatabaseChanged	= false
+	
+	if ConfigYnAMP.LoadingDatabase then
+		ConfigYnAMP.LoadingDatabase = false
+		UIManager:SetUICursor( 1 )
+		UITutorialManager:EnableOverlay( false )	
+		UITutorialManager:HideAll()
+		Events.ExitToMainMenu()
+	end
+end
+
+
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+function UpdateLoadingText(sText)
+print("ExposedMembers.YnAMP_Loading.FallbackMessage",ExposedMembers.YnAMP_Loading.FallbackMessage)
+print("ExposedMembers.YnAMP_Loading.LoadGameMenu",ExposedMembers.YnAMP_Loading.LoadGameMenu)
+print(sText)
+	if ExposedMembers.YnAMP_Loading.LoadGameMenu then
+	
+	else
+	
+	end
+end
