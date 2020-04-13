@@ -1296,13 +1296,17 @@ function OnStartButton()
 					if not MapConfiguration.GetValue(leaderType) then -- this leaderType is not banned
 						if (not IsUsedLeader[leaderType]) or (not bNoDupeLeaders) then
 							local civilizationType = GetPlayerCivilization(leaderType)
-							if (not IsUsedCiv[civilizationType]) or (not bNoDupeCivs) then
-								MarkUsedCiv(civilizationType)
-								MarkUsedLeader(leaderType)
-								listIndex 	= listIndex + 1
-								return leaderType
+							if civilizationType then
+								if (not IsUsedCiv[civilizationType]) or (not bNoDupeCivs) then
+									MarkUsedCiv(civilizationType)
+									MarkUsedLeader(leaderType)
+									listIndex 	= listIndex + 1
+									return leaderType
+								else
+									print(" - Can't use leader because of duplicate Civilization : ", leaderType, civilizationType)
+								end
 							else
-								print(" - Can't use leader because of duplicate Civilization : ", leaderType, civilizationType)
+								print(" - WARNING: can't find civilizationType for : ", leaderType)
 							end
 						else
 							print(" - Can't use duplicate leader : ", leaderType)
