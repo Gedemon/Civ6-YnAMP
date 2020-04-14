@@ -119,6 +119,7 @@
 			<File>Gameplay/GamePlayText_it_IT.xml</File>
 			<File>Gameplay/GamePlayText_ja_JP.xml</File>
 			<File>Gameplay/GamePlayText_ko_KR.xml</File>
+			<File>Gameplay/GamePlayText_pl_PL.xml</File>
 		</UpdateText>
 	</InGameActions>
 	
@@ -165,6 +166,7 @@
 				<File>Configuration/ConfigText_it_IT.xml</File>
 				<File>Configuration/ConfigText_ja_JP.xml</File>
 				<File>Configuration/ConfigText_ko_KR.xml</File>
+				<File>Configuration/ConfigText_pl_PL.xml</File>
 		</UpdateText>
 		<ImportFiles id="YNAMP_SETTING_IMPORT">
            	<Properties>
@@ -200,7 +202,7 @@
             <it_IT>Maps with True or Culturally Linked Start Locations.</it_IT>
             <ja_JP>史実と同じ場所や文化が近い文明の付近からプレイを始めるマップです。</ja_JP>
             <ko_KR>실제 혹은 문화적 연관성이 있는 시작 지점을 보유한 지도들입니다.</ko_KR>
-            <pl_PL>Maps with True or Culturally Linked Start Locations.</pl_PL>
+            <pl_PL>Mapy z Prawdziwymi lub Powiązanymi Kulturowo Pozycjami Startowymi.</pl_PL>
             <pt_BR>Maps with True or Culturally Linked Start Locations.</pt_BR>
             <ru_RU>Maps with True or Culturally Linked Start Locations.</ru_RU>
 			<zh_Hans_CN>话不多说！再来一回合！</zh_Hans_CN>
@@ -214,7 +216,7 @@
             <it_IT>Maps with True or Culturally Linked Starting Location and custom options.</it_IT>
             <ja_JP>史実と同じ場所や文化が近い文明の付近からプレイを始めるマップです。多数のカスタムオプションあり。</ja_JP>
             <ko_KR>실제 혹은 문화적 연관성이 있는 시작 지점을 보유한 지도들입니다.</ko_KR>
-            <pl_PL>Maps with True or Culturally Linked Starting Location and custom options.</pl_PL>
+            <pl_PL>Mapy z Prawdziwymi lub Powiązanymi Kulturowo Pozycjami Startowymi oraz dodatkowymi ustawieniami.</pl_PL>
             <pt_BR>Maps with True or Culturally Linked Starting Location and custom options.</pt_BR>
             <ru_RU>Maps with True or Culturally Linked Starting Location and custom options.</ru_RU>
 			<zh_Hans_CN>模拟真实世界中的文明开局，包含各种大小的真实世界地图、部分优化设置及一些高自由度配置的作死地图。
@@ -252,6 +254,7 @@
 		<File>Configuration/ConfigText_it_IT.xml</File>
 		<File>Configuration/ConfigText_ja_JP.xml</File>
 		<File>Configuration/ConfigText_ko_KR.xml</File>
+		<File>Configuration/ConfigText_pl_PL.xml</File>
 		<File>Gameplay/Tables.sql</File>
 		<File>Gameplay/GamePlay.xml</File>
 		<File>Gameplay/GamePlayXP2.xml</File>
@@ -264,6 +267,7 @@
 		<File>Gameplay/GamePlayText_it_IT.xml</File>
 		<File>Gameplay/GamePlayText_ja_JP.xml</File>
 		<File>Gameplay/GamePlayText_ko_KR.xml</File>
+		<File>Gameplay/GamePlayText_pl_PL.xml</File>
 		<File>Maps/GiantEarth/Map.xml</File>
 		<File>Maps/GiantEarth/CityMap.xml</File>
 		<File>Maps/GiantEarth/CityMap_Egypt.xml</File>
