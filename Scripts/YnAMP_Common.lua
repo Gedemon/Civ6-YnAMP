@@ -554,8 +554,12 @@ function LoadGameplayDatabaseForConfig()
 	end
 	print("Mod list loaded, rows = ", #listMods)
 	
+	local ruleset = GameConfiguration.GetValue("RULESET")
+	print("Current Ruleset = ", ruleset)
+		
 	ConfigYnAMP.IsDatabaseLoaded 	= true
 	ConfigYnAMP.IsDatabaseChanged	= false
+	ConfigYnAMP.LoadedRuleset 		= ruleset
 	
 	if ConfigYnAMP.LoadingDatabase then
 		ConfigYnAMP.LoadingDatabase = false

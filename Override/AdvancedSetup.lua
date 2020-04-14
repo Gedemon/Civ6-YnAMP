@@ -1933,6 +1933,17 @@ function ValidateSettingsYnAMP()
 		Controls.LoadDataYnAMP:SetHide(false)
 	end
 	
+	-- Ruleset check
+	if ConfigYnAMP.IsDatabaseLoaded  then
+		if ConfigYnAMP.LoadedRuleset ~= GameConfiguration.GetValue("RULESET") then
+			print("Database have changed...")
+			local bLock		= not IgnoredWarning["RulesetChanged"]
+			local severity	= bLock and 100 or 70
+			table.insert(reportTable, { Severity = severity, Title = Locale.Lookup("LOC_SETUP_RULESET_CHANGED_YNAMP"), Tooltip = Locale.Lookup("LOC_SETUP_RULESET_CHANGED_YNAMP_TT"), DisableStart = bLock, BlockGroup = "RulesetChanged" })
+			Controls.LoadDataYnAMP:SetHide(false)
+		end
+	end
+	
 	-- Map Size check
 	local dimension		= GetCustomMapDimension()
 	local size 			= dimension and dimension.size
@@ -2018,7 +2029,11 @@ Events.FinishedGameplayContentConfigure.Add(OnGameplayContentConfigure)
 -- ===========================================================================
 function LoadDatabase()
 	print("Set and Launch a quick game to get YnAMP Data...");
+	
 	ConfigYnAMP.LoadingDatabase = true
+	
+	local ruleset = GameConfiguration.GetValue("RULESET")
+	print("Active Ruleset = ", ruleset)
 	
 	-- save config
 	local saveGame 			= {}
@@ -2032,7 +2047,7 @@ function LoadDatabase()
 
 	GameConfiguration.SetToDefaults();
 	GameConfiguration.SetWorldBuilderEditor(true)
-	
+	GameConfiguration.SetValue("RULESET", ruleset)
 	MapConfiguration.SetMapSize("MAPSIZE_DUEL")
 	MapConfiguration.SetScript("WorldBuilderMap.lua")
 	MapConfiguration.SetValue("ScenarioType", "SCENARIO_NONE")
