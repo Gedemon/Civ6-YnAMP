@@ -16,7 +16,6 @@ print("Game version : ".. tostring(UI.GetAppVersion()))
 ExposedMembers.ConfigYnAMP = ExposedMembers.ConfigYnAMP or {}
 ConfigYnAMP = ExposedMembers.ConfigYnAMP
 
-
 ------------------------------------------------------------------------------
 -- YnAMP defines
 ------------------------------------------------------------------------------
@@ -24,13 +23,16 @@ local currentSelectedNumberMajorCivs	= 2		-- To track change to the number of se
 local bUpdatePlayerCount				= false	-- To tell when to update player count to prevent UI lag
 local bFinishedGameplayContentConfigure	= false	-- Wait before starting to check parameters for YnAMP
 local autoSaveConfigName				= "AutoSaveYnAMP"
-local filteredRandomLeaderList			= {}	-- List of leaders available for Random slots
-local maxWorkingMapSize					= 128*80
+local availableLeaderList				= {}	-- List of leaders available for Random slots
+local maxSupportedMapSize				= 120*62
+local maxWorkingMapSize					= 140*74
 local maxLoadingMapSize					= 200*104
-
-
+local bStartDisabledByYnAMP 			= false
+local bStartDisabledBySetup 			= false
+local SavedParameter					= {}	-- Saved values for disabled parameters
+local cityStatesQuery					= "SELECT Parameters.ConfigurationId, Parameters.Name from Parameters JOIN ParameterDependencies ON Parameters.ParameterId = ParameterDependencies.ParameterId WHERE ParameterDependencies.ConfigurationId ='SelectCityStates' AND Parameters.ConfigurationId LIKE '%LEADER%'" --"SELECT * from Parameters where ConfigurationId LIKE '%LEADER_MINOR_CIV%' and GroupId='MapOptions'"
 -- There must be a cleaner way to get that...
-local RulesetDomain	= {
+local RulesetPlayerDomain	= {
 	["RULESET_STANDARD"]	= "Players:StandardPlayers",
 	["RULESET_EXPANSION_1"]	= "Players:Expansion1_Players",
 	["RULESET_EXPANSION_2"]	= "Players:Expansion2_Players"
@@ -51,10 +53,29 @@ ConfigYnAMP.MapSizes = ConfigYnAMP.MapSizes or {
 	["MAPSIZE_ENORMOUS21"] 	= {Width = 140,	Height = 74 , Size = 140* 74 },
 	["MAPSIZE_ENORMOUS"] 	= {Width = 128,	Height = 80 , Size = 128* 80 },
 	["MAPSIZE_GIANT"] 		= {Width = 180,	Height = 94 , Size = 180* 94 },
-	["MAPSIZE_LUDICROUS"] 	= {Width = 200,	Height = 104, Size = 200* 104}
+	["MAPSIZE_LUDICROUS"] 	= {Width = 200,	Height = 104, Size = 200* 104},
+	["MAPSIZE_OVERSIZED"] 	= {Width = 230,	Height = 115, Size = 230* 116}
 }
 
--- Add known CS to config DB
+-- GetMapSize returns Hash, I don't speak Hash, so build a translation table
+-- And get a cached table with MapSizes sorted by size while we're here...
+local MapSizeTypesFromHash 	= {}
+local SortedMapSize 		= {}
+for mapSizeType, row in pairs(ConfigYnAMP.MapSizes) do
+	MapSizeTypesFromHash[DB.MakeHash(mapSizeType)] = mapSizeType
+	table.insert(SortedMapSize, {MapSizeType = mapSizeType, Width = row.Width,	Height = row.Height, Size = row.Size})
+end
+table.sort(SortedMapSize, function(a, b) return a.Size > b.Size; end)
+
+-- Cache maps size names
+local MapSizeNames	= {}
+for i, row in ipairs(CachedQuery("SELECT MapSizeType, Name from MapSizes")) do
+	MapSizeNames[row.MapSizeType] = row.Name
+end
+
+-- Add known CS to config DB		
+-- and get civilization types for each CS leaders
+local LeadersCivilizations = {}
 if ConfigYnAMP.CityStatesList then
 
 	print("Check City States Selection list after Loading GamePlay DB...")
@@ -62,9 +83,10 @@ if ConfigYnAMP.CityStatesList then
 
 	-- Add CS imported from GamePlay DB to the config DB
 	for i, row in ipairs(ConfigYnAMP.CityStatesList) do
-		local LeaderType 		= row.LeaderType
-		local LeaderName 		= row.LeaderName
-		local CivilizationName 	= row.CivilizationName
+		local LeaderType 					= row.LeaderType
+		local LeaderName 					= row.LeaderName
+		local CivilizationName 				= row.CivilizationName
+		LeadersCivilizations[LeaderType] 	= row.CivilizationType
 		IsAvailable[LeaderType]	= true
 	
 		local query		= "SELECT * FROM Parameters WHERE ConfigurationId = ?"
@@ -81,20 +103,52 @@ if ConfigYnAMP.CityStatesList then
 	end
 	
 	-- Remove CS missing in GamePlay DB from the Config DB
-	local query		= "SELECT * from Parameters where ConfigurationId LIKE '%LEADER_MINOR_CIV%' and GroupId='MapOptions'"
+	local query		= cityStatesQuery
 	local results	= DB.ConfigurationQuery(query)
 	if results and #results > 0 then
 		for i, row in ipairs(results) do
 			if not (IsAvailable[row.ConfigurationId]) then
 				print("- Removing missing City State Leader from Selection List: ", row.ConfigurationId)
 				DB.ConfigurationQuery("DELETE FROM Parameters WHERE ConfigurationId = ? ", row.ConfigurationId)
-				--local query		= "SELECT * from Parameters where ConfigurationId LIKE '%LEADER_MINOR_CIV%' and GroupId='MapOptions'"
-				--local results	= DB.ConfigurationQuery(query)
 			end
 		end
 	end
 end
 
+-- Build TSL table if available
+local TSL = {}
+if ConfigYnAMP.TSL then
+	for i, row in ipairs(ConfigYnAMP.TSL) do
+		local mapName 		= row.MapName
+		local civilization 	= row.Civilization
+		local leader 		= row.Leader
+		TSL[mapName] 		= TSL[mapName] or {}
+		local mapTSL		= TSL[mapName]
+		if civilization then
+			mapTSL[civilization] = mapTSL[civilization] or {}
+			table.insert(mapTSL[civilization], {X = row.X, Y = row.Y})
+		end
+		if leader then
+			mapTSL[leader] = mapTSL[leader] or {}
+			table.insert(mapTSL[leader], {X = row.X, Y = row.Y})
+		end
+	end
+end
+
+---[[
+-- helper table to check if a value is a leader type
+local IsLeaderType = {}
+for i, row in ipairs(CachedQuery("SELECT LeaderType from Players")) do
+	IsLeaderType[row.LeaderType] = true
+end
+
+-- helper table to check if a value is a minor leader type
+local IsMinorLeaderType = {}
+local duplicateMinor	= {}
+for i, row in ipairs(CachedQuery(cityStatesQuery)) do
+	IsMinorLeaderType[row.ConfigurationId] = true
+end
+--]]
 
 ------------------------------------------------------------------------------
 -- YnAMP Math functions
@@ -104,7 +158,7 @@ function GetShuffledCopyOfTable(incoming_table)
 	local len = table.maxn(incoming_table);
 	local copy = {};
 	local shuffledVersion = {};
-	local seed = MapConfiguration.GetValue("RANDOM_SEED")
+	local seed = MapConfiguration.GetValue("RANDOM_SEED") -- passing the same table will give the same result.
 	print("Using Map Random seed for GetShuffledCopyOfTable :", seed )
 	math.randomseed(seed)
 	print("random first call = ", math.random(1,10))
@@ -816,13 +870,13 @@ end
 function RemovePlayer(voidValue1, voidValue2, control)
 	print("Removing Player " .. tonumber(voidValue1));
 	local playerConfig = PlayerConfigurations[voidValue1];
-	playerConfig:SetLeaderTypeName(nil);
+	playerConfig:SetLeaderTypeName(nil);	
+	GameConfiguration.RemovePlayer(voidValue1);
 	
 	-- YnAMP <<<<<
-	local nextNumPlayer = GameConfiguration.GetParticipatingPlayerCount() - 1
+	local nextNumPlayer = GameConfiguration.GetParticipatingPlayerCount()
 	if currentSelectedNumberMajorCivs > nextNumPlayer then
 		currentSelectedNumberMajorCivs 	= nextNumPlayer
-		bUpdatePlayerCount 				= true
 		GameConfiguration.SetValue("MajorCivilizationsCount", currentSelectedNumberMajorCivs)
 		GameConfiguration.SetParticipatingPlayerCount(currentSelectedNumberMajorCivs)
 	elseif currentSelectedNumberMajorCivs < nextNumPlayer then
@@ -830,8 +884,6 @@ function RemovePlayer(voidValue1, voidValue2, control)
 		GameConfiguration.SetParticipatingPlayerCount(currentSelectedNumberMajorCivs)
 	end
 	-- YnAMP >>>>>
-	
-	GameConfiguration.RemovePlayer(voidValue1);
 
 	GameSetup_PlayerCountChanged();
 end
@@ -934,16 +986,24 @@ function UI_PostRefreshParameters()
 	-- However, player options are allowed to be in an 'invalid' state for UI
 	-- This way, instead of hiding/preventing the user from selecting an invalid player
 	-- we can allow it, but display an error message explaining why it's invalid.
-
+	
+	-- YnAMP <<<<<
+	bStartDisabledBySetup = false
+	if not bStartDisabledByYnAMP then
+	-- YnAMP >>>>>
 	-- This is primarily used to present ownership errors and custom constraint errors.
 	Controls.StartButton:SetDisabled(false);
 	Controls.StartButton:SetToolTipString(nil);
+	-- YnAMP <<<<<
+	end
+	-- YnAMP >>>>>
 
 	local game_err = GetGameParametersError();
 	if(game_err) then
-	-- YnAMP <<<<<
-	print("GetGameParametersError = ",game_err)
-	-- YnAMP >>>>>
+		-- YnAMP <<<<<
+		print("GetGameParametersError = ",game_err)
+		bStartDisabledBySetup = true
+		-- YnAMP >>>>>
 		Controls.StartButton:SetDisabled(true);
 		Controls.StartButton:LocalizeAndSetToolTip("LOC_SETUP_PARAMETER_ERROR");
 	end
@@ -954,6 +1014,7 @@ function UI_PostRefreshParameters()
 		if(err) then
 			-- YnAMP <<<<<
 			print("GetPlayerParameterError = ", err)
+			bStartDisabledBySetup = true
 			-- YnAMP >>>>>
 			Controls.StartButton:SetDisabled(true);
 			Controls.StartButton:LocalizeAndSetToolTip("LOC_SETUP_PLAYER_PARAMETER_ERROR");
@@ -1029,6 +1090,10 @@ function OnShow()
 	AutoSizeGridButton(Controls.LoadDataYnAMP,133,36,15,"H");
 	local offsetX = Controls.CloseButton:GetSizeX()
 	Controls.LoadDataYnAMP:SetOffsetX(offsetX)
+	
+	AutoSizeGridButton(Controls.IgnoreWarning,133,36,15,"H");
+	local offsetX = Controls.DefaultButton:GetSizeX()
+	Controls.IgnoreWarning:SetOffsetX(offsetX)
 	-- ynAMP >>>>>
 
 	-- the map size and type dropdowns don't make sense on a map import
@@ -1150,6 +1215,12 @@ end
 function OnStartButton()
 
 	-- <<<<< YNAMP
+	
+	-- hide the player section first to not show the mod selection for random slots
+	Controls.PlayersSection:SetHide(true)
+	
+	-- output the last validation report to the log
+	print(Controls.WindowTitle:GetToolTipString())
 	---[[
 	local player_ids 	= GameConfiguration.GetParticipatingPlayerIDs();
 	local numPlayers 	= #player_ids
@@ -1160,8 +1231,9 @@ function OnStartButton()
 	local maxCS 		= maxPlayer - numPlayers
 	local bSelectCS		= MapConfiguration.GetValue("SelectCityStates") ~= "RANDOM"
 	local bBanLeaders	= MapConfiguration.GetValue("BanLeaders")
+	local bOnlyTSL		= MapConfiguration.GetValue("OnlyLeadersWithTSL")
 	local ruleset		= GameConfiguration.GetValue("RULESET")
-	local playerDomain	= ruleset and RulesetDomain[ruleset] or "Players:StandardPlayers"
+	local playerDomain	= ruleset and RulesetPlayerDomain[ruleset] or "Players:StandardPlayers"
 	
 	-- Limit number of players for R&F and GS
 	print("------------------------------------------------------")
@@ -1173,9 +1245,9 @@ function OnStartButton()
 		GameConfiguration.SetValue("CITY_STATE_COUNT", newNumCS)
 	end
 	
-	if bBanLeaders then
+	if true then --bBanLeaders then -- I prefer the randomization of this function over the Core method (less duplicates when allowed, no duplicate when not), so make it default.
 		print("------------------------------------------------------")
-		print("Applying Leader Ban list on Random slots...")
+		print("Getting Leaders for Random slots...")
 		
 		local IsUsedCiv		= {}
 		local IsUsedLeader 	= {}
@@ -1257,7 +1329,7 @@ function OnStartButton()
 			
 		-- Get Random slots and used leaders and Civs
 		local randomSlots = {}
-		for i, slotID in ipairs(player_ids) do	
+		for i, slotID in ipairs(player_ids) do
 			local playerConfig = PlayerConfigurations[slotID];
 			if playerConfig:GetSlotName() == "LOC_RANDOM_LEADER" then
 				table.insert(randomSlots, slotID)
@@ -1271,6 +1343,13 @@ function OnStartButton()
 		print("Random Leaders Slots = ", #randomSlots)
 		
 		if #randomSlots > 0 then -- don't waste time if there are no random slots...
+			
+			local filteredRandomLeaderList = {}
+			for leaderType, bValid in pairs(availableLeaderList) do
+				if bValid then
+					table.insert(filteredRandomLeaderList, leaderType)
+				end
+			end
 			
 			local shuffledList 	= GetShuffledCopyOfTable(filteredRandomLeaderList)
 			local listIndex		= 1
@@ -1290,7 +1369,7 @@ function OnStartButton()
 			-- 			
 			local function GetNextLeaderType(bSecondLoop)
 				local leaderType 		= shuffledList[listIndex]
-				local bNoDupeLeaders 	= unique_leaders or (not bSecondLoop) 		-- avoid duplicate leaders on first loop, even if allowaed
+				local bNoDupeLeaders 	= unique_leaders or (not bSecondLoop) 		-- avoid duplicate leaders on first loop, even if allowed
 				local bNoDupeCivs 		= unique_civilizations or (not bSecondLoop) -- avoid duplicate civs on first loop, even if allowed
 				while(leaderType) do
 					if not MapConfiguration.GetValue(leaderType) then -- this leaderType is not banned
@@ -1303,23 +1382,30 @@ function OnStartButton()
 									listIndex 	= listIndex + 1
 									return leaderType
 								else
-									print(" - Can't use leader because of duplicate Civilization : ", leaderType, civilizationType)
+									--print(" - Can't use leader because of duplicate Civilization : ", leaderType, civilizationType)
 								end
 							else
-								print(" - WARNING: can't find civilizationType for : ", leaderType)
+								--print(" - WARNING: can't find civilizationType for : ", leaderType)
 							end
 						else
-							print(" - Can't use duplicate leader : ", leaderType)
+							--print(" - Can't use duplicate leader : ", leaderType)
 						end
 					else
-						print(" - Can't use banned leader : ", leaderType)
+						--print(" - Can't use banned leader : ", leaderType)
 					end
 					listIndex 	= listIndex + 1
 					leaderType 	= shuffledList[listIndex]
 				end
 				if not bSecondLoop then -- in case duplicates are allowed
 					print(" - Can't find next leader, trying second loop")
+					shuffledList = GetShuffledCopyOfTable(shuffledList)
 					listIndex = 1
+					if not unique_leaders then
+						IsUsedLeader = {}
+					end
+					if not unique_civilizations then
+						IsUsedCiv = {}
+					end
 					return GetNextLeaderType(true)
 				else
 					print(" - Can't find next leader after second loop")
@@ -1346,7 +1432,7 @@ function OnStartButton()
 	end
 	
 	-- Get available player slots list for CS
-	if bSelectCS then
+	if bSelectCS or bOnlyTSL then
 		print("------------------------------------------------------")
 		print("Generate available slots list for CS...")
 		local CityStatesSlotsList	= {}
@@ -1370,14 +1456,36 @@ function OnStartButton()
 		end
 		
 		-- Get the City States list
-		local query		= "SELECT * from Parameters where ConfigurationId LIKE '%LEADER_MINOR_CIV%' and GroupId='MapOptions'"
+		local query		= cityStatesQuery
 		local results	= DB.ConfigurationQuery(query)
 		
 		if(results and #results > 0) then
+		
+			local filteredList 	= {}
+			local duplicate		= {}
+			local mapName		= MapConfiguration.GetValue("MapName")
+			for i, row in ipairs(results) do
+				local leaderType 	= row.ConfigurationId
+				local bValid		= true
+				if bOnlyTSL then -- filter CS list
+					local args				= {}
+					args.leaderType			= leaderType
+					args.civilizationType	= LeadersCivilizations[leaderType]
+					args.mapName			= mapName
+					if not HasTSL(args) then--(leaderType, mapName, playerDomain, civilizationType)
+						bValid = false
+					end
+				end
+				if bValid and not duplicate[leaderType] then
+					duplicate[leaderType] = true
+					table.insert(filteredList, {ConfigurationId = leaderType, Name = row.Name})
+				end
+			end
+		
 			local bCapped			= MapConfiguration.GetValue("SelectCityStates") == "SELECTION"
 			local bOnlySelection	= MapConfiguration.GetValue("SelectCityStates") == "ONLY_SELECTION"
 			local cityStateSlots 	= (bCapped and numCS) or maxCS
-			local shuffledList 		= GetShuffledCopyOfTable(results)
+			local shuffledList 		= GetShuffledCopyOfTable(filteredList)
 			local randomList		= {}
 			local slotListID		= 1
 			print("------------------------------------------------------")
@@ -1613,7 +1721,9 @@ function Initialize()
 	LuaEvents.AdvancedSetup_SetMapByHash.Add( OnSetMapByHash );
 	-- YnAMP <<<<<
 	Controls.LoadDataYnAMP:RegisterCallback( Mouse.eLClick, LoadDatabase);
-	Controls.LoadDataYnAMP:RegisterCallback( Mouse.eMouseEnter, function() UI.PlaySound("Main_Menu_Mouse_Over"); end);
+	Controls.LoadDataYnAMP:RegisterCallback( Mouse.eMouseEnter, function() UI.PlaySound("Main_Menu_Mouse_Over"); end);--
+	Controls.IgnoreWarning:RegisterCallback( Mouse.eLClick, IgnoreWarning);
+	Controls.IgnoreWarning:RegisterCallback( Mouse.eMouseEnter, function() UI.PlaySound("Main_Menu_Mouse_Over"); end);--
 	-- YnAMP >>>>>
 
 	Resize();
@@ -1624,20 +1734,164 @@ end
 -- YnAMP settings functions
 -- ===========================================================================
 local bCheckModList 	= true
+local sTooltipSeparator	= "[NEWLINE]----------------------------------------------------------------------------------------------------------------[NEWLINE]"
+local IgnoredWarning	= {}
+local currentBlock		= nil
+
+function GetColorStringSeverity(str, severity)
+	local none		= 0
+	local medium	= 25
+	local high		= 75
+	if severity == none then
+		str = "[COLOR_Civ6Green]"..str.."[ENDCOLOR] [ICON_CheckSuccess]"
+	elseif severity >= high then
+		str = "[COLOR_Civ6Red]"..str.."[ENDCOLOR] [ICON_Not]"
+	elseif severity >= medium then
+		str = "[COLOR_Civ6Yellow]"..str.."[ENDCOLOR] [ICON_CheckFail]"
+	end
+	return str
+end
+
+function GetCustomMapDimension() -- return size, iW, iH
+	local startX	= MapConfiguration.GetValue("StartX")
+	if startX then -- can have a custom section
+		local dimension		= {}
+		dimension.startX	= startX
+		dimension.uncutW	= MapConfiguration.GetValue("UncutMapWidth")
+		dimension.uncutH	= MapConfiguration.GetValue("UncutMapHeight")
+		dimension.startY	= MapConfiguration.GetValue("StartY")
+		dimension.endX		= MapConfiguration.GetValue("EndX")
+		dimension.endY		= MapConfiguration.GetValue("EndY")
+		
+		dimension.iW	= (dimension.startX < dimension.endX) and dimension.endX - dimension.startX + 1 or dimension.uncutW - (dimension.startX - dimension.endX) + 1
+		dimension.iH	= (dimension.startY < dimension.endY) and dimension.endY - dimension.startY + 1 or dimension.uncutH - (dimension.startY - dimension.endY) + 1
+		
+		dimension.size	= dimension.iW * dimension.iH
+		return dimension
+	end
+end
+
+function IsInDimension(x, y, dimension)
+	--local xValid = ((dimension.startX < dimension.endX) and (x > dimension.startX and  x < dimension.endX)) and ((dimension.startX > dimension.endX) and not (x > dimension.startX and  x < dimension.endX))
+--print(x, dimension.startX, dimension.endX, dimension.iW, dimension.uncutW, xValid)
+	--local yValid = (dimension.startY < dimension.endY) and (y > dimension.startY and  y < dimension.endY) or not (y > dimension.startY and  y < dimension.endY)
+	
+	local xValid = false
+	local yValid = false
+	
+	if (dimension.startX < dimension.endX) then
+		xValid = (x > dimension.startX and x < dimension.endX)
+	else
+		xValid = (x > dimension.startX or  x < dimension.endX)
+	end
+		
+	if (dimension.startY < dimension.endY) then
+		yValid = (y > dimension.startY and y < dimension.endY)
+	else
+		yValid = (y > dimension.startY or  y < dimension.endY)
+	end
+	
+	return xValid and yValid
+end
+
+function HasTSL(args)--(leaderType, mapName, playerDomain, civilizationType)
+	local reason			= nil
+	local leaderType		= args.leaderType
+	local playerDomain		= (args.civilizationType and nil) or args.playerDomain or (GameConfiguration.GetValue("RULESET") and RulesetPlayerDomain[GameConfiguration.GetValue("RULESET")] or "Players:StandardPlayers") -- don't need it if CivilizationType is already in args
+	local civilizationType	= args.civilizationType or GetPlayerCivilization(playerDomain, leaderType)
+	local mapName			= args.mapName or MapConfiguration.GetValue("MapName")
+	local mapTSL			= mapName and TSL[mapName]
+	local leaderTSL			= mapTSL and mapTSL[leaderType]
+	local civTSL			= mapTSL and civilizationType and mapTSL[civilizationType]
+	
+	if not (leaderTSL or civTSL) then -- no TSL for that map
+		reason = "LOC_SETUP_ERROR_NO_TSL"
+	else
+		local dimension = GetCustomMapDimension() 
+		if dimension then -- custom dimension found, check in map section
+			if leaderTSL then
+				for _, row in ipairs(leaderTSL) do
+					if IsInDimension(row.X, row.Y, dimension) then
+						return true
+					end
+				end
+			end
+			if civTSL then
+				for _, row in ipairs(civTSL) do
+					if IsInDimension(row.X, row.Y, dimension) then
+						return true
+					end
+				end
+			end
+			reason = "LOC_SETUP_ERROR_NO_TSL_IN_SECTION"
+		else -- uncut map, found TSL table, return true
+			return true
+		end
+	end
+	
+	return false, reason
+end
+
+function GetClosestMapSizeType(size)
+--MapSizeNames ConfigYnAMP.MapSizes
+	local bestDiff 	= 99999
+	local closest	= nil
+	for _, row in ipairs(SortedMapSize) do
+		local diff = math.abs(size - row.Size)
+		if diff < bestDiff then
+			bestDiff 	= diff
+			closest 	= row.MapSizeType
+		end
+	end
+	return closest
+end
+
+function SetStartButtonValid(bValid, sReason, sBlockGroup)
+	--print("Calling SetStartButtonValid(", bValid, sReason, "), bStartDisabledBySetup = ", bStartDisabledBySetup, " bStartDisabledByYnAMP = ", bStartDisabledByYnAMP)
+	if bStartDisabledBySetup then
+		return
+	end
+	if bValid then
+		bStartDisabledByYnAMP = false
+		Controls.StartButton:SetDisabled(false)
+		Controls.StartButton:SetToolTipString(nil)
+		Controls.IgnoreWarning:SetHide(true)
+	else
+		currentBlock			= sBlockGroup
+		bStartDisabledByYnAMP 	= true
+		local sTooltip			= sReason..sTooltipSeparator..Locale.Lookup("LOC_SETUP_IGNORE_WARNING_YNAMP_TT")
+		Controls.StartButton:SetDisabled(true)
+		Controls.StartButton:SetToolTipString(sTooltip)
+		Controls.IgnoreWarning:SetHide(false)
+		Controls.IgnoreWarning:SetToolTipString(sTooltip)
+	end
+end
+
+function IgnoreWarning()
+	Controls.IgnoreWarning:SetHide(true)
+	if currentBlock then
+		IgnoredWarning[currentBlock] = true
+	end
+	ValidateSettingsYnAMP() -- test again, to see if another block exists
+end
+
 function ValidateSettingsYnAMP()
+
+	local reportTable 	= {} -- {{ Severity = [0-100], Title = string, Tooltip = string, DisableStart = bool, BlockGroup = string },}
+
+	-- Database check
 	if ConfigYnAMP.IsDatabaseLoaded then
-		Controls.WindowTitle:SetText(Locale.Lookup("LOC_SETUP_DATABASE_LOADED_YNAMP"))
-		Controls.WindowTitle:SetToolTipString(Locale.Lookup("LOC_SETUP_DATABASE_LOADED_YNAMP_TT"))
+		table.insert(reportTable, { Severity = 0, Title = Locale.Lookup("LOC_SETUP_DATABASE_LOADED_YNAMP"), Tooltip = Locale.Lookup("LOC_SETUP_DATABASE_LOADED_YNAMP_TT") })
 		Controls.LoadDataYnAMP:SetHide(true)
 	else
-		Controls.WindowTitle:SetText(Locale.Lookup("LOC_SETUP_DATABASE_NOT_LOADED_YNAMP"))
-		Controls.WindowTitle:SetToolTipString(Locale.Lookup("LOC_SETUP_DATABASE_NOT_LOADED_YNAMP_TT"))
+		table.insert(reportTable, { Severity = 30, Title = Locale.Lookup("LOC_SETUP_DATABASE_NOT_LOADED_YNAMP"), Tooltip = Locale.Lookup("LOC_SETUP_DATABASE_NOT_LOADED_YNAMP_TT") })
 		Controls.LoadDataYnAMP:SetHide(false)
 	end
 	
-	if ConfigYnAMP.IsDatabaseLoaded and bCheckModList then
+	-- Mod check
+	if ConfigYnAMP.IsDatabaseLoaded and bCheckModList then -- don't check each time a setting is changed...
 	
-		bCheckModList		= false -- don't check each time a setting is changed...
+		bCheckModList		= false 
 		local bFoundChange	= false
 		local listMods		= {}
 		local installedMods = Modding.GetInstalledMods()
@@ -1671,12 +1925,84 @@ function ValidateSettingsYnAMP()
 		ConfigYnAMP.IsDatabaseChanged = bFoundChange
 	end
 		
-	if ConfigYnAMP.IsDatabaseChanged then
+	if ConfigYnAMP.IsDatabaseChanged then -- always chech to generate the report
 		print("Database may have changed...")
-		Controls.WindowTitle:SetText(Locale.Lookup("LOC_SETUP_DATABASE_CHANGED_YNAMP"))
-		Controls.WindowTitle:SetToolTipString(Locale.Lookup("LOC_SETUP_DATABASE_CHANGED_YNAMP_TT"))
+		local bLock		= not IgnoredWarning["DatabaseChanged"]
+		local severity	= bLock and 75 or 50
+		table.insert(reportTable, { Severity = severity, Title = Locale.Lookup("LOC_SETUP_DATABASE_CHANGED_YNAMP"), Tooltip = Locale.Lookup("LOC_SETUP_DATABASE_CHANGED_YNAMP_TT"), DisableStart = bLock, BlockGroup = "DatabaseChanged" })
 		Controls.LoadDataYnAMP:SetHide(false)
 	end
+	
+	-- Map Size check
+	local dimension		= GetCustomMapDimension()
+	local size 			= dimension and dimension.size
+	local bMapSizeBlock	= not IgnoredWarning["MapSize"]
+	if not size then 
+		local mapSizetype	= MapSizeTypesFromHash[MapConfiguration.GetMapSize()]
+		local mapDimension 	= mapSizetype and ConfigYnAMP.MapSizes[mapSizetype]
+		if mapDimension then
+			size = mapDimension.Size
+		else
+			print("No map size ", MapConfiguration.GetMapSize(), mapSizetype)
+			local tooltip = Locale.Lookup("LOC_SETUP_MAP_SIZE_UNKNOWN_YNAMP_TT")
+			local bLock		= bMapSizeBlock
+			local severity	= bLock and 80 or 55
+			table.insert(reportTable, { Severity = severity, Title = Locale.Lookup("LOC_SETUP_MAP_SIZE_UNKNOWN_YNAMP"), Tooltip = tooltip, DisableStart = bLock, BlockGroup = "MapSize" })
+		end
+	end
+	if size then
+		if size > maxLoadingMapSize then
+			--print("Unsupported map size", mapDimension.Width, mapDimension.Height, mapDimension.Size)
+			local tooltip	= Locale.Lookup("LOC_SETUP_MAP_OVERSIZE_YNAMP_TT")
+			local bLock		= bMapSizeBlock
+			local severity	= bLock and 100 or 70
+			table.insert(reportTable, { Severity = severity, Title = Locale.Lookup("LOC_SETUP_MAP_SIZE_LOCK_YNAMP"), Tooltip = tooltip, DisableStart = bLock, BlockGroup = "MapSize" })
+		elseif size > maxWorkingMapSize then
+			--print("Not loading map size", mapDimension.Width, mapDimension.Height, mapDimension.Size)
+			local tooltip = Locale.Lookup("LOC_SETUP_MAP_SIZE_LOCK_YNAMP_TT")
+			local bLock		= bMapSizeBlock
+			local severity	= bLock and 80 or 55
+			table.insert(reportTable, { Severity = severity, Title = Locale.Lookup("LOC_SETUP_MAP_SIZE_LOCK_YNAMP"), Tooltip = tooltip, DisableStart = bLock, BlockGroup = "MapSize" })
+		elseif size > maxSupportedMapSize then
+			--print("Unsupported map size", mapDimension.Width, mapDimension.Height, mapDimension.Size)
+			local tooltip	= Locale.Lookup("LOC_SETUP_MAP_SIZE_UNOFFICIAL_YNAMP_TT")
+			local severity	= bMapSizeBlock and 40 or 25
+			table.insert(reportTable, { Severity = severity, Title = Locale.Lookup("LOC_SETUP_MAP_SIZE_UNOFFICIAL_YNAMP"), Tooltip = tooltip })
+		end
+	end
+	
+	-- Compare Major Civilization slider to actual numbe of players
+	if GameConfiguration.GetParticipatingPlayerCount() ~= GameConfiguration.GetValue("MajorCivilizationsCount") then
+		table.insert(reportTable, { Severity = 1, Title = Locale.Lookup("LOC_SETUP_MAJOR_COUNT_DIFFERENCE"), Tooltip = Locale.Lookup("LOC_SETUP_MAJOR_COUNT_DIFFERENCE_TT") })
+	end
+	
+	----------------------------------------------------
+	-- Generate Title and Tooltip, check for valid Start
+	----------------------------------------------------
+	table.sort(reportTable, function(a, b) return a.Severity > b.Severity; end)
+	local titleStr 	= nil
+	local tooltip	= {Locale.Lookup("LOC_SETUP_YNAMP_REPORT")}
+	local bCanStart	= true
+	local listIcon	= #reportTable > 1 and "[ICON_Reports]" or ""
+	for i, row in ipairs(reportTable) do
+		titleStr 			= titleStr or GetColorStringSeverity(row.Title, row.Severity)..listIcon -- set title with the highest severity reason "YnAMP - "..
+		local severityStr 	= row.Severity > 0 and " "..Locale.Lookup("LOC_SETUP_SEVERITY_YNAMP", row.Severity) or ""
+		local blockingStr 	= row.DisableStart and " "..Locale.Lookup("LOC_SETUP_BLOCKING_YNAMP") or ""
+		local ignoredStr	= row.BlockGroup and IgnoredWarning[row.BlockGroup] and " "..Locale.Lookup("LOC_SETUP_IGNORE_BLOCK_YNAMP") or nil
+		local tooltipStr	= row.Title .. (ignoredStr or (severityStr.." "..blockingStr)) ..sTooltipSeparator.. row.Tooltip
+		table.insert(tooltip, "[ICON_Bullet]" .. tooltipStr)
+		if bCanStart and row.DisableStart then -- set locked start with the highest severity reason
+			bCanStart = false
+			SetStartButtonValid(false, tooltipStr, row.BlockGroup)
+		end
+	end
+	
+	if bCanStart then
+		SetStartButtonValid(true)
+	end
+	--
+	Controls.WindowTitle:SetText(titleStr)
+	Controls.WindowTitle:SetToolTipString(table.concat(tooltip, sTooltipSeparator))
 end
 
 -- ===========================================================================
@@ -1707,7 +2033,7 @@ function LoadDatabase()
 	GameConfiguration.SetToDefaults();
 	GameConfiguration.SetWorldBuilderEditor(true)
 	
-	GameConfiguration.SetValue("MapSize", "MAPSIZE_DUEL")
+	MapConfiguration.SetMapSize("MAPSIZE_DUEL")
 	MapConfiguration.SetScript("WorldBuilderMap.lua")
 	MapConfiguration.SetValue("ScenarioType", "SCENARIO_NONE")
 	GameConfiguration.SetValue("CITY_STATE_COUNT", 0)
@@ -1718,6 +2044,32 @@ function LoadDatabase()
 	UI.PlaySound("Set_View_2D")
 	Network.HostGame(ServerType.SERVER_TYPE_NONE)
 end
+
+-- ===========================================================================
+function ParameterBackup(parameter) -- Save and Restore specifics parameters when they are hidden
+--print("backup : parameter = ", parameter.ConfigurationId, parameter.ConfigurationGroup )
+	local ConfGroup		= parameter.ConfigurationGroup
+	local Configuration = (ConfGroup == "Game" and GameConfiguration) or (ConfGroup == "Map" and MapConfiguration)
+	if Configuration then
+		local configurationID	= parameter.ConfigurationId
+		if not SavedParameter[configurationID] then SavedParameter[configurationID] = {} end
+		local Backup	= SavedParameter[configurationID]
+		local curValue	= Configuration.GetValue(configurationID)
+		if curValue == nil then -- Mark that the setting is disabled
+			Backup.IsDisabled = true
+		else
+			if Backup.IsDisabled == true then -- The setting was disabled, but is visible again
+				Backup.IsDisabled = false
+				if Backup.Value ~= nil then -- Restore the previous value if their was one
+					Configuration.SetValue(configurationID, Backup.Value)
+				end
+			else -- The setting was visible, update the users's choice
+				Backup.Value = curValue
+			end
+		end
+	end
+end
+
 
 -- ===========================================================================
 -- Mod Compatibility (not working, files are nil when reloading advanced setup as of sept 2019 patch)
@@ -1805,6 +2157,7 @@ end
 
 -- ===========================================================================
 local OldGetRelevantParameters = GetRelevantParameters
+--local RelevantParameters
 function GetRelevantParameters(o, parameter)
 	
 	-- Hack to use parameters to determine if a Mod/DLC/Expansion is enabled
@@ -1818,6 +2171,61 @@ function GetRelevantParameters(o, parameter)
 		return false
 	end
 	
+	-- Show dimension for Map with custom sections
+	if parameter.ConfigurationId == "MapDimension" then
+		local dimension	= GetCustomMapDimension()
+		if dimension then
+			local size, iW, iH	= dimension.size, dimension.iW, dimension.iH
+			local mapSizeType 	= GetClosestMapSizeType(size)
+			local currSize		= MapSizeTypesFromHash[MapConfiguration.GetValue("MAP_SIZE")]
+			if currSize ~= mapSizeType then
+				MapConfiguration.SetMapSize(mapSizeType)
+				currSize = mapSizeType
+			end
+			local sizeName = MapSizeNames[currSize]
+			MapConfiguration.SetValue("MapDimension", Locale.Lookup("LOC_MAP_DIMENSION_STRING", iW, iH, size).." - "..Locale.Lookup(sizeName))
+		else
+			return false
+		end
+	end
+	
+	-- The OnlyLeadersWithTSL option require the Database to be loaded and unmodified
+	if parameter.ConfigurationId == "OnlyLeadersWithTSL" then
+		if (not ConfigYnAMP.IsDatabaseLoaded) or ConfigYnAMP.IsDatabaseChanged then
+			return false
+		end
+	end
+	
+	-- Show fake OnlyLeadersWithTSL option when the Database is not loaded or modified
+	if parameter.ConfigurationId == "FakeOnlyLeadersWithTSL" then
+		if ConfigYnAMP.IsDatabaseLoaded and not ConfigYnAMP.IsDatabaseChanged then
+			return false
+		end
+	end
+	
+	-- Hide unavailable Leaders from Ban list
+	if IsLeaderType[parameter.ConfigurationId] then
+		ParameterBackup(parameter) -- to save/restore each leader value even when the setting is hidden
+		local leaderType = parameter.ConfigurationId
+		if not availableLeaderList[leaderType] then
+			return false
+		end
+	end
+	
+	-- Save/Restore CityState selection list
+	-- Hide CityState without TSL from list
+	if IsMinorLeaderType[parameter.ConfigurationId] then
+		ParameterBackup(parameter)
+		if MapConfiguration.GetValue("OnlyLeadersWithTSL") then
+			local args				= {}
+			args.leaderType			= parameter.ConfigurationId
+			args.civilizationType	= LeadersCivilizations[parameter.ConfigurationId]
+			if not HasTSL(args) then--(leaderType, mapName, playerDomain, civilizationType)
+				return false
+			end
+		end
+	end
+	
 	return OldGetRelevantParameters(o, parameter);
 end
 
@@ -1828,162 +2236,71 @@ end
 SetupParameters.OldParameter_FilterValues = SetupParameters.Parameter_FilterValues
 function SetupParameters:Parameter_FilterValues(parameter, values)
 	values = self:OldParameter_FilterValues(parameter, values)
-	
-	-- Use the already filtered Leader list to build the list for random slots if the Ban Leader option is active
-	if (parameter.ParameterId == "PlayerLeader" and MapConfiguration.GetValue("BanLeaders") and self.PlayerId == 0) then -- and don't update for every player slots
+
+	-- Use the already filtered Leader list to build the list for random slots to use if the Ban Leader option is active
+	-- We're not handling the banned leaders here as we still want them to be available for manual selection.
+	if (parameter.ParameterId == "PlayerLeader" and self.PlayerId == 0) then -- and don't update for every player slots -- and MapConfiguration.GetValue("BanLeaders") 
 		--print("Building filtered Available Leader List for Random Slots...", self.PlayerId)
-		local curPlayerConfig 	= PlayerConfigurations[self.PlayerId]
-		local curLeadertype		= curPlayerConfig:GetLeaderTypeName()
+		local curPlayerConfig 		= PlayerConfigurations[self.PlayerId]
+		local curLeadertype			= curPlayerConfig:GetLeaderTypeName()
+		--filteredRandomLeaderList	= {}
 		for i,v in ipairs(values) do
 			local leaderType = v.Value
-			if curLeadertype ~= leaderType and not v.Invalid then
-				table.insert(filteredRandomLeaderList,leaderType)
+			if (curLeadertype ~= leaderType) and (not v.Invalid) then
+				--print(leaderType)
+				if leaderType ~= "RANDOM" then
+					--print("    - added to availableLeaderList")
+					--table.insert(filteredRandomLeaderList,leaderType)
+					availableLeaderList[leaderType] = true
+				end
 			else
-				--print(leaderType, v.InvalidReason and Locale.Lookup(v.InvalidReason) or Locale.Lookup("LOC_SETUP_ERROR_NO_DUPLICATE_LEADERS"))
+				--print(leaderType, v.InvalidReason and Locale.Lookup(v.InvalidReason))
+				availableLeaderList[leaderType] = false
 			end
 		end
 	end
-	--[[
-	if false then --(parameter.ParameterId == "PlayerLeader") then
-		local unique_leaders = GameConfiguration.GetValue("NO_DUPLICATE_LEADERS");
-		local unique_civilizations = GameConfiguration.GetValue("NO_DUPLICATE_CIVILIZATIONS");
-
-		local leaders_in_use;
-		local civilizations_in_use;
-
-		local InsertIntoDuplicateBucket = function(map, key, other_key)
-			local bucketA = map[key];
-			local bucketB = map[other_key];
-
-			if(bucketA == nil and bucketB == nil) then
-				bucketA = {key, other_key};
-				map[key] = bucketA;
-				map[other_key] = bucketA;
-
-			elseif(bucketA == nil and bucketB ~= nil) then
-				table.insert(bucketB, key);
-				map[key] = bucketB;
-
-			elseif(bucketA ~= nil and bucketB == nil) then
-				table.insert(bucketA, other_key);
-				map[other_key] = bucketA;
-			
-			elseif(bucketA ~= nil and bucketB ~= nil and bucketA ~= bucketB) then
-				-- consolidate buckets
-				-- if A is a dupe of B and B is a dupe of C, then A is a dupe of C.
-				for i,v in ipairs(bucketB) do
-					table.insert(bucketA, v);
-					map[v] = bucketA;
-				end
-
-			elseif(bucketA == bucketB) then
-				-- buckets are same, no need to do anything since they are already dupes of each other
-			end
-		end;
-
-		local duplicate_civilizations;
-		if(unique_civilizations) then
-			duplicate_civilizations = {};
-			for i, row in ipairs(CachedQuery("SELECT CivilizationType, OtherCivilizationType from DuplicateCivilizations where Domain = ?", parameter.Domain)) do
-				InsertIntoDuplicateBucket(duplicate_civilizations, row.CivilizationType, row.OtherCivilizationType);
-			end
-		end
-
-		local duplicate_leaders;
-		if(unique_leaders) then
-			duplicate_leaders = {};
-			for i, row in ipairs(CachedQuery("SELECT LeaderType, OtherLeaderType from DuplicateLeaders where Domain = ?", parameter.Domain)) do
-				InsertIntoDuplicateBucket(duplicate_leaders, row.LeaderType, row.OtherLeaderType);
-			end
-		end
-
-		if(unique_civilizations or unique_leaders) then
-
-			civilizations_in_use = {};
-			leaders_in_use = {};
-
-			local player_ids = GameConfiguration.GetParticipatingPlayerIDs();
-			for i, player_id in ipairs(player_ids) do	
-				if(player_id ~= self.PlayerId) then
-					local playerConfig = PlayerConfigurations[player_id];
-					if(playerConfig) then
-						local civilization = playerConfig:GetCivilizationTypeName();
-						if(type(civilization) == "string") then
-							civilizations_in_use[civilization] = true;
-
-							local dupes = duplicate_civilizations and duplicate_civilizations[civilization];
-							if(dupes) then
-								for i,v in ipairs(dupes) do
-									civilizations_in_use[v] = true;
-								end
-							end 
-						end
-
-						local leader = playerConfig:GetLeaderTypeName();
-						if(type(leader) == "string") then
-							leaders_in_use[leader] = true;
-
-							local dupes = duplicate_leaders and duplicate_leaders[leader];
-							if(dupes) then
-								for i,v in ipairs(dupes) do
-									leaders_in_use[v] = true;
-								end
-							end 
-						end
-					end
-				end
-			end
-		end
-
-		local new_values = {};
-		
-		local gameInProgress = GameConfiguration.GetGameState() ~= GameStateTypes.GAMESTATE_PREGAME;
 	
-		local checkOwnership = true;
-		if(GameConfiguration.IsAnyMultiplayer()) then
-			local checkComputerSlots = Network.IsGameHost() and not gameInProgress;
-
-			local curPlayerConfig = PlayerConfigurations[self.PlayerId];
-			local curSlotStatus = curPlayerConfig:GetSlotStatus();
-			local localPlayerId = Network.GetLocalPlayerID();
-			checkOwnership = self.PlayerId == localPlayerId or (checkComputerSlots and curSlotStatus == SlotStatus.SS_COMPUTER);
-		end
-
-		for i,v in ipairs(values) do
-			local reason;
-			if(checkOwnership and not Modding.IsLeaderAllowed(self.PlayerId, v.Value)) then
-				reason = "LOC_SETUP_ERROR_LEADER_NOT_OWNED";
-			elseif(unique_leaders and leaders_in_use[v.Value]) then
-				reason = "LOC_SETUP_ERROR_NO_DUPLICATE_LEADERS";
-			elseif(unique_civilizations) then
-				local civilization = GetPlayerCivilization(v.Domain, v.Value);
-				if(civilization and civilizations_in_use[civilization]) then
-					reason = "LOC_SETUP_ERROR_NO_DUPLICATE_CIVILIZATIONS";
-				end
+	-- Filter leaders without TSL
+	if (parameter.ParameterId == "PlayerLeader" and MapConfiguration.GetValue("OnlyLeadersWithTSL")) then
+		local newValues 	= {}
+		local ruleset		= GameConfiguration.GetValue("RULESET")
+		local playerDomain	= ruleset and RulesetPlayerDomain[ruleset] or "Players:StandardPlayers"
+		local mapName		= MapConfiguration.GetValue("MapName")
+		for i, row in ipairs(values) do
+			local reason		= nil
+			local bHasTSL		= true	-- So that leaderType "RANDOM" is always valid
+			local leaderType	= row.Value
+			if leaderType ~= "RANDOM" then
+				local args = {}
+				args.leaderType 	= leaderType
+				args.mapName 		= mapName
+				args.playerDomain 	= playerDomain
+				bHasTSL, reason 	= HasTSL(args)--(leaderType, mapName, playerDomain, civilizationType)(leaderType, mapName, playerDomain)
 			end
-
-			if(reason == nil) then
-				table.insert(new_values, v);
+			if(bHasTSL) then
+				table.insert(newValues, row)
+				availableLeaderList[leaderType] = true
+				--print("adding", leaderType)
 			else
-				local new_value = {};
+				local copy = {}
 
 				-- Copy data from value.
-				for k,v in pairs(v) do
-					new_value[k] = v;
+				for k,v in pairs(row) do
+					copy[k] = v
 				end
 
 				-- Mark value as invalid.
-				new_value.Invalid = true;
-				new_value.InvalidReason = reason;
-				table.insert(new_values, new_value);
+				copy.Invalid 		= true
+				copy.InvalidReason 	= reason
+				table.insert(newValues, copy)
+				availableLeaderList[leaderType] = false
+				--print("removing", leaderType)
 			end
 		end
-		return new_values;
-	else
-		return values;
+		return newValues
 	end
-	--]]
-	return values;
+	
+	return values
 end
 
 

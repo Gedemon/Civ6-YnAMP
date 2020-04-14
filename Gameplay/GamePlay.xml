@@ -75,7 +75,7 @@
 		<Replace MapSizeType="MAPSIZE_ENORMOUS21" 	Name="LOC_MAPSIZE_ENORMOUS21_NAME" 	Description="LOC_MAPSIZE_ENORMOUS21_DESCRIPTION" 	DefaultPlayers="19" GridWidth="140" GridHeight="74" NumNaturalWonders="8" PlateValue="5" Continents="6"/>
 		<Replace MapSizeType="MAPSIZE_GIANT" 		Name="LOC_MAPSIZE_GIANT_NAME" 		Description="LOC_MAPSIZE_GIANT_DESCRIPTION" 		DefaultPlayers="23" GridWidth="180" GridHeight="94" NumNaturalWonders="12" PlateValue="6" Continents="7"/>
 		<Replace MapSizeType="MAPSIZE_LUDICROUS" 	Name="LOC_MAPSIZE_LUDICROUS_NAME" 	Description="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" 	DefaultPlayers="23" GridWidth="200" GridHeight="104" NumNaturalWonders="16" PlateValue="7" Continents="8"/>
-		<Replace MapSizeType="MAPSIZE_OVERSIZED" 	Name="LOC_MAPSIZE_OVERSIZED_NAME" 	Description="LOC_MAPSIZE_OVERSIZED_DESCRIPTION" 	DefaultPlayers="23" GridWidth="230" GridHeight="115" NumNaturalWonders="24" PlateValue="8" Continents="10"/>
+		<Replace MapSizeType="MAPSIZE_OVERSIZED" 	Name="LOC_MAPSIZE_OVERSIZED_NAME" 	Description="LOC_MAPSIZE_OVERSIZED_DESCRIPTION" 	DefaultPlayers="23" GridWidth="230" GridHeight="116" NumNaturalWonders="24" PlateValue="8" Continents="10"/>
 		<!--
 		<Replace MapSizeType="MAPSIZE_MAX" 			Name="LOC_MAPSIZE_MAX_NAME" 		Description="LOC_MAPSIZE_MAX_DESCRIPTION" 			DefaultPlayers="23" GridWidth="202" GridHeight="101" NumNaturalWonders="16" PlateValue="7" Continents="8"/>
 		-->
@@ -90,6 +90,7 @@
 		<Replace MapSizeType="MAPSIZE_ENORMOUS" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
 		<Replace MapSizeType="MAPSIZE_GIANT" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
 		<Replace MapSizeType="MAPSIZE_LUDICROUS" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
+		<Replace MapSizeType="MAPSIZE_OVERSIZED" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
 		<!--
 		<Replace MapSizeType="MAPSIZE_MAX" GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" MaxWorldInstances="7"/>
 		-->
