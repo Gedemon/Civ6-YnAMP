@@ -41,7 +41,7 @@
       <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - Terra Map</Text>
     </Replace>
     <Replace Tag="LOC_TERRAMAP_DESC" Language="pl_PL">
-      <Text>Mapa z konfigurowalnymi kontynentami, bazowana na skalowanej mapie Ziemi</Text>
+      <Text>Mapa z konfigurowalnymi kontynentami, bazuje na skalowanej mapie Ziemi</Text>
     </Replace>
 	<Replace Tag="LOC_LARGESTEARTHCUSTOM_NAME" Language="pl_PL">
       <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - [COLOR_RED]Largest Earth Custom[ENDCOLOR]</Text>
@@ -76,28 +76,28 @@
     </Replace>
 	
     <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_NAME" Language="pl_PL">
-      <Text>TSL Replacement Range</Text>
+      <Text>Zasięg rozstawienia TSL</Text>
     </Replace>
     <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_DESCRIPTION" Language="pl_PL">
-      <Text>Distance at which a TSL can be moved if the relative position is not good enough. This parameters scale with map size.</Text>
+      <Text>Dystans o który może zostać przesunięta oryginalna pozycja startowa jeśli nie jest wystarczająco dobra. Parametr skaluje się wraz z wybranym rozmiarem mapy.</Text>
     </Replace>
     <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_SHORT_NAME" Language="pl_PL">
-      <Text>Short Range</Text>
+      <Text>Krótki zasięg</Text>
     </Replace>
     <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_SHORT_DESCRIPTION" Language="pl_PL">
-      <Text>Stay relatively close to the position from the reference map, but this may prevent a Civilization to be in game.</Text>
+      <Text>Zmiana będzie tylko na krótki dystans, wciąż może nie wystarczyć do pojawienia się Cywilizacji na mapie.</Text>
     </Replace>
     <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_MEDIUM_NAME" Language="pl_PL">
-      <Text>Medium Range</Text>
+      <Text>Średni zasięg</Text>
     </Replace>
     <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_MEDIUM_DESCRIPTION" Language="pl_PL">
-      <Text>This will allow a TSL replacement for most cases.</Text>
+      <Text>W większości przypadków pozwala na zastąpienie TSL, jeśli Cywilizacja nie może pojawić się na oryginalnej lokacji.</Text>
     </Replace>
     <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_HIGH_NAME" Language="pl_PL">
-      <Text>High Range</Text>
+      <Text>Duży zasięg</Text>
     </Replace>
     <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_HIGH_DESCRIPTION" Language="pl_PL">
-      <Text>A Civilization may get placed relatively far from its original region.</Text>
+      <Text>Cywilizacja praktycznie zawsze się pojawia, ale może być bardzo daleko od swojego oryginalnego miejsca startu.</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAPSIZE_ENORMOUS_NAME" Language="pl_PL">
@@ -123,6 +123,12 @@
     </Replace>
     <Replace Tag="LOC_MAPSIZE_MAX_DESCRIPTION" Language="pl_PL">
       <Text>Największa działająca mapa na moim komputerze (i7 4770K + MSI GTX 1080 Ti + 16GB Ram) (215x112)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_OVERSIZED_NAME" Language="pl_PL">
+      <Text>Największa</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_OVERSIZED_DESCRIPTION" Language="pl_PL">
+      <Text>Największa (230x116)</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAPSIZE_SMALL21_NAME" Language="pl_PL">
@@ -342,7 +348,7 @@
       <Text>Importuj</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_IMPORT_DESCRIPTION" Language="pl_PL">
-      <Text>Pozycje Nizin zostaną zaimportowane z oryginalnej mapy, jesli istnieją</Text>
+      <Text>Pozycje nizin zostaną zaimportowane z oryginalnej mapy, jeśli istnieją</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEEP_NAME" Language="pl_PL">
       <Text>Dopasuj do równin</Text>
@@ -368,7 +374,7 @@
     </Replace>
 	
     <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_NAME" Language="pl_PL">
-      <Text>Pusty</Text>
+      <Text>Brak</Text>
     </Replace>
     <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" Language="pl_PL">
       <Text>Brak Rozmieszczenia</Text>
@@ -403,7 +409,7 @@
       <Text>Brak lodowca przy brzegu</Text>
     </Replace>
     <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_DESC" Language="pl_PL">
-      <Text>Usunie lód przy północnym/południowym brzegu kontynentów aby ułatwić opłynięcie ziemi. Nie usuwa to terenów ziemi na granicy pólnocy i południa.</Text>
+      <Text>Usunie lód przy północnym/południowym brzegu kontynentów aby ułatwić opłynięcie ziemi. Nie usuwa to terenów ziemi na granicy północy i południa.</Text>
     </Replace>
     <Replace Tag="LOC_MAP_NO_CITY_STATE_NAME" Language="pl_PL">
       <Text>Brak Państw-Miast</Text>
@@ -450,7 +456,7 @@
       <Text>Używaj tylko generycznych nazw</Text>
     </Replace>
 	<Replace Tag="LOC_MAP_ONLY_GENERIC_CITY_NAMES_DESC" Language="pl_PL">
-      <Text>When unchecked the mod will try to set the name of a city based on what would be the real world name of a city created by a Civilization at its location. Check this to use the default (ie english) city name at the city's location.</Text>
+      <Text>Gdy nieaktywne, gra spróbuje ustawić nazwę miasta na podstawie rzeczywistej nazwy miasta stworzonej przez tą Cywilizację na tej lokacji. Zaznacz jeśli chcesz żeby gra użyła nazwy miasta dla tej lokalizacji niezależnie od Cywilizacji.</Text>
     </Replace>
 	
 	<Replace Tag="LOC_MAP_LEADER_TSL_NAME" Language="pl_PL">
@@ -496,6 +502,25 @@
     </Replace>
     <Replace Tag="LOC_MAP_BAN_LEADERS_DESCRIPTION" Language="pl_PL">
       <Text>Wybierz Przywódców których gra ma wykluczyć z losowania, wciąż możesz ich wybrać ręcznie dla slotów graczy i A.I.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_TSL_LEADERS_NAME" Language="pl_PL">
+      <Text>Tylko Cywilizacje/Państwa-Miasta z TSL</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_TSL_LEADERS_DESCRIPTION" Language="pl_PL">
+      <Text>Tylko Cywilizacje/Państwa-Miasta z TSL są możliwe do wybrania dla tej mapy gdy opcja jest zaznaczona.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_TSL_LEADERS_NEED_DB_DESCRIPTION" Language="pl_PL">
+      <Text>Tylko Cywilizacje/Państwa-Miasta z TSL są możliwe do wybrania dla tej mapy gdy opcja jest zaznaczona.[NEWLINE][NEWLINE]Gra musi zostać uruchomiona aby pobrać bazedanych która jest wymagana do aktywacji tej opcji, kliknij "Wczytaj Baze" aby uruchomić grę w trybie 2D, następnie gra powróci do menu głównego. Wróć do tego menu i aktywuj opcje.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_DIMENSION_NAME" Language="pl_PL">
+      <Text> </Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DIMENSION_DESCRIPTION" Language="pl_PL">
+      <Text>Rozmiar mapy który jest znany w panelu tworzenia rozgrywki. W grze rozmiar może być inny, WorldBuilder oraz Skrypty map mogą używać innych rozmiarów niż tych na których są skonfigurowane.[NEWLINE][NEWLINE]Kiedy wybrane są oryginalne mapy YnAMP rozmiar jest prawidłowy.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DIMENSION_STRING" Language="pl_PL">
+      <Text>Rozmiar: {1_Num}x{2_Num} (Pól: {3_Num : number #,###})</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_REFERENCE_DB_NAME" Language="pl_PL">
@@ -588,7 +613,7 @@
       <Text>Jeden masywny kontynent z kilkoma pęknięciami dla małego regionu mapy.</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_COMPACT_PANGEA_NAME" Language="pl_PL">
-      <Text>Spójna pangea</Text>
+      <Text>Spójna Pangea</Text>
     </Replace>
     <Replace Tag="LOC_MAP_COMPACT_PANGEA_DESCRIPTION" Language="pl_PL">
       <Text>Jeden masywny kontynent bez pęknięć dla małego regionu mapy.[NEWLINE][NEWLINE]Może wygenerować bardzo jednolity obszar jeśli zostanie użyty na za dużym regionie mapy.</Text>
@@ -765,7 +790,7 @@
       <Text>Dodatkowe wyspy</Text>
     </Replace>
     <Replace Tag="LOC_MAP_ADD_ISLANDS_DESC" Language="pl_PL">
-      <Text>Dodaje kilka wysp na mapie. Może zwiększyć prawdopodobieństwo osiągniecia Nowego Świata przed wynalezieniem Kartografii[NEWLINE][NEWLINE]Ustawienia Mieszania Lądów/Mórz mają wpływ na ten parametr</Text>
+      <Text>Dodaje kilka wysp na mapie. Może zwiększyć prawdopodobieństwo osiągnięcia Nowego Świata przed wynalezieniem Kartografii[NEWLINE][NEWLINE]Ustawienia Mieszania Lądów/Mórz mają wpływ na ten parametr</Text>
     </Replace>
     <Replace Tag="LOC_MAP_ADDITIONAL_SEAS_NAME" Language="pl_PL">
       <Text>Dodatkowe morza</Text>
@@ -953,7 +978,7 @@
       <Text>Tylko wybrane</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CS_OPTION_ONLY_SELECTION_DESCRIPTION" Language="pl_PL">
-      <Text>Wybierz które Państwa-Miasta chcesz dodać, gra spróbuje znaleźć sloty dla wszystkich wybranych miast, ignorująć wartość suwaka jeśli wybierzesz mniej lub więcej.[NEWLINE][NEWLINE]Uwaga: DLC/Scenariusze/Mody mogą dodawać/usuwać Państwa-Miasta, lista nie odzwierciedla co jest aktualnie dostępne.</Text>
+      <Text>Wybierz które Państwa-Miasta chcesz dodać, gra spróbuje znaleźć sloty dla wszystkich wybranych miast, ignorując wartość suwaka jeśli wybierzesz mniej lub więcej.[NEWLINE][NEWLINE]Uwaga: DLC/Scenariusze/Mody mogą dodawać/usuwać Państwa-Miasta, lista nie odzwierciedla co jest aktualnie dostępne.</Text>
     </Replace>
 	
     <Replace Tag="LOC_XP1_CHECK_NAME" Language="pl_PL">
@@ -966,7 +991,7 @@
       <Text>Lista Państw-Miast dla Gathering Storm</Text>
     </Replace>
     <Replace Tag="LOC_XP2_CHECK_DESCRIPTION" Language="pl_PL">
-      <Text>Zaznacz jeśli dodatek Gathering Storm Expansion jest aktywny.[NEWLINE]Odznacz jeśli jest niezainstalowany lub wyłączony.[NEWLINE]Lista zostanie zaktualizowana o Twój wybór.</Text>
+      <Text>Zaznacz jeśli dodatek Gathering Storm jest aktywny.[NEWLINE]Odznacz jeśli jest niezainstalowany lub wyłączony.[NEWLINE]Lista zostanie zaktualizowana o Twój wybór.</Text>
     </Replace>
     <Replace Tag="LOC_DLC2_CHECK_NAME" Language="pl_PL">
       <Text>Lista Państw-Miast dla Viking DLC</Text>
@@ -1013,7 +1038,7 @@
       <Text>Generator rozmieszczania YnAMP</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_GENERATED_PRESET_DESC" Language="pl_PL">
-      <Text>Placement presets to generate starting Civilizations[NEWLINE]This scenario replaces the setup screen default values to civ-specific values for the following settings:[NEWLINE][ICON_BULLET]Cities Placement[NEWLINE][ICON_BULLET]Number of Cities[NEWLINE][ICON_BULLET]Max. Distance From Capital[NEWLINE][ICON_BULLET]Only on the same landmass[NEWLINE][NEWLINE]Custom Civilizations will use the default settings (unless added separatly by the custom civ mod)[NEWLINE][NEWLINE]The settings are optimized for the Giant Earth map (or regions of it) but can be used with any map.</Text>
+      <Text>Predefiniowane rozstawienie dla wybranych Cywilizacji[NEWLINE]Scenariusz zastępuje wymienione domyśle specyficzne wartości dla Cywilizacji:[NEWLINE][ICON_BULLET]Rozmieszczenie miast[NEWLINE][ICON_BULLET]Ilość miast[NEWLINE][ICON_BULLET]Maksymalny dystans od stolicy[NEWLINE][ICON_BULLET]Zasiedlanie się tylko na tym samym kontynencie[NEWLINE][NEWLINE]Niestandardowe Cywilizacje będą używały domyślnych ustawień (chyba, że twórca Cywilizacji dodał je osobno dla tego scenariusza)[NEWLINE][NEWLINE]Ustawienie zoptymalizowane dla gry na mapie Giant Earth (lub wybranych regionów na niej) ale może zostać użyty na każdej innej mapie.</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CITY_PLACEMENT_NAME" Language="pl_PL">
@@ -1103,21 +1128,21 @@
     </Replace>
 	
     <Replace Tag="LOC_MAP_CITY_SIZE_DECREMENT" Language="pl_PL">
-      <Text>Size Decrement</Text>
+      <Text>Zmniejsz rozmiar</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CITY_SIZE_DECREMENT_DESCRIPTION" Language="pl_PL">
       <Text>Decrement City Size by this value</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_NUM_CITY_PER_DECREMENT" Language="pl_PL">
-      <Text>Cities per Decrement</Text>
+      <Text>Miasta na zmniejszenie</Text>
     </Replace>
     <Replace Tag="LOC_MAP_NUM_CITY_PER_DECREMENT_DESCRIPTION" Language="pl_PL">
       <Text>Number of cities placed for each size decrement</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_MAX_CAPITAL_DISTANCE" Language="pl_PL">
-      <Text>Max. Odległość od Stolicy</Text>
+      <Text>Maks. Odległość od Stolicy</Text>
     </Replace>
     <Replace Tag="LOC_MAP_MAX_CAPITAL_DISTANCE_DESCRIPTION" Language="pl_PL">
       <Text>Maximum distance from Capital for the other cities (this is not checked for cities imported from the ScenarioCities table)</Text>
@@ -1177,81 +1202,81 @@
     </Replace>
 	
     <Replace Tag="LOC_MAP_BORDER_PLACEMENT_NAME" Language="pl_PL">
-      <Text>Borders Placement</Text>
+      <Text>Rozmieszczenie granic</Text>
     </Replace>
     <Replace Tag="LOC_MAP_BORDER_PLACEMENT_DESCRIPTION" Language="pl_PL">
       <Text>How to place the borders on the map</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_BORDER_DISTANCE_NAME" Language="pl_PL">
-      <Text>Borders max. distance</Text>
+      <Text>Maks. odległość granic</Text>
     </Replace>
     <Replace Tag="LOC_MAP_BORDER_DISTANCE_DESCRIPTION" Language="pl_PL">
       <Text>Maximum distance from a city center for the territory border.</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_PLACEMENT_EXPAND_NAME" Language="pl_PL">
-      <Text>Expansion</Text>
+      <Text>Ekspansja miast</Text>
     </Replace>
     <Replace Tag="LOC_MAP_PLACEMENT_EXPAND_DESCRIPTION" Language="pl_PL">
       <Text>Expansion on free territory in rings from each city center, until the maximum distance is reached</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_INFRASTRUCTURE_NAME" Language="pl_PL">
-      <Text>Infrastructure Placement</Text>
+      <Text>Rozmieszczenie infrastruktury</Text>
     </Replace>
     <Replace Tag="LOC_MAP_INFRASTRUCTURE_DESCRIPTION" Language="pl_PL">
       <Text>How to place the infrastructure (roads, rails, improvments, districts, buildings) on the map</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_ROAD_PLACEMENT_NAME" Language="pl_PL">
-      <Text>Roads Placement</Text>
+      <Text>Rozmieszczenie dróg</Text>
     </Replace>
     <Replace Tag="LOC_MAP_ROAD_PLACEMENT_DESCRIPTION" Language="pl_PL">
       <Text>How to place the roads on the map</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_ROAD_DISTANCE_NAME" Language="pl_PL">
-      <Text>Unlimited roads length</Text>
+      <Text>Nieograniczona długość dróg</Text>
     </Replace>
     <Replace Tag="LOC_MAP_ROAD_DISTANCE_DESCRIPTION" Language="pl_PL">
       <Text>No distance limit between two Cities to try to place a road</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_ROAD_DISTANCE_NAME" Language="pl_PL">
-      <Text>Max. distance for roads</Text>
+      <Text>Maks. długość dróg</Text>
     </Replace>
     <Replace Tag="LOC_MAP_ROAD_DISTANCE_DESCRIPTION" Language="pl_PL">
       <Text>Maximum distance between two Cities to try to place a road</Text>
     </Replace>
     <Replace Tag="LOC_MAP_MAX_ROAD_PER_CITY_NAME" Language="pl_PL">
-      <Text>Max. roads per City</Text>
+      <Text>Maks. ilość dróg</Text>
     </Replace>
     <Replace Tag="LOC_MAP_MAX_ROAD_PER_CITY_DESCRIPTION" Language="pl_PL">
       <Text>Maximum number of Roads going out of a City</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_PLACEMENT_CENTRALIZED_NAME" Language="pl_PL">
-      <Text>Centralized</Text>
+      <Text>Scentralizowane</Text>
     </Replace>
     <Replace Tag="LOC_MAP_PLACEMENT_CENTRALIZED_DESCRIPTION" Language="pl_PL">
       <Text>From Capitals to all other cities</Text>
     </Replace>
     <Replace Tag="LOC_MAP_PLACEMENT_PER_CITY_NAME" Language="pl_PL">
-      <Text>City to City</Text>
+      <Text>Z miasta do miasta</Text>
     </Replace>
     <Replace Tag="LOC_MAP_PLACEMENT_PER_CITY_DESCRIPTION" Language="pl_PL">
       <Text>Each City to the closest cities</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_INTERNATIONAL_ROADS_NAME" Language="pl_PL">
-      <Text>International Roads</Text>
+      <Text>Drogi międzynarodowe</Text>
     </Replace>
     <Replace Tag="LOC_MAP_INTERNATIONAL_ROADS_DESCRIPTION" Language="pl_PL">
       <Text>When checked, allows roads placement to foreign cities (only Capital to Capital when the "Centralized" Road Placement option is chosen).</Text>
     </Replace>
     <Replace Tag="LOC_MAP_UNLIMITED_ROAD_DISTANCE_NAME" Language="pl_PL">
-      <Text>Unlimited Road Distance</Text>
+      <Text>Nieograniczona długość dróg</Text>
     </Replace>
     <Replace Tag="LOC_MAP_UNLIMITED_ROAD_DISTANCE_DESCRIPTION" Language="pl_PL">
       <Text>When checked, no distance limit is used when trying to place a road between two cities. May slow down Scenario Generation on larger maps.</Text>
@@ -1363,35 +1388,86 @@
 		<Text>Palenque city-state</Text>
 	</Replace>
 	
+    <Replace Tag="LOC_SETUP_YNAMP_REPORT" Language="pl_PL">
+      <Text>Raport walidacji opcji:</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_SEVERITY_YNAMP" Language="pl_PL">
+      <Text>(poziom = {1_Num})</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_BLOCKING_YNAMP" Language="pl_PL">
+      <Text>(blokuje start)</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_IGNORE_BLOCK_YNAMP" Language="pl_PL">
+      <Text>(blok nadpisany przez użytkownika)</Text>
+    </Replace>
     <Replace Tag="LOC_SETUP_DATABASE_LOADED_YNAMP" Language="pl_PL">
-      <Text>YnAMP - [COLOR_Civ6Green]BazaDanych OK[ENDCOLOR] [ICON_CheckSuccess]</Text>
+      <Text>BazaDanych wczytana</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_DATABASE_LOADED_YNAMP_TT" Language="pl_PL">
-      <Text>Baza danych została wczytana prawidłowo.</Text>
+      <Text>Baza danych została wczytana prawidłowo i jest dostępna dla opcji YnAMP</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_DATABASE_NOT_LOADED_YNAMP" Language="pl_PL">
-      <Text>YnAMP - [COLOR_Civ6Yellow]Brak BazyDanych[ENDCOLOR] [ICON_CheckFail]</Text>
+      <Text>Brak BazyDanych</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_DATABASE_NOT_LOADED_YNAMP_TT" Language="pl_PL">
-      <Text>Baza nie została jeszcze wczytana.[NEWLINE][NEWLINE]Gra musi uruchomić rozgrywkę w trybie 2D aby zaktualizować dane wymagane do ustawień zaawansowanych YnAMP[NEWLINE][NEWLINE]Możesz kliknąć "Wczytaj baze" aby odpalić grę w trybie 2D.</Text>
+      <Text>Baza nie została jeszcze wczytana w tej sesji. Gra musi uruchomić rozgrywkę w trybie 2D aby zaktualizować dane wymagane do ustawień zaawansowanych YnAMP.[NEWLINE][NEWLINE]Możesz kliknąć "Wczytaj baze" aby uruchomić grę w trybie 2D.</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_DATABASE_CHANGED_YNAMP" Language="pl_PL">
-      <Text>YnAMP - [COLOR_Civ6Yellow]BazaDanych Zmieniona![ENDCOLOR] [ICON_CheckFail]</Text>
+      <Text>BazaDanych zmieniona</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_DATABASE_CHANGED_YNAMP_TT" Language="pl_PL">
-      <Text>BazaDanych została zmieniona (przez aktywowanie modów lub DLC)[NEWLINE][NEWLINE]Rozgrywka zostanie ponownie uruchomiona aby zaktualizować dane wymagane do ustawień zaawansowanych YnAMP.[NEWLINE][NEWLINE]Możesz kliknąć "Wczytaj baze" aby odpalić grę w trybie 2D.</Text>
+      <Text>BazaDanych została zmieniona (przez aktywowanie modów lub DLC). Gra musi uruchomić rozgrywkę w trybie 2D aby zaktualizować dane wymagane do ustawień zaawansowanych YnAMP.[NEWLINE][NEWLINE]Uruchamiając pełną grę w momencie kiedy opcje są niewczytane może powodować błędy oraz awarie gry podczas wczytywania.[NEWLINE][NEWLINE]Możesz kliknąć "Wczytaj baze" aby uruchomić grę w trybie 2D.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_RULESET_CHANGED_YNAMP" Language="pl_PL">
+      <Text>Reguły zmienione</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_RULESET_CHANGED_YNAMP_TT" Language="pl_PL">
+      <Text>Reguły wczytane podczas wczytywania bazy dan zostały zmienione, nowa szybka gra 2D musi zostać uruchomiona aby zaktualizować dane potrzebne do zaawansowanych opcji YnAMP.[NEWLINE][NEWLINE]Uruchamiając pełną grę w momencie kiedy opcje są niewczytane może powodować błędy oraz awarie gry podczas wczytywania.[NEWLINE][NEWLINE]Możesz kliknąć "Wczytaj baze" aby uruchomić grę w trybie 2D lub powrócić do poprzednich reguł.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNOFFICIAL_YNAMP" Language="pl_PL">
+      <Text>Nieoficjalny rozmiar mapy</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNOFFICIAL_YNAMP_TT" Language="pl_PL">
+      <Text>Ten rozmiar mapy jest większy niż oficjalnie odstępne.[NEWLINE][NEWLINE]Gra się uruchomi, jednak może powodować losowe awarie gry w późniejszych etapach gry.[NEWLINE][NEWLINE]Na dodatku Gathering Storm wraz z podnoszeniem się poziomu morza, ilość awarii gry może się drastycznie zwiększyć, oraz uniemożliwić dalszą rozgrywkę.</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_MAP_SIZE_LOCK_YNAMP" Language="pl_PL">
-      <Text>YnAMP - [COLOR_Civ6Red]Niewspierany rozmiar mapy[ENDCOLOR] [ICON_Not]</Text>
+      <Text>Niewspierany rozmiar mapy</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_MAP_SIZE_LOCK_YNAMP_TT" Language="pl_PL">
-      <Text>Ostrzeżenie Rozmiaru Mapy[NEWLINE][NEWLINE]Ostrzeżenie.[NEWLINE][NEWLINE]Naprawdę, Ostrzegam.</Text>
+      <Text>Ten rozmiar mapy jest większy, niż największy znany rozmiar który można grać powyżej tury 500. Jeśli mapa na to pozwala, możesz wybrać mniejszy region gry, który zmniejszy rozmiar tej mapy.[NEWLINE][NEWLINE]Gra się wczyta, ale losowe awarie gry są pewnie w późniejszym etapie rozgrywki, zapisuj grę często[NEWLINE][NEWLINE]Z dodatkiem Gathering Storm wraz z podnoszeniem się poziomu morza, ilość awarii gry może się drastycznie zwiększyć, oraz uniemożliwić dalszą rozgrywkę.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_OVERSIZE_YNAMP_TT" Language="pl_PL">
+      <Text>Ten rozmiar mapy jest większy, niż największy znany rozmiar który wczytuje się bez awarii gry przy wczytywaniu. Jeśli mapa na to pozwala, możesz wybrać mniejszy region gry, który zimniejszy rozmiar tej mapy.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNKNOWN_YNAMP" Language="pl_PL">
+      <Text>Nieznany rozmiar mapy</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNKNOWN_YNAMP_TT" Language="pl_PL">
+      <Text>Ten rozmiar mapy jest nieznany, YnAMP nie może wykryć czy ten rozmiar ma wpływ na stabilność gry, można to naprawić wczytując baze danych u góry.</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_LOAD_DATA_YNAMP" Language="pl_PL">
       <Text>Wczytaj Baze</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_LOAD_DATA_YNAMP_TT" Language="pl_PL">
       <Text>Uruchamia szybką grę w trybie 2D, aby wczytać wszystkie dane ustawień, używane przez mod YnAMP. Rozgrywka automatycznie się zakończy i wróci do Menu Głównego.[NEWLINE][NEWLINE]Następnie wróć do tego menu, powinna wyświetlać na górze "Baza Danych Wczytana" i aktywować zaawansowane opcje YnAMP.[NEWLINE][NEWLINE]Plik zapisu aktualnych ustawień: "AutoSaveYnAMP" - powinien być dostępny do przeładowania ustawień, jeśli zajdzie taka potrzeba, ale sugerowana kolejność zmian powinna być:[NEWLINE][ICON_BULLET] Włącz mody[NEWLINE][ICON_BULLET] Wczytaj Baze Danych[NEWLINE][ICON_BULLET] Zmień swoje ustawienia</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_IGNORE_WARNING_YNAMP" Language="pl_PL">
+      <Text>Ignoruj</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_IGNORE_WARNING_YNAMP_TT" Language="pl_PL">
+      <Text>Kliknij "Ignoruj" jeśli rozumiesz problemy i chcesz je zignorować.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAJOR_COUNT_DIFFERENCE" Language="pl_PL">
+      <Text>Zatwierdź ilość Cywilizacji</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAJOR_COUNT_DIFFERENCE_TT" Language="pl_PL">
+      <Text>Wybrana ilość Cywilizacji nie została jeszcze odwzorowana.[NEWLINE][NEWLINE]Aby zapobiec lagom w UI lub przypadkowym zmianom wartość kółkiem myszy, wartość nie zostanie od razu odwzorowana w panelu.[NEWLINE][NEWLINE]Użycie: ustaw większą wartość i kliknij "+" (Dodaj) lub ustaw mniejszą wartość i kliknij "X" (Usuń) w panelu "Graczy"</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ERROR_NO_TSL" Language="pl_PL">
+      <Text>Brak TSL dla tej mapy</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ERROR_NO_TSL_IN_SECTION" Language="pl_PL">
+      <Text>Brakuje danych TSL dla tej mapy</Text>
     </Replace>
   </LocalizedText>
 </GameData>
