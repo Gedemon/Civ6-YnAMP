@@ -9,7 +9,6 @@ include "CoastalLowlands"
 ------------------------------------------------------------------------------
 -- **************************** YnAMP globals ******************************
 ------------------------------------------------------------------------------
-
 print("------------------------------------------------------")
 print ("loading modded AssignStartingPlots")
 local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value -- can't use GlobalParameters.YNAMP_VERSION ?
@@ -17,12 +16,12 @@ print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (20
 
 include "YnAMP_Common"
 
-if ExposedMembers.YnAMP_Loading ~= nil then
+if YnAMP_Loading ~= nil then
 	print("------------------------------------------------------")
-	print ("Game version: ".. tostring(ExposedMembers.YnAMP_Loading.GameVersion))
+	print ("Game version: ".. tostring(YnAMP_Loading.GameVersion))
 	print("Active mods:")
-	if ExposedMembers.YnAMP_Loading.ListMods then
-		for i,v in ipairs(ExposedMembers.YnAMP_Loading.ListMods) do
+	if YnAMP_Loading.ListMods then
+		for i,v in ipairs(YnAMP_Loading.ListMods) do
 			print(" - ".. Locale.Lookup(v.Name))
 		end
 	end
@@ -63,6 +62,7 @@ local IsOceanStart		= {}	-- table to list Civilization with a starting plot set 
 mapName = MapConfiguration.GetValue("ReferenceMap") or MapConfiguration.GetValue("MapName")
 print ("Map Name 		= ", MapConfiguration.GetValue("MapName"))
 print ("Reference Map	= ", MapConfiguration.GetValue("ReferenceMap"))
+print ("MapScript		= ", YnAMP_Loading.MapScript)--MapConfiguration.GetScript())
 getTSL 					= {} -- primary TSL for each civilization
 isInGame 				= {} -- Civilization/Leaders type in game
 tempStartingPlots 		= {} -- Temporary table for starting plots used when Historical Spawn Dates is set.

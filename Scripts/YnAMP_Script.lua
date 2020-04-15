@@ -984,6 +984,7 @@ end
 
 -- ===========================================================================
 -- Function to check if the data in a row is valid for the current game setting, return true (with a matching level as second parameter, higher is better) or nil
+-- todo : add MapScript as a possible column, as we can have one Database reference (aka "MapName", like "GiantEarth") for multiple map and may want to have different values for specific MapScript (like "LargestEarthCustom.lua")
 --[[
 	Row without scenario name: 
 		Valid if the map name is matching, even when no scenario are selected 

@@ -8,11 +8,13 @@ print ("loading YnAMP_Common.lua")
 -- Sharing UI/Gameplay context
 ------------------------------------------------------------------------------
 
-ExposedMembers.YnAMP 		= ExposedMembers.YnAMP or {}
-ExposedMembers.ConfigYnAMP 	= ExposedMembers.ConfigYnAMP or {}
+ExposedMembers.YnAMP 			= ExposedMembers.YnAMP or {}
+ExposedMembers.ConfigYnAMP 		= ExposedMembers.ConfigYnAMP or {}
+ExposedMembers.YnAMP_Loading 	= ExposedMembers.YnAMP_Loading or {}
 
-YnAMP 		= ExposedMembers.YnAMP
-ConfigYnAMP = ExposedMembers.ConfigYnAMP
+YnAMP 			= ExposedMembers.YnAMP
+ConfigYnAMP 	= ExposedMembers.ConfigYnAMP
+YnAMP_Loading 	= ExposedMembers.YnAMP_Loading
 
 
 ------------------------------------------------------------------------------
@@ -425,9 +427,9 @@ print("Warning, can't find refMap y,x for ", mapX, mapY," returning ",  XFromRef
 		
 		-- the code below assume that the reference map is wrapX
 		if refMapY >= g_UncutMapHeight then
-			--refMapY = refMapY - g_UncutMapHeight
-			refMapY = (2*g_UncutMapHeight) - refMapY - 1
-			refMapX = refMapX + Round(g_UncutMapWidth / 2)
+			refMapY = refMapY - g_UncutMapHeight
+			--refMapY = (2*g_UncutMapHeight) - refMapY - 1
+			--refMapX = refMapX + Round(g_UncutMapWidth / 2)
 		end
 		if refMapX >= g_UncutMapWidth then
 			refMapX = refMapX - g_UncutMapWidth -- -1 ?
@@ -460,6 +462,7 @@ function GetXYFromRefMapXY(x, y, bOnlyOffset, customWidthRatio, customHeightRati
 		
 		-- the code below assume that the reference map is wrapX
 		if y < 0 then 
+			y = y + g_UncutMapHeight
 			--y = y + g_iH - 1
 			--y = y + g_iH
 			--x = x + Round(g_iW / 2)
@@ -574,10 +577,10 @@ end
 -----------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------
 function UpdateLoadingText(sText)
-print("ExposedMembers.YnAMP_Loading.FallbackMessage",ExposedMembers.YnAMP_Loading.FallbackMessage)
-print("ExposedMembers.YnAMP_Loading.LoadGameMenu",ExposedMembers.YnAMP_Loading.LoadGameMenu)
+print("YnAMP_Loading.FallbackMessage",YnAMP_Loading.FallbackMessage)
+print("YnAMP_Loading.LoadGameMenu",YnAMP_Loading.LoadGameMenu)
 print(sText)
-	if ExposedMembers.YnAMP_Loading.LoadGameMenu then
+	if YnAMP_Loading.LoadGameMenu then
 	
 	else
 	

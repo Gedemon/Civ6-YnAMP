@@ -13,8 +13,10 @@ include("SupportFunctions");
 --print ("loading AdvancedSetup with include for mods... (from Yet (not) Another Maps Pack)")
 print("loading AdvancedSetup for Yet (not) Another Maps Pack...")
 print("Game version : ".. tostring(UI.GetAppVersion()))
-ExposedMembers.ConfigYnAMP = ExposedMembers.ConfigYnAMP or {}
-ConfigYnAMP = ExposedMembers.ConfigYnAMP
+ExposedMembers.ConfigYnAMP 		= ExposedMembers.ConfigYnAMP or {}
+ExposedMembers.YnAMP_Loading	= ExposedMembers.YnAMP_Loading or {}
+YnAMP_Loading 	=ExposedMembers.YnAMP_Loading
+ConfigYnAMP 	= ExposedMembers.ConfigYnAMP
 
 ------------------------------------------------------------------------------
 -- YnAMP defines
@@ -1568,12 +1570,9 @@ function OnStartButton()
 		print(slotID, playerConfig and playerConfig:GetLeaderTypeName(), playerConfig and playerConfig:GetLeaderTypeName(), playerConfig and playerConfig:GetCivilizationTypeName(), playerConfig and playerConfig:GetSlotName(), playerConfig and (slotStatusString[playerConfig:GetSlotStatus()] or "UNK STATUS"), playerConfig and (civLevelString[playerConfig:GetCivilizationLevelTypeID()] or "UNK LEVEL"),  playerConfig and playerConfig:IsAI())
 	end
 	
-	-- Make some debugging info available during map creation
-	--local listMods	= Modding.GetActiveMods()
+	-- Make some info available during map creation
 	local listMods		= {}
 	local installedMods = Modding.GetInstalledMods()
-
-	---[[
 	if installedMods ~= nil then
 		for i, modData in ipairs(installedMods) do
 			if modData.Enabled then
@@ -1581,11 +1580,9 @@ function OnStartButton()
 			end
 		end
 	end
-	ExposedMembers.YnAMP_Loading	= {
-		ListMods 	= listMods,
-		GameVersion = UI.GetAppVersion()
-	}
-	--]]
+	YnAMP_Loading.ListMods 		= listMods
+	YnAMP_Loading.GameVersion 	= UI.GetAppVersion()
+	YnAMP_Loading.MapScript		= MapConfiguration.GetScript()
 	-- YNAMP >>>>>
 	
 	-- Is WorldBuilder active?
@@ -1731,7 +1728,147 @@ end
 -- YnAMP <<<<<
 
 -- ===========================================================================
--- YnAMP settings functions
+-- TSL Reference functions
+-- ===========================================================================
+-- Set globals
+local lastSelectedMapName		= nil
+local bUseRelativeFixedTable	= false
+local RefMapXfromX 				= {}
+local RefMapYfromY 				= {}
+
+-- Build Reference table
+function BuildRefXY()
+	local sX, sY 		= 0, 0
+	local lX, lY 		= 0, 0
+	local skipX, skipY	= MapConfiguration.GetValue("RescaleSkipX"), MapConfiguration.GetValue("RescaleSkipY")
+	for x = 0, g_UncutMapWidth, 1 do
+		for y = 0, g_UncutMapHeight, 1 do
+			
+			RefMapXfromX[sX] = x
+			RefMapYfromY[sY] = y
+			
+			lY = lY + 1
+			if lY == skipY then
+				lY = 0
+			else
+				sY = sY +1
+			end
+		end
+		sY = 0
+		lX = lX + 1
+		if lX == skipX then
+			lX = 0
+		else
+			sX = sX +1
+		end
+	end
+end
+
+--
+function InitializeMapGlobals()
+	-- local
+	local referenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth")
+	local referenceMapHeight 	= MapConfiguration.GetValue("ReferenceMapHeight")
+	
+	-- global
+	bUseRelativeFixedTable 	= MapConfiguration.GetValue("UseRelativeFixedTable")
+	g_UncutMapWidth 		= MapConfiguration.GetValue("UncutMapWidth")
+	g_UncutMapHeight 		= MapConfiguration.GetValue("UncutMapHeight")
+	g_ReferenceWidthRatio   = g_UncutMapWidth / referenceMapWidth
+	g_ReferenceHeightRatio  = g_UncutMapHeight / referenceMapHeight
+	
+	if bUseRelativeFixedTable then
+		BuildRefXY()
+	end
+end
+
+-- Convert the reference map position to the current map position
+function GetXYFromRefMapXY(x, y)
+	local currMapScript = MapConfiguration.GetScript()
+	if currMapScript ~= lastSelectedMapScript then -- only initialize if the map has changed
+		InitializeMapGlobals()
+		lastSelectedMapScript = currMapScript
+	end
+	if bUseRelativeFixedTable then
+		x = RefMapXfromX[x]
+		y = RefMapYfromY[y]
+		if x == nil or y == nil then
+			return -1, -1
+		end
+	else
+		x = Round( g_ReferenceWidthRatio * x)
+		y = Round( g_ReferenceHeightRatio * y)		
+	end
+	return x, y
+end
+
+--
+function IsInDimension(x, y, dimension)
+	
+	if MapConfiguration.GetValue("UseRelativePlacement") then
+		x, y = GetXYFromRefMapXY(x, y)
+	end
+	
+	local xValid = false
+	local yValid = false
+	
+	if (dimension.startX < dimension.endX) then
+		xValid = (x > dimension.startX and x < dimension.endX)
+	else
+		xValid = (x > dimension.startX or  x < dimension.endX)
+	end
+		
+	if (dimension.startY < dimension.endY) then
+		yValid = (y > dimension.startY and y < dimension.endY)
+	else
+		yValid = (y > dimension.startY or  y < dimension.endY)
+	end
+	
+	return xValid and yValid
+end
+
+--
+function HasTSL(args)--(leaderType, mapName, playerDomain, civilizationType)
+	local reason			= nil
+	local leaderType		= args.leaderType
+	local playerDomain		= (args.civilizationType and nil) or args.playerDomain or (GameConfiguration.GetValue("RULESET") and RulesetPlayerDomain[GameConfiguration.GetValue("RULESET")] or "Players:StandardPlayers") -- don't need it if CivilizationType is already in args
+	local civilizationType	= args.civilizationType or GetPlayerCivilization(playerDomain, leaderType)
+	local mapName			= args.mapName or MapConfiguration.GetValue("MapName")
+	local mapTSL			= mapName and TSL[mapName]
+	local leaderTSL			= mapTSL and mapTSL[leaderType]
+	local civTSL			= mapTSL and civilizationType and mapTSL[civilizationType]
+	
+	if not (leaderTSL or civTSL) then -- no TSL for that map
+		reason = "LOC_SETUP_ERROR_NO_TSL"
+	else
+		local dimension = GetCustomMapDimension() 
+		if dimension then -- custom dimension found, check in map section
+			if leaderTSL then
+				for _, row in ipairs(leaderTSL) do
+					if IsInDimension(row.X, row.Y, dimension) then
+						return true
+					end
+				end
+			end
+			if civTSL then
+				for _, row in ipairs(civTSL) do
+					if IsInDimension(row.X, row.Y, dimension) then
+						return true
+					end
+				end
+			end
+			reason = "LOC_SETUP_ERROR_NO_TSL_IN_SECTION"
+		else -- uncut map, found TSL table, return true
+			return true
+		end
+	end
+	
+	return false, reason
+end
+
+
+-- ===========================================================================
+-- Settings Validation functions
 -- ===========================================================================
 local bCheckModList 	= true
 local sTooltipSeparator	= "[NEWLINE]----------------------------------------------------------------------------------------------------------------[NEWLINE]"
@@ -1769,67 +1906,6 @@ function GetCustomMapDimension() -- return size, iW, iH
 		dimension.size	= dimension.iW * dimension.iH
 		return dimension
 	end
-end
-
-function IsInDimension(x, y, dimension)
-	--local xValid = ((dimension.startX < dimension.endX) and (x > dimension.startX and  x < dimension.endX)) and ((dimension.startX > dimension.endX) and not (x > dimension.startX and  x < dimension.endX))
---print(x, dimension.startX, dimension.endX, dimension.iW, dimension.uncutW, xValid)
-	--local yValid = (dimension.startY < dimension.endY) and (y > dimension.startY and  y < dimension.endY) or not (y > dimension.startY and  y < dimension.endY)
-	
-	local xValid = false
-	local yValid = false
-	
-	if (dimension.startX < dimension.endX) then
-		xValid = (x > dimension.startX and x < dimension.endX)
-	else
-		xValid = (x > dimension.startX or  x < dimension.endX)
-	end
-		
-	if (dimension.startY < dimension.endY) then
-		yValid = (y > dimension.startY and y < dimension.endY)
-	else
-		yValid = (y > dimension.startY or  y < dimension.endY)
-	end
-	
-	return xValid and yValid
-end
-
-function HasTSL(args)--(leaderType, mapName, playerDomain, civilizationType)
-	local reason			= nil
-	local leaderType		= args.leaderType
-	local playerDomain		= (args.civilizationType and nil) or args.playerDomain or (GameConfiguration.GetValue("RULESET") and RulesetPlayerDomain[GameConfiguration.GetValue("RULESET")] or "Players:StandardPlayers") -- don't need it if CivilizationType is already in args
-	local civilizationType	= args.civilizationType or GetPlayerCivilization(playerDomain, leaderType)
-	local mapName			= args.mapName or MapConfiguration.GetValue("MapName")
-	local mapTSL			= mapName and TSL[mapName]
-	local leaderTSL			= mapTSL and mapTSL[leaderType]
-	local civTSL			= mapTSL and civilizationType and mapTSL[civilizationType]
-	
-	if not (leaderTSL or civTSL) then -- no TSL for that map
-		reason = "LOC_SETUP_ERROR_NO_TSL"
-	else
-		local dimension = GetCustomMapDimension() 
-		if dimension then -- custom dimension found, check in map section
-			if leaderTSL then
-				for _, row in ipairs(leaderTSL) do
-					if IsInDimension(row.X, row.Y, dimension) then
-						return true
-					end
-				end
-			end
-			if civTSL then
-				for _, row in ipairs(civTSL) do
-					if IsInDimension(row.X, row.Y, dimension) then
-						return true
-					end
-				end
-			end
-			reason = "LOC_SETUP_ERROR_NO_TSL_IN_SECTION"
-		else -- uncut map, found TSL table, return true
-			return true
-		end
-	end
-	
-	return false, reason
 end
 
 function GetClosestMapSizeType(size)

@@ -131,15 +131,16 @@ end
 Events.LoadScreenClose.Add( StopLoadingTextUpdate )
 
 function CheckLoadingTextUpdate()
+	--[[
 	if YnAMP and sCurrentText ~= YnAMP.LoadingText then
 		sCurrentText = YnAMP.LoadingText
-		print("LoadScreen LoadScreen Context = ", ContextPtr:LookUpControl("/LoadScreen/"))
+		print("LoadScreen Context = ", ContextPtr:LookUpControl("/LoadScreen/"))
 		print("LoadScreen InGame Context = ", ContextPtr:LookUpControl("/InGame/LoadScreen/"))
 		print("LoadScreen FrontEnd Context = ", ContextPtr:LookUpControl("/FrontEnd/LoadScreen/"))
 		print("FrontEnd Context = ", ContextPtr:LookUpControl("/FrontEnd/"))
-		print("FrontEnd/MainMenu/LoadGameMenu Context = ",ContextPtr:LookUpControl( "/FrontEnd/MainMenu/LoadGameMenu" ))
 		print("InGame Context = ", ContextPtr:LookUpControl("/InGame/"))
 	end
+	--]]
 end
 
 --=====================================================================================--
