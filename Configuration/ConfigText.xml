@@ -1422,7 +1422,7 @@
       <Text>Ruleset changed</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_RULESET_CHANGED_YNAMP_TT" Language="en_US">
-      <Text>The Ruleset used when loading the Gameplay Database  has been changed, a new empty game have to be launched to update the data required by some of YnAMP advanced options.[NEWLINE][NEWLINE]Launching a full new game while those options are unreliable may cause crashes on load.[NEWLINE][NEWLINE]You can click the "Load Database" button to launch a quick game in 2D mode and use the active Ruleset or switch back to the previous Ruleset.</Text>
+      <Text>The Ruleset used when loading the Gameplay Database  has been changed, a new empty game has to be launched to update the data required by some of YnAMP advanced options.[NEWLINE][NEWLINE]Launching a full new game while those options are unreliable may cause crashes on load.[NEWLINE][NEWLINE]You can click the "Load Database" button to launch a quick game in 2D mode and use the active Ruleset or switch back to the previous Ruleset.</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_MAP_SIZE_UNOFFICIAL_YNAMP" Language="en_US">
       <Text>Map Size unofficial</Text>
