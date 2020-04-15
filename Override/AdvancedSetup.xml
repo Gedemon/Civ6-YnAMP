@@ -15,6 +15,9 @@
 				</Grid>
 				<!-- YnAMP <<<<< -->
 				<Grid Style="ShellHeaderButtonGrid">
+					<GridButton ID="IgnoreWarning" Style="ShellButtonOrnateFlat" Anchor="L,C" Size="300,parent" Offset="1,0" String="{LOC_SETUP_IGNORE_WARNING_YNAMP:upper}" ToolTip="LOC_SETUP_IGNORE_WARNING_YNAMP_TT" />
+				</Grid>
+				<Grid Style="ShellHeaderButtonGrid">
 					<GridButton ID="LoadDataYnAMP" Style="ShellButtonOrnateFlat" Anchor="R,C" Size="300,parent" Offset="1,0" String="{LOC_SETUP_LOAD_DATA_YNAMP:upper}" ToolTip="LOC_SETUP_LOAD_DATA_YNAMP_TT" />
 				</Grid>
 				<!-- YnAMP >>>>> -->

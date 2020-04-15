@@ -122,7 +122,13 @@
       <Text>Max</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_MAX_DESCRIPTION" Language="en_US">
-      <Text>Max working size on my PC (i7 4770K + MSI GTX 1080 Ti + 16GB Ram) (215x112)</Text>
+      <Text>Max working size on my PC (i7 4770K + MSI GTX 1080 Ti + 16GB Ram) (215x112) (I should have put the date of the test here, because it was a long time ago...)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_OVERSIZED_NAME" Language="en_US">
+      <Text>Oversized</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_OVERSIZED_DESCRIPTION" Language="en_US">
+      <Text>Oversized (230x116)</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAPSIZE_SMALL21_NAME" Language="en_US">
@@ -496,6 +502,25 @@
     </Replace>
     <Replace Tag="LOC_MAP_BAN_LEADERS_DESCRIPTION" Language="en_US">
       <Text>Select Leaders to ban for Random slots, you can still select them manually for the player or the AI.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_TSL_LEADERS_NAME" Language="en_US">
+      <Text>Only Civilizations/CityStates with TSL</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_TSL_LEADERS_DESCRIPTION" Language="en_US">
+      <Text>Only Leaders of Civilizations/CityStates with TSL for the selected map are valid when this is checked.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_TSL_LEADERS_NEED_DB_DESCRIPTION" Language="en_US">
+      <Text>Only Leaders of Civilizations/CityStates with TSL for the selected map are valid when this is checked.[NEWLINE][NEWLINE]A game need to be launched to get the GamePlay Database which is required to activate this option, you can click the "Load Database" button to launch a quick game in 2D mode and return to Main Menu, then you can navigate back to this screen and activate the option.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_DIMENSION_NAME" Language="en_US">
+      <Text> </Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DIMENSION_DESCRIPTION" Language="en_US">
+      <Text>Map Dimensions as known in the setup screen. In game dimensions can be different, as Worldbuilder Maps and Maps Script can both use different size that the one they are configured to use.[NEWLINE][NEWLINE]When used with YnAMP maps allowing custom sections (like the Giant Earth or the Largest Earth Custom), the dimensions are accurate.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DIMENSION_STRING" Language="en_US">
+      <Text>Size: {1_Num}x{2_Num} ({3_Num : number #,###} tiles)</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_REFERENCE_DB_NAME" Language="en_US">
@@ -1363,35 +1388,86 @@
 		<Text>Palenque city-state</Text>
 	</Replace>
 	
+    <Replace Tag="LOC_SETUP_YNAMP_REPORT" Language="en_US">
+      <Text>Settings validation report:</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_SEVERITY_YNAMP" Language="en_US">
+      <Text>(severity = {1_Num})</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_BLOCKING_YNAMP" Language="en_US">
+      <Text>(blocking Start)</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_IGNORE_BLOCK_YNAMP" Language="en_US">
+      <Text>(block overriden by user)</Text>
+    </Replace>
     <Replace Tag="LOC_SETUP_DATABASE_LOADED_YNAMP" Language="en_US">
-      <Text>YnAMP - [COLOR_Civ6Green]Database loaded[ENDCOLOR] [ICON_CheckSuccess]</Text>
+      <Text>Database loaded</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_DATABASE_LOADED_YNAMP_TT" Language="en_US">
-      <Text>The Database has been loaded.</Text>
+      <Text>The GamePlay Database has been loaded and is available for YnAMP Setup Options.</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_DATABASE_NOT_LOADED_YNAMP" Language="en_US">
-      <Text>YnAMP - [COLOR_Civ6Yellow]Database not loaded[ENDCOLOR] [ICON_CheckFail]</Text>
+      <Text>Database not loaded</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_DATABASE_NOT_LOADED_YNAMP_TT" Language="en_US">
-      <Text>The Database has not been loaded yet.[NEWLINE][NEWLINE]A game need to be launched to get the data required for some of YnAMP advanced options.[NEWLINE][NEWLINE]You can click the "Load Database" button to launch a quick game in 2D mode.</Text>
+      <Text>The Gameplay Database has not been loaded yet during this session, a game need to be launched to get the data required for some of YnAMP advanced options.[NEWLINE][NEWLINE]You can click the "Load Database" button to launch a quick game in 2D mode.</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_DATABASE_CHANGED_YNAMP" Language="en_US">
-      <Text>YnAMP - [COLOR_Civ6Yellow]Database changed[ENDCOLOR] [ICON_CheckFail]</Text>
+      <Text>Database changed</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_DATABASE_CHANGED_YNAMP_TT" Language="en_US">
-      <Text>The Database has been changed (by activating Mods, DLCs or Expansions)[NEWLINE][NEWLINE]A game may need to be launched to update the data required for some of YnAMP advanced options.[NEWLINE][NEWLINE]You can click the "Load Database" button to launch a quick game in 2D mode.</Text>
+      <Text>The Gameplay Database has changed (by activating Mods, DLCs or Expansions), a new empty game have to be launched to update the data required for some of YnAMP advanced options.[NEWLINE][NEWLINE]Launching a full new game while those options are unreliable may cause issues, including crashes on load.[NEWLINE][NEWLINE]You can click the "Load Database" button to launch a quick game in 2D mode.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_RULESET_CHANGED_YNAMP" Language="en_US">
+      <Text>Ruleset changed</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_RULESET_CHANGED_YNAMP_TT" Language="en_US">
+      <Text>The Ruleset used when loading the Gameplay Database  has been changed, a new empty game has to be launched to update the data required by some of YnAMP advanced options.[NEWLINE][NEWLINE]Launching a full new game while those options are unreliable may cause crashes on load.[NEWLINE][NEWLINE]You can click the "Load Database" button to launch a quick game in 2D mode and use the active Ruleset or switch back to the previous Ruleset.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNOFFICIAL_YNAMP" Language="en_US">
+      <Text>Map Size unofficial</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNOFFICIAL_YNAMP_TT" Language="en_US">
+      <Text>This map size is bigger than the official maps.[NEWLINE][NEWLINE]It will load, but you may get random crashes in late game.[NEWLINE][NEWLINE]It was not reported at this kind of sizes, but please note that with Gathering Storm, water level rising may cause an unrecoverable crash on maps a bit larger.</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_MAP_SIZE_LOCK_YNAMP" Language="en_US">
-      <Text>YnAMP - [COLOR_Civ6Red]Map size unsupported[ENDCOLOR] [ICON_Not]</Text>
+      <Text>Map size unsupported</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_MAP_SIZE_LOCK_YNAMP_TT" Language="en_US">
-      <Text>Map size warning[NEWLINE][NEWLINE]Warning.[NEWLINE][NEWLINE]Seriously, Warning.</Text>
+      <Text>This map size is bigger than the biggest known map that can be played for 500 turns. If the map allows it, you can select a smaller section to play on, that will adjust the size.[NEWLINE][NEWLINE]It may load, but you will surely get random crashes in late game, you should save often.[NEWLINE][NEWLINE]With Gathering Storm, water level rising will cause an unrecoverable crash.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_OVERSIZE_YNAMP_TT" Language="en_US">
+      <Text>This map size is bigger than the biggest known map that can be started without crashing on load. If the map allows it, you can select a smaller section to play on, that will adjust the size.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNKNOWN_YNAMP" Language="en_US">
+      <Text>Map size unknown</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNKNOWN_YNAMP_TT" Language="en_US">
+      <Text>This Map size in unknowkn, YnAMP can't detect if it will allow a stable game yet, this can be fixed by loading the Database.</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_LOAD_DATA_YNAMP" Language="en_US">
       <Text>Load Database</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_LOAD_DATA_YNAMP_TT" Language="en_US">
       <Text>Launch a quick game in 2D mode to load all data used by YnAMP for the setting menu then quit automatically and return to the Main Menu.[NEWLINE][NEWLINE]Navigate back to this setup screen, it should then show "Database Loaded" and activate the related YnAMP advanced options.[NEWLINE][NEWLINE]A saved file of the current settings named "AutoSaveYnAMP" should be available to reload if needed, but the suggested order of action should be:[NEWLINE][ICON_BULLET] Activate mods[NEWLINE][ICON_BULLET] Load the database[NEWLINE][ICON_BULLET] Change your settings</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_IGNORE_WARNING_YNAMP" Language="en_US">
+      <Text>Ignore</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_IGNORE_WARNING_YNAMP_TT" Language="en_US">
+      <Text>Click the "Ignore" button if you understand the issue and want to ignore it.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAJOR_COUNT_DIFFERENCE" Language="en_US">
+      <Text>Apply Civilizations count</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAJOR_COUNT_DIFFERENCE_TT" Language="en_US">
+      <Text>The selected number of Major Civilization has not been applied yet.[NEWLINE][NEWLINE]To prevent User Interface lag or accidental change when using the mouse wheel in the menu, this setting is not immediatly applied.[NEWLINE][NEWLINE]Click on the "+" (Add) button or one of the "X" (Delete) buttons in the "Players" section to apply the setting now.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ERROR_NO_TSL" Language="en_US">
+      <Text>No TSL for this map</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ERROR_NO_TSL_IN_SECTION" Language="en_US">
+      <Text>No TSL for this map section</Text>
     </Replace>
   </LocalizedText>
 </GameData>

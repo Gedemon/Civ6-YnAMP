@@ -44,7 +44,7 @@
 
 		<!--	Special default MapSize (hidden)
 		-->
-		<Row Key1="Map" Key2="LargestEarthCustom.lua" 	ParameterId="LargestEarthCustomSize" 	Name="LOC_MAP_SIZE" Description="" Domain="StandardMapSizes" DefaultValue="MAPSIZE_LUDICROUS" ConfigurationGroup="Map" ConfigurationId="MAP_SIZE" Hash="1" GroupId="MapOptions" Visible="0" SortIndex="225"/>
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" 	ParameterId="LargestEarthCustomSize" 	Name="LOC_MAP_SIZE" Description="" Domain="StandardMapSizes" DefaultValue="MAPSIZE_OVERSIZED" ConfigurationGroup="Map" ConfigurationId="MAP_SIZE" Hash="1" GroupId="MapOptions" Visible="0" SortIndex="225"/>
 		
 		<!--	Hidden parameter to hide normal mapsize for converted maps
 		-->
