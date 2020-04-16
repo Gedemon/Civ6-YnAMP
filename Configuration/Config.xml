@@ -469,6 +469,7 @@
 		<Replace Domain="SelectCityStates"	Value="SELECTION"			Name="LOC_MAP_CS_OPTION_SELECTION_NAME" 			Description="LOC_MAP_CS_OPTION_SELECTION_DESCRIPTION"			SortIndex="20"/>
 		<Replace Domain="SelectCityStates"	Value="UNCAPPED_SELECTION"	Name="LOC_MAP_CS_OPTION_UNCAPPED_SELECTION_NAME" 	Description="LOC_MAP_CS_OPTION_UNCAPPED_SELECTION_DESCRIPTION"	SortIndex="30"/>
 		<Replace Domain="SelectCityStates"	Value="ONLY_SELECTION"		Name="LOC_MAP_CS_OPTION_ONLY_SELECTION_NAME" 		Description="LOC_MAP_CS_OPTION_ONLY_SELECTION_DESCRIPTION"		SortIndex="40"/>
+		<Replace Domain="SelectCityStates"	Value="EXCLUSION"			Name="LOC_MAP_CS_OPTION_EXCLUSION_NAME"		 		Description="LOC_MAP_CS_OPTION_EXCLUSION_DESCRIPTION"			SortIndex="50"/>
 	</DomainValues>
 	
 	<ParameterDependencies>

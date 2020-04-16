@@ -568,7 +568,7 @@ end
 
 function StopScriptWithPause() -- GameCoreEventPublishComplete is called frequently, keep it clean
 
-	print("StopScriptWithPause")
+	print("Stopping ScriptWithPause...")
 	Events.GameCoreEventPublishComplete.Remove( CheckTimer )
 end
 

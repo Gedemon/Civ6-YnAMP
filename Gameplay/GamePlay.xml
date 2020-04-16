@@ -195,7 +195,7 @@
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_MALI"			Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="5"	MaxDistanceFromCapital="20"	OnlySameLandMass="true"		/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_MAORI"		Priority="10"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="4"	MaxDistanceFromCapital="20"	OnlySameLandMass="false"	/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_MAPUCHE"		Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="3"	MaxDistanceFromCapital="20"	OnlySameLandMass="true"		/>
-		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_MONGOLIA"		Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="8"	MaxDistanceFromCapital="30"	OnlySameLandMass="true"		/>
+		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_MONGOLIA"		Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="8"	MaxDistanceFromCapital="30"	OnlySameLandMass="true"	NorthernLatitude="60"	/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_NETHERLANDS"	Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="1"	MaxDistanceFromCapital="4"	OnlySameLandMass="true"		/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_NORWAY"		Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="5"	MaxDistanceFromCapital="12"	OnlySameLandMass="true"		/>
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_NUBIA"		Priority="50"	CityPlacement="PLACEMENT_TERRAIN"	NumberOfCity="5"	MaxDistanceFromCapital="20"	OnlySameLandMass="true"		/>

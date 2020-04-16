@@ -980,6 +980,12 @@
     <Replace Tag="LOC_MAP_CS_OPTION_ONLY_SELECTION_DESCRIPTION" Language="en_US">
       <Text>Select which City States you want to be placed on the map from a list, the mod will try to find a slot only for the selected City States, ignoring the slider value when you select more or less.[NEWLINE][NEWLINE]Note that DLCs, Expansions, scenarios and mods can add or remove City States, the list does not reflect which ones are actually available.</Text>
     </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_EXCLUSION_NAME" Language="en_US">
+      <Text>Exclusion List</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_EXCLUSION_DESCRIPTION" Language="en_US">
+      <Text>The Selection will be used in exclusion mode, YnAMP will try to find a slot only for the unselected City States, up to the slider value.[NEWLINE][NEWLINE]Note that DLCs, Expansions, scenarios and mods can add or remove City States, the list does not reflect which ones are actually available.</Text>
+    </Replace>
 	
     <Replace Tag="LOC_XP1_CHECK_NAME" Language="en_US">
       <Text>Update CS list for Rise and Fall</Text>

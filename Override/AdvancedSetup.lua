@@ -1232,6 +1232,7 @@ function OnStartButton()
 	local cityStateID	= 0 			-- Player slots IDs start at 0, Human is 0, so we should start at 1, but start at 0 in case some mod (spectator ?) change that
 	local maxCS 		= maxPlayer - numPlayers
 	local bSelectCS		= MapConfiguration.GetValue("SelectCityStates") ~= "RANDOM"
+	local bBanListCS	= MapConfiguration.GetValue("SelectCityStates") == "EXCLUSION"
 	local bBanLeaders	= MapConfiguration.GetValue("BanLeaders")
 	local bOnlyTSL		= MapConfiguration.GetValue("OnlyLeadersWithTSL")
 	local ruleset		= GameConfiguration.GetValue("RULESET")
@@ -1469,7 +1470,14 @@ function OnStartButton()
 			for i, row in ipairs(results) do
 				local leaderType 	= row.ConfigurationId
 				local bValid		= true
-				if bOnlyTSL then -- filter CS list
+				
+				if bBanListCS then -- first check if the selection list is in "exclusion" mode
+					if MapConfiguration.GetValue(leaderType) then -- true if this CS was checked
+						bValid = false
+					end
+				end
+				
+				if bValid and bOnlyTSL then -- filter CS list by TSL
 					local args				= {}
 					args.leaderType			= leaderType
 					args.civilizationType	= LeadersCivilizations[leaderType]
@@ -1478,13 +1486,14 @@ function OnStartButton()
 						bValid = false
 					end
 				end
+				
 				if bValid and not duplicate[leaderType] then
 					duplicate[leaderType] = true
 					table.insert(filteredList, {ConfigurationId = leaderType, Name = row.Name})
 				end
 			end
 		
-			local bCapped			= MapConfiguration.GetValue("SelectCityStates") == "SELECTION"
+			local bCapped			= MapConfiguration.GetValue("SelectCityStates") == "SELECTION" or MapConfiguration.GetValue("SelectCityStates") == "EXCLUSION"
 			local bOnlySelection	= MapConfiguration.GetValue("SelectCityStates") == "ONLY_SELECTION"
 			local cityStateSlots 	= (bCapped and numCS) or maxCS
 			local shuffledList 		= GetShuffledCopyOfTable(filteredList)
@@ -1498,7 +1507,7 @@ function OnStartButton()
 				--for k, v in pairs(row) do print(k, v) end
 				local leaderType = row.ConfigurationId
 				local leaderName = row.Name
-				if MapConfiguration.GetValue(leaderType) then -- true if this CS was checked
+				if (not bBanListCS) and MapConfiguration.GetValue(leaderType) then -- true if this CS was checked and we're not in exclusion mode
 					if cityStateSlots > 0 then
 						local slotID = CityStatesSlotsList[slotListID]
 						if slotID then
@@ -1582,7 +1591,6 @@ function OnStartButton()
 	end
 	YnAMP_Loading.ListMods 		= listMods
 	YnAMP_Loading.GameVersion 	= UI.GetAppVersion()
-	YnAMP_Loading.MapScript		= MapConfiguration.GetScript()
 	-- YNAMP >>>>>
 	
 	-- Is WorldBuilder active?
