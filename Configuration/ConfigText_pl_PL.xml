@@ -980,6 +980,12 @@
     <Replace Tag="LOC_MAP_CS_OPTION_ONLY_SELECTION_DESCRIPTION" Language="pl_PL">
       <Text>Wybierz które Państwa-Miasta chcesz dodać, gra spróbuje znaleźć sloty dla wszystkich wybranych miast, ignorując wartość suwaka jeśli wybierzesz mniej lub więcej.[NEWLINE][NEWLINE]Uwaga: DLC/Scenariusze/Mody mogą dodawać/usuwać Państwa-Miasta, lista nie odzwierciedla co jest aktualnie dostępne.</Text>
     </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_EXCLUSION_NAME" Language="pl_PL">
+      <Text>Lista wykluczeń</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_EXCLUSION_DESCRIPTION" Language="pl_PL">
+      <Text>Zaznaczone państwa-miasta zostaną wykluczone z listy, gra spróbuje wypełnić wolne sloty niewybranymi miastami, do limitu ustawionego na suwaku[NEWLINE][NEWLINE]Uwaga: DLC/Scenariusze/Mody mogą dodawać/usuwać Państwa-Miasta, lista nie odzwierciedla co jest aktualnie dostępne.</Text>
+    </Replace>
 	
     <Replace Tag="LOC_XP1_CHECK_NAME" Language="pl_PL">
       <Text>Lista Państw-Miast dla Rise and Fall</Text>
