@@ -47,7 +47,7 @@
       <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - [COLOR_RED]Largest Earth Custom[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_LARGESTEARTHCUSTOM_DESC" Language="pl_PL">
-      <Text>Largest Earth Custom (230x116 - Absurdalna)[NEWLINE][ICON_Exclamation] [COLOR_RED]NIE WCZYTA SIĘ W PEŁNYM ROZMIARZE![ENDCOLOR][NEWLINE]Skonfiguruj, aby ustawić rozgrywkę na mniejszych regionach mapy.</Text>
+      <Text>Largest Earth Custom (230x116 - Absurdalna)[NEWLINE][ICON_Exclamation] [COLOR_RED]NIE WCZYTA SIĘ W PEŁNYM ROZMIARZE![ENDCOLOR][NEWLINE]Skonfiguruj, aby uruchomić rozgrywkę na mniejszym regionie mapy.</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Language="pl_PL">

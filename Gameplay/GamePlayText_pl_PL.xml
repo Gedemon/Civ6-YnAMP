@@ -103,7 +103,7 @@
 		  <Text>[COLOR_RED]Largest Earth Custom[ENDCOLOR]</Text>
 		</Replace>
 		<Replace Tag="LOC_LARGESTEARTHCUSTOM_DESC" Language="pl_PL">
-		  <Text>Largest Earth Custom (230x116 - Absurdalna)[NEWLINE][ICON_Exclamation] [COLOR_RED]BARDZO NIESTABILNA w największym rozmiarze[ENDCOLOR][NEWLINE]Use the custom options to set a game on a region of the map.</Text>
+		  <Text>Largest Earth Custom (230x116 - Absurdalna)[NEWLINE][ICON_Exclamation] [COLOR_RED]BARDZO NIESTABILNA w największym rozmiarze[ENDCOLOR][NEWLINE]Skonfiguruj, aby uruchomić rozgrywkę na mniejszym regionie mapy.</Text>
 		</Replace>
 
 	</LocalizedText>
@@ -111,17 +111,17 @@
 	<LocalizedText>		<!-- Menus -->
 	
 		<Replace Tag="LOC_GAME_MENU_EXPORT_TO_LUA" Language="pl_PL">
-		  <Text>Eksportuj Mape do Logu</Text>
+		  <Text>Eksportuj mapę do Logu</Text>
 		</Replace>
 		<Replace Tag="LOC_GAME_MENU_EXPORT_TO_LUA_DESCRIPTION" Language="pl_PL">
-		  <Text>Eksportuj mapę do formatu YnAMP Lua.log file (w katalogu "..\Documents\my games\Sid Meier's Civilization VI\Logs\")</Text>
+		  <Text>Eksportuj mapę do formatu YnAMP Lua.log (w katalogu "..\Documents\my games\Sid Meier's Civilization VI\Logs\")</Text>
 		</Replace>
 		
 		<Replace Tag="LOC_GAME_MENU_YNAMP_RESTART" Language="pl_PL">
 		  <Text>[ICON_Exclamation] ZRESTARTUJ MAPE [ICON_Exclamation]</Text>
 		</Replace>
 		<Replace Tag="LOC_GAME_MENU_YNAMP_RESTART_TOOLTIP" Language="pl_PL">
-		  <Text>Kliknij aby zresetować mapę z tymi samymi ustawieniami[NEWLINE][NEWLINE][COLOR_RED][ICON_Exclamation] UWAGA [ICON_Exclamation][NEWLINE][NEWLINE]Opcja została wyłączona przez Firaxis z powodu:[ENDCOLOR][NEWLINE]"Restarting in worldbuilder can cause a bunch of problems, disabling for now."</Text>
+		  <Text>Kliknij aby zresetować mapę z tymi samymi ustawieniami[NEWLINE][NEWLINE][COLOR_RED][ICON_Exclamation] UWAGA [ICON_Exclamation][NEWLINE][NEWLINE]Opcja została wyłączona przez Firaxis z powodu:[ENDCOLOR][NEWLINE]"Restartowanie w edytorze map może powodować problemy, na razie wyłączone."</Text>
 		</Replace>
 		
 		<Replace Tag="LOC_GAME_MENU_YNAMP_RESTART_TIMER" Language="pl_PL">
