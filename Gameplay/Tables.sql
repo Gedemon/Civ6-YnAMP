@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS CityMap
 		CityLocaleName TEXT NOT NULL,
 		X INT default 0,
 		Y INT default 0,
-		Area INT default 1);
+		Area INT NOT NULL default 1);
 
 -- Maritime CS
 CREATE TABLE IF NOT EXISTS StartBiasCoast

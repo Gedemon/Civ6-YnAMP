@@ -2258,7 +2258,7 @@
 		<Replace MapName="PlayEuropeAgain" X="7" Y="9" CityLocaleName="LOC_CITY_NAME_MAHBES" />
 		<Replace MapName="PlayEuropeAgain" X="12" Y="9" CityLocaleName="LOC_CITY_NAME_TINFOUCHY" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="13" Y="10" CityLocaleName="LOC_CITY_NAME_TINFOUCHY" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="18" Y="9" CityLocaleName="LOC_CITY_NAME_ABADLA" Area="" />
+		<Replace MapName="PlayEuropeAgain" X="18" Y="9" CityLocaleName="LOC_CITY_NAME_ABADLA" />
 
 		<Replace MapName="PlayEuropeAgain" X="0" Y="10" CityLocaleName="LOC_CITY_NAME_LAAYOUNE" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="6" Y="10" CityLocaleName="LOC_CITY_NAME_ICHT" Area="0" />
@@ -2313,7 +2313,7 @@
 
 		<Replace MapName="PlayEuropeAgain" X="4" Y="19" CityLocaleName="LOC_CITY_NAME_ESSAOUIRA" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="4" Y="20" CityLocaleName="LOC_CITY_NAME_ESSAOUIRA" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="8" Y="19" CityLocaleName="LOC_CITY_NAME_KHOURIBGA" Area="" />
+		<Replace MapName="PlayEuropeAgain" X="8" Y="19" CityLocaleName="LOC_CITY_NAME_KHOURIBGA" />
 
 		<Replace MapName="PlayEuropeAgain" X="5" Y="20" CityLocaleName="LOC_CITY_NAME_SAFI" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="6" Y="20" CityLocaleName="LOC_CITY_NAME_SAFI" Area="0" />
