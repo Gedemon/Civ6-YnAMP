@@ -2123,16 +2123,16 @@
 		<Replace Tag="LOC_CITY_NAME_MESSINA_ROME" Language="zh_Hans_CN">
 			<Text>墨西拿</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_MILANO" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_MILAN" Language="zh_Hans_CN">
 			<Text>米兰</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_MILANO_GERMANY" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_MILAN_GERMANY" Language="zh_Hans_CN">
 			<Text>米兰</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_MILANO_POLAND" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_MILAN_POLAND" Language="zh_Hans_CN">
 			<Text>米兰</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_MILANO_ROME" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_MILAN_ROME" Language="zh_Hans_CN">
 			<Text>米兰</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_MONTELEONE" Language="zh_Hans_CN">
@@ -2144,22 +2144,22 @@
 		<Replace Tag="LOC_CITY_NAME_MONTELEONE_ROME" Language="zh_Hans_CN">
 			<Text>维博瓦伦蒂亚</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_NAPOLI" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_NAPLES" Language="zh_Hans_CN">
 			<Text>那不勒斯</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_NAPOLI_GERMANY" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_NAPLES_GERMANY" Language="zh_Hans_CN">
 			<Text>那不勒斯</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_NAPOLI_GREECE" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_NAPLES_GREECE" Language="zh_Hans_CN">
 			<Text>那不勒斯</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_NAPOLI_ROME" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_NAPLES_ROME" Language="zh_Hans_CN">
 			<Text>那不勒斯</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_NAPOLI_RUSSIA" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_NAPLES_RUSSIA" Language="zh_Hans_CN">
 			<Text>那不勒斯</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_NAPOLI_SPAIN" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_NAPLES_SPAIN" Language="zh_Hans_CN">
 			<Text>那不勒斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_OLBIA" Language="zh_Hans_CN">
@@ -2303,37 +2303,37 @@
 		<Replace Tag="LOC_CITY_NAME_RIMINI_ROME" Language="zh_Hans_CN">
 			<Text>里米尼</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_ROMA" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_ROME" Language="zh_Hans_CN">
 			<Text>罗马</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_ROMA_ARABIA" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_ROME_ARABIA" Language="zh_Hans_CN">
 			<Text>罗马</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_ROMA_CHINA" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_ROME_CHINA" Language="zh_Hans_CN">
 			<Text>罗马</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_ROMA_GERMANY" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_ROME_GERMANY" Language="zh_Hans_CN">
 			<Text>罗马</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_ROMA_GREECE" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_ROME_GREECE" Language="zh_Hans_CN">
 			<Text>罗马</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_ROMA_JAPAN" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_ROME_JAPAN" Language="zh_Hans_CN">
 			<Text>罗马</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_ROMA_NORWAY" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_ROME_NORWAY" Language="zh_Hans_CN">
 			<Text>罗马</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_ROMA_POLAND" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_ROME_POLAND" Language="zh_Hans_CN">
 			<Text>罗马</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_ROMA_ROME" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_ROME_ROME" Language="zh_Hans_CN">
 			<Text>罗马</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_ROMA_RUSSIA" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_ROME_RUSSIA" Language="zh_Hans_CN">
 			<Text>罗马</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_ROMA_SPAIN" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_ROME_SPAIN" Language="zh_Hans_CN">
 			<Text>罗马</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_SALERNO" Language="zh_Hans_CN">
@@ -2495,13 +2495,13 @@
 		<Replace Tag="LOC_CITY_NAME_VASTO_ROME" Language="zh_Hans_CN">
 			<Text>瓦斯托</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_VENETIA" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_VENICE" Language="zh_Hans_CN">
 			<Text>威尼斯</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_VENETIA_GERMANY" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_VENICE_GERMANY" Language="zh_Hans_CN">
 			<Text>威尼斯</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_VENETIA_ROME" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_VENICE_ROME" Language="zh_Hans_CN">
 			<Text>威尼斯</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_VERONA" Language="zh_Hans_CN">

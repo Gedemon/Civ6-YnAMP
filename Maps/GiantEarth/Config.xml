@@ -67,6 +67,26 @@
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthOldWorldStartY" 	Name="LOC_MAP_STARTY_NAME"	Description="LOC_MAP_STARTY_DESCRIPTION" 	Domain="text" 	 Visible="0"	DefaultValue="0" 	ConfigurationGroup="Map" ConfigurationId="StartY" 	GroupId="MapOptions" SortIndex="223"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthOldWorldEndX"		Name="LOC_MAP_ENDX_NAME"	Description="LOC_MAP_ENDX_DESCRIPTION"		Domain="text"	 Visible="0"	DefaultValue="111" 	ConfigurationGroup="Map" ConfigurationId="EndX"		GroupId="MapOptions" SortIndex="224"/>
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthOldWorldEndY"		Name="LOC_MAP_ENDY_NAME"	Description="LOC_MAP_ENDY_DESCRIPTION" 		Domain="text" 	 Visible="0"	DefaultValue="93" 	ConfigurationGroup="Map" ConfigurationId="EndY"		GroupId="MapOptions" SortIndex="225"/>
+		
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthAfricaStartX" 		Name="LOC_MAP_STARTX_NAME"	Description="LOC_MAP_STARTX_DESCRIPTION" 	Domain="text"	 Visible="0"	DefaultValue="0" 	ConfigurationGroup="Map" ConfigurationId="StartX" 	GroupId="MapOptions" SortIndex="222"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthAfricaStartY" 		Name="LOC_MAP_STARTY_NAME"	Description="LOC_MAP_STARTY_DESCRIPTION" 	Domain="text" 	 Visible="0"	DefaultValue="4" 	ConfigurationGroup="Map" ConfigurationId="StartY" 	GroupId="MapOptions" SortIndex="223"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthAfricaEndX"		Name="LOC_MAP_ENDX_NAME"	Description="LOC_MAP_ENDX_DESCRIPTION"		Domain="text"	 Visible="0"	DefaultValue="42" 	ConfigurationGroup="Map" ConfigurationId="EndX"		GroupId="MapOptions" SortIndex="224"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthAfricaEndY"		Name="LOC_MAP_ENDY_NAME"	Description="LOC_MAP_ENDY_DESCRIPTION" 		Domain="text" 	 Visible="0"	DefaultValue="54" 	ConfigurationGroup="Map" ConfigurationId="EndY"		GroupId="MapOptions" SortIndex="225"/>
+		
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthLargeAsiaStartX" 	Name="LOC_MAP_STARTX_NAME"	Description="LOC_MAP_STARTX_DESCRIPTION" 	Domain="text"	 Visible="0"	DefaultValue="30" 	ConfigurationGroup="Map" ConfigurationId="StartX" 	GroupId="MapOptions" SortIndex="222"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthLargeAsiaStartY" 	Name="LOC_MAP_STARTY_NAME"	Description="LOC_MAP_STARTY_DESCRIPTION" 	Domain="text" 	 Visible="0"	DefaultValue="4" 	ConfigurationGroup="Map" ConfigurationId="StartY" 	GroupId="MapOptions" SortIndex="223"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthLargeAsiaEndX"		Name="LOC_MAP_ENDX_NAME"	Description="LOC_MAP_ENDX_DESCRIPTION"		Domain="text"	 Visible="0"	DefaultValue="106" 	ConfigurationGroup="Map" ConfigurationId="EndX"		GroupId="MapOptions" SortIndex="224"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthLargeAsiaEndY"		Name="LOC_MAP_ENDY_NAME"	Description="LOC_MAP_ENDY_DESCRIPTION" 		Domain="text" 	 Visible="0"	DefaultValue="80" 	ConfigurationGroup="Map" ConfigurationId="EndY"		GroupId="MapOptions" SortIndex="225"/>
+		
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthSouthEastAsiaStartX" Name="LOC_MAP_STARTX_NAME"Description="LOC_MAP_STARTX_DESCRIPTION" 	Domain="text"	 Visible="0"	DefaultValue="68" 	ConfigurationGroup="Map" ConfigurationId="StartX" 	GroupId="MapOptions" SortIndex="222"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthSouthEastAsiaStartY" Name="LOC_MAP_STARTY_NAME"Description="LOC_MAP_STARTY_DESCRIPTION" 	Domain="text" 	 Visible="0"	DefaultValue="20" 	ConfigurationGroup="Map" ConfigurationId="StartY" 	GroupId="MapOptions" SortIndex="223"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthSouthEastAsiaEndX"	Name="LOC_MAP_ENDX_NAME"	Description="LOC_MAP_ENDX_DESCRIPTION"		Domain="text"	 Visible="0"	DefaultValue="106" 	ConfigurationGroup="Map" ConfigurationId="EndX"		GroupId="MapOptions" SortIndex="224"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthSouthEastAsiaEndY"	Name="LOC_MAP_ENDY_NAME"	Description="LOC_MAP_ENDY_DESCRIPTION" 		Domain="text" 	 Visible="0"	DefaultValue="62" 	ConfigurationGroup="Map" ConfigurationId="EndY"		GroupId="MapOptions" SortIndex="225"/>
+		
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthPacificStartX" 	Name="LOC_MAP_STARTX_NAME"	Description="LOC_MAP_STARTX_DESCRIPTION" 	Domain="text"	 Visible="0"	DefaultValue="82" 	ConfigurationGroup="Map" ConfigurationId="StartX" 	GroupId="MapOptions" SortIndex="222"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthPacificStartY" 	Name="LOC_MAP_STARTY_NAME"	Description="LOC_MAP_STARTY_DESCRIPTION" 	Domain="text" 	 Visible="0"	DefaultValue="6" 	ConfigurationGroup="Map" ConfigurationId="StartY" 	GroupId="MapOptions" SortIndex="223"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthPacificEndX"		Name="LOC_MAP_ENDX_NAME"	Description="LOC_MAP_ENDX_DESCRIPTION"		Domain="text"	 Visible="0"	DefaultValue="156" 	ConfigurationGroup="Map" ConfigurationId="EndX"		GroupId="MapOptions" SortIndex="224"/>
+		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="GiantEarthPacificEndY"		Name="LOC_MAP_ENDY_NAME"	Description="LOC_MAP_ENDY_DESCRIPTION" 		Domain="text" 	 Visible="0"	DefaultValue="82" 	ConfigurationGroup="Map" ConfigurationId="EndY"		GroupId="MapOptions" SortIndex="225"/>
 		<!--	GiantEarth Options
 		-->
 		<Row Key1="Map" Key2="GiantEarth.lua" ParameterId="RiversPlacement" 		Name="LOC_MAP_RIVERS_PLACEMENT_NAME" Description="LOC_MAP_RIVERS_PLACEMENT_DESCRIPTION" Domain="RiversPlacement" DefaultValue="PLACEMENT_IMPORT" ConfigurationGroup="Map" ConfigurationId="RiversPlacement" GroupId="MapOptions" SortIndex="231"/>
@@ -134,14 +154,18 @@
 	
 	<DomainValues>
 		
-		<Replace Domain="GiantEarthSection" Value="SECTION_FULL" 			Name="LOC_MAP_SECTION_FULL_NAME"			Description="LOC_MAP_SECTION_FULL_DESCRIPTION"			SortIndex="0"/>
-		<Replace Domain="GiantEarthSection" Value="SECTION_CUSTOM" 			Name="LOC_MAP_SECTION_CUSTOM_NAME"			Description="LOC_MAP_SECTION_CUSTOM_DESCRIPTION"		SortIndex="1"/>
-		<Replace Domain="GiantEarthSection" Value="SECTION_EUROPE" 			Name="LOC_MAP_SECTION_EUROPE_NAME"			Description="LOC_MAP_SECTION_EUROPE_DESCRIPTION"		SortIndex="100"/>
-		<Replace Domain="GiantEarthSection" Value="SECTION_MEDITERRANEA"	Name="LOC_MAP_SECTION_MEDITERRANEA_NAME"	Description="LOC_MAP_SECTION_MEDITERRANEA_DESCRIPTION"	SortIndex="100"/>
-		<Replace Domain="GiantEarthSection" Value="SECTION_MIDDLE_EAST"		Name="LOC_MAP_SECTION_MIDDLE_EAST_NAME"		Description="LOC_MAP_SECTION_MIDDLE_EAST_DESCRIPTION"	SortIndex="100"/>
-		<Replace Domain="GiantEarthSection" Value="SECTION_AMERICAS" 		Name="LOC_MAP_SECTION_AMERICAS_NAME"		Description="LOC_MAP_SECTION_AMERICAS_DESCRIPTION"		SortIndex="100"/>
-		<Replace Domain="GiantEarthSection" Value="SECTION_COLONIZATION" 	Name="LOC_MAP_SECTION_COLONIZATION_NAME"	Description="LOC_MAP_SECTION_COLONIZATION_DESCRIPTION"	SortIndex="100"/>
-		<Replace Domain="GiantEarthSection" Value="SECTION_OLD_WORLD" 		Name="LOC_MAP_SECTION_OLD_WORLD_NAME"		Description="LOC_MAP_SECTION_OLD_WORLD_DESCRIPTION"		SortIndex="100"/>
+		<Replace Domain="GiantEarthSection" Value="SECTION_FULL" 			Name="LOC_MAP_SECTION_FULL_NAME"			Description="LOC_MAP_SECTION_FULL_DESCRIPTION"				SortIndex="0"/>
+		<Replace Domain="GiantEarthSection" Value="SECTION_CUSTOM" 			Name="LOC_MAP_SECTION_CUSTOM_NAME"			Description="LOC_MAP_SECTION_CUSTOM_DESCRIPTION"			SortIndex="1"/>
+		<Replace Domain="GiantEarthSection" Value="SECTION_EUROPE" 			Name="LOC_MAP_SECTION_EUROPE_NAME"			Description="LOC_MAP_SECTION_EUROPE_DESCRIPTION"			SortIndex="100"/>
+		<Replace Domain="GiantEarthSection" Value="SECTION_MEDITERRANEA"	Name="LOC_MAP_SECTION_MEDITERRANEA_NAME"	Description="LOC_MAP_SECTION_MEDITERRANEA_DESCRIPTION"		SortIndex="100"/>
+		<Replace Domain="GiantEarthSection" Value="SECTION_MIDDLE_EAST"		Name="LOC_MAP_SECTION_MIDDLE_EAST_NAME"		Description="LOC_MAP_SECTION_MIDDLE_EAST_DESCRIPTION"		SortIndex="100"/>
+		<Replace Domain="GiantEarthSection" Value="SECTION_AMERICAS" 		Name="LOC_MAP_SECTION_AMERICAS_NAME"		Description="LOC_MAP_SECTION_AMERICAS_DESCRIPTION"			SortIndex="100"/>
+		<Replace Domain="GiantEarthSection" Value="SECTION_COLONIZATION" 	Name="LOC_MAP_SECTION_COLONIZATION_NAME"	Description="LOC_MAP_SECTION_COLONIZATION_DESCRIPTION"		SortIndex="100"/>
+		<Replace Domain="GiantEarthSection" Value="SECTION_OLD_WORLD" 		Name="LOC_MAP_SECTION_OLD_WORLD_NAME"		Description="LOC_MAP_SECTION_OLD_WORLD_DESCRIPTION"			SortIndex="100"/>
+		<Replace Domain="GiantEarthSection" Value="SECTION_AFRICA" 			Name="LOC_MAP_SECTION_AFRICA_NAME"			Description="LOC_MAP_SECTION_AFRICA_DESCRIPTION"			SortIndex="100"/>
+		<Replace Domain="GiantEarthSection" Value="SECTION_LARGE_ASIA" 		Name="LOC_MAP_SECTION_LARGE_ASIA_NAME"		Description="LOC_MAP_SECTION_LARGE_ASIA_DESCRIPTION"		SortIndex="100"/>
+		<Replace Domain="GiantEarthSection" Value="SECTION_SOUTH_EAST_ASIA" Name="LOC_MAP_SECTION_SOUTH_EAST_ASIA_NAME"	Description="LOC_MAP_SECTION_SOUTH_EAST_ASIA_DESCRIPTION"	SortIndex="100"/>
+		<Replace Domain="GiantEarthSection" Value="SECTION_PACIFIC" 		Name="LOC_MAP_SECTION_PACIFIC_NAME"			Description="LOC_MAP_SECTION_PACIFIC_DESCRIPTION"			SortIndex="100"/>
 		
 		<Replace Domain="GiantEarthLatitude" Value="0" 		Name="LOC_MAP_WEST_EUROPE_NAME" 			Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="0"/>
 		<Replace Domain="GiantEarthLatitude" Value="16" 	Name="LOC_MAP_ALPS_NAME" 					Description="LOC_MAP_LATITUDE_NAME" 	SortIndex="5"/>
@@ -219,6 +243,26 @@
 		<Replace ParameterId="GiantEarthOldWorldStartY" ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_OLD_WORLD"/>
 		<Replace ParameterId="GiantEarthOldWorldEndX" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_OLD_WORLD"/>
 		<Replace ParameterId="GiantEarthOldWorldEndY" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_OLD_WORLD"/>
+		
+		<Replace ParameterId="GiantEarthAfricaStartX" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_AFRICA"/>
+		<Replace ParameterId="GiantEarthAfricaStartY" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_AFRICA"/>
+		<Replace ParameterId="GiantEarthAfricaEndX" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_AFRICA"/>
+		<Replace ParameterId="GiantEarthAfricaEndY" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_AFRICA"/>
+		
+		<Replace ParameterId="GiantEarthLargeAsiaStartX" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_LARGE_ASIA"/>
+		<Replace ParameterId="GiantEarthLargeAsiaStartY" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_LARGE_ASIA"/>
+		<Replace ParameterId="GiantEarthLargeAsiaEndX" 		ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_LARGE_ASIA"/>
+		<Replace ParameterId="GiantEarthLargeAsiaEndY"		ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_LARGE_ASIA"/>
+		
+		<Replace ParameterId="GiantEarthSouthEastAsiaStartX"	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_SOUTH_EAST_ASIA"/>
+		<Replace ParameterId="GiantEarthSouthEastAsiaStartY"	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_SOUTH_EAST_ASIA"/>
+		<Replace ParameterId="GiantEarthSouthEastAsiaEndX"		ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_SOUTH_EAST_ASIA"/>
+		<Replace ParameterId="GiantEarthSouthEastAsiaEndY"		ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_SOUTH_EAST_ASIA"/>
+		
+		<Replace ParameterId="GiantEarthPacificStartX"	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_PACIFIC"/>
+		<Replace ParameterId="GiantEarthPacificStartY"	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_PACIFIC"/>
+		<Replace ParameterId="GiantEarthPacificEndX" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_PACIFIC"/>
+		<Replace ParameterId="GiantEarthPacificEndY" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_PACIFIC"/>
 		
 		<!--
 		<Replace ParameterId="GiantEarthCityPlacement"	ConfigurationGroup="Map" ConfigurationId="ScenarioType" Operator="NotEquals" 	ConfigurationValue="SCENARIO_NONE"/>

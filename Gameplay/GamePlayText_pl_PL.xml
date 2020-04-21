@@ -822,19 +822,19 @@
 		<Replace Tag="LOC_CITY_NAME_MESSINA_ARABIA" Text="Tabarmīn" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_MESSINA_GREECE" Text="Zancle" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_MESSINA_ROME" Text="Messana" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_MILANO" Text="Milan" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_MILANO_GERMANY" Text="Mailand" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_MILANO_POLAND" Text="Mediolan" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_MILANO_ROME" Text="Mediolanum" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_MILAN" Text="Milan" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_MILAN_GERMANY" Text="Mailand" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_MILAN_POLAND" Text="Mediolan" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_MILAN_ROME" Text="Mediolanum" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_MONTELEONE" Text="Monteleone" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_MONTELEONE_GREECE" Text="Hipponion" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_MONTELEONE_ROME" Text="Vibo Valentia" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_NAPOLI" Text="Naples" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_NAPOLI_GERMANY" Text="Neapel" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_NAPOLI_GREECE" Text="Parthenope" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_NAPOLI_ROME" Text="Neapolis" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_NAPOLI_RUSSIA" Text="Neapol" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_NAPOLI_SPAIN" Text="Nápoles" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NAPLES" Text="Naples" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NAPLES_GERMANY" Text="Neapel" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NAPLES_GREECE" Text="Parthenope" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NAPLES_ROME" Text="Neapolis" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NAPLES_RUSSIA" Text="Neapol" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NAPLES_SPAIN" Text="Nápoles" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_OLBIA" Text="Olbia" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_ORISTANO" Text="Oristano" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_ORISTANO_ROME" Text="Aristanis" Language="pl_PL" />
@@ -882,17 +882,17 @@
 		<Replace Tag="LOC_CITY_NAME_RIETI_ROME" Text="Reate" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_RIMINI" Text="Rimini" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_RIMINI_ROME" Text="Ariminum" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_ROMA" Text="Rome" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_ARABIA" Text="Rūmiya" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_CHINA" Text="Luoma" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_GERMANY" Text="Rom" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_GREECE" Text="Rómi" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_JAPAN" Text="Rōma" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_NORWAY" Text="Rómaborg" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_POLAND" Text="Rzym" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_ROME" Text="Roma" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_RUSSIA" Text="Rim" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_SPAIN" Text="Roma" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ROME" Text="Rome" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ROME_ARABIA" Text="Rūmiya" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ROME_CHINA" Text="Luoma" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ROME_GERMANY" Text="Rom" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ROME_GREECE" Text="Rómi" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ROME_JAPAN" Text="Rōma" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ROME_NORWAY" Text="Rómaborg" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ROME_POLAND" Text="Rzym" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ROME_ROME" Text="Roma" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ROME_RUSSIA" Text="Rim" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ROME_SPAIN" Text="Roma" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_SALERNO" Text="Salerno" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_SALERNO_ROME" Text="Salernum" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_SAN_BENEDETTO_DEL_TRONTO" Text="San Benedetto del Tronto" Language="pl_PL" />
@@ -946,9 +946,9 @@
 		<Replace Tag="LOC_CITY_NAME_VALLETTA_GREECE" Text="Valéta" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_VASTO" Text="Vasto" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_VASTO_ROME" Text="Larinum" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_VENETIA" Text="Venice" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_VENETIA_GERMANY" Text="Venedig" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_VENETIA_ROME" Text="Altinum" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_VENICE" Text="Venice" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_VENICE_GERMANY" Text="Venedig" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_VENICE_ROME" Text="Altinum" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_VERONA" Text="Verona" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_VERONA_FRANCE" Text="Vérone" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_VICENZA" Text="Vicenza" Language="pl_PL" />

@@ -88,6 +88,19 @@
 			<File>Gameplay/Resource.xml</File>
 			<File>Gameplay/CityNameByEra.xml</File>
 		</UpdateDatabase>
+		<UpdateDatabase id="YNAMP_SCENARIO_GAMEPLAY">
+           	<Properties>
+				<LoadOrder>2</LoadOrder>
+           	</Properties>
+			<File Priority="90">Gameplay/Scenarios.xml</File>
+		</UpdateDatabase>
+		<UpdateDatabase id="YNAMP_POST_SCENARIO_GAMEPLAY">
+           	<Properties>
+				<LoadOrder>10500</LoadOrder>
+           	</Properties>
+			<File Priority="90">Gameplay/Scenarios.sql</File>
+			<File Priority="10">Gameplay/ScenariosPostUpdate.xml</File>
+		</UpdateDatabase>
 		<UpdateDatabase id="YNAMP_XP2" criteria="YNAMP_Expansion2">
            	<Properties>
 				<LoadOrder>10</LoadOrder>
@@ -126,6 +139,7 @@
 	<FrontEndActions>
 		<UpdateDatabase id="YNAMP_SETTING">
 			<File>Configuration/Config.xml</File>
+			<File>Configuration/ScenarioConfig.xml</File>
 			<File>Maps/GiantEarth/Config.xml</File>
 			<File>Maps/GreatestEarthMap/Config.xml</File>
 			<File>Maps/PlayEuropeAgain/Config.xml</File>
@@ -241,6 +255,7 @@
 		<File>Configuration/ConfigXP2.xml</File>
 		<File>Configuration/ConfigXP1.xml</File>
 		<File>Configuration/ConfigVikingDLC.xml</File>
+		<File>Configuration/ScenarioConfig.xml</File>
 		<File>Maps/GiantEarth/Config.xml</File>
 		<File>Maps/GreatestEarthMap/Config.xml</File>
 		<File>Maps/PlayEuropeAgain/Config.xml</File>
@@ -268,6 +283,8 @@
 		<File>Gameplay/GamePlayText_ja_JP.xml</File>
 		<File>Gameplay/GamePlayText_ko_KR.xml</File>
 		<File>Gameplay/GamePlayText_pl_PL.xml</File>
+		<File>Gameplay/Scenarios.xml</File>
+		<File>Gameplay/Scenarios.sql</File>
 		<File>Maps/GiantEarth/Map.xml</File>
 		<File>Maps/GiantEarth/CityMap.xml</File>
 		<File>Maps/GiantEarth/CityMap_Egypt.xml</File>

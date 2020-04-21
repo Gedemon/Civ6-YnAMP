@@ -78,7 +78,9 @@
 		<Row Map="PlayEuropeAgain.lua" Domain="LowLandPlacement" Value="PLACEMENT_DEEP" />
 	</MapSupportedValues>	
 	
-	<MapUnSupportedValues>
+	<MapUnSupportedValues> <!-- Not working -->
+		<!--
 		<Row Map="PlayEuropeAgain.lua" Domain="StandardPlayers" Value="CIVILIZATION_AMERICA" />
+		-->
 	</MapUnSupportedValues>
 </GameInfo>

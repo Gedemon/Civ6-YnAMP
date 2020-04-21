@@ -866,6 +866,14 @@
     <Replace Tag="LOC_MAP_SECTION_COLONIZATION_DESCRIPTION" Text="Play on a Map of the Atlantic Ocean, with parts of Europe and Americas"		Language="en_US"/>
     <Replace Tag="LOC_MAP_SECTION_OLD_WORLD_NAME" 			Text="Old World" 																	Language="en_US"/>
     <Replace Tag="LOC_MAP_SECTION_OLD_WORLD_DESCRIPTION" 	Text="Play on the Old World (Europe, Africa, Asia)"									Language="en_US"/>
+    <Replace Tag="LOC_MAP_SECTION_AFRICA_NAME" 				Text="Africa" 																		Language="en_US"/>
+    <Replace Tag="LOC_MAP_SECTION_AFRICA_DESCRIPTION" 		Text="Play on Africa"																Language="en_US"/>
+    <Replace Tag="LOC_MAP_SECTION_LARGE_ASIA_NAME" 			Text="Large Asia" 																	Language="en_US"/>
+    <Replace Tag="LOC_MAP_SECTION_LARGE_ASIA_DESCRIPTION" 	Text="Play on all Asia, from Middle-East to Japan, including Australia"				Language="en_US"/>
+    <Replace Tag="LOC_MAP_SECTION_SOUTH_EAST_ASIA_NAME" 	Text="South East Asia" 																Language="en_US"/>
+    <Replace Tag="LOC_MAP_SECTION_SOUTH_EAST_ASIA_DESCRIPTION" 	Text="Play on a smaller version of Asia, excluding most part of Australia"		Language="en_US"/>
+    <Replace Tag="LOC_MAP_SECTION_PACIFIC_NAME" 			Text="Pacific" 																		Language="en_US"/>
+    <Replace Tag="LOC_MAP_SECTION_PACIFIC_DESCRIPTION" 		Text="Play on a map centered on the Pacific, including parts of Asia and America"	Language="en_US"/>
 	
     <Replace Tag="LOC_MAP_STARTX_NAME" Language="en_US">
       <Text>WEST Border</Text>
@@ -1007,7 +1015,7 @@
     </Replace>
 	
     <Replace Tag="LOC_SCENARIO_OPTIONS" Language="en_US">
-      <Text>[ICON_DownloadContent][ICON_DownloadContent][ICON_DownloadContent][ICON_DownloadContent] SCENARIO OPTIONS [ICON_DownloadContent][ICON_DownloadContent][ICON_DownloadContent][ICON_DownloadContent]</Text>
+      <Text>[ICON_DownloadContent] SCENARIO OPTIONS [ICON_DownloadContent]</Text>
     </Replace>
     <Replace Tag="LOC_SCENARIO_OPTIONS_DESCRIPTION" Language="en_US">
       <Text>Scenario Options Below[NEWLINE][ICON_Exclamation][COLOR_RED] Alpha Testing [ENDCOLOR][ICON_Exclamation]</Text>
@@ -1044,7 +1052,13 @@
       <Text>YnAMP generated placement</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_GENERATED_PRESET_DESC" Language="en_US">
-      <Text>Placement presets to generate starting Civilizations[NEWLINE]This scenario replaces the setup screen default values to civ-specific values for the following settings:[NEWLINE][ICON_BULLET]Cities Placement[NEWLINE][ICON_BULLET]Number of Cities[NEWLINE][ICON_BULLET]Max. Distance From Capital[NEWLINE][ICON_BULLET]Only on the same landmass[NEWLINE][NEWLINE]Custom Civilizations will use the default settings (unless added separatly by the custom civ mod)[NEWLINE][NEWLINE]The settings are optimized for the Giant Earth map (or regions of it) but can be used with any map.</Text>
+      <Text>Placement presets to generate starting Civilizations[NEWLINE][NEWLINE]This scenario replaces the setup screen default values to civ-specific values for the following settings:[NEWLINE][ICON_BULLET]Cities Placement[NEWLINE][ICON_BULLET]Number of Cities[NEWLINE][ICON_BULLET]Max. Distance From Capital[NEWLINE][ICON_BULLET]Only on the same landmass[NEWLINE][NEWLINE]Custom Civilizations will use the default settings (unless added separatly by the custom civ mod)[NEWLINE][NEWLINE]The settings are optimized for the Giant Earth map (or regions of it) but can be used with any map.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CITYMAP_PRESET_NAME" Language="en_US">
+      <Text>YnAMP CityMap placement</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CITYMAP_PRESET_DESC" Language="en_US">
+      <Text>Placement presets to generate starting Civilizations with the City Names Database (originally used for Automatic City Naming based on position)[NEWLINE][NEWLINE]This scenario replaces the setup screen default values to civ-specific values for the following settings:[NEWLINE][ICON_BULLET]Cities Placement[NEWLINE][ICON_BULLET]Number of Cities[NEWLINE][ICON_BULLET]Max. Distance From Capital[NEWLINE][ICON_BULLET]Only on the same landmass[NEWLINE][NEWLINE]Custom Civilizations will use the default settings (unless added separatly by the custom civ mod)[NEWLINE][NEWLINE]The settings are optimized for the Giant Earth map (or regions of it) but can be used with other maps with a CityName database (like "Play Europe Again", "Largest Earth Map" with GiantEarth database reference or even "Terra Map" with a high real land blending ratio).[NEWLINE][NEWLINE]This scenario shouldn't be available for map without associated City Names</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CITY_PLACEMENT_NAME" Language="en_US">

@@ -31,10 +31,11 @@ g_iW		= 0
 g_iH		= 0
 g_MapSize	= 0
 
--- The base map is the Largest Earth Map
+-- The base map is the Largest Earth Map for the Terra Map hardcoded region table
 g_LargestMapWidth 		= 230
 g_LargestMapHeight 		= 116
 g_LargestMapOldWorldX	= 155
+g_LargestEarthOceanWidth 	= 24
 
 g_SizeDual      			=  44*26
 g_SizeTiny      			=  60*36
@@ -44,8 +45,7 @@ g_SizeLarge     			=  96*60
 g_SizeHuge      			= 106*66
 g_SizeEnormous  			= 128*80
 g_SizeGiant     			= 180*94
-g_SizeLudicrous 			= 230*115
-g_LargestEarthOceanWidth 	= 24
+g_SizeLudicrous 			= 200*104--230*115
 
 g_WidthFactor			= 0
 g_HeightFactor			= 0
@@ -83,12 +83,20 @@ skipX, skipY	= MapConfiguration.GetValue("RescaleSkipX") or 999, MapConfiguratio
 
 g_LatitudeDegreesPerY	= nil
 g_OriginLatitude		= nil
+g_LatitudeBorderOffset	= 5		-- to allows border to be a but norther or souther than the northern or southern city
+
+g_ExtraRange 			= 0		-- Used when the reference maps is smaller than the actual map
+
 
 ------------------------------------------------------------------------------
 -- Set globals
 ------------------------------------------------------------------------------
+local bGlobalsInitialized = false
 function SetGlobals()
 
+	if bGlobalsInitialized then return end
+	
+	print("----------------------")
 	print("Setting common Globals")
 	print("----------------------")
 	g_iW, g_iH 	= Map.GetGridSize();
@@ -111,7 +119,7 @@ function SetGlobals()
 	g_ReferenceWidthRatio   = g_iW / g_ReferenceMapWidth
 	g_ReferenceHeightRatio  = g_iH / g_ReferenceMapHeight
 
-	g_ReferenceSizeRatio = math.sqrt(g_iW * g_iH) / math.sqrt(g_ReferenceMapWidth * g_ReferenceMapHeight)
+	g_ReferenceSizeRatio = math.sqrt(g_iW * g_iH) / math.sqrt(g_ReferenceMapSize)
 
 	g_StartingPlotRange 		= 16 * g_ReferenceSizeRatio -- todo: what's that magic number here ?
 	
@@ -120,47 +128,32 @@ function SetGlobals()
 
 	g_NewWorldX = g_LargestMapOldWorldX * g_WidthRatio
 	
-	g_MaxStartDistanceMajor = math.sqrt(g_iW * g_iH / PlayerManager.GetWasEverAliveMajorsCount())
+	g_MaxStartDistanceMajor = math.sqrt(g_MapSize / PlayerManager.GetWasEverAliveMajorsCount())
 	g_MinStartDistanceMajor = g_MaxStartDistanceMajor / 3
 
 	BuildRefXY()
 	SetLatitudesGlobals()
 	
-	print("g_iW 	= ", g_iW)
-	print("g_iH 	= ", g_iH)
-	print("g_LargestMapWidth 	= ", g_LargestMapWidth)
-	print("g_LargestMapHeight 	= ", g_LargestMapHeight)
-	print("g_WidthFactor 	= ", g_WidthFactor)
-	print("g_HeightFactor 	= ", g_HeightFactor)
-	print("g_WidthRatio 	= ", g_WidthRatio)
-	print("g_HeightRatio 	= ", g_HeightRatio)
-	print("g_ReferenceMapWidth 		= ", g_ReferenceMapWidth)
-	print("g_ReferenceMapHeight 	= ", g_ReferenceMapHeight)
-	print("g_ReferenceWidthFactor 	= ", g_ReferenceWidthFactor)
-	print("g_ReferenceHeightFactor 	= ", g_ReferenceHeightFactor)
-	print("g_ReferenceWidthRatio 	= ", g_ReferenceWidthRatio)
-	print("g_ReferenceHeightRatio 	= ", g_ReferenceHeightRatio)
-	print("StartX", MapConfiguration.GetValue("StartX"))
-	print("EndX", MapConfiguration.GetValue("EndX"))
-	print("StartY", MapConfiguration.GetValue("StartY"))
-	print("EndY", MapConfiguration.GetValue("EndY"))
-	print("g_UncutMapWidth", g_UncutMapWidth)
-	print("g_UncutMapHeight", g_UncutMapHeight)
-	print("bUseOffset", bUseOffset)	
+	if bUseRelativePlacement and g_MapSize > g_ReferenceMapSize then
+		g_ExtraRange = 0 --Round(10 * math.sqrt(g_MapSize) / math.sqrt(g_ReferenceMapSize))
+	end
+	
+	print("g_iW, g_iH = ", g_iW, g_iH)
+	print("g_LargestMapWidth, g_LargestMapHeight 	= ", g_LargestMapWidth, g_LargestMapHeight)
+	print("g_WidthFactor, g_HeightFactor, g_WidthRatio, g_HeightRatio 	= ", g_WidthFactor, g_HeightFactor, g_WidthRatio, g_HeightRatio)
+	print("g_ReferenceMapWidth, g_ReferenceMapHeight = ", g_ReferenceMapWidth, g_ReferenceMapHeight)
+	print("g_ReferenceWidthFactor, g_ReferenceHeightFactor, g_ReferenceWidthRatio,  g_ReferenceHeightRatio	= ", g_ReferenceWidthFactor, g_ReferenceHeightFactor, g_ReferenceWidthRatio, g_ReferenceHeightRatio)
+	print("StartX, EndX, StartY, EndY ", MapConfiguration.GetValue("StartX"), MapConfiguration.GetValue("EndX"), MapConfiguration.GetValue("StartY"), MapConfiguration.GetValue("EndY"))
+	print("g_UncutMapWidth, g_UncutMapHeight, bUseOffset", g_UncutMapWidth, g_UncutMapHeight, bUseOffset)
+	print("bUseRelativePlacement, bUseRelativeFixedTable, skipX, skipY  = ",bUseRelativePlacement, bUseRelativeFixedTable, skipX, skipY)
 	print("g_ReferenceSizeRatio	= ", g_ReferenceSizeRatio)
-	print("g_StartingPlotRange =", g_StartingPlotRange)
-	print("replacementRangeForTSL =", replacementRangeForTSL)
-	print("g_ReplacementRangeForTSL =", g_ReplacementRangeForTSL)
-	print("g_MaxStartDistanceMajor = ", g_MaxStartDistanceMajor)
-	print("g_MinStartDistanceMajor = ", g_MinStartDistanceMajor)
-	print("Map.GetGridSize()", Map.GetGridSize())
-	print("bUseRelativePlacement",bUseRelativePlacement)
-	print("bUseRelativeFixedTable",bUseRelativeFixedTable)
-	print("skipX",skipX)
-	print("skipY",skipY)
-	print("g_LatitudeDegreesPerY",g_LatitudeDegreesPerY)
-	print("g_OriginLatitude",g_OriginLatitude)
+	print("g_StartingPlotRange = ", g_StartingPlotRange)
+	print("replacementRangeForTSL, g_ReplacementRangeForTSL = ", replacementRangeForTSL, g_ReplacementRangeForTSL)
+	print("g_MaxStartDistanceMajor, g_MinStartDistanceMajor = ", g_MaxStartDistanceMajor, g_MinStartDistanceMajor)
+	print("g_LatitudeDegreesPerY, g_OriginLatitude = ",g_LatitudeDegreesPerY,g_OriginLatitude)
+	print("----------------------")
 
+	bGlobalsInitialized = true
 end
 
 
@@ -179,6 +172,119 @@ function Round(num)
     end
 end
 
+
+------------------------------------------------------------------------------
+-- Handling script with pauses
+--
+-- When Lua takes too much time to process something, it seems to cause the game to crash
+-- so we're using coroutines that can yield during some time-consuming loops and resume
+-- after a few ticks of gamecore (using Events.GameCoreEventPublishComplete)
+------------------------------------------------------------------------------
+---[[
+local g_LastPause 		= 0
+local g_TimeForPause	= 0.075	--0.1/0.05	-- running time in seconds before yielding
+local g_TickBeforeResume= 4		--5		-- number of call to GameCoreEventPublishComplete before resuming the coroutine
+local g_Tick			= 0
+local bLoadScreenClosed	= false
+local CoroutineList		= {}
+
+local bFirstCheck		= true
+local g_FirstCheckTime	= 0
+local g_FirstCheckPause	= 3
+
+
+function AddCoToList(newCo)
+	print("Adding coroutine to script with pause :"..tostring(newCo))
+	table.insert(CoroutineList, newCo)
+end
+
+function LaunchScriptWithPause()
+	print("LaunchScriptWithPause")
+	Events.GameCoreEventPublishComplete.Add( CheckTimer )
+end
+--Events.LoadScreenClose.Add( LaunchScriptWithPause ) -- launching the script when the load screen is closed, you can use your own events
+
+function StopScriptWithPause() -- GameCoreEventPublishComplete is called frequently, keep it clean
+
+	print("Stopping ScriptWithPause...")
+	Events.GameCoreEventPublishComplete.Remove( CheckTimer )
+end
+
+function OnLoadScreenClose()
+	bLoadScreenClosed = true
+end
+Events.LoadScreenClose.Add( OnLoadScreenClose ) 
+
+function ChangePause(value)
+	print("changing pause value to ", value)
+	g_TimeForPause = value
+end
+
+function CheckCoroutinePause()
+	if bFirstCheck or (g_LastPause + g_TimeForPause < Automation.GetTime()) then
+		print("**** coroutine.yield at ", Automation.GetTime() - g_LastPause, g_TimeForPause)
+		if bFirstCheck then
+			print("**** Delayed start, pause for ", g_FirstCheckPause)
+			g_FirstCheckTime = Automation.GetTime()
+		end
+		coroutine.yield()
+		--return true
+	end
+end
+
+local countdown = 999
+function CheckTimer()
+
+	if bFirstCheck then
+		if g_FirstCheckTime > 0 then
+			if (g_FirstCheckTime + g_FirstCheckPause > Automation.GetTime()) then
+				local t = g_FirstCheckPause - Round(Automation.GetTime()-g_FirstCheckTime)
+				if t < countdown then
+					print(t)
+					countdown = t
+				end
+				return
+			else
+				print("**** Starting...")
+				bFirstCheck = false
+			end
+		end
+	end
+
+	g_Tick	= g_Tick + 1
+	
+	if #CoroutineList > 0 then -- show ticking only when there are Coroutine running
+		--print("**** Tick = ", g_Tick)
+	end
+
+	if g_Tick >= g_TickBeforeResume then
+		local toRemove 	= {}
+		g_Tick			= 0
+		for i, runningCo in ipairs(CoroutineList) do
+			if coroutine.status(runningCo)=="dead" then
+				print("**** removing dead coroutine: "..tostring(runningCo), i)
+				table.insert(toRemove, i)
+			elseif coroutine.status(runningCo)=="suspended" then
+				g_LastPause = Automation.GetTime()
+				local ok, errorMsg = coroutine.resume(runningCo)
+				if not ok then
+					error("**** ERROR in co-routine : " .. errorMsg)
+				end
+			end
+		end
+		for _, i in ipairs(toRemove) do
+			if coroutine.status(CoroutineList[i])=="dead" then
+				table.remove(CoroutineList, i)
+			else
+				print("**** ERROR, trying to remove not dead Coroutine: "..tostring(CoroutineList[i]), i)
+			end
+		end
+		if #CoroutineList == 0 and bLoadScreenClosed and not bFirstCheck then
+		--	StopScriptWithPause()
+		end
+	end
+end
+--]]
 
 ------------------------------------------------------------------------------
 -- Strings
@@ -406,28 +512,18 @@ function GetRefMapXY(mapX, mapY, bOnlyOffset, customWidthFactor, customHeightFac
 	local customWidthFactor		= customWidthFactor or 1
 	local customHeightFactor	= customHeightFactor or 1
 	local refMapX, refMapY = mapX, mapY
-	if bUseRelativePlacement and (not bOnlyOffset) then
-		if bUseRelativeFixedTable then
-			refMapX 	= XFromRefMapX[mapX] and Round(XFromRefMapX[mapX]*customWidthFactor) --Round(g_ReferenceWidthFactor * mapX)
-			refMapY 	= YFromRefMapY[mapY] and Round(YFromRefMapY[mapY]*customHeightFactor) --Round(g_ReferenceHeightFactor * mapY)
-			if refMapX == nil or refMapY == nil then
-print("Warning, can't find refMap y,x for ", mapX, mapY," returning ",  XFromRefMapX[mapX] and Round(XFromRefMapX[mapX]*customWidthFactor), YFromRefMapY[mapY] and Round(YFromRefMapY[mapY]*customHeightFactor))
---for k, v in pairs(XFromRefMapX) do print(k,v) end
---for k, v in pairs(YFromRefMapY) do print(k,v) end
-				return -1, -1
-			end
-		else
-			refMapX 	= Round(g_ReferenceWidthFactor * mapX)
-			refMapY 	= Round(g_ReferenceHeightFactor * mapY)		
-		end
-	end
+	
+	-- First apply the offset value on the current map position
 	if bUseOffset then
 		refMapX = refMapX + g_OffsetX
 		refMapY = refMapY + g_OffsetY
 		
-		-- the code below assume that the reference map is wrapX
+		-- the code below assume that the reference map is wrapX or wrapY
+		-- else we should limit the choice on the setup screen
 		if refMapY >= g_UncutMapHeight then
 			refMapY = refMapY - g_UncutMapHeight
+			-- No idea how to simulate walking through the north pole / south pole
+			-- maybe if the map is limited to 1/2 of width and mirror the other half above/below the poles ?
 			--refMapY = (2*g_UncutMapHeight) - refMapY - 1
 			--refMapX = refMapX + Round(g_UncutMapWidth / 2)
 		end
@@ -435,7 +531,21 @@ print("Warning, can't find refMap y,x for ", mapX, mapY," returning ",  XFromRef
 			refMapX = refMapX - g_UncutMapWidth -- -1 ?
 		end
 	end
---print(bUseRelativePlacement, bOnlyOffset, bUseOffset, refMapX, refMapY, mapX, mapY, XFromRefMapX[mapX], YFromRefMapY[mapY])
+	
+	-- Now that we have the offset position, get the corresponding relative placement in the reference map
+	if bUseRelativePlacement and (not bOnlyOffset) then
+		if bUseRelativeFixedTable then
+			refMapX 	= XFromRefMapX[refMapX] and Round(XFromRefMapX[refMapX]*customWidthFactor) --Round(g_ReferenceWidthFactor * mapX)
+			refMapY 	= YFromRefMapY[refMapY] and Round(YFromRefMapY[refMapY]*customHeightFactor) --Round(g_ReferenceHeightFactor * mapY)
+			if refMapX == nil or refMapY == nil then
+				print("Warning, can't find refMap y,x for ", mapX, mapY," returning (-1, -1) instead of ",  XFromRefMapX[mapX] and Round(XFromRefMapX[mapX]*customWidthFactor), YFromRefMapY[mapY] and Round(YFromRefMapY[mapY]*customHeightFactor))
+				return -1, -1
+			end
+		else
+			refMapX 	= Round(g_ReferenceWidthFactor * refMapX)
+			refMapY 	= Round(g_ReferenceHeightFactor * refMapY)		
+		end
+	end
 	return refMapX, refMapY
 end
 
@@ -444,6 +554,8 @@ function GetXYFromRefMapXY(x, y, bOnlyOffset, customWidthRatio, customHeightRati
 	local customWidthRatio	= customWidthRatio or 1
 	local customHeightRatio = customHeightRatio or 1
 	local mapX, mapY		= x, y
+	
+	-- First determine where the relative placement position would be on the current map
 	if bUseRelativePlacement and (not bOnlyOffset) then
 		if bUseRelativeFixedTable then
 			x = RefMapXfromX[x] and Round(RefMapXfromX[x]*customWidthRatio)--Round( g_ReferenceWidthRatio * x)
@@ -456,24 +568,26 @@ function GetXYFromRefMapXY(x, y, bOnlyOffset, customWidthRatio, customHeightRati
 			y = Round( g_ReferenceHeightRatio * y)		
 		end
 	end
+	
+	-- Then apply the offset
 	if bUseOffset then
 		x = x - g_OffsetX
 		y = y - g_OffsetY
 		
 		-- the code below assume that the reference map is wrapX
+		-- else we should limit the choice on the setup screen
 		if y < 0 then 
 			y = y + g_UncutMapHeight
+			-- No idea how to simulate walking through the north pole / south pole
+			-- maybe if the map is limited to 1/2 of width and mirror the other half above/below the poles ?
 			--y = y + g_iH - 1
 			--y = y + g_iH
 			--x = x + Round(g_iW / 2)
 		end
-		--if x < 0 then x = x + g_iW - 1 end
-		--if x < 0 and Map.IsWrapX() then x = x + g_iW end
 		if x < 0 then
 			x = x + g_UncutMapWidth
 		end
 	end
---print(bUseRelativePlacement, bOnlyOffset, bUseOffset, x, y, mapX, mapY, RefMapXfromX[mapX], RefMapYfromY[mapY])
 	return x, y
 end
 
@@ -495,7 +609,7 @@ function SetLatitudesGlobals()
 	local northernLatitude	= MapConfiguration.GetValue("NorthernLatitude") or northPoleLatitude
 	
 	local height			= (bUseOffset and g_UncutMapHeight) or g_iH
-print("SetLatitudesGlobals: southernLatitude = ", southernLatitude, "northernLatitude = ", northernLatitude, "bUseOffset = ", bUseOffset, "g_UncutMapHeight = ", g_UncutMapHeight, "g_iH = ", g_iH, "height = ", height, "southernY = ", southernY )
+--print("SetLatitudesGlobals: southernLatitude = ", southernLatitude, "northernLatitude = ", northernLatitude, "bUseOffset = ", bUseOffset, "g_UncutMapHeight = ", g_UncutMapHeight, "g_iH = ", g_iH, "height = ", height, "southernY = ", southernY )
 	g_LatitudeDegreesPerY 	= (northernLatitude - southernLatitude) / height  -- but there are 181° of latitudes from -90 to 90, shouldn't we add 1° when crossing the equator ?
 	g_OriginLatitude		= (southernY * g_LatitudeDegreesPerY) + southernLatitude
 end
@@ -516,6 +630,8 @@ function LoadGameplayDatabaseForConfig()
 	ConfigYnAMP.TSL				= {}
 	ConfigYnAMP.MapSizes		= {}
 	
+	local mapName				= MapConfiguration.GetValue("MapName")
+	
 	-- Load TSL
 	for row in GameInfo.StartPosition() do
 		table.insert(ConfigYnAMP.TSL, row)
@@ -533,7 +649,7 @@ function LoadGameplayDatabaseForConfig()
 		local civilizationRow 	= GameInfo.Civilizations[row.CivilizationType]
 		local leaderRow 		= GameInfo.Leaders[row.LeaderType]
 		if civilizationRow and civilizationRow.StartingCivilizationLevelType =="CIVILIZATION_LEVEL_CITY_STATE" then
-			table.insert(ConfigYnAMP.CityStatesList, {LeaderType = row.LeaderType, CivilizationType = civilizationRow.CivilizationType, LeaderName = leaderRow.Name, CivilizationName = civilizationRow.Name })
+			table.insert(ConfigYnAMP.CityStatesList, {LeaderType = row.LeaderType, CivilizationType = civilizationRow.CivilizationType, LeaderName = leaderRow.Name, CivilizationName = civilizationRow.Name, LocalizedLeaderName = Locale.Lookup(leaderRow.Name), LocalizedCivilizationName = Locale.Lookup(civilizationRow.Name) })
 		end
 	end
 	print("CityState list loaded, rows = ", #ConfigYnAMP.CityStatesList)
@@ -573,6 +689,44 @@ function LoadGameplayDatabaseForConfig()
 	end
 end
 
+
+-----------------------------------------------------------------------------------------
+-- City Names for debug
+-----------------------------------------------------------------------------------------
+function GetCityNamesAt(x, y, bShowCivSpecificNames)
+
+	local nameList			= {}
+	local mapName			= MapConfiguration.GetValue("MapName")
+	local refMapX, refMapY 	= GetRefMapXY(x, y)
+	local out 		= 0
+	local added		= 0
+	local far 		= 0
+	local reserved	= 0
+	
+	for row in GameInfo.CityMap() do
+		if row.MapName == mapName  then
+			if (row.Civilization and bShowCivSpecificNames) or (row.Civilization == nil) then
+				local name				= row.CityLocaleName
+				local nameX 			= row.X
+				local nameY 			= row.Y
+				local nameMaxDistance 	= row.Area + g_ExtraRange
+				local distance 			= Map.GetPlotDistance(refMapX, refMapY ,nameX, nameY)
+				if distance <= nameMaxDistance then
+					table.insert(nameList, {Name = name, Distance = distance})
+					added = added + 1
+				else
+					far = far + 1
+				end	
+			else
+				reserved = reserved + 1
+			end
+		else
+			out = out + 1
+		end
+	end
+	--print(string.format("Added: %i, Not on Map = %i, Reserved = %i, Too far = %i", added, out, reserved, far))
+	return #nameList > 0 and nameList
+end
 
 -----------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------
