@@ -2,6 +2,9 @@
 --	World Builder Plot Editor
 -- ===========================================================================
 
+-- YnAMP <<<<<
+include("InstanceManager")
+-- ynAMP >>>>>
 
 -- ===========================================================================
 --	CONSTANTS
@@ -995,7 +998,7 @@ Initialize();
 
 -- YnAMP <<<<<
 
-include "YnAMP_Common"
+include ("YnAMP_Common")
 
 ----------------------------------------------------------------------------------------
 -- Manage "Restart" button
@@ -1039,6 +1042,65 @@ function OnRestart()
 	end
 end
 
+
+----------------------------------------------------------------------------------------
+-- Show all City Names on map
+----------------------------------------------------------------------------------------
+
+local g_InstanceManager	:table = InstanceManager:new( "CityList",	"Anchor", Controls.CityListContainer )
+local g_MapCities		:table = {};
+function GetCityListInstanceAt(x, y, sList)
+	local plotIndex = Map.GetPlotIndex(x, y)
+	local pInstance = g_MapCities[plotIndex];
+	if (pInstance == nil) then
+		local pInstance = g_InstanceManager:GetInstance();
+		local worldX, worldY = UI.GridToWorld( plotIndex );
+		pInstance.Anchor:SetWorldPositionVal( worldX, worldY, 0.0 )
+		pInstance.Anchor:ChangeParent(ContextPtr:LookUpControl("/WorldBuilder/CityBannerManager"))
+		pInstance.TextContainer:SetHide( false )
+		pInstance.ListText:SetText(sList)
+	end
+	return pInstance
+end
+--Controls.CityListContainer:ChangeParent(ContextPtr:LookUpControl("/InGame/CityBannerManager"))
+Controls.CityListContainer:ChangeParent(ContextPtr:LookUpControl("/WorldBuilder/CityBannerManager"))
+
+function SetCityNamesOnMap(bShowCivSpecificNames)
+	SetGlobals()
+	local iW, iH = Map.GetGridSize()
+	for iY = 0, iH - 1 do
+		for iX = iW - 1, 0, -1  do
+			CheckCoroutinePause()
+			local cityList = GetCityNamesAt(iX, iY, bShowCivSpecificNames)
+			if cityList then
+				local list = {}
+				table.sort(cityList, function(a, b) return a.Distance < b.Distance; end)
+				for i, row in ipairs(cityList) do
+					if row.Distance == 0 then
+						table.insert(list, "[ICON_Buildings] "..Locale.Lookup(row.Name))
+					else
+						table.insert(list, string.format("[ICON_Range] %s (%i)", Locale.Lookup(row.Name), row.Distance))
+					end
+				end
+				local sList = table.concat(list, "[NEWLINE]")
+				GetCityListInstanceAt(iX, iY, sList)
+			end
+		end
+	end
+end
+
+function ListCities(civilizationType)
+	for row in GameInfo.CityNames() do
+		if civilizationType == row.CivilizationType or civilizationType == nil then
+			print(Indentation(row.CivilizationType, 20, false, true).." "..Indentation(row.CityName, 30, false, true).." "..Locale.Lookup(row.CityName))
+		end
+	end
+end
+
+function Start()
+	LaunchScriptWithPause()
+	AddCoToList(coroutine.create(SetCityNamesOnMap))
+end
 ----------------------------------------------------------------------------------------
 -- Add "Export to Lua" button to the Option Menu and add keyboard shortcut (ctrl+alt+E)
 ----------------------------------------------------------------------------------------

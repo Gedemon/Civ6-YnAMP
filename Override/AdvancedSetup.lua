@@ -86,8 +86,8 @@ if ConfigYnAMP.CityStatesList then
 	-- Add CS imported from GamePlay DB to the config DB
 	for i, row in ipairs(ConfigYnAMP.CityStatesList) do
 		local LeaderType 					= row.LeaderType
-		local LeaderName 					= row.LeaderName
-		local CivilizationName 				= row.CivilizationName
+		local LeaderName 					= (Locale.Lookup(row.LeaderName) ~= row.LeaderName) and row.LeaderName or row.LocalizedLeaderName -- If there is a Config Localization use it, else use the imported GamePlay Localization
+		local CivilizationName 				= (Locale.Lookup(row.CivilizationName) ~= row.CivilizationName) and row.CivilizationName or row.LocalizedCivilizationName
 		LeadersCivilizations[LeaderType] 	= row.CivilizationType
 		IsAvailable[LeaderType]	= true
 	
@@ -122,17 +122,19 @@ local TSL = {}
 if ConfigYnAMP.TSL then
 	for i, row in ipairs(ConfigYnAMP.TSL) do
 		local mapName 		= row.MapName
-		local civilization 	= row.Civilization
-		local leader 		= row.Leader
-		TSL[mapName] 		= TSL[mapName] or {}
-		local mapTSL		= TSL[mapName]
-		if civilization then
-			mapTSL[civilization] = mapTSL[civilization] or {}
-			table.insert(mapTSL[civilization], {X = row.X, Y = row.Y})
-		end
-		if leader then
-			mapTSL[leader] = mapTSL[leader] or {}
-			table.insert(mapTSL[leader], {X = row.X, Y = row.Y})
+			if mapName then
+			local civilization 	= row.Civilization
+			local leader 		= row.Leader
+			TSL[mapName] 		= TSL[mapName] or {}
+			local mapTSL		= TSL[mapName]
+			if civilization then
+				mapTSL[civilization] = mapTSL[civilization] or {}
+				table.insert(mapTSL[civilization], {X = row.X, Y = row.Y})
+			end
+			if leader then
+				mapTSL[leader] = mapTSL[leader] or {}
+				table.insert(mapTSL[leader], {X = row.X, Y = row.Y})
+			end
 		end
 	end
 end
@@ -151,6 +153,45 @@ for i, row in ipairs(CachedQuery(cityStatesQuery)) do
 	IsMinorLeaderType[row.ConfigurationId] = true
 end
 --]]
+
+------------------------------------------------------------------------------
+-- Formating
+------------------------------------------------------------------------------
+local indentationString	= ".............................." -- maxLength = 30 car
+local indentationSpaces	= "                              "
+
+function Indentation(str, maxLength, bAlignRight, bShowSpace)
+	local bIsNumber	= type(str) == "number"
+	local minLength	= 2
+	local indentStr	= (bShowSpace and indentationString) or indentationSpaces
+	local maxLength = math.max(maxLength or string.len(indentStr))
+	--local str 		= (bIsNumber and str > math.pow(10,maxLength-2)-1 and tostring(math.floor(str))) or tostring(str)
+	--local str 		= (bIsNumber and str > 9 and tostring(math.floor(str))) or tostring(str)
+	local str 		= tostring(str)
+	local length 	= string.len(str)
+	
+	if length > maxLength and bIsNumber then
+		str		= tostring(math.floor(tonumber(str)))
+		length 	= string.len(str)
+	end
+	
+	if length < maxLength then
+		if bAlignRight then
+			return string.sub(indentStr, 1, maxLength - length) .. str
+		else
+			return str.. string.sub(indentStr, 1, maxLength - length)
+		end
+	elseif length > maxLength and length > minLength then
+		if bIsNumber then
+			return tostring(math.pow(10,maxLength)-1)  -- return 999 for value >= 1000 when maxLength = 3
+		else
+			return string.sub(str, 1, maxLength-1).."."
+		end
+	else
+		return str
+	end
+end
+
 
 ------------------------------------------------------------------------------
 -- YnAMP Math functions
@@ -1576,7 +1617,10 @@ function OnStartButton()
 	print("Setup Player slots :")
 	for slotID = 0, 63 do
 		local playerConfig = PlayerConfigurations[slotID]
-		print(slotID, playerConfig and playerConfig:GetLeaderTypeName(), playerConfig and playerConfig:GetLeaderTypeName(), playerConfig and playerConfig:GetCivilizationTypeName(), playerConfig and playerConfig:GetSlotName(), playerConfig and (slotStatusString[playerConfig:GetSlotStatus()] or "UNK STATUS"), playerConfig and (civLevelString[playerConfig:GetCivilizationLevelTypeID()] or "UNK LEVEL"),  playerConfig and playerConfig:IsAI())
+		if playerConfig then
+		--Indentation
+			print(slotID, Indentation(playerConfig and playerConfig:GetLeaderTypeName(),20), Indentation(playerConfig and playerConfig:GetCivilizationTypeName(),25), Indentation(playerConfig and playerConfig:GetSlotName(),25), Indentation(playerConfig and (slotStatusString[playerConfig:GetSlotStatus()] or "UNK STATUS"),15), Indentation(playerConfig and (civLevelString[playerConfig:GetCivilizationLevelTypeID()] or "UNK LEVEL"),15),  playerConfig and playerConfig:IsAI())
+		end
 	end
 	
 	-- Make some info available during map creation
@@ -2095,6 +2139,13 @@ function ValidateSettingsYnAMP()
 	if bCanStart then
 		SetStartButtonValid(true)
 	end
+	
+	-- Show which setup mode we are on
+	if GameConfiguration.IsWorldBuilderEditor() then
+		titleStr = "[ICON_Global] ".. titleStr
+	else
+		titleStr = "[ICON_Team] ".. titleStr
+	end
 	--
 	Controls.WindowTitle:SetText(titleStr)
 	Controls.WindowTitle:SetToolTipString(table.concat(tooltip, sTooltipSeparator))
@@ -2335,7 +2386,7 @@ end
 SetupParameters.OldParameter_FilterValues = SetupParameters.Parameter_FilterValues
 function SetupParameters:Parameter_FilterValues(parameter, values)
 	values = self:OldParameter_FilterValues(parameter, values)
-
+	
 	-- Use the already filtered Leader list to build the list for random slots to use if the Ban Leader option is active
 	-- We're not handling the banned leaders here as we still want them to be available for manual selection.
 	if (parameter.ParameterId == "PlayerLeader" and self.PlayerId == 0) then -- and don't update for every player slots -- and MapConfiguration.GetValue("BanLeaders") 

@@ -38,9 +38,9 @@
 		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="StartPosition" Name="LOC_MAP_START_POSITION_NAME" Description="LOC_MAP_START_POSITION_DESCRIPTION" Domain="StartPosition" DefaultValue="2" ConfigurationGroup="Map" ConfigurationId="start" GroupId="MapOptions" Hash="0" SortIndex="285"/>
 		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="RequestedResources" Name="LOC_MAP_RESOURCES_REQUESTED_NAME" Description="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" Domain="RequestedResources" DefaultValue="PLACEMENT_REQUEST" ConfigurationGroup="Map" ConfigurationId="RequestedResources" GroupId="MapOptions" SortIndex="295"/>
 
-		<!--	Auto City Naming
-		-->
+		<!--	Auto City Naming - W.I.P.
 		<Row Key1="Map" Key2="GreatestEarthMap.lua" ParameterId="AutoCityNaming" Name="LOC_MAP_AUTO_CITY_NAMING_NAME" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="AutoCityNaming" GroupId="MapOptions" SortIndex="2000"/>
+		-->
 		
 		<!--	Special default MapSize (hidden)
 		-->

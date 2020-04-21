@@ -7,7 +7,7 @@
 	<!-- Majors -->
 	<StartPosition>
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AMERICA"	X="155" Y="64" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AMERICA"	X="130" Y="64" AlternateStart="1" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AMERICA"	X="130" Y="64" AlternateStart="1" /> <!-- San Francisco for portion of the maps including West Coast only -->
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ARABIA"	X="36" Y="41" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AUSTRALIA"	X="103" Y="10" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AZTEC"		X="138" Y="49" />
@@ -42,6 +42,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ROME"		X="20" Y="57" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_RUSSIA"	X="36" Y="74" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_RUSSIA"	X="31" Y="78" AlternateStart="1" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_RUSSIA"	X="94" Y="69" AlternateStart="1" /><!-- Vladivostok for Asian sections of the map -->
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SCOTLAND"	X="10" Y="78" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SCYTHIA"	X="47" Y="69" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SPAIN"		X="7" Y="57" />
@@ -55,6 +56,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MAORI"		X="120"	Y="16" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_HUNGARY"	X="25"	Y="65" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CANADA"	X="153"	Y="71" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CANADA"	X="131" Y="70" AlternateStart="1" /><!-- Vancouver for sections of the map including West Coast only -->
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_FRANCE"	X="11"	Y="64" Leader="LEADER_ELEANOR" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PHOENICIA"	X="36"	Y="52" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_INCA"		X="155"	Y="25" />

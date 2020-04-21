@@ -2,8 +2,22 @@
 
 <Context Name="WorldBuilderPlotEditor">
  <!-- YnAMP <<<<< -->
+
+	<Container	ID="CityListContainer" />
+	<Instance	Name="CityList">
+		<WorldAnchor		ID="Anchor" > <!-- Scaling="1" UnitsPerPixel="0.06" Billboard="1"> -->
+			<Stack			ID="IconStack"	StackGrowth="Right"		Anchor="C,C">
+				<Container	ID="TextContainer" Size="256,256">
+					<Label	ID="ListText" Style="FontNormalBold16" Text="TextLabel" Anchor="C,C"/>
+				</Container>
+			</Stack>
+		</WorldAnchor>
+	</Instance>
+ 
 	<GridButton ID="ExportMapToLua"				Anchor="C,T" Style="PauseMenuButton" Size="250,36" String="{LOC_GAME_MENU_EXPORT_TO_LUA:upper}" ToolTip="LOC_GAME_MENU_EXPORT_TO_LUA_DESCRIPTION" Hidden="1" />
 	<GridButton ID="Restart"					Anchor="C,T" Style="PauseMenuButton" Size="250,36" String="{LOC_GAME_MENU_YNAMP_RESTART:upper}" ToolTip="LOC_GAME_MENU_YNAMP_RESTART_TOOLTIP"		Hidden="1" />
+
+
  <!-- YnAMP >>>>> -->
   <ScrollPanel ID="PlotEditorScrollPanel" Size="320,455" Vertical="1" AutoScrollBar="1" >
     

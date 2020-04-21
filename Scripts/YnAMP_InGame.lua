@@ -7,7 +7,8 @@ local YnAMP_Version = GameInfo.GlobalParameters["YNAMP_VERSION"].Value
 print ("Yet (not) Another Maps Pack version " .. tostring(YnAMP_Version) .." (2016-2019) by Gedemon")
 print ("loading YnAMP_InGame.lua")
 
-include "YnAMP_Common"
+include("YnAMP_Common")
+include("InstanceManager")
 
 local mods = Modding.GetActiveMods()
 if mods ~= nil then
@@ -159,7 +160,8 @@ end
 function Cleaning()
 	print ("Cleaning YnAMP table...")
 	-- 
-	ExposedMembers.YnAMP = nil
+	ExposedMembers.YnAMP 			= nil
+	ExposedMembers.YnAMP_Loading 	= nil
 	--print ("Cleaning InputHandler...")
 	--Automation.RemoveInputHandler( OnInputHandler )
 end
@@ -184,6 +186,7 @@ function Initialize()
 	StartLoadingTextUpdate()
 end
 Initialize()
+
 
 
 

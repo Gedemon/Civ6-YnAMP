@@ -821,19 +821,19 @@
 		<Replace Tag="LOC_CITY_NAME_MESSINA_ARABIA" Text="타르바민" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_MESSINA_GREECE" Text="잔클레" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_MESSINA_ROME" Text="메사나" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_MILANO" Text="밀란" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_MILANO_GERMANY" Text="마이란트" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_MILANO_POLAND" Text="메디올란" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_MILANO_ROME" Text="메디올라눔" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_MILAN" Text="밀란" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_MILAN_GERMANY" Text="마이란트" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_MILAN_POLAND" Text="메디올란" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_MILAN_ROME" Text="메디올라눔" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_MONTELEONE" Text="몬텔레오네" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_MONTELEONE_GREECE" Text="히포니온" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_MONTELEONE_ROME" Text="비보 발렌티아" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_NAPOLI" Text="나폴리" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_NAPOLI_GERMANY" Text="네아펠" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_NAPOLI_GREECE" Text="파르데노페" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_NAPOLI_ROME" Text="네아폴리스" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_NAPOLI_RUSSIA" Text="네아폴" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_NAPOLI_SPAIN" Text="나폴레스" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_NAPLES" Text="나폴리" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_NAPLES_GERMANY" Text="네아펠" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_NAPLES_GREECE" Text="파르데노페" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_NAPLES_ROME" Text="네아폴리스" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_NAPLES_RUSSIA" Text="네아폴" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_NAPLES_SPAIN" Text="나폴레스" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_OLBIA" Text="올비아" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_ORISTANO" Text="오리스타노" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_ORISTANO_ROME" Text="아리스타니스" Language="ko_KR" />
@@ -881,17 +881,17 @@
 		<Replace Tag="LOC_CITY_NAME_RIETI_ROME" Text="레아테" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_RIMINI" Text="리미니" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_RIMINI_ROME" Text="아리미눔" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_ROMA" Text="로마" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_ARABIA" Text="루미야" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_CHINA" Text="뤄마" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_GERMANY" Text="롬" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_GREECE" Text="로미" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_JAPAN" Text="로마" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_NORWAY" Text="로마보르그" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_POLAND" Text="짐" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_ROME" Text="로마" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_RUSSIA" Text="림" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_ROMA_SPAIN" Text="로마" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_ROME" Text="로마" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_ROME_ARABIA" Text="루미야" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_ROME_CHINA" Text="뤄마" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_ROME_GERMANY" Text="롬" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_ROME_GREECE" Text="로미" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_ROME_JAPAN" Text="로마" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_ROME_NORWAY" Text="로마보르그" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_ROME_POLAND" Text="짐" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_ROME_ROME" Text="로마" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_ROME_RUSSIA" Text="림" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_ROME_SPAIN" Text="로마" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SALERNO" Text="살레르노" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SALERNO_ROME" Text="살레르눔" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_SAN_BENEDETTO_DEL_TRONTO" Text="산 베네덴토 델 트론토" Language="ko_KR" />
@@ -945,9 +945,9 @@
 		<Replace Tag="LOC_CITY_NAME_VALLETTA_GREECE" Text="발레타" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_VASTO" Text="바스토" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_VASTO_ROME" Text="라리눔" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_VENETIA" Text="베네치아" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_VENETIA_GERMANY" Text="베네디크" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_VENETIA_ROME" Text="알티눔" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_VENICE" Text="베네치아" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_VENICE_GERMANY" Text="베네디크" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_VENICE_ROME" Text="알티눔" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_VERONA" Text="베로나" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_VERONA_FRANCE" Text="베론" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_VICENZA" Text="비첸짜" Language="ko_KR" />

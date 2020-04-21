@@ -64,7 +64,8 @@ CREATE TABLE IF NOT EXISTS NaturalWonderPosition
 		
 -- Start Positions
 CREATE TABLE IF NOT EXISTS StartPosition
-	(	MapName TEXT NOT NULL,
+	(	MapName TEXT,
+		MapScript TEXT, 	-- to override MapName reference for specific entries in relation to MapScript (like in region of the Largest Earth Map that were heavily modified and can't use the GiantEarth reference)
 		Civilization TEXT,
 		Leader TEXT,
 		DisabledByCivilization TEXT,
@@ -90,12 +91,13 @@ CREATE TABLE IF NOT EXISTS RegionPosition
 
 -- City Map		
 CREATE TABLE IF NOT EXISTS CityMap
-	(	MapName TEXT NOT NULL,
+	(	MapName TEXT,
+		MapScript TEXT, 	-- to override MapName reference for specific entries in relation to MapScript (like in region of the Largest Earth Map that were heavily modified and can't use the GiantEarth reference)
 		Civilization TEXT,
 		CityLocaleName TEXT NOT NULL,
 		X INT default 0,
 		Y INT default 0,
-		Area INT);
+		Area INT NOT NULL default 1);
 
 -- Maritime CS
 CREATE TABLE IF NOT EXISTS StartBiasCoast
@@ -118,24 +120,30 @@ CREATE TABLE IF NOT EXISTS ScenarioCivilizationsReplacement
 CREATE TABLE IF NOT EXISTS ScenarioCivilizations
 	(	ScenarioName TEXT,
 		MapName TEXT,
+		MapScript TEXT,
 		SpecificEra TEXT,
-		CivilizationType TEXT NOT NULL,
-		Priority INT default 0, -- higher means first selected for placement in loops
+		CivilizationType TEXT, 		-- can be NULL to set default values for all Civilization, in that case ScenarioName must not be NULL
+		Priority INT default 0, 	-- higher means first selected for placement in loops
 		CityPlacement TEXT,
 		MaxDistanceFromCapital INT, -- if OnlySameLandMass is true, then this is the land path distance, else it's the air distance
 		MinCitySeparation INT,
-		SouthernLatitude INT,	-- from -90 to 90, 0 being equator
+		SouthernLatitude INT,		-- from -90 to 90, 0 being equator
 		NorthernLatitude INT,
+		BorderPlacement TEXT,
+		BorderMaxDistance INT,
 		OnlySameLandMass BOOLEAN NOT NULL CHECK (OnlySameLandMass IN (0,1)) DEFAULT 0,
 		NumberOfCity INT,
+		NumberOfMinorCity INT, 		-- Default scenario setting only, it has no effect when CivilizationType exists
 		CapitalSize INT,
 		OtherCitySize INT,
+		DecreaseOtherCitySize BOOLEAN NOT NULL CHECK (DecreaseOtherCitySize IN (0,1)) DEFAULT 0,	-- Default scenario setting only, it has no effect when CivilizationType exists
 		CitySizeDecrement INT,
 		NumCityPerSizeDecrement INT,
+		Infrastructure TEXT,
 		RoadPlacement TEXT,
 		RoadMaxDistance INT,
 		MaxRoadPerCity INT,
-		InternationalRoads TEXT,
+		InternationalRoads BOOLEAN NOT NULL CHECK (InternationalRoads IN (0,1)) DEFAULT 0,
 		InternationalRoadMaxDistance INT,
 		NationalRailPlacement TEXT,
 		InternationalRails TEXT,
