@@ -637,6 +637,7 @@
 		<Replace Tag="LOC_CITY_NAME_STRASBOURG_NORWAY" Text="Strassborg" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_STRASBOURG_ROME" Text="Argentoratum" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_STRASBOURG_SPAIN" Text="Estrasburgo" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TOULON" Text="Toulon" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_TOULOUSE" Text="Toulouse" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_TOULOUSE_POLAND" Text="Tuluza" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_TOULOUSE_ROME" Text="Tolosa" Language="pl_PL" />
@@ -2705,6 +2706,7 @@
 		<Replace Tag="LOC_CITY_NAME_KAUNAS_GERMANY" Text="Kauen" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_KAUNAS_POLAND" Text="Kowno" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_KECSKEMET" Text="Kecskemét" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_KHARKOV" Text="Kharkov" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_KHMELNYTSKYI" Text="Khmelnytskyi" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_KHMELNYTSKYI_GERMANY" Text="Proskuriv" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_KHUST" Text="Khust" Language="pl_PL" />
@@ -2946,15 +2948,15 @@
 		<Replace Tag="LOC_CITY_NAME_VITEBSK" Text="Vitebsk" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_VITEBSK_GERMANY" Text="Wizebsk" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_VITEBSK_POLAND" Text="Witebsk" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_WARSZAWA" Text="Warsaw" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_WARSZAWA_ARABIA" Text="Varşova" Language="pl_PL" /> <!-- Turkish -->
-		<Replace Tag="LOC_CITY_NAME_WARSZAWA_FRANCE" Text="Varsovie" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_WARSZAWA_GERMANY" Text="Warschau" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_WARSZAWA_GREECE" Text="Varsovía" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_WARSZAWA_NORWAY" Text="Warszawa" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_WARSZAWA_POLAND" Text="Warszawa" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_WARSZAWA_ROME" Text="Varsovia" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_WARSZAWA_RUSSIA" Text="Varšava" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_WARSZAW" Text="Warsaw" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_WARSZAW_ARABIA" Text="Varşova" Language="pl_PL" /> <!-- Turkish -->
+		<Replace Tag="LOC_CITY_NAME_WARSZAW_FRANCE" Text="Varsovie" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_WARSZAW_GERMANY" Text="Warschau" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_WARSZAW_GREECE" Text="Varsovía" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_WARSZAW_NORWAY" Text="Warszawa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_WARSZAW_POLAND" Text="Warszawa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_WARSZAW_ROME" Text="Varsovia" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_WARSZAW_RUSSIA" Text="Varšava" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_WIEN" Text="Vienna" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_WIENER_NEUSTADT" Text="Wiener Neustadt" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_WIENER_NEUSTADT_ROME" Text="Scarbantia" Language="pl_PL" />
@@ -3174,6 +3176,10 @@
 		<Replace Tag="LOC_CITY_NAME_ZELENOGRAD" Text="Zelenograd" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_ZHARKOVSKIY" Text="Zharkovskiy" Language="pl_PL" />
 
+		<!-- USSR -->
+		<Replace Tag="LOC_CITY_NAME_STALINGRAD" Text="Stalingrad" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_LENINGRAD" Text="Leningrad" Language="pl_PL" />
+		
 		<!-- EASTERN RUSSIA -->
 		<Replace Tag="LOC_CITY_NAME_BELEBEY" Text="Belebey" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_BELORETSK" Text="Beloretsk" Language="pl_PL" />
@@ -3203,6 +3209,7 @@
 		<Replace Tag="LOC_CITY_NAME_NEFTEGORSK" Text="Neftegorsk" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_NEFTEKAMSK" Text="Neftekamsk" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_NIZHNY_TAGIL" Text="Nizhny Tagil" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NOVOSIBIRSK" Text="Novosibirsk" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_NYROB" Text="Nyrob" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_ORENBURG" Text="Orenburg" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_ORENBURG_SCYTHIA" Text="Pokrovka" Language="pl_PL" />
@@ -3212,6 +3219,7 @@
 		<Replace Tag="LOC_CITY_NAME_PERM_SCYTHIA" Text="Yagoshikha" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_PESTRAVKA" Text="Pestravka" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_PETROPAVL" Text="Petropavl" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PETROPAVLOVSK_KAMCHATSKIY" Text="Petropavlovsk-Kamchatskiy" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_POREZ" Text="Porez" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_PUGACHYOV" Text="Pugachyov" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_SALAVAT" Text="Salavat" Language="pl_PL" />
@@ -3235,6 +3243,7 @@
 		<Replace Tag="LOC_CITY_NAME_UVA" Text="Uva" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_VERKHOTURYE" Text="Verkhoturye" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_VIZHAY" Text="Vizhay" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_VLADIVOSTOK" Text="Vladivostok" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_VOTKINSK" Text="Votkinsk" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_YEKATERINBURG" Text="Yekaterinburg" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_YUGORSK" Text="Yugorsk" Language="pl_PL" />
@@ -3291,6 +3300,7 @@
 		<Replace Tag="LOC_CITY_NAME_MUZHI" Text="Muzhi" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_NARYAN_MAR" Text="Naryan-Mar" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_NIZHNNAYA_ZOLOTITSKA" Text="Nizhnaya Zolotitsa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NORILSK" Text="Norilsk" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_NOVY_BOR" Text="Novy Bor" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_NYAGAN" Text="Nyagan" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_NYAKSIMVOL" Text="Nyaksimvol" Language="pl_PL" />
@@ -3853,6 +3863,7 @@
 
 		<Replace Tag="LOC_CITY_NAME_ABHAR" Text="Abhar" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_ADIYAMAN" Text="Adıyaman" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ALMATY" Text="Almaty" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_BANEH" Text="Baneh" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_BATMAN" Text="Batman" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_BAYBURT" Text="Bayburt" Language="pl_PL" />
@@ -3898,6 +3909,7 @@
 		<Replace Tag="LOC_CITY_NAME_NARMAN" Text="Narman" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_NEFTCHALA" Text="Neftçala" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_NIZIP" Text="Nizip" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NUKUS" Text="Nukus" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_NUSAYBIN" Text="Nusaybin" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_PAZARYOLU" Text="Pazaryolu" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_PIRANSHAHR" Text="Piranshahr" Language="pl_PL" />
@@ -3915,6 +3927,7 @@
 		<Replace Tag="LOC_CITY_NAME_SIVAS" Text="Sivas" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_SORAN" Text="Soran" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_TABRIZ" Text="Tabriz" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TASHKENT" Text="Tashkent" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_TATVAN" Text="Tatvan" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_TEHRAN" Text="Tehran" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_TERCAN" Text="Tercan" Language="pl_PL" />
@@ -6007,6 +6020,304 @@
 
 	</LocalizedText>
 
+	<LocalizedText>		<!-- PACIFIC ISLANDS -->
+		<Replace Tag="LOC_CITY_NAME_REKOHU" Text="Rekohu" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_REKOHU_JAPAN" Text="Rekofu" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_REKOHU_AUSTRALIA" Text="Chatham Island" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_REKOHU_ENGLAND" Text="Chatham Island" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_OGASAWARA" Text="Ogasawara" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_OGASAWARA_KOREA" Text="Ogasawala" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_OGASAWARA_ARABIA" Text="Awghasawara" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_OGASAWARA_INDIA" Text="Ogasara" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_OGASAWARA_CHINA" Text="Xiaoliyuan" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_OGASAWARA_KHMER" Text="Auhkasavearea" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_OGASAWARA_ENGLAND" Text="Peel Island" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_OGASAWARA_SPAIN" Text="Islas del Arzobispo" Language="pl_PL" />
+
+        <Replace Tag="LOC_CITY_NAME_NAURU" Text="Nauru" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_NAURU_KOREA" Text="Naulu" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_NAURU_CHINA" Text="Naolu" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_NAURU_ARABIA" Text="Nawru" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_NAURU_KHMER" Text="Nourou" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_PALAU" Text="Palau" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_PALAU_JAPAN" Text="Parau" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_PALAU_KOREA" Text="Pallau" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_PALAU_CHINA" Text="Palao" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_PALAU_ARABIA" Text="Balaw" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_PALAU_INDIA" Text="Palaoo" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_PALAU_KHMER" Text="Balav" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_CHUUK" Text="Chuuk" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_CHUUK_KOREA" Text="Chuug" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_CHUUK_CHINA" Text="Qiuke" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_CHUUK_ARABIA" Text="Shuk" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_CHUUK_JAPAN" Text="Chuku" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_TARAWA" Text="Tarawa" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_TARAWA_KOREA" Text="Talawa" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_TARAWA_CHINA" Text="Talawa" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_TARAWA_ARABIA" Text="Tarau" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_TARAWA_KHMER" Text="Tareavea" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_TARAWA_GEORGIA" Text="Tarava" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_TARAWA_INDIA" Text="Tarava" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_TARAWA_MONGOLIA" Text="Tarava" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_KIRITIMATI" Text="Kiritimati" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_KIRITIMATI_KOREA" Text="Kilitimati" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_KIRITIMATI_CHINA" Text="Kelisimasi" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_KIRITIMATI_ARABIA" Text="Kayritimati" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_KIRITIMATI_GREECE" Text="Kiritimáti" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_KIRITIMATI_GEORGIA" Text="Kritimati" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_NAN_MADOL" Text="Nan Madol" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_NAN_MADOL_KOREA" Text="Naen Maedol" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_NAN_MADOL_ARABIA" Text="Nan Madul" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_NAN_MADOL_JAPAN" Text="Nan Madoru" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_NAN_MADOL_INDIA" Text="Nana Madola" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_NAN_MADOL_PALIKIR" Text="Palikir" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_NAN_MADOL_GEORGIA" Text="Nan Madoli" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS" Text="Marshall Islands" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_INDONESIA" Text="Kepulauan Marsal" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_ARABIA" Text="Juzur Marishal" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_JAPAN" Text="Masharu Shoto" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_CHINA" Text="Mashaoer Qundao" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_KHMER" Text="Kaoh Marshall" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_FRANCE" Text="Îles Marshall" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_KOREA" Text="Maysal Gundo" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_RUSSIA" Text="Marshallovy Ostrova" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_NETHERLANDS" Text="Marshall Eilanden" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_GEORGIA" Text="Marshalis Kundzulebi" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_MONGOLIA" Text="Marshallyn Arluud " Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_GERMANY" Text="Marshallinseln" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_GREECE" Text="Nísoi Mársal" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_INDIA" Text="Maarshal Dveep Samooh" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_ROME" Text="Insulae Marsallae" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_POLAND" Text="Wyspy Marshalla" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_BRAZIL" Text="Ilhas Marshall" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_MARSHALL_ISLANDS_SPAIN" Text="Islas Marshall" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_GUAM" Text="Guam" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_GUAM_JAPAN" Text="Oyima-Jima" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_GUAM_KOREA" Text="Gwam" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_GUAM_CHINA" Text="Guandao" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_GUAM_GEORGIA" Text="Guami" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_GUAM_ARABIA" Text="Ghawam" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_GUAM_GREECE" Text="Nkouám" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_GUAM_KHMER" Text="Hkam" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_SAIPAN" Text="Saipan" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_SAIPAN_CHINA" Text="Saiban" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_SAIPAN_RUSSIA" Text="Saypan" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_SAIPAN_GEORGIA" Text="Saipiani" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_SAIPAN_ARABIA" Text="Sayban" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_SAIPAN_ZULU" Text="I-Saipan" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_SAIPAN_INDIA" Text="Saayapan" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_JOHNSTON_ATOLL" Text="Johnston Atoll" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_JOHNSTON_ATOLL_ARABIA" Text="Junistun Atul" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_JOHNSTON_ATOLL_JAPAN" Text="Karama Kansho" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_JOHNSTON_ATOLL_CHINA" Text="Kalama Huanjiao" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_JOHNSTON_ATOLL_KHMER" Text="Kaoh Kalamea" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_JOHNSTON_ATOLL_POLYNESIA" Text="Kalama Atoll" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_JOHNSTON_ATOLL_HAWAII" Text="Kalama Atoll" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_JOHNSTON_ATOLL_RUSSIA" Text="Atoll Dzhonstona" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_HONIARA" Text="Honiara" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_HONIARA_KOREA" Text="Honiala" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_HONIARA_CHINA" Text="Huoniyala" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_HONIARA_ARABIA" Text="Huniara" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_HONIARA_GREECE" Text="Choniára" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_HONIARA_INDIA" Text="Hyunara" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_ARAWA" Text="Arawa" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_ARAWA_GEORGIA" Text="Arava" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_ARAWA_INDIA" Text="Arava" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_KIMBE" Text="Kimbe" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_KIMBE_KOREA" Text="Gimbe" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_KIMBE_CHINA" Text="Jinbei" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_KIMBE_JAPAN" Text="Kimube" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_KIMBE_INDIA" Text="Kimbabe" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_KOKOPO" Text="Kokopo" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_KOKOPO_CHINA" Text="Kekebo" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_LORENGAU" Text="Lorengau" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_LORENGAU_CHINA" Text="Luolungau" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_LORENGAU_JAPAN" Text="Rorengau" Language="pl_PL" />
+		
+        <Replace Tag="LOC_CITY_NAME_KAVIENG" Text="Kavieng" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_KAVIENG_KOREA" Text="Kabieng" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_KAVIENG_CHINA" Text="Kaweien" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_KAVIENG_GEORGIA" Text="Kaviengi" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_KAVIENG_JAPAN" Text="Kabien" Language="pl_PL" />
+        <Replace Tag="LOC_CITY_NAME_KAVIENG_INDIA" Text="Kavienga" Language="pl_PL" />
+
+		<Replace Tag="LOC_CITY_NAME_HANGA_ROA" Text="Hanga Roa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_HANGA_ROA_KOREA" Text="Hang-ga Loa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_HANGA_ROA_CHINA" Text="Anjialuoa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_HANGA_ROA_ARABIA" Text="Hanajaan Ruu" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_HANGA_ROA_KHMER" Text="Hangsa Rmea" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_HANGA_ROA_INDIA" Text="Hanka Roa" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS" Text="Pitcairn Islands" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_INDONESIA" Text="Kepulauan Pitcairn" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_ARABIA" Text="Juzur Byitkirn" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_JAPAN" Text="Pitokeanshoto" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_CHINA" Text="Pitekaien Qundao" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_KHMER" Text="Kaoh Pitcairn" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_FRANCE" Text="Îles Pitcairn" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_KOREA" Text="Piskeeon Jedo" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_RUSSIA" Text="Ostrova Pitkern" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_NETHERLANDS" Text="Pitcairneilanden" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_ZULU" Text="Iziqhingi zasePitcairn" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_MONGOLIA" Text="Pitkern Arluud " Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_GERMANY" Text="Pitcairninseln" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_GREECE" Text="Nísoi Pitcairn" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_INDIA" Text="Pitakairan Aailaind" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_ROME" Text="Insulae Pitcairn" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_POLAND" Text="Wyspy Pitcairn" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_BRAZIL" Text="Ilhas Pitcairn" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PITCAIRN_ISLANDS_SPAIN" Text="Islas Pitcairn" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_NOUMEA" Text="Nouméa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NOUMEA_KOREA" Text="Numea" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NOUMEA_CHINA" Text="Numeia" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NOUMEA_ARABIA" Text="Numiaan" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NOUMEA_JAPAN" Text="Numea" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NOUMEA_INDIA" Text="Naumiya" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_KONE_NCD" Text="Koné" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_TONGA" Text="Tonga" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TONGA_ZULU" Text="I-Tonga" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TONGA_CHINA" Text="Tangjia" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TONGA_ARABIA" Text="Tungha" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TONGA_GREECE" Text="Tónnka" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TONGA_KOREA" Text="Tong-ga" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TONGA_KHMER" Text="Tongohka" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_PORT_VILA" Text="Port Vila" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PORT_VILA_ROME" Text="Prodigium Vila" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PORT_VILA_CHINA" Text="Weilagang" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PORT_VILA_ARABIA" Text="Bwrt Filana" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PORT_VILA_JAPAN" Text="Potobira" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PORT_VILA_KOREA" Text="Poteu Billa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_PORT_VILA_KHMER" Text="Kampngphe Vilea" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_RAROTONGA" Text="Rarotonga" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_RAROTONGA_KOREA" Text="Lalotong-ga" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_RAROTONGA_CHINA" Text="Lalotangjiadao" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_RAROTONGA_ARABIA" Text="Rarutunaja" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_RAROTONGA_GEORGIA" Text="Rarotong" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_NIUE" Text="Niue" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NIUE_CHINA" Text="Niuai" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_TAHITI" Text="Tahiti" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TAHITI_CHINA" Text="Daxidi" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TAHITI_JAPAN" Text="Tahichi" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TAHITI_GEORGIA" Text="Tahti" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TAHITI_INDIA" Text="Taahitee" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TAHITI_MONGOLIA" Text="Takhiti" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TAHITI_GREECE" Text="Taïtí" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TAHITI_KHMER" Text="Tahasai" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TAHITI_ZULU" Text="I-Tahiti" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_MALEKULA" Text="Malekula" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_MALEKULA_MONGOLIA" Text="Malyekula" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_MALEKULA_JAPAN" Text="Marekura" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_MALEKULA_RUSSIA" Text="Malykula" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_LAUTOKA" Text="Lautoka" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_LAUTOKA_CHINA" Text="Laotuoka" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_LAUTOKA_JAPAN" Text="Rautoka" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_LAUTOKA_GEORGIA" Text="Lvotoka" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_LAUTOKA_ARABIA" Text="Awtuka" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_SUVA" Text="Suva" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_SUVA_CHINA" Text="Suwa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_SUVA_JAPAN" Text="Suba" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_SUVA_KOREA" Text="Suba" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_SUVA_GREECE" Text="Souvá" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_SUVA_KHMER" Text="Saouvea" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_LABASA" Text="Labasa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_LABASA_JAPAN" Text="Rabasa" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_ESPIRITU_SANTO" Text="Espiritu Santo" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ESPIRITU_SANTO_CHINA" Text="Shènglíng" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ESPIRITU_SANTO_JAPAN" Text="Seirei" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ESPIRITU_SANTO_INDONESIA" Text="Roh Kudus" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ESPIRITU_SANTO_INDIA" Text="Pavitr Aatma" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ESPIRITU_SANTO_KOREA" Text="Seonglyeong" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_ESPIRITU_SANTO_KHMER" Text="Preahvinhnhean Brisot" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_RAIATEA" Text="Raiatea" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_RAIATEA_CHINA" Text="Ruiyadiyadao" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_RAIATEA_ARABIA" Text="Rayatia" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_RAIATEA_KOREA" Text="Laiatea" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_RAIATEA_MONGOLIA" Text="Raiat" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_RAIATEA_INDIA" Text="Rayatea" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_RAIATEA_GEORGIA" Text="Raateta" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA" Text="Uvea" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_CHINA" Text="Walisidao" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_ARABIA" Text="Walyis Wafawtunana" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_KOREA" Text="Wolliseu Putuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_MONGOLIA" Text="Uollis ba Futuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_INDIA" Text="Vaalee aur Fyutuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_GEORGIA" Text="Uilisi da Putuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_FRANCE" Text="Wallis et Futuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_ENGLAND" Text="Wallis and Futuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_AUSTRALIA" Text="Wallis and Futuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_AMERICA" Text="Wallis and Futuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_GERMANY" Text="Wallis und Futuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_NETHERLANDS" Text="Wallis en Futuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_ROME" Text="Wallis et Futunae" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_SPAIN" Text="Wallis y Futuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_BRAZIL" Text="Wallis e Futuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_RUSSIA" Text="Uollis i Futuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_KHMER" Text="Wallis ning Futuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_NORWAY" Text="Wallis og Futuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_POLAND" Text="Wallis i Futuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_GREECE" Text="Wallis kai Futuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_INDONESIA" Text="Wallis dan Futuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_JAPAN" Text="Uorisu to Futsuna" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_UVEA_WALLIS_AND_FUTUNA_FIJI" Text="Labasa" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_SAMOA" Text="Samoa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_SAMOA_CHINA" Text="Samoya" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_SAMOA_ARABIA" Text="Samuu" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_SAMOA_AMERICA" Text="American Samoa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_SAMOA_GERMANY" Text="Deutsch-Samoa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_SAMOA_GREECE" Text="Samóa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_SAMOA_KHMER" Text="Samr" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_SAMOA_ZULU" Text="I-Samoa" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_NUKU_HIVA" Text="Nuku Hiva" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NUKU_HIVA_CHINA" Text="Nukuxiwa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NUKU_HIVA_ARABIA" Text="Nuku Hifa" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NUKU_HIVA_KOREA" Text="Nuku Hiba" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NUKU_HIVA_JAPAN" Text="Nuku Hiba" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NUKU_HIVA_INDIA" Text="Nuuku Hivha" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NUKU_HIVA_GEORGIA" Text="Niuk Hvava" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NUKU_HIVA_RUSSIA" Text="Nuku Khiva" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NUKU_HIVA_MONGOLIA" Text="Nuku Khiva" Language="pl_PL" />
+		
+		<Replace Tag="LOC_CITY_NAME_TUVALU" Text="Tuvalu" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TUVALU_CHINA" Text="Tuwalu" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TUVALU_ARABIA" Text="Tawfalu" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TUVALU_KOREA" Text="Tuballu" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TUVALU_JAPAN" Text="Tsubaru" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_TUVALU_GREECE" Text="Touvaloú" Language="pl_PL" />
+	
+	</LocalizedText>
+	
+	
 	<LocalizedText>		<!-- AOTEAROA/NEW ZEALAND -->
 
 		<Replace Tag="LOC_CITY_NAME_AUCKLAND" Text="Auckland" Language="pl_PL" />
@@ -6753,6 +7064,7 @@
 		<Replace Tag="LOC_CITY_NAME_SAKAI" Text="Sakai" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_WAKAYAMA" Text="Wakayama" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_HIROSHIMA" Text="Hiroshima" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NAGASAKI" Text="Nagasaki" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_NARA" Text="Nara" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_JEJU" Text="Jeju" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_YAMAGUSHI" Text="Yamagushi" Language="pl_PL" />
@@ -7003,6 +7315,7 @@
 		<Replace Language="pl_PL" Text="Anoubrthean" Tag="LOC_CITY_NAME_DEPUTATSKY_KHMER"/>
 		<Replace Language="pl_PL" Text="Daeliin" Tag="LOC_CITY_NAME_DEPUTATSKY_KOREA"/>
 		<Replace Language="pl_PL" Text="Orlogch Darga" Tag="LOC_CITY_NAME_DEPUTATSKY_MONGOLIA"/>
+		<Replace Language="pl_PL" Text="Dikson" Tag="LOC_CITY_NAME_DIKSON"/>
 		<Replace Language="pl_PL" Text="Egvekinot" Tag="LOC_CITY_NAME_EGVEKINOT"/>
 		<Replace Language="pl_PL" Text="Egvekinoto" Tag="LOC_CITY_NAME_EGVEKINOT_GEORGIA"/>
 		<Replace Language="pl_PL" Text="Igvikonota" Tag="LOC_CITY_NAME_EGVEKINOT_INDIA"/>
@@ -7243,6 +7556,7 @@
 		<Replace Language="pl_PL" Text="Tahtoiisk" Tag="LOC_CITY_NAME_TAKHTOYAMSK_KHMER"/>
 		<Replace Language="pl_PL" Text="Tatudiseukeu" Tag="LOC_CITY_NAME_TAKHTOYAMSK_KOREA"/>
 		<Replace Language="pl_PL" Text="Takhtopi Khel" Tag="LOC_CITY_NAME_TAKHTOYAMSK_MONGOLIA"/>
+		<Replace Language="pl_PL" Text="Tiksi" Tag="LOC_CITY_NAME_TIKSI"/>
 		<Replace Language="pl_PL" Text="Tilichiki" Tag="LOC_CITY_NAME_TILICHIKI"/>
 		<Replace Language="pl_PL" Text="Tylytshyka" Tag="LOC_CITY_NAME_TILICHIKI_ARABIA"/>
 		<Replace Language="pl_PL" Text="Jiliqiji" Tag="LOC_CITY_NAME_TILICHIKI_CHINA"/>
@@ -7334,6 +7648,9 @@
 		<Replace Language="pl_PL" Text="Jhirianaka" Tag="LOC_CITY_NAME_ZYRYANKA_INDIA"/>
 		<Replace Language="pl_PL" Text="Jirianka" Tag="LOC_CITY_NAME_ZYRYANKA_JAPAN"/>
 		<Replace Language="pl_PL" Text="Jilikanka" Tag="LOC_CITY_NAME_ZYRYANKA_KOREA"/>
+		
+		<Replace Tag="LOC_CITY_NAME_CHUMIKAN"	Text="Chumikan"		Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NERYUNGRI"	Text="Neryungri"	Language="pl_PL" />
 		
 	</LocalizedText>
 	
