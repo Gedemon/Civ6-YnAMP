@@ -47,7 +47,7 @@
       <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - [COLOR_RED]Largest Earth Custom[ENDCOLOR]</Text>
     </Replace>
     <Replace Tag="LOC_LARGESTEARTHCUSTOM_DESC" Language="pl_PL">
-      <Text>Largest Earth Custom (230x116 - Absurdalna)[NEWLINE][ICON_Exclamation] [COLOR_RED]NIE WCZYTA SIĘ W PEŁNYM ROZMIARZE![ENDCOLOR][NEWLINE]Skonfiguruj, aby ustawić rozgrywkę na mniejszych regionach mapy.</Text>
+      <Text>Largest Earth Custom (230x116 - Absurdalna)[NEWLINE][ICON_Exclamation] [COLOR_RED]NIE WCZYTA SIĘ W PEŁNYM ROZMIARZE![ENDCOLOR][NEWLINE]Skonfiguruj, aby uruchomić rozgrywkę na mniejszym regionie mapy.</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Language="pl_PL">
@@ -866,6 +866,14 @@
     <Replace Tag="LOC_MAP_SECTION_COLONIZATION_DESCRIPTION" Text="Graj na mapie z Oceanem Atlantyckim z częścią Europy i Amerykami"				Language="pl_PL"/>
     <Replace Tag="LOC_MAP_SECTION_OLD_WORLD_NAME" 			Text="Stary Kontynent" 																Language="pl_PL"/>
     <Replace Tag="LOC_MAP_SECTION_OLD_WORLD_DESCRIPTION" 	Text="Graj na Starym Kontynencie (Europa, Afryka, Azja)"							Language="pl_PL"/>
+    <Replace Tag="LOC_MAP_SECTION_AFRICA_NAME" 				Text="Afryka" 																		Language="pl_PL"/>
+    <Replace Tag="LOC_MAP_SECTION_AFRICA_DESCRIPTION" 		Text="Graj na kontynecie Afrykańskim"												Language="pl_PL"/>
+    <Replace Tag="LOC_MAP_SECTION_LARGE_ASIA_NAME" 			Text="Azja Wielka" 																	Language="pl_PL"/>
+    <Replace Tag="LOC_MAP_SECTION_LARGE_ASIA_DESCRIPTION" 	Text="Graj na całej Azji, od Bliskiego Wschodu do Japonii, włączając w to Austarlie"	Language="pl_PL"/>
+    <Replace Tag="LOC_MAP_SECTION_SOUTH_EAST_ASIA_NAME" 	Text="Azja Południowo-Wschodnia" 													Language="pl_PL"/>
+    <Replace Tag="LOC_MAP_SECTION_SOUTH_EAST_ASIA_DESCRIPTION" 	Text="Graj na mniejszej wersji Azji, wyłączając większą część Australii"		Language="pl_PL"/>
+    <Replace Tag="LOC_MAP_SECTION_PACIFIC_NAME" 			Text="Pacyfik" 																		Language="pl_PL"/>
+    <Replace Tag="LOC_MAP_SECTION_PACIFIC_DESCRIPTION" 		Text="Graj na mapie wyśrodkowanej na Pacyfiku, włączając w to część Azji i Ameryki"	Language="pl_PL"/>
 	
     <Replace Tag="LOC_MAP_STARTX_NAME" Language="pl_PL">
       <Text>Granica ZACHODNIA</Text>
@@ -1007,7 +1015,7 @@
     </Replace>
 	
     <Replace Tag="LOC_SCENARIO_OPTIONS" Language="pl_PL">
-      <Text>[ICON_DownloadContent][ICON_DownloadContent][ICON_DownloadContent][ICON_DownloadContent] OPCJE SCENARIUSZA [ICON_DownloadContent][ICON_DownloadContent][ICON_DownloadContent][ICON_DownloadContent]</Text>
+      <Text>[ICON_DownloadContent] OPCJE SCENARIUSZA [ICON_DownloadContent]</Text>
     </Replace>
     <Replace Tag="LOC_SCENARIO_OPTIONS_DESCRIPTION" Language="pl_PL">
       <Text>Opcje scenariusza poniżej[NEWLINE][ICON_Exclamation][COLOR_RED] OPCJA TESTOWA [ENDCOLOR][ICON_Exclamation]</Text>
@@ -1044,7 +1052,13 @@
       <Text>Generator rozmieszczania YnAMP</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_GENERATED_PRESET_DESC" Language="pl_PL">
-      <Text>Predefiniowane rozstawienie dla wybranych Cywilizacji[NEWLINE]Scenariusz zastępuje wymienione domyśle specyficzne wartości dla Cywilizacji:[NEWLINE][ICON_BULLET]Rozmieszczenie miast[NEWLINE][ICON_BULLET]Ilość miast[NEWLINE][ICON_BULLET]Maksymalny dystans od stolicy[NEWLINE][ICON_BULLET]Zasiedlanie się tylko na tym samym kontynencie[NEWLINE][NEWLINE]Niestandardowe Cywilizacje będą używały domyślnych ustawień (chyba, że twórca Cywilizacji dodał je osobno dla tego scenariusza)[NEWLINE][NEWLINE]Ustawienie zoptymalizowane dla gry na mapie Giant Earth (lub wybranych regionów na niej) ale może zostać użyty na każdej innej mapie.</Text>
+      <Text>Predefiniowane rozstawienie dla wybranych Cywilizacji[NEWLINE][NEWLINE]Scenariusz zastępuje wymienione domyśle specyficzne wartości dla Cywilizacji:[NEWLINE][ICON_BULLET]Rozmieszczenie miast[NEWLINE][ICON_BULLET]Ilość miast[NEWLINE][ICON_BULLET]Maksymalny dystans od stolicy[NEWLINE][ICON_BULLET]Zasiedlanie się tylko na tym samym kontynencie[NEWLINE][NEWLINE]Niestandardowe Cywilizacje będą używały domyślnych ustawień (chyba, że twórca Cywilizacji dodał je osobno dla tego scenariusza)[NEWLINE][NEWLINE]Ustawienie zoptymalizowane dla gry na mapie Giant Earth (lub wybranych regionów na niej) ale może zostać użyty na każdej innej mapie.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CITYMAP_PRESET_NAME" Language="pl_PL">
+      <Text>Mapa rozmieszczenia miast YnAMP</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CITYMAP_PRESET_DESC" Language="pl_PL">
+      <Text>Predefiniowane rozmieszczenie miast dla Cywilizacji z baza danych miast (orginalnie użyte dla automatycznego nazewnictwa miast na podstawie lokalizacji)[NEWLINE][NEWLINE]Scenariusz zamienia domyślne wartości na panelu ustawień do wartości specyficznych dla cywilizacji dla wymienionych parametrów:[NEWLINE][ICON_BULLET]Rozmieszczenie miast[NEWLINE][ICON_BULLET]Ilość miast[NEWLINE][ICON_BULLET]Maks. odległość od stolicy[NEWLINE][ICON_BULLET]Tylko na tym samym kontynencie[NEWLINE][NEWLINE]Niestandardowe cywilizacje będą używać domyślnych wartości (chyba, że twórca modu dodał je oddzielnie)[NEWLINE][NEWLINE]Ustawienie zoptymalizowane dla mapy Giant Earth (lub wybranych regionów) ale może zostać użyty na każdej mapie z własną bazą danych miast (takich jak "Play Europe Again", "Largest Earth Map" z referencyjna baza Giant Earth lub nawet "Terra Map" z ustawieniami generującymi mapę bardzo zbliżoną do ziemi).[NEWLINE][NEWLINE]Ten scenariusz nie powinien być dostępny dla map bez bazy danych miast</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CITY_PLACEMENT_NAME" Language="pl_PL">
