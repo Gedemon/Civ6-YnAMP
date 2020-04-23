@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Context Name="WorldBuilderPlotEditor">
+  <ScrollPanel ID="PlotEditorScrollPanel" Size="320,455" Vertical="1" AutoScrollBar="1" >
+    
+    <Stack ID="PlotEditorStack" Anchor="R,T" StackGrowth="Bottom" Padding="10">
+
+        <Stack Anchor="R,T" StackGrowth="Left" Padding="5">
+		    <Container Size="200,24" >
+		        <Label ID="SelectedPlotLabel" Anchor="C,C" Style="FontNormal16" String=""/>
+		    </Container>
+
+		    <Label Anchor="R,C" Offset="30,0" Style="WorldBuilderPullDownLabel" String="LOC_WORLDBUILDER_SELECTED_PLOT" />
+	   </Stack>
+			
+			<Stack Anchor="R,T" StackGrowth="Left" Padding="5">
+				<SimplePullDown ID="TerrainPullDown" Style="WorldBuilderPropertyPullDown" />
+				<Label Anchor="L,C" Size="105,29" Style="WorldBuilderPullDownLabel" String="LOC_WORLDBUILDER_ATTRIBUTE_TERRAIN"/>        
+      </Stack>
+
+      <Stack Anchor="R,T" StackGrowth="Left" Padding="5">
+				<SimplePullDown ID="FeaturePullDown" Style="WorldBuilderPropertyPullDown" />
+				<Label Anchor="L,C" Size="125,29" Style="WorldBuilderPullDownLabel" String="LOC_WORLDBUILDER_ATTRIBUTE_FEATURE"/>        
+      </Stack>
+
+      <Stack Anchor="R,T" StackGrowth="Left" Padding="5">
+				<SimplePullDown ID="ResourcePullDown" Style="WorldBuilderPropertyPullDown" />
+				<Label Anchor="L,C" Size="125,29" Style="WorldBuilderPullDownLabel" String="LOC_WORLDBUILDER_ATTRIBUTE_RESOURCE"/>        
+      </Stack>
+
+      <Stack Anchor="R,T" StackGrowth="Left" Padding="5">
+				<Grid Style="EditTextArea" Size="200,30" InnerPadding="6,6">
+					<EditBox ID="ResourceAmount" Offset="0,0" Size="parent,23" EditMode="1" String="" NumberInput="1"/>
+				</Grid>
+				<Label Anchor="L,C" Size="200,29" Style="WorldBuilderPullDownLabel" String="LOC_WORLDBUILDER_ATTRIBUTE_RESOURCE_AMOUNT"/>
+			</Stack>
+    
+      <Stack Anchor="R,T" StackGrowth="Left" Padding="5">
+				<SimplePullDown ID="ImprovementPullDown" Style="WorldBuilderPropertyPullDown" />
+				<Label ID="ImprovementLabel" Anchor="L,C" Size="125,29" Style="WorldBuilderPullDownLabel" String="LOC_WORLDBUILDER_ATTRIBUTE_IMPROVEMENT"/>
+      </Stack>
+
+      <GridButton Anchor="R,T" ID="ImprovementPillagedButton" Offset="0,0" Size="200,24" Style="CheckBoxControl" String="LOC_WORLDBUILDER_ATTRIBUTE_IMPROVEMENT_PILLAGED" />
+
+      <Stack Anchor="R,T" StackGrowth="Left" Padding="5">
+        <SimplePullDown ID="DistrictPullDown" Style="WorldBuilderPropertyPullDown" />
+        <Label ID="DistrictLabel" Anchor="L,C" Size="125,29" Style="WorldBuilderPullDownLabel" String="LOC_WORLDBUILDER_ATTRIBUTE_DISTRICT"/>
+      </Stack>
+
+      <GridButton Anchor="R,T" ID="DistrictPillagedButton" Offset="0,0" Size="200,24" Style="CheckBoxControl" String="LOC_WORLDBUILDER_ATTRIBUTE_DISTRICT_PILLAGED" />
+      
+      <Stack Anchor="R,T" StackGrowth="Left" Padding="5">
+				<SimplePullDown ID="RoutePullDown" Style="WorldBuilderPropertyPullDown" />
+				<Label ID="RouteLabel" Anchor="L,C" Size="125,29" Style="WorldBuilderPullDownLabel" String="LOC_WORLDBUILDER_ATTRIBUTE_ROUTE"/>        
+      </Stack>
+
+      <GridButton Anchor="R,T" ID="RoutePillagedButton" Offset="0,0" Size="200,24" Style="CheckBoxControl" String="LOC_WORLDBUILDER_ATTRIBUTE_ROUTE_PILLAGED" />
+    
+      <Stack Anchor="R,T" StackGrowth="Left" Padding="5">
+				<SimplePullDown ID="StartPosPulldown" Style="WorldBuilderPropertyPullDown" />
+				<Label ID="StartPosLabel" Size="125,29" Style="WorldBuilderPullDownLabel" String="LOC_WORLDBUILDER_START_POSITION"/>        
+      </Stack>
+
+      <Tab Anchor="R,T" ID="StartPosTabControl" Size="200,24">
+        <Container ID="TabContainer" Size="parent,parent">
+          <SimplePullDown ID="StartPosPlayerPulldown" Style="WorldBuilderPropertyPullDown" />
+          <SimplePullDown ID="StartPosLeaderPulldown" Style="WorldBuilderPropertyPullDown" />
+          <SimplePullDown ID="StartPosCivPulldown" Style="WorldBuilderPropertyPullDown" />
+        </Container>
+      </Tab>
+
+      <Stack Anchor="R,T" StackGrowth="Left" Padding="5">
+				<SimplePullDown ID="OwnerPulldown" Style="WorldBuilderPropertyPullDown" />
+				<Label ID="OwnerLabel" Anchor="L,C" Size="125,29" Style="WorldBuilderPullDownLabel" String="LOC_WORLDBUILDER_ATTRIBUTE_OWNER"/>        
+      </Stack>
+
+      <Stack Anchor="R,T" StackGrowth="Left" Padding="5">
+				<SimplePullDown ID="FeatureDirectionPulldown" Style="WorldBuilderPropertyPullDown" />
+				<Label Anchor="L,C" Size="125,29" Style="WorldBuilderPullDownLabel" String="LOC_WORLDBUILDER_ATTRIBUTE_FEATURE_DIRECTION"/>        
+      </Stack>
+
+      <Stack Anchor="R,T" StackGrowth="Left" Padding="5">
+				<SimplePullDown ID="LowlandTypePulldown" Style="WorldBuilderPropertyPullDown" />
+        <Label ID="LowlandLabel" Anchor="L,C" Size="125,29" Style="WorldBuilderPullDownLabel" String="LOC_WORLDBUILDER_ATTRIBUTE_LOWLAND_TYPE"/>        
+      </Stack>
+
+    </Stack>
+    
+    <ScrollBar Anchor="R,C" Size="11,parent+4" Offset="2,0" AnchorSide="O,I" Style="ScrollVerticalBar"/>
+  </ScrollPanel>
+</Context>

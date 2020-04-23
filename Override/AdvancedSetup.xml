@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Context xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="..\..\..\..\..\..\CivTech\Libs\ForgeUI\ForgeUI_Assets\Controls.xsd"
+		Style="FontNormal14">
+
+	<Box ID="MainGrid" Style="ShellBGBox">
+
+		<Container ID="MainWindow" Size="1024,768" Anchor="C,B" >
+			<Grid ID="LogoContainer" Style="SubContainer4" Size="parent-10,116" Anchor="C,T" Color="7,28,50" AnchorSide="I,O" Offset="0,4">
+      			<Image ID="Logo"				Anchor="C,C" Texture="MainLogo.dds" StretchMode="Auto"/>
+   			</Grid>
+
+			<Container Style="ShellHeaderContainer">
+				<Grid Style="ShellHeaderButtonGrid">
+					<GridButton ID="DefaultButton" Style="ShellButtonOrnateFlat" Anchor="L,C" Size="300,parent" Offset="1,0" String="{LOC_SETUP_RESTORE_DEFAULT:upper}" ToolTip="LOC_SETUP_RESTORE_DEFAULT_TT" />
+				</Grid>
+				<Grid Style="ShellHeaderButtonGrid">
+					<GridButton ID="CloseButton" Style="ShellButtonOrnateFlat" Anchor="R,C" Offset="1,0" String="LOC_MULTIPLAYER_BACK"/>
+				</Grid>
+				<Label ID="WindowTitle" Style="ShellHeader" Anchor="C,C" String="{LOC_SETUP_CREATE_GAME:upper}"/>
+			</Container>
+
+			<Container ID="CreateGameWindow" Size="parent,parent">
+				<Grid Style="SubContainer4" Size="parent-10,parent" Anchor="C,T" Color="7,28,50" Offset="0,55"  InnerPadding="0,0">					
+					<Box Size="340,parent" Color="8,36,68,150" Anchor="C,T">
+						<Grid Style="SubContainer3" Size="parent-6,parent-6" Anchor="C,C" Color="6,54,93,255">
+							<Image Texture="Controls_Gradient_HalfRadial" Size="parent, 120" Anchor="C,T" Color="44,90,134,255" Offset="0,-4" FlipY="1"/>
+							<Image Texture="Controls_Gradient_HalfRadial" Size="parent, 120" Anchor="C,B" Color="44,90,134,255" Offset="0,-4"/>
+							<Stack ID="CreateGameOptions" StackGrowth="Down" Offset="0,30" Anchor="C,T">
+								<Container ID="CreateGame_RulesetContainer" Size="parent+10,50">
+									<Box Color="62,152,203,20" Anchor="C,T" Size="parent,30">
+										<Label Anchor="C,T" Style="ShellSubHeaderText" String="{LOC_SETUP_CHOOSE_RULESET:upper}" AnchorSide="I,O"/>
+										<PullDown ID="CreateGame_GameRuleset" Anchor="C,C" Style="PullDownBlue" Size="325,24"/>
+									</Box>
+								</Container>
+								<Container  ID="CreateGame_LocalPlayerContainer" Size="parent+10,70" Hidden="1">
+									<Box Color="62,152,203,20" Anchor="C,C" Size="parent,55">
+										<Label Anchor="C,T" Style="ShellSubHeaderText" String="{LOC_SETUP_CIVILIZATION:upper}" AnchorSide="I,O"/>
+										<PullDown ID="Basic_LocalPlayerPulldown" Anchor="C,C" Offset="0,0" Size="325,50"  AutoSizePopup="1" ScrollThreshold="520" SpaceForScroll="15">
+											<ButtonData>
+												<GridButton  Size="325,45" Style="TabFont" TextAnchor="L,C" TextOffset="100" WrapWidth="200">
+													<GridData Texture="Controls_DropDownControlLarge" StateOffsetIncrement="0,45"	SliceCorner="10,15" SliceTextureSize="45,45" />
+													<Container Size="44,44" Anchor="L,T" Offset="3,3">
+														<Image	ID="Basic_LocalPlayerCivIconBG" Texture="CircleBacking44"		Size="44,44"/>
+														<Image	ID="Basic_IconShadows"					Texture="Circle44_Darker"		Size="44,44" Color="0,0,0,50" />
+														<Image	ID="Basic_IconHighlights"				Texture="Circle44_Lighter" 	Size="44,44" Color="255,255,255,100" />
+														<Image	ID="Basic_LocalPlayerCivIcon"		Texture="CivSymbols44"			Size="44,44" Anchor="C,C"/>
+													</Container>
+													<Container Size="45,45" Offset="52,2">
+														<Image Texture="Controls_CircleBacking45" Size="51,51" Anchor="L,T" Offset="-3,-3"/>
+														<Image ID="Basic_LocalPlayerLeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
+													</Container>
+												</GridButton>
+											</ButtonData>
+											<GridData Offset="0,45" Texture="Controls_DropdownPanel" InnerPadding="0,6" SliceCorner="10,10" SliceTextureSize="22,22"/>
+											<ScrollPanelData Anchor="C,C" Vertical="1" Size="parent,parent" AutoScrollBar="1" >
+												<ScrollBar Style="Slider_Blue" Anchor="R,C" AnchorSide="O,I"   />
+											</ScrollPanelData>
+											<StackData StackGrowth="Bottom" Anchor="C,T"/>
+											<InstanceData Name="InstanceOne">
+												<GridButton ID="Button" Style="ButtonControl" Anchor="L,T"	Size="315,50" TextAnchor="L,C" TextOffset="100" WrapWidth="200">
+													<Container Size="44,44" Anchor="L,T" Offset="3,3">
+														<Image	ID="CivIconBG"				Size="44,44" Texture="CircleBacking44" />
+														<Image	ID="IconShadows"			Size="44,44" Texture="Circle44_Darker"  Color="0,0,0,50" />
+														<Image	ID="IconHighlights"		Size="44,44" Texture="Circle44_Lighter" Color="255,255,255,100" />
+														<Image	ID="CivIcon"					Size="44,44" Texture="CivSymbols44"			Anchor="C,C"/>
+													</Container>
+													<Container Size="62,62" Offset="44,-1" Anchor="L,C">
+														<Image ID="LeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
+													</Container>
+												</GridButton>
+											</InstanceData>
+										</PullDown>
+
+									</Box>
+								</Container>
+
+								<Container ID="CreateGame_GameDifficultyContainer" Size="parent+10,50" Hidden="1">
+									<Box Color="62,152,203,20" Anchor="C,B" Size="parent,30">
+										<Label Anchor="C,T" Style="ShellSubHeaderText" String="{LOC_SETUP_DIFFICULTY:upper}" AnchorSide="I,O"/>
+										<PullDown ID="CreateGame_GameDifficulty" Anchor="C,C" Style="PullDownBlue" Size="220,24"/>
+									</Box>
+								</Container>
+
+								<Container ID="CreateGame_SpeedPulldownContainer" Size="parent+10,70" Hidden="1">
+									<Box Color="62,152,203,20" Anchor="C,B" Size="parent,30">
+										<Label Anchor="C,T" Style="ShellSubHeaderText" String="{LOC_SETUP_SPEED:upper}" AnchorSide="I,O"/>
+										<PullDown ID="CreateGame_SpeedPulldown" Anchor="C,C" Style="PullDownBlue" Size="220,24"/>
+									</Box>
+								</Container>
+
+                <Container ID="CreateGame_MapTypeContainer" Size="parent+10,70" Hidden="1">
+                  <Box Color="62,152,203,20" Anchor="C,B" Size="parent,30">
+                    <Label Anchor="C,T" Style="ShellSubHeaderText" String="{LOC_SETUP_MAP_TYPE:upper}" AnchorSide="I,O"/>
+                    <PullDown ID="CreateGame_MapType" Anchor="C,C" Style="PullDownBlue" ScrollThreshold="350" Size="220,24"/>
+                  </Box>
+                </Container>
+
+                <Container ID="CreateGame_MapSelectContainer" Size="parent+10,70">
+                  <Box Color="62,152,203,20" Anchor="C,B" Size="parent,30">
+                    <Label Anchor="C,T" Style="ShellSubHeaderText" String="{LOC_SETUP_MAP_TYPE:upper}" AnchorSide="I,O"/>
+                    <GridButton ID="MapSelectButton" Anchor="C,C" Style="ButtonControl" Size="219,24" String="LOC_SETUP_MAP_MAP_SELECT" TruncateWidth="205" TruncateTooltip="1"/>
+                  </Box>
+                </Container>
+
+								<Container ID="CreateGame_MapSizeContainer" Size="parent+10,70" Hidden="1">
+									<Box Color="62,152,203,20" Anchor="C,B" Size="parent,30">
+										<Label Anchor="C,T" Style="ShellSubHeaderText" String="{LOC_SETUP_MAP_SIZE:upper}" AnchorSide="I,O"/>
+										<PullDown ID="CreateGame_MapSize" Anchor="C,C" Style="PullDownBlue" Size="220,24"/>
+									</Box>
+								</Container>
+
+								<!-- Primary Parameters Stack -->
+								<Stack Anchor="C,T" Offset="0,0" Padding="0" Size="parent+10,auto" StackGrowth="Bottom" ID="CreateGame_ExtraParametersStack"/>
+
+							</Stack>
+
+							<GridButton ID="AdvancedSetupButton" Anchor="C,B" Style="ShellButtonOrnateFlat" String="{LOC_SETUP_ADVANCED_OPTIONS:upper}" Size="parent,36">
+								<Image Texture="Controls_Compass" StretchMode="Auto" Anchor="C,T" AnchorSide="I,O" Color="44,90,134,50"/>
+							</GridButton>
+
+						</Grid>
+
+						<Container ID="BasicTooltipContainer" Size="340,670" Anchor="R,C" AnchorSide="O,I"/>
+						<Container ID="BasicPlacardContainer" Size="340,670" Anchor="L,C" AnchorSide="O,I"/>
+					</Box>
+				</Grid>
+			</Container>
+			<!-- Decorative Border -->
+
+			<Container ID="AdvancedOptionsWindow" Hidden="1" Size="parent,parent">
+				<Grid Style="SubContainer4" Size="parent-10,parent" Anchor="C,T" Color="7,28,50" Offset="0,55"  InnerPadding="10,10">
+					<Stack Anchor="C,T" StackGrowth="Right" Padding="10">
+						
+						<!-- Players Stack (Left Side Panel) -->
+						<Grid ID="PlayersSection" Style="DecoGrid" Size="445,parent" Anchor="L,T" Color="30,66,96,255">
+							<Grid Size="parent,21" Texture="Shell_SectionHeader" SliceCorner="154,10" SliceTextureSize="308,21" Color="20,144,140,100" Offset="0,8">
+								<Image Texture="Controls_Gradient_HalfRadial" Color="20,144,140,100" FlipY="1" Anchor="C,T" Size="225,94"/>
+								<Label Anchor="C,C" Style="ShellOptionText" WrapWidth="320" String="LOC_PLAYERS"/>
+							</Grid>
+
+							<Stack Anchor="C,T" Offset="0,50" StackGrowth="Bottom" Padding="5">
+								<!-- Human Player Info, placed at the top -->
+								<Box Color="65,118,163,50" Size="parent,56" Offset="0,2">
+									<Grid ID="LocalPlayerAdvancedOptions" Style="YouIndicator" Size="parent,parent+2" Offset="0,-2">
+									
+
+								
+										<Container Offset="25,5" Size="parent-50,50">
+											<!-- Local Player Civ -->
+											<!-- Color Scheme -->
+											<PullDown ID="Advanced_LocalColorPullDown" ScrollThreshold="350" Size="65,50" AutoSizePopUp="0" SpaceForScroll="1">
+												<ButtonData>
+													<GridButton  Size="65,45" Style="TabFont" TextAnchor="L,T" DisabledMouseMoveCallbacks="1">
+														<GridData Texture="Controls_DropDownControlLarge" StateOffsetIncrement="0,45"	SliceCorner="10,15" SliceTextureSize="45,45" />
+														<Container Size="44,44" Anchor="L,C" Offset="1,0">
+															<Image ID="Advanced_LocalPlayerCivIconBG" Texture="CircleBacking44" Size="44,44"/>
+															<Image ID="Advanced_LocalPlayerCivIcon" Texture="CivSymbols44" Size="44,44" Anchor="C,C"/>
+														</Container>
+													</GridButton>
+												</ButtonData>
+												<GridData Offset="0,45" Texture="Controls_DropdownPanel" InnerPadding="0,6" SliceCorner="10,10" SliceTextureSize="22,22"/>
+												<ScrollPanelData Anchor="C,C" Vertical="1" Size="parent,parent" AutoScrollBar="1" >
+													<ScrollBar Style="Slider_Blue" Anchor="R,C" AnchorSide="O,I"   />
+												</ScrollPanelData>
+												<StackData StackGrowth="Bottom" Anchor="C,T"/>
+												<InstanceData Name="InstanceOne">
+													<GridButton ID="Button" Style="ButtonControl" Anchor="L,T"	Size="75,45" Offset="10,0" TextAnchor="L,C" TextOffset="60" WrapWidth="200">
+														<Container Size="30,30" Offset="0,0" Anchor="C,C">
+															<Image ID="CivIconBG" Texture="CircleBacking30" Size="30,30" Anchor="C,C" Offset="0,0"/>
+															<Image ID="CivIcon" Texture="CivSymbols30" Size="30,30" Anchor="C,C"/>
+														</Container>
+													</GridButton>
+												</InstanceData>
+
+											</PullDown>
+
+											<!-- Player Civ -->
+											<PullDown ID="Advanced_LocalPlayerPulldown"  Anchor="L,T" Offset="70,0" Size="285,50" AutoSizePopup="0" AutoFlip="1" ScrollThreshold="350" SpaceForScroll="15">
+												<ButtonData>
+													<GridButton  Size="325,45" Style="TabFont" TextAnchor="L,C" TextOffset="55" WrapWidth="225">
+														<GridData Texture="Controls_DropDownControlLarge" StateOffsetIncrement="0,45"	SliceCorner="10,15" SliceTextureSize="45,45" />
+														<Container Size="45,45" Offset="3,2">
+															<Image Texture="Controls_CircleBacking45" Size="51,51" Anchor="L,T" Offset="-3,-3"/>
+															<Image ID="Advanced_LocalPlayerLeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
+														</Container>
+													</GridButton>
+												</ButtonData>
+												<GridData Offset="-70,50" Texture="Controls_DropdownPanel" InnerPadding="0,6" SliceCorner="10,10" SliceTextureSize="22,22"/>
+												<ScrollPanelData Anchor="L,T" Vertical="1" Size="275,parent" AutoScrollBar="1" >
+													<ScrollBar Style="Slider_Blue" Anchor="R,C" AnchorSide="O,I"   />
+												</ScrollPanelData>
+												<StackData StackGrowth="Bottom" Size="50,auto" Anchor="L,T"/>
+												<InstanceData Name="InstanceOne">
+													<GridButton ID="Button" Style="ButtonControl" Anchor="L,T"	Size="335,50" Offset="0,0" TextAnchor="L,C" TextOffset="120" WrapWidth="200">
+														<Container Size="44,44" Anchor="L,C" Offset="1,0">
+															<Image ID="CivIconBG" Texture="CircleBacking44" Size="44,44"/>
+															<Image Anchor="C,C" Size="44,44" Texture="Circle44_Darker"  Color="0,0,0,50" />
+															<Image Anchor="C,C" Size="44,44" Texture="Circle44_Lighter" Color="255,255,255,100" />
+															<Image ID="CivIcon" Texture="CivSymbols44" Size="44,44" Anchor="C,C"/>
+														</Container>
+														<Container Size="45,45" Offset="70,-1" Anchor="L,C">
+															<Image ID="LeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
+														</Container>
+													</GridButton>
+												</InstanceData>
+											</PullDown>
+										</Container>								
+								</Grid>
+								</Box>
+								<!-- AI Player Listing Background -->
+								<ScrollPanel  ID="NonLocalPlayersPanel" Anchor="C,C" Vertical="1" Size="parent,parent-120" AutoScrollBar="1">
+									<Stack ID="NonLocalPlayersStack" StackGrowth="Down" Offset="25,0" Size="parent-50,auto">
+										<Stack ID="NonLocalPlayersSlotStack" StackGrowth="Bottom" Padding="4" />
+										<GridButton ID="AddAIButton" Style="ShellButtonControlLarge" Size="parent,54" Offset="0,10" ToolTip="LOC_SETUP_ADD_AI_PLAYER_TT" String="{LOC_SETUP_ADD_AI_PLAYER:upper}">
+											<Image Anchor="R,C" Offset="6,0" Texture="Shell_Add" Size="37,37"/>
+										</GridButton>
+									</Stack>
+									<ScrollBar Style="Slider_Blue" Anchor="R,C"/>
+								</ScrollPanel>
+							</Stack>
+						</Grid>
+
+						<!-- Parameters Panel (Right Side Panel) -->
+						<Grid ID="OptionsSection" Style="DecoGrid" Size="545,parent" Anchor="R,T" Color="30,66,96,240">
+							<ScrollPanel Anchor="L,T" ID="ParametersScrollPanel" Vertical="1" Size="Parent,Parent" >
+								<!-- Scroll Controls -->
+								<Stack ID="ParametersStack" Anchor="L,T" Offset="0,0" Padding="20" StackGrowth="Bottom" >
+									<Grid Size="parent,21" Texture="Shell_SectionHeader" SliceCorner="154,10" SliceTextureSize="308,21" Color="20,144,140,100" Offset="0,8">
+										<Image Texture="Controls_Gradient_HalfRadial" Color="20,144,140,100" FlipY="1" Anchor="C,T" Size="225,94"/>
+										<Label Anchor="C,C" Style="ShellOptionText" WrapWidth="320" String="LOC_OPTIONS"/>
+									</Grid>
+
+									<!-- Primary Parameters Stack -->
+									<Stack Anchor="L,T"  Padding="0" Size="parent,auto" StackGrowth="Bottom" ID="PrimaryParametersStack"/>
+
+									<Grid ID="VictoryParametersHeader" Size="parent,21" Texture="Shell_SectionHeader" SliceCorner="154,10" SliceTextureSize="308,21" Color="20,144,140,100" Offset="0,8">
+										<Image Texture="Controls_Gradient_HalfRadial" Color="20,144,140,100" FlipY="1" Anchor="C,T" Size="225,94"/>
+										<Label Anchor="C,C" Style="ShellOptionText" WrapWidth="320" String="LOC_SETUP_VICTORY_CONDITIONS"/>
+									</Grid>
+
+									<Stack Anchor="L,T"  Padding="0" Size="parent,auto" StackGrowth="Bottom" ID="VictoryParameterStack" />
+
+									<!-- Secondary Parameters Stack -->
+									<Grid ID="SecondaryParametersHeader" Size="parent,21" Texture="Shell_SectionHeader" SliceCorner="154,10" SliceTextureSize="308,21" Color="20,144,140,100" Offset="0,8">
+										<Image Texture="Controls_Gradient_HalfRadial" Color="20,144,140,100" FlipY="1" Anchor="C,T" Size="225,94"/>
+										<Label Anchor="C,C" Style="ShellOptionText" WrapWidth="320" String="LOC_ADVANCED_OPTIONS"/>
+									</Grid>
+
+									<Stack Anchor="L,T" Padding="0" Size="parent,auto" StackGrowth="Bottom" ID="SecondaryParametersStack"/>
+								</Stack>
+								<ScrollBar Style="Slider_Blue" Length="516" Anchor="R,T"/>
+							</ScrollPanel>
+						</Grid><!-- Game options -->
+					</Stack>
+					<Container ID="AdvancedTooltipContainer" Size="555,670" Anchor="L,C" Offset="445,0"/>
+				</Grid><!-- Decorative border -->
+			</Container><!--Advanced Options-->
+			<Stack ID="ButtonStack" Anchor="C,B" Padding="20" StackGrowth="Right">
+				<GridButton ID="LoadConfig" Size="260,45" Style="MainButton" Anchor="C,B" String="LOC_LOAD_CONFIG" Hidden="1"/>
+				<GridButton ID="SaveConfig" Size="260,45" Style="MainButton" Anchor="C,B" String="LOC_SAVE_CONFIG" Hidden="1"/>
+				<GridButton ID="StartButton" Size="340,45" Style="ButtonConfirm" Anchor="C,B" String="LOC_START_GAME" />
+			</Stack>
+
+      <!--Map Selection Window-->
+      <LuaContext ID="MapSelectWindow" FileName="MapSelect" Hidden="1"/>
+      
+		</Container><!-- Main Window -->
+  
+  
+    
+  
+	</Box><!-- Main Box -->
+
+	<!-- INSTANCES -->
+	<!-- Non Local Player Slot Instance -->
+	<Instance Name="NonLocalPlayerSlotInstance" >
+		<Container ID="Root"  Size="parent,auto">
+			<!-- Color Scheme -->
+			<PullDown ID="ColorPullDown" ScrollThreshold="350" Size="65,50" AutoSizePopUp="0" SpaceForScroll="1">
+				<ButtonData>
+					<GridButton  Size="65,45" Style="TabFont" TextAnchor="L,T" DisabledMouseMoveCallbacks="1">
+						<GridData Texture="Controls_DropDownControlLarge" StateOffsetIncrement="0,45"	SliceCorner="10,15" SliceTextureSize="45,45" />
+						<Image ID="WarnIcon" Texture="Alert18" Size="18,18" Anchor="R,T" Offset="3,2"/>
+
+						<Container Size="44,44" Anchor="L,C" Offset="1,0">
+							<Image ID="CivIconBG" Texture="CircleBacking44" Size="44,44"/>
+							<Image ID="CivIcon" Texture="CivSymbols44" Size="44,44" Anchor="C,C"/>
+						</Container>
+
+					</GridButton>
+				</ButtonData>
+				<GridData Offset="0,45" Texture="Controls_DropdownPanel" InnerPadding="0,6" SliceCorner="10,10" SliceTextureSize="22,22"/>
+				<ScrollPanelData Anchor="C,C" Vertical="1" Size="parent,parent" AutoScrollBar="1" >
+					<ScrollBar Style="Slider_Blue" Anchor="R,C" AnchorSide="O,I"   />
+				</ScrollPanelData>
+				<StackData StackGrowth="Bottom" Anchor="C,T"/>
+				<InstanceData Name="InstanceOne">
+					<GridButton ID="Button" Style="ButtonControl" Anchor="L,T"	Size="75,45" Offset="10,0" TextAnchor="L,C" TextOffset="60" WrapWidth="200">
+						<Container Size="30,30" Offset="0,0" Anchor="C,C">
+							<Image ID="CivIconBG" Texture="CircleBacking30" Size="30,30" Anchor="C,C" Offset="0,0"/>
+							<Image ID="CivIcon" Texture="CivSymbols30" Size="30,30" Anchor="C,C"/>
+						</Container>
+					</GridButton>
+				</InstanceData>
+
+			</PullDown>
+
+			<!-- Player Civ -->
+			<PullDown ID="PlayerPullDown"  Anchor="L,T" Offset="70,0" Size="285,50" AutoSizePopup="0" AutoFlip="1" ScrollThreshold="350" SpaceForScroll="15">
+				<ButtonData>
+					<GridButton  Size="325,45" Style="TabFont" TextAnchor="L,C" TextOffset="55" WrapWidth="225">
+						<GridData Texture="Controls_DropDownControlLarge" StateOffsetIncrement="0,45"	SliceCorner="10,15" SliceTextureSize="45,45" />
+						<Container Size="45,45" Offset="3,2">
+							<Image Texture="Controls_CircleBacking45" Size="51,51" Anchor="L,T" Offset="-3,-3"/>
+							<Image ID="LeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
+						</Container>
+					</GridButton>
+				</ButtonData>
+				<GridData Offset="-70,50" Texture="Controls_DropdownPanel" InnerPadding="0,6" SliceCorner="10,10" SliceTextureSize="22,22"/>
+				<ScrollPanelData Anchor="L,T" Vertical="1" Size="275,parent" AutoScrollBar="1" >
+					<ScrollBar Style="Slider_Blue" Anchor="R,C" AnchorSide="O,I"   />
+				</ScrollPanelData>
+				<StackData StackGrowth="Bottom" Size="50,auto" Anchor="L,T"/>
+				<InstanceData Name="InstanceOne">
+					<GridButton ID="Button" Style="ButtonControl" Anchor="L,T"	Size="335,50" Offset="0,0" TextAnchor="L,C" TextOffset="120" WrapWidth="200">
+						<Container Size="44,44" Anchor="L,C" Offset="1,0">
+							<Image ID="CivIconBG" Texture="CircleBacking44" Size="44,44"/>
+							<Image Anchor="C,C" Size="44,44" Texture="Circle44_Darker"  Color="0,0,0,50" />
+							<Image Anchor="C,C" Size="44,44" Texture="Circle44_Lighter" Color="255,255,255,100" />
+							<Image ID="CivIcon" Texture="CivSymbols44" Size="44,44" Anchor="C,C"/>
+						</Container>
+						<Container Size="45,45" Offset="70,-1" Anchor="L,C">
+							<Image ID="LeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
+						</Container>
+					</GridButton>
+				</InstanceData>
+
+				<Container AnchorSide="O,I" Anchor="R,C" Size="40,50">
+					<Image Texture="Shell_CircleAnchor" Size="9,47" Anchor="L,C"/>
+					<Button ID="RemoveButton" Texture="Shell_XButton" Size="37,37" Anchor="L,C" ToolTip="LOC_DELETE_AI"/>
+				</Container>
+			</PullDown>
+		</Container>
+	</Instance>
+
+	<!-- Simplified string instance -->
+	<Instance Name="SimpleBooleanParameterInstance">
+		<Container ID="Root" Size="parent,70">
+			<Box Color="62,152,203,20" Anchor="C,B" Size="parent,30">
+				<GridButton ID="CheckBox" Anchor="C,T" Style="CheckBoxControl"  Size="340,24" States="8"/>
+			</Box>
+		</Container>
+	</Instance>
+	
+	<!-- Instance for a boolean parameters -->
+	<Instance Name="BooleanParameterInstance">
+		<GridButton ID="CheckBox" Anchor="R,T" Offset="40,0" Style="CheckBoxControl"  Size="340,24" States="8"/>
+	</Instance>
+
+	<!-- Simplified string instance -->
+	<Instance Name="SimpleSliderParameterInstance">
+		<Container ID="Root" Size="parent,90">
+			<Box Color="62,152,203,20" Anchor="L,B" Size="parent,55">
+				<Label ID="OptionTitle" Anchor="C,T" Style="ShellSubHeaderText" String="$Name$" AnchorSide="I,O"/>
+				<Stack StackGrowth="Right" Anchor="C,T">
+					<Slider ID="OptionSlider" Style="SliderControl" Size="198,13" Anchor="L,C" />
+					<Image Texture="Controls_CircleCompass" Size="52,53" Color="ShellControl">
+						<Label ID="NumberDisplay" Style="FontFlair40" String="10" Anchor="C,C" FontStyle="stroke" Color0="208,212,217,255"	Color1="0,0,0,50"/>
+					</Image>
+				</Stack>
+			</Box>
+		</Container>
+	</Instance>
+	
+	<!-- Slider with number display -->
+	<Instance Name="SliderParameterInstance">
+		<Container ID="Root" Size="parent,55" Anchor="C,T">
+			<Container Size="auto,55" Anchor="R,T" Offset="40,0">
+
+				<Stack StackGrowth="Right" Anchor="R,T">
+					<Label ID="OptionTitle" Style="ShellOptionText" Anchor="L,C" String="" />
+					<Slider ID="OptionSlider" Style="SliderControl" Size="250,13" Anchor="L,C" />
+					<Image Texture="Controls_CircleCompass" Size="52,53" Color="ShellControl">
+						<Label ID="NumberDisplay" Style="FontFlair40" String="10" Anchor="C,C" FontStyle="stroke" Color0="208,212,217,255"	Color1="0,0,0,50"/>
+					</Image>
+				</Stack>
+			</Container>
+		</Container>
+	</Instance>
+
+	<!-- Simplified string instance -->
+	<Instance Name="SimpleStringParameterInstance">
+		<Container ID="Root" Size="parent,70">
+			<Box Color="62,152,203,20" Anchor="C,B" Size="parent,30">
+				<Label ID="StringName" Anchor="C,T" Style="ShellSubHeaderText" String="$Name$" AnchorSide="I,O"/>
+				<Container  Size="auto,auto" Anchor="C,B" Offset="0,0">
+					<Grid Style="EditTextArea" Size="270,30">
+						<EditBox ID="StringEdit" Anchor="L,C" Offset="6,0" Size="248,23" EditMode="1" Style="FontNormal18" ColorSet="BodyTextCool" FontStyle="stroke" MaxLength="32"/>
+					</Grid>
+				</Container>
+			</Box>
+		</Container>
+	</Instance>
+	
+	<!-- Instance for a string parameters -->
+	<Instance Name="StringParameterInstance">
+		<Container  Anchor="R,T" Size="300,32" ID="StringRoot" Offset="40,0">
+			<Stack StackGrowth="Right" Size="auto,55" Anchor="R,T">
+				<Label ID="StringName" Anchor="L,C" Offset="0,0" Style="FontNormal14" ColorSet="ShellOptionText" FontStyle="stroke" WrapWidth="180" String="UNKNOWN_EDIT_BOX"/>
+				<Grid Style="EditTextArea" Size="300,30">
+					<EditBox ID="StringEdit" Anchor="L,C" Offset="6,0" Size="parent,23" EditMode="1" Style="FontNormal14" ColorSet="BodyTextCool" FontStyle="stroke" MaxLength="22"/>
+				</Grid>
+			</Stack>
+		</Container>
+	</Instance>
+
+	<!-- Simplified pull down instance. -->
+	<Instance Name="SimplePullDownParameterInstance">
+		<Container ID="Root" Size="parent,70">
+			<Box Color="62,152,203,20" Anchor="C,B" Size="parent,30">
+				<Label ID="StringName" Anchor="C,T" Style="ShellSubHeaderText" String="$Name$" AnchorSide="I,O"/>
+				<PullDown ID="PullDown" Anchor="C,C" Style="PullDownBlue" Size="220,24"/>
+			</Box>
+		</Container>
+	</Instance>
+	
+	<!-- Instance for a parameter that has multiple choices for the value, displayed as a dropdown -->
+	<Instance Name="PullDownParameterInstance">
+		<Container ID="Root" Anchor="L,T" Size="parent,32" Offset="0,0">
+			<PullDown Anchor="R,T" ID="PullDown" Style="PullDownBlue" Size="300,24" Offset="40,0">
+				<Label Style="ShellOptionText" ID="StringName" AnchorSide="O,I" Anchor="L,C" String="$Name$"/>
+			</PullDown>
+		</Container>
+	</Instance>
+
+	<!-- Instance for a parameter that has a button to launch a popup (e.g., map-select) -->
+	<Instance Name="ButtonParameterInstance">
+		<Container		ID="ButtonRoot" Anchor="L,T" Size="parent,32" Offset="0,0">
+			<GridButton ID="Button"			Anchor="R,T" Style="ButtonControl" Size="300,24" Offset="40,0">
+				<Label		ID="StringName"	Anchor="L,C" Style="ShellOptionText" AnchorSide="O,I" String="$Name$"/>
+			</GridButton>
+		</Container>
+	</Instance>
+
+		
+	<Instance			Name="IconInfoInstance">
+		<Container	ID="Top"				 Size="auto,auto">
+			<Image    Texture="Controls_CircleCompass" Size="52,53" Offset="0,-2" Color="34,58,80,150">
+				<Image		ID="Icon"					Size="38,38" Anchor="C,C" />
+			</Image>
+			<Stack		ID="TextStack"		StackGrowth="Bottom" StackPadding="4" Offset="55,0">
+				<Label	ID="Header"				WrapWidth="parent-80" SmallCapsType="EveryWord" SmallCaps="20" Style="FontFlair14"		String="$Header$" ColorSet="ShellHeader"/>
+				<Label	ID="Description"	WrapWidth="parent-80"	Style="DawnText"	String="$Description$"/>
+			</Stack>
+		</Container>
+	</Instance>
+
+	<Instance		Name="HeaderInstance">
+		<Grid     ID="Top" Style="DivHeader" Anchor="C,T">
+			<Label  ID="Header"    Style="FontFlair18" FontStyle="glow" ColorSet="ShellHeader" SmallCaps="22" SmallCapsLeading="0" SmallCapsType="EveryWord" Anchor="C,C" Align="Center" Offset="0,1"/>
+		</Grid>
+	</Instance>
+
+	<Instance			Name="IconInstance">
+		<Container	ID="Top"				 Size="auto,auto">
+			<Image    Texture="Controls_CircleBacking45" Size="51,51" Offset="0,-2">
+				<Image		ID="Icon"					Size="45,45" Anchor="C,C" Offset="0,-1" />
+			</Image>
+			<Stack		ID="TextStack"		StackGrowth="Bottom" StackPadding="4" Offset="55,0">
+				<Label	ID="Header"				WrapWidth="parent-80" SmallCapsType="EveryWord" SmallCaps="20" Style="FontFlair14"		String="$Header$" ColorSet="ShellHeader"/>
+				<Label	ID="Description"	WrapWidth="parent-80"	Style="DawnText"	String="$Description$"/>
+			</Stack>
+		</Container>
+	</Instance>
+
+	<Instance Name="CivIconInstance">
+		<Container	ID="Top"					Size="parent,auto">
+			<Image		ID="IconBG"					Size="44,44" Texture="CircleBacking44" >
+				<Image	ID="IconShadows"		Size="44,44" Texture="Circle44_Darker"  Color="0,0,0,50" />
+				<Image	ID="IconHighlights"	Size="44,44" Texture="Circle44_Lighter" Color="255,255,255,100" />
+				<Image	ID="Icon"						Size="44,44" Anchor="C,C"/>
+			</Image>
+			<Stack		ID="TextStack"		StackGrowth="Bottom" StackPadding="4" Offset="55,0">
+				<Label	ID="Header"				WrapWidth="parent-80" SmallCapsType="EveryWord" SmallCaps="20" Style="FontFlair14"		String="$Header$" ColorSet="ShellHeader"/>
+				<Label	ID="Description"	WrapWidth="parent-80"	Style="DawnText"	String="$Description$"/>
+			</Stack>
+		</Container>		
+	</Instance>
+
+	<!-- Enhanced ToolTip for Leaders -->
+	<Instance Name="CivToolTip">
+		<Container						ID="Top" Size="auto,670">
+			<AlphaAnim					ID="CivToolTipAlpha" AlphaBegin="0" AlphaEnd="1" Speed="4" Function="Root" Cycle="Once" Size="parent,parent" Stopped="1">
+				<SlideAnim				ID="CivToolTipSlide" Start="-20,0" End="0,0" Speed="4" Function="Root" Cycle="Once" Size="parent,parent">
+					<Grid																	Style="EnhancedToolTip" Size="parent,parent">
+						<ScrollPanel  ID="InfoScrollPanel" Vertical="1" Size="parent-12,parent-25" AutoScrollBar="1" Anchor="C,T" Offset="0,9">
+							<Stack			ID="InfoStack" StackGrowth="Down" Padding="8"  Anchor="C,T" Offset="10,25"/>
+							<ScrollBar Style="Slider_Light" Anchor="R,C" Offset="2,0" />
+						</ScrollPanel>
+					</Grid>
+				</SlideAnim>
+			</AlphaAnim>
+		</Container>
+	</Instance>
+
+	<Instance Name="LeaderPlacard">
+		<Container ID="Top" Size="340,670">
+			<AlphaAnim    ID="CivLeaderAlpha" AlphaBegin="0" AlphaEnd="1" Speed="4" Function="Root" Cycle="Once" Size="parent,parent" Stopped="1">
+				<SlideAnim  ID="CivLeaderSlide" Start="20,0" End="0,0" Speed="4" Function="Root" Cycle="Once" Size="parent,parent">
+					<Grid Style="EnhancedToolTip" Size="parent,parent">
+						<Container Size="parent-12,parent-25" Anchor="C,T" Offset="0,9">
+							<Image ID="LeaderBG"  Size="parent,parent" StretchMode="None" />
+							<Image Texture="Controls_Gradient" Color="0,0,0,200" Size="parent,500" Anchor="L,T" FlipY="1"/>
+							<Image Texture="Controls_Gradient" Color="0,0,0,200" Size="parent,200" Anchor="L,B"/>
+							<Image ID="DummyImage" StretchMode="Auto" Hidden="1"/>
+							<Image ID="LeaderImage" StretchMode="UniformToFill" Size="parent,parent" Anchor="C,B" Sampler="Linear"/>
+							<Image Texture="Controls_Gradient" Color="0,0,0,200" Size="parent,400" Anchor="L,B"/>
+							<Image Size="50,parent" Texture="Controls_Gradient" Anchor="R,T" Rotate="270" Color="0,0,0,150"/>
+							<Image Size="50,parent" Texture="Controls_Gradient" Anchor="L,T" Rotate="90"  Color="0,0,0,150"/>
+							<Image Size="20,parent" Texture="Controls_GradientSmall" Anchor="L,T" Rotate="270" Color="0,0,0,100"/>
+							<Image Size="20,parent" Texture="Controls_GradientSmall" Anchor="R,T" Rotate="90"  Color="0,0,0,100"/>
+						</Container>
+					</Grid>
+				</SlideAnim>
+			</AlphaAnim>
+		</Container>
+	</Instance>
+  
+</Context>
