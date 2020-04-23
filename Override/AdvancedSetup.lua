@@ -2012,7 +2012,7 @@ function ValidateSettingsYnAMP()
 		table.insert(reportTable, { Severity = 0, Title = Locale.Lookup("LOC_SETUP_DATABASE_LOADED_YNAMP"), Tooltip = Locale.Lookup("LOC_SETUP_DATABASE_LOADED_YNAMP_TT") })
 		Controls.LoadDataYnAMP:SetHide(true)
 	else
-		table.insert(reportTable, { Severity = 30, Title = Locale.Lookup("LOC_SETUP_DATABASE_NOT_LOADED_YNAMP"), Tooltip = Locale.Lookup("LOC_SETUP_DATABASE_NOT_LOADED_YNAMP_TT") })
+		table.insert(reportTable, { Severity = 20, Title = Locale.Lookup("LOC_SETUP_DATABASE_NOT_LOADED_YNAMP"), Tooltip = Locale.Lookup("LOC_SETUP_DATABASE_NOT_LOADED_YNAMP_TT") })
 		Controls.LoadDataYnAMP:SetHide(false)
 	end
 	
@@ -2112,7 +2112,7 @@ function ValidateSettingsYnAMP()
 	
 	-- Compare Major Civilization slider to actual numbe of players
 	if GameConfiguration.GetParticipatingPlayerCount() ~= GameConfiguration.GetValue("MajorCivilizationsCount") then
-		table.insert(reportTable, { Severity = 1, Title = Locale.Lookup("LOC_SETUP_MAJOR_COUNT_DIFFERENCE"), Tooltip = Locale.Lookup("LOC_SETUP_MAJOR_COUNT_DIFFERENCE_TT") })
+		--table.insert(reportTable, { Severity = 1, Title = Locale.Lookup("LOC_SETUP_MAJOR_COUNT_DIFFERENCE"), Tooltip = Locale.Lookup("LOC_SETUP_MAJOR_COUNT_DIFFERENCE_TT") })
 	end
 	
 	----------------------------------------------------
@@ -2125,7 +2125,7 @@ function ValidateSettingsYnAMP()
 	local listIcon	= #reportTable > 1 and "[ICON_Reports]" or ""
 	for i, row in ipairs(reportTable) do
 		titleStr 			= titleStr or GetColorStringSeverity(row.Title, row.Severity)..listIcon -- set title with the highest severity reason "YnAMP - "..
-		local severityStr 	= row.Severity > 0 and " "..Locale.Lookup("LOC_SETUP_SEVERITY_YNAMP", row.Severity) or ""
+		local severityStr 	= ""--row.Severity > 0 and " "..Locale.Lookup("LOC_SETUP_SEVERITY_YNAMP", row.Severity) or ""
 		local blockingStr 	= row.DisableStart and " "..Locale.Lookup("LOC_SETUP_BLOCKING_YNAMP") or ""
 		local ignoredStr	= row.BlockGroup and IgnoredWarning[row.BlockGroup] and " "..Locale.Lookup("LOC_SETUP_IGNORE_BLOCK_YNAMP") or nil
 		local tooltipStr	= row.Title .. (ignoredStr or (severityStr.." "..blockingStr)) ..sTooltipSeparator.. row.Tooltip
