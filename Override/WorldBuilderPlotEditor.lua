@@ -2,6 +2,9 @@
 --	World Builder Plot Editor
 -- ===========================================================================
 
+-- YnAMP <<<<<
+include("InstanceManager")
+-- ynAMP >>>>>
 
 -- ===========================================================================
 --	CONSTANTS
@@ -992,3 +995,146 @@ function Initialize()
 	UpdateCityEntries();
 end
 Initialize();
+
+-- YnAMP <<<<<
+
+include ("YnAMP_Common")
+
+----------------------------------------------------------------------------------------
+-- Manage "Restart" button
+----------------------------------------------------------------------------------------
+local bRestartInitialized	= false
+local bNeedToSave			= false --true
+local restartTimer			= 0
+local waitBeforeRestart		= 5.9
+function RestartTimer()
+	if bRestartInitialized then
+		if bNeedToSave and Automation.GetTime() - restartTimer > 0.1 then -- give time to update menu text
+			bNeedToSave				= false
+			local saveGame 			= {};
+			saveGame.Name 			= "AutoSaveOnRestart"
+			saveGame.Location 		= SaveLocations.LOCAL_STORAGE
+			saveGame.Type			= SaveTypes.WORLDBUILDER_MAP
+			saveGame.IsAutosave 	= false
+			saveGame.IsQuicksave 	= false
+			Network.SaveGame(saveGame)		
+		end
+		if Automation.GetTime() - restartTimer > waitBeforeRestart then
+			Events.GameCoreEventPublishComplete.Remove( RestartTimer )
+			Network.RestartGame()
+		else
+			Controls.Restart:SetText( Locale.Lookup("LOC_GAME_MENU_YNAMP_RESTART_TIMER", math.floor(math.max(0, waitBeforeRestart - (Automation.GetTime() - restartTimer)))) )
+		end
+	end
+end
+
+function OnRestart()
+	if bRestartInitialized then
+		bRestartInitialized = false
+		bNeedToSave			= false --true
+		Controls.Restart:SetText( Locale.Lookup("LOC_GAME_MENU_YNAMP_RESTART") )
+		Events.GameCoreEventPublishComplete.Remove( RestartTimer )
+	else
+		bRestartInitialized = true
+		Controls.Restart:SetText( Locale.Lookup("LOC_GAME_MENU_YNAMP_RESTART_TIMER", waitBeforeRestart) )
+		restartTimer = Automation.GetTime()
+		Events.GameCoreEventPublishComplete.Add( RestartTimer )
+	end
+end
+
+
+----------------------------------------------------------------------------------------
+-- Show all City Names on map
+----------------------------------------------------------------------------------------
+
+local g_InstanceManager	:table = InstanceManager:new( "CityList",	"Anchor", Controls.CityListContainer )
+local g_MapCities		:table = {};
+function GetCityListInstanceAt(x, y, sList)
+	local plotIndex = Map.GetPlotIndex(x, y)
+	local pInstance = g_MapCities[plotIndex];
+	if (pInstance == nil) then
+		local pInstance = g_InstanceManager:GetInstance();
+		local worldX, worldY = UI.GridToWorld( plotIndex );
+		pInstance.Anchor:SetWorldPositionVal( worldX, worldY, 0.0 )
+		pInstance.Anchor:ChangeParent(ContextPtr:LookUpControl("/WorldBuilder/CityBannerManager"))
+		pInstance.TextContainer:SetHide( false )
+		pInstance.ListText:SetText(sList)
+	end
+	return pInstance
+end
+--Controls.CityListContainer:ChangeParent(ContextPtr:LookUpControl("/InGame/CityBannerManager"))
+Controls.CityListContainer:ChangeParent(ContextPtr:LookUpControl("/WorldBuilder/CityBannerManager"))
+
+function SetCityNamesOnMap(bShowCivSpecificNames)
+	SetGlobals()
+	local iW, iH = Map.GetGridSize()
+	for iY = 0, iH - 1 do
+		for iX = iW - 1, 0, -1  do
+			CheckCoroutinePause()
+			local cityList = GetCityNamesAt(iX, iY, bShowCivSpecificNames)
+			if cityList then
+				local list = {}
+				table.sort(cityList, function(a, b) return a.Distance < b.Distance; end)
+				for i, row in ipairs(cityList) do
+					if row.Distance == 0 then
+						table.insert(list, "[ICON_Buildings] "..Locale.Lookup(row.Name))
+					else
+						table.insert(list, string.format("[ICON_Range] %s (%i)", Locale.Lookup(row.Name), row.Distance))
+					end
+				end
+				local sList = table.concat(list, "[NEWLINE]")
+				GetCityListInstanceAt(iX, iY, sList)
+			end
+		end
+	end
+end
+
+function ListCities(civilizationType)
+	for row in GameInfo.CityNames() do
+		if civilizationType == row.CivilizationType or civilizationType == nil then
+			print(Indentation(row.CivilizationType, 20, false, true).." "..Indentation(row.CityName, 30, false, true).." "..Locale.Lookup(row.CityName))
+		end
+	end
+end
+
+function Start()
+	LaunchScriptWithPause()
+	AddCoToList(coroutine.create(SetCityNamesOnMap))
+end
+----------------------------------------------------------------------------------------
+-- Add "Export to Lua" button to the Option Menu and add keyboard shortcut (ctrl+alt+E)
+----------------------------------------------------------------------------------------
+-- Sharing UI/Gameplay context (ExposedMembers.YnAMP is initialized in AssignStartingPlots.lua)
+local YnAMP = ExposedMembers.YnAMP
+
+function OnInputHandler( pInputStruct:table )
+	local uiMsg:number = pInputStruct:GetMessageType();
+	if uiMsg == KeyEvents.KeyUp then
+		if pInputStruct:GetKey() == Keys.E and pInputStruct:IsControlDown() and pInputStruct:IsAltDown() then
+			YnAMP.ExportMap()
+			UI.PlaySound("Alert_Neutral")
+		end
+		-- pInputStruct:IsShiftDown() and pInputStruct:IsAltDown() and  pInputStruct:IsControlDown()
+	end
+	return false
+end
+
+function OnEnterGame()
+	Controls.ExportMapToLua:RegisterCallback( Mouse.eLClick, YnAMP.ExportMap )
+	Controls.ExportMapToLua:SetHide( false )
+	Controls.ExportMapToLua:ChangeParent(ContextPtr:LookUpControl("/WorldBuilder/TopOptionsMenu/MainStack"))
+	
+	Controls.Restart:RegisterCallback( Mouse.eLClick, OnRestart )
+	Controls.Restart:SetHide( false )
+	Controls.Restart:ChangeParent(ContextPtr:LookUpControl("/WorldBuilder/TopOptionsMenu/MainStack"))
+	--Automation.SetInputHandler( OnInputHandler ) --<- deactivated, cause crash on restart ?
+	LoadGameplayDatabaseForConfig()
+end
+Events.LoadScreenClose.Add(OnEnterGame)
+
+function Cleaning()
+	--print ("Cleaning InputHandler on LeaveGameComplete...")
+	--Automation.RemoveInputHandler( OnInputHandler )
+end
+Events.LeaveGameComplete.Add(Cleaning)
+-- YnAMP >>>>>

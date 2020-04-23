@@ -13,6 +13,14 @@
 				<Grid Style="ShellHeaderButtonGrid">
 					<GridButton ID="DefaultButton" Style="ShellButtonOrnateFlat" Anchor="L,C" Size="300,parent" Offset="1,0" String="{LOC_SETUP_RESTORE_DEFAULT:upper}" ToolTip="LOC_SETUP_RESTORE_DEFAULT_TT" />
 				</Grid>
+				<!-- YnAMP <<<<< -->
+				<Grid Style="ShellHeaderButtonGrid">
+					<GridButton ID="IgnoreWarning" Style="ShellButtonOrnateFlat" Anchor="L,C" Size="300,parent" Offset="1,0" String="{LOC_SETUP_IGNORE_WARNING_YNAMP:upper}" ToolTip="LOC_SETUP_IGNORE_WARNING_YNAMP_TT" />
+				</Grid>
+				<Grid Style="ShellHeaderButtonGrid">
+					<GridButton ID="LoadDataYnAMP" Style="ShellButtonOrnateFlat" Anchor="R,C" Size="300,parent" Offset="1,0" String="{LOC_SETUP_LOAD_DATA_YNAMP:upper}" ToolTip="LOC_SETUP_LOAD_DATA_YNAMP_TT" />
+				</Grid>
+				<!-- YnAMP >>>>> -->
 				<Grid Style="ShellHeaderButtonGrid">
 					<GridButton ID="CloseButton" Style="ShellButtonOrnateFlat" Anchor="R,C" Offset="1,0" String="LOC_MULTIPLAYER_BACK"/>
 				</Grid>
