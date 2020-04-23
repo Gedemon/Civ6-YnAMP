@@ -1246,7 +1246,7 @@
       <Text>Infrastructure Placement</Text>
     </Replace>
     <Replace Tag="LOC_MAP_INFRASTRUCTURE_DESCRIPTION" Language="en_US">
-      <Text>How to place the infrastructure (roads, rails, improvments, districts, buildings) on the map</Text>
+      <Text>How to place the infrastructure (roads, rails, improvements, districts, buildings) on the map</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_ROAD_PLACEMENT_NAME" Language="en_US">

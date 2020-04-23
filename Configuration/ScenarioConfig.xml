@@ -17,10 +17,10 @@
 		InternationalRails : domain, NONE, CENTRALIZED (capital to all capitals), Infrastructure Equals GENERATED
 		RailsMaxDistance : uint, (0 = no limit) OR domain, 4, 6, 8, 12, 16, 24, 32 unlimited (default = 12)
 		RailsPerSize : domain, 1 per 1, 1 per 2, 1 per 3, 1 per 6, 1 per 9, 1 per 12 (default = "1 per 6"), NationalRailPlacement Equals SIZE_RELATED
-		Improvments : domain, NONE, CENTRALIZED (capital only), ALL, SIZE_RELATED (num dependant of city size), Infrastructure Equals GENERATED
-		MaxNumImprovments : Improvments NotEquals NONE/SIZE_RELATED
-		ImprovmentsPerSize : domain, 1 per 1, 1 per 2, 1 per 3, 1 per 6 (default = "1 per 2"), Improvments Equals SIZE_RELATED
-		MaxImprovmentsDistance : domain, 1, 2, 3, 6 (default = 3), Improvments NotEquals NONE
+		Improvements : domain, NONE, CENTRALIZED (capital only), ALL, SIZE_RELATED (num dependant of city size), Infrastructure Equals GENERATED
+		MaxNumImprovements : Improvements NotEquals NONE/SIZE_RELATED
+		ImprovementsPerSizeRatio : domain, 1 per 1, 1 per 2, 1 per 3, 1 per 6 (default = "1 per 2"), Improvements Equals SIZE_RELATED
+		MaxImprovementsDistance : domain, 1, 2, 3, 6 (default = 3), Improvements NotEquals NONE
 		Districts : domain, NONE, CENTRALIZED (capital only), ALL, SIZE_RELATED (num dependant of city size), Infrastructure Equals GENERATED
 		MaxNumDistricts : Districts NotEquals NONE/SIZE_RELATED
 		DistrictsPerSize : domain, 1 per 1, 1 per 2, 1 per 3, 1 per 6 (default = "1 per 6"), Districts Equals SIZE_RELATED
@@ -86,7 +86,6 @@
 		<Replace Domain="ScenarioType"	Value="SCENARIO_DEFAULT"	Name="LOC_MAP_SCENARIO_DEFAULT_NAME" 	Description="LOC_MAP_SCENARIO_DEFAULT_DESCRIPTION" 		SortIndex="20"/>
 		<Replace Domain="ScenarioType"	Value="SCENARIO_GENERATED"	Name="LOC_MAP_SCENARIO_GENERATED_NAME" 	Description="LOC_MAP_SCENARIO_GENERATED_DESCRIPTION" 	SortIndex="30"/>
 		<Replace Domain="ScenarioType" 	Value="YnampGenerated" 		Name="LOC_YNAMP_GENERATED_PRESET_NAME" 	Description="LOC_YNAMP_GENERATED_PRESET_DESC" 			SortIndex="40"/>
-		<Replace Domain="ScenarioType" 	Value="YnampCityMap" 		Name="LOC_YNAMP_CITYMAP_PRESET_NAME" 	Description="LOC_YNAMP_CITYMAP_PRESET_DESC" 			SortIndex="50"/> <!-- Filtered in PostConfig.sql -->
 		
 		<Replace Domain="CityPlacement" Value="PLACEMENT_EMPTY" 		Name="LOC_MAP_PLACEMENT_EMPTY_NAME" 				Description="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" 				SortIndex="10"/>
 		<Replace Domain="CityPlacement" Value="PLACEMENT_TERRAIN" 		Name="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" 			Description="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" 		SortIndex="20"/>

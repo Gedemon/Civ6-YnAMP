@@ -273,7 +273,7 @@ function CheckTimer()
 			end
 		end
 		for _, i in ipairs(toRemove) do
-			if coroutine.status(CoroutineList[i])=="dead" then
+			if CoroutineList[i] and coroutine.status(CoroutineList[i])=="dead" then
 				table.remove(CoroutineList, i)
 			else
 				print("**** ERROR, trying to remove not dead Coroutine: "..tostring(CoroutineList[i]), i)
@@ -446,18 +446,18 @@ function ExportMap()
 	print("<!--******* Infrastructure *******---->")
 	print("<!--******************************---->")
 	print("<ScenarioInfrastructure>")
-	local iImprovmentType
+	local iImprovementType
 	local iRouteType
 	for iY = 0, g_iH - 1 do
 		for iX = g_iW - 1, 0, -1  do
 			pPlot 					= Map.GetPlot(iX,iY)
-			iImprovmentType 		= pPlot:GetImprovementType()
+			iImprovementType 		= pPlot:GetImprovementType()
 			iRouteType 				= pPlot:GetRouteType()
 			local improvementStr 	= ""
 			local routeStr 			= ""
 			local bRow = false
-			if iImprovmentType ~= -1 then
-				improvementStr = "ImprovementType=\"".. tostring(GameInfo.Improvements[iImprovmentType].ImprovementType).."\""
+			if iImprovementType ~= -1 then
+				improvementStr = "ImprovementType=\"".. tostring(GameInfo.Improvements[iImprovementType].ImprovementType).."\""
 				bRow = true
 			end
 			if iRouteType ~= -1 then

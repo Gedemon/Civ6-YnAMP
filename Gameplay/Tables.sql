@@ -123,6 +123,8 @@ CREATE TABLE IF NOT EXISTS ScenarioCivilizations
 		MapScript TEXT,
 		SpecificEra TEXT,
 		CivilizationType TEXT, 		-- can be NULL to set default values for all Civilization, in that case ScenarioName must not be NULL
+		ExploreAll BOOLEAN NOT NULL CHECK (ExploreAll IN (0,1)) DEFAULT 0,
+		MeetAll BOOLEAN NOT NULL CHECK (MeetAll IN (0,1)) DEFAULT 0,
 		Priority INT default 0, 	-- higher means first selected for placement in loops
 		CityPlacement TEXT,
 		MaxDistanceFromCapital INT, -- if OnlySameLandMass is true, then this is the land path distance, else it's the air distance
@@ -148,10 +150,10 @@ CREATE TABLE IF NOT EXISTS ScenarioCivilizations
 		NationalRailPlacement TEXT,
 		InternationalRails TEXT,
 		RailsMaxDistance INT,
-		Improvments TEXT,
-		MaxNumImprovments INT,
-		ImprovmentsPerSize TEXT,
-		MaxImprovmentsDistance INT,
+		Improvements TEXT,
+		MaxNumImprovements INT,
+		ImprovementsPerSizeRatio INT,
+		MaxImprovementsDistance INT,
 		Districts TEXT,
 		MaxNumDistricts INT,
 		DistrictsPerSize TEXT,
@@ -263,6 +265,14 @@ CREATE TABLE IF NOT EXISTS ScenarioTechs
 		OnlyAI BOOLEAN NOT NULL CHECK (OnlyAI IN (0,1)) DEFAULT 0,
 		OnlyHuman BOOLEAN NOT NULL CHECK (OnlyHuman IN (0,1)) DEFAULT 0,
 		TechnologyType TEXT);
+
+-- Scenario Diplomacy
+CREATE TABLE IF NOT EXISTS ScenarioDiplomacy
+	(	ScenarioName TEXT NOT NULL,
+		CivilizationType TEXT NOT NULL,
+		DiplomaticAction TEXT,
+		OtherCivilization TEXT,
+		ActionValue INT);
 		
 -----------------------------------------------
 -- Temporary Tables for initialization

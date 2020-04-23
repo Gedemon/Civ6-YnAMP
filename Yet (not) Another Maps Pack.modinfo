@@ -87,19 +87,7 @@
 			<File>Maps/LargestEarthCustom/Map.xml</File>
 			<File>Gameplay/Resource.xml</File>
 			<File>Gameplay/CityNameByEra.xml</File>
-		</UpdateDatabase>
-		<UpdateDatabase id="YNAMP_SCENARIO_GAMEPLAY">
-           	<Properties>
-				<LoadOrder>2</LoadOrder>
-           	</Properties>
-			<File Priority="90">Gameplay/Scenarios.xml</File>
-		</UpdateDatabase>
-		<UpdateDatabase id="YNAMP_POST_SCENARIO_GAMEPLAY">
-           	<Properties>
-				<LoadOrder>10500</LoadOrder>
-           	</Properties>
-			<File Priority="90">Gameplay/Scenarios.sql</File>
-			<File Priority="10">Gameplay/ScenariosPostUpdate.xml</File>
+			<File>Gameplay/Scenarios.xml</File>
 		</UpdateDatabase>
 		<UpdateDatabase id="YNAMP_XP2" criteria="YNAMP_Expansion2">
            	<Properties>
@@ -284,7 +272,6 @@
 		<File>Gameplay/GamePlayText_ko_KR.xml</File>
 		<File>Gameplay/GamePlayText_pl_PL.xml</File>
 		<File>Gameplay/Scenarios.xml</File>
-		<File>Gameplay/Scenarios.sql</File>
 		<File>Maps/GiantEarth/Map.xml</File>
 		<File>Maps/GiantEarth/CityMap.xml</File>
 		<File>Maps/GiantEarth/CityMap_Egypt.xml</File>

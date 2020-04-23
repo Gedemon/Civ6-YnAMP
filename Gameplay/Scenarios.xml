@@ -1,9 +1,9 @@
 <GameInfo>
 
 
-	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++ -->
-	<!--                 Scenario Settings                -->
-	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!--                 Ynamp Generated                -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<ScenarioCivilizations>
 	
 		<Row ScenarioName="YnampGenerated" CivilizationType="CIVILIZATION_AMERICA"		Priority="75"	CityPlacement="PLACEMENT_MIXED"	NumberOfCity="15"	MaxDistanceFromCapital="75"	OnlySameLandMass="true"	MinCitySeparation="4" SouthernLatitude="25"	NorthernLatitude="60"/>
@@ -51,6 +51,5 @@
 
 	</ScenarioCivilizations>
 	
-
 	
 </GameInfo>

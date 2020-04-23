@@ -2144,7 +2144,7 @@ function ValidateSettingsYnAMP()
 	if GameConfiguration.IsWorldBuilderEditor() then
 		titleStr = "[ICON_Global] ".. titleStr
 	else
-		titleStr = "[ICON_Team] ".. titleStr
+		titleStr = "[ICON_ProductionQueue] ".. titleStr
 	end
 	--
 	Controls.WindowTitle:SetText(titleStr)
