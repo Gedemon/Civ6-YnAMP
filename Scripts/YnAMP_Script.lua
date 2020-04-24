@@ -1204,7 +1204,7 @@ function SetScenarioPlayers()
 			if defaultRow then
 				print("Add missing default settings...")
 				for key, value in orderedPairs(defaultRow) do
-					playerData[key] = playerData[key] or value
+					playerData[key] = (playerData[key] == nil and value) or playerData[key]
 				end
 			end
 			
@@ -1736,7 +1736,7 @@ function PlaceCities()
 							local cityName	= cityData.Name
 							importPlaced	= importPlaced + 1
 							InitializeCity(city, cityData.Name, cityData.Size)
-							print(" 		- ".. tostring(Locale.Lookup(city:GetName())) .." PLACED at ", city:GetX(), city:GetY(), " for ",CivTypePlayerID[iPlayer])
+							print(" 		- ".. tostring(Locale.Lookup(city:GetName())) .." PLACED at ", city:GetX(), city:GetY(), " for ",CivTypePlayerID[iPlayer], ", left = ", playerData and playerData.CitiesToPlace)
 						else
 							print(" 		- WARNING: can't place ".. tostring(cityData.Name) .." at ", cityData.X, cityData.Y, " for ",CivTypePlayerID[iPlayer])
 							importSkipped	= importSkipped + 1
@@ -1794,7 +1794,7 @@ function PlaceCities()
 						
 							local x, y		= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y), pos.OnlyOffset) -- CityPosition use average value of x, y as a city name can fit multiple positions on a map
 							local distance	= (playerData.StartingPlot and Map.GetPlotDistance(x, y, playerData.StartingPlot:GetX(), playerData.StartingPlot:GetY())) or 0
-							print("  - position for ".. Indentation(Locale.Lookup(cityName),12) .. " at ".."(".. Indentation(tostring(x).. ","..tostring(y),7).."), reference map at (".. Indentation(tostring(pos.X)..","..tostring(pos.Y),7).. "), starting plot distance = " .. tostring(distance))
+							print("  - position for ".. Indentation(Locale.Lookup(cityName),12) .. " at ".."(".. Indentation(tostring(x).. ","..tostring(y),7).."), reference map at (".. Indentation(tostring(pos.X)..","..tostring(pos.Y),7).. "), starting plot distance = " .. tostring(distance), "RowID = ", row.Index, row.index)
 							table.insert(cityList[iPlayer], { Name = cityName, X = x, Y = y, Distance = distance })
 
 						end
@@ -1853,7 +1853,7 @@ function PlaceCities()
 									local city = CreatePlayerCity(player, cityRow.X, cityRow.Y)--player:GetCities():Create(cityRow.X, cityRow.Y)
 									if city then
 										InitializeCity(city, cityName)
-										print("  - ".. tostring(cityName), " entry#"..tostring(cityIndex[iPlayer]-1).."/"..#list, " PLACED !")
+										print("  - ".. tostring(cityName), " entry#"..tostring(cityIndex[iPlayer]-1).."/"..#list, " PLACED, left = ", playerData.CitiesToPlace)
 										bPlayerCityPlaced 		= true
 										bAnyCityPlaced			= true
 									else
@@ -1958,7 +1958,7 @@ function PlaceCities()
 						if city then
 							InitializeCity(city)
 							bPlacedCity = true
-							print("     - ".. tostring(Locale.Lookup(city:GetName())) .." PLACED !")
+							print("     - ".. tostring(Locale.Lookup(city:GetName())) .." PLACED, left = ", playerData.CitiesToPlace)
 						else
 							print("     - WARNING, can't place city at ", pBestPlot:GetX(), pBestPlot:GetY(), " removing entry from plotList")
 							plotList[iIndex].Plot = nil
@@ -2520,7 +2520,7 @@ function PlaceInfrastructure()
 											local row			= GameInfo.Improvements[eImprovementType]
 											local eTtechType	= row.PrereqTech 	and GameInfo.Technologies[row.PrereqTech].Index
 											local eCivicType	= row.PrereqCivic 	and GameInfo.Civics[row.PrereqCivic].Index
-											print(string.format("    - Check to place %s at (%i,%i)", Locale.Lookup(row.Name), pAdjacencyPlot:GetX(), pAdjacencyPlot:GetY()))
+											--print(string.format("    - Check to place %s at (%i,%i)", Locale.Lookup(row.Name), pAdjacencyPlot:GetX(), pAdjacencyPlot:GetY()))
 											if eCivicType == nil or pCulture:HasCivic(eCivicType) then
 												if eTtechType == nil or pTech:HasTech(eTtechType) then
 													ImprovementBuilder.SetImprovementType(pAdjacencyPlot, eImprovementType, iPlayer)
@@ -2529,10 +2529,10 @@ function PlaceInfrastructure()
 														break
 													end
 												else
-													print("Failed on tech ", row.PrereqTech)
+													--print("Failed on tech ", row.PrereqTech)
 												end
 											else
-												print("Failed on civic ", row.PrereqCivic)
+												--print("Failed on civic ", row.PrereqCivic)
 											end
 										end
 									end
@@ -2568,7 +2568,6 @@ function InitializeDiplomacy()
 				if pDiplo then
 					for k, iOtherPlayer in ipairs(AliveList) do
 						if (iPlayer ~= iOtherPlayer) then
-print("Set HasMet", CivTypePlayerID[iPlayer], CivTypePlayerID[iOtherPlayer])
 							pDiplo:SetHasMet(iOtherPlayer);
 						end
 					end
@@ -2588,7 +2587,6 @@ print("Set HasMet", CivTypePlayerID[iPlayer], CivTypePlayerID[iOtherPlayer])
 			-- Check for explore all
 			if playerData.ExploreAll then
 				-- Set all plots to explored
-print("Explore All for", CivTypePlayerID[iPlayer])
 				local pPlayerVis = PlayersVisibility[iPlayer];
 				pPlayerVis:RevealAllPlots();
 			end

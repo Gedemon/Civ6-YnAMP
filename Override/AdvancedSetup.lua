@@ -15,7 +15,7 @@ print("loading AdvancedSetup for Yet (not) Another Maps Pack...")
 print("Game version : ".. tostring(UI.GetAppVersion()))
 ExposedMembers.ConfigYnAMP 		= ExposedMembers.ConfigYnAMP or {}
 ExposedMembers.YnAMP_Loading	= ExposedMembers.YnAMP_Loading or {}
-YnAMP_Loading 	=ExposedMembers.YnAMP_Loading
+YnAMP_Loading 	= ExposedMembers.YnAMP_Loading
 ConfigYnAMP 	= ExposedMembers.ConfigYnAMP
 
 ------------------------------------------------------------------------------
@@ -31,7 +31,8 @@ local maxWorkingMapSize					= 140*74
 local maxLoadingMapSize					= 200*104
 local bStartDisabledByYnAMP 			= false
 local bStartDisabledBySetup 			= false
-local SavedParameter					= {}	-- Saved values for disabled parameters
+--ConfigYnAMP.SavedParameter			= ConfigYnAMP.SavedParameter or {}	-- Saved values for disabled parameters
+local SavedParameter					= {}	--ConfigYnAMP.SavedParameter
 local cityStatesQuery					= "SELECT DISTINCT Parameters.ConfigurationId, Parameters.Name from Parameters JOIN ParameterDependencies ON Parameters.ParameterId = ParameterDependencies.ParameterId WHERE ParameterDependencies.ConfigurationId ='SelectCityStates' AND Parameters.ConfigurationId LIKE '%LEADER%'" --"SELECT * from Parameters where ConfigurationId LIKE '%LEADER_MINOR_CIV%' and GroupId='MapOptions'"
 -- There must be a cleaner way to get that...
 local RulesetPlayerDomain	= {
@@ -2075,7 +2076,7 @@ function ValidateSettingsYnAMP()
 	end
 		
 	if ConfigYnAMP.IsDatabaseChanged then -- always chech to generate the report
-		print("Database may have changed...")
+		--print("Database may have changed...")
 		--local bLock		= not IgnoredWarning["DatabaseChanged"]
 		local severity	= bLock and 40 or 25 --bLock and 75 or 50
 		table.insert(reportTable, { Severity = severity, Title = Locale.Lookup("LOC_SETUP_DATABASE_CHANGED_YNAMP"), Tooltip = Locale.Lookup("LOC_SETUP_DATABASE_CHANGED_YNAMP_TT"), DisableStart = bLock, BlockGroup = "DatabaseChanged" })
@@ -2091,8 +2092,8 @@ function ValidateSettingsYnAMP()
 	end
 	
 	if ConfigYnAMP.IsDatabaseLoaded  then
-		if bChangedRuleset then --ConfigYnAMP.LoadedRuleset ~= GameConfiguration.GetValue("RULESET") then
-			print("Database have changed...")
+		if bChangedRuleset then
+			--print("Database have changed...")
 			ConfigYnAMP.IsDatabaseChanged 	= true
 			--local bLock		= not IgnoredWarning["RulesetChanged"]
 			local severity	= bLock and 40 or 24 --bLock and 100 or 70
@@ -2104,7 +2105,7 @@ function ValidateSettingsYnAMP()
 	-- Map Size check
 	local dimension		= GetCustomMapDimension()
 	local size 			= dimension and dimension.size
-	local bMapSizeBlock	= not IgnoredWarning["MapSize"]
+	local bMapSizeBlock	= (not IgnoredWarning["MapSize"]) and (not GameConfiguration.IsWorldBuilderEditor())
 	if not size then 
 		local mapSizetype	= MapSizeTypesFromHash[MapConfiguration.GetMapSize()]
 		local mapDimension 	= mapSizetype and ConfigYnAMP.MapSizes[mapSizetype]

@@ -869,7 +869,7 @@
 		<Replace MapName="PlayEuropeAgain" X="54" Y="80" CityLocaleName="LOC_CITY_NAME_RAMSELE" Area="0" />
 
 		<Replace MapName="PlayEuropeAgain" X="48" Y="81" CityLocaleName="LOC_CITY_NAME_TRONDHEIM" />
-		<Replace MapName="PlayEuropeAgain" X="52" Y="81" CityLocaleName="LOC_CITY_NAME_OESTERSUND" />
+		<Replace MapName="PlayEuropeAgain" X="52" Y="81" CityLocaleName="LOC_CITY_NAME_OSTERSUND" />
 		<Replace MapName="PlayEuropeAgain" X="55" Y="81" CityLocaleName="LOC_CITY_NAME_UMEA" />
 
 		<Replace MapName="PlayEuropeAgain" X="51" Y="82" CityLocaleName="LOC_CITY_NAME_STROEMSUND" Area="0" />

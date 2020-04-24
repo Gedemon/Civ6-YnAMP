@@ -4808,7 +4808,7 @@
 		<Replace Tag="LOC_CITY_NAME_OEREBRO" Language="zh_Hans_CN">
 			<Text>厄勒布鲁</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_OESTERSUND" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_OSTERSUND" Language="zh_Hans_CN">
 			<Text>厄斯特松德</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_OEVERKALIX" Language="zh_Hans_CN">
@@ -21684,10 +21684,10 @@
 		<Replace Tag="LOC_CITY_NAME_RANKIN_INLET_MAPUCHE" Language="zh_Hans_CN">
 			<Text>兰金因莱特</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_REPULSE_BAY" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_NAUJAAT" Language="zh_Hans_CN">
 			<Text>纳武加特</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_REPULSE_BAY_ENGLAND" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_NAUJAAT_ENGLAND" Language="zh_Hans_CN">
 			<Text>纳武加特</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_RESOLUTE" Language="zh_Hans_CN">

@@ -1736,7 +1736,7 @@
 		<Replace Tag="LOC_CITY_NAME_NYKOEPING" Text="뉘셰핑" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_ODENSE" Text="오덴세" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_OEREBRO" Text="외레브로" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_OESTERSUND" Text="외스터순" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_OSTERSUND" Text="외스터순" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_OEVERKALIX" Text="외베르칼릭스" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_OSLO" Text="오슬로" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_OULU" Text="오울루" Language="ko_KR" />
@@ -7584,8 +7584,8 @@
 		<Replace Tag="LOC_CITY_NAME_RANKIN_INLET_CREE" Text="캉기크리니크" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_RANKIN_INLET_AZTEC" Text="캉기크리니크" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_RANKIN_INLET_MAPUCHE" Text="캉기크리니크" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_REPULSE_BAY" Text="노아잣" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_REPULSE_BAY_ENGLAND" Text="리펄스베이" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_NAUJAAT" Text="노아잣" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_NAUJAAT_ENGLAND" Text="리펄스베이" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_RESOLUTE" Text="리솔루트" Language="ko_KR" />	
 		<Replace Tag="LOC_CITY_NAME_RESOLUTE_CREE" Text="콰우스잇투크" Language="ko_KR" />	
 		<Replace Tag="LOC_CITY_NAME_RESOLUTE_AZTEC" Text="콰우스잇투크" Language="ko_KR" />	

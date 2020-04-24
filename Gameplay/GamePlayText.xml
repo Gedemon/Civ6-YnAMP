@@ -1739,7 +1739,7 @@
 		<Replace Tag="LOC_CITY_NAME_NYKOEPING" Text="Nyköping" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ODENSE" Text="Odense" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OEREBRO" Text="Örebro" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_OESTERSUND" Text="Östersund" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_OSTERSUND" Text="Östersund" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OEVERKALIX" Text="Överkalix" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OSLO" Text="Oslo" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OULU" Text="Oulu" Language="en_US" />
@@ -7432,6 +7432,7 @@
 		<Replace Language="en_US" Text="Marakaho" Tag="LOC_CITY_NAME_MARKOVO_INDIA"/>
 		<Replace Language="en_US" Text="Marukoho" Tag="LOC_CITY_NAME_MARKOVO_JAPAN"/>
 		<Replace Language="en_US" Text="Mys Shmidta" Tag="LOC_CITY_NAME_MYS_SHMIDTA"/>
+		<Replace Language="en_US" Text="Nordvik" Tag="LOC_CITY_NAME_NORDVIK"/>
 		<Replace Language="en_US" Text="Cape Schmidt" Tag="LOC_CITY_NAME_MYS_SHMIDTA_AMERICA"/>
 		<Replace Language="en_US" Text="Kayb Shamit" Tag="LOC_CITY_NAME_MYS_SHMIDTA_ARABIA"/>
 		<Replace Language="en_US" Text="Cape Schmidt" Tag="LOC_CITY_NAME_MYS_SHMIDTA_AUSTRALIA"/>
@@ -7915,8 +7916,8 @@
 		<Replace Tag="LOC_CITY_NAME_RANKIN_INLET_CREE" Text="Kangiqliniq" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RANKIN_INLET_AZTEC" Text="Kangiqliniq" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RANKIN_INLET_MAPUCHE" Text="Kangiqliniq" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_REPULSE_BAY" Text="Naujaat" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_REPULSE_BAY_ENGLAND" Text="Repulse Bay" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAUJAAT" Text="Naujaat" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_NAUJAAT_ENGLAND" Text="Repulse Bay" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_RESOLUTE" Text="Resolute" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_RESOLUTE_CREE" Text="Qausuittuq" Language="en_US" />	
 		<Replace Tag="LOC_CITY_NAME_RESOLUTE_AZTEC" Text="Qausuittuq" Language="en_US" />	

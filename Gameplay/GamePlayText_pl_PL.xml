@@ -1738,7 +1738,7 @@
 		<Replace Tag="LOC_CITY_NAME_NYKOEPING" Text="Nyköping" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_ODENSE" Text="Odense" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_OEREBRO" Text="Örebro" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_OESTERSUND" Text="Östersund" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_OSTERSUND" Text="Östersund" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_OEVERKALIX" Text="Överkalix" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_OSLO" Text="Oslo" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_OULU" Text="Oulu" Language="pl_PL" />
@@ -7902,8 +7902,8 @@
 		<Replace Tag="LOC_CITY_NAME_RANKIN_INLET_CREE" Text="Kangiqliniq" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_RANKIN_INLET_AZTEC" Text="Kangiqliniq" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_RANKIN_INLET_MAPUCHE" Text="Kangiqliniq" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_REPULSE_BAY" Text="Naujaat" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_REPULSE_BAY_ENGLAND" Text="Repulse Bay" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NAUJAAT" Text="Naujaat" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_NAUJAAT_ENGLAND" Text="Repulse Bay" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_RESOLUTE" Text="Resolute" Language="pl_PL" />	
 		<Replace Tag="LOC_CITY_NAME_RESOLUTE_CREE" Text="Qausuittuq" Language="pl_PL" />	
 		<Replace Tag="LOC_CITY_NAME_RESOLUTE_AZTEC" Text="Qausuittuq" Language="pl_PL" />	
