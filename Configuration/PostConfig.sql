@@ -20,6 +20,9 @@ DELETE FROM ParameterDependencies WHERE ParameterId = 'NoDupeLeaders' AND Config
 
 -- Legacy setting update for CityState list on first selection
 UPDATE ParameterDependencies SET ConfigurationValue = 'RANDOM',	Operator ='NotEquals' WHERE ConfigurationId = 'SelectCityStates' AND ConfigurationValue =1;
+INSERT OR REPLACE INTO ParameterDependencies (ParameterId, ConfigurationGroup, ConfigurationId, Operator, ConfigurationValue)
+	SELECT ParameterId, ConfigurationGroup, ConfigurationId, Operator, NULL
+	FROM ParameterDependencies WHERE ConfigurationId='SelectCityStates' AND ConfigurationValue ='RANDOM';
 
 -- Create Ban Leader list <Replace ParameterId="BanLeaders" Name="LOC_MAP_BAN_LEADERS_NAME" Description="LOC_MAP_BAN_LEADERS_DESCRIPTION"	Domain="bool" 	DefaultValue="0" 	ConfigurationGroup="Map" 	ConfigurationId="BanLeaders" 	GroupId="MapOptions" 	SortIndex="52"/>
 INSERT OR REPLACE INTO Parameters (ParameterId, Name, Description, Domain, DefaultValue, ConfigurationGroup, ConfigurationId, GroupId, SortIndex)

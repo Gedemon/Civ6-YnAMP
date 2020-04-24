@@ -218,9 +218,9 @@
 		<Replace ParameterId="SelectCityStates" Name="LOC_MAP_SELECT_CITY_STATES_NAME" 	Description="LOC_MAP_SELECT_CITY_STATES_DESCRIPTION" 	Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="SelectCityStates" GroupId="MapOptions" SortIndex="82"/>
 		<Replace ParameterId="LimitCityStates" 	Name="LOC_MAP_LIMIT_CITY_STATES_NAME" 	Description="LOC_MAP_LIMIT_CITY_STATES_DESCRIPTION" 	Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="LimitCityStates" GroupId="MapOptions" SortIndex="82"/>
 		<!-- -->
-		<Replace ParameterId="SelectCityStatesMP" Name="LOC_CITYSTATES_OPTIONS_NAME" 	Description="LOC_CITYSTATES_OPTIONS_DESCRIPTION" 	Domain="SelectCityStates" DefaultValue="RANDOM" ConfigurationGroup="Map" ConfigurationId="SelectCityStates" GroupId="MapOptions" SupportsLANMultiplayer="0" SupportsInternetMultiplayer="0" Visible="1" SortIndex="82"/>
-		<Replace ParameterId="SelectCityStatesSP" Name="LOC_CITYSTATES_OPTIONS_NAME" 	Description="LOC_CITYSTATES_OPTIONS_DESCRIPTION" 	Domain="SelectCityStates" DefaultValue="RANDOM" ConfigurationGroup="Map" ConfigurationId="SelectCityStates" GroupId="MapOptions" SupportsLANMultiplayer="1" SupportsInternetMultiplayer="1" Visible="0" SortIndex="82"/>
-
+		<Replace ParameterId="SelectCityStatesMP" 	Name="LOC_CITYSTATES_OPTIONS_NAME" 	Description="LOC_CITYSTATES_OPTIONS_DESCRIPTION" 		Domain="SelectCityStates" 	DefaultValue="RANDOM" 	ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 	GroupId="MapOptions" SupportsLANMultiplayer="0" SupportsInternetMultiplayer="0" Visible="1" SortIndex="82"/>
+		<Replace ParameterId="SelectCityStatesSP" 	Name="LOC_CITYSTATES_OPTIONS_NAME" 	Description="LOC_CITYSTATES_OPTIONS_DESCRIPTION" 		Domain="SelectCityStates" 	DefaultValue="RANDOM" 	ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 	GroupId="MapOptions" SupportsLANMultiplayer="1" SupportsInternetMultiplayer="1" Visible="0" SortIndex="82"/>
+		<Replace ParameterId="FakeSelectCityStates" Name="LOC_CITYSTATES_OPTIONS_NAME" 	Description="LOC_FAKE_SELECT_CITY_STATES_DESCRIPTION" 	Domain="bool" 				DefaultValue="0" 		ConfigurationGroup="Map" ConfigurationId="FakeSelectCityStates" GroupId="MapOptions" ReadOnly="1" SortIndex="82"/>
 				
 		<!--	Checkbox to set which XP/DLC is active
 		<Replace ParameterId="XP1"	Name="LOC_XP1_CHECK_NAME"	Description="LOC_XP1_CHECK_DESCRIPTION" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="XP1"	GroupId="MapOptions" Visible="1" SortIndex="82"/>

@@ -963,6 +963,9 @@
     <Replace Tag="LOC_MAP_SELECT_CITY_STATES_DESCRIPTION" Language="en_US">
       <Text>When enabled you can manually select which City States you want to be placed on the map from a list.[NEWLINE][NEWLINE]Note that DLCs, Expansions, scenarios and mods can add or remove City States, the list does not reflect which ones are actually available.[NEWLINE][NEWLINE]When a City State is not available, its slot is free for a random CS.</Text>
     </Replace>
+    <Replace Tag="LOC_FAKE_SELECT_CITY_STATES_DESCRIPTION" Language="en_US">
+      <Text>When enabled you can manually select which City States you want to be placed on the map from a list.[NEWLINE][NEWLINE]A game need to be launched to update the GamePlay Database which is required to activate this option, you can click the "Load Database" button to launch a quick game in 2D mode and return to Main Menu, then you can navigate back to this screen and activate the option.</Text>
+    </Replace>
 	
     <Replace Tag="LOC_CITYSTATES_OPTIONS_NAME" Language="en_US">
       <Text>City States Selection</Text>
@@ -1408,6 +1411,9 @@
 		<Text>Palenque city-state</Text>
 	</Replace>
 	
+    <Replace Tag="LOC_SETUP_CREATE_MAP" Language="en_US">
+      <Text>Create Map</Text>
+    </Replace>
     <Replace Tag="LOC_SETUP_YNAMP_REPORT" Language="en_US">
       <Text>Settings validation report:</Text>
     </Replace>
@@ -1430,19 +1436,19 @@
       <Text>Database not loaded</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_DATABASE_NOT_LOADED_YNAMP_TT" Language="en_US">
-      <Text>The Gameplay Database has not been loaded yet during this session, a game need to be launched to get the data required for some of YnAMP advanced options.[NEWLINE][NEWLINE]You can click the "Load Database" button to launch a quick game in 2D mode, or you can ignore this and launch your game as usual if you don't need the new options.</Text>
+      <Text>The Gameplay Database has not been loaded yet during this session, a game need to be launched to get the data required for some of YnAMP advanced options.[NEWLINE][NEWLINE]You can click the "Load Database" button to launch a quick game in 2D mode, or you can launch your game as usual if you don't need the new options.</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_DATABASE_CHANGED_YNAMP" Language="en_US">
       <Text>Database changed</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_DATABASE_CHANGED_YNAMP_TT" Language="en_US">
-      <Text>The Gameplay Database has changed (by activating Mods, DLCs or Expansions), a new empty game have to be launched to update the data required for some of YnAMP advanced options.[NEWLINE][NEWLINE]Launching a full new game while those options are unreliable may cause issues, including crashes on load.[NEWLINE][NEWLINE]You can click the "Load Database" button to launch a quick game in 2D mode.</Text>
+      <Text>The Gameplay Database has changed (by activating Mods, DLCs or Expansions), a new empty game have to be launched to update the data required for some of YnAMP advanced options.[NEWLINE][NEWLINE]You can click the "Load Database" button to launch a quick game in 2D mode, or you can launch your game as usual if you don't need the new options.</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_RULESET_CHANGED_YNAMP" Language="en_US">
       <Text>Ruleset changed</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_RULESET_CHANGED_YNAMP_TT" Language="en_US">
-      <Text>The Ruleset used when loading the Gameplay Database  has been changed, a new empty game has to be launched to update the data required by some of YnAMP advanced options.[NEWLINE][NEWLINE]Launching a full new game while those options are unreliable may cause crashes on load.[NEWLINE][NEWLINE]You can click the "Load Database" button to launch a quick game in 2D mode and use the active Ruleset or switch back to the previous Ruleset.</Text>
+      <Text>The Ruleset used when loading the Gameplay Database  has been changed, a new empty game has to be launched to update the data required by some of YnAMP advanced options.[NEWLINE][NEWLINE]You can click the "Load Database" button to launch a quick game in 2D mode and use the active Ruleset, switch back to the previous Ruleset, or you can launch your game as usual if you don't need the new options.</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_MAP_SIZE_UNOFFICIAL_YNAMP" Language="en_US">
       <Text>Map Size unofficial</Text>
@@ -1469,7 +1475,7 @@
       <Text>Load Database</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_LOAD_DATA_YNAMP_TT" Language="en_US">
-      <Text>Launch a quick game in 2D mode to load all data used by YnAMP for the setting menu then quit automatically and return to the Main Menu.[NEWLINE][NEWLINE]Navigate back to this setup screen, it should then show "Database Loaded" and activate the related YnAMP advanced options.[NEWLINE][NEWLINE]A saved file of the current settings named "AutoSaveYnAMP" should be available to reload if needed, but the suggested order of action should be:[NEWLINE][ICON_BULLET] Activate mods[NEWLINE][ICON_BULLET] Load the database[NEWLINE][ICON_BULLET] Change your settings</Text>
+      <Text>Launch a quick game in 2D mode to load all data used by YnAMP for the setting menu then quit automatically and return to the Main Menu.[NEWLINE][NEWLINE]Navigate back to this setup screen, it should then show "Database Loaded" and activate the related YnAMP advanced options.[NEWLINE][NEWLINE]A saved file of the current settings named "AutoSaveYnAMP" should be available to reload if needed, but the suggested order of action should be:[NEWLINE][ICON_BULLET] Activate mods[NEWLINE][ICON_BULLET] Load the database[NEWLINE][ICON_BULLET] Change your settings[NEWLINE][NEWLINE]This is optional and you can launch your game as usual if you don't need the new options.</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_IGNORE_WARNING_YNAMP" Language="en_US">
       <Text>Ignore</Text>
@@ -1481,7 +1487,7 @@
       <Text>Apply Civilizations count</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_MAJOR_COUNT_DIFFERENCE_TT" Language="en_US">
-      <Text>The selected number of Major Civilization has not been applied yet.[NEWLINE][NEWLINE]To prevent User Interface lag or accidental change when using the mouse wheel in the menu, this setting is not immediatly applied.[NEWLINE][NEWLINE]Click on the "+" (Add) button or one of the "X" (Delete) buttons in the "Players" section to apply the setting now.</Text>
+      <Text>The actual number of Player slots and the Civilizations Slots slider value doesn't match.[NEWLINE][NEWLINE]To prevent User Interface lag or accidental change when using the mouse wheel in the menu, the slider value is not immediatly applied. It may also have been changed by exiting and going back to the setup screen.[NEWLINE][NEWLINE]If you want to apply the slider value, click on the "+" (Add) button or one of the "X" (Delete) buttons in the "Players" section.</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_ERROR_NO_TSL" Language="en_US">
       <Text>No TSL for this map</Text>

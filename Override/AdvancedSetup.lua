@@ -32,7 +32,7 @@ local maxLoadingMapSize					= 200*104
 local bStartDisabledByYnAMP 			= false
 local bStartDisabledBySetup 			= false
 local SavedParameter					= {}	-- Saved values for disabled parameters
-local cityStatesQuery					= "SELECT Parameters.ConfigurationId, Parameters.Name from Parameters JOIN ParameterDependencies ON Parameters.ParameterId = ParameterDependencies.ParameterId WHERE ParameterDependencies.ConfigurationId ='SelectCityStates' AND Parameters.ConfigurationId LIKE '%LEADER%'" --"SELECT * from Parameters where ConfigurationId LIKE '%LEADER_MINOR_CIV%' and GroupId='MapOptions'"
+local cityStatesQuery					= "SELECT DISTINCT Parameters.ConfigurationId, Parameters.Name from Parameters JOIN ParameterDependencies ON Parameters.ParameterId = ParameterDependencies.ParameterId WHERE ParameterDependencies.ConfigurationId ='SelectCityStates' AND Parameters.ConfigurationId LIKE '%LEADER%'" --"SELECT * from Parameters where ConfigurationId LIKE '%LEADER_MINOR_CIV%' and GroupId='MapOptions'"
 -- There must be a cleaner way to get that...
 local RulesetPlayerDomain	= {
 	["RULESET_STANDARD"]	= "Players:StandardPlayers",
@@ -100,6 +100,9 @@ if ConfigYnAMP.CityStatesList then
 			DB.ConfigurationQuery(query, LeaderType, LeaderName, CivilizationName, LeaderType)
 			
 			query = "INSERT INTO ParameterDependencies (ParameterId, ConfigurationGroup, ConfigurationId, Operator, ConfigurationValue) VALUES (?, 'Map', 'SelectCityStates', 'NotEquals', 'RANDOM')"
+			DB.ConfigurationQuery(query, LeaderType)
+			
+			query = "INSERT INTO ParameterDependencies (ParameterId, ConfigurationGroup, ConfigurationId, Operator, ConfigurationValue) VALUES (?, 'Map', 'SelectCityStates', 'NotEquals', NULL)"
 			DB.ConfigurationQuery(query, LeaderType)
 		end
 	end
@@ -654,8 +657,12 @@ g_ParameterFactories["Map"] = function(o, parameter)
 	table.insert( drivers, CreateButtonPopupDriver(o, parameter, OnMapSelect) );
 	
 	-- YNAMP <<<<<
-	-- Restore pulldown menu for map selection, less clicks = good UI
-	table.insert(drivers, GameParameters_UI_DefaultCreateParameterDriver(o, parameter));
+	-- Restore pulldown menu for map selection
+--for k, v in pairs(parameter) do print(k, v) end
+	if parameter.SortIndex then
+		parameter.SortIndex = parameter.SortIndex + 1
+	end
+		table.insert(drivers, GameParameters_UI_DefaultCreateParameterDriver(o, parameter));
 	-- YNAMP >>>>>
 
 	return drivers;
@@ -1279,6 +1286,10 @@ function OnStartButton()
 	local ruleset		= GameConfiguration.GetValue("RULESET")
 	local playerDomain	= ruleset and RulesetPlayerDomain[ruleset] or "Players:StandardPlayers"
 	
+	local ruleset = GameConfiguration.GetValue("RULESET")
+	print("Active Ruleset = ", ruleset)
+	print("Player Domain = ", playerDomain)
+	
 	-- Limit number of players for R&F and GS
 	print("------------------------------------------------------")
 	print("YnAMP checking for number of players limit on Start...")
@@ -1390,6 +1401,7 @@ function OnStartButton()
 			
 			local filteredRandomLeaderList = {}
 			for leaderType, bValid in pairs(availableLeaderList) do
+				bValid = bValid and #CachedQuery("SELECT LeaderType from Players WHERE Domain = ? AND LeaderType = ?", playerDomain, leaderType)>0
 				if bValid then
 					table.insert(filteredRandomLeaderList, leaderType)
 				end
@@ -1476,7 +1488,7 @@ function OnStartButton()
 	end
 	
 	-- Get available player slots list for CS
-	if bSelectCS or bOnlyTSL then
+	if (bSelectCS or bOnlyTSL) and (not ConfigYnAMP.IsDatabaseChanged) then
 		print("------------------------------------------------------")
 		print("Generate available slots list for CS...")
 		local CityStatesSlotsList	= {}
@@ -1601,6 +1613,9 @@ function OnStartButton()
 			end
 			--]]
 		end
+	elseif ConfigYnAMP.IsDatabaseChanged then
+		print("------------------------------------------------------")
+		print("Database Changed, skipping CS selection...")
 	end
 	
 	-- List the player slots
@@ -1922,21 +1937,22 @@ end
 -- ===========================================================================
 -- Settings Validation functions
 -- ===========================================================================
-local bCheckModList 	= true
-local sTooltipSeparator	= "[NEWLINE]----------------------------------------------------------------------------------------------------------------[NEWLINE]"
-local IgnoredWarning	= {}
-local currentBlock		= nil
+local bCheckModList 		= true
+local bRulesetStateChanged 	= false
+local sTooltipSeparator		= "[NEWLINE]----------------------------------------------------------------------------------------------------------------[NEWLINE]"
+local IgnoredWarning		= {}
+local currentBlock			= nil
 
+local severityNone			= 0
+local severityMedium		= 25
+local severityHigh			= 75
 function GetColorStringSeverity(str, severity)
-	local none		= 0
-	local medium	= 25
-	local high		= 75
-	if severity == none then
+	if severity == severityNone then
 		str = "[COLOR_Civ6Green]"..str.."[ENDCOLOR] [ICON_CheckSuccess]"
-	elseif severity >= high then
+	elseif severity > severityHigh then
 		str = "[COLOR_Civ6Red]"..str.."[ENDCOLOR] [ICON_Not]"
-	elseif severity >= medium then
-		str = "[COLOR_Civ6Yellow]"..str.."[ENDCOLOR] [ICON_CheckFail]"
+	elseif severity > severityMedium then
+		str = "[COLOR_OperationChance_Orange]"..str.."[ENDCOLOR] [ICON_CheckFail]"
 	end
 	return str
 end
@@ -2005,6 +2021,11 @@ end
 
 function ValidateSettingsYnAMP()
 
+	-- Severity trigger values
+	-- None		= 0
+	-- Medium	= 25
+	-- High		= 75
+
 	local reportTable 	= {} -- {{ Severity = [0-100], Title = string, Tooltip = string, DisableStart = bool, BlockGroup = string },}
 
 	-- Database check
@@ -2055,18 +2076,26 @@ function ValidateSettingsYnAMP()
 		
 	if ConfigYnAMP.IsDatabaseChanged then -- always chech to generate the report
 		print("Database may have changed...")
-		local bLock		= not IgnoredWarning["DatabaseChanged"]
-		local severity	= bLock and 75 or 50
+		--local bLock		= not IgnoredWarning["DatabaseChanged"]
+		local severity	= bLock and 40 or 25 --bLock and 75 or 50
 		table.insert(reportTable, { Severity = severity, Title = Locale.Lookup("LOC_SETUP_DATABASE_CHANGED_YNAMP"), Tooltip = Locale.Lookup("LOC_SETUP_DATABASE_CHANGED_YNAMP_TT"), DisableStart = bLock, BlockGroup = "DatabaseChanged" })
 		Controls.LoadDataYnAMP:SetHide(false)
 	end
 	
 	-- Ruleset check
+	local bChangedRuleset	= (ConfigYnAMP.LoadedRuleset ~= GameConfiguration.GetValue("RULESET"))
+	
+	if bRulesetStateChanged ~= bChangedRuleset then -- redo mod check when Ruleset check state has changed
+		bRulesetStateChanged 	= bChangedRuleset
+		bCheckModList			= true
+	end
+	
 	if ConfigYnAMP.IsDatabaseLoaded  then
-		if ConfigYnAMP.LoadedRuleset ~= GameConfiguration.GetValue("RULESET") then
+		if bChangedRuleset then --ConfigYnAMP.LoadedRuleset ~= GameConfiguration.GetValue("RULESET") then
 			print("Database have changed...")
-			local bLock		= not IgnoredWarning["RulesetChanged"]
-			local severity	= bLock and 100 or 70
+			ConfigYnAMP.IsDatabaseChanged 	= true
+			--local bLock		= not IgnoredWarning["RulesetChanged"]
+			local severity	= bLock and 40 or 24 --bLock and 100 or 70
 			table.insert(reportTable, { Severity = severity, Title = Locale.Lookup("LOC_SETUP_RULESET_CHANGED_YNAMP"), Tooltip = Locale.Lookup("LOC_SETUP_RULESET_CHANGED_YNAMP_TT"), DisableStart = bLock, BlockGroup = "RulesetChanged" })
 			Controls.LoadDataYnAMP:SetHide(false)
 		end
@@ -2084,8 +2113,8 @@ function ValidateSettingsYnAMP()
 		else
 			print("No map size ", MapConfiguration.GetMapSize(), mapSizetype)
 			local tooltip = Locale.Lookup("LOC_SETUP_MAP_SIZE_UNKNOWN_YNAMP_TT")
-			local bLock		= bMapSizeBlock
-			local severity	= bLock and 80 or 55
+			--local bLock		= bMapSizeBlock
+			local severity	= bMapSizeBlock and 40 or 24 --bLock and 80 or 55
 			table.insert(reportTable, { Severity = severity, Title = Locale.Lookup("LOC_SETUP_MAP_SIZE_UNKNOWN_YNAMP"), Tooltip = tooltip, DisableStart = bLock, BlockGroup = "MapSize" })
 		end
 	end
@@ -2105,30 +2134,32 @@ function ValidateSettingsYnAMP()
 		elseif size > maxSupportedMapSize then
 			--print("Unsupported map size", mapDimension.Width, mapDimension.Height, mapDimension.Size)
 			local tooltip	= Locale.Lookup("LOC_SETUP_MAP_SIZE_UNOFFICIAL_YNAMP_TT")
-			local severity	= bMapSizeBlock and 40 or 25
+			local severity	= bMapSizeBlock and 40 or 24
 			table.insert(reportTable, { Severity = severity, Title = Locale.Lookup("LOC_SETUP_MAP_SIZE_UNOFFICIAL_YNAMP"), Tooltip = tooltip })
 		end
 	end
 	
 	-- Compare Major Civilization slider to actual numbe of players
-	if GameConfiguration.GetParticipatingPlayerCount() ~= GameConfiguration.GetValue("MajorCivilizationsCount") then
-		--table.insert(reportTable, { Severity = 1, Title = Locale.Lookup("LOC_SETUP_MAJOR_COUNT_DIFFERENCE"), Tooltip = Locale.Lookup("LOC_SETUP_MAJOR_COUNT_DIFFERENCE_TT") })
+	if m_AdvancedMode and GameConfiguration.GetParticipatingPlayerCount() ~= GameConfiguration.GetValue("MajorCivilizationsCount") then
+		table.insert(reportTable, { Severity = 1, Title = Locale.Lookup("LOC_SETUP_MAJOR_COUNT_DIFFERENCE"), Tooltip = Locale.Lookup("LOC_SETUP_MAJOR_COUNT_DIFFERENCE_TT") })
 	end
 	
 	----------------------------------------------------
 	-- Generate Title and Tooltip, check for valid Start
 	----------------------------------------------------
 	table.sort(reportTable, function(a, b) return a.Severity > b.Severity; end)
-	local titleStr 	= nil
-	local tooltip	= {Locale.Lookup("LOC_SETUP_YNAMP_REPORT")}
-	local bCanStart	= true
-	local listIcon	= #reportTable > 1 and "[ICON_Reports]" or ""
+	local maxSeverity	= #reportTable > 0 and reportTable[1].Severity or 0
+	local titleStr 		= nil
+	local mainTitle		= GameConfiguration.IsWorldBuilderEditor() and Locale.ToUpper("LOC_SETUP_CREATE_MAP") or Locale.ToUpper("LOC_SETUP_CREATE_GAME")
+	local tooltip		= {Locale.Lookup("LOC_SETUP_YNAMP_REPORT")}
+	local bCanStart		= true
+	local listIcon		= maxSeverity > 0 and "[ICON_Reports]" or ""
 	for i, row in ipairs(reportTable) do
-		titleStr 			= titleStr or GetColorStringSeverity(row.Title, row.Severity)..listIcon -- set title with the highest severity reason "YnAMP - "..
+		titleStr 			= titleStr or GetColorStringSeverity(mainTitle, row.Severity)..listIcon -- row.Title -- set title with the highest severity reason "YnAMP - "..
 		local severityStr 	= ""--row.Severity > 0 and " "..Locale.Lookup("LOC_SETUP_SEVERITY_YNAMP", row.Severity) or ""
 		local blockingStr 	= row.DisableStart and " "..Locale.Lookup("LOC_SETUP_BLOCKING_YNAMP") or ""
 		local ignoredStr	= row.BlockGroup and IgnoredWarning[row.BlockGroup] and " "..Locale.Lookup("LOC_SETUP_IGNORE_BLOCK_YNAMP") or nil
-		local tooltipStr	= row.Title .. (ignoredStr or (severityStr.." "..blockingStr)) ..sTooltipSeparator.. row.Tooltip
+		local tooltipStr	= GetColorStringSeverity(row.Title, row.Severity) .. (ignoredStr or (severityStr.." "..blockingStr)) ..sTooltipSeparator.. row.Tooltip
 		table.insert(tooltip, "[ICON_Bullet]" .. tooltipStr)
 		if bCanStart and row.DisableStart then -- set locked start with the highest severity reason
 			bCanStart = false
@@ -2141,11 +2172,13 @@ function ValidateSettingsYnAMP()
 	end
 	
 	-- Show which setup mode we are on
+	--[[
 	if GameConfiguration.IsWorldBuilderEditor() then
 		titleStr = "[ICON_Global] ".. titleStr
 	else
 		titleStr = "[ICON_ProductionQueue] ".. titleStr
 	end
+	--]]
 	--
 	Controls.WindowTitle:SetText(titleStr)
 	Controls.WindowTitle:SetToolTipString(table.concat(tooltip, sTooltipSeparator))
@@ -2153,7 +2186,7 @@ end
 
 -- ===========================================================================
 function OnGameplayContentConfigure()
-	--print("Mark to check mods on FinishedGameplayContentConfigure")
+	print("Mark to check mods on FinishedGameplayContentConfigure")
 	bCheckModList = true
 end
 Events.FinishedGameplayContentConfigure.Add(OnGameplayContentConfigure)
@@ -2272,7 +2305,7 @@ function MapSize_ValueChanged(p)
 		for i, v in ipairs(results) do
 			minPlayers = v.MinPlayers;
 			maxPlayers = v.MaxPlayers;
-			defPlayers = math.max(GameConfiguration.GetParticipatingPlayerCount(), v.DefaultPlayers); --YnAMP currentSelectedNumberMajorCivs
+			defPlayers = m_AdvancedMode and math.max(GameConfiguration.GetParticipatingPlayerCount(), v.DefaultPlayers) or v.DefaultPlayers; --YnAMP currentSelectedNumberMajorCivs
 			minCityStates = v.MinCityStates;
 			maxCityStates = v.MaxCityStates;
 			defCityStates = v.DefaultCityStates;
@@ -2352,6 +2385,29 @@ function GetRelevantParameters(o, parameter)
 			return false
 		end
 	end
+	
+	-- The SelectCityStates option require the Database to be unmodified
+	if parameter.ConfigurationId == "SelectCityStates" then
+		if ConfigYnAMP.IsDatabaseChanged then
+			return false
+		end
+	end
+	--[[
+	-- The SelectCityStates option require the Database to be unmodified
+	if parameter.ParameterId == "HideSelectCityStates" then
+		if (not ConfigYnAMP.IsDatabaseChanged == false) or ConfigYnAMP.IsDatabaseChanged == nil then
+			return false
+		end
+	end 
+	--]]
+	-- Show fake SelectCityStates option when the Database is not loaded or modified
+	if parameter.ConfigurationId == "FakeSelectCityStates" then -- or parameter.ParameterId == "HideSelectCityStates"
+		if (not ConfigYnAMP.IsDatabaseChanged) then
+			return false
+		end
+	end
+	
+	--FaxeSelectCityStates
 	
 	-- Hide unavailable Leaders from Ban list
 	if IsLeaderType[parameter.ConfigurationId] then
