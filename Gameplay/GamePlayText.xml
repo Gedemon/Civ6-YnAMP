@@ -4118,7 +4118,7 @@
 		<Replace Tag="LOC_CITY_NAME_RIYADH_SUMERIA" Text="Hajr" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SAKAKA" Text="Sakaka" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SALALAH" Text="Salalah" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_SAMAWAH" Text="LOC_CITY_NAME_SAMAWAH" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_SAMAWAH" Text="Samawah" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SANAA" Text="Sana'a" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SHIRAZ" Text="Shiraz" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SHIRAZ_GREECE" Text="Persepolis" Language="en_US" />
