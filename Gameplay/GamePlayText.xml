@@ -6635,7 +6635,7 @@
 		<Replace Tag="LOC_CITY_NAME_KANCHANABURI" Text="Kanchanaburi" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_NAKHON_RATCHASIMA" Text="Nakhon Ratchasima" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PAKXE" Text="Pakxe" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_BOUN_MA_THOUT" Text="Buon Ma Thout" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_BOUN_MA_THOUT" Text="Buon Ma Thuot" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BANGKOK" Text="Bangkok" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SEREI_SAOPHOAN" Text="Serei Saophoan" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_SIEM_REAP" Text="Siem Reap" Language="en_US" />
