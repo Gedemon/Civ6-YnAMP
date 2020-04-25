@@ -102,8 +102,8 @@ for row in GameInfo.CityMap() do
 			if not IsCityOnMap[name] then
 				IsCityOnMap[name] 					= true
 				IsCityOnMap[Locale.Lookup(name)] 	= true
-				CityPosition[name] 					= {X = row.X, Y = row.Y, Weight = row.Area + iWeightBonus, OnlyOffset = bMapScriptValid}
-				CityPosition[Locale.Lookup(name)] 	= {X = row.X, Y = row.Y, Weight = row.Area + iWeightBonus, OnlyOffset = bMapScriptValid}
+				CityPosition[name] 					= {X = row.X, Y = row.Y, Area = row.Area, Weight = row.Area + iWeightBonus, OnlyOffset = bMapScriptValid}
+				CityPosition[Locale.Lookup(name)] 	= {X = row.X, Y = row.Y, Area = row.Area, Weight = row.Area + iWeightBonus, OnlyOffset = bMapScriptValid}
 			elseif (row.Area + iWeightBonus > CityPosition[name].Weight) then -- in the current DB, Area is rarely > 1, but in Scenatio additions DB it will be more frequent, so use those when existing.
 			--[[
 			else -- the problem with average position is that it can return a plot on water (and is not average with current calculation if there are more than 2 positions...)
@@ -364,6 +364,14 @@ function MapStatistics()
 	print("--------------------------------------")
 end
 
+function CanPlaceCity(pPlot)
+	if pPlot and (not pPlot:IsImpassable()) and (not pPlot:IsNaturalWonder()) and (not pPlot:IsWater()) and pPlot:GetFeatureType() ~= g_FEATURE_OASIS then
+		return true
+	else 
+		return false
+	end
+end
+
 function CreatePlayerCity(player, x, y)
 	-- player:GetCities():Create can fail on feature removing, so do a manual remove before placing...
 	local plot			= Map.GetPlot(x, y)
@@ -385,6 +393,102 @@ function IncrementCityCount()
 	--print("City count = "..tostring(g_NumCitiesOnMap))
 end
 
+
+function GetBestCityPlotInRange(pPlot, range)
+
+	if pPlot == nil or range == nil or range < 1 then
+		--print("WARNING, called GetBestCityPlotInRange with range < 1 or nil, range = ", range)
+		return
+	end
+
+	local bestPlot 					= nil
+	local bestFertility				= -9999
+	local distanceWeigthMultiplier	= 1.5
+	for iRing = 1, range do
+		for pEdgePlot in PlotRingIterator(pPlot, iRing) do
+			if	pEdgePlot and (bestPlot == nil or pEdgePlot:GetResourceCount() == 0) and CanPlaceCity(pEdgePlot) then
+				local distanceWeight 	= iRing * distanceWeigthMultiplier
+				local fertility 		= GetPlotFertility(pEdgePlot)
+				fertility 				= fertility > 0 and (fertility / (1 + distanceWeight)) or (fertility * (1 + distanceWeight))
+				if fertility > bestFertility then
+					--print("fertility = ", fertility)
+					bestFertility 	= fertility
+					bestPlot		= pEdgePlot
+				end
+			end
+		end
+	end
+	return bestPlot
+end
+
+function GetValidCityPosition(pos, cityName) -- Check if CityMap position is valid
+
+	local x, y 		= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y), pos.OnlyOffset)
+	local sWarning	= nil
+	local cityName	= cityName or pos.CityName or "unknown"
+	local plot	= Map.GetPlot(x, y)
+	if not CanPlaceCity(plot) then
+		plot = GetBestCityPlotInRange(plot, pos.Area)
+	end
+	if plot then
+		x, y	= plot:GetX(), plot:GetY()
+	else
+		sWarning = "WARNING: position invalid in city map and no replacement in area for "..Locale.Lookup(cityName).. " - ".. tostring(cityName)
+	end
+	return x, y, sWarning
+end
+
+function ListInvalidCityPos(bList)
+	print("Check <CityMap> for entries without valid position on map...")
+	local countCityInvalid	= 0
+	for row in GameInfo.CityMap() do
+		local bMapScriptValid = (row.MapScript == mapScript)
+		if (mapName == row.MapName) or bMapScriptValid then
+			local name 		= row.CityLocaleName
+			row.OnlyOffset 	= bMapScriptValid
+			local x, y, sWarning = GetValidCityPosition(row, name)
+			if sWarning then
+				countCityInvalid = countCityInvalid + 1
+				if bList then
+					print("rowID#",row.rowid,row.X,row.Y, Indentation(row.CityLocaleName,25,false, true), Indentation(mapName,15,false, true), Indentation(row.MapName,15,false, true), Indentation(row.MapScript,20,false, true), Indentation(mapScript,20,false, true))
+				end
+			end
+		end
+	end
+	print("  - Cities not valid = "..tostring(countCityInvalid) .. " - type 'ListInvalidCityPos(true)' in tuner to display the full list")
+end
+
+function ListCityNotOnMap(bList)
+	print("Check <CityNames> for entries without position on map...")
+	local countCityNotOnMap	= 0
+	for row in GameInfo.CityNames() do
+		local name = row.CityName
+		local civilization = row.CivilizationType
+		if not (IsCityOnMap[name] or IsCityOnMap[Locale.Lookup(name)]) then
+			if bList then print("Not mapped for "..tostring(civilization).." : "..tostring(name)) end
+			countCityNotOnMap = countCityNotOnMap + 1 
+		end
+	end
+	print("  - Cities not mapped = "..tostring(countCityNotOnMap) .. " - type 'ListCityNotOnMap(true)' in tuner to display the list")
+end
+
+function ListCityWithoutLOC(bList)
+	print("Check <CityMap> for entries without Localization...")
+	bList = true -- not a long list, always show
+	local countCityWithoutLOC	= 0
+	for row in GameInfo.CityMap() do
+		local name = row.CityLocaleName
+		if name then
+			if Locale.Lookup(name) == name then
+				if bList then print("WARNING : no translation for "..tostring(name)) end
+				countCityWithoutLOC = countCityWithoutLOC + 1 
+			end
+		else
+			print("ERROR : no name at row "..tostring(row.Index + 1))
+		end
+	end
+	print("  - Cities without LOC_NAME entry = "..tostring(countCityWithoutLOC) .. " - type 'ListCityWithoutLOC(true)' in tuner to display the list")
+end
 
 -----------------------------------------------------------------------------------------
 -- Pathfinder Functions
@@ -715,39 +819,9 @@ function ChangeCityName( ownerPlayerID, cityID)
 end
 Events.CityInitialized.Add( ChangeCityName )
 
-local countCityWithoutLOC	= 0
-function ListCityWithoutLOC(bList)
-	print("Check <CityMap> for entries without Localization...")
-	bList = true -- not a long list, always show
-	for row in GameInfo.CityMap() do
-		local name = row.CityLocaleName
-		if name then
-			if Locale.Lookup(name) == name then
-				if bList then print("WARNING : no translation for "..tostring(name)) end
-				countCityWithoutLOC = countCityWithoutLOC + 1 
-			end
-		else
-			print("ERROR : no name at row "..tostring(row.Index + 1))
-		end
-	end
-	print("Cities without LOC_NAME entry = "..tostring(countCityWithoutLOC) .. " - type 'ListCityWithoutLOC(true)' in tuner to display the list")
-end
 Events.LoadScreenClose.Add( ListCityWithoutLOC )
-
-local countCityNotOnMap	= 0
-function ListCityNotOnMap(bList)
-	print("Check <CityNames> for entries without position on map...")
-	for row in GameInfo.CityNames() do
-		local name = row.CityName
-		local civilization = row.CivilizationType
-		if not (IsCityOnMap[name] or IsCityOnMap[Locale.Lookup(name)]) then
-			if bList then print("Not mapped for "..tostring(civilization).." : "..tostring(name)) end
-			countCityNotOnMap = countCityNotOnMap + 1 
-		end
-	end
-	print("Cities from not mapped = "..tostring(countCityNotOnMap) .. " - type 'ListCityNotOnMap(true)' in tuner to display the list")
-end
 Events.LoadScreenClose.Add( ListCityNotOnMap )
+Events.LoadScreenClose.Add( ListInvalidCityPos )
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 end
@@ -1372,7 +1446,7 @@ function CheckPotentialCityPlotDistance(plot, iThisPlayer, bNoCloserCheck, bNoLo
 					local cityPlot	= city:GetPlot()
 					local distance 	= Map.GetPlotDistance(plot:GetIndex(), cityPlot:GetIndex())
 					if distance <= minDistance then
-						print("     - Not far enough, distance = ".. tostring(distance) .." <= minDistance of "..tostring(minDistance))
+						print("     - Not far enough, distance = ".. tostring(distance) .." <= minDistance of "..tostring(minDistance) .. " with other city = "..Locale.Lookup(city:GetName()))
 						NotCityPlot[plot] = true
 						return false, bCloseEnough
 					end
@@ -1459,7 +1533,7 @@ function GetPotentialCityPlots()
 		for iY = 0, g_iH - 1 do
 			local index = (iY * g_iW) + iX;
 			pPlot = Map.GetPlotByIndex(index)
-			if pPlot:GetResourceCount() == 0 and (not pPlot:IsImpassable()) and (not pPlot:IsNaturalWonder()) and (not pPlot:IsWater()) and pPlot:GetFeatureType() ~= g_FEATURE_OASIS then
+			if pPlot:GetResourceCount() == 0 and CanPlaceCity(pPlot) then
 				local fertility = GetPlotFertility(pPlot)
 				if fertility > minFertility then
 					--print("fertility = ", fertility)
@@ -1473,6 +1547,7 @@ function GetPotentialCityPlots()
 	table.sort (potentialPlots, function(a, b) return a.Fertility > b.Fertility; end);
 	return potentialPlots
 end
+
 
 function GetBestCityPlotFromList(potentialPlots, iPlayer)
 
@@ -1522,6 +1597,7 @@ function GetBestCityPlotFromList(potentialPlots, iPlayer)
 
 	return nil;
 end
+
 
 -- ===========================================================================
 -- Cities Placement
@@ -1682,12 +1758,11 @@ function PlaceCities()
 								elseif cityName then
 									local pos = CityPosition[cityName]
 									if pos then
-										x, y	= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y), pos.OnlyOffset)
-										--print("    - Getting coordinates from city map for ", Locale.Lookup(cityName))
-										--print(" 		-posXY =", pos.X, pos.Y, " 	refXY = ", x, y)
+										local sWarning
+										x, y, sWarning = GetValidCityPosition(pos, cityName)
+										if sWarning then print(sWarning) end
 									else
 										--print("WARNING at rowID #"..tostring(row.Index).." : no position in city map for "..Locale.Lookup(cityName))
-										noPosition = noPosition + 1
 									end
 								else
 									print("ERROR at rowID #"..tostring(row.Index).." : CityName and X,Y are NULL")							
@@ -1697,6 +1772,9 @@ function PlaceCities()
 									ImportedCities[iPlayer]	= ImportedCities[iPlayer] or {}
 									table.insert(ImportedCities[iPlayer], {X = x, Y = y, Name = cityName, Size = row.CitySize})
 									importCount = importCount + 1
+								else
+									--print("WARNING at rowID #"..tostring(row.Index).." : can't determine position for "..Locale.Lookup(cityName))
+									noPosition = noPosition + 1
 								end
 							end
 						else
@@ -1791,12 +1869,15 @@ function PlaceCities()
 					if civilizationType == row.CivilizationType then
 						local pos = CityPosition[cityName] --or CityPosition[Locale.Lookup(cityName)] -- to do : option to allow localization (may cause desync in MP with different language)
 						if pos then
-						
-							local x, y		= GetXYFromRefMapXY(Round(pos.X), Round(pos.Y), pos.OnlyOffset) -- CityPosition use average value of x, y as a city name can fit multiple positions on a map
-							local distance	= (playerData.StartingPlot and Map.GetPlotDistance(x, y, playerData.StartingPlot:GetX(), playerData.StartingPlot:GetY())) or 0
-							print("  - position for ".. Indentation(Locale.Lookup(cityName),12) .. " at ".."(".. Indentation(tostring(x).. ","..tostring(y),7).."), reference map at (".. Indentation(tostring(pos.X)..","..tostring(pos.Y),7).. "), starting plot distance = " .. tostring(distance), "RowID = ", row.Index, row.index)
-							table.insert(cityList[iPlayer], { Name = cityName, X = x, Y = y, Distance = distance })
 
+							local x, y, sWarning = GetValidCityPosition(pos, cityName)
+							if sWarning then 
+								print(sWarning)
+							else
+								local distance	= (playerData.StartingPlot and Map.GetPlotDistance(x, y, playerData.StartingPlot:GetX(), playerData.StartingPlot:GetY())) or 0
+								print("  - position for ".. Indentation(Locale.Lookup(cityName),12) .. " at ".."(".. Indentation(tostring(x).. ","..tostring(y),7).."), reference map at (".. Indentation(tostring(pos.X)..","..tostring(pos.Y),7).. "), starting plot distance = " .. tostring(distance), "RowID = ", row.Index, row.index)
+								table.insert(cityList[iPlayer], { Name = cityName, X = x, Y = y, Distance = distance })
+							end
 						end
 					end
 				end
@@ -1924,8 +2005,10 @@ function PlaceCities()
 				for i, row in ipairs(potentialplots) do
 					local distance	= Map.GetPlotDistance(row.Plot:GetIndex(), playerData.StartingPlot:GetIndex())
 					if distance > minDistance or city == nil then
-						local distanceWeight = distance * distanceWeigthMultiplier
-						table.insert(plotList, { Plot = row.Plot, Fertility = row.Fertility / (1 + distanceWeight)} )
+						local distanceWeight 	= distance * distanceWeigthMultiplier
+						local fertility 		= row.Fertility
+						fertility 				= fertility > 0 and (fertility / (1 + distanceWeight)) or (fertility * (1 + distanceWeight))
+						table.insert(plotList, { Plot = row.Plot, Fertility = fertility} )
 					end
 				end
 				table.sort (plotList, function(a, b) return a.Fertility > b.Fertility; end)

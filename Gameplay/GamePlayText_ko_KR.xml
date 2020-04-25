@@ -1660,15 +1660,15 @@
 		<Replace Tag="LOC_CITY_NAME_KIRKENES" Text="키르케네스" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_KIROVSK" Text="키롭스크" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_KLITMOLLER" Text="클리트몰러" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN" Text="코펜하겐" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_FRANCE" Text="코펜하그" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_GERMANY" Text="카우프만샤펜" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_GERMANY" Text="코펜하겐" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_NORWAY" Text="코벤하븐" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_POLAND" Text="코펜하가" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_ROME" Text="하프니아" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_RUSSIA" Text="코펜가겐" Language="ko_KR" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_SPAIN" Text="코펜하구에" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN" Text="코펜하겐" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_FRANCE" Text="코펜하그" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_GERMANY" Text="카우프만샤펜" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_GERMANY" Text="코펜하겐" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_NORWAY" Text="코벤하븐" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_POLAND" Text="코펜하가" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_ROME" Text="하프니아" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_RUSSIA" Text="코펜가겐" Language="ko_KR" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_SPAIN" Text="코펜하구에" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_KOKKOLA" Text="코콜라" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_KOLEZHMA" Text="콜레즈마" Language="ko_KR" />
 		<Replace Tag="LOC_CITY_NAME_KOSTOMUKSCHA" Text="코스토묵샤" Language="ko_KR" />

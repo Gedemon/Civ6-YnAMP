@@ -619,7 +619,7 @@
 		<!-- DENMARK -->
 		<Replace MapName="GiantEarth" X="19" Y="74" CityLocaleName="LOC_CITY_NAME_ESBJERG" Area="0" />
 		<Replace MapName="GiantEarth" X="20" Y="74" CityLocaleName="LOC_CITY_NAME_ODENSE" Area="0" />
-		<Replace MapName="GiantEarth" X="21" Y="74" CityLocaleName="LOC_CITY_NAME_KOBENHAVN" Area="0" />
+		<Replace MapName="GiantEarth" X="21" Y="75" CityLocaleName="LOC_CITY_NAME_COPENHAGEN" Area="1" />
 
 		<Replace MapName="GiantEarth" X="19" Y="75" CityLocaleName="LOC_CITY_NAME_ESBJERG" Area="0" />
 		<Replace MapName="GiantEarth" X="20" Y="75" CityLocaleName="LOC_CITY_NAME_AARHUS" Area="0" />

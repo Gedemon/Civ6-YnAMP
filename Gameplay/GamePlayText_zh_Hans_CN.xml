@@ -4583,28 +4583,28 @@
 		<Replace Tag="LOC_CITY_NAME_KLITMOLLER" Language="zh_Hans_CN">
 			<Text>克利特默勒</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN" Language="zh_Hans_CN">
 			<Text>哥本哈根</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_FRANCE" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_FRANCE" Language="zh_Hans_CN">
 			<Text>哥本哈根</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_GERMANY" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_GERMANY" Language="zh_Hans_CN">
 			<Text>哥本哈根</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_NORWAY" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_NORWAY" Language="zh_Hans_CN">
 			<Text>哥本哈根</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_POLAND" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_POLAND" Language="zh_Hans_CN">
 			<Text>哥本哈根</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_ROME" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_ROME" Language="zh_Hans_CN">
 			<Text>哥本哈根</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_RUSSIA" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_RUSSIA" Language="zh_Hans_CN">
 			<Text>哥本哈根</Text>
 		</Replace>
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_SPAIN" Language="zh_Hans_CN">
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_SPAIN" Language="zh_Hans_CN">
 			<Text>哥本哈根</Text>
 		</Replace>
 		<Replace Tag="LOC_CITY_NAME_KOKKOLA" Language="zh_Hans_CN">

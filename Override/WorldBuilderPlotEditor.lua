@@ -1084,6 +1084,11 @@ function SetCityNamesOnMap(bShowCivSpecificNames)
 				end
 				local sList = table.concat(list, "[NEWLINE]")
 				GetCityListInstanceAt(iX, iY, sList)
+			else
+				local plot = Map.GetPlot(iX, iY)
+				if plot and ((not plot:IsWater()) or plot:IsImpassable()) then
+					GetCityListInstanceAt(iX, iY, string.format("[ICON_Exclamation][COLOR_Civ6DarkRed]NO NAME[NEWLINE](%i,%i)[ENDCOLOR]", iX, iY))
+				end
 			end
 		end
 	end

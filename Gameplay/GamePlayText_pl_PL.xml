@@ -1662,15 +1662,15 @@
 		<Replace Tag="LOC_CITY_NAME_KIRKENES" Text="Kirkenes" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_KIROVSK" Text="Kirovsk" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_KLITMOLLER" Text="Klitmøller" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN" Text="Copenhagen" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_FRANCE" Text="Copenhague" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_GERMANY" Text="Kaufmannshafen" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_GERMANY" Text="Kopenhagen" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_NORWAY" Text="København" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_POLAND" Text="Kopenhaga" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_ROME" Text="Hafnia" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_RUSSIA" Text="Kopengagen" Language="pl_PL" />
-		<Replace Tag="LOC_CITY_NAME_KOBENHAVN_SPAIN" Text="Copenhague" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN" Text="Copenhagen" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_FRANCE" Text="Copenhague" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_GERMANY" Text="Kaufmannshafen" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_GERMANY" Text="Kopenhagen" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_NORWAY" Text="København" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_POLAND" Text="Kopenhaga" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_ROME" Text="Hafnia" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_RUSSIA" Text="Kopengagen" Language="pl_PL" />
+		<Replace Tag="LOC_CITY_NAME_COPENHAGEN_SPAIN" Text="Copenhague" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_KOKKOLA" Text="Kokkola" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_KOLEZHMA" Text="Kolezhma" Language="pl_PL" />
 		<Replace Tag="LOC_CITY_NAME_KOSTOMUKSCHA" Text="Kostomukscha" Language="pl_PL" />

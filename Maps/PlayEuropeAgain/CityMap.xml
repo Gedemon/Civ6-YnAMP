@@ -740,11 +740,11 @@
 
 		<!-- DENMARK, NORWAY, SWEDEN, NORTHERN FINLAND, KOLA PENINSULA, & SAAREMAA/OSEL -->
 		<Replace MapName="PlayEuropeAgain" X="46" Y="63" CityLocaleName="LOC_CITY_NAME_NAKSKOV" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="47" Y="63" CityLocaleName="LOC_CITY_NAME_KOBENHAVN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="47" Y="63" CityLocaleName="LOC_CITY_NAME_COPENHAGEN" Area="0" />
 
 		<Replace MapName="PlayEuropeAgain" X="44" Y="64" CityLocaleName="LOC_CITY_NAME_TONDER" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="45" Y="64" CityLocaleName="LOC_CITY_NAME_ODENSE" Area="0" />
-		<Replace MapName="PlayEuropeAgain" X="47" Y="64" CityLocaleName="LOC_CITY_NAME_KOBENHAVN" Area="0" />
+		<Replace MapName="PlayEuropeAgain" X="47" Y="64" CityLocaleName="LOC_CITY_NAME_COPENHAGEN" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="49" Y="64" CityLocaleName="LOC_CITY_NAME_MALMOE" Area="0" />
 		<Replace MapName="PlayEuropeAgain" X="50" Y="64" CityLocaleName="LOC_CITY_NAME_YSTAD" Area="0" />
 
