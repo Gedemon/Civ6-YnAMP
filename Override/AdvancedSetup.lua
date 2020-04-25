@@ -1142,9 +1142,9 @@ function OnShow()
 	local offsetX = Controls.CloseButton:GetSizeX()
 	Controls.LoadDataYnAMP:SetOffsetX(offsetX)
 	
-	AutoSizeGridButton(Controls.IgnoreWarning,133,36,15,"H");
-	local offsetX = Controls.DefaultButton:GetSizeX()
-	Controls.IgnoreWarning:SetOffsetX(offsetX)
+	--AutoSizeGridButton(Controls.IgnoreWarning,133,36,15,"H");
+	--local offsetX = Controls.DefaultButton:GetSizeX()
+	--Controls.IgnoreWarning:SetOffsetX(offsetX)
 	-- ynAMP >>>>>
 
 	-- the map size and type dropdowns don't make sense on a map import

@@ -269,7 +269,7 @@
 				<GridButton ID="LoadConfig" Size="260,45" Style="MainButton" Anchor="C,B" String="LOC_LOAD_CONFIG" Hidden="1"/>
 				<GridButton ID="SaveConfig" Size="260,45" Style="MainButton" Anchor="C,B" String="LOC_SAVE_CONFIG" Hidden="1"/>
 				<!-- YnAMP -->
-				<GridButton ID="IgnoreWarning" Size="260,45" Style="MainButton" Anchor="C,B" String="LOC_SETUP_IGNORE_WARNING_YNAMP" ToolTip="LOC_SETUP_IGNORE_WARNING_YNAMP_TT"  Hidden="1"/>
+				<GridButton ID="IgnoreWarning" Size="340,45" Style="MainButton" Anchor="C,B" String="LOC_SETUP_IGNORE_WARNING_YNAMP" ToolTip="LOC_SETUP_IGNORE_WARNING_YNAMP_TT"  Hidden="1"/>
 				<!-- YnAMP -->
 				<GridButton ID="StartButton" Size="340,45" Style="ButtonConfirm" Anchor="C,B" String="LOC_START_GAME" />
 			</Stack>
