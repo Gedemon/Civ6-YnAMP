@@ -14,9 +14,11 @@
 					<GridButton ID="DefaultButton" Style="ShellButtonOrnateFlat" Anchor="L,C" Size="300,parent" Offset="1,0" String="{LOC_SETUP_RESTORE_DEFAULT:upper}" ToolTip="LOC_SETUP_RESTORE_DEFAULT_TT" />
 				</Grid>
 				<!-- YnAMP <<<<< -->
+				<!-- ->
 				<Grid Style="ShellHeaderButtonGrid">
 					<GridButton ID="IgnoreWarning" Style="ShellButtonOrnateFlat" Anchor="L,C" Size="300,parent" Offset="1,0" String="{LOC_SETUP_IGNORE_WARNING_YNAMP:upper}" ToolTip="LOC_SETUP_IGNORE_WARNING_YNAMP_TT" />
 				</Grid>
+				<!-- -->
 				<Grid Style="ShellHeaderButtonGrid">
 					<GridButton ID="LoadDataYnAMP" Style="ShellButtonOrnateFlat" Anchor="R,C" Size="300,parent" Offset="1,0" String="{LOC_SETUP_LOAD_DATA_YNAMP:upper}" ToolTip="LOC_SETUP_LOAD_DATA_YNAMP_TT" />
 				</Grid>
@@ -266,6 +268,9 @@
 			<Stack ID="ButtonStack" Anchor="C,B" Padding="20" StackGrowth="Right">
 				<GridButton ID="LoadConfig" Size="260,45" Style="MainButton" Anchor="C,B" String="LOC_LOAD_CONFIG" Hidden="1"/>
 				<GridButton ID="SaveConfig" Size="260,45" Style="MainButton" Anchor="C,B" String="LOC_SAVE_CONFIG" Hidden="1"/>
+				<!-- YnAMP -->
+				<GridButton ID="IgnoreWarning" Size="260,45" Style="MainButton" Anchor="C,B" String="LOC_SETUP_IGNORE_WARNING_YNAMP" ToolTip="LOC_SETUP_IGNORE_WARNING_YNAMP_TT"  Hidden="1"/>
+				<!-- YnAMP -->
 				<GridButton ID="StartButton" Size="340,45" Style="ButtonConfirm" Anchor="C,B" String="LOC_START_GAME" />
 			</Stack>
 

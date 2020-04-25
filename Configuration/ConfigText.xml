@@ -1478,7 +1478,7 @@
       <Text>Launch a quick game in 2D mode to load all data used by YnAMP for the setting menu then quit automatically and return to the Main Menu.[NEWLINE][NEWLINE]Navigate back to this setup screen, it should then show "Database Loaded" and activate the related YnAMP advanced options.[NEWLINE][NEWLINE]A saved file of the current settings named "AutoSaveYnAMP" should be available to reload if needed, but the suggested order of action should be:[NEWLINE][ICON_BULLET] Activate mods[NEWLINE][ICON_BULLET] Load the database[NEWLINE][ICON_BULLET] Change your settings[NEWLINE][NEWLINE]This is optional and you can launch your game as usual if you don't need the new options.</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_IGNORE_WARNING_YNAMP" Language="en_US">
-      <Text>Ignore</Text>
+      <Text>Ignore Warning</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_IGNORE_WARNING_YNAMP_TT" Language="en_US">
       <Text>Click the "Ignore" button if you understand the issue and want to ignore it.</Text>

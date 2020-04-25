@@ -123,8 +123,8 @@ CREATE TABLE IF NOT EXISTS ScenarioCivilizations
 		MapScript TEXT,
 		SpecificEra TEXT,
 		CivilizationType TEXT, 		-- can be NULL to set default values for all Civilization, in that case ScenarioName must not be NULL
-		ExploreAll BOOLEAN NOT NULL CHECK (ExploreAll IN (0,1)) DEFAULT 0,
-		MeetAll BOOLEAN NOT NULL CHECK (MeetAll IN (0,1)) DEFAULT 0,
+		ExploreAll BOOLEAN,
+		MeetAll BOOLEAN,
 		Priority INT default 0, 	-- higher means first selected for placement in loops
 		CityPlacement TEXT,
 		MaxDistanceFromCapital INT, -- if OnlySameLandMass is true, then this is the land path distance, else it's the air distance
@@ -133,19 +133,19 @@ CREATE TABLE IF NOT EXISTS ScenarioCivilizations
 		NorthernLatitude INT,
 		BorderPlacement TEXT,
 		BorderMaxDistance INT,
-		OnlySameLandMass BOOLEAN NOT NULL CHECK (OnlySameLandMass IN (0,1)) DEFAULT 0,
+		OnlySameLandMass BOOLEAN,
 		NumberOfCity INT,
 		NumberOfMinorCity INT, 		-- Default scenario setting only, it has no effect when CivilizationType exists
 		CapitalSize INT,
 		OtherCitySize INT,
-		DecreaseOtherCitySize BOOLEAN NOT NULL CHECK (DecreaseOtherCitySize IN (0,1)) DEFAULT 0,	-- Default scenario setting only, it has no effect when CivilizationType exists
+		DecreaseOtherCitySize BOOLEAN,	-- Default scenario setting only, it has no effect when CivilizationType exists
 		CitySizeDecrement INT,
 		NumCityPerSizeDecrement INT,
 		Infrastructure TEXT,
 		RoadPlacement TEXT,
 		RoadMaxDistance INT,
 		MaxRoadPerCity INT,
-		InternationalRoads BOOLEAN NOT NULL CHECK (InternationalRoads IN (0,1)) DEFAULT 0,
+		InternationalRoads BOOLEAN,
 		InternationalRoadMaxDistance INT,
 		NationalRailPlacement TEXT,
 		InternationalRails TEXT,

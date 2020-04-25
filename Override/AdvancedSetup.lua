@@ -2001,6 +2001,12 @@ function SetStartButtonValid(bValid, sReason, sBlockGroup)
 		Controls.StartButton:SetDisabled(false)
 		Controls.StartButton:SetToolTipString(nil)
 		Controls.IgnoreWarning:SetHide(true)
+		
+		if(m_AdvancedMode) then
+			Controls.LoadConfig:SetHide(false);
+			Controls.SaveConfig:SetHide(false);
+			Controls.ButtonStack:CalculateSize();
+		end
 	else
 		currentBlock			= sBlockGroup
 		bStartDisabledByYnAMP 	= true
@@ -2009,6 +2015,12 @@ function SetStartButtonValid(bValid, sReason, sBlockGroup)
 		Controls.StartButton:SetToolTipString(sTooltip)
 		Controls.IgnoreWarning:SetHide(false)
 		Controls.IgnoreWarning:SetToolTipString(sTooltip)
+		
+		if(m_AdvancedMode) then
+			Controls.LoadConfig:SetHide(true);
+			Controls.SaveConfig:SetHide(true);
+			Controls.ButtonStack:CalculateSize();
+		end
 	end
 end
 
