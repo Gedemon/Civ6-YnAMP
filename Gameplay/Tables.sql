@@ -40,7 +40,8 @@ CREATE TABLE IF NOT EXISTS CivilizationRequestedResource
 		
 -- Optional Extra Placement
 CREATE TABLE IF NOT EXISTS ExtraPlacement
-	(	MapName TEXT NOT NULL,
+	(	MapName TEXT,
+		MapScript TEXT,
 		X INT default 0,
 		Y INT default 0,
 		ConfigurationId TEXT,
@@ -56,7 +57,8 @@ CREATE TABLE IF NOT EXISTS ExtraPlacement
 		
 -- Natural Wonder Positions
 CREATE TABLE IF NOT EXISTS NaturalWonderPosition
-	(	MapName TEXT NOT NULL,
+	(	MapName TEXT,
+		MapScript TEXT,
 		FeatureType TEXT NOT NULL,
 		TerrainType TEXT,
 		X INT default 0,

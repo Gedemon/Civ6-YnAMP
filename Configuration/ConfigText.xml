@@ -533,10 +533,23 @@
       <Text>LargestEarth Database</Text>
     </Replace>
     <Replace Tag="LOC_MAP_GIANT_DB_DESCRIPTION" Language="en_US">
-      <Text>Use the GiantEarth Database to get City names, custom Civilizations TSL, custom NW positions, ...[NEWLINE]Less precision for placement but a lot more data available</Text>
+      <Text>Use the GiantEarth Database to get City names, custom Civilizations TSL, custom NW positions, ...[NEWLINE][NEWLINE]Less precision for placement but a lot more data available</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LARGESTEARTH_DB_DESCRIPTION" Language="en_US">
       <Text>Use the LargestEarth Database[NEWLINE]Perfect placement, but less data available.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_SCRIPT_REF_FOR_NW_NAME" Language="en_US">
+      <Text>Direct Reference for Natural Wonders</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCRIPT_REF_FOR_NW_DESC" Language="en_US">
+      <Text>Do not use a relative Database to get Natural Wonders placement, only get them from direct reference to the LargestEarth MapScript.[NEWLINE][NEWLINE]You may miss some Natural Wonders without relative reference, but all that have a direct reference should have perfect placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCRIPT_REF_FOR_XT_NAME" Language="en_US">
+      <Text>Direct Reference for Extra placement</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCRIPT_REF_FOR_XT_DESC" Language="en_US">
+      <Text>Do not use a relative Database to get Extra Placement (conditional changes to Terrain, Features, Resources,... like Volcanoes when Gathering Storm is active), only get them from direct reference to the LargestEarth MapScript.</Text>
     </Replace>
 	
 	<!--

@@ -261,6 +261,25 @@ function ChangePlotOwner(pPlot, ownerID, cityID)
 	end
 end
 
+function RemoveLowLands()
+	print("User asked politely to remove all Coastal Lowland plots, processing...")
+	local totalplots 	= Map.GetPlotCount()
+	local count			= 0
+	local bIsXP2		= TerrainManager and TerrainManager.GetCoastalLowlandType
+	if bIsXP2 then
+		for i = 0, (totalplots) - 1, 1 do
+			plot = Map.GetPlotByIndex(i)
+			if TerrainManager.GetCoastalLowlandType(plot) ~= -1 then
+				TerrainBuilder.AddCoastalLowland(plot:GetIndex(), -1)
+				count = count + 1
+			end
+		end
+		print("  - Coastal Lowland plots removed = ", count)
+	else
+		print("  - XP2 not detected")
+	end
+end
+
 function MapStatistics()
 		
 	local totalplots 		= Map.GetPlotCount()
@@ -2724,5 +2743,9 @@ function Initialize()
 	LaunchScriptWithPause()
 	--
 	Events.LoadScreenClose.Add( MapStatistics )
+	--
+	if GameInfo.GlobalParameters["YNAMP_PLEASE_REMOVE_LOWLAND"] then
+		RemoveLowLands()
+	end
 end
 Initialize()

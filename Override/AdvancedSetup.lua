@@ -1267,6 +1267,17 @@ function OnStartButton()
 
 	-- <<<<< YNAMP
 	
+	-- We can't have a nil Map Seed for the random selections
+	if not MapConfiguration.GetValue("RANDOM_SEED") then
+print(MapConfiguration.GetValue("RANDOM_SEED"), GameConfiguration.GetValue("GAME_SYNC_RANDOM_SEED"))
+		local gameSeed = GameConfiguration.GetValue("GAME_SYNC_RANDOM_SEED")
+		GameConfiguration.RegenerateSeeds()
+		if gameSeed then
+			GameConfiguration.SetValue("GAME_SYNC_RANDOM_SEED", gameSeed)
+		end
+print(MapConfiguration.GetValue("RANDOM_SEED"), GameConfiguration.GetValue("GAME_SYNC_RANDOM_SEED"))
+	end
+	
 	-- hide the player section first to not show the mod selection for random slots
 	Controls.PlayersSection:SetHide(true)
 	

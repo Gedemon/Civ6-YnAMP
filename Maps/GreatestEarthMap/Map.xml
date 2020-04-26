@@ -170,46 +170,46 @@
 		<!--  GreatestEarthMap Volcanos  -->
 		<!-- +++++++++++++++++++++++++++ -->
 
-		<Replace MapName="GreatestEarthMap" X="63" Y="28"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="82" Y="31"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="65" Y="12"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="71" Y="8"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="89" Y="24"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="93" Y="29"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="99" Y="25"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="2" Y="9"		RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="25" Y="5"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="103" Y="61"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="25" Y="13"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="50" Y="38"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="59" Y="40"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="3" Y="53"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="8" Y="35"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="2" Y="31"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="22" Y="22"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="15" Y="30"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="37" Y="28"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="57" Y="19"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="92" Y="43"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="86" Y="25"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="101" Y="24"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="88" Y="35"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="98" Y="62"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="92" Y="56"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="2" Y="51"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="64" Y="45"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="91" Y="23"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="11" Y="33"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="21" Y="20"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="84" Y="26"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="65" Y="44"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="100" Y="50"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="16" Y="30"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="30" Y="30"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="22" Y="23"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="23" Y="15"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="25" Y="7"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GreatestEarthMap" X="26" Y="8"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="63" Y="28"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="82" Y="31"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="65" Y="12"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="71" Y="8"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="89" Y="24"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="93" Y="29"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="99" Y="25"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="2" Y="9"		ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="25" Y="5"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="103" Y="61"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="25" Y="13"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="50" Y="38"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="59" Y="40"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="3" Y="53"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="8" Y="35"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="2" Y="31"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="22" Y="22"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="15" Y="30"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="37" Y="28"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="57" Y="19"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="92" Y="43"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="86" Y="25"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="101" Y="24"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="88" Y="35"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="98" Y="62"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="92" Y="56"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="2" Y="51"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="64" Y="45"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="91" Y="23"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="11" Y="33"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="21" Y="20"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="84" Y="26"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="65" Y="44"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="100" Y="50"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="16" Y="30"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="30" Y="30"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="22" Y="23"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="23" Y="15"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="25" Y="7"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GreatestEarthMap" X="26" Y="8"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 	</ExtraPlacement>
 
 	

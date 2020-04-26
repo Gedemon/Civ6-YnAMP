@@ -13,6 +13,7 @@
 	Enormous              128x80
 	Giant     180x94      180x94
 	Ludicrous N/A        230x115 
+	
 
 -->
 
@@ -51,7 +52,6 @@
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" 	ParameterId="HideSize" Name="HideSize" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="HideSize" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		
 		<!--	Hidden parameters to notify some YnAMP scripts to use relative placement for this map (you must also set ReferenceMapHeight, ReferenceMapWidth and give that map the same name as the reference map
-		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="UseOwnDataForNW"			Name="UseOwnDataForNW" 			Description="" Domain="StandardMapSizes" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="UseOwnDataForNW" 		GroupId="MapOptions" Visible="0" SortIndex="225"/>
 		-->
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="UseRelativePlacement"	Name="UseRelativePlacement" 	Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="UseRelativePlacement" 	GroupId="MapOptions" Visible="0" SortIndex="225"/>
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="UseRelativeFixedTable"	Name="UseRelativeFixedTable" 	Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="UseRelativeFixedTable" 	GroupId="MapOptions" Visible="0" SortIndex="225"/>
@@ -66,12 +66,15 @@
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="RescaleSkipX" 	Name="RescaleSkipX" 	Description="" Domain="text" DefaultValue="4" ConfigurationGroup="Map" ConfigurationId="RescaleSkipX" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="RescaleSkipY" 	Name="RescaleSkipY" 	Description="" Domain="text" DefaultValue="5" ConfigurationGroup="Map" ConfigurationId="RescaleSkipY" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
 		
-		<!--	Hidden parameter to set the map name to the reference map that will be used to find the tables for TSL
-		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomName" 				Name="MapName" 		Description="" Domain="text" DefaultValue="LargestEarthCustom" 	ConfigurationGroup="Map" ConfigurationId="MapName" 		GroupId="MapOptions" Visible="0" SortIndex="2010"/>
-		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomReferenceMap" 		Name="ReferenceMap" Description="" Domain="text" DefaultValue="GiantEarth" 			ConfigurationGroup="Map" ConfigurationId="ReferenceMap" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
+		<!--	Parameter to set the map name to the reference map that will be used to find the tables for TSL
 		-->
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomName" 				Name="LOC_MAP_REFERENCE_DB_NAME" 		Description="" Domain="LargestEarthCustomDBName" DefaultValue="GiantEarth" 	ConfigurationGroup="Map" ConfigurationId="MapName" 		GroupId="MapOptions" SortIndex="230"/>
 
+		<!--	Parameters to use only direct script reference instead of the reference map for Natural Wonders and Extra Placement tables
+		-->	
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="MapScriptRefForNW" 	Name="LOC_MAP_SCRIPT_REF_FOR_NW_NAME" Description="LOC_MAP_SCRIPT_REF_FOR_NW_DESC" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="MapScriptRefForNW" 		GroupId="MapOptions" SortIndex="231"/>	
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="MapScriptRefForExtra" Name="LOC_MAP_SCRIPT_REF_FOR_XT_NAME" Description="LOC_MAP_SCRIPT_REF_FOR_XT_DESC" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="MapScriptRefForExtra" 	GroupId="MapOptions" SortIndex="231"/>	
+		
 		<!--	Hidden parameters to adjust features placement when they are not imported
 		-->		
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" 	ParameterId="LargestEarthCustomEquator" 	Name="EquatorAdjustment" Description="" Domain="text" DefaultValue="-22"	ConfigurationGroup="Map" ConfigurationId="EquatorAdjustment" GroupId="MapOptions" Visible="0" SortIndex="2010"/>
@@ -203,7 +206,14 @@
 		<Replace ParameterId="UseRelativePlacement"		ConfigurationGroup="Map" ConfigurationId="MapName" 		Operator="Equals" 		ConfigurationValue="GiantEarth"/>
 		<Replace ParameterId="UseRelativeFixedTable"	ConfigurationGroup="Map" ConfigurationId="MapName" 		Operator="Equals" 		ConfigurationValue="GiantEarth"/>
 	
-		<Replace ParameterId="ResourcesPlacement"		ConfigurationGroup="Map" ConfigurationId="MapName" 		Operator="NotEquals" 	ConfigurationValue="LargestEarth"/>		
+		<Replace ParameterId="ResourcesPlacement"		ConfigurationGroup="Map" ConfigurationId="MapName" 		Operator="NotEquals" 	ConfigurationValue="LargestEarth"/>	
+		
+		<Replace ParameterId="MapScriptRefForNW" 		ConfigurationGroup="Map" ConfigurationId="MapName" 		Operator="NotEquals" 	ConfigurationValue="LargestEarthCustom"/>
+		<Replace ParameterId="MapScriptRefForExtra" 	ConfigurationGroup="Map" ConfigurationId="MapName" 		Operator="NotEquals" 	ConfigurationValue="LargestEarthCustom"/>
+		
+		<Replace ParameterId="MapScriptRefForNW" 		ConfigurationGroup="Map" ConfigurationId="MAP_SCRIPT" 	Operator="NotEquals" 	ConfigurationValue="LargestEarthCustom"/>
+		<Replace ParameterId="MapScriptRefForExtra" 	ConfigurationGroup="Map" ConfigurationId="MAP_SCRIPT" 	Operator="NotEquals" 	ConfigurationValue="LargestEarthCustom"/>
+		
 
 	</ParameterDependencies>
 	

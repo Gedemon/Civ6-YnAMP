@@ -70,33 +70,33 @@
 		<!--     LargeEurope Volcanos    -->
 		<!-- +++++++++++++++++++++++++++ -->
 
-		<Replace MapName="LargeEurope" X="69" Y="35"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="LargeEurope" X="64" Y="25"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="LargeEurope" X="38" Y="25"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="LargeEurope" X="50" Y="23"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="LargeEurope" X="5" Y="12"		RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="LargeEurope" X="66" Y="35"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="LargeEurope" X="38" Y="27"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="LargeEurope" X="66" Y="25"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="69" Y="35"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="64" Y="25"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="38" Y="25"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="50" Y="23"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="5" Y="12"		ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="66" Y="35"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="38" Y="27"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="66" Y="25"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 		
 	</ExtraPlacement>
 	
-  <NaturalWonderPosition>
-    <Replace MapName="LargeEurope" X="24" Y="47" FeatureType="FEATURE_CLIFFS_DOVER" />
-    <Replace MapName="LargeEurope" X="25" Y="47" FeatureType="FEATURE_CLIFFS_DOVER" />
-
-    <Replace MapName="LargeEurope" X="62" Y="15" FeatureType="FEATURE_DEAD_SEA" />
-    <Replace MapName="LargeEurope" X="63" Y="16" FeatureType="FEATURE_DEAD_SEA" />
-
-    <Replace MapName="LargeEurope" X="11" Y="71" FeatureType="FEATURE_EYJAFJALLAJOKULL" />
-    <Replace MapName="LargeEurope" X="12" Y="71" FeatureType="FEATURE_EYJAFJALLAJOKULL" />
-
-    <Replace MapName="LargeEurope" X="31" Y="61" FeatureType="FEATURE_LYSEFJORDEN" />
-    <Replace MapName="LargeEurope" X="31" Y="62" FeatureType="FEATURE_LYSEFJORDEN" />
-    <Replace MapName="LargeEurope" X="32" Y="62" FeatureType="FEATURE_LYSEFJORDEN" />
-
-    <Replace MapName="LargeEurope" X="19" Y="54" FeatureType="FEATURE_GIANTS_CAUSEWAY" />
-    <Replace MapName="LargeEurope" X="18" Y="55" FeatureType="FEATURE_GIANTS_CAUSEWAY" />
+	<NaturalWonderPosition>
+		<Replace MapName="LargeEurope" X="24" Y="47" FeatureType="FEATURE_CLIFFS_DOVER" />
+		<Replace MapName="LargeEurope" X="25" Y="47" FeatureType="FEATURE_CLIFFS_DOVER" />
+		
+		<Replace MapName="LargeEurope" X="62" Y="15" FeatureType="FEATURE_DEAD_SEA" />
+		<Replace MapName="LargeEurope" X="63" Y="16" FeatureType="FEATURE_DEAD_SEA" />
+		
+		<Replace MapName="LargeEurope" X="11" Y="71" FeatureType="FEATURE_EYJAFJALLAJOKULL" />
+		<Replace MapName="LargeEurope" X="12" Y="71" FeatureType="FEATURE_EYJAFJALLAJOKULL" />
+		
+		<Replace MapName="LargeEurope" X="31" Y="61" FeatureType="FEATURE_LYSEFJORDEN" />
+		<Replace MapName="LargeEurope" X="31" Y="62" FeatureType="FEATURE_LYSEFJORDEN" />
+		<Replace MapName="LargeEurope" X="32" Y="62" FeatureType="FEATURE_LYSEFJORDEN" />
+		
+		<Replace MapName="LargeEurope" X="19" Y="54" FeatureType="FEATURE_GIANTS_CAUSEWAY" />
+		<Replace MapName="LargeEurope" X="18" Y="55" FeatureType="FEATURE_GIANTS_CAUSEWAY" />
 	
 		
 		<!-- ****************** -->
