@@ -70,14 +70,14 @@
 		<!--     LargeEurope Volcanos    -->
 		<!-- +++++++++++++++++++++++++++ -->
 
-		<Replace MapName="LargeEurope" X="69" Y="35"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="LargeEurope" X="64" Y="25"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="LargeEurope" X="38" Y="25"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="LargeEurope" X="50" Y="23"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="LargeEurope" X="5" Y="12"		ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="LargeEurope" X="66" Y="35"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="LargeEurope" X="38" Y="27"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="LargeEurope" X="66" Y="25"	ConfigurationId="FeaturesPlacement" ConfigurationValue="PLACEMENT_IMPORT"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="69" Y="35"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="64" Y="25"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="38" Y="25"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="50" Y="23"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="5" Y="12"		RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="66" Y="35"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="38" Y="27"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="LargeEurope" X="66" Y="25"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 		
 	</ExtraPlacement>
 	

@@ -14,6 +14,10 @@ UPDATE Parameters SET SortIndex =35 WHERE ParameterId = 'GameSpeeds';
 UPDATE Parameters SET SortIndex =40 WHERE ParameterId = 'Realism';
 UPDATE Parameters SET SortIndex =270 WHERE ParameterId = 'Resources';
 
+
+-- Legacy update
+UPDATE Players SET Domain='Players:StandardPlayers' WHERE Domain='StandardPlayers';
+
 -- Remove some restriction on WorldBuilder Setup
 DELETE FROM ParameterDependencies WHERE ParameterId = 'NoDupeCivilizations' AND ConfigurationId = 'WORLD_BUILDER';
 DELETE FROM ParameterDependencies WHERE ParameterId = 'NoDupeLeaders' AND ConfigurationId = 'WORLD_BUILDER';

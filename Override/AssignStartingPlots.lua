@@ -3929,10 +3929,8 @@ function PlaceRealNaturalWonders(NaturalWonders)
 	-- NW directly defined in the Map File still take priority
 	for NaturalWonderRow in GameInfo.NaturalWonderPosition() do
 		local bScriptValid	= NaturalWonderRow.MapScript ~= nil and NaturalWonderRow.MapScript == mapScript
-print("bScriptValid=",bScriptValid, NaturalWonderRow.MapScript, mapScript)
 		local bOnlyOffset	= true
 		if bScriptValid and GameInfo.Features[NaturalWonderRow.FeatureType] then
-print("     -",NaturalWonderRow.FeatureType)
 			local eFeatureType = GameInfo.Features[NaturalWonderRow.FeatureType].Index
 			if not NaturalWonders[eFeatureType] then
 				HasMapScriptPosition[eFeatureType] 	= true
@@ -3969,9 +3967,7 @@ print("     -",NaturalWonderRow.FeatureType)
 	-- The coordinates in NaturalWonders table are still those from the reference map, unless using MapScript rows
 	for NaturalWonderRow in GameInfo.NaturalWonderPosition() do
 		local bNameValid 	= (not bMapScriptRefForNW) and NaturalWonderRow.MapName == mapName
-print("bNameValid=",bNameValid, NaturalWonderRow.MapName, mapName)
 		if (bNameValid) and GameInfo.Features[NaturalWonderRow.FeatureType] then
-print("     -",NaturalWonderRow.FeatureType)
 			local eFeatureType = GameInfo.Features[NaturalWonderRow.FeatureType].Index
 			if NaturalWonders[eFeatureType] and not HasMapScriptPosition[eFeatureType] then --and not bUseRelativePlacement then 
 				-- Seems to be a multiplots feature...
