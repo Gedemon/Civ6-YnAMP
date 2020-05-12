@@ -548,6 +548,7 @@ function GetRefMapXY(mapX, mapY, bOnlyOffset, customWidthFactor, customHeightFac
 	end
 	return refMapX, refMapY
 end
+YnAMP.GetRefMapXY = GetRefMapXY
 
 -- Convert the reference map position to the current map position
 function GetXYFromRefMapXY(x, y, bOnlyOffset, customWidthRatio, customHeightRatio)
@@ -590,6 +591,7 @@ function GetXYFromRefMapXY(x, y, bOnlyOffset, customWidthRatio, customHeightRati
 	end
 	return x, y
 end
+YnAMP.GetXYFromRefMapXY = GetXYFromRefMapXY
 
 function GetPlotFromRefMap(x, y, bOnlyOffset)
 	return Map.GetPlot(GetXYFromRefMapXY(x,y, bOnlyOffset))

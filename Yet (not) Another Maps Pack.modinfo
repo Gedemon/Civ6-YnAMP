@@ -95,12 +95,6 @@
            	</Properties>
 			<File>Gameplay/GamePlayXP2.xml</File>
 		</UpdateDatabase>
-		<UpdateDatabase id="YNAMP_COLORS">
-           	<Properties>
-				<LoadOrder>1000</LoadOrder>
-           	</Properties>
-			<File>Gameplay/Colors.xml</File>
-		</UpdateDatabase>
 		<UpdateDatabase id="YNAMP_USER_CUSTOMIZATION">
            	<Properties>
 				<LoadOrder>10600</LoadOrder>
@@ -122,6 +116,12 @@
 			<File>Gameplay/GamePlayText_ko_KR.xml</File>
 			<File>Gameplay/GamePlayText_pl_PL.xml</File>
 		</UpdateText>
+		<UpdateColors id="YNAMP_COLORS">
+           	<Properties>
+				<LoadOrder>1000</LoadOrder>
+           	</Properties>
+			<File>Gameplay/Colors.sql</File>
+		</UpdateDatabase>
 	</InGameActions>
 	
 	<FrontEndActions>
@@ -294,7 +294,7 @@
 		<File>Maps/LargestEarthCustom/Map.xml</File>
 		<File>Gameplay/Resource.xml</File>
 		<File>Gameplay/CityNameByEra.xml</File>
-		<File>Gameplay/Colors.xml</File>
+		<File>Gameplay/Colors.sql</File>
 		<File>Maps/GiantEarth/GiantEarth.lua</File>
 		<File>Maps/GreatestEarthMap/GreatestEarthMap.lua</File>
 		<File>Maps/PlayEuropeAgain/PlayEuropeAgain.lua</File>
