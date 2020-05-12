@@ -1508,5 +1508,14 @@
     <Replace Tag="LOC_SETUP_ERROR_NO_TSL_IN_SECTION" Language="en_US">
       <Text>No TSL for this map section</Text>
     </Replace>
+    <Replace Tag="LOC_SETUP_ARTICLE_TITLE_YNAMP" Language="en_US">
+      <Text>[ICON_Whisper] "At this time we don’t have plans to release the DLL source code"</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ARTICLE_RESUME_YNAMP" Language="en_US">
+      <Text>[NEWLINE]Firaxis doesn't plan to release the tools to support Vox Populi or any full overhaul mods for Civilization VI[NEWLINE]I have no interest in such a game, so this is my last update for [COLOR_Civ6Blue]YnAMP[ENDCOLOR], thank you for your support so far.[NEWLINE](Quote from pcgamesn.com interview with Anton Strenger, lead designer)</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ARTICLE_RESUME_STEAM_ON_YNAMP" Language="en_US">
+      <Text>[NEWLINE]Firaxis doesn't plan to release the tools to support Vox Populi or any full overhaul mods for Civilization VI[NEWLINE]I have no interest in such a game, so this is my last update for [COLOR_Civ6Blue]YnAMP[ENDCOLOR], thank you for your support so far.[NEWLINE](left click here for the article about the DLL Source on pcgamesn.com, right click for the interview)</Text>
+    </Replace>
   </LocalizedText>
 </GameData>

@@ -6,9 +6,14 @@
 
 		<Container ID="MainWindow" Size="1024,768" Anchor="C,B" >
 			<Grid ID="LogoContainer" Style="SubContainer4" Size="parent-10,116" Anchor="C,T" Color="7,28,50" AnchorSide="I,O" Offset="0,4">
-      			<Image ID="Logo"				Anchor="C,C" Texture="MainLogo.dds" StretchMode="Auto"/>
+				<!-- YnAMP <<<<< -->
+				<GridButton	ID="ButtonURL"		Size="parent,parent"	Anchor="C,C"/>
+				<Label ID="ArticleTitle" FontSize="20"	Anchor="C,C" String="{LOC_SETUP_ARTICLE_TITLE_YNAMP} {LOC_SETUP_ARTICLE_RESUME_YNAMP}"/>
+				<!-- ->
+				<!-- YnAMP >>>>> -->
+				<Image ID="Logo"				Anchor="C,C" Texture="MainLogo.dds" StretchMode="Auto"/>
    			</Grid>
-
+      			
 			<Container Style="ShellHeaderContainer">
 				<Grid Style="ShellHeaderButtonGrid">
 					<GridButton ID="DefaultButton" Style="ShellButtonOrnateFlat" Anchor="L,C" Size="300,parent" Offset="1,0" String="{LOC_SETUP_RESTORE_DEFAULT:upper}" ToolTip="LOC_SETUP_RESTORE_DEFAULT_TT" />

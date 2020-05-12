@@ -121,7 +121,7 @@
 				<LoadOrder>1000</LoadOrder>
            	</Properties>
 			<File>Gameplay/Colors.sql</File>
-		</UpdateDatabase>
+		</UpdateColors>
 	</InGameActions>
 	
 	<FrontEndActions>
