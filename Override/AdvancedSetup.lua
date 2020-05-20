@@ -1802,6 +1802,7 @@ function Initialize()
 	Controls.IgnoreWarning:RegisterCallback( Mouse.eMouseEnter, function() UI.PlaySound("Main_Menu_Mouse_Over"); end);
 	
 	-- Ranting
+	--[[
 	Controls.Logo:SetAlpha(0.10)
 	if(Steam and Steam.IsOverlayEnabled and Steam.IsOverlayEnabled()) then
 		local titleText = "[COLOR_Gold]"..Locale.ToUpper("LOC_SETUP_ARTICLE_TITLE_YNAMP").."[ENDCOLOR]" .. Locale.Lookup("LOC_SETUP_ARTICLE_RESUME_STEAM_ON_YNAMP")
@@ -1818,6 +1819,7 @@ function Initialize()
 	else
 		Controls.ButtonURL:SetToolTipString("www.pcgamesn.comcivilization-vi/civ-6-new-season-pass-details[NEWLINE]Interview with Anton Strenger, lead designer[NEWLINE]May 11, 2020[NEWLINE][NEWLINE]www.pcgamesn.com/civilization-6/dll-source-release-modding-community[NEWLINE]Article about the modding limitations without the DLL source[NEWLINE]Feb 25, 2020")
 	end
+	--]]
 	-- YnAMP >>>>>
 
 	Resize();
