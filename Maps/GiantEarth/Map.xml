@@ -61,6 +61,9 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PHOENICIA"	X="36"	Y="52" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_INCA"		X="155"	Y="25" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_OTTOMAN"	X="31"	Y="59" />
+		<!-- New Horizon -->
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GRAN_COLOMBIA"	X="153"	Y="39" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MAYA"		X="145"	Y="47" Leader="LEADER_LADY_SIX_SKY" />
 	</StartPosition>	
 	
 	<!-- Minors -->
@@ -98,7 +101,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ARMAGH" 		X="6" Y="76" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GRANADA" 		X="8" Y="54" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MUSCAT" 		X="45" Y="43" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PALENQUE" 		X="144" Y="46" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PALENQUE" 		X="143" Y="46" /> <!-- Moved to Mitla-->
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_AKKAD"			X="42"	Y="52" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BOLOGNA"		X="19"	Y="61" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CAHOKIA"		X="146"	Y="64" />
@@ -108,6 +111,14 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_NAZCA"			X="153"	Y="24" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_NGAZARGAMU"	X="21"	Y="39" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_RAPA_NUI"		X="7"	Y="49" />
+
+		<!-- New Horizon DLC -->
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_CAGUANA" 		X="159" Y="46" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_HUNZA" 		X="153" Y="39" DisabledByLeader="LEADER_SIMON_BOLIVAR" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_LAHORE" 		X="59" Y="54" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SINGAPORE" 	X="78" Y="32" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_TARUGA" 		X="19" Y="37" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_VATICAN_CITY" 	X="20" Y="57" DisabledByLeader="LEADER_TRAJAN" />
 		
 	</StartPosition>
 
@@ -258,6 +269,39 @@
 		<Replace MapName="GiantEarth" X="154" Y="34"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 		<Replace MapName="GiantEarth" X="115" Y="13"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 		<Replace MapName="GiantEarth" X="154" Y="11"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+
+	<!-- +++++++++++++++++++++++++++ -->
+	<!--   Giant Earth Geothermal    -->
+	<!-- +++++++++++++++++++++++++++ -->
+
+		<Replace MapName="GiantEarth" X="131" Y="61"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="133" Y="58"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="32" Y="29"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="19" Y="59"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="132" Y="59"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="74" Y="30"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="88" Y="40"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="2" Y="84"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="80" Y="25"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="113" Y="10"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="31" Y="56"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="133" Y="65"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="91" Y="54"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="146" Y="44"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="148" Y="42"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="33" Y="34"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="68" Y="54"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="52" Y="73"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="29" Y="28"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="121" Y="84"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="99" Y="66"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="44" Y="57"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="156" Y="20"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="99" Y="14"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="100" Y="17"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="99" Y="18"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GiantEarth" X="73" Y="46"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		
 	</ExtraPlacement>
 	
 	<NaturalWonderPosition>
@@ -385,6 +429,13 @@
 		<Replace MapName="GiantEarth" X="146" Y="49" FeatureType="FEATURE_IKKIL"  />
 		<Replace MapName="GiantEarth" X="22" Y="56" FeatureType="FEATURE_VESUVIUS" TerrainType="TERRAIN_PLAINS_MOUNTAIN" />
 		
+		<!-- ****************** -->
+		<!-- New Horizon Pack   -->
+		<!-- ****************** -->
+
+		<Replace MapName="GiantEarth" X="155" Y="53" FeatureType="FEATURE_BERMUDA_TRIANGLE" TerrainType="TERRAIN_OCEAN" />
+		<Replace MapName="GiantEarth" X="156" Y="53" FeatureType="FEATURE_BERMUDA_TRIANGLE" TerrainType="TERRAIN_OCEAN" />
+		<Replace MapName="GiantEarth" X="156" Y="54" FeatureType="FEATURE_BERMUDA_TRIANGLE" TerrainType="TERRAIN_OCEAN" />
 		
 		<!-- **************** -->
 		<!--    Modded NW     -->
