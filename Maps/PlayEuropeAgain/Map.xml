@@ -72,6 +72,9 @@
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_VALLETTA"		X="42" Y="19" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_VILNIUS"		X="60" Y="60" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_YEREVAN"		X="93" Y="33" />
+
+		<!-- New Horizon DLC -->
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_VATICAN_CITY" X="44" Y="34" DisabledByLeader="LEADER_TRAJAN" />
 		
 	</StartPosition>
 	
@@ -87,6 +90,16 @@
 		<Replace MapName="PlayEuropeAgain" X="89" Y="39"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 		<Replace MapName="PlayEuropeAgain" X="46" Y="26"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 		<Replace MapName="PlayEuropeAgain" X="90" Y="29"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+
+		<!-- +++++++++++++++++++++++++++ -->
+		<!--   Giant Earth Geothermal    -->
+		<!-- +++++++++++++++++++++++++++ -->
+
+		<Replace MapName="PlayEuropeAgain" X="43" Y="38"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="PlayEuropeAgain" X="10" Y="90"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="PlayEuropeAgain" X="66" Y="25"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="PlayEuropeAgain" X="8" Y="88"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="PlayEuropeAgain" X="100" Y="31"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
 	</ExtraPlacement>
 	
 	<!--     Natural Wonders    -->
