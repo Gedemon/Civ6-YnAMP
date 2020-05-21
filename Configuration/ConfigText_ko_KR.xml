@@ -1157,7 +1157,7 @@
 		<Text>무스카트</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_PALENQUE_NAME" Language="ko_KR">
-		<Text>팔렝케</Text>
+		<Text>미틀라</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_DESCRIPTION" Language="ko_KR">
 		<Text>도시국가 오클랜드</Text>
@@ -1175,8 +1175,45 @@
 		<Text>도시국가 무스카트</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_PALENQUE_DESCRIPTION" Language="ko_KR">
-		<Text>도시국가 팔렝케</Text>
+		<Text>도시국가 미틀라 </Text>
 	</Replace>
+
+  <Replace Tag="LOC_CIVILIZATION_CAGUANA_NAME" Language="ko_KR">
+    <Text>카구아나</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_HUNZA_NAME" Language="ko_KR">
+    <Text>훈자</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_LAHORE_NAME" Language="ko_KR">
+    <Text>라호르</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_SINGAPORE_NAME" Language="ko_KR">
+    <Text>싱가포르</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_TARUGA_NAME" Language="ko_KR">
+    <Text>타루가</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_VATICAN_CITY_NAME" Language="ko_KR">
+    <Text>바티칸 시국</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_CAGUANA_DESCRIPTION" Language="ko_KR">
+    <Text>도시국가 카구아나</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_HUNZA_DESCRIPTION" Language="ko_KR">
+    <Text>도시국가 훈자</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_LAHORE_DESCRIPTION" Language="ko_KR">
+    <Text>도시국가 라호르</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_SINGAPORE_DESCRIPTION" Language="ko_KR">
+    <Text>도시국가 싱가포르</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_TARUGA_DESCRIPTION" Language="ko_KR">
+    <Text>도시국가 타루가</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_VATICAN_CITY_DESCRIPTION" Language="ko_KR">
+    <Text>도시국가 바티칸 시국</Text>
+  </Replace>
 	
 	
   </LocalizedText>

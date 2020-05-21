@@ -1387,7 +1387,7 @@
 		<Text>Muscat</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_PALENQUE_NAME" Language="pl_PL">
-		<Text>Palenque</Text>
+		<Text>Mitla</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_DESCRIPTION" Language="pl_PL">
 		<Text>Auckland city-state</Text>
@@ -1405,8 +1405,45 @@
 		<Text>Muscat city-state</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_PALENQUE_DESCRIPTION" Language="pl_PL">
-		<Text>Palenque city-state</Text>
+		<Text>Mitla city-state</Text>
 	</Replace>
+
+  <Replace Tag="LOC_CIVILIZATION_CAGUANA_NAME" Language="pl_PL">
+    <Text>Caguana</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_HUNZA_NAME" Language="pl_PL">
+    <Text>Hunza</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_LAHORE_NAME" Language="pl_PL">
+    <Text>Lahaur</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_SINGAPORE_NAME" Language="pl_PL">
+    <Text>Singapur</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_TARUGA_NAME" Language="pl_PL">
+    <Text>Taruga</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_VATICAN_CITY_NAME" Language="pl_PL">
+    <Text>Watykan</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_CAGUANA_DESCRIPTION" Language="pl_PL">
+    <Text>Caguana city-state</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_HUNZA_DESCRIPTION" Language="pl_PL">
+    <Text>Hunza city-state</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_LAHORE_DESCRIPTION" Language="pl_PL">
+    <Text>Lahaur city-state</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_SINGAPORE_DESCRIPTION" Language="pl_PL">
+    <Text>Singapur city-state</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_TARUGA_DESCRIPTION" Language="pl_PL">
+    <Text>Taruga city-state</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_VATICAN_CITY_DESCRIPTION" Language="pl_PL">
+    <Text>Watykan city-state</Text>
+  </Replace>
 	
     <Replace Tag="LOC_SETUP_YNAMP_REPORT" Language="pl_PL">
       <Text>Raport walidacji opcji:</Text>
