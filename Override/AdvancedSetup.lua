@@ -228,6 +228,9 @@ end
 -- ===========================================================================
 -- ===========================================================================
 
+-- ===========================================================================
+-- ===========================================================================
+
 local PULLDOWN_TRUNCATE_OFFSET:number = 40;
 
 local MIN_SCREEN_Y			:number = 768;
@@ -239,9 +242,14 @@ local MIN_SCREEN_OFFSET_Y	:number = -53;
 
 -- Instance managers for dynamic simple game options.
 g_SimpleBooleanParameterManager = InstanceManager:new("SimpleBooleanParameterInstance", "CheckBox", Controls.CheckBoxParent);
+g_SimpleGameModeParameterManager = InstanceManager:new("GameModeSelectorInstance", "Top", Controls.CheckBoxParent);
 g_SimplePullDownParameterManager = InstanceManager:new("SimplePullDownParameterInstance", "Root", Controls.PullDownParent);
 g_SimpleSliderParameterManager = InstanceManager:new("SimpleSliderParameterInstance", "Root", Controls.SliderParent);
 g_SimpleStringParameterManager = InstanceManager:new("SimpleStringParameterInstance", "Root", Controls.EditBoxParent);
+
+-- Instance managers for Game Mode placard and details flyouts
+local m_gameModeToolTipHeaderIM = InstanceManager:new("HeaderInstance", "Top", Controls.GameModeInfoStack );
+local m_gameModeToolTipHeaderIconIM = InstanceManager:new("IconInstance", "Top", Controls.GameModeInfoStack );
 
 g_kMapData = {};	-- Global set of map data; enough for map selection context to do it's thing. (Parameter list still truly owns the data.)
 
@@ -259,6 +267,7 @@ GameSetup_HideGameSetup = HideGameSetup;
 function HideGameSetup(func)
 	GameSetup_HideGameSetup(func);
 	g_SimpleBooleanParameterManager:ResetInstances();
+	g_SimpleGameModeParameterManager:ResetInstances();
 	g_SimplePullDownParameterManager:ResetInstances();
 	g_SimpleSliderParameterManager:ResetInstances();
 	g_SimpleStringParameterManager:ResetInstances();
@@ -290,6 +299,71 @@ function UI_BeforeRefresh()
 	Controls.CreateGame_SpeedPulldownContainer:SetHide(true);
 	Controls.CreateGame_MapTypeContainer:SetHide(true);
 	Controls.CreateGame_MapSizeContainer:SetHide(true);
+end
+
+local _UI_AfterRefresh = GameParameters_UI_AfterRefresh;
+function GameParameters_UI_AfterRefresh(o)
+	
+	if(_UI_AfterRefresh) then
+		_UI_AfterRefresh(o);
+	end
+	
+	-- All parameters are provided with a sort index and are manipulated
+	-- in that particular order.
+	-- However, destroying and re-creating parameters can get expensive
+	-- and thus is avoided.  Because of this, some parameters may be 
+	-- created in a bad order.  
+	-- It is up to this function to ensure order is maintained as well
+	-- as refresh/resize any containers.
+	-- FYI: Because of the way we're sorting, we need to delete instances
+	-- rather than release them.  This is because releasing merely hides it
+	-- but it still gets thrown in for sorting, which is frustrating.
+	local sort = function(a,b)
+	
+		-- ForgUI requires a strict weak ordering sort.
+
+		local ap = g_SortingMap[tostring(a)];
+		local bp = g_SortingMap[tostring(b)];
+
+		if(ap == nil) then
+			print("GameParameters sort ap is nil: ",a.ParameterId);
+		end
+		
+		if(bp == nil) then
+			print("GameParameters sort bp is nil: ",b.ParameterId);
+		end
+
+		if(ap == nil and bp ~= nil) then
+			return true;
+		elseif(ap == nil and bp == nil) then
+			return tostring(a) < tostring(b);
+		elseif(ap ~= nil and bp == nil) then
+			return false;
+		else
+			return o.Utility_SortFunction(ap, bp);
+		end
+	end
+
+	local stacks = {};
+	table.insert(stacks, Controls.CreateGame_ExtraParametersStack);
+	table.insert(stacks, Controls.CreateGame_GameModeParametersStack);
+
+	for i,v in ipairs(stacks) do
+		v:SortChildren(sort);
+	end
+
+	for i,v in ipairs(stacks) do
+		v:CalculateSize();
+		v:ReprocessAnchoring();
+	end
+	   
+	Controls.CreateGameOptions:CalculateSize();
+	Controls.CreateGameOptions:ReprocessAnchoring();
+
+	if Controls.CreateGame_ParametersScrollPanel then
+		Controls.CreateGame_ParametersScrollPanel:CalculateInternalSize();
+	end
+
 end
 
 -- Override for SetupParameters to filter ruleset values by non-scenario only.
@@ -444,12 +518,13 @@ function CreatePulldownDriver(o, parameter, c, container)
 		Container = container,
 		UpdateValue = function(value)
 			local valueText = value and value.Name or nil;
+			local button = c:GetButton();
 			if(cache.ValueText ~= valueText or cache.ValueDescription ~= valueDescription) then
-				local button = c:GetButton();
 				local truncateWidth = button:GetSizeX() - PULLDOWN_TRUNCATE_OFFSET;
 				TruncateStringWithTooltip(button, truncateWidth, valueText);
 				cache.ValueText = valueText;
 			end		
+			button:LocalizeAndSetToolTip(value.RawDescription);
 		end,
 		UpdateValues = function(values)
 			-- If container was included, hide it if there is only 1 possible value.
@@ -656,7 +731,6 @@ g_ParameterFactories["Map"] = function(o, parameter)
 	
 	-- Advanced setup version.	
 	table.insert( drivers, CreateButtonPopupDriver(o, parameter, OnMapSelect) );
-	
 	-- YNAMP <<<<<
 	-- Restore pulldown menu for map selection
 --for k, v in pairs(parameter) do print(k, v) end
@@ -702,8 +776,47 @@ function CreateSimpleParameterDriver(o, parameter, parent)
 		return;
 	end;
 
-	if(parameter.Domain == "bool") then
+	if(parameter.GroupId == "GameModes") then
+		local c = g_SimpleGameModeParameterManager:GetInstance();	
+		
+		-- Store the root control, NOT the instance table.
+		g_SortingMap[tostring(c.Top)] = parameter;		
+		
+		local name = Locale.ToUpper(parameter.Name);
+		c.CheckBox:RegisterCallback(Mouse.eLClick, function()
+			o:SetParameterValue(parameter, not c.CheckBox:IsSelected());
+			Network.BroadcastGameConfig();
+		end);	
+		c.GameModeIcon:SetIcon("ICON_" .. parameter.ParameterId);
+		c.Top:ChangeParent(parent);
+
+		control = {
+			UpdateValue = function(value, parameter)
+				c.CheckBox:SetSelected(value);
+			end,
+			Control = c,
+			SetEnabled = function(enabled)
+				c.CheckBox:SetDisabled(not enabled);
+			end,
+			SetVisible = function(visible)
+				c.CheckBox:SetHide(not visible);
+			end,
+			Destroy = function()
+				g_SimpleGameModeParameterManager:ReleaseInstance(c);
+			end,
+		};
+		c.CheckBox:RegisterCallback( Mouse.eMouseEnter, function() OnGameModeMouseEnter(parameter) end);
+		c.CheckBox:RegisterCallback( Mouse.eMouseExit, function() OnGameModeMouseExit(parameter) end);
+
+		if(Controls.NoGameModesContainer:IsHidden() == false)then
+			Controls.NoGameModesContainer:SetHide(true);
+		end
+
+	elseif(parameter.Domain == "bool") then
 		local c = g_SimpleBooleanParameterManager:GetInstance();	
+		
+		-- Store the root control, NOT the instance table.
+		g_SortingMap[tostring(c.CheckBox)] = parameter;		
 		
 		local name = Locale.ToUpper(parameter.Name);
 		c.CheckBox:SetText(name);
@@ -742,6 +855,9 @@ function CreateSimpleParameterDriver(o, parameter, parent)
 	elseif(parameter.Domain == "int" or parameter.Domain == "uint" or parameter.Domain == "text") then
 		local c = g_SimpleStringParameterManager:GetInstance();		
 
+		-- Store the root control, NOT the instance table.
+		g_SortingMap[tostring(c.Root)] = parameter;
+		
 		local name = Locale.ToUpper(parameter.Name);	
 		c.StringName:SetText(name);
 		c.Root:SetToolTipString(parameter.Description);
@@ -806,6 +922,9 @@ function CreateSimpleParameterDriver(o, parameter, parent)
 		-- Get the UI instance
 		local c = g_SimpleSliderParameterManager:GetInstance();	
 		
+		-- Store the root control, NOT the instance table.
+		g_SortingMap[tostring(c.Root)] = parameter;
+		
 		c.Root:ChangeParent(parent);
 
 		local name = Locale.ToUpper(parameter.Name);
@@ -851,6 +970,9 @@ function CreateSimpleParameterDriver(o, parameter, parent)
 		
 		-- Get the UI instance
 		local c = g_SimplePullDownParameterManager:GetInstance();	
+		
+		-- Store the root control, NOT the instance table.
+		g_SortingMap[tostring(c.Root)] = parameter;
 
 		c.Root:ChangeParent(parent);
 		if c.StringName ~= nil then
@@ -909,7 +1031,13 @@ function GameParameters_UI_CreateParameter(o, parameter)
 			CreateSimpleParameterDriver(o, parameter, Controls.CreateGame_ExtraParametersStack),
 			GameParameters_UI_DefaultCreateParameterDriver(o, parameter)
 		};
+	elseif(parameter.GroupId == "GameModes") then	
+		control = {
+			CreateSimpleParameterDriver(o, parameter, Controls.CreateGame_GameModeParametersStack),
+			GameParameters_UI_DefaultCreateParameterDriver(o, parameter)
+		};	
 	else
+	
 		control = GameParameters_UI_DefaultCreateParameterDriver(o, parameter);
 	end
 
@@ -921,9 +1049,10 @@ end
 function RemovePlayer(voidValue1, voidValue2, control)
 	print("Removing Player " .. tonumber(voidValue1));
 	local playerConfig = PlayerConfigurations[voidValue1];
-	playerConfig:SetLeaderTypeName(nil);	
-	GameConfiguration.RemovePlayer(voidValue1);
+	playerConfig:SetLeaderTypeName(nil);
 	
+	GameConfiguration.RemovePlayer(voidValue1);
+
 	-- YnAMP <<<<<
 	local nextNumPlayer = GameConfiguration.GetParticipatingPlayerCount()
 	if currentSelectedNumberMajorCivs > nextNumPlayer then
@@ -1037,7 +1166,8 @@ function UI_PostRefreshParameters()
 	-- However, player options are allowed to be in an 'invalid' state for UI
 	-- This way, instead of hiding/preventing the user from selecting an invalid player
 	-- we can allow it, but display an error message explaining why it's invalid.
-	
+
+	-- This is primarily used to present ownership errors and custom constraint errors.
 	-- YnAMP <<<<<
 	bStartDisabledBySetup = false
 	if not bStartDisabledByYnAMP then
@@ -1114,7 +1244,7 @@ function OnShow()
         if (MapConfiguration.GetScript() == "WBImport.lua") then
             m_WorldBuilderImport = true;
         end
-		
+
 		-- KLUDGE: Ideally setup parameters in a group should have some sort of control mechanism for whether or not the group should show.
 		Controls.CreateGame_LocalPlayerContainer:SetHide(true);
 		Controls.PlayersSection:SetHide(true);
@@ -1194,7 +1324,7 @@ function OnAddAIButton()
 		if (playerConfig:GetSlotStatus() == SlotStatus.SS_CLOSED) then
 			playerConfig:SetSlotStatus(SlotStatus.SS_COMPUTER);
 			playerConfig:SetMajorCiv();
-			
+
 			-- YnAMP <<<<<
 			-- todo : clean implementation with a counter in the while loop until currentSelectedNumberMajorCivs is reached.
 			local nextNumPlayer = GameConfiguration.GetParticipatingPlayerCount()
@@ -1264,7 +1394,6 @@ end
 
 -- ===========================================================================
 function OnStartButton()
-
 	-- <<<<< YNAMP
 	
 	-- We can't have a nil Map Seed for the random selections
@@ -1663,12 +1792,12 @@ print(MapConfiguration.GetValue("RANDOM_SEED"), GameConfiguration.GetValue("GAME
 	YnAMP_Loading.ListMods 		= listMods
 	YnAMP_Loading.GameVersion 	= UI.GetAppVersion()
 	-- YNAMP >>>>>
-	
+
 	-- Is WorldBuilder active?
 	if (GameConfiguration.IsWorldBuilderEditor()) then
         if (m_WorldBuilderImport) then
             MapConfiguration.SetScript("WBImport.lua");
-			local loadGameMenu 		= ContextPtr:LookUpControl( "/FrontEnd/MainMenu/LoadGameMenu" );
+			local loadGameMenu = ContextPtr:LookUpControl( "/FrontEnd/MainMenu/LoadGameMenu" );
 			UIManager:QueuePopup(loadGameMenu, PopupPriority.Current);	
 		else
 			UI.SetWorldRenderView( WorldRenderView.VIEW_2D );
@@ -1697,6 +1826,65 @@ function OnBackButton()
 		LuaEvents.MapSelect_ClearMapData();
 		UIManager:DequeuePopup( MapSelectWindow );
 		UIManager:DequeuePopup( ContextPtr );
+		Controls.NoGameModesContainer:SetHide(false);
+	end
+end
+
+-- ===========================================================================
+--	Realize the animated flyouts with description, icons, and portraits for 
+--  the currently hovered game mode toggle.
+-- ===========================================================================
+function OnGameModeMouseEnter(kGameModeData : table)
+	m_gameModeToolTipHeaderIM:ResetInstances();
+	m_gameModeToolTipHeaderIconIM:ResetInstances();
+	if(Controls.GameModeToolTipSlide:IsReversing())then
+		Controls.GameModeSlide:Reverse();
+		Controls.GameModeAlpha:Reverse();
+		Controls.GameModeToolTipSlide:Reverse();
+		Controls.GameModeToolTipAlpha:Reverse();
+	else
+		Controls.GameModeSlide:Play();
+		Controls.GameModeAlpha:Play();
+		Controls.GameModeToolTipSlide:Play();
+		Controls.GameModeToolTipAlpha:Play();
+	end
+	local gameModeHeader : table = m_gameModeToolTipHeaderIM:GetInstance();
+	gameModeHeader.Header:SetText(Locale.Lookup(kGameModeData.RawName));
+
+	local gameModeDescription : table = m_gameModeToolTipHeaderIconIM:GetInstance();
+	gameModeDescription.Description:SetText(kGameModeData.Description);
+	gameModeDescription.Header:SetHide(true);
+
+	local gameModeInfo : table = GetGameModeInfo(kGameModeData.ConfigurationId);
+	if(gameModeInfo ~= nil)then
+		gameModeDescription.Icon:SetIcon(gameModeInfo.Icon);
+
+		if(gameModeInfo.UnitIcon)then
+			local gameModeUnitDescription : table = m_gameModeToolTipHeaderIconIM:GetInstance();
+			gameModeUnitDescription.Description:SetText(Locale.Lookup(gameModeInfo.UnitDescription));
+			gameModeUnitDescription.Icon:SetIcon(gameModeInfo.UnitIcon);
+			gameModeUnitDescription.Header:SetText(Locale.ToUpper(gameModeInfo.UnitName));
+		end
+		if(gameModeInfo.Portrait)then
+			Controls.GameModeImage:SetTexture(gameModeInfo.Portrait);
+		end
+		if(gameModeInfo.Background)then
+			Controls.GameModeBG:SetTexture(gameModeInfo.Background);
+		end
+	end
+end
+
+function OnGameModeMouseExit(kGameModeData : table)
+	if(not Controls.GameModeToolTipSlide:IsReversing())then
+		Controls.GameModeSlide:Reverse();
+		Controls.GameModeAlpha:Reverse();
+		Controls.GameModeToolTipSlide:Reverse();
+		Controls.GameModeToolTipAlpha:Reverse();
+	else
+		Controls.GameModeSlide:Play();
+		Controls.GameModeAlpha:Play();
+		Controls.GameModeToolTipSlide:Play();
+		Controls.GameModeToolTipAlpha:Play();
 	end
 end
 
@@ -1738,7 +1926,8 @@ function Resize()
 		Controls.CreateGameWindow:SetSizeY(MIN_SCREEN_OFFSET_Y + Controls.MainWindow:GetSizeY() - (Controls.ButtonStack:GetSizeY()));
 		Controls.AdvancedOptionsWindow:SetSizeY(MIN_SCREEN_OFFSET_Y + Controls.MainWindow:GetSizeY() - (Controls.ButtonStack:GetSizeY()));
 	end
-	
+	Controls.BasicPlacardContainer:SetSizeY(Controls.CreateGameWindow:GetSizeY());
+	Controls.BasicTooltipContainer:SetSizeY(Controls.CreateGameWindow:GetSizeY());	
 end
 
 -- ===========================================================================
@@ -1824,6 +2013,7 @@ function Initialize()
 
 	Resize();
 end
+
 -- YnAMP <<<<<
 
 -- ===========================================================================

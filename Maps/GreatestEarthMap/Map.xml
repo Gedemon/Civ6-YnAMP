@@ -89,6 +89,9 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NAZCA"			X="22"	Y="15" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NGAZARGAMU"		X="49"	Y="26" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_RAPA_NUI"		X="15"	Y="9" />
+		<!-- New Horizon -->
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GRAN_COLOMBIA"	X="23"	Y="23" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MAYA"	X="16"	Y="32" Leader="LEADER_LADY_SIX_SKY" />
 	</StartPosition>
 	
 	<!-- City States -->
@@ -130,7 +133,15 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ARMAGH" 		X="33" Y="55" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GRANADA" 	X="38" Y="34" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MUSCAT" 		X="70" Y="33" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PALENQUE" 	X="18" Y="35" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PALENQUE" 	X="14" Y="31" /> <!-- Moved to Mitla-->
+
+		<!-- New Horizon DLC -->
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CAGUANA" 	X="29" Y="32" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_HUNZA" 		X="23" Y="23" DisabledByLeader="LEADER_SIMON_BOLIVAR"/>
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_LAHORE" 		X="74" Y="41" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SINGAPORE" 	X="83" Y="33" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_TARUGA" 		X="51" Y="22" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_VATICAN_CITY" 	X="50" Y="42" DisabledByLeader="LEADER_TRAJAN" />
 	</StartPosition>
 	
 	<!--     Regions Positions    -->	
@@ -210,6 +221,29 @@
 		<Replace MapName="GreatestEarthMap" X="23" Y="15"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 		<Replace MapName="GreatestEarthMap" X="25" Y="7"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 		<Replace MapName="GreatestEarthMap" X="26" Y="8"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+
+	<!-- +++++++++++++++++++++++++++ -->
+	<!--   Giant Earth Geothermal    -->
+	<!-- +++++++++++++++++++++++++++ -->
+
+		<Replace MapName="GreatestEarthMap" X="1" Y="47"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="4" Y="42"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="62" Y="18"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="49" Y="44"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="4" Y="43"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="82" Y="29"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="90" Y="34"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="4" Y="47"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="93" Y="44"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="17" Y="30"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="18" Y="28"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="63" Y="25"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="76" Y="43"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="71" Y="54"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="58" Y="19"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="100" Y="55"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="25" Y="7"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+		<Replace MapName="GreatestEarthMap" X="99" Y="15"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
 	</ExtraPlacement>
 
 	
@@ -249,5 +283,13 @@
 		<Replace MapName="GreatestEarthMap" X="8" Y="50" FeatureType="FEATURE_DEVILSTOWER" TerrainType="TERRAIN_PLAINS_MOUNTAIN" />
 		<Replace MapName="GreatestEarthMap" X="18" Y="36" FeatureType="FEATURE_IKKIL"  />
 		<Replace MapName="GreatestEarthMap" X="52" Y="40" FeatureType="FEATURE_VESUVIUS" TerrainType="TERRAIN_PLAINS_MOUNTAIN" />
+
+		<!-- ****************** -->
+		<!-- New Horizon Pack   -->
+		<!-- ****************** -->
+
+		<Replace MapName="GreatestEarthMap" X="23" Y="40" FeatureType="FEATURE_BERMUDA_TRIANGLE" TerrainType="TERRAIN_OCEAN" />
+		<Replace MapName="GreatestEarthMap" X="24" Y="40" FeatureType="FEATURE_BERMUDA_TRIANGLE" TerrainType="TERRAIN_OCEAN" />
+		<Replace MapName="GreatestEarthMap" X="23" Y="41" FeatureType="FEATURE_BERMUDA_TRIANGLE" TerrainType="TERRAIN_OCEAN" />
 	</NaturalWonderPosition>
 </GameData>

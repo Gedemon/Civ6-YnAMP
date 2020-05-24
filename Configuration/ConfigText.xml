@@ -1403,7 +1403,7 @@
 		<Text>Muscat</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_PALENQUE_NAME" Language="en_US">
-		<Text>Palenque</Text>
+		<Text>Mitla</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_DESCRIPTION" Language="en_US">
 		<Text>Auckland city-state</Text>
@@ -1421,9 +1421,46 @@
 		<Text>Muscat city-state</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_PALENQUE_DESCRIPTION" Language="en_US">
-		<Text>Palenque city-state</Text>
+		<Text>Mitla city-state</Text>
 	</Replace>
 	
+  <Replace Tag="LOC_CIVILIZATION_CAGUANA_NAME" Language="en_US">
+    <Text>Caguana</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_HUNZA_NAME" Language="en_US">
+    <Text>Hunza</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_LAHORE_NAME" Language="en_US">
+    <Text>Lahore</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_SINGAPORE_NAME" Language="en_US">
+    <Text>Singapore</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_TARUGA_NAME" Language="en_US">
+    <Text>Taruga</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_VATICAN_CITY_NAME" Language="en_US">
+    <Text>Vatican City</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_CAGUANA_DESCRIPTION" Language="en_US">
+    <Text>Caguana city-state</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_HUNZA_DESCRIPTION" Language="en_US">
+    <Text>Hunza city-state</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_LAHORE_DESCRIPTION" Language="en_US">
+    <Text>Lahore city-state</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_SINGAPORE_DESCRIPTION" Language="en_US">
+    <Text>Singapore city-state</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_TARUGA_DESCRIPTION" Language="en_US">
+    <Text>Taruga city-state</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_VATICAN_CITY_DESCRIPTION" Language="en_US">
+    <Text>Vatican City city-state</Text>
+  </Replace>
+
     <Replace Tag="LOC_SETUP_CREATE_MAP" Language="en_US">
       <Text>Create Map</Text>
     </Replace>
