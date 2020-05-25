@@ -158,6 +158,23 @@ for i, row in ipairs(CachedQuery(cityStatesQuery)) do
 end
 --]]
 
+-- Build mod list
+local listMods		= {}
+local IsActiveMod	= {}
+local installedMods = Modding.GetInstalledMods()
+
+if installedMods ~= nil then
+	for i, modData in ipairs(installedMods) do
+		if modData.Enabled then
+			table.insert(listMods, modData)
+		end
+	end
+end
+
+for i, v in ipairs(listMods) do
+	IsActiveMod[v.Id] = v
+end
+
 ------------------------------------------------------------------------------
 -- Formating
 ------------------------------------------------------------------------------
@@ -1398,13 +1415,11 @@ function OnStartButton()
 	
 	-- We can't have a nil Map Seed for the random selections
 	if not MapConfiguration.GetValue("RANDOM_SEED") then
-print(MapConfiguration.GetValue("RANDOM_SEED"), GameConfiguration.GetValue("GAME_SYNC_RANDOM_SEED"))
 		local gameSeed = GameConfiguration.GetValue("GAME_SYNC_RANDOM_SEED")
 		GameConfiguration.RegenerateSeeds()
 		if gameSeed then
 			GameConfiguration.SetValue("GAME_SYNC_RANDOM_SEED", gameSeed)
 		end
-print(MapConfiguration.GetValue("RANDOM_SEED"), GameConfiguration.GetValue("GAME_SYNC_RANDOM_SEED"))
 	end
 	
 	-- hide the player section first to not show the mod selection for random slots
@@ -1780,15 +1795,6 @@ print(MapConfiguration.GetValue("RANDOM_SEED"), GameConfiguration.GetValue("GAME
 	end
 	
 	-- Make some info available during map creation
-	local listMods		= {}
-	local installedMods = Modding.GetInstalledMods()
-	if installedMods ~= nil then
-		for i, modData in ipairs(installedMods) do
-			if modData.Enabled then
-				table.insert(listMods, modData)
-			end
-		end
-	end
 	YnAMP_Loading.ListMods 		= listMods
 	YnAMP_Loading.GameVersion 	= UI.GetAppVersion()
 	-- YNAMP >>>>>
@@ -2422,6 +2428,24 @@ end
 function OnGameplayContentConfigure()
 	print("Mark to check mods on FinishedGameplayContentConfigure")
 	bCheckModList = true
+	
+	
+	print("Rebuild modlist")
+	listMods 	= {}
+	IsActiveMod	= {}
+	local installedMods = Modding.GetInstalledMods()
+
+	if installedMods ~= nil then
+		for i, modData in ipairs(installedMods) do
+			if modData.Enabled then
+				table.insert(listMods, modData)
+			end
+		end
+	end
+
+	for i, v in ipairs(listMods) do
+		IsActiveMod[v.Id] = v
+	end
 end
 Events.FinishedGameplayContentConfigure.Add(OnGameplayContentConfigure)
 --GameConfigurationRebuilt
@@ -2502,7 +2526,6 @@ end
 local bMajorCountChanged				= false	-- 
 OldGameSetup_RefreshParameters 			= GameSetup_RefreshParameters 
 function GameSetup_RefreshParameters()
-
 	if bFinishedGameplayContentConfigure then
 		--print("Calling YnAMP GameSetup_RefreshParameters override", bUpdatePlayerCount, bMajorCountChanged)
 		
@@ -2576,7 +2599,7 @@ end
 local OldGetRelevantParameters = GetRelevantParameters
 --local RelevantParameters
 function GetRelevantParameters(o, parameter)
-	
+
 	-- Hack to use parameters to determine if a Mod/DLC/Expansion is enabled
 	-- 1/ Define a hidden Parameter with Name="RequireMod" and Description="REQUIRED_MOD_ID": 
 	-- <Replace ParameterId="DLC2" Name="RequireMod" Description="2F6E858A-28EF-46B3-BEAC-B985E52E9BC1" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="DLC2"	GroupId="MapOptions" Visible="0" SortIndex="82"/>
@@ -2584,7 +2607,8 @@ function GetRelevantParameters(o, parameter)
 	-- <Replace ParameterId="LEADER_MINOR_CIV_AUCKLAND"	ConfigurationGroup="Map" ConfigurationId="DLC2" Operator="Equals" ConfigurationValue="1"/>
 	-- 3/ Your hidden Parameter can have its own dependencies
 	-- <Replace ParameterId="DLC2"	ConfigurationGroup="Map" ConfigurationId="SelectCityStates" Operator="NotEquals" ConfigurationValue="RANDOM"/>
-	if parameter.Name == "RequireMod" and not Modding.IsModEnabled(parameter.Description) then
+	
+	if parameter.Name == "RequireMod" and not IsActiveMod[parameter.Description] then --and not Modding.IsModEnabled(parameter.Description) then --
 		return false
 	end
 	
@@ -2605,7 +2629,7 @@ function GetRelevantParameters(o, parameter)
 			return false
 		end
 	end
-	
+
 	-- The OnlyLeadersWithTSL option require the Database to be loaded and unmodified
 	if parameter.ConfigurationId == "OnlyLeadersWithTSL" then
 		if (not ConfigYnAMP.IsDatabaseLoaded) or ConfigYnAMP.IsDatabaseChanged then
@@ -2626,22 +2650,13 @@ function GetRelevantParameters(o, parameter)
 			return false
 		end
 	end
-	--[[
-	-- The SelectCityStates option require the Database to be unmodified
-	if parameter.ParameterId == "HideSelectCityStates" then
-		if (not ConfigYnAMP.IsDatabaseChanged == false) or ConfigYnAMP.IsDatabaseChanged == nil then
-			return false
-		end
-	end 
-	--]]
+	
 	-- Show fake SelectCityStates option when the Database is not loaded or modified
 	if parameter.ConfigurationId == "FakeSelectCityStates" then -- or parameter.ParameterId == "HideSelectCityStates"
 		if (not ConfigYnAMP.IsDatabaseChanged) then
 			return false
 		end
 	end
-	
-	--FaxeSelectCityStates
 	
 	-- Hide unavailable Leaders from Ban list
 	if IsLeaderType[parameter.ConfigurationId] then
@@ -2679,22 +2694,16 @@ function SetupParameters:Parameter_FilterValues(parameter, values)
 	
 	-- Use the already filtered Leader list to build the list for random slots to use if the Ban Leader option is active
 	-- We're not handling the banned leaders here as we still want them to be available for manual selection.
-	if (parameter.ParameterId == "PlayerLeader" and self.PlayerId == 0) then -- and don't update for every player slots -- and MapConfiguration.GetValue("BanLeaders") 
-		--print("Building filtered Available Leader List for Random Slots...", self.PlayerId)
+	if (parameter.ParameterId == "PlayerLeader" and self.PlayerId == 0) then -- and don't update for every player slots
 		local curPlayerConfig 		= PlayerConfigurations[self.PlayerId]
 		local curLeadertype			= curPlayerConfig:GetLeaderTypeName()
-		--filteredRandomLeaderList	= {}
 		for i,v in ipairs(values) do
 			local leaderType = v.Value
 			if (curLeadertype ~= leaderType) and (not v.Invalid) then
-				--print(leaderType)
 				if leaderType ~= "RANDOM" then
-					--print("    - added to availableLeaderList")
-					--table.insert(filteredRandomLeaderList,leaderType)
 					availableLeaderList[leaderType] = true
 				end
 			else
-				--print(leaderType, v.InvalidReason and Locale.Lookup(v.InvalidReason))
 				availableLeaderList[leaderType] = false
 			end
 		end
@@ -2720,7 +2729,6 @@ function SetupParameters:Parameter_FilterValues(parameter, values)
 			if(bHasTSL) then
 				table.insert(newValues, row)
 				availableLeaderList[leaderType] = true
-				--print("adding", leaderType)
 			else
 				local copy = {}
 
@@ -2734,7 +2742,6 @@ function SetupParameters:Parameter_FilterValues(parameter, values)
 				copy.InvalidReason 	= reason
 				table.insert(newValues, copy)
 				availableLeaderList[leaderType] = false
-				--print("removing", leaderType)
 			end
 		end
 		return newValues
