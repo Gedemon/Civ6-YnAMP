@@ -16,7 +16,7 @@ Mac **non-Steam** users use the following command:
 
 Once inside this directory, clone this repo with the following git command:
 
-`git clone https://github.com/Gedemon/Civ6-YnAMP.git`
+`git clone https://github.com/seelingcat/Civ6-YnAMP.git`
 
 If you do not have git, it can be installed [here](https://git-scm.com/download/mac).
 

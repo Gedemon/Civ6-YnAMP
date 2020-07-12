@@ -83,13 +83,19 @@
 		<Replace MapName="LargeEurope" X="66" Y="25"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 
 		<!-- +++++++++++++++++++++++++++ -->
-	<!--   Giant Earth Geothermal    -->
-	<!-- +++++++++++++++++++++++++++ -->
+		<!--   Giant Earth Geothermal    -->
+		<!-- +++++++++++++++++++++++++++ -->
 
 		<Replace MapName="LargeEurope" X="34" Y="33"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
 		<Replace MapName="LargeEurope" X="10" Y="70"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
 		<Replace MapName="LargeEurope" X="54" Y="26"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
 		<Replace MapName="LargeEurope" X="73" Y="25"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+
+		<Replace MapName="LargeEurope" X="61" Y="11" RuleSet="RULESET_EXPANSION_2" FeatureType="FEATURE_REEF" />
+		<Replace MapName="LargeEurope" X="66" Y="2" RuleSet="RULESET_EXPANSION_2" FeatureType="FEATURE_REEF" />
+		<Replace MapName="LargeEurope" X="65" Y="1" RuleSet="RULESET_EXPANSION_2" FeatureType="FEATURE_REEF" />
+		<Replace MapName="LargeEurope" X="61" Y="8" RuleSet="RULESET_EXPANSION_2" FeatureType="FEATURE_REEF" />
+
 	</ExtraPlacement>
 	
 	<NaturalWonderPosition>

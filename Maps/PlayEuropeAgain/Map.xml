@@ -100,6 +100,9 @@
 		<Replace MapName="PlayEuropeAgain" X="66" Y="25"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
 		<Replace MapName="PlayEuropeAgain" X="8" Y="88"		RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
 		<Replace MapName="PlayEuropeAgain" X="100" Y="31"	RuleSet="RULESET_EXPANSION_2" 	FeatureType="FEATURE_GEOTHERMAL_FISSURE" />
+
+		<Replace MapName="PlayEuropeAgain" X="81" Y="6" RuleSet="RULESET_EXPANSION_2" FeatureType="FEATURE_REEF" />
+		<Replace MapName="PlayEuropeAgain" X="79" Y="1" RuleSet="RULESET_EXPANSION_2" FeatureType="FEATURE_REEF" />
 	</ExtraPlacement>
 	
 	<!--     Natural Wonders    -->
