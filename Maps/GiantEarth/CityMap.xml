@@ -4818,7 +4818,7 @@
 		<Replace MapName="GiantEarth" X="164" Y="38" CityLocaleName="LOC_CITY_NAME_CAIENA" Area="0" />
 
 		<Replace MapName="GiantEarth" X="151" Y="39" CityLocaleName="LOC_CITY_NAME_SALAQUI" Area="0" />
-		<Replace MapName="GiantEarth" X="153" Y="39" CityLocaleName="LOC_CITY_NAME_BUCARAMANGA" Area="0" />
+		<Replace MapName="GiantEarth" X="153" Y="39" CityLocaleName="LOC_CITY_NAME_BOGOTA" Area="0" /> <!-- Changed here from Bucaramanga -->
 		<Replace MapName="GiantEarth" X="155" Y="39" CityLocaleName="LOC_CITY_NAME_PUERTO_CARRENO" Area="0" />
 		<Replace MapName="GiantEarth" X="156" Y="39" CityLocaleName="LOC_CITY_NAME_CANAIMA" Area="0" />
 		<Replace MapName="GiantEarth" X="157" Y="39" CityLocaleName="LOC_CITY_NAME_LAS_CLARITAS" Area="0" />
