@@ -61,6 +61,7 @@
 		<!-- New Horizon -->
 		<Replace MapName="LargestEarthCustom.lua" Civilization="CIVILIZATION_GRAN_COLOMBIA"	X="202"	Y="48" />
 		<Replace MapName="LargestEarthCustom.lua" Civilization="CIVILIZATION_MAYA"	X="193"	Y="58" Leader="LEADER_LADY_SIX_SKY" />
+		<Replace MapName="LargestEarthCustom.lua" Civilization="CIVILIZATION_ETHIOPIA"	X="44"	Y="42" />
 	</StartPosition>
 		
 	<!-- Minors from Civ6 -->
