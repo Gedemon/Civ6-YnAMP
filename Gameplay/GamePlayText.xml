@@ -2363,7 +2363,7 @@
 		<Replace Tag="LOC_CITY_NAME_ORESTIAS" Text="Orestias" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ORESTIAS_HUNGARY" Text="Oresztiasz" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_OURANOUPOLI" Text="Ouranoupoli" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_OURANOUPOLI" Text="Uranupoli" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_OURANOUPOLI_HUNGARY" Text="Uranupoli" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PATRAS" Text="Patras" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_PATRAS_HUNGARY" Text="Patrasz" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_POROS" Text="Poros" Language="en_US" />
@@ -11908,7 +11908,8 @@
 <Replace Tag="LOC_CITY_NAME_AL_HAFIRAH" Text="Al Hafirah" Language="en_US" />
 <Replace Tag="LOC_CITY_NAME_NAFUD_AL_URAYQ" Text="Nafud al-'Urayq" Language="en_US" />
 
-
+<!-- Localized Text Automatically Produced by Jörmungandr True Location GUI for YnAMP -->
+<Replace Tag="LOC_JORMUNGANDR_CITY_NAME_HASNA" Text="Hasna" Language="en_US" />
 
 	</LocalizedText>
 

@@ -3287,7 +3287,8 @@
 <Replace MapName="PlayEuropeAgain" X="92" Y="5" CityLocaleName="LOC_CITY_NAME_AL_HAFIRAH" Area="2" />
 <Replace MapName="PlayEuropeAgain" X="93" Y="1" CityLocaleName="LOC_CITY_NAME_NAFUD_AL_URAYQ" Area="2" />
 
-
+<!-- City Map Automatically Produced by Jörmungandr True Location GUI for YnAMP -->
+<Replace MapName="PlayEuropeAgain" X="78" Y="10" CityLocaleName="LOC_JORMUNGANDR_CITY_NAME_HASNA" Area="0" />
 
 	</CityMap>
 

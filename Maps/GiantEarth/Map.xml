@@ -64,6 +64,7 @@
 		<!-- New Horizon -->
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GRAN_COLOMBIA"	X="153"	Y="39" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MAYA"		X="145"	Y="47" Leader="LEADER_LADY_SIX_SKY" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ETHIOPIA"	X="35"	Y="34" />
 	</StartPosition>	
 	
 	<!-- Minors -->
@@ -85,7 +86,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_LA_VENTA"		X="143" Y="47" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_LISBON"		X="4" Y="56" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MOHENJO_DARO"	X="55" Y="52" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_NAN_MADOL"		X="105" Y="31" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_NAN_MADOL"		X="105" Y="30" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PRESLAV"		X="29" Y="61" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_SEOUL"			X="89" Y="61" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_STOCKHOLM"		X="24" Y="79" />
@@ -250,7 +251,7 @@
 		<Replace MapName="GiantEarth" X="104" Y="32"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 		<Replace MapName="GiantEarth" X="88" Y="40"		RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 		<Replace MapName="GiantEarth" X="103" Y="76"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
-		<Replace MapName="GiantEarth" X="90" Y="65"		RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
+		<Replace MapName="GiantEarth" X="90" Y="67"		RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 		<Replace MapName="GiantEarth" X="131" Y="67"	RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 		<Replace MapName="GiantEarth" X="42" Y="62"		RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
 		<Replace MapName="GiantEarth" X="20" Y="55"		RuleSet="RULESET_EXPANSION_2"	TerrainType="TERRAIN_PLAINS_MOUNTAIN" FeatureType="FEATURE_VOLCANO" />
