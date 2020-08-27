@@ -341,6 +341,7 @@
 
 			<!--Map Selection Window-->
 			<LuaContext ID="MapSelectWindow" FileName="MapSelect" Hidden="1"/>
+			<LuaContext ID="MultiSelectWindow" FileName="MultiSelectWindow" Hidden="1"/>
 
 		</Container><!-- Main Window -->
 
@@ -437,7 +438,7 @@
       <Container Size="64,64" Anchor="C,T" Offset="0,0">
         <Image Anchor="C,C" Size="44,44" Texture="Circle44_Darker"  Color="0,0,0,50" />
         <Image Anchor="C,C" Size="44,44" Texture="Circle44_Lighter" Color="255,255,255,100" />
-        <Image ID="GameModeIcon" Texture="CivSymbols44" Size="44,44" Anchor="C,C"/>
+        <Image ID="GameModeIcon" Texture="CivSymbols44" Size="44,44" Anchor="C,C" Offset="0,-4"/>
         <Button ID="CheckBox" Texture="Controls_CircleGameMode" Anchor="C,T" Size="64,64"/>
       </Container>
     </Container>
@@ -543,7 +544,7 @@
 
 	<Instance		Name="HeaderInstance">
 		<Grid     ID="Top" Style="DivHeader" Anchor="C,T">
-			<Label  ID="Header"    Style="FontFlair18" FontStyle="glow" ColorSet="ShellHeader" SmallCaps="22" SmallCapsLeading="0" SmallCapsType="EveryWord" Anchor="C,C" Align="Center" Offset="0,1"/>
+			<Label  ID="Header"    Style="FontFlair18" FontStyle="glow" ColorSet="ShellHeader" SmallCaps="22" SmallCapsLeading="0" SmallCapsType="EveryWord" Anchor="C,C" Align="Center" Offset="0,1" WrapWidth="parent-40"/>
 		</Grid>
 	</Instance>
 
