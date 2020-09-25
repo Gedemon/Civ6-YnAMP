@@ -3366,7 +3366,7 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, wi
 		function CheckFlowDirectionValid(plotA, edgeA, plotB, edgeB)
 			local flowA	= GetFlowDirection(plotA, edgeA)
 			local flowB	= GetFlowDirection(plotB, edgeB)
-			if (not NextFlowValid[flowA][flowB]) and (not NextFlowValid[flowB][flowA]) then
+			if (NextFlowValid[flowA] and NextFlowValid[flowB]) and (not NextFlowValid[flowA][flowB]) and (not NextFlowValid[flowB][flowA]) then
 				print("Need to check Flow between: ", plotA:GetX(), plotA:GetY(), EdgeString[edgeA], FlowDirectionString[flowA], " and " , plotB:GetX(), plotB:GetY(), EdgeString[edgeB], FlowDirectionString[flowB])
 			end			
 		end
