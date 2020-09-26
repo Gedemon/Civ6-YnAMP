@@ -1375,10 +1375,10 @@
 	</Replace>
 	
 	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_NAME" Language="en_US">
-		<Text>Antioch</Text>
+		<Text>Venice</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_DESCRIPTION" Language="en_US">
-		<Text>Antioch city-state</Text>
+		<Text>Venice city-state</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_BABYLON_NAME" Language="en_US">
 		<Text>Babylon</Text>
