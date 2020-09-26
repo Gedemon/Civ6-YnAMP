@@ -30,7 +30,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GREECE"	X="31" Y="60" Leader="LEADER_GORGO" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_INDIA"		X="60" Y="52" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_INDIA"		X="65" Y="49" Leader="LEADER_CHANDRAGUPTA" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_INDONESIA"	X="84" Y="24" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_INDONESIA"	X="83" Y="25" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_JAPAN"		X="96" Y="58" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KHMER"		X="77" Y="40" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KHMER"		X="76" Y="42" AlternateStart="1" />
