@@ -8,8 +8,10 @@
 	<StartPosition>
 		
 		<!-- Civilizations -->
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"		X="84" Y="15" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"		X="84" Y="15" DisabledByCivilization="CIVILIZATION_PHOENICIA" />	
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"		X="42" Y="15" AlternateStart="1" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"		X="74" Y="6" Leader="LEADER_SALADIN"  DisabledByCivilization="CIVILIZATION_EGYPT" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"		X="42" Y="15" Leader="LEADER_SALADIN" AlternateStart="1" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_EGYPT"		X="73" Y="7" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_EGYPT"		X="72" Y="10" Leader="LEADER_CLEOPATRA" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ENGLAND"		X="30" Y="61" />
@@ -28,11 +30,11 @@
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_NORWAY"		X="49" Y="82" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_NORWAY"		X="47" Y="73" AlternateStart="1" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_NUBIA"		X="75" Y="1" />
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ROME"		X="44" Y="34" />
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ROME"		X="69" Y="32" AlternateStart="1" />
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_RUSSIA"		X="78" Y="62" />
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_RUSSIA"		X="65" Y="71" AlternateStart="1" />
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SCOTLAND"		X="29" Y="71" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ROME"			X="44" Y="34" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ROME"			X="69" Y="32" AlternateStart="1" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_RUSSIA"		X="78" Y="62" AlternateStart="1" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_RUSSIA"		X="65" Y="71" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SCOTLAND"		X="28" Y="72" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SCYTHIA"		X="83" Y="46" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SCYTHIA"		X="101" Y="52" AlternateStart="1" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SPAIN"		X="18" Y="38" />
@@ -45,9 +47,14 @@
 		<!-- Gathering Storm -->
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_SWEDEN"		X="55"	Y="72" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_HUNGARY"		X="55"	Y="44" />
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FRANCE"		X="27"	Y="49" Leader="LEADER_ELEANOR" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FRANCE"		X="27"	Y="49" Leader="LEADER_ELEANOR_FRANCE" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ENGLAND"		X="27"	Y="49" Leader="LEADER_ELEANOR_ENGLAND" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_PHOENICIA"	X="82"	Y="15" />
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_OTTOMAN"		X="69"	Y="32" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_OTTOMAN"		X="69"	Y="32" DisabledByCivilization="CIVILIZATION_BYZANTIUM" />	
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_OTTOMAN"		X="74"	Y="29" AlternateStart="1" />
+
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_BYZANTIUM"	X="69"	Y="32" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GAUL"			X="37"	Y="56" />
 		
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_AKKAD"		X="99"	Y="19" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_BOLOGNA"		X="44"	Y="40" />
@@ -55,7 +62,7 @@
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FEZ"			X="15"	Y="25" />
 		
 		<!-- City States -->
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ANTIOCH" 		X="82" Y="20" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ANTIOCH" 		X="45" Y="41" /> <!-- Changed to Venice -->
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_AMSTERDAM"	X="37" Y="60" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_BABYLON" 		X="99" Y="17" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARMAGH"		X="22" Y="69" />
@@ -74,7 +81,7 @@
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_YEREVAN"		X="93" Y="33" />
 
 		<!-- New Horizon DLC -->
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_VATICAN_CITY" X="44" Y="34" DisabledByLeader="LEADER_TRAJAN" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_VATICAN_CITY" X="44" Y="34" DisabledByCivilization="CIVILIZATION_ROME" />
 		
 	</StartPosition>
 	
