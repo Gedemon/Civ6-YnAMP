@@ -180,6 +180,7 @@
 	<ExtraPlacement>
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_RAPA_NUI"	X="15"	Y="9" TerrainType="TERRAIN_GRASS" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_OTTOMAN"		X="58"	Y="45" TerrainType="TERRAIN_GRASS" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BYZANTIUM"	X="58"	Y="45" TerrainType="TERRAIN_GRASS" />
 		
 		<!-- +++++++++++++++++++++++++++ -->
 		<!--  GreatestEarthMap Volcanos  -->
