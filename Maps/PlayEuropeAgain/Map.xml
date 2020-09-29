@@ -18,8 +18,9 @@
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FRANCE"		X="34" Y="52" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FRANCE"		X="25" Y="46" AlternateStart="1" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GEORGIA"		X="93" Y="37" />
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GERMANY"		X="38" Y="55" Leader="LEADER_BARBAROSSA"  DisabledByCivilization="CIVILIZATION_GAUL" /> <!-- Aachen -->
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GERMANY"		X="38" Y="55" Leader="LEADER_BARBAROSSA"  DisabledByCivilization="CIVILIZATION_NETHERLANDS" AlternateStart="1" /> <!-- Aachen -->
+		
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GERMANY"		X="38" Y="55" Leader="LEADER_BARBAROSSA"  DisabledByLeader="LEADER_AMBIORIX" DisabledByCivilization="CIVILIZATION_NETHERLANDS"/> <!-- Aachen -->
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GERMANY"		X="47" Y="58" Leader="LEADER_BARBAROSSA"  AlternateStart="1" /> <!-- Aachen -->/> <!-- Berlin -->
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GERMANY"		X="47" Y="58" /> <!-- Berlin -->
 		
 		<!--
