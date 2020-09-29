@@ -24,8 +24,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ENGLAND"	X="12" Y="72" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_FRANCE"	X="13" Y="67" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GEORGIA"	X="43" Y="60" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GERMANY"	X="22" Y="71" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GERMANY"	X="22" Y="71" Leader="LEADER_BARBAROSSA" DisabledByCivilization="CIVILIZATION_NETHERLANDS" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GERMANY"	X="22" Y="71" /> <!-- Berlin-->
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GREECE"	X="28" Y="56" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GREECE"	X="31" Y="60" Leader="LEADER_GORGO" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_INDIA"		X="60" Y="52" />
@@ -71,7 +70,8 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MAYA"		X="145"	Y="47" Leader="LEADER_LADY_SIX_SKY" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_ETHIOPIA"	X="35"	Y="34" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BYZANTIUM"	X="31"	Y="59" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GAUL"		X="16"	Y="69" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GAUL"		X="16"	Y="69"  Leader="LEADER_AMBIORIX" DisabledByCivilization="CIVILIZATION_NETHERLANDS" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GAUL"		X="14"	Y="63" /> <!-- Lyon -->
 	</StartPosition>	
 	
 	<!-- Minors -->
@@ -215,6 +215,7 @@
 		<Replace MapName="GiantEarth" X="151" Y="40" ConfigurationId="PanamaCanal" 		TerrainType="TERRAIN_PLAINS" />
 		
 		<Replace MapName="GiantEarth" X="31" Y="59" Civilization="CIVILIZATION_OTTOMAN" 	TerrainType="TERRAIN_GRASS_HILLS" />
+		<Replace MapName="GiantEarth" X="31" Y="59" Civilization="CIVILIZATION_BYZANTIUM" 	TerrainType="TERRAIN_GRASS_HILLS" />
 		
 	<!-- +++++++++++++++++++++++++++ -->
 	<!--     Giant Earth Volcanos    -->
