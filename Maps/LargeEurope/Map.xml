@@ -34,7 +34,7 @@
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_SUMERIA"	X="73" Y="15" />
 		<!-- Gathering Storm -->
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_SWEDEN"	X="41"	Y="61" />
-	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_MALI"		X="19" 	Y="5" />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_MALI"		X="11" 	Y="2" />
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_HUNGARY"	X="43"	Y="40" />
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_FRANCE"	X="24"	Y="39" Leader="LEADER_ELEANOR_FRANCE" />
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_ENGLAND"	X="24"	Y="39" Leader="LEADER_ELEANOR_ENGLAND" />
@@ -46,7 +46,8 @@
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_CARDIFF"		X="21"	Y="48" />
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_FEZ"			X="18"	Y="18" />
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_BYZANTIUM"	X="53"	Y="31" />
-	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_GAUL"			X="29"	Y="45" />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_GAUL"			X="29"	Y="45" Leader="LEADER_AMBIORIX" DisabledByCivilization="CIVILIZATION_FRANCE"  />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_GAUL"			X="27"	Y="37" />
   </StartPosition>
 
   <!-- Minors -->
@@ -74,6 +75,7 @@
 
 	<ExtraPlacement>
 		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_OTTOMAN"		X="53"	Y="31" TerrainType="TERRAIN_GRASS" />
+		<Replace MapName="LargeEurope" Civilization="CIVILIZATION_BYZANTIUM"	X="53"	Y="31" TerrainType="TERRAIN_GRASS" />
 		
 		<!-- +++++++++++++++++++++++++++ -->
 		<!--     LargeEurope Volcanos    -->
