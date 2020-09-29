@@ -83,7 +83,8 @@
 		<Replace MapName="LargestEarthCustom.lua" Civilization="CIVILIZATION_MAYA"	X="193"	Y="58" Leader="LEADER_LADY_SIX_SKY" />
 		<Replace MapName="LargestEarthCustom.lua" Civilization="CIVILIZATION_ETHIOPIA"	X="44"	Y="42" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_BYZANTIUM"	X="41"	Y="74" />	
-		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_GAUL"	X="20"	Y="87" Leader="LEADER_AMBIORIX" DisabledByCivilization="CIVILIZATION_NETHERLANDS" />				
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_GAUL"	X="20"	Y="87" Leader="LEADER_AMBIORIX" DisabledByCivilization="CIVILIZATION_NETHERLANDS" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_GAUL"			X="18"	Y="79"  Leader="LEADER_AMBIORIX" AlternateStart="1"/>
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_GAUL"	X="18"	Y="79" />	
 	</StartPosition>
 		
