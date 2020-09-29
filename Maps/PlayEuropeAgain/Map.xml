@@ -61,6 +61,7 @@
 
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_BYZANTIUM"	X="69"	Y="32" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GAUL"			X="37"	Y="56"  Leader="LEADER_AMBIORIX" DisabledByCivilization="CIVILIZATION_NETHERLANDS"/> <!-- Tongeren/Aduatuca -->
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GAUL"			X="32"	Y="45"  Leader="LEADER_AMBIORIX" AlternateStart="1"/>
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GAUL"			X="32"	Y="45" /> <!-- Lugdunum/Gaul-->
 		
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_AKKAD"		X="99"	Y="19" />
