@@ -94,6 +94,7 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GRAN_COLOMBIA"	X="23"	Y="23" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MAYA"		X="16"	Y="32" Leader="LEADER_LADY_SIX_SKY" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GAUL"		X="44"	Y="51" Leader="LEADER_AMBIORIX" DisabledByCivilization="CIVILIZATION_NETHERLANDS"/>
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GAUL"			X="43"	Y="44"  Leader="LEADER_AMBIORIX" AlternateStart="1"/>
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GAUL"		X="43"	Y="44" />
 	</StartPosition>
 	
