@@ -47,6 +47,7 @@
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_FEZ"			X="18"	Y="18" />
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_BYZANTIUM"	X="53"	Y="31" />
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_GAUL"			X="29"	Y="45" Leader="LEADER_AMBIORIX" DisabledByCivilization="CIVILIZATION_FRANCE"  />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_GAUL"			X="27"	Y="37"  Leader="LEADER_AMBIORIX" AlternateStart="1"/>
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_GAUL"			X="27"	Y="37" />
   </StartPosition>
 
