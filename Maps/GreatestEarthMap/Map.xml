@@ -55,7 +55,6 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NETHERLANDS" 	X="43" Y="53" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NORWAY"		X="44" Y="60" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NUBIA"		X="60" Y="29" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_OTTOMAN"		X="62" Y="44" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_PERSIA"		X="67" Y="41" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_POLAND"		X="56" Y="55" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_POLYNESIA" 	X="102" Y="36" />
@@ -94,7 +93,8 @@
 		<!-- New Horizon -->
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GRAN_COLOMBIA"	X="23"	Y="23" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MAYA"		X="16"	Y="32" Leader="LEADER_LADY_SIX_SKY" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GAUL"		X="44"	Y="51" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GAUL"		X="44"	Y="51" Leader="LEADER_AMBIORIX" DisabledByCivilization="CIVILIZATION_NETHERLANDS"/>
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GAUL"		X="43"	Y="44" />
 	</StartPosition>
 	
 	<!-- City States -->
