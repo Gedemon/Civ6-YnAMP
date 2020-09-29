@@ -8,18 +8,24 @@
 	<StartPosition>
 		
 		<!-- Civilizations -->
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"		X="84" Y="15" DisabledByCivilization="CIVILIZATION_PHOENICIA" />	
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"		X="42" Y="15" AlternateStart="1" />
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"		X="74" Y="6" Leader="LEADER_SALADIN"  DisabledByCivilization="CIVILIZATION_EGYPT" />
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"		X="42" Y="15" Leader="LEADER_SALADIN" AlternateStart="1" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"		X="84" Y="15" DisabledByCivilization="CIVILIZATION_PHOENICIA" />	<!-- Damascus -->
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"		X="84" Y="21" AlternateStart="1" /> <!-- Aleppo-->
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"		X="74" Y="6" Leader="LEADER_SALADIN"  DisabledByCivilization="CIVILIZATION_EGYPT" /> <!-- Cairo -->
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ARABIA"		X="84" Y="21" Leader="LEADER_SALADIN" AlternateStart="1" /> <!-- Aleppo -->
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_EGYPT"		X="73" Y="7" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_EGYPT"		X="72" Y="10" Leader="LEADER_CLEOPATRA" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_ENGLAND"		X="30" Y="61" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FRANCE"		X="34" Y="52" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_FRANCE"		X="25" Y="46" AlternateStart="1" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GEORGIA"		X="93" Y="37" />
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GERMANY"		X="47" Y="58" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GERMANY"		X="38" Y="55" Leader="LEADER_BARBAROSSA"  DisabledByCivilization="CIVILIZATION_GAUL" /> <!-- Aachen -->
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GERMANY"		X="38" Y="55" Leader="LEADER_BARBAROSSA"  DisabledByCivilization="CIVILIZATION_NETHERLANDS" AlternateStart="1" /> <!-- Aachen -->
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GERMANY"		X="47" Y="58" /> <!-- Berlin -->
+		
+		<!--
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GERMANY"		X="50" Y="46" AlternateStart="1" />
+		Vienna
+		-->
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GREECE"		X="60" Y="25" DisabledByLeader="LEADER_GORGO" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GREECE"		X="67" Y="24" AlternateStart="1" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GREECE"  		X="58" Y="21" Leader="LEADER_GORGO" />
@@ -54,7 +60,8 @@
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_OTTOMAN"		X="74"	Y="29" AlternateStart="1" />
 
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_BYZANTIUM"	X="69"	Y="32" />
-		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GAUL"			X="37"	Y="56" />
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GAUL"			X="37"	Y="56"  Leader="LEADER_AMBIORIX" DisabledByCivilization="CIVILIZATION_NETHERLANDS"/> <!-- Tongeren/Aduatuca -->
+		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_GAUL"			X="32"	Y="45" /> <!-- Lugdunum/Gaul-->
 		
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_AKKAD"		X="99"	Y="19" />
 		<Replace MapName="PlayEuropeAgain" Civilization="CIVILIZATION_BOLOGNA"		X="44"	Y="40" />
