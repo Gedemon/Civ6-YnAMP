@@ -254,6 +254,8 @@ local MIN_SCREEN_Y			:number = 768;
 local SCREEN_OFFSET_Y		:number = 61;
 local MIN_SCREEN_OFFSET_Y	:number = -53;
 
+local MAX_SIDEBAR_Y			:number = 960;
+
 -- ===========================================================================
 -- ===========================================================================
 
@@ -1275,8 +1277,8 @@ function RefreshPlayerSlots()
 
 	for i, player_id in ipairs(player_ids) do	
 		if(m_singlePlayerID == player_id) then
-			SetupLeaderPulldown(player_id, Controls, "Basic_LocalPlayerPulldown", "Basic_LocalPlayerCivIcon",  "Basic_LocalPlayerCivIconBG", "Basic_LocalPlayerLeaderIcon", m_BasicTooltipData);
-			SetupLeaderPulldown(player_id, Controls, "Advanced_LocalPlayerPulldown", "Advanced_LocalPlayerCivIcon", "Advanced_LocalPlayerCivIconBG", "Advanced_LocalPlayerLeaderIcon", advancedTooltipData, "Advanced_LocalColorPullDown");
+			SetupLeaderPulldown(player_id, Controls, "Basic_LocalPlayerPulldown", "Basic_LocalPlayerCivIcon",  "Basic_LocalPlayerCivIconBG", "Basic_LocalPlayerLeaderIcon", "Basic_LocalPlayerScrollText", m_BasicTooltipData);
+			SetupLeaderPulldown(player_id, Controls, "Advanced_LocalPlayerPulldown", "Advanced_LocalPlayerCivIcon", "Advanced_LocalPlayerCivIconBG", "Advanced_LocalPlayerLeaderIcon", "Advanced_LocalPlayerScrollText", advancedTooltipData, "Advanced_LocalColorPullDown");
 		else
 			local ui_instance = m_NonLocalPlayerSlotManager:GetInstance();
 			
@@ -1287,7 +1289,7 @@ function RefreshPlayerSlots()
 			end
 			ui_instance.RemoveButton:SetHide(not can_remove);
 			
-			SetupLeaderPulldown(player_id, ui_instance,"PlayerPullDown",nil,nil,nil,advancedTooltipData);
+			SetupLeaderPulldown(player_id, ui_instance,"PlayerPullDown",nil,nil,nil,nil,advancedTooltipData);
 		end
 	end
 
@@ -1690,6 +1692,8 @@ function OnStartButton()
 				end
 			end
 			
+			table.sort(filteredRandomLeaderList) 
+			
 			local shuffledList 	= GetShuffledCopyOfTable(filteredRandomLeaderList)
 			local listIndex		= 1
 		
@@ -2059,8 +2063,15 @@ function Resize()
 		Controls.CreateGameWindow:SetSizeY(MIN_SCREEN_OFFSET_Y + Controls.MainWindow:GetSizeY() - (Controls.ButtonStack:GetSizeY()));
 		Controls.AdvancedOptionsWindow:SetSizeY(MIN_SCREEN_OFFSET_Y + Controls.MainWindow:GetSizeY() - (Controls.ButtonStack:GetSizeY()));
 	end
-	Controls.BasicPlacardContainer:SetSizeY(Controls.CreateGameWindow:GetSizeY());
-	Controls.BasicTooltipContainer:SetSizeY(Controls.CreateGameWindow:GetSizeY());	
+
+	local iSidebarSize = Controls.CreateGameWindow:GetSizeY();
+	if iSidebarSize > MAX_SIDEBAR_Y then
+		iSidebarSize = MAX_SIDEBAR_Y;
+	end
+	Controls.BasicPlacardContainer:SetSizeY(iSidebarSize);
+	Controls.BasicTooltipContainer:SetSizeY(iSidebarSize);
+	Controls.GameModePlacardContainer:SetSizeY(iSidebarSize);
+	Controls.GameModeTooltipContainer:SetSizeY(iSidebarSize);
 end
 
 -- ===========================================================================

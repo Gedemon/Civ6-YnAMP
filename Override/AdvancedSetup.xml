@@ -66,6 +66,7 @@
 															<Image Texture="Controls_CircleBacking45" Size="51,51" Anchor="L,T" Offset="-3,-3"/>
 															<Image ID="Basic_LocalPlayerLeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
 														</Container>
+														<ScrollTextField ID="Basic_LocalPlayerScrollText" Size="200,50" Style="TabFont" Offset="100,0" Anchor="L,C"/>
 													</GridButton>
 												</ButtonData>
 												<GridData Offset="0,45" Texture="Controls_DropdownPanel" InnerPadding="0,6" SliceCorner="10,10" SliceTextureSize="22,22"/>
@@ -84,6 +85,7 @@
 														<Container Size="62,62" Offset="44,-1" Anchor="L,C">
 															<Image ID="LeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
 														</Container>
+														<ScrollTextField ID="ScrollText" Size="200,50" Style="TabFont" Offset="100,0" Anchor="L,C"/>
 													</GridButton>
 												</InstanceData>
 											</PullDown>
@@ -251,6 +253,7 @@
 															<Image Texture="Controls_CircleBacking45" Size="51,51" Anchor="L,T" Offset="-3,-3"/>
 															<Image ID="Advanced_LocalPlayerLeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
 														</Container>
+														<ScrollTextField ID="Advanced_LocalPlayerScrollText" Size="225,50" Style="TabFont" Offset="55,0" Anchor="L,C"/>
 													</GridButton>
 												</ButtonData>
 												<GridData Offset="-70,50" Texture="Controls_DropdownPanel" InnerPadding="0,6" SliceCorner="10,10" SliceTextureSize="22,22"/>
@@ -269,6 +272,7 @@
 														<Container Size="45,45" Offset="70,-1" Anchor="L,C">
 															<Image ID="LeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
 														</Container>
+														<ScrollTextField ID="ScrollText" Size="200,50"   Offset="120,0" Style="TabFont" Anchor="L,C"/>
 													</GridButton>
 												</InstanceData>
 											</PullDown>
@@ -393,6 +397,7 @@
 							<Image Texture="Controls_CircleBacking45" Size="51,51" Anchor="L,T" Offset="-3,-3"/>
 							<Image ID="LeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
 						</Container>
+						<ScrollTextField ID="ScrollText" Size="225,50" Offset="55,0" Style="TabFont"  Anchor="L,C"/>
 					</GridButton>
 				</ButtonData>
 				<GridData Offset="-70,50" Texture="Controls_DropdownPanel" InnerPadding="0,6" SliceCorner="10,10" SliceTextureSize="22,22"/>
@@ -411,6 +416,7 @@
 						<Container Size="45,45" Offset="70,-1" Anchor="L,C">
 							<Image ID="LeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
 						</Container>
+						<ScrollTextField ID="ScrollText" Size="200,50" Offset="120,0" Style="TabFont"  Anchor="L,C"/>
 					</GridButton>
 				</InstanceData>
 
