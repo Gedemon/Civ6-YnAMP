@@ -1129,10 +1129,10 @@
 	</Replace>
 	
 	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_NAME" Language="it_IT">
-		<Text>Antioch</Text>
+		<Text>Venezia</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_DESCRIPTION" Language="it_IT">
-		<Text>Città-stato di Antioch</Text>
+		<Text>Città-stato di Venezia</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_BABYLON_NAME" Language="it_IT">
 		<Text>Babilonia</Text>

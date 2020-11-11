@@ -8,7 +8,7 @@
 	<StartPosition>
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_AMERICA"		X="206" Y="80" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_ARABIA"		X="48" Y="52" />
-		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_ARABIA"		X="40" Y="59" Leader="LEADER_SALADIN" DisabledByCivilization="CIVILIZATION_EGYPT" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_ARABIA"		X="41" Y="58" Leader="LEADER_SALADIN" DisabledByCivilization="CIVILIZATION_EGYPT" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_ARABIA"		X="48" Y="52" Leader="LEADER_SALADIN" AlternateStart="1" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_AUSTRALIA"		X="135" Y="11" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_AZTEC"			X="184" Y="61" />
@@ -34,21 +34,41 @@
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_NUBIA"			X="43" Y="47" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_ROME"			X="26" Y="73" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_RUSSIA"		X="47" Y="93" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_RUSSIA"		X="39" Y="97" Leader="LEADER_PETER_GREAT" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_SCYTHIA"		X="62" Y="87" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_SPAIN"			X="10" Y="71" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_SUMERIA"		X="53" Y="63" />
-		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_PERSIA"		X="61" Y="68" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_PERSIA"		X="59" Y="61" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_POLAND"		X="33" Y="89" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_INDONESIA"		X="112" Y="30" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_KHMER"			X="102" Y="51" />
+		<!-- Rise and Fall -->
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_CREE"			X="185" Y="90" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_NETHERLANDS"	X="20" Y="90" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_GEORGIA"		X="56" Y="75" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_KOREA"			X="120" Y="75" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_MONGOLIA"		X="100" Y="88" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_SCOTLAND"		X="11" Y="99" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_ZULU"			X="38" Y="13" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_MAPUCHE"		X="205" Y="21" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_INDIA"			X="86" Y="61" Leader="LEADER_CHANDRAGUPTA" />
+	
+
 		<!-- Gathering Storm -->
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_SWEDEN"	X="32"	Y="99" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_MALI"		X="9" 	Y="47" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_MAORI"		X="162"	Y="17" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_HUNGARY"	X="32"	Y="81" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_CANADA"	X="206"	Y="87" />
-		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_FRANCE"	X="13"	Y="80" Leader="LEADER_ELEANOR" />
-		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_PHOENICIA"	X="47"	Y="64" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_FRANCE"	X="13"	Y="80" Leader="LEADER_ELEANOR_FRANCE" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_ENGLAND"	X="13"	Y="80" Leader="LEADER_ELEANOR_ENGLAND" />
+		<!--
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_PHOENICIA"	X="47"	Y="64" DisabledByCivilization="CIVILIZATION_ARABIA" />
+		-->
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_PHOENICIA"	X="23"	Y="64"/>
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_INCA"		X="203"	Y="31" />
-		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_OTTOMAN"	X="41"	Y="74" />		
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_OTTOMAN"	X="41"	Y="74" DisabledByCivilization="CIVILIZATION_BYZANTIUM" />			
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_OTTOMAN"	X="45"	Y="72" AlternateStart="1" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_AKKAD"			X="55"	Y="65" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_BOLOGNA"		X="25"	Y="77" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_CAHOKIA"		X="194"	Y="80" />
@@ -62,11 +82,16 @@
 		<Replace MapName="LargestEarthCustom.lua" Civilization="CIVILIZATION_GRAN_COLOMBIA"	X="202"	Y="48" />
 		<Replace MapName="LargestEarthCustom.lua" Civilization="CIVILIZATION_MAYA"	X="193"	Y="58" Leader="LEADER_LADY_SIX_SKY" />
 		<Replace MapName="LargestEarthCustom.lua" Civilization="CIVILIZATION_ETHIOPIA"	X="44"	Y="42" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_BYZANTIUM"	X="41"	Y="74" />	
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_GAUL"	X="20"	Y="87" Leader="LEADER_AMBIORIX" DisabledByCivilization="CIVILIZATION_NETHERLANDS" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_GAUL"			X="18"	Y="79"  Leader="LEADER_AMBIORIX" AlternateStart="1"/>
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_GAUL"	X="18"	Y="79" />	
 	</StartPosition>
 		
 	<!-- Minors from Civ6 -->
 	<StartPosition>		
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_AMSTERDAM"		X="20" Y="90" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_ANTIOCH"		X="36" Y="37" /> <!-- Changed to Venice -->
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_BRUSSELS"		X="19" Y="87" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_BUENOS_AIRES"	X="209" Y="12" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_CARTHAGE"		X="23" Y="64" />
@@ -179,6 +204,7 @@
 	<ExtraPlacement>
 	
 		<Replace MapScript="LargestEarthCustom.lua" Civilization="CIVILIZATION_OTTOMAN"		X="41"	Y="74" TerrainType="TERRAIN_PLAINS" />
+		<Replace MapScript="LargestEarthCustom.lua" Civilization="CIVILIZATION_BYZANTIUM"	X="41"	Y="74" TerrainType="TERRAIN_PLAINS" />
 
 		<!-- +++++++++++++++++++++++++++ -->
 		<!-- LargestEarthCustom Volcanos -->
@@ -388,7 +414,7 @@
 		
 		<Replace MapScript="LargestEarthCustom.lua" X="57" Y="75" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
 		<Replace MapScript="LargestEarthCustom.lua" X="57" Y="76" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
-		<Replace MapScript="LargestEarthCustom.lua" X="58" Y="75" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
+		<Replace MapScript="LargestEarthCustom.lua" X="58" Y="76" FeatureType="FEATURE_GOBUSTAN" TerrainType="TERRAIN_PLAINS" />
 		
 		<Replace MapScript="LargestEarthCustom.lua" X="41" Y="70" FeatureType="FEATURE_PAMUKKALE" TerrainType="TERRAIN_PLAINS_HILLS" />
 		<Replace MapScript="LargestEarthCustom.lua" X="42" Y="70" FeatureType="FEATURE_PAMUKKALE" TerrainType="TERRAIN_PLAINS_HILLS" />

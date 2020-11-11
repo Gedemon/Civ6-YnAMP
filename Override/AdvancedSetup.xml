@@ -66,6 +66,7 @@
 															<Image Texture="Controls_CircleBacking45" Size="51,51" Anchor="L,T" Offset="-3,-3"/>
 															<Image ID="Basic_LocalPlayerLeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
 														</Container>
+														<ScrollTextField ID="Basic_LocalPlayerScrollText" Size="200,50" Style="TabFont" Offset="100,0" Anchor="L,C"/>
 													</GridButton>
 												</ButtonData>
 												<GridData Offset="0,45" Texture="Controls_DropdownPanel" InnerPadding="0,6" SliceCorner="10,10" SliceTextureSize="22,22"/>
@@ -84,6 +85,7 @@
 														<Container Size="62,62" Offset="44,-1" Anchor="L,C">
 															<Image ID="LeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
 														</Container>
+														<ScrollTextField ID="ScrollText" Size="200,50" Style="TabFont" Offset="100,0" Anchor="L,C"/>
 													</GridButton>
 												</InstanceData>
 											</PullDown>
@@ -251,6 +253,7 @@
 															<Image Texture="Controls_CircleBacking45" Size="51,51" Anchor="L,T" Offset="-3,-3"/>
 															<Image ID="Advanced_LocalPlayerLeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
 														</Container>
+														<ScrollTextField ID="Advanced_LocalPlayerScrollText" Size="225,50" Style="TabFont" Offset="55,0" Anchor="L,C"/>
 													</GridButton>
 												</ButtonData>
 												<GridData Offset="-70,50" Texture="Controls_DropdownPanel" InnerPadding="0,6" SliceCorner="10,10" SliceTextureSize="22,22"/>
@@ -269,6 +272,7 @@
 														<Container Size="45,45" Offset="70,-1" Anchor="L,C">
 															<Image ID="LeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
 														</Container>
+														<ScrollTextField ID="ScrollText" Size="200,50"   Offset="120,0" Style="TabFont" Anchor="L,C"/>
 													</GridButton>
 												</InstanceData>
 											</PullDown>
@@ -341,6 +345,7 @@
 
 			<!--Map Selection Window-->
 			<LuaContext ID="MapSelectWindow" FileName="MapSelect" Hidden="1"/>
+			<LuaContext ID="MultiSelectWindow" FileName="MultiSelectWindow" Hidden="1"/>
 
 		</Container><!-- Main Window -->
 
@@ -392,6 +397,7 @@
 							<Image Texture="Controls_CircleBacking45" Size="51,51" Anchor="L,T" Offset="-3,-3"/>
 							<Image ID="LeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
 						</Container>
+						<ScrollTextField ID="ScrollText" Size="225,50" Offset="55,0" Style="TabFont"  Anchor="L,C"/>
 					</GridButton>
 				</ButtonData>
 				<GridData Offset="-70,50" Texture="Controls_DropdownPanel" InnerPadding="0,6" SliceCorner="10,10" SliceTextureSize="22,22"/>
@@ -410,6 +416,7 @@
 						<Container Size="45,45" Offset="70,-1" Anchor="L,C">
 							<Image ID="LeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
 						</Container>
+						<ScrollTextField ID="ScrollText" Size="200,50" Offset="120,0" Style="TabFont"  Anchor="L,C"/>
 					</GridButton>
 				</InstanceData>
 
@@ -437,7 +444,7 @@
       <Container Size="64,64" Anchor="C,T" Offset="0,0">
         <Image Anchor="C,C" Size="44,44" Texture="Circle44_Darker"  Color="0,0,0,50" />
         <Image Anchor="C,C" Size="44,44" Texture="Circle44_Lighter" Color="255,255,255,100" />
-        <Image ID="GameModeIcon" Texture="CivSymbols44" Size="44,44" Anchor="C,C"/>
+        <Image ID="GameModeIcon" Texture="CivSymbols44" Size="44,44" Anchor="C,C" Offset="0,-4"/>
         <Button ID="CheckBox" Texture="Controls_CircleGameMode" Anchor="C,T" Size="64,64"/>
       </Container>
     </Container>
@@ -543,7 +550,7 @@
 
 	<Instance		Name="HeaderInstance">
 		<Grid     ID="Top" Style="DivHeader" Anchor="C,T">
-			<Label  ID="Header"    Style="FontFlair18" FontStyle="glow" ColorSet="ShellHeader" SmallCaps="22" SmallCapsLeading="0" SmallCapsType="EveryWord" Anchor="C,C" Align="Center" Offset="0,1"/>
+			<Label  ID="Header"    Style="FontFlair18" FontStyle="glow" ColorSet="ShellHeader" SmallCaps="22" SmallCapsLeading="0" SmallCapsType="EveryWord" Anchor="C,C" Align="Center" Offset="0,1" WrapWidth="parent-40"/>
 		</Grid>
 	</Instance>
 

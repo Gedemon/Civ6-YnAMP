@@ -1359,16 +1359,16 @@
 	</Replace>
 	
 	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_NAME" Language="pl_PL">
-		<Text>Antiocha</Text>
+		<Text>Wenecja</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_DESCRIPTION" Language="pl_PL">
-		<Text>Antioch city-state</Text>
+		<Text>Wenecja city-state</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_BABYLON_NAME" Language="pl_PL">
 		<Text>Babilon</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_BABYLON_DESCRIPTION" Language="pl_PL">
-		<Text>Babylon city-state</Text>
+		<Text>Babilon city-state</Text>
 	</Replace>
 	
 	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_NAME" Language="pl_PL">
