@@ -1365,10 +1365,10 @@
 		<Text>Wenecja city-state</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_BABYLON_NAME" Language="pl_PL">
-		<Text>Babilon</Text>
+		<Text>Anszan</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_BABYLON_DESCRIPTION" Language="pl_PL">
-		<Text>Babilon city-state</Text>
+		<Text>Anszan city-state</Text>
 	</Replace>
 	
 	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_NAME" Language="pl_PL">

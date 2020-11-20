@@ -1381,10 +1381,10 @@
 		<Text>Ciudad-estado de Venecia</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_BABYLON_NAME" Language="es_ES">
-		<Text>Babilonia</Text>
+		<Text>Anshan</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_BABYLON_DESCRIPTION" Language="es_ES">
-		<Text>Ciudad-estado de Babilonia</Text>
+		<Text>Ciudad-estado de Anshan</Text>
 	</Replace>
 	
 	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_NAME" Language="es_ES">
