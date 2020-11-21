@@ -153,7 +153,7 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_JOHANNESBURG" 		X="58" Y="7" DisabledByCivilization="CIVILIZATION_ZULU" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NALANDA" 	X="78" Y="38" DisabledByLeader="LEADER_CHANDRAGUPTA" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SAMARKAND" 		X="71" Y="46" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_WOLIN" 	X="51" Y="55" isabledByCivilization="CIVILIZATION_GERMANY" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_WOLIN" 	X="51" Y="55" DisabledByCivilization="CIVILIZATION_GERMANY" />
 	</StartPosition>
 	
 	<!--     Regions Positions    -->	
