@@ -15,7 +15,6 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AUSTRALIA"	X="101" Y="11" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AUSTRIA"		X="54" Y="49" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AZTEC"		X="11" Y="34" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BABYLON"		X="66" Y="38" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BRAZIL"		X="30" Y="13" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BYZANTIUM" 	X="58" Y="45" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CARTHAGE" 	X="48" Y="36" />
@@ -27,7 +26,7 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_EGYPT"		X="58" Y="35" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_EGYPT"		X="57" Y="36" Leader="LEADER_CLEOPATRA" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ENGLAND"		X="40" Y="52" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ENGLAND"		X="39" Y="46" Leader="LEADER_ELEANOR_ENGLAND" />
+		<!--Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ENGLAND"		X="39" Y="46" Leader="LEADER_ELEANOR_ENGLAND" /-->
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ETHIOPIA" 	X="64" Y="26" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_FRANCE"		X="42" Y="48" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_FRANCE"		X="39" Y="46" Leader="LEADER_ELEANOR_FRANCE" />
@@ -68,7 +67,7 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SIAM"		X="83" Y="38" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SONGHAI"		X="47" Y="26" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SPAIN"		X="37" Y="38" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SUMERIA"		X="66" Y="39" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SUMERIA"		X="67" Y="38" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SWEDEN"		X="52" Y="61" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_VENICE"		X="51" Y="47" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ZULU"		X="59" Y="6" />
@@ -96,13 +95,14 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GAUL"		X="44"	Y="51" Leader="LEADER_AMBIORIX" DisabledByCivilization="CIVILIZATION_NETHERLANDS"/>
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GAUL"			X="43"	Y="44"  Leader="LEADER_AMBIORIX" AlternateStart="1"/>
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GAUL"		X="43"	Y="44" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BABYLON_STK"	X="66"	Y="40" />
 	</StartPosition>
 	
 	<!-- City States -->
 	<StartPosition>
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_ANTIOCH"		X="51" Y="47" /> <!-- Changed to Venice -->
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AMSTERDAM"	X="44" Y="53" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BABYLON"		X="66" Y="39" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BABYLON"		X="67" Y="41" DisabledByCivilization="CIVILIZATION_PERSIA" /> <!-- Changed to Anshan -->
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BRUSSELS"		X="43" Y="51" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BUENOS_AIRES"	X="27" Y="7" DisabledByLeader="LEADER_LAUTARO" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BUENOS_AIRES"	X="28" Y="6" AlternateStart="1" />
@@ -147,6 +147,13 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SINGAPORE" 	X="83" Y="33" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_TARUGA" 		X="51" Y="22" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_VATICAN_CITY" 	X="50" Y="42" DisabledByLeader="LEADER_TRAJAN" />
+
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_AYUTTHAYA" 		X="83" Y="36" DisabledByCivilization="CIVILIZATION_KHMER" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CHINGUETTI" 		X="40" Y="28" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_JOHANNESBURG" 		X="58" Y="7" DisabledByCivilization="CIVILIZATION_ZULU" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NALANDA" 	X="78" Y="38" DisabledByLeader="LEADER_CHANDRAGUPTA" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_SAMARKAND" 		X="71" Y="46" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_WOLIN" 	X="51" Y="55" DisabledByCivilization="CIVILIZATION_GERMANY" />
 	</StartPosition>
 	
 	<!--     Regions Positions    -->	

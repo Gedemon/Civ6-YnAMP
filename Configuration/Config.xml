@@ -292,6 +292,14 @@
 		<Replace ParameterId="LEADER_MINOR_CIV_TARUGA"		Name="LOC_CIVILIZATION_TARUGA_NAME"		Description="LOC_CIVILIZATION_TARUGA_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_TARUGA"	GroupId="MapOptions" SortIndex="87"/>
 		<Replace ParameterId="LEADER_MINOR_CIV_VATICAN_CITY"		Name="LOC_CIVILIZATION_VATICAN_CITY_NAME"		Description="LOC_CIVILIZATION_VATICAN_CITY_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_VATICAN_CITY"	GroupId="MapOptions" SortIndex="87"/>
 		<!-- -->
+		<!--	NF4 list -->
+		<Replace ParameterId="LEADER_MINOR_CIV_AYUTTHAYA"		Name="LOC_CIVILIZATION_AYUTTHAYA_NAME"		Description="LOC_CIVILIZATION_AYUTTHAYA_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_AYUTTHAYA"	GroupId="MapOptions" SortIndex="87"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_CHINGUETTI"		Name="LOC_CIVILIZATION_CHINGUETTI_NAME"		Description="LOC_CIVILIZATION_CHINGUETTI_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_CHINGUETTI"	GroupId="MapOptions" SortIndex="87"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_JOHANNESBURG"		Name="LOC_CIVILIZATION_JOHANNESBURG_NAME"		Description="LOC_CIVILIZATION_JOHANNESBURG_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_JOHANNESBURG"	GroupId="MapOptions" SortIndex="87"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_NALANDA"		Name="LOC_CIVILIZATION_NALANDA_NAME"		Description="LOC_CIVILIZATION_NALANDA_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_NALANDA"	GroupId="MapOptions" SortIndex="87"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_SAMARKAND"		Name="LOC_CIVILIZATION_SAMARKAND_NAME"		Description="LOC_CIVILIZATION_SAMARKAND_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_SAMARKAND"	GroupId="MapOptions" SortIndex="87"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_WOLIN"		Name="LOC_CIVILIZATION_WOLIN_NAME"		Description="LOC_CIVILIZATION_WOLIN_DESCRIPTION"			Domain="bool" DefaultValue="0"	ConfigurationGroup="Map" ConfigurationId="LEADER_MINOR_CIV_WOLIN"	GroupId="MapOptions" SortIndex="87"/>
+		<!-- -->
 	</Parameters>
 	
 	<DomainValues>
@@ -361,7 +369,12 @@
 		<Replace ParameterId="LEADER_MINOR_CIV_TARUGA"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="NotEquals" 	ConfigurationValue="RANDOM"/>
 		<Replace ParameterId="LEADER_MINOR_CIV_VATICAN_CITY"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="NotEquals" 	ConfigurationValue="RANDOM"/>
 
-
+		<Replace ParameterId="LEADER_MINOR_CIV_AYUTTHAYA"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="NotEquals" 	ConfigurationValue="RANDOM"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_CHINGUETTI"	ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="NotEquals" 	ConfigurationValue="RANDOM"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_JOHANNESBURG"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="NotEquals" 	ConfigurationValue="RANDOM"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_NALANDA"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="NotEquals" 	ConfigurationValue="RANDOM"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_SAMARKAND"			ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="NotEquals" 	ConfigurationValue="RANDOM"/>
+		<Replace ParameterId="LEADER_MINOR_CIV_WOLIN"		ConfigurationGroup="Map" ConfigurationId="SelectCityStates" 		Operator="NotEquals" 	ConfigurationValue="RANDOM"/>
 		
 		<!--	Require R&F -->
 		<Replace ParameterId="LEADER_MINOR_CIV_ANTIOCH"			ConfigurationGroup="Map" ConfigurationId="XP1" 		Operator="Equals" 	ConfigurationValue="1"/>

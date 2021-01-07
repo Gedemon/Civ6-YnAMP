@@ -1129,16 +1129,16 @@
 	</Replace>
 	
 	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_NAME" Language="ko_KR">
-		<Text>안디옥</Text>
+		<Text>베네치아</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_DESCRIPTION" Language="ko_KR">
-		<Text>도시국가 안디옥</Text>
+		<Text>도시국가 베네치아</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_BABYLON_NAME" Language="ko_KR">
-		<Text>바빌론</Text>
+		<Text>안샨</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_BABYLON_DESCRIPTION" Language="ko_KR">
-		<Text>도시국가 바빌론</Text>
+		<Text>도시국가 안샨</Text>
 	</Replace>
 	
 	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_NAME" Language="ko_KR">

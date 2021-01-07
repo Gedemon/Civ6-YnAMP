@@ -1381,10 +1381,10 @@
 		<Text>Venice city-state</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_BABYLON_NAME" Language="en_US">
-		<Text>Babylon</Text>
+		<Text>Anshan</Text>
 	</Replace>
 	<Replace Tag="LOC_CIVILIZATION_BABYLON_DESCRIPTION" Language="en_US">
-		<Text>Babylon city-state</Text>
+		<Text>Anshan city-state</Text>
 	</Replace>
 	
 	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_NAME" Language="en_US">
@@ -1459,6 +1459,43 @@
   </Replace>
   <Replace Tag="LOC_CIVILIZATION_VATICAN_CITY_DESCRIPTION" Language="en_US">
     <Text>Vatican City city-state</Text>
+  </Replace>
+
+   <Replace Tag="LOC_CIVILIZATION_AYUTTHAYA_NAME" Language="en_US">
+    <Text>Ayutthaya</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_CHINGUETTI_NAME" Language="en_US">
+    <Text>Chinguetti</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_JOHANNESBURG_NAME" Language="en_US">
+    <Text>Johannesburg</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_NALANDA_NAME" Language="en_US">
+    <Text>Nalanda</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_SAMARKAND_NAME" Language="en_US">
+    <Text>Samarkand</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_WOLIN_NAME" Language="en_US">
+    <Text>Wolin</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_AYUTTHAYA_DESCRIPTION" Language="en_US">
+    <Text>Ayutthaya city-state</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_CHINGUETTI_DESCRIPTION" Language="en_US">
+    <Text>Chinguetti city-state</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_JOHANNESBURG_DESCRIPTION" Language="en_US">
+    <Text>Johannesburg city-state</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_NALANDA_DESCRIPTION" Language="en_US">
+    <Text>Nalanda city-state</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_SAMARKAND_DESCRIPTION" Language="en_US">
+    <Text>Samarkand city-state</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_WOLIN_DESCRIPTION" Language="en_US">
+    <Text>Wolin city-state</Text>
   </Replace>
 
     <Replace Tag="LOC_SETUP_CREATE_MAP" Language="en_US">

@@ -37,7 +37,7 @@
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_MALI"		X="11" 	Y="2" />
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_HUNGARY"	X="43"	Y="40" />
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_FRANCE"	X="24"	Y="39" Leader="LEADER_ELEANOR_FRANCE" />
-	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_ENGLAND"	X="24"	Y="39" Leader="LEADER_ELEANOR_ENGLAND" />
+	<!--Replace MapName="LargeEurope" Civilization="CIVILIZATION_ENGLAND"	X="24"	Y="39" Leader="LEADER_ELEANOR_ENGLAND" /-->
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_PHOENICIA"	X="61"	Y="19" />
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_OTTOMAN"	X="53"	Y="31" DisabledByCivilization="CIVILIZATION_BYZANTIUM" />		
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_OTTOMAN"	X="57"	Y="29" AlternateStart="1" />
@@ -49,6 +49,7 @@
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_GAUL"			X="29"	Y="45" Leader="LEADER_AMBIORIX" DisabledByCivilization="CIVILIZATION_FRANCE"  />
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_GAUL"			X="27"	Y="37"  Leader="LEADER_AMBIORIX" AlternateStart="1"/>
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_GAUL"			X="27"	Y="37" />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_BABYLON_STK"	X="71"	Y="18" />
   </StartPosition>
 
   <!-- Minors -->
@@ -56,7 +57,7 @@
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_AMSTERDAM"	X="29" Y="49" />
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_ANTIOCH"		X="36" Y="37" /> <!-- Changed to Venice -->
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_ARMAGH"		X="18" Y="53"/>
-    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_BABYLON"		X="71" Y="18" />
+    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_BABYLON"		X="77" Y="17" DisabledByCivilization="CIVILIZATION_PERSIA"  /> <!-- Changed to Anshan -->
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_BRUSSELS"		X="29" Y="46" />
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_CARTHAGE"		X="34" Y="22" />
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_GENEVA"		X="29" Y="39" />
@@ -72,6 +73,8 @@
 
     <!-- New Horizon DLC -->
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_VATICAN_CITY" X="36" Y="32" DisabledByLeader="LEADER_TRAJAN" />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_CHINGUETTI" 		X="7" Y="1" />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_WOLIN" 	X="39" Y="51" />
   </StartPosition>
 
 	<ExtraPlacement>
