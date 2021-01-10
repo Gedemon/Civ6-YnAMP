@@ -11,6 +11,10 @@
       <Text>Start Position Balance</Text>
     </Replace>
 	
+	<Replace Tag="LOC_CITYSTATE_COUNT_DESCRIPTION" Language="en_US">
+		<Text>The number of City-States to include in the game.[NEWLINE][NEWLINE]This number is limited by the number of slots already used, the game can handle 64 slots, one slot is used for the Barbarians, one slot is used for the Free Cities.[NEWLINE][NEWLINE]There are 62 slots left available for the total of City-States and Civilizations, when that total is higher than 62, the number of City-States will be lowered to respect the limit.</Text>
+	</Replace>
+	
 	<!-- New entries -->
     
 	<Replace Tag="LOC_YNAGEM_NAME" Language="en_US">
@@ -981,34 +985,37 @@
     </Replace>
 	
     <Replace Tag="LOC_CITYSTATES_OPTIONS_NAME" Language="en_US">
-      <Text>City States Selection</Text>
+      <Text>CS Selection Usage</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_DEFAULT_NAME" Language="en_US">
+      <Text>Civ6 Default</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CS_OPTION_DEFAULT_DESCRIPTION" Language="en_US">
-      <Text>City States are selected by the Civ6 Map Generator (random)</Text>
+      <Text>Use the default Civ6 method for City States selection, when you select less CS in the list than the slider value only the selected City States will have a slot in game.</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CS_OPTION_SELECTION_NAME" Language="en_US">
       <Text>Selection and Random</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CS_OPTION_SELECTION_DESCRIPTION" Language="en_US">
-      <Text>Select which City States you want to be placed, the total number of CS will still be capped at the slider value and when you select less CS in the list than the slider value, the empty slots will be filled with random CS. If you select more CS than the slider value, the mod will pick a limited random list from your selection.[NEWLINE][NEWLINE]Note that DLCs, Expansions, scenarios and mods can add or remove City States, the list does not reflect which ones are actually available.</Text>
+      <Text>Your City States selection will be placed in priority, the total number of CS will still be capped at the slider value and when you select less CS in the list than the slider value, the empty slots will be filled with random CS. If you select more CS than the slider value, the mod will pick a limited random list from your selection.</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CS_OPTION_UNCAPPED_SELECTION_NAME" Language="en_US">
       <Text>Uncapped Selection</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CS_OPTION_UNCAPPED_SELECTION_DESCRIPTION" Language="en_US">
-      <Text>Select which City States you want to be placed on the map from a list, the mod will try to find a slot for all selected City States, ignoring the slider value when you select more. When you select less CS in the list than the slider value, the empty slots will be filled with random CS.[NEWLINE][NEWLINE]Note that DLCs, Expansions, scenarios and mods can add or remove City States, the list does not reflect which ones are actually available.</Text>
+      <Text>All the City States of your selection will be placed on the map from a list, up to the maximum allowed players. The mod will try to find a slot for all selected City States, ignoring the slider value when you select more. When you select less CS in the list than the slider value, the empty slots will be filled with random CS.</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CS_OPTION_ONLY_SELECTION_NAME" Language="en_US">
       <Text>Only Selection</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CS_OPTION_ONLY_SELECTION_DESCRIPTION" Language="en_US">
-      <Text>Select which City States you want to be placed on the map from a list, the mod will try to find a slot only for the selected City States, ignoring the slider value when you select more or less.[NEWLINE][NEWLINE]Note that DLCs, Expansions, scenarios and mods can add or remove City States, the list does not reflect which ones are actually available.</Text>
+      <Text>Only the City States from your selection will be placed on the map, up to the maximum allowed players. The mod will try to find a slot only for the selected City States, ignoring the slider value when you select more or less.</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CS_OPTION_EXCLUSION_NAME" Language="en_US">
       <Text>Exclusion List</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CS_OPTION_EXCLUSION_DESCRIPTION" Language="en_US">
-      <Text>The Selection will be used in exclusion mode, YnAMP will try to find a slot only for the unselected City States, up to the slider value.[NEWLINE][NEWLINE]Note that DLCs, Expansions, scenarios and mods can add or remove City States, the list does not reflect which ones are actually available.</Text>
+      <Text>Your selection will be used in exclusion mode, YnAMP will try to find a slot only for the unselected City States, up to the slider value.</Text>
     </Replace>
 	
     <Replace Tag="LOC_XP1_CHECK_NAME" Language="en_US">

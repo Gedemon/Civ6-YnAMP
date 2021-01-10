@@ -107,7 +107,7 @@ function SetGlobals()
 
 	g_OffsetX 				= MapConfiguration.GetValue("StartX") or 0
 	g_OffsetY 				= MapConfiguration.GetValue("StartY") or 0
-	bUseOffset				= (g_OffsetX + g_OffsetY > 0) and (MapConfiguration.GetValue("StartX") ~= MapConfiguration.GetValue("EndX")) and (MapConfiguration.GetValue("StartY") ~= MapConfiguration.GetValue("EndY"))
+	bUseOffset				= (g_OffsetX + g_OffsetY > 0) --and (MapConfiguration.GetValue("StartX") ~= MapConfiguration.GetValue("EndX")) and (MapConfiguration.GetValue("StartY") ~= MapConfiguration.GetValue("EndY"))
 
 	g_WidthFactor 	= g_LargestMapWidth / g_iW
 	g_HeightFactor 	= g_LargestMapHeight / g_iH
