@@ -11,7 +11,7 @@
       <Text>Баланс стартовой позиции</Text>
     </Replace>
 	
-    <Replace Tag="LOC_CITYSTATE_COUNT_DESCRIPTION" Language="en_US">
+    <Replace Tag="LOC_CITYSTATE_COUNT_DESCRIPTION" Language="ru_RU">
       <Text>Количество городов-государств, которые нужно включить в игру.[NEWLINE][NEWLINE]Это число ограничено количеством уже используемых ячеек, игра может обрабатывать 64 ячейки, одна ячейка используется для варваров, одна ячейка используется для свободных городов.[NEWLINE][NEWLINE]Для общего числа городов-государств и цивилизаций осталось 62 слота, и когда это общее число превысит 62, число городов-государств будет уменьшено, чтобы соответствовать пределу.</Text>
     </Replace>
 	
@@ -987,7 +987,7 @@
     <Replace Tag="LOC_CITYSTATES_OPTIONS_NAME" Language="ru_RU">
       <Text>Метод выбора ГГ</Text>
     </Replace>
-	<Replace Tag="LOC_MAP_CS_OPTION_DEFAULT_NAME" Language="en_US">
+	<Replace Tag="LOC_MAP_CS_OPTION_DEFAULT_NAME" Language="ru_RU">
       <Text>Civ6 по умолчанию</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CS_OPTION_DEFAULT_DESCRIPTION" Language="ru_RU">
