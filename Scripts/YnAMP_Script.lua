@@ -24,7 +24,6 @@ local CityPosition			= {} -- helper to get the first defined position in the cit
 
 local NotCityPlot			= {} -- helper to store all plots that are too close from other cities
 local PlayersSettings		= {} -- player specific setting and variables
-local CivTypePlayerID 		= {} -- helper to get playerID <-> CivilizationType
 local RouteIndexForEra		= {} -- helper to get the best RouteType for a specific era
 local IsTemporaryStartPos	= {} -- helper to check if a Civ "alive" was placed only to prevent the crash from civilizations without starting position
 local AliveList				= {} -- helper to get the list of civilization minus the fake starting position civs
@@ -118,18 +117,6 @@ for row in GameInfo.CityMap() do
 		else
 			print("ERROR : no name at row "..tostring(row.Index + 1))
 		end
-	end
-end
-
--- Initialize players tables
-print("Pairing Civilization Type with PlayerIDs...")
-for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do -- for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
-	local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
-	if CivilizationTypeName then
-		CivTypePlayerID[CivilizationTypeName]	= iPlayer
-		CivTypePlayerID[iPlayer] 				= CivilizationTypeName
-	else
-		print("WARNING for playerID #"..tostring(iPlayer).." : CivilizationTypeName is NIL")
 	end
 end
 

@@ -88,6 +88,27 @@ g_LatitudeBorderOffset	= 5		-- to allows border to be a but norther or souther t
 g_ExtraRange 			= 0		-- Used when the reference maps is smaller than the actual map
 
 
+-- ===========================================================================
+-- helper tables
+--
+-- Those helpers are used for both the City AutoNaming and some of the Scenario generation options (CityMap placement or with the "Import" option when no position is defined in the Scenario)
+-- ===========================================================================
+
+CivTypePlayerID 		= {} -- helper to get playerID <-> CivilizationType
+
+-- Initialize players tables
+print("Pairing Civilization Type with PlayerIDs...")
+for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do -- for _, iPlayer in ipairs(PlayerManager.GetWasEverAliveMajorIDs()) do
+	local CivilizationTypeName = PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+	if CivilizationTypeName then
+		CivTypePlayerID[CivilizationTypeName]	= iPlayer
+		CivTypePlayerID[iPlayer] 				= CivilizationTypeName
+	else
+		print("WARNING for playerID #"..tostring(iPlayer).." : CivilizationTypeName is NIL")
+	end
+end
+
+
 ------------------------------------------------------------------------------
 -- Set globals
 ------------------------------------------------------------------------------
