@@ -21,6 +21,10 @@ YnAMP_Loading 	= ExposedMembers.YnAMP_Loading
 -- Defines
 ------------------------------------------------------------------------------
 
+mapName 		= MapConfiguration.GetValue("MapName")
+mapScript		= MapConfiguration.GetValue("MAP_SCRIPT")
+scenarioName 	= MapConfiguration.GetValue("ScenarioType")
+
 bUseRelativePlacement 	= MapConfiguration.GetValue("UseRelativePlacement")
 bUseRelativeFixedTable 	= bUseRelativePlacement and MapConfiguration.GetValue("UseRelativeFixedTable")
 g_ReferenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth") or 180
@@ -394,7 +398,7 @@ function ExportMap()
 	
 	-- export Scenario
 	local scenarioString 	= ScenarioName and "ScenarioName=\""..tostring(ScenarioName).."\"" or ""
-	local mapString 		= ScenarioName and "ScenarioName=\""..tostring(ScenarioName).."\"" or ""
+	local mapString 		= mapName and "MapName=\""..tostring(mapName).."\"" or ""
 	local stringTable 		= {}
 	local cityNames 		= {}
 	local pPlot

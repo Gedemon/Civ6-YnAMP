@@ -11,8 +11,6 @@ include "MapEnums"
 include "PlotIterators"
 include "YnAMP_Common"
 
-local mapName 	= MapConfiguration.GetValue("MapName")
-local mapScript = MapConfiguration.GetValue("MAP_SCRIPT")
 print ("Map Name = " .. tostring(mapName))
 print ("Map Script = " .. tostring(mapScript))
 
@@ -919,7 +917,6 @@ if MapConfiguration.GetValue("ScenarioType") ~= "SCENARIO_NONE" then --and not G
 
 -- Scenario Settings
 local startingEraType			= GameInfo.Eras[GameConfiguration.GetStartEra()].EraType
-local scenarioName 				= MapConfiguration.GetValue("ScenarioType")
 
 local cityPlacement 			= MapConfiguration.GetValue("CityPlacement")
 local borderPlacement			= MapConfiguration.GetValue("BorderPlacement")
