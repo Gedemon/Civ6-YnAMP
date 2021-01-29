@@ -75,6 +75,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_GAUL"		X="14"	Y="63" /> <!-- Lyon -->
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BABYLON_STK"	X="40"	Y="51" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_VIETNAM"	X="76"	Y="47" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MONGOLIA"	X="83"	Y="68" Leader="LEADER_KUBLAI_KHAN_MONGOLIA" />
 	</StartPosition>	
 	
 	<!-- Minors -->
