@@ -116,6 +116,7 @@
 			<File>Gameplay/GamePlayText_ja_JP.xml</File>
 			<File>Gameplay/GamePlayText_ko_KR.xml</File>
 			<File>Gameplay/GamePlayText_pl_PL.xml</File>
+			<File>Gameplay/GamePlayText_ru_RU.xml</File>
 		</UpdateText>
 		<UpdateColors id="YNAMP_COLORS">
            	<Properties>
@@ -171,6 +172,7 @@
 				<File>Configuration/ConfigText_ko_KR.xml</File>
 				<File>Configuration/ConfigText_pl_PL.xml</File>
 				<File>Configuration/ConfigText_es_ES.xml</File>
+				<File>Configuration/ConfigText_ru_RU.xml</File>
 		</UpdateText>
 		<ImportFiles id="YNAMP_SETTING_IMPORT">
            	<Properties>
@@ -208,21 +210,21 @@
             <ko_KR>실제 혹은 문화적 연관성이 있는 시작 지점을 보유한 지도들입니다.</ko_KR>
             <pl_PL>Mapy z Prawdziwymi lub Powiązanymi Kulturowo Pozycjami Startowymi.</pl_PL>
             <pt_BR>Maps with True or Culturally Linked Start Locations.</pt_BR>
-            <ru_RU>Maps with True or Culturally Linked Start Locations.</ru_RU>
+            <ru_RU>Карты с истинными или культурно связанными начальными стартовыми позициями.</ru_RU>
 			<zh_Hans_CN>话不多说！再来一回合！</zh_Hans_CN>
 			<zh_Hant_HK>帶有現實世界或人文地理關聯出生地的地圖包。</zh_Hant_HK>
 		</Text>
 		<Text id="LOC_YNAMP_DESCRIPTION">
-			<en_US>Maps with True or Culturally Linked Starting Location and custom options.</en_US>
-            <de_DE>Maps with True or Culturally Linked Starting Location and custom options.</de_DE>
-            <es_ES>Mapas con posiciones de inicio reales o culturalmente ligadas y con opciones personalizadas.</es_ES>
-            <fr_FR>Maps with True or Culturally Linked Starting Location and custom options.</fr_FR>
-            <it_IT>Maps with True or Culturally Linked Starting Location and custom options.</it_IT>
-            <ja_JP>史実と同じ場所や文化が近い文明の付近からプレイを始めるマップです。多数のカスタムオプションあり。</ja_JP>
-            <ko_KR>실제 혹은 문화적 연관성이 있는 시작 지점을 보유한 지도들입니다.</ko_KR>
-            <pl_PL>Mapy z Prawdziwymi lub Powiązanymi Kulturowo Pozycjami Startowymi oraz dodatkowymi ustawieniami.</pl_PL>
-            <pt_BR>Maps with True or Culturally Linked Starting Location and custom options.</pt_BR>
-            <ru_RU>Maps with True or Culturally Linked Starting Location and custom options.</ru_RU>
+			<en_US>Maps with True or Culturally Linked Starting Location and custom options.[NEWLINE][NEWLINE][COLOR_RED]You need to restart the game when you activate or deactivate the mod[ENDCOLOR][NEWLINE][NEWLINE]The Advanced Setup Screen will show missing or incorrect options if you don't do it.</en_US>
+            <de_DE>Maps with True or Culturally Linked Starting Location and custom options.[NEWLINE][NEWLINE][COLOR_RED]You need to restart the game when you activate or deactivate the mod[ENDCOLOR][NEWLINE][NEWLINE]The Advanced Setup Screen will show missing or incorrect options if you don't do it.</de_DE>
+            <es_ES>Mapas con posiciones de inicio reales o culturalmente ligadas y con opciones personalizadas.[NEWLINE][NEWLINE][COLOR_RED]You need to restart the game the first time you activate or deactivate the mod[ENDCOLOR][NEWLINE][NEWLINE]The Advanced Setup Screen will show missing or incorrect options if you don't do it.</es_ES>
+            <fr_FR>Maps with True or Culturally Linked Starting Location and custom options.[NEWLINE][NEWLINE][COLOR_RED]You need to restart the game the first time you activate or deactivate the mod[ENDCOLOR][NEWLINE][NEWLINE]The Advanced Setup Screen will show missing or incorrect options if you don't do it.</fr_FR>
+            <it_IT>Maps with True or Culturally Linked Starting Location and custom options.[NEWLINE][NEWLINE][COLOR_RED]You need to restart the game the first time you activate or deactivate the mod[ENDCOLOR][NEWLINE][NEWLINE]The Advanced Setup Screen will show missing or incorrect options if you don't do it.</it_IT>
+            <ja_JP>史実と同じ場所や文化が近い文明の付近からプレイを始めるマップです。多数のカスタムオプションあり。[NEWLINE][NEWLINE][COLOR_RED]You need to restart the game the first time you activate or deactivate the mod[ENDCOLOR][NEWLINE][NEWLINE]The Advanced Setup Screen will show missing or incorrect options if you don't do it.</ja_JP>
+            <ko_KR>실제 혹은 문화적 연관성이 있는 시작 지점을 보유한 지도들입니다.[NEWLINE][NEWLINE][COLOR_RED]You need to restart the game the first time you activate or deactivate the mod[ENDCOLOR][NEWLINE][NEWLINE]The Advanced Setup Screen will show missing or incorrect options if you don't do it.</ko_KR>
+            <pl_PL>Mapy z Prawdziwymi lub Powiązanymi Kulturowo Pozycjami Startowymi oraz dodatkowymi ustawieniami.[NEWLINE][NEWLINE][COLOR_RED]You need to restart the game the first time you activate or deactivate the mod[ENDCOLOR][NEWLINE][NEWLINE]The Advanced Setup Screen will show missing or incorrect options if you don't do it.</pl_PL>
+            <pt_BR>Maps with True or Culturally Linked Starting Location and custom options.[NEWLINE][NEWLINE][COLOR_RED]You need to restart the game the first time you activate or deactivate the mod[ENDCOLOR][NEWLINE][NEWLINE]The Advanced Setup Screen will show missing or incorrect options if you don't do it.</pt_BR>
+            <ru_RU>Карты с истинными или культурно связанными начальными стартовыми позициями, а также пользовательскими настройками.[NEWLINE][NEWLINE][COLOR_RED]Вам нужно перезапустить игру при первой активации или деактивации мода[ENDCOLOR][NEWLINE][NEWLINE]Экран дополнительных настроек покажет отсутствующие или неправильные параметры, если вы этого не сделаете.</ru_RU>
 			<zh_Hans_CN>模拟真实世界中的文明开局，包含各种大小的真实世界地图、部分优化设置及一些高自由度配置的作死地图。
 			[NEWLINE][NEWLINE][NEWLINE]
 			_________________________________________________
@@ -232,8 +234,9 @@
 			[NEWLINE]例：XXXX → XXXX 古城
 			[NEWLINE]
 			_________________________________________________
-			[NEWLINE][COLOR_Grey][SIZE_10]城市名称仅供参考[ENDCOLOR][SIZE_16]</zh_Hans_CN>
-			<zh_Hant_HK>帶有現實世界或人文地理關聯出生地，以及自定義選項的地圖包。</zh_Hant_HK>
+			[NEWLINE][COLOR_Grey][SIZE_10]城市名称仅供参考[ENDCOLOR][SIZE_16]
+			[NEWLINE][NEWLINE][COLOR_RED]You need to restart the game the first time you activate or deactivate the mod[ENDCOLOR][NEWLINE][NEWLINE]The Advanced Setup Screen will show missing or incorrect options if you don't do it.</zh_Hans_CN>
+			<zh_Hant_HK>帶有現實世界或人文地理關聯出生地，以及自定義選項的地圖包。[NEWLINE][NEWLINE][COLOR_RED]You need to restart the game the first time you activate or deactivate the mod[ENDCOLOR][NEWLINE][NEWLINE]The Advanced Setup Screen will show missing or incorrect options if you don't do it.</zh_Hant_HK>
 		</Text>
 	</LocalizedText>
 	
@@ -261,6 +264,7 @@
 		<File>Configuration/ConfigText_ko_KR.xml</File>
 		<File>Configuration/ConfigText_pl_PL.xml</File>
 		<File>Configuration/ConfigText_es_ES.xml</File>
+		<File>Configuration/ConfigText_ru_RU.xml</File>
 		<File>Gameplay/Tables.sql</File>
 		<File>Gameplay/GamePlay.xml</File>
 		<File>Gameplay/GamePlayXP2.xml</File>
@@ -275,6 +279,7 @@
 		<File>Gameplay/GamePlayText_ko_KR.xml</File>
 		<File>Gameplay/GamePlayText_pl_PL.xml</File>
 		<File>Gameplay/GamePlayText_es_ES.xml</File>
+		<File>Gameplay/GamePlayText_ru_RU.xml</File>
 		<File>Gameplay/Scenarios.xml</File>
 		<File>Maps/GiantEarth/Map.xml</File>
 		<File>Maps/GiantEarth/CityMap.xml</File>

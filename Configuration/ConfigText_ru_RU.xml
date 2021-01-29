@@ -1,0 +1,1565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+  
+    <!-- Replacing -->
+	
+    <Replace Tag="LOC_MAP_RESOURCES_NAME" Language="ru_RU">
+      <Text>Количество ресурсов</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_START_POSITION_NAME" Language="ru_RU">
+      <Text>Баланс стартовой позиции</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_CITYSTATE_COUNT_DESCRIPTION" Language="ru_RU">
+      <Text>Количество городов-государств, которые нужно включить в игру.[NEWLINE][NEWLINE]Это число ограничено количеством уже используемых ячеек, игра может обрабатывать 64 ячейки, одна ячейка используется для варваров, одна ячейка используется для свободных городов.[NEWLINE][NEWLINE]Для общего числа городов-государств и цивилизаций осталось 62 слота, и когда это общее число превысит 62, число городов-государств будет уменьшено, чтобы соответствовать пределу.</Text>
+    </Replace>
+	
+    <!-- New entries -->
+    
+    <Replace Tag="LOC_YNAGEM_NAME" Language="ru_RU">
+      <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - [COLOR_RED]Гигантская Земля[ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAGEM_DESC" Language="ru_RU">
+      <Text>Genghis Kai's GEM (Hormigas версия) (180x94 - Гигантская)[NEWLINE][ICON_Exclamation] [COLOR_RED]НЕСТАБИЛЬНА в поздней игре[ENDCOLOR][NEWLINE]Понизьте настройки графики, чтобы уменьшить случайные падения.[NEWLINE]Рекомендуется 6+ Гб видеопамяти</Text>
+    </Replace>
+    <Replace Tag="LOC_GREATESTEARTH_NAME" Language="ru_RU">
+      <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - Величайшая карта Земли</Text>
+    </Replace>
+    <Replace Tag="LOC_GREATESTEARTH_DESC" Language="ru_RU">
+      <Text>Величайшая карта Земли от djvandyke (104x64 - Большая)</Text>
+    </Replace>
+    <Replace Tag="LOC_PLAYEUROPEAGAIN_NAME" Language="ru_RU">
+      <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - Снова игра в Европе</Text>
+    </Replace>
+    <Replace Tag="LOC_PLAYEUROPEAGAIN_DESC" Language="ru_RU">
+      <Text>Европа от NiRv4n4 (Hormigas версия) (108x98 - Огромная)</Text>
+    </Replace>
+	<Replace Tag="LOC_LARGE_EUROPE_NAME" Language="ru_RU">
+      <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - Большая Европа</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGE_EUROPE_DESC" Language="ru_RU">
+      <Text>Большая Европа от Dieter VonClam (79x73 - Большая)</Text>
+    </Replace>
+    <Replace Tag="LOC_TERRAMAP_NAME" Language="ru_RU">
+      <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - Карта Терры</Text>
+    </Replace>
+    <Replace Tag="LOC_TERRAMAP_DESC" Language="ru_RU">
+      <Text>Карта с настраиваемым размещением суши на основе масштабируемой Земли</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGESTEARTHCUSTOM_NAME" Language="ru_RU">
+      <Text>[COLOR_Civ6Blue]YnAMP[ENDCOLOR] - [COLOR_RED]Крупнейшая Земля с настройками[ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_LARGESTEARTHCUSTOM_DESC" Language="ru_RU">
+      <Text>Крупнейшая Земля с настройками (230x116 - Абсурдная)[NEWLINE][ICON_Exclamation] [COLOR_RED]НЕ ЗАГРУЖАЙТЕ В ПОЛНОМ РАЗМЕРЕ![ENDCOLOR][NEWLINE]Используйте пользовательские параметры, чтобы установить игру на меньших областях карты.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_NAME" Language="ru_RU">
+      <Text>Размещение цивилизации</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATION_PLACEMENT_DESCRIPTION" Language="ru_RU">
+      <Text>Как расположены цивилизации на карте</Text>
+    </Replace>
+    <Replace Tag="LOC_CULTURALLY_LINKED_START_NAME" Language="ru_RU">
+      <Text>Связка стартовых позиций</Text>
+    </Replace>
+    <Replace Tag="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Language="ru_RU">
+      <Text>Культурно-связанные стартовые позиции</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_RANDOM_NAME" Language="ru_RU">
+      <Text>Случайно</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_DESCRIPTION" Language="ru_RU">
+      <Text>Не пытаться группировать цивилизации по этническому признаку</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_NAME" Language="ru_RU">
+      <Text>Культурно</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_DESCRIPTION" Language="ru_RU">
+      <Text>Попытаться сгруппировать цивилизации по этническому признаку на стартовых позициях</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_NAME" Language="ru_RU">
+      <Text>TSL дальность замены</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_DESCRIPTION" Language="ru_RU">
+      <Text>Расстояние, на которое TSL может быть перемещено, если относительное положение недостаточно хорошо. Эти параметры масштабируются вместе с размером карты.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_SHORT_NAME" Language="ru_RU">
+      <Text>Короткая дальность</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_SHORT_DESCRIPTION" Language="ru_RU">
+      <Text>Оставаться относительно близко к стартовой позиции, но это может помешать цивилизации быть в игре.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_MEDIUM_NAME" Language="ru_RU">
+      <Text>Средняя дальность</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_MEDIUM_DESCRIPTION" Language="ru_RU">
+      <Text>Это позволит произойти TSL замене в большинстве случаев.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_HIGH_NAME" Language="ru_RU">
+      <Text>Высокая дальность</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_HIGH_DESCRIPTION" Language="ru_RU">
+      <Text>Цивилизация может оказаться относительно далеко от своего первоначального региона.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS_NAME" Language="ru_RU">
+      <Text>Громадная</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS_DESCRIPTION" Language="ru_RU">
+      <Text>Действительно громадная карта для 16 игроков (128x80)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_GIANT_NAME" Language="ru_RU">
+      <Text>[COLOR_RED]Гигантская[ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_GIANT_DESCRIPTION" Language="ru_RU">
+      <Text>Гигантская карта для 20+ игроков (180x94)[NEWLINE][ICON_Exclamation] [COLOR_RED]НЕСТАБИЛЬНА в поздней игре[ENDCOLOR][NEWLINE]Понизьте настройки графики, чтобы уменьшить случайные падения.[NEWLINE]Рекомендуется 6+ Гб видеопамяти</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LUDICROUS_NAME" Language="ru_RU">
+      <Text>[COLOR_RED]Абсурдная[ENDCOLOR]</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" Language="ru_RU">
+      <Text>Выдержите ли вы испытание временем, пока ваш компьютер пытается загрузить это? (200x104)[NEWLINE][ICON_Exclamation] [COLOR_RED]НЕСТАБИЛЬНА в поздней игре[ENDCOLOR][NEWLINE]Понизьте настройки графики, чтобы уменьшить случайные падения.[NEWLINE]Рекомендуется 8+ Гб видеопамяти</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_MAX_NAME" Language="ru_RU">
+      <Text>Максимальная</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_MAX_DESCRIPTION" Language="ru_RU">
+      <Text>Максимально рабочий размер на моём ПК (i7 4770K + MSI GTX 1080 Ti + 16GB Ram) (215x112) (Я должен был поставить дату теста здесь, потому что это было очень давно...)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_OVERSIZED_NAME" Language="ru_RU">
+      <Text>Крупногабаритная</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_OVERSIZED_DESCRIPTION" Language="ru_RU">
+      <Text>Крупногабаритная (230x116)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAPSIZE_SMALL21_NAME" Language="ru_RU">
+      <Text>Маленькая (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_SMALL21_DESCRIPTION" Language="ru_RU">
+      <Text>Маленькая карта для 6 игроков (84x44)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_STANDARD21_NAME" Language="ru_RU">
+      <Text>Стандартная (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_STANDARD21_DESCRIPTION" Language="ru_RU">
+      <Text>Карта среднего размера для 8 игроков (96x50)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LARGE21_NAME" Language="ru_RU">
+      <Text>Большая (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_LARGE21_DESCRIPTION" Language="ru_RU">
+      <Text>Большая карта для 10 игроков (108x56)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_HUGE21_NAME" Language="ru_RU">
+      <Text>Огромная (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_HUGE21_DESCRIPTION" Language="ru_RU">
+      <Text>Огромная карта для 12 игроков (120x62)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS21_NAME" Language="ru_RU">
+      <Text>Громадная (2:1)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_ENORMOUS21_DESCRIPTION" Language="ru_RU">
+      <Text>Действительно громадная карта для 16 игроков (140x74)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_NAME" Language="ru_RU">
+      <Text>Размещение ресурсов</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DESCRIPTION" Language="ru_RU">
+      <Text>Как ресурсы размещаются на карте</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_NAME" Language="ru_RU">
+      <Text>Генератор карты</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_DEFAULT_DESCRIPTION" Language="ru_RU">
+      <Text>Ресурсы размещаются с помощью генератора карт Civ6 (случайно)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_NAME" Language="ru_RU">
+      <Text>Импорт</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_IMPORT_DESCRIPTION" Language="ru_RU">
+      <Text>Позиции ресурсов импортируются из исходных картографических данных</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_NAME" Language="ru_RU">
+      <Text>Зоны исключения ресурсов</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_EXCLUDE_DESCRIPTION" Language="ru_RU">
+      <Text>Некоторые ресурсы будут размещены только в заранее определенных областях карты</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_NAME" Language="ru_RU">
+      <Text>Месторождения реального мира</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_DESCRIPTION" Language="ru_RU">
+      <Text>Некоторые месторождения ресурсов будут размещены в соответствующих областях реального мира</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_ACTIVATED_NAME" Language="ru_RU">
+      <Text>Активировано</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_DEACTIVATED_NAME" Language="ru_RU">
+      <Text>Деактивировано</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_NAME" Language="ru_RU">
+      <Text>Ресурсы цивилизации</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RESOURCES_REQUESTED_DESCRIPTION" Language="ru_RU">
+      <Text>Разместить некоторые особые ресурсы вокруг стартовой позиции особых цивилизаций</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALL_LUXURIES_NAME" Language="ru_RU">
+      <Text>Все предметы роскоши</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALL_LUXURIES_DESCRIPTION" Language="ru_RU">
+      <Text>Когда это активировано, мод попытается разместить хотя бы несколько единиц каждого ресурса роскоши на карте.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALL_STRATEGICS_NAME" Language="ru_RU">
+      <Text>Добавить недостающие стратег. ресурсы</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALL_STRATEGICS_DESCRIPTION" Language="ru_RU">
+      <Text>При импорте карты ресурсов из civ5 вы можете пропустить некоторые стратегические ресурсы, эта опция позволяет принудительно случайным образом разместить недостающие ресурсы.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_NAME" Language="ru_RU">
+      <Text>Размещение особенностей</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DESCRIPTION" Language="ru_RU">
+      <Text>Как особенности (леса, джунгли, ...) размещаются на карте</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_NAME" Language="ru_RU">
+      <Text>Генератор карты</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_DEFAULT_DESCRIPTION" Language="ru_RU">
+      <Text>Объекты размещаются с помощью генератора карт Civ6 (случайно)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_NAME" Language="ru_RU">
+      <Text>Импорт</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_DESCRIPTION" Language="ru_RU">
+      <Text>Позиции объектов импортируются из исходных картографических данных</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_NAME" Language="ru_RU">
+      <Text>Генератор карты</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_DESCRIPTION" Language="ru_RU">
+      <Text>Цивилизации размещаются с помощью генератора карт Civ6 (случайно)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_NAME" Language="ru_RU">
+      <Text>Истинные стартовые позиции</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_TSL_DESCRIPTION" Language="ru_RU">
+      <Text>Цивилизации размещаются как в реальном мире, когда они доступны</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_OLD_WORLD_NAME" Language="ru_RU">
+      <Text>Генератор карты (Старый Свет)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_OLD_WORLD_DESCRIPTION" Language="ru_RU">
+      <Text>Цивилизации располагаются только на территории Старого Света</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_ALLOW_NW_CS_NAME" Language="ru_RU">
+      <Text>Разрешить города-государства в Новом Свете</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_NAME" Language="ru_RU">
+      <Text>Размещение континентов</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_PLACEMENT_DESCRIPTION" Language="ru_RU">
+      <Text>Как расположены названия континентов на карте</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_NAME" Language="ru_RU">
+      <Text>Генератор карты</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_DESCRIPTION" Language="ru_RU">
+      <Text>Континенты называются с помощью генератора карт Civ6 (случайное имя)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_NAME" Language="ru_RU">
+      <Text>Импорт</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_DESCRIPTION" Language="ru_RU">
+      <Text>Названия континентов импортируются из исходных картографических данных</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CONTINENT_MODEL_NAME" Language="ru_RU">
+      <Text>Модель континентов</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_MODEL_DESCRIPTION" Language="ru_RU">
+      <Text>Выберите модель континента для использования</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SEVEN_CONTINENT_NAME" Language="ru_RU">
+      <Text>Семь континентов</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SEVEN_CONTINENT_DESCRIPTION" Language="ru_RU">
+      <Text>Модель семи континентов (Африка, Азия, Европа, Северная Америка, Южная Америка, Антарктида, Океания)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SUBCONTINENT_NAME" Language="ru_RU">
+      <Text>Субконтиненты и регионы</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENTS_MODEL_SUBCONTINENT_DESCRIPTION" Language="ru_RU">
+      <Text>Установить несколько субконтинентов и регионов</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_NAME" Language="ru_RU">
+      <Text>Размещение рек</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DESCRIPTION" Language="ru_RU">
+      <Text>Как расположены реки на карте</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_NAME" Language="ru_RU">
+      <Text>Генератор карты</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="ru_RU">
+      <Text>Реки размещаются с помощью генератора карт Civ6 (случайно)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_NAME" Language="ru_RU">
+      <Text>Импорт</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RIVERS_PLACEMENT_IMPORT_DESCRIPTION" Language="ru_RU">
+      <Text>Реки импортируются из исходных картографических данных</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_NAME" Language="ru_RU">
+      <Text>Размещение чудес природы</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DESCRIPTION" Language="ru_RU">
+      <Text>Как чудеса природы размещаются на карте</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_NAME" Language="ru_RU">
+      <Text>Генератор карты</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_DEFAULT_DESCRIPTION" Language="ru_RU">
+      <Text>Чудеса природы размещаются с помощью генератора карт Civ6 (случайно)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_NAME" Language="ru_RU">
+      <Text>Импорт</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NATURAL_WONDERS_PLACEMENT_IMPORT_DESCRIPTION" Language="ru_RU">
+      <Text>Чудеса природы импортируются из картографических данных</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_NAME" Language="ru_RU">
+      <Text>Прибрежная низменность</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DESCRIPTION" Language="ru_RU">
+      <Text>Как определяется высота суши (для подъёма воды)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEFAULT_DESCRIPTION" Language="ru_RU">
+      <Text>Низменные участки определяются с помощью генератора карт Civ6 (случайно)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_IMPORT_NAME" Language="ru_RU">
+      <Text>Импорт</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_IMPORT_DESCRIPTION" Language="ru_RU">
+      <Text>Низменные участки импортируются из картографических данных, если они существуют</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEEP_NAME" Language="ru_RU">
+      <Text>Подходящая равнина</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_DEEP_DESCRIPTION" Language="ru_RU">
+      <Text>Поднятие моря может проникнуть дальше вглубь суши, следуя за равнинными участками</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LOWLAND_PLACEMENT_EMPTY_DESCRIPTION" Language="ru_RU">
+      <Text>Нет низменного размещения (нет подъёма моря)</Text>
+    </Replace>
+
+	<Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_NAME" Language="ru_RU">
+      <Text>Наводнение рек</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_DESCRIPTION" Language="ru_RU">
+      <Text>Как определяется размещение специальных пойм (для затопления рек).</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_DEFAULT_DESCRIPTION" Language="ru_RU">
+      <Text>Специальные поймы размещаются с помощью генератора карт Civ6 (случайно)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FLOODPLAINS_PLACEMENT_EMPTY_DESCRIPTION" Language="ru_RU">
+      <Text>Никаких особых пойм (никаких затоплений рек)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_NAME" Language="ru_RU">
+      <Text>Пусто</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_EMPTY_DESCRIPTION" Language="ru_RU">
+      <Text>Нет размещения</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_DEFAULT_NAME" Language="ru_RU">
+      <Text>Генератор карты</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CLOSED_BOSPHORUS_NAME" Language="ru_RU">
+      <Text>Закрыть пролив Босфор</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MONT_SAINT_MICHEL_MARSH_NAME" Language="ru_RU">
+      <Text>Разместить болото для Мон-Сен-Мишель</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_STONEHENGE_STONE_NAME" Language="ru_RU">
+      <Text>Разместить камень для Стоунхенджа</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ARTEMIS_TEMPLE_DEER_NAME" Language="ru_RU">
+      <Text>Разместить оленей для Храма Артемиды</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_GREAT_ZIMBABWE_CATTLE_NAME" Language="ru_RU">
+      <Text>Разместить скот для Великого Зимбабве</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_JEBEL_BARKAL_HILLS_NAME" Language="ru_RU">
+      <Text>Заменить поймы с холмами для Джебель-Баркала</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_PANAMA_CANAL_NAME" Language="ru_RU">
+      <Text>Заменить холмы с равниной для Панамского канала</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Language="ru_RU">
+      <Text>Нет льда вблизи суши</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_DESC" Language="ru_RU">
+      <Text>Это приведёт к удалению ледяных объектов, расположенных рядом с клетками суши для облегчения кругосветного путешествия. Клетки земли на Северном и Южном краях карты не удаляются.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NO_CITY_STATE_NAME" Language="ru_RU">
+      <Text>Без городов-государств</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_FORCE_TSL_NAME" Language="ru_RU">
+      <Text>Принудительное TSL</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_DESCRIPTION" Language="ru_RU">
+      <Text>Заменить первоначального поселенца городом на TSL</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_OFF" Language="ru_RU">
+      <Text>Выключено</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_OFF_DESCRIPTION" Language="ru_RU">
+      <Text>Первоначальные поселенцы могут свободно передвигаться до создания города</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_CS" Language="ru_RU">
+      <Text>Города-государства</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_CS_DESCRIPTION" Language="ru_RU">
+      <Text>Поселенцы городов-государств заменяются городом на TSL</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_AI" Language="ru_RU">
+      <Text>И.И.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_AI_DESCRIPTION" Language="ru_RU">
+      <Text>И.И. (цивилизации и ГГ) поселенцы заменяются городом на TSL</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_ALL" Language="ru_RU">
+      <Text>Все</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_FORCE_TSL_ALL_DESCRIPTION" Language="ru_RU">
+      <Text>Все поселенцы (включая игроков-людей) заменяются городом на TSL</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_AUTO_CITY_NAMING_NAME" Language="ru_RU">
+      <Text>Реальные имена городов</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_AUTO_CITY_NAMING_DESC" Language="ru_RU">
+      <Text>Если выбрано, то названия городов присваиваются на основе реальных названий относительно их местоположения. Снимите этот флажок, чтобы использовать список городов по умолчанию для каждой цивилизации.</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ONLY_GENERIC_CITY_NAMES_NAME" Language="ru_RU">
+      <Text>Только обычные имена городов</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ONLY_GENERIC_CITY_NAMES_DESC" Language="ru_RU">
+      <Text>Если не выбрано, то названия городов присваиваются на основе того, что было бы реальным названием города, созданного цивилизацией на его месте. Установите флажок, чтобы использовать стандартное (то есть русское) название города в местоположении города.</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_LEADER_TSL_NAME" Language="ru_RU">
+      <Text>Использовать TSL лидеров при наличии</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ALTERNATE_TSL_NAME" Language="ru_RU">
+      <Text>Альтернативное TSL, если доступно</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ALTERNATE_PLACEMENT_NAME" Language="ru_RU">
+      <Text>Случайное размещение цивилизаций без TSL</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ALTERNATE_PLACEMENT_DESC" Language="ru_RU">
+      <Text>При установлении флажка все цивилизации без TSL будут размещены случайным образом на карте, таким образом все выбранные игроки будут иметь стартовую позицию. Снимите этот флажок при использовании случайных ячеек, если вы хотите иметь в игре только цивилизации TSL и не возражаете, если количество игроков будет меньше, чем вы выбрали.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_LAND_AROUND_TSL_NAME" Language="ru_RU">
+      <Text>Больше суши вокруг TSL</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LAND_AROUND_TSL_DESC" Language="ru_RU">
+      <Text>Попробуйте повысить вероятность наличия суши вокруг цивилизаций относительно TSL, за исключением цивилизаций, начинающих у моря.</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_HISTORICAL_SPAWN_NAME" Language="ru_RU">
+      <Text>Исторические даты появления</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_TURNS_BEFORE_BARBARIANS_NAME" Language="ru_RU">
+      <Text>Ходов до варварских разведчиков</Text>
+    </Replace>
+    <Replace Tag="LOC_TURNS_BEFORE_BARBARIANS_DESCRIPTION" Language="ru_RU">
+      <Text>Минимальное количество ходов до появления варварских разведчиков</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAJOR_CIVILIZATION_COUNT_NAME" Language="ru_RU">
+      <Text>Ячейки цивилизаций</Text>
+    </Replace>
+    <Replace Tag="LOC_MAJOR_CIVILIZATION_COUNT_DESCRIPTION" Language="ru_RU">
+      <Text>Количество ячеек основных цивилизаций.[NEWLINE][NEWLINE]Чтобы предотвратить задержку пользовательского интерфейса или случайное изменение при использовании колёсика мыши в меню, этот параметр не применяется немедленно.[NEWLINE][NEWLINE]Использование: установите более высокое число и нажмите на кнопку "+" (добавить) или установите более низкое число и нажмите на одну из кнопок "X" (удалить) в разделе "игроки".</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_BAN_LEADERS_NAME" Language="ru_RU">
+      <Text>Запрет лидеров для случайных ячеек</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_BAN_LEADERS_DESCRIPTION" Language="ru_RU">
+      <Text>Выберите лидеров для запрета в случайных ячейках, при этом вы всё равно можете выбрать их вручную для игрока или ИИ.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_TSL_LEADERS_NAME" Language="ru_RU">
+      <Text>Только цивилизации и ГГ с TSL</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_TSL_LEADERS_DESCRIPTION" Language="ru_RU">
+      <Text>Действительны только лидеры цивилизаций и городов-государств с TSL для выбранной карты после проверки.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_TSL_LEADERS_NEED_DB_DESCRIPTION" Language="ru_RU">
+      <Text>Действительны только лидеры цивилизаций и городов-государств с TSL для выбранной карты после проверки.[NEWLINE][NEWLINE]Чтобы получить базу данных игрового процесса, необходимую для активации этой опции, вы можете нажать кнопку "загрузить базу данных" для запуска быстрой игры в 2D-режиме и вернуться в главное меню, после чего вы можете вернуться к этому экрану и активировать эту опцию.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_DIMENSION_NAME" Language="ru_RU">
+      <Text> </Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DIMENSION_DESCRIPTION" Language="ru_RU">
+      <Text>Размеры карты, зависящие от экрана настроек. В игре размеры могут быть разными, так как карты Worldbuilder и скрипты карты могут использовать другой размер, на который они настроены.[NEWLINE][NEWLINE]При использовании с картами YnAMP, позволяющими создавать пользовательские секции (например, Гигантская Земля или Крупнейшая Земля), размеры будут точными.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DIMENSION_STRING" Language="ru_RU">
+      <Text>Размер: {1_Num}x{2_Num} ({3_Num : number #,###} клеток)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_REFERENCE_DB_NAME" Language="ru_RU">
+      <Text>Ссылка на базу данных</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIANT_DB_NAME" Language="ru_RU">
+      <Text>База данных Гигантской Земли</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LARGESTEARTH_DB_NAME" Language="ru_RU">
+      <Text>База данных Крупнейшей Земли</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIANT_DB_DESCRIPTION" Language="ru_RU">
+      <Text>Использовать базу данных Гигантской Земли, чтобы получить названия городов, истинные стартовые позиции цивилизаций, пользовательские позиции чудес природы, ...[NEWLINE][NEWLINE]Меньшая точность размещения, но гораздо больше доступных данных</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LARGESTEARTH_DB_DESCRIPTION" Language="ru_RU">
+      <Text>Использовать базу данных Крупнейшей Земли[NEWLINE]Безупречное размещение, но меньше доступных данных.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_SCRIPT_REF_FOR_NW_NAME" Language="ru_RU">
+      <Text>Прямая ссылка на природные чудеса</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCRIPT_REF_FOR_NW_DESC" Language="ru_RU">
+      <Text>Не использовать относительную базу данных для размещения чудес природы, а напрямую получить их из скрипта карты Крупнейшей Земли.[NEWLINE][NEWLINE]Вы можете пропустить некоторые чудеса природы без относительной ссылки, но всё, что имеет прямую ссылку, должно иметь идеальное расположение</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCRIPT_REF_FOR_XT_NAME" Language="ru_RU">
+      <Text>Прямая ссылка для доп. размещения</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCRIPT_REF_FOR_XT_DESC" Language="ru_RU">
+      <Text>Не используйте относительную базу данных для получения дополнительного размещения (условные изменения местности, улучшений, ресурсов... например, вулканов, когда активен Gathering Storm), а напрямую получить их из скрипта карты Крупнейшей Земли.</Text>
+    </Replace>
+	
+	<!--
+    <Replace Tag="LOC_MAP_LANDMASS_OVERLAY_NAME" Language="ru_RU">
+      <Text>Случайная суша</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LANDMASS_OVERLAY_DESCRIPTION" Language="ru_RU">
+      <Text>Для генерации массивов суши, расположенных над реальным положением континентов Земли (случайная береговая линия)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_EARTH_LANDMASS_NAME" Language="ru_RU">
+      <Text>Использовать базовую Землю</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EARTH_LANDMASS_DESCRIPTION" Language="ru_RU">
+      <Text>Континенты реальной Земли формируют массивы суши (уменьшенные до размера карты)</Text>
+    </Replace>
+	-->
+	
+    <Replace Tag="LOC_MAP_MAP_SHAPE_NAME" Language="ru_RU">
+      <Text>Форма карты</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MAP_SHAPE_DESCRIPTION" Language="ru_RU">
+      <Text>Как формируются земные массивы Терры</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_EARTH_ONLY_NAME" Language="ru_RU">
+      <Text>Континенты в форме Земли</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EARTH_ONLY_DESCRIPTION" Language="ru_RU">
+      <Text>Массивы суши будут иметь форму настоящих земных континентов</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_EARTH_RNG_NAME" Language="ru_RU">
+      <Text>Земля со случайной береговой линией</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EARTH_RNG_DESCRIPTION" Language="ru_RU">
+      <Text>Континенты будут иметь форму настоящей Земли, но береговая линия будет случайной.</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_2CONTINENTS_NAME" Language="ru_RU">
+      <Text>Два скрипта >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_2CONTINENTS_DESCRIPTION" Language="ru_RU">
+      <Text>В отдельных районах образуются два массива суши: Старый и Новый Свет (добавьте дополнительные параметры)</Text>
+    </Replace>	
+    <Replace Tag="LOC_YNAMP_MULTIPLE_CONTINENT_NAME" Language="ru_RU">
+      <Text>Множественные скрипты >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MULTIPLE_CONTINENT_DESCRIPTION" Language="ru_RU">
+      <Text>Многочисленные массивы суши образуются в относительных положениях реальных континентов Земли (добавьте дополнительные параметры)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_OLD_WORLD_SHAPE_NAME" Language="ru_RU">
+      <Text>Форма Старого Света</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_OLD_WORLD_DESCRIPTION" Language="ru_RU">
+      <Text>Как формируется суша Старого Света</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NEW_WORLD_SHAPE_NAME" Language="ru_RU">
+      <Text>Форма Нового Света</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NEW_WORLD_DESCRIPTION" Language="ru_RU">
+      <Text>Как формируется суша Нового Света</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_PANGEA_NAME" Language="ru_RU">
+      <Text>Пангея</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PANGEA_DESCRIPTION" Language="ru_RU">
+      <Text>Массивный континент для большой области карты, с некоторыми разломами.[NEWLINE][NEWLINE]Может генерировать прямые берега, если используется для небольшого региона карты.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_PANGEA_REGION_NAME" Language="ru_RU">
+      <Text>Пангея (регион)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PANGEA_REGION_DESCRIPTION" Language="ru_RU">
+      <Text>Массивный континент для небольшой области карты, с некоторыми трещинами.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_COMPACT_PANGEA_NAME" Language="ru_RU">
+      <Text>Компактная Пангея</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_COMPACT_PANGEA_DESCRIPTION" Language="ru_RU">
+      <Text>Массивный континент для небольшого участка карты, без трещин.[NEWLINE][NEWLINE]Может генерировать очень однородный ландшафт, если используется для большой области карты.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CONTINENT_NAME" Language="ru_RU">
+      <Text>Континент</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CONTINENT_DESCRIPTION" Language="ru_RU">
+      <Text>Континент с несколькими, возможно, меньшими разделёнными массивами суши.[NEWLINE][NEWLINE]Может генерировать очень дробящийся ландшафт, если используется для небольшой области карты.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_MINI_CONTINENT_NAME" Language="ru_RU">
+      <Text>Континент (регион)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MINI_CONTINENT_DESCRIPTION" Language="ru_RU">
+      <Text>Континент для небольшой области карты.[NEWLINE][NEWLINE]Может генерировать очень однородный ландшафт, если используется для большой области карты.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_COMPACT_CONTINENT_NAME" Language="ru_RU">
+      <Text>Компактный континент (регион)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_COMPACT_CONTINENT_DESCRIPTION" Language="ru_RU">
+      <Text>Континент для небольшого участка карты, без разлома.[NEWLINE][NEWLINE]Может генерировать очень однородный ландшафт, если используется для большой области карты.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SLIM_CONTINENT_NAME" Language="ru_RU">
+      <Text>Высокий континент</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SLIM_CONTINENT_DESCRIPTION" Language="ru_RU">
+      <Text>Континент для большой области карты, которая имеет больше высоты, чем ширины, где скрипты других континентов могут генерировать слишком много вертикальных разломов.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SLIM_CONTINENT_R_NAME" Language="ru_RU">
+      <Text>Высокий континент (регион)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SLIM_CONTINENT_R_DESCRIPTION" Language="ru_RU">
+      <Text>Континент для небольшой области карты, которая имеет больше высоты, чем ширины.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SMALL_CONTINENT_NAME" Language="ru_RU">
+      <Text>Маленький континент</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SMALL_CONTINENT_DESCRIPTION" Language="ru_RU">
+      <Text>Небольшой континент с некоторыми, возможно, меньшими разделёнными массивами суши.[NEWLINE][NEWLINE]Может генерировать очень дробящийся ландшафт, если используется для небольшой области карты.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SMALL_CONTINENT_R_NAME" Language="ru_RU">
+      <Text>Маленький континент (регион)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SMALL_CONTINENT_R_DESCRIPTION" Language="ru_RU">
+      <Text>Небольшой континент для небольшой площади карты.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_LARGE_ISLANDS_NAME" Language="ru_RU">
+      <Text>Большие острова</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LARGE_ISLANDS_DESCRIPTION" Language="ru_RU">
+      <Text>Группа больших островов</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_ISLANDS_NAME" Language="ru_RU">
+      <Text>Острова</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ISLANDS_DESCRIPTION" Language="ru_RU">
+      <Text>Группа островов</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SMALL_ISLANDS_NAME" Language="ru_RU">
+      <Text>Маленькие острова</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SMALL_ISLANDS_DESCRIPTION" Language="ru_RU">
+      <Text>Группа небольших островов</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SEA_NAME" Language="ru_RU">
+      <Text>Море</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SEA_DESCRIPTION" Language="ru_RU">
+      <Text>Изолированные маленькие острова</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_RANDOM_NAME" Language="ru_RU">
+      <Text>Случайный скрипт</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RANDOM_DESCRIPTION" Language="ru_RU">
+      <Text>Один из вышеперечисленных скриптов (но без варианта Реальной Земли)</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_RANDOM_VALUES_NAME" Language="ru_RU">
+      <Text>Случайные значения настроек</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RANDOM_VALUES_DESCRIPTION" Language="ru_RU">
+      <Text>Может быть действительно всё, что угодно (включая ничего)</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CUSTOM_NAME" Language="ru_RU">
+      <Text>Настройка >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_DESCRIPTION" Language="ru_RU">
+      <Text>Настройка значений генерации массива суши</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CUSTOM_TYPE_NAME" Language="ru_RU">
+      <Text>Тип слоя</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_TYPE_DESCRIPTION" Language="ru_RU">
+      <Text>Выберите, будет ли слой заменять водные клетки (слой суши) или заменять наземные клетки (слой воды)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_WATER_PERCENT_NAME" Language="ru_RU">
+      <Text>Процент воды</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_WATER_PERCENT_DESCRIPTION" Language="ru_RU">
+      <Text>Процент воды для этого слоя</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_GRAIN_NAME" Language="ru_RU">
+      <Text>Фрактальное зерно (0-7)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_GRAIN_DESCRIPTION" Language="ru_RU">
+      <Text>Количество зерна для добавления во фрактал. 0 - нет зерна (гладкое), 7 - много зерна (зазубренное).</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_RIFT_GRAIN_NAME" Language="ru_RU">
+      <Text>Разрыв зерна (0-4)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_RIFT_GRAIN_DESCRIPTION" Language="ru_RU">
+      <Text>О чём вы спрашиваете? Это хороший вопрос!</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTX_EXP_NAME" Language="ru_RU">
+      <Text>FracXExp</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTX_EXP_DESCRIPTION" Language="ru_RU">
+      <Text>Фрактальное разрешение по ширине. Более высокие значения приведут к более резким фракталам, в то время как более низкие значения приведут к размытым. Это экспоненты, возведенные в степени двух. Таким образом, значение FracXExp = 7 означает 2^7, что будет иметь ширину 128 единиц. FracXExp = 6 будет иметь ширину 64 единицы.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTY_EXP_NAME" Language="ru_RU">
+      <Text>FracYExp</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_FRACTY_EXP_DESCRIPTION" Language="ru_RU">
+      <Text>Фрактальное разрешение по высоте. Более высокие значения приведут к более резким фракталам, в то время как более низкие значения приведут к размытым. Это экспоненты, возведенные в степени двух. Таким образом, значение FracYExp = 7 означает 2^7, что будет иметь ширину 128 единиц. FracYExp = 6 будет иметь ширину 64 единицы.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_LAND_NAME" Language="ru_RU">
+      <Text>Суша</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LAND_DESCRIPTION" Language="ru_RU">
+      <Text>Этот слой добавляет сушу над водой (но не меняет существующую сушу)</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_WATER_NAME" Language="ru_RU">
+      <Text>Вода</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_WATER_DESCRIPTION" Language="ru_RU">
+      <Text>Этот слой добавляет воду над сушей (но не изменяет существующую воду)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_YNAMP_DEFAULT_LANDMASS_NAME" Language="ru_RU">
+      <Text>Массив суши по умолчанию</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DEFAULT_LANDMASS_DESCRIPTION" Language="ru_RU">
+      <Text>Используйте скрипты по умолчанию для каждого участка суши.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SELECT_LANDMASS_NAME" Language="ru_RU">
+      <Text>Выберите массивы суши >></Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SELECT_LANDMASS_DESCRIPTION" Language="ru_RU">
+      <Text>Выберите каждый скрипт массива суши. (добавьте дополнительные параметры)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_REAL_LAND_BLEND_NAME" Language="ru_RU">
+      <Text>[ICON_PressureHigh] Смешивание реальной суши [ICON_PressureHigh]</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_REAL_LAND_BLEND_DESCRIPTION" Language="ru_RU">
+      <Text>Смешайте реальную форму суши поверх выбранного скрипта(ов) (0 = без смешивания, 100 = реальная форма мира)</Text>
+    </Replace>	
+    <Replace Tag="LOC_MAP_REAL_SEA_BLEND_NAME" Language="ru_RU">
+      <Text>[ICON_PressureHigh] Смешивание реального моря [ICON_PressureHigh]</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_REAL_SEA_BLEND_DESCRIPTION" Language="ru_RU">
+      <Text>Смешайте реальную морскую форму поверх выбранного скрипта(ов) (0 = без смешивания, 100 = реальная форма мира)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_ADD_LAKES_NAME" Language="ru_RU">
+      <Text>Дополнительные крупные озера</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ADD_LAKES_DESC" Language="ru_RU">
+      <Text>Добавьте на карту несколько больших озер.[NEWLINE][NEWLINE]На этот параметр не влияет опция смешивания реальной формы суши и моря.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ADD_ISLANDS_NAME" Language="ru_RU">
+      <Text>Позволить острова</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ADD_ISLANDS_DESC" Language="ru_RU">
+      <Text>Позволяет размещать острова на карте. Это может немного повысить вероятность достижения Нового Света до того, как будут доступны океанические путешествия.[NEWLINE][NEWLINE]На этот параметр влияет опция смешивания реальной формы суши и моря.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ADDITIONAL_SEAS_NAME" Language="ru_RU">
+      <Text>Дополнительные моря</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ADDITIONAL_SEAS_DESC" Language="ru_RU">
+      <Text>Добавьте случайно сформированные моря в этих местах (относительно реального мира):[NEWLINE][NEWLINE][ICON_BULLET]Охотское море[NEWLINE][ICON_BULLET]Северное море[NEWLINE][ICON_BULLET]Балтийское море[NEWLINE][ICON_BULLET]Бенгальский залив[NEWLINE][ICON_BULLET]Японское море[NEWLINE][ICON_BULLET]Желтое море[NEWLINE][ICON_BULLET]Мексиканский залив[NEWLINE][NEWLINE]На форму этих морей влияет реальный вариант смешивания формы суши и моря.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LIMIT_TUNDRA_NAME" Language="ru_RU">
+      <Text>Ограничение тундры и снега</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LIMIT_TUNDRA_DESC" Language="ru_RU">
+      <Text>Генератор карт может разместить слишком много типов тундровых и снежных ландшафтов в некоторых районах при использовании формы Земли, похожей на реальный мир (особенно на юге, который немного обрезан, чтобы сэкономить место на эталонной карте), когда этот параметр установлен, он позволяет ограничить широты тундры и снега относительно эталонной карты реального мира.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LAND_ON_POLES_NAME" Language="ru_RU">
+      <Text>Клетки суши на полюсах</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LAND_ON_POLES_DESC" Language="ru_RU">
+      <Text>По умолчанию скрипты карты Терра используют небольшой буфер к северу и югу, чтобы предотвратить наземные клетки, блокирующие кругосветное плавание. Когда эта опция включена, наземные клетки могут быть размещены даже на Северном и Южном полюсах. Но это не приводит к размещению клеток суши, если фрактальная функция породила массив суши без суши на полюсах.</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_REAL_TERRAIN_NAME" Language="ru_RU">
+      <Text>Использовать реальную местность</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_REAL_TERRAIN_DESC" Language="ru_RU">
+      <Text>Используйте эталонную карту реального мира, чтобы определить тип местности (трава, равнины, пустыня, тундра, снег и холмы/горы) земельного участка, основываясь на его относительном (к реальной Земле) положении, когда это возможно.[NEWLINE][NEWLINE]Эта настройка не влияет на земельные участки, которые генерируются там, где на эталонной карте есть вода.</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_REAL_FEATURES_NAME" Language="ru_RU">
+      <Text>Использовать реальные особенности</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_REAL_FEATURES_DESC" Language="ru_RU">
+      <Text>Используйте справочную карту реального мира, чтобы определить тип объекта (лес, джунгли, оазис, ...) земельного участка, основываясь на его относительном (к реальной Земле) положении, когда это возможно.[NEWLINE][NEWLINE]Эта настройка не влияет на земельные участки, которые генерируются там, где есть вода на эталонной карте, и не включает в себя чудеса природы.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_AUSTRALIA_NAME" 			Text="Австралия" 			Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_OCEANIA_NAME" 			Text="Океания" 				Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_SOUTH_ASIA_NAME"			Text="Южная Азия" 			Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_ASIA_NAME"		Text="Центральная Азия" 		Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_EAST_ASIA_NAME" 			Text="Восточная Азия" 			Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_JAPAN_NAME" 				Text="Япония" 				Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_NORTH_ASIA_NAME" 			Text="Северная Азия" 			Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_MIDDLE_EAST_NAME" 		Text="Средний Восток" 			Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_TURKEY_NAME" 				Text="Турция" 				Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_SOUTH_EUROPA_NAME" 		Text="Южная Европа" 		Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_WEST_EUROPA_NAME" 		Text="Западная Европа" 			Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_EUROPA_NAME" 		Text="Центральная Европа" 		Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_NORTH_EUROPA_NAME" 		Text="Северная Европа" 		Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_EAST_EUROPA_NAME" 		Text="Восточная Европа" 			Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_NORTH_AFRICA_NAME" 		Text="Северная Африка" 		Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_AFRICA_NAME" 		Text="Центральная Африка" 		Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_SOUTH_AFRICA_NAME" 		Text="Южная Африка" 		Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_MADAGASCAR_NAME" 			Text="Мадагаскар" 			Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_NORTH_AMERICA_NAME" 		Text="Северная Америка" 		Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_ARCTIC_AMERICA_NAME" 		Text="Арктическая Америка" 		Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_CENTRAL_AMERICA_NAME"		Text="Центральная Америка" 		Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_SOUTH_AMERICA_WEST_NAME"	Text="Южная Америка (Восток)"	Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_SOUTH_AMERICA_EAST_NAME" 	Text="Южная Америка (Запад)" Language="ru_RU" /> 
+    <Replace Tag="LOC_MAP_ANTARCTIC_AMERICA_NAME" 	Text="Антарктическая Америка" 	Language="ru_RU" />	
+	
+    <Replace Tag="LOC_MAP_SECTION_NAME" 					Text="Секция карты"																	Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_DESCRIPTION" 				Text="Выберите секцию карты для игры" 									Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_FULL_NAME" 				Text="Полная карта" 																	Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_FULL_DESCRIPTION" 		Text="Оригинальная полная карта"															Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_CUSTOM_NAME" 				Text="Настроенная"																		Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_CUSTOM_DESCRIPTION" 		Text="Выберите Восточную/Западную/Южную/Северную границы региона, на котором вы хотите играть"	Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_EUROPE_NAME" 				Text="Европа" 																		Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_EUROPE_DESCRIPTION" 		Text="Играть на карте Европейского региона" 										Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_MEDITERRANEA_NAME" 		Text="Средиземноморье" 																Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_MEDITERRANEA_DESCRIPTION" Text="Играть вокруг Средиземного моря"	 										Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_MIDDLE_EAST_NAME" 		Text="Ближний Восток" 																	Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_MIDDLE_EAST_DESCRIPTION" 	Text="Играть на карте Ближневосточного региона"									Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_AMERICAS_NAME" 			Text="Америки" 																	Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_AMERICAS_DESCRIPTION" 	Text="Играть на Американских континентах"		 										Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_COLONIZATION_NAME" 		Text="Колонизация" 																Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_COLONIZATION_DESCRIPTION" Text="Играть на карте Атлантического океана с частями Европы и Америки"		Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_OLD_WORLD_NAME" 			Text="Старый Свет" 																	Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_OLD_WORLD_DESCRIPTION" 	Text="Играть в Старом Свете (Европа, Африка, Азия)"									Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_AFRICA_NAME" 				Text="Африка" 																		Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_AFRICA_DESCRIPTION" 		Text="Играть в Африке"																Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_LARGE_ASIA_NAME" 			Text="Большая Азия" 																	Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_LARGE_ASIA_DESCRIPTION" 	Text="Играть по всей Азии, от Ближнего Востока до Японии, включая Австралию"				Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_SOUTH_EAST_ASIA_NAME" 	Text="Юго-Восточная Азия" 																Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_SOUTH_EAST_ASIA_DESCRIPTION" 	Text="Играть на уменьшенной версии Азии, исключая большую часть Австралии"		Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_PACIFIC_NAME" 			Text="Тихий океан" 																		Language="ru_RU"/>
+    <Replace Tag="LOC_MAP_SECTION_PACIFIC_DESCRIPTION" 		Text="Играть на карте с центром в Тихом океане, включая части Азии и Америки"	Language="ru_RU"/>
+	
+    <Replace Tag="LOC_MAP_STARTX_NAME" Language="ru_RU">
+      <Text>ЗАПАДНАЯ граница</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ENDX_NAME" Language="ru_RU">
+      <Text>ВОСТОЧНАЯ граница</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_STARTY_NAME" Language="ru_RU">
+      <Text>ЮЖНАЯ граница</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ENDY_NAME" Language="ru_RU">
+      <Text>СЕВЕРНАЯ граница</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_LATITUDE_NAME" Language="ru_RU">
+      <Text>Широта</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LONGITUDE_NAME" Language="ru_RU">
+      <Text>Долгота</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_WEST_EUROPE_NAME" Language="ru_RU">
+      <Text>Западная Европа</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EAST_AMERICA_NAME" Language="ru_RU">
+      <Text>Восточная Америка</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SOUTH_POLE_NAME" Language="ru_RU">
+      <Text>Южный Полюс</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_POLE_NAME" Language="ru_RU">
+      <Text>Северный Полюс</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EQUATOR_NAME" Language="ru_RU">
+      <Text>Экватор</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_EAST_MEDITERRANEA_NAME" Language="ru_RU">
+      <Text>Восточное Средиземноморье</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EAST_EUROPE_AFRICA_NAME" Language="ru_RU">
+      <Text>Восточная Европа/Африка</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_THE_URALS_WEST_INDIA_NAME" Language="ru_RU">
+      <Text>Урал, Западная Индия</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CENTRAL_ASIA_NAME" Language="ru_RU">
+      <Text>Центральная Азия</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_EAST_ASIA_WEST_AUSTRALIA_NAME" Language="ru_RU">
+      <Text>Восточная Азия, Западная Австралия</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_BERING_STRAIT_NAME" Language="ru_RU">
+      <Text>Берингов Пролив</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_WEST_COAST_NAME" Language="ru_RU">
+      <Text>Западное побережье</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GULF_OF_MEXICO_NAME" Language="ru_RU">
+      <Text>Мексиканский залив</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_AFRICA_SOUTH_ASIA_CARIBBEAN_NAME" Language="ru_RU">
+      <Text>Северная Африка, Южная Азия, Карибский бассейн</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GIBRALTAR_SOUTH_JAPAN_CENTRAL_AMERICA_NAME" Language="ru_RU">
+      <Text>Гибралтар, Южная Япония, Центральная Америка</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_MEDITERRANEA_ASIA_NAME" Language="ru_RU">
+      <Text>Северное Средиземноморье/Азия</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SOUTH_AFRICA_AMERICA_NAME" Language="ru_RU">
+      <Text>Южная Африка/Америка</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NORTH_AMERICA_EUROPE_NAME" Language="ru_RU">
+      <Text>Северная Америка/Европа</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MID_MEDITERRANEA_NAME" Language="ru_RU">
+      <Text>Центр Средиземноморья (Западная Греция)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALPS_NAME" Language="ru_RU">
+      <Text>Альпы (Западная Италия)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_SELECT_CITY_STATES_NAME" Language="ru_RU">
+      <Text>Ручной выбор городов-государств</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SELECT_CITY_STATES_DESCRIPTION" Language="ru_RU">
+      <Text>Если эта функция включена, то вы можете вручную выбрать какие города-государства вы хотите разместить на карте из списка.[NEWLINE][NEWLINE]Обратите внимание, что DLC, расширения, сценарии и моды могут добавлять или удалять города-государства, список не отражает, какие из них на самом деле доступны.[NEWLINE][NEWLINE]Когда город-государство недоступен, то его ячейка свободна для случайного города-государства.</Text>
+    </Replace>
+    <Replace Tag="LOC_FAKE_SELECT_CITY_STATES_DESCRIPTION" Language="ru_RU">
+      <Text>Если эта функция включена, то вы можете вручную выбрать какие города-государства вы хотите разместить на карте из списка.[NEWLINE][NEWLINE]Игра должна быть запущена для обновления игровой базы данных, которая необходима для активации этой настройки. Вы можете нажать кнопку "загрузить базу данных", чтобы запустить быструю игру в 2D-режиме и вернуться в главное меню, затем вы можете вернуться к этому экрану и активировать эту настройку.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_CITYSTATES_OPTIONS_NAME" Language="ru_RU">
+      <Text>Метод выбора ГГ</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_CS_OPTION_DEFAULT_NAME" Language="ru_RU">
+      <Text>Civ6 по умолчанию</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_DEFAULT_DESCRIPTION" Language="ru_RU">
+      <Text>Используйте метод Civ6 по умолчанию для выбора городов-государств, когда вы выбираете меньше ГГ в списке, чем значение ползунка, то только выбранные города-государства будут иметь ячейку в игре.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_SELECTION_NAME" Language="ru_RU">
+      <Text>Выбор и случайность</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_SELECTION_DESCRIPTION" Language="ru_RU">
+      <Text>Ваш выбор городов-государств будет поставлен в приоритет. Общее количество ГГ по-прежнему будет ограничено значением ползунка, и когда вы выберете меньше ГГ в списке, чем значение ползунка, пустые ячейки будут заполнены случайными ГГ. Если вы выберете больше ГГ, чем значение ползунка, мод выберет ограниченный случайный список из вашего выбора.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_UNCAPPED_SELECTION_NAME" Language="ru_RU">
+      <Text>Неограниченный выбор</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_UNCAPPED_SELECTION_DESCRIPTION" Language="ru_RU">
+      <Text>Все города-государства по вашему выбору будут размещены на карте из списка, вплоть до максимально разрешённого кол-ва игроков. Мод попытается найти ячейку для всех выбранных городов-государств, игнорируя значение ползунка при выборе дополнительных. Когда вы выберете в списке меньше ГГ, чем значение ползунка, пустые ячейки будут заполнены случайными ГГ.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_ONLY_SELECTION_NAME" Language="ru_RU">
+      <Text>Только выбор</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_ONLY_SELECTION_DESCRIPTION" Language="ru_RU">
+      <Text>Только города-государства из вашего выбора будут размещены на карте, вплоть до максимально разрешённого кол-ва игроков. Мод попытается найти ячейку только для выбранных городов-государств, игнорируя значение ползунка при выборе более или менее.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_EXCLUSION_NAME" Language="ru_RU">
+      <Text>Список исключений</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_EXCLUSION_DESCRIPTION" Language="ru_RU">
+      <Text>Ваш выбор будет происходить в режиме исключения, YnAMP будет пытаться найти ячейку только для невыбранных городов-государств, вплоть до значения ползунка.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_XP1_CHECK_NAME" Language="ru_RU">
+      <Text>Обновление списка ГГ для Rise and Fall</Text>
+    </Replace>
+    <Replace Tag="LOC_XP1_CHECK_DESCRIPTION" Language="ru_RU">
+      <Text>Выберите это, если дополнение Rise and Fall активно.[NEWLINE]Снимите флажок, если дополнение Rise and Fall не установлено или неактивно.[NEWLINE]Список городов-государств будет обновляться в зависимости от вашего выбора.</Text>
+    </Replace>
+    <Replace Tag="LOC_XP2_CHECK_NAME" Language="ru_RU">
+      <Text>Обновление списка ГГ для Gathering Storm</Text>
+    </Replace>
+    <Replace Tag="LOC_XP2_CHECK_DESCRIPTION" Language="ru_RU">
+      <Text>Выберите это, если дополнение Gathering Storm активно.[NEWLINE]Снимите флажок, если дополнение Gathering Storm не установлено или неактивно.[NEWLINE]Список городов-государств будет обновляться в зависимости от вашего выбора.</Text>
+    </Replace>
+    <Replace Tag="LOC_DLC2_CHECK_NAME" Language="ru_RU">
+      <Text>Обновление списка ГГ для Viking DLC</Text>
+    </Replace>
+    <Replace Tag="LOC_DLC2_CHECK_DESCRIPTION" Language="ru_RU">
+      <Text>Выберите это, если Viking DLC активно.[NEWLINE]Снимите флажок, если Viking DLC не установлено или неактивно.[NEWLINE]Список городов-государств будет обновляться в зависимости от вашего выбора.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_SCENARIO_OPTIONS" Language="ru_RU">
+      <Text>[ICON_DownloadContent] НАСТРОЙКИ СЦЕНАРИЯ [ICON_DownloadContent]</Text>
+    </Replace>
+    <Replace Tag="LOC_SCENARIO_OPTIONS_DESCRIPTION" Language="ru_RU">
+      <Text>Настройки сценария ниже[NEWLINE][ICON_Exclamation][COLOR_RED] Альфа-Тестирование [ENDCOLOR][ICON_Exclamation]</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_SCENARIO_TYPE_NAME" Language="ru_RU">
+      <Text>Сценарий</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_NONE_NAME" Language="ru_RU">
+      <Text>Нет</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_NONE_DESCRIPTION" Language="ru_RU">
+      <Text>Не допускайть размещения каких-либо сценариев</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_DEFAULT_NAME" Language="ru_RU">
+      <Text>По умолчанию</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_DEFAULT_DESCRIPTION" Language="ru_RU">
+      <Text>Сценарий импортируется из базы данных при наличии</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_GENERATED_NAME" Language="ru_RU">
+      <Text>Генерация/Смешанный (Бета-тестирование)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCENARIO_GENERATED_DESCRIPTION" Language="ru_RU">
+      <Text>Сценарий генерируется автоматически и/или импортируется из базы данных</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GENERATED_NAME" Language="ru_RU">
+      <Text>Генерация</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_GENERATED_DESCRIPTION" Language="ru_RU">
+      <Text>Автоматическое размещение генератором сценариев</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_GENERATED_PRESET_NAME" Language="ru_RU">
+      <Text>YnAMP генерация размещения</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_GENERATED_PRESET_DESC" Language="ru_RU">
+      <Text>Предустановки размещения для создания старта цивилизаций[NEWLINE][NEWLINE]Этот сценарий заменяет значения по умолчанию на экране настроек на значения специфичные для цивилизаций. Применимо к следующим параметрам:[NEWLINE][ICON_BULLET]Размещение городов[NEWLINE][ICON_BULLET]Количество городов[NEWLINE][ICON_BULLET]Максимальное расстояние от столицы[NEWLINE][ICON_BULLET]Только на одном и том же участке суши[NEWLINE][NEWLINE]Пользовательские цивилизации будут использовать настройки по умолчанию (если только не добавлено отдельно модом на пользовательскую цивилизацию)[NEWLINE][NEWLINE]Настройки оптимизированы для карты Гигантской Земли (или её регионов), но могут быть использованы с любой картой.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CITYMAP_PRESET_NAME" Language="ru_RU">
+      <Text>YnAMP размещение городов</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CITYMAP_PRESET_DESC" Language="ru_RU">
+      <Text>Предустановки размещения для создания стартовых позиций цивилизаций с базой данных названий городов (первоначально использовалось для автоматического именования городов на основе позиции)[NEWLINE][NEWLINE]Этот сценарий заменяет значения по умолчанию на экране настроек на значения специфичные для цивилизаций. Применимо к следующим параметрам:[NEWLINE][ICON_BULLET]Размещение городов[NEWLINE][ICON_BULLET]Количество городов[NEWLINE][ICON_BULLET]Максимальное расстояние от столицы[NEWLINE][ICON_BULLET]Только на одном и том же участке суши[NEWLINE][NEWLINE]Пользовательские цивилизации будут использовать настройки по умолчанию (если только не добавлено отдельно модом на пользовательскую цивилизацию)[NEWLINE][NEWLINE]Настройки оптимизированы для карты Гигантской Земли (или её регионов), но могут быть использованы с любой картой с базой данных названий городов (как "Снова игра в Европе", "Крупнейшая Земля" с базой данных Гигантской Земли или даже "Карта Терры" с высоким коэффициентом смешивания реальных земель).[NEWLINE][NEWLINE]Этот сценарий не должен быть доступен для карты без связанных названий городов.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_NAME" Language="ru_RU">
+      <Text>Размещение городов</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_NAME" Language="ru_RU">
+      <Text>По умолчанию: местность</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_DESCRIPTION" Language="ru_RU">
+      <Text>Использовать значения плодородия местности для размещения городов для цивилизаций, которые не имеют типа размещения, определённого в таблице ScenarioCivilizations.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_NAME" Language="ru_RU">
+      <Text>По умолчанию: карта городов</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_DESCRIPTION" Language="ru_RU">
+      <Text>Получить положение городов из таблицы CityMap для цивилизаций, которые не имеют типа размещения, определённого в таблице ScenarioCivilizations.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_MIXED_NAME" Language="ru_RU">
+      <Text>По умолчанию: смешанное</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_MIXED_DESCRIPTION" Language="ru_RU">
+      <Text>Получить положение городов из всех возможных источников (сначала ScenarioCities, затем CityMap, затем значения плодородия) для цивилизаций, которые не имеют типа размещения, определённого в таблице ScenarioCivilizations.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_NAME" Language="ru_RU">
+      <Text>По умолчанию: импорт</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_DESCRIPTION" Language="ru_RU">
+      <Text>Получить положение городов из таблицы ScenarioCities для цивилизаций, которые не имеют типа размещения, определённого в таблице ScenarioCivilizations.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_ONLY_NAME" Language="ru_RU">
+      <Text>Ограничение: местность</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_TERRAIN_ONLY_DESCRIPTION" Language="ru_RU">
+      <Text>Использовать только значения плодородия местности для размещения городов, переопределяя все типы размещения из таблицы ScenarioCivilizations.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_ONLY_NAME" Language="ru_RU">
+      <Text>Ограничение: карта городов</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_CITY_MAP_ONLY_DESCRIPTION" Language="ru_RU">
+      <Text>Получить позицию городов только из таблицы CityMap, переопределив все типы размещения из таблицы ScenarioCivilizations.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_ONLY_NAME" Language="ru_RU">
+      <Text>Ограничение: импорт</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_PLACEMENT_IMPORT_ONLY_DESCRIPTION" Language="ru_RU">
+      <Text>Размещать только города, определённые в таблице ScenarioCities, переопределяя все типы размещения из таблицы ScenarioCivilizations.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CUSTOM_SCENARIO_VALUES_NAME" Language="ru_RU">
+      <Text>Использовать поля ввода ([ICON_Exclamation] сброс значений!)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CUSTOM_SCENARIO_VALUES_DESCRIPTION" Language="ru_RU">
+      <Text>По возможности использовать поля ввода вместо выпадающего меню для параметров сценария</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NUMBER_OF_CITY_NAME" Language="ru_RU">
+      <Text>Макс. кол-во городов (Основных)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NUMBER_OF_CITY_DESCRIPTION" Language="ru_RU">
+      <Text>Генератор сценариев попытается разместить это количество городов для основных цивилизаций</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NUMBER_OF_MINOR_CITY_NAME" Language="ru_RU">
+      <Text>Макс. кол-во городов (Малых)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NUMBER_OF_MINOR_CITY_DESCRIPTION" Language="ru_RU">
+      <Text>Генератор сценариев попытается разместить это количество городов для малых цивилизаций</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CAPITAL_SIZE_NAME" Language="ru_RU">
+      <Text>Размер столицы</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CAPITAL_SIZE_DESCRIPTION" Language="ru_RU">
+      <Text>Размер столиц</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_OTHER_CITY_SIZE_NAME" Language="ru_RU">
+      <Text>Размер других городов</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_OTHER_CITY_SIZE_DESCRIPTION" Language="ru_RU">
+      <Text>Максимальный размер других городов</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_DECREASE_OTHER_CITY_SIZE" Language="ru_RU">
+      <Text>Уменьшать размер других городов</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DECREASE_OTHER_CITY_SIZE_DESCRIPTION" Language="ru_RU">
+      <Text>Если установлено, то первые основанные города будут больше, чем последующие города. Начальные города используют значение "размер других городов", затем размер уменьшается с использованием коэффициента "уменьшение размера".</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_CITY_SIZE_DECREMENT" Language="ru_RU">
+      <Text>Уменьшение размера</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CITY_SIZE_DECREMENT_DESCRIPTION" Language="ru_RU">
+      <Text>Уменьшать размер города на это значение</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_NUM_CITY_PER_DECREMENT" Language="ru_RU">
+      <Text>Городов на уменьшение</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_NUM_CITY_PER_DECREMENT_DESCRIPTION" Language="ru_RU">
+      <Text>Количество основанных городов для каждого уменьшения размера</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_MAX_CAPITAL_DISTANCE" Language="ru_RU">
+      <Text>Макс. расстояние от столицы</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MAX_CAPITAL_DISTANCE_DESCRIPTION" Language="ru_RU">
+      <Text>Максимальное расстояние от столицы для других городов (не проверяется для городов, импортированных из таблицы ScenarioCities)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MIN_CITY_SEPARATION" Language="ru_RU">
+      <Text>Мин. разделение городов</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MIN_CITY_SEPARATION_DESCRIPTION" Language="ru_RU">
+      <Text>Минимальное расстояние между городами (не проверяется для городов, импортированных из таблицы ScenarioCities, и игнорируется, если оно ниже основного лимита игры)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SAME_LANDMASS" Language="ru_RU">
+      <Text>Только на одинаковой суше</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SAME_LANDMASS_DESCRIPTION" Language="ru_RU">
+      <Text>Города должны располагаться на той же территории суши, что и столица (не проверяется для городов, импортированных из таблицы ScenarioCities)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_RATIO_2_PER_1" Language="ru_RU">
+      <Text>2 на 1</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_2_PER_1_DESCRIPTION" Language="ru_RU">
+      <Text>Использовать соотношение 2/1 для изменения этого значения</Text>
+    </Replace>	
+    <Replace Tag="LOC_RATIO_1_PER_1" Language="ru_RU">
+      <Text>1 на 1</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_1_DESCRIPTION" Language="ru_RU">
+      <Text>Использовать соотношение 1/1 для изменения этого значения</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_2" Language="ru_RU">
+      <Text>1 на 2</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_2_DESCRIPTION" Language="ru_RU">
+      <Text>Использовать соотношение 1/2 для изменения этого значения</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_3" Language="ru_RU">
+      <Text>1 на 3</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_3_DESCRIPTION" Language="ru_RU">
+      <Text>Использовать соотношение 1/3 для изменения этого значения</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_6" Language="ru_RU">
+      <Text>1 на 6</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_6_DESCRIPTION" Language="ru_RU">
+      <Text>Использовать соотношение 1/6 для изменения этого значения</Text>
+    </Replace>
+    <Replace Tag="LOC_RATIO_1_PER_10_DESCRIPTION" Language="ru_RU">
+      <Text>Использовать соотношение 1/10 для изменения этого значения</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_RATIO_PLACEMENT_DESCRIPTION" Language="ru_RU">
+      <Text>Использовать соотношение 1/X для этого значения. Чем выше X, тем меньше места</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_RATIO_PER_CITY_DESCRIPTION" Language="ru_RU">
+      <Text>Использовать соотношение X/Y для этого значения. Более высокий Y означает, что размеры позже размещённых городов уменьшаются медленнее.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_BORDER_PLACEMENT_NAME" Language="ru_RU">
+      <Text>Размещение границ</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_BORDER_PLACEMENT_DESCRIPTION" Language="ru_RU">
+      <Text>Как разместить границы на карте</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_BORDER_DISTANCE_NAME" Language="ru_RU">
+      <Text>Макс. расстояние границ</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_BORDER_DISTANCE_DESCRIPTION" Language="ru_RU">
+      <Text>Максимальное расстояние от центра города до границы территории.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_PLACEMENT_EXPAND_NAME" Language="ru_RU">
+      <Text>Расширение</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_EXPAND_DESCRIPTION" Language="ru_RU">
+      <Text>Расширение на свободную территорию в кольцах от каждого центра города, пока не будет достигнуто максимальное расстояние</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_INFRASTRUCTURE_NAME" Language="ru_RU">
+      <Text>Размещение инфраструктуры</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_INFRASTRUCTURE_DESCRIPTION" Language="ru_RU">
+      <Text>Как разместить инфраструктуру (дороги, рельсы, улучшения, районы, здания) на карте</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_ROAD_PLACEMENT_NAME" Language="ru_RU">
+      <Text>Размещение дорог</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ROAD_PLACEMENT_DESCRIPTION" Language="ru_RU">
+      <Text>Как разместить дороги на карте</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_ROAD_DISTANCE_NAME" Language="ru_RU">
+      <Text>Неограниченная длина дорог</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ROAD_DISTANCE_DESCRIPTION" Language="ru_RU">
+      <Text>Нет ограничения расстояния между двумя городами для размещения дороги</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_ROAD_DISTANCE_NAME" Language="ru_RU">
+      <Text>Макс. расстояние для дорог</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ROAD_DISTANCE_DESCRIPTION" Language="ru_RU">
+      <Text>Максимальное расстояние между двумя городами для размещения дороги</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MAX_ROAD_PER_CITY_NAME" Language="ru_RU">
+      <Text>Макс. количество дорог на город</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MAX_ROAD_PER_CITY_DESCRIPTION" Language="ru_RU">
+      <Text>Максимальное количество дорог, исходящих из города</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_PLACEMENT_CENTRALIZED_NAME" Language="ru_RU">
+      <Text>Централизованное</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_CENTRALIZED_DESCRIPTION" Language="ru_RU">
+      <Text>Из столиц во все другие города</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_PER_CITY_NAME" Language="ru_RU">
+      <Text>Из города в город</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PLACEMENT_PER_CITY_DESCRIPTION" Language="ru_RU">
+      <Text>От каждого города до ближайших городов</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_INTERNATIONAL_ROADS_NAME" Language="ru_RU">
+      <Text>Международные дороги</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_INTERNATIONAL_ROADS_DESCRIPTION" Language="ru_RU">
+      <Text>При установке флажка допускается размещение дорог в зарубежные города (только из столицы в столицу, если выбран вариант "централизованное" размещение дорог).</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_UNLIMITED_ROAD_DISTANCE_NAME" Language="ru_RU">
+      <Text>Неограниченная дистанция дорог</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_UNLIMITED_ROAD_DISTANCE_DESCRIPTION" Language="ru_RU">
+      <Text>Если установлено, то не используется ограничение расстояния при попытке проложить дорогу между двумя городами. Может замедлить генерацию сценариев на больших картах.</Text>
+    </Replace>
+	
+	<!--City-States-->
+	<Replace Tag="LOC_CIVILIZATION_AKKAD_NAME" Language="ru_RU">
+		<Text>Аккад</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_AKKAD_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Аккад</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_BOLOGNA_NAME" Language="ru_RU">
+		<Text>Болонья</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_BOLOGNA_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Болонья</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_CAHOKIA_NAME" Language="ru_RU">
+		<Text>Кахокия</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_CAHOKIA_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Кахокия</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_CARDIFF_NAME" Language="ru_RU">
+		<Text>Кардифф</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_CARDIFF_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Кардифф</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_FEZ_NAME" Language="ru_RU">
+		<Text>Фес</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_FEZ_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Фес</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_MEXICO_CITY_NAME" Language="ru_RU">
+		<Text>Мехико</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_MEXICO_CITY_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Мехико</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_NAZCA_NAME" Language="ru_RU">
+		<Text>Наска</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_NAZCA_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Наска</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_NGAZARGAMU_NAME" Language="ru_RU">
+		<Text>Нгазаргаму</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_NGAZARGAMU_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Нгазаргаму</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_RAPA_NUI_NAME" Language="ru_RU">
+		<Text>Рапа Нуи</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_RAPA_NUI_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Рапа Нуи</Text>
+	</Replace>
+	
+	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_NAME" Language="ru_RU">
+		<Text>Венеция</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_ANTIOCH_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Венеция</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_BABYLON_NAME" Language="ru_RU">
+		<Text>Вавилон</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_BABYLON_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Вавилон</Text>
+	</Replace>
+	
+	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_NAME" Language="ru_RU">
+		<Text>Окленд</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_ANTANANARIVO_NAME" Language="ru_RU">
+		<Text>Антананариву</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_ARMAGH_NAME" Language="ru_RU">
+		<Text>Арма</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_GRANADA_NAME" Language="ru_RU">
+		<Text>Гранада</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_MUSCAT_NAME" Language="ru_RU">
+		<Text>Маскат</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_PALENQUE_NAME" Language="ru_RU">
+		<Text>Митла</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_AUCKLAND_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Окленд</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_ANTANANARIVO_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Антананариву</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_ARMAGH_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Арма</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_GRANADA_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Гранада</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_MUSCAT_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Маскат</Text>
+	</Replace>
+	<Replace Tag="LOC_CIVILIZATION_PALENQUE_DESCRIPTION" Language="ru_RU">
+		<Text>Город-государство Митла</Text>
+	</Replace>
+	
+  <Replace Tag="LOC_CIVILIZATION_CAGUANA_NAME" Language="ru_RU">
+    <Text>Кагуана</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_HUNZA_NAME" Language="ru_RU">
+    <Text>Хунза</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_LAHORE_NAME" Language="ru_RU">
+    <Text>Лахор</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_SINGAPORE_NAME" Language="ru_RU">
+    <Text>Сингапур</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_TARUGA_NAME" Language="ru_RU">
+    <Text>Таруга</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_VATICAN_CITY_NAME" Language="ru_RU">
+    <Text>Ватикан</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_CAGUANA_DESCRIPTION" Language="ru_RU">
+    <Text>Город-государство Кагуана</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_HUNZA_DESCRIPTION" Language="ru_RU">
+    <Text>Город-государство Хунза</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_LAHORE_DESCRIPTION" Language="ru_RU">
+    <Text>Город-государство Лахор</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_SINGAPORE_DESCRIPTION" Language="ru_RU">
+    <Text>Город-государство Сингапур</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_TARUGA_DESCRIPTION" Language="ru_RU">
+    <Text>Город-государство Таруга</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_VATICAN_CITY_DESCRIPTION" Language="ru_RU">
+    <Text>Город-государство Ватикан</Text>
+  </Replace>
+
+    <Replace Tag="LOC_SETUP_CREATE_MAP" Language="ru_RU">
+      <Text>Создать карту</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_YNAMP_REPORT" Language="ru_RU">
+      <Text>Отчёт о проверке настроек:</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_SEVERITY_YNAMP" Language="ru_RU">
+      <Text>(строгость = {1_Num})</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_BLOCKING_YNAMP" Language="ru_RU">
+      <Text>(блокировка запуска)</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_IGNORE_BLOCK_YNAMP" Language="ru_RU">
+      <Text>(блок переопределен пользователем)</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_LOADED_YNAMP" Language="ru_RU">
+      <Text>База данных загружена</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_LOADED_YNAMP_TT" Language="ru_RU">
+      <Text>База данных игрового процесса была загружена и доступна для расширенных параметров настройки YnAMP.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_NOT_LOADED_YNAMP" Language="ru_RU">
+      <Text>База данных не загружена</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_NOT_LOADED_YNAMP_TT" Language="ru_RU">
+      <Text>База данных игрового процесса ещё не была загружена во время этой сессии. Нужно запустить игру, чтобы получить данные, необходимые для некоторых расширенных опций YnAMP.[NEWLINE][NEWLINE]Вы можете нажать кнопку "Загрузить базу данных", чтобы запустить быструю игру в 2D-режиме, или вы можете запустить свою игру как обычно, если вам не нужны новые опции.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_CHANGED_YNAMP" Language="ru_RU">
+      <Text>База данных изменена</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_CHANGED_YNAMP_TT" Language="ru_RU">
+      <Text>База данных игрового процесса изменилась (путём активации модов, DLC или расширений), должна быть запущена новая пустая игра для обновления данных, необходимых для некоторых расширенных опций YnAMP.[NEWLINE][NEWLINE]Вы можете нажать кнопку "Загрузить базу данных", чтобы запустить быструю игру в 2D-режиме, или вы можете запустить свою игру как обычно, если вам не нужны новые опции.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_RULESET_CHANGED_YNAMP" Language="ru_RU">
+      <Text>Набор правил изменился</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_RULESET_CHANGED_YNAMP_TT" Language="ru_RU">
+      <Text>Изменился набор правил, используемый при загрузке базы данных игрового процесса, поэтому для обновления данных, требуемых некоторыми расширенными опциями YnAMP, необходимо запустить новую пустую игру.[NEWLINE][NEWLINE]Вы можете нажать кнопку "Загрузить базу данных", чтобы запустить быструю игру в 2D-режиме и использовать активный набор правил, вернуться к предыдущему набору правил или запустить игру как обычно, если вам не нужны новые опции.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNOFFICIAL_YNAMP" Language="ru_RU">
+      <Text>Неофициальный размер карты</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNOFFICIAL_YNAMP_TT" Language="ru_RU">
+      <Text>Выбранный размер карты больше, чем у официальных карт.[NEWLINE][NEWLINE]Карта загрузится, но вы можете получить случайные падения в поздней игре.[NEWLINE][NEWLINE]Об этом не сообщалось при таких размерах, но, пожалуйста, обратите внимание, что с дополнением Gathering Storm повышение уровня воды может привести к непоправимому падению на картах немного большего размера.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_LOCK_YNAMP" Language="ru_RU">
+      <Text>Размер карты не поддерживается</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_LOCK_YNAMP_TT" Language="ru_RU">
+      <Text>Выбранный размер карты больше, чем самая большая известная карта, на которой можно играть в течение 500 ходов. Если карта позволяет, то вы можете выбрать меньшую область для игры, которая определит размер.[NEWLINE][NEWLINE]Карта загрузится, но вы наверняка столкнётесь со случайными падениями в поздней игре, вам следует часто сохраняться.[NEWLINE][NEWLINE]С дополнением Gathering Storm, повышение уровня воды может привести к непоправимому падению.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_OVERSIZE_YNAMP_TT" Language="ru_RU">
+      <Text>Выбранный размер карты больше, чем самая большая известная карта, которую можно запустить без сбоев при загрузке. Если карта позволяет, то вы можете выбрать меньшую область для игры, которая определит размер.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNKNOWN_YNAMP" Language="ru_RU">
+      <Text>Размер карты неизвестен</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNKNOWN_YNAMP_TT" Language="ru_RU">
+      <Text>Выбранный размер карты неизвестен, YnAMP не может определить стабильной ли будет игра. Это можно исправить, загрузив базу данных.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_LOAD_DATA_YNAMP" Language="ru_RU">
+      <Text>Загрузить базу данных</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_LOAD_DATA_YNAMP_TT" Language="ru_RU">
+      <Text>Запустить быструю игру в 2D-режиме для загрузки всех данных, используемых YnAMP для меню настроек, а затем автоматически выйти и вернуться в главное меню.[NEWLINE][NEWLINE]Вернитесь к этому экрану настроек, после чего он должен показать "база данных загружена" и выберите соответствующие дополнительные параметры YnAMP.[NEWLINE][NEWLINE]Сохранённый файл текущих настроек с именем "AutoSaveYnAMP" должен быть доступен для перезагрузки в случае необходимости, но предлагаемый порядок действий должен быть таким:[NEWLINE][ICON_BULLET] Активируйте модификации[NEWLINE][ICON_BULLET] Загрузите базу данных[NEWLINE][ICON_BULLET] Измените свои настройки[NEWLINE][NEWLINE]Если вам не нужны новые игровые настройки, то выполнять эти шаги необязательно, вы можете запустить свою игру как обычно.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_IGNORE_WARNING_YNAMP" Language="ru_RU">
+      <Text>Игнорировать предупреждение</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_IGNORE_WARNING_YNAMP_TT" Language="ru_RU">
+      <Text>Нажмите кнопку "игнорировать", если вы понимаете проблему и хотите её игнорировать.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAJOR_COUNT_DIFFERENCE" Language="ru_RU">
+      <Text>Применить подсчет цивилизаций</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAJOR_COUNT_DIFFERENCE_TT" Language="ru_RU">
+      <Text>Актуальное количество ячеек для игроков и значение ползунка ячеек для цивилизаций не совпадают.[NEWLINE][NEWLINE]Для предотвращения задержки пользовательского интерфейса или случайного изменения при использовании колёсика мыши в меню, значение ползунка не применяется немедленно. Это также может быть изменено путём выхода и возврата к экрану настройки.[NEWLINE][NEWLINE]Если вы хотите применить значение ползунка, нажмите на кнопку "+" (добавить) или одну из кнопок "X" (удалить) в разделе "игроки".</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ERROR_NO_TSL" Language="ru_RU">
+      <Text>Без TSL для этой карты</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ERROR_NO_TSL_IN_SECTION" Language="ru_RU">
+      <Text>Без TSL для этой секции карты</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ARTICLE_TITLE_YNAMP" Language="ru_RU">
+      <Text>[ICON_Whisper] "На данный момент у нас нет планов выпускать исходный код DLL"</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ARTICLE_RESUME_YNAMP" Language="ru_RU">
+      <Text>[NEWLINE]Firaxis не планирует выпускать инструменты для поддержки Vox Populi или каких-либо модификаций для полной реконструкции Civilization VI[NEWLINE]У меня нет никакого интереса к такой игре, так что это моё последнее обновление для [COLOR_Civ6Blue]YnAMP[ENDCOLOR], спасибо вам за вашу поддержку до сих пор.[NEWLINE](Цитата из интервью pcgamesn.com с Anton Strenger, ведущим дизайнером)</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ARTICLE_RESUME_STEAM_ON_YNAMP" Language="ru_RU">
+      <Text>[NEWLINE]Firaxis не планирует выпускать инструменты для поддержки Vox Populi или каких-либо модификаций для полной реконструкции Civilization VI[NEWLINE]У меня нет никакого интереса к такой игре, так что это моё последнее обновление для [COLOR_Civ6Blue]YnAMP[ENDCOLOR], спасибо вам за вашу поддержку до сих пор.[NEWLINE](щёлкните левой кнопкой мыши здесь для прочтения статьи об исходном коде DLL на pcgamesn.com, щёлкните правой кнопкой мыши для интервью)</Text>
+    </Replace>
+  </LocalizedText>
+</GameData>

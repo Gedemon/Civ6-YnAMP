@@ -21,6 +21,7 @@ UPDATE Players SET Domain='Players:StandardPlayers' WHERE Domain='StandardPlayer
 -- Remove some restriction on WorldBuilder Setup
 DELETE FROM ParameterDependencies WHERE ParameterId = 'NoDupeCivilizations' AND ConfigurationId = 'WORLD_BUILDER';
 DELETE FROM ParameterDependencies WHERE ParameterId = 'NoDupeLeaders' AND ConfigurationId = 'WORLD_BUILDER';
+DELETE FROM ParameterDependencies WHERE ParameterId = 'NaturalWonders' AND ConfigurationId = 'WORLD_BUILDER';
 
 -- Legacy setting update for CityState list on first selection
 UPDATE ParameterDependencies SET ConfigurationValue = 'RANDOM',	Operator ='NotEquals' WHERE ConfigurationId = 'SelectCityStates' AND ConfigurationValue =1;

@@ -4063,10 +4063,20 @@ function PlaceRealNaturalWonders(NaturalWonders)
 		end
 	end
 	
+	local excludedWonders = {};
+	local excludeWondersConfig = GameConfiguration.GetValue("EXCLUDE_NATURAL_WONDERS");
+	if(excludeWondersConfig and #excludeWondersConfig > 0) then
+		print("The following Natural Wonders have been marked as 'excluded':");
+		for i,v in ipairs(excludeWondersConfig) do
+			print("* " .. v);
+			excludedWonders[v] = true;
+		end
+	end
+	
 	-- Place all NW from the table
 	for eFeatureType, position in pairs(NaturalWonders) do
-		if GameInfo.Features[eFeatureType] then
-			local featureTypeName = GameInfo.Features[eFeatureType].FeatureType
+		local featureTypeName = GameInfo.Features[eFeatureType] and GameInfo.Features[eFeatureType].FeatureType
+		if featureTypeName and not excludedWonders[featureTypeName] then
 
 			-- Convert the NW coordinates to the current map position if using a reference map or offsets
 			local x, y = GetXYFromRefMapXY(position.X, position.Y, (HasMapScriptPosition[eFeatureType])) -- if the NW has a true position from the MapScript table, don't use relative placement, only offset)
@@ -4285,8 +4295,8 @@ function PlaceRealNaturalWonders(NaturalWonders)
 			else
 				print ("  - WARNING : can't get the plot at that NW position")
 			end
-		else
-			print ("  - WARNING : Can't find "..tostring().." in Features tables")
+		elseif not GameInfo.Features[eFeatureType] then
+			print ("  - WARNING : Can't find "..tostring(featureTypeName).." in Features tables")
 		end
 	end
 end

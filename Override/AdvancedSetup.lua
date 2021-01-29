@@ -5,6 +5,7 @@ include("InstanceManager");
 include("PlayerSetupLogic");
 include("Civ6Common");
 include("SupportFunctions");
+include("PopupDialog");
 
 -- ===========================================================================
 -- ===========================================================================
@@ -29,6 +30,7 @@ local availableLeaderList				= {}	-- List of leaders available for Random slots
 local maxSupportedMapSize				= 120*62
 local maxWorkingMapSize					= 140*74
 local maxLoadingMapSize					= 200*104
+local maxTotalPlayers					= 62	-- max is 64 but 1 slot is required for barbarian and 1 slot for free cities
 local bStartDisabledByYnAMP 			= false
 local bStartDisabledBySetup 			= false
 --ConfigYnAMP.SavedParameter			= ConfigYnAMP.SavedParameter or {}	-- Saved values for disabled parameters
@@ -76,6 +78,20 @@ for i, row in ipairs(CachedQuery("SELECT MapSizeType, Name from MapSizes")) do
 	MapSizeNames[row.MapSizeType] = row.Name
 end
 
+-- For whatever reasons, changing the "CityStates" SortIndex in the config database with XML is not working for this screen
+-- The value in the DB is correctly updated, but the value in the Parameter table is always 230 (even when changing it in the base game files)
+-- So we cache the DB value here and affect it manually when the parameters are checked
+local CityStatesSortIndex = 230 -- default value
+do
+	local query		= "SELECT SortIndex from Parameters WHERE ParameterId = ?"
+	local results	= DB.ConfigurationQuery(query, "CityStates")
+
+	if results then
+		CityStatesSortIndex = results[1].SortIndex
+		print("City States Parameter <SortIndex> value in DB is ", CityStatesSortIndex)
+	end
+end
+
 -- Add known CS to config DB		
 -- and get civilization types for each CS leaders
 local LeadersCivilizations = {}
@@ -86,17 +102,20 @@ if ConfigYnAMP.CityStatesList then
 
 	-- Add CS imported from GamePlay DB to the config DB
 	for i, row in ipairs(ConfigYnAMP.CityStatesList) do
-		local LeaderType 					= row.LeaderType
-		local LeaderName 					= (Locale.Lookup(row.LeaderName) ~= row.LeaderName) and row.LeaderName or row.LocalizedLeaderName -- If there is a Config Localization use it, else use the imported GamePlay Localization
-		local CivilizationName 				= (Locale.Lookup(row.CivilizationName) ~= row.CivilizationName) and row.CivilizationName or row.LocalizedCivilizationName
-		LeadersCivilizations[LeaderType] 	= row.CivilizationType
+		local LeaderType 						= row.LeaderType
+		local CivilizationType					= row.CivilizationType
+		local LeaderName 						= (Locale.Lookup(row.LeaderName) ~= row.LeaderName) and row.LeaderName or row.LocalizedLeaderName -- If there is a Config Localization use it, else use the imported GamePlay Localization
+		local CivilizationName 					= (Locale.Lookup(row.CivilizationName) ~= row.CivilizationName) and row.CivilizationName or row.LocalizedCivilizationName
+		LeadersCivilizations[LeaderType] 		= CivilizationType
+		LeadersCivilizations[CivilizationType] 	= LeaderType
 		IsAvailable[LeaderType]	= true
 	
+		--[[
 		local query		= "SELECT * FROM Parameters WHERE ConfigurationId = ?"
 		local results	= DB.ConfigurationQuery(query, LeaderType)
 		
 		if results and #results == 0 then
-			print("- Adding new City State leader to Selection List: ", LeaderType)
+			print("- Adding new City State leader to YnAMP Selection List: ", LeaderType)
 			query = "INSERT INTO Parameters (ParameterId, Name, Description, Domain, DefaultValue, ConfigurationGroup, ConfigurationId, GroupId, SortIndex) VALUES (?, ?, ?, 'bool', 0, 'Map', ?, 'MapOptions', 99)"
 			DB.ConfigurationQuery(query, LeaderType, LeaderName, CivilizationName, LeaderType)
 			
@@ -106,18 +125,35 @@ if ConfigYnAMP.CityStatesList then
 			query = "INSERT INTO ParameterDependencies (ParameterId, ConfigurationGroup, ConfigurationId, Operator, ConfigurationValue) VALUES (?, 'Map', 'SelectCityStates', 'NotEquals', NULL)"
 			DB.ConfigurationQuery(query, LeaderType)
 		end
+		--]]
+		
+		--[[
+		-- the code below doesn't seem to update the parameters or the debug config DB
+		-- but reloading this file shows that the entry is added in the <CityStates> table linked to that query
+		-- the code above was updating parameters
+		-- maybe look at calls to CachedQuery vs DB.ConfigurationQuery ?
+		-- disabling for now
+		
+		local query		= "SELECT * FROM CityStates WHERE CivilizationType = ?"
+		local results	= DB.ConfigurationQuery(query, CivilizationType)
+		
+		if results and #results == 0 then
+			print("- Adding new City State Civilization to the CS Picker Screen List: ", LeaderType)
+			local query = "INSERT INTO CityStates (CivilizationType, Name, Icon, CityStateCategory, Bonus) VALUES (?, ?, 'test_icon', 'test_cs_category', 'test_bonus')"
+			DB.ConfigurationQuery(query, CivilizationType, CivilizationName)
+		end
+		--]]
 	end
 	
-	-- Remove CS missing in GamePlay DB from the Config DB
-	local query		= cityStatesQuery
-	local results	= DB.ConfigurationQuery(query)
-	if results and #results > 0 then
-		for i, row in ipairs(results) do
-			if not (IsAvailable[row.ConfigurationId]) then
-				print("- Removing missing City State Leader from Selection List: ", row.ConfigurationId)
-				DB.ConfigurationQuery("DELETE FROM Parameters WHERE ConfigurationId = ? ", row.ConfigurationId)
-			end
-		end
+end
+
+-- Remove CS missing in GamePlay DB from the Config DB
+local query		= cityStatesQuery
+local results	= DB.ConfigurationQuery(query)
+if results and #results > 0 then
+	for i, row in ipairs(results) do
+		print("- Cleaning City State Leader from deprecated Selection List: ", row.ConfigurationId)
+		DB.ConfigurationQuery("DELETE FROM Parameters WHERE ConfigurationId = ? ", row.ConfigurationId)
 	end
 end
 
@@ -279,6 +315,8 @@ local m_RulesetData					:table = {};
 local m_BasicTooltipData			:table = {};
 local m_WorldBuilderImport          :boolean = false;
 
+local m_pCityStateWarningPopup:table = PopupDialog:new("CityStateWarningPopup");
+
 -- ===========================================================================
 -- Override hiding game setup to release simplified instances.
 -- ===========================================================================
@@ -340,17 +378,8 @@ function GameParameters_UI_AfterRefresh(o)
 	local sort = function(a,b)
 	
 		-- ForgUI requires a strict weak ordering sort.
-
 		local ap = g_SortingMap[tostring(a)];
 		local bp = g_SortingMap[tostring(b)];
-
-		if(ap == nil) then
-			print("GameParameters sort ap is nil: ",a.ParameterId);
-		end
-		
-		if(bp == nil) then
-			print("GameParameters sort bp is nil: ",b.ParameterId);
-		end
 
 		if(ap == nil and bp ~= nil) then
 			return true;
@@ -453,7 +482,7 @@ end
 --	map selection screen.
 --
 --	To send maps:		LuaEvents.MapSelect_PopulatedMaps( g_kMapData );
---	To receive choice:	LuaEvents.AdvancedSetup_SetMapByHash( Hash );
+--	To receive choice:	LuaEvents.MapSelect_SetMapByValue( value );
 -- ===========================================================================
 function BuildMapSelectData( kMapParameters:table )
 	-- Sanity checks
@@ -504,7 +533,6 @@ end
 function SortMapsByName(a, b)
 	return Locale.Compare(a.Name, b.Name) == -1;
 end
-
 
 -- ===========================================================================
 --	LuaEvent
@@ -716,7 +744,6 @@ function CreateButtonPopupDriver(o, parameter, activateFunc, parent )
 	return kDriver;
 end
 
-
 -- ===========================================================================
 -- This driver is for launching a multi-select option in a separate window.
 -- ===========================================================================
@@ -809,6 +836,97 @@ function CreateMultiSelectWindowDriver(o, parameter, parent)
 	return kDriver;
 end
 
+-- ===========================================================================
+-- This driver is for launching the city-state picker in a separate window.
+-- ===========================================================================
+function CreateCityStatePickerDriver(o, parameter, parent)
+
+	if(parent == nil) then
+		parent = GetControlStack(parameter.GroupId);
+	end
+			
+	-- Get the UI instance
+	local c :object = g_ButtonParameterManager:GetInstance();	
+
+	local parameterId = parameter.ParameterId;
+	local button = c.Button;
+	button:RegisterCallback( Mouse.eLClick, function()
+		LuaEvents.CityStatePicker_Initialize(o.Parameters[parameterId], g_GameParameters);
+		Controls.CityStatePicker:SetHide(false);
+	end);
+	button:SetToolTipString(parameter.Description);
+
+	-- Store the root control, NOT the instance table.
+	g_SortingMap[tostring(c.ButtonRoot)] = parameter;
+
+	c.ButtonRoot:ChangeParent(parent);
+	if c.StringName ~= nil then
+		c.StringName:SetText(parameter.Name);
+	end
+
+	local cache = {};
+
+	local kDriver :table = {
+		Control = c,
+		Cache = cache,
+		UpdateValue = function(value, p)
+			local valueText = value and value.Name or nil;
+			local valueAmount :number = 0;
+		
+			if(valueText == nil) then
+				if(value == nil) then
+					if (parameter.UxHint ~= nil and parameter.UxHint == "InvertSelection") then
+						valueText = "LOC_SELECTION_EVERYTHING";
+					else
+						valueText = "LOC_SELECTION_NOTHING";
+					end
+				elseif(type(value) == "table") then
+					local count = #value;
+					if (parameter.UxHint ~= nil and parameter.UxHint == "InvertSelection") then
+						if(count == 0) then
+							valueText = "LOC_SELECTION_EVERYTHING";
+						elseif(count == #p.Values) then
+							valueText = "LOC_SELECTION_NOTHING";
+						else
+							valueText = "LOC_SELECTION_CUSTOM";
+							valueAmount = #p.Values - count;
+						end
+					else
+						if(count == 0) then
+							valueText = "LOC_SELECTION_NOTHING";
+						elseif(count == #p.Values) then
+							valueText = "LOC_SELECTION_EVERYTHING";
+						else
+							valueText = "LOC_SELECTION_CUSTOM";
+							valueAmount = count;
+						end
+					end
+				end
+			end				
+
+			if(cache.ValueText ~= valueText) or (cache.ValueAmount ~= valueAmount) then
+				local button = c.Button;			
+				button:LocalizeAndSetText(valueText, valueAmount);
+				cache.ValueText = valueText;
+				cache.ValueAmount = valueAmount;
+			end
+		end,
+		UpdateValues = function(values, p) 
+			-- Values are refreshed when the window is open.
+		end,
+		SetEnabled = function(enabled, p)
+			c.Button:SetDisabled(not enabled or #p.Values <= 1);
+		end,
+		SetVisible = function(visible)
+			c.ButtonRoot:SetHide(not visible);
+		end,
+		Destroy = function()
+			g_ButtonParameterManager:ReleaseInstance(c);
+		end,
+	};	
+
+	return kDriver;
+end
 
 -- ===========================================================================
 -- Override parameter behavior for basic setup screen.
@@ -895,7 +1013,7 @@ g_ParameterFactories["MapSize"] = function(o, parameter)
 
 	-- Advanced setup version.
 	-- Create the parameter dynamically like we normally would...
-	table.insert(drivers, GameParameters_UI_DefaultCreateParameterDriver(o, parameter));
+	table.insert(drivers, GameParameters_UI_CreateParameterDriver(o, parameter));
 
 	return drivers;
 end
@@ -1157,7 +1275,12 @@ end
 
 function GameParameters_UI_CreateParameterDriver(o, parameter, ...)
 
-	if(parameter.Array) then
+	if(parameter.ParameterId == "CityStates") then
+		if GameConfiguration.IsWorldBuilderEditor() then
+			-- return nil; -- YnAMP
+		end
+		return CreateCityStatePickerDriver(o, parameter);
+	elseif(parameter.Array) then
 		return CreateMultiSelectWindowDriver(o, parameter);
 	else
 		return GameParameters_UI_DefaultCreateParameterDriver(o, parameter, ...);
@@ -1183,7 +1306,6 @@ function GameParameters_UI_CreateParameter(o, parameter)
 			GameParameters_UI_CreateParameterDriver(o, parameter)
 		};	
 	else
-	
 		control = GameParameters_UI_CreateParameterDriver(o, parameter);
 	end
 
@@ -1327,24 +1449,26 @@ function UI_PostRefreshParameters()
 
 	local game_err = GetGameParametersError();
 	if(game_err) then
-		-- YnAMP <<<<<
-		print("GetGameParametersError = ",game_err)
-		bStartDisabledBySetup = true
-		-- YnAMP >>>>>
 		Controls.StartButton:SetDisabled(true);
 		Controls.StartButton:LocalizeAndSetToolTip("LOC_SETUP_PARAMETER_ERROR");
+		-- YnAMP <<<<<
+		print("GetGameParametersError = ",game_err)
+		if type(game_err)=="table" then for k, v in pairs(game_err) do print("   - ", k, v) end end
+		bStartDisabledBySetup = true
+		-- YnAMP >>>>>
 	end
 	
 	local player_ids = GameConfiguration.GetParticipatingPlayerIDs();
 	for i, player_id in ipairs(player_ids) do	
 		local err = GetPlayerParameterError(player_id);
 		if(err) then
-			-- YnAMP <<<<<
-			print("GetPlayerParameterError = ", err)
-			bStartDisabledBySetup = true
-			-- YnAMP >>>>>
 			Controls.StartButton:SetDisabled(true);
 			Controls.StartButton:LocalizeAndSetToolTip("LOC_SETUP_PLAYER_PARAMETER_ERROR");
+			-- YnAMP <<<<<
+			print("GetPlayerParameterError = ", err)
+			if type(err)=="table" then for k, v in pairs(err) do print("   - ", k, v) end end
+			bStartDisabledBySetup = true
+			-- YnAMP >>>>>
 		end
 	end
 
@@ -1375,6 +1499,22 @@ end
 -- ===========================================================================
 function GameSetup_PlayerCountChanged()
 	print("Player Count Changed");
+	-- YnAMP <<<<<
+	-- code below may be a bit intrusive (auto-reduce the number of CS selected)
+	-- added text to tooltip about the 62 player limit
+	-- maybe better to add a warning or a popup on clicking start when numCS > maxCS
+	--[[
+	local player_ids 	= GameConfiguration.GetParticipatingPlayerIDs();
+	local numPlayers 	= #player_ids
+	local numCS			= GameConfiguration.GetValue("CITY_STATE_COUNT") or 0
+	local maxCS 		= maxTotalPlayers - numPlayers
+	
+	if numCS > maxCS then
+		--MapConfiguration.SetMaxMinorPlayers(maxCS) -- this doesn't seems to update the slider 
+		GameConfiguration.SetValue("CITY_STATE_COUNT", maxCS);
+	end
+	-- YnAMP >>>>>
+	--]]
 	RefreshPlayerSlots();
 end
 
@@ -1561,9 +1701,8 @@ function OnStartButton()
 	local numPlayers 	= #player_ids
 	local numCS			= GameConfiguration.GetValue("CITY_STATE_COUNT")
 	local newNumCS		= numCS
-	local maxPlayer		= 62 			-- max is 64 but 1 slot is required for barbarian and 1 slot for free cities
 	local cityStateID	= 0 			-- Player slots IDs start at 0, Human is 0, so we should start at 1, but start at 0 in case some mod (spectator ?) change that
-	local maxCS 		= maxPlayer - numPlayers
+	local maxCS 		= maxTotalPlayers - numPlayers
 	local bSelectCS		= MapConfiguration.GetValue("SelectCityStates") ~= "RANDOM"
 	local bBanListCS	= MapConfiguration.GetValue("SelectCityStates") == "EXCLUSION"
 	local bBanLeaders	= MapConfiguration.GetValue("BanLeaders")
@@ -1579,7 +1718,7 @@ function OnStartButton()
 	print("------------------------------------------------------")
 	print("YnAMP checking for number of players limit on Start...")
 	print("num. players = ".. tostring(numPlayers) .. ", num. CS = ".. tostring(numCS), ", Selection type = ", MapConfiguration.GetValue("SelectCityStates"), ", Do selection =", bSelectCS)
-	if (GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_1" or GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_2") and numPlayers + numCS > maxPlayer then
+	if (GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_1" or GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_2") and numPlayers + numCS > maxTotalPlayers then
 		newNumCS = maxCS
 		print("new num. CS = ".. tostring(newNumCS))
 		GameConfiguration.SetValue("CITY_STATE_COUNT", newNumCS)
@@ -1779,7 +1918,7 @@ function OnStartButton()
 		print("------------------------------------------------------")
 		print("Generate available slots list for CS...")
 		local CityStatesSlotsList	= {}
-		while(cityStateID < maxPlayer) do
+		while(cityStateID < maxTotalPlayers) do
 			local playerConfig = PlayerConfigurations[cityStateID];
 			
 			-- If we've reached the end of the line, exit.
@@ -1802,6 +1941,46 @@ function OnStartButton()
 		local query		= cityStatesQuery
 		local results	= DB.ConfigurationQuery(query)
 		
+		-- Get the data from the CS picker if it exists 
+		local kParameters:table = g_GameParameters["Parameters"]
+		local bUsePickerList	= false
+		local pickerNotSelected	= {}
+		
+		local function GetLeaderNameTypeFromCivType(civTypeName)
+			return "LEADER_MINOR_CIV_" .. string.gsub( civTypeName, "CIVILIZATION_", "")
+		end
+		
+		if kParameters["CityStates"] then
+		
+			print("Using Picker Screen List")
+			
+			bUsePickerList 		= true
+			local tempTable		= {}
+			local notSelected 	= kParameters["CityStates"].Value or {}		-- this is the list of unchecked CS in kParameters["CityStates"] from the picker screen, it can be nil
+			local allList		= kParameters["CityStates"].Values or {}	-- this is the list of all CS in kParameters["CityStates"] from the picker screen
+			
+			for _, data in ipairs(notSelected) do 
+				local leaderType = GetLeaderNameTypeFromCivType(data.Value)
+				pickerNotSelected[leaderType] = true
+			end
+			
+			for _, data in ipairs(allList) do 
+				local leaderType = GetLeaderNameTypeFromCivType(data.Value)
+				table.insert(tempTable, { ConfigurationId = leaderType, Name = data.RawName })
+			end
+			results = tempTable
+		
+		end
+		
+		
+		local function IsSelected(leaderType)
+			if bUsePickerList then
+				return pickerNotSelected[leaderType] ~= true -- there is no direct check for selected CS in the picker screen, so we check vs the opposite
+			else
+				return MapConfiguration.GetValue(leaderType) == true -- true if this CS was checked
+			end
+		end
+		
 		if(results and #results > 0) then
 		
 			local filteredList 	= {}
@@ -1812,7 +1991,7 @@ function OnStartButton()
 				local bValid		= true
 				
 				if bBanListCS then -- first check if the selection list is in "exclusion" mode
-					if MapConfiguration.GetValue(leaderType) then -- true if this CS was checked
+					if IsSelected(leaderType) then
 						bValid = false
 					end
 				end
@@ -1829,6 +2008,7 @@ function OnStartButton()
 				
 				if bValid and not duplicate[leaderType] then
 					duplicate[leaderType] = true
+					--print("- adding to filtered list : ", leaderType)
 					table.insert(filteredList, {ConfigurationId = leaderType, Name = row.Name})
 				end
 			end
@@ -1847,7 +2027,7 @@ function OnStartButton()
 				--for k, v in pairs(row) do print(k, v) end
 				local leaderType = row.ConfigurationId
 				local leaderName = row.Name
-				if (not bBanListCS) and MapConfiguration.GetValue(leaderType) then -- true if this CS was checked and we're not in exclusion mode
+				if (not bBanListCS) and IsSelected(leaderType) then -- true if this CS was checked and we're not in exclusion mode
 					if cityStateSlots > 0 then
 						local slotID = CityStatesSlotsList[slotListID]
 						if slotID then
@@ -1942,10 +2122,41 @@ function OnStartButton()
 			Network.HostGame(ServerType.SERVER_TYPE_NONE);
 		end
 	else
-		-- No, start a normal game
-		UI.PlaySound("Set_View_3D");
-		Network.HostGame(ServerType.SERVER_TYPE_NONE);
+		-- YNAMP <<<<<
+		-- 	if AreAllCityStateSlotsUsed() then
+		if bSelectCS or AreAllCityStateSlotsUsed() then -- if bSelectCS is true then we use one of the YnAMP option for CS selection and we can use any number of CS slots 
+		-- YNAMP >>>>>
+			HostGame();
+		else
+			m_pCityStateWarningPopup:ShowOkCancelDialog(Locale.Lookup("LOC_CITY_STATE_PICKER_TOO_FEW_WARNING"), HostGame);
+		end
 	end
+end
+
+-- ===========================================================================
+function HostGame()
+	-- Start a normal game
+	UI.PlaySound("Set_View_3D");
+	Network.HostGame(ServerType.SERVER_TYPE_NONE);
+end
+
+-- ===========================================================================
+function AreAllCityStateSlotsUsed()
+	local kParameters:table = g_GameParameters["Parameters"];
+
+	if kParameters["CityStates"] == nil then
+		return true;
+	end
+
+	local cityStateSlots:number = kParameters["CityStateCount"].Value;
+	local totalCityStates:number = #kParameters["CityStates"].AllValues;
+	local excludedCityStates:number = kParameters["CityStates"].Value ~= nil and #kParameters["CityStates"].Value or 0;
+
+	if (totalCityStates - excludedCityStates) < cityStateSlots then
+		return false;
+	end
+
+	return true;
 end
 
 ----------------------------------------------------------------    
@@ -2083,7 +2294,7 @@ end
 
 -- ===========================================================================
 function OnBeforeMultiplayerInviteProcessing()
-	-- We're about to process a game invite.  Get off the popup stack before we accidently break the invite!
+	-- We're about to process a game invite.  Get off the popup stack before we accidentally break the invite!
 	UIManager:DequeuePopup( ContextPtr );
 end
 
@@ -2095,6 +2306,7 @@ function OnShutdown()
 
 	LuaEvents.MapSelect_SetMapByValue.Remove( OnSetMapByValue );
 	LuaEvents.MultiSelectWindow_SetParameterValues.Remove(OnSetParameterValues);
+	LuaEvents.CityStatePicker_SetParameterValues.Remove(OnSetParameterValues);
 end
 
 -- ===========================================================================
@@ -2130,6 +2342,7 @@ function Initialize()
 
 	LuaEvents.MapSelect_SetMapByValue.Add( OnSetMapByValue );
 	LuaEvents.MultiSelectWindow_SetParameterValues.Add(OnSetParameterValues);
+	LuaEvents.CityStatePicker_SetParameterValues.Add(OnSetParameterValues);
 	-- YnAMP <<<<<
 	Controls.LoadDataYnAMP:RegisterCallback( Mouse.eLClick, LoadDatabase);
 	Controls.LoadDataYnAMP:RegisterCallback( Mouse.eMouseEnter, function() UI.PlaySound("Main_Menu_Mouse_Over"); end);--
@@ -2685,6 +2898,7 @@ end
 
 -- ===========================================================================
 function MapSize_ValueChanged(p)
+print("MapSize_ValueChanged")
 	SetupParameters_Log("MAP SIZE CHANGED");
 
 	-- The map size has changed!
@@ -2704,7 +2918,7 @@ function MapSize_ValueChanged(p)
 			maxPlayers = v.MaxPlayers;
 			defPlayers = m_AdvancedMode and math.max(GameConfiguration.GetParticipatingPlayerCount(), v.DefaultPlayers) or v.DefaultPlayers; --YnAMP currentSelectedNumberMajorCivs
 			minCityStates = v.MinCityStates;
-			maxCityStates = v.MaxCityStates;
+			maxCityStates = v.MaxCityStates--math.min(v.MaxCityStates,maxTotalPlayers-defPlayers);
 			defCityStates = v.DefaultCityStates;
 		end
 	end
@@ -2752,6 +2966,8 @@ function GetRelevantParameters(o, parameter)
 		return false
 	end
 	
+	
+	--
 	-- Show dimension for Map with custom sections
 	if parameter.ConfigurationId == "MapDimension" then
 		local dimension	= GetCustomMapDimension()
@@ -2770,6 +2986,7 @@ function GetRelevantParameters(o, parameter)
 		end
 	end
 
+	--
 	-- The OnlyLeadersWithTSL option require the Database to be loaded and unmodified
 	if parameter.ConfigurationId == "OnlyLeadersWithTSL" then
 		if (not ConfigYnAMP.IsDatabaseLoaded) or ConfigYnAMP.IsDatabaseChanged then
@@ -2777,6 +2994,7 @@ function GetRelevantParameters(o, parameter)
 		end
 	end
 	
+	--
 	-- Show fake OnlyLeadersWithTSL option when the Database is not loaded or modified
 	if parameter.ConfigurationId == "FakeOnlyLeadersWithTSL" then
 		if ConfigYnAMP.IsDatabaseLoaded and not ConfigYnAMP.IsDatabaseChanged then
@@ -2784,6 +3002,9 @@ function GetRelevantParameters(o, parameter)
 		end
 	end
 	
+	--[[
+	-- we don't need the code below anymore I think, as we use the base game CS piker only and expect modders to follow Firaxis method
+	--
 	-- The SelectCityStates option require the Database to be unmodified
 	if parameter.ConfigurationId == "SelectCityStates" then
 		if ConfigYnAMP.IsDatabaseChanged then
@@ -2791,13 +3012,16 @@ function GetRelevantParameters(o, parameter)
 		end
 	end
 	
+	--
 	-- Show fake SelectCityStates option when the Database is not loaded or modified
 	if parameter.ConfigurationId == "FakeSelectCityStates" then -- or parameter.ParameterId == "HideSelectCityStates"
 		if (not ConfigYnAMP.IsDatabaseChanged) then
 			return false
 		end
 	end
+	--]]
 	
+	--
 	-- Hide unavailable Leaders from Ban list
 	if IsLeaderType[parameter.ConfigurationId] then
 		ParameterBackup(parameter) -- to save/restore each leader value even when the setting is hidden
@@ -2807,6 +3031,9 @@ function GetRelevantParameters(o, parameter)
 		end
 	end
 	
+	--[[
+	-- deprecated code related to the old CS selection method
+	--
 	-- Save/Restore CityState selection list
 	-- Hide CityState without TSL from list
 	if IsMinorLeaderType[parameter.ConfigurationId] then
@@ -2820,6 +3047,7 @@ function GetRelevantParameters(o, parameter)
 			end
 		end
 	end
+	--]]
 	
 	return OldGetRelevantParameters(o, parameter);
 end
@@ -2850,43 +3078,100 @@ function SetupParameters:Parameter_FilterValues(parameter, values)
 	end
 	
 	-- Filter leaders without TSL
-	if (parameter.ParameterId == "PlayerLeader" and MapConfiguration.GetValue("OnlyLeadersWithTSL")) then
+	if (parameter.ParameterId == "PlayerLeader") then
+		local newValues = {}
+		if (MapConfiguration.GetValue("OnlyLeadersWithTSL")) then
+			local ruleset		= GameConfiguration.GetValue("RULESET")
+			local playerDomain	= ruleset and RulesetPlayerDomain[ruleset] or "Players:StandardPlayers"
+			local mapName		= MapConfiguration.GetValue("MapName")
+			for i, row in ipairs(values) do
+				local reason		= nil
+				local bHasTSL		= true	-- So that leaderType "RANDOM" is always valid
+				local leaderType	= row.Value
+				if leaderType ~= "RANDOM" then
+					local args = {}
+					args.leaderType 	= leaderType
+					args.mapName 		= mapName
+					args.playerDomain 	= playerDomain
+					bHasTSL, reason 	= HasTSL(args)--(leaderType, mapName, playerDomain, civilizationType)(leaderType, mapName, playerDomain)
+				end
+				if(bHasTSL) then
+				
+					-- 10-Jan-2021
+					-- Check below to remove the duplicate leaders/civilizations from the selection list as the UI doesn't notify/disable them now (introduced in the December 2020 patch or earlier)
+					-- remove the check and just keep the table.insert and availableLeaderList lines when it's fixed
+					if row.Invalid and row.InvalidReason ~= "LOC_SETUP_ERROR_NO_TSL" and row.InvalidReason ~= "LOC_SETUP_ERROR_NO_TSL_IN_SECTION" then
+						print("Removing invalid leader from list :", leaderType, row.Invalid, row.InvalidReason)
+					else
+						table.insert(newValues, row)
+						availableLeaderList[leaderType] = true
+					end
+				else
+					local copy = {}
+
+					-- Copy data from value.
+					for k,v in pairs(row) do
+						copy[k] = v
+					end
+
+					-- Mark value as invalid.
+					copy.Invalid 		= true
+					copy.InvalidReason 	= reason
+					-- 10-Jan-2021
+					-- Line below commented out to remove the invalid leaders/civilizations from the selection list as the UI doesn't notify/disable them now (introduced in the December 2020 patch or earlier)
+					-- uncomment this line when the display bug has been fixed by Firaxis
+					--table.insert(newValues, copy) 
+					availableLeaderList[leaderType] = false
+				end
+			end
+			return newValues
+		-- fix <<<<<
+		-- 10-Jan-2021
+		-- This section remove the duplicate leaders/civilizations from the selection list as the UI doesn't notify/disable them now (introduced in the December 2020 patch or earlier)
+		-- you can remove it when the bug is fixed
+		else
+			for i, row in ipairs(values) do
+				if row.Invalid then
+					print("Removing invalid leader from list :", leaderType, row.Invalid, row.InvalidReason)
+				else
+					table.insert(newValues, row)
+				end
+			end
+			return newValues
+		-- fix >>>>>
+		end
+	end
+	---[[
+	-- Hack to fix the value of the CityStates SortIndex in parameter (it doesn't use the value from the Configuration Database, but the value from the game's XML)
+	if (parameter.ParameterId == "CityStates") then
+		if parameter.SortIndex ~= CityStatesSortIndex then
+			print("Fixing the SortIndex of the CityStates parameter to use Configuration DB value, parameter says "..tostring(parameter.SortIndex).." while DB is "..tostring(CityStatesSortIndex))
+			parameter.SortIndex = CityStatesSortIndex
+		end
+	end
+	
+	-- Filter CityStates without TSL for the new Picker screen
+	if (parameter.ParameterId == "CityStates") and MapConfiguration.GetValue("OnlyLeadersWithTSL") then
 		local newValues 	= {}
-		local ruleset		= GameConfiguration.GetValue("RULESET")
-		local playerDomain	= ruleset and RulesetPlayerDomain[ruleset] or "Players:StandardPlayers"
 		local mapName		= MapConfiguration.GetValue("MapName")
 		for i, row in ipairs(values) do
 			local reason		= nil
-			local bHasTSL		= true	-- So that leaderType "RANDOM" is always valid
-			local leaderType	= row.Value
-			if leaderType ~= "RANDOM" then
-				local args = {}
-				args.leaderType 	= leaderType
-				args.mapName 		= mapName
-				args.playerDomain 	= playerDomain
-				bHasTSL, reason 	= HasTSL(args)--(leaderType, mapName, playerDomain, civilizationType)(leaderType, mapName, playerDomain)
-			end
+			local bHasTSL			= true	-- So that leaderType "RANDOM" is always valid
+			local civilizationType	= row.Value
+			
+			local args = {}
+			args.civilizationType 	= row.Value
+			args.leaderType 		= LeadersCivilizations[row.Value]
+			args.mapName 			= mapName
+			bHasTSL, reason 		= HasTSL(args)
+				
 			if(bHasTSL) then
 				table.insert(newValues, row)
-				availableLeaderList[leaderType] = true
-			else
-				local copy = {}
-
-				-- Copy data from value.
-				for k,v in pairs(row) do
-					copy[k] = v
-				end
-
-				-- Mark value as invalid.
-				copy.Invalid 		= true
-				copy.InvalidReason 	= reason
-				table.insert(newValues, copy)
-				availableLeaderList[leaderType] = false
 			end
 		end
 		return newValues
 	end
-	
+	--]]
 	return values
 end
 
@@ -2901,6 +3186,17 @@ function InitializeYnAMP()
 	Events.FinishedGameplayContentConfigure.Remove(InitializeYnAMP)
 end
 Events.FinishedGameplayContentConfigure.Add(InitializeYnAMP)
+
+-- Neutralize the CS count control in the CS picker screen as we have multiple possible applications for the selection
+local CityStateConfirmButton = nil
+function UnlockCityStateConfirmButton()
+	local CityStateConfirmButton = CityStateConfirmButton or ContextPtr:LookUpControl("/FrontEnd/MainMenu/AdvancedSetup/CityStatePicker/ConfirmButton/")
+	if CityStateConfirmButton and CityStateConfirmButton:IsDisabled() then
+		CityStateConfirmButton:SetDisabled(false)
+		ContextPtr:LookUpControl("/FrontEnd/MainMenu/AdvancedSetup/CityStatePicker/CountWarning/"):SetText("")
+	end
+end
+Events.GameCoreEventPublishComplete.Add(UnlockCityStateConfirmButton)
 
 -- YnAMP >>>>>
 Initialize();
