@@ -97,6 +97,7 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GAUL"		X="43"	Y="44" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BABYLON_STK"	X="66"	Y="40" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_VIETNAM"		X="84"	Y="41" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MONGOLIA"	X="86"	Y="56" Leader="LEADER_KUBLAI_KHAN_MONGOLIA" />
 	</StartPosition>
 	
 	<!-- City States -->
