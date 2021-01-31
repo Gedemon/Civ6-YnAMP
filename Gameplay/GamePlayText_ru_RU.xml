@@ -2764,7 +2764,7 @@
 		<Replace Tag="LOC_CITY_NAME_BIELSKO_BIALA_GERMANY" Text="Биелиц-Биала" Language="ru_RU" />
 		<Replace Tag="LOC_CITY_NAME_BILHOROD_DNISTROVSKYI" Text="Белгород-Днестровский" Language="ru_RU" />
 		<Replace Tag="LOC_CITY_NAME_BILHOROD_DNISTROVSKYI_ARABIA" Text="Аккерман" Language="ru_RU" /> <!-- Turkish -->
-		<Replace Tag="LOC_CITY_NAME_BILHOROD_DNISTROVSKYI_GREECE" Text="Тирас" Language="ru_RU" 
+		<Replace Tag="LOC_CITY_NAME_BILHOROD_DNISTROVSKYI_GREECE" Text="Тирас" Language="ru_RU" />
 		<Replace Tag="LOC_CITY_NAME_BILHOROD_DNISTROVSKYI_HUNGARY" Text="Билхород-Дништровски" Language="ru_RU" />
 		<Replace Tag="LOC_CITY_NAME_BILHOROD_DNISTROVSKYI_POLAND" Text="Билогрод над Дниестрем" Language="ru_RU" />
 		<Replace Tag="LOC_CITY_NAME_BILHOROD_DNISTROVSKYI_ROME" Text="Албум Каструм" Language="ru_RU" />
@@ -9145,7 +9145,7 @@
 		<Replace Tag="LOC_CITY_NAME_FREDERICTON_CREE" Text="Аукпакуе" Language="ru_RU" />
 		<Replace Tag="LOC_CITY_NAME_FREDERICTON_MAPUCHE" Text="Аукпакуе" Language="ru_RU" />
 		<Replace Tag="LOC_CITY_NAME_FREDERICTON_SCOTLAND" Text="Минто" Language="ru_RU" />
-		<Replace Tag="LOC_CITY_NAME_FREDERICTON_CHINA" Text="Фулэйделикедун Language="ru_RU" />
+		<Replace Tag="LOC_CITY_NAME_FREDERICTON_CHINA" Text="Фулэйделикедун" Language="ru_RU" />
 		<Replace Tag="LOC_CITY_NAME_FREDERICTON_JAPAN" Text="Фуредерикутон" Language="ru_RU" />
 		<Replace Tag="LOC_CITY_NAME_FREDERICTON_RUSSIA" Text="Фредериктон" Language="ru_RU" />
 		<Replace Tag="LOC_CITY_NAME_FREDERICTON_ARABIA" Text="Фаридриктун" Language="ru_RU" />

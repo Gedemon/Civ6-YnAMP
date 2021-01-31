@@ -10,15 +10,11 @@
   </Properties>	
   
     <ActionCriteria>
-        <Criteria id="YNAMP_Expansion2">
+        <Criteria id="Expansion2">
 			<GameCoreInUse>Expansion2</GameCoreInUse>
         </Criteria>
-        <Criteria id="YNAMP_Expansion1">
+        <Criteria id="Expansion1">
 			<GameCoreInUse>Expansion1</GameCoreInUse>
-        </Criteria>
-        <Criteria id="YNAMP_VikingsDLC">
-			<!-- that criteria is not working as supposed, files using it are always loaded --> 
-			<ModInUse>2F6E858A-28EF-46B3-BEAC-B985E52E9BC1</ModInUse>
         </Criteria>
     </ActionCriteria>
 	
@@ -89,7 +85,7 @@
 			<File>Gameplay/CityNameByEra.xml</File>
 			<File>Gameplay/Scenarios.xml</File>
 		</UpdateDatabase>
-		<UpdateDatabase id="YNAMP_XP2" criteria="YNAMP_Expansion2">
+		<UpdateDatabase id="YNAMP_XP2" criteria="Expansion2">
            	<Properties>
 				<LoadOrder>10</LoadOrder>
            	</Properties>
@@ -155,12 +151,6 @@
 				<LoadOrder>10</LoadOrder>
            	</Properties>
 			<File>Configuration/ConfigXP1.xml</File>
-		</UpdateDatabase>
-		<UpdateDatabase id="YNAMP_SETTING" criteria="YNAMP_VikingsDLC">
-           	<Properties>
-				<LoadOrder>10</LoadOrder>
-           	</Properties>
-			<File>Configuration/ConfigVikingDLC.xml</File>
 		</UpdateDatabase>
 		<UpdateText id="YNAMP_SETTING_LOC">
 				<File>Configuration/ConfigText.xml</File>
