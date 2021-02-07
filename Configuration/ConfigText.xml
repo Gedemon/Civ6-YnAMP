@@ -66,6 +66,10 @@
     <Replace Tag="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Language="en_US">
       <Text>Culturally Linked Starting Positions</Text>
     </Replace>
+    <Replace Tag="LOC_TEAM_LINKED_NAME" Language="en_US">
+      <Text>Teams start closer</Text>
+    </Replace>
+	
     <Replace Tag="LOC_MAP_PLACEMENT_RANDOM_NAME" Language="en_US">
       <Text>Random</Text>
     </Replace>

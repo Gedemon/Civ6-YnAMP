@@ -71,6 +71,7 @@ isResourceExclusive 			= {}
 YnAMP_Loading.IsAlternateStart	= {}
 -- get options
 bCulturallyLinked 		= MapConfiguration.GetValue("CulturallyLinkedStart") == "PLACEMENT_ETHNIC";
+bTeamLinkedStart 		= MapConfiguration.GetValue("TeamLinkedStart")
 bTSL 					= MapConfiguration.GetValue("CivilizationPlacement") == "PLACEMENT_TSL";
 bResourceExclusion 		= MapConfiguration.GetValue("ResourcesExclusion") == "PLACEMENT_EXCLUDE";
 bRequestedResources 	= MapConfiguration.GetValue("RequestedResources") == "PLACEMENT_REQUEST";
@@ -5761,7 +5762,9 @@ function CalculateDistanceScore(cultureList, bOutput, player1, player2)
 				local player2 		= Players[player_ID2]
 				local playerConfig2 = PlayerConfigurations[player_ID2]
 				local civCulture2 	= GameInfo.Civilizations[playerConfig2:GetCivilizationTypeID()].Ethnicity
-				if  civCulture2 == civCulture then
+				local bUseTeamStart	= bTeamLinkedStart and player:GetTeam() == player2:GetTeam()
+				if  civCulture2 == civCulture or bUseTeamStart then
+					local SAME_GROUP_WEIGHT = bUseTeamStart and (SAME_GROUP_WEIGHT*2) or SAME_GROUP_WEIGHT
 					local startPlot1 = player:GetStartingPlot()
 					--if not startPlot1 then print("WARNING no starting plot for : " .. tostring(playerConfig:GetPlayerName())) end
 					local startPlot2 = player2:GetStartingPlot()

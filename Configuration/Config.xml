@@ -59,6 +59,9 @@
 		<!--	Culturally Linked Start Position		-->
 		<Replace ParameterId="CulturallyLinkedStart" Name="LOC_CULTURALLY_LINKED_START_NAME" Description="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Domain="CulturallyLinkedStart" DefaultValue="PLACEMENT_ETHNIC" ConfigurationGroup="Map" ConfigurationId="CulturallyLinkedStart" GroupId="MapOptions" Hash="0" SortIndex="287"/>
 
+		<!--	Team Linked Start Position (depending on Culturally Linked Start)		-->
+		<Replace ParameterId="TeamLinkedStart" 	Name="LOC_TEAM_LINKED_NAME" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="TeamLinkedStart" GroupId="MapOptions" SupportsLANMultiplayer="1" SupportsInternetMultiplayer="1" SupportsHotSeat="1" SortIndex="296"/>
+
 		<!--	Option to use Leaders TSL if available		-->
 		<Replace ParameterId="LeaderTSL" Name="LOC_MAP_LEADER_TSL_NAME" Description="" Domain="bool" DefaultValue="1" ConfigurationGroup="Map" ConfigurationId="LeaderTSL" GroupId="MapOptions" SortIndex="296"/>
 
@@ -175,7 +178,8 @@
 		<Replace ParameterId="PlaceAllStrategics" 		ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="Equals" 		ConfigurationValue="PLACEMENT_IMPORT"/>
 		<Replace ParameterId="NoIceAdjacentToLand"		ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_IMPORT"/>
 		<Replace ParameterId="ContinentModel"			ConfigurationGroup="Map" ConfigurationId="ContinentsPlacement" 		Operator="Equals" 		ConfigurationValue="PLACEMENT_IMPORT"/>
-
+		<Replace ParameterId="TeamLinkedStart"			ConfigurationGroup="Map" ConfigurationId="CulturallyLinkedStart" 	Operator="Equals" 		ConfigurationValue="PLACEMENT_ETHNIC"/>
+		
 		<Replace ParameterId="TurnsBeforeBarbarians" 	ConfigurationGroup="Game" ConfigurationId="GAME_NO_BARBARIANS" 		Operator="Equals" ConfigurationValue="0" />
 		
 	</ParameterDependencies>
