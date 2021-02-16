@@ -87,6 +87,8 @@
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_GAUL"			X="18"	Y="79"  Leader="LEADER_AMBIORIX" AlternateStart="1"/>
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_GAUL"	X="18"	Y="79" />	
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_BABYLON_STK"	X="53"	Y="64" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_VIETNAM"		X="101"	Y="59" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_MONGOLIA"	X="110"	Y="85" Leader="LEADER_KUBLAI_KHAN_MONGOLIA" />
 	</StartPosition>
 		
 	<!-- Minors from Civ6 -->
