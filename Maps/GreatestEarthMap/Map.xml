@@ -19,7 +19,7 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BYZANTIUM" 	X="58" Y="45" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CARTHAGE" 	X="48" Y="36" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CELTS"		X="38" Y="56" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CHINA"		X="87" Y="54" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CHINA"		X="86" Y="54" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CHINA"		X="85" Y="50" Leader="LEADER_QIN" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_CREE"		X="8" Y="57" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_DENMARK"		X="49" Y="57" />
@@ -96,6 +96,8 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GAUL"			X="43"	Y="44"  Leader="LEADER_AMBIORIX" AlternateStart="1"/>
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_GAUL"		X="43"	Y="44" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_BABYLON_STK"	X="66"	Y="40" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_VIETNAM"		X="84"	Y="41" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MONGOLIA"	X="86"	Y="56" Leader="LEADER_KUBLAI_KHAN_MONGOLIA" />
 	</StartPosition>
 	
 	<!-- City States -->

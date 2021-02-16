@@ -2085,6 +2085,19 @@ function OnStartButton()
 		print("Database Changed, skipping CS selection...")
 	end
 	
+	-- Gedemon fix for Free Cities Bug
+	if (GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_1" or GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_2") then
+        local playerConfig     = PlayerConfigurations[62]
+        if playerConfig then
+            local leaderType = "LEADER_FREE_CITIES"
+            local leaderName = "LOC_LEADER_FREE_CITIES_NAME"
+            print(" - Reserving player slot#"..tostring(slotID).." for ".. Locale.Lookup(leaderName) )
+            playerConfig:SetSlotStatus(SlotStatus.SS_COMPUTER)
+            playerConfig:SetLeaderName(leaderName)
+            playerConfig:SetLeaderTypeName(leaderType)
+        end
+    end
+    
 	-- List the player slots
 	local slotStatusString	= {}
 	local civLevelString	= {}
