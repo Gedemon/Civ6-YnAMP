@@ -2864,14 +2864,6 @@ function ParameterBackup(parameter) -- Save and Restore specifics parameters whe
 	end
 end
 
-
--- ===========================================================================
--- Mod Compatibility (not working, files are nil when reloading advanced setup as of sept 2019 patch)
--- ===========================================================================
---print("Including AdvancedSetup_* files...")
---include("AdvancedSetup_", true);
-
-
 -- ===========================================================================
 -- Override vanilla setting functions
 -- ===========================================================================
@@ -3197,6 +3189,14 @@ function UnlockCityStateConfirmButton()
 	end
 end
 Events.GameCoreEventPublishComplete.Add(UnlockCityStateConfirmButton)
+
+
+-- ===========================================================================
+-- Mod Compatibility (addon files must be imported in both <FrontEnd> and <InGame>
+-- ===========================================================================
+print("Including AdvancedSetup_* files...")
+include("AdvancedSetup_", true);
+
 
 -- YnAMP >>>>>
 Initialize();
