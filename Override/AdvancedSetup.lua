@@ -2091,7 +2091,7 @@ function OnStartButton()
         if playerConfig then
             local leaderType = "LEADER_FREE_CITIES"
             local leaderName = "LOC_LEADER_FREE_CITIES_NAME"
-            print(" - Reserving player slot#"..tostring(slotID).." for ".. Locale.Lookup(leaderName) )
+            print(" - Reserving player slot#62 for ".. Locale.Lookup(leaderName) )
             playerConfig:SetSlotStatus(SlotStatus.SS_COMPUTER)
             playerConfig:SetLeaderName(leaderName)
             playerConfig:SetLeaderTypeName(leaderType)
@@ -3106,7 +3106,7 @@ function SetupParameters:Parameter_FilterValues(parameter, values)
 					-- Check below to remove the duplicate leaders/civilizations from the selection list as the UI doesn't notify/disable them now (introduced in the December 2020 patch or earlier)
 					-- remove the check and just keep the table.insert and availableLeaderList lines when it's fixed
 					if row.Invalid and row.InvalidReason ~= "LOC_SETUP_ERROR_NO_TSL" and row.InvalidReason ~= "LOC_SETUP_ERROR_NO_TSL_IN_SECTION" then
-						print("Removing invalid leader from list :", leaderType, row.Invalid, row.InvalidReason)
+						--print("Removing invalid leader from list :", leaderType, row.Invalid, row.InvalidReason)
 					else
 						table.insert(newValues, row)
 						availableLeaderList[leaderType] = true
@@ -3137,7 +3137,7 @@ function SetupParameters:Parameter_FilterValues(parameter, values)
 		else
 			for i, row in ipairs(values) do
 				if row.Invalid then
-					print("Removing invalid leader from list :", leaderType, row.Invalid, row.InvalidReason)
+					--print("Removing invalid leader from list :", row.Value, row.Invalid, row.InvalidReason)
 				else
 					table.insert(newValues, row)
 				end
