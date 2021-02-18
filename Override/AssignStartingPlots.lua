@@ -261,6 +261,7 @@ function AssignStartingPlots.Create(args)
 
 	--instance:__InitStartingData()
 	-- YnAMP <<<<<
+	SetGlobals()
 	if not bTSL then
 		instance:__InitStartingData()
 	end
@@ -3205,8 +3206,6 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, wi
 	-- Set globals
 	SetGlobals()
 	
-	g_MaxStartDistanceMajor = math.sqrt(g_iW * g_iH / PlayerManager.GetWasEverAliveMajorsCount())
-	g_MinStartDistanceMajor = g_MaxStartDistanceMajor / 3
 	print("g_MaxStartDistanceMajor, g_MinStartDistanceMajor = ", g_MaxStartDistanceMajor, g_MinStartDistanceMajor)
 
 	local bIsCiv5Map = (#MapToConvert[0][0][6] == 2) -- 6th entry is resource for civ5 data ( = 2 : type and number), cliffs positions for civ6 data ( = 3 : all possible positions on a hexagon side)
