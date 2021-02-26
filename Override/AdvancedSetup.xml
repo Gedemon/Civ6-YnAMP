@@ -68,7 +68,7 @@
 															<Image Texture="Controls_CircleBacking45" Size="51,51" Anchor="L,T" Offset="-3,-3"/>
 															<Image ID="Basic_LocalPlayerLeaderIcon" Texture="Leaders45" Size="45,45" Anchor="C,C"/>
 														</Container>
-														<ScrollTextField ID="Basic_LocalPlayerScrollText" Size="200,50" Style="TabFont" Offset="100,0" Anchor="L,C"/>
+                                                        <ScrollTextField ID="Basic_LocalPlayerScrollText" Size="200,50" Style="TabFont" Offset="100,0" Anchor="L,C"/>
 													</GridButton>
 												</ButtonData>
 												<GridData Offset="0,45" Texture="Controls_DropdownPanel" InnerPadding="0,6" SliceCorner="10,10" SliceTextureSize="22,22"/>
@@ -220,7 +220,7 @@
 										<Container Offset="25,5" Size="parent-50,50">
 											<!-- Local Player Civ -->
 											<!-- Color Scheme -->
-											<PullDown ID="Advanced_LocalColorPullDown" ScrollThreshold="350" Size="65,50" AutoSizePopUp="0" SpaceForScroll="1">
+											<PullDown ID="Advanced_LocalColorPullDown" ScrollThreshold="350" Size="65,50" AutoSizePopUp="1" SpaceForScroll="1">
 												<ButtonData>
 													<GridButton  Size="65,45" Style="TabFont" TextAnchor="L,T" DisabledMouseMoveCallbacks="1">
 														<GridData Texture="Controls_DropDownControlLarge" StateOffsetIncrement="0,45"	SliceCorner="10,15" SliceTextureSize="45,45" />
@@ -231,12 +231,12 @@
 													</GridButton>
 												</ButtonData>
 												<GridData Offset="0,45" Texture="Controls_DropdownPanel" InnerPadding="0,6" SliceCorner="10,10" SliceTextureSize="22,22"/>
-												<ScrollPanelData Anchor="C,C" Vertical="1" Size="parent,parent" AutoScrollBar="1" >
+												<ScrollPanelData Anchor="C,C" Vertical="1" Size="65,parent" AutoScrollBar="1" >
 													<ScrollBar Style="Slider_Blue" Anchor="R,C" AnchorSide="O,I"   />
 												</ScrollPanelData>
 												<StackData StackGrowth="Bottom" Anchor="C,T"/>
 												<InstanceData Name="InstanceOne">
-													<GridButton ID="Button" Style="ButtonControl" Anchor="L,T"	Size="75,45" Offset="10,0" TextAnchor="L,C" TextOffset="60" WrapWidth="200">
+													<GridButton ID="Button" Style="ButtonControl" Anchor="C,T"	Size="65,50" Offset="5,0" TextAnchor="L,C" TextOffset="60" WrapWidth="200">
 														<Container Size="30,30" Offset="0,0" Anchor="C,C">
 															<Image ID="CivIconBG" Texture="CircleBacking30" Size="30,30" Anchor="C,C" Offset="0,0"/>
 															<Image ID="CivIcon" Texture="CivSymbols30" Size="30,30" Anchor="C,C"/>
@@ -349,6 +349,7 @@
 			<LuaContext ID="MapSelectWindow" FileName="MapSelect" Hidden="1"/>
 			<LuaContext ID="MultiSelectWindow" FileName="MultiSelectWindow" Hidden="1"/>
 			<LuaContext ID="CityStatePicker" FileName="CityStatePicker" Hidden="1"/>
+      <LuaContext ID="LeaderPicker" FileName="LeaderPicker" Hidden="1"/>
 
 		</Container><!-- Main Window -->
 
@@ -357,12 +358,25 @@
 
 	</Box><!-- Main Box -->
 
+	<Container ID="ConflictPopup" Anchor="C,C" Size="680,400" Offset="0,0" Hidden="1">
+		<Image ID="ModalBG" Size="680,400" Offset="0,0" Texture="WorldBuilder_BG" StretchMode="Tile" ConsumeMouse="1"/>
+		<Grid	Size="parent,40" Texture="Controls_SubHeader2" ConsumeMouse="1" SliceCorner="20,2" SliceTextureSize="40,40">
+		  <Label ID="ModalScreenTitle" String="LOC_SETUP_PLAYER_PARAMETER_ERROR" Anchor="C,C" Style="FontFlair26" FontStyle="glow" ColorSet="ShellHeader" />
+		</Grid>
+		<Grid	Offset="-8,-8"	Size="parent+16,parent+16"	Style="ScreenFrame"/>
+
+		<Grid Size="648,280" Offset="20,50" Texture="Religion_OverviewFrame" SliceCorner="15,15" SliceTextureSize="34,33">
+				<Label Offset="20,20" WrapWidth="560" Style="FontNormal20" FontStyle="shadow" ColorSet="ShellHeader" String="LOC_SETUP_PLAYER_PARAMETER_ERROR_POPUP" />
+		</Grid>
+		<GridButton ID="ConflictConfirmButton" Size="200,48" Offset="17,8" String="LOC_CONTINUE" Style="ButtonConfirm" Anchor="C,B"/>
+	</Container>
+
 	<!-- INSTANCES -->
 	<!-- Non Local Player Slot Instance -->
 	<Instance Name="NonLocalPlayerSlotInstance" >
 		<Container ID="Root"  Size="parent,auto">
 			<!-- Color Scheme -->
-			<PullDown ID="ColorPullDown" ScrollThreshold="350" Size="65,50" AutoSizePopUp="0" AutoFlip="1" SpaceForScroll="1">
+			<PullDown ID="ColorPullDown" ScrollThreshold="350" Size="65,50" AutoSizePopUp="1" AutoFlip="1" SpaceForScroll="1">
 				<ButtonData>
 					<GridButton  Size="65,45" Style="TabFont" TextAnchor="L,T" DisabledMouseMoveCallbacks="1">
 						<GridData Texture="Controls_DropDownControlLarge" StateOffsetIncrement="0,45"	SliceCorner="10,15" SliceTextureSize="45,45" />
@@ -374,12 +388,12 @@
 					</GridButton>
 				</ButtonData>
 				<GridData Offset="0,45" Texture="Controls_DropdownPanel" InnerPadding="0,6" SliceCorner="10,10" SliceTextureSize="22,22"/>
-				<ScrollPanelData Anchor="C,C" Vertical="1" Size="parent,parent" AutoScrollBar="1" >
+				<ScrollPanelData Anchor="C,C" Vertical="1" Size="65,parent" AutoScrollBar="1" >
 					<ScrollBar Style="Slider_Blue" Anchor="R,C" AnchorSide="O,I"   />
 				</ScrollPanelData>
 				<StackData StackGrowth="Bottom" Anchor="C,T"/>
 				<InstanceData Name="InstanceOne">
-					<GridButton ID="Button" Style="ButtonControl" Anchor="L,T"	Size="75,45" Offset="10,0" TextAnchor="L,C" TextOffset="60" WrapWidth="200">
+					<GridButton ID="Button" Style="ButtonControl" Anchor="C,T"	Size="65,50" Offset="5,0" TextAnchor="L,C" TextOffset="60" WrapWidth="200">
 						<Container Size="30,30" Offset="0,0" Anchor="C,C">
 							<Image ID="CivIconBG" Texture="CircleBacking30" Size="30,30" Anchor="C,C" Offset="0,0"/>
 							<Image ID="CivIcon" Texture="CivSymbols30" Size="30,30" Anchor="C,C"/>

@@ -71,6 +71,7 @@ isResourceExclusive 			= {}
 YnAMP_Loading.IsAlternateStart	= {}
 -- get options
 bCulturallyLinked 		= MapConfiguration.GetValue("CulturallyLinkedStart") == "PLACEMENT_ETHNIC";
+bDistanceRelativeStart	= MapConfiguration.GetValue("CulturallyLinkedStart") == "PLACEMENT_DISTANCE";
 bTeamLinkedStart 		= MapConfiguration.GetValue("TeamLinkedStart")
 bTSL 					= MapConfiguration.GetValue("CivilizationPlacement") == "PLACEMENT_TSL";
 bResourceExclusion 		= MapConfiguration.GetValue("ResourcesExclusion") == "PLACEMENT_EXCLUDE";
@@ -3367,7 +3368,7 @@ function GenerateImportedMap(MapToConvert, Civ6DataToConvert, NaturalWonders, wi
 			local flowA	= GetFlowDirection(plotA, edgeA)
 			local flowB	= GetFlowDirection(plotB, edgeB)
 			if (NextFlowValid[flowA] and NextFlowValid[flowB]) and (not NextFlowValid[flowA][flowB]) and (not NextFlowValid[flowB][flowA]) then
-				print("Need to check Flow between: ", plotA:GetX(), plotA:GetY(), EdgeString[edgeA], FlowDirectionString[flowA], " and " , plotB:GetX(), plotB:GetY(), EdgeString[edgeB], FlowDirectionString[flowB])
+				--print("Need to check Flow between: ", plotA:GetX(), plotA:GetY(), EdgeString[edgeA], FlowDirectionString[flowA], " and " , plotB:GetX(), plotB:GetY(), EdgeString[edgeB], FlowDirectionString[flowB])
 			end			
 		end
 		
@@ -3777,6 +3778,11 @@ function CheckAllCivilizationsStartingLocations()
 		print("Updating Culturally Linked placement...")
 		CulturallyLinkedCivilizations(true)	
 		CulturallyLinkedCityStates(true)	
+	end -- ApplyDistanceRelativeStart
+	
+	if bDistanceRelativeStart and bNeedPlacementUpdate then
+		print("Updating Distance-Relative start...")
+		ApplyDistanceRelativeStart()
 	end
 end
 
@@ -5464,6 +5470,10 @@ function ImportCiv6Map(MapToConvert, g_iW, g_iH, bDoTerrains, bImportRivers, bIm
 		ContinentConvertion["CONTINENT_CAUCASIA"]		= EuropeID
 		ContinentConvertion["CONTINENT_BRITTANIA"]		= EuropeID
 		ContinentConvertion["CONTINENT_BALKANIA"]		= EuropeID
+		ContinentConvertion["CONTINENT_FRANCIA"]		= EuropeID
+		ContinentConvertion["CONTINENT_GERMANIA"]		= EuropeID
+		ContinentConvertion["CONTINENT_ITALIA"]			= EuropeID
+		ContinentConvertion["CONTINENT_BALTICA"]		= EuropeID
 	
 		-- North America
 		local NorthAmericaID = GameInfo.Continents["CONTINENT_NORTH_AMERICA"].Index
@@ -5720,6 +5730,10 @@ function YnAMP_StartPositions()
 		CulturallyLinkedCityStates()
 	end
 	
+	if bDistanceRelativeStart then
+		ApplyDistanceRelativeStart()
+	end
+	
 	if bRequestedResources and (not bNoResources) and (not bStartinglocationResourcesAdded) then
 		AddStartingLocationResources()
 	end
@@ -5729,7 +5743,7 @@ end
 -- Culturally Linked Start Locations
 ------------------------------------------------------------------------------
 
-BRUTE_FORCE_TRIES 	= 3 -- raise this number for better placement but longer initialization. From tests, 3 passes should be more than enough.
+BRUTE_FORCE_TRIES 	= 5--3 -- raise this number for better placement but longer initialization. From tests, 3 passes should be more than enough.
 OVERSEA_PENALTY 	= 50 -- distance penalty for starting plot separated by sea
 SAME_GROUP_WEIGHT 	= 5 -- factor to use for distance in same cultural group
 
@@ -6065,6 +6079,137 @@ function CulturallyLinkedCityStates(bForcePlacement)
 	print ("CS INITIAL DISTANCE SCORE = " .. tostring(initialDistanceScore))
 	print ("------------------------------------------------------- ")
 	print ("CS FINAL DISTANCE SCORE = " .. tostring(CalculateDistanceScoreCityStates()))
+	print ("------------------------------------------------------- ")
+end
+
+
+------------------------------------------------------------------------------
+-- Civ-to-Civ relative distance
+------------------------------------------------------------------------------
+local sReferenceMapName	= "GiantEarth"
+local tCivToCivDistance = {}
+local tCivRefStartPos	= {}
+local iDefaultDistance	= GlobalParameters.START_DISTANCE_MAJOR_CIVILIZATION * 2 -- place further Civs that don't have a reference TSL
+function BuildReferenceDistanceTable()
+
+	if tCivRefStartPos.IsInitialized then return end
+
+	for row in GameInfo.StartPosition() do
+		if row.MapName == sReferenceMapName  then
+			if isInGame[row.Civilization] and not tCivRefStartPos[row.Civilization] then
+				tCivRefStartPos[row.Civilization] = row
+			end
+		end
+	end
+
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do -- players can share a Civilization/Leader, so we can't assume "one TSL by Civilization/Leader" and need to loop the players table
+		local sCivType 	= PlayerConfigurations[iPlayer]:GetCivilizationTypeName()
+		local rowPlayer	= tCivRefStartPos[sCivType]
+		tCivToCivDistance[iPlayer] = {}
+		local iPlayerX, iPlayerY = tCivRefStartPos
+		for iOtherPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+			if iOtherPlayer ~= iPlayer then
+				local sOtherCivType = PlayerConfigurations[iOtherPlayer]:GetCivilizationTypeName()
+				if sOtherCivType == sCivType then
+					tCivToCivDistance[iPlayer][iOtherPlayer] = 0
+				else
+					local rowOtherPlayer = tCivRefStartPos[sOtherCivType]
+					
+					if rowOtherPlayer and rowPlayer then
+						local iPlayerX, iPlayerY			= GetXYFromRefMapXY(rowPlayer.X, rowPlayer.Y)
+						local iOtherPlayerX, iOtherPlayerY	= GetXYFromRefMapXY(rowOtherPlayer.X, rowOtherPlayer.Y)
+						tCivToCivDistance[iPlayer][iOtherPlayer] = Map.GetPlotDistance(iPlayerX, iPlayerY, iOtherPlayerX, iOtherPlayerY)
+					else
+						tCivToCivDistance[iPlayer][iOtherPlayer] = iDefaultDistance
+					end
+				end
+				print(sCivType, sOtherCivType, tCivToCivDistance[iPlayer][iOtherPlayer])
+			end
+		end
+	end
+	tCivRefStartPos.IsInitialized = true
+end
+
+function CalculateCivToCivDistanceScore()
+	local globalDistanceScore = 0
+	for iPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+		local pPlayer	= Players[iPlayer]
+		local pPlot		= pPlayer:GetStartingPlot()
+		if pPlot then
+			for iOtherPlayer = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+				if iPlayer ~= iOtherPlayer then
+					local pOtherPlayer	= Players[iOtherPlayer]
+					local pOtherPlot 	= pOtherPlayer:GetStartingPlot()
+					if pOtherPlot then
+						local bUseTeamStart	= bTeamLinkedStart and pPlayer:GetTeam() == pOtherPlayer:GetTeam()
+						local iRefDistance	= bUseTeamStart and 0 or tCivToCivDistance[iPlayer][iOtherPlayer]
+						local iDistance		= Map.GetPlotDistance(pPlot:GetX(), pPlot:GetY(), pOtherPlot:GetX(), pOtherPlot:GetY())
+						if pPlot:GetArea() ~= pOtherPlot:GetArea() then
+							iDistance = iDistance + OVERSEA_PENALTY
+						end
+						local iScore		= math.abs(tCivToCivDistance[iPlayer][iOtherPlayer] - iDistance)
+						globalDistanceScore = globalDistanceScore + (iScore*iScore)
+					end
+				end
+			end
+		end
+	end
+	return globalDistanceScore
+end
+
+function ApplyDistanceRelativeStart()
+
+	BuildReferenceDistanceTable()
+
+	print ("------------------------------------------------------- ")
+	print ("Apply Distance-Relative option to startingposition... ")
+	print ("------------------------------------------------------- ")
+	
+	local iInitialDistanceScore = CalculateCivToCivDistanceScore()
+	local iBestDistanceScore 	= iInitialDistanceScore
+	
+	-- very brute force
+	for try = 1, BRUTE_FORCE_TRIES do 
+		print ("------------------------------------------------------- ")
+		print ("Brute Force Pass num = " .. tostring(try) )
+		for player_ID = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+			if not IsOceanStart[player_ID] then
+				local player = Players[player_ID]
+				local playerConfig = PlayerConfigurations[player_ID]
+				print ("------------------------------------------------------- ")
+				print ("Testing " .. tostring(playerConfig:GetPlayerName()) )
+				for player_ID2 = 0, PlayerManager.GetWasEverAliveCount() - 1 do
+					if player_ID ~= player_ID2 and not IsOceanStart[player_ID2] then
+						local player2 		= Players[player_ID2]
+						local playerConfig2 = PlayerConfigurations[player_ID2]
+						
+						local startPlot1 	= player:GetStartingPlot()
+						local startPlot2 	= player2:GetStartingPlot()
+						local bAreSameType	= player:IsMajor() == player2:IsMajor()
+						if startPlot1 and startPlot2 and bAreSameType then
+							player:SetStartingPlot(startPlot2)
+							player2:SetStartingPlot(startPlot1)
+							local actualdistanceScore = CalculateCivToCivDistanceScore()
+							if  actualdistanceScore < iBestDistanceScore then
+								print (" - Got better score, switching position of " .. tostring(playerConfig:GetPlayerName()) .. " with " .. tostring(playerConfig2:GetPlayerName()) .. " at new best score = " .. tostring(actualdistanceScore) )
+								iBestDistanceScore = actualdistanceScore
+							else	
+								player:SetStartingPlot(startPlot1)
+								player2:SetStartingPlot(startPlot2)
+							end
+						end
+					end
+				end
+			end
+		end
+
+		print ("New global distance = " .. tostring(CalculateCivToCivDistanceScore()))
+	end
+	local finalScore = CalculateCivToCivDistanceScore()
+	print ("------------------------------------------------------- ")
+	print ("INITIAL DISTANCE SCORE = " .. tostring(iInitialDistanceScore))
+	print ("------------------------------------------------------- ")
+	print ("FINAL DISTANCE SCORE: " .. tostring(finalScore) )
 	print ("------------------------------------------------------- ")
 end
 

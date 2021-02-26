@@ -13,7 +13,9 @@ UPDATE Parameters SET SortIndex =30 WHERE ParameterId = 'GameStartEra';
 UPDATE Parameters SET SortIndex =35 WHERE ParameterId = 'GameSpeeds';
 UPDATE Parameters SET SortIndex =40 WHERE ParameterId = 'Realism';
 UPDATE Parameters SET SortIndex =270 WHERE ParameterId = 'Resources';
-
+--
+UPDATE Parameters SET SupportsSinglePlayer =0 WHERE ParameterId = 'LeaderPool1';
+UPDATE Parameters SET SupportsSinglePlayer =0 WHERE ParameterId = 'LeaderPool2';
 
 -- Legacy update
 UPDATE Players SET Domain='Players:StandardPlayers' WHERE Domain='StandardPlayers';

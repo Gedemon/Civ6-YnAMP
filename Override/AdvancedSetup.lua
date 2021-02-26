@@ -929,6 +929,106 @@ function CreateCityStatePickerDriver(o, parameter, parent)
 end
 
 -- ===========================================================================
+-- This driver is for launching the leader picker in a separate window.
+-- ===========================================================================
+function CreateLeaderPickerDriver(o, parameter, parent)
+
+	if(parent == nil) then
+		parent = GetControlStack(parameter.GroupId);
+	end
+			
+	-- Get the UI instance
+	local c :object = g_ButtonParameterManager:GetInstance();	
+
+	local parameterId = parameter.ParameterId;
+	local button = c.Button;
+	button:RegisterCallback( Mouse.eLClick, function()
+		LuaEvents.LeaderPicker_Initialize(o.Parameters[parameterId], g_GameParameters);
+		Controls.LeaderPicker:SetHide(false);
+	end);
+	button:SetToolTipString(parameter.Description);
+
+	-- Store the root control, NOT the instance table.
+	g_SortingMap[tostring(c.ButtonRoot)] = parameter;
+
+	c.ButtonRoot:ChangeParent(parent);
+	if c.StringName ~= nil then
+		c.StringName:SetText(parameter.Name);
+	end
+
+	local cache = {};
+
+	local kDriver :table = {
+		Control = c,
+		Cache = cache,
+		UpdateValue = function(value, p)
+			local valueText = value and value.Name or nil;
+			local valueAmount :number = 0;
+
+			-- Remove random leaders from the Values table that is used to determine number of leaders selected
+			for i = #p.Values, 1, -1 do
+				local kItem:table = p.Values[i];
+				if kItem.Value == "RANDOM" or kItem.Value == "RANDOM_POOL1" or kItem.Value == "RANDOM_POOL2" then
+					table.remove(p.Values, i);
+				end
+			end
+		
+			if(valueText == nil) then
+				if(value == nil) then
+					if (parameter.UxHint ~= nil and parameter.UxHint == "InvertSelection") then
+						valueText = "LOC_SELECTION_EVERYTHING";
+					else
+						valueText = "LOC_SELECTION_NOTHING";
+					end
+				elseif(type(value) == "table") then
+					local count = #value;
+					if (parameter.UxHint ~= nil and parameter.UxHint == "InvertSelection") then
+						if(count == 0) then
+							valueText = "LOC_SELECTION_EVERYTHING";
+						elseif(count == #p.Values) then
+							valueText = "LOC_SELECTION_NOTHING";
+						else
+							valueText = "LOC_SELECTION_CUSTOM";
+							valueAmount = #p.Values - count;
+						end
+					else
+						if(count == 0) then
+							valueText = "LOC_SELECTION_NOTHING";
+						elseif(count == #p.Values) then
+							valueText = "LOC_SELECTION_EVERYTHING";
+						else
+							valueText = "LOC_SELECTION_CUSTOM";
+							valueAmount = count;
+						end
+					end
+				end
+			end				
+
+			if(cache.ValueText ~= valueText) or (cache.ValueAmount ~= valueAmount) then
+				local button = c.Button;			
+				button:LocalizeAndSetText(valueText, valueAmount);
+				cache.ValueText = valueText;
+				cache.ValueAmount = valueAmount;
+			end
+		end,
+		UpdateValues = function(values, p) 
+			-- Values are refreshed when the window is open.
+		end,
+		SetEnabled = function(enabled, p)
+			c.Button:SetDisabled(not enabled or #p.Values <= 1);
+		end,
+		SetVisible = function(visible)
+			c.ButtonRoot:SetHide(not visible);
+		end,
+		Destroy = function()
+			g_ButtonParameterManager:ReleaseInstance(c);
+		end,
+	};	
+
+	return kDriver;
+end
+
+-- ===========================================================================
 -- Override parameter behavior for basic setup screen.
 g_ParameterFactories["Ruleset"] = function(o, parameter)
 	
@@ -1280,6 +1380,11 @@ function GameParameters_UI_CreateParameterDriver(o, parameter, ...)
 			-- return nil; -- YnAMP
 		end
 		return CreateCityStatePickerDriver(o, parameter);
+	elseif(parameter.ParameterId == "LeaderPool1" or parameter.ParameterId == "LeaderPool2") then
+		if GameConfiguration.IsWorldBuilderEditor() then
+			return nil;
+		end
+		return CreateLeaderPickerDriver(o, parameter);
 	elseif(parameter.Array) then
 		return CreateMultiSelectWindowDriver(o, parameter);
 	else
@@ -1464,6 +1569,7 @@ function UI_PostRefreshParameters()
 		if(err) then
 			Controls.StartButton:SetDisabled(true);
 			Controls.StartButton:LocalizeAndSetToolTip("LOC_SETUP_PLAYER_PARAMETER_ERROR");
+			Controls.ConflictPopup:SetHide(false);
 			-- YnAMP <<<<<
 			print("GetPlayerParameterError = ", err)
 			if type(err)=="table" then for k, v in pairs(err) do print("   - ", k, v) end end
@@ -2086,6 +2192,7 @@ function OnStartButton()
 	end
 	
 	-- Gedemon fix for Free Cities Bug
+	--[[
 	if (GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_1" or GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_2") then
         local playerConfig     = PlayerConfigurations[62]
         if playerConfig then
@@ -2097,27 +2204,8 @@ function OnStartButton()
             playerConfig:SetLeaderTypeName(leaderType)
         end
     end
+	--]]
     
-	-- List the player slots
-	local slotStatusString	= {}
-	local civLevelString	= {}
-	for key, v in pairs(SlotStatus) do
-		slotStatusString[v] = key
-	end
-	for key, v in pairs(CivilizationLevelTypes) do
-		civLevelString[v] = key
-	end
-		
-	print("------------------------------------------------------")
-	print("Setup Player slots :")
-	for slotID = 0, 63 do
-		local playerConfig = PlayerConfigurations[slotID]
-		if playerConfig then
-		--Indentation
-			print(slotID, Indentation(playerConfig and playerConfig:GetLeaderTypeName(),20), Indentation(playerConfig and playerConfig:GetCivilizationTypeName(),25), Indentation(playerConfig and playerConfig:GetSlotName(),25), Indentation(playerConfig and (slotStatusString[playerConfig:GetSlotStatus()] or "UNK STATUS"),15), Indentation(playerConfig and (civLevelString[playerConfig:GetCivilizationLevelTypeID()] or "UNK LEVEL"),15),  playerConfig and playerConfig:IsAI())
-		end
-	end
-	
 	-- Make some info available during map creation
 	YnAMP_Loading.ListMods 		= listMods
 	YnAMP_Loading.GameVersion 	= UI.GetAppVersion()
@@ -2148,6 +2236,60 @@ end
 
 -- ===========================================================================
 function HostGame()
+	-- YnAMP <<<<<
+	-- Reserve slots if required
+	local bHasFreeCities 	= (GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_1" or GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_2")
+	local lastSlot 			= bHasFreeCities and 61 or 62
+	local results			= DB.ConfigurationQuery("SELECT * FROM ReservedPlayerSlots")
+	local IsUsedLeader		= {}
+	for slotID = 0, 63 do
+		local playerConfig = PlayerConfigurations[slotID]
+		if playerConfig and playerConfig:GetLeaderTypeName() then
+			IsUsedLeader[playerConfig:GetLeaderTypeName()] = true
+		end
+	end
+	for i, row in ipairs(results) do
+		local playerConfig = PlayerConfigurations[lastSlot]
+		local leaderName = "LOC_"..tostring(row.LeaderType).."_NAME"
+		if playerConfig then
+			if playerConfig:GetLeaderTypeName() == nil or row.ForceReplace then
+				if not (row.NoDuplicate and IsUsedLeader[row.LeaderType]) then
+					print(" - Reserving player slot#"..tostring(lastSlot).." for ".. tostring(row.LeaderType) )
+					
+					playerConfig:SetLeaderTypeName(nil)
+					GameConfiguration.RemovePlayer(lastSlot)
+					
+					playerConfig:SetSlotStatus(SlotStatus.SS_COMPUTER)
+					playerConfig:SetLeaderName(leaderName)
+					playerConfig:SetLeaderTypeName(row.LeaderType)
+					if row.IsMajor then
+						playerConfig:SetMajorCiv()
+					end
+				end
+				lastSlot = lastSlot - 1
+			end
+		end
+	end
+	
+	-- List the player slots
+	local slotStatusString	= {}
+	local civLevelString	= {}
+	for key, v in pairs(SlotStatus) do
+		slotStatusString[v] = key
+	end
+	for key, v in pairs(CivilizationLevelTypes) do
+		civLevelString[v] = key
+	end
+	print("------------------------------------------------------")
+	print("Setup Player slots :")
+	for slotID = 0, 63 do
+		local playerConfig = PlayerConfigurations[slotID]
+		if playerConfig then
+		--Indentation
+			print(slotID, Indentation(playerConfig and playerConfig:GetLeaderTypeName(),20), Indentation(playerConfig and playerConfig:GetCivilizationTypeName(),25), Indentation(playerConfig and playerConfig:GetSlotName(),25), Indentation(playerConfig and (slotStatusString[playerConfig:GetSlotStatus()] or "UNK STATUS"),15), Indentation(playerConfig and (civLevelString[playerConfig:GetCivilizationLevelTypeID()] or "UNK LEVEL"),15),  playerConfig and playerConfig:IsAI())
+		end
+	end
+	-- YnAMP >>>>>
 	-- Start a normal game
 	UI.PlaySound("Set_View_3D");
 	Network.HostGame(ServerType.SERVER_TYPE_NONE);
@@ -2320,6 +2462,7 @@ function OnShutdown()
 	LuaEvents.MapSelect_SetMapByValue.Remove( OnSetMapByValue );
 	LuaEvents.MultiSelectWindow_SetParameterValues.Remove(OnSetParameterValues);
 	LuaEvents.CityStatePicker_SetParameterValues.Remove(OnSetParameterValues);
+	LuaEvents.LeaderPicker_SetParameterValues.Remove(OnSetParameterValues);
 end
 
 -- ===========================================================================
@@ -2348,6 +2491,8 @@ function Initialize()
 	Controls.SaveConfig:RegisterCallback( Mouse.eMouseEnter, function() UI.PlaySound("Main_Menu_Mouse_Over"); end);
 	Controls.MapSelectButton:RegisterCallback( Mouse.eLClick, OnMapSelect );
 	Controls.MapSelectButton:RegisterCallback( Mouse.eMouseEnter, function() UI.PlaySound("Main_Menu_Mouse_Over"); end);
+	Controls.ConflictConfirmButton:RegisterCallback( Mouse.eLClick, function() Controls.ConflictPopup:SetHide(true); end);
+	Controls.ConflictConfirmButton:RegisterCallback( Mouse.eMouseEnter, function() UI.PlaySound("Main_Menu_Mouse_Over"); end);
 	
 	Events.FinishedGameplayContentConfigure.Add(OnFinishedGameplayContentConfigure);
 	Events.SystemUpdateUI.Add( OnUpdateUI );
@@ -2356,6 +2501,7 @@ function Initialize()
 	LuaEvents.MapSelect_SetMapByValue.Add( OnSetMapByValue );
 	LuaEvents.MultiSelectWindow_SetParameterValues.Add(OnSetParameterValues);
 	LuaEvents.CityStatePicker_SetParameterValues.Add(OnSetParameterValues);
+	LuaEvents.LeaderPicker_SetParameterValues.Add(OnSetParameterValues);
 	-- YnAMP <<<<<
 	Controls.LoadDataYnAMP:RegisterCallback( Mouse.eLClick, LoadDatabase);
 	Controls.LoadDataYnAMP:RegisterCallback( Mouse.eMouseEnter, function() UI.PlaySound("Main_Menu_Mouse_Over"); end);--
@@ -3135,16 +3281,19 @@ function SetupParameters:Parameter_FilterValues(parameter, values)
 		-- This section remove the duplicate leaders/civilizations from the selection list as the UI doesn't notify/disable them now (introduced in the December 2020 patch or earlier)
 		-- you can remove it when the bug is fixed
 		else
+			---[[
 			for i, row in ipairs(values) do
-				if row.Invalid then
+				if row.Invalid or row.Value == "RANDOM_POOL1" or row.Value == "RANDOM_POOL2" then
 					--print("Removing invalid leader from list :", row.Value, row.Invalid, row.InvalidReason)
 				else
 					table.insert(newValues, row)
 				end
 			end
 			return newValues
+			--]]
 		-- fix >>>>>
 		end
+		
 	end
 	---[[
 	-- Hack to fix the value of the CityStates SortIndex in parameter (it doesn't use the value from the Configuration Database, but the value from the game's XML)

@@ -45,13 +45,13 @@
 		</Update>
 		-->
 		
-		<Replace ParameterId="MajorCivilizationsCount" 	Name="LOC_MAJOR_CIVILIZATION_COUNT_NAME" 	Description="LOC_MAJOR_CIVILIZATION_COUNT_DESCRIPTION" 	Domain="MajorCivilizationsCount" 	ConfigurationGroup="Game" 	ConfigurationId="MajorCivilizationsCount" 	GroupId="GameOptions" 	SupportsLANMultiplayer="0" SupportsInternetMultiplayer="0" SortIndex="50"/>
-		<Replace ParameterId="OnlyLeadersWithTSL"		Name="LOC_MAP_TSL_LEADERS_NAME" 			Description="LOC_MAP_TSL_LEADERS_DESCRIPTION" 			Domain="bool" 	DefaultValue="0" 	ConfigurationGroup="Map" 	ConfigurationId="OnlyLeadersWithTSL" 		GroupId="MapOptions" 	SupportsLANMultiplayer="0" SupportsInternetMultiplayer="0" SortIndex="51"/>
-		<Replace ParameterId="FakeOnlyLeadersWithTSL"	Name="LOC_MAP_TSL_LEADERS_NAME" 			Description="LOC_MAP_TSL_LEADERS_NEED_DB_DESCRIPTION"	Domain="bool" 	DefaultValue="0" 	ConfigurationGroup="Map" 	ConfigurationId="FakeOnlyLeadersWithTSL" 	GroupId="MapOptions" 	SupportsLANMultiplayer="0" SupportsInternetMultiplayer="0" ReadOnly="1" SortIndex="51"/>
-		<Replace ParameterId="BanLeaders" 				Name="LOC_MAP_BAN_LEADERS_NAME" 			Description="LOC_MAP_BAN_LEADERS_DESCRIPTION" 			Domain="bool" 	DefaultValue="0" 	ConfigurationGroup="Map" 	ConfigurationId="BanLeaders" 				GroupId="MapOptions" 	SupportsLANMultiplayer="0" SupportsInternetMultiplayer="0" SortIndex="52"/>
+		<Replace ParameterId="MajorCivilizationsCount" 	Name="LOC_MAJOR_CIVILIZATION_COUNT_NAME" 	Description="LOC_MAJOR_CIVILIZATION_COUNT_DESCRIPTION" 	Domain="MajorCivilizationsCount" 	ConfigurationGroup="Game" 	ConfigurationId="MajorCivilizationsCount" 	GroupId="GameOptions" 	SupportsHotSeat='0' SupportsLANMultiplayer="0" SupportsInternetMultiplayer="0" SortIndex="50"/>
+		<Replace ParameterId="OnlyLeadersWithTSL"		Name="LOC_MAP_TSL_LEADERS_NAME" 			Description="LOC_MAP_TSL_LEADERS_DESCRIPTION" 			Domain="bool" 	DefaultValue="0" 	ConfigurationGroup="Map" 	ConfigurationId="OnlyLeadersWithTSL" 		GroupId="MapOptions" 	SupportsHotSeat='0' SupportsLANMultiplayer="0" SupportsInternetMultiplayer="0" SortIndex="51"/>
+		<Replace ParameterId="FakeOnlyLeadersWithTSL"	Name="LOC_MAP_TSL_LEADERS_NAME" 			Description="LOC_MAP_TSL_LEADERS_NEED_DB_DESCRIPTION"	Domain="bool" 	DefaultValue="0" 	ConfigurationGroup="Map" 	ConfigurationId="FakeOnlyLeadersWithTSL" 	GroupId="MapOptions" 	SupportsHotSeat='0' SupportsLANMultiplayer="0" SupportsInternetMultiplayer="0" ReadOnly="1" SortIndex="51"/>
+		<Replace ParameterId="BanLeaders" 				Name="LOC_MAP_BAN_LEADERS_NAME" 			Description="LOC_MAP_BAN_LEADERS_DESCRIPTION" 			Domain="bool" 	DefaultValue="0" 	ConfigurationGroup="Map" 	ConfigurationId="BanLeaders" 				GroupId="MapOptions" 	SupportsHotSeat='0' SupportsLANMultiplayer="0" SupportsInternetMultiplayer="0" SortIndex="52"/>
 
 		<!--	Map dimension to display custom section sizes		-->
-		<Row ParameterId="MapDimension"	Name="LOC_MAP_DIMENSION_NAME"	Description="LOC_MAP_DIMENSION_DESCRIPTION" Domain="text" Visible="1" DefaultValue="0x0 (0)" ConfigurationGroup="Map" ConfigurationId="MapDimension"	GroupId="MapOptions" ReadOnly="1" SortIndex="227"/>
+		<Row ParameterId="MapDimension"	Name="LOC_MAP_DIMENSION_NAME"	Description="LOC_MAP_DIMENSION_DESCRIPTION" Domain="text" Visible="1" DefaultValue="0x0 (0)" ConfigurationGroup="Map" ConfigurationId="MapDimension"	GroupId="MapOptions" SupportsHotSeat='0' SupportsLANMultiplayer="0" SupportsInternetMultiplayer="0" ReadOnly="1" SortIndex="227"/>
 		
 		<!--	Add missing Strategic resources on import		-->
 		<Replace ParameterId="PlaceAllStrategics" 		Name="LOC_MAP_ALL_STRATEGICS_NAME" Description="LOC_MAP_ALL_STRATEGICS_DESCRIPTION" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="PlaceAllStrategics" GroupId="MapOptions" SortIndex="269"/>
@@ -119,6 +119,7 @@
 		
 		<Replace Domain="CulturallyLinkedStart" Value="PLACEMENT_DEFAULT" 	Name="LOC_MAP_PLACEMENT_RANDOM_NAME" 		Description="LOC_MAP_LINKED_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
 		<Replace Domain="CulturallyLinkedStart" Value="PLACEMENT_ETHNIC"	Name="LOC_MAP_LINKED_PLACEMENT_ETHNIC_NAME" Description="LOC_MAP_LINKED_PLACEMENT_ETHNIC_DESCRIPTION" 	SortIndex="20"/>
+		<Replace Domain="CulturallyLinkedStart" Value="PLACEMENT_DISTANCE"	Name="LOC_MAP_LINKED_PLACEMENT_DISTANCE_NAME" Description="LOC_MAP_LINKED_PLACEMENT_DISTANCE_DESCRIPTION" SortIndex="30"/>
 		
 		<Replace Domain="ContinentsPlacement" Value="PLACEMENT_DEFAULT" 	Name="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_NAME" 	Description="LOC_MAP_CONTINENTS_PLACEMENT_DEFAULT_DESCRIPTION" 	SortIndex="10"/>
 		<Replace Domain="ContinentsPlacement" Value="PLACEMENT_IMPORT" 		Name="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_NAME" 	Description="LOC_MAP_CONTINENTS_PLACEMENT_IMPORT_DESCRIPTION" 	SortIndex="20"/>
@@ -178,7 +179,7 @@
 		<Replace ParameterId="PlaceAllStrategics" 		ConfigurationGroup="Map" ConfigurationId="ResourcesPlacement" 		Operator="Equals" 		ConfigurationValue="PLACEMENT_IMPORT"/>
 		<Replace ParameterId="NoIceAdjacentToLand"		ConfigurationGroup="Map" ConfigurationId="FeaturesPlacement" 		Operator="NotEquals" 	ConfigurationValue="PLACEMENT_IMPORT"/>
 		<Replace ParameterId="ContinentModel"			ConfigurationGroup="Map" ConfigurationId="ContinentsPlacement" 		Operator="Equals" 		ConfigurationValue="PLACEMENT_IMPORT"/>
-		<Replace ParameterId="TeamLinkedStart"			ConfigurationGroup="Map" ConfigurationId="CulturallyLinkedStart" 	Operator="Equals" 		ConfigurationValue="PLACEMENT_ETHNIC"/>
+		<Replace ParameterId="TeamLinkedStart"			ConfigurationGroup="Map" ConfigurationId="CulturallyLinkedStart" 	Operator="NotEquals" 	ConfigurationValue="PLACEMENT_DEFAULT"/>
 		
 		<Replace ParameterId="TurnsBeforeBarbarians" 	ConfigurationGroup="Game" ConfigurationId="GAME_NO_BARBARIANS" 		Operator="Equals" ConfigurationValue="0" />
 		

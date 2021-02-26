@@ -123,6 +123,12 @@
 	</InGameActions>
 	
 	<FrontEndActions>
+		<UpdateDatabase id="YNAMP_INIT_TABLE">
+           	<Properties>
+				<LoadOrder>-1000</LoadOrder>
+           	</Properties>
+			<File>Configuration/ConfigTables.sql</File>
+		</UpdateDatabase>
 		<UpdateDatabase id="YNAMP_SETTING">
 			<File>Configuration/Config.xml</File>
 			<File>Configuration/ScenarioConfig.xml</File>
@@ -232,6 +238,7 @@
 	
 	<Files>
 		<File>Version.sql</File>
+		<File>Configuration/ConfigTables.sql</File>
 		<File>Configuration/Config.xml</File>
 		<File>Configuration/PostConfig.sql</File>
 		<File>Configuration/ConfigXP2.sql</File>
