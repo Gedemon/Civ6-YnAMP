@@ -33,6 +33,10 @@
 		<Replace Type="CONTINENT_CAUCASIA" 			Kind="KIND_CONTINENT"/>
 		<Replace Type="CONTINENT_BRITTANIA"			Kind="KIND_CONTINENT"/>
 		<Replace Type="CONTINENT_BALKANIA" 			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_FRANCIA" 			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_GERMANIA" 			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_ITALIA" 			Kind="KIND_CONTINENT"/>
+		<Replace Type="CONTINENT_BALTICA" 			Kind="KIND_CONTINENT"/>
 		<!-- North America -->
 		<Replace Type="CONTINENT_AMERICA" 			Kind="KIND_CONTINENT"/>
 		<Replace Type="CONTINENT_NORTH_AMERICA" 	Kind="KIND_CONTINENT"/>
@@ -137,6 +141,10 @@
 		<Replace ContinentType="CONTINENT_CAUCASIA" 		Description="LOC_CONTINENT_CAUCASIA" 		/>
 		<Replace ContinentType="CONTINENT_BRITTANIA"		Description="LOC_CONTINENT_BRITTANIA"		/>
 		<Replace ContinentType="CONTINENT_BALKANIA" 		Description="LOC_CONTINENT_BALKANIA" 		/>
+		<Replace ContinentType="CONTINENT_FRANCIA" 			Description="LOC_CONTINENT_FRANCIA" 		/>
+		<Replace ContinentType="CONTINENT_GERMANIA" 		Description="LOC_CONTINENT_GERMANIA" 		/>
+		<Replace ContinentType="CONTINENT_ITALIA" 			Description="LOC_CONTINENT_ITALIA" 			/>
+		<Replace ContinentType="CONTINENT_BALTICA" 			Description="LOC_CONTINENT_BALTICA" 		/>
 		<!-- North America 
 		<Replace ContinentType="CONTINENT_AMERICA" 			Description="CONTINENT_AMERICA" 		/>
 		<Replace ContinentType="CONTINENT_NORTH_AMERICA" 	Description="CONTINENT_NORTH_AMERICA" 	/>

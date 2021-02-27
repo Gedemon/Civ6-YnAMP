@@ -162,6 +162,10 @@
 		<Replace Tag="LOC_CONTINENT_CAUCASIA" 			Text="Caucasia" Language="en_US"	/>
 		<Replace Tag="LOC_CONTINENT_BRITTANIA"			Text="Brittania" Language="en_US"	/>
 		<Replace Tag="LOC_CONTINENT_BALKANIA" 			Text="Balkania" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_FRANCIA" 			Text="Francia" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_GERMANIA" 			Text="Germania" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_ITALIA" 			Text="Italia" Language="en_US"	/>
+		<Replace Tag="LOC_CONTINENT_BALTICA" 			Text="Baltica" Language="en_US"	/>
 		<Replace Tag="CONTINENT_AMERICA" 				Text="America" Language="en_US"	/>
 		<Replace Tag="CONTINENT_NORTH_AMERICA" 			Text="North America" Language="en_US"	/>
 		<Replace Tag="CONTINENT_ALASKANIA" 				Text="Alaskania" Language="en_US"	/>

@@ -64,7 +64,7 @@
       <Text>Start position Link</Text>
     </Replace>
     <Replace Tag="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Language="en_US">
-      <Text>Culturally Linked Starting Positions</Text>
+      <Text>Linking Starting Positions between Civilization</Text>
     </Replace>
     <Replace Tag="LOC_TEAM_LINKED_NAME" Language="en_US">
       <Text>Teams start closer</Text>
@@ -74,13 +74,19 @@
       <Text>Random</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_DESCRIPTION" Language="en_US">
-      <Text>Do not try to regroup Civilizations by Ethnicity</Text>
+      <Text>Use the normal map generator placement (with terrains/features Starting Biases)</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_NAME" Language="en_US">
       <Text>Cultural</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_DESCRIPTION" Language="en_US">
-      <Text>Try to regroup Civilizations by Ethnicity on the Starting Positions</Text>
+      <Text>Try to regroup Civilizations by Ethnicity on the Starting Positions (this setting disable the other Starting Biases)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DISTANCE_NAME" Language="en_US">
+      <Text>Distance-Relative</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DISTANCE_DESCRIPTION" Language="en_US">
+      <Text>Try to regroup Civilizations by Relative Real World Distance on the Starting Positions (this setting disable the other Starting Biases)</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_NAME" Language="en_US">

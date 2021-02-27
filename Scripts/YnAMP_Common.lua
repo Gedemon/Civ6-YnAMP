@@ -58,8 +58,8 @@ g_HeightRatio			= 0
 g_ReferenceSizeRatio	= 0
 
 -- set values of the reference map for placement
-g_ReferenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth") or 180
-g_ReferenceMapHeight 	= MapConfiguration.GetValue("ReferenceMapHeight") or 94
+g_ReferenceMapWidth 	= MapConfiguration.GetValue("ReferenceMapWidth") or 180 -- Giant Earth Map is the default reference
+g_ReferenceMapHeight 	= MapConfiguration.GetValue("ReferenceMapHeight") or 94	--	"		"		"		"		"
 g_ReferenceMapSize  	= g_ReferenceMapWidth*g_ReferenceMapHeight
 g_ReferenceWidthFactor	= 0
 g_ReferenceHeightFactor	= 0
