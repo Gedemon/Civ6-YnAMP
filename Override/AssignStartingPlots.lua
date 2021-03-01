@@ -28,6 +28,7 @@ end
 -- List the player slots
 local slotStatusString	= {}
 local civLevelString	= {}
+SlotStatus.SS_RESERVED	= 5
 for key, v in pairs(SlotStatus) do
 	slotStatusString[v] = key
 end
@@ -39,7 +40,7 @@ print("InGame Player slots :")
 for slotID = 0, 63 do
 	local playerConfig = PlayerConfigurations[slotID]
 	if playerConfig then
-		print(slotID, Indentation(playerConfig and playerConfig:GetLeaderTypeName(),20), Indentation(playerConfig and playerConfig:GetCivilizationTypeName(),25), Indentation(playerConfig and playerConfig:GetSlotName(),25), Indentation(playerConfig and (slotStatusString[playerConfig:GetSlotStatus()] or "UNK STATUS"),15), playerConfig and (civLevelString[playerConfig:GetCivilizationLevelTypeID()] or "UNK LEVEL"))--,  playerConfig and playerConfig:IsAI())
+		print(slotID, Indentation(playerConfig and playerConfig:GetLeaderTypeName(),20), Indentation(playerConfig and playerConfig:GetCivilizationTypeName(),25), Indentation(playerConfig and playerConfig:GetSlotName(),25), Indentation(playerConfig and (slotStatusString[playerConfig:GetSlotStatus()] or "UNK STATUS#"..tostring(playerConfig:GetSlotStatus())),15), playerConfig and (civLevelString[playerConfig:GetCivilizationLevelTypeID()] or "UNK LEVEL"))--,  playerConfig and playerConfig:IsAI())
 	end
 end
 
@@ -49,7 +50,7 @@ print ("Setting YnAMP globals and cache...")
 g_startTimer = os.clock()
 
 --ExposedMembers.HistoricalStartingPlots 	= nil
-ExposedMembers.YnAMP	= { RiverMap = {}, PlayerToRemove = {}}
+ExposedMembers.YnAMP	= ExposedMembers.YnAMP or { RiverMap = {}, PlayerToRemove = {}}
 
 local YnAMP				= ExposedMembers.YnAMP
 local RiverMap 			= YnAMP.RiverMap
@@ -3699,11 +3700,11 @@ function CheckAllCivilizationsStartingLocations()
 				end
 			else
 				table.insert(YnAMP.PlayerToRemove, iPlayer)
-				print("Set temporary starting plot for " .. PlayerConfigurations[iPlayer]:GetPlayerName())
+				print("Get temporary starting plot for " .. PlayerConfigurations[iPlayer]:GetPlayerName())
 				--local pPlot = Map.GetPlot(0,0)
 				local pPlot = GetBestStartingPlotFromList(startPlotList, true)
 				if pPlot then
-					print("  - Set starting plot at ", pPlot:GetX(), pPlot:GetY())
+					print("  - Set temporary starting plot at ", pPlot:GetX(), pPlot:GetY())
 					player:SetStartingPlot(pPlot)
 				end
 			end
