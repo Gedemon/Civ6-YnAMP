@@ -16,9 +16,10 @@ print("loading AdvancedSetup for Yet (not) Another Maps Pack...")
 print("Game version : ".. tostring(UI.GetAppVersion()))
 ExposedMembers.ConfigYnAMP 		= ExposedMembers.ConfigYnAMP or {}
 ExposedMembers.YnAMP_Loading	= ExposedMembers.YnAMP_Loading or {}
+ExposedMembers.YnAMP			= { RiverMap = {}, PlayerToRemove = {}}
 YnAMP_Loading 	= ExposedMembers.YnAMP_Loading
 ConfigYnAMP 	= ExposedMembers.ConfigYnAMP
-
+YnAMP			= ExposedMembers.YnAMP
 ------------------------------------------------------------------------------
 -- YnAMP defines
 ------------------------------------------------------------------------------
@@ -36,6 +37,16 @@ local bStartDisabledBySetup 			= false
 --ConfigYnAMP.SavedParameter			= ConfigYnAMP.SavedParameter or {}	-- Saved values for disabled parameters
 local SavedParameter					= {}	--ConfigYnAMP.SavedParameter
 local cityStatesQuery					= "SELECT DISTINCT Parameters.ConfigurationId, Parameters.Name from Parameters JOIN ParameterDependencies ON Parameters.ParameterId = ParameterDependencies.ParameterId WHERE ParameterDependencies.ConfigurationId ='SelectCityStates' AND Parameters.ConfigurationId LIKE '%LEADER%'" --"SELECT * from Parameters where ConfigurationId LIKE '%LEADER_MINOR_CIV%' and GroupId='MapOptions'"
+local slotStatusString					= {}
+local civLevelString					= {}
+SlotStatus.SS_RESERVED					= 5
+for key, v in pairs(SlotStatus) do
+	slotStatusString[v] = key
+end
+for key, v in pairs(CivilizationLevelTypes) do
+	civLevelString[v] = key
+end
+
 -- There must be a cleaner way to get that...
 local RulesetPlayerDomain	= {
 	["RULESET_STANDARD"]	= "Players:StandardPlayers",
@@ -1815,6 +1826,7 @@ function OnStartButton()
 	local bOnlyTSL		= MapConfiguration.GetValue("OnlyLeadersWithTSL")
 	local ruleset		= GameConfiguration.GetValue("RULESET")
 	local playerDomain	= ruleset and RulesetPlayerDomain[ruleset] or "Players:StandardPlayers"
+	local bBarbarians	= GameConfiguration.GetValue("GAMEMODE_BARBARIAN_CLANS")
 	
 	local ruleset = GameConfiguration.GetValue("RULESET")
 	print("Active Ruleset = ", ruleset)
@@ -2119,11 +2131,12 @@ function OnStartButton()
 				end
 			end
 		
-			local bCapped			= MapConfiguration.GetValue("SelectCityStates") == "SELECTION" or MapConfiguration.GetValue("SelectCityStates") == "EXCLUSION"
+			local bCapped			= MapConfiguration.GetValue("SelectCityStates") == "SELECTION" or MapConfiguration.GetValue("SelectCityStates") == "EXCLUSION" or MapConfiguration.GetValue("SelectCityStates") == "RANDOM"
 			local bOnlySelection	= MapConfiguration.GetValue("SelectCityStates") == "ONLY_SELECTION"
 			local cityStateSlots 	= (bCapped and numCS) or maxCS
 			local shuffledList 		= GetShuffledCopyOfTable(filteredList)
 			local randomList		= {}
+			local barbarianList		= {}
 			local slotListID		= 1
 			print("------------------------------------------------------")
 			print("YnAMP setting specific CS slots...")
@@ -2148,7 +2161,8 @@ function OnStartButton()
 							print(" - ERROR, No slots found for ".. Locale.Lookup(leaderName) .." at slotListID#"..tostring(slotListID).."/".. tostring(#CityStatesSlotsList) .." but calculated slots left = ".. tostring(cityStateSlots) )
 						end
 					else
-						print(" - Maximum #CS reached, can't set a slot for ".. Locale.Lookup(leaderName) .." at slotListID#"..tostring(slotListID).."/".. tostring(#CityStatesSlotsList) )					
+						print(" - Maximum #CS reached, adding to Barbarian Pool : ".. Locale.Lookup(leaderName) .." at slotListID#"..tostring(slotListID).."/".. tostring(#CityStatesSlotsList) )
+						table.insert(barbarianList, row)
 					end
 				else -- add unselected CS to the random pool
 					table.insert(randomList, row)
@@ -2160,10 +2174,11 @@ function OnStartButton()
 			print("Setting Random CS to number of slots = ", newNumCS )
 			--GameConfiguration.SetValue("CITY_STATE_COUNT", newNumCS)
 			---[[
+			local slotID 	= CityStatesSlotsList[slotListID]
 			if newNumCS > 0 then
 				local nextIndex	= 1
 				for slotListID = slotListID, slotListID + newNumCS - 1 do --cityStateSlots do
-					local slotID 		= CityStatesSlotsList[slotListID]
+					slotID 				= CityStatesSlotsList[slotListID]
 					local playerConfig 	= PlayerConfigurations[slotID]
 					if playerConfig then
 						-- get next entry in the random pool
@@ -2172,16 +2187,56 @@ function OnStartButton()
 						if row then
 							local leaderType = row.ConfigurationId
 							local leaderName = row.Name
-							print(" - Reserving player slot#"..tostring(slotID).." for ".. Locale.Lookup(leaderName) )
+							print(" - Reserving player slot#"..tostring(slotID).." for ".. Locale.Lookup(leaderName), "slotListID#"..tostring(slotListID) )
 							playerConfig:SetSlotStatus(SlotStatus.SS_COMPUTER)
 							playerConfig:SetLeaderName(leaderName)
 							playerConfig:SetLeaderTypeName(leaderType)
 						else
 							print(" - No more CS in Random pool, can't set a CS at slotListID#"..tostring(slotListID).."/".. tostring(#CityStatesSlotsList) )
+							break
 						end
 					else
 						print(" - No more Slot available, can't set a CS at slotListID#"..tostring(slotListID).."/".. tostring(#CityStatesSlotsList) )
+						break
 					end
+				end
+			end
+			if bBarbarians then
+				print("Reserving Barbarians CS Slots")
+				print(" - slotListID",slotListID)
+				print(" - slotID",slotID)
+				local nextIndex	= 1
+				local maxSlotID	= (GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_1" or GameConfiguration.GetValue("RULESET") == "RULESET_EXPANSION_2") and maxTotalPlayers - 1 or maxTotalPlayers
+				if slotID then
+					while (slotID and slotID < maxSlotID) do
+						slotID 				= CityStatesSlotsList[slotListID]
+						slotListID			= slotListID + 1
+						if slotID and slotID < maxSlotID then
+							local playerConfig 	= PlayerConfigurations[slotID]
+							if playerConfig then
+								-- get next entry in the random pool
+								local row	= barbarianList[nextIndex]
+								nextIndex	= nextIndex + 1
+								if row then
+									local leaderType = row.ConfigurationId
+									local leaderName = row.Name
+									print(" - Reserving player slot#"..tostring(slotID).." for Barbarians CS ".. Locale.Lookup(leaderName) , "slotListID#"..tostring(slotListID) )
+									playerConfig:SetSlotStatus(SlotStatus.SS_RESERVED)
+									playerConfig:SetLeaderName(leaderName)
+									playerConfig:SetLeaderTypeName(leaderType)
+								else
+									print(" - No more CS in Barbarian pool, can't set a CS at slotListID#"..tostring(slotListID).."/".. tostring(#CityStatesSlotsList) )
+									break
+								end
+							end
+						elseif slotID then
+							print(" - Player Slot #".. tostring(slotID) ..">= "..tostring(maxTotalPlayers).. ", can't set a CS at slotListID#"..tostring(slotListID).."/".. tostring(#CityStatesSlotsList) )
+						else
+							print(" - No more Slot in CS slotList at ID#"..tostring(slotListID).."/".. tostring(#CityStatesSlotsList) )
+						end
+					end
+				else
+					print(" - No more Slot available, can't set a CS at slotListID#"..tostring(slotListID).."/".. tostring(#CityStatesSlotsList) )
 				end
 			end
 			--]]
@@ -2272,14 +2327,6 @@ function HostGame()
 	end
 	
 	-- List the player slots
-	local slotStatusString	= {}
-	local civLevelString	= {}
-	for key, v in pairs(SlotStatus) do
-		slotStatusString[v] = key
-	end
-	for key, v in pairs(CivilizationLevelTypes) do
-		civLevelString[v] = key
-	end
 	print("------------------------------------------------------")
 	print("Setup Player slots :")
 	for slotID = 0, 63 do
