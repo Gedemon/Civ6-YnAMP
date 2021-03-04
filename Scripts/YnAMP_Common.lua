@@ -8,7 +8,7 @@ print ("loading YnAMP_Common.lua")
 -- Sharing UI/Gameplay context
 ------------------------------------------------------------------------------
 
-ExposedMembers.YnAMP 			= ExposedMembers.YnAMP or {}
+ExposedMembers.YnAMP 			= ExposedMembers.YnAMP or { RiverMap = {}, PlayerToRemove = {}}
 ExposedMembers.ConfigYnAMP 		= ExposedMembers.ConfigYnAMP or {}
 ExposedMembers.YnAMP_Loading 	= ExposedMembers.YnAMP_Loading or {}
 
