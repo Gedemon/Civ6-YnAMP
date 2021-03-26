@@ -64,7 +64,7 @@
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_GRANADA"		X="19" Y="24" />
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_HATTUSA"		X="60" Y="29" />
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_JERUSALEM"	X="62" Y="16" />
-    <Replace MapName="LargeEurope" Civilization="CIVILIZATION_LISBON"		X="13" Y="27" />
+    <!-- Replace MapName="LargeEurope" Civilization="CIVILIZATION_LISBON"		X="13" Y="27" /> Changed to Mogadishu -->
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_PRESLAV"		X="52" Y="35" />
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_STOCKHOLM"	X="41" Y="61" />
     <Replace MapName="LargeEurope" Civilization="CIVILIZATION_VALLETTA"		X="37" Y="21" />
