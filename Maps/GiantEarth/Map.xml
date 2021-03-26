@@ -76,6 +76,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_BABYLON_STK"	X="40"	Y="51" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_VIETNAM"	X="76"	Y="47" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MONGOLIA"	X="83"	Y="68" Leader="LEADER_KUBLAI_KHAN_MONGOLIA" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PORTUGAL"		X="4" Y="56" />
 	</StartPosition>	
 	
 	<!-- Minors -->
@@ -95,7 +96,7 @@
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KANDY"			X="62" Y="33" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_KUMASI"		X="11" Y="34" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_LA_VENTA"		X="143" Y="47" />
-		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_LISBON"		X="4" Y="56" />
+		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_LISBON"		X="36" Y="30" /> <!-- Changed to Mogadishu -->
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_MOHENJO_DARO"	X="55" Y="52" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_NAN_MADOL"		X="105" Y="30" />
 		<Replace MapName="GiantEarth" Civilization="CIVILIZATION_PRESLAV"		X="29" Y="61" />
