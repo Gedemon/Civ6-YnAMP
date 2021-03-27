@@ -50,6 +50,7 @@
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_GAUL"			X="27"	Y="37"  Leader="LEADER_AMBIORIX" AlternateStart="1"/>
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_GAUL"			X="27"	Y="37" />
 	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_BABYLON_STK"	X="71"	Y="18" />
+	<Replace MapName="LargeEurope" Civilization="CIVILIZATION_PORTUGAL"		X="13" Y="27" />
   </StartPosition>
 
   <!-- Minors -->
