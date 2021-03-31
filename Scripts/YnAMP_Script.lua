@@ -314,13 +314,13 @@ function MapStatistics()
 	print("======================================")
 	print("====== Generated Map Statistics ======")
 	print("======================================")
-	print("-- Map Dimensions		= ", Indentation(tostring(iW).."x"..tostring(iH),8,true))
-	print("-- Total plots on map = ", Indentation(totalplots,8,true))
-	print("-- Land plots 		= ", Indentation(landPlots,8,true).."	 (" .. Indentation(Round(landPlots / totalplots * 10000) / 100,5,true).." map percent)")
-	print("-- Water plots 		= ", Indentation(waterPlots,8,true).."	 (" .. Indentation(Round(waterPlots / totalplots * 10000) / 100,5,true).." map percent)")
-	print("-- Hills plots 		= ", Indentation(hills,8,true).."	 (" .. Indentation(Round(hills / landPlots * 10000) / 100,5,true).." land percent)")
-	print("-- Mountains plots 	= ", Indentation(mountains,8,true).."	 (" .. Indentation(Round(mountains / landPlots * 10000) / 100,5,true).." land percent)")
-	print("-- Flatland plots 	= ", Indentation(flatLand,8,true).."	 (" .. Indentation(Round(flatLand / landPlots * 10000) / 100,5,true).." land percent)")
+	print(Indentation("-- Map Dimensions",25,false,true), Indentation(tostring(iW).."x"..tostring(iH),8,true))
+	print(Indentation("-- Total plots on map",25,false,true), Indentation(totalplots,8,true))
+	print(Indentation("-- Land plots",25,false,true), Indentation(landPlots,8,true).." (" .. Indentation(Round(landPlots / totalplots * 10000) / 100,5,true).." map percent)")
+	print(Indentation("-- Water plots",25,false,true), Indentation(waterPlots,8,true).." (" .. Indentation(Round(waterPlots / totalplots * 10000) / 100,5,true).." map percent)")
+	print(Indentation("-- Hills plots",25,false,true), Indentation(hills,8,true).." (" .. Indentation(Round(hills / landPlots * 10000) / 100,5,true).." land percent)")
+	print(Indentation("-- Mountains plots",25,false,true), Indentation(mountains,8,true).." (" .. Indentation(Round(mountains / landPlots * 10000) / 100,5,true).." land percent)")
+	print(Indentation("-- Flatland plots",25,false,true), Indentation(flatLand,8,true).." (" .. Indentation(Round(flatLand / landPlots * 10000) / 100,5,true).." land percent)")
 	
 	print("--------------------------------------")
 	print("-------- Resources Statistics --------")
@@ -337,7 +337,7 @@ function MapStatistics()
 			--if frequency < 10 then sFrequency = " "..sFrequency end
 			--Indentation(str, maxLength, bAlignRight, bShowSpace)
 			--print("Resource = " .. tostring(resRow.ResourceType).."		placed = " .. tostring(numRes).."		(" .. tostring(placedPercent).." % of land)		frequency = " .. sFrequency.."		ratio = " .. tostring(ratio))
-			print(Indentation(resRow.ResourceType,25,false, true).." placed = " .. Indentation(numRes,6,true),"	 (" .. Indentation(placedPercent,5,true).." land percent), frequency = " .. Indentation(frequency,3, true)..", ratio = " .. Indentation(ratio, 3, true))
+			print(Indentation(resRow.ResourceType,25,false, true).." placed = " .. Indentation(numRes,6,true)," (" .. Indentation(placedPercent,5,true).." land percent), frequency = " .. Indentation(frequency,3, true)..", ratio = " .. Indentation(ratio, 3, true))
 		end
 	end
 		
@@ -349,7 +349,7 @@ function MapStatistics()
 		local percent		= Round(number / totalplots * 10000) / 100
 		local landPercent	= Round(number / landPlots * 10000) / 100
 		local waterPercent	= Round(number / waterPlots * 10000) / 100
-		print(Indentation(row.TerrainType,25,false, true).." placed = " .. Indentation(number,6,true).."	 (" .. Indentation(percent,5,true).." map percent, ".. Indentation(landPercent,5,true).." land percent, ".. Indentation(waterPercent,5,true).." water percent)")
+		print(Indentation(row.TerrainType,25,false, true).." placed = " .. Indentation(number,6,true).." (" .. Indentation(percent,5,true).." map percent, ".. Indentation(landPercent,5,true).." land percent, ".. Indentation(waterPercent,5,true).." water percent)")
 	end
 		
 	print("--------------------------------------")
@@ -362,7 +362,7 @@ function MapStatistics()
 			local landPercent	= Round(number / landPlots * 10000) / 100
 			local waterPercent	= Round(number / waterPlots * 10000) / 100
 			--print(tostring(row.FeatureType).."		placed = " .. tostring(number).."		" .. tostring(percent).." map percent, ",	tostring(landPercent).." land percent, ", tostring(waterPercent).." water percent)")
-			print(Indentation(row.FeatureType,25,false, true).." placed = " .. Indentation(number,6,true).." 	(" .. Indentation(percent,5,true).." map percent, ".. Indentation(landPercent,5,true).." land percent, ".. Indentation(waterPercent,5,true).." water percent)")
+			print(Indentation(row.FeatureType,25,false, true).." placed = " .. Indentation(number,6,true).." (" .. Indentation(percent,5,true).." map percent, ".. Indentation(landPercent,5,true).." land percent, ".. Indentation(waterPercent,5,true).." water percent)")
 		end
 	end
 	print("--------------------------------------")
@@ -508,6 +508,8 @@ function GetRoadPath(plot, destPlot, sRoute, maxRange, iPlayer, bAllowHiddenRout
 	
 	local startNode	= startPlot
 	local bestCost	= 0.10
+
+	local adjancentRouteFactor	= 5
 	
 	function GetPath(currentNode)
 		local path 		= {}
@@ -546,10 +548,22 @@ function GetRoadPath(plot, destPlot, sRoute, maxRange, iPlayer, bAllowHiddenRout
 				if gScore[node] == nil then
 					local nodeDistance = node:GetMovementCost() --1 --Map.GetPlotDistance(data.Plot:GetX(), data.Plot:GetY(), currentPlot:GetX(), currentPlot:GetY())
 
-					if data.Plot:IsRiverCrossingToPlot(currentPlot) then nodeDistance = nodeDistance + 1 end
-					if data.Plot:GetRouteType() ~= -1 then nodeDistance = nodeDistance * bestCost end -- to do : real cost
+					if node:IsRiverCrossingToPlot(currentPlot) then nodeDistance = nodeDistance + 1 end
+					if node:GetRouteType() ~= -1 then 
+						nodeDistance = nodeDistance * bestCost -- to do : real cost
+					else
+						-- try to prevent spaghetti routes by avoiding adjacency for new routes
+						local numAdjacentRoutes		= 0
+						for direction = 0, DirectionTypes.NUM_DIRECTION_TYPES - 1, 1 do
+							local adjacentPlot = Map.GetAdjacentPlot(node:GetX(), node:GetY(), direction);
+							if adjacentPlot ~= currentPlot and adjacentPlot:GetRouteType() ~= -1 then
+								numAdjacentRoutes = numAdjacentRoutes + 1
+							end
+						end
+						nodeDistance = nodeDistance + (numAdjacentRoutes * adjancentRouteFactor)
+					end
 					
-					local destDistance		= Map.GetPlotDistance(data.Plot:GetX(), data.Plot:GetY(), destPlot:GetX(), destPlot:GetY()) * bestCost
+					local destDistance		= Map.GetPlotDistance(node:GetX(), node:GetY(), destPlot:GetX(), destPlot:GetY()) * bestCost
 					local tentative_gscore 	= (gScore[currentNode] or math.huge) + nodeDistance
 				
 					table.insert (openSet, {Node = node, Score = tentative_gscore + destDistance})
@@ -566,7 +580,7 @@ function GetRoadPath(plot, destPlot, sRoute, maxRange, iPlayer, bAllowHiddenRout
 		table.sort(openSet, function(a, b) return a.Score > b.Score; end)
 		local data = table.remove(openSet)
 		if data then
-			local plot = data.Node
+			--local plot = data.Node
 			currentNode = data.Node 
 		else
 			currentNode = nil
@@ -1105,15 +1119,15 @@ function GetScenarioRow(CivilizationType)
 	local matchingLevel = -1
 	
 	if CivilizationType == nil then
-		print("Called GetScenarioRow with CivilizationType = "..tostring(CivilizationType)..", looking for default settings values")
-		--return nil
+		--print("Called GetScenarioRow with CivilizationType = "..tostring(CivilizationType)..", looking for default settings values")
+		----return nil
 	end
 	for row in GameInfo.ScenarioCivilizations() do
 		if row.CivilizationType == CivilizationType then
 			local bReturnMatchingLevel 		= true
 			local bIsValid, newMatchLevel 	= IsRowValid(row, bReturnMatchingLevel)
-print("GetScenarioRow:", row.Index, CivilizationType, bIsValid, newMatchLevel, row.ScenarioName, row.MapName, row.MapScript, row.SpecificEra, "current scenario = ", scenarioName, "current map = ", mapName, "current script = ", mapScript)
---print("----------------------------")
+--print("GetScenarioRow:", row.Index, CivilizationType, bIsValid, newMatchLevel, row.ScenarioName, row.MapName, row.MapScript, row.SpecificEra, "current scenario = ", scenarioName, "current map = ", mapName, "current script = ", mapScript)
+----print("----------------------------")
 			if bIsValid then
 				if newMatchLevel > matchingLevel then --matchingRow == nil or newMatchLevel > matchingLevel then
 					matchingRow 	= row
@@ -1212,8 +1226,8 @@ function SetScenarioPlayers()
 			local bIsMajor			= player and player:IsMajor()
 			local bIsMinor			= player and (not bIsMajor) and (not player:IsBarbarian())
 			
-			print("- Scenario settings for "..tostring(civilizationType))
-			print("----------------------------")
+			--print("- Scenario settings for "..tostring(civilizationType))
+			--print("----------------------------")
 			
 			--[[
 			--debug
@@ -1226,18 +1240,18 @@ function SetScenarioPlayers()
 			--]]
 			--local strBuild = {}
 			if ScenarioRow then
-				print("ScenarioRow:")
-				print("-----")
+				--print("ScenarioRow:")
+				--print("-----")
 				for key, value in orderedPairs(ScenarioRow) do
-					print(" - ", Indentation(key, 25, false, true), value)
+					--print(" - ", Indentation(key, 25, false, true), value)
 					--table.insert(strBuild, Indentation(key, 25, false, true).. " : " ..Indentation(value, 25, false, false))
 					playerData[key] = value
 				end
-				--print(table.concat(strBuild, ","))
-				print("-----")
+				----print(table.concat(strBuild, ","))
+				--print("-----")
 			else
-				print("No Scenario row")
-				print("-----")
+				--print("No Scenario row")
+				--print("-----")
 			end
 			
 			-- a placement type is possible if : 
@@ -1279,7 +1293,7 @@ function SetScenarioPlayers()
 
 			-- Apply missing default settings
 			if defaultRow then
-				print("Add missing default settings...")
+				--print("Add missing default settings...")
 				for key, value in orderedPairs(defaultRow) do
 					playerData[key] = (playerData[key] == nil and value) or playerData[key]
 				end
@@ -1312,16 +1326,16 @@ function SetScenarioPlayers()
 				bDoImprovementPlacement = true
 			end
 			
-			print("Applied Settings:")
-			print("-----")
+			--print("Applied Settings:")
+			--print("-----")
 			local strBuild = {}
 			for key, value in orderedPairs(playerData) do
 				print(" - ", Indentation(key, 25, false, true), value)
 				--table.insert(strBuild, Indentation(key, 12, false, true).. ":" ..Indentation(value, 12, false, false))
-				--print(" - ", key, value)
+				----print(" - ", key, value)
 			end
-			--print(table.concat(strBuild, ","))
-			print("----------------------------")
+			----print(table.concat(strBuild, ","))
+			--print("----------------------------")
 		end
 	end
 end
