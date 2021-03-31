@@ -121,7 +121,7 @@
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KANDY"		X="78" Y="29" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_KUMASI"		X="46" Y="24" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_LA_VENTA"	X="15" Y="32" />
-		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_LISBON"		X="33" Y="37" />
+		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_LISBON"		X="67" Y="24" /> <!-- Changed to Mogadishu -->
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MEXICO_CITY"	X="11" Y="36" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_MOROCCO"		X="39" Y="30" />
 		<Replace MapName="GreatestEarthMap" Civilization="CIVILIZATION_NAN_MADOL"	X="95" Y="29" />
