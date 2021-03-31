@@ -162,6 +162,10 @@
 		<Replace Tag="LOC_CONTINENT_CAUCASIA" 			Text="코카시아" Language="ko_KR"	/>
 		<Replace Tag="LOC_CONTINENT_BRITTANIA"			Text="브리타니아" Language="ko_KR"	/>
 		<Replace Tag="LOC_CONTINENT_BALKANIA" 			Text="발카니아" Language="ko_KR"	/>
+		<Replace Tag="LOC_CONTINENT_FRANCIA" 			Text="프랑키아" Language="ko_KR"	/>
+		<Replace Tag="LOC_CONTINENT_GERMANIA" 			Text="게르마니아" Language="ko_KR"	/>
+		<Replace Tag="LOC_CONTINENT_ITALIA" 			Text="이탈리아" Language="ko_KR"	/>
+		<Replace Tag="LOC_CONTINENT_BALTICA" 			Text="발티카" Language="ko_KR"	/>
 		<Replace Tag="CONTINENT_AMERICA" 				Text="아메리카" Language="ko_KR"	/>
 		<Replace Tag="CONTINENT_NORTH_AMERICA" 			Text="북아메리카" Language="ko_KR"	/>
 		<Replace Tag="CONTINENT_ALASKANIA" 				Text="알래스카니아" Language="ko_KR"	/>
