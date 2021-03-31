@@ -89,6 +89,7 @@
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_BABYLON_STK"	X="53"	Y="64" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_VIETNAM"		X="101"	Y="59" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_MONGOLIA"	X="110"	Y="85" Leader="LEADER_KUBLAI_KHAN_MONGOLIA" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_PORTUGAL"		X="5" Y="69" />
 	</StartPosition>
 		
 	<!-- Minors from Civ6 -->
@@ -108,7 +109,7 @@
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_KANDY"		X="83" Y="41" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_KUMASI"		X="17" Y="44" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_LA_VENTA"		X="191" Y="58" />
-		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_LISBON"		X="5" Y="69" />
+		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_LISBON"		X="48" Y="38" /> <!-- Changed to Mogadishu -->
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_MOHENJO_DARO"	X="72" Y="63" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_NAN_MADOL"		X="144" Y="45" />
 		<Replace MapName="LargestEarthCustom" Civilization="CIVILIZATION_PRESLAV"		X="39" Y="77" />

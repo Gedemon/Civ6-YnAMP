@@ -11,6 +11,10 @@
       <Text>시작 지점 밸런스</Text>
     </Replace>
 	
+	<Replace Tag="LOC_CITYSTATE_COUNT_DESCRIPTION" Language="ko_KR">
+		<Text>The number of City-States to include in the game.[NEWLINE][NEWLINE]This number is limited by the number of slots already used, the game can handle 64 slots, one slot is used for the Barbarians, one slot is used for the Free Cities.[NEWLINE][NEWLINE]There are 62 slots left available for the total of City-States and Civilizations, when that total is higher than 62, the number of City-States will be lowered to respect the limit.</Text>
+	</Replace>												   
+	
 	<!-- New entries -->
     
 	<Replace Tag="LOC_YNAGEM_NAME" Language="ko_KR">
@@ -60,20 +64,55 @@
       <Text>시작 지점 연결</Text>
     </Replace>
     <Replace Tag="LOC_CULTURALLY_LINKED_START_DESCRIPTION" Language="ko_KR">
-      <Text>문화적으로 연결된 시작 지점</Text>
+      <Text>문화적으로 연관된 문명들의 시작 지점을 연결시켜줍니다</Text>
     </Replace>
-    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_NAME" Language="ko_KR">
+	<Replace Tag="LOC_TEAM_LINKED_NAME" Language="ko_KR">
+      <Text>같은 팀끼리 가까이 배치</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_PLACEMENT_RANDOM_NAME" Language="ko_KR">
       <Text>무작위</Text>
-    </Replace>
+    </Replace>   
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DEFAULT_DESCRIPTION" Language="ko_KR">
-      <Text>민족성에 따른 문명의 재편성을 금지</Text>
+      <Text>맵 생성기가 통상적으로 문명을 배치합니다 (지형/지형 특성 조건에 따라 차이가 있을 수 있습니다)</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_NAME" Language="ko_KR">
       <Text>문화적</Text>
     </Replace>
     <Replace Tag="LOC_MAP_LINKED_PLACEMENT_ETHNIC_DESCRIPTION" Language="ko_KR">
-      <Text>민족성에 따라 문명들의 시작 지점을 재편성함</Text>
+      <Text>문명들의 시작 위치를 민족에 따라 재편성하려 시도합니다 (이를 사용하면, 시작 지형/지형 특성 조건을 무시할 수도 있습니다)</Text>								
     </Replace>
+	<Replace Tag="LOC_MAP_LINKED_PLACEMENT_DISTANCE_NAME" Language="ko_KR">
+      <Text>거리-비례</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LINKED_PLACEMENT_DISTANCE_DESCRIPTION" Language="ko_KR">
+      <Text>문명들의 시작 위치를 실제 세계에서의 거리와 비례하는 상대적인 거리에 따라, 재편성하려 시도합니다 (이를 사용하면, 시작 지형/지형 특성 조건을 무시할 수도 있습니다)</Text>
+    </Replace>	
+	
+	<Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_NAME" Language="ko_KR">
+      <Text>TSL 대체 배치 거리</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_DESCRIPTION" Language="ko_KR">
+      <Text>만일 거리에 비례한 재편성으로도 불충분하다면, TSL 시작 위치가 옮겨질 수 있는 대체 위치를 결정합니다. 해당 파라메터는 맵의 크기에 따라서 조정됩니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_SHORT_NAME" Language="ko_KR">
+      <Text>지근 거리</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_SHORT_DESCRIPTION" Language="ko_KR">
+      <Text>지도의 실제 위치로부터 상대적으로 가까운 위치에 머무르려 시도합니다, 그러나 이를 사용하면 일부 문명이 게임에 등장하지 못하게 될 수도 있습니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_MEDIUM_NAME" Language="ko_KR">
+      <Text>중간 거리</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_MEDIUM_DESCRIPTION" Language="ko_KR">
+      <Text>이를 허용하면, 대부분의 경우에 있어 TSL 대체 시작 지점 배치가 가능하게 해줍니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_HIGH_NAME" Language="ko_KR">
+      <Text>먼 거리</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ALTERNATE_TSL_RANGE_HIGH_DESCRIPTION" Language="ko_KR">
+      <Text>문명이 본래 배치되어야 할 지역으로부터 상대적으로 멀리 떨어진 곳에 배치될 수도 있습니다.</Text>
+    </Replace>	
 	
     <Replace Tag="LOC_MAPSIZE_ENORMOUS_NAME" Language="ko_KR">
       <Text>특대형</Text>
@@ -88,16 +127,22 @@
       <Text>20명 이상의 플레이어를 위한 거대한 지도입니다 (184x92)[NEWLINE][ICON_Exclamation] [COLOR_RED]후반에 게임이 매우 불안정 할 수 있습니다[ENDCOLOR][NEWLINE]튕김 및 충돌 방지를 위해 그래픽 옵션을 낮추세요.[NEWLINE]6+ GB 이상의 VRAM 사양이 요구됩니다</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_LUDICROUS_NAME" Language="ko_KR">
-      <Text>터무니 없는</Text>
+      <Text>터무니 없는 크기</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_LUDICROUS_DESCRIPTION" Language="ko_KR">
       <Text>당신의 컴퓨터가 이걸 로드하다 터지나 안 터지나 시험 해보시겠습니까? (200x100)[NEWLINE][ICON_Exclamation] [COLOR_RED]후반에 게임이 매우 불안정 할 수 있습니다[ENDCOLOR][NEWLINE]튕김 및 충돌 방지를 위해 그래픽 옵션을 낮추세요.[NEWLINE]8+ GB 이상의 VRAM 사양이 요구됩니다</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_MAX_NAME" Language="ko_KR">
-      <Text>최대한도</Text>
+      <Text>최대 크기</Text>
     </Replace>
     <Replace Tag="LOC_MAPSIZE_MAX_DESCRIPTION" Language="ko_KR">
-      <Text>제 PC에서 돌아가는 최대 사이즈입니다! (i7 4770K + MSI GTX 1080 Ti + 16GB Ram) (215x112)</Text>
+      <Text>제 PC에서 돌아가는 최대 사이즈입니다! (i7 4770K + MSI GTX 1080 Ti + 16GB Ram) (215x112) (※마지막으로 테스트 했던 날짜를 적어놔야 겠는걸, 이걸 테스트해본게 워낙 옛날이라...)</Text>
+    </Replace>
+	<Replace Tag="LOC_MAPSIZE_OVERSIZED_NAME" Language="ko_KR">
+      <Text>초과 크기</Text>
+    </Replace>
+    <Replace Tag="LOC_MAPSIZE_OVERSIZED_DESCRIPTION" Language="ko_KR">
+      <Text>초과 크기 (230x116)</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAPSIZE_SMALL21_NAME" Language="ko_KR">
@@ -160,7 +205,7 @@
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_DESCRIPTION" Language="ko_KR">
       <Text>몇몇 자원들은 현실의 지구 지역에서 발견되는 위치에만 배치될 것입니다</Text>
-    </Replace>
+    </Replace
     <Replace Tag="LOC_YNAMP_ACTIVATED_NAME" Language="ko_KR">
       <Text>활성화됨</Text>
     </Replace>
@@ -202,7 +247,7 @@
       <Text>불러오기</Text>
     </Replace>
     <Replace Tag="LOC_MAP_FEATURES_PLACEMENT_IMPORT_DESCRIPTION" Language="ko_KR">
-      <Text>지형 위치를 원본 지도 데이터에서 불러옵니다</Text>
+      <Text>지형 특성의 위치를 원본 지도 데이터에서 불러옵니다</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CIVILIZATIONS_PLACEMENT_DEFAULT_NAME" Language="ko_KR">
@@ -375,58 +420,77 @@
     </Replace>
 	
     <Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_NAME" Language="ko_KR">
-      <Text>대륙 근처에 빙하 없음 (항해 탐험에 도움이 됩니다)</Text>
+      <Text>대륙 근처에 빙하 없음 (항해로 일주하는 탐험에 유용)</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_NO_ICE_ADJACENT_TO_LAND_DESC" Language="ko_KR">
+      <Text>이는 육지 근처에 물에 뜬 빙하들을 없앰으로 지도를 한 바퀴 도는 항해 탐험을 돕게 됩니다. 이 설정으로는 북극 또는 남극지에 위치한 설원 지역들이 제거되지 않습니다.</Text>
     </Replace>
     <Replace Tag="LOC_MAP_NO_CITY_STATE_NAME" Language="ko_KR">
       <Text>도시 국가 없음</Text>
     </Replace>
 	
 	<Replace Tag="LOC_MAP_FORCE_TSL_NAME" Language="ko_KR">
-      <Text>강제적 실제 시작 지점 적용</Text>
+      <Text>강제적 TSL 배치 적용</Text>
     </Replace>
     <Replace Tag="LOC_MAP_FORCE_TSL_DESCRIPTION" Language="ko_KR">
-      <Text>첫 개척자가 실제 시작 지점에 곧바로 도시를 건설합니다.</Text>
+      <Text>첫 개척자가 TSL 좌표에 곧바로 도시를 건설합니다.</Text>
     </Replace>
     <Replace Tag="LOC_MAP_FORCE_TSL_OFF" Language="ko_KR">
       <Text>해제</Text>
     </Replace>
     <Replace Tag="LOC_MAP_FORCE_TSL_OFF_DESCRIPTION" Language="ko_KR">
-      <Text>첫 개척자가 도시를 건설하기 전 자유롭게 주변을 돌아다닐 수 있습니다</Text>
+      <Text>첫 개척자가 도시를 건설하기 전에 자유롭게 주변을 돌아다닐 수 있습니다</Text>
     </Replace>
     <Replace Tag="LOC_MAP_FORCE_TSL_CS" Language="ko_KR">
       <Text>도시 국가</Text>
     </Replace>
     <Replace Tag="LOC_MAP_FORCE_TSL_CS_DESCRIPTION" Language="ko_KR">
-      <Text>도시 국가의 개척자들이 실제 시작 지점에 곧바로 도시를 건설합니다</Text>
+      <Text>도시 국가의 개척자들이 TSL 좌표에 곧바로 도시를 건설합니다</Text>
     </Replace>
     <Replace Tag="LOC_MAP_FORCE_TSL_AI" Language="ko_KR">
       <Text>인공지능(A.I.)</Text>
     </Replace>
     <Replace Tag="LOC_MAP_FORCE_TSL_AI_DESCRIPTION" Language="ko_KR">
-      <Text>인공지능의 (문명 및 도시 국가) 첫 개척자들이 실제 시작 지점에 도시를 건설합니다.</Text>
+      <Text>인공지능의 (문명 및 도시 국가) 첫 개척자들이 TSL 좌표에 도시를 건설합니다.</Text>
     </Replace>
     <Replace Tag="LOC_MAP_FORCE_TSL_ALL" Language="ko_KR">
       <Text>모두</Text>
     </Replace>
     <Replace Tag="LOC_MAP_FORCE_TSL_ALL_DESCRIPTION" Language="ko_KR">
-      <Text>모든 첫 개척자들이 (인간 플레이어를 포함) 실제 시작 지점에 도시를 건설합니다</Text>
+      <Text>모든 첫 개척자들이 (인간 플레이어를 포함) TSL 좌표에 도시를 건설합니다</Text>
     </Replace>
 	
 	<Replace Tag="LOC_MAP_AUTO_CITY_NAMING_NAME" Language="ko_KR">
       <Text>실제 도시 이름 명명</Text>
     </Replace>
+	<Replace Tag="LOC_MAP_AUTO_CITY_NAMING_DESC" Language="ko_KR">
+      <Text>해당 설정을 활성화 한다면, 도시가 새로 건설될 때 마다 모드가 실제 지구의 위치에 비례하여 실존 도시명을 불러와 명명하려 시도할 것입니다. 해당 설정을 비활성화하면, 기존의 방식대로 문명별로 존재하는 도시명 목록에서 가져와 명명할 것입니다.</Text>
+    </Replace>
 	<Replace Tag="LOC_MAP_ONLY_GENERIC_CITY_NAMES_NAME" Language="ko_KR">
-      <Text>생성된 도시 이름만을 사용합니다</Text>
-    </Replace>	
+      <Text>도시 이름에 통칭만을 사용</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ONLY_GENERIC_CITY_NAMES_DESC" Language="ko_KR">
+      <Text>해당 설정을 해제하면, 도시가 건설될 때 마다, 모드가 도시명을 각각의 문명이 해당하는 위치에 도시를 건설했을 때 불렀던 실제 명칭으로 명명하게 됩니다 (예) 영문-런던, 라틴어-론디니움). 이를 활성화하면 도시의 실제 이름을 불러올 때 도시의 통칭으로 명명하게 됩니다. (예) 영문-런던)</Text>
+    </Replace>
 	
 	<Replace Tag="LOC_MAP_LEADER_TSL_NAME" Language="ko_KR">
-      <Text>이용가능할 때 지도자들의 실제 시작 지점을 사용합니다</Text>
+      <Text>이용가능할 때마다 지도자들의 TSL 좌표를 사용합니다</Text>
     </Replace>
 	<Replace Tag="LOC_MAP_ALTERNATE_TSL_NAME" Language="ko_KR">
-      <Text>필요하고, 가능한 시점에 대체 실제 시작 지점을 사용합니다</Text>
+      <Text>필요하고, 가능한 시점에 대체 TSL 좌표를 적용합니다</Text>
     </Replace>
 	<Replace Tag="LOC_MAP_ALTERNATE_PLACEMENT_NAME" Language="ko_KR">
-      <Text>실제 시작 지점 없이 무작위로 문명들을 배치합니다</Text>
+      <Text>TSL 좌표가 없는 문명들의 무작위 배치를 허용합니다.</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_ALTERNATE_PLACEMENT_DESC" Language="ko_KR">
+      <Text>TSL 좌표가 없는 문명들이 무작위로 지도에 배치됩니다. 이는 당신이 선택한 숫자의 플레이어 모두가 시작 위치를 가지게 해주며, 만일 게임에 실제 TSL 좌표가 있는 문명들만을 등장시키고 싶고, 무작위 문명 배치를 원한거나, 당신이 선택한 플레이어의 수보다 적은 수의 플레이어가 배치되는걸 개의치 않는다면 해당 설정을 비활성화 해주세요.</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_LAND_AROUND_TSL_NAME" Language="ko_KR">
+      <Text>TSL 좌표 주변 더 많은 육지 배치</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LAND_AROUND_TSL_DESC" Language="ko_KR">
+      <Text>TLL 좌표 주변에 육지가 생성될 확률을 높여줍니다, 그러나 바다에서 시작하는 문명들의 경우에는 육지가 생성되지 않습니ㅏ.</Text>
     </Replace>
 	
 	<Replace Tag="LOC_MAP_HISTORICAL_SPAWN_NAME" Language="ko_KR">
@@ -440,8 +504,41 @@
       <Text>야만인 정찰병들이 처음 등장하기 전까지의 최소 턴 수를 결정합니다</Text>
     </Replace>
 	
+	 <Replace Tag="LOC_MAJOR_CIVILIZATION_COUNT_NAME" Language="ko_KR">
+      <Text>문명 슬롯</Text>
+    </Replace>
+    <Replace Tag="LOC_MAJOR_CIVILIZATION_COUNT_DESCRIPTION" Language="ko_KR">
+      <Text>주요 문명 슬롯의 숫자를 지정합니다.[NEWLINE][NEWLINE]UI 렉 또는 메뉴에서 마우스 휠을 사용 시 실수로 선택 변경을 방지하기 위함입니다, 해당 설정은 곧바로 적용되지 않습니다.[NEWLINE][NEWLINE]사용법: 더 높은 수를 입력하고 "+" 버튼을 클릭하거나 더 낮은 수를 입력하고 플레이어 칸에 위치한 "X" 버튼을 클릭하세요.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_BAN_LEADERS_NAME" Language="ko_KR">
+      <Text>무직위 슬롯을 위한 지도자 밴 목록</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_BAN_LEADERS_DESCRIPTION" Language="ko_KR">
+      <Text>무작위 슬롯을 위한 밴 목록을 위해 지도자를 선택합니다, 당신은 여전히 플래이어 도는 AI를 위해 수동으로 문명을 지정해줄 수 있습니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_TSL_LEADERS_NAME" Language="ko_KR">
+      <Text>TSL 좌표가 존재하는 문명/도시국가만을 선택</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_TSL_LEADERS_DESCRIPTION" Language="ko_KR">
+      <Text>해당 설정을 활성화 시, 선택된 지도상에 TSL 좌표가 있는 문명/도시국가들만이 허용되게 됩니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_TSL_LEADERS_NEED_DB_DESCRIPTION" Language="ko_KR">
+      <Text>해당 설정이 활성화 되면, 오직 TSL 좌표가 존재하는 문명/도시국가만이 등장 가능하게 됩니다.[NEWLINE][NEWLINE]우선 게임을 실행해 GamePlay 데이터베이스를 불러올 필요가 있습니다, 당신은 "데이터베이스 불러오기" 버튼을 클릭함으로 빠르게 2D 모드로 게임을 실행시켰다가, 메인 메뉴로 돌아와, 다시 이 화면으로 돌아와 해당 설정을 활성화 시킬 수 있습니다.</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_DIMENSION_NAME" Language="ko_KR">
+      <Text> </Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DIMENSION_DESCRIPTION" Language="ko_KR">
+      <Text>지도의 크기를 설정 화면에 표기된 것으로 설정합니다. 실제 게임 내 크기는 다를 수도 있는데, 이는 지도 생성기 및 지도 스크립트가 각기 다른 크기로 설정되 있을 경우입니다.[NEWLINE][NEWLINE]사용자 설정 구획을 허용하는 YnAMP 지도들과 함께 해당 설정을 적용하면 (거대한 지구 또는 최대 크기 지구 등) 지도 크기가 정확하게 적용됩니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_DIMENSION_STRING" Language="ko_KR">
+      <Text>크기: {1_Num}x{2_Num} ({3_Num : number #,###} 타일)</Text>
+    </Replace>
+	
     <Replace Tag="LOC_MAP_REFERENCE_DB_NAME" Language="ko_KR">
-      <Text>참조 데이터베이스</Text>
+      <Text>참조할 데이터베이스</Text>
     </Replace>
     <Replace Tag="LOC_MAP_GIANT_DB_NAME" Language="ko_KR">
       <Text>거대한 지구 데이터베이스</Text>
@@ -454,6 +551,19 @@
     </Replace>
     <Replace Tag="LOC_MAP_LARGESTEARTH_DB_DESCRIPTION" Language="ko_KR">
       <Text>최대 크기 지구용 데이터베이스를 사용합니다[NEWLINE]좌표등의 배치가 완벽하지만, 데이터량이 훨씬 적습니다.</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_MAP_SCRIPT_REF_FOR_NW_NAME" Language="ko_KR">
+      <Text>자연 불가사의를 위해 직접적 좌표 참조</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCRIPT_REF_FOR_NW_DESC" Language="ko_KR">
+      <Text>자연 불가사의를 배치할 때, 데이터베이스로부터 상대적 좌표를 불러오지 않고, 최대크기 지구 지도의 맵 스크립트로부터 직접적으로 참조해 불러들입니다.[NEWLINE][NEWLINE] 상대적인 참조와 비교할 때 몇개의 자연 불가사의가 누락됨을 경험할 수도 있을 것이나, 직접 좌표를 보유한 모든 불가사의가 완벽히 배치될 것입니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCRIPT_REF_FOR_XT_NAME" Language="ko_KR">
+      <Text>추가 배치를 위한 직접적 좌표 참조</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SCRIPT_REF_FOR_XT_DESC" Language="ko_KR">
+      <Text>상대적 좌표를 사용해 추가적 배치를 실행하지 않습니다(조건부 지형, 지형 특성, 자원 등 변경 등... 예를 들어 몰려오는 폭풍에서 나타나는 화산 등이 있습니다), 오직 최대크기 지구 지도 스크립트에서만 가져옵니다.</Text>
     </Replace>
 	
 	<!--
@@ -521,19 +631,61 @@
       <Text>판게아</Text>
     </Replace>
     <Replace Tag="LOC_MAP_PANGEA_DESCRIPTION" Language="ko_KR">
-      <Text>하나의 거대한 땅덩이입니다</Text>
+      <Text>하나의 거대한 땅덩이으로, 약간의 협곡이 존재할 수 있습니다. [NEWLINE][NEWLINE]작은 구역을 지정할 수록 길쭉한 해변의 형태를 생성할 수도 있습니다.</Text>
+    </Replace>
+	<Replace Tag="LOC_YNAMP_PANGEA_REGION_NAME" Language="ko_KR">
+      <Text>판게아 (구역)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_PANGEA_REGION_DESCRIPTION" Language="ko_KR">
+      <Text>지도의 작은 구역에 약간의 협곡을 포함한 커다란 땅덩이를 배치합니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_COMPACT_PANGEA_NAME" Language="ko_KR">
+      <Text>꽉 찬 판게아</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_COMPACT_PANGEA_DESCRIPTION" Language="ko_KR">
+      <Text>지도의 작은 구역에 아무런 협곡을 포함하지 않는, 커다란 땅덩이를 배치합니다.[NEWLINE][NEWLINE]넓은 구역을 지정할 수록, 아주 일정한 지도 형태를 생성하게 될 수도 있습니다.</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_CONTINENT_NAME" Language="ko_KR">
       <Text>대륙</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CONTINENT_DESCRIPTION" Language="ko_KR">
-      <Text>하나의 대륙이 보다 작은 분리된 섬들과 출현합니다</Text>
+      <Text>하나의 대륙이 보다 작은 분리된 섬들과 출현합니다.[NEWLINE][NEWLINE]작은 구역을 지정할 수록, 많이 갈라진 땅의 형태가 생성될 수도 있습니다.</Text>
+    </Replace>
+	<Replace Tag="LOC_YNAMP_MINI_CONTINENT_NAME" Language="ko_KR">
+      <Text>대륙 (구역)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MINI_CONTINENT_DESCRIPTION" Language="ko_KR">
+      <Text>지도의 작은 구역에 대륙을 생성합니다.[NEWLINE][NEWLINE]넓은 구역을 지정할 수록, 아주 일정한 지도 형태를 생성하게 될 수 있습니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_COMPACT_CONTINENT_NAME" Language="ko_KR">
+      <Text>꽉찬 대륙 (구역)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_COMPACT_CONTINENT_DESCRIPTION" Language="ko_KR">
+      <Text>지도의 작은 구역에 대륙을 배치하며, 이는 협곡을 포함하지 않습니다.[NEWLINE][NEWLINE]넓은 구역을 지정할 수록, 아주 일정한 지도 형태를 생성하게 될 수 있습니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SLIM_CONTINENT_NAME" Language="ko_KR">
+      <Text>길쭉한 대륙</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SLIM_CONTINENT_DESCRIPTION" Language="ko_KR">
+      <Text>지도의 넓은 구역을 위한 대륙을 배치하며, 다른 지도 스크립트가 너무 많은 세로 형태의 협곡을 포함한 것과 대조적으로, 대륙의 높이가 너비보다 더 깁니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_SLIM_CONTINENT_R_NAME" Language="ko_KR">
+      <Text>길쭉한 대륙 (구역)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SLIM_CONTINENT_R_DESCRIPTION" Language="ko_KR">
+      <Text>지도의 작은 구역을 위해 높이가 너비보다 긴 형태의 대륙을 배치합니다.</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_SMALL_CONTINENT_NAME" Language="ko_KR">
       <Text>작은 대륙</Text>
     </Replace>
     <Replace Tag="LOC_MAP_SMALL_CONTINENT_DESCRIPTION" Language="ko_KR">
-      <Text>작은 대륙이 보다 작고 분리된 섬들과 출현합니다</Text>
+      <Text>작은 대륙이 보다 작고 분리된 섬들과 출현합니다.[NEWLINE][NEWLINE]작은 구역을 지정할 수록, 많이 갈라진 땅의 형태가 생성될 수도 있습니다.</Text>
+    </Replace>
+	 <Replace Tag="LOC_YNAMP_SMALL_CONTINENT_R_NAME" Language="ko_KR">
+      <Text>작은 대륙 (구역)</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_SMALL_CONTINENT_R_DESCRIPTION" Language="ko_KR">
+      <Text>지도의 작은 구역에 작은 대륙을 배치합니다.</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_LARGE_ISLANDS_NAME" Language="ko_KR">
       <Text>대형 군도</Text>
@@ -560,22 +712,22 @@
       <Text>고립된 작은 섬들입니다</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_RANDOM_NAME" Language="ko_KR">
-      <Text>무작위 대륙</Text>
+      <Text>무작위 스크립트</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RANDOM_DESCRIPTION" Language="ko_KR">
-      <Text>위의 대륙 설정 중 하나를 따릅니다 (하지만 실제 지구는 선택되지 않습니다)</Text>
+      <Text>위의 스크립트들 중 하나를 따릅니다 (실제 지구는 제외됩니다)</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_RANDOM_VALUES_NAME" Language="ko_KR">
-      <Text>무작위 수치 설정</Text>
+      <Text>무작위 사용자 설정</Text>
     </Replace>
     <Replace Tag="LOC_MAP_RANDOM_VALUES_DESCRIPTION" Language="ko_KR">
-      <Text>아무 수치나 변경할 수 있습니다 (이는 아무것도 안 하는것도 포함됩니다.)</Text>
+      <Text>완전히 무작위로 무언가 설정될 수 있습니다 (아무것도 설정되지 않을 수도 있고요)</Text>
     </Replace>
     <Replace Tag="LOC_YNAMP_CUSTOM_NAME" Language="ko_KR">
-      <Text>유저 설정 >></Text>
+      <Text>사용자 설정 >></Text>
     </Replace>
     <Replace Tag="LOC_MAP_CUSTOM_DESCRIPTION" Language="ko_KR">
-      <Text>육지 생성 수치를 설정할 수 있습니다</Text>
+      <Text>육지 생성 수치값을 직접 설정할 수 있습니다</Text>
     </Replace>
 	
     <Replace Tag="LOC_MAP_CUSTOM_TYPE_NAME" Language="ko_KR">
@@ -597,10 +749,10 @@
       <Text>프랙탈에 추가될 결의 양을 정합니다. 0은 결이 없음을 의미하고 (매끄러움), 7은 결이 많음을 의미합니다. (들쭉날쭉).</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CUSTOM_RIFT_GRAIN_NAME" Language="ko_KR">
-      <Text>균열 결 (0-4)</Text>
+      <Text>협곡 결 (0-4)</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CUSTOM_RIFT_GRAIN_DESCRIPTION" Language="ko_KR">
-      <Text>좋은 질문입니다!</Text>
+      <Text>이게 뭐냐구요? 좋은 질문입니다!</Text>
     </Replace>
     <Replace Tag="LOC_MAP_CUSTOM_FRACTX_EXP_NAME" Language="ko_KR">
       <Text>FracXExp</Text>
@@ -625,7 +777,7 @@
       <Text>물</Text>
     </Replace>
     <Replace Tag="LOC_MAP_WATER_DESCRIPTION" Language="ko_KR">
-      <Text>이 레이어는 육지 위에 물을 생성합니다 (러나 이미 존재하는 물을 변경하진 않습니다)</Text>
+      <Text>이 레이어는 육지 위에 물을 생성합니다 (그러나 이미 존재하는 물을 변경하진 않습니다)</Text>
     </Replace>
 	
     <Replace Tag="LOC_YNAMP_DEFAULT_LANDMASS_NAME" Language="ko_KR">
@@ -639,7 +791,63 @@
     </Replace>
     <Replace Tag="LOC_MAP_SELECT_LANDMASS_DESCRIPTION" Language="ko_KR">
       <Text>각 대륙별 설정을 선택합니다. (추가 설정 가능)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_REAL_LAND_BLEND_NAME" Language="ko_KR">
+      <Text>[ICON_PressureHigh] 사실적 육지 혼합 [ICON_PressureHigh]</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_REAL_LAND_BLEND_DESCRIPTION" Language="ko_KR">
+      <Text>선택된 스크립트(들)에 사실적인 육지의 모양을 혼합합니다. (0 = 혼합하지 않음, 100 = 실제 세계와 가까운 모양)</Text>
     </Replace>	
+    <Replace Tag="LOC_MAP_REAL_SEA_BLEND_NAME" Language="ko_KR">
+      <Text>[ICON_PressureHigh] 사실적 대양 혼합 [ICON_PressureHigh]</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_REAL_SEA_BLEND_DESCRIPTION" Language="ko_KR">
+      <Text>선택된 스크립트(들)에 사실적인 대양의 모양을 혼합합니다. (0 = 혼합하지 않음, 100 = 실제 세계와 가까운 모양)</Text>
+    </Replace>
+	
+    <Replace Tag="LOC_MAP_ADD_LAKES_NAME" Language="ko_KR">
+      <Text>추가적 대형 호수</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ADD_LAKES_DESC" Language="ko_KR">
+      <Text>지도 위에 대형 호수 몇개를 더 추가합니다.[NEWLINE][NEWLINE] 해당 파라미터는 사실적 육지/대향 혼합 설정에 영향받지 않습니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ADD_ISLANDS_NAME" Language="ko_KR">
+      <Text>섬 허용</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ADD_ISLANDS_DESC" Language="ko_KR">
+      <Text>지도상에 섬이 배치될 수 있게 해줍니다. 이는 원양 항해가 가능하기 전에 신대륙에 도달할 확률을 조금 높여줄 지도 모릅니다.[NEWLINE][NEWLINE]해당 파라미터는 사실적 육지/대향 혼합 설정에 영향받습니다</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ADDITIONAL_SEAS_NAME" Language="ko_KR">
+      <Text>추가적 해양</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_ADDITIONAL_SEAS_DESC" Language="ko_KR">
+      <Text>무작위 형태를 가진 해양을 해당 지점에 생성합니다 (실제 세계의 위치에 비례됩니다):[NEWLINE][NEWLINE][ICON_BULLET]오호츠크해[NEWLINE][ICON_BULLET]북해[NEWLINE][ICON_BULLET]발트해[NEWLINE][ICON_BULLET]벵골만[NEWLINE][ICON_BULLET]동해[NEWLINE][ICON_BULLET]황해[NEWLINE][ICON_BULLET]멕시코 만[NEWLINE][NEWLINE]이 대양들의 모양은 사실적 육지/대향 혼합 설정에 영향받습니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LIMIT_TUNDRA_NAME" Language="ko_KR">
+      <Text>툰드라 및 설원 제한</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LIMIT_TUNDRA_DESC" Language="ko_KR">
+      <Text>지도 생성기는 실제 세계와 비슷한 육지 형태를 생성할 때, 일부 지역에 너무 많은 툰드라 및 설원 지역을 배치할 수도 있습니다. (특히 참조 지도의 공간에 맞춰 잘라낸 남쪽 부분에 더욱 그렇습니다), 만약 해당 설정을 활성화하면 툰드라 및 설원의 배치를 실제 지구 지도를 참조해, 특정 위도 이상/이하로 제한할 수 있습니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LAND_ON_POLES_NAME" Language="ko_KR">
+      <Text>극지에 육지 타일 생성 허용</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_LAND_ON_POLES_DESC" Language="ko_KR">
+      <Text>기본적으로, 테라 지도 스크립트들은 북극 또는 남극에 육지 생성을 막는 버퍼를 설정해 놓는데, 이는 세계 일주 항해 탐험을 막는 것을 방지하기 위함입니다. 해당 설정이 활성화되면, 남극 또는 북극일지라도 육지 타일이 생성될 것입니다. 그러나 만일 프랙탈 결 설정에 의해 극지에 육지가 하나도 없는 지도가 생성되었을 경우, 해당 설정으로 인해 강제적으로 육지가 형성되지는 않을 것입니다.</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_REAL_TERRAIN_NAME" Language="ko_KR">
+      <Text>가능한 실제적 지형 사용</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_REAL_TERRAIN_DESC" Language="ko_KR">
+      <Text>참조용 실제 세계지도를 사용함으로, 지도 생성시 (실제 지구 지도의 위치와 거리에 비례해) 가능한 한 사실적인 지형 유형을 (초원, 평원, 사막, 툰드라, 설원, 언덕/산) 구현합니다.[NEWLINE][NEWLINE]해당 설정은 참조 지도 상 물이 있어야 하는 위치에 생성된 육지 타일들에는 영향을 미치지 않습니다.</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_REAL_FEATURES_NAME" Language="ko_KR">
+      <Text>가능한 실제적 지형 특성 사용</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_REAL_FEATURES_DESC" Language="ko_KR">
+      <Text>참조용 실제 세계지도를 사용함으로, 지도 생성시 (실제 지구 지도의 위치와 거리에 비례해) 가능한 한 사실적인 지형 특성 유형을 (숲, 정글, 오아시스 등...) 구현합니다.[NEWLINE][NEWLINE]해당 설정은 참조 지도 상 물이 있어야 하는 위치에 생성된 육지 타일들에는 영향을 미치지 않으며, 자연 불가사의를 포함하지 않습니다.</Text>
+    </Replace>
 	
     <Replace Tag="LOC_MAP_AUSTRALIA_NAME" 			Text="오스트레일리아" 			Language="ko_KR" /> 
     <Replace Tag="LOC_MAP_OCEANIA_NAME" 			Text="오세아니아" 				Language="ko_KR" /> 
@@ -684,6 +892,14 @@
     <Replace Tag="LOC_MAP_SECTION_COLONIZATION_DESCRIPTION" Text="지도의 대서양 구역이 있는 구획을 플레이하며, 유럽과 아메리카 대륙의 일부가 포함됩니다"		Language="ko_KR"/>
     <Replace Tag="LOC_MAP_SECTION_OLD_WORLD_NAME" 			Text="구대륙" 																	Language="ko_KR"/>
     <Replace Tag="LOC_MAP_SECTION_OLD_WORLD_DESCRIPTION" 	Text="구대륙에서 플레이합니다 (유럽, 아프리카, 아시아)"									Language="ko_KR"/>
+	<Replace Tag="LOC_MAP_SECTION_AFRICA_NAME" 				Text="아프리카" 																		Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_AFRICA_DESCRIPTION" 		Text="아프리카에서 플레이합니다"																Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_LARGE_ASIA_NAME" 			Text="큰 아시아" 																	Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_LARGE_ASIA_DESCRIPTION" 	Text="아시아 전역에서 플레이합니다, 중동부터 시작해 일본까지 이어지며, 호주도 포함됩니다"				Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_SOUTH_EAST_ASIA_NAME" 	Text="동남아시아" 																Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_SOUTH_EAST_ASIA_DESCRIPTION" 	Text="아시아의 보다 더 작은 부분에서 플레이하며, 호주 대부분을 포함하지 않습니다"		Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_PACIFIC_NAME" 			Text="태평양" 																		Language="ko_KR"/>
+    <Replace Tag="LOC_MAP_SECTION_PACIFIC_DESCRIPTION" 		Text="맵의 중앙이 태평양에 고정된 상태로 플레이하며, 아시아 및 아메리카 대륙의 일부를 포함하고 있습니다"	Language="ko_KR"/>
 	
     <Replace Tag="LOC_MAP_STARTX_NAME" Language="ko_KR">
       <Text>서쪽 경계</Text>
@@ -767,14 +983,48 @@
       <Text>알프스 (이탈리아 서부)</Text>
     </Replace>
 	
-	<Replace Tag="LOC_CITYSTATES_OPTIONS" Language="ko_KR">
-      <Text>도시 국가 설정</Text>
-    </Replace>
     <Replace Tag="LOC_MAP_SELECT_CITY_STATES_NAME" Language="ko_KR">
       <Text>등장 도시국가를 수동으로 설정합니다</Text>
     </Replace>
     <Replace Tag="LOC_MAP_SELECT_CITY_STATES_DESCRIPTION" Language="ko_KR">
       <Text>이를 활성화 시키면, 목록으로부터 당신이 등장시키길 원하는 도시국가들을 선택할 수 있습니다.[NEWLINE][NEWLINE]DLC, 확장팩, 시나리오 및 모드에 의해 도시국가가 추가되거나 삭제될 수 있음을 명심하세요, 목록은 어떤 도시국가들이 실제로 배치 가능한지 여부는 반영하고 있지 않습니다.[NEWLINE][NEWLINE]만일 도시 국가가 배치 불가할 경우, 그 슬롯은 빈 것으로 간주되어 무작위 도시국가가 생성됩니다.</Text>
+    </Replace>
+	<Replace Tag="LOC_FAKE_SELECT_CITY_STATES_DESCRIPTION" Language="ko_KR">
+      <Text>를 활성화 시키면, 목록으로부터 당신이 등장시키길 원하는 도시국가들을 선택할 수 있습니다.[NEWLINE][NEWLINE]해당 설정을 활성화시키기 위해서는 게임을 실행시켜 GamePlay 데이터베이스를 업데이트 시킬 필요가 있으며, 당신은 "데이터베이스 불러오기" 버튼을 눌러 2D모드의 게임을 빠르게 실행시켰다가, 메인메뉴로 돌아오고, 다시 이 화면으로 돌아와 설정을 활성화 시킬 수 있을 것입니다..</Text>
+    </Replace>
+	
+	<Replace Tag="LOC_CITYSTATES_OPTIONS_NAME" Language="ko_KR">
+      <Text>도시국가 선택 사용</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_DEFAULT_NAME" Language="ko_KR">
+      <Text>문명6 기본 설정</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_DEFAULT_DESCRIPTION" Language="ko_KR">
+      <Text>이 문명6의 기본 설정을 사용해 도시국가를 선택하세요, 만일 당신이 슬라이더로 지정한 숫자보다 적은 도시국가를 선택했을 경우, 선택된 도시 국가들만이 게임을 위한 슬롯을 가지게 될 것입니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_SELECTION_NAME" Language="ko_KR">
+      <Text>선택 및 무작위</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_SELECTION_DESCRIPTION" Language="ko_KR">
+      <Text>당신의 도시국가 선택이 우선적으로 적용될 것입니다, 등장 가능한 최대 도시국가 수는 여전히 슬라이더 값에 영향받으며, 빈 슬롯은 무작위 도시국가로 채워넣어지게 될 것입니다. 만일 당신이 슬라이더 값보다 많은 수의 도시국가를 선택했다면, 모드가 당신이 선택한 문명들 중 일부를 제한적 무작위로 선별할 것입니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_UNCAPPED_SELECTION_NAME" Language="ko_KR">
+      <Text>제한 없는 선택</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_UNCAPPED_SELECTION_DESCRIPTION" Language="ko_KR">
+      <Text>당신이 선택한 모든 도시국가들이 지도에 배치될 것이며, 허용 가능한 플레이어 수의 최대치 만큼 허용할 것입니다. 모드는 당신이 선택한 모든 도시국가를 위한 슬롯을 찾아주려 시도할 것이며, 선택한 도시국가의 수가 많다면 슬라이더 값을 무시할 것입니다. 만일 당신이 슬라이더 값보다 적은 수의 도시국가를 선택했다면, 빈 슬롯들은 무작위 도시국가들로 채워질 것입니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_ONLY_SELECTION_NAME" Language="ko_KR">
+      <Text>선택만 사용</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_ONLY_SELECTION_DESCRIPTION" Language="ko_KR">
+      <Text>당신이 선택한 도시국가만이 지도에 배치될 것이며, 허용 가능한 플레이어 수의 최대치 만큼 선택 가능할 것입니다. 모드는 당신이 선택한 모든 도시국가를 위한 슬롯을 찾아주려 시도할 것이며, 선택한 도시국가의 수가 많다면 슬라이더 값을 무시할 것입니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_EXCLUSION_NAME" Language="ko_KR">
+      <Text>제외 목록</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_CS_OPTION_EXCLUSION_DESCRIPTION" Language="ko_KR">
+      <Text>당신의 선택이 제외 모드에 사용될 것입니다, YnAMP 모드는 슬롯에 선택되지 않은 도시국가들만을 채워 넣으려 시도할 것이며, 슬라이더 값과 같은 수의 도시국가를 등장시킬 것 입니다. will try to find a slot only for the unselected City States, up to the slider value.</Text>
     </Replace>
 	
 	<Replace Tag="LOC_XP1_CHECK_NAME" Language="ko_KR">
@@ -835,6 +1085,12 @@
     </Replace>
     <Replace Tag="LOC_YNAMP_GENERATED_PRESET_DESC" Language="ko_KR">
       <Text>문명들의 시작 위치가 미리 지정해둔 값을 이용하여 생성됩니다[NEWLINE]이 시나리오는 설정 창에 표시된 다음을 위한 기본 값들을 문명별로 미리 지정된 값으로 치환해줍니다:[NEWLINE][ICON_BULLET]도시 배치[NEWLINE][ICON_BULLET]도시 숫자[NEWLINE][ICON_BULLET]수도로부터의 최대 거리[NEWLINE][ICON_BULLET]동일 대륙에서만[NEWLINE][NEWLINE]제작된 모드 문명들은 기본 설정들이 적용됩니다 (문명 모드에 의해 자체적으로 값을 지정하지 않는 한)[NEWLINE][NEWLINE]설정들은 거대한 지구 맵 (또는 일부를)을 위하여 최적화 되어 있지만, 모든 맵과 함께 사용될 수도 있습니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CITYMAP_PRESET_NAME" Language="ko_KR">
+      <Text>YnAMP CityMap 배치</Text>
+    </Replace>
+    <Replace Tag="LOC_YNAMP_CITYMAP_PRESET_DESC" Language="ko_KR">
+      <Text>문명들의 시작 위치가 도시명 데이터베이스에 미리 지정된 값을 이용하여 생성됩니다 (원래 도시위치에 따른 자동 도시이름 지정을 위해 사용됩니다)[NEWLINE][NEWLINE]해당 시나리오는 설정 창에 표시된 다음을 문명별로 미리 지정된 값으로 치환해줍니다:[NEWLINE][ICON_BULLET]도시 배치[NEWLINE][ICON_BULLET]도시의 수[NEWLINE][ICON_BULLET]수도로부터의 최대 거리[NEWLINE][ICON_BULLET]같은 대륙에만[NEWLINE][NEWLINE]커스텀 문명들은 기본 설정값을 적용받게 될 것입니다 (커스텀 문명 모드에 의해 커스텀 값이 추가되지 않는 한은요)[NEWLINE][NEWLINE]해당 설정들은 거대 지구 지도에 최적화되어 있습니다 (혹은 그것의 구획), 그러나 CityName 데이터베이스를 사용하는 다른 지도들과도 함께 사용될 수 있습니다 (예를 들어 "다시 유럽으로 플레이", "최대 크기의 지구 지도"와 거대 지구 데이터베이스 조합 혹은 심지어 "테라 지도" 및 높은 사실적 육지 혼합 설정 비율을 적용할 수도 있겠지요).[NEWLINE][NEWLINE]해당 시나리오는 지도와 연동되는 도시명 데이터베이스가 없다면 사용할 수 없습니다.</Text>
     </Replace>
 	
 	<Replace Tag="LOC_MAP_CITY_PLACEMENT_NAME" Language="ko_KR">
@@ -942,6 +1198,12 @@
     </Replace>
     <Replace Tag="LOC_MAP_MAX_CAPITAL_DISTANCE_DESCRIPTION" Language="ko_KR">
       <Text>기타 도시들이 수도로부터 멀어질 수 있는 최대 거리 (ScenarioCities 표로 불러온 도시들에는 적용되지 않습니다)</Text>
+    </Replace>
+	<Replace Tag="LOC_MAP_MIN_CITY_SEPARATION" Language="ko_KR">
+      <Text>도시간 최소 거리</Text>
+    </Replace>
+    <Replace Tag="LOC_MAP_MIN_CITY_SEPARATION_DESCRIPTION" Language="ko_KR">
+      <Text>도시 사이의 최소 거리입니다 (해당 설정은 ScenarioCities 표로부터 불러온 도시들에는 적용되지 않으며, 본 게임에서 기본적으로 허용하는 제한 미만이라면 무시됩니다.</Text>
     </Replace>
     <Replace Tag="LOC_MAP_SAME_LANDMASS" Language="ko_KR">
       <Text>같은 대륙에만</Text>
@@ -1214,7 +1476,136 @@
   <Replace Tag="LOC_CIVILIZATION_VATICAN_CITY_DESCRIPTION" Language="ko_KR">
     <Text>도시국가 바티칸 시국</Text>
   </Replace>
+
+  <Replace Tag="LOC_CIVILIZATION_AYUTTHAYA_NAME" Language="ko_KR">
+    <Text>아유타야</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_CHINGUETTI_NAME" Language="ko_KR">
+    <Text>싱게티</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_JOHANNESBURG_NAME" Language="ko_KR">
+    <Text>요하네스버그</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_NALANDA_NAME" Language="ko_KR">
+    <Text>날란다</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_SAMARKAND_NAME" Language="ko_KR">
+    <Text>사마르칸트</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_WOLIN_NAME" Language="ko_KR">
+    <Text>볼린</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_AYUTTHAYA_DESCRIPTION" Language="ko_KR">
+    <Text>도시국가 아유타야</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_CHINGUETTI_DESCRIPTION" Language="ko_KR">
+    <Text>도시국가 싱게티</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_JOHANNESBURG_DESCRIPTION" Language="ko_KR">
+    <Text>도시국가 요하네스버그</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_NALANDA_DESCRIPTION" Language="ko_KR">
+    <Text>도시국가 날란다</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_SAMARKAND_DESCRIPTION" Language="ko_KR">
+    <Text>도시국가 사마르칸트</Text>
+  </Replace>
+  <Replace Tag="LOC_CIVILIZATION_WOLIN_DESCRIPTION" Language="ko_KR">
+    <Text>도시국가 볼린</Text>
+  </Replace>
 	
-	
+    <Replace Tag="LOC_SETUP_CREATE_MAP" Language="ko_KR">
+      <Text>지도 생성하기</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_YNAMP_REPORT" Language="ko_KR">
+      <Text>설정 유효성 보고서:</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_SEVERITY_YNAMP" Language="ko_KR">
+      <Text>(심각도 = {1_Num})</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_BLOCKING_YNAMP" Language="ko_KR">
+      <Text>(시작 방지)</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_IGNORE_BLOCK_YNAMP" Language="ko_KR">
+      <Text>(시작 방지가 사용자에 의해 기각됨)</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_LOADED_YNAMP" Language="ko_KR">
+      <Text>데이터베이스 로드됨</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_LOADED_YNAMP_TT" Language="ko_KR">
+      <Text>GamePlay 데이터베이스가 로드되었고 YnAMP 고급 환경 설정에 이용될 수 있습니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_NOT_LOADED_YNAMP" Language="ko_KR">
+      <Text>데이터베이스가 로드되지 않음</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_NOT_LOADED_YNAMP_TT" Language="ko_KR">
+      <Text>Gameplay 데이터베이스가 현재의 세션동안 로딩되지 않았으며, 게임을 실행해서 YnAMP 고급 설정에 필요한 데이터 일부를 가져와야 합니다.[NEWLINE][NEWLINE]당신은 "데이터베이스 불러오기" 버튼을 눌러 2D 모드로 빠른 게임을 실행할 수 있습니다, 만일 새로운 설정들이 필요하지 않다면, 이대로 통상적인 게임 시작을 해도 좋습니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_CHANGED_YNAMP" Language="ko_KR">
+      <Text>데이터베이스 변경됨</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_DATABASE_CHANGED_YNAMP_TT" Language="ko_KR">
+      <Text>Gameplay 데이터베이스가 (모드, DLC 또는 확장팩을 실행시킴으로) 변경되었습니다. 당신은 새 게임을 실행해서 YnAMP 고급 설정에 필요한 데이터를 업데이트해야 합니다.[NEWLINE][NEWLINE]당신은 "데이터베이스 불러오기" 버튼을 눌러 2D 모드로 빠른 게임을 실행할 수 있습니다, 만일 새로운 설정들이 필요하지 않다면, 이대로 통상적인 게임 시작을 해도 좋습니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_RULESET_CHANGED_YNAMP" Language="ko_KR">
+      <Text>룰셋 변경됨</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_RULESET_CHANGED_YNAMP_TT" Language="ko_KR">
+      <Text>데이터베이스를 불러올 당시 설정했던 룰셋이 변경되었습니다, 새 게임을 실행해서 YnAMP 고급 설정에 필요한 데이터를 업데이트 해야 합니다.[NEWLINE][NEWLINE]당신은 "데이터베이스 불러오기" 버튼을 눌러 2D 모드로 빠른 게임을 실행해 활성화 된 룰셋을 사용한 후, 기존의 룰셋으로 도로 되돌리거나, 새로운 설정이 필요하지 않다면 이대로 통상적인 게임 시작을 해도 좋습니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNOFFICIAL_YNAMP" Language="ko_KR">
+      <Text>공인되지 않은 지도 크기입니다</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNOFFICIAL_YNAMP_TT" Language="ko_KR">
+      <Text>해당 지도 크기는 공식적인 지도 크기보다 큽니다.[NEWLINE][NEWLINE]지도는 로딩될 것이나, 게임 후반부에 무작위 게임 충돌을 경험할 수 있을지도 모릅니다.[NEWLINE][NEWLINE]이런 유형의 크기 모두에서 보고된 것은 아니나, 몰려오는 폭풍에서 해수면 상승 발생시에 큰 지도의 경우 복구 불가능한 충돌을 일으킬 수 있다는 점을 유념해 주십시오.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_LOCK_YNAMP" Language="ko_KR">
+      <Text>지원하지 않는 지도 크기</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_LOCK_YNAMP_TT" Language="ko_KR">
+      <Text>해당 지도 크기는 500 턴 동안 플레이 가능한 지도 중 알려진 최대 크기의 지도보다도 큽니다. 만일 맵이 허용한다면, 당신은 그 지도의 보다 작은 구획을 선택해 플레이 할 수 있을 것이며, 그걸로 크기를 조정할 수 있을 것입니다.[NEWLINE][NEWLINE]지도는 로딩될 것이나, 게임 후반부에 무작위 게임 충돌을 경험할 수 있을지도 모르니, 자주 저장하는 습관을 들이세요.[NEWLINE][NEWLINE]몰려오는 폭풍에서, 해수면 상승이 일어날 시 복구 불가능한 오류가 발생할 것입니다.
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_OVERSIZE_YNAMP_TT" Language="ko_KR">
+      <Text>해당 지도 크기는 로딩시 오류가 발생하지 않는 모든 알려진 지도들 중 제일 큰 지도보다 큽니다. 만일 지도가 허용한다면, 당신은 그 지도의 보다 작은 구획을 선택해 플레이 할 수 있을 것이며, 그걸로 크기를 조정할 수 있을 것입니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNKNOWN_YNAMP" Language="ko_KR">
+      <Text>지도 크기를 알 수 없음</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAP_SIZE_UNKNOWN_YNAMP_TT" Language="ko_KR">
+      <Text>이 지도의 크기를 알 수 없습니다, YnAMP 모드는 이 지도에서 원활한 게임 플레이가 가능한지 진단을 내릴 수가 없습니다, 해당 문제는 데이터베이스를 불러옴으로 해결될 수 있습니다.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_LOAD_DATA_YNAMP" Language="ko_KR">
+      <Text>데이터베이스 불러오기</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_LOAD_DATA_YNAMP_TT" Language="ko_KR">
+      <Text>빠른 게임을 2D모드로 실행해 YnAMP의 환경설정에서 사용되는 모든 데이터를 불러온 후, 자동으로 종료해 메인메뉴로 돌아옵니다.[NEWLINE][NEWLINE]설정 화면으로 돌아가보면, "데이터베이스 로드됨" 이라고 표기되어 있을 것이며 관련된 YnAMP 고급 환경 설정들이 활성화 되어 있을 것입니다.[NEWLINE][NEWLINE]현재 설정값을 저장한 "AutoSaveYnAMP" 파일이 생성되어 필요시 다시 불러올 수 있을 것입니다, 하지만 권장되는 순서는 다음과 같습니다:[NEWLINE][ICON_BULLET] 모드 활성화[NEWLINE][ICON_BULLET] 데이터베이스 불러오기[NEWLINE][ICON_BULLET] 설정 변경[NEWLINE][NEWLINE]이는 선택 사항이며, 세부 설정이 필요하지 않다면 그냥 이대로 통상적인 게임을 실행시키세요.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_IGNORE_WARNING_YNAMP" Language="ko_KR">
+      <Text>경고 무시하기</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_IGNORE_WARNING_YNAMP_TT" Language="ko_KR">
+      <Text>만일 당신이 문제를 인지했고 경고를 무시하고 싶다면 "무시" 버튼을 누르세요.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAJOR_COUNT_DIFFERENCE" Language="ko_KR">
+      <Text>문명 숫자를 적용하세요</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_MAJOR_COUNT_DIFFERENCE_TT" Language="ko_KR">
+      <Text>실제 플레이어 슬롯의 수와 문명 슬롯 슬라이더의 값이 일치하지 않습니다.[NEWLINE][NEWLINE]사용자 인터페이스 렉 및 마우스 휠로 인한 변경 실수를 막기 위해, 슬라이더 값은 즉시 적용되지 않습니다. 또 게임 생성화면에서 나갔다가 다시 들어왔을 때, 변경되었을 수도 있습니다.[NEWLINE][NEWLINE]슬라이더 값을 적용하고 싶다면, "+" 버튼(추가)을 또는 "플레이어" 항목의 "X" 버튼(제거)을 클릭하세요.</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ERROR_NO_TSL" Language="ko_KR">
+      <Text>해당 지도 유형을 위한 TSL 좌표 없음</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ERROR_NO_TSL_IN_SECTION" Language="ko_KR">
+      <Text>이 지도로는 TSL 적용이 불가능합니다</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ARTICLE_TITLE_YNAMP" Language="ko_KR">
+      <Text>[ICON_Whisper] "현 시점에서 우리는 DLL 소스 코드를 공개할 예정이 없답니다."</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ARTICLE_RESUME_YNAMP" Language="ko_KR">
+      <Text>[NEWLINE]Firaxis사에서 Vox Populi 및 모든 문명6 대형 모드를 위한 툴을 지원하거나 업데이트 할 예정이 없다고 합니다[NEWLINE]전 그런 게임에 더 이상 흥미를 못하며, [COLOR_Civ6Blue]YnAMP[ENDCOLOR에 있어 이게 제 마지막 업데이트가 될 것입니다, 지금까지 여러분의 성원에 감사드립니다.[NEWLINE](pcgamesn.com에서 리드 디자이너인 Anton Strenger와으ㅏ  인터뷰로부터 인용)</Text>
+    </Replace>
+    <Replace Tag="LOC_SETUP_ARTICLE_RESUME_STEAM_ON_YNAMP" Language="ko_KR">
+      <Text>[NEWLINE]Firaxis사에서 Vox Populi 및 모든 문명6 대형 모드를 위한 툴을 지원하거나 업데이트 할 예정이 없다고 합니다[NEWLINE]전 그런 게임에 더 이상 흥미를 못하며, [COLOR_Civ6Blue]YnAMP[ENDCOLOR에 있어 이게 제 마지막 업데이트가 될 것입니다, 지금까지 여러분의 성원에 감사드립니다.[NEWLINE](왼클릭해 pcgamesn.com에 올라온 DLL 소스에 관한 기사를 읽어보세요, 우클릭하면 인터뷰에 관한걸 읽어볼 수 있습니다)</Text>
+    </Replace>
   </LocalizedText>
 </GameData>
