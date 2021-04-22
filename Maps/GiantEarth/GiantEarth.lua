@@ -28,6 +28,8 @@ local g_StartY	= MapConfiguration.GetValue("StartY") or 0
 local g_EndX	= MapConfiguration.GetValue("EndX") or 179
 local g_EndY	= MapConfiguration.GetValue("EndY") or 93
 
+local g_WrapX	= MapConfiguration.GetValue("WrapX")
+
 if g_StartX < g_EndX then g_iW = g_EndX - g_StartX + 1 end
 if g_StartX > g_EndX then g_iW = g_iW - (g_StartX - g_EndX) + 1 end
 
@@ -42,7 +44,7 @@ function GetMapInitData(worldSize)
 	return {
 		Width 	= g_iW,
 		Height 	= g_iH,
-		WrapX 	= (g_iW == 180),
+		WrapX 	= g_WrapX or (g_iW == 180),
 		WrapY 	= false,
 	};      
 end

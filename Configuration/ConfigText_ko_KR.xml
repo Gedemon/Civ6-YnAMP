@@ -205,7 +205,7 @@
     </Replace>
     <Replace Tag="LOC_MAP_RESOURCES_PLACEMENT_RWDEPOSIT_DESCRIPTION" Language="ko_KR">
       <Text>몇몇 자원들은 현실의 지구 지역에서 발견되는 위치에만 배치될 것입니다</Text>
-    </Replace
+    </Replace>
     <Replace Tag="LOC_YNAMP_ACTIVATED_NAME" Language="ko_KR">
       <Text>활성화됨</Text>
     </Replace>
@@ -1563,7 +1563,7 @@
       <Text>지원하지 않는 지도 크기</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_MAP_SIZE_LOCK_YNAMP_TT" Language="ko_KR">
-      <Text>해당 지도 크기는 500 턴 동안 플레이 가능한 지도 중 알려진 최대 크기의 지도보다도 큽니다. 만일 맵이 허용한다면, 당신은 그 지도의 보다 작은 구획을 선택해 플레이 할 수 있을 것이며, 그걸로 크기를 조정할 수 있을 것입니다.[NEWLINE][NEWLINE]지도는 로딩될 것이나, 게임 후반부에 무작위 게임 충돌을 경험할 수 있을지도 모르니, 자주 저장하는 습관을 들이세요.[NEWLINE][NEWLINE]몰려오는 폭풍에서, 해수면 상승이 일어날 시 복구 불가능한 오류가 발생할 것입니다.
+      <Text>해당 지도 크기는 500 턴 동안 플레이 가능한 지도 중 알려진 최대 크기의 지도보다도 큽니다. 만일 맵이 허용한다면, 당신은 그 지도의 보다 작은 구획을 선택해 플레이 할 수 있을 것이며, 그걸로 크기를 조정할 수 있을 것입니다.[NEWLINE][NEWLINE]지도는 로딩될 것이나, 게임 후반부에 무작위 게임 충돌을 경험할 수 있을지도 모르니, 자주 저장하는 습관을 들이세요.[NEWLINE][NEWLINE]몰려오는 폭풍에서, 해수면 상승이 일어날 시 복구 불가능한 오류가 발생할 것입니다.</Text>
     </Replace>
     <Replace Tag="LOC_SETUP_MAP_OVERSIZE_YNAMP_TT" Language="ko_KR">
       <Text>해당 지도 크기는 로딩시 오류가 발생하지 않는 모든 알려진 지도들 중 제일 큰 지도보다 큽니다. 만일 지도가 허용한다면, 당신은 그 지도의 보다 작은 구획을 선택해 플레이 할 수 있을 것이며, 그걸로 크기를 조정할 수 있을 것입니다.</Text>

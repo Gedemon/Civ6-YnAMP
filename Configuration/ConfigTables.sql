@@ -11,6 +11,7 @@
 -- Reserved Slots		
 CREATE TABLE IF NOT EXISTS ReservedPlayerSlots
 	(	LeaderType TEXT NOT NULL,
+		SlotStatus TEXT NOT NULL CHECK (SlotStatus IN ("SS_RESERVED","SS_COMPUTER")) DEFAULT "SS_COMPUTER",
 		NoDuplicate BOOLEAN NOT NULL CHECK (NoDuplicate IN (0,1)) DEFAULT 0,
 		ForceReplace BOOLEAN NOT NULL CHECK (ForceReplace IN (0,1)) DEFAULT 0,
 		IsMajor BOOLEAN NOT NULL CHECK (IsMajor IN (0,1)) DEFAULT 0);

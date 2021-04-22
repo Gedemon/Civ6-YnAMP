@@ -2314,7 +2314,7 @@ function HostGame()
 					playerConfig:SetLeaderTypeName(nil)
 					GameConfiguration.RemovePlayer(lastSlot)
 					
-					playerConfig:SetSlotStatus(SlotStatus.SS_COMPUTER)
+					playerConfig:SetSlotStatus(SlotStatus[row.SlotStatus])
 					playerConfig:SetLeaderName(leaderName)
 					playerConfig:SetLeaderTypeName(row.LeaderType)
 					if row.IsMajor then

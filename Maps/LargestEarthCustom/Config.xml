@@ -152,6 +152,7 @@
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomPacificEndX"		Name="LOC_MAP_ENDX_NAME"	Description="LOC_MAP_ENDX_DESCRIPTION"		Domain="text"	 Visible="0"	DefaultValue="208" 	ConfigurationGroup="Map" ConfigurationId="EndX"		GroupId="MapOptions" SortIndex="224"/>
 		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomPacificEndY"		Name="LOC_MAP_ENDY_NAME"	Description="LOC_MAP_ENDY_DESCRIPTION" 		Domain="text" 	 Visible="0"	DefaultValue="104" 	ConfigurationGroup="Map" ConfigurationId="EndY"		GroupId="MapOptions" SortIndex="225"/>
 		
+		<Row Key1="Map" Key2="LargestEarthCustom.lua" ParameterId="LargestEarthCustomWrapX"				Name="LOC_MAP_WRAP_X_NAME" 	Description="" Domain="bool" DefaultValue="0" ConfigurationGroup="Map" ConfigurationId="WrapX" GroupId="MapOptions" SortIndex="226"/>
 	</Parameters>
 	
 	<DomainValues>
@@ -278,6 +279,17 @@
 		<Replace ParameterId="LargestEarthCustomPacificStartY"	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_PACIFIC"/>
 		<Replace ParameterId="LargestEarthCustomPacificEndX" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_PACIFIC"/>
 		<Replace ParameterId="LargestEarthCustomPacificEndY" 	ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="Equals" 	ConfigurationValue="SECTION_PACIFIC"/>
+		
+		
+		<Replace ParameterId="LargestEarthCustomWrapX" 			ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="NotEquals" 	ConfigurationValue="SECTION_PACIFIC"/>
+		<Replace ParameterId="LargestEarthCustomWrapX" 			ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="NotEquals" 	ConfigurationValue="SECTION_SOUTH_EAST_ASIA"/>
+		<Replace ParameterId="LargestEarthCustomWrapX" 			ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="NotEquals" 	ConfigurationValue="SECTION_LARGE_ASIA"/>
+		<Replace ParameterId="LargestEarthCustomWrapX" 			ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="NotEquals" 	ConfigurationValue="SECTION_AFRICA"/>
+		<Replace ParameterId="LargestEarthCustomWrapX" 			ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="NotEquals" 	ConfigurationValue="SECTION_COLONIZATION"/>
+		<Replace ParameterId="LargestEarthCustomWrapX" 			ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="NotEquals" 	ConfigurationValue="SECTION_MIDDLE_EAST"/>
+		<Replace ParameterId="LargestEarthCustomWrapX" 			ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="NotEquals" 	ConfigurationValue="SECTION_MEDITERRANEA"/>
+		<Replace ParameterId="LargestEarthCustomWrapX" 			ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="NotEquals" 	ConfigurationValue="SECTION_EUROPE"/>
+		<Replace ParameterId="LargestEarthCustomWrapX" 			ConfigurationGroup="Map" ConfigurationId="MapSection" 	Operator="NotEquals" 	ConfigurationValue="SECTION_FULL"/>
 		
 	</ParameterDependencies>
 	

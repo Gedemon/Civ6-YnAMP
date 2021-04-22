@@ -497,6 +497,10 @@
       <Text>Use Historical Spawn Dates</Text>
     </Replace>
 	
+	<Replace Tag="LOC_MAP_WRAP_X_NAME" Language="en_US">
+      <Text>Force WrapX [COLOR_RED](experimental)[ENDCOLOR]</Text>
+    </Replace>
+	
     <Replace Tag="LOC_TURNS_BEFORE_BARBARIANS_NAME" Language="en_US">
       <Text>Barbarians Scout Turn</Text>
     </Replace>
