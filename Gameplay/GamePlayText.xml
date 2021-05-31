@@ -1101,11 +1101,11 @@
 		<Replace Tag="LOC_CITY_NAME_VALLETTA_VALLETTA" Text="Il-Belt" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_VASTO" Text="Vasto" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_VASTO_ROME" Text="Larinum" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ANTIOCH" Text="Venice" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ANTIOCH_GERMANY" Text="Venedig" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ANTIOCH_HUNGARY" Text="Velence" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ANTIOCH_ROME" Text="Altinum" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ANTIOCH_ANTIOCH" Text="Venesia" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VENICE" Text="Venice" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VENICE_GERMANY" Text="Venedig" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VENICE_HUNGARY" Text="Velence" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VENICE_ROME" Text="Altinum" Language="en_US" />
+		<Replace Tag="LOC_CITY_NAME_VENICE_ANTIOCH" Text="Venesia" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_VERONA" Text="Verona" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_VERONA_FRANCE" Text="Vérone" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_VERONA_ANTIOCH" Text="Veròna" Language="en_US" />
