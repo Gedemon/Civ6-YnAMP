@@ -1827,7 +1827,6 @@
 		<Replace Tag="LOC_CITY_NAME_ARVIKA" Text="Arvika" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ASKERSUND" Text="Askersund" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_ASKVOLL" Text="Askvoll" Language="en_US" />
-		<Replace Tag="LOC_CITY_NAME_ASKVOLL_HUNGARY" Text="Askvolls" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_A_I_LOFOTEN" Text="Å i Lofoten" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BERGEN" Text="Bergen" Language="en_US" />
 		<Replace Tag="LOC_CITY_NAME_BERGEN_CHINA" Text="Beirgen" Language="en_US" />
